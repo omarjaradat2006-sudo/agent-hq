@@ -4,9 +4,8 @@ Repo: `omarjaradat2006-sudo/agent-hq` · Site: https://omarjaradat2006-sudo.gith
 Your team's data file: `data/<team>/state.json` (shape in README.md). Hourly stats: `data/<team>/metrics.json` (read-only for you, written by the collectors).
 
 ## 1. Get the repo
-1. Call the `add_repo` tool (load it with ToolSearch "select:mcp__claude-code-remote__add_repo" if needed) with owner `omarjaradat2006-sudo`, repo `agent-hq`, access `push`.
-2. `git clone --depth 1 https://github.com/omarjaradat2006-sudo/agent-hq /home/claude/agent-hq`
-3. Commit as `git -c user.name="Agent HQ" -c user.email="omarjaradat2006-sudo@users.noreply.github.com" commit ...`
+The repo is normally already checked out at `/home/claude/agent-hq`. Run `cd /home/claude/agent-hq && git pull --rebase`. Only if that folder doesn't exist: `git clone https://github.com/omarjaradat2006-sudo/agent-hq /home/claude/agent-hq`. There is no add_repo step; don't look for one.
+Commit as `git -c user.name="Agent HQ" -c user.email="omarjaradat2006-sudo@users.noreply.github.com" commit ...`
 
 ## 2. Show you're working (so the live floor lights up)
 At the start, set your agents' `status` to `"working"` with a `doing` line, add a log entry, set `updatedAt`, commit "<Team>: run started", push.
