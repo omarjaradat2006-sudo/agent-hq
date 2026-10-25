@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en" data-root="../" data-team="linkedai">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>LinkedAI · Agent HQ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <a class="brand" href="../"><span class="brand-mark"></span><b>Agent HQ</b></a>
+    <nav class="nav" id="nav" aria-label="Sites"></nav>
+    <div class="live"><span class="pulse"></span><span id="liveText">Connecting…</span></div>
+  </header>
+  <section class="hero">
+    <div><div class="label">Agent HQ · company floor</div><h1>LinkedAI</h1><p id="tagline"></p></div>
+    <div class="stats">
+      <div class="stat"><div class="v" id="s-working">0</div><div class="k">Working now</div></div>
+      <div class="stat"><div class="v" id="s-ideas">0</div><div class="k">To review</div></div>
+      <div class="stat"><div class="v" id="s-last">—</div><div class="k">Last update</div></div>
+    </div>
+  </section>
+  <section class="panel brief" id="brief" hidden></section>
+  <section class="floor-wrap" aria-label="LinkedAI floor">
+    <div class="floor-head"><div class="label">Live floor</div></div>
+    <svg class="floor" id="floor" role="img" aria-label="Isometric view of the LinkedAI agents"></svg>
+    <div class="legend"><span><i class="sw" style="background:#6fd3ff"></i>Working</span><span><i class="sw" style="background:#a37bff"></i>Idle</span><span><i class="sw" style="background:#5fe0a0"></i>Done</span><span><i class="sw" style="background:#ffc864"></i>Waiting</span><span><i class="sw" style="background:#ff7a8e"></i>Error</span><span><i class="sw" style="background:#4b4566"></i>Not hired</span></div>
+  </section>
+  <section class="panel"><div class="panel-head"><h2>The team</h2></div><div class="roster" id="roster"></div></section>
+  <div class="grid">
+    <div class="stack">
+      <section class="panel"><div class="panel-head"><h2>Idea queue</h2><div class="tabs" id="tabs" role="group" aria-label="Filter ideas"></div></div><div class="ideas" id="ideas"></div></section>
+      <section class="panel"><div class="panel-head"><h2>Market numbers</h2></div><div id="metrics"></div></section>
+      <section class="panel"><div class="panel-head"><h2>Trending now</h2></div><div id="trending"></div></section>
+      <section class="panel"><div class="panel-head"><h2>Outlier research</h2></div><div id="research"></div></section>
+    </div>
+    <section class="panel"><div class="panel-head"><h2>Activity</h2></div><ul class="log" id="log"></ul></section>
+  </div>
+  <footer>Agents run on a schedule in the cloud · data collectors run hourly · this page refreshes every minute</footer>
+</div>
+<script src="../assets/config.js"></script>
+<script src="../assets/app.js"></script>
+</body>
+</html>
