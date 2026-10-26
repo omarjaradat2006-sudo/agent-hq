@@ -40,9 +40,9 @@ TikTok doesn't offer retention graphs or audience demographics through its API. 
 
 ## 4. Free stock footage for Ambient Escape (2 minutes)
 
-1. Go to https://www.pexels.com/api/ , sign in, and click **Your API Key**. It's free and instant.
-2. Add it to GitHub Secrets as **`PEXELS_API_KEY`**.
-3. Optional backup source: a free key from https://pixabay.com/api/docs/ saved as **`PIXABAY_API_KEY`**.
+1. Sign up free at https://pixabay.com , then open https://pixabay.com/api/docs/ while logged in.
+2. Your key is shown in green next to `key` in the Parameters section. Add it to GitHub Secrets as **`PIXABAY_API_KEY`**.
+3. Pexels has paused new API keys. If they reopen, a key saved as **`PEXELS_API_KEY`** is used first.
 
 Every morning the YouTube team lists the clips its lineup needs. The **Footage fetcher** workflow then downloads them and attaches them to that day's GitHub Release, so your batch has them ready. You never film anything.
 

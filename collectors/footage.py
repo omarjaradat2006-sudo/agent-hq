@@ -110,7 +110,7 @@ def main():
     if not env("PEXELS_API_KEY") and not env("PIXABAY_API_KEY"):
         for i in wanted:
             i["status"] = "needs_key"
-        s.setdefault("log", []).insert(0, {"t": ISO, "agent": "Footage Fetcher", "msg": "Waiting for a Pexels API key (add PEXELS_API_KEY in GitHub Secrets)."})
+        s.setdefault("log", []).insert(0, {"t": ISO, "agent": "Footage Fetcher", "msg": "Waiting for a footage API key (add PIXABAY_API_KEY in GitHub Secrets)."})
         json.dump(s, open(STATE, "w"), indent=1); print("no api key"); return
     used = set(json.load(open(USED))) if os.path.exists(USED) else set()
     ensure_release()

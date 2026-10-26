@@ -378,8 +378,8 @@
     intro.append(el("div", "why", "The team picks the clips each lineup needs. GitHub then finds and downloads them from Pexels (or Pixabay) automatically, so your batch has them ready. You don't film anything."));
     body.append(intro);
     if (!ft.length) { body.append(empty("No footage requested yet", "The YouTube team lists the clips it needs with each morning's lineup.")); return; }
-    const label = { ready: ["ok", "Downloaded"], wanted: ["waiting", "Finding"], needs_key: ["waiting", "Needs Pexels key"], not_found: ["error", "No match"], error: ["error", "Failed"] };
-    if (ft.some(f => f.status === "needs_key")) body.append(empty("One-time setup", "Get a free API key at pexels.com/api and add it in GitHub Secrets as PEXELS_API_KEY. Then the clips download by themselves."));
+    const label = { ready: ["ok", "Downloaded"], wanted: ["waiting", "Finding"], needs_key: ["waiting", "Needs Pixabay key"], not_found: ["error", "No match"], error: ["error", "Failed"] };
+    if (ft.some(f => f.status === "needs_key")) body.append(empty("One-time setup", "Get a free API key at pixabay.com/api/docs (it shows next to “key” when you are logged in) and add it in GitHub Secrets as PIXABAY_API_KEY. Then the clips download by themselves."));
     ft.forEach(f => { const k = el("div", "card"); const r = el("div", "row between"); r.append(el("h3", null, f.query || f.file)); const [cls, txt] = label[f.status || "wanted"] || ["idle", f.status]; r.append(el("span", "pill s-" + cls, txt)); k.append(r);
       const meta = [f.file, f.for ? "for " + f.for : null, f.seconds ? f.seconds + "s" : null, f.size, f.mb ? f.mb + " MB" : null].filter(Boolean).join(" · "); k.append(el("div", "small", meta));
       if (f.credit) { const row = el("div", "sources"); const u = safeUrl(f.page); const a = el(u ? "a" : "span", null, (u ? "↗ " : "") + f.credit); if (u) { a.href = u; a.target = "_blank"; a.rel = "noopener"; } row.append(a); k.append(row); }
