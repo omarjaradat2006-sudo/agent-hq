@@ -48,7 +48,8 @@
   const pts = a => a.map(p => p[0].toFixed(1) + "," + p[1].toFixed(1)).join(" ");
   const roomOrigin = t => [t.cfg.grid[0] * (S + G), t.cfg.grid[1] * (S + G)];
   const SLOTSET = { 3: [[0.4, 0.4], [2.75, 0.35], [0.35, 2.75]], 4: [[0.2, 0.2], [2.8, 0.3], [0.3, 2.8], [2.3, 2.3]], 5: [[0.2, 0.2], [2.8, 0.3], [0.3, 2.8], [2.8, 2.0], [1.9, 2.8]], 6: [[0.15, 0.15], [1.55, 0.15], [2.9, 0.4], [0.2, 2.85], [1.6, 2.9], [2.9, 1.9]] };
-  const W0 = { x0: -1.2, y0: -1.2, x1: 3 * S + 2 * G + 1.2, y1: 2 * S + G + 1.2 };
+  const COLS = Math.max(...CFG.teams.map(t => t.grid[0])) + 1, ROWS = Math.max(...CFG.teams.map(t => t.grid[1])) + 1;
+  const W0 = { x0: -1.2, y0: -1.2, x1: COLS * S + (COLS - 1) * G + 1.2, y1: ROWS * S + (ROWS - 1) * G + 1.2 };
   let svg, worldBox, roomBoxes = {};
 
   function buildWorld() {
@@ -344,7 +345,7 @@
     return `Use the ${skill} skill. Include this Agent HQ idea in today's batch (id ${i.id}):\n\nTitle: ${i.title}\nHook: ${i.hook || ""}\nFormat: ${i.format || ""}\n\nProduction notes:\n${i.script || ""}`;
   }
   function vIdeas(t, body) {
-    const ideas = t.state.ideas || []; const S2 = [["pending", "To review"], ["approved", t.cfg.id === "youtube" ? "Up next" : "Approved"], ["filmed", t.cfg.id === "opps" ? "Started" : "Done"], ["rejected", "Passed"]];
+    const ideas = t.state.ideas || []; const S2 = [["pending", "To review"], ["approved", t.cfg.id === "youtube" ? "Up next" : "Approved"], ["filmed", t.cfg.id === "opps" ? "Started" : t.cfg.id === "lab" ? "Built" : "Done"], ["rejected", "Passed"]];
     const sub = el("div", "subtabs"); S2.forEach(([k, l]) => { const b = el("button", null, `${l} ${ideas.filter(i => effectiveStatus(i).status === k).length}`); b.setAttribute("aria-pressed", String(ideaFilter === k)); b.onclick = () => { ideaFilter = k; renderPanel(); }; sub.append(b); });
     body.append(sub);
     const list = ideas.filter(i => effectiveStatus(i).status === ideaFilter).sort((a, b) => (b.createdAt || "").localeCompare(a.createdAt || ""));
@@ -361,7 +362,7 @@
         if (Array.isArray(i.hooksToTest) && i.hooksToTest.length) { w.append(el("div", "label", "Hooks to test")); const ul = el("ul"); ul.style.margin = "0"; ul.style.paddingLeft = "18px"; i.hooksToTest.forEach(h => ul.append(el("li", null, h))); w.append(ul); }
         if (i.caption) { w.append(el("div", "label", "Caption")); w.append(el("div", "small", i.caption)); }
         d.append(w); c.append(d); }
-      else if (i.script) { const d = el("details"); d.append(el("summary", null, t.cfg.id === "opps" ? "How to do it" : t.cfg.id === "youtube" ? "Production notes" : "Full script")); d.append(el("div", "script", i.script)); c.append(d); }
+      else if (i.script) { const d = el("details"); d.append(el("summary", null, t.cfg.id === "opps" ? "How to do it" : t.cfg.id === "lab" ? "How to build it" : t.cfg.id === "youtube" ? "Production notes" : "Full script")); d.append(el("div", "script", i.script)); c.append(d); }
       if (Array.isArray(i.scenes) && i.scenes.length && i.script) { const d = el("details"); d.append(el("summary", null, "Copy full script")); d.append(el("div", "script", i.script)); c.append(d); }
       if (i.swarm) c.append(swarmBlock(i.swarm, true));
       if (Array.isArray(i.sources) && i.sources.length) { const s = el("div", "sources"); i.sources.forEach(x => { const u = safeUrl(x.url); if (u) { const a = el("a", null, "↗ " + (x.title || "source")); a.href = u; a.target = "_blank"; a.rel = "noopener"; s.append(a); } }); c.append(s); }
@@ -371,6 +372,7 @@
       else if (st === "pending") { add("Approve", "approve", "primary"); add("Pass", "pass"); }
       else if (st === "approved") { add(t.cfg.id === "tiktok" || t.cfg.id === "youtube" ? (t.cfg.id === "youtube" ? "Mark made" : "Mark filmed") : "Mark done", "filmed", "primary"); add("Back to review", "review"); }
       else add("Back to review", "review");
+      if (i.buildPrompt) { const m = el("button", "btn", "Copy build prompt"); m.onclick = async () => { try { await navigator.clipboard.writeText(i.buildPrompt); toast("Copied. Paste it into a new Claude chat to build this."); } catch { const ta = el("textarea"); ta.value = i.buildPrompt; ta.style.width = "100%"; ta.rows = 6; c.append(ta); ta.select(); toast("Select and copy the text below."); } }; act.append(m); }
       if (t.cfg.id === "youtube" && !queued && (st === "pending" || st === "approved")) { const m = el("button", "btn", "Copy 'make it' prompt"); m.onclick = async () => { const txt = makeItPrompt(t, i); try { await navigator.clipboard.writeText(txt); toast("Copied. Paste it into Claude to make this video."); } catch { const ta = el("textarea"); ta.value = txt; ta.style.width = "100%"; ta.rows = 5; c.append(ta); ta.select(); toast("Select and copy the text below."); } }; act.append(m); }
       act.append(el("span", "small", ago(i.createdAt))); c.append(act); body.append(c); });
     connectCard(body);
@@ -533,7 +535,7 @@
     chip(String(working), "Working now"); chip(String(pending), "Ideas to review");
     if (fol) chip(fmt(fol.value), "TikTok followers", fol.delta ? el("div", "d " + (fol.delta >= 0 ? "up" : "down"), (fol.delta >= 0 ? "+" : "") + fol.delta) : null);
     if (subs) chip(fmt(subs), "YouTube subs");
-    $("#liveText").textContent = "Live · " + all.filter(t => t.hired && !t.cfg.virtual).length + " of 5 teams hired";
+    $("#liveText").textContent = "Live · " + all.filter(t => t.hired && !t.cfg.virtual).length + " of " + all.filter(t => !t.cfg.virtual).length + " teams hired";
     const bar = $("#teambar"); bar.replaceChildren();
     CFG.teams.forEach(c => { const t = M.teams[c.id]; const b = el("button"); b.dataset.id = c.id; const sw = el("span", "sw"); sw.style.background = c.color; b.append(sw, document.createTextNode(c.virtual ? "HQ" : c.name));
       if (t.agents.some(a => a.status === "working")) b.append(el("span", "live")); b.onclick = () => focusTeam(c.id); bar.append(b); });

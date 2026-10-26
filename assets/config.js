@@ -35,6 +35,12 @@ window.HQ_CONFIG = {
         { id: "planner", name: "Planner", role: "How-to, hours, cost", kind: "ideas" },
         { id: "swarm", name: "Swarm Tester", role: "100 people debate the idea", kind: "swarm" } ] },
     { id: "hq", name: "Chief of Staff", color: "#a37bff", grid: [2, 1], tagline: "Your daily brief across every team", virtual: true,
-      agents: [ { id: "chief", name: "Chief of Staff", role: "Daily brief at noon", kind: "brief" } ] }
+      agents: [ { id: "chief", name: "Chief of Staff", role: "Daily brief at noon", kind: "brief" } ] },
+    { id: "lab", name: "R&D Lab", color: "#2ee6d6", grid: [1, 2], tagline: "Upgrades for every business, pipeline and this site", ideaWord: "Upgrades",
+      agents: [
+        { id: "lead", name: "Lab Director", role: "Picks the upgrades worth doing", kind: "brief" },
+        { id: "scout", name: "Tool Scout", role: "New AI tools, models and APIs", kind: "research" },
+        { id: "hunter", name: "Format Hunter", role: "What makes rival videos more engaging", kind: "research" },
+        { id: "engineer", name: "Upgrade Engineer", role: "Turns finds into build plans", kind: "ideas" } ] }
   ]
 };
