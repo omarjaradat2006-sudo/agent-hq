@@ -22,17 +22,20 @@ window.HQ_CONFIG = {
       agents: [
         { id: "lead", name: "Product Lead", role: "Weekly read on the market", kind: "brief" },
         { id: "watch", name: "Competitor Watch", role: "Their content, ads and growth", kind: "competitors" },
-        { id: "copywriter", name: "Copywriter", role: "Promo scripts and posts", kind: "ideas" } ] },
+        { id: "copywriter", name: "Copywriter", role: "Promo scripts and posts", kind: "ideas" },
+        { id: "swarm", name: "Swarm Tester", role: "100 people debate the idea", kind: "swarm" } ] },
     { id: "growth", name: "Growth Architect", color: "#3ddc97", grid: [0, 1], tagline: "AI marketing tools market and promo content", ideaWord: "Content",
       agents: [
         { id: "lead", name: "Product Lead", role: "Weekly read on the market", kind: "brief" },
         { id: "watch", name: "Competitor Watch", role: "Their content, ads and growth", kind: "competitors" },
-        { id: "copywriter", name: "Copywriter", role: "Promo scripts and posts", kind: "ideas" } ] },
+        { id: "copywriter", name: "Copywriter", role: "Promo scripts and posts", kind: "ideas" },
+        { id: "swarm", name: "Swarm Tester", role: "100 people debate the idea", kind: "swarm" } ] },
     { id: "opps", name: "AI Opportunities", color: "#ffd23d", grid: [1, 1], tagline: "New ways to make money with AI", ideaWord: "Opportunities",
       agents: [
         { id: "lead", name: "Venture Lead", role: "Picks the best bets", kind: "brief" },
         { id: "scout", name: "Scout", role: "Finds opportunities", kind: "research" },
-        { id: "planner", name: "Planner", role: "How-to, hours, cost", kind: "ideas" } ] },
+        { id: "planner", name: "Planner", role: "How-to, hours, cost", kind: "ideas" },
+        { id: "swarm", name: "Swarm Tester", role: "100 people debate the idea", kind: "swarm" } ] },
     { id: "hq", name: "Chief of Staff", color: "#a37bff", grid: [2, 1], tagline: "Your daily brief across every team", virtual: true,
       agents: [ { id: "chief", name: "Chief of Staff", role: "Daily brief at noon", kind: "brief" } ] }
   ]

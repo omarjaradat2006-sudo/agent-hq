@@ -230,7 +230,7 @@
 
   /* ---------------- panel ---------------- */
   let tab = "overview", agentSel = null, ideaFilter = "pending", statSel = null;
-  function tabForKind(t, kind) { return ["stats", "research", "ideas", "review", "competitors"].includes(kind) ? kind : "overview"; }
+  function tabForKind(t, kind) { return ["stats", "research", "ideas", "review", "competitors", "swarm"].includes(kind) ? kind : "overview"; }
   function focusTeam(id, tb, agentId) {
     if (!M.teams[id]) return; focused = id; tab = tb || "overview"; agentSel = agentId || null; statSel = null; ideaFilter = id === "youtube" ? "approved" : "pending";
     $("#panel").classList.add("open"); renderPanel(); syncTeambar();
@@ -248,6 +248,7 @@
     if (t.cfg.id === "youtube") out.splice(1, 0, ["lineup", "Today's lineup"]), out.splice(3, 0, ["shots", "Footage"]);
     if (t.cfg.id === "tiktok" || t.cfg.id === "youtube") out.splice(out.findIndex(x => x[0] === "ideas") + 1, 0, ["review", "Review"]);
     if (t.cfg.id === "linkedai" || t.cfg.id === "growth") out.splice(2, 0, ["competitors", "Competitors"]);
+    if (["linkedai", "growth", "opps"].includes(t.cfg.id)) out.splice(out.findIndex(x => x[0] === "ideas") + 1, 0, ["swarm", "100-person test"]);
     out.push(["research", "Research"], ["activity", "Activity"]);
     return out;
   }
@@ -264,7 +265,7 @@
       b.onclick = () => { tab = k; renderPanel(); }; tabs.append(b); });
     ph.append(tabs); p.append(ph);
     const body = el("div", "pb"); p.append(body);
-    ({ overview: vOverview, ideas: vIdeas, review: vReview, competitors: vCompetitors, lineup: vLineup, shots: vShots, stats: vStats, trending: vTrending, research: vResearch, activity: vActivity }[tab] || vOverview)(t, body);
+    ({ overview: vOverview, ideas: vIdeas, review: vReview, competitors: vCompetitors, swarm: vSwarm, lineup: vLineup, shots: vShots, stats: vStats, trending: vTrending, research: vResearch, activity: vActivity }[tab] || vOverview)(t, body);
   }
   function pill(s) { return el("span", "pill s-" + (s || "idle"), ST[s] || s || "Idle"); }
   function empty(title, text) { const e = el("div", "empty"); e.append(el("strong", null, title)); e.append(el("span", null, text)); return e; }
@@ -273,7 +274,7 @@
     r.append(nm, pill(a.status)); c.append(r);
     if (a.doing) c.append(el("div", null, a.doing));
     c.append(el("div", "small", (a.lastRun ? "Last run " + ago(a.lastRun) : "Hasn't run yet") + (a.nextRun ? " · next " + until(a.nextRun) : "")));
-    const k = tabForKind(t, a.kind); if (k !== "overview") { const b = el("button", "btn primary", { stats: "See the stats", research: "See what they found", review: "See the review", competitors: "See the competitors" }[k] || "See what they wrote"); b.onclick = () => { tab = k; renderPanel(); }; c.append(b); }
+    const k = tabForKind(t, a.kind); if (k !== "overview") { const b = el("button", "btn primary", { stats: "See the stats", research: "See what they found", review: "See the review", competitors: "See the competitors", swarm: "See the debate" }[k] || "See what they wrote"); b.onclick = () => { tab = k; renderPanel(); }; c.append(b); }
     return c;
   }
   function vOverview(t, body) {
@@ -360,6 +361,8 @@
         if (i.caption) { w.append(el("div", "label", "Caption")); w.append(el("div", "small", i.caption)); }
         d.append(w); c.append(d); }
       else if (i.script) { const d = el("details"); d.append(el("summary", null, t.cfg.id === "opps" ? "How to do it" : t.cfg.id === "youtube" ? "Production notes" : "Full script")); d.append(el("div", "script", i.script)); c.append(d); }
+      if (Array.isArray(i.scenes) && i.scenes.length && i.script) { const d = el("details"); d.append(el("summary", null, "Copy full script")); d.append(el("div", "script", i.script)); c.append(d); }
+      if (i.swarm) c.append(swarmBlock(i.swarm, true));
       if (Array.isArray(i.sources) && i.sources.length) { const s = el("div", "sources"); i.sources.forEach(x => { const u = safeUrl(x.url); if (u) { const a = el("a", null, "↗ " + (x.title || "source")); a.href = u; a.target = "_blank"; a.rel = "noopener"; s.append(a); } }); c.append(s); }
       const act = el("div", "row"); const { status: st, queued } = effectiveStatus(i); const btns = [];
       const add = (l, a, cls) => { const b = el("button", "btn " + (cls || ""), l); b.onclick = () => decide(a, t, i, btns); btns.push(b); act.append(b); };
@@ -370,6 +373,26 @@
       if (t.cfg.id === "youtube" && !queued && (st === "pending" || st === "approved")) { const m = el("button", "btn", "Copy 'make it' prompt"); m.onclick = async () => { const txt = makeItPrompt(t, i); try { await navigator.clipboard.writeText(txt); toast("Copied. Paste it into Claude to make this video."); } catch { const ta = el("textarea"); ta.value = txt; ta.style.width = "100%"; ta.rows = 5; c.append(ta); ta.select(); toast("Select and copy the text below."); } }; act.append(m); }
       act.append(el("span", "small", ago(i.createdAt))); c.append(act); body.append(c); });
     connectCard(body);
+  }
+  function swarmBlock(w, compact) {
+    const d = el("details"); d.open = !compact; d.append(el("summary", null, `100-person test${w.score != null ? " · " + w.score + "/10" : ""}${w.support ? " · " + w.support.for + "% for" : ""}`));
+    const b = el("div"); b.style.display = "grid"; b.style.gap = "8px"; b.style.marginTop = "8px";
+    if (w.verdict) b.append(el("div", "why", w.verdict));
+    if (w.support) { const bar = el("div"); bar.style.display = "flex"; bar.style.height = "8px"; bar.style.borderRadius = "4px"; bar.style.overflow = "hidden";
+      [["for", "var(--good)"], ["undecided", "var(--line2)"], ["against", "var(--bad)"]].forEach(([k, col]) => { const x = el("div"); x.style.width = (w.support[k] || 0) + "%"; x.style.background = col; bar.append(x); });
+      b.append(bar); b.append(el("div", "small", `${w.support.for || 0}% for · ${w.support.undecided || 0}% undecided · ${w.support.against || 0}% against`)); }
+    (w.groups || []).forEach(g => { const r = el("div"); r.style.borderLeft = "2px solid var(--line2)"; r.style.paddingLeft = "10px";
+      r.append(el("div", "label", `${g.name}${g.for != null ? " · " + g.for + "% for" : ""}`)); if (g.quote) r.append(el("div", null, `"${g.quote}"${g.username ? " — " + g.username : ""}`)); b.append(r); });
+    const list = (title, arr) => { if (!Array.isArray(arr) || !arr.length) return; b.append(el("div", "label", title)); const ul = el("ul"); ul.style.margin = "0"; ul.style.paddingLeft = "18px"; arr.forEach(x => ul.append(el("li", null, x))); b.append(ul); };
+    list("What they liked", w.topPraise); list("Objections", w.topObjections); list("Fixes to win them over", w.fixes);
+    if (w.changedMinds) { b.append(el("div", "label", "What changed minds")); b.append(el("div", "small", w.changedMinds)); }
+    if (w.limits) b.append(el("div", "small", w.limits));
+    d.append(b); return d;
+  }
+  function vSwarm(t, body) {
+    const ws = t.state.swarms || [];
+    if (!ws.length) { body.append(empty("No swarm tests yet", "Each run, 100 simulated people (investors, customers, skeptics, marketers, everyday users) debate the team's top idea. Results show up here.")); return; }
+    ws.forEach(w => { const c = el("div", "card"); c.append(el("div", "label", (w.date || ago(w.createdAt)))); c.append(el("h3", null, w.idea || "Idea")); c.append(swarmBlock(w, false)); body.append(c); });
   }
   function vReview(t, body) {
     const r = t.state.review;
