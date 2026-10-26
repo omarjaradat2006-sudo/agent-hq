@@ -245,7 +245,7 @@
     const out = [["overview", "Overview"], ["ideas", t.cfg.ideaWord || "Ideas"]];
     if (t.metrics) out.push(["stats", "Stats"]);
     if (t.metrics && (t.metrics.trending || []).length) out.push(["trending", "Trending"]);
-    if (t.cfg.id === "youtube") out.splice(2, 0, ["shots", "Shot list"]);
+    if (t.cfg.id === "youtube") out.splice(1, 0, ["lineup", "Today's lineup"]), out.splice(3, 0, ["shots", "Shot list"]);
     out.push(["research", "Research"], ["activity", "Activity"]);
     return out;
   }
@@ -262,7 +262,7 @@
       b.onclick = () => { tab = k; renderPanel(); }; tabs.append(b); });
     ph.append(tabs); p.append(ph);
     const body = el("div", "pb"); p.append(body);
-    ({ overview: vOverview, ideas: vIdeas, shots: vShots, stats: vStats, trending: vTrending, research: vResearch, activity: vActivity }[tab] || vOverview)(t, body);
+    ({ overview: vOverview, ideas: vIdeas, lineup: vLineup, shots: vShots, stats: vStats, trending: vTrending, research: vResearch, activity: vActivity }[tab] || vOverview)(t, body);
   }
   function pill(s) { return el("span", "pill s-" + (s || "idle"), ST[s] || s || "Idle"); }
   function empty(title, text) { const e = el("div", "empty"); e.append(el("strong", null, title)); e.append(el("span", null, text)); return e; }
@@ -361,6 +361,17 @@
       if (t.cfg.id === "youtube" && !queued && (st === "pending" || st === "approved")) { const m = el("button", "btn", "Copy 'make it' prompt"); m.onclick = async () => { const txt = makeItPrompt(t, i); try { await navigator.clipboard.writeText(txt); toast("Copied. Paste it into Claude to make this video."); } catch { const ta = el("textarea"); ta.value = txt; ta.style.width = "100%"; ta.rows = 5; c.append(ta); ta.select(); toast("Select and copy the text below."); } }; act.append(m); }
       act.append(el("span", "small", ago(i.createdAt))); c.append(act); body.append(c); });
     connectCard(body);
+  }
+  function vLineup(t, body) {
+    const L = t.state.lineup; const sub0 = L && L.channels ? Object.keys(L.channels) : [];
+    if (!sub0.length) { body.append(empty("No lineup yet", "Every morning the team plans all 17 videos for each channel: 15 Shorts and 2 long videos.")); return; }
+    statSel = sub0.includes(statSel) ? statSel : sub0[0];
+    const sub = el("div", "subtabs"); sub0.forEach(ch => { const b = el("button", null, `${ch} ${(L.channels[ch] || []).length}`); b.setAttribute("aria-pressed", String(statSel === ch)); b.onclick = () => { statSel = ch; renderPanel(); }; sub.append(b); }); body.append(sub);
+    body.append(el("div", "small", "Planned " + (L.date || ago(L.createdAt)) + " · say “make today's batch” to Claude and it builds these"));
+    const c = el("div", "card"); (L.channels[statSel] || []).forEach(v => { const r = el("div", "vid");
+      const tt = el("span", "t", (v.slot || "") + "  " + (v.title || "")); tt.title = v.title || ""; r.append(tt, el("span", "n", v.kind || ""));
+      r.append(el("span", "m", [v.format, v.note].filter(Boolean).join(" · ")), el("span", "m", [v.newIdea ? "★ new" : "", v.clip ? "🎥 " + v.clip : ""].filter(Boolean).join("  "))); c.append(r); });
+    body.append(c);
   }
   function vShots(t, body) {
     const ideas = (t.state.ideas || []).filter(i => ["pending", "approved"].includes(effectiveStatus(i).status));
