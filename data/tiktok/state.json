@@ -1,14 +1,14 @@
 {
   "team": "tiktok",
   "hired": true,
-  "updatedAt": "2026-10-26T13:46:25Z",
+  "updatedAt": "2026-10-26T13:47:40Z",
   "agents": [
     {
       "id": "analyst",
       "name": "Analyst",
       "role": "Finds outlier videos",
-      "status": "working",
-      "doing": "Scanning what's trending in your niche",
+      "status": "ok",
+      "doing": "Found 5 trend signals (psychology facts, stoic one-liners, loud budgeting)",
       "lastRun": "2026-10-25T20:11:13Z",
       "nextRun": "2026-10-26T13:41:00Z"
     },
@@ -16,8 +16,8 @@
       "id": "strategist",
       "name": "Strategist",
       "role": "Picks what to film next",
-      "status": "waiting",
-      "doing": "Waiting on research",
+      "status": "working",
+      "doing": "Picking the 3 best angles for your page",
       "lastRun": "2026-10-25T20:11:13Z",
       "nextRun": "2026-10-26T13:41:00Z"
     },
@@ -32,6 +32,16 @@
     }
   ],
   "log": [
+    {
+      "t": "2026-10-26T13:47:40Z",
+      "agent": "Analyst",
+      "msg": "Biggest finding: 'Male psychology facts' Shorts are running at 52x their channel average (779K views in 5 days); stoic desire/freedom lines also at 34x"
+    },
+    {
+      "t": "2026-10-26T13:46:37Z",
+      "agent": "Strategist",
+      "msg": "Omar passed on 'This Sunday your Fajr alarm is wrong (clocks fall back)'"
+    },
     {
       "t": "2026-10-26T13:46:25Z",
       "agent": "Analyst",
@@ -153,7 +163,7 @@
           "url": "https://www.timeout.com/montreal/news/when-is-the-time-change-in-canada-2026-021726"
         }
       ],
-      "status": "pending",
+      "status": "rejected",
       "team": "tiktok",
       "title": "This Sunday your Fajr alarm is wrong (clocks fall back)",
       "why": "Clocks fall back on Sun Nov 1, 2026, so every prayer time moves about an hour earlier on the clock. That makes it a practical, urgent discipline video he has to post this week.",
@@ -210,6 +220,47 @@
     }
   ],
   "research": [
+    {
+      "date": "2026-10-26",
+      "createdAt": "2026-10-26T13:47:40Z",
+      "items": [
+        {
+          "title": "Male Psychology Facts (Shorts)",
+          "creator": "@motivation_points",
+          "url": "https://www.youtube.com/watch?v=YVskINzf3mk",
+          "metric": "779,227 views, 52x channel average, 5 days old",
+          "whyItWorks": "'Facts about men' is a list format guys watch to the end to see if they're in it. A second video from the same channel also hit 20.5x, so it's a pattern, not a fluke."
+        },
+        {
+          "title": "You become free the moment your desires stop controlling you",
+          "creator": "hiddenverses",
+          "url": "https://www.youtube.com/watch?v=xIdNx_BD-lU",
+          "metric": "74,629 views, 34.2x channel average, 3 days old",
+          "whyItWorks": "One stoic line about desire and self-control, framed as freedom. It reads as a challenge to the viewer, not a lecture."
+        },
+        {
+          "title": "Two philosophers, two timeless lessons (Marcus Aurelius + Nietzsche)",
+          "creator": "PHILOSOPHY KA CRAZE HAI:)",
+          "url": "https://www.youtube.com/watch?v=_IfNQBXFe9I",
+          "metric": "94,619 views, 25.1x channel average, 4 days old",
+          "whyItWorks": "Naming real philosophers gives the advice weight. Pairing two thinkers creates a built-in structure: lesson one, lesson two."
+        },
+        {
+          "title": "Loud budgeting: Gen Z saying no to spending out loud",
+          "creator": "Lukas Battle (coined it); Bank of America 2026 Better Money Habits study",
+          "url": "https://caymanindependent.com/loud-budgeting-how-gen-zs-rejection-of-financial-pretence-is-reshaping-money-culture/",
+          "metric": "75% of Gen Z look for ways to spend less when making plans; 66% are saving (BofA 2026)",
+          "whyItWorks": "It makes not spending look like strength, not being broke. That's a money-mindset angle a regular guy can talk about without acting rich."
+        },
+        {
+          "title": "Goodnight-call trend: guys calling their boys to say goodnight",
+          "creator": "Many creators (covered by Straight Arrow News)",
+          "url": "https://san.com/cc/viral-goodnight-calls-on-tiktok-are-showing-the-softer-side-of-masculinity/",
+          "metric": "Pew: 8% of Americans say they have no close friends",
+          "whyItWorks": "Shows that male friendship content hits when it's funny and real. It opens an angle on friendship and loneliness for young guys that doesn't sound soft."
+        }
+      ]
+    },
     {
       "date": "2026-10-25",
       "createdAt": "2026-10-25T20:09:31Z",
@@ -289,5 +340,8 @@
       "Your TikTok stats aren't connected yet (metrics say needs setup), so I can't track how your videos are moving. See SETUP.md."
     ]
   },
-  "processedIssues": []
+  "processedIssues": [
+    1,
+    2
+  ]
 }
