@@ -136,27 +136,38 @@ def yt_own_channel(refresh):
         "metrics": "views,estimatedMinutesWatched,averageViewDuration,subscribersGained,subscribersLost"}), headers=H)
     row = (rep.get("rows") or [[0, 0, 0, 0, 0]])[0]
     uploads = ch["contentDetails"]["relatedPlaylists"]["uploads"]
-    pl = http(YT + "playlistItems?" + urllib.parse.urlencode({"part": "contentDetails", "playlistId": uploads, "maxResults": 30}), headers=H)
-    vid_ids = [i["contentDetails"]["videoId"] for i in pl.get("items", [])]
-    # per-video analytics for the last 28 days (views, retention, likes, shares, subs gained)
-    per = {}
+    pl = http(YT + "playlistItems?" + urllib.parse.urlencode({"part": "contentDetails", "playlistId": uploads, "maxResults": 50}), headers=H)
+    recent_ids = [i["contentDetails"]["videoId"] for i in pl.get("items", [])]
+    # Per-video analytics over 90 days, sorted by views: this is where the hits
+    # (and their retention) live. YouTube analytics lag 2-3 days, and Omar posts
+    # 17 videos a day, so the newest uploads alone never show what worked.
+    per, top_ids = {}, []
+    start90 = (NOW.date() - datetime.timedelta(days=90)).isoformat()
     try:
         vr = http("https://youtubeanalytics.googleapis.com/v2/reports?" + urllib.parse.urlencode({
-            "ids": "channel==MINE", "startDate": start, "endDate": end, "dimensions": "video", "sort": "-views", "maxResults": 50,
+            "ids": "channel==MINE", "startDate": start90, "endDate": end, "dimensions": "video", "sort": "-views", "maxResults": 200,
             "metrics": "views,averageViewDuration,averageViewPercentage,likes,shares,subscribersGained"}), headers=H)
         for r in vr.get("rows") or []:
-            per[r[0]] = {"avgViewSec": int(r[2]), "avgViewPct": round(float(r[3]), 1), "shares": int(r[5]), "subsGained": int(r[6])}
+            per[r[0]] = {"views90": int(r[1]), "avgViewSec": int(r[2]), "avgViewPct": round(float(r[3]), 1), "shares": int(r[5]), "subsGained": int(r[6])}
+            top_ids.append(r[0])
     except Exception as e:
-        print("per-video analytics skipped:", str(e)[:120])
+        print("per-video analytics skipped:", str(e)[:160])
+    # top 40 by views + the 40 lowest that have analytics (to compare hits vs misses) + newest uploads
+    analysed = top_ids[:40] + [v for v in top_ids[40:][-40:]]
+    want = list(dict.fromkeys(analysed + recent_ids[:30]))
     vids = []
-    if vid_ids:
-        for v in http(YT + "videos?" + urllib.parse.urlencode({"part": "snippet,statistics,contentDetails", "id": ",".join(vid_ids)}), headers=H).get("items", []):
+    for i in range(0, len(want), 50):
+        chunk = want[i:i + 50]
+        for v in http(YT + "videos?" + urllib.parse.urlencode({"part": "snippet,statistics,contentDetails", "id": ",".join(chunk)}), headers=H).get("items", []):
             s = v.get("statistics", {}); dur = v.get("contentDetails", {}).get("duration", "")
-            item = {"title": f"[{name}] " + v["snippet"]["title"], "url": "https://www.youtube.com/watch?v=" + v["id"], "id": v["id"],
+            pub = v["snippet"]["publishedAt"]
+            age = (NOW - datetime.datetime.strptime(pub, "%Y-%m-%dT%H:%M:%SZ").replace(tzinfo=datetime.timezone.utc)).days
+            item = {"title": f"[{name}] " + v["snippet"]["title"], "channel": name, "url": "https://www.youtube.com/watch?v=" + v["id"], "id": v["id"],
                     "views": int(s.get("viewCount", 0)), "likes": int(s.get("likeCount", 0) or 0), "comments": int(s.get("commentCount", 0) or 0),
-                    "published": v["snippet"]["publishedAt"], "duration": dur, "isShort": iso_secs(dur) <= 180}
+                    "published": pub, "ageDays": age, "duration": dur, "seconds": iso_secs(dur), "isShort": iso_secs(dur) <= 180}
             item.update(per.get(v["id"], {}))
             vids.append(item)
+    vids.sort(key=lambda x: x["views"], reverse=True)
     subs = int(ch["statistics"].get("subscriberCount", 0))
     kpis = [
         {"label": f"{name} · subscribers", "value": subs, "delta": int(row[3]) - int(row[4]), "deltaLabel": "28d"},
@@ -221,7 +232,7 @@ def run_youtube():
             except Exception as e:
                 problems.append("analytics: " + str(e))
         if kpis:
-            m["kpis"], m["topVideos"] = kpis, sorted(vids, key=lambda x: x["published"], reverse=True)[:60]
+            m["kpis"], m["topVideos"] = kpis, sorted(vids, key=lambda x: (x.get("channel", ""), -x["views"]))[:260]
             did.append(f"pulled your stats for {len(kpis)//4} channel(s)")
     finish(m, "youtube", did, problems, needs="Add YT_API_KEY (and your Google sign-in tokens) to start. See SETUP.md.")
 
