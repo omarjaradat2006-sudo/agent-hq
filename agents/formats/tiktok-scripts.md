@@ -31,10 +31,44 @@ Regular guy giving advice, not a guru. A student who works, still building, not 
 ```
 Also keep `script` as the full spoken script with `[pause]` between scenes (for copying).
 
+## `formatted` — REQUIRED. This is what Omar sees on the site.
+Each idea is ONE version, written EXACTLY in his content-scripts output format (the same thing his skill prints in chat), as markdown, AFTER the VoicePrint pass. Copy this layout character for character; only the words change:
+
+```
+**VERSION A - Curiosity loop (~35s)**
+- **Why this one:** one sentence on the mechanism (what tension it creates).
+- **On-screen text (first 3-5s):** a short line that adds to the spoken hook, never repeats it.
+
+**Scene 1 - Hook (0-3s)**
+> exact spoken line(s)
+
+*Delivery:* lean in, flat and serious.
+
+[pause]
+
+**Scene 2 - Context lean (~5s)**
+> exact spoken lines
+
+*Delivery:* ...
+
+[pause]
+
+...every scene the same way (Scene N - <job> (~Xs), quoted line, *Delivery:*, [pause])...
+
+**Last line:** "the last spoken line" (and how it loops into Scene 1, if it does)
+
+- **Hooks to test:**
+  - alternative first line 1 (hook family)
+  - alternative first line 2 (hook family)
+  - alternative first line 3 (hook family)
+- **Caption:** one line + exactly 5 hashtags
+```
+Use VERSION A / B / C across the 3 ideas of a run (one per idea). Spoken lines in `formatted` must be word-for-word the same as `scenes[].line` and `script`. Never output paragraphs instead of scenes. If `formatted` doesn't match this layout, rewrite it before saving.
+
 Typical scene jobs: hook, context lean, re-hook / tension, value or clues, reveal, payoff, loop/close. 4-7 scenes. Version lengths: curiosity loop 25-40s, story 40-60s, hard truth / call-out 20-35s. The 3 daily ideas must use 3 different hook families AND structures, not just different wording.
 
-## VoicePrint pass (always, after drafting)
-Run each script through the voiceprint skill if it's available (register: Casual → Social post; freedom: "Keep the structure too, sentences only"), so it sounds like Omar, not AI. If the skill isn't available, do it by hand:
+## VoicePrint pass (always, after drafting, before writing `formatted`)
+Load the content-scripts skill (Skill tool) for hooks and structure, then run each script through the voiceprint skill (register: Casual → Social post; freedom: "Keep the structure too, sentences only"), so it sounds like Omar, not AI. If the skill isn't available, do it by hand:
 - Vary sentence length hard: some 2-4 word lines, some longer ones. No even rhythm.
 - Cut AI tells: "Here's the thing", "Let's dive in", "game-changer", "unlock", "navigate", "journey", "It's not X, it's Y" framing, rule-of-three lists, em-dashes, tidy summaries at the end.
 - Use contractions, plain words, the odd fragment, and the way a 20-year-old actually talks.

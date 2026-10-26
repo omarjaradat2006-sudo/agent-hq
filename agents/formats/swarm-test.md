@@ -2,14 +2,12 @@
 
 Use Omar's swarm-prediction skill (Skill tool: "swarm-prediction" or "anthropic-skills:swarm-prediction"). Load it and follow its phases, with these settings. If the skill isn't available, run the same thing by hand (personas, rounds, report) without the engine.
 
-## What to test
-- AI Opportunities: the opportunity the Venture Lead ranks #1 this run.
-- Growth Architect / LinkedAI: the positioning, feature, pricing or ad-angle idea from this run (or the top promo hook if there isn't one).
-Seed material = the idea's title, hook, why and script, plus the product facts in your prompt and the competitor findings from this run.
+## What to test (AI Opportunities only)
+The opportunity with the highest score this run: is it actually a good idea? Seed material = its title, hook, why, plan and sources, plus what the Scout found.
 
 ## Cast: 100 agents, 5 groups of 20
 1. Investors / VCs / angel investors (would they fund or buy this?)
-2. Target customers (job seekers or small-business owners, depending on the product; for opportunities, the people who'd pay)
+2. Target customers (the people who would actually pay for it)
 3. Skeptics and critics (people who have tried competitors, Reddit-style "this is a wrapper" voices)
 4. Marketers / growth people / creators (would this spread? what's the hook?)
 5. Everyday users and bystanders (casual scrollers, students, parents)

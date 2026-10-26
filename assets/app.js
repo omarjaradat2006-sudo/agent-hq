@@ -248,7 +248,7 @@
     if (t.cfg.id === "youtube") out.splice(1, 0, ["lineup", "Today's lineup"]), out.splice(3, 0, ["shots", "Footage"]);
     if (t.cfg.id === "tiktok" || t.cfg.id === "youtube") out.splice(out.findIndex(x => x[0] === "ideas") + 1, 0, ["review", "Review"]);
     if (t.cfg.id === "linkedai" || t.cfg.id === "growth") out.splice(2, 0, ["competitors", "Competitors"]);
-    if (["linkedai", "growth", "opps"].includes(t.cfg.id)) out.splice(out.findIndex(x => x[0] === "ideas") + 1, 0, ["swarm", "100-person test"]);
+    if (t.cfg.id === "opps") out.splice(out.findIndex(x => x[0] === "ideas") + 1, 0, ["swarm", "100-person test"]);
     out.push(["research", "Research"], ["activity", "Activity"]);
     return out;
   }
@@ -353,7 +353,8 @@
       const tg = el("div", "row"); if (i.format) tg.append(el("span", "pill s-idle", i.format)); if (i.score != null) tg.append(el("span", "small", "Fit " + i.score + "/10")); r.append(tg); c.append(r);
       if (i.hook) c.append(el("div", "hook", i.hook)); if (i.why) c.append(el("div", "why", i.why));
       if (i.onScreen) c.append(el("div", "small", "On screen: " + i.onScreen));
-      if (Array.isArray(i.scenes) && i.scenes.length) { const d = el("details"); d.open = false; d.append(el("summary", null, `Scenes (${i.scenes.length}${i.length ? " · ~" + i.length + "s" : ""}${i.hookFamily ? " · " + i.hookFamily : ""})`));
+      if (i.formatted) { const d = el("details"); d.open = true; d.append(el("summary", null, "Script")); d.append(mdBlock(i.formatted)); c.append(d); }
+      else if (Array.isArray(i.scenes) && i.scenes.length) { const d = el("details"); d.open = false; d.append(el("summary", null, `Scenes (${i.scenes.length}${i.length ? " · ~" + i.length + "s" : ""}${i.hookFamily ? " · " + i.hookFamily : ""})`));
         const w = el("div"); w.style.display = "grid"; w.style.gap = "10px"; w.style.marginTop = "8px";
         i.scenes.forEach((sc, n) => { const b = el("div"); b.style.borderLeft = "2px solid var(--line2)"; b.style.paddingLeft = "10px";
           b.append(el("div", "label", `Scene ${n + 1} · ${sc.label || ""}${sc.time ? " · " + sc.time : ""}`)); b.append(el("div", null, sc.line || "")); if (sc.delivery) b.append(el("div", "small", sc.delivery)); w.append(b); });
@@ -373,6 +374,20 @@
       if (t.cfg.id === "youtube" && !queued && (st === "pending" || st === "approved")) { const m = el("button", "btn", "Copy 'make it' prompt"); m.onclick = async () => { const txt = makeItPrompt(t, i); try { await navigator.clipboard.writeText(txt); toast("Copied. Paste it into Claude to make this video."); } catch { const ta = el("textarea"); ta.value = txt; ta.style.width = "100%"; ta.rows = 5; c.append(ta); ta.select(); toast("Select and copy the text below."); } }; act.append(m); }
       act.append(el("span", "small", ago(i.createdAt))); c.append(act); body.append(c); });
     connectCard(body);
+  }
+  function mdBlock(src) {
+    const box = el("div", "script"); box.style.whiteSpace = "normal"; box.style.lineHeight = "1.55";
+    const inline = (txt) => { const span = el("span"); const parts = String(txt).split(/(\*\*[^*]+\*\*|\*[^*]+\*)/g);
+      parts.forEach(p => { if (/^\*\*[^*]+\*\*$/.test(p)) span.append(el("strong", null, p.slice(2, -2))); else if (/^\*[^*]+\*$/.test(p)) span.append(el("em", null, p.slice(1, -1))); else if (p) span.append(document.createTextNode(p)); }); return span; };
+    let ul = null;
+    String(src).split(/\r?\n/).forEach(line => { const l = line.trimEnd();
+      if (/^\s*[-*] /.test(l)) { if (!ul) { ul = el("ul"); ul.style.margin = "4px 0"; ul.style.paddingLeft = "18px"; box.append(ul); } const li = el("li"); li.append(inline(l.replace(/^\s*[-*] /, ""))); ul.append(li); return; }
+      ul = null;
+      if (!l.trim()) { const sp = el("div"); sp.style.height = "8px"; box.append(sp); return; }
+      if (/^>\s?/.test(l)) { const q = el("div"); q.style.borderLeft = "3px solid var(--accent, #888)"; q.style.padding = "2px 0 2px 10px"; q.style.margin = "2px 0"; q.style.fontSize = "15px"; q.append(inline(l.replace(/^>\s?/, ""))); box.append(q); return; }
+      if (/^#{1,4} /.test(l)) { const h = el("div"); h.style.fontWeight = "700"; h.style.marginTop = "6px"; h.append(inline(l.replace(/^#{1,4} /, ""))); box.append(h); return; }
+      const d = el("div"); d.append(inline(l)); box.append(d); });
+    return box;
   }
   function swarmBlock(w, compact) {
     const d = el("details"); d.open = !compact; d.append(el("summary", null, `100-person test${w.score != null ? " · " + w.score + "/10" : ""}${w.support ? " · " + w.support.for + "% for" : ""}`));

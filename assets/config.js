@@ -22,14 +22,12 @@ window.HQ_CONFIG = {
       agents: [
         { id: "lead", name: "Product Lead", role: "Weekly read on the market", kind: "brief" },
         { id: "watch", name: "Competitor Watch", role: "Their content, ads and growth", kind: "competitors" },
-        { id: "copywriter", name: "Copywriter", role: "Promo scripts and posts", kind: "ideas" },
-        { id: "swarm", name: "Swarm Tester", role: "100 people debate the idea", kind: "swarm" } ] },
+        { id: "copywriter", name: "Copywriter", role: "Promo scripts and posts", kind: "ideas" } ] },
     { id: "growth", name: "Growth Architect", color: "#3ddc97", grid: [0, 1], tagline: "AI marketing tools market and promo content", ideaWord: "Content",
       agents: [
         { id: "lead", name: "Product Lead", role: "Weekly read on the market", kind: "brief" },
         { id: "watch", name: "Competitor Watch", role: "Their content, ads and growth", kind: "competitors" },
-        { id: "copywriter", name: "Copywriter", role: "Promo scripts and posts", kind: "ideas" },
-        { id: "swarm", name: "Swarm Tester", role: "100 people debate the idea", kind: "swarm" } ] },
+        { id: "copywriter", name: "Copywriter", role: "Promo scripts and posts", kind: "ideas" } ] },
     { id: "opps", name: "AI Opportunities", color: "#ffd23d", grid: [1, 1], tagline: "New ways to make money with AI", ideaWord: "Opportunities",
       agents: [
         { id: "lead", name: "Venture Lead", role: "Picks the best bets", kind: "brief" },
