@@ -1,7 +1,7 @@
 {
   "team": "linkedai",
   "hired": true,
-  "updatedAt": "2026-10-26T14:30:26Z",
+  "updatedAt": "2026-10-26T14:31:33Z",
   "agents": [
     {
       "id": "lead",
@@ -14,18 +14,23 @@
       "id": "watch",
       "name": "Competitor Watch",
       "role": "Extensions, pricing, reviews",
-      "status": "working",
-      "doing": "Checking competitors and reviews"
+      "status": "ok",
+      "doing": "Market check done: 5 findings"
     },
     {
       "id": "copywriter",
       "name": "Copywriter",
       "role": "Promo scripts and posts",
-      "status": "waiting",
-      "doing": "Hired today. First run coming up."
+      "status": "working",
+      "doing": "Writing this week's scripts"
     }
   ],
   "log": [
+    {
+      "t": "2026-10-26T14:31:33Z",
+      "agent": "Competitor Watch",
+      "msg": "Biggest finding: Simplify+, Jobright and Jobscan all sit at $40–50/month, and reviewers keep calling their AI writing generic. Jobright is adding referral outreach but only shows names."
+    },
     {
       "t": "2026-10-26T14:30:26Z",
       "agent": "Competitor Watch",
@@ -38,7 +43,49 @@
     }
   ],
   "ideas": [],
-  "research": [],
+  "research": [
+    {
+      "date": "2026-10-26",
+      "createdAt": "2026-10-26T14:31:33Z",
+      "items": [
+        {
+          "title": "Simplify+ sells AI answers at $19.99/week or $39.99/month — reviewers call them generic",
+          "creator": "Simplify (via ResumeHog review)",
+          "url": "https://resumehog.com/blog/posts/simplify-copilot-review-2026-is-the-free-autofill-tool-worth-it.html",
+          "metric": "$19.99/wk · $39.99/mo · $89.99/3mo; no refunds",
+          "whyItWorks": "The biggest free autofill tool charges ~$40/mo for AI writing people say sounds robotic. LinkedAI can win on 'sounds like you, not a bot' and a cheaper Pro."
+        },
+        {
+          "title": "Jobright raised its Turbo plan from $29.99 to $39.99/month; 'Insider Connections' referral feature is thin",
+          "creator": "Jobright (via ResumeHog review)",
+          "url": "https://resumehog.com/blog/posts/jobright-ai-review-2026-is-this-job-search-copilot-worth-it.html",
+          "metric": "$39.99/mo, $17.99/wk; free tier 2 credits/day; US-only",
+          "whyItWorks": "A big rival is moving toward referral outreach but only surfaces names. LinkedAI's common-ground messages are the step they're missing — and LinkedAI isn't US-only."
+        },
+        {
+          "title": "Jobscan charges $49.95/month; free plan is 5 scans and rewrites can turn keyword-stuffed",
+          "creator": "Jobscan (via The Interview Guys)",
+          "url": "https://blog.theinterviewguys.com/?p=10428",
+          "metric": "$49.95/mo or $89.95/quarter",
+          "whyItWorks": "Job seekers between jobs feel these prices. A resume + cover letter bundle priced well under $50 is an easy comparison to make in videos and on the store listing."
+        },
+        {
+          "title": "LinkedIn's Hiring Assistant now plugs into ATSs like Greenhouse and Workday; LinkedIn claims 66% higher InMail acceptance",
+          "creator": "LinkedIn (via Business Today, Sep 3 2026)",
+          "url": "https://www.businesstoday.in/jobs/story/recruiters-may-soon-stop-searching-for-candidates-linkedin-wants-ai-to-do-it-553287-2026-09-03",
+          "metric": "Claimed 80% fewer profiles reviewed, +66% InMail acceptance",
+          "whyItWorks": "Recruiters are leaning on AI to filter applicants, so cold applications matter less and direct, personal messages matter more — exactly LinkedAI's outreach pitch."
+        },
+        {
+          "title": "Paid creator read: 'Recruiters use AI to filter you out, so use your own AI' (Tsenta partner video)",
+          "creator": "@charlottechaze on TikTok",
+          "url": "https://www.tiktok.com/@charlottechaze/video/7665394259620662558",
+          "metric": "",
+          "whyItWorks": "This is the exact sponsored-creator format Omar wants: an 'us vs. the recruiter's AI' hook, a free-trial link, and an 'I only partner with brands I believe in' line. A good template for LinkedAI UGC briefs."
+        }
+      ]
+    }
+  ],
   "brief": null,
   "processedIssues": []
 }
