@@ -7,7 +7,8 @@ window.HQ_CONFIG = {
       agents: [
         { id: "analyst", name: "Analyst", role: "Finds outlier videos", kind: "research" },
         { id: "strategist", name: "Strategist", role: "Picks what to film next", kind: "ideas" },
-        { id: "copywriter", name: "Copywriter", role: "Hooks and full scripts", kind: "ideas" },
+        { id: "copywriter", name: "Copywriter", role: "Scene-by-scene scripts", kind: "ideas" },
+        { id: "reviewer", name: "Performance Reviewer", role: "Studies what worked and why", kind: "review" },
         { id: "collector", name: "Data Collector", role: "Pulls your stats hourly", kind: "stats" } ] },
     { id: "youtube", name: "YouTube", color: "#ff8a3d", grid: [1, 0], tagline: "Bounce Theory and Ambient Escape", ideaWord: "Video ideas",
       agents: [
@@ -15,16 +16,17 @@ window.HQ_CONFIG = {
         { id: "analyst", name: "Analyst", role: "Niche and competitor outliers", kind: "research" },
         { id: "strategist", name: "Strategist", role: "Topics and titles", kind: "ideas" },
         { id: "producer", name: "Producer", role: "Formats for your pipelines", kind: "ideas" },
+        { id: "reviewer", name: "Performance Reviewer", role: "Studies what worked and why", kind: "review" },
         { id: "collector", name: "Data Collector", role: "Pulls channel stats hourly", kind: "stats" } ] },
     { id: "linkedai", name: "LinkedAI", color: "#4da3ff", grid: [2, 0], tagline: "LinkedIn tools market and promo content", ideaWord: "Content",
       agents: [
         { id: "lead", name: "Product Lead", role: "Weekly read on the market", kind: "brief" },
-        { id: "watch", name: "Competitor Watch", role: "Extensions, pricing, reviews", kind: "research" },
+        { id: "watch", name: "Competitor Watch", role: "Their content, ads and growth", kind: "competitors" },
         { id: "copywriter", name: "Copywriter", role: "Promo scripts and posts", kind: "ideas" } ] },
     { id: "growth", name: "Growth Architect", color: "#3ddc97", grid: [0, 1], tagline: "AI marketing tools market and promo content", ideaWord: "Content",
       agents: [
         { id: "lead", name: "Product Lead", role: "Weekly read on the market", kind: "brief" },
-        { id: "watch", name: "Competitor Watch", role: "Positioning and pricing", kind: "research" },
+        { id: "watch", name: "Competitor Watch", role: "Their content, ads and growth", kind: "competitors" },
         { id: "copywriter", name: "Copywriter", role: "Promo scripts and posts", kind: "ideas" } ] },
     { id: "opps", name: "AI Opportunities", color: "#ffd23d", grid: [1, 1], tagline: "New ways to make money with AI", ideaWord: "Opportunities",
       agents: [

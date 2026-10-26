@@ -113,6 +113,11 @@ def yt_trending(queries, shorts_only=False):
 
 
 # ---------------- YouTube private analytics ----------------
+def iso_secs(d):
+    import re
+    m = re.match(r"PT(?:(\d+)H)?(?:(\d+)M)?(?:(\d+)S)?", d or "")
+    return (int(m.group(1) or 0) * 3600 + int(m.group(2) or 0) * 60 + int(m.group(3) or 0)) if m else 0
+
 def google_access_token(refresh):
     r = http("https://oauth2.googleapis.com/token", {"client_id": env("YT_CLIENT_ID"), "client_secret": env("YT_CLIENT_SECRET"),
                                                     "refresh_token": refresh, "grant_type": "refresh_token"})
@@ -131,14 +136,27 @@ def yt_own_channel(refresh):
         "metrics": "views,estimatedMinutesWatched,averageViewDuration,subscribersGained,subscribersLost"}), headers=H)
     row = (rep.get("rows") or [[0, 0, 0, 0, 0]])[0]
     uploads = ch["contentDetails"]["relatedPlaylists"]["uploads"]
-    pl = http(YT + "playlistItems?" + urllib.parse.urlencode({"part": "contentDetails", "playlistId": uploads, "maxResults": 15}), headers=H)
+    pl = http(YT + "playlistItems?" + urllib.parse.urlencode({"part": "contentDetails", "playlistId": uploads, "maxResults": 30}), headers=H)
     vid_ids = [i["contentDetails"]["videoId"] for i in pl.get("items", [])]
+    # per-video analytics for the last 28 days (views, retention, likes, shares, subs gained)
+    per = {}
+    try:
+        vr = http("https://youtubeanalytics.googleapis.com/v2/reports?" + urllib.parse.urlencode({
+            "ids": "channel==MINE", "startDate": start, "endDate": end, "dimensions": "video", "sort": "-views", "maxResults": 50,
+            "metrics": "views,averageViewDuration,averageViewPercentage,likes,shares,subscribersGained"}), headers=H)
+        for r in vr.get("rows") or []:
+            per[r[0]] = {"avgViewSec": int(r[2]), "avgViewPct": round(float(r[3]), 1), "shares": int(r[5]), "subsGained": int(r[6])}
+    except Exception as e:
+        print("per-video analytics skipped:", str(e)[:120])
     vids = []
     if vid_ids:
-        for v in http(YT + "videos?" + urllib.parse.urlencode({"part": "snippet,statistics", "id": ",".join(vid_ids)}), headers=H).get("items", []):
-            s = v.get("statistics", {})
-            vids.append({"title": f"[{name}] " + v["snippet"]["title"], "url": "https://www.youtube.com/watch?v=" + v["id"],
-                         "views": int(s.get("viewCount", 0)), "likes": int(s.get("likeCount", 0) or 0), "published": v["snippet"]["publishedAt"]})
+        for v in http(YT + "videos?" + urllib.parse.urlencode({"part": "snippet,statistics,contentDetails", "id": ",".join(vid_ids)}), headers=H).get("items", []):
+            s = v.get("statistics", {}); dur = v.get("contentDetails", {}).get("duration", "")
+            item = {"title": f"[{name}] " + v["snippet"]["title"], "url": "https://www.youtube.com/watch?v=" + v["id"], "id": v["id"],
+                    "views": int(s.get("viewCount", 0)), "likes": int(s.get("likeCount", 0) or 0), "comments": int(s.get("commentCount", 0) or 0),
+                    "published": v["snippet"]["publishedAt"], "duration": dur, "isShort": iso_secs(dur) <= 180}
+            item.update(per.get(v["id"], {}))
+            vids.append(item)
     subs = int(ch["statistics"].get("subscriberCount", 0))
     kpis = [
         {"label": f"{name} · subscribers", "value": subs, "delta": int(row[3]) - int(row[4]), "deltaLabel": "28d"},
@@ -158,14 +176,15 @@ def tiktok_own():
     H = {"Authorization": "Bearer " + tok["access_token"]}
     u = http("https://open.tiktokapis.com/v2/user/info/?fields=display_name,follower_count,likes_count,video_count", headers=H)
     user = u.get("data", {}).get("user", {})
-    fields = "id,title,video_description,create_time,share_url,view_count,like_count,comment_count,share_count"
+    fields = "id,title,video_description,create_time,share_url,view_count,like_count,comment_count,share_count,duration,cover_image_url"
     vl = http("https://open.tiktokapis.com/v2/video/list/?fields=" + fields, {"max_count": 20},
               headers={**H, "Content-Type": "application/json"}, method="POST")
     vids = []
     for v in vl.get("data", {}).get("videos", []):
         vids.append({"title": (v.get("title") or v.get("video_description") or "Untitled")[:120], "url": v.get("share_url"),
                      "views": v.get("view_count", 0), "likes": v.get("like_count", 0), "comments": v.get("comment_count", 0),
-                     "shares": v.get("share_count", 0),
+                     "shares": v.get("share_count", 0), "duration": v.get("duration"), "cover": v.get("cover_image_url"),
+                     "description": (v.get("video_description") or "")[:500], "id": v.get("id"),
                      "published": datetime.datetime.fromtimestamp(v.get("create_time", 0), datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")})
     vids.sort(key=lambda x: x["published"], reverse=True)
     recent = vids[:10]
@@ -202,7 +221,7 @@ def run_youtube():
             except Exception as e:
                 problems.append("analytics: " + str(e))
         if kpis:
-            m["kpis"], m["topVideos"] = kpis, sorted(vids, key=lambda x: x["published"], reverse=True)[:15]
+            m["kpis"], m["topVideos"] = kpis, sorted(vids, key=lambda x: x["published"], reverse=True)[:60]
             did.append(f"pulled your stats for {len(kpis)//4} channel(s)")
     finish(m, "youtube", did, problems, needs="Add YT_API_KEY (and your Google sign-in tokens) to start. See SETUP.md.")
 
@@ -225,7 +244,7 @@ def run_tiktok():
             for k in kpis:
                 if k["label"] in prev and isinstance(prev[k["label"]], (int, float)):
                     k["delta"] = k["value"] - prev[k["label"]]; k["deltaLabel"] = "since last check"
-            m["kpis"], m["topVideos"] = kpis, vids[:15]
+            m["kpis"], m["topVideos"] = kpis, vids[:20]
             did.append(f"pulled your TikTok stats (avg {avg:,} views on last 10" + (f", best: {best['views']:,}" if best else "") + ")")
         except Exception as e:
             problems.append("tiktok: " + str(e))

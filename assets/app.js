@@ -47,7 +47,7 @@
   const P = (x, y, z = 0) => [(x - y) * TW / 2, (x + y) * TH / 2 - z];
   const pts = a => a.map(p => p[0].toFixed(1) + "," + p[1].toFixed(1)).join(" ");
   const roomOrigin = t => [t.cfg.grid[0] * (S + G), t.cfg.grid[1] * (S + G)];
-  const SLOTSET = { 3: [[0.4, 0.4], [2.75, 0.35], [0.35, 2.75]], 4: [[0.2, 0.2], [2.8, 0.3], [0.3, 2.8], [2.3, 2.3]], 5: [[0.2, 0.2], [2.8, 0.3], [0.3, 2.8], [2.8, 2.0], [1.9, 2.8]] };
+  const SLOTSET = { 3: [[0.4, 0.4], [2.75, 0.35], [0.35, 2.75]], 4: [[0.2, 0.2], [2.8, 0.3], [0.3, 2.8], [2.3, 2.3]], 5: [[0.2, 0.2], [2.8, 0.3], [0.3, 2.8], [2.8, 2.0], [1.9, 2.8]], 6: [[0.15, 0.15], [1.55, 0.15], [2.9, 0.4], [0.2, 2.85], [1.6, 2.9], [2.9, 1.9]] };
   const W0 = { x0: -1.2, y0: -1.2, x1: 3 * S + 2 * G + 1.2, y1: 2 * S + G + 1.2 };
   let svg, worldBox, roomBoxes = {};
 
@@ -230,7 +230,7 @@
 
   /* ---------------- panel ---------------- */
   let tab = "overview", agentSel = null, ideaFilter = "pending", statSel = null;
-  function tabForKind(t, kind) { return kind === "stats" ? "stats" : kind === "research" ? "research" : kind === "ideas" ? "ideas" : "overview"; }
+  function tabForKind(t, kind) { return ["stats", "research", "ideas", "review", "competitors"].includes(kind) ? kind : "overview"; }
   function focusTeam(id, tb, agentId) {
     if (!M.teams[id]) return; focused = id; tab = tb || "overview"; agentSel = agentId || null; statSel = null; ideaFilter = id === "youtube" ? "approved" : "pending";
     $("#panel").classList.add("open"); renderPanel(); syncTeambar();
@@ -246,6 +246,8 @@
     if (t.metrics) out.push(["stats", "Stats"]);
     if (t.metrics && (t.metrics.trending || []).length) out.push(["trending", "Trending"]);
     if (t.cfg.id === "youtube") out.splice(1, 0, ["lineup", "Today's lineup"]), out.splice(3, 0, ["shots", "Footage"]);
+    if (t.cfg.id === "tiktok" || t.cfg.id === "youtube") out.splice(out.findIndex(x => x[0] === "ideas") + 1, 0, ["review", "Review"]);
+    if (t.cfg.id === "linkedai" || t.cfg.id === "growth") out.splice(2, 0, ["competitors", "Competitors"]);
     out.push(["research", "Research"], ["activity", "Activity"]);
     return out;
   }
@@ -262,7 +264,7 @@
       b.onclick = () => { tab = k; renderPanel(); }; tabs.append(b); });
     ph.append(tabs); p.append(ph);
     const body = el("div", "pb"); p.append(body);
-    ({ overview: vOverview, ideas: vIdeas, lineup: vLineup, shots: vShots, stats: vStats, trending: vTrending, research: vResearch, activity: vActivity }[tab] || vOverview)(t, body);
+    ({ overview: vOverview, ideas: vIdeas, review: vReview, competitors: vCompetitors, lineup: vLineup, shots: vShots, stats: vStats, trending: vTrending, research: vResearch, activity: vActivity }[tab] || vOverview)(t, body);
   }
   function pill(s) { return el("span", "pill s-" + (s || "idle"), ST[s] || s || "Idle"); }
   function empty(title, text) { const e = el("div", "empty"); e.append(el("strong", null, title)); e.append(el("span", null, text)); return e; }
@@ -271,7 +273,7 @@
     r.append(nm, pill(a.status)); c.append(r);
     if (a.doing) c.append(el("div", null, a.doing));
     c.append(el("div", "small", (a.lastRun ? "Last run " + ago(a.lastRun) : "Hasn't run yet") + (a.nextRun ? " · next " + until(a.nextRun) : "")));
-    const k = tabForKind(t, a.kind); if (k !== "overview") { const b = el("button", "btn primary", k === "stats" ? "See the stats" : k === "research" ? "See what they found" : "See what they wrote"); b.onclick = () => { tab = k; renderPanel(); }; c.append(b); }
+    const k = tabForKind(t, a.kind); if (k !== "overview") { const b = el("button", "btn primary", { stats: "See the stats", research: "See what they found", review: "See the review", competitors: "See the competitors" }[k] || "See what they wrote"); b.onclick = () => { tab = k; renderPanel(); }; c.append(b); }
     return c;
   }
   function vOverview(t, body) {
@@ -349,7 +351,15 @@
     list.forEach(i => { const c = el("article", "card"); const r = el("div", "row between"); r.append(el("h3", null, i.title || "Untitled"));
       const tg = el("div", "row"); if (i.format) tg.append(el("span", "pill s-idle", i.format)); if (i.score != null) tg.append(el("span", "small", "Fit " + i.score + "/10")); r.append(tg); c.append(r);
       if (i.hook) c.append(el("div", "hook", i.hook)); if (i.why) c.append(el("div", "why", i.why));
-      if (i.script) { const d = el("details"); d.append(el("summary", null, t.cfg.id === "opps" ? "How to do it" : t.cfg.id === "youtube" ? "Production notes" : "Full script")); d.append(el("div", "script", i.script)); c.append(d); }
+      if (i.onScreen) c.append(el("div", "small", "On screen: " + i.onScreen));
+      if (Array.isArray(i.scenes) && i.scenes.length) { const d = el("details"); d.open = false; d.append(el("summary", null, `Scenes (${i.scenes.length}${i.length ? " · ~" + i.length + "s" : ""}${i.hookFamily ? " · " + i.hookFamily : ""})`));
+        const w = el("div"); w.style.display = "grid"; w.style.gap = "10px"; w.style.marginTop = "8px";
+        i.scenes.forEach((sc, n) => { const b = el("div"); b.style.borderLeft = "2px solid var(--line2)"; b.style.paddingLeft = "10px";
+          b.append(el("div", "label", `Scene ${n + 1} · ${sc.label || ""}${sc.time ? " · " + sc.time : ""}`)); b.append(el("div", null, sc.line || "")); if (sc.delivery) b.append(el("div", "small", sc.delivery)); w.append(b); });
+        if (Array.isArray(i.hooksToTest) && i.hooksToTest.length) { w.append(el("div", "label", "Hooks to test")); const ul = el("ul"); ul.style.margin = "0"; ul.style.paddingLeft = "18px"; i.hooksToTest.forEach(h => ul.append(el("li", null, h))); w.append(ul); }
+        if (i.caption) { w.append(el("div", "label", "Caption")); w.append(el("div", "small", i.caption)); }
+        d.append(w); c.append(d); }
+      else if (i.script) { const d = el("details"); d.append(el("summary", null, t.cfg.id === "opps" ? "How to do it" : t.cfg.id === "youtube" ? "Production notes" : "Full script")); d.append(el("div", "script", i.script)); c.append(d); }
       if (Array.isArray(i.sources) && i.sources.length) { const s = el("div", "sources"); i.sources.forEach(x => { const u = safeUrl(x.url); if (u) { const a = el("a", null, "↗ " + (x.title || "source")); a.href = u; a.target = "_blank"; a.rel = "noopener"; s.append(a); } }); c.append(s); }
       const act = el("div", "row"); const { status: st, queued } = effectiveStatus(i); const btns = [];
       const add = (l, a, cls) => { const b = el("button", "btn " + (cls || ""), l); b.onclick = () => decide(a, t, i, btns); btns.push(b); act.append(b); };
@@ -360,6 +370,34 @@
       if (t.cfg.id === "youtube" && !queued && (st === "pending" || st === "approved")) { const m = el("button", "btn", "Copy 'make it' prompt"); m.onclick = async () => { const txt = makeItPrompt(t, i); try { await navigator.clipboard.writeText(txt); toast("Copied. Paste it into Claude to make this video."); } catch { const ta = el("textarea"); ta.value = txt; ta.style.width = "100%"; ta.rows = 5; c.append(ta); ta.select(); toast("Select and copy the text below."); } }; act.append(m); }
       act.append(el("span", "small", ago(i.createdAt))); c.append(act); body.append(c); });
     connectCard(body);
+  }
+  function vReview(t, body) {
+    const r = t.state.review;
+    if (!r) { body.append(empty("No review yet", "The Performance Reviewer compares your best and worst recent videos on its next run and says why.")); return; }
+    const top = el("div", "card brief"); top.append(el("div", "label", "Performance review · " + (r.date || ago(r.createdAt))));
+    if (r.headline) top.append(el("h3", null, r.headline)); if (r.summary) top.append(el("div", "why", r.summary)); body.append(top);
+    const list = (title, arr, cls) => { if (!Array.isArray(arr) || !arr.length) return; const c = el("div", "card"); c.append(el("div", "label", title));
+      arr.forEach(v => { const s = el("div", "shot"); const u = safeUrl(v.url); const a = el(u ? "a" : "div", "t", v.title || ""); if (u) { a.href = u; a.target = "_blank"; a.rel = "noopener"; } s.append(a);
+        const m = [v.channel, v.views != null ? fmt(v.views) + " views" : null, v.avgViewPct != null ? v.avgViewPct + "% watched" : null, v.vsAvg].filter(Boolean).join(" · "); if (m) { const mm = el("div", "m", m); if (cls) mm.style.color = cls; s.append(mm); }
+        if (v.why) s.append(el("p", null, v.why)); c.append(s); }); body.append(c); };
+    list("What worked", r.winners, "var(--good)"); list("What didn't", r.losers, "var(--bad)");
+    const bullets = (title, arr) => { if (!Array.isArray(arr) || !arr.length) return; const c = el("div", "card brief"); c.append(el("div", "label", title)); const ul = el("ul"); arr.forEach(x => ul.append(el("li", null, typeof x === "string" ? x : (x.text || JSON.stringify(x))))); c.append(ul); body.append(c); };
+    bullets("Patterns", r.patterns); bullets("Do more of", r.doMore); bullets("Stop doing", r.stopDoing); bullets("Suggested skill updates", r.skillSuggestions);
+  }
+  function vCompetitors(t, body) {
+    const cs = t.state.competitors || [];
+    if (!cs.length) { body.append(empty("No competitor intel yet", "Competitor Watch fills this with what your competitors post, how many views they get, how they advertise and how they grew.")); return; }
+    if (t.state.competitorsUpdated) body.append(el("div", "small", "Updated " + ago(t.state.competitorsUpdated)));
+    cs.forEach(x => { const c = el("div", "card"); const r = el("div", "row between"); const u = safeUrl(x.url); const h = el(u ? "a" : "h3", u ? "t" : null, x.name || "Competitor");
+      if (u) { h.href = u; h.target = "_blank"; h.rel = "noopener"; h.style.fontWeight = "600"; h.style.fontSize = "16px"; h.style.color = "var(--fg)"; } r.append(h); if (x.price) r.append(el("span", "pill s-idle", x.price)); c.append(r);
+      if (x.oneLiner) c.append(el("div", "why", x.oneLiner));
+      const sec = (label, txt) => { if (!txt) return; c.append(el("div", "label", label)); c.append(el("div", null, txt)); };
+      sec("How they grew", x.howTheyGrew); sec("Ad strategy", x.adStrategy); sec("Content strategy", x.contentStrategy);
+      if (Array.isArray(x.topContent) && x.topContent.length) { c.append(el("div", "label", "Their top content")); x.topContent.forEach(v => { const s = el("div", "shot"); const uu = safeUrl(v.url); const a = el(uu ? "a" : "div", "t", v.title || v.platform || "Post"); if (uu) { a.href = uu; a.target = "_blank"; a.rel = "noopener"; } s.append(a);
+        const m = [v.platform, v.views != null ? (typeof v.views === "number" ? fmt(v.views) : v.views) + " views" : null, v.date].filter(Boolean).join(" · "); if (m) s.append(el("div", "m", m)); if (v.whyItWorked) s.append(el("p", null, v.whyItWorked)); c.append(s); }); }
+      if (Array.isArray(x.ads) && x.ads.length) { c.append(el("div", "label", "Ads running")); x.ads.forEach(v => { const s = el("div", "shot"); const uu = safeUrl(v.url); const a = el(uu ? "a" : "div", "t", v.hook || v.title || "Ad"); if (uu) { a.href = uu; a.target = "_blank"; a.rel = "noopener"; } s.append(a); const m = [v.platform, v.running].filter(Boolean).join(" · "); if (m) s.append(el("div", "m", m)); if (v.notes) s.append(el("p", null, v.notes)); c.append(s); }); }
+      if (x.lessonForUs) { const l = el("div", "hook", x.lessonForUs); c.append(l); }
+      body.append(c); });
   }
   function vLineup(t, body) {
     const L = t.state.lineup; const sub0 = L && L.channels ? Object.keys(L.channels) : [];
