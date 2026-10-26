@@ -299,21 +299,65 @@
     const body = `Decision from Agent HQ.\n\nIdea: ${idea.title || ""}\nTeam: ${t.cfg.id}\n\n(Just press "Submit new issue". The agents read this and update the site.)`;
     return `https://github.com/${CFG.repo}/issues/new?title=${encodeURIComponent(action + ": " + idea.id)}&body=${encodeURIComponent(body)}`;
   }
+  /* one-click decisions: a GitHub token kept only in this browser */
+  const LS = { get(k) { try { return localStorage.getItem(k); } catch { return null; } }, set(k, v) { try { v == null ? localStorage.removeItem(k) : localStorage.setItem(k, v); } catch {} } };
+  const ACTION_STATUS = { approve: "approved", pass: "rejected", filmed: "filmed", review: "pending" };
+  function localDecisions() { try { return JSON.parse(LS.get("hq.decisions") || "{}"); } catch { return {}; } }
+  function saveDecision(id, status) { const d = localDecisions(); d[id] = { status, at: Date.now() }; LS.set("hq.decisions", JSON.stringify(d)); }
+  function effectiveStatus(i) { const d = localDecisions()[i.id]; const real = i.status || "pending";
+    if (d && d.status !== real && Date.now() - d.at < 3 * 86400e3) return { status: d.status, queued: true }; return { status: real, queued: false }; }
+  async function decide(action, t, idea, btns) {
+    const tok = LS.get("hq.ghToken");
+    if (!tok) { window.open(issueUrl(action, t, idea), "_blank", "noopener"); toast("Press Create on GitHub. Tip: connect GitHub once for one-click decisions."); return; }
+    btns.forEach(b => b.disabled = true);
+    try {
+      const r = await fetch(`https://api.github.com/repos/${CFG.repo}/issues`, { method: "POST",
+        headers: { Authorization: "Bearer " + tok, Accept: "application/vnd.github+json", "Content-Type": "application/json" },
+        body: JSON.stringify({ title: `${action}: ${idea.id}`, body: `Decision from Agent HQ.\n\nIdea: ${idea.title || ""}\nTeam: ${t.cfg.id}` }) });
+      if (r.status === 401 || r.status === 403) { LS.set("hq.ghToken", null); throw new Error("token"); }
+      if (!r.ok) throw new Error("http " + r.status);
+      saveDecision(idea.id, ACTION_STATUS[action]);
+      toast({ approve: "Approved", pass: "Passed", filmed: "Marked done", review: "Moved back to review" }[action] + ". The team picks it up on its next run.");
+      renderPanel();
+    } catch (e) { btns.forEach(b => b.disabled = false); toast(e.message === "token" ? "GitHub didn't accept the token. Connect it again." : "Couldn't reach GitHub. Try again."); }
+  }
+  function connectCard(body) {
+    if (LS.get("hq.ghToken")) return;
+    const c = el("details", "card"); c.append(el("summary", null, "Make Approve and Pass one click"));
+    const w = el("div"); w.style.display = "grid"; w.style.gap = "8px"; w.style.marginTop = "8px";
+    w.append(el("div", "why", "Right now each decision opens GitHub. Paste a GitHub token once and they happen instantly. It's saved only in this browser."));
+    const steps = el("ol"); steps.style.margin = "0"; steps.style.paddingLeft = "18px"; steps.style.fontSize = "13px";
+    ["Open github.com/settings/personal-access-tokens/new", "Name it Agent HQ, set Expiration to 1 year", "Repository access: Only select repositories → agent-hq", "Permissions → Issues → Read and write, then Generate token", "Copy it and paste it below"].forEach(x => steps.append(el("li", null, x)));
+    w.append(steps);
+    const inp = el("input"); inp.type = "password"; inp.id = "ghtok"; inp.placeholder = "github_pat_…"; inp.autocomplete = "off";
+    Object.assign(inp.style, { background: "var(--bg2)", border: "1px solid var(--line2)", borderRadius: "9px", padding: "9px 11px", color: "var(--fg)", font: "13px var(--f-mono)" });
+    const sv2 = el("button", "btn primary", "Connect"); sv2.onclick = () => { const v = inp.value.trim(); if (!/^(github_pat_|ghp_)/.test(v)) { toast("That doesn't look like a GitHub token."); return; } LS.set("hq.ghToken", v); toast("Connected. Decisions are one click now."); renderPanel(); };
+    w.append(inp, sv2); c.append(w); body.append(c);
+  }
+  function makeItPrompt(t, i) {
+    const f = (i.format || "").toLowerCase(); const skill = f.includes("ambient") ? "ambient-escape-videos" : "bounce-theory-videos";
+    return `Use the ${skill} skill. Include this Agent HQ idea in today's batch (id ${i.id}):\n\nTitle: ${i.title}\nHook: ${i.hook || ""}\nFormat: ${i.format || ""}\n\nProduction notes:\n${i.script || ""}`;
+  }
   function vIdeas(t, body) {
     const ideas = t.state.ideas || []; const S2 = [["pending", "To review"], ["approved", "Approved"], ["filmed", t.cfg.id === "opps" ? "Started" : "Done"], ["rejected", "Passed"]];
-    const sub = el("div", "subtabs"); S2.forEach(([k, l]) => { const b = el("button", null, `${l} ${ideas.filter(i => (i.status || "pending") === k).length}`); b.setAttribute("aria-pressed", String(ideaFilter === k)); b.onclick = () => { ideaFilter = k; renderPanel(); }; sub.append(b); });
+    const sub = el("div", "subtabs"); S2.forEach(([k, l]) => { const b = el("button", null, `${l} ${ideas.filter(i => effectiveStatus(i).status === k).length}`); b.setAttribute("aria-pressed", String(ideaFilter === k)); b.onclick = () => { ideaFilter = k; renderPanel(); }; sub.append(b); });
     body.append(sub);
-    const list = ideas.filter(i => (i.status || "pending") === ideaFilter).sort((a, b) => (b.createdAt || "").localeCompare(a.createdAt || ""));
+    const list = ideas.filter(i => effectiveStatus(i).status === ideaFilter).sort((a, b) => (b.createdAt || "").localeCompare(a.createdAt || ""));
     if (!list.length) { body.append(empty(ideas.length ? "Nothing in this list" : "Nothing yet", ideas.length ? "Ideas move here when you change their status." : "The team adds new ideas after each run.")); return; }
     list.forEach(i => { const c = el("article", "card"); const r = el("div", "row between"); r.append(el("h3", null, i.title || "Untitled"));
       const tg = el("div", "row"); if (i.format) tg.append(el("span", "pill s-idle", i.format)); if (i.score != null) tg.append(el("span", "small", "Fit " + i.score + "/10")); r.append(tg); c.append(r);
       if (i.hook) c.append(el("div", "hook", i.hook)); if (i.why) c.append(el("div", "why", i.why));
-      if (i.script) { const d = el("details"); d.append(el("summary", null, t.cfg.id === "opps" ? "How to do it" : "Full script")); d.append(el("div", "script", i.script)); c.append(d); }
+      if (i.script) { const d = el("details"); d.append(el("summary", null, t.cfg.id === "opps" ? "How to do it" : t.cfg.id === "youtube" ? "Production notes" : "Full script")); d.append(el("div", "script", i.script)); c.append(d); }
       if (Array.isArray(i.sources) && i.sources.length) { const s = el("div", "sources"); i.sources.forEach(x => { const u = safeUrl(x.url); if (u) { const a = el("a", null, "↗ " + (x.title || "source")); a.href = u; a.target = "_blank"; a.rel = "noopener"; s.append(a); } }); c.append(s); }
-      const act = el("div", "row"); const st = i.status || "pending";
-      const add = (l, a, cls) => { const b = el("a", "btn " + (cls || ""), l); b.href = issueUrl(a, t, i); b.target = "_blank"; b.rel = "noopener"; b.onclick = () => toast("Press Submit on GitHub. The next agent run applies it."); act.append(b); };
-      if (st === "pending") { add("Approve", "approve", "primary"); add("Pass", "pass"); } else if (st === "approved") { add(t.cfg.id === "tiktok" || t.cfg.id === "youtube" ? "Mark filmed" : "Mark done", "filmed", "primary"); add("Back to review", "review"); } else add("Back to review", "review");
+      const act = el("div", "row"); const { status: st, queued } = effectiveStatus(i); const btns = [];
+      const add = (l, a, cls) => { const b = el("button", "btn " + (cls || ""), l); b.onclick = () => decide(a, t, i, btns); btns.push(b); act.append(b); };
+      if (queued) act.append(el("span", "pill s-waiting", "Sent · applies next run"));
+      else if (st === "pending") { add("Approve", "approve", "primary"); add("Pass", "pass"); }
+      else if (st === "approved") { add(t.cfg.id === "tiktok" || t.cfg.id === "youtube" ? (t.cfg.id === "youtube" ? "Mark made" : "Mark filmed") : "Mark done", "filmed", "primary"); add("Back to review", "review"); }
+      else add("Back to review", "review");
+      if (t.cfg.id === "youtube" && !queued && (st === "pending" || st === "approved")) { const m = el("button", "btn", "Copy 'make it' prompt"); m.onclick = async () => { const txt = makeItPrompt(t, i); try { await navigator.clipboard.writeText(txt); toast("Copied. Paste it into Claude to make this video."); } catch { const ta = el("textarea"); ta.value = txt; ta.style.width = "100%"; ta.rows = 5; c.append(ta); ta.select(); toast("Select and copy the text below."); } }; act.append(m); }
       act.append(el("span", "small", ago(i.createdAt))); c.append(act); body.append(c); });
+    connectCard(body);
   }
   function barChart(vals, labels, color) {
     const W = 420, H = 150, pl = 34, pb = 22, pt = 14, n = vals.length, max = Math.max(1, ...vals);
