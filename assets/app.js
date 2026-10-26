@@ -245,7 +245,7 @@
     const out = [["overview", "Overview"], ["ideas", t.cfg.ideaWord || "Ideas"]];
     if (t.metrics) out.push(["stats", "Stats"]);
     if (t.metrics && (t.metrics.trending || []).length) out.push(["trending", "Trending"]);
-    if (t.cfg.id === "youtube") out.splice(1, 0, ["lineup", "Today's lineup"]), out.splice(3, 0, ["shots", "Shot list"]);
+    if (t.cfg.id === "youtube") out.splice(1, 0, ["lineup", "Today's lineup"]), out.splice(3, 0, ["shots", "Footage"]);
     out.push(["research", "Research"], ["activity", "Activity"]);
     return out;
   }
@@ -258,7 +258,7 @@
     const tabs = el("div", "tabs"); tabs.setAttribute("role", "tablist");
     tabsFor(t).forEach(([k, l]) => { const b = el("button", null, l); b.setAttribute("role", "tab"); b.setAttribute("aria-selected", String(tab === k));
       if (k === "ideas") b.append(el("span", "n", String((t.state.ideas || []).filter(i => t.cfg.id === "youtube" ? ["pending", "approved"].includes(effectiveStatus(i).status) : effectiveStatus(i).status === "pending").length)));
-      if (k === "shots") b.append(el("span", "n", String((t.state.ideas || []).filter(i => ["pending", "approved"].includes(effectiveStatus(i).status)).reduce((n, i) => n + (i.clips || []).length, 0))));
+      if (k === "shots") b.append(el("span", "n", String((t.state.footage || []).filter(f => f.status === "ready").length)));
       b.onclick = () => { tab = k; renderPanel(); }; tabs.append(b); });
     ph.append(tabs); p.append(ph);
     const body = el("div", "pb"); p.append(body);
@@ -350,7 +350,6 @@
       const tg = el("div", "row"); if (i.format) tg.append(el("span", "pill s-idle", i.format)); if (i.score != null) tg.append(el("span", "small", "Fit " + i.score + "/10")); r.append(tg); c.append(r);
       if (i.hook) c.append(el("div", "hook", i.hook)); if (i.why) c.append(el("div", "why", i.why));
       if (i.script) { const d = el("details"); d.append(el("summary", null, t.cfg.id === "opps" ? "How to do it" : t.cfg.id === "youtube" ? "Production notes" : "Full script")); d.append(el("div", "script", i.script)); c.append(d); }
-      if (Array.isArray(i.clips) && i.clips.length) { const cl = el("div", "why"); cl.textContent = "🎥 Needs " + i.clips.length + " clip" + (i.clips.length > 1 ? "s" : "") + " from you: " + i.clips.map(x => x.file).join(", "); c.append(cl); }
       if (Array.isArray(i.sources) && i.sources.length) { const s = el("div", "sources"); i.sources.forEach(x => { const u = safeUrl(x.url); if (u) { const a = el("a", null, "↗ " + (x.title || "source")); a.href = u; a.target = "_blank"; a.rel = "noopener"; s.append(a); } }); c.append(s); }
       const act = el("div", "row"); const { status: st, queued } = effectiveStatus(i); const btns = [];
       const add = (l, a, cls) => { const b = el("button", "btn " + (cls || ""), l); b.onclick = () => decide(a, t, i, btns); btns.push(b); act.append(b); };
@@ -370,23 +369,21 @@
     body.append(el("div", "small", "Planned " + (L.date || ago(L.createdAt)) + " · say “make today's batch” to Claude and it builds these"));
     const c = el("div", "card"); (L.channels[statSel] || []).forEach(v => { const r = el("div", "vid");
       const tt = el("span", "t", (v.slot || "") + "  " + (v.title || "")); tt.title = v.title || ""; r.append(tt, el("span", "n", v.kind || ""));
-      r.append(el("span", "m", [v.format, v.note].filter(Boolean).join(" · ")), el("span", "m", [v.newIdea ? "★ new" : "", v.clip ? "🎥 " + v.clip : ""].filter(Boolean).join("  "))); c.append(r); });
+      r.append(el("span", "m", [v.format, v.note].filter(Boolean).join(" · ")), el("span", "m", [v.newIdea ? "★ new" : "", v.footage ? "🎞 " + v.footage : ""].filter(Boolean).join("  "))); c.append(r); });
     body.append(c);
   }
   function vShots(t, body) {
-    const ideas = (t.state.ideas || []).filter(i => ["pending", "approved"].includes(effectiveStatus(i).status));
-    const clips = []; ideas.forEach(i => (i.clips || []).forEach(c => clips.push({ ...c, idea: i })));
-    const intro = el("div", "card"); intro.append(el("h3", null, "Clips to film"));
-    intro.append(el("div", "why", "Film each one on your phone, vertical, no people or voices in shot. Rename it to the exact file name and drop it in the folder shown. Next time you ask Claude for a batch, it uses them."));
-    const folder = (t.state.clipFolder) || "OneDrive › YOUTUBE HQ Clips";
-    intro.append(el("div", "small", "Drop folder: " + folder)); body.append(intro);
-    if (!clips.length) { body.append(empty("No clips needed right now", "When an idea needs real footage from you, it shows up here.")); return; }
-    clips.forEach(c => { const k = el("div", "card"); const r = el("div", "row between"); r.append(el("h3", null, c.what || "Clip")); if (c.seconds) r.append(el("span", "pill s-waiting", c.seconds + "s")); k.append(r);
-      if (c.how) k.append(el("div", "why", c.how));
-      const fr = el("div", "row"); const code = el("code", null, c.file || ""); Object.assign(code.style, { font: "13px var(--f-mono)", background: "var(--bg2)", border: "1px solid var(--line2)", borderRadius: "8px", padding: "6px 9px", overflowWrap: "anywhere" });
-      const cp = el("button", "btn", "Copy name"); cp.onclick = async () => { try { await navigator.clipboard.writeText(c.file || ""); toast("Copied " + c.file); } catch { toast("Select the name and copy it."); } };
-      fr.append(code, cp); k.append(fr);
-      k.append(el("div", "small", "Folder: " + (c.folder || folder) + " · for “" + (c.idea.title || "") + "”"));
+    const ft = t.state.footage || [];
+    const intro = el("div", "card"); intro.append(el("h3", null, "Free stock footage"));
+    intro.append(el("div", "why", "The team picks the clips each lineup needs. GitHub then finds and downloads them from Pexels (or Pixabay) automatically, so your batch has them ready. You don't film anything."));
+    body.append(intro);
+    if (!ft.length) { body.append(empty("No footage requested yet", "The YouTube team lists the clips it needs with each morning's lineup.")); return; }
+    const label = { ready: ["ok", "Downloaded"], wanted: ["waiting", "Finding"], needs_key: ["waiting", "Needs Pexels key"], not_found: ["error", "No match"], error: ["error", "Failed"] };
+    if (ft.some(f => f.status === "needs_key")) body.append(empty("One-time setup", "Get a free API key at pexels.com/api and add it in GitHub Secrets as PEXELS_API_KEY. Then the clips download by themselves."));
+    ft.forEach(f => { const k = el("div", "card"); const r = el("div", "row between"); r.append(el("h3", null, f.query || f.file)); const [cls, txt] = label[f.status || "wanted"] || ["idle", f.status]; r.append(el("span", "pill s-" + cls, txt)); k.append(r);
+      const meta = [f.file, f.for ? "for " + f.for : null, f.seconds ? f.seconds + "s" : null, f.size, f.mb ? f.mb + " MB" : null].filter(Boolean).join(" · "); k.append(el("div", "small", meta));
+      if (f.credit) { const row = el("div", "sources"); const u = safeUrl(f.page); const a = el(u ? "a" : "span", null, (u ? "↗ " : "") + f.credit); if (u) { a.href = u; a.target = "_blank"; a.rel = "noopener"; } row.append(a); k.append(row); }
+      if (f.note && f.status !== "ready") k.append(el("div", "why", f.note));
       body.append(k); });
   }
   function barChart(vals, labels, color) {

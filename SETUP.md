@@ -38,11 +38,20 @@ This powers "Trending now" on both the YouTube and TikTok sites. Each video gets
 
 TikTok doesn't offer retention graphs or audience demographics through its API. For those, screenshot TikTok Studio and send them to Claude.
 
+## 4. Free stock footage for Ambient Escape (2 minutes)
+
+1. Go to https://www.pexels.com/api/ , sign in, and click **Your API Key**. It's free and instant.
+2. Add it to GitHub Secrets as **`PEXELS_API_KEY`**.
+3. Optional backup source: a free key from https://pixabay.com/api/docs/ saved as **`PIXABAY_API_KEY`**.
+
+Every morning the YouTube team lists the clips its lineup needs. The **Footage fetcher** workflow then downloads them and attaches them to that day's GitHub Release, so your batch has them ready. You never film anything.
+
 ## What runs when
 
 | What | Where | When |
 |---|---|---|
 | Data collectors (your stats, niche trends) | GitHub Actions | Every hour (trend scan every 6 hours to stay inside YouTube's free quota) |
+| Footage fetcher (free Pexels/Pixabay clips) | GitHub Actions | Right after the YouTube team plans the day |
 | TikTok team (Analyst, Strategist, Copywriter) | Claude scheduled task | Daily ~9:40 AM |
 | Chief of Staff brief | Claude scheduled task | Daily ~11:40 AM |
 
