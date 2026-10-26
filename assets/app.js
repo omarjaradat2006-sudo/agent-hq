@@ -442,7 +442,19 @@
     if (!sub0.length) { body.append(empty("No lineup yet", "Every morning the team plans all 17 videos for each channel: 15 Shorts and 2 long videos.")); return; }
     statSel = sub0.includes(statSel) ? statSel : sub0[0];
     const sub = el("div", "subtabs"); sub0.forEach(ch => { const b = el("button", null, `${ch} ${(L.channels[ch] || []).length}`); b.setAttribute("aria-pressed", String(statSel === ch)); b.onclick = () => { statSel = ch; renderPanel(); }; sub.append(b); }); body.append(sub);
-    body.append(el("div", "small", "Planned " + (L.date || ago(L.createdAt)) + " · say “make today's batch” to Claude and it builds these"));
+    body.append(el("div", "small", "Planned " + (L.date || ago(L.createdAt)) + " · press the button, paste into a NEW Claude chat"));
+    { const slug = { "Bounce Theory": "bounce-theory", "Ambient Escape": "ambient-escape" }[statSel];
+      const skill = { "Bounce Theory": "bounce-theory-videos", "Ambient Escape": "ambient-escape-videos" }[statSel];
+      if (slug) { const url = `https://raw.githubusercontent.com/${CFG.repo}/main/data/youtube/batch/${slug}.md`;
+        const longs = (L.channels[statSel] || []).filter(v => v.kind === "Long" && v.footage).map(v => `${v.slot} = ${v.footage}`);
+        const txt = `Make today's ${statSel} batch with my ${skill} skill.\n\nFirst open today's plan and follow it exactly: ${url}\n(If you can't open it, run: curl -sL "${url}")\n\n` +
+          (longs.length ? `The long videos MUST loop the real downloaded clips from that file (${longs.join(", ")}). Do not generate or draw scenes for them. Download the clips first and list them to me before rendering.\n\n` : "") +
+          `Make all ${(L.channels[statSel] || []).length} videos in the file's order with its titles, then tell me which clip each video used.`;
+        const row = el("div", "row"); row.style.gap = "8px"; row.style.flexWrap = "wrap"; row.style.margin = "6px 0 10px";
+        const b = el("button", "btn primary", "Copy batch prompt");
+        b.onclick = async () => { try { await navigator.clipboard.writeText(txt); toast("Copied. Paste it into a new Claude chat."); } catch { const ta = el("textarea"); ta.value = txt; ta.rows = 7; ta.style.width = "100%"; row.after(ta); ta.select(); toast("Select and copy the text below."); } };
+        const a = el("a", "btn", "Open today's batch file"); a.href = url.replace("raw.githubusercontent.com", "github.com").replace("/main/", "/blob/main/"); a.target = "_blank"; a.rel = "noopener";
+        row.append(b, a); body.append(row); } }
     const c = el("div", "card"); (L.channels[statSel] || []).forEach(v => { const r = el("div", "vid");
       const tt = el("span", "t", (v.slot || "") + "  " + (v.title || "")); tt.title = v.title || ""; r.append(tt, el("span", "n", v.kind || ""));
       r.append(el("span", "m", [v.format, v.note].filter(Boolean).join(" · ")), el("span", "m", [v.newIdea ? "★ new" : "", v.footage ? "🎞 " + v.footage : ""].filter(Boolean).join("  "))); c.append(r); });

@@ -26,6 +26,8 @@ jobs:
           PIXABAY_API_KEY: ${{ secrets.PIXABAY_API_KEY }}
           GH_TOKEN: ${{ github.token }}
         run: python collectors/footage.py
+      - name: Write today's batch files
+        run: python collectors/batch_brief.py
       - name: Save
         run: |
           git config user.name "agent-hq-footage"
