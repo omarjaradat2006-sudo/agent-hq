@@ -86,7 +86,7 @@ def yt_trending(queries, shorts_only=False):
     ids = []
     for q in queries:
         params = {"part": "snippet", "q": q, "type": "video", "order": "viewCount", "publishedAfter": after,
-                  "maxResults": 8, "regionCode": CFG.get("region", "CA"), "key": key}
+                  "maxResults": 8, "regionCode": CFG.get("region", "CA"), "relevanceLanguage": "en", "key": key}
         if shorts_only:
             params["videoDuration"] = "short"
         res = http(YT + "search?" + urllib.parse.urlencode(params))
