@@ -232,7 +232,7 @@
   let tab = "overview", agentSel = null, ideaFilter = "pending", statSel = null;
   function tabForKind(t, kind) { return kind === "stats" ? "stats" : kind === "research" ? "research" : kind === "ideas" ? "ideas" : "overview"; }
   function focusTeam(id, tb, agentId) {
-    if (!M.teams[id]) return; focused = id; tab = tb || "overview"; agentSel = agentId || null; statSel = null;
+    if (!M.teams[id]) return; focused = id; tab = tb || "overview"; agentSel = agentId || null; statSel = null; ideaFilter = id === "youtube" ? "approved" : "pending";
     $("#panel").classList.add("open"); renderPanel(); syncTeambar();
     requestAnimationFrame(() => animateTo(fitBox(roomBoxes[id], .74)));
     history.replaceState(null, "", "#" + id);
@@ -245,6 +245,7 @@
     const out = [["overview", "Overview"], ["ideas", t.cfg.ideaWord || "Ideas"]];
     if (t.metrics) out.push(["stats", "Stats"]);
     if (t.metrics && (t.metrics.trending || []).length) out.push(["trending", "Trending"]);
+    if (t.cfg.id === "youtube") out.splice(2, 0, ["shots", "Shot list"]);
     out.push(["research", "Research"], ["activity", "Activity"]);
     return out;
   }
@@ -256,11 +257,12 @@
     const x = el("button", "xbtn", "×"); x.setAttribute("aria-label", "Close and zoom out"); x.onclick = zoomOut; top.append(tt, x); ph.append(top);
     const tabs = el("div", "tabs"); tabs.setAttribute("role", "tablist");
     tabsFor(t).forEach(([k, l]) => { const b = el("button", null, l); b.setAttribute("role", "tab"); b.setAttribute("aria-selected", String(tab === k));
-      if (k === "ideas") b.append(el("span", "n", String((t.state.ideas || []).filter(i => (i.status || "pending") === "pending").length)));
+      if (k === "ideas") b.append(el("span", "n", String((t.state.ideas || []).filter(i => t.cfg.id === "youtube" ? ["pending", "approved"].includes(effectiveStatus(i).status) : effectiveStatus(i).status === "pending").length)));
+      if (k === "shots") b.append(el("span", "n", String((t.state.ideas || []).filter(i => ["pending", "approved"].includes(effectiveStatus(i).status)).reduce((n, i) => n + (i.clips || []).length, 0))));
       b.onclick = () => { tab = k; renderPanel(); }; tabs.append(b); });
     ph.append(tabs); p.append(ph);
     const body = el("div", "pb"); p.append(body);
-    ({ overview: vOverview, ideas: vIdeas, stats: vStats, trending: vTrending, research: vResearch, activity: vActivity }[tab] || vOverview)(t, body);
+    ({ overview: vOverview, ideas: vIdeas, shots: vShots, stats: vStats, trending: vTrending, research: vResearch, activity: vActivity }[tab] || vOverview)(t, body);
   }
   function pill(s) { return el("span", "pill s-" + (s || "idle"), ST[s] || s || "Idle"); }
   function empty(title, text) { const e = el("div", "empty"); e.append(el("strong", null, title)); e.append(el("span", null, text)); return e; }
@@ -339,7 +341,7 @@
     return `Use the ${skill} skill. Include this Agent HQ idea in today's batch (id ${i.id}):\n\nTitle: ${i.title}\nHook: ${i.hook || ""}\nFormat: ${i.format || ""}\n\nProduction notes:\n${i.script || ""}`;
   }
   function vIdeas(t, body) {
-    const ideas = t.state.ideas || []; const S2 = [["pending", "To review"], ["approved", "Approved"], ["filmed", t.cfg.id === "opps" ? "Started" : "Done"], ["rejected", "Passed"]];
+    const ideas = t.state.ideas || []; const S2 = [["pending", "To review"], ["approved", t.cfg.id === "youtube" ? "Up next" : "Approved"], ["filmed", t.cfg.id === "opps" ? "Started" : "Done"], ["rejected", "Passed"]];
     const sub = el("div", "subtabs"); S2.forEach(([k, l]) => { const b = el("button", null, `${l} ${ideas.filter(i => effectiveStatus(i).status === k).length}`); b.setAttribute("aria-pressed", String(ideaFilter === k)); b.onclick = () => { ideaFilter = k; renderPanel(); }; sub.append(b); });
     body.append(sub);
     const list = ideas.filter(i => effectiveStatus(i).status === ideaFilter).sort((a, b) => (b.createdAt || "").localeCompare(a.createdAt || ""));
@@ -348,6 +350,7 @@
       const tg = el("div", "row"); if (i.format) tg.append(el("span", "pill s-idle", i.format)); if (i.score != null) tg.append(el("span", "small", "Fit " + i.score + "/10")); r.append(tg); c.append(r);
       if (i.hook) c.append(el("div", "hook", i.hook)); if (i.why) c.append(el("div", "why", i.why));
       if (i.script) { const d = el("details"); d.append(el("summary", null, t.cfg.id === "opps" ? "How to do it" : t.cfg.id === "youtube" ? "Production notes" : "Full script")); d.append(el("div", "script", i.script)); c.append(d); }
+      if (Array.isArray(i.clips) && i.clips.length) { const cl = el("div", "why"); cl.textContent = "🎥 Needs " + i.clips.length + " clip" + (i.clips.length > 1 ? "s" : "") + " from you: " + i.clips.map(x => x.file).join(", "); c.append(cl); }
       if (Array.isArray(i.sources) && i.sources.length) { const s = el("div", "sources"); i.sources.forEach(x => { const u = safeUrl(x.url); if (u) { const a = el("a", null, "↗ " + (x.title || "source")); a.href = u; a.target = "_blank"; a.rel = "noopener"; s.append(a); } }); c.append(s); }
       const act = el("div", "row"); const { status: st, queued } = effectiveStatus(i); const btns = [];
       const add = (l, a, cls) => { const b = el("button", "btn " + (cls || ""), l); b.onclick = () => decide(a, t, i, btns); btns.push(b); act.append(b); };
@@ -358,6 +361,22 @@
       if (t.cfg.id === "youtube" && !queued && (st === "pending" || st === "approved")) { const m = el("button", "btn", "Copy 'make it' prompt"); m.onclick = async () => { const txt = makeItPrompt(t, i); try { await navigator.clipboard.writeText(txt); toast("Copied. Paste it into Claude to make this video."); } catch { const ta = el("textarea"); ta.value = txt; ta.style.width = "100%"; ta.rows = 5; c.append(ta); ta.select(); toast("Select and copy the text below."); } }; act.append(m); }
       act.append(el("span", "small", ago(i.createdAt))); c.append(act); body.append(c); });
     connectCard(body);
+  }
+  function vShots(t, body) {
+    const ideas = (t.state.ideas || []).filter(i => ["pending", "approved"].includes(effectiveStatus(i).status));
+    const clips = []; ideas.forEach(i => (i.clips || []).forEach(c => clips.push({ ...c, idea: i })));
+    const intro = el("div", "card"); intro.append(el("h3", null, "Clips to film"));
+    intro.append(el("div", "why", "Film each one on your phone, vertical, no people or voices in shot. Rename it to the exact file name and drop it in the folder shown. Next time you ask Claude for a batch, it uses them."));
+    const folder = (t.state.clipFolder) || "OneDrive › YOUTUBE HQ Clips";
+    intro.append(el("div", "small", "Drop folder: " + folder)); body.append(intro);
+    if (!clips.length) { body.append(empty("No clips needed right now", "When an idea needs real footage from you, it shows up here.")); return; }
+    clips.forEach(c => { const k = el("div", "card"); const r = el("div", "row between"); r.append(el("h3", null, c.what || "Clip")); if (c.seconds) r.append(el("span", "pill s-waiting", c.seconds + "s")); k.append(r);
+      if (c.how) k.append(el("div", "why", c.how));
+      const fr = el("div", "row"); const code = el("code", null, c.file || ""); Object.assign(code.style, { font: "13px var(--f-mono)", background: "var(--bg2)", border: "1px solid var(--line2)", borderRadius: "8px", padding: "6px 9px", overflowWrap: "anywhere" });
+      const cp = el("button", "btn", "Copy name"); cp.onclick = async () => { try { await navigator.clipboard.writeText(c.file || ""); toast("Copied " + c.file); } catch { toast("Select the name and copy it."); } };
+      fr.append(code, cp); k.append(fr);
+      k.append(el("div", "small", "Folder: " + (c.folder || folder) + " · for “" + (c.idea.title || "") + "”"));
+      body.append(k); });
   }
   function barChart(vals, labels, color) {
     const W = 420, H = 150, pl = 34, pb = 22, pt = 14, n = vals.length, max = Math.max(1, ...vals);
