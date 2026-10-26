@@ -1,7 +1,7 @@
 # Agent runbook (shared by every Agent HQ team)
 
 Repo: `omarjaradat2006-sudo/agent-hq` · Site: https://omarjaradat2006-sudo.github.io/agent-hq/
-Your team's data file: `data/<team>/state.json` (shape in README.md). Hourly stats: `data/<team>/metrics.json` (read-only for you, written by the collectors).
+Your team's data file: `data/<team>/state.json` (shape in README.md). The Chief of Staff lives in `data/hq/state.json`. Hourly stats: `data/<team>/metrics.json` (read-only for you, written by the collectors).
 
 ## 1. Get the repo
 The repo is normally already checked out at `/home/claude/agent-hq`. Run `cd /home/claude/agent-hq && git pull --rebase`. Only if that folder doesn't exist: `git clone https://github.com/omarjaradat2006-sudo/agent-hq /home/claude/agent-hq`. There is no add_repo step; don't look for one.

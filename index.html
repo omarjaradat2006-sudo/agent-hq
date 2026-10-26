@@ -10,31 +10,15 @@
 <link rel="stylesheet" href="./assets/style.css">
 </head>
 <body>
-<div class="wrap">
-  <header class="top">
-    <a class="brand" href="./"><span class="brand-mark"></span><b>Agent HQ</b></a>
-    <nav class="nav" id="nav" aria-label="Sites"></nav>
-    <div class="live"><span class="pulse"></span><span id="liveText">Connecting…</span></div>
-  </header>
-  <section class="hero">
-    <div><div class="label">Omar Jaradat · operations floor</div><h1>Agent HQ</h1><p>Five teams of AI agents researching, writing and tracking your numbers. Click any company to go to its floor.</p></div>
-    <div class="stats">
-      <div class="stat"><div class="v" id="s-working">0</div><div class="k">Agents working</div></div>
-      <div class="stat"><div class="v" id="s-ideas">0</div><div class="k">Ideas to review</div></div>
-      <div class="stat"><div class="v" id="s-teams">0/5</div><div class="k">Teams hired</div></div>
-    </div>
-  </section>
-  <section class="floor-wrap" aria-label="Operations floor">
-    <div class="floor-head"><div class="label">Live floor</div></div>
-    <svg class="floor" id="floor" role="img" aria-label="Isometric view of all teams"></svg>
-    <div class="legend"><span><i class="sw" style="background:#6fd3ff"></i>Working</span><span><i class="sw" style="background:#a37bff"></i>Idle</span><span><i class="sw" style="background:#5fe0a0"></i>Done</span><span><i class="sw" style="background:#ffc864"></i>Waiting on you</span><span><i class="sw" style="background:#ff7a8e"></i>Error</span></div>
-  </section>
-  <div class="grid">
-    <section class="panel"><div class="panel-head"><h2>Companies</h2></div><div class="companies" id="companies"></div></section>
-    <section class="panel"><div class="panel-head"><h2>Activity</h2></div><ul class="log" id="log"></ul></section>
-  </div>
-  <footer>Agents run on a schedule in the cloud · data collectors run hourly · this page refreshes every minute</footer>
-</div>
+<div id="stage"><svg id="world" role="img" aria-label="Agent HQ floor: click a room or a robot to zoom in"></svg></div>
+<header class="hud-top">
+  <a class="brand" href="./" style="text-decoration:none;color:inherit"><span class="brand-mark"></span><div><h1>Agent HQ</h1><div class="sub"><span class="pulse"></span><span id="liveText">Connecting…</span></div></div></a>
+  <div class="chips" id="chips"></div>
+</header>
+<button class="backbtn" id="back" hidden>← Whole floor</button>
+<nav class="teambar" id="teambar" aria-label="Teams"></nav>
+<div class="ticker" aria-label="Latest agent activity"><div class="ticker-track" id="tickerTrack"></div></div>
+<aside class="panel-side" id="panel" aria-label="Details"></aside>
 <script src="./assets/config.js"></script>
 <script src="./assets/app.js"></script>
 </body>

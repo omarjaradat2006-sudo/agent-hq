@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en" data-root="../" data-team="hq">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Chief of Staff · Agent HQ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<div id="stage"><svg id="world" role="img" aria-label="Agent HQ floor: click a room or a robot to zoom in"></svg></div>
+<header class="hud-top">
+  <a class="brand" href="../" style="text-decoration:none;color:inherit"><span class="brand-mark"></span><div><h1>Agent HQ</h1><div class="sub"><span class="pulse"></span><span id="liveText">Connecting…</span></div></div></a>
+  <div class="chips" id="chips"></div>
+</header>
+<button class="backbtn" id="back" hidden>← Whole floor</button>
+<nav class="teambar" id="teambar" aria-label="Teams"></nav>
+<div class="ticker" aria-label="Latest agent activity"><div class="ticker-track" id="tickerTrack"></div></div>
+<aside class="panel-side" id="panel" aria-label="Details"></aside>
+<script src="../assets/config.js"></script>
+<script src="../assets/app.js"></script>
+</body>
+</html>
