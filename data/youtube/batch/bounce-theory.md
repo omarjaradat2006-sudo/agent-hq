@@ -14,25 +14,27 @@ Full data (ideas, footage, review): https://raw.githubusercontent.com/omarjarada
 
 ## The videos
 
-| Slot | Kind | Title | Format | Today's twist | Clip |
-|---|---|---|---|---|---|
-| S01 | Short | Every bounce draws a line... into a star ⭐ #shorts #satisfying | string_art | Your #2 Short (848 views): 7-point star frame, gold + cyan threads, harp pluck per line |  |
-| S02 | Short | This ball plays Für Elise 🎹 #shorts #satisfying | ring_escape | Your #1 Short (867 views) remixed: each bounce = next note of Für Elise (public domain), white ball, magenta rings |  |
-| S03 | Short | Hard vs Soft vs Jelly... which escapes? 😳 #shorts #physics | Soft Body 0% vs 100% Escape ★ NEW | NEW: 0% / 50% / 100% soft blobs in 3 spinning rings |  |
-| S04 | Short | 8 colors, only 1 survives 🎯 #shorts #satisfying | colour_escape | 8 colours instead of 6, gap widens each lap |  |
-| S05 | Short | The circle keeps shrinking... can it survive? 😬 #shorts #satisfying | shrinking_circle | Two balls (red + blue) share the circle; last one inside wins |  |
-| S06 | Short | 1 ball vs a spinning spiral 🌀 #shorts #chainreaction | Spiral Chain Reaction (every wall hit splits) ★ NEW | NEW: every wall hit doubles the ball, Ode to Joy notes, race to the core |  |
-| S07 | Short | Escape the spinning hexagon 🔷 #shorts #satisfying | polygon_escape | Hexagon inside a pentagon inside a square, each spinning opposite ways |  |
-| S08 | Short | Pick your marble before it starts! 🏁 #shorts #marblerace | marble_race | Pick-your-colour hook (trending: CARRERA DE CANICAS 3.3M); 8 marbles, zig-zag plinko |  |
-| S09 | Short | Watch the threads turn into a heart 💛 #shorts #satisfying | string_art | Heart-shaped frame, red → pink gradient threads, piano notes C major |  |
-| S10 | Short | Guess the song from the bounces 🎵 #shorts #satisfying | ring_escape | Guess-the-song (Mo Lucky outlier, 10x): Ode to Joy? No — Twinkle Twinkle (public domain), answer at the end |  |
-| S11 | Short | It grows every time it bounces 😳 #shorts #satisfying | grow_every_bounce | Lime ball in a rotating triangle; ends when it fills the frame |  |
-| S12 | Short | 16 countries, 1 marble left 🌍 #shorts #marblerace | marble_race | Country-flag colour marbles, elimination funnel every 5 s |  |
-| S13 | Short | Chaos fan vs 300 balls 🌪️ #shorts #satisfying | chaos_fan | Fan speed ramps with a bass drop at 15 s, cyan/orange balls |  |
-| S14 | Short | Shrinking circle, but 10 balls 😱 #shorts #satisfying | shrinking_circle | 10 neon balls, shrink speed doubles at half-time; countdown of survivors |  |
-| S15 | Short | 22 pendulums, one perfect wave 🌊 #shorts #physics | pendulum_wave | Retry with 30 pendulums, rainbow gradient + glass chime; only 1 pendulum Short today |  |
-| L1 | Long | Marble Race Tournament: 16 Colors, 1 Champion 🏆 / Satisfying Marble Run | marble_race | Bracket tournament with on-screen bracket + names, 8 heats → semis → final (~12 min) |  |
-| L2 | Long | Satisfying Clips for Edits Vol. 1 (No Text) / Physics Simulations 4K | compilation | Text-free mix of string art, ring escape, spiral chain and soft-body clips, 60 s each (~15 min) |  |
+Most of these are remixes of videos that already won. Keep each winner's recipe (format, hook, length, pacing) and change only the twist.
+
+| Slot | Kind | Title | Format | Based on | Today's twist | Clip |
+|---|---|---|---|---|---|---|
+| S01 | Short | Every bounce draws a line... into a star ⭐ #shorts #satisfying | string_art |  | Your #2 Short (848 views): 7-point star frame, gold + cyan threads, harp pluck per line |  |
+| S02 | Short | This ball plays Für Elise 🎹 #shorts #satisfying | ring_escape |  | Your #1 Short (867 views) remixed: each bounce = next note of Für Elise (public domain), white ball, magenta rings |  |
+| S03 | Short | Hard vs Soft vs Jelly... which escapes? 😳 #shorts #physics | Soft Body 0% vs 100% Escape ★ NEW |  | NEW: 0% / 50% / 100% soft blobs in 3 spinning rings |  |
+| S04 | Short | 8 colors, only 1 survives 🎯 #shorts #satisfying | colour_escape |  | 8 colours instead of 6, gap widens each lap |  |
+| S05 | Short | The circle keeps shrinking... can it survive? 😬 #shorts #satisfying | shrinking_circle |  | Two balls (red + blue) share the circle; last one inside wins |  |
+| S06 | Short | 1 ball vs a spinning spiral 🌀 #shorts #chainreaction | Spiral Chain Reaction (every wall hit splits) ★ NEW |  | NEW: every wall hit doubles the ball, Ode to Joy notes, race to the core |  |
+| S07 | Short | Escape the spinning hexagon 🔷 #shorts #satisfying | polygon_escape |  | Hexagon inside a pentagon inside a square, each spinning opposite ways |  |
+| S08 | Short | Pick your marble before it starts! 🏁 #shorts #marblerace | marble_race |  | Pick-your-colour hook (trending: CARRERA DE CANICAS 3.3M); 8 marbles, zig-zag plinko |  |
+| S09 | Short | Watch the threads turn into a heart 💛 #shorts #satisfying | string_art |  | Heart-shaped frame, red → pink gradient threads, piano notes C major |  |
+| S10 | Short | Guess the song from the bounces 🎵 #shorts #satisfying | ring_escape |  | Guess-the-song (Mo Lucky outlier, 10x): Ode to Joy? No — Twinkle Twinkle (public domain), answer at the end |  |
+| S11 | Short | It grows every time it bounces 😳 #shorts #satisfying | grow_every_bounce |  | Lime ball in a rotating triangle; ends when it fills the frame |  |
+| S12 | Short | 16 countries, 1 marble left 🌍 #shorts #marblerace | marble_race |  | Country-flag colour marbles, elimination funnel every 5 s |  |
+| S13 | Short | Chaos fan vs 300 balls 🌪️ #shorts #satisfying | chaos_fan |  | Fan speed ramps with a bass drop at 15 s, cyan/orange balls |  |
+| S14 | Short | Shrinking circle, but 10 balls 😱 #shorts #satisfying | shrinking_circle |  | 10 neon balls, shrink speed doubles at half-time; countdown of survivors |  |
+| S15 | Short | 22 pendulums, one perfect wave 🌊 #shorts #physics | pendulum_wave |  | Retry with 30 pendulums, rainbow gradient + glass chime; only 1 pendulum Short today |  |
+| L1 | Long | Marble Race Tournament: 16 Colors, 1 Champion 🏆 / Satisfying Marble Run | marble_race |  | Bracket tournament with on-screen bracket + names, 8 heats → semis → final (~12 min) |  |
+| L2 | Long | Satisfying Clips for Edits Vol. 1 (No Text) / Physics Simulations 4K | compilation |  | Text-free mix of string art, ring escape, spiral chain and soft-body clips, 60 s each (~15 min) |  |
 
 ## Build specs for the new concepts
 
@@ -56,4 +58,4 @@ Tags: spiral simulation, chain reaction, balls multiply, every bounce 2 balls, s
 - Tell Omar which clip each video used (by file name) and any slot that fell back.
 - If this session can push to omarjaradat2006-sudo/agent-hq: set `made: true` on each lineup item made and `status: "filmed"` on each used idea in data/youtube/state.json, then commit and push. Otherwise list the idea ids so Omar can press "Mark made" on the site.
 
-_Generated 2026-10-27 02:12 UTC_
+_Generated 2026-10-27 02:24 UTC_

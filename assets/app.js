@@ -451,7 +451,7 @@
         const longs = (L.channels[statSel] || []).filter(v => v.kind === "Long" && v.footage).map(v => `${v.slot} = ${v.footage}`);
         const txt = `Make today's ${statSel} batch with my ${skill} skill.\n\nFirst open today's plan and follow it exactly: ${url}\n(If you can't open it, run: curl -sL "${url}")\n\n` +
           (longs.length ? `The long videos MUST loop the real downloaded clips from that file (${longs.join(", ")}). Do not generate or draw scenes for them. Download the clips first and list them to me before rendering.\n\n` : "") +
-          (statSel === "Bounce Theory" ? "Every video MUST visibly use its \"Today's twist\" from the file (frame, colours, counts, rules, melody). Never re-render a format with its default settings or reuse an old render. Before delivering, compare each video's contact sheet with that format's last upload and redo any that look the same.\n\n" : "") +
+          "Most of these videos are remixes of what already won (each row says what it's based on). Keep the winner's recipe (format, hook, length, pacing) and change only the listed twist.\n\n" + (statSel === "Bounce Theory" ? "Every video MUST visibly use its \"Today's twist\" from the file (frame, colours, counts, rules, melody). Never re-render a format with its default settings or reuse an old render. Before delivering, compare each video's contact sheet with that format's last upload and redo any that look the same.\n\n" : "") +
           `Make all ${(L.channels[statSel] || []).length} videos in the file's order with its titles, then tell me ${statSel === "Bounce Theory" ? "in one line per video what is visibly new" : "which clip each video used"}.`;
         const row = el("div", "row"); row.style.gap = "8px"; row.style.flexWrap = "wrap"; row.style.margin = "6px 0 10px";
         const b = el("button", "btn primary", "Copy batch prompt");
@@ -460,7 +460,7 @@
         row.append(b, a); body.append(row); } }
     const c = el("div", "card"); (L.channels[statSel] || []).forEach(v => { const r = el("div", "vid");
       const tt = el("span", "t", (v.slot || "") + "  " + (v.title || "")); tt.title = v.title || ""; r.append(tt, el("span", "n", v.kind || ""));
-      r.append(el("span", "m", [v.format, v.note].filter(Boolean).join(" · ")), el("span", "m", [v.newIdea ? "★ new" : "", v.footage ? "🎞 " + v.footage : ""].filter(Boolean).join("  "))); c.append(r); });
+      r.append(el("span", "m", [v.format, v.note].filter(Boolean).join(" · ")), el("span", "m", v.basis ? "↳ " + v.basis : ""), el("span", "m", [v.newIdea ? "★ new" : "", v.footage ? "🎞 " + v.footage : ""].filter(Boolean).join("  "))); c.append(r); });
     body.append(c);
   }
   function vShots(t, body) {

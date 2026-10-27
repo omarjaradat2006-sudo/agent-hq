@@ -50,8 +50,10 @@ def brief(ch, items, s):
     out.append("")
     out.append("## The videos")
     out.append("")
-    out.append("| Slot | Kind | Title | Format | Today's twist | Clip |")
-    out.append("|---|---|---|---|---|---|")
+    out.append("Most of these are remixes of videos that already won. Keep each winner's recipe (format, hook, length, pacing) and change only the twist.")
+    out.append("")
+    out.append("| Slot | Kind | Title | Format | Based on | Today's twist | Clip |")
+    out.append("|---|---|---|---|---|---|---|")
     for v in items:
         clip = ""
         if v.get("footage"):
@@ -59,7 +61,7 @@ def brief(ch, items, s):
             st = f.get("status", "wanted")
             clip = f"`{v['footage']}` " + ("READY" if st == "ready" else "MISSING (" + st + ")")
         new = " ★ NEW" if v.get("newIdea") else ""
-        out.append(f"| {esc(v.get('slot'))} | {esc(v.get('kind'))} | {esc(v.get('title'))} | {esc(v.get('format'))}{new} | {esc(v.get('note'))} | {clip} |")
+        out.append(f"| {esc(v.get('slot'))} | {esc(v.get('kind'))} | {esc(v.get('title'))} | {esc(v.get('format'))}{new} | {esc(v.get('basis'))} | {esc(v.get('note'))} | {clip} |")
     out.append("")
 
     used = []

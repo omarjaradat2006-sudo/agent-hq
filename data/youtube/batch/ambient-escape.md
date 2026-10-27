@@ -13,25 +13,27 @@ Full data (ideas, footage, review): https://raw.githubusercontent.com/omarjarada
 
 ## The videos
 
-| Slot | Kind | Title | Format | Today's twist | Clip |
-|---|---|---|---|---|---|
-| S01 | Short | Complete the ayah... only 1% know it 🤲 #shorts #quran #quiz | Complete the Ayah (3-option quiz) ★ NEW | NEW: 'Verily, in the remembrance of Allah…' → do hearts find rest (13:28) | `AE-starry-sky-01.mp4` READY |
-| S02 | Short | Guess the surah: it's worth 1/3 of the Quran 🤲 #shorts #quran #quiz | guess_the_surah | Answer: Al-Ikhlas (112) — Sahih al-Bukhari 5013 | `AE-foggy-forest-01.mp4` MISSING (not_found) |
-| S03 | Short | Read this if you feel alone / Quran 2:186 #shorts #islam | ayah_reminder | 'And when My servants ask you concerning Me – indeed I am near' (Al-Baqarah 2:186) | `AE-ocean-waves-01.mp4` READY |
-| S04 | Short | The first thing you'll be asked about ⏳ #shorts #muslim #salah | discipline_reminder | First deed accounted for is the prayer — Jami' at-Tirmidhi 413 | `AE-candle-flame-01.mp4` MISSING (not_found) |
-| S05 | Short | No eye has seen this... 🌿 #shorts #jannah #islam | jannah_reminder | Hadith qudsi: what no eye has seen nor ear heard — Sahih al-Bukhari 3244, Muslim 2824; cf. As-Sajdah 32:17 | `AE-starry-sky-01.mp4` READY |
-| S06 | Short | What Allah says about patience 🤍 #shorts #islam #quran | what_allah_says | 'Indeed, Allah is with the patient' (Al-Baqarah 2:153) | `AE-foggy-forest-01.mp4` MISSING (not_found) |
-| S07 | Short | Dua of the day: the best of both worlds 🤲 #shorts #dua | dua_of_the_day | Rabbana atina fid-dunya hasanah… (Al-Baqarah 2:201), Arabic transliteration + English | `AE-ocean-waves-01.mp4` READY |
-| S08 | Short | True or false: the Quran came down in one night? 🕌 #shorts #quiz | true_false_quiz | False — revealed gradually over about 23 years (cf. Al-Isra 17:106); sent down to the nearest heaven on Laylat al-Qadr (97:1) | `AE-candle-flame-01.mp4` MISSING (not_found) |
-| S09 | Short | Complete the ayah: 'For indeed, with hardship...' 🤲 #shorts #quran | Complete the Ayah (3-option quiz) ★ NEW | NEW: → will be ease (Ash-Sharh 94:5) | `AE-starry-sky-01.mp4` READY |
-| S10 | Short | Guess the surah: no Bismillah at the start 🤔 #shorts #quran #quiz | guess_the_surah | Answer: At-Tawbah (9), the only surah without Bismillah | `AE-foggy-forest-01.mp4` MISSING (not_found) |
-| S11 | Short | Read this if you can't stop overthinking / Quran 13:28 #shorts | ayah_reminder | Hearts find rest in the remembrance of Allah (Ar-Ra'd 13:28) — calm AI voice | `AE-ocean-waves-01.mp4` READY |
-| S12 | Short | Your phone got 6 hours today. Your Quran got 0. #shorts #muslim | discipline_reminder | Screen-time vs Quran-time reminder (follow-up to your best AE Short: gym vs salah, 13 views) | `AE-candle-flame-01.mp4` MISSING (not_found) |
-| S13 | Short | The lowest place in Jannah is 10x this world 😳 #shorts #jannah | jannah_reminder | Last person to enter Jannah gets ten times the world — Sahih Muslim 186 | `AE-starry-sky-01.mp4` READY |
-| S14 | Short | What Allah says about backbiting 😶 #shorts #islam #quran | what_allah_says | 'Would one of you like to eat the flesh of his brother when dead?' (Al-Hujurat 49:12) | `AE-foggy-forest-01.mp4` MISSING (not_found) |
-| S15 | Short | Dua of the day: 'My Lord, increase me in knowledge' 📖 #shorts #dua | dua_of_the_day | Rabbi zidni 'ilma (Ta-Ha 20:114) | `AE-ocean-waves-01.mp4` READY |
-| L1 | Long | Crackling Cabin Fireplace in a Blizzard + Brown Noise 3 Hours 🔥❄️ Deep Sleep (Dark Screen After 2h) | Blizzard Cabin Fireplace + Brown Noise 3 Hours ★ NEW | Fire crackle + brown noise -12 dB + howling wind -18 dB; snowfall-window interlude every 30 min | `AE-cabin-fireplace-01.mp4` READY |
-| L2 | Long | Rain on the Window at Night + Pink Noise 3 Hours 🌧️ Sleep Instantly (No Thunder, No Ads) | rain_long | Window rain + pink noise -10 dB, steady rain, no thunder (Still Point-style 'NO THUNDER' hook) | `AE-rain-window-01.mp4` READY |
+Most of these are remixes of videos that already won. Keep each winner's recipe (format, hook, length, pacing) and change only the twist.
+
+| Slot | Kind | Title | Format | Based on | Today's twist | Clip |
+|---|---|---|---|---|---|---|
+| S01 | Short | Complete the ayah... only 1% know it 🤲 #shorts #quran #quiz | Complete the Ayah (3-option quiz) ★ NEW |  | NEW: 'Verily, in the remembrance of Allah…' → do hearts find rest (13:28) | `AE-starry-sky-01.mp4` READY |
+| S02 | Short | Guess the surah: it's worth 1/3 of the Quran 🤲 #shorts #quran #quiz | guess_the_surah |  | Answer: Al-Ikhlas (112) — Sahih al-Bukhari 5013 | `AE-foggy-forest-01.mp4` MISSING (not_found) |
+| S03 | Short | Read this if you feel alone / Quran 2:186 #shorts #islam | ayah_reminder |  | 'And when My servants ask you concerning Me – indeed I am near' (Al-Baqarah 2:186) | `AE-ocean-waves-01.mp4` READY |
+| S04 | Short | The first thing you'll be asked about ⏳ #shorts #muslim #salah | discipline_reminder |  | First deed accounted for is the prayer — Jami' at-Tirmidhi 413 | `AE-candle-flame-01.mp4` MISSING (not_found) |
+| S05 | Short | No eye has seen this... 🌿 #shorts #jannah #islam | jannah_reminder |  | Hadith qudsi: what no eye has seen nor ear heard — Sahih al-Bukhari 3244, Muslim 2824; cf. As-Sajdah 32:17 | `AE-starry-sky-01.mp4` READY |
+| S06 | Short | What Allah says about patience 🤍 #shorts #islam #quran | what_allah_says |  | 'Indeed, Allah is with the patient' (Al-Baqarah 2:153) | `AE-foggy-forest-01.mp4` MISSING (not_found) |
+| S07 | Short | Dua of the day: the best of both worlds 🤲 #shorts #dua | dua_of_the_day |  | Rabbana atina fid-dunya hasanah… (Al-Baqarah 2:201), Arabic transliteration + English | `AE-ocean-waves-01.mp4` READY |
+| S08 | Short | True or false: the Quran came down in one night? 🕌 #shorts #quiz | true_false_quiz |  | False — revealed gradually over about 23 years (cf. Al-Isra 17:106); sent down to the nearest heaven on Laylat al-Qadr (97:1) | `AE-candle-flame-01.mp4` MISSING (not_found) |
+| S09 | Short | Complete the ayah: 'For indeed, with hardship...' 🤲 #shorts #quran | Complete the Ayah (3-option quiz) ★ NEW |  | NEW: → will be ease (Ash-Sharh 94:5) | `AE-starry-sky-01.mp4` READY |
+| S10 | Short | Guess the surah: no Bismillah at the start 🤔 #shorts #quran #quiz | guess_the_surah |  | Answer: At-Tawbah (9), the only surah without Bismillah | `AE-foggy-forest-01.mp4` MISSING (not_found) |
+| S11 | Short | Read this if you can't stop overthinking / Quran 13:28 #shorts | ayah_reminder |  | Hearts find rest in the remembrance of Allah (Ar-Ra'd 13:28) — calm AI voice | `AE-ocean-waves-01.mp4` READY |
+| S12 | Short | Your phone got 6 hours today. Your Quran got 0. #shorts #muslim | discipline_reminder |  | Screen-time vs Quran-time reminder (follow-up to your best AE Short: gym vs salah, 13 views) | `AE-candle-flame-01.mp4` MISSING (not_found) |
+| S13 | Short | The lowest place in Jannah is 10x this world 😳 #shorts #jannah | jannah_reminder |  | Last person to enter Jannah gets ten times the world — Sahih Muslim 186 | `AE-starry-sky-01.mp4` READY |
+| S14 | Short | What Allah says about backbiting 😶 #shorts #islam #quran | what_allah_says |  | 'Would one of you like to eat the flesh of his brother when dead?' (Al-Hujurat 49:12) | `AE-foggy-forest-01.mp4` MISSING (not_found) |
+| S15 | Short | Dua of the day: 'My Lord, increase me in knowledge' 📖 #shorts #dua | dua_of_the_day |  | Rabbi zidni 'ilma (Ta-Ha 20:114) | `AE-ocean-waves-01.mp4` READY |
+| L1 | Long | Crackling Cabin Fireplace in a Blizzard + Brown Noise 3 Hours 🔥❄️ Deep Sleep (Dark Screen After 2h) | Blizzard Cabin Fireplace + Brown Noise 3 Hours ★ NEW |  | Fire crackle + brown noise -12 dB + howling wind -18 dB; snowfall-window interlude every 30 min | `AE-cabin-fireplace-01.mp4` READY |
+| L2 | Long | Rain on the Window at Night + Pink Noise 3 Hours 🌧️ Sleep Instantly (No Thunder, No Ads) | rain_long |  | Window rain + pink noise -10 dB, steady rain, no thunder (Still Point-style 'NO THUNDER' hook) | `AE-rain-window-01.mp4` READY |
 
 ## Clips to download first
 
@@ -75,4 +77,4 @@ Tags: fireplace sounds, crackling fireplace 3 hours, blizzard sounds, cabin ambi
 - Tell Omar which clip each video used (by file name) and any slot that fell back.
 - If this session can push to omarjaradat2006-sudo/agent-hq: set `made: true` on each lineup item made and `status: "filmed"` on each used idea in data/youtube/state.json, then commit and push. Otherwise list the idea ids so Omar can press "Mark made" on the site.
 
-_Generated 2026-10-27 02:12 UTC_
+_Generated 2026-10-27 02:24 UTC_
