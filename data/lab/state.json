@@ -1,38 +1,66 @@
 {
   "team": "lab",
   "hired": true,
-  "updatedAt": "2026-10-27T10:50:00Z",
+  "updatedAt": "2026-10-27T11:15:00Z",
   "agents": [
     {
       "id": "lead",
       "name": "Lab Director",
       "role": "Picks the upgrades worth doing",
-      "status": "waiting",
-      "doing": "Waiting for the Format Hunter"
+      "status": "ok",
+      "doing": "Brief ready: try AI-visual Islamic story longs",
+      "lastRun": "2026-10-27T11:15:00Z",
+      "nextRun": "2026-10-28T10:23:00Z"
     },
     {
       "id": "scout",
       "name": "Tool Scout",
       "role": "New AI tools, models and APIs",
       "status": "ok",
-      "doing": "Found 4 useful tool and platform changes"
+      "doing": "4 tool and platform changes found",
+      "lastRun": "2026-10-27T11:15:00Z",
+      "nextRun": "2026-10-28T10:23:00Z"
     },
     {
       "id": "hunter",
       "name": "Format Hunter",
       "role": "What makes rival videos more engaging",
       "status": "ok",
-      "doing": "9 format leads for the YouTube team"
+      "doing": "9 format leads for the YouTube team",
+      "lastRun": "2026-10-27T11:15:00Z",
+      "nextRun": "2026-10-28T10:23:00Z"
     },
     {
       "id": "engineer",
       "name": "Upgrade Engineer",
       "role": "Turns finds into build plans",
-      "status": "working",
-      "doing": "Writing build plans"
+      "status": "ok",
+      "doing": "5 build plans ready",
+      "lastRun": "2026-10-27T11:15:00Z",
+      "nextRun": "2026-10-28T10:23:00Z"
     }
   ],
   "log": [
+    {
+      "t": "2026-10-27T11:15:00Z",
+      "agent": "Lab Director",
+      "msg": "Brief ready: best upgrade is 'A Day in Jannah' long videos; best format lead is weapon-ball battles; hired Long-Form Doctor (YouTube)."
+    },
+    {
+      "t": "2026-10-27T11:10:00Z",
+      "agent": "Upgrade Engineer",
+      "msg": "No approved Agent HQ upgrade to self-build this run."
+    },
+    {
+      "t": "2026-10-27T11:10:00Z",
+      "agent": "Lab Director",
+      "msg": "Hired Long-Form Doctor onto the YouTube team: the best of 27 long uploads got 114 views (most Ambient longs 0-21) while Shorts reach 31K. Checked previous hires: none from the Lab yet."
+    },
+    {
+      "t": "2026-10-27T11:05:00Z",
+      "agent": "Upgrade Engineer",
+      "msg": "Planned 5 upgrades: A Day in Jannah: AI-visual long videos; Weapon Ball Battle format for sims.py; LinkedAI fresh-review engine; Growth Architect: free plan pages + welcome emails; SATR Ramadan 2027 runway plan"
+    },
     {
       "t": "2026-10-27T10:50:00Z",
       "agent": "Lab Director",
@@ -59,7 +87,143 @@
       "msg": "The R&D Lab opened. First run coming up."
     }
   ],
-  "ideas": [],
+  "ideas": [
+    {
+      "id": "lab-2026-10-27-1",
+      "title": "A Day in Jannah: AI-visual long videos",
+      "hook": "A long format for Ambient Escape with real search demand, no reciter audio needed",
+      "why": "Ambient Escape's longs get 0-21 views (recitation longs also carry Content ID risk). An AI-visual 'Movie of Heaven' Islamic story got 1.4M views on a 38K-sub channel (SA Religious Voice, OutlierKit), and its 'Jahannam' video hit 131K at 82x. Omar's verse Shorts already earn ~9% like rates, so the audience is there.",
+      "format": "Ambient Escape · Video · 4h",
+      "business": "Ambient Escape",
+      "type": "Video",
+      "impact": "First Ambient long with a real chance at 1K-10K+ views; a repeatable weekly series (Jannah, the grave, the Day of Judgement, stories of the Prophets told without depictions)",
+      "effort": "4h to build the pipeline, then about 1h per video",
+      "cost": "$0 with free stock clips and free-tier AI voice; AI images may need a paid tier",
+      "score": 8,
+      "script": "1. Pick the first topic: 'A Day in Jannah, as the Quran describes it'.\n2. Claude drafts a 15-20 min narration where every sentence is tied to a Quran ayah or sahih hadith; the reference shows on screen as it is said. Omar (or someone he trusts) checks every reference before upload.\n3. Visuals: slow stock or AI landscapes (gardens, rivers, light, clouds). Never depict prophets, angels or Allah; no faces needed.\n4. Audio: calm AI voice over his soft rain/wind bed from the ambient-escape-videos pipeline. No reciter audio.\n5. Title test: 'A Day in Jannah 🌿 What the Quran Describes | Calm Islamic Story for Sleep'.\n6. Thumbnail: bright garden + one short line.\nRisks: inaccurate claims (fix with source checks), AI-image licence terms (check the tool's commercial terms), and 'repetitive content' if every video looks the same (vary topics and visuals).\nWorked if: in 14 days it beats Ambient's best long (21 views) by 10x, or average view duration is over 3 minutes.",
+      "buildPrompt": "I run the Ambient Escape YouTube channel (calm Islamic and sleep content). I use my Claude skill 'ambient-escape-videos' and my repo omarjaradat2006-sudo/agent-hq. I want to add a new long-form series: calm Islamic story videos with AI or stock visuals, e.g. 'A Day in Jannah, as the Quran describes it'. Please: 1) Write a 15-20 minute narration script for that first episode in calm, simple English, where EVERY claim is tied to a specific Quran ayah (surah:ayah) or a sahih hadith (collection + number), listed in a separate source table so I can check them; mark anything you're not sure of. 2) Give a scene list (timestamp, on-screen reference text, visual description) using only landscapes, light, water and gardens: no depictions of prophets, angels or Allah, and no faces. 3) Explain how to produce it with free tools: free stock clips from Pixabay/Pexels, a free or cheap AI voice (state its commercial-use terms), and my existing synthesized rain/wind bed; NO reciter audio. 4) Propose the changes to my ambient-escape-videos skill so it can make this format (I'll save the updated skill myself). 5) Give 3 title and thumbnail options. Don't post or upload anything.",
+      "sources": [
+        {
+          "title": "SA Religious Voice channel stats",
+          "url": "https://outlierkit.com/channel/sareligiousvoice"
+        },
+        {
+          "title": "ZZ Brothers Shorts channel stats",
+          "url": "https://outlierkit.com/channel/zzbrothersshorts"
+        }
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-27T11:05:00Z"
+    },
+    {
+      "id": "lab-2026-10-27-2",
+      "title": "Weapon Ball Battle format for sims.py",
+      "hook": "A new 'who wins' sim with HP bars, built once, remixable forever",
+      "why": "Three small channels are 3x outliers with ball battles (Cell Wars Game 1,629 at 3.2x; Seadog Ball Battles 1,143 at 3.0x and 1,061 at 2.8x), and a character-ball 'vs' video hit 1,195,688 at 3.5x (Velique). Omar's own 'who wins / pick a colour' Shorts already pull 1.4K-3.8K, so this extends a proven hook.",
+      "format": "Bounce Theory · Video · 3h",
+      "business": "Bounce Theory",
+      "type": "Video",
+      "impact": "A fresh format for 2-3 daily slots; if it matches his marble races that is +5K-10K views a day",
+      "effort": "3h",
+      "cost": "$0",
+      "score": 7,
+      "script": "1. Add a 'weapon_battle' format to sims.py: two (later 4) balls bounce in a circle or square arena.\n2. Each ball carries a simple drawn weapon (sword, spear, hammer) or shield, rotating with the ball.\n3. Weapon tip hitting the other ball = damage; health bars at top; a hit flash and a synth 'clang' from the existing audio engine.\n4. Last ball standing gets a 1-second slow-mo and 'WINNER' text.\n5. Variables to remix: weapons, sizes, speed, arena shape, 'one gets stronger each hit'.\n6. Title pattern: 'Sword vs Hammer... who wins? ⚔️ #shorts'. Use generic names only (no anime, Minecraft or game characters: copyright).\n7. Put 2 slots in the 'winning elsewhere' block for a week.\nRisks: fights that end too fast (tune HP so it lasts 20-30 s) or too random.\nWorked if: after 7 days the median battle Short beats the channel's Short median.",
+      "buildPrompt": "I run the Bounce Theory YouTube channel. My Shorts are made by my Python Bounce Engine (sims.py formats + synthesized audio) through my Claude skill 'bounce-theory-videos'; daily plans live in my repo omarjaradat2006-sudo/agent-hq (data/youtube/state.json). Please design and write a new sims.py format called 'weapon_battle': 2-4 balls bounce in an arena (circle or square); each ball has a simple drawn weapon (sword, spear, hammer) or a shield that rotates with it; when a weapon tip touches another ball it loses HP (health bars at the top), with a hit flash and a short synthesized clang; last ball standing gets 1 s of slow motion and 'WINNER' text. Fights should last 20-30 s at 1080x1920, 60 fps. Expose parameters (weapons, HP, speeds, arena shape, 'grows stronger each hit') so I can remix it daily. Use generic names only, never copyrighted characters. First ask me to paste my current sims.py (or its format interface) so the new format matches it exactly. Then propose the matching update to my bounce-theory-videos skill (I'll save it myself), and 5 title options in my style ('... who wins? ⚔️ #shorts').",
+      "sources": [
+        {
+          "title": "Levi vs Eren | Weapon Ball Battle",
+          "url": "https://www.youtube.com/watch?v=KpHlAxRi9wc"
+        },
+        {
+          "title": "Sigma Ball vs Verity",
+          "url": "https://www.youtube.com/watch?v=nZPtSGMxGsA"
+        },
+        {
+          "title": "Weapon Ball Fight (App Store)",
+          "url": "https://apps.apple.com/app/id6749248257"
+        }
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-27T11:05:00Z"
+    },
+    {
+      "id": "lab-2026-10-27-3",
+      "title": "LinkedAI fresh-review engine",
+      "hook": "More recent 5-star reviews now that the Chrome Web Store weights them",
+      "why": "Google's Aug 20, 2026 update says extension ratings will weight recent reviews more, and the Featured badge program is ending (self-nominations closed). The LinkedAI team also found rivals' AI gets called 'generic' in reviews, so happy users praising personal messages are a selling point.",
+      "format": "LinkedAI · Product · 2h",
+      "business": "LinkedAI",
+      "type": "Product",
+      "impact": "Higher, fresher rating on the store listing; realistic +10-30% install conversion if the rating and review count rise (not guaranteed)",
+      "effort": "2h",
+      "cost": "$0",
+      "score": 7,
+      "script": "1. Find LinkedAI's 'happy moment' (e.g. a user copies a generated message for the 3rd time, or marks 'got a reply').\n2. At that moment only, show a small, dismissible prompt: 'Did LinkedAI help? A quick review helps a student developer a lot' with a button to the Chrome Web Store reviews page.\n3. Never ask twice in 30 days; never block the UI; never offer rewards for reviews (against store policy).\n4. If a user clicks 'not really', open a feedback form instead so complaints come to Omar, not the store.\n5. Ship as a small version update (use the new pre-submission checks).\nRisks: being pushy (keep it once, dismissible); store policy on incentives (none offered).\nWorked if: in 14 days LinkedAI gets more new reviews than in the previous 2 months and the rating holds or rises.",
+      "buildPrompt": "I built LinkedAI, a freemium LinkedIn Chrome extension (Manifest V3) that writes personal outreach messages. Chrome Web Store ratings now weight recent reviews more (Google's Aug 20, 2026 'Chrome Web Store updates' post) and the Featured badge program is ending, so I want a polite in-extension review prompt. Please: 1) Ask me to paste my manifest.json and the files where a message gets generated/copied. 2) Add a 'happy moment' trigger (e.g. after the 3rd copied message or when the user marks 'got a reply'), stored in chrome.storage.local, that shows one small dismissible prompt: 'Did LinkedAI help? A quick review helps a lot' with 'Leave a review' (opens my store listing's reviews page) and 'Not really' (opens a feedback form link I'll give you). 3) Rules: never more than once per 30 days, never blocks the UI, no rewards or incentives for reviews (Chrome Web Store policy), no new permissions if avoidable. 4) Give me the exact code changes, a version bump, and a short test plan. Don't publish anything; I'll upload it myself.",
+      "sources": [
+        {
+          "title": "Chrome Web Store updates: Faster reviews, new publication limits, badge updates",
+          "url": "https://developer.chrome.com/blog/cws-review-updates-2026"
+        }
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-27T11:05:00Z"
+    },
+    {
+      "id": "lab-2026-10-27-4",
+      "title": "Growth Architect: free plan pages + welcome emails",
+      "hook": "Search traffic and a 3-email onboarding using features Base44 just shipped",
+      "why": "Base44 added an SEO & GEO dashboard (meta tags, sitemap, llms.txt, Search Console rolling out) and branded workflow emails on Oct 6, 2026, plus a Payments tab on Oct 15. Rivals such as AirOps use a free 'AI marketing plan generator' page as their funnel. The Growth Architect team hasn't run yet, so the app has no growth loop on record.",
+      "format": "Growth Architect · Growth · 3h",
+      "business": "Growth Architect",
+      "type": "Growth",
+      "impact": "A free, compounding traffic source (5-10 landing pages) and more signups finishing their first plan; realistic first results in 4-8 weeks",
+      "effort": "3h",
+      "cost": "$0 for SEO; editing built-in emails needs the Builder plan, workflow emails per Base44's plan terms",
+      "score": 6,
+      "script": "1. In Base44, open the SEO & GEO dashboard for Growth Architect and fix every checklist item (titles, meta descriptions, sitemap, llms.txt).\n2. Create 5 public pages: 'Free AI marketing plan for a barbershop / restaurant / Shopify store / local cleaner / coach', each with a short sample plan and a 'make yours' button.\n3. Add a 3-email onboarding workflow: welcome (start your first plan), day 2 (finish it: here's what's missing), day 5 (try the weekly planner).\n4. Connect Search Console when the integration reaches his account.\n5. Watch the Payments tab weekly.\nRisks: thin pages rank poorly (make each sample plan useful); plan limits on emails.\nWorked if: in 4 weeks pages are indexed and at least a few signups come from search; email-driven return rate is visible.",
+      "buildPrompt": "I have a Base44 app called Growth Architect (app id 699b4057d65174480989a52e): an AI marketing-plan web app with agents, a money tab, weekly planner, market test and competitor watch, using the Claude API. Please use the Base44 tools to: 1) Read the app's current pages and entities first and tell me what exists. 2) Propose (and after I say yes, build) 5 public landing pages, 'Free AI marketing plan for a barbershop / restaurant / Shopify store / local cleaning business / online coach', each with a short, genuinely useful sample plan and a 'Make yours free' button into the app's signup. 3) Give me the exact SEO settings for each page (title under 60 chars, meta description under 155) to enter in Base44's SEO & GEO dashboard, and tell me which checklist items to fix. 4) Draft a 3-email onboarding sequence (welcome, day 2 'finish your plan', day 5 'try the weekly planner') to set up with Base44's Emails workflow, and tell me which plan it needs. Don't run any paid ads, don't change pricing, and don't publish without asking me.",
+      "sources": [
+        {
+          "title": "Base44 release notes",
+          "url": "https://releasebot.io/updates/base44"
+        },
+        {
+          "title": "AirOps AI Marketing Plan Generator",
+          "url": "https://www.airops.com/tools/ai-marketing-plan-generator"
+        }
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-27T11:05:00Z"
+    },
+    {
+      "id": "lab-2026-10-27-5",
+      "title": "SATR Ramadan 2027 runway plan",
+      "hook": "Start SATR's Ramadan push 3 months early, when Quran gifts peak",
+      "why": "Ramadan 2027 is expected to begin around Feb 8, 2027 (moon-sighting dependent), and Ramadan gifting of religious items surges online. TikTok's own case study: religious publisher Ummul Qura's Ramadan TikTok campaign got +23% purchases, +14% GMV and 1.9x ROI. SATR has no plan in Agent HQ yet.",
+      "format": "SATR · Money · 2h",
+      "business": "SATR",
+      "type": "Money",
+      "impact": "Ready-made content and store pages before demand peaks; Ramadan is likely SATR's biggest sales window of the year",
+      "effort": "2h to plan, then ~30 min a week",
+      "cost": "$0 organic (any ads are Omar's call later)",
+      "score": 6,
+      "script": "1. Build a simple calendar: Nov-Dec content (cover close-ups, 'gift for your mum' angles), January pre-orders and shipping cut-off dates, Ramadan weeks 1-2 last-chance posts, Eid gifting.\n2. Shopify: a 'Ramadan gift' collection, a gift-note option and clear Canada shipping dates.\n3. TikTok: 12 faceless product clips (hands, cover textures, unboxing) planned now, posted 2-3 a week.\n4. Check whether TikTok Shop is open to his seller location before planning around it; otherwise link the Shopify store.\nRisks: stock and shipping times (order stock by early January); any paid ads need Omar's approval.\nAlso add a short 'how to choose a Quran cover' guide page for search, and ask the first buyers for a photo review.\nWorked if: by mid-January there are 10+ posted clips, the collection is live, and pre-order or add-to-cart numbers are rising week to week.",
+      "buildPrompt": "I run SATR, a small Shopify brand selling Quran covers, based in Mississauga, Ontario. Ramadan 2027 is expected to start around Feb 8, 2027. Build me a Ramadan 2027 runway plan: 1) A week-by-week calendar from November 2026 to Eid al-Fitr 2027 with what to post, what to change on the store, and stock/shipping cut-off dates for Canada (ask me my supplier lead time). 2) Twelve faceless TikTok/Reels clip ideas I can shoot with my phone in one afternoon (close-ups, textures, unboxing, gift angles), each with a hook line and caption. 3) The exact Shopify changes: a 'Ramadan gifts' collection, gift-note option, product description rewrites (ask me to paste my current ones). 4) Tell me how to check whether TikTok Shop is available to me as a seller and what to do if it isn't. Keep everything halal and respectful of the Quran. Don't post, buy ads or change my store yourself.",
+      "sources": [
+        {
+          "title": "Ummul Qura on TikTok (success story)",
+          "url": "https://ads.tiktok.com/business/en/inspiration/ummul-qura"
+        },
+        {
+          "title": "Ramazan gifting trend sparks surge in religious items sale",
+          "url": "https://www.app.com.pk/?p=1166111"
+        }
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-27T11:05:00Z"
+    }
+  ],
   "research": [
     {
       "date": "2026-10-27",
@@ -123,7 +287,23 @@
       ]
     }
   ],
-  "brief": null,
+  "brief": {
+    "date": "2026-10-27",
+    "createdAt": "2026-10-27T11:15:00Z",
+    "headline": "Your longs get no views: try AI-visual Islamic stories",
+    "summary": "Across 27 long uploads your best got 114 views, while an AI-visual 'Movie of Heaven' Islamic story hit 1.4M on a 38K-sub channel. Your best upgrade is 'A Day in Jannah' for Ambient Escape: a sourced, calm narration over landscapes, no reciter audio. For Bounce Theory, the best new format lead is weapon-ball battles (3x outliers on three channels), and I hired a Long-Form Doctor for the YouTube team.",
+    "filmToday": [
+      "A Day in Jannah: AI-visual long videos — paste its build prompt into a new Claude chat to get the sourced script"
+    ],
+    "approvals": [
+      "5 upgrades waiting"
+    ],
+    "notes": [
+      "Several Ambient Escape longs use Maher Al-Muaiqly's recitation: that's a Content ID risk and they get 0-21 views. Consider replacing them with the Jannah story format.",
+      "A third-party report says YouTube has cut Shorts reach for re-uploads without meaningful changes since Oct 1; keep one visible change in every remix (check YouTube's own post before relying on it).",
+      "Chrome Web Store's Featured badge is ending and ratings now weight recent reviews, so fresh LinkedAI reviews matter more than ever."
+    ]
+  },
   "processedIssues": [],
   "formatLeads": [
     {

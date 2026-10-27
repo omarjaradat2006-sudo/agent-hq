@@ -18,7 +18,8 @@ window.HQ_CONFIG = {
         { id: "strategist", name: "Strategist", role: "Topics and titles", kind: "ideas" },
         { id: "producer", name: "Producer", role: "Formats for your pipelines", kind: "ideas" },
         { id: "reviewer", name: "Performance Reviewer", role: "Studies what worked and why", kind: "review" },
-        { id: "collector", name: "Data Collector", role: "Pulls channel stats hourly", kind: "stats" } ] },
+        { id: "collector", name: "Data Collector", role: "Pulls channel stats hourly", kind: "stats" },
+        { id: "longdoc", name: "Long-Form Doctor", role: "Fixes long videos that aren't getting views", kind: "ideas" } ] },
     { id: "linkedai", name: "LinkedAI", color: "#4da3ff", grid: [2, 0], tagline: "LinkedIn tools market and promo content", ideaWord: "Content",
       agents: [
         { id: "lead", name: "Product Lead", role: "Weekly read on the market", kind: "brief" },

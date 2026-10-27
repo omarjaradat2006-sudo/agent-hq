@@ -51,9 +51,21 @@
    "role": "Brings in the R&D Lab's finds",
    "status": "idle",
    "doing": "Joins on the next run"
+  },
+  {
+   "id": "longdoc",
+   "name": "Long-Form Doctor",
+   "role": "Fixes long videos that aren't getting views",
+   "status": "idle",
+   "doing": "Hired by the R&D Lab. First run coming up."
   }
  ],
  "log": [
+  {
+   "t": "2026-10-27T11:10:00Z",
+   "agent": "R&D Lab",
+   "msg": "R&D Lab hired Long-Form Doctor: the best of 27 long uploads got 114 views while Shorts reach 31K"
+  },
   {
    "t": "2026-10-27T02:31:16Z",
    "agent": "R&D Liaison",
@@ -87,7 +99,7 @@
   {
    "t": "2026-10-26T14:27:08Z",
    "agent": "Analyst",
-   "msg": "Ambient Escape: a 3-hour crackling fireplace video is running 4x its channel average \u2014 fireplace season has started."
+   "msg": "Ambient Escape: a 3-hour crackling fireplace video is running 4x its channel average — fireplace season has started."
   },
   {
    "t": "2026-10-26T14:27:08Z",
@@ -111,16 +123,16 @@
    "title": "Soft Body 0% vs 100% Escape",
    "hook": "Frame 1: three glowing jelly blobs (0%, 50%, 100% soft) already falling into three stacked spinning rings, each with a small gap.",
    "why": "ArtikAnimates' 'Verity 0% vs 100% Soft Body Simulation' is at 3.5M views (37x its average) and MORPHIK 3D's cloth sim at 3.46M (44x). Bounce Theory has no deformable-body format yet; the escape mechanic is already proven on your channel (6 colors, only 1 stays inside: 683 views).",
-   "format": "Bounce Theory \u00b7 Short 30s",
-   "script": "New sims.py function softbody_escape(). Objects: 3 lanes stacked vertically (centres y\u2248420, 860, 1300; rings radius 170, line width 8, gap 40\u00b0, each spinning 0.9 rad/s, alternating direction). In each ring one soft blob = 24-node spring-mass ring around a pressure centre (radius 38), spring stiffness 1.0 / 0.35 / 0.08 for 0% / 50% / 100% soft, damping 0.02, gravity 1400 px/s\u00b2, restitution 0.85. Rigid 0% blob bounces cleanly; 100% blob splats, wobbles and squeezes through the gap. Win: first blob whose centre leaves its ring gets a burst of 40 particles + 'ESCAPED' tag; keep running until all 3 escape or 25 s; ranking shown 1st/2nd/3rd. Looping ending: final frame fades the escaped blobs back to their start positions (last 0.6 s cross-fade to frame 1). Colours on near-black #07070c: 0% cyan #22e4ff, 50% magenta #ff3fd8, 100% lime #9dff3a, ring glow white 40%. On-screen lines (white, y=150-330): 'Which one escapes first?' then yellow 'Hard vs Soft vs Jelly \ud83d\ude33'; small labels '0% SOFT', '50% SOFT', '100% SOFT' left of each ring. Sound: rigid hits = short marimba pluck (pitch by speed), soft hits = low squish (filtered noise burst + pitch drop), escape = rising arpeggio C-E-G-C. Length 30 s at 60 fps.\nDescription: Hard, soft or full jelly \u2013 which ball escapes the spinning ring first? \ud83d\ude33 Comment your pick before it ends!\nHashtags: #shorts #satisfying #softbody #physics #simulation\nTags: soft body simulation, 0% vs 100%, jelly ball, satisfying simulation, ball escape, spinning ring, physics simulation, oddly satisfying, bounce theory, which one wins",
+   "format": "Bounce Theory · Short 30s",
+   "script": "New sims.py function softbody_escape(). Objects: 3 lanes stacked vertically (centres y≈420, 860, 1300; rings radius 170, line width 8, gap 40°, each spinning 0.9 rad/s, alternating direction). In each ring one soft blob = 24-node spring-mass ring around a pressure centre (radius 38), spring stiffness 1.0 / 0.35 / 0.08 for 0% / 50% / 100% soft, damping 0.02, gravity 1400 px/s², restitution 0.85. Rigid 0% blob bounces cleanly; 100% blob splats, wobbles and squeezes through the gap. Win: first blob whose centre leaves its ring gets a burst of 40 particles + 'ESCAPED' tag; keep running until all 3 escape or 25 s; ranking shown 1st/2nd/3rd. Looping ending: final frame fades the escaped blobs back to their start positions (last 0.6 s cross-fade to frame 1). Colours on near-black #07070c: 0% cyan #22e4ff, 50% magenta #ff3fd8, 100% lime #9dff3a, ring glow white 40%. On-screen lines (white, y=150-330): 'Which one escapes first?' then yellow 'Hard vs Soft vs Jelly 😳'; small labels '0% SOFT', '50% SOFT', '100% SOFT' left of each ring. Sound: rigid hits = short marimba pluck (pitch by speed), soft hits = low squish (filtered noise burst + pitch drop), escape = rising arpeggio C-E-G-C. Length 30 s at 60 fps.\nDescription: Hard, soft or full jelly – which ball escapes the spinning ring first? 😳 Comment your pick before it ends!\nHashtags: #shorts #satisfying #softbody #physics #simulation\nTags: soft body simulation, 0% vs 100%, jelly ball, satisfying simulation, ball escape, spinning ring, physics simulation, oddly satisfying, bounce theory, which one wins",
    "score": 9,
    "sources": [
     {
-     "title": "Verity 0% vs 100% Soft Body Simulation \ud83d\ude31",
+     "title": "Verity 0% vs 100% Soft Body Simulation 😱",
      "url": "https://www.youtube.com/watch?v=nM9KBlDni9Y"
     },
     {
-     "title": "Metallic Cloth Takes Over a Red Ball \ud83d\ude0d | Satisfying 3D Simulation",
+     "title": "Metallic Cloth Takes Over a Red Ball 😍 | Satisfying 3D Simulation",
      "url": "https://www.youtube.com/watch?v=INLxnalVcsc"
     }
    ],
@@ -132,8 +144,8 @@
    "title": "Spiral Chain Reaction (every wall hit splits)",
    "hook": "Frame 1: a single glowing white ball already rolling into the open mouth of a slowly rotating glowing spiral track.",
    "why": "GreyHaT Sim's 'Bouncing Emoji Balls Multiply in a Spiral!' has 3.95M views (12.6x). Your plain multiply Short ('1 ball becomes 200') got 2 views, so the multiply mechanic needs a new arena; the spiral gives it a visible goal (reach the centre).",
-   "format": "Bounce Theory \u00b7 Short 35s",
-   "script": "New sims.py function spiral_chain(). Arena: Archimedean spiral wall (r = 60 + 34\u00b7\u03b8, 4.5 turns, line width 6) centred at (540, 900), rotating 0.35 rad/s; a glowing core circle r=45 at the centre. Start with 1 ball (r=14). Rule: every time a ball hits the spiral wall it splits into 2 (child gets \u00b115\u00b0 velocity jitter), capped at 999 balls; ball radius shrinks from 14 to 6 as count grows. Gravity off; balls get a constant inward pull of 60 px/s\u00b2 so they creep toward the core. Each ball's hue = its generation (rainbow cycle). Counter top-centre counts up. Win: first ball that touches the core triggers the core to flash and absorb all balls in a 2 s vacuum swirl. Looping ending: after the swirl, one white ball pops out of the core and flies back to the spiral mouth (= frame 1). On-screen lines (y=140-320): white 'Every hit = 2 balls', yellow 'Can 1 reach the centre? \ud83c\udf00'; counter '1 \u2192 999' at y\u22481420. Sound: each split plays the next note of 'Ode to Joy' (public domain, synthesized bell timbre, max 12 notes/sec, gain rises with count); core hit = deep boom + whoosh. Background #06060b, spiral glow electric blue #3a7bff.\nDescription: One ball, a spinning spiral, and every hit doubles it. Does one make it to the centre? \ud83c\udf00\nHashtags: #shorts #satisfying #chainreaction #simulation #physics\nTags: spiral simulation, chain reaction, balls multiply, every bounce 2 balls, satisfying simulation, physics simulation, 999 balls, oddly satisfying, bounce theory, rotating spiral",
+   "format": "Bounce Theory · Short 35s",
+   "script": "New sims.py function spiral_chain(). Arena: Archimedean spiral wall (r = 60 + 34·θ, 4.5 turns, line width 6) centred at (540, 900), rotating 0.35 rad/s; a glowing core circle r=45 at the centre. Start with 1 ball (r=14). Rule: every time a ball hits the spiral wall it splits into 2 (child gets ±15° velocity jitter), capped at 999 balls; ball radius shrinks from 14 to 6 as count grows. Gravity off; balls get a constant inward pull of 60 px/s² so they creep toward the core. Each ball's hue = its generation (rainbow cycle). Counter top-centre counts up. Win: first ball that touches the core triggers the core to flash and absorb all balls in a 2 s vacuum swirl. Looping ending: after the swirl, one white ball pops out of the core and flies back to the spiral mouth (= frame 1). On-screen lines (y=140-320): white 'Every hit = 2 balls', yellow 'Can 1 reach the centre? 🌀'; counter '1 → 999' at y≈1420. Sound: each split plays the next note of 'Ode to Joy' (public domain, synthesized bell timbre, max 12 notes/sec, gain rises with count); core hit = deep boom + whoosh. Background #06060b, spiral glow electric blue #3a7bff.\nDescription: One ball, a spinning spiral, and every hit doubles it. Does one make it to the centre? 🌀\nHashtags: #shorts #satisfying #chainreaction #simulation #physics\nTags: spiral simulation, chain reaction, balls multiply, every bounce 2 balls, satisfying simulation, physics simulation, 999 balls, oddly satisfying, bounce theory, rotating spiral",
    "score": 8,
    "sources": [
     {
@@ -152,8 +164,8 @@
    "id": "youtube-2026-10-26-3",
    "title": "Blizzard Cabin Fireplace + Brown Noise 3 Hours",
    "hook": "Frame 1: logs already burning in a close-up fireplace, warm orange glow filling the frame, no people.",
-   "why": "Novaden's 'Real Crackling Fireplace 4K (3 Hours)' is running 4.0x its channel average 6 days in \u2014 late October fireplace demand. Gives Ambient Escape a warm scene to contrast with today's rain long (L2).",
-   "format": "Ambient Escape \u00b7 Long 3h",
+   "why": "Novaden's 'Real Crackling Fireplace 4K (3 Hours)' is running 4.0x its channel average 6 days in — late October fireplace demand. Gives Ambient Escape a warm scene to contrast with today's rain long (L2).",
+   "format": "Ambient Escape · Long 3h",
    "script": "Footage: AE-cabin-fireplace-01.mp4 (main, landscape) with AE-snowfall-window-01.mp4 used for a 20 s cross-dissolve interlude every 30 min (6 times total), then back to the fire. Loop: take the clip, find the 1.5 s at the end and start with the closest match, play forward then cross-fade the last 1.5 s into the first 1.5 s (ffmpeg xfade=fade, duration 1.5), then loop that segment with -stream_loop to 3:00:00; slight warm grade (+5 temperature), no zoom. Audio (all synthesized/free, -16 LUFS integrated, gentle limiter): layer 1 fire crackle (random filtered clicks + low rumble) at 0 dB reference; layer 2 brown noise -12 dB; layer 3 howling wind outside (band-passed pink noise with slow 0.05 Hz LFO) -18 dB; layer 4 a soft wood-creak every 4-9 min at -24 dB. 10 s fade-in, 60 s fade-out. Optional dark-screen variant: after 2:00:00 fade picture to 10% brightness over 2 min (mention in title as Dark Screen After 2 Hours). No text on screen. Length 3:00:00.\nDescription: A crackling cabin fireplace while a blizzard howls outside, with soft brown noise underneath to help you fall asleep and stay asleep. 3 hours, no talking, no music, no ads in the middle.\nHashtags: #fireplace #sleepsounds #brownnoise #cozy #asmr\nTags: fireplace sounds, crackling fireplace 3 hours, blizzard sounds, cabin ambience, brown noise for sleep, cozy winter ambience, fireplace for sleep, wind sounds, sleep sounds no ads, dark screen sleep",
    "score": 8,
    "sources": [
@@ -174,8 +186,8 @@
    "title": "Complete the Ayah (3-option quiz)",
    "hook": "Frame 1: calm starry-sky loop with the first half of a famous ayah already on screen and three answer cards sliding in.",
    "why": "Question-led Islamic titles are outperforming (Tartil Offical's 'The Question That Leaves Every Soul Silent', 4.3x). Your quiz-style Shorts get started but your reminders are near 0 views; a fill-in-the-blank quiz gives a reason to stay to the reveal.",
-   "format": "Ambient Escape \u00b7 Short 20s",
-   "script": "Background: AE-starry-sky-01.mp4 (portrait, loop with 1 s cross-fade) or AE-foggy-forest-01.mp4, darkened 35%. Layout: line 1 (white, y=180): 'Complete the ayah \ud83e\udd32'; line 2 (yellow, y=320): 'Only 1% get it right'. Main text (white, y=560-900): first half of the ayah in English. Three cards (y=1000-1400): A/B/C. 0-3 s question appears; 3-13 s 10-second countdown ring with soft tick (synthesized); 13 s correct card turns green with the full ayah and reference; 17-20 s 'Comment if you got it \u2705'. Audio: soft pad drone + rain (synthesized), optional neutral AI voice reading the English only. NEVER a reciter recording. Today's two verified items (Sahih International wording): (1) 'Verily, in the remembrance of Allah\u2026' A) do hearts find rest \u2705 B) is wealth found C) are sins hidden \u2014 Ar-Ra'd 13:28. (2) 'For indeed, with hardship\u2026' A) comes patience B) will be ease \u2705 C) is reward \u2014 Ash-Sharh 94:5 (repeated in 94:6). Spare items for later days: 'Allah does not burden a soul\u2026' \u2192 'beyond that it can bear' (Al-Baqarah 2:286); 'So remember Me\u2026' \u2192 'I will remember you' (Al-Baqarah 2:152); 'And whoever relies upon Allah\u2026' \u2192 'then He is sufficient for him' (At-Talaq 65:3).\nDescription: Can you complete this ayah before the timer runs out? Comment your answer \ud83e\udd32\nHashtags: #shorts #quran #islam #quiz #muslim\nTags: complete the ayah, quran quiz, islamic quiz, guess the ayah, quran verses, muslim shorts, islam quiz, ayah of the day, quran reminder, islamic shorts",
+   "format": "Ambient Escape · Short 20s",
+   "script": "Background: AE-starry-sky-01.mp4 (portrait, loop with 1 s cross-fade) or AE-foggy-forest-01.mp4, darkened 35%. Layout: line 1 (white, y=180): 'Complete the ayah 🤲'; line 2 (yellow, y=320): 'Only 1% get it right'. Main text (white, y=560-900): first half of the ayah in English. Three cards (y=1000-1400): A/B/C. 0-3 s question appears; 3-13 s 10-second countdown ring with soft tick (synthesized); 13 s correct card turns green with the full ayah and reference; 17-20 s 'Comment if you got it ✅'. Audio: soft pad drone + rain (synthesized), optional neutral AI voice reading the English only. NEVER a reciter recording. Today's two verified items (Sahih International wording): (1) 'Verily, in the remembrance of Allah…' A) do hearts find rest ✅ B) is wealth found C) are sins hidden — Ar-Ra'd 13:28. (2) 'For indeed, with hardship…' A) comes patience B) will be ease ✅ C) is reward — Ash-Sharh 94:5 (repeated in 94:6). Spare items for later days: 'Allah does not burden a soul…' → 'beyond that it can bear' (Al-Baqarah 2:286); 'So remember Me…' → 'I will remember you' (Al-Baqarah 2:152); 'And whoever relies upon Allah…' → 'then He is sufficient for him' (At-Talaq 65:3).\nDescription: Can you complete this ayah before the timer runs out? Comment your answer 🤲\nHashtags: #shorts #quran #islam #quiz #muslim\nTags: complete the ayah, quran quiz, islamic quiz, guess the ayah, quran verses, muslim shorts, islam quiz, ayah of the day, quran reminder, islamic shorts",
    "score": 8,
    "sources": [
     {
@@ -201,52 +213,52 @@
    "createdAt": "2026-10-26T14:27:08Z",
    "items": [
     {
-     "title": "Metallic Cloth Takes Over a Red Ball \ud83d\ude0d | Satisfying 3D Simulation",
+     "title": "Metallic Cloth Takes Over a Red Ball 😍 | Satisfying 3D Simulation",
      "creator": "MORPHIK 3D",
      "url": "https://www.youtube.com/watch?v=INLxnalVcsc",
-     "metric": "3,463,064 views \u00b7 44.1x channel avg \u00b7 6d old",
+     "metric": "3,463,064 views · 44.1x channel avg · 6d old",
      "whyItWorks": "One object slowly 'consuming' another is a pure watch-to-the-end hook; deformable materials (cloth/jelly) read as premium vs rigid balls. Channel: Bounce Theory."
     },
     {
-     "title": "Verity 0% vs 100% Soft Body Simulation \ud83d\ude31",
+     "title": "Verity 0% vs 100% Soft Body Simulation 😱",
      "creator": "ArtikAnimates",
      "url": "https://www.youtube.com/watch?v=nM9KBlDni9Y",
-     "metric": "3,514,764 views \u00b7 37.2x channel avg \u00b7 6d old",
+     "metric": "3,514,764 views · 37.2x channel avg · 6d old",
      "whyItWorks": "'0% vs 100%' comparison promises a visible payoff and invites viewers to wait for the extreme case. Soft-body is a format Bounce Theory doesn't have yet. Channel: Bounce Theory."
     },
     {
      "title": "Bouncing Emoji Balls Multiply in a Spiral! Satisfying Chain Reaction Simulation",
      "creator": "GreyHaT Sim",
      "url": "https://www.youtube.com/watch?v=jIQcCkJ8q3k",
-     "metric": "3,954,735 views \u00b7 12.6x channel avg \u00b7 6d old",
-     "whyItWorks": "Multiplying balls work when the arena itself adds novelty (a spiral) \u2014 Omar's plain '1 ball becomes 200' got 2 views, so the multiply mechanic needs a new container. Channel: Bounce Theory."
+     "metric": "3,954,735 views · 12.6x channel avg · 6d old",
+     "whyItWorks": "Multiplying balls work when the arena itself adds novelty (a spiral) — Omar's plain '1 ball becomes 200' got 2 views, so the multiply mechanic needs a new container. Channel: Bounce Theory."
     },
     {
      "title": "Guess The Song// Satisfying physics simulation - 999 varied bouncing orbs",
      "creator": "Mo Lucky",
      "url": "https://www.youtube.com/watch?v=ANIRrsIdP3k",
-     "metric": "677,722 views \u00b7 10.2x channel avg \u00b7 2d old",
+     "metric": "677,722 views · 10.2x channel avg · 2d old",
      "whyItWorks": "Melody-on-collision + 'guess the song' framing; matches Omar's own best Short ('This ball plays a song you know', 867 views). Channel: Bounce Theory."
     },
     {
-     "title": "Marble Run \u2606 Freedom Marble Run\u2460",
+     "title": "Marble Run ☆ Freedom Marble Run①",
      "creator": "Marble Run Freedom",
      "url": "https://www.youtube.com/watch?v=41KTnixN51A",
-     "metric": "23,423,941 views \u00b7 10.1x channel avg \u00b7 5d old",
+     "metric": "23,423,941 views · 10.1x channel avg · 5d old",
      "whyItWorks": "Marble runs are the biggest raw-view outliers in the scan (also 'CARRERA DE CANICAS ELIGE TU COLOR FAVORITO!!' 3.3M, pick-your-colour hook). Channel: Bounce Theory."
     },
     {
      "title": "Done for the Day? Kick Back with This Real Crackling Fireplace 4K (3 Hours)",
      "creator": "Novaden",
      "url": "https://www.youtube.com/watch?v=n7X2ZoWpp9c",
-     "metric": "74,477 views \u00b7 4.0x channel avg \u00b7 6d old",
+     "metric": "74,477 views · 4.0x channel avg · 6d old",
      "whyItWorks": "Seasonal (late October) fireplace demand; the title sells an evening ritual ('Done for the day?') instead of just 'fireplace'. Channel: Ambient Escape."
     },
     {
      "title": "The Question That Leaves Every Soul Silent",
      "creator": "Tartil Offical",
      "url": "https://www.youtube.com/watch?v=yWBarjMFvPQ",
-     "metric": "11,552 views \u00b7 4.3x channel avg \u00b7 4d old",
+     "metric": "11,552 views · 4.3x channel avg · 4d old",
      "whyItWorks": "Curiosity-question title for an Islamic reflection outperforms its channel; question-led hooks fit Ambient Escape's quiz/reminder Shorts. Channel: Ambient Escape."
     },
     {
@@ -264,9 +276,9 @@
   "headline": "Soft-body and fireplace season: lean into melody and string art",
   "summary": "Bounce Theory is well ahead of Ambient Escape (46.1K vs 19.9K views in 28 days; both +34 subs), and your melody, string-art, colour-escape and shrinking-circle Shorts are pulling 600-870 views each while Ambient Shorts are still in single digits. Today adds a soft-body '0% vs 100%' escape and a spiral chain reaction on Bounce Theory, plus a blizzard-fireplace 3-hour long and a new Complete-the-Ayah quiz on Ambient Escape.",
   "filmToday": [
-   "Bounce Theory: This ball plays F\u00fcr Elise \ud83c\udfb9 #shorts #satisfying",
-   "Bounce Theory: Hard vs Soft vs Jelly... which escapes? \ud83d\ude33 #shorts #physics",
-   "Ambient Escape: Crackling Cabin Fireplace in a Blizzard + Brown Noise 3 Hours \ud83d\udd25\u2744\ufe0f Deep Sleep (Dark Screen After 2h)"
+   "Bounce Theory: This ball plays Für Elise 🎹 #shorts #satisfying",
+   "Bounce Theory: Hard vs Soft vs Jelly... which escapes? 😳 #shorts #physics",
+   "Ambient Escape: Crackling Cabin Fireplace in a Blizzard + Brown Noise 3 Hours 🔥❄️ Deep Sleep (Dark Screen After 2h)"
   ],
   "approvals": [
    "Today's lineup is ready: 34 videos. Footage downloads by itself. Just ask Claude to make today's batch."
@@ -391,21 +403,21 @@
     {
      "slot": "S01",
      "kind": "Short",
-     "title": "Every bounce draws a line... into a star \u2b50 #shorts #satisfying",
+     "title": "Every bounce draws a line... into a star ⭐ #shorts #satisfying",
      "format": "string_art",
      "note": "Your #2 Short (848 views): 7-point star frame, gold + cyan threads, harp pluck per line"
     },
     {
      "slot": "S02",
      "kind": "Short",
-     "title": "This ball plays F\u00fcr Elise \ud83c\udfb9 #shorts #satisfying",
+     "title": "This ball plays Für Elise 🎹 #shorts #satisfying",
      "format": "ring_escape",
-     "note": "Your #1 Short (867 views) remixed: each bounce = next note of F\u00fcr Elise (public domain), white ball, magenta rings"
+     "note": "Your #1 Short (867 views) remixed: each bounce = next note of Für Elise (public domain), white ball, magenta rings"
     },
     {
      "slot": "S03",
      "kind": "Short",
-     "title": "Hard vs Soft vs Jelly... which escapes? \ud83d\ude33 #shorts #physics",
+     "title": "Hard vs Soft vs Jelly... which escapes? 😳 #shorts #physics",
      "format": "Soft Body 0% vs 100% Escape",
      "note": "NEW: 0% / 50% / 100% soft blobs in 3 spinning rings",
      "newIdea": "youtube-2026-10-26-1"
@@ -413,21 +425,21 @@
     {
      "slot": "S04",
      "kind": "Short",
-     "title": "8 colors, only 1 survives \ud83c\udfaf #shorts #satisfying",
+     "title": "8 colors, only 1 survives 🎯 #shorts #satisfying",
      "format": "colour_escape",
      "note": "8 colours instead of 6, gap widens each lap"
     },
     {
      "slot": "S05",
      "kind": "Short",
-     "title": "The circle keeps shrinking... can it survive? \ud83d\ude2c #shorts #satisfying",
+     "title": "The circle keeps shrinking... can it survive? 😬 #shorts #satisfying",
      "format": "shrinking_circle",
      "note": "Two balls (red + blue) share the circle; last one inside wins"
     },
     {
      "slot": "S06",
      "kind": "Short",
-     "title": "1 ball vs a spinning spiral \ud83c\udf00 #shorts #chainreaction",
+     "title": "1 ball vs a spinning spiral 🌀 #shorts #chainreaction",
      "format": "Spiral Chain Reaction (every wall hit splits)",
      "note": "NEW: every wall hit doubles the ball, Ode to Joy notes, race to the core",
      "newIdea": "youtube-2026-10-26-2"
@@ -435,72 +447,72 @@
     {
      "slot": "S07",
      "kind": "Short",
-     "title": "Escape the spinning hexagon \ud83d\udd37 #shorts #satisfying",
+     "title": "Escape the spinning hexagon 🔷 #shorts #satisfying",
      "format": "polygon_escape",
      "note": "Hexagon inside a pentagon inside a square, each spinning opposite ways"
     },
     {
      "slot": "S08",
      "kind": "Short",
-     "title": "Pick your marble before it starts! \ud83c\udfc1 #shorts #marblerace",
+     "title": "Pick your marble before it starts! 🏁 #shorts #marblerace",
      "format": "marble_race",
      "note": "Pick-your-colour hook (trending: CARRERA DE CANICAS 3.3M); 8 marbles, zig-zag plinko"
     },
     {
      "slot": "S09",
      "kind": "Short",
-     "title": "Watch the threads turn into a heart \ud83d\udc9b #shorts #satisfying",
+     "title": "Watch the threads turn into a heart 💛 #shorts #satisfying",
      "format": "string_art",
-     "note": "Heart-shaped frame, red \u2192 pink gradient threads, piano notes C major"
+     "note": "Heart-shaped frame, red → pink gradient threads, piano notes C major"
     },
     {
      "slot": "S10",
      "kind": "Short",
-     "title": "Guess the song from the bounces \ud83c\udfb5 #shorts #satisfying",
+     "title": "Guess the song from the bounces 🎵 #shorts #satisfying",
      "format": "ring_escape",
-     "note": "Guess-the-song (Mo Lucky outlier, 10x): Ode to Joy? No \u2014 Twinkle Twinkle (public domain), answer at the end"
+     "note": "Guess-the-song (Mo Lucky outlier, 10x): Ode to Joy? No — Twinkle Twinkle (public domain), answer at the end"
     },
     {
      "slot": "S11",
      "kind": "Short",
-     "title": "It grows every time it bounces \ud83d\ude33 #shorts #satisfying",
+     "title": "It grows every time it bounces 😳 #shorts #satisfying",
      "format": "grow_every_bounce",
      "note": "Lime ball in a rotating triangle; ends when it fills the frame"
     },
     {
      "slot": "S12",
      "kind": "Short",
-     "title": "16 countries, 1 marble left \ud83c\udf0d #shorts #marblerace",
+     "title": "16 countries, 1 marble left 🌍 #shorts #marblerace",
      "format": "marble_race",
      "note": "Country-flag colour marbles, elimination funnel every 5 s"
     },
     {
      "slot": "S13",
      "kind": "Short",
-     "title": "Chaos fan vs 300 balls \ud83c\udf2a\ufe0f #shorts #satisfying",
+     "title": "Chaos fan vs 300 balls 🌪️ #shorts #satisfying",
      "format": "chaos_fan",
      "note": "Fan speed ramps with a bass drop at 15 s, cyan/orange balls"
     },
     {
      "slot": "S14",
      "kind": "Short",
-     "title": "Shrinking circle, but 10 balls \ud83d\ude31 #shorts #satisfying",
+     "title": "Shrinking circle, but 10 balls 😱 #shorts #satisfying",
      "format": "shrinking_circle",
      "note": "10 neon balls, shrink speed doubles at half-time; countdown of survivors"
     },
     {
      "slot": "S15",
      "kind": "Short",
-     "title": "22 pendulums, one perfect wave \ud83c\udf0a #shorts #physics",
+     "title": "22 pendulums, one perfect wave 🌊 #shorts #physics",
      "format": "pendulum_wave",
      "note": "Retry with 30 pendulums, rainbow gradient + glass chime; only 1 pendulum Short today"
     },
     {
      "slot": "L1",
      "kind": "Long",
-     "title": "Marble Race Tournament: 16 Colors, 1 Champion \ud83c\udfc6 | Satisfying Marble Run",
+     "title": "Marble Race Tournament: 16 Colors, 1 Champion 🏆 | Satisfying Marble Run",
      "format": "marble_race",
-     "note": "Bracket tournament with on-screen bracket + names, 8 heats \u2192 semis \u2192 final (~12 min)"
+     "note": "Bracket tournament with on-screen bracket + names, 8 heats → semis → final (~12 min)"
     },
     {
      "slot": "L2",
@@ -514,18 +526,18 @@
     {
      "slot": "S01",
      "kind": "Short",
-     "title": "Complete the ayah... only 1% know it \ud83e\udd32 #shorts #quran #quiz",
+     "title": "Complete the ayah... only 1% know it 🤲 #shorts #quran #quiz",
      "format": "Complete the Ayah (3-option quiz)",
-     "note": "NEW: 'Verily, in the remembrance of Allah\u2026' \u2192 do hearts find rest (13:28)",
+     "note": "NEW: 'Verily, in the remembrance of Allah…' → do hearts find rest (13:28)",
      "newIdea": "youtube-2026-10-26-4",
      "footage": "AE-starry-sky-01.mp4"
     },
     {
      "slot": "S02",
      "kind": "Short",
-     "title": "Guess the surah: it's worth 1/3 of the Quran \ud83e\udd32 #shorts #quran #quiz",
+     "title": "Guess the surah: it's worth 1/3 of the Quran 🤲 #shorts #quran #quiz",
      "format": "guess_the_surah",
-     "note": "Answer: Al-Ikhlas (112) \u2014 Sahih al-Bukhari 5013",
+     "note": "Answer: Al-Ikhlas (112) — Sahih al-Bukhari 5013",
      "footage": "AE-foggy-forest-01.mp4"
     },
     {
@@ -533,29 +545,29 @@
      "kind": "Short",
      "title": "Read this if you feel alone | Quran 2:186 #shorts #islam",
      "format": "ayah_reminder",
-     "note": "'And when My servants ask you concerning Me \u2013 indeed I am near' (Al-Baqarah 2:186)",
+     "note": "'And when My servants ask you concerning Me – indeed I am near' (Al-Baqarah 2:186)",
      "footage": "AE-ocean-waves-01.mp4"
     },
     {
      "slot": "S04",
      "kind": "Short",
-     "title": "The first thing you'll be asked about \u23f3 #shorts #muslim #salah",
+     "title": "The first thing you'll be asked about ⏳ #shorts #muslim #salah",
      "format": "discipline_reminder",
-     "note": "First deed accounted for is the prayer \u2014 Jami' at-Tirmidhi 413",
+     "note": "First deed accounted for is the prayer — Jami' at-Tirmidhi 413",
      "footage": "AE-candle-flame-01.mp4"
     },
     {
      "slot": "S05",
      "kind": "Short",
-     "title": "No eye has seen this... \ud83c\udf3f #shorts #jannah #islam",
+     "title": "No eye has seen this... 🌿 #shorts #jannah #islam",
      "format": "jannah_reminder",
-     "note": "Hadith qudsi: what no eye has seen nor ear heard \u2014 Sahih al-Bukhari 3244, Muslim 2824; cf. As-Sajdah 32:17",
+     "note": "Hadith qudsi: what no eye has seen nor ear heard — Sahih al-Bukhari 3244, Muslim 2824; cf. As-Sajdah 32:17",
      "footage": "AE-starry-sky-01.mp4"
     },
     {
      "slot": "S06",
      "kind": "Short",
-     "title": "What Allah says about patience \ud83e\udd0d #shorts #islam #quran",
+     "title": "What Allah says about patience 🤍 #shorts #islam #quran",
      "format": "what_allah_says",
      "note": "'Indeed, Allah is with the patient' (Al-Baqarah 2:153)",
      "footage": "AE-foggy-forest-01.mp4"
@@ -563,32 +575,32 @@
     {
      "slot": "S07",
      "kind": "Short",
-     "title": "Dua of the day: the best of both worlds \ud83e\udd32 #shorts #dua",
+     "title": "Dua of the day: the best of both worlds 🤲 #shorts #dua",
      "format": "dua_of_the_day",
-     "note": "Rabbana atina fid-dunya hasanah\u2026 (Al-Baqarah 2:201), Arabic transliteration + English",
+     "note": "Rabbana atina fid-dunya hasanah… (Al-Baqarah 2:201), Arabic transliteration + English",
      "footage": "AE-ocean-waves-01.mp4"
     },
     {
      "slot": "S08",
      "kind": "Short",
-     "title": "True or false: the Quran came down in one night? \ud83d\udd4c #shorts #quiz",
+     "title": "True or false: the Quran came down in one night? 🕌 #shorts #quiz",
      "format": "true_false_quiz",
-     "note": "False \u2014 revealed gradually over about 23 years (cf. Al-Isra 17:106); sent down to the nearest heaven on Laylat al-Qadr (97:1)",
+     "note": "False — revealed gradually over about 23 years (cf. Al-Isra 17:106); sent down to the nearest heaven on Laylat al-Qadr (97:1)",
      "footage": "AE-candle-flame-01.mp4"
     },
     {
      "slot": "S09",
      "kind": "Short",
-     "title": "Complete the ayah: 'For indeed, with hardship...' \ud83e\udd32 #shorts #quran",
+     "title": "Complete the ayah: 'For indeed, with hardship...' 🤲 #shorts #quran",
      "format": "Complete the Ayah (3-option quiz)",
-     "note": "NEW: \u2192 will be ease (Ash-Sharh 94:5)",
+     "note": "NEW: → will be ease (Ash-Sharh 94:5)",
      "newIdea": "youtube-2026-10-26-4",
      "footage": "AE-starry-sky-01.mp4"
     },
     {
      "slot": "S10",
      "kind": "Short",
-     "title": "Guess the surah: no Bismillah at the start \ud83e\udd14 #shorts #quran #quiz",
+     "title": "Guess the surah: no Bismillah at the start 🤔 #shorts #quran #quiz",
      "format": "guess_the_surah",
      "note": "Answer: At-Tawbah (9), the only surah without Bismillah",
      "footage": "AE-foggy-forest-01.mp4"
@@ -598,7 +610,7 @@
      "kind": "Short",
      "title": "Read this if you can't stop overthinking | Quran 13:28 #shorts",
      "format": "ayah_reminder",
-     "note": "Hearts find rest in the remembrance of Allah (Ar-Ra'd 13:28) \u2014 calm AI voice",
+     "note": "Hearts find rest in the remembrance of Allah (Ar-Ra'd 13:28) — calm AI voice",
      "footage": "AE-ocean-waves-01.mp4"
     },
     {
@@ -612,15 +624,15 @@
     {
      "slot": "S13",
      "kind": "Short",
-     "title": "The lowest place in Jannah is 10x this world \ud83d\ude33 #shorts #jannah",
+     "title": "The lowest place in Jannah is 10x this world 😳 #shorts #jannah",
      "format": "jannah_reminder",
-     "note": "Last person to enter Jannah gets ten times the world \u2014 Sahih Muslim 186",
+     "note": "Last person to enter Jannah gets ten times the world — Sahih Muslim 186",
      "footage": "AE-starry-sky-01.mp4"
     },
     {
      "slot": "S14",
      "kind": "Short",
-     "title": "What Allah says about backbiting \ud83d\ude36 #shorts #islam #quran",
+     "title": "What Allah says about backbiting 😶 #shorts #islam #quran",
      "format": "what_allah_says",
      "note": "'Would one of you like to eat the flesh of his brother when dead?' (Al-Hujurat 49:12)",
      "footage": "AE-foggy-forest-01.mp4"
@@ -628,7 +640,7 @@
     {
      "slot": "S15",
      "kind": "Short",
-     "title": "Dua of the day: 'My Lord, increase me in knowledge' \ud83d\udcd6 #shorts #dua",
+     "title": "Dua of the day: 'My Lord, increase me in knowledge' 📖 #shorts #dua",
      "format": "dua_of_the_day",
      "note": "Rabbi zidni 'ilma (Ta-Ha 20:114)",
      "footage": "AE-ocean-waves-01.mp4"
@@ -636,7 +648,7 @@
     {
      "slot": "L1",
      "kind": "Long",
-     "title": "Crackling Cabin Fireplace in a Blizzard + Brown Noise 3 Hours \ud83d\udd25\u2744\ufe0f Deep Sleep (Dark Screen After 2h)",
+     "title": "Crackling Cabin Fireplace in a Blizzard + Brown Noise 3 Hours 🔥❄️ Deep Sleep (Dark Screen After 2h)",
      "format": "Blizzard Cabin Fireplace + Brown Noise 3 Hours",
      "note": "Fire crackle + brown noise -12 dB + howling wind -18 dB; snowfall-window interlude every 30 min",
      "newIdea": "youtube-2026-10-26-3",
@@ -645,7 +657,7 @@
     {
      "slot": "L2",
      "kind": "Long",
-     "title": "Rain on the Window at Night + Pink Noise 3 Hours \ud83c\udf27\ufe0f Sleep Instantly (No Thunder, No Ads)",
+     "title": "Rain on the Window at Night + Pink Noise 3 Hours 🌧️ Sleep Instantly (No Thunder, No Ads)",
      "format": "rain_long",
      "note": "Window rain + pink noise -10 dB, steady rain, no thunder (Still Point-style 'NO THUNDER' hook)",
      "footage": "AE-rain-window-01.mp4"
