@@ -1,4 +1,4 @@
-# Bounce Theory: today's batch (2026-10-26)
+# Bounce Theory: today's batch (2026-10-27)
 
 Planned by Omar's Agent HQ YouTube team. Omar approves everything, so make exactly these 17 videos, in this order, with these titles. Use the `bounce-theory-videos` skill for how to render, folders, upload sheet and scheduling.
 
@@ -18,23 +18,23 @@ Most of these are remixes of videos that already won. Keep each winner's recipe 
 
 | Slot | Kind | Title | Format | Based on | Today's twist | Clip |
 |---|---|---|---|---|---|---|
-| S01 | Short | Every bounce draws a line... into a star ⭐ #shorts #satisfying | string_art |  | Your #2 Short (848 views): 7-point star frame, gold + cyan threads, harp pluck per line |  |
-| S02 | Short | This ball plays Für Elise 🎹 #shorts #satisfying | ring_escape |  | Your #1 Short (867 views) remixed: each bounce = next note of Für Elise (public domain), white ball, magenta rings |  |
-| S03 | Short | Hard vs Soft vs Jelly... which escapes? 😳 #shorts #physics | Soft Body 0% vs 100% Escape ★ NEW |  | NEW: 0% / 50% / 100% soft blobs in 3 spinning rings |  |
-| S04 | Short | 8 colors, only 1 survives 🎯 #shorts #satisfying | colour_escape |  | 8 colours instead of 6, gap widens each lap |  |
-| S05 | Short | The circle keeps shrinking... can it survive? 😬 #shorts #satisfying | shrinking_circle |  | Two balls (red + blue) share the circle; last one inside wins |  |
-| S06 | Short | 1 ball vs a spinning spiral 🌀 #shorts #chainreaction | Spiral Chain Reaction (every wall hit splits) ★ NEW |  | NEW: every wall hit doubles the ball, Ode to Joy notes, race to the core |  |
-| S07 | Short | Escape the spinning hexagon 🔷 #shorts #satisfying | polygon_escape |  | Hexagon inside a pentagon inside a square, each spinning opposite ways |  |
-| S08 | Short | Pick your marble before it starts! 🏁 #shorts #marblerace | marble_race |  | Pick-your-colour hook (trending: CARRERA DE CANICAS 3.3M); 8 marbles, zig-zag plinko |  |
-| S09 | Short | Watch the threads turn into a heart 💛 #shorts #satisfying | string_art |  | Heart-shaped frame, red → pink gradient threads, piano notes C major |  |
-| S10 | Short | Guess the song from the bounces 🎵 #shorts #satisfying | ring_escape |  | Guess-the-song (Mo Lucky outlier, 10x): Ode to Joy? No — Twinkle Twinkle (public domain), answer at the end |  |
-| S11 | Short | It grows every time it bounces 😳 #shorts #satisfying | grow_every_bounce |  | Lime ball in a rotating triangle; ends when it fills the frame |  |
-| S12 | Short | 16 countries, 1 marble left 🌍 #shorts #marblerace | marble_race |  | Country-flag colour marbles, elimination funnel every 5 s |  |
-| S13 | Short | Chaos fan vs 300 balls 🌪️ #shorts #satisfying | chaos_fan |  | Fan speed ramps with a bass drop at 15 s, cyan/orange balls |  |
-| S14 | Short | Shrinking circle, but 10 balls 😱 #shorts #satisfying | shrinking_circle |  | 10 neon balls, shrink speed doubles at half-time; countdown of survivors |  |
-| S15 | Short | 22 pendulums, one perfect wave 🌊 #shorts #physics | pendulum_wave |  | Retry with 30 pendulums, rainbow gradient + glass chime; only 1 pendulum Short today |  |
-| L1 | Long | Marble Race Tournament: 16 Colors, 1 Champion 🏆 / Satisfying Marble Run | marble_race |  | Bracket tournament with on-screen bracket + names, 8 heats → semis → final (~12 min) |  |
-| L2 | Long | Satisfying Clips for Edits Vol. 1 (No Text) / Physics Simulations 4K | compilation |  | Text-free mix of string art, ring escape, spiral chain and soft-body clips, 60 s each (~15 min) |  |
+| S01 | Short | Watch 36 pendulums line up again... 🌊 #shorts #physics | pendulum_wave | Your hit: 'Watch them line up again... 🌊' · 31,776 views · 94% watched | 36 pendulums instead of 22, colour runs rainbow → gold across the row, glass-chime note per swing; keep 33 s and the re-alignment payoff |  |
+| S02 | Short | Every hit breaks a brick... can it get free? 🧱 #shorts #satisfying | brick_breaker | Your hit: 'Every hit breaks a brick... when does it escape? 🧱' · 9,322 views · 99.5% watched | Bricks form a hexagon ring (48 bricks) instead of a wall, cyan ball, magenta bricks that crack yellow before breaking; 21 s |  |
+| S03 | Short | Every bounce adds a string... into a flower 🌸 #shorts #satisfying | string_art | Your hit: 'Every bounce adds a string 🎨' · 9,106 views · 87.3% watched | 8-petal flower frame, magenta + white threads, harp pluck per string (not the star/heart from yesterday); 24 s |  |
+| S04 | Short | Different lengths, same start... now 3 rows 🌊 #shorts #physics | pendulum_wave | Your hit: 'Different lengths, same start... wait for it 🌊' · 7,933 views · 78.1% watched | 3 stacked rows of pendulums (blue, violet, teal) that re-align at different moments, piano note per row; 31 s |  |
+| S05 | Short | The square shrinks every bounce 😬 #shorts #satisfying | shrinking_circle | Your hit: 'The circle shrinks every bounce 😬' · 5,294 views · 143.5% watched | Square frame instead of a circle, orange ball with a trail, frame flashes red each shrink; keep it short at 15 s |  |
+| S06 | Short | 2 balls, 1 brick wall... who breaks free first? 🧱 #shorts | brick_breaker | Your hit: 'Every hit breaks a brick... when does it escape? 🧱' · 9,322 views · 99.5% watched | Split race: red ball and blue ball each clear their own half of a 40-brick wall, brick counter per side; 22 s |  |
+| S07 | Short | 3 balls, every bounce adds a string 🎨 #shorts #satisfying | string_art | Your hit: 'Every bounce adds a string 🎨' · 9,106 views · 87.3% watched | 3 balls (cyan, gold, pink) each draw their own colour threads inside a circle frame, chord instead of single note; 24 s |  |
+| S08 | Short | Pick your marble, the fastest one wins 🏁 #shorts #marblerace | marble_race | Your hit: 'Fastest marble wins 🏁 Pick one' · 3,827 views · 126.8% watched | 12 marbles instead of 8, zigzag ramps with one spinning gate, neon lime track; keep 14 s |  |
+| S09 | Short | Pick a color before it escapes the star ⭐ #shorts #satisfying | colour_escape | Your hit: 'Pick a color before it escapes 🔴🔵' · 3,174 views · 139.8% watched | 5 colours inside a spinning 5-point star with one gap, winner's colour floods the screen; 11 s |  |
+| S10 | Short | 500 balls dropped at once 🤯 #shorts #physics | chaos_fan | Your hit: '400 balls dropped at once 🤯' · 3,164 views · 90.9% watched | 500 balls in a rainbow gradient, dropped into a funnel with 3 pegs so the gradient visibly scrambles; 23 s |  |
+| S11 | Short | 999 balls play a song... can you guess it? 🎵 #shorts #satisfying | ring_escape (melody) | Winning elsewhere: 'Guess The Song// Satisfying physics simulation - 999 varied bouncing orbs' by Mo Lucky · 681,950 views · 10.1x their average | 999 small multicolour orbs, each wall hit plays the next note of Ode to Joy (public domain); cut to 20 s (your 29 s melody Short held only 59.5%) |  |
+| S12 | Short | 0% vs 100% soft... which one escapes? 😱 #shorts #physics | Soft Body 0% vs 100% Escape ★ NEW | Winning elsewhere: 'Verity 0% vs 100% Soft Body Simulation 😱' by ArtikAnimates · 4,162,270 views · 40.5x their average | Two blobs side by side in one spinning ring (orange 0%, teal 100%) instead of yesterday's 3 lanes; 100% squeezes through the gap; 25 s |  |
+| S13 | Short | ¡Elige tu color! Carrera de canicas 🏁 #shorts #canicas | marble_race | Winning elsewhere: 'CARRERA DE CANICAS ELIGE TU COLOR FAVORITO!!' by FernanWarriorZ · 3,441,389 views · 5.7x their average | Spanish title and on-screen text ('¡Elige tu color!' / '¡Ganó el rojo!'), 10 marbles on a plinko board instead of ramps; 15 s |  |
+| S14 | Short | Sigma Ball vs Tiny Ball... who takes the arena? 😤 #shorts | colour_battle | Winning elsewhere: 'Sigma Ball vs Verity' by Velique · 1,195,688 views · 3.5x their average | Balls get simple drawn faces and names ('Sigma Ball' big and grey-blue, 'Tiny Ball' small and pink) and paint territory; only 1 colour-battle slot since your battles score 0.9x; 25 s |  |
+| S15 | Short | How high before it falls? 1 → 1,000 🧱 #shorts #satisfying | Stack Until It Falls (1 → 1,000) ★ NEW | Test: '%1,000,000 Satisfying iPhone Stacking Video' by 3D Zone is at 3,644,337 views (4.4x) and you have no stacking format yet | New build: plain neon blocks (no phones, no logos) stacked with a speeding counter until the tower collapses in slow-mo; 20 s |  |
+| L1 | Long | Physics Tournament 🏆 Pendulum Waves vs Brick Breakers vs String Art / Pick Your Winner | tournament (pendulum_wave + brick_breaker + string_art) | Your hits: pendulum wave 31,776 · brick breaker 9,322 · string art 9,106 views; Long-Form Doctor: numbered compilations fell to 0-11 views, marble-run longs are 10.7-19.6x outliers elsewhere | 3 rounds of 3 heats each, built only from your top 3 Short formats, running scoreboard with text ('Round 2: Brick Breakers'), a final where the round winners race; ~5 min |  |
+| L2 | Long | Satisfying Clips for Edits Vol. 8 (No Text) 🔴🔵 Free to Use / Split-Screen Background | compilation (no text) | Your hits: pendulum wave, brick breaker, string art, shrinking circle (5,294) and marble race (3,827); your first 'Clips for Edits' got 66 views | No text at all; 8 clips of 30 s from the 5 top formats in new colours (gold/teal palette), hard cuts on the beat; Vol. 8 because Vol. 7 is already on the channel; ~4 min |  |
 
 ## Build specs for the new concepts
 
@@ -46,16 +46,16 @@ Description: Hard, soft or full jelly – which ball escapes the spinning ring f
 Hashtags: #shorts #satisfying #softbody #physics #simulation
 Tags: soft body simulation, 0% vs 100%, jelly ball, satisfying simulation, ball escape, spinning ring, physics simulation, oddly satisfying, bounce theory, which one wins
 
-### Spiral Chain Reaction (every wall hit splits)  (`youtube-2026-10-26-2`)
-*Bounce Theory · Short 35s*
+### Stack Until It Falls (1 → 1,000)  (`youtube-2026-10-27-1`)
+*Bounce Theory · Short 20s*
 
-New sims.py function spiral_chain(). Arena: Archimedean spiral wall (r = 60 + 34·θ, 4.5 turns, line width 6) centred at (540, 900), rotating 0.35 rad/s; a glowing core circle r=45 at the centre. Start with 1 ball (r=14). Rule: every time a ball hits the spiral wall it splits into 2 (child gets ±15° velocity jitter), capped at 999 balls; ball radius shrinks from 14 to 6 as count grows. Gravity off; balls get a constant inward pull of 60 px/s² so they creep toward the core. Each ball's hue = its generation (rainbow cycle). Counter top-centre counts up. Win: first ball that touches the core triggers the core to flash and absorb all balls in a 2 s vacuum swirl. Looping ending: after the swirl, one white ball pops out of the core and flies back to the spiral mouth (= frame 1). On-screen lines (y=140-320): white 'Every hit = 2 balls', yellow 'Can 1 reach the centre? 🌀'; counter '1 → 999' at y≈1420. Sound: each split plays the next note of 'Ode to Joy' (public domain, synthesized bell timbre, max 12 notes/sec, gain rises with count); core hit = deep boom + whoosh. Background #06060b, spiral glow electric blue #3a7bff.
-Description: One ball, a spinning spiral, and every hit doubles it. Does one make it to the centre? 🌀
-Hashtags: #shorts #satisfying #chainreaction #simulation #physics
-Tags: spiral simulation, chain reaction, balls multiply, every bounce 2 balls, satisfying simulation, physics simulation, 999 balls, oddly satisfying, bounce theory, rotating spiral
+New sims.py function stack_collapse(). Objects: plain rounded rectangles 'blocks' (no logos, no phone shapes), 140x40 px, dropped one at a time from y=260 onto a 360 px platform centred at y=1380. Physics: 2D rigid bodies (pymunk), gravity 1800 px/s², friction 0.7, elasticity 0.05; each new block spawns with a random x offset ±18 px and drop interval that shrinks from 0.45 s to 0.08 s so the counter speeds up (1, 2, 5, 10, 25, 50, 100...). Win/ending: the tower leans and collapses at ~16 s; slow-mo 0.4x for the fall, then the counter freezes and flashes. Looping end: the last 0.5 s fades the debris out and a single block falls again onto the empty platform, matching frame 1. Colours on near-black #07070c: blocks cycle cyan #22e4ff → magenta #ff3fd8 → lime #9dff3a → orange #ff9a1f with a soft glow; platform white 60%. On-screen lines (y=150-330): white 'How high before it falls?' then yellow counter 'x 1' growing; at collapse yellow 'It fell at <N>!'. Sound: a soft wood-tick per landing pitched up as the stack grows (C major pentatonic), a low rumble + crash at collapse. Length 20 s.
+Description: How many blocks can one tower hold? Watch until it falls. 🧱
+Hashtags: #shorts #satisfying #physics #simulation #stacking
+Tags: stacking simulation, satisfying physics, tower collapse, block stacking, physics simulation, satisfying video, oddly satisfying, bounce theory, simulation shorts, wait for it
 
 ## When the batch is done
 - Tell Omar which clip each video used (by file name) and any slot that fell back.
 - If this session can push to omarjaradat2006-sudo/agent-hq: set `made: true` on each lineup item made and `status: "filmed"` on each used idea in data/youtube/state.json, then commit and push. Otherwise list the idea ids so Omar can press "Mark made" on the site.
 
-_Generated 2026-10-27 14:29 UTC_
+_Generated 2026-10-27 14:32 UTC_

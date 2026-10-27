@@ -1,4 +1,4 @@
-# Ambient Escape: today's batch (2026-10-26)
+# Ambient Escape: today's batch (2026-10-27)
 
 Planned by Omar's Agent HQ YouTube team. Omar approves everything, so make exactly these 17 videos, in this order, with these titles. Use the `ambient-escape-videos` skill for how to render, folders, upload sheet and scheduling.
 
@@ -17,43 +17,44 @@ Most of these are remixes of videos that already won. Keep each winner's recipe 
 
 | Slot | Kind | Title | Format | Based on | Today's twist | Clip |
 |---|---|---|---|---|---|---|
-| S01 | Short | Complete the ayah... only 1% know it 🤲 #shorts #quran #quiz | Complete the Ayah (3-option quiz) ★ NEW |  | NEW: 'Verily, in the remembrance of Allah…' → do hearts find rest (13:28) | `AE-starry-sky-01.mp4` READY |
-| S02 | Short | Guess the surah: it's worth 1/3 of the Quran 🤲 #shorts #quran #quiz | guess_the_surah |  | Answer: Al-Ikhlas (112) — Sahih al-Bukhari 5013 | `AE-foggy-forest-01.mp4` MISSING (not_found) |
-| S03 | Short | Read this if you feel alone / Quran 2:186 #shorts #islam | ayah_reminder |  | 'And when My servants ask you concerning Me – indeed I am near' (Al-Baqarah 2:186) | `AE-ocean-waves-01.mp4` READY |
-| S04 | Short | The first thing you'll be asked about ⏳ #shorts #muslim #salah | discipline_reminder |  | First deed accounted for is the prayer — Jami' at-Tirmidhi 413 | `AE-candle-flame-01.mp4` MISSING (not_found) |
-| S05 | Short | No eye has seen this... 🌿 #shorts #jannah #islam | jannah_reminder |  | Hadith qudsi: what no eye has seen nor ear heard — Sahih al-Bukhari 3244, Muslim 2824; cf. As-Sajdah 32:17 | `AE-starry-sky-01.mp4` READY |
-| S06 | Short | What Allah says about patience 🤍 #shorts #islam #quran | what_allah_says |  | 'Indeed, Allah is with the patient' (Al-Baqarah 2:153) | `AE-foggy-forest-01.mp4` MISSING (not_found) |
-| S07 | Short | Dua of the day: the best of both worlds 🤲 #shorts #dua | dua_of_the_day |  | Rabbana atina fid-dunya hasanah… (Al-Baqarah 2:201), Arabic transliteration + English | `AE-ocean-waves-01.mp4` READY |
-| S08 | Short | True or false: the Quran came down in one night? 🕌 #shorts #quiz | true_false_quiz |  | False — revealed gradually over about 23 years (cf. Al-Isra 17:106); sent down to the nearest heaven on Laylat al-Qadr (97:1) | `AE-candle-flame-01.mp4` MISSING (not_found) |
-| S09 | Short | Complete the ayah: 'For indeed, with hardship...' 🤲 #shorts #quran | Complete the Ayah (3-option quiz) ★ NEW |  | NEW: → will be ease (Ash-Sharh 94:5) | `AE-starry-sky-01.mp4` READY |
-| S10 | Short | Guess the surah: no Bismillah at the start 🤔 #shorts #quran #quiz | guess_the_surah |  | Answer: At-Tawbah (9), the only surah without Bismillah | `AE-foggy-forest-01.mp4` MISSING (not_found) |
-| S11 | Short | Read this if you can't stop overthinking / Quran 13:28 #shorts | ayah_reminder |  | Hearts find rest in the remembrance of Allah (Ar-Ra'd 13:28) — calm AI voice | `AE-ocean-waves-01.mp4` READY |
-| S12 | Short | Your phone got 6 hours today. Your Quran got 0. #shorts #muslim | discipline_reminder |  | Screen-time vs Quran-time reminder (follow-up to your best AE Short: gym vs salah, 13 views) | `AE-candle-flame-01.mp4` MISSING (not_found) |
-| S13 | Short | The lowest place in Jannah is 10x this world 😳 #shorts #jannah | jannah_reminder |  | Last person to enter Jannah gets ten times the world — Sahih Muslim 186 | `AE-starry-sky-01.mp4` READY |
-| S14 | Short | What Allah says about backbiting 😶 #shorts #islam #quran | what_allah_says |  | 'Would one of you like to eat the flesh of his brother when dead?' (Al-Hujurat 49:12) | `AE-foggy-forest-01.mp4` MISSING (not_found) |
-| S15 | Short | Dua of the day: 'My Lord, increase me in knowledge' 📖 #shorts #dua | dua_of_the_day |  | Rabbi zidni 'ilma (Ta-Ha 20:114) | `AE-ocean-waves-01.mp4` READY |
-| L1 | Long | Crackling Cabin Fireplace in a Blizzard + Brown Noise 3 Hours 🔥❄️ Deep Sleep (Dark Screen After 2h) | Blizzard Cabin Fireplace + Brown Noise 3 Hours ★ NEW |  | Fire crackle + brown noise -12 dB + howling wind -18 dB; snowfall-window interlude every 30 min | `AE-cabin-fireplace-01.mp4` READY |
-| L2 | Long | Rain on the Window at Night + Pink Noise 3 Hours 🌧️ Sleep Instantly (No Thunder, No Ads) | rain_long |  | Window rain + pink noise -10 dB, steady rain, no thunder (Still Point-style 'NO THUNDER' hook) | `AE-rain-window-01.mp4` READY |
+| S01 | Short | Allah hasn't given up on you / Quran 39:53 #shorts #quran | ayah_reminder | Your hit: 'Allah hasn't forgotten you / Quran 93:3' · 1,334 views · 96% watched | Starry sky loop, Quran 39:53 ('...do not despair of the mercy of Allah. Indeed, Allah forgives all sins.'), 'do not despair' in yellow; 11 s | `AE-starry-sky-01.mp4` READY |
+| S02 | Short | What Allah says about your spouse 🤍 #shorts #islam #quran | what_allah_says | Your hit: 'What Allah says about your parents 🤍' · 1,261 views · 102.4% watched | Topic: spouse. Quran 30:21 ('...He created for you from yourselves mates that you may find tranquility in them, and He placed between you affection and mercy.'); misty forest loop; 13 s | `AE-forest-mist-01.mp4` READY |
+| S03 | Short | Never lose hope in Allah / Quran 12:87 #shorts #quran | ayah_reminder | Your hit: 'Where hearts find rest / Quran 13:28' · 1,173 views · 99.4% watched | Ocean loop, Quran 12:87 ('...despair not of relief from Allah. Indeed, no one despairs of relief from Allah except the disbelieving people.'), words fade in one line at a time; 11 s | `AE-ocean-waves-01.mp4` READY |
+| S04 | Short | Only real ones know which surah is named after iron 🤍 #shorts #quiz | guess_the_surah | Your hit: 'Only real ones know this surah 🤍' · 1,017 views · 231.1% watched | Clue: 'This surah is named after a metal'. 3 options: Al-Hadid / Al-Kahf / Al-Qamar; answer Al-Hadid (Surah 57, 'The Iron'); candle loop, 5 s countdown; 13 s | `AE-candle-glow-01.mp4` READY |
+| S05 | Short | Allah is with you when you're patient / Quran 2:153 #shorts | ayah_reminder | Your hit: 'Allah won't give you more than you can bear' · 921 views · 224.1% watched | Starry sky loop, Quran 2:153 ('O you who have believed, seek help through patience and prayer. Indeed, Allah is with the patient.'), 'with the patient' in yellow; 11 s | `AE-starry-sky-01.mp4` READY |
+| S06 | Short | How many ayat are in Surah Al-Kawthar? 🤔 #shorts #quran #quiz | number_quiz | Your hit: 'How many surahs are in the Quran? 🤔' · 900 views · 97.7% watched | Question about Al-Kawthar (Surah 108); options 3 / 5 / 7; answer 3 (the shortest surah); misty forest loop; 13 s | `AE-forest-mist-01.mp4` READY |
+| S07 | Short | Guess the surah in 3 seconds ⏱️ #shorts #quran #quiz | guess_the_surah | Your hit: 'Guess the surah in 5 seconds ⏱️' · 870 views · 152.9% watched | 3-second timer instead of 5. Clue: first ayah in English 'Say, I seek refuge in the Lord of daybreak'; answer Al-Falaq (113:1); ocean loop; 12 s | `AE-ocean-waves-01.mp4` READY |
+| S08 | Short | Your salah is the one meeting you never cancel #shorts #salah | discipline_reminder | Your hit: 'Your salah is not a break from your day' · 869 views · 84% watched | Candle loop with a simple calendar graphic: five daily 'meetings' (Fajr, Dhuhr, Asr, Maghrib, Isha) ticking off; 12 s | `AE-candle-glow-01.mp4` READY |
+| S09 | Short | What Allah says about your neighbour 🤍 #shorts #islam #quran | what_allah_says | Your hit: 'What Allah says about your parents 🤍' · 1,261 views · 102.4% watched | Topic: neighbours. Quran 4:36 ('...do good to parents, relatives, orphans, the needy, the near neighbour, the neighbour farther away...'), 'neighbour' in yellow; starry sky loop; 13 s | `AE-starry-sky-01.mp4` READY |
+| S10 | Short | You set 5 alarms and still missed Fajr? #shorts #fajr #muslim | discipline_reminder | Your hit: 'You missed Fajr again, didn't you?' · 815 views · 76.9% watched | Five alarm icons ring and get snoozed one by one, then the line 'Fajr only needs one'; misty forest loop; 14 s | `AE-forest-mist-01.mp4` READY |
+| S11 | Short | What will you say when you're asked about your youth? #shorts #islam | question_hook_reflection | Winning elsewhere: 'The Question That Leaves Every Soul Silent' by Tartil Offical · 11,564 views · 4.5x their average | Question on screen, 2 s pause, then the hadith: feet won't move on the Day of Resurrection until asked about his life, his youth, his wealth and his knowledge (Jami' at-Tirmidhi 2416, graded hasan); ocean loop; 14 s | `AE-ocean-waves-01.mp4` READY |
+| S12 | Short | You walk through the gates of Jannah... 🤍 #shorts #jannah #islam | jannah_reminder | Winning elsewhere: 'Jannat Ka Darwaza' by ZZ Brothers Shorts · 67K views · 10.5x their median (reported by OutlierKit, via the R&D Lab) | Second-person lines appear one by one ('You walk with the believers in groups... the gates are open...'), ending with Quran 39:73 ('Peace be upon you; you have become pure; so enter it to abide eternally therein') and 'Ameen' line; candle loop; only 1 Jannah slot (your Jannah Shorts score 0.5x); 15 s | `AE-candle-glow-01.mp4` READY |
+| S13 | Short | Islamic quiz #1: 3 questions, how many can you get? 🤔 #shorts #quiz | islamic_quiz_series | Winning elsewhere: 'Islamic Common Sense Paheliyan... General Knowledge Quiz#29' by Islamic Solve Question · 923.8K views (204K-sub channel, ~10.8K average per video) | Numbered series, 3 rapid questions with 3 s timers: which prophet was swallowed by a whale? (Yunus, Quran 37:139-142) · who raised the Kaaba's foundations with his son? (Ibrahim with Ismail, 2:127) · which surah has no Bismillah? (At-Tawbah, 9); score count at the end; starry sky loop; 18 s | `AE-starry-sky-01.mp4` READY |
+| S14 | Short | What will you answer when asked about your prayer? #shorts #salah | question_hook_reflection | Winning elsewhere: 'The Question That Leaves Every Soul Silent' by Tartil Offical · 11,564 views · 4.5x their average | Different question: the first deed a servant is held to account for on the Day of Resurrection is his prayer (Jami' at-Tirmidhi 413, graded sahih by al-Albani); misty forest loop; 13 s | `AE-forest-mist-01.mp4` READY |
+| S15 | Short | Complete the ayah: 'And whoever relies upon Allah...' 🤲 #shorts | Complete the Ayah (3-option quiz) ★ NEW | Test: yesterday's approved concept has no numbers yet; it reuses your quiz hook, which gets 88% watched on average | Options: '...then He is sufficient for him' (correct, Quran 65:3) / '...will be given wealth' / '...will never be tested'; ocean loop; 15 s | `AE-ocean-waves-01.mp4` READY |
+| L1 | Long | Rain on a Tin Roof for Sleeping 🌧️ No Thunder / 3 Hours Dark Screen | Rain on a Tin Roof, No Thunder (3 Hours, Dark Screen) ★ NEW | Winning elsewhere: 'Rain on Tin Roof for Sleeping 🌧️ No Thunder / 8 Hours Black' by Sleep Thunder Rain · 629 views · 8.9x their median | Scene: rain off a tin roof; mix: pink-noise rain + metal-roof plinks + gutter drips + low brown noise, NO thunder; screen dims to near-black after 30 min | `AE-tin-roof-rain-01.mp4` READY |
+| L2 | Long | Heavy Rain & Thunder in a Cozy Camper Van ⛈️ Fall Asleep in 30 Minutes / 3 Hours | rain_long | Winning elsewhere: 'Heavy Rain on Tin Roof 🌧️ Cozy Camper Van Sleep Sounds / 3 Hours' (587 views, 8.3x) and 'Heavy Rain and Thunder Sounds — Fall Asleep in 30 Minutes' (579, 8.2x) by Sleep Thunder Rain | Scene: rain streaming down a car/van window at night (different from L1's roof); mix: heavy rain -18 dBFS + distant thunder every 40-120 s -24 dBFS + muffled cabin brown noise -30 dBFS; no music | `AE-car-window-rain-01.mp4` READY |
 
 ## Clips to download first
 
 - **AE-starry-sky-01.mp4** for S01, S05, S09, S13: READY (28s · 15.6 MB)
   - Download: `curl -L -o "AE-starry-sky-01.mp4" "https://github.com/omarjaradat2006-sudo/agent-hq/releases/download/footage-2026-10-26/AE-starry-sky-01.mp4"`
   - Description credit: Video by bellergy on Pixabay
-- **AE-foggy-forest-01.mp4** for S02, S06, S10, S14: MISSING (not_found). Use another READY clip that fits, or an existing scene, and say so.
+- **AE-forest-mist-01.mp4** for S02, S06, S10, S14: READY (1080x1920 · 54s · 71.2 MB)
+  - Download: `curl -L -o "AE-forest-mist-01.mp4" "https://github.com/omarjaradat2006-sudo/agent-hq/releases/download/footage-2026-10-27/AE-forest-mist-01.mp4"`
+  - Description credit: Video by Matthias_Groeneveld on Pixabay
 - **AE-ocean-waves-01.mp4** for S03, S07, S11, S15: READY (1080x1920 · 16s · 10.0 MB)
   - Download: `curl -L -o "AE-ocean-waves-01.mp4" "https://github.com/omarjaradat2006-sudo/agent-hq/releases/download/footage-2026-10-26/AE-ocean-waves-01.mp4"`
   - Description credit: Video by Mario_Krimer on Pixabay
-- **AE-candle-flame-01.mp4** for S04, S08, S12: MISSING (not_found). Use another READY clip that fits, or an existing scene, and say so.
-- **AE-cabin-fireplace-01.mp4** for L1: READY (1920x1080 · 28s · 16.5 MB)
-  - Download: `curl -L -o "AE-cabin-fireplace-01.mp4" "https://github.com/omarjaradat2006-sudo/agent-hq/releases/download/footage-2026-10-26/AE-cabin-fireplace-01.mp4"`
-  - Description credit: Video by Christopher_OToole_Images on Pixabay
-- **AE-rain-window-01.mp4** for L2: READY (1920x1080 · 13s · 8.6 MB)
-  - Download: `curl -L -o "AE-rain-window-01.mp4" "https://github.com/omarjaradat2006-sudo/agent-hq/releases/download/footage-2026-10-26/AE-rain-window-01.mp4"`
-  - Description credit: Video by quocvo_net on Pixabay
-- **AE-snowfall-window-01.mp4** for L1: READY (1920x1080 · 10s · 4.1 MB)
-  - Download: `curl -L -o "AE-snowfall-window-01.mp4" "https://github.com/omarjaradat2006-sudo/agent-hq/releases/download/footage-2026-10-26/AE-snowfall-window-01.mp4"`
-  - Description credit: Video by krace4 on Pixabay
+- **AE-candle-glow-01.mp4** for S04, S08, S12: READY (1080x1920 · 20s · 2.0 MB)
+  - Download: `curl -L -o "AE-candle-glow-01.mp4" "https://github.com/omarjaradat2006-sudo/agent-hq/releases/download/footage-2026-10-27/AE-candle-glow-01.mp4"`
+  - Description credit: Video by Placidplace on Pixabay
+- **AE-tin-roof-rain-01.mp4** for L1: READY (1920x1076 · 15s · 11.5 MB)
+  - Download: `curl -L -o "AE-tin-roof-rain-01.mp4" "https://github.com/omarjaradat2006-sudo/agent-hq/releases/download/footage-2026-10-27/AE-tin-roof-rain-01.mp4"`
+  - Description credit: Video by Amazighe93 on Pixabay
+- **AE-car-window-rain-01.mp4** for L2: READY (1920x1080 · 12s · 7.9 MB)
+  - Download: `curl -L -o "AE-car-window-rain-01.mp4" "https://github.com/omarjaradat2006-sudo/agent-hq/releases/download/footage-2026-10-27/AE-car-window-rain-01.mp4"`
+  - Description credit: Video by jl_creativespace on Pixabay
 
 ## Build specs for the new concepts
 
@@ -65,16 +66,16 @@ Description: Can you complete this ayah before the timer runs out? Comment your 
 Hashtags: #shorts #quran #islam #quiz #muslim
 Tags: complete the ayah, quran quiz, islamic quiz, guess the ayah, quran verses, muslim shorts, islam quiz, ayah of the day, quran reminder, islamic shorts
 
-### Blizzard Cabin Fireplace + Brown Noise 3 Hours  (`youtube-2026-10-26-3`)
+### Rain on a Tin Roof, No Thunder (3 Hours, Dark Screen)  (`youtube-2026-10-27-2`)
 *Ambient Escape · Long 3h*
 
-Footage: AE-cabin-fireplace-01.mp4 (main, landscape) with AE-snowfall-window-01.mp4 used for a 20 s cross-dissolve interlude every 30 min (6 times total), then back to the fire. Loop: take the clip, find the 1.5 s at the end and start with the closest match, play forward then cross-fade the last 1.5 s into the first 1.5 s (ffmpeg xfade=fade, duration 1.5), then loop that segment with -stream_loop to 3:00:00; slight warm grade (+5 temperature), no zoom. Audio (all synthesized/free, -16 LUFS integrated, gentle limiter): layer 1 fire crackle (random filtered clicks + low rumble) at 0 dB reference; layer 2 brown noise -12 dB; layer 3 howling wind outside (band-passed pink noise with slow 0.05 Hz LFO) -18 dB; layer 4 a soft wood-creak every 4-9 min at -24 dB. 10 s fade-in, 60 s fade-out. Optional dark-screen variant: after 2:00:00 fade picture to 10% brightness over 2 min (mention in title as Dark Screen After 2 Hours). No text on screen. Length 3:00:00.
-Description: A crackling cabin fireplace while a blizzard howls outside, with soft brown noise underneath to help you fall asleep and stay asleep. 3 hours, no talking, no music, no ads in the middle.
-Hashtags: #fireplace #sleepsounds #brownnoise #cozy #asmr
-Tags: fireplace sounds, crackling fireplace 3 hours, blizzard sounds, cabin ambience, brown noise for sleep, cozy winter ambience, fireplace for sleep, wind sounds, sleep sounds no ads, dark screen sleep
+Footage: AE-tin-roof-rain-01.mp4 (landscape). Loop: pick the cleanest 8-10 s, crossfade-loop 1.5 s to 3:00:00, slow 2% push-in over each 10 min so it isn't static; after 30 min fade to 85% black over 60 s (dark-screen promise), keep a faint rain glint. Audio (all synthesized, no thunder): layer 1 pink-noise rain bed -20 dBFS; layer 2 'metal roof' plinks = band-passed (2-5 kHz) random clicks at 18-30/s, -26 dBFS, slow random density drift; layer 3 gutter drip (low tick every 1.5-4 s) -32 dBFS; layer 4 brown noise -34 dBFS for warmth. No music, no voice. On-screen text: none. Length 3:00:00.
+Description: Rain on a tin roof for 3 hours, no thunder, screen dims after 30 minutes. Made for deep sleep, light sleepers and quiet focus.
+Hashtags: #rainsounds #sleepsounds #tinroof #nothunder #ambience
+Tags: rain on tin roof, rain sounds for sleeping, no thunder rain, tin roof rain 3 hours, rain dark screen, rain sounds, sleep sounds, white noise rain, rain ambience, deep sleep rain
 
 ## When the batch is done
 - Tell Omar which clip each video used (by file name) and any slot that fell back.
 - If this session can push to omarjaradat2006-sudo/agent-hq: set `made: true` on each lineup item made and `status: "filmed"` on each used idea in data/youtube/state.json, then commit and push. Otherwise list the idea ids so Omar can press "Mark made" on the site.
 
-_Generated 2026-10-27 14:29 UTC_
+_Generated 2026-10-27 14:32 UTC_
