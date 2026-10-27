@@ -1,14 +1,14 @@
 {
   "team": "tiktok",
   "hired": true,
-  "updatedAt": "2026-10-27T13:56:41Z",
+  "updatedAt": "2026-10-27T13:57:05Z",
   "agents": [
     {
       "id": "analyst",
       "name": "Analyst",
       "role": "Finds outlier videos",
-      "status": "working",
-      "doing": "Researching what is working right now",
+      "status": "ok",
+      "doing": "Found 5 signals: IFS young-men survey, stoic one-liners, shorter videos win",
       "lastRun": "2026-10-26T13:48:30Z",
       "nextRun": "2026-10-27T13:41:00Z"
     },
@@ -16,8 +16,8 @@
       "id": "strategist",
       "name": "Strategist",
       "role": "Picks what to film next",
-      "status": "waiting",
-      "doing": "Waiting for the review",
+      "status": "working",
+      "doing": "Picking today's 3 angles",
       "lastRun": "2026-10-26T13:48:30Z",
       "nextRun": "2026-10-27T13:41:00Z"
     },
@@ -41,11 +41,21 @@
       "id": "liaison",
       "name": "R&D Liaison",
       "role": "Brings in the R&D Lab's finds",
-      "status": "waiting",
-      "doing": "Waiting for the review"
+      "status": "ok",
+      "doing": "Used 1 Lab lead, skipped 2 that need footage"
     }
   ],
   "log": [
+    {
+      "t": "2026-10-27T13:57:05Z",
+      "agent": "R&D Liaison",
+      "msg": "Passed the Lab's 'stoic one-liner' lead into today's scripts"
+    },
+    {
+      "t": "2026-10-27T13:57:05Z",
+      "agent": "Analyst",
+      "msg": "Biggest find: a fresh IFS survey says 61% of guys 18-29 feel they have little control over their lives. Perfect setup for Epictetus"
+    },
     {
       "t": "2026-10-27T13:56:41Z",
       "agent": "Performance Reviewer",
@@ -335,6 +345,47 @@
   ],
   "research": [
     {
+      "date": "2026-10-27",
+      "createdAt": "2026-10-27T13:57:05Z",
+      "items": [
+        {
+          "title": "61% of young men feel they have little control over their lives",
+          "creator": "Institute for Family Studies survey of 2,000 men aged 18-29 (Aug 2026)",
+          "url": "https://ifstudies.org/blog/demoralized-but-not-defeated-what-2000-young-men-told-ifs-about-their-lives",
+          "metric": "61% agree 'I often feel that I have little control over the things that happen to me'; 43% agree 'I am inclined to think that I am a failure'",
+          "whyItWorks": "A fresh, real stat that hits the exact viewer you talk to, and it sets up Epictetus' 'what's in your control' idea perfectly. Stat-then-philosopher is the pattern behind the stoic outliers."
+        },
+        {
+          "title": "72% of young men think who you know beats hard work",
+          "creator": "Institute for Family Studies (same survey)",
+          "url": "https://ifstudies.org/blog/demoralized-but-not-defeated-what-2000-young-men-told-ifs-about-their-lives",
+          "metric": "72% agree 'Who you know is more important than ability or hard work'; 84% still say they have ambitious plans",
+          "whyItWorks": "A debate line built in: half your viewers agree, half get annoyed. Perfect for a money/career mindset video that ends on a comment question."
+        },
+        {
+          "title": "59% of single young men hesitate to ask someone out",
+          "creator": "Institute for Family Studies via UnHerd (Mar 2026)",
+          "url": "https://unherd.com/newsroom/poll-over-half-of-young-men-not-ready-for-a-relationship/",
+          "metric": "59% hesitate out of fear of rejection; 73% say it's harder to know what being a man means than 20-30 years ago",
+          "whyItWorks": "Fear of rejection is a masculinity/relationships angle that doesn't need you to be a dating guru. Pairs with Seneca on fear. Saved for a later day."
+        },
+        {
+          "title": "You become free the moment your desires stop controlling you",
+          "creator": "hiddenverses (YouTube Shorts)",
+          "url": "https://www.youtube.com/watch?v=xIdNx_BD-lU",
+          "metric": "79,167 views, 34.5x channel average, 4 days old",
+          "whyItWorks": "Still the top outlier in your niche feed: one quotable stoic line, shown on screen, explained fast. The R&D Lab flagged the same pattern."
+        },
+        {
+          "title": "Viral TikToks run shorter and open on the payoff",
+          "creator": "OpusClip analysis of 13.5M clips (their own marketing, correlational)",
+          "url": "https://www.opus.pro/blog/anatomy-of-a-viral-tiktok-2026",
+          "metric": "Viral-tier median length 41s vs 50s overall; 'let me tell you about the time I...' story setups were the weakest openers",
+          "whyItWorks": "Backs up your own numbers: your winners were 31-40s. Lead with the payoff, keep it under 40s."
+        }
+      ]
+    },
+    {
       "date": "2026-10-26",
       "createdAt": "2026-10-26T13:47:40Z",
       "items": [
@@ -561,5 +612,16 @@
         "Most captions are the same 'Follow for more' line, so TikTok gets no keywords about the topic and I can't match videos to scripts."
       ]
     }
-  ]
+  ],
+  "labFeedback": {
+    "date": "2026-10-27",
+    "used": [
+      "Stoic one-liners are 30x outliers on Shorts"
+    ],
+    "skipped": [
+      "'It's making sense now' reaction format: needs someone else's clip to react to, doesn't fit a one-take sit-down video",
+      "'Editing how I see myself' moodboard: not a talking video and needs footage Omar may not have"
+    ],
+    "request": "Find which caption styles (keyword line vs 'Follow for more') get more reach for small self-improvement accounts, and whether anything is known about sudden reach drops after ~300 posts"
+  }
 }
