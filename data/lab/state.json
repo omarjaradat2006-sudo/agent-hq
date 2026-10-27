@@ -1,7 +1,7 @@
 {
   "team": "lab",
   "hired": true,
-  "updatedAt": "2026-10-27T10:25:00Z",
+  "updatedAt": "2026-10-27T10:50:00Z",
   "agents": [
     {
       "id": "lead",
@@ -14,25 +14,40 @@
       "id": "scout",
       "name": "Tool Scout",
       "role": "New AI tools, models and APIs",
-      "status": "waiting",
-      "doing": "Waiting for the Format Hunter"
+      "status": "ok",
+      "doing": "Found 4 useful tool and platform changes"
     },
     {
       "id": "hunter",
       "name": "Format Hunter",
       "role": "What makes rival videos more engaging",
-      "status": "working",
-      "doing": "Hunting for new formats that are winning right now"
+      "status": "ok",
+      "doing": "9 format leads for the YouTube team"
     },
     {
       "id": "engineer",
       "name": "Upgrade Engineer",
       "role": "Turns finds into build plans",
-      "status": "waiting",
-      "doing": "Waiting for the Format Hunter"
+      "status": "working",
+      "doing": "Writing build plans"
     }
   ],
   "log": [
+    {
+      "t": "2026-10-27T10:50:00Z",
+      "agent": "Lab Director",
+      "msg": "Evidence: longs on both channels get 0-114 views; TikTok avg down to 393; Ambient's best Short is an off-niche sim; growth and opps teams haven't run yet. No format leads existed before today, so nothing to check in the lineup."
+    },
+    {
+      "t": "2026-10-27T10:50:00Z",
+      "agent": "Tool Scout",
+      "msg": "Found: Chrome Web Store now weights recent reviews and is ending the Featured badge; Base44 added SEO & GEO, emails and a Payments tab; MOSS-SoundEffect v2 (weights licence unclear)."
+    },
+    {
+      "t": "2026-10-27T10:50:00Z",
+      "agent": "Format Hunter",
+      "msg": "Best find: AI-visual Islamic afterlife stories ('AI Movie of Heaven', 1.4M views) give Ambient Escape a long format; plus weapon-ball battles and stacking sims for Bounce Theory. 9 format leads written."
+    },
     {
       "t": "2026-10-27T10:25:00Z",
       "agent": "Format Hunter",
@@ -45,7 +60,362 @@
     }
   ],
   "ideas": [],
-  "research": [],
+  "research": [
+    {
+      "date": "2026-10-27",
+      "createdAt": "2026-10-27T10:50:00Z",
+      "items": [
+        {
+          "title": "AI-visual Islamic afterlife stories are huge long-form outliers",
+          "creator": "SA Religious Voice (via OutlierKit)",
+          "url": "https://outlierkit.com/channel/sareligiousvoice",
+          "metric": "1.4M views on 'AI Movie of Heaven' (38.2K-sub channel, 4.7K avg)",
+          "whyItWorks": "A long format for Ambient Escape that people search for and that needs no reciter audio."
+        },
+        {
+          "title": "Weapon ball battles are a repeatable 3x format across small channels",
+          "creator": "Cell Wars Game, Seadog Ball Battles",
+          "url": "https://www.youtube.com/watch?v=KpHlAxRi9wc",
+          "metric": "1,629 views at 3.2x; 1,143 at 3.0x",
+          "whyItWorks": "A new sims.py format with HP bars and a winner, close to his proven 'who wins' Shorts."
+        },
+        {
+          "title": "Stacking-until-collapse sims",
+          "creator": "3D Zone",
+          "url": "https://www.youtube.com/watch?v=SaqmhDpTv2M",
+          "metric": "3,644,337 views · 4.4x",
+          "whyItWorks": "A counter-driven wait-for-it hook he can build in 2D."
+        },
+        {
+          "title": "Marble runs dominate long-form outliers",
+          "creator": "Marble Run Freedom",
+          "url": "https://www.youtube.com/watch?v=41KTnixN51A",
+          "metric": "25,190,529 views · 10.7x",
+          "whyItWorks": "Proof the long-form demand he's missing exists; a sim course could fill Bounce Theory's long slots."
+        },
+        {
+          "title": "YouTube's Oct 1 Shorts originality update (third-party report)",
+          "creator": "VIDIO blog",
+          "url": "https://www.vidio.ai/blog/article/youtube-original-content-shorts-update-october-2026",
+          "whyItWorks": "Says reach drops for re-uploads without meaningful changes and flags template uploads with minimal changes; his remixes should change something visible every time."
+        },
+        {
+          "title": "Chrome Web Store: Featured badge ending, ratings now weight recent reviews",
+          "creator": "Chrome for Developers",
+          "url": "https://developer.chrome.com/blog/cws-review-updates-2026",
+          "metric": "Published Aug 20, 2026",
+          "whyItWorks": "LinkedAI should earn fresh reviews instead of hoping for a badge."
+        },
+        {
+          "title": "Base44 shipped SEO & GEO dashboard, branded emails and a Payments tab",
+          "creator": "Base44 (via Releasebot)",
+          "url": "https://releasebot.io/updates/base44",
+          "metric": "Oct 6 and Oct 15, 2026",
+          "whyItWorks": "Growth Architect can get search traffic and welcome emails without new tools."
+        },
+        {
+          "title": "MOSS-SoundEffect v2.0, open sound-effect model (up to 30 s)",
+          "creator": "OpenMOSS",
+          "url": "https://github.com/OpenMOSS/MOSS-TTS",
+          "metric": "Released 2026-05-26; repo Apache-2.0, weights licence not stated",
+          "whyItWorks": "Could give Ambient Escape richer rain/fire layers than synthesis, but don't use it on monetised videos until the weights licence is confirmed."
+        }
+      ]
+    }
+  ],
   "brief": null,
-  "processedIssues": []
+  "processedIssues": [],
+  "formatLeads": [
+    {
+      "channel": "Bounce Theory",
+      "kind": "Short",
+      "name": "Weapon Ball Battle (HP bars)",
+      "example": {
+        "title": "Levi vs Eren | Weapon Ball Battle #shorts",
+        "url": "https://www.youtube.com/watch?v=KpHlAxRi9wc",
+        "creator": "Cell Wars Game",
+        "views": "1,629",
+        "vsAvg": "3.2x channel avg (Seadog Ball Battles also 1,143 at 3.0x and 1,061 at 2.8x)"
+      },
+      "howToMake": "New sims.py format: two balls bounce in an arena, each with a weapon drawn on it (sword, spear, hammer, shield). A hit on the other ball takes HP; health bars on top; winner gets a slow-mo finish. Use generic weapons and names only, never anime/Minecraft characters (copyright).",
+      "why": "Three separate small channels are 3x outliers with the same 'X vs Y ball battle' idea, and mobile games built on it exist (Weapon Ball Fight on the App Store). It fits Omar's 'who escapes / who wins' winners (pick-a-colour Shorts 1.4K-3.2K).",
+      "createdAt": "2026-10-27T10:50:00Z"
+    },
+    {
+      "channel": "Bounce Theory",
+      "kind": "Short",
+      "name": "Character balls (meme names, 'vs')",
+      "example": {
+        "title": "Sigma Ball vs Verity #satisfying #physics #simulation #ball",
+        "url": "https://www.youtube.com/watch?v=nZPtSGMxGsA",
+        "creator": "Velique",
+        "views": "1,195,688",
+        "vsAvg": "3.5x channel avg"
+      },
+      "howToMake": "Same physics as his escape/battle sims, but each ball gets a face and a meme-style name ('Sigma Ball' vs 'Tiny Ball'); title is 'A vs B'. Faces are simple shapes drawn in sims.py.",
+      "why": "Giving the balls a personality turns a sim into a rivalry viewers pick a side in; 1.2M views at 3.5x.",
+      "createdAt": "2026-10-27T10:50:00Z"
+    },
+    {
+      "channel": "Bounce Theory",
+      "kind": "Short",
+      "name": "Stacking until it falls (0% → 1,000,000%)",
+      "example": {
+        "title": "%1,000,000 Satisfying iPhone Stacking Video 📱 #simulation",
+        "url": "https://www.youtube.com/watch?v=SaqmhDpTv2M",
+        "creator": "3D Zone",
+        "views": "3,644,337",
+        "vsAvg": "4.4x channel avg"
+      },
+      "howToMake": "2D rigid-body stacking in sims.py (pymunk or his own physics): drop generic phones/boxes/blocks one at a time onto a tower with a counter (1, 10, 100...) until it collapses. Never show brand logos.",
+      "why": "Counter + inevitable collapse is a pure wait-for-it hook; 3.6M views in 6 days.",
+      "createdAt": "2026-10-27T10:50:00Z"
+    },
+    {
+      "channel": "Bounce Theory",
+      "kind": "Long",
+      "name": "Marble run course (10+ minutes)",
+      "example": {
+        "title": "Marble Run ☆ Freedom Marble Run①",
+        "url": "https://www.youtube.com/watch?v=41KTnixN51A",
+        "creator": "Marble Run Freedom",
+        "views": "25,190,529",
+        "vsAvg": "10.7x channel avg (also Marble corn 2,020,488 at 19.6x; サマーマーブル 1,031,777 at 4.8x)"
+      },
+      "howToMake": "A long 2D marble course built from his marble-race and 'escape' pieces: funnels, spinners, elevators, drop gates, one camera that follows the leader. One continuous run, calm music from his synth, no talking. Note: the examples are filmed physical runs, so this is a sim version of a proven long-form demand, not a copy.",
+      "why": "Marble runs are the biggest long-form outliers in the niche right now, while Omar's own longs peak at 114 views. His Shorts marble races already pull 1.4K-3.8K.",
+      "createdAt": "2026-10-27T10:50:00Z"
+    },
+    {
+      "channel": "Bounce Theory",
+      "kind": "Short",
+      "name": "Spanish-title 'elige tu color' race",
+      "example": {
+        "title": "CARRERA DE CANICAS ELIGE TU COLOR FAVORITO!!",
+        "url": "https://www.youtube.com/watch?v=lC2beIfULwY",
+        "creator": "FernanWarriorZ",
+        "views": "3,441,389",
+        "vsAvg": "5.7x channel avg"
+      },
+      "howToMake": "No new build: take his best marble race ('Fastest marble wins 🏁 Pick one', 3,827 views) and upload one version with a Spanish title and on-screen text ('¡Elige tu color!'). Visuals have no words, so one text change localises it.",
+      "why": "Wordless sims travel across languages; a Spanish marble race is a 3.4M-view 5.7x outlier. Cheap test of a new audience.",
+      "createdAt": "2026-10-27T10:50:00Z"
+    },
+    {
+      "channel": "Ambient Escape",
+      "kind": "Long",
+      "name": "AI-visual afterlife story ('A day in Jannah')",
+      "example": {
+        "title": "Aik Din Jannat Main | AI Movie Of Heaven",
+        "url": "https://outlierkit.com/channel/sareligiousvoice",
+        "creator": "SA Religious Voice",
+        "views": "1.4M (reported by OutlierKit)",
+        "vsAvg": "about 7,000x the channel's typical video; its 'AI Movie of Jahannam' is 131K at 82x"
+      },
+      "howToMake": "English 15-25 min long: calm AI voice narrates what the Quran and sahih hadith describe about Jannah (every claim with its ayah/hadith reference on screen), over AI-generated or stock landscapes (gardens, rivers, light), with his soft rain/ambience bed underneath. Never depict prophets, angels or Allah; no reciter audio. Have the script checked against the sources before upload.",
+      "why": "Long Islamic storytelling with AI visuals is the biggest outlier found in his niche; it gives Ambient Escape a long format with search demand, while his recitation longs get 0-21 views.",
+      "createdAt": "2026-10-27T10:50:00Z"
+    },
+    {
+      "channel": "Ambient Escape",
+      "kind": "Short",
+      "name": "Second-person Jannah reminder",
+      "example": {
+        "title": "Jannat Ka Darwaza",
+        "url": "https://outlierkit.com/channel/zzbrothersshorts",
+        "creator": "ZZ Brothers Shorts",
+        "views": "67K (reported by OutlierKit)",
+        "vsAvg": "10.5x the channel's recent median (channel: 517K subs)"
+      },
+      "howToMake": "Text Short in his existing Islamic Short template: 'You walk through the gates of Jannah...' lines appear one by one over a calm landscape, ending with the source (e.g. Quran 39:73) and a dua line. Optional AI voice.",
+      "why": "OutlierKit credits the 'you are there' framing and an ending call to dua. Omar's own Quran-verse Shorts already get very high like rates (93:3 Short: 1,334 views, 125 likes, 96% watched).",
+      "createdAt": "2026-10-27T10:50:00Z"
+    },
+    {
+      "channel": "Ambient Escape",
+      "kind": "Short",
+      "name": "Question hook reflection",
+      "example": {
+        "title": "The Question That Leaves Every Soul Silent",
+        "url": "https://www.youtube.com/watch?v=yWBarjMFvPQ",
+        "creator": "Tartil Offical",
+        "views": "11,564",
+        "vsAvg": "4.5x channel avg"
+      },
+      "howToMake": "Open with a question on screen ('What will you say when you are asked about your youth?'), pause 2 seconds, then the ayah or hadith that answers it, with the reference. Same text template he already uses.",
+      "why": "Question-led Islamic titles beat statement reminders in the trending data, and it costs nothing to switch hooks.",
+      "createdAt": "2026-10-27T10:50:00Z"
+    },
+    {
+      "channel": "Ambient Escape",
+      "kind": "Short",
+      "name": "AI macro nature + ayah",
+      "example": {
+        "title": "What Happens When a Strawberry Falls in the Rain? 🌧️🍓🌱",
+        "url": "https://www.youtube.com/watch?v=hV7tqz6P8cM",
+        "creator": "Nature & Noor AI",
+        "views": "6,854",
+        "vsAvg": "2.1x channel avg"
+      },
+      "howToMake": "Slow AI or stock macro clip (rain on fruit, a seed sprouting) with a 'what happens when...' title, then an ayah about rain or growth as text, over his rain audio. Do NOT copy their reciter audio (Content ID).",
+      "why": "Curiosity title + calming nature visual is a cheap way to make Islamic Shorts look different from plain text cards. Weaker evidence (2.1x), so test only.",
+      "createdAt": "2026-10-27T10:50:00Z"
+    }
+  ],
+  "teamLeads": {
+    "tiktok": [
+      {
+        "title": "'It's making sense now' reaction format",
+        "what": "React to someone's bad reasoning with a calm 'it's making sense now' realisation; 206 creators this week, +20,500%.",
+        "evidence": {
+          "title": "It's making sense now",
+          "url": "https://virlo.ai/trends",
+          "creator": "Virlo trend tracker",
+          "metric": "sample videos 3.3M, 1.7M, 833K views"
+        },
+        "howToUse": "Sit-down version: 'Why most guys can't stop scrolling... it's making sense now' then explain the psychology in 3 beats. Pairs with the psychology-facts angle the team already picked.",
+        "createdAt": "2026-10-27T10:50:00Z"
+      },
+      {
+        "title": "Stoic one-liners are 30x outliers on Shorts",
+        "what": "One strong line about desire/discipline, dark minimal visual.",
+        "evidence": {
+          "title": "You become free the moment your desires stop controlling you.",
+          "url": "https://www.youtube.com/watch?v=xIdNx_BD-lU",
+          "creator": "hiddenverses",
+          "metric": "79,167 views · 34.5x channel avg"
+        },
+        "howToUse": "Open a talking video with one quotable line (Islamic or stoic) as the first sentence and on-screen text, then explain it in under 40 seconds.",
+        "createdAt": "2026-10-27T10:50:00Z"
+      },
+      {
+        "title": "'Editing how I see myself' moodboard",
+        "what": "Aesthetic self-image edit, new this week (68 creators).",
+        "evidence": {
+          "title": "Editing how I see myself",
+          "url": "https://virlo.ai/trends",
+          "creator": "Virlo trend tracker",
+          "metric": "sample videos 412K, 349K, 222K views"
+        },
+        "howToUse": "Optional B-side post: a quick moodboard of who he's becoming (gym, Quran, books, desk) with one line of text. Only if it doesn't need filming beyond phone clips he has.",
+        "createdAt": "2026-10-27T10:50:00Z"
+      }
+    ],
+    "linkedai": [
+      {
+        "title": "Chrome Web Store now weights recent reviews; Featured badge is ending",
+        "what": "Ratings favour fresh reviews; self-nominations for Featured closed Aug 20, 2026.",
+        "evidence": {
+          "title": "Chrome Web Store updates: Faster reviews, new publication limits, badge updates",
+          "url": "https://developer.chrome.com/blog/cws-review-updates-2026",
+          "creator": "Chrome for Developers",
+          "metric": "Published Aug 20, 2026"
+        },
+        "howToUse": "Make one promo idea that ends with 'leave a review if it got you a reply', and stop planning around the Featured badge.",
+        "createdAt": "2026-10-27T10:50:00Z"
+      },
+      {
+        "title": "Shaking-head AI meme",
+        "what": "AI-animated photo shaking its head with relatable text; tagged for brands.",
+        "evidence": {
+          "title": "Shaking head AI meme",
+          "url": "https://virlo.ai/trends",
+          "creator": "Virlo trend tracker",
+          "metric": "sample videos 2.2M, 659K, 625K views"
+        },
+        "howToUse": "Text: 'Recruiters reading my 200th generic cover letter' over a head-shake; caption pitches LinkedAI's personal messages.",
+        "createdAt": "2026-10-27T10:50:00Z"
+      }
+    ],
+    "growth": [
+      {
+        "title": "Base44 SEO & GEO dashboard + llms.txt",
+        "what": "SEO score, per-page meta tags, sitemap, llms.txt and Search Console (rolling out).",
+        "evidence": {
+          "title": "Base44 release notes (Oct 6, 2026)",
+          "url": "https://releasebot.io/updates/base44",
+          "creator": "Base44",
+          "metric": "shipped Oct 6, 2026"
+        },
+        "howToUse": "Write one idea around free 'AI marketing plan for <business type>' landing pages, since marketing-plan generator pages are what rivals rank with.",
+        "createdAt": "2026-10-27T10:50:00Z"
+      },
+      {
+        "title": "Free marketing-plan generators are the category's lead magnet",
+        "what": "Rivals offer a free plan generator as the top of their funnel.",
+        "evidence": {
+          "title": "AI Marketing Plan Generator",
+          "url": "https://www.airops.com/tools/ai-marketing-plan-generator",
+          "creator": "AirOps",
+          "metric": ""
+        },
+        "howToUse": "Content idea: 'I made a marketing plan for a local barber in 60 seconds' screen-record demo of Growth Architect.",
+        "createdAt": "2026-10-27T10:50:00Z"
+      },
+      {
+        "title": "Base44 branded emails as workflow steps",
+        "what": "Design emails and send them on events like signup (custom built-in emails need Builder plan).",
+        "evidence": {
+          "title": "Base44 release notes (Oct 6, 2026)",
+          "url": "https://releasebot.io/updates/base44",
+          "creator": "Base44",
+          "metric": "shipped Oct 6, 2026"
+        },
+        "howToUse": "Product idea: a 3-email onboarding sequence that brings new users back to finish their first plan.",
+        "createdAt": "2026-10-27T10:50:00Z"
+      }
+    ],
+    "opps": [
+      {
+        "title": "Islamic AI-storytelling long-form channel",
+        "what": "Faceless Islamic story/afterlife channels with AI visuals are hitting huge outliers.",
+        "evidence": {
+          "title": "SA Religious Voice",
+          "url": "https://outlierkit.com/channel/sareligiousvoice",
+          "creator": "SA Religious Voice",
+          "metric": "1.4M views on top video, 38.2K subs (OutlierKit)"
+        },
+        "howToUse": "Check whether this should be its own channel or live on Ambient Escape; cost it in hours per video including source-checking.",
+        "createdAt": "2026-10-27T10:50:00Z"
+      },
+      {
+        "title": "NFC review-card wholesale and reseller programmes exist",
+        "what": "Suppliers sell blank/branded review tags wholesale to resellers.",
+        "evidence": {
+          "title": "Wholesale & Reseller",
+          "url": "https://tap2review.it.com/wholesale",
+          "creator": "tap2review",
+          "metric": ""
+        },
+        "howToUse": "Compare his NFC tag cost vs wholesale prices and check whether a 'reseller kit' for other students is a better business than selling door to door.",
+        "createdAt": "2026-10-27T10:50:00Z"
+      }
+    ],
+    "youtube": [
+      {
+        "title": "Change one visible thing in every remix",
+        "what": "A third-party report says YouTube cut reach from Oct 1, 2026 for re-uploads without meaningful additions, and calls template uploads with minimal changes more exposed.",
+        "evidence": {
+          "title": "What Does YouTube's October 2026 Original-Content Shorts Update Mean",
+          "url": "https://www.vidio.ai/blog/article/youtube-original-content-shorts-update-october-2026",
+          "creator": "VIDIO",
+          "metric": "update dated Oct 1, 2026 (per the article)"
+        },
+        "howToUse": "Keep the remix rule strict: a new colour, count, arena or melody every time, never the same render with a new title.",
+        "createdAt": "2026-10-27T10:50:00Z"
+      },
+      {
+        "title": "Ambient Escape's top Short is a bouncing-ball sim",
+        "what": "'Every bounce, the ball gets BIGGER' got 3,396 views on Ambient Escape, more than any Islamic Short, which may confuse who the channel is for.",
+        "evidence": {
+          "title": "Every bounce, the ball gets BIGGER 😳 Wait for the end",
+          "url": "https://www.youtube.com/watch?v=-kp0e1xMDNA",
+          "creator": "Ambient Escape (Omar)",
+          "metric": "3,396 views · 76.7% watched"
+        },
+        "howToUse": "Put sims on Bounce Theory only; give Ambient Escape's slots to Quran-verse and question-hook Shorts, which have the best like rates.",
+        "createdAt": "2026-10-27T10:50:00Z"
+      }
+    ]
+  }
 }
