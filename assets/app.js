@@ -451,7 +451,8 @@
         const longs = (L.channels[statSel] || []).filter(v => v.kind === "Long" && v.footage).map(v => `${v.slot} = ${v.footage}`);
         const txt = `Make today's ${statSel} batch with my ${skill} skill.\n\nFirst open today's plan and follow it exactly: ${url}\n(If you can't open it, run: curl -sL "${url}")\n\n` +
           (longs.length ? `The long videos MUST loop the real downloaded clips from that file (${longs.join(", ")}). Do not generate or draw scenes for them. Download the clips first and list them to me before rendering.\n\n` : "") +
-          `Make all ${(L.channels[statSel] || []).length} videos in the file's order with its titles, then tell me which clip each video used.`;
+          (statSel === "Bounce Theory" ? "Every video MUST visibly use its \"Today's twist\" from the file (frame, colours, counts, rules, melody). Never re-render a format with its default settings or reuse an old render. Before delivering, compare each video's contact sheet with that format's last upload and redo any that look the same.\n\n" : "") +
+          `Make all ${(L.channels[statSel] || []).length} videos in the file's order with its titles, then tell me ${statSel === "Bounce Theory" ? "in one line per video what is visibly new" : "which clip each video used"}.`;
         const row = el("div", "row"); row.style.gap = "8px"; row.style.flexWrap = "wrap"; row.style.margin = "6px 0 10px";
         const b = el("button", "btn primary", "Copy batch prompt");
         b.onclick = async () => { try { await navigator.clipboard.writeText(txt); toast("Copied. Paste it into a new Claude chat."); } catch { const ta = el("textarea"); ta.value = txt; ta.rows = 7; ta.style.width = "100%"; row.after(ta); ta.select(); toast("Select and copy the text below."); } };

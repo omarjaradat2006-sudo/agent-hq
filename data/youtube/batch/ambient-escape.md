@@ -75,4 +75,4 @@ Tags: fireplace sounds, crackling fireplace 3 hours, blizzard sounds, cabin ambi
 - Tell Omar which clip each video used (by file name) and any slot that fell back.
 - If this session can push to omarjaradat2006-sudo/agent-hq: set `made: true` on each lineup item made and `status: "filmed"` on each used idea in data/youtube/state.json, then commit and push. Otherwise list the idea ids so Omar can press "Mark made" on the site.
 
-_Generated 2026-10-26 21:39 UTC_
+_Generated 2026-10-27 02:12 UTC_

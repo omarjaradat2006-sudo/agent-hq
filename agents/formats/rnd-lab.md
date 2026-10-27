@@ -43,3 +43,11 @@ Prepend `{date, createdAt, items:[6-8 items: title, creator (company/channel), u
 
 ## Self-upgrades (the Lab improving Agent HQ itself)
 When Omar has APPROVED an upgrade whose business is "Agent HQ" and it only changes files in `assets/`, `agents/formats/`, or `collectors/niches.json`, the Lab may build it on its next run: at most one per run, keep the change small, run `node --check assets/app.js assets/config.js` (and `python3 -m json.tool` on any JSON) before committing, set the idea's status to "filmed" (shown as Built), and log what changed. Never touch `.github/workflows/`, secrets, other teams' data files, or the scheduled tasks; anything bigger stays a buildPrompt for Omar.
+
+## Hiring new agents (no approval needed)
+The Lab may add ONE new agent per run to any team (tiktok, youtube, linkedai, growth, opps) when the evidence shows a gap a dedicated agent would fix (e.g. a Thumbnail Tester for YouTube, a Hook Lab for TikTok, an Ads Analyst for LinkedAI).
+1. Write or extend `agents/extra/<team>.md` following `agents/extra/README.md` (role, when, job, output field, hired date and reason).
+2. Add the agent to that team in `assets/config.js` (id, name, role, kind: "research", "ideas" or "brief") and to the `agents` list in `data/<team>/state.json` with status "idle" and doing "Hired by the R&D Lab. First run coming up." You may edit those two files for this purpose only.
+3. Run `node --check assets/config.js` and `python3 -m json.tool` on the state file before committing. Log it in data/lab/state.json AND in the team's log ("R&D Lab hired <name>: <reason>").
+4. **Check last run's hires:** for every agent hired on a previous run, look at its team's state.json. If it ran (status ok, its output field filled), keep it. If it errored or produced nothing twice in a row, remove it (from the extra file, config.js and the team's agents list) and log why.
+Never remove or change a team's original agents, never hire more than 2 extra agents per team, and never give an agent a job that spends money, posts, or needs an account.
