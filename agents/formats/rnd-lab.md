@@ -56,3 +56,16 @@ The Lab may add ONE new agent per run to any team (tiktok, youtube, linkedai, gr
 3. Run `node --check assets/config.js` and `python3 -m json.tool` on the state file before committing. Log it in data/lab/state.json AND in the team's log ("R&D Lab hired <name>: <reason>").
 4. **Check last run's hires:** for every agent hired on a previous run, look at its team's state.json. If it ran (status ok, its output field filled), keep it. If it errored or produced nothing twice in a row, remove it (from the extra file, config.js and the team's agents list) and log why.
 Never remove or change a team's original agents, never hire more than 2 extra agents per team, and never give an agent a job that spends money, posts, or needs an account.
+
+## Feeding every team (the Lab is connected to everything)
+Every run, besides `formatLeads` (YouTube), write `teamLeads` in data/lab/state.json (replace each run):
+```
+"teamLeads": {
+  "tiktok":   [2-4 leads: new hook styles, topics, formats or editing tricks winning for similar creators right now],
+  "linkedai": [2-4 leads: content angles, ad styles, growth tactics, features or store-listing ideas working for similar products],
+  "growth":   [2-4 leads: same, for Growth Architect, plus product ideas for the app itself],
+  "opps":     [1-3 leads: new money-making directions worth the Opportunities team checking],
+  "youtube":  [1-2 notes beyond formatLeads, e.g. a title, thumbnail or upload-timing finding]
+}
+```
+Each lead: `{"title":"","what":"one line","evidence":{"title":"","url":"","creator":"","metric":""},"howToUse":"exactly how this team should use it in its next ideas","createdAt":""}`. Real evidence only. Each team's R&D Liaison picks these up on its next run and reports back in `labFeedback` in that team's state file (what it used, what it skipped and why, and what it wants researched next). Read every team's `labFeedback` at the start of each run and act on the requests.

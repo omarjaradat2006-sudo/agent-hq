@@ -250,6 +250,7 @@
     if (t.cfg.id === "tiktok" || t.cfg.id === "youtube") out.splice(out.findIndex(x => x[0] === "ideas") + 1, 0, ["review", "Review"]);
     if (t.cfg.id === "linkedai" || t.cfg.id === "growth") out.splice(2, 0, ["competitors", "Competitors"]);
     if (t.cfg.id === "opps") out.splice(out.findIndex(x => x[0] === "ideas") + 1, 0, ["swarm", "100-person test"]);
+    if (t.cfg.id === "lab") out.splice(1, 0, ["leads", "Leads for each team"]);
     out.push(["research", "Research"], ["activity", "Activity"]);
     return out;
   }
@@ -266,7 +267,7 @@
       b.onclick = () => { tab = k; renderPanel(); }; tabs.append(b); });
     ph.append(tabs); p.append(ph);
     const body = el("div", "pb"); p.append(body);
-    ({ overview: vOverview, ideas: vIdeas, review: vReview, competitors: vCompetitors, swarm: vSwarm, lineup: vLineup, shots: vShots, stats: vStats, trending: vTrending, research: vResearch, activity: vActivity }[tab] || vOverview)(t, body);
+    ({ overview: vOverview, ideas: vIdeas, review: vReview, competitors: vCompetitors, swarm: vSwarm, leads: vLeads, lineup: vLineup, shots: vShots, stats: vStats, trending: vTrending, research: vResearch, activity: vActivity }[tab] || vOverview)(t, body);
   }
   function pill(s) { return el("span", "pill s-" + (s || "idle"), ST[s] || s || "Idle"); }
   function empty(title, text) { const e = el("div", "empty"); e.append(el("strong", null, title)); e.append(el("span", null, text)); return e; }
@@ -410,6 +411,21 @@
     const ws = t.state.swarms || [];
     if (!ws.length) { body.append(empty("No swarm tests yet", "Each run, 100 simulated people (investors, customers, skeptics, marketers, everyday users) debate the team's top idea. Results show up here.")); return; }
     ws.forEach(w => { const c = el("div", "card"); c.append(el("div", "label", (w.date || ago(w.createdAt)))); c.append(el("h3", null, w.idea || "Idea")); c.append(swarmBlock(w, false)); body.append(c); });
+  }
+  function vLeads(t, body) {
+    const st = t.state, fl = st.formatLeads || [], tl = st.teamLeads || {};
+    if (!fl.length && !Object.keys(tl).length) { body.append(empty("No leads yet", "Every morning the Lab hunts for what's winning right now and sends leads to each team. Each team's R&D Liaison uses them and reports back.")); return; }
+    const leadCard = (x) => { const c = el("div", "shot"); const ev = x.example || x.evidence || {}; const u = safeUrl(ev.url);
+      c.append(el("div", "t", x.name || x.title || "Lead")); const m = [x.channel, x.kind, ev.creator, ev.views || ev.metric, ev.vsAvg].filter(Boolean).join(" · "); if (m) c.append(el("div", "m", m));
+      if (x.what || x.why) c.append(el("p", null, x.what || x.why)); if (x.howToMake || x.howToUse) c.append(el("div", "small", "How: " + (x.howToMake || x.howToUse)));
+      if (u) { const a = el("a", null, "↗ " + (ev.title || "Example")); a.href = u; a.target = "_blank"; a.rel = "noopener"; c.append(a); } return c; };
+    if (fl.length) { const c = el("div", "card"); c.append(el("div", "label", "New YouTube formats · to the YouTube team")); fl.forEach(x => c.append(leadCard(x))); body.append(c); }
+    const label = { tiktok: "TikTok", youtube: "YouTube", linkedai: "LinkedAI", growth: "Growth Architect", opps: "AI Opportunities" };
+    Object.entries(tl).forEach(([team, arr]) => { if (!Array.isArray(arr) || !arr.length) return; const c = el("div", "card"); c.append(el("div", "label", "To " + (label[team] || team)));
+      arr.forEach(x => c.append(leadCard(x)));
+      const fb = (M.teams[team] && M.teams[team].state && M.teams[team].state.labFeedback) || null;
+      if (fb) c.append(el("div", "small", "Team feedback: used " + ((fb.used || []).length) + ", skipped " + ((fb.skipped || []).length) + (fb.request ? " · wants: " + fb.request : "")));
+      body.append(c); });
   }
   function vReview(t, body) {
     const r = t.state.review;
