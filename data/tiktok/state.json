@@ -1,7 +1,7 @@
 {
   "team": "tiktok",
   "hired": true,
-  "updatedAt": "2026-10-27T13:57:05Z",
+  "updatedAt": "2026-10-27T13:58:41Z",
   "agents": [
     {
       "id": "analyst",
@@ -9,43 +9,62 @@
       "role": "Finds outlier videos",
       "status": "ok",
       "doing": "Found 5 signals: IFS young-men survey, stoic one-liners, shorter videos win",
-      "lastRun": "2026-10-26T13:48:30Z",
-      "nextRun": "2026-10-27T13:41:00Z"
+      "lastRun": "2026-10-27T13:58:41Z",
+      "nextRun": "2026-10-28T13:41:00Z"
     },
     {
       "id": "strategist",
       "name": "Strategist",
       "role": "Picks what to film next",
-      "status": "working",
-      "doing": "Picking today's 3 angles",
-      "lastRun": "2026-10-26T13:48:30Z",
-      "nextRun": "2026-10-27T13:41:00Z"
+      "status": "ok",
+      "doing": "Picked: Epictetus control, who-you-know debate, gratitude (faith slot)",
+      "lastRun": "2026-10-27T13:58:41Z",
+      "nextRun": "2026-10-28T13:41:00Z"
     },
     {
       "id": "copywriter",
       "name": "Copywriter",
       "role": "Hooks and full scripts",
-      "status": "waiting",
-      "doing": "Waiting for the review",
-      "lastRun": "2026-10-26T13:48:30Z",
-      "nextRun": "2026-10-27T13:41:00Z"
+      "status": "ok",
+      "doing": "Wrote 3 scripts (A/B/C), VoicePrint pass done",
+      "lastRun": "2026-10-27T13:58:41Z",
+      "nextRun": "2026-10-28T13:41:00Z"
     },
     {
       "id": "reviewer",
       "name": "Performance Reviewer",
       "status": "ok",
       "doing": "Reviewed 19 videos: reach dropped Oct 21, short + on-niche wins",
-      "role": "Explains why videos won or flopped"
+      "role": "Explains why videos won or flopped",
+      "lastRun": "2026-10-27T13:58:41Z",
+      "nextRun": "2026-10-28T13:41:00Z"
     },
     {
       "id": "liaison",
       "name": "R&D Liaison",
       "role": "Brings in the R&D Lab's finds",
       "status": "ok",
-      "doing": "Used 1 Lab lead, skipped 2 that need footage"
+      "doing": "Used 1 Lab lead, skipped 2 that need footage",
+      "lastRun": "2026-10-27T13:58:41Z",
+      "nextRun": "2026-10-28T13:41:00Z"
     }
   ],
   "log": [
+    {
+      "t": "2026-10-27T13:58:41Z",
+      "agent": "Strategist",
+      "msg": "Brief ready: film 'Epictetus' fix for feeling out of control' first"
+    },
+    {
+      "t": "2026-10-27T13:58:32Z",
+      "agent": "Copywriter",
+      "msg": "Wrote 3 scripts: Epictetus' fix for feeling out of control; Who you know is a skill, not luck; I had gratitude backwards"
+    },
+    {
+      "t": "2026-10-27T13:58:32Z",
+      "agent": "Strategist",
+      "msg": "Picked 3 different shapes: stoic stat-to-philosopher loop, a career debate line, and the one faith slot on gratitude since it led your review"
+    },
     {
       "t": "2026-10-27T13:57:05Z",
       "agent": "R&D Liaison",
@@ -341,6 +360,208 @@
       "status": "pending",
       "createdAt": "2026-10-26T13:48:30Z",
       "team": "tiktok"
+    },
+    {
+      "id": "tiktok-2026-10-27-1",
+      "title": "Epictetus' fix for feeling out of control",
+      "hook": "Six in ten guys our age feel like they've got barely any control over their life.",
+      "why": "Built on today's biggest research find (IFS: 61% of guys 18-29 feel they have little control) and the R&D Lab's 'stoic one-liners are 30x outliers' lead, shown as the on-screen line. Kept under 40s because your winners were 31-40s.",
+      "format": "Talking head 39s",
+      "hookFamily": "Curiosity loop",
+      "length": 39,
+      "onScreen": "The fix is 1,900 years old.",
+      "scenes": [
+        {
+          "label": "Hook",
+          "time": "0-4s",
+          "line": "Six in ten guys our age feel like they've got barely any control over their life.",
+          "delivery": "lean in, flat and serious, no smile"
+        },
+        {
+          "label": "Context lean",
+          "time": "4-7s",
+          "line": "That's a survey of 2,000 young men. This year.",
+          "delivery": "matter-of-fact, slight pause before 'This year'"
+        },
+        {
+          "label": "Re-hook",
+          "time": "7-11s",
+          "line": "But a slave figured this out almost 2,000 years ago.",
+          "delivery": "lift the energy on 'a slave', hold eye contact"
+        },
+        {
+          "label": "Value",
+          "time": "11-21s",
+          "line": "Epictetus. Some things are up to us, some aren't. Your effort, what you do next. Yours. What people think of you? Not yours.",
+          "delivery": "count on fingers loosely, quick on the 'not yours' list"
+        },
+        {
+          "label": "Payoff",
+          "time": "21-32s",
+          "line": "So write two columns tonight. What's up to you, and what isn't. Put everything stressing you in one of them. [fill in: one thing from your own list]",
+          "delivery": "calmer, like you're telling a friend what you tried"
+        },
+        {
+          "label": "Last line / loop",
+          "time": "32-38s",
+          "line": "Then only touch the first column. That's where your control went. It was there the whole time.",
+          "delivery": "slow, last sentence almost quiet, then cut. Loops back to the 'no control' hook"
+        }
+      ],
+      "hooksToTest": [
+        "A slave figured out the thing most guys our age are stressing about. (Story / progressive reveal)",
+        "You don't have a motivation problem. You've got a control problem. (Calm hard truth)",
+        "Stop stressing about stuff that was never yours to fix. (Call-out)"
+      ],
+      "caption": "A slave figured out the control problem almost 2,000 years ago. #fyppppppppppppppppppppppp #viral #fyp #stoicism #selfimprovement",
+      "script": "Six in ten guys our age feel like they've got barely any control over their life. [pause] That's a survey of 2,000 young men. This year. [pause] But a slave figured this out almost 2,000 years ago. [pause] Epictetus. Some things are up to us, some aren't. Your effort, what you do next. Yours. What people think of you? Not yours. [pause] So write two columns tonight. What's up to you, and what isn't. Put everything stressing you in one of them. [fill in: one thing from your own list] [pause] Then only touch the first column. That's where your control went. It was there the whole time.",
+      "formatted": "**VERSION A - Curiosity loop (~39s)**\n- **Why this one:** A stat the viewer sees himself in, then a promise that someone solved it 2,000 years ago, so he stays for the answer.\n- **On-screen text (first 3-5s):** The fix is 1,900 years old.\n\n**Scene 1 - Hook (0-4s)**\n> Six in ten guys our age feel like they've got barely any control over their life.\n\n*Delivery:* lean in, flat and serious, no smile\n\n[pause]\n\n**Scene 2 - Context lean (4-7s)**\n> That's a survey of 2,000 young men. This year.\n\n*Delivery:* matter-of-fact, slight pause before 'This year'\n\n[pause]\n\n**Scene 3 - Re-hook (7-11s)**\n> But a slave figured this out almost 2,000 years ago.\n\n*Delivery:* lift the energy on 'a slave', hold eye contact\n\n[pause]\n\n**Scene 4 - Value (11-21s)**\n> Epictetus. Some things are up to us, some aren't. Your effort, what you do next. Yours. What people think of you? Not yours.\n\n*Delivery:* count on fingers loosely, quick on the 'not yours' list\n\n[pause]\n\n**Scene 5 - Payoff (21-32s)**\n> So write two columns tonight. What's up to you, and what isn't. Put everything stressing you in one of them. [fill in: one thing from your own list]\n\n*Delivery:* calmer, like you're telling a friend what you tried\n\n[pause]\n\n**Scene 6 - Last line / loop (32-38s)**\n> Then only touch the first column. That's where your control went. It was there the whole time.\n\n*Delivery:* slow, last sentence almost quiet, then cut. Loops back to the 'no control' hook\n\n**Last line:** \"Then only touch the first column. That's where your control went. It was there the whole time.\" (Loops back to the 'no control' hook)\n\n- **Hooks to test:**\n  - A slave figured out the thing most guys our age are stressing about. (Story / progressive reveal)\n  - You don't have a motivation problem. You've got a control problem. (Calm hard truth)\n  - Stop stressing about stuff that was never yours to fix. (Call-out)\n- **Caption:** A slave figured out the control problem almost 2,000 years ago. #fyppppppppppppppppppppppp #viral #fyp #stoicism #selfimprovement",
+      "score": 8,
+      "sources": [
+        {
+          "title": "IFS: Demoralized but not defeated: what 2,000 young men told IFS about their lives",
+          "url": "https://ifstudies.org/blog/demoralized-but-not-defeated-what-2000-young-men-told-ifs-about-their-lives"
+        },
+        {
+          "title": "Epictetus, Enchiridion 1 (Handbook), 'Some things are in our control and others not'",
+          "url": "https://classics.mit.edu/Epictetus/epicench.html"
+        }
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-27T13:58:32Z",
+      "team": "tiktok"
+    },
+    {
+      "id": "tiktok-2026-10-27-2",
+      "title": "Who you know is a skill, not luck",
+      "hook": "Most guys our age think who you know beats how hard you work.",
+      "why": "Uses the IFS stat that 72% of young men think who you know beats hard work: half your viewers agree, half disagree, which is built for comments. Money/career angle, so it rotates away from yesterday's Seneca money video.",
+      "format": "Talking head 34s",
+      "hookFamily": "Debate line",
+      "length": 34,
+      "onScreen": "72% of us believe this. Here's the catch.",
+      "scenes": [
+        {
+          "label": "Hook",
+          "time": "0-4s",
+          "line": "Most guys our age think who you know beats how hard you work.",
+          "delivery": "straight face, slight head tilt like you're about to argue"
+        },
+        {
+          "label": "Tension",
+          "time": "4-9s",
+          "line": "72% said it in a survey this year. And they're kind of right.",
+          "delivery": "shrug on 'kind of right', don't fight it"
+        },
+        {
+          "label": "Re-hook",
+          "time": "9-15s",
+          "line": "But who you know isn't luck. It's a skill. Most of us just never practice it.",
+          "delivery": "lean in on 'it's a skill', pause after it"
+        },
+        {
+          "label": "Value",
+          "time": "15-26s",
+          "line": "Nobody hires a guy they've never heard of. So message one person a week who's a step ahead of you. One real question. That's it.",
+          "delivery": "practical, quicker pace, like giving directions"
+        },
+        {
+          "label": "Payoff",
+          "time": "26-30s",
+          "line": "I'm starting this week. [fill in: who you're messaging]",
+          "delivery": "honest, a bit lower, no flex"
+        },
+        {
+          "label": "Last line / CTA",
+          "time": "30-34s",
+          "line": "So what's holding you back? Who you know, or that you never asked?",
+          "delivery": "look right into the lens, stop dead"
+        }
+      ],
+      "hooksToTest": [
+        "Hard work isn't enough anymore, and I'm tired of pretending it is. (Calm hard truth)",
+        "Every guy who says 'it's who you know' is skipping one step. (Call-out)",
+        "I used to think networking was fake. Then I noticed something. (Vulnerable admission)"
+      ],
+      "caption": "Who you know isn't luck. It's a skill you can practice. #fyppppppppppppppppppppppp #viral #fyp #careeradvice #mindset",
+      "script": "Most guys our age think who you know beats how hard you work. [pause] 72% said it in a survey this year. And they're kind of right. [pause] But who you know isn't luck. It's a skill. Most of us just never practice it. [pause] Nobody hires a guy they've never heard of. So message one person a week who's a step ahead of you. One real question. That's it. [pause] I'm starting this week. [fill in: who you're messaging] [pause] So what's holding you back? Who you know, or that you never asked?",
+      "formatted": "**VERSION B - Debate line (~34s)**\n- **Why this one:** It opens on a belief the viewer already holds, agrees with it, then flips who's responsible for it.\n- **On-screen text (first 3-5s):** 72% of us believe this. Here's the catch.\n\n**Scene 1 - Hook (0-4s)**\n> Most guys our age think who you know beats how hard you work.\n\n*Delivery:* straight face, slight head tilt like you're about to argue\n\n[pause]\n\n**Scene 2 - Tension (4-9s)**\n> 72% said it in a survey this year. And they're kind of right.\n\n*Delivery:* shrug on 'kind of right', don't fight it\n\n[pause]\n\n**Scene 3 - Re-hook (9-15s)**\n> But who you know isn't luck. It's a skill. Most of us just never practice it.\n\n*Delivery:* lean in on 'it's a skill', pause after it\n\n[pause]\n\n**Scene 4 - Value (15-26s)**\n> Nobody hires a guy they've never heard of. So message one person a week who's a step ahead of you. One real question. That's it.\n\n*Delivery:* practical, quicker pace, like giving directions\n\n[pause]\n\n**Scene 5 - Payoff (26-30s)**\n> I'm starting this week. [fill in: who you're messaging]\n\n*Delivery:* honest, a bit lower, no flex\n\n[pause]\n\n**Scene 6 - Last line / CTA (30-34s)**\n> So what's holding you back? Who you know, or that you never asked?\n\n*Delivery:* look right into the lens, stop dead\n\n**Last line:** \"So what's holding you back? Who you know, or that you never asked?\" (ends on the question, no loop)\n\n- **Hooks to test:**\n  - Hard work isn't enough anymore, and I'm tired of pretending it is. (Calm hard truth)\n  - Every guy who says 'it's who you know' is skipping one step. (Call-out)\n  - I used to think networking was fake. Then I noticed something. (Vulnerable admission)\n- **Caption:** Who you know isn't luck. It's a skill you can practice. #fyppppppppppppppppppppppp #viral #fyp #careeradvice #mindset",
+      "score": 7,
+      "sources": [
+        {
+          "title": "IFS: Demoralized but not defeated (72% 'who you know' finding)",
+          "url": "https://ifstudies.org/blog/demoralized-but-not-defeated-what-2000-young-men-told-ifs-about-their-lives"
+        }
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-27T13:58:32Z",
+      "team": "tiktok"
+    },
+    {
+      "id": "tiktok-2026-10-27-3",
+      "title": "I had gratitude backwards",
+      "hook": "I used to say I'd be grateful once I made it.",
+      "why": "Today's one faith slot. The review found gratitude/faith reflections were 2 of your top 3 (834 and 783 views, best like rate), so this repeats that topic with a sharper opening and the same comment-question ending.",
+      "format": "Talking head 36s",
+      "hookFamily": "Vulnerable admission",
+      "length": 36,
+      "onScreen": "Surah Ibrahim, verse 7 changed the order for me.",
+      "scenes": [
+        {
+          "label": "Hook",
+          "time": "0-3s",
+          "line": "I used to say I'd be grateful once I made it.",
+          "delivery": "quiet, a bit embarrassed, look slightly down then up"
+        },
+        {
+          "label": "Context lean",
+          "time": "3-8s",
+          "line": "Once I had the money. My own car. My own place. Then I'd be thankful.",
+          "delivery": "list it like you're making fun of your old self"
+        },
+        {
+          "label": "Re-hook",
+          "time": "8-12s",
+          "line": "Then one verse flipped the whole order on me.",
+          "delivery": "pause before 'flipped', lean in"
+        },
+        {
+          "label": "Reveal",
+          "time": "12-20s",
+          "line": "Surah Ibrahim, verse seven. Allah says, 'If you are grateful, I will surely increase you.' [verify source]",
+          "delivery": "slower, calm, let the verse breathe"
+        },
+        {
+          "label": "Value",
+          "time": "20-26s",
+          "line": "Grateful first. Then more. Not the other way round. I had it backwards for years.",
+          "delivery": "short lines, nod on 'backwards'"
+        },
+        {
+          "label": "Payoff / CTA",
+          "time": "26-36s",
+          "line": "So now before I sleep I name one thing I'm thankful for. Out loud. Today it was [fill in: your real one]. What's yours?",
+          "delivery": "warm, smile a little on the last question"
+        }
+      ],
+      "hooksToTest": [
+        "Most of us are waiting to be grateful. That's the problem. (Calm hard truth)",
+        "One verse made me realise I had gratitude completely backwards. (Curiosity loop)",
+        "If you're waiting to make it before you say alhamdulillah, watch this. (Call-out)"
+      ],
+      "caption": "Grateful first, then more. Not the other way round. #fyppppppppppppppppppppppp #viral #fyp #gratitude #muslim",
+      "script": "I used to say I'd be grateful once I made it. [pause] Once I had the money. My own car. My own place. Then I'd be thankful. [pause] Then one verse flipped the whole order on me. [pause] Surah Ibrahim, verse seven. Allah says, 'If you are grateful, I will surely increase you.' [verify source] [pause] Grateful first. Then more. Not the other way round. I had it backwards for years. [pause] So now before I sleep I name one thing I'm thankful for. Out loud. Today it was [fill in: your real one]. What's yours?",
+      "formatted": "**VERSION C - Vulnerable admission (~36s)**\n- **Why this one:** An honest confession most guys share, then one verse that flips the order of it.\n- **On-screen text (first 3-5s):** Surah Ibrahim, verse 7 changed the order for me.\n\n**Scene 1 - Hook (0-3s)**\n> I used to say I'd be grateful once I made it.\n\n*Delivery:* quiet, a bit embarrassed, look slightly down then up\n\n[pause]\n\n**Scene 2 - Context lean (3-8s)**\n> Once I had the money. My own car. My own place. Then I'd be thankful.\n\n*Delivery:* list it like you're making fun of your old self\n\n[pause]\n\n**Scene 3 - Re-hook (8-12s)**\n> Then one verse flipped the whole order on me.\n\n*Delivery:* pause before 'flipped', lean in\n\n[pause]\n\n**Scene 4 - Reveal (12-20s)**\n> Surah Ibrahim, verse seven. Allah says, 'If you are grateful, I will surely increase you.' [verify source]\n\n*Delivery:* slower, calm, let the verse breathe\n\n[pause]\n\n**Scene 5 - Value (20-26s)**\n> Grateful first. Then more. Not the other way round. I had it backwards for years.\n\n*Delivery:* short lines, nod on 'backwards'\n\n[pause]\n\n**Scene 6 - Payoff / CTA (26-36s)**\n> So now before I sleep I name one thing I'm thankful for. Out loud. Today it was [fill in: your real one]. What's yours?\n\n*Delivery:* warm, smile a little on the last question\n\n**Last line:** \"So now before I sleep I name one thing I'm thankful for. Out loud. Today it was [fill in: your real one]. What's yours?\" (ends on the question, no loop)\n\n- **Hooks to test:**\n  - Most of us are waiting to be grateful. That's the problem. (Calm hard truth)\n  - One verse made me realise I had gratitude completely backwards. (Curiosity loop)\n  - If you're waiting to make it before you say alhamdulillah, watch this. (Call-out)\n- **Caption:** Grateful first, then more. Not the other way round. #fyppppppppppppppppppppppp #viral #fyp #gratitude #muslim",
+      "score": 8,
+      "sources": [
+        {
+          "title": "Quran 14:7 (Surah Ibrahim), Sahih International: 'If you are grateful, I will surely increase you [in favor]'",
+          "url": "https://quran.com/14/7"
+        }
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-27T13:58:32Z",
+      "team": "tiktok"
     }
   ],
   "research": [
@@ -482,21 +703,21 @@
     }
   ],
   "brief": {
-    "date": "2026-10-26",
-    "createdAt": "2026-10-26T13:48:30Z",
-    "headline": "Psychology-facts videos are 52x outliers. Film the overthinking one.",
-    "summary": "Your last four videos (Oct 21–24) got 244–298 views, roughly half your 440 average, after a week of ~690–740. Today's best idea is the overthinking video: it uses the 'psychology facts' list format that's running at 52x right now, backed by two real studies.",
+    "date": "2026-10-27",
+    "createdAt": "2026-10-27T13:58:41Z",
+    "headline": "Reach dropped since Oct 21: go short, on-niche, specific captions",
+    "summary": "Your videos sat around 700 views until Oct 21, and your last five all landed near 250, so reach dropped across the board rather than one hook missing. The lesson from your winners: stay 30-40s, stay on niche, and gratitude/faith reflections get your best like rate. Today's best idea is Epictetus' fix for feeling out of control, built on a fresh survey stat about guys our age.",
     "filmToday": [
-      "Two psychology studies that kill overthinking — Two psychology studies that should make every guy stop overthinking.",
-      "Seneca's definition of broke — Seneca said the poor man isn't the one with too little.",
-      "When's the last time you checked on your boys? — When's the last time you called one of your boys just to check on him?"
+      "Epictetus' fix for feeling out of control — Six in ten guys our age feel like they've got barely any control over their life.",
+      "Who you know is a skill, not luck — Most guys our age think who you know beats how hard you work.",
+      "I had gratitude backwards — I used to say I'd be grateful once I made it."
     ],
     "approvals": [
-      "6 ideas waiting on you (3 new today)"
+      "9 ideas waiting for your approve/pass"
     ],
     "notes": [
-      "Views dropped by about half from Oct 21. Every recent caption is 'Follow for more', so try a caption that states the video's point (suggestions are in each script).",
-      "Your best video in the last two weeks was the Oct 13 gratitude one (834 views). Comment-question endings like that are built into all three of today's scripts."
+      "Swap 'Follow for more' for a specific keyword line in captions; it's on 15 of your last 20 posts (the reviewer's skill suggestion for content-scripts).",
+      "The content-scripts skill points to a hook-playbook file that's missing from the skill folder; worth re-adding it."
     ]
   },
   "processedIssues": [
