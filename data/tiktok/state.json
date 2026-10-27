@@ -1,14 +1,14 @@
 {
   "team": "tiktok",
   "hired": true,
-  "updatedAt": "2026-10-27T13:44:38Z",
+  "updatedAt": "2026-10-27T13:56:41Z",
   "agents": [
     {
       "id": "analyst",
       "name": "Analyst",
       "role": "Finds outlier videos",
-      "status": "waiting",
-      "doing": "Waiting for the review",
+      "status": "working",
+      "doing": "Researching what is working right now",
       "lastRun": "2026-10-26T13:48:30Z",
       "nextRun": "2026-10-27T13:41:00Z"
     },
@@ -33,8 +33,9 @@
     {
       "id": "reviewer",
       "name": "Performance Reviewer",
-      "status": "working",
-      "doing": "Reviewing how your last videos did"
+      "status": "ok",
+      "doing": "Reviewed 19 videos: reach dropped Oct 21, short + on-niche wins",
+      "role": "Explains why videos won or flopped"
     },
     {
       "id": "liaison",
@@ -45,6 +46,11 @@
     }
   ],
   "log": [
+    {
+      "t": "2026-10-27T13:56:41Z",
+      "agent": "Performance Reviewer",
+      "msg": "Views dropped from ~700 to ~250 since Oct 21; off-niche posts did 0.4x, faith/gratitude reflections led"
+    },
     {
       "t": "2026-10-27T13:44:38Z",
       "agent": "Performance Reviewer",
@@ -445,5 +451,115 @@
   "processedIssues": [
     1,
     2
+  ],
+  "review": {
+    "date": "2026-10-27",
+    "createdAt": "2026-10-27T13:56:41Z",
+    "headline": "Views dropped from ~700 to ~250 since Oct 21",
+    "summary": "Before Oct 21 almost every video you posted landed around 690-830 views; your last five judged posts (Oct 21-24) all sat at 246-301, so something changed at the account level, not just one bad hook. Your best ones were short (31-40s) and two of the top three were gratitude/faith reflections with specific captions. Off-niche posts (an AI tool tutorial, a UFC take) did 0.4x even before the drop.",
+    "winners": [
+      {
+        "title": "Gratitude reflection ('Comment down what else your thankful for', #allah)",
+        "url": "https://www.tiktok.com/@o.hustle44/video/7695983607550102791",
+        "views": 834,
+        "vsAvg": "1.2x your median",
+        "why": "36s faith-and-gratitude reflection posted Oct 13 with a comment-question caption. Only 1 comment though, so the bump came from watch time, not the CTA. I can't watch it, so I can't judge the opening line."
+      },
+      {
+        "title": "Self-improvement talking video (#success #ai, Oct 8)",
+        "url": "https://www.tiktok.com/@o.hustle44/video/7694102142541466888",
+        "views": 788,
+        "vsAvg": "1.13x your median",
+        "why": "40s, generic 'Follow for more' caption, so the caption tells me nothing about the hook. Within noise of your ~700 floor; no strong signal."
+      },
+      {
+        "title": "'Always choose the right' reminder (#allah, Oct 9)",
+        "url": "https://www.tiktok.com/@o.hustle44/video/7694492529596615954",
+        "views": 783,
+        "vsAvg": "1.13x your median",
+        "why": "39s faith reminder with a 6.9% like rate (54 likes), more than double your usual ~3%. People who saw it liked it, which says the topic connects with your audience."
+      }
+    ],
+    "losers": [
+      {
+        "title": "'Ts too hard' 2-second clip (Oct 5)",
+        "url": "https://www.tiktok.com/@o.hustle44/video/7693012871998885127",
+        "views": 34,
+        "vsAvg": "0.05x your median",
+        "why": "A 2-second meme clip, not a talking video. Not a fair comparison, just an off-format post."
+      },
+      {
+        "title": "Self-improvement talking video (Oct 21)",
+        "url": "https://www.tiktok.com/@o.hustle44/video/7698934409180744978",
+        "views": 246,
+        "vsAvg": "0.35x your median",
+        "why": "34s, 'Follow for more' caption. First video in the drop: four more after it all stayed at ~250-300 regardless of length (34-61s), which points to reach, not this one video's hook."
+      },
+      {
+        "title": "Self-improvement talking video (Oct 23)",
+        "url": "https://www.tiktok.com/@o.hustle44/video/7699690091102375176",
+        "views": 256,
+        "vsAvg": "0.37x your median",
+        "why": "61s, one of your longest. Length may not have helped, but every post in this stretch did ~250, so the sample can't separate length from the drop."
+      }
+    ],
+    "patterns": [
+      "Step change on Oct 21: 13 of 14 posts before it got 690-834 views; all 5 judged posts since got 246-301. Posting time didn't change (all 9-11pm Toronto), so it isn't timing.",
+      "Off-niche topics underperform even in good weeks: AI/Claude tutorial (259) and UFC/Topuria take (303) were your only two sub-400 posts before Oct 21.",
+      "Faith/gratitude reflections got the most likes per view (54 and 21 likes) and 2 of the top 3 spots.",
+      "Winners were 31-40s; your 57-64s posts never beat the median.",
+      "Most captions are the same 'Follow for more' line, so TikTok gets no keywords about the topic and I can't match videos to scripts."
+    ],
+    "formatScores": [
+      {
+        "name": "Faith / gratitude reflection",
+        "videos": 2,
+        "medianViews": 808,
+        "vsAvg": "1.16x"
+      },
+      {
+        "name": "General self-improvement talking head",
+        "videos": 14,
+        "medianViews": 696,
+        "vsAvg": "1.0x"
+      },
+      {
+        "name": "Off-niche (AI tool, UFC)",
+        "videos": 2,
+        "medianViews": 281,
+        "vsAvg": "0.4x"
+      }
+    ],
+    "doMore": [
+      "Keep videos 30-40s; open with the payoff in the first 3 seconds",
+      "One faith/gratitude reflection every few days, it has your best like rate",
+      "Write a specific caption line about the topic (keywords), not 'Follow for more'",
+      "Stay on niche: discipline, mindset, philosophy, faith"
+    ],
+    "stopDoing": [
+      "Off-niche posts (AI tools, UFC takes) on this page",
+      "Generic 'Follow for more' captions",
+      "60s+ videos until reach recovers"
+    ],
+    "skillSuggestions": [
+      "content-scripts: make the caption step mandatory: one specific keyword line about the topic, never 'Follow for more' (it's on 15 of your last 20 captions)",
+      "trend-ideas: drop AI/business and sports takes from this page's rotation; both did 0.4x of your median",
+      "content-scripts: cap default versions at 40s; none of your 57-64s posts beat your median",
+      "content-scripts: the 'references/hook-playbook.md' the skill tells me to read is missing from the skill folder; re-add it",
+      "NEW SKILL idea: a quick 'posted' log where you mark which script each upload used, so the reviewer can match hooks to results"
+    ]
+  },
+  "reviewHistory": [
+    {
+      "date": "2026-10-27",
+      "headline": "Views dropped from ~700 to ~250 since Oct 21",
+      "patterns": [
+        "Step change on Oct 21: 13 of 14 posts before it got 690-834 views; all 5 judged posts since got 246-301. Posting time didn't change (all 9-11pm Toronto), so it isn't timing.",
+        "Off-niche topics underperform even in good weeks: AI/Claude tutorial (259) and UFC/Topuria take (303) were your only two sub-400 posts before Oct 21.",
+        "Faith/gratitude reflections got the most likes per view (54 and 21 likes) and 2 of the top 3 spots.",
+        "Winners were 31-40s; your 57-64s posts never beat the median.",
+        "Most captions are the same 'Follow for more' line, so TikTok gets no keywords about the topic and I can't match videos to scripts."
+      ]
+    }
   ]
 }
