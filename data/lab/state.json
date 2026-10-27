@@ -1,46 +1,51 @@
 {
- "team": "lab",
- "hired": true,
- "updatedAt": "2026-10-26T21:44:34Z",
- "agents": [
-  {
-   "id": "lead",
-   "name": "Lab Director",
-   "role": "Picks the upgrades worth doing",
-   "status": "idle",
-   "doing": "Hired today. First run coming up."
-  },
-  {
-   "id": "scout",
-   "name": "Tool Scout",
-   "role": "New AI tools, models and APIs",
-   "status": "idle",
-   "doing": "Hired today. First run coming up."
-  },
-  {
-   "id": "hunter",
-   "name": "Format Hunter",
-   "role": "What makes rival videos more engaging",
-   "status": "idle",
-   "doing": "Hired today. First run coming up."
-  },
-  {
-   "id": "engineer",
-   "name": "Upgrade Engineer",
-   "role": "Turns finds into build plans",
-   "status": "idle",
-   "doing": "Hired today. First run coming up."
-  }
- ],
- "log": [
-  {
-   "t": "2026-10-26T21:44:34Z",
-   "agent": "Lab Director",
-   "msg": "The R&D Lab opened. First run coming up."
-  }
- ],
- "ideas": [],
- "research": [],
- "brief": null,
- "processedIssues": []
+  "team": "lab",
+  "hired": true,
+  "updatedAt": "2026-10-27T10:25:00Z",
+  "agents": [
+    {
+      "id": "lead",
+      "name": "Lab Director",
+      "role": "Picks the upgrades worth doing",
+      "status": "waiting",
+      "doing": "Waiting for the Format Hunter"
+    },
+    {
+      "id": "scout",
+      "name": "Tool Scout",
+      "role": "New AI tools, models and APIs",
+      "status": "waiting",
+      "doing": "Waiting for the Format Hunter"
+    },
+    {
+      "id": "hunter",
+      "name": "Format Hunter",
+      "role": "What makes rival videos more engaging",
+      "status": "working",
+      "doing": "Hunting for new formats that are winning right now"
+    },
+    {
+      "id": "engineer",
+      "name": "Upgrade Engineer",
+      "role": "Turns finds into build plans",
+      "status": "waiting",
+      "doing": "Waiting for the Format Hunter"
+    }
+  ],
+  "log": [
+    {
+      "t": "2026-10-27T10:25:00Z",
+      "agent": "Format Hunter",
+      "msg": "Started this run"
+    },
+    {
+      "t": "2026-10-26T21:44:34Z",
+      "agent": "Lab Director",
+      "msg": "The R&D Lab opened. First run coming up."
+    }
+  ],
+  "ideas": [],
+  "research": [],
+  "brief": null,
+  "processedIssues": []
 }
