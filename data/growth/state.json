@@ -1,38 +1,56 @@
 {
   "team": "growth",
   "hired": true,
-  "updatedAt": "2026-10-27T14:45:00Z",
+  "updatedAt": "2026-10-27T15:10:00Z",
   "agents": [
     {
       "id": "lead",
       "name": "Product Lead",
       "role": "Weekly read on the market",
-      "status": "waiting",
-      "doing": "Waiting for the competitor study"
+      "status": "ok",
+      "doing": "Brief ready: own the marketing plan",
+      "lastRun": "2026-10-27T15:10:00Z",
+      "nextRun": "2026-10-30T14:19:00Z"
     },
     {
       "id": "watch",
       "name": "Competitor Watch",
       "role": "Positioning and pricing",
       "status": "ok",
-      "doing": "Competitor study done: 6 rivals, 5 trend finds"
+      "doing": "Competitor study done: 6 rivals, 5 trend finds",
+      "lastRun": "2026-10-27T15:10:00Z",
+      "nextRun": "2026-10-30T14:19:00Z"
     },
     {
       "id": "copywriter",
       "name": "Copywriter",
       "role": "Promo scripts and posts",
-      "status": "working",
-      "doing": "Writing promo scripts from the study"
+      "status": "ok",
+      "doing": "3 pieces written, waiting for your call",
+      "lastRun": "2026-10-27T15:10:00Z",
+      "nextRun": "2026-10-30T14:19:00Z"
     },
     {
       "id": "liaison",
       "name": "R&D Liaison",
       "role": "Brings in the R&D Lab's finds",
-      "status": "waiting",
-      "doing": "Waiting for the competitor study"
+      "status": "ok",
+      "doing": "Brought 2 Lab leads into today's ideas",
+      "lastRun": "2026-10-27T15:10:00Z",
+      "nextRun": "2026-10-30T14:19:00Z"
     }
   ],
   "log": [
+    {
+      "t": "2026-10-27T15:05:00Z",
+      "agent": "Copywriter",
+      "msg": "Wrote 3 pieces: Every AI marketing plan said 'post consistently'; Zero customers and I hate marketing; Own 'marketing plan', not 'business plan'"
+    },
+    {
+      "t": "2026-10-27T15:05:00Z",
+      "agent": "R&D Liaison",
+      "msg": "Handed 2 Lab leads to the Copywriter (barber demo, business-type SEO pages); skipped onboarding emails"
+    },
     {
       "t": "2026-10-27T14:45:00Z",
       "agent": "Competitor Watch",
@@ -54,7 +72,181 @@
       "msg": "Team hired. First run is scheduled."
     }
   ],
-  "ideas": [],
+  "ideas": [
+    {
+      "id": "growth-2026-10-27-1",
+      "title": "Every AI marketing plan said 'post consistently'",
+      "hook": "Every AI marketing plan I tried told me the same thing. Post consistently.",
+      "why": "Uses the Competitor Watch lesson from Venturekit (reviewers call AI plans 'a placeholder filled with generic content') and the R&D Lab lead 'Free marketing-plan generators are the category's lead magnet' (the barber demo).",
+      "format": "TikTok promo 34s",
+      "score": 9,
+      "sources": [
+        {
+          "title": "Venturekit reviews on Trustpilot",
+          "url": "https://nl.trustpilot.com/review/www.venturekit.ai?page=4"
+        },
+        {
+          "title": "R&D Lab lead: AI Marketing Plan Generator (AirOps)",
+          "url": "https://www.airops.com/tools/ai-marketing-plan-generator"
+        }
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-27T15:05:00Z",
+      "hookFamily": "Curiosity loop",
+      "length": 34,
+      "onScreen": "I tried them so you don't have to",
+      "scenes": [
+        {
+          "label": "Hook",
+          "time": "0-4s",
+          "line": "Every AI marketing plan I tried told me the same thing. Post consistently.",
+          "delivery": "flat, a little fed up, slight eye roll on 'consistently'"
+        },
+        {
+          "label": "Context lean",
+          "time": "4-9s",
+          "line": "I've been helping a barber get more clients. [fill in: who, e.g. my cousin, and where he cuts]",
+          "delivery": "casual, like explaining to a friend"
+        },
+        {
+          "label": "Re-hook",
+          "time": "9-15s",
+          "line": "And every plan I got could've been for a bakery. Or a dentist. Nothing in it was about him.",
+          "delivery": "lean in, a bit sharper"
+        },
+        {
+          "label": "Value",
+          "time": "15-27s",
+          "line": "Then I tried Growth Architect. It asked about his area, his prices, his budget. Then it walked me through the plan step by step, with a calendar I could drop straight into his phone.",
+          "delivery": "pick up the pace, point down at the screen text"
+        },
+        {
+          "label": "Payoff",
+          "time": "27-31s",
+          "line": "It even pulled YouTube videos on where to start. [fill in: your real result after the first week]",
+          "delivery": "calm, matter of fact"
+        },
+        {
+          "label": "Last line / loop",
+          "time": "31-34s",
+          "line": "Link's in my bio if you know someone who keeps hearing post consistently.",
+          "delivery": "half smile, loops back to the hook phrase"
+        }
+      ],
+      "hooksToTest": [
+        "I asked AI for a marketing plan for a barber and it gave me a plan for a bakery. (Call-out)",
+        "Small business owners, stop paying for business plans when you need a marketing plan. (Calm hard truth)",
+        "I gave one tool my friend's barbershop and it finally got specific. (Story / progressive reveal)"
+      ],
+      "caption": "Finally a plan that knew it was a barbershop #fyppppppppppppppppppppppp #viral #fyp #smallbusiness #marketingtips",
+      "script": "Every AI marketing plan I tried told me the same thing. Post consistently. [pause] I've been helping a barber get more clients. [fill in: who, e.g. my cousin, and where he cuts] [pause] And every plan I got could've been for a bakery. Or a dentist. Nothing in it was about him. [pause] Then I tried Growth Architect. It asked about his area, his prices, his budget. Then it walked me through the plan step by step, with a calendar I could drop straight into his phone. [pause] It even pulled YouTube videos on where to start. [fill in: your real result after the first week] [pause] Link's in my bio if you know someone who keeps hearing post consistently.",
+      "formatted": "**VERSION A - Curiosity loop (~34s)**\n- **Why this one:** Everyone who's tried an AI plan has seen the same useless advice, so naming it makes them wait for the one that wasn't.\n- **On-screen text (first 3-5s):** I tried them so you don't have to\n\n**Scene 1 - Hook (0-4s)**\n> Every AI marketing plan I tried told me the same thing. Post consistently.\n\n*Delivery:* flat, a little fed up, slight eye roll on 'consistently'\n\n[pause]\n\n**Scene 2 - Context lean (4-9s)**\n> I've been helping a barber get more clients. [fill in: who, e.g. my cousin, and where he cuts]\n\n*Delivery:* casual, like explaining to a friend\n\n[pause]\n\n**Scene 3 - Re-hook (9-15s)**\n> And every plan I got could've been for a bakery. Or a dentist. Nothing in it was about him.\n\n*Delivery:* lean in, a bit sharper\n\n[pause]\n\n**Scene 4 - Value (15-27s)**\n> Then I tried Growth Architect. It asked about his area, his prices, his budget. Then it walked me through the plan step by step, with a calendar I could drop straight into his phone.\n\n*Delivery:* pick up the pace, point down at the screen text\n\n[pause]\n\n**Scene 5 - Payoff (27-31s)**\n> It even pulled YouTube videos on where to start. [fill in: your real result after the first week]\n\n*Delivery:* calm, matter of fact\n\n[pause]\n\n**Scene 6 - Last line / loop (31-34s)**\n> Link's in my bio if you know someone who keeps hearing post consistently.\n\n*Delivery:* half smile, loops back to the hook phrase\n\n**Last line:** \"Link's in my bio if you know someone who keeps hearing post consistently.\" Loops back to Scene 1's 'post consistently'.\n\n- **Hooks to test:**\n  - I asked AI for a marketing plan for a barber and it gave me a plan for a bakery. (Call-out)\n  - Small business owners, stop paying for business plans when you need a marketing plan. (Calm hard truth)\n  - I gave one tool my friend's barbershop and it finally got specific. (Story / progressive reveal)\n- **Caption:** Finally a plan that knew it was a barbershop #fyppppppppppppppppppppppp #viral #fyp #smallbusiness #marketingtips"
+    },
+    {
+      "id": "growth-2026-10-27-2",
+      "title": "Zero customers and I hate marketing",
+      "hook": "[fill in: how long] into my side hustle. Zero customers.",
+      "why": "Built on the Starter Story outlier 'How I Grew My App to $13K/month (Even Though I Hate Marketing)' (247K views, 2.5x median) and on LivePlan/Upmetrics being 'business plan' tools for banks, which this script uses as the contrast.",
+      "format": "TikTok promo 46s",
+      "score": 8,
+      "sources": [
+        {
+          "title": "Starter Story: How I Grew My App to $13K/month (Even Though I Hate Marketing)",
+          "url": "https://youtube.com/watch?v=Adl5_lJfkEE"
+        },
+        {
+          "title": "LivePlan vs Upmetrics on G2",
+          "url": "https://www.g2.com/compare/liveplan-vs-upmetrics"
+        }
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-27T15:05:00Z",
+      "hookFamily": "Story / progressive reveal",
+      "length": 46,
+      "onScreen": "the side hustle part nobody posts",
+      "scenes": [
+        {
+          "label": "Hook",
+          "time": "0-4s",
+          "line": "[fill in: how long] into my side hustle. Zero customers.",
+          "delivery": "flat, tired, start mid-thought"
+        },
+        {
+          "label": "Context lean",
+          "time": "4-9s",
+          "line": "The product was fine. I just hate marketing. I didn't even know where to start.",
+          "delivery": "shrug, honest"
+        },
+        {
+          "label": "Clues",
+          "time": "9-18s",
+          "line": "So I googled business plan templates. Forty pages on funding and projections. I'm not asking a bank for money. I need people to buy.",
+          "delivery": "building frustration, faster"
+        },
+        {
+          "label": "Re-hook",
+          "time": "18-22s",
+          "line": "What finally helped was way simpler than that. [fill in: how you found it]",
+          "delivery": "slow down, lean in"
+        },
+        {
+          "label": "Reveal",
+          "time": "22-37s",
+          "line": "It's called Growth Architect. You tell it about your business and it builds a marketing plan, step by step. Budget tracker so I can see where my [fill in: your budget] goes. And there's a 100-person market test before you spend anything.",
+          "delivery": "lighter, counting the features on fingers"
+        },
+        {
+          "label": "Payoff",
+          "time": "37-42s",
+          "line": "First week following it. [fill in: your real result]. Not crazy. More than zero though.",
+          "delivery": "small proud smile, no flex"
+        },
+        {
+          "label": "Last line / loop",
+          "time": "42-46s",
+          "line": "If you're sitting at zero too, it's in my bio.",
+          "delivery": "quiet, looks straight in lens, loops to 'zero' in the hook"
+        }
+      ],
+      "hooksToTest": [
+        "I hate marketing. So I let a tool tell me what to do for a week. (Vulnerable admission)",
+        "Business plans are for banks. You need a marketing plan. (Calm hard truth)",
+        "Side hustlers, what's your customer count right now? Be honest. (Debate line)"
+      ],
+      "caption": "From zero customers to an actual plan #fyppppppppppppppppppppppp #viral #fyp #sidehustle #smallbusinesstips",
+      "script": "[fill in: how long] into my side hustle. Zero customers. [pause] The product was fine. I just hate marketing. I didn't even know where to start. [pause] So I googled business plan templates. Forty pages on funding and projections. I'm not asking a bank for money. I need people to buy. [pause] What finally helped was way simpler than that. [fill in: how you found it] [pause] It's called Growth Architect. You tell it about your business and it builds a marketing plan, step by step. Budget tracker so I can see where my [fill in: your budget] goes. And there's a 100-person market test before you spend anything. [pause] First week following it. [fill in: your real result]. Not crazy. More than zero though. [pause] If you're sitting at zero too, it's in my bio.",
+      "formatted": "**VERSION B - Story / progressive reveal (~46s)**\n- **Why this one:** Starts at zero mid-struggle, so viewers stay to see what moved the number, and 'I hate marketing' is a confession most side-hustlers share.\n- **On-screen text (first 3-5s):** the side hustle part nobody posts\n\n**Scene 1 - Hook (0-4s)**\n> [fill in: how long] into my side hustle. Zero customers.\n\n*Delivery:* flat, tired, start mid-thought\n\n[pause]\n\n**Scene 2 - Context lean (4-9s)**\n> The product was fine. I just hate marketing. I didn't even know where to start.\n\n*Delivery:* shrug, honest\n\n[pause]\n\n**Scene 3 - Clues (9-18s)**\n> So I googled business plan templates. Forty pages on funding and projections. I'm not asking a bank for money. I need people to buy.\n\n*Delivery:* building frustration, faster\n\n[pause]\n\n**Scene 4 - Re-hook (18-22s)**\n> What finally helped was way simpler than that. [fill in: how you found it]\n\n*Delivery:* slow down, lean in\n\n[pause]\n\n**Scene 5 - Reveal (22-37s)**\n> It's called Growth Architect. You tell it about your business and it builds a marketing plan, step by step. Budget tracker so I can see where my [fill in: your budget] goes. And there's a 100-person market test before you spend anything.\n\n*Delivery:* lighter, counting the features on fingers\n\n[pause]\n\n**Scene 6 - Payoff (37-42s)**\n> First week following it. [fill in: your real result]. Not crazy. More than zero though.\n\n*Delivery:* small proud smile, no flex\n\n[pause]\n\n**Scene 7 - Last line / loop (42-46s)**\n> If you're sitting at zero too, it's in my bio.\n\n*Delivery:* quiet, looks straight in lens, loops to 'zero' in the hook\n\n**Last line:** \"If you're sitting at zero too, it's in my bio.\" Loops to the 'zero customers' in Scene 1.\n\n- **Hooks to test:**\n  - I hate marketing. So I let a tool tell me what to do for a week. (Vulnerable admission)\n  - Business plans are for banks. You need a marketing plan. (Calm hard truth)\n  - Side hustlers, what's your customer count right now? Be honest. (Debate line)\n- **Caption:** From zero customers to an actual plan #fyppppppppppppppppppppppp #viral #fyp #sidehustle #smallbusinesstips"
+    },
+    {
+      "id": "growth-2026-10-27-3",
+      "title": "Own 'marketing plan', not 'business plan'",
+      "hook": "Your business plan is for the bank. This one's for customers.",
+      "why": "Uses the competitor gap: LivePlan, Upmetrics, PrometAI and Venturekit all sell business plans for lenders, and Upmetrics grows with comparison pages; the R&D Lab lead on business-type SEO pages fills the rest.",
+      "format": "Positioning",
+      "score": 8,
+      "sources": [
+        {
+          "title": "Upmetrics: PrometAI alternatives (pricing table)",
+          "url": "https://upmetrics.co/prometai-alternatives"
+        },
+        {
+          "title": "LivePlan on Semrush",
+          "url": "https://tr.semrush.com/website/liveplan.com/overview"
+        },
+        {
+          "title": "MarketingGuide AI on Capterra",
+          "url": "https://www.capterra.com/p/10029813/MarketingGuide-AI/reviews/"
+        },
+        {
+          "title": "R&D Lab lead: Base44 release notes",
+          "url": "https://releasebot.io/updates/base44"
+        }
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-27T15:05:00Z",
+      "script": "POSITIONING: \"A marketing plan, not a business plan.\"\n\nThe gap: every big tool in this space sells a BUSINESS plan (LivePlan $20/mo, Upmetrics $14/mo, PrometAI $55/mo, Venturekit). Those are built for banks and investors: funding, projections, 40 pages. Reviewers still complain the output is generic (Venturekit: \"a placeholder filled with generic content\") and about surprise billing. The only direct \"AI marketing plan\" rival found, MarketingGuide AI, has zero reviews.\n\n1) Landing page hero (test this line):\nHeadline: Your business plan is for the bank. This one's for customers.\nSub: Tell it about your business. Get a step-by-step marketing plan, a budget tracker and a calendar that goes straight into your phone.\nButton: Build my marketing plan\n\n2) Pricing line under the button (counter Venturekit's billing complaints):\n\"[fill in: your real price and cancel terms, e.g. cancel anytime in one click]\"\n\n3) \"Growth Architect vs business plan tools\" page (copy Upmetrics' comparison-page play, honestly):\n- Need money from a bank or investor? Use a business-plan tool.\n- Need your first customers? You need to know who to reach, what to post, what to spend, and when. That's what Growth Architect gives you.\nList the real differences only: step-by-step guidance, budget tracker, calendar export, PDF download, YouTube videos and studies on where to start, the 100-person market test, Pro daily competitor watch.\n\n4) Business-type pages (R&D Lab lead): start with 5 pages, \"AI marketing plan for a barber / bakery / cleaning business / nail tech / food truck\". Each shows a real sample plan excerpt Growth Architect produced for that type [fill in: generate and paste real excerpts]. Base44's new SEO dashboard and llms.txt can handle meta tags and sitemap.\n\n5) Creator angle for UGC briefs: \"Business plans are for banks\" works as a spoken line, see Version B's hooks to test."
+    }
+  ],
   "research": [
     {
       "date": "2026-10-27",
@@ -98,7 +290,24 @@
       ]
     }
   ],
-  "brief": null,
+  "brief": {
+    "date": "2026-10-27",
+    "createdAt": "2026-10-27T15:05:00Z",
+    "headline": "Rivals sell business plans; own the marketing plan",
+    "summary": "Your competitors (LivePlan, Upmetrics, PrometAI, Venturekit) all sell business plans for banks, and their users complain the AI output is generic and the billing is sneaky. The only direct AI marketing plan rival has zero reviews and no content. Your best opening is short videos showing a plan that's clearly about one real small business, plus a 'marketing plan, not business plan' line on your site.",
+    "filmToday": [
+      "Every AI marketing plan said 'post consistently' — Every AI marketing plan I tried told me the same thing. Post consistently.",
+      "Zero customers and I hate marketing — [fill in: how long] into my side hustle. Zero customers."
+    ],
+    "approvals": [
+      "3 ideas waiting"
+    ],
+    "notes": [
+      "Searching 'Growth Architect' brings up job titles and other companies, not your site, so promos use 'link in bio' instead of 'search Growth Architect'.",
+      "Ad libraries (Meta, TikTok, LinkedIn) weren't reachable this run, so no competitor ads are confirmed yet.",
+      "LaunchForge pitched the same audience (barbers, students) on Product Hunt and got 3 points: a cold launch there won't move much."
+    ]
+  },
   "processedIssues": [],
   "competitors": [
     {
@@ -196,5 +405,16 @@
       "lessonForUs": "Same audience pitch as us (barbers, students) and it went nowhere with a cold launch. Short-form video plus creators is the better bet; don't count on a Product Hunt day."
     }
   ],
-  "competitorsUpdated": "2026-10-27T14:45:00Z"
+  "competitorsUpdated": "2026-10-27T14:45:00Z",
+  "labFeedback": {
+    "date": "2026-10-27",
+    "used": [
+      "Free marketing-plan generators are the category's lead magnet",
+      "Base44 SEO & GEO dashboard + llms.txt"
+    ],
+    "skipped": [
+      "Base44 branded emails as workflow steps (product build, not content; worth a separate decision from Omar)"
+    ],
+    "request": "The AirOps link in the lead now shows a prompt library, not a plan generator. Please find which free 'marketing plan generator' pages actually rank for 'marketing plan for <business type>' searches and how much traffic they get."
+  }
 }
