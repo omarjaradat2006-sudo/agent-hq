@@ -1,7 +1,7 @@
 {
   "team": "lab",
   "hired": true,
-  "updatedAt": "2026-10-28T10:26:00Z",
+  "updatedAt": "2026-10-28T10:55:00Z",
   "agents": [
     {
       "id": "lead",
@@ -16,8 +16,8 @@
       "id": "scout",
       "name": "Tool Scout",
       "role": "New AI tools, models and APIs",
-      "status": "waiting",
-      "doing": "4 tool and platform changes found",
+      "status": "ok",
+      "doing": "Found Shorts series, Base44 social posting, TikTok caption data",
       "lastRun": "2026-10-27T11:15:00Z",
       "nextRun": "2026-10-28T10:23:00Z"
     },
@@ -25,8 +25,8 @@
       "id": "hunter",
       "name": "Format Hunter",
       "role": "What makes rival videos more engaging",
-      "status": "working",
-      "doing": "Hunting for new formats that are winning right now",
+      "status": "ok",
+      "doing": "10 format leads: marble-run specials, seasonal rooms, rain stories",
       "lastRun": "2026-10-27T11:15:00Z",
       "nextRun": "2026-10-28T10:23:00Z"
     },
@@ -34,13 +34,33 @@
       "id": "engineer",
       "name": "Upgrade Engineer",
       "role": "Turns finds into build plans",
-      "status": "waiting",
-      "doing": "5 build plans ready",
+      "status": "working",
+      "doing": "Turning finds into build plans",
       "lastRun": "2026-10-27T11:15:00Z",
       "nextRun": "2026-10-28T10:23:00Z"
     }
   ],
   "log": [
+    {
+      "t": "2026-10-28T10:55:00Z",
+      "agent": "Tool Scout",
+      "msg": "Best tool find: YouTube Shorts series (seasons/episodes) for Bounce Theory tournaments"
+    },
+    {
+      "t": "2026-10-28T10:55:00Z",
+      "agent": "Format Hunter",
+      "msg": "Best find: Marble Run 'Special' long at 2.27M views (21.7x), one continuous course instead of a compilation"
+    },
+    {
+      "t": "2026-10-28T10:55:00Z",
+      "agent": "Lab Director",
+      "msg": "Checked hires: Long-Form Doctor ran (longFix written), keeping it"
+    },
+    {
+      "t": "2026-10-28T10:55:00Z",
+      "agent": "Lab Director",
+      "msg": "No open approve/pass issues from Omar this run"
+    },
     {
       "t": "2026-10-28T10:26:00Z",
       "agent": "Format Hunter",
@@ -231,6 +251,68 @@
   ],
   "research": [
     {
+      "date": "2026-10-28",
+      "createdAt": "2026-10-28T10:55:00Z",
+      "items": [
+        {
+          "title": "Seasonal cozy-room ambience is the top ambience outlier",
+          "creator": "Tranquil Jazz Nook / Delger Family Farm",
+          "url": "https://www.youtube.com/watch?v=UWn5bwctWbA",
+          "metric": "22,389 views at 27.5x; autumn sunroom 20,284 at 5.0x",
+          "whyItWorks": "A named seasonal place in the title, which Omar's sleep longs lack; doable with stock clips + his fireplace/wind synth."
+        },
+        {
+          "title": "Marble Run 'Special' longs keep breaking out",
+          "creator": "Marble corn",
+          "url": "https://www.youtube.com/watch?v=u3MxJiJTkZk",
+          "metric": "2,267,948 views at 21.7x",
+          "whyItWorks": "One continuous race, not a compilation: a direct fix for Bounce Theory's 0-11 view compilation longs."
+        },
+        {
+          "title": "Rain + nostalgia story ambience",
+          "creator": "Ghibli Echoes / Ghibli Village Stories",
+          "url": "https://outlierkit.com/channel/theghibliechoes",
+          "metric": "1.1M at 9.4x (long); 178,950 at 4.3x (Short)",
+          "whyItWorks": "Gives rain ambience a mini story and a place; stock clips can do it without imitating a studio's style."
+        },
+        {
+          "title": "YouTube Shorts series (seasons and episodes)",
+          "creator": "YouTube Official Blog",
+          "url": "https://blog.youtube/news-and-events/made-on-youtube-creators-shorts-series-tv-features/",
+          "metric": "rolling out from Sept 23, 2026; microdramas 6.5B views in H1 2026",
+          "whyItWorks": "Lets Bounce Theory run episodic tournaments with sequential playback."
+        },
+        {
+          "title": "Metricool 2026 TikTok study: captions and keywords",
+          "creator": "Metricool",
+          "url": "https://metricool.com/tiktok-seo/",
+          "metric": "question captions +26.19% comments; like-CTAs ~-60% likes; mentions up to +20% reach for small accounts",
+          "whyItWorks": "Directly answers the TikTok team's caption question after the Oct 21 reach drop."
+        },
+        {
+          "title": "Base44 October changelog",
+          "creator": "Base44",
+          "url": "https://docs.base44.com/changelog",
+          "metric": "Oct 13 social posting (LinkedIn/IG/FB); Oct 8 email dashboard; Oct 21 Wan 3.0 + Seedance 2.5 video; Oct 15 Base Code reads SKILL.md",
+          "whyItWorks": "New building blocks for Growth Architect (post-on-approval, measure welcome emails)."
+        },
+        {
+          "title": "Wan 3.0 reported as open weights (Apache 2.0)",
+          "creator": "wan27.org (independent)",
+          "url": "https://wan27.org/blog/wan-3-open-source",
+          "metric": "1.3B model on ~8GB GPU; 14B needs ~24GB",
+          "whyItWorks": "Possible free source of AI landscape clips for story longs; confirm on the official Hugging Face page first."
+        },
+        {
+          "title": "YouTube title A/B testing (longs only)",
+          "creator": "vidIQ",
+          "url": "https://vidiq.com/blog/post/youtube-launches-new-title-testing-tool/",
+          "metric": "up to 3 titles, winner by watch-time share",
+          "whyItWorks": "A free way to find which long titles work, without guessing."
+        }
+      ]
+    },
+    {
       "date": "2026-10-27",
       "createdAt": "2026-10-27T10:50:00Z",
       "items": [
@@ -313,293 +395,296 @@
   "formatLeads": [
     {
       "channel": "Bounce Theory",
-      "kind": "Short",
-      "name": "Weapon Ball Battle (HP bars)",
+      "kind": "Long",
+      "name": "Marble Run 'Special' (one continuous course)",
       "example": {
-        "title": "Levi vs Eren | Weapon Ball Battle #shorts",
-        "url": "https://www.youtube.com/watch?v=KpHlAxRi9wc",
-        "creator": "Cell Wars Game",
-        "views": "1,629",
-        "vsAvg": "3.2x channel avg (Seadog Ball Battles also 1,143 at 3.0x and 1,061 at 2.8x)"
+        "title": "Marble Run♡Durururu Special",
+        "url": "https://www.youtube.com/watch?v=u3MxJiJTkZk",
+        "creator": "Marble corn",
+        "views": "2,267,948",
+        "vsAvg": "21.7x channel avg"
       },
-      "howToMake": "New sims.py format: two balls bounce in an arena, each with a weapon drawn on it (sword, spear, hammer, shield). A hit on the other ball takes HP; health bars on top; winner gets a slow-mo finish. Use generic weapons and names only, never anime/Minecraft characters (copyright).",
-      "why": "Three separate small channels are 3x outliers with the same 'X vs Y ball battle' idea, and mobile games built on it exist (Weapon Ball Fight on the App Store). It fits Omar's 'who escapes / who wins' winners (pick-a-colour Shorts 1.4K-3.2K).",
-      "createdAt": "2026-10-27T10:50:00Z"
+      "howToMake": "New sims.py long: one 10-15 min continuous course (funnels, zig-zag ramps, spinners, elevators) with 8-12 named colour marbles, a live leaderboard and a winner card. Synth plinks per collision, no compilation cuts.",
+      "why": "The strongest long-form outlier in today's trending pull (and a second Marble corn upload at 2.9x, plus サマーマーブル's run at 4.9x / 1.06M). Long-Form Doctor found numbered compilations fell to 0-11 views; one continuous race is the opposite of that.",
+      "createdAt": "2026-10-28T10:55:00Z"
     },
     {
       "channel": "Bounce Theory",
       "kind": "Short",
-      "name": "Character balls (meme names, 'vs')",
+      "name": "Guess the Song bouncing orbs (repeat winner)",
+      "example": {
+        "title": "Guess The Song// Satisfying physics simulation - 999 varied bouncing orbs",
+        "url": "https://www.youtube.com/watch?v=ANIRrsIdP3k",
+        "creator": "Mo Lucky",
+        "views": "683,864",
+        "vsAvg": "10.1x channel avg"
+      },
+      "howToMake": "ring_escape/orb sim where each bounce plays the next note of a public-domain melody (Für Elise, Ode to Joy, Canon in D); title asks 'Guess the song'. Only public-domain tunes, synthesized by sims.py.",
+      "why": "It repeats: Mo Lucky's second upload of the same format is at 264,263 (3.9x). A format that wins twice on one channel is safer than a one-off.",
+      "createdAt": "2026-10-28T10:55:00Z"
+    },
+    {
+      "channel": "Bounce Theory",
+      "kind": "Short",
+      "name": "Every bounce = +1 ball (1 → 500?)",
+      "example": {
+        "title": "Every Bounce = +1 Ball 🎃 1 → 500?! #satisfying #shorts",
+        "url": "https://www.youtube.com/watch?v=_mvEjWoIq8A",
+        "creator": "Jokhio Interactive",
+        "views": "1,349",
+        "vsAvg": "3.4x channel avg"
+      },
+      "howToMake": "Start with one ball in a circle; every wall hit spawns one more; on-screen counter races to a target (500 or 1,000). Same engine as brick_breaker, so it is a quick variant.",
+      "why": "Small channel, but it is the same 'count-up to a big number' hook as the stacking lead and fits Omar's 20-25 s sweet spot. Test slot, not a proven slot.",
+      "createdAt": "2026-10-28T10:55:00Z"
+    },
+    {
+      "channel": "Bounce Theory",
+      "kind": "Short",
+      "name": "Character balls 'X vs Y' (still rising)",
       "example": {
         "title": "Sigma Ball vs Verity #satisfying #physics #simulation #ball",
         "url": "https://www.youtube.com/watch?v=nZPtSGMxGsA",
         "creator": "Velique",
-        "views": "1,195,688",
-        "vsAvg": "3.5x channel avg"
+        "views": "1,345,323",
+        "vsAvg": "3.9x channel avg"
       },
-      "howToMake": "Same physics as his escape/battle sims, but each ball gets a face and a meme-style name ('Sigma Ball' vs 'Tiny Ball'); title is 'A vs B'. Faces are simple shapes drawn in sims.py.",
-      "why": "Giving the balls a personality turns a sim into a rivalry viewers pick a side in; 1.2M views at 3.5x.",
-      "createdAt": "2026-10-27T10:50:00Z"
-    },
-    {
-      "channel": "Bounce Theory",
-      "kind": "Short",
-      "name": "Stacking until it falls (0% → 1,000,000%)",
-      "example": {
-        "title": "%1,000,000 Satisfying iPhone Stacking Video 📱 #simulation",
-        "url": "https://www.youtube.com/watch?v=SaqmhDpTv2M",
-        "creator": "3D Zone",
-        "views": "3,644,337",
-        "vsAvg": "4.4x channel avg"
-      },
-      "howToMake": "2D rigid-body stacking in sims.py (pymunk or his own physics): drop generic phones/boxes/blocks one at a time onto a tower with a counter (1, 10, 100...) until it collapses. Never show brand logos.",
-      "why": "Counter + inevitable collapse is a pure wait-for-it hook; 3.6M views in 6 days.",
-      "createdAt": "2026-10-27T10:50:00Z"
-    },
-    {
-      "channel": "Bounce Theory",
-      "kind": "Long",
-      "name": "Marble run course (10+ minutes)",
-      "example": {
-        "title": "Marble Run ☆ Freedom Marble Run①",
-        "url": "https://www.youtube.com/watch?v=41KTnixN51A",
-        "creator": "Marble Run Freedom",
-        "views": "25,190,529",
-        "vsAvg": "10.7x channel avg (also Marble corn 2,020,488 at 19.6x; サマーマーブル 1,031,777 at 4.8x)"
-      },
-      "howToMake": "A long 2D marble course built from his marble-race and 'escape' pieces: funnels, spinners, elevators, drop gates, one camera that follows the leader. One continuous run, calm music from his synth, no talking. Note: the examples are filmed physical runs, so this is a sim version of a proven long-form demand, not a copy.",
-      "why": "Marble runs are the biggest long-form outliers in the niche right now, while Omar's own longs peak at 114 views. His Shorts marble races already pull 1.4K-3.8K.",
-      "createdAt": "2026-10-27T10:50:00Z"
-    },
-    {
-      "channel": "Bounce Theory",
-      "kind": "Short",
-      "name": "Spanish-title 'elige tu color' race",
-      "example": {
-        "title": "CARRERA DE CANICAS ELIGE TU COLOR FAVORITO!!",
-        "url": "https://www.youtube.com/watch?v=lC2beIfULwY",
-        "creator": "FernanWarriorZ",
-        "views": "3,441,389",
-        "vsAvg": "5.7x channel avg"
-      },
-      "howToMake": "No new build: take his best marble race ('Fastest marble wins 🏁 Pick one', 3,827 views) and upload one version with a Spanish title and on-screen text ('¡Elige tu color!'). Visuals have no words, so one text change localises it.",
-      "why": "Wordless sims travel across languages; a Spanish marble race is a 3.4M-view 5.7x outlier. Cheap test of a new audience.",
-      "createdAt": "2026-10-27T10:50:00Z"
+      "howToMake": "Two named balls (meme names, no copyrighted characters) in one arena with HP or size bars; first to escape or win. Already in yesterday's lineup, keep it in the elsewhere slots while it climbs.",
+      "why": "Grew from 1.20M to 1.35M views since yesterday's pull, so the format is still being pushed.",
+      "createdAt": "2026-10-28T10:55:00Z"
     },
     {
       "channel": "Ambient Escape",
       "kind": "Long",
-      "name": "AI-visual afterlife story ('A day in Jannah')",
+      "name": "Seasonal cozy room (winter library hideaway)",
       "example": {
-        "title": "Aik Din Jannat Main | AI Movie Of Heaven",
+        "title": "The Christmas Library Hideaway | Christmas Jazz, Snowy Village Views & Crackling Fireplace",
+        "url": "https://www.youtube.com/watch?v=UWn5bwctWbA",
+        "creator": "Tranquil Jazz Nook",
+        "views": "22,389",
+        "vsAvg": "27.5x channel avg"
+      },
+      "howToMake": "Pexels/Pixabay library or cabin-window clip with falling snow + his synthesized fireplace crackle and soft wind; title as a place ('The Winter Library Hideaway | Snowy Window & Crackling Fireplace | 3 Hours'). No Christmas branding and no jazz unless the music is CC0/licensed for monetised use.",
+      "why": "Biggest ambience outlier in today's trending pull; the hook is a named, seasonal place, which Omar's sleep longs (0-4 views) don't have.",
+      "createdAt": "2026-10-28T10:55:00Z"
+    },
+    {
+      "channel": "Ambient Escape",
+      "kind": "Long",
+      "name": "Autumn morning room ambience",
+      "example": {
+        "title": "Cozy Fall Morning Ambience 🍂 Autumn Sunroom & Fireplace | Pumpkin Bake Day",
+        "url": "https://www.youtube.com/watch?v=phLFXYQ4OK8",
+        "creator": "Delger Family Farm",
+        "views": "20,284",
+        "vsAvg": "5.0x channel avg"
+      },
+      "howToMake": "Sunroom/porch stock clip, leaves outside, light rain + fireplace mix from his pipeline; morning framing ('for study and calm mornings') instead of sleep.",
+      "why": "Second seasonal-room outlier in the same pull, so the seasonal-place pattern is not a one-off. Works now; switch to winter titles from mid-November.",
+      "createdAt": "2026-10-28T10:55:00Z"
+    },
+    {
+      "channel": "Ambient Escape",
+      "kind": "Short",
+      "name": "Rain story short ('power cut, then the rain begins')",
+      "example": {
+        "title": "Power Cut on a Hot Summer Night 🌙 Then the Monsoon Rain Begins! | 90s Village Life #shorts",
+        "url": "https://www.youtube.com/watch?v=_6pK4Z8-61M",
+        "creator": "Ghibli Village Stories",
+        "views": "178,950",
+        "vsAvg": "4.3x channel avg"
+      },
+      "howToMake": "20-30 s Short with a tiny story arc: hot, silent night clip → first drops → full rain (stock clips cross-faded, his rain synth swelling). Text: 'The power went out... then the rain came 🌧️'. Avoid the word 'Ghibli' and any Ghibli-style imitation in titles.",
+      "why": "A story arc on top of plain rain ambience gives a reason to watch to the end; works as a Short that points to the 3-hour rain long.",
+      "createdAt": "2026-10-28T10:55:00Z"
+    },
+    {
+      "channel": "Ambient Escape",
+      "kind": "Long",
+      "name": "Nostalgic rainy-village night (story ambience)",
+      "example": {
+        "title": "90s Indian Rural Life After a Storm 🌧️ | Pumpkin Curry, Puri & Dried Prawn | Ghibli Nostalgia",
+        "url": "https://outlierkit.com/channel/theghibliechoes",
+        "creator": "Ghibli Echoes (via OutlierKit)",
+        "views": "1.1M",
+        "vsAvg": "9.4x channel median"
+      },
+      "howToMake": "Long rain ambience framed as a place and time ('A Rainy Night in an Old Village House | Rain on Clay Roof & Distant Thunder | 3 Hours') using stock village/rain clips; no faces, no AI imitation of a studio's style.",
+      "why": "The channel has 354K subs and 1.8M average views with 8 outliers, all rain/village nostalgia. Data is from OutlierKit's page, not checked on YouTube.",
+      "createdAt": "2026-10-28T10:55:00Z"
+    },
+    {
+      "channel": "Ambient Escape",
+      "kind": "Short",
+      "name": "Event-timed Sunnah reminder (rain dua)",
+      "example": {
+        "title": "كسوف الشمس ⚠️احذر من هذا الخطأ (Solar eclipse: beware this mistake)",
+        "url": "https://outlierkit.com/channel/alkamalii",
+        "creator": "Basa'ir @alkamalii (via OutlierKit)",
+        "views": "159K",
+        "vsAvg": "27.4x recent median"
+      },
+      "howToMake": "On a rainy or windy day in Ontario, post a Short over his rain footage: 'It's raining — say this' + the dua the Prophet ﷺ said when it rained ('Allahumma sayyiban nafi'a', Sahih al-Bukhari 1032) with the reference on screen. Have the reference checked before upload.",
+      "why": "The biggest Islamic outlier found today was tied to a live event with a 'do this / avoid this' hook. Rain is an event Omar can match to his existing rain clips. Note: Arabic channel; no English channel with reliable per-video numbers was found this run.",
+      "createdAt": "2026-10-28T10:55:00Z"
+    },
+    {
+      "channel": "Ambient Escape",
+      "kind": "Long",
+      "name": "Quran story long (Ya'juj and Ma'juj, from Surah Al-Kahf)",
+      "example": {
+        "title": "Yajuj Majuj Ka Waqia",
         "url": "https://outlierkit.com/channel/sareligiousvoice",
-        "creator": "SA Religious Voice",
-        "views": "1.4M (reported by OutlierKit)",
-        "vsAvg": "about 7,000x the channel's typical video; its 'AI Movie of Jahannam' is 131K at 82x"
+        "creator": "SA Religious Voice (via OutlierKit)",
+        "views": "390K",
+        "vsAvg": "10.2x"
       },
-      "howToMake": "English 15-25 min long: calm AI voice narrates what the Quran and sahih hadith describe about Jannah (every claim with its ayah/hadith reference on screen), over AI-generated or stock landscapes (gardens, rivers, light), with his soft rain/ambience bed underneath. Never depict prophets, angels or Allah; no reciter audio. Have the script checked against the sources before upload.",
-      "why": "Long Islamic storytelling with AI visuals is the biggest outlier found in his niche; it gives Ambient Escape a long format with search demand, while his recitation longs get 0-21 views.",
-      "createdAt": "2026-10-27T10:50:00Z"
-    },
-    {
-      "channel": "Ambient Escape",
-      "kind": "Short",
-      "name": "Second-person Jannah reminder",
-      "example": {
-        "title": "Jannat Ka Darwaza",
-        "url": "https://outlierkit.com/channel/zzbrothersshorts",
-        "creator": "ZZ Brothers Shorts",
-        "views": "67K (reported by OutlierKit)",
-        "vsAvg": "10.5x the channel's recent median (channel: 517K subs)"
-      },
-      "howToMake": "Text Short in his existing Islamic Short template: 'You walk through the gates of Jannah...' lines appear one by one over a calm landscape, ending with the source (e.g. Quran 39:73) and a dua line. Optional AI voice.",
-      "why": "OutlierKit credits the 'you are there' framing and an ending call to dua. Omar's own Quran-verse Shorts already get very high like rates (93:3 Short: 1,334 views, 125 likes, 96% watched).",
-      "createdAt": "2026-10-27T10:50:00Z"
-    },
-    {
-      "channel": "Ambient Escape",
-      "kind": "Short",
-      "name": "Question hook reflection",
-      "example": {
-        "title": "The Question That Leaves Every Soul Silent",
-        "url": "https://www.youtube.com/watch?v=yWBarjMFvPQ",
-        "creator": "Tartil Offical",
-        "views": "11,564",
-        "vsAvg": "4.5x channel avg"
-      },
-      "howToMake": "Open with a question on screen ('What will you say when you are asked about your youth?'), pause 2 seconds, then the ayah or hadith that answers it, with the reference. Same text template he already uses.",
-      "why": "Question-led Islamic titles beat statement reminders in the trending data, and it costs nothing to switch hooks.",
-      "createdAt": "2026-10-27T10:50:00Z"
-    },
-    {
-      "channel": "Ambient Escape",
-      "kind": "Short",
-      "name": "AI macro nature + ayah",
-      "example": {
-        "title": "What Happens When a Strawberry Falls in the Rain? 🌧️🍓🌱",
-        "url": "https://www.youtube.com/watch?v=hV7tqz6P8cM",
-        "creator": "Nature & Noor AI",
-        "views": "6,854",
-        "vsAvg": "2.1x channel avg"
-      },
-      "howToMake": "Slow AI or stock macro clip (rain on fruit, a seed sprouting) with a 'what happens when...' title, then an ayah about rain or growth as text, over his rain audio. Do NOT copy their reciter audio (Content ID).",
-      "why": "Curiosity title + calming nature visual is a cheap way to make Islamic Shorts look different from plain text cards. Weaker evidence (2.1x), so test only.",
-      "createdAt": "2026-10-27T10:50:00Z"
+      "howToMake": "English narration (AI voice, never Omar's) over landscapes and wind, every claim tied to Surah Al-Kahf 18:94-99 and sahih hadith shown on screen; no depictions of people or prophets; checked by someone knowledgeable before upload.",
+      "why": "Same channel as the 1.4M 'Day in Jannah' lead; its #2 outlier is a Quran story, so story longs are a repeatable pattern, not one hit.",
+      "createdAt": "2026-10-28T10:55:00Z"
     }
   ],
   "teamLeads": {
     "tiktok": [
       {
-        "title": "'It's making sense now' reaction format",
-        "what": "React to someone's bad reasoning with a calm 'it's making sense now' realisation; 206 creators this week, +20,500%.",
+        "title": "Keyword in the first caption line, on screen and said aloud",
+        "what": "TikTok reads the first caption line, on-screen text and the transcript to decide what a video is about.",
         "evidence": {
-          "title": "It's making sense now",
-          "url": "https://virlo.ai/trends",
-          "creator": "Virlo trend tracker",
-          "metric": "sample videos 3.3M, 1.7M, 833K views"
+          "title": "TikTok SEO Guide 2026 (Metricool's 2026 TikTok study)",
+          "url": "https://metricool.com/tiktok-seo/",
+          "creator": "Metricool",
+          "metric": "1+ hashtag ≈ +5% views; skip #fyp/#viral; keep 1-5 specific tags"
         },
-        "howToUse": "Sit-down version: 'Why most guys can't stop scrolling... it's making sense now' then explain the psychology in 3 beats. Pairs with the psychology-facts angle the team already picked.",
-        "createdAt": "2026-10-27T10:50:00Z"
+        "howToUse": "Replace 'Follow for more' with a first caption line like 'stoic advice for young muslim men' and put the same phrase as text in the first 3 seconds; say it in the first sentence.",
+        "createdAt": "2026-10-28T10:55:00Z"
       },
       {
-        "title": "Stoic one-liners are 30x outliers on Shorts",
-        "what": "One strong line about desire/discipline, dark minimal visual.",
+        "title": "Ask a question in the caption, never ask for likes",
+        "what": "Question captions get more comments; like-CTAs backfire.",
         "evidence": {
-          "title": "You become free the moment your desires stop controlling you.",
-          "url": "https://www.youtube.com/watch?v=xIdNx_BD-lU",
-          "creator": "hiddenverses",
-          "metric": "79,167 views · 34.5x channel avg"
+          "title": "TikTok SEO Guide 2026",
+          "url": "https://metricool.com/tiktok-seo/",
+          "creator": "Metricool",
+          "metric": "question captions +26.19% comments; comment CTA ~+14% comments; like CTA ~-60% likes"
         },
-        "howToUse": "Open a talking video with one quotable line (Islamic or stoic) as the first sentence and on-screen text, then explain it in under 40 seconds.",
-        "createdAt": "2026-10-27T10:50:00Z"
+        "howToUse": "End each caption with one specific question tied to the script ('What's one thing you stopped controlling?'). Drop any 'like if…' line.",
+        "createdAt": "2026-10-28T10:55:00Z"
       },
       {
-        "title": "'Editing how I see myself' moodboard",
-        "what": "Aesthetic self-image edit, new this week (68 creators).",
+        "title": "Mention a relevant account (small accounts only)",
+        "what": "Small accounts that @mention someone relevant saw more reach.",
         "evidence": {
-          "title": "Editing how I see myself",
-          "url": "https://virlo.ai/trends",
-          "creator": "Virlo trend tracker",
-          "metric": "sample videos 412K, 349K, 222K views"
+          "title": "TikTok SEO Guide 2026",
+          "url": "https://metricool.com/tiktok-seo/",
+          "creator": "Metricool",
+          "metric": "mentions: comments +45%, reach up to +20% for tiny/small accounts"
         },
-        "howToUse": "Optional B-side post: a quick moodboard of who he's becoming (gym, Quran, books, desk) with one line of text. Only if it doesn't need filming beyond phone clips he has.",
-        "createdAt": "2026-10-27T10:50:00Z"
+        "howToUse": "Only when it is honest: credit the creator or page whose stat or quote the script uses. Test on 3 posts and compare views.",
+        "createdAt": "2026-10-28T10:55:00Z"
       }
     ],
     "linkedai": [
       {
-        "title": "Chrome Web Store now weights recent reviews; Featured badge is ending",
-        "what": "Ratings favour fresh reviews; self-nominations for Featured closed Aug 20, 2026.",
+        "title": "Write about the problem, not the extension",
+        "what": "Long-tail problem posts and a one-page SEO landing page bring steady installs for Chrome extensions.",
         "evidence": {
-          "title": "Chrome Web Store updates: Faster reviews, new publication limits, badge updates",
-          "url": "https://developer.chrome.com/blog/cws-review-updates-2026",
-          "creator": "Chrome for Developers",
-          "metric": "Published Aug 20, 2026"
+          "title": "7 Proven Ways to Get More Users for Your Chrome Extension",
+          "url": "https://www.stefanvd.net/blog/?p=2493",
+          "creator": "Stefan vd (Turn Off the Lights)",
+          "metric": "author says one well-ranked post brings 'thousands' of visitors over time (no hard data)"
         },
-        "howToUse": "Make one promo idea that ends with 'leave a review if it got you a reply', and stop planning around the Featured badge.",
-        "createdAt": "2026-10-27T10:50:00Z"
+        "howToUse": "Turn the 'Stop applying, start messaging' angle into a page answering 'how to message a recruiter on LinkedIn' with 3 templates and a LinkedAI install button.",
+        "createdAt": "2026-10-28T10:55:00Z"
       },
       {
-        "title": "Shaking-head AI meme",
-        "what": "AI-animated photo shaking its head with relatable text; tagged for brands.",
+        "title": "Reddit: disclose you're the dev and ask for feedback",
+        "what": "Helpful answers in job-search subreddits with a disclosed mention beat promo posts.",
         "evidence": {
-          "title": "Shaking head AI meme",
-          "url": "https://virlo.ai/trends",
-          "creator": "Virlo trend tracker",
-          "metric": "sample videos 2.2M, 659K, 625K views"
+          "title": "7 Proven Ways to Get More Users for Your Chrome Extension",
+          "url": "https://www.stefanvd.net/blog/?p=2493",
+          "creator": "Stefan vd",
+          "metric": "no numbers given"
         },
-        "howToUse": "Text: 'Recruiters reading my 200th generic cover letter' over a head-shake; caption pitches LinkedAI's personal messages.",
-        "createdAt": "2026-10-27T10:50:00Z"
+        "howToUse": "Draft 2 answers to real 'how do I reach recruiters' threads for Omar to post himself; say he built LinkedAI and asks for honest feedback.",
+        "createdAt": "2026-10-28T10:55:00Z"
       }
     ],
     "growth": [
       {
-        "title": "Base44 SEO & GEO dashboard + llms.txt",
-        "what": "SEO score, per-page meta tags, sitemap, llms.txt and Search Console (rolling out).",
+        "title": "One template page per business type ranks for 'marketing plan for a <business>'",
+        "what": "Searching 'marketing plan for a bakery' returns ClickUp pages for bakery, cake shop and home-based bakery, each its own page.",
         "evidence": {
-          "title": "Base44 release notes (Oct 6, 2026)",
-          "url": "https://releasebot.io/updates/base44",
-          "creator": "Base44",
-          "metric": "shipped Oct 6, 2026"
+          "title": "Bakery Business Marketing Plan Template",
+          "url": "https://clickup.com/templates/marketing-plan/bakery-business",
+          "creator": "ClickUp",
+          "metric": "ranks on page 1 alongside GanttPRO and Slidesgo; traffic numbers not public"
         },
-        "howToUse": "Write one idea around free 'AI marketing plan for <business type>' landing pages, since marketing-plan generator pages are what rivals rank with.",
-        "createdAt": "2026-10-27T10:50:00Z"
+        "howToUse": "Answer to your request: the pages that rank are per-business-type template pages, not generic generators. Pick 3 of Omar's audience types (barber, café, home bakery) and write ideas around a sample Growth Architect plan for each.",
+        "createdAt": "2026-10-28T10:55:00Z"
       },
       {
-        "title": "Free marketing-plan generators are the category's lead magnet",
-        "what": "Rivals offer a free plan generator as the top of their funnel.",
+        "title": "Base44 can now post social content on the user's behalf",
+        "what": "Base44 added LinkedIn/Instagram/Facebook posting for social content (Oct 13) and an email performance dashboard (Oct 8).",
         "evidence": {
-          "title": "AI Marketing Plan Generator",
-          "url": "https://www.airops.com/tools/ai-marketing-plan-generator",
-          "creator": "AirOps",
-          "metric": ""
-        },
-        "howToUse": "Content idea: 'I made a marketing plan for a local barber in 60 seconds' screen-record demo of Growth Architect.",
-        "createdAt": "2026-10-27T10:50:00Z"
-      },
-      {
-        "title": "Base44 branded emails as workflow steps",
-        "what": "Design emails and send them on events like signup (custom built-in emails need Builder plan).",
-        "evidence": {
-          "title": "Base44 release notes (Oct 6, 2026)",
-          "url": "https://releasebot.io/updates/base44",
+          "title": "Base44 changelog",
+          "url": "https://docs.base44.com/changelog",
           "creator": "Base44",
-          "metric": "shipped Oct 6, 2026"
+          "metric": "Oct 13: social posting; Oct 8: email performance dashboard"
         },
-        "howToUse": "Product idea: a 3-email onboarding sequence that brings new users back to finish their first plan.",
-        "createdAt": "2026-10-27T10:50:00Z"
+        "howToUse": "Product idea: a 'Post this week's plan' button that drafts the posts and only posts after the user approves each one. Content idea: 'your plan now writes the posts too'.",
+        "createdAt": "2026-10-28T10:55:00Z"
       }
     ],
     "opps": [
       {
-        "title": "Islamic AI-storytelling long-form channel",
-        "what": "Faceless Islamic story/afterlife channels with AI visuals are hitting huge outliers.",
+        "title": "Shorts series + microdramas",
+        "what": "YouTube now lets creators group Shorts into seasons and episodes; microdramas passed 6.5B views in H1 2026.",
         "evidence": {
-          "title": "SA Religious Voice",
-          "url": "https://outlierkit.com/channel/sareligiousvoice",
-          "creator": "SA Religious Voice",
-          "metric": "1.4M views on top video, 38.2K subs (OutlierKit)"
+          "title": "YouTube on TV 2026: Shorts Series & Living Room Features",
+          "url": "https://blog.youtube/news-and-events/made-on-youtube-creators-shorts-series-tv-features/",
+          "creator": "YouTube Official Blog",
+          "metric": "microdramas 6.5B views H1 2026; TV microdrama views +90% YoY"
         },
-        "howToUse": "Check whether this should be its own channel or live on Ambient Escape; cost it in hours per video including source-checking.",
-        "createdAt": "2026-10-27T10:50:00Z"
+        "howToUse": "Check whether a faceless, halal episodic series (e.g. sourced Quran stories in 6 episodes) could be a new channel or a series on Ambient Escape.",
+        "createdAt": "2026-10-28T10:55:00Z"
       },
       {
-        "title": "NFC review-card wholesale and reseller programmes exist",
-        "what": "Suppliers sell blank/branded review tags wholesale to resellers.",
+        "title": "NFC review stands: one-time vs $50-100/month platforms",
+        "what": "Single-location shops pay $5-48 one-time on Etsy, while Podium/Birdeye start around $50-100/month.",
         "evidence": {
-          "title": "Wholesale & Reseller",
-          "url": "https://tap2review.it.com/wholesale",
-          "creator": "tap2review",
-          "metric": ""
+          "title": "Best Google Review Cards and Stands for Small Businesses in 2026",
+          "url": "https://onrec.com/node/129063",
+          "creator": "Onrec (partner content)",
+          "metric": "Etsy $5-48; marketplace $5-36; subscriptions $50-100+/mo"
         },
-        "howToUse": "Compare his NFC tag cost vs wholesale prices and check whether a 'reseller kit' for other students is a better business than selling door to door.",
-        "createdAt": "2026-10-27T10:50:00Z"
+        "howToUse": "Size a 'no monthly fee' NFC stand offer for Mississauga shops; check the claim that cheap cards often link to the profile instead of the direct review link.",
+        "createdAt": "2026-10-28T10:55:00Z"
       }
     ],
     "youtube": [
       {
-        "title": "Change one visible thing in every remix",
-        "what": "A third-party report says YouTube cut reach from Oct 1, 2026 for re-uploads without meaningful additions, and calls template uploads with minimal changes more exposed.",
+        "title": "Shorts series for tournaments",
+        "what": "Shorts can be grouped into seasons/episodes with sequential playback (rolling out since Sept 23, 2026).",
         "evidence": {
-          "title": "What Does YouTube's October 2026 Original-Content Shorts Update Mean",
-          "url": "https://www.vidio.ai/blog/article/youtube-original-content-shorts-update-october-2026",
-          "creator": "VIDIO",
-          "metric": "update dated Oct 1, 2026 (per the article)"
+          "title": "YouTube on TV 2026: Shorts Series",
+          "url": "https://blog.youtube/news-and-events/made-on-youtube-creators-shorts-series-tv-features/",
+          "creator": "YouTube Official Blog",
+          "metric": "no view data yet"
         },
-        "howToUse": "Keep the remix rule strict: a new colour, count, arena or melody every time, never the same render with a new title.",
-        "createdAt": "2026-10-27T10:50:00Z"
+        "howToUse": "Bounce Theory: run a 'Ball World Cup' as a Shorts series (Round of 16 → Final), each episode a top format; Omar groups them in Studio.",
+        "createdAt": "2026-10-28T10:55:00Z"
       },
       {
-        "title": "Ambient Escape's top Short is a bouncing-ball sim",
-        "what": "'Every bounce, the ball gets BIGGER' got 3,396 views on Ambient Escape, more than any Islamic Short, which may confuse who the channel is for.",
+        "title": "Title A/B tests for longs only",
+        "what": "YouTube tests up to 3 titles and picks by watch-time share; not available for Shorts.",
         "evidence": {
-          "title": "Every bounce, the ball gets BIGGER 😳 Wait for the end",
-          "url": "https://www.youtube.com/watch?v=-kp0e1xMDNA",
-          "creator": "Ambient Escape (Omar)",
-          "metric": "3,396 views · 76.7% watched"
+          "title": "YouTube Launches New Title A/B Testing Tool",
+          "url": "https://vidiq.com/blog/post/youtube-launches-new-title-testing-tool/",
+          "creator": "vidIQ",
+          "metric": "3 variants, 1-14 days, needs Advanced Features"
         },
-        "howToUse": "Put sims on Bounce Theory only; give Ambient Escape's slots to Quran-verse and question-hook Shorts, which have the best like rates.",
-        "createdAt": "2026-10-27T10:50:00Z"
+        "howToUse": "Give each L1/L2 three titles (one-sound+promise, place-name, question) so Omar can paste them into Test & Compare.",
+        "createdAt": "2026-10-28T10:55:00Z"
       }
     ]
   }
