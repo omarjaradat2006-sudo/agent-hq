@@ -1,16 +1,16 @@
 {
   "team": "lab",
   "hired": true,
-  "updatedAt": "2026-10-28T10:55:00Z",
+  "updatedAt": "2026-10-28T11:25:00Z",
   "agents": [
     {
       "id": "lead",
       "name": "Lab Director",
       "role": "Picks the upgrades worth doing",
-      "status": "waiting",
-      "doing": "Brief ready: try AI-visual Islamic story longs",
-      "lastRun": "2026-10-27T11:15:00Z",
-      "nextRun": "2026-10-28T10:23:00Z"
+      "status": "ok",
+      "doing": "Brief ready: make the Bounce long a marble race",
+      "lastRun": "2026-10-28T11:25:00Z",
+      "nextRun": "2026-10-29T10:23:00Z"
     },
     {
       "id": "scout",
@@ -18,29 +18,49 @@
       "role": "New AI tools, models and APIs",
       "status": "ok",
       "doing": "Found Shorts series, Base44 social posting, TikTok caption data",
-      "lastRun": "2026-10-27T11:15:00Z",
-      "nextRun": "2026-10-28T10:23:00Z"
+      "lastRun": "2026-10-28T11:25:00Z",
+      "nextRun": "2026-10-29T10:23:00Z"
     },
     {
       "id": "hunter",
       "name": "Format Hunter",
       "role": "What makes rival videos more engaging",
       "status": "ok",
-      "doing": "10 format leads: marble-run specials, seasonal rooms, rain stories",
-      "lastRun": "2026-10-27T11:15:00Z",
-      "nextRun": "2026-10-28T10:23:00Z"
+      "doing": "10 format leads for the YouTube team",
+      "lastRun": "2026-10-28T11:25:00Z",
+      "nextRun": "2026-10-29T10:23:00Z"
     },
     {
       "id": "engineer",
       "name": "Upgrade Engineer",
       "role": "Turns finds into build plans",
-      "status": "working",
-      "doing": "Turning finds into build plans",
-      "lastRun": "2026-10-27T11:15:00Z",
-      "nextRun": "2026-10-28T10:23:00Z"
+      "status": "ok",
+      "doing": "5 build plans ready",
+      "lastRun": "2026-10-28T11:25:00Z",
+      "nextRun": "2026-10-29T10:23:00Z"
     }
   ],
   "log": [
+    {
+      "t": "2026-10-28T11:25:00Z",
+      "agent": "Lab Director",
+      "msg": "Brief ready: Marble Run Special long; hired Caption Coach (TikTok)"
+    },
+    {
+      "t": "2026-10-28T11:20:00Z",
+      "agent": "Lab Director",
+      "msg": "No approved Agent HQ upgrade to build, skipped self-upgrade"
+    },
+    {
+      "t": "2026-10-28T11:20:00Z",
+      "agent": "Lab Director",
+      "msg": "Hired Caption Coach for the TikTok team: views fell ~700→250 since Oct 21 and 15 of 20 captions say 'Follow for more'"
+    },
+    {
+      "t": "2026-10-28T11:20:00Z",
+      "agent": "Upgrade Engineer",
+      "msg": "Planned 5 upgrades: Marble Run Special: Bounce Theory's first real long; Keyword-first captions for every TikTok; Seasonal room longs for Ambient Escape; NFC tags: 'no monthly fee' review stand for local shops; Agent HQ: show how Lab leads performed"
+    },
     {
       "t": "2026-10-28T10:55:00Z",
       "agent": "Tool Scout",
@@ -113,6 +133,129 @@
     }
   ],
   "ideas": [
+    {
+      "id": "lab-2026-10-28-1",
+      "title": "Marble Run Special: Bounce Theory's first real long",
+      "hook": "Swap 0-view compilations for one continuous marble race, the format at 2.27M views (21.7x) today",
+      "why": "Bounce Theory's 8 longs top out at 114 views and numbered compilations fell to 0-11 (Long-Form Doctor). Today's trending pull has Marble corn's 'Marble Run♡Durururu Special' at 2,267,948 views (21.7x), another of its runs at 2.9x, and サマーマーブル's marble run at 1.06M (4.9x). All are one continuous course, not clips stitched together.",
+      "format": "Bounce Theory · Video · 4h",
+      "business": "Bounce Theory",
+      "type": "Video",
+      "impact": "A long format with proven demand: realistic first target 500-5,000 views per long vs 0-114 now, plus watch hours toward monetisation",
+      "effort": "4h to build the format, then automatic in the daily batch",
+      "cost": "$0",
+      "score": 8,
+      "script": "1. Add a marble_run long format to the Bounce Engine (sims.py): a tall procedurally built course of 12-20 sections (funnels, zig-zag ramps, spinners, trapdoors, a lift back to the top for lap 2), 8-12 named colour marbles.\n2. On screen: live leaderboard, section counter, 'Final lap!' banner, winner card at the end. No cuts.\n3. Audio: synthesized plinks per collision and a soft rising pad; no copyrighted music.\n4. Length 10-15 min, 16:9, title like the outliers: 'Marble Run Special ♡ 12 Marbles, 1 Winner | Satisfying Marble Race'.\n5. Run it as L1 for 7 days with different course seeds and colour sets; put the 3 best 25 s moments out as Shorts that say 'full race on the channel'.\n6. Risks: render time for long physics; cap at 60 fps 1080p and test one 12-minute render first.\nWorked if: in 2 weeks at least one marble long passes 500 views or beats every previous Bounce Theory long.",
+      "buildPrompt": "You are helping me (Omar) add a new long-video format to my Bounce Theory YouTube pipeline. Use my bounce-theory-videos skill and my Python Bounce Engine (sims.py). Context: my repo is omarjaradat2006-sudo/agent-hq (read data/youtube/state.json → longFix, and data/youtube/metrics.json → trending for evidence). My long videos get 0-114 views; a continuous marble-run long ('Marble Run♡Durururu Special' by Marble corn, https://www.youtube.com/watch?v=u3MxJiJTkZk) is at 2.27M views, 21.7x its channel average. Build a new sims.py format called marble_run_long: a procedurally generated tall course (12-20 sections: funnels, zig-zag ramps, spinners, trapdoors, a lift for lap 2) with 8-12 named colour marbles, a live leaderboard, section counter, 'Final lap' banner and winner card, synthesized collision plinks and a soft pad (no copyrighted audio), 10-15 minutes, 1920x1080 at 60 fps, seedable so every day's course is different. Give me the full code for the new format, how to register it in the daily batch as L1, a 2-minute test render command, and 3 title options following the pattern 'Marble Run Special ♡ 12 Marbles, 1 Winner | Satisfying Marble Race'. Then propose the updated bounce-theory-videos skill text that adds marble_run_long as an L1 option (I'll save it myself).",
+      "sources": [
+        {
+          "title": "Marble Run♡Durururu Special (Marble corn)",
+          "url": "https://www.youtube.com/watch?v=u3MxJiJTkZk"
+        },
+        {
+          "title": "マーブルラン371 (サマーマーブル)",
+          "url": "https://www.youtube.com/watch?v=qFaLSFIA3WQ"
+        }
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-28T11:20:00Z"
+    },
+    {
+      "id": "lab-2026-10-28-2",
+      "title": "Keyword-first captions for every TikTok",
+      "hook": "Fix the caption half of the reach drop in 10 minutes: keyword line, on-screen keyword, one question",
+      "why": "TikTok views fell from ~700 to ~250 since Oct 21, and 15 of the last 20 posts end in 'Follow for more' (TikTok reviewer). Metricool's 2026 TikTok study says TikTok reads the first caption line, on-screen text and the transcript to file a video; question captions get 26.19% more comments, and like-CTAs cut likes by ~60%.",
+      "format": "TikTok · Skill · 30min",
+      "business": "TikTok",
+      "type": "Skill",
+      "impact": "Better topic matching and search reach; realistic goal is getting back to the ~700-view floor within 2 weeks (not guaranteed, since part of the drop may be account-level)",
+      "effort": "30 min to update the skill",
+      "cost": "$0",
+      "score": 8,
+      "script": "1. Update the content-scripts skill so every script ends with a caption block: line 1 = the search phrase (e.g. 'stoic advice for young muslim men'), line 2 = one specific question, then 2-4 specific hashtags (no #fyp/#viral).\n2. Add an on-screen text cue in scene 1 with the same phrase in the first 3 seconds, and make sure the phrase is said out loud in the first sentence.\n3. Ban 'Follow for more' and any 'like if…' line.\n4. Turn on auto-captions in TikTok and fix wrong words before posting.\n5. Track the next 10 posts in the TikTok reviewer's table: views, comments, search share if shown.\nRisk: the drop may be account-level (Oct 21), so captions alone may not fix it; the reviewer should keep watching.\nWorked if: the 10 posts after the change average above the ~250 views of the last five, and comments rise.",
+      "buildPrompt": "Help me (Omar) update my content-scripts Claude skill for my TikTok self-improvement page (young Muslim guys, Islamic discipline). Problem: my views dropped from ~700 to ~250 per video since Oct 21 and 15 of my last 20 captions end with 'Follow for more'. Evidence from Metricool's 2026 TikTok SEO guide (https://metricool.com/tiktok-seo/): TikTok weighs the first caption line most, reads on-screen text and transcribes speech; question captions got 26.19% more comments; like-CTAs were linked to ~60% fewer likes; use 1-5 specific hashtags, not #fyp/#viral. Change the skill so every script it writes includes: (1) a caption block whose first line is a natural search phrase for the topic, a second line with one specific question, and 2-4 specific hashtags; (2) an on-screen text cue in the first 3 seconds with the same phrase; (3) the phrase spoken in the first sentence; (4) a rule never to write 'Follow for more' or 'like if'. Keep everything else in the skill (scene format, VoicePrint pass, hooks) the same. Also re-create the missing hook-playbook reference file the skill points to, if you can see what it should contain. Show me the full updated SKILL.md so I can save it myself.",
+      "sources": [
+        {
+          "title": "TikTok SEO Guide 2026",
+          "url": "https://metricool.com/tiktok-seo/"
+        }
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-28T11:20:00Z"
+    },
+    {
+      "id": "lab-2026-10-28-3",
+      "title": "Seasonal room longs for Ambient Escape",
+      "hook": "Name a cozy place and a season in every sleep long; the top ambience outlier today is 27.5x",
+      "why": "Ambient Escape's 3-hour sleep longs get 0-4 views. Today's trending pull: 'The Christmas Library Hideaway | … Snowy Village Views & Crackling Fireplace' (Tranquil Jazz Nook) 22,389 views at 27.5x, and 'Cozy Fall Morning Ambience 🍂 Autumn Sunroom & Fireplace' (Delger Family Farm) 20,284 at 5.0x. Sleep Thunder Rain's 'Rainy Day Café Jazz' is 6.0x. Both top outliers name a place + season + sounds.",
+      "format": "Ambient Escape · Video · 2h",
+      "business": "Ambient Escape",
+      "type": "Video",
+      "impact": "A title and scene formula with current evidence; target 100-1,000 views per long in 2 weeks vs 0-4 now",
+      "effort": "2h to add scene presets, then automatic",
+      "cost": "$0 (music only if CC0 or licensed for monetised use)",
+      "score": 7,
+      "script": "1. Add 4 scene presets to the ambient-escape-videos pipeline: Winter Library Hideaway (snowy window + fireplace), Autumn Sunroom Morning (leaves + light rain + fire), Snowed-In Cabin (wind + fire), Rainy Old Village House (clay-roof rain + far thunder).\n2. Clips from Pexels/Pixabay; audio from his synth mixer (fire crackle, wind, rain).\n3. Title formula: '<The Place> | <2 sounds> | <hours>', e.g. 'The Winter Library Hideaway | Snowy Window & Crackling Fireplace | 3 Hours'. No Christmas branding (keeps the channel's Islamic identity) and no jazz unless the track is CC0/licensed.\n4. Use autumn presets until mid-November, then winter.\n5. Give each long three titles for YouTube's Test & Compare (longs only).\nRisk: synthesized fire can sound flat; layer two crackle textures.\nWorked if: in 2 weeks at least two seasonal longs pass 100 views, beating every earlier Ambient long.",
+      "buildPrompt": "Help me (Omar) add seasonal 'cozy place' long videos to my Ambient Escape YouTube channel using my ambient-escape-videos skill. My 3-hour sleep longs get 0-4 views. Outliers right now (from my repo omarjaradat2006-sudo/agent-hq, data/youtube/metrics.json → trending): 'The Christmas Library Hideaway | Christmas Jazz, Snowy Village Views & Crackling Fireplace' by Tranquil Jazz Nook (22,389 views, 27.5x average) and 'Cozy Fall Morning Ambience 🍂 Autumn Sunroom & Fireplace' by Delger Family Farm (20,284, 5.0x). Create 4 scene presets for my pipeline: Winter Library Hideaway, Autumn Sunroom Morning, Snowed-In Cabin, Rainy Old Village House. For each give: Pexels/Pixabay search terms for the clips, my synthesized audio mix (fire, wind, rain layers and levels), a 3-hour structure, and three titles in the pattern '<The Place> | <2 sounds> | <hours>' for YouTube's title A/B test. Rules: no Christmas branding, no reciter audio, no music unless it is CC0 or licensed for monetised YouTube (say clearly if a licence is unclear), never my voice. Then propose the updated ambient-escape-videos skill text adding these presets and the title formula (I'll save it myself).",
+      "sources": [
+        {
+          "title": "The Christmas Library Hideaway (Tranquil Jazz Nook)",
+          "url": "https://www.youtube.com/watch?v=UWn5bwctWbA"
+        },
+        {
+          "title": "Cozy Fall Morning Ambience (Delger Family Farm)",
+          "url": "https://www.youtube.com/watch?v=phLFXYQ4OK8"
+        }
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-28T11:20:00Z"
+    },
+    {
+      "id": "lab-2026-10-28-4",
+      "title": "NFC tags: 'no monthly fee' review stand for local shops",
+      "hook": "Sell a one-time review stand against $50-100/month review software",
+      "why": "A Sept 28, 2026 comparison (Onrec, partner content) puts Etsy review cards at $5-48 one-time and Podium/Birdeye-style platforms at $50-100+/month. It also says many cheap cards link to the Business Profile instead of the direct review link, which adds taps. Omar already has NFC review tags, so the gap is positioning and a local offer.",
+      "format": "NFC tags · Money · 3h",
+      "business": "NFC tags",
+      "type": "Money",
+      "impact": "A clear local pitch; if 5-10 Mississauga shops buy a stand at a one-time price in the Etsy range, that's a small but halal side income with near-zero ongoing work",
+      "effort": "3h to make the one-pager and test list",
+      "cost": "$0 beyond tags he already has",
+      "score": 6,
+      "script": "1. Confirm every tag Omar sells opens the direct 'write a review' link (Google's review link from the Business Profile), with a QR code on the same stand as fallback.\n2. One-page offer: 'Tap, review, done. One-time price, no monthly fee', with a price inside the $5-48 Etsy range Omar picks himself.\n3. Make a list of 20 single-location shops near campus (barbers, cafés, bakeries) with under ~50 Google reviews; walk in with a demo stand.\n4. Offer a free 2-week trial stand to 3 shops; count reviews before and after.\nRisks: Google rules forbid paying or rewarding for reviews; the stand must not offer discounts for reviews.\nWorked if: in 2 weeks 3 trial shops gained reviews and at least 1 paid.",
+      "buildPrompt": "Help me (Omar, university student in Mississauga, Ontario) turn my NFC Google review tags into a simple local offer. Evidence: an Onrec comparison from Sept 28, 2026 (https://onrec.com/node/129063, partner content) lists Etsy review cards at $5-48 one-time and subscription platforms like Podium/Birdeye at $50-100+/month, and says many cheap cards link to the Business Profile instead of the direct review link. Please: (1) explain exactly how to get a business's direct Google 'write a review' link and how to program and test it on an NFC tag plus a QR fallback; (2) write a one-page offer sheet ('Tap, review, done. One-time price, no monthly fee') with a price slot I fill in; (3) write a 30-second walk-in pitch for barbers, cafés and bakeries; (4) a simple before/after review tracker table for a 2-week free trial; (5) a short list of Google review policy rules I must follow (no incentives for reviews, no review gating). Don't contact anyone or buy anything; just give me the materials.",
+      "sources": [
+        {
+          "title": "Best Google Review Cards and Stands for Small Businesses in 2026",
+          "url": "https://onrec.com/node/129063"
+        }
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-28T11:20:00Z"
+    },
+    {
+      "id": "lab-2026-10-28-5",
+      "title": "Agent HQ: show how Lab leads performed",
+      "hook": "See on the site which Lab format leads the YouTube team used and how they did",
+      "why": "The YouTube Liaison used 5 Lab leads yesterday and skipped 5 (labFeedback), but nothing on the site connects a lead to its lineup slot or its later views, so the Lab can't learn which leads pay off. The lineup items already carry a 'basis' that names the source video.",
+      "format": "Agent HQ · Site · 1h",
+      "business": "Agent HQ",
+      "type": "Site",
+      "impact": "Closes the loop: leads that win get more slots, leads that flop get dropped; saves Omar from reading three JSON files",
+      "effort": "1h",
+      "cost": "$0",
+      "score": 6,
+      "script": "1. In assets/app.js, in the Lab panel where formatLeads are drawn, add a small badge per lead: 'Used in lineup' if any data/youtube/state.json lineup item's basis contains the lead's example title or creator, else 'Not used yet'.\n2. Also show skipped reasons from youtube labFeedback.skipped when the lead's name appears there.\n3. Later step (not now): when metrics.json topVideos has an Omar video whose title matches a lineup slot with that basis and ageDays >= 3, show its views.\n4. node --check assets/app.js before committing.\nWorked if: Omar can open the Lab panel and see used/skipped per lead without opening JSON.",
+      "buildPrompt": "In my repo omarjaradat2006-sudo/agent-hq (a static game-style site in assets/app.js, assets/config.js, assets/style.css reading data/*/state.json), add a small feature to the R&D Lab panel. The Lab panel already renders data/lab/state.json → formatLeads (see the code near `const st = t.state, fl = st.formatLeads || []` in assets/app.js). For each format lead, show a badge: 'Used in lineup' if any item in data/youtube/state.json → lineup.channels[*][*].basis contains the lead's example.title or example.creator; 'Skipped: <reason>' if data/youtube/state.json → labFeedback.skipped has an entry starting with the lead's name; otherwise 'Not used yet'. Keep the styling consistent with existing badges in assets/style.css. Don't touch .github/workflows, data files or anything else. Show me the exact diff, then run `node --check assets/app.js` and commit with a clear message.",
+      "sources": [
+        {
+          "title": "agent-hq repo",
+          "url": "https://github.com/omarjaradat2006-sudo/agent-hq"
+        }
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-28T11:20:00Z"
+    },
     {
       "id": "lab-2026-10-27-1",
       "title": "A Day in Jannah: AI-visual long videos",
@@ -375,20 +518,20 @@
     }
   ],
   "brief": {
-    "date": "2026-10-27",
-    "createdAt": "2026-10-27T11:15:00Z",
-    "headline": "Your longs get no views: try AI-visual Islamic stories",
-    "summary": "Across 27 long uploads your best got 114 views, while an AI-visual 'Movie of Heaven' Islamic story hit 1.4M on a 38K-sub channel. Your best upgrade is 'A Day in Jannah' for Ambient Escape: a sourced, calm narration over landscapes, no reciter audio. For Bounce Theory, the best new format lead is weapon-ball battles (3x outliers on three channels), and I hired a Long-Form Doctor for the YouTube team.",
+    "date": "2026-10-28",
+    "createdAt": "2026-10-28T11:20:00Z",
+    "headline": "Make Bounce Theory's long a marble race, not a compilation",
+    "summary": "Your best upgrade today is a Marble Run Special long for Bounce Theory: one continuous race is at 2.27M views (21.7x) right now, while your compilation longs sit at 0-11 views. For Ambient Escape, the top new lead is seasonal cozy-room longs (a winter library hideaway hit 27.5x). I hired a Caption Coach for TikTok, since your views fell to ~250 and most captions still say 'Follow for more'.",
     "filmToday": [
-      "A Day in Jannah: AI-visual long videos — paste its build prompt into a new Claude chat to get the sourced script"
+      "Marble Run Special: Bounce Theory's first real long — paste its build prompt into a new Claude chat to get the marble_run_long code"
     ],
     "approvals": [
-      "5 upgrades waiting"
+      "10 upgrades waiting (5 new today)"
     ],
     "notes": [
-      "Several Ambient Escape longs use Maher Al-Muaiqly's recitation: that's a Content ID risk and they get 0-21 views. Consider replacing them with the Jannah story format.",
-      "A third-party report says YouTube has cut Shorts reach for re-uploads without meaningful changes since Oct 1; keep one visible change in every remix (check YouTube's own post before relying on it).",
-      "Chrome Web Store's Featured badge is ending and ratings now weight recent reviews, so fresh LinkedAI reviews matter more than ever."
+      "Answered team requests: TikTok caption data came from Metricool's 2026 study (question captions +26% comments); nothing reliable found on reach drops after ~300 posts. I couldn't find an English Islamic Shorts channel with trustworthy per-video numbers; today's Islamic lead is Arabic (event-timed hook, 159K).",
+      "Growth team: the pages ranking for 'marketing plan for a bakery' are per-business-type template pages (ClickUp), not generic generators; traffic numbers aren't public.",
+      "YouTube Shorts series (seasons and episodes) is rolling out since Sept 23: a tidy way to run a Bounce Theory tournament. The AI Opportunities team still hasn't run since it was hired."
     ]
   },
   "processedIssues": [],

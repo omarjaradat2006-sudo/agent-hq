@@ -10,7 +10,8 @@ window.HQ_CONFIG = {
         { id: "copywriter", name: "Copywriter", role: "Scene-by-scene scripts", kind: "ideas" },
         { id: "reviewer", name: "Performance Reviewer", role: "Studies what worked and why", kind: "review" },
         { id: "collector", name: "Data Collector", role: "Pulls your stats hourly", kind: "stats" },
-        { id: "liaison", name: "R&D Liaison", role: "Brings in the R&D Lab's finds", kind: "research" } ] },
+        { id: "liaison", name: "R&D Liaison", role: "Brings in the R&D Lab's finds", kind: "research" },
+        { id: "captions", name: "Caption Coach", role: "Search-friendly captions and on-screen keywords", kind: "ideas" } ] },
     { id: "youtube", name: "YouTube", color: "#ff8a3d", grid: [1, 0], tagline: "Bounce Theory and Ambient Escape", ideaWord: "Video ideas",
       agents: [
         { id: "lead", name: "Channel Lead", role: "Runs both channels", kind: "brief" },
