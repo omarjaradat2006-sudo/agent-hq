@@ -35,3 +35,10 @@ At most 1 new concept per channel per day, and only when it is backed by evidenc
 
 ## When a "winning elsewhere" or test slot wins for Omar
 After it has real numbers (ageDays >= 3) and beats the channel median, it becomes one of Omar's hits and moves into the remix slots. That is how new formats graduate.
+
+## R&D upgrades: only use what is done
+The R&D Lab's upgrades (ideas in data/lab/state.json for Bounce Theory, Ambient Escape or YouTube: new sims.py formats, audio upgrades, pipeline changes) have a status Omar sets: pending → approved / skipped → done. See agents/RUNBOOK.md section 3.
+- Plan slots that rely on an upgrade (a new format function, new audio, a new pipeline step) **only when that upgrade's status is `done`**. `approved` means Omar hasn't built it yet.
+- Approved-but-not-done upgrades are "waiting on Omar": no slot may depend on them. List them in the brief's `approvals` as "Waiting on Omar: <title>".
+- Lab `formatLeads` that need a new build count as a Test slot (0-2), built in the batch from a Producer idea's spec, never from an upgrade that isn't done.
+- Your own video ideas: new ones are `approved` (up next); the batch marks them `done` when made, or Omar presses "I did it". `skipped` ideas never go in a lineup.

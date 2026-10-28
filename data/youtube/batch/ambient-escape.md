@@ -76,6 +76,6 @@ Tags: rain sounds, rain at night, rain on window, power cut rain, cozy rain, sle
 
 ## When the batch is done
 - Tell Omar which clip each video used (by file name) and any slot that fell back.
-- If this session can push to omarjaradat2006-sudo/agent-hq: set `made: true` on each lineup item made and `status: "filmed"` on each used idea in data/youtube/state.json, then commit and push. Otherwise list the idea ids so Omar can press "Mark made" on the site.
+- If this session can push to omarjaradat2006-sudo/agent-hq: set `made: true` on each lineup item made and `status: "done"` (and `doneAt` now) on each used idea in data/youtube/state.json, then commit and push. Never change any other status. Otherwise list the idea ids so Omar can press "I did it" on the site.
 
-_Generated 2026-10-28 14:29 UTC_
+_Generated 2026-10-28 15:18 UTC_

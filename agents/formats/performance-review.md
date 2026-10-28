@@ -6,7 +6,7 @@ Goal: work out WHY some of Omar's videos beat his average and others flopped, th
 - `data/<team>/metrics.json` → `topVideos` (his own recent uploads).
   - TikTok: views, likes, comments, shares, duration, description (= caption), createTime, url.
   - YouTube: per channel; views, likes, comments, avgViewPct (% of video watched), avgViewSec, subsGained, shares, duration, isShort, published, url.
-- `data/<team>/state.json` → ideas with status "filmed" (TikTok: the real scenes/hook he filmed) and the last lineups (YouTube: format + note per slot).
+- `data/<team>/state.json` → ideas with status "done" (old files: "filmed") (TikTok: the real scenes/hook he filmed) and the last lineups (YouTube: format + note per slot).
 - YouTube `topVideos` now holds each channel's top ~40 and bottom ~40 videos of the last 90 days (with `avgViewPct`, `avgViewSec`, `subsGained`, `views90`, `ageDays`, `seconds`, `channel`) plus the 30 newest uploads. Analytics lag 2-3 days, so videos under 3 days old have views but no retention: judge them on views only, or leave them out. Map each title to its format by keyword (e.g. "line up again" = pendulum wave, "string" = string art) and score formats by median views and median retention.
 - You cannot watch the videos. Say so where it matters: your read of the hook comes from the caption/title plus the matched script.
 

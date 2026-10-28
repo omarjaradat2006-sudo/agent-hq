@@ -38,16 +38,23 @@ Goal: find the highest-leverage ways AI can make Omar more money, save him time,
  "buildPrompt":"a complete prompt Omar pastes into a NEW Claude chat to build it. Name the exact skill, repo (omarjaradat2006-sudo/agent-hq), Base44 app id (699b4057d65174480989a52e) or files involved. For a skill change, ask Claude to propose the updated skill (Omar saves it). Self-contained: it must work without this conversation.",
  "sources":[{"title":"","url":""}],"status":"pending","createdAt":""}
 ```
+
+## Upgrade status: the done loop
+Omar sets each upgrade's status on the site: `pending` → `approved` (he wants it) or `skipped` (he passed) → `done` (he actually built or installed it). Old files may say `rejected` (= skipped) or `filmed` (= done). See agents/RUNBOOK.md section 3.
+- **Only `done` upgrades exist.** When you describe "what exists today", read pain points, or plan new upgrades, treat a `done` upgrade as part of his setup and build on it. Never assume an `approved` upgrade is installed.
+- **Approved-but-not-done = waiting on Omar.** Don't plan anything that depends on it, don't re-pitch it as new, and list it in the brief's `approvals` as "Waiting on Omar: <title> (approved <n> days ago)", oldest first. If one has waited 7+ days, add one note asking whether to skip it.
+- Leads and teamLeads you send other teams must not depend on an upgrade that isn't `done`; if a lead needs one, say "needs <title> first" in `howToUse`.
+- Learn from `skipped` (what he doesn't want) and `done` (what he actually uses).
 Never invent tools, features, prices, licences or results. If a licence is unclear, say so and do not recommend it for monetised videos.
 
 ## Research entry
 Prepend `{date, createdAt, items:[6-8 items: title, creator (company/channel), url, metric (only if real), whyItWorks (what it could do for Omar)]}`; keep 10 entries.
 
 ## Brief
-`{date, createdAt, headline (<12 words), summary (2-3 sentences to "you": the single best upgrade and why), filmToday:["the one upgrade to do first, as '<title> — <first step>'"], approvals:["N upgrades waiting"], notes:[1-3 heads-ups, e.g. a tool going paid, a free tier, a pain point you keep seeing]}`
+`{date, createdAt, headline (<12 words), summary (2-3 sentences to "you": the single best upgrade and why), filmToday:["the one upgrade to do first, as '<title> — <first step>'"], approvals:["N upgrades to review", "Waiting on Omar: <title> (approved N days ago)" for each approved-but-not-done upgrade], notes:[1-3 heads-ups, e.g. a tool going paid, a free tier, a pain point you keep seeing]}`
 
 ## Self-upgrades (the Lab improving Agent HQ itself)
-When Omar has APPROVED an upgrade whose business is "Agent HQ" and it only changes files in `assets/`, `agents/formats/`, or `collectors/niches.json`, the Lab may build it on its next run: at most one per run, keep the change small, run `node --check assets/app.js assets/config.js` (and `python3 -m json.tool` on any JSON) before committing, set the idea's status to "filmed" (shown as Built), and log what changed. Never touch `.github/workflows/`, secrets, other teams' data files, or the scheduled tasks; anything bigger stays a buildPrompt for Omar.
+When Omar has APPROVED an upgrade whose business is "Agent HQ" and it only changes files in `assets/`, `agents/formats/`, or `collectors/niches.json`, the Lab may build it on its next run: at most one per run, keep the change small, run `node --check assets/app.js assets/config.js` (and `python3 -m json.tool` on any JSON) before committing, set the idea's status to "done" (shown as Installed) with `doneAt` now, and log what changed. This is the only case where the Lab sets `done` itself. Never touch `.github/workflows/`, secrets, other teams' data files, or the scheduled tasks; anything bigger stays a buildPrompt for Omar.
 
 ## Hiring new agents (no approval needed)
 The Lab may add ONE new agent per run to any team (tiktok, youtube, linkedai, growth, opps) when the evidence shows a gap a dedicated agent would fix (e.g. a Thumbnail Tester for YouTube, a Hook Lab for TikTok, an Ads Analyst for LinkedAI).

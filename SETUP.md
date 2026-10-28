@@ -57,7 +57,13 @@ Every morning the YouTube team lists the clips its lineup needs. The **Footage f
 
 ## Approving ideas
 
-On a team site, press **Approve**, **Pass** or **Mark filmed**. It opens a GitHub issue that's already filled in. Press **Submit new issue**. The next agent run reads it, updates the site, and closes the issue.
+One time per device: press ⚙ (top right) → **Connect** and paste a fine-grained GitHub token (Repository access: only agent-hq; Permissions → Contents: Read and write). It's stored only in that browser.
+
+Then every button saves by itself (you'll see "Saved"):
+- **Approve** / **Skip** on new ideas
+- **I did it** when you've actually built, installed, filmed or made it; **Not done yet** to undo that
+
+Agents only treat an R&D upgrade as available once it's **done**. Approved-but-not-done upgrades show as "Waiting on you" and stay out of every plan.
 
 ## Editing what gets researched
 

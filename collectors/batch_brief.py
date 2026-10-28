@@ -23,6 +23,21 @@ def esc(s):
     return str(s or "").replace("|", "/").replace("\n", " ").strip()
 
 
+DONE = ("done", "filmed")  # "filmed" is the old name for done
+
+
+def lab_upgrades(ch):
+    """R&D Lab upgrades for this channel, split into done (usable) and approved-but-not-done (waiting on Omar)."""
+    try:
+        lab = json.load(open(os.path.join(ROOT, "data", "lab", "state.json")))
+    except Exception:
+        return [], []
+    mine = [i for i in lab.get("ideas") or [] if str(i.get("business") or "") in (ch, "YouTube")]
+    done = [i for i in mine if i.get("status") in DONE]
+    waiting = [i for i in mine if i.get("status") == "approved"]
+    return done, waiting
+
+
 def brief(ch, items, s):
     date = (s.get("lineup") or {}).get("date") or "unknown"
     foot = {f.get("file"): f for f in s.get("footage") or [] if f.get("file")}
@@ -103,9 +118,20 @@ def brief(ch, items, s):
             out.append(str(i.get("script") or "").strip())
             out.append("")
 
+    done, waiting = lab_upgrades(ch)
+    if done or waiting:
+        out.append("## R&D upgrades")
+        out.append("")
+        out.append("Only upgrades marked done are installed. Use those; never use one that is only approved.")
+        for i in done:
+            out.append(f"- Installed (use it): {esc(i.get('title'))}  (`{i.get('id')}`)")
+        for i in waiting:
+            out.append(f"- Waiting on Omar (NOT installed, don't use it): {esc(i.get('title'))}  (`{i.get('id')}`)")
+        out.append("")
+
     out.append("## When the batch is done")
     out.append(f"- Tell Omar which clip each video used (by file name) and any slot that fell back.")
-    out.append(f"- If this session can push to {REPO}: set `made: true` on each lineup item made and `status: \"filmed\"` on each used idea in data/youtube/state.json, then commit and push. Otherwise list the idea ids so Omar can press \"Mark made\" on the site.")
+    out.append(f"- If this session can push to {REPO}: set `made: true` on each lineup item made and `status: \"done\"` (and `doneAt` now) on each used idea in data/youtube/state.json, then commit and push. Never change any other status. Otherwise list the idea ids so Omar can press \"I did it\" on the site.")
     out.append("")
     out.append(f"_Generated {datetime.datetime.now(datetime.timezone.utc).strftime('%Y-%m-%d %H:%M UTC')}_")
     return "\n".join(out) + "\n"

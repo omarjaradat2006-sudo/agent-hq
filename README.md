@@ -21,7 +21,7 @@ Omar's AI agent teams: TikTok, YouTube, LinkedAI, Growth Architect, AI Opportuni
               "status": "working|idle|ok|waiting|error|off", "doing": "...", "lastRun": "ISO", "nextRun": "ISO"}],
   "log": [{"t": "ISO", "agent": "Analyst", "msg": "..."}],
   "ideas": [{"id": "tiktok-YYYY-MM-DD-1", "title": "", "hook": "", "why": "", "format": "", "script": "",
-             "score": 8, "sources": [{"title": "", "url": ""}], "status": "pending|approved|filmed|rejected", "createdAt": "ISO"}],
+             "score": 8, "sources": [{"title": "", "url": ""}], "status": "pending|approved|skipped|done", "decidedAt": "ISO", "createdAt": "ISO"}],
   "research": [{"date": "YYYY-MM-DD", "createdAt": "ISO", "items": [{"title": "", "creator": "", "url": "", "metric": "", "whyItWorks": ""}]}],
   "brief": {"date": "", "createdAt": "ISO", "headline": "", "summary": "", "filmToday": [], "approvals": [], "notes": []},
   "processedIssues": [12, 13]

@@ -226,7 +226,7 @@
       const mx = vb.x + (e.clientX - r.left) / r.width * vb.w, my = vb.y + (e.clientY - r.top) / r.height * vb.h;
       const w = Math.min(Math.max(vb.w * k, 300), 6000), h = w * vb.h / vb.w; setVB({ x: mx - (mx - vb.x) * w / vb.w, y: my - (my - vb.y) * h / vb.h, w, h }); }, { passive: false });
     addEventListener("resize", () => { if (focused) animateTo(fitBox(roomBoxes[focused]), 200); else animateTo(fitBox(worldBox, .96), 200); });
-    addEventListener("keydown", e => { if (e.key === "Escape") zoomOut(); });
+    addEventListener("keydown", e => { if (e.key === "Escape") { const m = $("#hqSettings"); if (m) m.remove(); else zoomOut(); } });
   }
 
   /* ---------------- panel ---------------- */
@@ -302,55 +302,86 @@
       body.append(ro2); }
   }
   function kpi(m) { const d = el("div", "kpi"); d.append(el("div", "v", fmt(m.value))); d.append(el("div", "k", m.label.replace(/^.* · /, ""))); if (m.delta != null && m.delta !== 0) { const n = Number(m.delta); d.append(el("div", "d " + (n >= 0 ? "up" : "down"), (n >= 0 ? "+" : "") + fmt(n) + " " + (m.deltaLabel || ""))); } return d; }
-  function issueUrl(action, t, idea) {
-    const body = `Decision from Agent HQ.\n\nIdea: ${idea.title || ""}\nTeam: ${t.cfg.id}\n\n(Just press "Submit new issue". The agents read this and update the site.)`;
-    return `https://github.com/${CFG.repo}/issues/new?title=${encodeURIComponent(action + ": " + idea.id)}&body=${encodeURIComponent(body)}`;
-  }
-  /* one-click decisions: a GitHub token kept only in this browser */
+  /* Decisions: saved straight into data/<team>/state.json with a GitHub token kept only in this browser. */
   const LS = { get(k) { try { return localStorage.getItem(k); } catch { return null; } }, set(k, v) { try { v == null ? localStorage.removeItem(k) : localStorage.setItem(k, v); } catch {} } };
-  const ACTION_STATUS = { approve: "approved", pass: "rejected", filmed: "filmed", review: "pending" };
+  // pending → approved / skipped → done. Old names: rejected = skipped, filmed = done.
+  const normStatus = s => ({ rejected: "skipped", filmed: "done" }[s] || s || "pending");
+  const ACTION_STATUS = { approve: "approved", skip: "skipped", done: "done", undone: "approved", review: "pending" };
+  const ACTION_TOAST = { approve: "Saved · approved", skip: "Saved · skipped", done: "Saved · marked done", undone: "Saved · back to waiting on you", review: "Saved · back to review" };
   function localDecisions() { try { return JSON.parse(LS.get("hq.decisions") || "{}"); } catch { return {}; } }
   function saveDecision(id, status) { const d = localDecisions(); d[id] = { status, at: Date.now() }; LS.set("hq.decisions", JSON.stringify(d)); }
-  function effectiveStatus(i) { const d = localDecisions()[i.id]; const real = i.status || "pending";
-    if (d && d.status !== real && Date.now() - d.at < 3 * 86400e3) return { status: d.status, queued: true }; return { status: real, queued: false }; }
-  async function decide(action, t, idea, btns) {
-    const tok = LS.get("hq.ghToken");
-    if (!tok) { window.open(issueUrl(action, t, idea), "_blank", "noopener"); toast("Press Create on GitHub. Tip: connect GitHub once for one-click decisions."); return; }
-    btns.forEach(b => b.disabled = true);
-    try {
-      const r = await fetch(`https://api.github.com/repos/${CFG.repo}/issues`, { method: "POST",
-        headers: { Authorization: "Bearer " + tok, Accept: "application/vnd.github+json", "Content-Type": "application/json" },
-        body: JSON.stringify({ title: `${action}: ${idea.id}`, body: `Decision from Agent HQ.\n\nIdea: ${idea.title || ""}\nTeam: ${t.cfg.id}` }) });
-      if (r.status === 401 || r.status === 403) { LS.set("hq.ghToken", null); throw new Error("token"); }
-      if (!r.ok) throw new Error("http " + r.status);
-      saveDecision(idea.id, ACTION_STATUS[action]);
-      toast({ approve: "Approved", pass: "Passed", filmed: "Marked done", review: "Moved back to review" }[action] + ". The team picks it up on its next run.");
-      renderPanel();
-    } catch (e) { btns.forEach(b => b.disabled = false); toast(e.message === "token" ? "GitHub didn't accept the token. Connect it again." : "Couldn't reach GitHub. Try again."); }
+  // Pages takes a minute to publish a commit, so show the saved status until the site catches up.
+  function effectiveStatus(i) { const d = localDecisions()[i.id]; const real = normStatus(i.status);
+    if (d && d.status !== real && Date.now() - d.at < 20 * 60e3) return { status: d.status, queued: true }; return { status: real, queued: false }; }
+  const b64ToText = b => new TextDecoder().decode(Uint8Array.from(atob(b.replace(/\s/g, "")), c => c.charCodeAt(0)));
+  const textToB64 = t => { const u = new TextEncoder().encode(t); let s = ""; for (let i = 0; i < u.length; i += 0x8000) s += String.fromCharCode.apply(null, u.subarray(i, i + 0x8000)); return btoa(s); };
+  async function gh(path, opt = {}) {
+    const r = await fetch(`https://api.github.com/repos/${CFG.repo}/${path}`, { ...opt, headers: { Authorization: "Bearer " + LS.get("hq.ghToken"), Accept: "application/vnd.github+json", "X-GitHub-Api-Version": "2022-11-28", ...(opt.body ? { "Content-Type": "application/json" } : {}) } });
+    if (r.status === 401) throw new Error("token"); if (r.status === 403 || r.status === 404) throw new Error("access"); return r;
   }
-  function connectCard(body) {
-    if (LS.get("hq.ghToken")) return;
-    const c = el("details", "card"); c.append(el("summary", null, "Make Approve and Pass one click"));
-    const w = el("div"); w.style.display = "grid"; w.style.gap = "8px"; w.style.marginTop = "8px";
-    w.append(el("div", "why", "Right now each decision opens GitHub. Paste a GitHub token once and they happen instantly. It's saved only in this browser."));
-    const steps = el("ol"); steps.style.margin = "0"; steps.style.paddingLeft = "18px"; steps.style.fontSize = "13px";
-    ["Open github.com/settings/personal-access-tokens/new", "Name it Agent HQ, set Expiration to 1 year", "Repository access: Only select repositories → agent-hq", "Permissions → Issues → Read and write, then Generate token", "Copy it and paste it below"].forEach(x => steps.append(el("li", null, x)));
-    w.append(steps);
-    const inp = el("input"); inp.type = "password"; inp.id = "ghtok"; inp.placeholder = "github_pat_…"; inp.autocomplete = "off";
-    Object.assign(inp.style, { background: "var(--bg2)", border: "1px solid var(--line2)", borderRadius: "9px", padding: "9px 11px", color: "var(--fg)", font: "13px var(--f-mono)" });
-    const sv2 = el("button", "btn primary", "Connect"); sv2.onclick = () => { const v = inp.value.trim(); if (!/^(github_pat_|ghp_)/.test(v)) { toast("That doesn't look like a GitHub token."); return; } LS.set("hq.ghToken", v); toast("Connected. Decisions are one click now."); renderPanel(); };
-    w.append(inp, sv2); c.append(w); body.append(c);
+  async function commitStatus(teamId, ideaId, status, label) {
+    const path = `contents/data/${teamId}/state.json`;
+    for (let attempt = 0; attempt < 3; attempt++) {
+      const r = await gh(path + "?ref=main&t=" + Date.now(), { cache: "no-store" }); if (!r.ok) throw new Error("http " + r.status);
+      const f = await r.json(); const st = JSON.parse(b64ToText(f.content));
+      const idea = (st.ideas || []).find(x => x.id === ideaId); if (!idea) throw new Error("missing");
+      const now = new Date().toISOString().replace(/\.\d+Z$/, "Z");
+      idea.status = status; idea.decidedAt = now; if (status === "done") idea.doneAt = now; else delete idea.doneAt;
+      st.log = [{ t: now, agent: "Omar", msg: `${label} ‘${idea.title || ideaId}’` }, ...(st.log || [])].slice(0, 100);
+      const put = await gh(path, { method: "PUT", body: JSON.stringify({ message: `Omar: ${status} ${ideaId}`, content: textToB64(JSON.stringify(st, null, 2) + "\n"), sha: f.sha, branch: "main" }) });
+      if (put.ok) return idea; if (put.status !== 409 && put.status !== 422) throw new Error("http " + put.status); // 409/422 = an agent pushed in between: re-read and retry
+    }
+    throw new Error("busy");
+  }
+  const LOG_LABEL = { approve: "Omar approved", skip: "Omar skipped", done: "Omar did", undone: "Omar says not done yet:", review: "Omar moved back to review" };
+  async function decide(action, t, idea, btns) {
+    if (!LS.get("hq.ghToken")) { openSettings("Connect GitHub once so your buttons save by themselves."); return; }
+    btns.forEach(b => b.disabled = true); toast("Saving…");
+    try {
+      const status = ACTION_STATUS[action]; await commitStatus(t.cfg.id, idea.id, status, LOG_LABEL[action]);
+      saveDecision(idea.id, status); idea.status = status; toast(ACTION_TOAST[action]); renderPanel(); renderHUD();
+    } catch (e) { btns.forEach(b => b.disabled = false);
+      const m = e.message; if (m === "token") { LS.set("hq.ghToken", null); openSettings("GitHub didn't accept that token. Paste a new one."); return; }
+      toast(m === "access" ? "Token can't write to agent-hq. Check its repo access and Contents: Read and write." : m === "missing" ? "That idea isn't in the saved file yet. Try again in a minute." : m === "busy" ? "An agent was saving at the same moment. Try again." : "Couldn't save. Check your connection and try again."); }
+  }
+  function openSettings(msg) {
+    let ov = $("#hqSettings"); if (ov) ov.remove();
+    ov = el("div", "modal"); ov.id = "hqSettings"; ov.onclick = e => { if (e.target === ov) ov.remove(); };
+    const c = el("div", "card modal-card"); c.setAttribute("role", "dialog"); c.setAttribute("aria-label", "Settings");
+    const top = el("div", "row between"); top.append(el("h3", null, "Settings")); const x = el("button", "xbtn", "×"); x.setAttribute("aria-label", "Close"); x.onclick = () => ov.remove(); top.append(x); c.append(top);
+    if (msg) c.append(el("div", "hook", msg));
+    const tok = LS.get("hq.ghToken");
+    if (tok) {
+      c.append(el("div", "why", "Connected. Approve, Skip, I did it and Not done yet save straight to the site from this device."));
+      const row = el("div", "row");
+      const test = el("button", "btn", "Test connection"); test.onclick = async () => { try { const r = await gh("contents/data/hq/state.json?ref=main"); toast(r.ok ? "Connected and working." : "GitHub said " + r.status); } catch (e) { toast(e.message === "token" ? "Token expired or revoked. Disconnect and connect again." : "Token can't read agent-hq."); } };
+      const dc = el("button", "btn", "Disconnect this device"); dc.onclick = () => { LS.set("hq.ghToken", null); toast("Disconnected."); openSettings(); };
+      row.append(test, dc); c.append(row);
+    } else {
+      c.append(el("div", "label", "Connect GitHub (one time per device)"));
+      c.append(el("div", "why", "Your decision buttons save by committing to your repo. Paste a GitHub token once; it stays only in this browser."));
+      const steps = el("ol"); steps.style.margin = "0"; steps.style.paddingLeft = "18px"; steps.style.fontSize = "13px";
+      ["Open github.com/settings/personal-access-tokens/new (fine-grained token)", "Name it Agent HQ, Expiration 1 year", "Repository access: Only select repositories → agent-hq", "Permissions → Repository → Contents → Read and write", "Generate token, copy it, paste it below"].forEach(s => steps.append(el("li", null, s)));
+      const a = el("a", "btn", "Open GitHub token page"); a.href = "https://github.com/settings/personal-access-tokens/new"; a.target = "_blank"; a.rel = "noopener";
+      const inp = el("input"); inp.type = "password"; inp.placeholder = "github_pat_…"; inp.autocomplete = "off"; inp.className = "tokin";
+      const go = el("button", "btn primary", "Connect"); go.onclick = async () => { const v = inp.value.trim(); if (!/^(github_pat_|ghp_)/.test(v)) { toast("That doesn't look like a GitHub token."); return; }
+        LS.set("hq.ghToken", v); go.disabled = true;
+        try { const r = await gh("contents/data/hq/state.json?ref=main"); if (!r.ok) throw new Error("access"); toast("Connected. Buttons save by themselves now."); ov.remove(); if (focused) renderPanel(); }
+        catch (e) { LS.set("hq.ghToken", null); go.disabled = false; toast(e.message === "token" ? "GitHub didn't accept that token." : "That token can't read agent-hq. Check its repo access."); } };
+      c.append(steps, a, inp, go);
+    }
+    ov.append(c); document.body.append(ov); const f = c.querySelector("input"); if (f) f.focus();
   }
   function makeItPrompt(t, i) {
     const f = (i.format || "").toLowerCase(); const skill = f.includes("ambient") ? "ambient-escape-videos" : "bounce-theory-videos";
     return `Use the ${skill} skill. Include this Agent HQ idea in today's batch (id ${i.id}):\n\nTitle: ${i.title}\nHook: ${i.hook || ""}\nFormat: ${i.format || ""}\n\nProduction notes:\n${i.script || ""}`;
   }
   function vIdeas(t, body) {
-    const ideas = t.state.ideas || []; const S2 = [["pending", "To review"], ["approved", t.cfg.id === "youtube" ? "Up next" : "Approved"], ["filmed", t.cfg.id === "opps" ? "Started" : t.cfg.id === "lab" ? "Built" : "Done"], ["rejected", "Passed"]];
+    const ideas = t.state.ideas || []; const S2 = [["pending", "To review"], ["approved", t.cfg.id === "youtube" ? "Up next" : "Waiting on you"], ["done", t.cfg.id === "lab" ? "Installed" : "Done"], ["skipped", "Skipped"]];
     const sub = el("div", "subtabs"); S2.forEach(([k, l]) => { const b = el("button", null, `${l} ${ideas.filter(i => effectiveStatus(i).status === k).length}`); b.setAttribute("aria-pressed", String(ideaFilter === k)); b.onclick = () => { ideaFilter = k; renderPanel(); }; sub.append(b); });
     body.append(sub);
     const list = ideas.filter(i => effectiveStatus(i).status === ideaFilter).sort((a, b) => (b.createdAt || "").localeCompare(a.createdAt || ""));
-    if (!list.length) { body.append(empty(ideas.length ? "Nothing in this list" : "Nothing yet", ideas.length ? "Ideas move here when you change their status." : "The team adds new ideas after each run.")); return; }
+    if (!list.length) { body.append(empty(ideas.length ? "Nothing in this list" : "Nothing yet", ideas.length ? "Ideas move here when you press a button." : "The team adds new ideas after each run.")); return; }
     list.forEach(i => { const c = el("article", "card"); const r = el("div", "row between"); r.append(el("h3", null, i.title || "Untitled"));
       const tg = el("div", "row"); if (i.format) tg.append(el("span", "pill s-idle", i.format)); if (i.score != null) tg.append(el("span", "small", "Fit " + i.score + "/10")); r.append(tg); c.append(r);
       if (i.hook) c.append(el("div", "hook", i.hook)); if (i.why) c.append(el("div", "why", i.why));
@@ -369,14 +400,15 @@
       if (Array.isArray(i.sources) && i.sources.length) { const s = el("div", "sources"); i.sources.forEach(x => { const u = safeUrl(x.url); if (u) { const a = el("a", null, "↗ " + (x.title || "source")); a.href = u; a.target = "_blank"; a.rel = "noopener"; s.append(a); } }); c.append(s); }
       const act = el("div", "row"); const { status: st, queued } = effectiveStatus(i); const btns = [];
       const add = (l, a, cls) => { const b = el("button", "btn " + (cls || ""), l); b.onclick = () => decide(a, t, i, btns); btns.push(b); act.append(b); };
-      if (queued) act.append(el("span", "pill s-waiting", "Sent · applies next run"));
-      else if (st === "pending") { add("Approve", "approve", "primary"); add("Pass", "pass"); }
-      else if (st === "approved") { add(t.cfg.id === "tiktok" || t.cfg.id === "youtube" ? (t.cfg.id === "youtube" ? "Mark made" : "Mark filmed") : "Mark done", "filmed", "primary"); add("Back to review", "review"); }
+      if (queued) act.append(el("span", "pill s-ok", "Saved"));
+      if (st === "pending") { add("Approve", "approve", "primary"); add("Skip", "skip"); }
+      else if (st === "approved") { add("I did it", "done", "primary"); add("Skip", "skip"); }
+      else if (st === "done") add("Not done yet", "undone");
       else add("Back to review", "review");
       if (i.buildPrompt) { const m = el("button", "btn", "Copy build prompt"); m.onclick = async () => { try { await navigator.clipboard.writeText(i.buildPrompt); toast("Copied. Paste it into a new Claude chat to build this."); } catch { const ta = el("textarea"); ta.value = i.buildPrompt; ta.style.width = "100%"; ta.rows = 6; c.append(ta); ta.select(); toast("Select and copy the text below."); } }; act.append(m); }
-      if (t.cfg.id === "youtube" && !queued && (st === "pending" || st === "approved")) { const m = el("button", "btn", "Copy 'make it' prompt"); m.onclick = async () => { const txt = makeItPrompt(t, i); try { await navigator.clipboard.writeText(txt); toast("Copied. Paste it into Claude to make this video."); } catch { const ta = el("textarea"); ta.value = txt; ta.style.width = "100%"; ta.rows = 5; c.append(ta); ta.select(); toast("Select and copy the text below."); } }; act.append(m); }
+      if (t.cfg.id === "youtube" && (st === "pending" || st === "approved")) { const m = el("button", "btn", "Copy 'make it' prompt"); m.onclick = async () => { const txt = makeItPrompt(t, i); try { await navigator.clipboard.writeText(txt); toast("Copied. Paste it into Claude to make this video."); } catch { const ta = el("textarea"); ta.value = txt; ta.style.width = "100%"; ta.rows = 5; c.append(ta); ta.select(); toast("Select and copy the text below."); } }; act.append(m); }
       act.append(el("span", "small", ago(i.createdAt))); c.append(act); body.append(c); });
-    connectCard(body);
+    if (!LS.get("hq.ghToken")) { const b = el("button", "btn", "Connect GitHub so buttons save by themselves"); b.onclick = () => openSettings(); body.append(b); }
   }
   function mdBlock(src) {
     const box = el("div", "script"); box.style.whiteSpace = "normal"; box.style.lineHeight = "1.55";
@@ -568,6 +600,7 @@
     if (changed || first) { buildWorld(); renderHUD(); if (focused) renderPanel(); if (first) { setVB(fitBox(worldBox, .96)); if (START && M.teams[START]) setTimeout(() => focusTeam(START), 500); } else if (focused) setVB(vb); else setVB(fitBox(worldBox, .96)); }
   }
   $("#back").onclick = zoomOut;
+  { const g = el("button", "gear", "⚙"); g.setAttribute("aria-label", "Settings"); g.title = "Settings"; g.onclick = () => openSettings(); $(".hud-top").append(g); }
   refresh(true).then(enablePanZoom);
   setInterval(refresh, 60000);
 })();
