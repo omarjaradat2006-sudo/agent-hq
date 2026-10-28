@@ -1,14 +1,14 @@
 {
   "team": "opps",
   "hired": true,
-  "updatedAt": "2026-10-28T14:42:42Z",
+  "updatedAt": "2026-10-28T14:46:25Z",
   "agents": [
     {
       "id": "lead",
       "name": "Venture Lead",
       "role": "Picks the best bets",
-      "status": "waiting",
-      "doing": "Waiting for the Scout"
+      "status": "working",
+      "doing": "Writing your brief"
     },
     {
       "id": "scout",
@@ -27,8 +27,8 @@
     {
       "id": "swarm",
       "name": "Swarm Tester",
-      "status": "working",
-      "doing": "Running a 100-person test on the top idea"
+      "status": "ok",
+      "doing": "Tested the top idea on 100 simulated people: 56% for"
     },
     {
       "id": "liaison",
@@ -39,6 +39,11 @@
     }
   ],
   "log": [
+    {
+      "t": "2026-10-28T14:46:25Z",
+      "agent": "Swarm Tester",
+      "msg": "100-person test on the Google-ready tune-up: 56% for, 15% against, 29% undecided. Wins if owners pay after the fix and the AI-calls scare pitch is dropped. Score 8 → 7."
+    },
     {
       "t": "2026-10-28T14:42:42Z",
       "agent": "Planner",
@@ -80,10 +85,10 @@
       "id": "opps-2026-10-28-1",
       "title": "\"Google-ready\" profile tune-up + NFC review stand for Mississauga shops",
       "hook": "Sell local shops a one-time profile fix plus your NFC stand ($149-249), then an optional $49-79/month upkeep; realistic: 3-6 clients in month one, $500-1,500.",
-      "why": "You already make NFC review tags and know local shops from delivery runs; AI turns a 5-10 hour/month profile job into ~1 hour. Google's AI is starting to phone businesses with clear profiles (Canada expected in 2026). Uses the R&D Lab's lead: shops pay $5-48 once on Etsy vs $50-100+/month for review platforms, so 'no monthly fee required' is the angle.",
+      "why": "You already make NFC review tags and know local shops from delivery runs; AI turns a 5-10 hour/month profile job into ~1 hour. Google's AI is starting to phone businesses with clear profiles (Canada expected in 2026). Uses the R&D Lab's lead: shops pay $5-48 once on Etsy vs $50-100+/month for review platforms, so 'no monthly fee required' is the angle. 100-person test: 56% for, 15% against — backers want pay-after-fix, no passwords, and no AI scare pitch.",
       "format": "Hours: 8 to set up, 3-5/week · Cost: $0-60 (stand samples, printing) · First $: ~1-2 weeks",
       "script": "1. Build a one-page offer in Base44 or Growth Architect: 'Google-ready in 48 hours: profile fixed, NFC review stand, no monthly fee.' Price $149 (single stand) / $249 (2 stands + full profile rewrite).\n2. Make a 15-point checklist with Claude: categories, services list with price ranges, hours, 10 photos, Q&A, service area, direct review link (not just the profile link), first 4 posts.\n3. List 40 Mississauga shops from Google Maps with under 4.3 stars, few reviews or missing hours (barbers, nail salons, auto shops, restaurants on your delivery routes).\n4. Walk in with a stand in hand, show their profile's gaps on your phone, offer a free 'Google-ready' audit sheet.\n5. Deliver: Claude drafts descriptions, services and posts; you get manager access to their profile, upload, and program the NFC tag to the direct review link.\n6. Offer upkeep at $49-79/month: 4 posts, review replies drafted by AI, monthly photo refresh. Never sell fake reviews.\nReuse: NFC tag stock and supplier, Growth Architect for the pitch page, n8n for monthly post reminders.\nRisks: walk-ins are slow; owners distrust 'SEO guys'; Google's AI calling may arrive in Canada late.\n2-week test: 25 walk-ins → at least 3 paid ($450+). Under 2 sales, switch to phone/Instagram DMs or change the price.",
-      "score": 8,
+      "score": 7,
       "sources": [
         {
           "title": "Retail Insider: When the first customer to call your business is an AI Assistant",
@@ -99,7 +104,72 @@
         }
       ],
       "status": "pending",
-      "createdAt": "2026-10-28T14:42:42Z"
+      "createdAt": "2026-10-28T14:42:42Z",
+      "swarm": {
+        "date": "2026-10-28",
+        "createdAt": "2026-10-28T14:46:25Z",
+        "ideaId": "opps-2026-10-28-1",
+        "idea": "\"Google-ready\" profile tune-up + NFC review stand for Mississauga shops",
+        "verdict": "Most would back it as a student's first business (not as an investment) if he lets owners pay after the profile is fixed, uses Google's add-manager access, and drops the 'Google's AI will call you' scare pitch.",
+        "score": 7,
+        "support": {
+          "for": 56,
+          "against": 15,
+          "undecided": 29
+        },
+        "groups": [
+          {
+            "name": "Investors",
+            "for": 80,
+            "quote": "Summing up the thread for him: $199 bundle, first month of upkeep included, pay after the fix, add-manager only, one-screenshot monthly report. That's a fundable-by-yourself business.",
+            "username": "@marcus_shopify-alumni48"
+          },
+          {
+            "name": "People who would pay (shop owners)",
+            "for": 75,
+            "quote": "Halal butcher in Malton. My Google page has 2 photos from 2019. If a brother from the community fixes it and I pay after, yes. Tell him to come Friday after Jummah.",
+            "username": "@kevin_halal61"
+          },
+          {
+            "name": "Skeptics",
+            "for": 5,
+            "quote": "Still think 80% of it is free. But 'pay after it's fixed' + no password = not a scam. Downgrading from scam to 'overpriced convenience'.",
+            "username": "@amira_r/smallbusiness28"
+          },
+          {
+            "name": "Marketers / creators",
+            "for": 80,
+            "quote": "Sales coach: don't pitch 'AI' at all to a shawarma owner. Pitch: 'You have 38 reviews, the place next door has 212. This gets you 10 more a month.' Hand them the stand to hold. Silence. Price.",
+            "username": "@zara_door-to-door88"
+          },
+          {
+            "name": "Everyday people",
+            "for": 40,
+            "quote": "I leave like 200 Google reviews a year. Shops with price ranges + recent photos are the ones I pick. Wrong hours = I'm never coming back. He's right about that part.",
+            "username": "@ethan_high-traffic68"
+          }
+        ],
+        "topPraise": [
+          "Physical stand makes a $149 profile service feel tangible",
+          "Owners admit their Google pages are wrong (hours, old photos, no prices)",
+          "He's already in these plazas daily from delivery; walk-ins close better than DMs",
+          "Halal shops in Malton spread trust by word of mouth"
+        ],
+        "topObjections": [
+          "Owners can do most of it free in the Google dashboard",
+          "Month-3 churn on the monthly upkeep",
+          "'Google's AI will call you' sounds like a scare pitch and isn't live in Canada yet",
+          "Door-to-door takes more hours than a student has",
+          "Mobile businesses (detailers, landscapers) have no counter for a stand"
+        ],
+        "changedMinds": "'Pay after it's fixed' plus never asking for the owner's password moved a burned owner, a skeptic and a Toronto angel; reframing it as 'the kid showing up is the product, not the AI' flipped a 'wrapper' critic.",
+        "fixes": [
+          "Pay after the fix, add-manager access only, written 'how to remove me' line",
+          "Price $199 with the first month of upkeep included and a one-screenshot monthly report (reviews added, calls from Google)",
+          "Lead with a free red-marked 'Google check-up' sheet and offer an NFC card version for mobile businesses; drop the AI-calls pitch and never promise rankings"
+        ],
+        "limits": "One model played all 100 agents; this is a rehearsal, not a forecast."
+      }
     },
     {
       "id": "opps-2026-10-28-2",
@@ -194,5 +264,72 @@
       "Shorts series + microdramas — a YouTube channel play, already with the YouTube team"
     ],
     "request": "Is Google's AI business-calling ('Have AI check pricing') live in Canada yet, and which categories? It decides when to pitch Mississauga shops."
-  }
+  },
+  "swarms": [
+    {
+      "date": "2026-10-28",
+      "createdAt": "2026-10-28T14:46:25Z",
+      "ideaId": "opps-2026-10-28-1",
+      "idea": "\"Google-ready\" profile tune-up + NFC review stand for Mississauga shops",
+      "verdict": "Most would back it as a student's first business (not as an investment) if he lets owners pay after the profile is fixed, uses Google's add-manager access, and drops the 'Google's AI will call you' scare pitch.",
+      "score": 7,
+      "support": {
+        "for": 56,
+        "against": 15,
+        "undecided": 29
+      },
+      "groups": [
+        {
+          "name": "Investors",
+          "for": 80,
+          "quote": "Summing up the thread for him: $199 bundle, first month of upkeep included, pay after the fix, add-manager only, one-screenshot monthly report. That's a fundable-by-yourself business.",
+          "username": "@marcus_shopify-alumni48"
+        },
+        {
+          "name": "People who would pay (shop owners)",
+          "for": 75,
+          "quote": "Halal butcher in Malton. My Google page has 2 photos from 2019. If a brother from the community fixes it and I pay after, yes. Tell him to come Friday after Jummah.",
+          "username": "@kevin_halal61"
+        },
+        {
+          "name": "Skeptics",
+          "for": 5,
+          "quote": "Still think 80% of it is free. But 'pay after it's fixed' + no password = not a scam. Downgrading from scam to 'overpriced convenience'.",
+          "username": "@amira_r/smallbusiness28"
+        },
+        {
+          "name": "Marketers / creators",
+          "for": 80,
+          "quote": "Sales coach: don't pitch 'AI' at all to a shawarma owner. Pitch: 'You have 38 reviews, the place next door has 212. This gets you 10 more a month.' Hand them the stand to hold. Silence. Price.",
+          "username": "@zara_door-to-door88"
+        },
+        {
+          "name": "Everyday people",
+          "for": 40,
+          "quote": "I leave like 200 Google reviews a year. Shops with price ranges + recent photos are the ones I pick. Wrong hours = I'm never coming back. He's right about that part.",
+          "username": "@ethan_high-traffic68"
+        }
+      ],
+      "topPraise": [
+        "Physical stand makes a $149 profile service feel tangible",
+        "Owners admit their Google pages are wrong (hours, old photos, no prices)",
+        "He's already in these plazas daily from delivery; walk-ins close better than DMs",
+        "Halal shops in Malton spread trust by word of mouth"
+      ],
+      "topObjections": [
+        "Owners can do most of it free in the Google dashboard",
+        "Month-3 churn on the monthly upkeep",
+        "'Google's AI will call you' sounds like a scare pitch and isn't live in Canada yet",
+        "Door-to-door takes more hours than a student has",
+        "Mobile businesses (detailers, landscapers) have no counter for a stand"
+      ],
+      "changedMinds": "'Pay after it's fixed' plus never asking for the owner's password moved a burned owner, a skeptic and a Toronto angel; reframing it as 'the kid showing up is the product, not the AI' flipped a 'wrapper' critic.",
+      "fixes": [
+        "Pay after the fix, add-manager access only, written 'how to remove me' line",
+        "Price $199 with the first month of upkeep included and a one-screenshot monthly report (reviews added, calls from Google)",
+        "Lead with a free red-marked 'Google check-up' sheet and offer an NFC card version for mobile businesses; drop the AI-calls pitch and never promise rankings"
+      ],
+      "limits": "One model played all 100 agents; this is a rehearsal, not a forecast."
+    }
+  ]
 }
