@@ -1,7 +1,7 @@
 {
   "team": "tiktok",
   "hired": true,
-  "updatedAt": "2026-10-28T14:02:00Z",
+  "updatedAt": "2026-10-28T13:52:33Z",
   "agents": [
     {
       "id": "analyst",
@@ -9,26 +9,26 @@
       "role": "Finds outlier videos",
       "status": "ok",
       "doing": "Found 5 signals: liking gap study, young men loneliness (Gallup), Epictetus on grooming",
-      "lastRun": "2026-10-28T14:02:00Z",
-      "nextRun": "2026-10-28T13:41:00Z"
+      "lastRun": "2026-10-28T13:52:33Z",
+      "nextRun": "2026-10-29T13:41:00Z"
     },
     {
       "id": "strategist",
       "name": "Strategist",
       "role": "Picks what to film next",
-      "status": "working",
-      "doing": "Picking 3 angles",
-      "lastRun": "2026-10-27T13:58:41Z",
-      "nextRun": "2026-10-28T13:41:00Z"
+      "status": "ok",
+      "doing": "Picked liking gap, Epictetus on looks, 66-day habits (all non-religious)",
+      "lastRun": "2026-10-28T13:52:33Z",
+      "nextRun": "2026-10-29T13:41:00Z"
     },
     {
       "id": "copywriter",
       "name": "Copywriter",
       "role": "Hooks and full scripts",
-      "status": "waiting",
+      "status": "ok",
       "doing": "Wrote 3 scripts (A/B/C), VoicePrint pass done",
-      "lastRun": "2026-10-27T13:58:41Z",
-      "nextRun": "2026-10-28T13:41:00Z"
+      "lastRun": "2026-10-28T13:52:33Z",
+      "nextRun": "2026-10-29T13:41:00Z"
     },
     {
       "id": "reviewer",
@@ -36,29 +36,49 @@
       "status": "ok",
       "doing": "Reviewed 19 videos: reach still ~250-300; topic caption on newest post looks better",
       "role": "Explains why videos won or flopped",
-      "lastRun": "2026-10-27T13:58:41Z",
-      "nextRun": "2026-10-28T13:41:00Z"
+      "lastRun": "2026-10-28T13:52:33Z",
+      "nextRun": "2026-10-29T13:41:00Z"
     },
     {
       "id": "liaison",
       "name": "R&D Liaison",
       "role": "Brings in the R&D Lab's finds",
-      "status": "waiting",
-      "doing": "Used 1 Lab lead, skipped 2 that need footage",
-      "lastRun": "2026-10-27T13:58:41Z",
-      "nextRun": "2026-10-28T13:41:00Z"
+      "status": "ok",
+      "doing": "Used 2 Lab caption leads, skipped @mentions",
+      "lastRun": "2026-10-28T13:52:33Z",
+      "nextRun": "2026-10-29T13:41:00Z"
     },
     {
       "id": "captions",
       "name": "Caption Coach",
       "role": "Search-friendly captions and on-screen keywords",
-      "status": "waiting",
-      "doing": "Hired by the R&D Lab. First run coming up.",
-      "lastRun": null,
-      "nextRun": null
+      "status": "ok",
+      "doing": "Wrote 3 caption packs: search phrase + question, no #fyp",
+      "lastRun": "2026-10-28T13:52:33Z",
+      "nextRun": "2026-10-29T13:41:00Z"
     }
   ],
   "log": [
+    {
+      "t": "2026-10-28T13:52:33Z",
+      "agent": "Caption Coach",
+      "msg": "Wrote caption packs for 3 scripts: search-phrase first line, one question, no #fyp"
+    },
+    {
+      "t": "2026-10-28T13:52:33Z",
+      "agent": "Copywriter",
+      "msg": "Wrote 3 scripts: 'The liking gap: they liked you more than you think', 'Epictetus on looksmaxxing', 'Missing one day doesn't kill a habit'"
+    },
+    {
+      "t": "2026-10-28T13:52:33Z",
+      "agent": "Strategist",
+      "msg": "Picked liking-gap psychology (like your shirt video), Epictetus on looksmaxxing (philosophy outlier), 66-day habit study (short, payoff-first); all 3 non-religious since yesterday had the faith slot"
+    },
+    {
+      "t": "2026-10-28T13:52:33Z",
+      "agent": "R&D Liaison",
+      "msg": "Used 2 Lab leads (keyword caption line, question caption); skipped @mentions"
+    },
     {
       "t": "2026-10-28T14:02:00Z",
       "agent": "Analyst",
@@ -591,6 +611,213 @@
       "status": "pending",
       "createdAt": "2026-10-27T13:58:32Z",
       "team": "tiktok"
+    },
+    {
+      "id": "tiktok-2026-10-28-1",
+      "title": "The liking gap: they liked you more than you think",
+      "hook": "Psychology says the person you just talked to likes you more than you think.",
+      "why": "Same 'psychology study kills a worry' shape as your embarrassing-shirt video, your best post since the drop (review doMore). Uses the R&D Lab lead 'Keyword in the first caption line, on screen and said aloud': 'psychology' is said in the first line, shown on screen and leads the caption.",
+      "format": "Talking head 40s",
+      "hookFamily": "Curiosity loop",
+      "length": 40,
+      "onScreen": "The 'liking gap' (Psychological Science, 2018)",
+      "scenes": [
+        {
+          "label": "Hook",
+          "time": "0-4s",
+          "line": "Psychology says the person you just talked to likes you more than you think.",
+          "delivery": "lean in, calm, like you're letting him in on something"
+        },
+        {
+          "label": "Context lean",
+          "time": "~10s",
+          "line": "Researchers paired strangers for a five minute chat. Then asked two things. How much do you like them? How much do they like you?",
+          "delivery": "count the two questions on your fingers"
+        },
+        {
+          "label": "Re-hook",
+          "time": "~3s",
+          "line": "And people kept getting the second one wrong.",
+          "delivery": "slow down, small pause before 'wrong'"
+        },
+        {
+          "label": "Value",
+          "time": "~10s",
+          "line": "They liked the other person more than they thought they were liked. It's called the liking gap. College roommates still had it months later.",
+          "delivery": "matter of fact, a bit surprised yourself"
+        },
+        {
+          "label": "Payoff",
+          "time": "~8s",
+          "line": "So that reason you don't text first, or don't say hi? It's built on a guess that's usually wrong.",
+          "delivery": "point at the camera on 'usually wrong'"
+        },
+        {
+          "label": "Last line / loop",
+          "time": "~4s",
+          "line": "Who's someone you've been scared to reach out to?",
+          "delivery": "ask it straight, hold eye contact. Comment bait, no loop"
+        }
+      ],
+      "hooksToTest": [
+        "You probably made a better first impression than you think. (Calm hard truth)",
+        "Strangers had a five minute chat, then got one question people keep getting wrong. (Specific number)",
+        "If you replay every conversation after it ends, watch this. (Call-out)"
+      ],
+      "caption": "psychology of first impressions: they liked you more than you think #fyppppppppppppppppppppppp #viral #fyp #psychology #overthinking",
+      "script": "Psychology says the person you just talked to likes you more than you think. [pause] Researchers paired strangers for a five minute chat. Then asked two things. How much do you like them? How much do they like you? [pause] And people kept getting the second one wrong. [pause] They liked the other person more than they thought they were liked. It's called the liking gap. College roommates still had it months later. [pause] So that reason you don't text first, or don't say hi? It's built on a guess that's usually wrong. [pause] Who's someone you've been scared to reach out to?",
+      "formatted": "**VERSION A - Curiosity loop (~40s)**\n- **Why this one:** Everyone's replayed an awkward convo. Telling them they're wrong about it, with a real study, makes them stay to hear how.\n- **On-screen text (first 3-5s):** The 'liking gap' (Psychological Science, 2018)\n\n**Scene 1 - Hook (0-4s)**\n> Psychology says the person you just talked to likes you more than you think.\n\n*Delivery:* lean in, calm, like you're letting him in on something.\n\n[pause]\n\n**Scene 2 - Context lean (~10s)**\n> Researchers paired strangers for a five minute chat. Then asked two things. How much do you like them? How much do they like you?\n\n*Delivery:* count the two questions on your fingers.\n\n[pause]\n\n**Scene 3 - Re-hook (~3s)**\n> And people kept getting the second one wrong.\n\n*Delivery:* slow down, small pause before 'wrong'.\n\n[pause]\n\n**Scene 4 - Value (~10s)**\n> They liked the other person more than they thought they were liked. It's called the liking gap. College roommates still had it months later.\n\n*Delivery:* matter of fact, a bit surprised yourself.\n\n[pause]\n\n**Scene 5 - Payoff (~8s)**\n> So that reason you don't text first, or don't say hi? It's built on a guess that's usually wrong.\n\n*Delivery:* point at the camera on 'usually wrong'.\n\n[pause]\n\n**Scene 6 - Last line / loop (~4s)**\n> Who's someone you've been scared to reach out to?\n\n*Delivery:* ask it straight, hold eye contact. Comment bait, no loop.\n\n[pause]\n\n**Last line:** \"Who's someone you've been scared to reach out to?\" (ends on a comment question, no loop)\n\n- **Hooks to test:**\n  - You probably made a better first impression than you think. (Calm hard truth)\n  - Strangers had a five minute chat, then got one question people keep getting wrong. (Specific number)\n  - If you replay every conversation after it ends, watch this. (Call-out)\n- **Caption:** psychology of first impressions: they liked you more than you think #fyppppppppppppppppppppppp #viral #fyp #psychology #overthinking",
+      "score": 8,
+      "sources": [
+        {
+          "title": "APS: You Probably Made a Better First Impression Than You Think (Boothby, Cooney, Clark & Sandstrom 2018)",
+          "url": "https://www.psychologicalscience.org/news/releases/you-probably-made-a-better-first-impression-than-you-think.html"
+        },
+        {
+          "title": "Gallup: Younger Men in the U.S. Among the Loneliest in West",
+          "url": "https://news.gallup.com/poll/690788/younger-men-among-loneliest-west.aspx"
+        }
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-28T13:52:13Z"
+    },
+    {
+      "id": "tiktok-2026-10-28-2",
+      "title": "Epictetus on looksmaxxing",
+      "hook": "A young guy walked in to see Epictetus with his hair done perfect.",
+      "why": "Philosophy vs a modern obsession is pulling outliers right now (Roody Francois' Epictetus grooming Short at 7.8x in today's scan). Story comes straight from Discourses 3.1, so nothing is invented, and it rotates off yesterday's 'control' angle.",
+      "format": "Talking head 50s",
+      "hookFamily": "Story / progressive reveal",
+      "length": 50,
+      "onScreen": "Epictetus, Discourses 3.1",
+      "scenes": [
+        {
+          "label": "Hook",
+          "time": "0-4s",
+          "line": "A young guy walked in to see Epictetus with his hair done perfect.",
+          "delivery": "storyteller voice, slight smirk"
+        },
+        {
+          "label": "Clues",
+          "time": "~8s",
+          "line": "Outfit styled. Everything on point. He's a student, wants to be a speaker. And Epictetus doesn't just roast him.",
+          "delivery": "list the details slowly, like you're picturing him"
+        },
+        {
+          "label": "Re-hook",
+          "time": "~5s",
+          "line": "He asks him one question. What makes a horse beautiful?",
+          "delivery": "lean in, raise your eyebrows on 'horse'"
+        },
+        {
+          "label": "Reveal",
+          "time": "~12s",
+          "line": "Not its mane. A horse is beautiful when it's good at being a horse. A dog when it's good at being a dog. So what makes a man beautiful?",
+          "delivery": "build it up, stop dead on the last question"
+        },
+        {
+          "label": "Payoff",
+          "time": "~13s",
+          "line": "And he tells him, you are not flesh and hair, but you are will. The stuff you choose. How you think, what you do. That's the part you're meant to work on.",
+          "delivery": "quote slow and clear, then go back to normal talking"
+        },
+        {
+          "label": "Last line",
+          "time": "~8s",
+          "line": "Guys our age put hours into jawlines. Fine. But be honest. How many hours into the other part?",
+          "delivery": "calm, a little smile, not preachy"
+        }
+      ],
+      "hooksToTest": [
+        "Epictetus had one question for guys who are obsessed with their looks. (Curiosity loop)",
+        "Looksmaxxing is a 2,000 year old problem. (Calm hard truth)",
+        "If you've watched a jawline video this week, a dead philosopher has something for you. (Call-out)"
+      ],
+      "caption": "epictetus on looksmaxxing: what a young man should actually work on #fyppppppppppppppppppppppp #viral #fyp #stoicism #philosophy",
+      "script": "A young guy walked in to see Epictetus with his hair done perfect. [pause] Outfit styled. Everything on point. He's a student, wants to be a speaker. And Epictetus doesn't just roast him. [pause] He asks him one question. What makes a horse beautiful? [pause] Not its mane. A horse is beautiful when it's good at being a horse. A dog when it's good at being a dog. So what makes a man beautiful? [pause] And he tells him, you are not flesh and hair, but you are will. The stuff you choose. How you think, what you do. That's the part you're meant to work on. [pause] Guys our age put hours into jawlines. Fine. But be honest. How many hours into the other part?",
+      "formatted": "**VERSION B - Story / progressive reveal (~50s)**\n- **Why this one:** Starts mid-scene with a guy we all recognise, then makes the viewer wait for what the philosopher actually said to him.\n- **On-screen text (first 3-5s):** Epictetus, Discourses 3.1\n\n**Scene 1 - Hook (0-4s)**\n> A young guy walked in to see Epictetus with his hair done perfect.\n\n*Delivery:* storyteller voice, slight smirk.\n\n[pause]\n\n**Scene 2 - Clues (~8s)**\n> Outfit styled. Everything on point. He's a student, wants to be a speaker. And Epictetus doesn't just roast him.\n\n*Delivery:* list the details slowly, like you're picturing him.\n\n[pause]\n\n**Scene 3 - Re-hook (~5s)**\n> He asks him one question. What makes a horse beautiful?\n\n*Delivery:* lean in, raise your eyebrows on 'horse'.\n\n[pause]\n\n**Scene 4 - Reveal (~12s)**\n> Not its mane. A horse is beautiful when it's good at being a horse. A dog when it's good at being a dog. So what makes a man beautiful?\n\n*Delivery:* build it up, stop dead on the last question.\n\n[pause]\n\n**Scene 5 - Payoff (~13s)**\n> And he tells him, you are not flesh and hair, but you are will. The stuff you choose. How you think, what you do. That's the part you're meant to work on.\n\n*Delivery:* quote slow and clear, then go back to normal talking.\n\n[pause]\n\n**Scene 6 - Last line (~8s)**\n> Guys our age put hours into jawlines. Fine. But be honest. How many hours into the other part?\n\n*Delivery:* calm, a little smile, not preachy.\n\n[pause]\n\n**Last line:** \"How many hours into the other part?\" (ends on a question for the comments)\n\n- **Hooks to test:**\n  - Epictetus had one question for guys who are obsessed with their looks. (Curiosity loop)\n  - Looksmaxxing is a 2,000 year old problem. (Calm hard truth)\n  - If you've watched a jawline video this week, a dead philosopher has something for you. (Call-out)\n- **Caption:** epictetus on looksmaxxing: what a young man should actually work on #fyppppppppppppppppppppppp #viral #fyp #stoicism #philosophy",
+      "score": 7,
+      "sources": [
+        {
+          "title": "Epictetus, Discourses Book 3, ch. 1 (George Long translation, Standard Ebooks)",
+          "url": "https://standardebooks.org/ebooks/epictetus/discourses/george-long/text/book-3"
+        },
+        {
+          "title": "Roody Francois: Epictetus Told a Young Man His Grooming Was Not the Problem",
+          "url": "https://www.youtube.com/watch?v=wGc09dYs5kM"
+        }
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-28T13:52:13Z"
+    },
+    {
+      "id": "tiktok-2026-10-28-3",
+      "title": "Missing one day doesn't kill a habit",
+      "hook": "Missing one day doesn't kill a habit. Researchers actually checked.",
+      "why": "Payoff in the first line plus a real specific number (66 days), which the review and OpusClip's hook data both point to. Short (~35s) per the review's 30-40s rule, and a discipline angle you haven't run this week.",
+      "format": "Talking head 35s",
+      "hookFamily": "Calm hard truth (specific number)",
+      "length": 35,
+      "onScreen": "UCL habit study: 96 people, 12 weeks",
+      "scenes": [
+        {
+          "label": "Hook",
+          "time": "0-4s",
+          "line": "Missing one day doesn't kill a habit. Researchers actually checked.",
+          "delivery": "flat and calm, no hype"
+        },
+        {
+          "label": "Context lean",
+          "time": "~7s",
+          "line": "A team at UCL had 96 people pick one new habit and track it for 12 weeks.",
+          "delivery": "conversational, like you're explaining it to a friend"
+        },
+        {
+          "label": "Value",
+          "time": "~8s",
+          "line": "On average it took 66 days to become automatic. Some people 18. Some way longer. Not the 21 days everyone says.",
+          "delivery": "hold up fingers for the numbers"
+        },
+        {
+          "label": "Re-hook",
+          "time": "~3s",
+          "line": "But the bit I needed to hear?",
+          "delivery": "pause, lean closer"
+        },
+        {
+          "label": "Payoff",
+          "time": "~9s",
+          "line": "Missing one day barely changed anything. So the day you miss isn't what ends it. Quitting the day after is.",
+          "delivery": "slow, let the last line land"
+        },
+        {
+          "label": "Last line / loop",
+          "time": "~4s",
+          "line": "So what habit are you picking back up?",
+          "delivery": "ask it, small nod. Loops back to the hook's 'one day'"
+        }
+      ],
+      "hooksToTest": [
+        "It takes 66 days to build a habit, not 21. (Specific number)",
+        "I used to drop a habit the second I missed a day. [fill in: only if true for you] (Vulnerable admission)",
+        "Everyone says 21 days to build a habit. A real study says otherwise. (Contrarian open)"
+      ],
+      "caption": "how long it really takes to build a habit (and why missing a day is fine) #fyppppppppppppppppppppppp #viral #fyp #discipline #habits",
+      "script": "Missing one day doesn't kill a habit. Researchers actually checked. [pause] A team at UCL had 96 people pick one new habit and track it for 12 weeks. [pause] On average it took 66 days to become automatic. Some people 18. Some way longer. Not the 21 days everyone says. [pause] But the bit I needed to hear? [pause] Missing one day barely changed anything. So the day you miss isn't what ends it. Quitting the day after is. [pause] So what habit are you picking back up?",
+      "formatted": "**VERSION C - Calm hard truth (specific number) (~35s)**\n- **Why this one:** Kills the all-or-nothing belief that makes guys quit after one slip, and backs it with a real study instead of hype.\n- **On-screen text (first 3-5s):** UCL habit study: 96 people, 12 weeks\n\n**Scene 1 - Hook (0-4s)**\n> Missing one day doesn't kill a habit. Researchers actually checked.\n\n*Delivery:* flat and calm, no hype.\n\n[pause]\n\n**Scene 2 - Context lean (~7s)**\n> A team at UCL had 96 people pick one new habit and track it for 12 weeks.\n\n*Delivery:* conversational, like you're explaining it to a friend.\n\n[pause]\n\n**Scene 3 - Value (~8s)**\n> On average it took 66 days to become automatic. Some people 18. Some way longer. Not the 21 days everyone says.\n\n*Delivery:* hold up fingers for the numbers.\n\n[pause]\n\n**Scene 4 - Re-hook (~3s)**\n> But the bit I needed to hear?\n\n*Delivery:* pause, lean closer.\n\n[pause]\n\n**Scene 5 - Payoff (~9s)**\n> Missing one day barely changed anything. So the day you miss isn't what ends it. Quitting the day after is.\n\n*Delivery:* slow, let the last line land.\n\n[pause]\n\n**Scene 6 - Last line / loop (~4s)**\n> So what habit are you picking back up?\n\n*Delivery:* ask it, small nod. Loops back to the hook's 'one day'.\n\n[pause]\n\n**Last line:** \"So what habit are you picking back up?\" (loops back to the hook: one missed day vs picking it back up)\n\n- **Hooks to test:**\n  - It takes 66 days to build a habit, not 21. (Specific number)\n  - I used to drop a habit the second I missed a day. [fill in: only if true for you] (Vulnerable admission)\n  - Everyone says 21 days to build a habit. A real study says otherwise. (Contrarian open)\n- **Caption:** how long it really takes to build a habit (and why missing a day is fine) #fyppppppppppppppppppppppp #viral #fyp #discipline #habits",
+      "score": 7,
+      "sources": [
+        {
+          "title": "James Clear: How Long Does It Take to Form a Habit? (Lally et al., European Journal of Social Psychology)",
+          "url": "https://jamesclear.com/new-habit"
+        },
+        {
+          "title": "OpusClip: 15 TikTok Hooks That Are Hijacking the Algorithm (2026)",
+          "url": "https://www.opus.pro/blog/tiktok-hooks-hijacking-algorithm-2026"
+        }
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-28T13:52:13Z"
     }
   ],
   "research": [
@@ -773,21 +1000,21 @@
     }
   ],
   "brief": {
-    "date": "2026-10-27",
-    "createdAt": "2026-10-27T13:58:41Z",
-    "headline": "Reach dropped since Oct 21: go short, on-niche, specific captions",
-    "summary": "Your videos sat around 700 views until Oct 21, and your last five all landed near 250, so reach dropped across the board rather than one hook missing. The lesson from your winners: stay 30-40s, stay on niche, and gratitude/faith reflections get your best like rate. Today's best idea is Epictetus' fix for feeling out of control, built on a fresh survey stat about guys our age.",
+    "date": "2026-10-28",
+    "createdAt": "2026-10-28T13:52:33Z",
+    "headline": "Topic captions may be breaking your ~250-view slump",
+    "summary": "Your judged videos are still stuck at 249-303 views since Oct 21, down from ~700. The one lesson today: the shirt video, your first post in weeks with a caption that says what it's about, is already at 346 after ~35 hours, so keep putting the topic in the caption and on screen. Best idea today is the liking-gap video, the same 'real study kills a worry' shape as that post.",
     "filmToday": [
-      "Epictetus' fix for feeling out of control — Six in ten guys our age feel like they've got barely any control over their life.",
-      "Who you know is a skill, not luck — Most guys our age think who you know beats how hard you work.",
-      "I had gratitude backwards — I used to say I'd be grateful once I made it."
+      "The liking gap: they liked you more than you think — Psychology says the person you just talked to likes you more than you think.",
+      "Missing one day doesn't kill a habit — Missing one day doesn't kill a habit. Researchers actually checked.",
+      "Epictetus on looksmaxxing — A young guy walked in to see Epictetus with his hair done perfect."
     ],
     "approvals": [
-      "9 ideas waiting for your approve/pass"
+      "12 ideas waiting for your approve/pass (3 new today)"
     ],
     "notes": [
-      "Swap 'Follow for more' for a specific keyword line in captions; it's on 15 of your last 20 posts (the reviewer's skill suggestion for content-scripts).",
-      "The content-scripts skill points to a hook-playbook file that's missing from the skill folder; worth re-adding it."
+      "The Caption Coach's packs skip #fyp/#viral per Metricool, but the script captions still carry your 5-tag format. Try the Coach's version on one post and compare.",
+      "Reviewer skill suggestion still open: content-scripts' references/hook-playbook.md is missing, and a 40s default cap would match your data. Say 'apply the reviewer's skill suggestions' to apply them."
     ]
   },
   "processedIssues": [
@@ -915,14 +1142,54 @@
     }
   ],
   "labFeedback": {
-    "date": "2026-10-27",
+    "date": "2026-10-28",
     "used": [
-      "Stoic one-liners are 30x outliers on Shorts"
+      "Keyword in the first caption line, on screen and said aloud",
+      "Ask a question in the caption, never ask for likes"
     ],
     "skipped": [
-      "'It's making sense now' reaction format: needs someone else's clip to react to, doesn't fit a one-take sit-down video",
-      "'Editing how I see myself' moodboard: not a talking video and needs footage Omar may not have"
+      "Mention a relevant account (small accounts only): today's sources are studies and a Greek philosopher, no TikTok account to credit honestly"
     ],
-    "request": "Find which caption styles (keyword line vs 'Follow for more') get more reach for small self-improvement accounts, and whether anything is known about sudden reach drops after ~300 posts"
+    "request": "Find 2-3 English talking-head TikTok creators in self-improvement (under 50k followers) whose views recovered after a sudden drop, and what they changed"
+  },
+  "captionPacks": {
+    "date": "2026-10-28",
+    "packs": [
+      {
+        "ideaId": "tiktok-2026-10-28-1",
+        "firstLine": "psychology of first impressions: people like you more than you think",
+        "question": "Who's someone you've been scared to text first?",
+        "hashtags": [
+          "#psychology",
+          "#overthinking",
+          "#socialanxiety"
+        ],
+        "onScreen": "psychology of first impressions"
+      },
+      {
+        "ideaId": "tiktok-2026-10-28-2",
+        "firstLine": "epictetus on looksmaxxing: stoic advice for young men",
+        "question": "How many hours a week do you spend on your looks vs your mind?",
+        "hashtags": [
+          "#stoicism",
+          "#epictetus",
+          "#looksmaxxing",
+          "#philosophy"
+        ],
+        "onScreen": "stoic advice on looksmaxxing"
+      },
+      {
+        "ideaId": "tiktok-2026-10-28-3",
+        "firstLine": "how long it takes to build a habit (66 days, not 21)",
+        "question": "What habit are you picking back up this week?",
+        "hashtags": [
+          "#habits",
+          "#discipline",
+          "#selfimprovement"
+        ],
+        "onScreen": "how long to build a habit"
+      }
+    ],
+    "note": "6 of your last 10 captions were 'Follow for more'; the one topic caption (the embarrassing-shirt video, Oct 27) is at 346 views after ~35h, already above all 5 posts from Oct 21-24 (249-303). Early, but it fits Metricool's keyword-caption advice."
   }
 }
