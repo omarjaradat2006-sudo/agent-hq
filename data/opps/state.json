@@ -1,7 +1,7 @@
 {
   "team": "opps",
   "hired": true,
-  "updatedAt": "2026-10-28T14:42:09Z",
+  "updatedAt": "2026-10-28T14:42:42Z",
   "agents": [
     {
       "id": "lead",
@@ -21,14 +21,14 @@
       "id": "planner",
       "name": "Planner",
       "role": "How-to, hours, cost",
-      "status": "working",
-      "doing": "Turning the finds into plans that fit you"
+      "status": "ok",
+      "doing": "Wrote 3 plans with hours, cost and a 2-week test"
     },
     {
       "id": "swarm",
       "name": "Swarm Tester",
-      "status": "waiting",
-      "doing": "Waiting for the Scout"
+      "status": "working",
+      "doing": "Running a 100-person test on the top idea"
     },
     {
       "id": "liaison",
@@ -39,6 +39,11 @@
     }
   ],
   "log": [
+    {
+      "t": "2026-10-28T14:42:42Z",
+      "agent": "Planner",
+      "msg": "Planned 3 opportunities: \"Google-ready\" profile tune-up + NFC review stand for Mississauga shops; Halal clipping on Whop Content Rewards using your video pipeline; Put LinkedAI inside ChatGPT as an app"
+    },
     {
       "t": "2026-10-28T14:42:09Z",
       "agent": "R&D Liaison",
@@ -70,7 +75,71 @@
       "msg": "Team hired. First run is scheduled."
     }
   ],
-  "ideas": [],
+  "ideas": [
+    {
+      "id": "opps-2026-10-28-1",
+      "title": "\"Google-ready\" profile tune-up + NFC review stand for Mississauga shops",
+      "hook": "Sell local shops a one-time profile fix plus your NFC stand ($149-249), then an optional $49-79/month upkeep; realistic: 3-6 clients in month one, $500-1,500.",
+      "why": "You already make NFC review tags and know local shops from delivery runs; AI turns a 5-10 hour/month profile job into ~1 hour. Google's AI is starting to phone businesses with clear profiles (Canada expected in 2026). Uses the R&D Lab's lead: shops pay $5-48 once on Etsy vs $50-100+/month for review platforms, so 'no monthly fee required' is the angle.",
+      "format": "Hours: 8 to set up, 3-5/week · Cost: $0-60 (stand samples, printing) · First $: ~1-2 weeks",
+      "script": "1. Build a one-page offer in Base44 or Growth Architect: 'Google-ready in 48 hours: profile fixed, NFC review stand, no monthly fee.' Price $149 (single stand) / $249 (2 stands + full profile rewrite).\n2. Make a 15-point checklist with Claude: categories, services list with price ranges, hours, 10 photos, Q&A, service area, direct review link (not just the profile link), first 4 posts.\n3. List 40 Mississauga shops from Google Maps with under 4.3 stars, few reviews or missing hours (barbers, nail salons, auto shops, restaurants on your delivery routes).\n4. Walk in with a stand in hand, show their profile's gaps on your phone, offer a free 'Google-ready' audit sheet.\n5. Deliver: Claude drafts descriptions, services and posts; you get manager access to their profile, upload, and program the NFC tag to the direct review link.\n6. Offer upkeep at $49-79/month: 4 posts, review replies drafted by AI, monthly photo refresh. Never sell fake reviews.\nReuse: NFC tag stock and supplier, Growth Architect for the pitch page, n8n for monthly post reminders.\nRisks: walk-ins are slow; owners distrust 'SEO guys'; Google's AI calling may arrive in Canada late.\n2-week test: 25 walk-ins → at least 3 paid ($450+). Under 2 sales, switch to phone/Instagram DMs or change the price.",
+      "score": 8,
+      "sources": [
+        {
+          "title": "Retail Insider: When the first customer to call your business is an AI Assistant",
+          "url": "https://retail-insider.com/articles/2026/08/when-the-first-customer-to-call-your-business-is-an-ai-assistant/"
+        },
+        {
+          "title": "Slashpost: Google Business Profile optimization cost 2026",
+          "url": "https://slashpost.ai/blogs/google-business-profile/google-business-profile-optimization-cost"
+        },
+        {
+          "title": "Onrec: Best Google Review Cards and Stands 2026 (R&D Lab lead)",
+          "url": "https://onrec.com/node/129063"
+        }
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-28T14:42:42Z"
+    },
+    {
+      "id": "opps-2026-10-28-2",
+      "title": "Halal clipping on Whop Content Rewards using your video pipeline",
+      "hook": "Post clips for brand/creator campaigns paid per 1,000 views; realistic: $50-300 in month one, more only if a few clips hit.",
+      "why": "You already run automated Python/Remotion pipelines and post Shorts daily, so cutting clips is close to free for you. The catch: many big campaigns are gambling streamers, so you'd filter hard to halal campaigns (podcasts, apps, business creators).",
+      "format": "Hours: 4 to set up, 5-7/week · Cost: $0 · First $: ~1-2 weeks (review window ~72h)",
+      "script": "1. Make a Whop account and browse Content Rewards. Skip any gambling, casino, crypto-casino, music with haram content or dating campaigns.\n2. Pick 2-3 campaigns paying at least $1 per 1K views with clear rules (podcast, business, AI tool, self-improvement creators fit your TikTok skills).\n3. Reuse your YouTube pipeline: Python downloads the provided source, Whisper finds the strongest 30-60s moments, Remotion adds captions and a hook title.\n4. Post on fresh TikTok/Shorts/IG accounts made for clipping (keep your main page clean), 3-5 clips a day per campaign.\n5. Submit links on Whop, track approved views in a sheet.\nRisks: rates have dropped (typical $0.50-1.50 per 1K), campaigns run out of budget fast, views can be rejected, platforms may limit reposted content, Whop takes a withdrawal fee.\n2-week test: 40+ clips posted. If total approved views are under 50K (≈ under $50), stop; if one campaign gets 100K+, double down on it.",
+      "score": 6,
+      "sources": [
+        {
+          "title": "OpusClip: What Is Whop Content Rewards?",
+          "url": "https://www.opus.pro/blog/whop-content-rewards"
+        },
+        {
+          "title": "Trends.vc: Clipping businesses",
+          "url": "https://trends.vc/clipping-businesses-pay-per-view-distribution-clip-armies-view-verification/"
+        }
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-28T14:42:42Z"
+    },
+    {
+      "id": "opps-2026-10-28-3",
+      "title": "Put LinkedAI inside ChatGPT as an app",
+      "hook": "Turn LinkedAI's post-writing into a ChatGPT App Directory listing that links to a paid upgrade; upside is free discovery, earnings likely small at first ($0-200/month).",
+      "why": "You already have LinkedAI's prompts and logic; the App Directory is a new, uncrowded shelf. In-chat sales of digital goods aren't allowed yet, so money comes from linking out to your existing paid tier.",
+      "format": "Hours: 15-25 to build, 2/week · Cost: $0-20/month hosting · First $: ~4-6 weeks (review time)",
+      "script": "1. Read OpenAI's Apps SDK docs; an app is an MCP server plus a small UI.\n2. Reuse LinkedAI's core: 'write a LinkedIn post from my notes', 'rewrite in my voice', 'make a hook'. Expose 3 tools only.\n3. Host the MCP server free/cheap (Cloudflare Workers or Vercel), with Claude helping write it.\n4. Add a free limit (e.g. 5 posts/week) and a link to your existing LinkedAI upgrade page.\n5. Submit to the directory; meanwhile post a demo on your TikTok and LinkedIn.\nRisks: app review can reject or delay; ChatGPT can already write LinkedIn posts, so the app must save real steps (voice profile, saved drafts); rules on monetization may change.\n2-week test (after approval): 100+ installs and 3+ upgrade clicks per day; if not, keep it as a free funnel only.",
+      "score": 5,
+      "sources": [
+        {
+          "title": "Moburst: ChatGPT App Directory Explained",
+          "url": "https://www.moburst.com/blog/chatgpt-app-directory-explained-what-brands-need-to-know/"
+        }
+      ],
+      "status": "pending",
+      "createdAt": "2026-10-28T14:42:42Z"
+    }
+  ],
   "research": [
     {
       "date": "2026-10-28",
