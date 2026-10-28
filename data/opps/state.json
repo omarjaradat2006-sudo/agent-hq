@@ -1,62 +1,67 @@
 {
- "team": "opps",
- "hired": true,
- "updatedAt": "2026-10-26T02:46:49Z",
- "agents": [
-  {
-   "id": "lead",
-   "name": "Venture Lead",
-   "role": "Picks the best bets",
-   "status": "idle",
-   "doing": "Hired today. First run coming up."
-  },
-  {
-   "id": "scout",
-   "name": "Scout",
-   "role": "Finds opportunities",
-   "status": "idle",
-   "doing": "Hired today. First run coming up."
-  },
-  {
-   "id": "planner",
-   "name": "Planner",
-   "role": "How-to, hours, cost",
-   "status": "idle",
-   "doing": "Hired today. First run coming up."
-  },
-  {
-   "id": "swarm",
-   "name": "Swarm Tester",
-   "status": "waiting",
-   "doing": "Hired. First 100-person test on the next run"
-  },
-  {
-   "id": "liaison",
-   "name": "R&D Liaison",
-   "role": "Brings in the R&D Lab's finds",
-   "status": "idle",
-   "doing": "Joins on the next run"
-  }
- ],
- "log": [
-  {
-   "t": "2026-10-27T02:31:16Z",
-   "agent": "R&D Liaison",
-   "msg": "Joined to bring the R&D Lab's finds into this team"
-  },
-  {
-   "t": "2026-10-26T20:54:44Z",
-   "agent": "Swarm Tester",
-   "msg": "Joined the team"
-  },
-  {
-   "t": "2026-10-26T02:46:49Z",
-   "agent": "Venture Lead",
-   "msg": "Team hired. First run is scheduled."
-  }
- ],
- "ideas": [],
- "research": [],
- "brief": null,
- "processedIssues": []
+  "team": "opps",
+  "hired": true,
+  "updatedAt": "2026-10-28T14:35:59Z",
+  "agents": [
+    {
+      "id": "lead",
+      "name": "Venture Lead",
+      "role": "Picks the best bets",
+      "status": "waiting",
+      "doing": "Waiting for the Scout"
+    },
+    {
+      "id": "scout",
+      "name": "Scout",
+      "role": "Finds opportunities",
+      "status": "working",
+      "doing": "Hunting for new AI money-makers"
+    },
+    {
+      "id": "planner",
+      "name": "Planner",
+      "role": "How-to, hours, cost",
+      "status": "waiting",
+      "doing": "Waiting for the Scout"
+    },
+    {
+      "id": "swarm",
+      "name": "Swarm Tester",
+      "status": "waiting",
+      "doing": "Waiting for the Scout"
+    },
+    {
+      "id": "liaison",
+      "name": "R&D Liaison",
+      "role": "Brings in the R&D Lab's finds",
+      "status": "waiting",
+      "doing": "Waiting for the Scout"
+    }
+  ],
+  "log": [
+    {
+      "t": "2026-10-28T14:35:59Z",
+      "agent": "Scout",
+      "msg": "Started this run's search"
+    },
+    {
+      "t": "2026-10-27T02:31:16Z",
+      "agent": "R&D Liaison",
+      "msg": "Joined to bring the R&D Lab's finds into this team"
+    },
+    {
+      "t": "2026-10-26T20:54:44Z",
+      "agent": "Swarm Tester",
+      "msg": "Joined the team"
+    },
+    {
+      "t": "2026-10-26T02:46:49Z",
+      "agent": "Venture Lead",
+      "msg": "Team hired. First run is scheduled."
+    }
+  ],
+  "ideas": [],
+  "research": [],
+  "brief": null,
+  "processedIssues": []
 }
