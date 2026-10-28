@@ -1,13 +1,13 @@
 {
   "team": "tiktok",
   "hired": true,
-  "updatedAt": "2026-10-27T13:58:41Z",
+  "updatedAt": "2026-10-28T13:49:00Z",
   "agents": [
     {
       "id": "analyst",
       "name": "Analyst",
       "role": "Finds outlier videos",
-      "status": "ok",
+      "status": "waiting",
       "doing": "Found 5 signals: IFS young-men survey, stoic one-liners, shorter videos win",
       "lastRun": "2026-10-27T13:58:41Z",
       "nextRun": "2026-10-28T13:41:00Z"
@@ -16,7 +16,7 @@
       "id": "strategist",
       "name": "Strategist",
       "role": "Picks what to film next",
-      "status": "ok",
+      "status": "waiting",
       "doing": "Picked: Epictetus control, who-you-know debate, gratitude (faith slot)",
       "lastRun": "2026-10-27T13:58:41Z",
       "nextRun": "2026-10-28T13:41:00Z"
@@ -25,7 +25,7 @@
       "id": "copywriter",
       "name": "Copywriter",
       "role": "Hooks and full scripts",
-      "status": "ok",
+      "status": "waiting",
       "doing": "Wrote 3 scripts (A/B/C), VoicePrint pass done",
       "lastRun": "2026-10-27T13:58:41Z",
       "nextRun": "2026-10-28T13:41:00Z"
@@ -33,8 +33,8 @@
     {
       "id": "reviewer",
       "name": "Performance Reviewer",
-      "status": "ok",
-      "doing": "Reviewed 19 videos: reach dropped Oct 21, short + on-niche wins",
+      "status": "working",
+      "doing": "Reviewing how your last videos did",
       "role": "Explains why videos won or flopped",
       "lastRun": "2026-10-27T13:58:41Z",
       "nextRun": "2026-10-28T13:41:00Z"
@@ -43,7 +43,7 @@
       "id": "liaison",
       "name": "R&D Liaison",
       "role": "Brings in the R&D Lab's finds",
-      "status": "ok",
+      "status": "waiting",
       "doing": "Used 1 Lab lead, skipped 2 that need footage",
       "lastRun": "2026-10-27T13:58:41Z",
       "nextRun": "2026-10-28T13:41:00Z"
@@ -52,13 +52,18 @@
       "id": "captions",
       "name": "Caption Coach",
       "role": "Search-friendly captions and on-screen keywords",
-      "status": "idle",
+      "status": "waiting",
       "doing": "Hired by the R&D Lab. First run coming up.",
       "lastRun": null,
       "nextRun": null
     }
   ],
   "log": [
+    {
+      "t": "2026-10-28T13:49:00Z",
+      "agent": "Performance Reviewer",
+      "msg": "Started today's run"
+    },
     {
       "t": "2026-10-28T11:20:00Z",
       "agent": "R&D Lab",
