@@ -10,7 +10,8 @@ Full data (ideas, footage, review): https://raw.githubusercontent.com/omarjarada
 3. **Every slot's "Today's twist" is mandatory and must be VISIBLE.** The twist (frame shape, colours, ball count, rule change, melody, timer, two-ball race...) is what makes each video different. If the existing sims.py function can't do the twist, add a parameter or a new function. Never re-render a format with its default settings, never reuse a seed, colour pair or melody from the last 7 days, and never re-upload an older render.
 4. **Check before delivering:** make a contact sheet of every new video next to the matching format's most recent upload (Upload Tool logs). If two look the same at a glance, redo that one. Tell Omar in one line per video what is visibly new.
 5. Variety: at least 8 formats, no format more than twice among the Shorts (the lineup already follows this).
-6. Nothing is uploaded or scheduled until Omar says "go".
+6. **Every video must be scheduled, never left Private.** Give EVERY item in `queue.json` a `slot` (0, 1, 2... in this file's order: strongest Short first, longs in the evening slots). The upload tool (`_system\Upload Tool\upload.py`) turns slots into publish times spread across the 5 PM to 8 AM window, 1 video at a time, never overlapping the previous batch. Check `queue.json` before finishing: if any item has no `slot`, fix it.
+7. You don't run the uploader yourself; Omar runs the upload command.
 
 ## The videos
 
@@ -46,8 +47,14 @@ Description: One giant marble run, 12 marbles, only one winner. Which one did yo
 Hashtags: #marblerun #marblerace #satisfying #simulation #physics
 Tags: marble run, marble race, marble run special, marble race simulation, satisfying marble run, pick your marble, physics simulation, marble race 12 marbles, satisfying video, marble tournament
 
+## R&D upgrades
+
+Only upgrades marked done are installed. Use those; never use one that is only approved.
+- Waiting on Omar (NOT installed, don't use it): Marble Run Special: Bounce Theory's first real long  (`lab-2026-10-28-1`)
+
 ## When the batch is done
 - Tell Omar which clip each video used (by file name) and any slot that fell back.
+- Confirm every `queue.json` item has a `slot`, give Omar the upload command (`python "%USERPROFILE%\Downloads\YOUTUBE HQ\_system\Upload Tool\upload.py" bounce`), and say the tool schedules everything inside the 5 PM to 8 AM window by itself.
 - If this session can push to omarjaradat2006-sudo/agent-hq: set `made: true` on each lineup item made and `status: "done"` (and `doneAt` now) on each used idea in data/youtube/state.json, then commit and push. Never change any other status. Otherwise list the idea ids so Omar can press "I did it" on the site.
 
-_Generated 2026-10-28 20:34 UTC_
+_Generated 2026-10-28 22:29 UTC_

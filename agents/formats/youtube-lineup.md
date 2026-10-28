@@ -42,3 +42,6 @@ The R&D Lab's upgrades (ideas in data/lab/state.json for Bounce Theory, Ambient 
 - Approved-but-not-done upgrades are "waiting on Omar": no slot may depend on them. List them in the brief's `approvals` as "Waiting on Omar: <title>".
 - Lab `formatLeads` that need a new build count as a Test slot (0-2), built in the batch from a Producer idea's spec, never from an upgrade that isn't done.
 - Your own video ideas: new ones are `approved` (up next); the batch marks them `done` when made, or Omar presses "I did it". `skipped` ideas never go in a lineup.
+
+## Scheduling (Omar's rule)
+Every video in a lineup gets uploaded scheduled, never left Private: the batch gives every `queue.json` item a `slot` in lineup order, and Omar's upload tool spreads them across the 5 PM to 8 AM window, one at a time, never overlapping the previous batch. So order the lineup the way it should go public: strongest Shorts first (S01-S05), longs in the evening.

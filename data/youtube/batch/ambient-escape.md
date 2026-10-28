@@ -9,7 +9,8 @@ Full data (ideas, footage, review): https://raw.githubusercontent.com/omarjarada
 2. A generated or existing scene is only allowed for a slot whose clip is MISSING, and the finish message must name those slots.
 3. Audio: copyright-safe only (synthesized rain/noise/fire/wind or CC0). Never reciter recordings, never Omar's voice. Put each clip's credit line in its video description.
 4. Religious content must be accurate: ayat with surah:ayah, only authentic hadith with collection and number, double-check quiz answers.
-5. Nothing is uploaded or scheduled until Omar says "go".
+5. **Every video must be scheduled, never left Private.** Give EVERY item in `queue.json` a `slot` (0, 1, 2... in this file's order: strongest Short first, longs in the evening slots). The upload tool (`_system\Upload Tool\upload.py`) turns slots into publish times spread across the 5 PM to 8 AM window, 1 video at a time, never overlapping the previous batch. Check `queue.json` before finishing: if any item has no `slot`, fix it.
+6. You don't run the uploader yourself; Omar runs the upload command.
 
 ## The videos
 
@@ -76,6 +77,7 @@ Tags: rain sounds, rain at night, rain on window, power cut rain, cozy rain, sle
 
 ## When the batch is done
 - Tell Omar which clip each video used (by file name) and any slot that fell back.
+- Confirm every `queue.json` item has a `slot`, give Omar the upload command (`python "%USERPROFILE%\Downloads\YOUTUBE HQ\_system\Upload Tool\upload.py" ambient`), and say the tool schedules everything inside the 5 PM to 8 AM window by itself.
 - If this session can push to omarjaradat2006-sudo/agent-hq: set `made: true` on each lineup item made and `status: "done"` (and `doneAt` now) on each used idea in data/youtube/state.json, then commit and push. Never change any other status. Otherwise list the idea ids so Omar can press "I did it" on the site.
 
-_Generated 2026-10-28 20:34 UTC_
+_Generated 2026-10-28 22:29 UTC_
