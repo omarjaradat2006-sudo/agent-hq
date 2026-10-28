@@ -1,7 +1,7 @@
 {
   "team": "opps",
   "hired": true,
-  "updatedAt": "2026-10-28T14:35:59Z",
+  "updatedAt": "2026-10-28T14:42:09Z",
   "agents": [
     {
       "id": "lead",
@@ -14,15 +14,15 @@
       "id": "scout",
       "name": "Scout",
       "role": "Finds opportunities",
-      "status": "working",
-      "doing": "Hunting for new AI money-makers"
+      "status": "ok",
+      "doing": "Found 5 leads: clipping payouts, Google AI calls, profile pricing, ChatGPT apps"
     },
     {
       "id": "planner",
       "name": "Planner",
       "role": "How-to, hours, cost",
-      "status": "waiting",
-      "doing": "Waiting for the Scout"
+      "status": "working",
+      "doing": "Turning the finds into plans that fit you"
     },
     {
       "id": "swarm",
@@ -34,11 +34,21 @@
       "id": "liaison",
       "name": "R&D Liaison",
       "role": "Brings in the R&D Lab's finds",
-      "status": "waiting",
-      "doing": "Waiting for the Scout"
+      "status": "ok",
+      "doing": "Passed the Lab's NFC-stand pricing lead to the Planner"
     }
   ],
   "log": [
+    {
+      "t": "2026-10-28T14:42:09Z",
+      "agent": "R&D Liaison",
+      "msg": "Used the Lab's NFC stand pricing lead; skipped the microdrama lead (YouTube team's)"
+    },
+    {
+      "t": "2026-10-28T14:42:09Z",
+      "agent": "Scout",
+      "msg": "Most promising find: Google's AI is starting to phone local businesses and only picks ones with clear Business Profiles; owners already pay $125-500/month for profile upkeep"
+    },
     {
       "t": "2026-10-28T14:35:59Z",
       "agent": "Scout",
@@ -61,7 +71,59 @@
     }
   ],
   "ideas": [],
-  "research": [],
+  "research": [
+    {
+      "date": "2026-10-28",
+      "createdAt": "2026-10-28T14:42:09Z",
+      "items": [
+        {
+          "title": "Whop Content Rewards: paid per 1,000 views for posting clips",
+          "creator": "OpusClip blog",
+          "url": "https://www.opus.pro/blog/whop-content-rewards",
+          "metric": "Typical live campaigns $0.50-1.50 per 1K views (mid-2026)",
+          "whyItWorks": "Brands fund view-based campaigns; anyone can post clips and get paid on approved views, so an automated clip pipeline turns directly into payouts."
+        },
+        {
+          "title": "Clipping businesses: pay-per-view distribution and clip armies",
+          "creator": "Trends.vc",
+          "url": "https://trends.vc/clipping-businesses-pay-per-view-distribution-clip-armies-view-verification/",
+          "metric": "Beginners realistically $200-500 in month one; ~$1,500 per million views",
+          "whyItWorks": "Creators and brands now buy distribution per view instead of ads, which is 3-8x cheaper for them; clippers with volume capture it."
+        },
+        {
+          "title": "Google's AI now phones local businesses to compare prices for customers",
+          "creator": "Retail Insider",
+          "url": "https://retail-insider.com/articles/2026/08/when-the-first-customer-to-call-your-business-is-an-ai-assistant/",
+          "metric": "",
+          "whyItWorks": "The AI only calls businesses with clear, complete Business Profiles; expanded to home services in summer 2026 and Canada is expected in 2026, so local shops need their profiles fixed now."
+        },
+        {
+          "title": "What Google Business Profile optimization costs in 2026",
+          "creator": "Slashpost",
+          "url": "https://slashpost.ai/blogs/google-business-profile/google-business-profile-optimization-cost",
+          "metric": "$125-500/month per location; setup $300-500 one-time",
+          "whyItWorks": "Owners pay real money for profile upkeep that AI tools make fast (posts, Q&A, review replies, service lists)."
+        },
+        {
+          "title": "ChatGPT App Directory: apps inside ChatGPT, purchases link out",
+          "creator": "Moburst",
+          "url": "https://www.moburst.com/blog/chatgpt-app-directory-explained-what-brands-need-to-know/",
+          "metric": "",
+          "whyItWorks": "A new distribution shelf for small tools; digital goods can't be sold in-chat yet, but apps can send users to an external paid upgrade."
+        }
+      ]
+    }
+  ],
   "brief": null,
-  "processedIssues": []
+  "processedIssues": [],
+  "labFeedback": {
+    "date": "2026-10-28",
+    "used": [
+      "NFC review stands: one-time vs $50-100/month platforms"
+    ],
+    "skipped": [
+      "Shorts series + microdramas — a YouTube channel play, already with the YouTube team"
+    ],
+    "request": "Is Google's AI business-calling ('Have AI check pricing') live in Canada yet, and which categories? It decides when to pitch Mississauga shops."
+  }
 }
