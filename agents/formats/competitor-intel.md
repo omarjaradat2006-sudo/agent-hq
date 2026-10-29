@@ -1,3 +1,5 @@
+> **Weekly deep dive (Omar's rule):** this team now runs once a week, so every run goes to the max. Use 30-40 searches/fetches. Cover each competitor's current ads (Meta Ad Library, TikTok Creative Center, Google Ads Transparency Center where reachable), their best-performing content and view counts, pricing and offer changes, review complaints, and recent launches. End with three clear lists in the brief's notes and in the ideas: **Copy** (what works for them that we should use now), **Beat** (where they're weak and how we win: features, price, angle), and **Improve** (concrete changes to our own product, store listing or landing page). Only real findings, never invented numbers.
+
 # Competitor Watch: content, ads and growth
 
 Goal: for each main competitor, find out what they post, how many views it gets, how they advertise, and how they grew, and what Omar should copy.
