@@ -56,5 +56,6 @@ Only upgrades marked done are installed. Use those; never use one that is only a
 - Tell Omar which clip each video used (by file name) and any slot that fell back.
 - Confirm every `queue.json` item has a `slot`, give Omar the upload command (`python "%USERPROFILE%\Downloads\YOUTUBE HQ\_system\Upload Tool\upload.py" bounce`), and say the tool schedules everything inside the 5 PM to 8 AM window by itself.
 - If this session can push to omarjaradat2006-sudo/agent-hq: set `made: true` on each lineup item made and `status: "done"` (and `doneAt` now) on each used idea in data/youtube/state.json, then commit and push. Never change any other status. Otherwise list the idea ids so Omar can press "I did it" on the site.
+- Then wait. When Omar says "done", clean up: delete all renders, frames, contact sheets, downloaded clips, split parts and temp files in your workspace, empty `_system\parts` on his laptop, and move the uploaded videos into "Uploaded (delete later)". Say how much space was freed.
 
-_Generated 2026-10-29 02:21 UTC_
+_Generated 2026-10-29 02:46 UTC_

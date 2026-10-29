@@ -492,21 +492,25 @@
     if (!sub0.length) { body.append(empty("No lineup yet", "Every morning the team plans all 17 videos for each channel: 15 Shorts and 2 long videos.")); return; }
     statSel = sub0.includes(statSel) ? statSel : sub0[0];
     const sub = el("div", "subtabs"); sub0.forEach(ch => { const b = el("button", null, `${ch} ${(L.channels[ch] || []).length}`); b.setAttribute("aria-pressed", String(statSel === ch)); b.onclick = () => { statSel = ch; renderPanel(); }; sub.append(b); }); body.append(sub);
-    body.append(el("div", "small", "Planned " + (L.date || ago(L.createdAt)) + " · press the button, paste into a NEW Claude chat"));
-    { const slug = { "Bounce Theory": "bounce-theory", "Ambient Escape": "ambient-escape" }[statSel];
-      const skill = { "Bounce Theory": "bounce-theory-videos", "Ambient Escape": "ambient-escape-videos" }[statSel];
-      if (slug) { const url = `https://raw.githubusercontent.com/${CFG.repo}/main/data/youtube/batch/${slug}.md`;
-        const longs = (L.channels[statSel] || []).filter(v => v.kind === "Long" && v.footage).map(v => `${v.slot} = ${v.footage}`);
-        const txt = `Make today's ${statSel} batch with my ${skill} skill.\n\nFirst open today's plan and follow it exactly: ${url}\n(If you can't open it, run: curl -sL "${url}")\n\n` +
-          (longs.length ? `The long videos MUST loop the real downloaded clips from that file (${longs.join(", ")}). Do not generate or draw scenes for them. Download the clips first and list them to me before rendering.\n\n` : "") +
-          "Most of these videos are remixes of what already won (each row says what it's based on). Keep the winner's recipe (format, hook, length, pacing) and change only the listed twist.\n\n" + (statSel === "Bounce Theory" ? "Every video MUST visibly use its \"Today's twist\" from the file (frame, colours, counts, rules, melody). Never re-render a format with its default settings or reuse an old render. Before delivering, compare each video's contact sheet with that format's last upload and redo any that look the same.\n\n" : "") +
-          "Every video must be scheduled: give EVERY queue.json item a slot (0, 1, 2... in the file's order) so the upload tool spreads them across 5 PM to 8 AM. Never leave a video without a slot (that uploads it as Private with no publish time).\n\n" +
-          `Make all ${(L.channels[statSel] || []).length} videos in the file's order with its titles, then tell me ${statSel === "Bounce Theory" ? "in one line per video what is visibly new" : "which clip each video used"}.`;
-        const row = el("div", "row"); row.style.gap = "8px"; row.style.flexWrap = "wrap"; row.style.margin = "6px 0 10px";
-        const b = el("button", "btn primary", "Copy batch prompt");
-        b.onclick = async () => { try { await navigator.clipboard.writeText(txt); toast("Copied. Paste it into a new Claude chat."); } catch { const ta = el("textarea"); ta.value = txt; ta.rows = 7; ta.style.width = "100%"; row.after(ta); ta.select(); toast("Select and copy the text below."); } };
-        const a = el("a", "btn", "Open today's batch file"); a.href = url.replace("raw.githubusercontent.com", "github.com").replace("/main/", "/blob/main/"); a.target = "_blank"; a.rel = "noopener";
-        row.append(b, a); body.append(row); } }
+    { const SLUG = { "Bounce Theory": "bounce-theory", "Ambient Escape": "ambient-escape" }, SKILL = { "Bounce Theory": "bounce-theory-videos", "Ambient Escape": "ambient-escape-videos" };
+      const chans = sub0.filter(ch => SLUG[ch]);
+      const urlOf = ch => `https://raw.githubusercontent.com/${CFG.repo}/main/data/youtube/batch/${SLUG[ch]}.md`;
+      const part = (ch, n) => { const longs = (L.channels[ch] || []).filter(v => v.kind === "Long" && v.footage).map(v => `${v.slot} = ${v.footage}`);
+        return `${n}. ${ch} (${(L.channels[ch] || []).length} videos) with my ${SKILL[ch]} skill. Plan: ${urlOf(ch)}\n(If you can't open it, run: curl -sL "${urlOf(ch)}")\n` +
+          (longs.length ? `   The long videos MUST loop the real downloaded clips from that file (${longs.join(", ")}). Never generate or draw scenes for them. Download the clips first and list them to me before rendering.\n` : "") +
+          (ch === "Bounce Theory" ? `   Every video MUST visibly use its "Today's twist" (frame, colours, counts, rules, melody). Never re-render a format with its default settings or reuse an old render. Compare each contact sheet with that format's last upload and redo any that look the same.\n` : ""); };
+      const txt = `Make today's YouTube batches for BOTH my channels in this one chat, one channel after the other. Read each plan file first and follow it exactly.\n\n` +
+        chans.map((ch, i) => part(ch, i + 1)).join("\n") +
+        `\nFor both: most videos are remixes of what already won (each row says what it's based on). Keep the winner's recipe (format, hook, length, pacing) and change only the listed twist. Make every video in the file's order with its titles.\n\n` +
+        `Every video must be scheduled: give EVERY queue.json item a slot (0, 1, 2... in the file's order) so the upload tool spreads them across 5 PM to 8 AM. Never leave a video without a slot.\n\n` +
+        `When each channel is finished, tell me what's in its folder and the upload command. Then wait. When I say "done", clean up everything this batch left behind: delete all renders, frames, contact sheets, downloaded clips, split parts and temp files in your workspace, empty the _system\\parts folder on my laptop, and move the uploaded videos from both "Upload Today" folders into "Uploaded (delete later)" (delete them instead if I've allowed deleting). Tell me how much space was freed.`;
+      const row = el("div", "row"); row.style.gap = "8px"; row.style.flexWrap = "wrap"; row.style.margin = "6px 0 10px";
+      body.append(el("div", "small", "Planned " + (L.date || ago(L.createdAt)) + " · one prompt makes both channels · paste into a NEW Claude chat"));
+      const b = el("button", "btn primary", "Copy batch prompt (both channels)");
+      b.onclick = async () => { try { await navigator.clipboard.writeText(txt); toast("Copied. Paste it into a new Claude chat."); } catch { const ta = el("textarea"); ta.value = txt; ta.rows = 7; ta.style.width = "100%"; row.after(ta); ta.select(); toast("Select and copy the text below."); } };
+      row.append(b);
+      if (SLUG[statSel]) { const a = el("a", "btn", "Open " + statSel + " batch file"); a.href = urlOf(statSel).replace("raw.githubusercontent.com", "github.com").replace("/main/", "/blob/main/"); a.target = "_blank"; a.rel = "noopener"; row.append(a); }
+      body.append(row); }
     const c = el("div", "card"); (L.channels[statSel] || []).forEach(v => { const r = el("div", "vid");
       const tt = el("span", "t", (v.slot || "") + "  " + (v.title || "")); tt.title = v.title || ""; r.append(tt, el("span", "n", v.kind || ""));
       r.append(el("span", "m", [v.format, v.note].filter(Boolean).join(" · ")), el("span", "m", v.basis ? "↳ " + v.basis : ""), el("span", "m", [v.newIdea ? "★ new" : "", v.footage ? "🎞 " + v.footage : ""].filter(Boolean).join("  "))); c.append(r); });

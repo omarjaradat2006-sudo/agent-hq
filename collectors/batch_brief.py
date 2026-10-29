@@ -135,6 +135,7 @@ def brief(ch, items, s):
     out.append(f"- Tell Omar which clip each video used (by file name) and any slot that fell back.")
     out.append(f"- Confirm every `queue.json` item has a `slot`, give Omar the upload command (`python \"%USERPROFILE%\\Downloads\\YOUTUBE HQ\\_system\\Upload Tool\\upload.py\" {'ambient' if ch == 'Ambient Escape' else 'bounce'}`), and say the tool schedules everything inside the 5 PM to 8 AM window by itself.")
     out.append(f"- If this session can push to {REPO}: set `made: true` on each lineup item made and `status: \"done\"` (and `doneAt` now) on each used idea in data/youtube/state.json, then commit and push. Never change any other status. Otherwise list the idea ids so Omar can press \"I did it\" on the site.")
+    out.append("- Then wait. When Omar says \"done\", clean up: delete all renders, frames, contact sheets, downloaded clips, split parts and temp files in your workspace, empty `_system\\parts` on his laptop, and move the uploaded videos into \"Uploaded (delete later)\". Say how much space was freed.")
     out.append("")
     out.append(f"_Generated {datetime.datetime.now(datetime.timezone.utc).strftime('%Y-%m-%d %H:%M UTC')}_")
     return "\n".join(out) + "\n"
