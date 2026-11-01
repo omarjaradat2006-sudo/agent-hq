@@ -1,7 +1,7 @@
 {
   "team": "repos",
   "hired": true,
-  "updatedAt": "2026-11-01T20:38:15Z",
+  "updatedAt": "2026-11-01T20:44:34Z",
   "agents": [
     {
       "id": "lead",
@@ -12,17 +12,22 @@
     {
       "id": "scout",
       "name": "Repo Scout",
-      "status": "working",
-      "doing": "Searching GitHub for free tools"
+      "status": "ok",
+      "doing": "Hunt done: 7 candidates"
     },
     {
       "id": "tester",
       "name": "Fit Checker",
-      "status": "waiting",
-      "doing": "Waiting"
+      "status": "working",
+      "doing": "Checking licence, safety and fit"
     }
   ],
   "log": [
+    {
+      "t": "2026-11-01T20:44:34Z",
+      "agent": "Repo Scout",
+      "msg": "Searched ~25 queries on GitHub; 7 candidates checked, best find: buxuku/SmartSub (local captions with highlighted keywords)"
+    },
     {
       "t": "2026-11-01T20:38:15Z",
       "agent": "Repo Scout",
@@ -35,6 +40,62 @@
     }
   ],
   "ideas": [],
-  "research": [],
+  "research": [
+    {
+      "date": "2026-11-01",
+      "createdAt": "2026-11-01T20:44:34Z",
+      "items": [
+        {
+          "title": "SmartSub: local subtitles with burned-in keyword highlights",
+          "creator": "buxuku/SmartSub",
+          "url": "https://github.com/buxuku/SmartSub",
+          "metric": "5.9k stars, updated Oct 2026, MIT",
+          "whyItWorks": "KEPT. Windows installer, CPU fallback, local Whisper, burn-in captions with highlightTerms, Claude Code MCP/CLI. Fits the approved keyword-first captions upgrade."
+        },
+        {
+          "title": "AutoClip: long video to captioned 9:16 clips",
+          "creator": "artbyjazi/autoclip",
+          "url": "https://github.com/artbyjazi/autoclip",
+          "metric": "220 stars, updated Aug 2026, MIT",
+          "whyItWorks": "REJECTED. Built to cut clips out of long videos; Omar films short sit-down videos. Needs Python 3.11, ffmpeg-full and an LLM key or Ollama; pre-1.0."
+        },
+        {
+          "title": "OpenMontage: agentic video production system",
+          "creator": "calesthio/OpenMontage",
+          "url": "https://github.com/calesthio/OpenMontage",
+          "metric": "74.3k stars, updated Oct 2026, AGPL-3.0",
+          "whyItWorks": "REJECTED. Huge (100+ tools, 423 open issues), many pipelines lean on paid APIs; his render.py pipeline already works."
+        },
+        {
+          "title": "oh-my-cassette: AI montage editor for Claude Code",
+          "creator": "Cassette-Editor/oh-my-cassette",
+          "url": "https://github.com/Cassette-Editor/oh-my-cassette",
+          "metric": "194 stars, updated Nov 2026, MIT",
+          "whyItWorks": "REJECTED. Montage editing; he already has a visual-hooks skill and his videos are talking heads or sims. Created June 2026, too new to trust."
+        },
+        {
+          "title": "youtube-mcp-server: YouTube API for AI assistants",
+          "creator": "ZubeidHendricks/youtube-mcp-server",
+          "url": "https://github.com/ZubeidHendricks/youtube-mcp-server",
+          "metric": "592 stars, updated Aug 2026, MIT",
+          "whyItWorks": "REJECTED. Agent HQ collectors already pull his channel stats hourly; needs OAuth setup for no new insight."
+        },
+        {
+          "title": "Remotion: videos with React",
+          "creator": "remotion-dev/remotion",
+          "url": "https://github.com/remotion-dev/remotion",
+          "metric": "69.7k stars, updated Nov 2026, custom licence",
+          "whyItWorks": "REJECTED. Custom licence (not plain OSS; paid for some commercial use) and a JS stack when his pipeline is Python."
+        },
+        {
+          "title": "Kokoro-FastAPI: local TTS server",
+          "creator": "remsky/Kokoro-FastAPI",
+          "url": "https://github.com/remsky/Kokoro-FastAPI",
+          "metric": "5.6k stars, updated Nov 2026, Apache-2.0",
+          "whyItWorks": "REJECTED. Good, but he has no voiceover pain right now (ambience channel, talking-head TikTok)."
+        }
+      ]
+    }
+  ],
   "brief": null
 }
