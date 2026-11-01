@@ -280,6 +280,7 @@
     return c;
   }
   function vOverview(t, body) {
+    if (t.cfg.id === "repos") requestCard(t, body);
     if (agentSel) { const a = t.agents.find(x => x.id === agentSel); if (a) body.append(agentCard(t, a)); }
     const b = t.state.brief;
     if (b) { const c = el("div", "card brief"); c.append(el("div", "label", (t.cfg.virtual ? "Chief of Staff · " : "Brief · ") + (b.date || ago(b.createdAt))));
@@ -332,6 +333,39 @@
       if (put.ok) return idea; if (put.status !== 409 && put.status !== 422) throw new Error("http " + put.status); // 409/422 = an agent pushed in between: re-read and retry
     }
     throw new Error("busy");
+  }
+  async function commitState(teamId, mutate, message) {
+    const path = `contents/data/${teamId}/state.json`;
+    for (let attempt = 0; attempt < 3; attempt++) {
+      const r = await gh(path + "?ref=main&t=" + Date.now(), { cache: "no-store" }); if (!r.ok) throw new Error("http " + r.status);
+      const f = await r.json(); const st = JSON.parse(b64ToText(f.content)); mutate(st);
+      const put = await gh(path, { method: "PUT", body: JSON.stringify({ message, content: textToB64(JSON.stringify(st, null, 2) + "\n"), sha: f.sha, branch: "main" }) });
+      if (put.ok) return st; if (put.status !== 409 && put.status !== 422) throw new Error("http " + put.status);
+    }
+    throw new Error("busy");
+  }
+  /* GitHub Scout: Omar asks for up to 3 specific repo hunts; the weekly run answers them first */
+  function requestCard(t, body) {
+    const c = el("div", "card brief"); c.append(el("div", "label", "Ask the scouts"));
+    c.append(el("div", "why", "Type up to 3 things you want a repo for (e.g. \"free Higgsfield-style video generator\", \"better auto-clipper for long videos\"). On the next run they compare several repos for each, check the code and test the best one before recommending anything."));
+    const reqs = t.state.requests || [];
+    reqs.slice(0, 6).forEach(q => { const r = el("div", "row between"); r.append(el("span", null, q.text)); r.append(el("span", "pill s-" + (q.status === "answered" ? "ok" : "waiting"), q.status === "answered" ? "Answered" : "Next run")); c.append(r);
+      if (q.answer) c.append(el("div", "small", q.answer)); });
+    const open = reqs.filter(q => q.status !== "answered").length;
+    if (open < 3) {
+      const inp = el("input"); inp.className = "tokin"; inp.placeholder = "What should they hunt for?"; inp.maxLength = 160;
+      const b = el("button", "btn primary", "Add request");
+      b.onclick = async () => { const v = inp.value.trim(); if (!v) return;
+        if (!LS.get("hq.ghToken")) { openSettings("Connect GitHub once so requests save by themselves."); return; }
+        b.disabled = true; toast("Saving…");
+        try { const now = new Date().toISOString().replace(/\.\d+Z$/, "Z");
+          const st = await commitState(t.cfg.id, s2 => { s2.requests = [{ text: v, at: now, status: "open" }, ...(s2.requests || [])].slice(0, 20);
+            s2.log = [{ t: now, agent: "Omar", msg: "Asked for: " + v }, ...(s2.log || [])].slice(0, 100); }, "Omar: repo request");
+          t.state.requests = st.requests; toast("Saved · the scouts take it on their next run"); renderPanel();
+        } catch (e) { b.disabled = false; toast(e.message === "access" ? "Token can't write to agent-hq." : "Couldn't save. Try again."); } };
+      c.append(inp, b);
+    } else c.append(el("div", "small", "3 requests are waiting. Add more after the next run."));
+    body.append(c);
   }
   const LOG_LABEL = { approve: "Omar approved", skip: "Omar skipped", done: "Omar did", undone: "Omar says not done yet:", review: "Omar moved back to review" };
   async function decide(action, t, idea, btns) {
