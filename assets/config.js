@@ -42,6 +42,11 @@ window.HQ_CONFIG = {
         { id: "liaison", name: "R&D Liaison", role: "Brings in the R&D Lab's finds", kind: "research" } ] },
     { id: "hq", name: "Chief of Staff", color: "#a37bff", grid: [2, 1], tagline: "Your daily brief across every team", virtual: true,
       agents: [ { id: "chief", name: "Chief of Staff", role: "Daily brief at noon", kind: "brief" } ] },
+    { id: "repos", name: "GitHub Scout", color: "#9be15d", grid: [2, 2], tagline: "Free open-source tools you can plug into Claude and your pipelines", ideaWord: "Repos",
+      agents: [
+        { id: "lead", name: "Scout Lead", role: "Picks the few repos worth your time", kind: "brief" },
+        { id: "scout", name: "Repo Scout", role: "Searches GitHub for free tools", kind: "research" },
+        { id: "tester", name: "Fit Checker", role: "Checks licence, safety and if it runs for you", kind: "ideas" } ] },
     { id: "lab", name: "R&D Lab", color: "#2ee6d6", grid: [1, 2], tagline: "Upgrades for every business, pipeline and this site", ideaWord: "Upgrades",
       agents: [
         { id: "lead", name: "Lab Director", role: "Picks the upgrades worth doing", kind: "brief" },

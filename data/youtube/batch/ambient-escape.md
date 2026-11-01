@@ -1,6 +1,8 @@
 # Ambient Escape: today's batch (2026-10-28)
 
-Planned by Omar's Agent HQ YouTube team. Omar approves everything, so make exactly these 17 videos, in this order, with these titles. Use the `ambient-escape-videos` skill for how to render, folders, upload sheet and scheduling.
+Planned by Omar's Agent HQ YouTube team. Omar approves everything, so make exactly these 17 videos, in this order, with these titles. Use the `ambient-escape-videos` skill for content rules, folders, upload sheet and scheduling.
+
+**Rendering happens on Omar's laptop, not in this chat.** Write the job file `_system\Local Render\jobs\ambient_today.py` (contract at the top of `_system\Local Render\render.py`), plus queue.json and UPLOAD SHEET.txt, then give Omar the `python render.py ...` and upload commands. Render only 3-second previews of brand-new formats to check them; this overrides any skill step that says to render in the cloud.
 
 Full data (ideas, footage, review): https://raw.githubusercontent.com/omarjaradat2006-sudo/agent-hq/main/data/youtube/state.json
 
@@ -81,4 +83,4 @@ Tags: rain sounds, rain at night, rain on window, power cut rain, cozy rain, sle
 - If this session can push to omarjaradat2006-sudo/agent-hq: set `made: true` on each lineup item made and `status: "done"` (and `doneAt` now) on each used idea in data/youtube/state.json, then commit and push. Never change any other status. Otherwise list the idea ids so Omar can press "I did it" on the site.
 - Then wait. When Omar says "done", clean up: delete all renders, frames, contact sheets, downloaded clips, split parts and temp files in your workspace, empty `_system\parts` on his laptop, and move the uploaded videos into "Uploaded (delete later)". Say how much space was freed.
 
-_Generated 2026-10-31 19:32 UTC_
+_Generated 2026-11-01 19:29 UTC_

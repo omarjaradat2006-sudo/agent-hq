@@ -377,7 +377,7 @@
     return `Use the ${skill} skill. Include this Agent HQ idea in today's batch (id ${i.id}):\n\nTitle: ${i.title}\nHook: ${i.hook || ""}\nFormat: ${i.format || ""}\n\nProduction notes:\n${i.script || ""}`;
   }
   function vIdeas(t, body) {
-    const ideas = t.state.ideas || []; const S2 = [["pending", "To review"], ["approved", t.cfg.id === "youtube" ? "Up next" : "Waiting on you"], ["done", t.cfg.id === "lab" ? "Installed" : "Done"], ["skipped", "Skipped"]];
+    const ideas = t.state.ideas || []; const S2 = [["pending", "To review"], ["approved", t.cfg.id === "youtube" ? "Up next" : "Waiting on you"], ["done", t.cfg.id === "lab" || t.cfg.id === "repos" ? "Installed" : "Done"], ["skipped", "Skipped"]];
     const sub = el("div", "subtabs"); S2.forEach(([k, l]) => { const b = el("button", null, `${l} ${ideas.filter(i => effectiveStatus(i).status === k).length}`); b.setAttribute("aria-pressed", String(ideaFilter === k)); b.onclick = () => { ideaFilter = k; renderPanel(); }; sub.append(b); });
     body.append(sub);
     const list = ideas.filter(i => effectiveStatus(i).status === ideaFilter).sort((a, b) => (b.createdAt || "").localeCompare(a.createdAt || ""));
@@ -394,7 +394,7 @@
         if (Array.isArray(i.hooksToTest) && i.hooksToTest.length) { w.append(el("div", "label", "Hooks to test")); const ul = el("ul"); ul.style.margin = "0"; ul.style.paddingLeft = "18px"; i.hooksToTest.forEach(h => ul.append(el("li", null, h))); w.append(ul); }
         if (i.caption) { w.append(el("div", "label", "Caption")); w.append(el("div", "small", i.caption)); }
         d.append(w); c.append(d); }
-      else if (i.script) { const d = el("details"); d.append(el("summary", null, t.cfg.id === "opps" ? "How to do it" : t.cfg.id === "lab" ? "How to build it" : t.cfg.id === "youtube" ? "Production notes" : "Full script")); d.append(el("div", "script", i.script)); c.append(d); }
+      else if (i.script) { const d = el("details"); d.append(el("summary", null, t.cfg.id === "opps" ? "How to do it" : t.cfg.id === "lab" ? "How to build it" : t.cfg.id === "repos" ? "How to set it up" : t.cfg.id === "youtube" ? "Production notes" : "Full script")); d.append(el("div", "script", i.script)); c.append(d); }
       if (Array.isArray(i.scenes) && i.scenes.length && i.script) { const d = el("details"); d.append(el("summary", null, "Copy full script")); d.append(el("div", "script", i.script)); c.append(d); }
       if (i.swarm) c.append(swarmBlock(i.swarm, true));
       if (Array.isArray(i.sources) && i.sources.length) { const s = el("div", "sources"); i.sources.forEach(x => { const u = safeUrl(x.url); if (u) { const a = el("a", null, "↗ " + (x.title || "source")); a.href = u; a.target = "_blank"; a.rel = "noopener"; s.append(a); } }); c.append(s); }
@@ -499,13 +499,21 @@
         return `${n}. ${ch} (${(L.channels[ch] || []).length} videos) with my ${SKILL[ch]} skill. Plan: ${urlOf(ch)}\n(If you can't open it, run: curl -sL "${urlOf(ch)}")\n` +
           (longs.length ? `   The long videos MUST loop the real downloaded clips from that file (${longs.join(", ")}). Never generate or draw scenes for them. Download the clips first and list them to me before rendering.\n` : "") +
           (ch === "Bounce Theory" ? `   Every video MUST visibly use its "Today's twist" (frame, colours, counts, rules, melody). Never re-render a format with its default settings or reuse an old render. Compare each contact sheet with that format's last upload and redo any that look the same.\n` : ""); };
-      const txt = `Make today's YouTube batches for BOTH my channels in this one chat, one channel after the other. Read each plan file first and follow it exactly.\n\n` +
+      const txt = `Prepare today's YouTube batches for BOTH my channels in this one chat. My laptop does the rendering, NOT you: rendering in this chat wastes my usage.\n\n` +
         chans.map((ch, i) => part(ch, i + 1)).join("\n") +
-        `\nFor both: most videos are remixes of what already won (each row says what it's based on). Keep the winner's recipe (format, hook, length, pacing) and change only the listed twist. Make every video in the file's order with its titles.\n\n` +
-        `Every video must be scheduled: give EVERY queue.json item a slot (0, 1, 2... in the file's order) so the upload tool spreads them across 5 PM to 8 AM. Never leave a video without a slot.\n\n` +
-        `When each channel is finished, tell me what's in its folder and the upload command. Then wait. When I say "done", clean up everything this batch left behind: delete all renders, frames, contact sheets, downloaded clips, split parts and temp files in your workspace, empty the _system\\parts folder on my laptop, and move the uploaded videos from both "Upload Today" folders into "Uploaded (delete later)" (delete them instead if I've allowed deleting). Tell me how much space was freed.`;
+        `\nFor both: most videos are remixes of what already won (each row says what it's based on). Keep the winner's recipe (format, hook, length, pacing) and change only the listed twist. Keep the file's order and titles.\n\n` +
+        `HOW TO WORK (read the header of "Downloads\\YOUTUBE HQ\\_system\\Local Render\\render.py" first: it has the job-file contract):\n` +
+        `1. Ask me for every folder and delete permission you'll need in ONE go at the start, so I can approve and step away.\n` +
+        `2. Build any new formats as functions in a new file in _system\\Bounce Engine (e.g. todayNN.py). Time escape/race seeds with dry=True. Never edit engine.py or old files.\n` +
+        `3. Write the job files: _system\\Local Render\\jobs\\bounce_today.py and ambient_today.py (JOBS in lineup order, DOWNLOADS for the ready clips, thumbnails last; Ambient longs use R.loop_long with copyright-safe audio layers). No /home/claude paths.\n` +
+        `4. Write queue.json (EVERY item gets a slot 0, 1, 2... in the file's order) and UPLOAD SHEET.txt into each "Upload Today" folder.\n` +
+        `5. Check your work cheaply: import each job file without errors, and render ONLY a 3-second preview of each brand-new format. Never render the full batch here.\n` +
+        `6. Then give me the exact steps, one channel at a time, as copy-paste Command Prompt lines:\n` +
+        `   cd "%USERPROFILE%\\Downloads\\YOUTUBE HQ\\_system\\Local Render"\n   python render.py bounce   (then)   python "..\\Upload Tool\\upload.py" bounce\n   python render.py ambient  (then)   python "..\\Upload Tool\\upload.py" ambient\n` +
+        `   and roughly how long each render takes.\n\n` +
+        `Then wait. If I paste an error from render.py, fix that job and tell me which command to rerun (finished videos are skipped). When I say "everything's scheduled, clean up", mark the used Agent HQ ideas done if you can push to the repo, then tell me to run  python render.py clean  (it deletes renders, clips, temp files and the already-uploaded videos, and shows how much space it freed).`;
       const row = el("div", "row"); row.style.gap = "8px"; row.style.flexWrap = "wrap"; row.style.margin = "6px 0 10px";
-      body.append(el("div", "small", "Planned " + (L.date || ago(L.createdAt)) + " · one prompt makes both channels · paste into a NEW Claude chat"));
+      body.append(el("div", "small", "Planned " + (L.date || ago(L.createdAt)) + " · one prompt sets up both channels · your laptop renders them"));
       const b = el("button", "btn primary", "Copy batch prompt (both channels)");
       b.onclick = async () => { try { await navigator.clipboard.writeText(txt); toast("Copied. Paste it into a new Claude chat."); } catch { const ta = el("textarea"); ta.value = txt; ta.rows = 7; ta.style.width = "100%"; row.after(ta); ta.select(); toast("Select and copy the text below."); } };
       row.append(b);

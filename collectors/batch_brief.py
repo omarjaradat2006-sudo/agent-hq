@@ -45,7 +45,9 @@ def brief(ch, items, s):
     out = []
     out.append(f"# {ch}: today's batch ({date})")
     out.append("")
-    out.append(f"Planned by Omar's Agent HQ YouTube team. Omar approves everything, so make exactly these {len(items)} videos, in this order, with these titles. Use the `{SKILL[ch]}` skill for how to render, folders, upload sheet and scheduling.")
+    out.append(f"Planned by Omar's Agent HQ YouTube team. Omar approves everything, so make exactly these {len(items)} videos, in this order, with these titles. Use the `{SKILL[ch]}` skill for content rules, folders, upload sheet and scheduling.")
+    out.append("")
+    out.append("**Rendering happens on Omar's laptop, not in this chat.** Write the job file `_system\\Local Render\\jobs\\" + ("bounce" if ch == "Bounce Theory" else "ambient") + "_today.py` (contract at the top of `_system\\Local Render\\render.py`), plus queue.json and UPLOAD SHEET.txt, then give Omar the `python render.py ...` and upload commands. Render only 3-second previews of brand-new formats to check them; this overrides any skill step that says to render in the cloud.")
     out.append("")
     out.append("Full data (ideas, footage, review): " + f"{RAW}/state.json")
     out.append("")
