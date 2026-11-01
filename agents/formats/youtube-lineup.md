@@ -27,6 +27,9 @@ Long videos have no big hits yet, so base them on what wins elsewhere plus Omar'
 
 The `note` is the visible twist on that winner ("same 30-pendulum wave, now rainbow-to-gold gradient and a glass-chime melody").
 
+## Language: English only
+Every title, on-screen line, description, tag and AI voice-over on BOTH channels is in English. Never translate a winner into Spanish or any other language, even if a foreign-language video did well (Islamic Shorts may show Arabic ayat with the English meaning). Swap any non-English title for an English one before saving.
+
 ## Titles
 Reuse the title pattern of the winner the slot is based on (same hook structure and emoji style), changing the specifics. Never copy a title word for word.
 

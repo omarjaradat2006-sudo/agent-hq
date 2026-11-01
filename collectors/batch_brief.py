@@ -51,6 +51,10 @@ def brief(ch, items, s):
     out.append("")
     out.append("Full data (ideas, footage, review): " + f"{RAW}/state.json")
     out.append("")
+    today = datetime.datetime.now(datetime.timezone(datetime.timedelta(hours=-5))).strftime("%Y-%m-%d")
+    if date != today:
+        out.append(f"> **STOP: this plan is from {date}, not today ({today}). These videos were probably already made and uploaded.** Don't remake them. Tell Omar the YouTube team didn't plan today and ask him to have it run again (or to say \"plan it yourself\").")
+        out.append("")
     out.append("## Hard rules")
     if ch == "Ambient Escape":
         out.append("1. **Long videos use the REAL downloaded clips below. Never draw, render or AI-generate a background scene for a slot whose clip says READY.** Download each clip from its link, check it with ffprobe, and list the downloaded files to Omar before rendering anything.")
@@ -66,6 +70,8 @@ def brief(ch, items, s):
     n = 5 if ch == 'Ambient Escape' else 6
     out.append(f"{n}. **Every video must be scheduled, never left Private.** Give EVERY item in `queue.json` a `slot` (0, 1, 2... in this file's order: strongest Short first, longs in the evening slots). The upload tool (`_system\\Upload Tool\\upload.py`) turns slots into publish times spread across the 5 PM to 8 AM window, 1 video at a time, never overlapping the previous batch. Check `queue.json` before finishing: if any item has no `slot`, fix it.")
     out.append(f"{n + 1}. You don't run the uploader yourself; Omar runs the upload command.")
+    out.append(f"{n + 2}. English only: every title, on-screen line, description and voice-over. Never Spanish or any other language.")
+    out.append(f"{n + 3}. Never remake a video that's already uploaded: check `_system\\Upload Tool\\logs\\*_uploaded_log.json` and skip or change any title already there.")
     out.append("")
     out.append("## The videos")
     out.append("")
@@ -137,7 +143,7 @@ def brief(ch, items, s):
     out.append(f"- Tell Omar which clip each video used (by file name) and any slot that fell back.")
     out.append(f"- Confirm every `queue.json` item has a `slot`, give Omar the upload command (`python \"%USERPROFILE%\\Downloads\\YOUTUBE HQ\\_system\\Upload Tool\\upload.py\" {'ambient' if ch == 'Ambient Escape' else 'bounce'}`), and say the tool schedules everything inside the 5 PM to 8 AM window by itself.")
     out.append(f"- If this session can push to {REPO}: set `made: true` on each lineup item made and `status: \"done\"` (and `doneAt` now) on each used idea in data/youtube/state.json, then commit and push. Never change any other status. Otherwise list the idea ids so Omar can press \"I did it\" on the site.")
-    out.append("- Then wait. When Omar says \"done\", clean up: delete all renders, frames, contact sheets, downloaded clips, split parts and temp files in your workspace, empty `_system\\parts` on his laptop, and move the uploaded videos into \"Uploaded (delete later)\". Say how much space was freed.")
+    out.append("- Then wait. When Omar says everything is uploaded/scheduled (\"okay\", \"done\"), clean up yourself with the delete permission you asked for at the start: empty `_system\\Local Render\\work`, `_system\\parts` and `_system\\Uploaded (delete later)`, plus any `.part`/temp files. Never delete anything still listed in a `queue.json`. Say how much space was freed. If you can't delete, tell him to run `python render.py clean`.")
     out.append("")
     out.append(f"_Generated {datetime.datetime.now(datetime.timezone.utc).strftime('%Y-%m-%d %H:%M UTC')}_")
     return "\n".join(out) + "\n"
