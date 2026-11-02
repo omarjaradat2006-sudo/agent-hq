@@ -481,11 +481,20 @@
   function vLeads(t, body) {
     const st = t.state, fl = st.formatLeads || [], tl = st.teamLeads || {};
     if (!fl.length && !Object.keys(tl).length) { body.append(empty("No leads yet", "Every morning the Lab hunts for what's winning right now and sends leads to each team. Each team's R&D Liaison uses them and reports back.")); return; }
-    const leadCard = (x) => { const c = el("div", "shot"); const ev = x.example || x.evidence || {}; const u = safeUrl(ev.url);
-      c.append(el("div", "t", x.name || x.title || "Lead")); const m = [x.channel, x.kind, ev.creator, ev.views || ev.metric, ev.vsAvg].filter(Boolean).join(" · "); if (m) c.append(el("div", "m", m));
+    const yst = (M.teams.youtube && M.teams.youtube.state) || {};
+    const bases = Object.values((yst.lineup && yst.lineup.channels) || {}).flatMap(a => Array.isArray(a) ? a : []).map(v => String((v && v.basis) || "")).filter(Boolean);
+    const skips = ((yst.labFeedback && yst.labFeedback.skipped) || []).map(String);
+    const useBadge = (x) => { const ev = x.example || {}, name = x.name || "";
+      const hit = s => s && bases.some(b => b.includes(s));
+      if (hit(ev.title) || hit(ev.creator)) return el("span", "pill s-ok lead-use", "Used in lineup");
+      const sk = name && skips.find(s => s.startsWith(name));
+      if (sk) { const why = sk.slice(name.length).replace(/^\s*[:\-–—]\s*/, "").trim(); return el("span", "pill s-waiting lead-use", why ? "Skipped: " + why : "Skipped"); }
+      return el("span", "pill s-off lead-use", "Not used yet"); };
+    const leadCard = (x, badge) => { const c = el("div", "shot"); const ev = x.example || x.evidence || {}; const u = safeUrl(ev.url);
+      c.append(el("div", "t", x.name || x.title || "Lead")); if (badge) c.append(useBadge(x)); const m = [x.channel, x.kind, ev.creator, ev.views || ev.metric, ev.vsAvg].filter(Boolean).join(" · "); if (m) c.append(el("div", "m", m));
       if (x.what || x.why) c.append(el("p", null, x.what || x.why)); if (x.howToMake || x.howToUse) c.append(el("div", "small", "How: " + (x.howToMake || x.howToUse)));
       if (u) { const a = el("a", null, "↗ " + (ev.title || "Example")); a.href = u; a.target = "_blank"; a.rel = "noopener"; c.append(a); } return c; };
-    if (fl.length) { const c = el("div", "card"); c.append(el("div", "label", "New YouTube formats · to the YouTube team")); fl.forEach(x => c.append(leadCard(x))); body.append(c); }
+    if (fl.length) { const c = el("div", "card"); c.append(el("div", "label", "New YouTube formats · to the YouTube team")); fl.forEach(x => c.append(leadCard(x, true))); body.append(c); }
     const label = { tiktok: "TikTok", youtube: "YouTube", linkedai: "LinkedAI", growth: "Growth Architect", opps: "AI Opportunities" };
     Object.entries(tl).forEach(([team, arr]) => { if (!Array.isArray(arr) || !arr.length) return; const c = el("div", "card"); c.append(el("div", "label", "To " + (label[team] || team)));
       arr.forEach(x => c.append(leadCard(x)));
