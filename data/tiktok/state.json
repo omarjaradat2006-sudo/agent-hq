@@ -1,34 +1,34 @@
 {
   "team": "tiktok",
   "hired": true,
-  "updatedAt": "2026-11-02T15:54:04Z",
+  "updatedAt": "2026-11-02T16:02:18Z",
   "agents": [
     {
       "id": "analyst",
       "name": "Analyst",
       "role": "Finds outlier videos",
       "status": "ok",
-      "doing": "Found 5 signals: same-exam comparison (309K/day), man's character list (21x), Movember Growmitment",
-      "lastRun": "2026-11-02T15:54:04Z",
-      "nextRun": "2026-10-29T13:41:00Z"
+      "doing": "Found 5 signals: same-exam comparison (309K/day), man's character list (21x), Movember",
+      "lastRun": "2026-11-02T16:02:18Z",
+      "nextRun": "2026-11-03T14:41:00Z"
     },
     {
       "id": "strategist",
       "name": "Strategist",
       "role": "Picks what to film next",
-      "status": "working",
-      "doing": "Picking today's 3 angles",
-      "lastRun": "2026-10-28T13:52:33Z",
-      "nextRun": "2026-10-29T13:41:00Z"
+      "status": "ok",
+      "doing": "Picked 3 scene-first angles: discipline, character, comparison (1 faith)",
+      "lastRun": "2026-11-02T16:02:18Z",
+      "nextRun": "2026-11-03T14:41:00Z"
     },
     {
       "id": "copywriter",
       "name": "Copywriter",
       "role": "Hooks and full scripts",
-      "status": "waiting",
-      "doing": "Waiting for the review",
-      "lastRun": "2026-10-28T13:52:33Z",
-      "nextRun": "2026-10-29T13:41:00Z"
+      "status": "ok",
+      "doing": "Wrote 3 scripts (A/B/C), VoicePrint pass done",
+      "lastRun": "2026-11-02T16:02:18Z",
+      "nextRun": "2026-11-03T14:41:00Z"
     },
     {
       "id": "reviewer",
@@ -36,8 +36,8 @@
       "status": "ok",
       "doing": "Reviewed 20 videos: topic captions ~285 median, shirt story still best since the drop",
       "role": "Explains why videos won or flopped",
-      "lastRun": "2026-11-02T15:47:56Z",
-      "nextRun": "2026-10-29T13:41:00Z"
+      "lastRun": "2026-11-02T16:02:18Z",
+      "nextRun": "2026-11-03T14:41:00Z"
     },
     {
       "id": "liaison",
@@ -45,20 +45,35 @@
       "role": "Brings in the R&D Lab's finds",
       "status": "ok",
       "doing": "Used 2 Lab caption leads; asked the Lab why keyword captions didn't lift reach",
-      "lastRun": "2026-11-02T15:54:04Z",
-      "nextRun": "2026-10-29T13:41:00Z"
+      "lastRun": "2026-11-02T16:02:18Z",
+      "nextRun": "2026-11-03T14:41:00Z"
     },
     {
       "id": "captions",
       "name": "Caption Coach",
       "role": "Search-friendly captions and on-screen keywords",
-      "status": "waiting",
-      "doing": "Waiting for the review",
-      "lastRun": "2026-10-28T13:52:33Z",
-      "nextRun": "2026-10-29T13:41:00Z"
+      "status": "ok",
+      "doing": "Wrote 3 caption packs: search phrase + question, no #fyp",
+      "lastRun": "2026-11-02T16:02:18Z",
+      "nextRun": "2026-11-03T14:41:00Z"
     }
   ],
   "log": [
+    {
+      "t": "2026-11-02T16:02:18Z",
+      "agent": "Caption Coach",
+      "msg": "Wrote 3 caption packs: search phrase + question, no #fyp"
+    },
+    {
+      "t": "2026-11-02T16:02:18Z",
+      "agent": "Copywriter",
+      "msg": "Wrote 3 scripts: Motivation vs discipline: same exam, three guys; Three small moments that show a man's real character; Comparing yourself at 1am? Look the other way"
+    },
+    {
+      "t": "2026-11-02T16:02:18Z",
+      "agent": "Strategist",
+      "msg": "Picked motivation vs discipline (309K same-exam format), man's character (21x outlier + Movember) and one faith slot on comparison; all open on a scene, per the review"
+    },
     {
       "t": "2026-11-02T15:54:04Z",
       "agent": "R&D Liaison",
@@ -910,6 +925,203 @@
       "status": "skipped",
       "createdAt": "2026-10-28T13:52:13Z",
       "decidedAt": "2026-11-02T02:05:58Z"
+    },
+    {
+      "id": "tiktok-2026-11-02-1",
+      "title": "Motivation vs discipline: same exam, three guys",
+      "hook": "Motivation vs discipline. Same exam Friday, three different guys.",
+      "why": "Today's top niche outlier is 'Motivated vs Disciplined vs Obsessed: Same Exam' (309K views in a day, 4.8x), and the review says scene-first opens beat your stat-opens. An exam is a moment every guy watching has lived.",
+      "format": "Talking head 45s",
+      "hookFamily": "Story / progressive reveal",
+      "length": 45,
+      "onScreen": "motivation vs discipline (which guy are you?)",
+      "scenes": [
+        {
+          "label": "Hook",
+          "time": "0-3s",
+          "line": "Motivation vs discipline. Same exam Friday, three different guys.",
+          "delivery": "lean in, flat, hold up three fingers"
+        },
+        {
+          "label": "Guy one",
+          "time": "3-10s",
+          "line": "Guy one watches a study video Sunday night. Gets hyped, makes a colour-coded plan, studies four hours Monday.",
+          "delivery": "a bit faster, half-smiling, you know this guy"
+        },
+        {
+          "label": "The crash",
+          "time": "10-16s",
+          "line": "Tuesday he's tired. Wednesday the hype's gone. Thursday night he's cramming and blaming the prof.",
+          "delivery": "slow down on each day, shrug on 'blaming the prof'"
+        },
+        {
+          "label": "Guy two",
+          "time": "16-27s",
+          "line": "Guy two never got hyped. Sunday he just decided, one hour after dinner, phone in the other room. Monday he didn't feel like it. Did the hour anyway.",
+          "delivery": "calm, steady, matter-of-fact"
+        },
+        {
+          "label": "Re-hook: guy three",
+          "time": "27-38s",
+          "line": "But guy three's the one nobody talks about. He's waiting to feel ready. Still waiting Thursday. I've been him. [fill in: your real exam or deadline you left too late, or cut this line if it's not true]",
+          "delivery": "lean closer, drop your voice, honest"
+        },
+        {
+          "label": "Payoff / last line",
+          "time": "38-45s",
+          "line": "Motivation shows up when it wants. Guy two had already decided. So which guy were you this week?",
+          "delivery": "flat and slow, look straight into the lens on the question"
+        }
+      ],
+      "hooksToTest": [
+        "I've been all three of these guys before one exam. Motivation vs discipline. [only if true] (Vulnerable admission)",
+        "If you only study when you feel motivated, you're guy one, and guy one fails Friday. (Call-out)",
+        "Motivation vs discipline is easier to see with one exam and three guys than any quote. (Curiosity loop)"
+      ],
+      "caption": "motivation vs discipline: which guy were you this week? #fyppppppppppppppppppppppp #viral #fyp #discipline #studymotivation",
+      "script": "Motivation vs discipline. Same exam Friday, three different guys.\n[pause]\nGuy one watches a study video Sunday night. Gets hyped, makes a colour-coded plan, studies four hours Monday.\n[pause]\nTuesday he's tired. Wednesday the hype's gone. Thursday night he's cramming and blaming the prof.\n[pause]\nGuy two never got hyped. Sunday he just decided, one hour after dinner, phone in the other room. Monday he didn't feel like it. Did the hour anyway.\n[pause]\nBut guy three's the one nobody talks about. He's waiting to feel ready. Still waiting Thursday. I've been him. [fill in: your real exam or deadline you left too late, or cut this line if it's not true]\n[pause]\nMotivation shows up when it wants. Guy two had already decided. So which guy were you this week?",
+      "formatted": "**VERSION A - Story / progressive reveal (~45s)**\n- **Why this one:** Three guys, one exam: the viewer sorts himself into one of them before the reveal, and the third guy is the twist.\n- **On-screen text (first 3-5s):** motivation vs discipline (which guy are you?)\n\n**Scene 1 - Hook (0-3s)**\n> Motivation vs discipline. Same exam Friday, three different guys.\n\n*Delivery:* lean in, flat, hold up three fingers\n\n[pause]\n\n**Scene 2 - Guy one (3-10s)**\n> Guy one watches a study video Sunday night. Gets hyped, makes a colour-coded plan, studies four hours Monday.\n\n*Delivery:* a bit faster, half-smiling, you know this guy\n\n[pause]\n\n**Scene 3 - The crash (10-16s)**\n> Tuesday he's tired. Wednesday the hype's gone. Thursday night he's cramming and blaming the prof.\n\n*Delivery:* slow down on each day, shrug on 'blaming the prof'\n\n[pause]\n\n**Scene 4 - Guy two (16-27s)**\n> Guy two never got hyped. Sunday he just decided, one hour after dinner, phone in the other room. Monday he didn't feel like it. Did the hour anyway.\n\n*Delivery:* calm, steady, matter-of-fact\n\n[pause]\n\n**Scene 5 - Re-hook: guy three (27-38s)**\n> But guy three's the one nobody talks about. He's waiting to feel ready. Still waiting Thursday. I've been him. [fill in: your real exam or deadline you left too late, or cut this line if it's not true]\n\n*Delivery:* lean closer, drop your voice, honest\n\n[pause]\n\n**Scene 6 - Payoff / last line (38-45s)**\n> Motivation shows up when it wants. Guy two had already decided. So which guy were you this week?\n\n*Delivery:* flat and slow, look straight into the lens on the question\n\n**Last line:** \"So which guy were you this week?\" (ends on a question, no loop)\n\n- **Hooks to test:**\n  - I've been all three of these guys before one exam. Motivation vs discipline. [only if true] (Vulnerable admission)\n  - If you only study when you feel motivated, you're guy one, and guy one fails Friday. (Call-out)\n  - Motivation vs discipline is easier to see with one exam and three guys than any quote. (Curiosity loop)\n- **Caption:** motivation vs discipline: which guy were you this week? #fyppppppppppppppppppppppp #viral #fyp #discipline #studymotivation",
+      "score": 8,
+      "sources": [
+        {
+          "title": "Motivated vs Disciplined vs Obsessed: Same Exam (Nobody Is Coming)",
+          "url": "https://www.youtube.com/watch?v=YdaG3mdUw4Q"
+        }
+      ],
+      "status": "pending",
+      "createdAt": "2026-11-02T16:01:53Z"
+    },
+    {
+      "id": "tiktok-2026-11-02-2",
+      "title": "Three small moments that show a man's real character",
+      "hook": "Your real character shows up in three small moments. Money's in none of them.",
+      "why": "'12 Things That Reveal a Man's True Character' is at 21.4x its channel average, and Movember 2026's theme is showing up for the men in your life. Your version keeps it to 3 everyday moments (the review's scene-first lesson) and lands on a real Marcus Aurelius line.",
+      "format": "Talking head 44s",
+      "hookFamily": "Calm hard truth (list)",
+      "length": 44,
+      "onScreen": "what shows a man's real character (none of it is money)",
+      "scenes": [
+        {
+          "label": "Hook",
+          "time": "0-5s",
+          "line": "Your real character shows up in three small moments. Money's in none of them.",
+          "delivery": "flat, serious, no smile"
+        },
+        {
+          "label": "Moment one",
+          "time": "5-15s",
+          "line": "One. How you talk about your boy when he's not in the room. If you'd say it different to his face, that's the real you.",
+          "delivery": "count it on your hand, slow on 'the real you'"
+        },
+        {
+          "label": "Moment two",
+          "time": "15-22s",
+          "line": "Two. What you do when nobody's checking. The workout nobody sees. The shift where the manager went home early.",
+          "delivery": "steady, a little quieter"
+        },
+        {
+          "label": "Re-hook: moment three",
+          "time": "22-32s",
+          "line": "The third one's the hardest. How you treat someone who can't do anything for you. The cashier. The new guy at work. Your little brother.",
+          "delivery": "pause before 'the third one', then list them slowly"
+        },
+        {
+          "label": "Payoff",
+          "time": "32-41s",
+          "line": "Marcus Aurelius was running an empire and wrote this to himself: stop talking about what the good man is like, and just be one.",
+          "delivery": "sit back, calm, like you're reading it off a page"
+        },
+        {
+          "label": "Last line",
+          "time": "41-44s",
+          "line": "So which one did you fail this week?",
+          "delivery": "straight to camera, honest, not preachy"
+        }
+      ],
+      "hooksToTest": [
+        "Your money says nothing about your character. These three moments do. (Debate line)",
+        "I failed one of these character tests this week, and it wasn't the one I expected. [fill in only if true] (Vulnerable admission)",
+        "If you talk about your boys behind their back, this one's for you. A man's real character comes down to three moments. (Call-out)"
+      ],
+      "caption": "what shows a man's real character, per Marcus Aurelius. Which one do you fail most? #fyppppppppppppppppppppppp #viral #fyp #stoicism #masculinity",
+      "script": "Your real character shows up in three small moments. Money's in none of them.\n[pause]\nOne. How you talk about your boy when he's not in the room. If you'd say it different to his face, that's the real you.\n[pause]\nTwo. What you do when nobody's checking. The workout nobody sees. The shift where the manager went home early.\n[pause]\nThe third one's the hardest. How you treat someone who can't do anything for you. The cashier. The new guy at work. Your little brother.\n[pause]\nMarcus Aurelius was running an empire and wrote this to himself: stop talking about what the good man is like, and just be one.\n[pause]\nSo which one did you fail this week?",
+      "formatted": "**VERSION B - Calm hard truth (list) (~44s)**\n- **Why this one:** Every guy quietly scores himself while you count, and the third moment is the one most of us fail.\n- **On-screen text (first 3-5s):** what shows a man's real character (none of it is money)\n\n**Scene 1 - Hook (0-5s)**\n> Your real character shows up in three small moments. Money's in none of them.\n\n*Delivery:* flat, serious, no smile\n\n[pause]\n\n**Scene 2 - Moment one (5-15s)**\n> One. How you talk about your boy when he's not in the room. If you'd say it different to his face, that's the real you.\n\n*Delivery:* count it on your hand, slow on 'the real you'\n\n[pause]\n\n**Scene 3 - Moment two (15-22s)**\n> Two. What you do when nobody's checking. The workout nobody sees. The shift where the manager went home early.\n\n*Delivery:* steady, a little quieter\n\n[pause]\n\n**Scene 4 - Re-hook: moment three (22-32s)**\n> The third one's the hardest. How you treat someone who can't do anything for you. The cashier. The new guy at work. Your little brother.\n\n*Delivery:* pause before 'the third one', then list them slowly\n\n[pause]\n\n**Scene 5 - Payoff (32-41s)**\n> Marcus Aurelius was running an empire and wrote this to himself: stop talking about what the good man is like, and just be one.\n\n*Delivery:* sit back, calm, like you're reading it off a page\n\n[pause]\n\n**Scene 6 - Last line (41-44s)**\n> So which one did you fail this week?\n\n*Delivery:* straight to camera, honest, not preachy\n\n**Last line:** \"So which one did you fail this week?\" (ends on a question that sends viewers back through the three moments)\n\n- **Hooks to test:**\n  - Your money says nothing about your character. These three moments do. (Debate line)\n  - I failed one of these character tests this week, and it wasn't the one I expected. [fill in only if true] (Vulnerable admission)\n  - If you talk about your boys behind their back, this one's for you. A man's real character comes down to three moments. (Call-out)\n- **Caption:** what shows a man's real character, per Marcus Aurelius. Which one do you fail most? #fyppppppppppppppppppppppp #viral #fyp #stoicism #masculinity",
+      "score": 7,
+      "sources": [
+        {
+          "title": "12 Things That Reveal a Man's True Character (MindShift Psychology)",
+          "url": "https://www.youtube.com/watch?v=YnREUcbDuOI"
+        },
+        {
+          "title": "Meditations 10.16, translations incl. Gregory Hays (2003)",
+          "url": "https://wist.info/marcus-aureleus/28892/"
+        },
+        {
+          "title": "Movember 2026: Make a Growmitment (VITA Daily)",
+          "url": "https://vitamagazine.com/2026/10/19/mo-than-a-moustache-why-movember-2026-is-about-showing-up-for-the-men-we-love/"
+        }
+      ],
+      "status": "pending",
+      "createdAt": "2026-11-02T16:01:53Z"
+    },
+    {
+      "id": "tiktok-2026-11-02-3",
+      "title": "Comparing yourself at 1am? Look the other way",
+      "hook": "Comparing yourself to guys on your feed? You're looking the wrong direction.",
+      "why": "Today's one faith slot. The review says faith reflections still have your best like rates (54 and 21 likes) but none has gone out since the drop, so this tests one. It opens on a moment (the 1am scroll), the shape that worked for the shirt video, and uses the Lab's keyword-caption and question-caption leads.",
+      "format": "Talking head 45s",
+      "hookFamily": "Curiosity loop",
+      "length": 45,
+      "onScreen": "how to stop comparing yourself (1am scroll edition)",
+      "scenes": [
+        {
+          "label": "Hook",
+          "time": "0-5s",
+          "line": "Comparing yourself to guys on your feed? You're looking the wrong direction.",
+          "delivery": "lean in, flat, slight head shake"
+        },
+        {
+          "label": "The moment",
+          "time": "5-15s",
+          "line": "You know the moment. It's 1am, some guy your age posts his new car, and suddenly your whole life feels behind. And nobody posts their bad month.",
+          "delivery": "softer, relatable, small laugh on 'behind'"
+        },
+        {
+          "label": "Re-hook",
+          "time": "15-19s",
+          "line": "But the fix for this is way older than any app.",
+          "delivery": "pause, then lower your voice"
+        },
+        {
+          "label": "Value: the hadith",
+          "time": "19-36s",
+          "line": "The Prophet ﷺ said: look at those who stand at a lower level than you, but don't look at those who stand at a higher level than you, for that is better suited that you do not disparage Allah's favours. That's Sahih Muslim [verify source].",
+          "delivery": "slow, respectful, every word clear"
+        },
+        {
+          "label": "Payoff / last line",
+          "time": "36-45s",
+          "line": "Keep chasing the goal. Just stop measuring your blessings against a highlight reel. Next time it hits at 1am, look the other way.",
+          "delivery": "calm and sure, loops back to 'wrong direction'"
+        }
+      ],
+      "hooksToTest": [
+        "I compared myself to a guy on my feed last night and felt behind for an hour. [fill in only if true] (Vulnerable admission)",
+        "Comparing yourself to guys online isn't ambition. There's a hadith about which way to look. (Debate line)",
+        "Stop comparing yourself to people above you. That's a direct instruction from the Prophet ﷺ. (Calm hard truth)"
+      ],
+      "caption": "how to stop comparing yourself as a muslim guy. What's one blessing you forgot you had? #fyppppppppppppppppppppppp #viral #fyp #muslim #comparison",
+      "script": "Comparing yourself to guys on your feed? You're looking the wrong direction.\n[pause]\nYou know the moment. It's 1am, some guy your age posts his new car, and suddenly your whole life feels behind. And nobody posts their bad month.\n[pause]\nBut the fix for this is way older than any app.\n[pause]\nThe Prophet ﷺ said: look at those who stand at a lower level than you, but don't look at those who stand at a higher level than you, for that is better suited that you do not disparage Allah's favours. That's Sahih Muslim [verify source].\n[pause]\nKeep chasing the goal. Just stop measuring your blessings against a highlight reel. Next time it hits at 1am, look the other way.",
+      "formatted": "**VERSION C - Curiosity loop (~45s)**\n- **Why this one:** 'Wrong direction' opens a loop the viewer can't close until the hadith tells him which way to look.\n- **On-screen text (first 3-5s):** how to stop comparing yourself (1am scroll edition)\n\n**Scene 1 - Hook (0-5s)**\n> Comparing yourself to guys on your feed? You're looking the wrong direction.\n\n*Delivery:* lean in, flat, slight head shake\n\n[pause]\n\n**Scene 2 - The moment (5-15s)**\n> You know the moment. It's 1am, some guy your age posts his new car, and suddenly your whole life feels behind. And nobody posts their bad month.\n\n*Delivery:* softer, relatable, small laugh on 'behind'\n\n[pause]\n\n**Scene 3 - Re-hook (15-19s)**\n> But the fix for this is way older than any app.\n\n*Delivery:* pause, then lower your voice\n\n[pause]\n\n**Scene 4 - Value: the hadith (19-36s)**\n> The Prophet ﷺ said: look at those who stand at a lower level than you, but don't look at those who stand at a higher level than you, for that is better suited that you do not disparage Allah's favours. That's Sahih Muslim [verify source].\n\n*Delivery:* slow, respectful, every word clear\n\n[pause]\n\n**Scene 5 - Payoff / last line (36-45s)**\n> Keep chasing the goal. Just stop measuring your blessings against a highlight reel. Next time it hits at 1am, look the other way.\n\n*Delivery:* calm and sure, loops back to 'wrong direction'\n\n**Last line:** \"Next time it hits at 1am, look the other way.\" ('look the other way' loops back into 'you're looking the wrong direction')\n\n- **Hooks to test:**\n  - I compared myself to a guy on my feed last night and felt behind for an hour. [fill in only if true] (Vulnerable admission)\n  - Comparing yourself to guys online isn't ambition. There's a hadith about which way to look. (Debate line)\n  - Stop comparing yourself to people above you. That's a direct instruction from the Prophet ﷺ. (Calm hard truth)\n- **Caption:** how to stop comparing yourself as a muslim guy. What's one blessing you forgot you had? #fyppppppppppppppppppppppp #viral #fyp #muslim #comparison",
+      "score": 7,
+      "sources": [
+        {
+          "title": "Sahih Muslim 2963c (sunnah.com)",
+          "url": "https://sunnah.com/muslim:2963c"
+        }
+      ],
+      "status": "pending",
+      "createdAt": "2026-11-02T16:01:53Z"
     }
   ],
   "research": [
@@ -1133,21 +1345,23 @@
     }
   ],
   "brief": {
-    "date": "2026-10-28",
-    "createdAt": "2026-10-28T13:52:33Z",
-    "headline": "Topic captions may be breaking your ~250-view slump",
-    "summary": "Your judged videos are still stuck at 249-303 views since Oct 21, down from ~700. The one lesson today: the shirt video, your first post in weeks with a caption that says what it's about, is already at 346 after ~35 hours, so keep putting the topic in the caption and on screen. Best idea today is the liking-gap video, the same 'real study kills a worry' shape as that post.",
+    "date": "2026-11-02",
+    "createdAt": "2026-11-02T16:02:18Z",
+    "headline": "Captions didn't fix reach; open on a real moment instead",
+    "summary": "Your last 4 posts got 237-367 views, about the same as the drop week, so topic captions alone didn't bring reach back. The lesson: the shirt video, which opens on a moment everyone's lived, still beats the scripts that opened on a stat or a debate claim. Best idea today is 'Motivation vs discipline: same exam, three guys', built on a format that hit 309K views in a day.",
     "filmToday": [
-      "The liking gap: they liked you more than you think — Psychology says the person you just talked to likes you more than you think.",
-      "Missing one day doesn't kill a habit — Missing one day doesn't kill a habit. Researchers actually checked.",
-      "Epictetus on looksmaxxing — A young guy walked in to see Epictetus with his hair done perfect."
+      "Motivation vs discipline: same exam, three guys — Motivation vs discipline. Same exam Friday, three different guys.",
+      "Three small moments that show a man's real character — Your real character shows up in three small moments. Money's in none of them.",
+      "Comparing yourself at 1am? Look the other way — Comparing yourself to guys on your feed? You're looking the wrong direction."
     ],
     "approvals": [
-      "12 ideas waiting for your approve/pass (3 new today)"
+      "3 new ideas waiting for your approve/pass",
+      "Waiting on Omar: Epictetus' fix for feeling out of control (looks like you posted it Oct 30; tap Done if so)",
+      "Waiting on Omar: Who you know is a skill, not luck (looks like you posted it Oct 28; tap Done if so)"
     ],
     "notes": [
-      "The Caption Coach's packs skip #fyp/#viral per Metricool, but the script captions still carry your 5-tag format. Try the Coach's version on one post and compare.",
-      "Reviewer skill suggestion still open: content-scripts' references/hook-playbook.md is missing, and a 40s default cap would match your data. Say 'apply the reviewer's skill suggestions' to apply them."
+      "Your recent captions still carry #muslim plus #fyp/#viral on non-faith videos and none asks a question. Try the Caption Coach's packs on the next 3 posts so we can compare.",
+      "Reviewer skill suggestion: make 'Relatable moment' a default hook family in content-scripts, since the shirt video beat all 3 stat/debate opens. Say 'apply the reviewer's skill suggestions' to apply it."
     ]
   },
   "processedIssues": [
@@ -1258,8 +1472,8 @@
     "skillSuggestions": [
       "content-scripts: make 'Relatable moment' (open on a specific everyday scene, e.g. the shirt) one of the default 3 hook families; your 3 stat/debate opens all landed below it",
       "content-scripts: in the caption step, only use #muslim on faith videos for the next 5 posts so the reviewer can compare",
-      "content-scripts: the 'references/hook-playbook.md' file the skill points to is still missing; re-add it",
-      "NEW SKILL idea: a 'posted' log (or use the site's Done button) so filmed scripts get matched to results; 3 posted scripts are still marked approved or skipped"
+      "NEW SKILL idea: a 'posted' log (or use the site's Done button) so filmed scripts get matched to results; 3 posted scripts are still marked approved or skipped",
+      "content-scripts: its caption rules (no #fyp/#viral, a question line) don't match the 5-tag caption format the TikTok team is told to use; pick one so scripts and the Caption Coach agree"
     ]
   },
   "reviewHistory": [
@@ -1309,43 +1523,42 @@
     "request": "The 4 keyword-caption posts (Oct 27-31) stayed at 237-367 views, same as before. Find what else small talking-head accounts (under 1k followers) changed when reach dropped after ~300 posts: posting time, length, first-frame text, or reposting old winners"
   },
   "captionPacks": {
-    "date": "2026-10-28",
+    "date": "2026-11-02",
     "packs": [
       {
-        "ideaId": "tiktok-2026-10-28-1",
-        "firstLine": "psychology of first impressions: people like you more than you think",
-        "question": "Who's someone you've been scared to text first?",
+        "ideaId": "tiktok-2026-11-02-1",
+        "firstLine": "motivation vs discipline explained with one exam",
+        "question": "Which of the three guys were you this week?",
         "hashtags": [
-          "#psychology",
-          "#overthinking",
-          "#socialanxiety"
-        ],
-        "onScreen": "psychology of first impressions"
-      },
-      {
-        "ideaId": "tiktok-2026-10-28-2",
-        "firstLine": "epictetus on looksmaxxing: stoic advice for young men",
-        "question": "How many hours a week do you spend on your looks vs your mind?",
-        "hashtags": [
-          "#stoicism",
-          "#epictetus",
-          "#looksmaxxing",
-          "#philosophy"
-        ],
-        "onScreen": "stoic advice on looksmaxxing"
-      },
-      {
-        "ideaId": "tiktok-2026-10-28-3",
-        "firstLine": "how long it takes to build a habit (66 days, not 21)",
-        "question": "What habit are you picking back up this week?",
-        "hashtags": [
-          "#habits",
           "#discipline",
+          "#studymotivation",
           "#selfimprovement"
         ],
-        "onScreen": "how long to build a habit"
+        "onScreen": "motivation vs discipline (which guy are you?)"
+      },
+      {
+        "ideaId": "tiktok-2026-11-02-2",
+        "firstLine": "what shows a man's real character (stoic advice)",
+        "question": "Which of the three moments do you fail most?",
+        "hashtags": [
+          "#stoicism",
+          "#marcusaurelius",
+          "#masculinity"
+        ],
+        "onScreen": "what shows a man's real character (none of it is money)"
+      },
+      {
+        "ideaId": "tiktok-2026-11-02-3",
+        "firstLine": "how to stop comparing yourself to others (islamic reminder)",
+        "question": "What's one blessing you forgot you had?",
+        "hashtags": [
+          "#muslim",
+          "#comparison",
+          "#gratitude"
+        ],
+        "onScreen": "how to stop comparing yourself (1am scroll edition)"
       }
     ],
-    "note": "6 of your last 10 captions were 'Follow for more'; the one topic caption (the embarrassing-shirt video, Oct 27) is at 346 views after ~35h, already above all 5 posts from Oct 21-24 (249-303). Early, but it fits Metricool's keyword-caption advice."
+    "note": "4 of your last 10 captions were topic lines (237-367 views, median ~286); the other 6 were 'Follow for more' (255-702, but 4 of those were the drop week at 255-312). None of the 10 asked a question and all 10 carried #fyp/#viral, so the question line and dropping generic tags are still untested."
   }
 }
