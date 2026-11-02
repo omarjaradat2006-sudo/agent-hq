@@ -1,7 +1,7 @@
 {
   "team": "linkedai",
   "hired": true,
-  "updatedAt": "2026-11-02T15:43:11Z",
+  "updatedAt": "2026-11-02T15:55:55Z",
   "agents": [
     {
       "id": "lead",
@@ -16,17 +16,17 @@
       "id": "watch",
       "name": "Competitor Watch",
       "role": "Extensions, pricing, reviews",
-      "status": "working",
-      "doing": "Studying competitors' content, ads and growth",
-      "lastRun": "2026-10-26T14:32:02Z",
+      "status": "ok",
+      "doing": "6 competitors profiled; ad libraries not reachable",
+      "lastRun": "2026-11-02T15:55:55Z",
       "nextRun": "2026-10-29T14:17:00Z"
     },
     {
       "id": "copywriter",
       "name": "Copywriter",
       "role": "Promo scripts and posts",
-      "status": "waiting",
-      "doing": "3 pieces ready for review",
+      "status": "working",
+      "doing": "Writing promo scripts",
       "lastRun": "2026-10-26T14:32:02Z",
       "nextRun": "2026-10-29T14:17:00Z"
     },
@@ -39,6 +39,11 @@
     }
   ],
   "log": [
+    {
+      "t": "2026-11-02T15:55:55Z",
+      "agent": "Competitor Watch",
+      "msg": "Biggest finding: Simplify grew from one clear LinkedIn post (50K+ views, 2,000 waitlist) and rivals charge $29-50/month; Weekday now has a free recruiter-message tool aimed at the same search as LinkedAI's outreach."
+    },
     {
       "t": "2026-11-02T15:43:11Z",
       "agent": "Competitor Watch",
@@ -137,6 +142,47 @@
   ],
   "research": [
     {
+      "date": "2026-11-02",
+      "createdAt": "2026-11-02T15:55:55Z",
+      "items": [
+        {
+          "title": "Simplify's founder post pitched one clear promise and got a 2,000-person waitlist",
+          "creator": "Michael Yan / Simplify",
+          "url": "https://consumerstartups.substack.com/p/simplify-0-1m-arr-playbook-behind",
+          "metric": "50,000+ views, ~2,000 waitlist sign-ups",
+          "whyItWorks": "A single plain promise to a pain people already feel beat cold emails. LinkedAI's promise is a message that finds real common ground; lead every video with that one outcome."
+        },
+        {
+          "title": "60-second green-screen job video topped 182,000 views",
+          "creator": "Makena Yee (via The Interview Guys)",
+          "url": "https://blog.theinterviewguys.com/tiktok-resumes/",
+          "metric": "182,000 views; reported 15+ job leads",
+          "whyItWorks": "Job-hunt videos with a face, a clear first-3-seconds claim and visual proof travel. Creators for LinkedAI should show the extension on a real profile in the first 5 seconds."
+        },
+        {
+          "title": "Job seekers say TikTok now beats LinkedIn for finding work; 2-3% of applications reach interviews",
+          "creator": "VICE (Josh Katz video resume: 'hundreds of thousands of views')",
+          "url": "https://www.vice.com/en/article/gen-z-started-using-tiktok-to-find-jobs-out-of-desperation-and-its-actually-working/",
+          "metric": "22.1% of Gen Z use TikTok vs 20.8% LinkedIn for job search (per article)",
+          "whyItWorks": "The audience already hangs out on TikTok and distrusts the apply button. A 'stop only applying' angle is credible there."
+        },
+        {
+          "title": "Free 'recruiter outreach writer' page targets 'how to message a recruiter on LinkedIn'",
+          "creator": "Weekday",
+          "url": "https://www.weekday.works/recruiter-outreach-writer",
+          "metric": "Claims 100,000+ outreach messages/month (own claim)",
+          "whyItWorks": "A rival is using a free SEO tool to collect people who want to message recruiters. LinkedAI can answer the same search with a page and win on finding common ground automatically."
+        },
+        {
+          "title": "Teal+ sells a $13/week option reviewers call a dark pattern",
+          "creator": "Teal (via MakerStack)",
+          "url": "https://makerstack.co/reviews/teal-review/",
+          "metric": "$29/month, $79/quarter, $13/week",
+          "whyItWorks": "Billing distrust is a gap. A clear monthly and yearly (20% off) Pro with no weekly trap is an easy comparison point in videos."
+        }
+      ]
+    },
+    {
       "date": "2026-10-26",
       "createdAt": "2026-10-26T14:31:33Z",
       "items": [
@@ -195,5 +241,118 @@
       "Sponsored creator reads need an #ad / paid partnership label — keep that in every creator brief."
     ]
   },
-  "processedIssues": []
+  "processedIssues": [],
+  "competitors": [
+    {
+      "name": "Simplify",
+      "url": "https://simplify.jobs",
+      "oneLiner": "Autofill Chrome extension that grew into an AI job-search copilot; job seekers of all levels.",
+      "price": "Simplify+ about $19.99/week or $39.99/month (per ResumeHog, Oct 2026)",
+      "channels": [
+        "LinkedIn (founder Michael Yan, 145K+ followers)",
+        "Reddit",
+        "Campus handouts"
+      ],
+      "topContent": [
+        {
+          "platform": "LinkedIn",
+          "title": "Michael Yan's first launch post pitching a 'common application for internships'",
+          "url": "https://consumerstartups.substack.com/p/simplify-0-1m-arr-playbook-behind",
+          "views": "50,000+ views, ~2,000 waitlist sign-ups",
+          "date": "early days",
+          "whyItWorked": "One clear promise to a pain every student already had."
+        },
+        {
+          "platform": "LinkedIn",
+          "title": "Yan's 'change 86400 to 3600 in the LinkedIn URL' job-search trick (covered by Fortune)",
+          "url": "https://www.fortune.com/2025/03/27/tech-ceo-michael-yan-linkedin-job-hunting-hack-gen-z-hiring-strategies",
+          "views": "nearly 8,850 reactions (no view count given)",
+          "date": "Mar 2025",
+          "whyItWorked": "A tiny, usable trick people can try in 10 seconds."
+        }
+      ],
+      "contentStrategy": "Founder-led LinkedIn posting every day as a job-search expert; best format is a job list where people comment their email.",
+      "ads": [],
+      "adStrategy": "Meta Ad Library and TikTok Creative Center could not be opened from this run (permission/robots block), so no ad creatives were verified. No paid-ad detail found in the articles read.",
+      "howTheyGrew": "Launch post to a ~2,000 waitlist, then Squid Game-styled business cards handed out at Stanford, MIT, Berkeley, Northeastern and Harvard (sources say 10,000 to 25,000+ cards) which helped pass 10,000 users. Now claims 800K+ job seekers and 70M+ applications processed, with a team under 10.",
+      "lessonForUs": "Copy the founder-free version of their best format: give something usable in seconds (a message that works) instead of explaining the product."
+    },
+    {
+      "name": "Teal",
+      "url": "https://www.tealhq.com",
+      "oneLiner": "Resume builder, job tracker and Chrome extension for job seekers.",
+      "price": "Free; Teal+ $29/month, $79/quarter, $13/week (no annual plan)",
+      "channels": [
+        "SEO and review sites",
+        "Chrome extension"
+      ],
+      "topContent": [],
+      "contentStrategy": "Mostly template/SEO pages (resume examples) and review-site coverage; no verified short-video view counts found (TikTok pages blocked to this run).",
+      "ads": [],
+      "adStrategy": "Meta Ad Library and TikTok Creative Center could not be opened from this run (permission/robots block), so no ad creatives were verified.",
+      "howTheyGrew": "Founded 2019 by Dave Fano (ex-WeWork); roughly $20M raised per MakerStack. Grew from a resume builder into a full job-search platform.",
+      "lessonForUs": "Beat on billing trust: reviewers call the $13/week option a dark pattern and say cancelling is fiddly. Say 'cancel anytime' plainly."
+    },
+    {
+      "name": "Jobscan",
+      "url": "https://www.jobscan.co",
+      "oneLiner": "Scores your resume against a job posting for ATS keywords.",
+      "price": "$49.95/month or $89.95/quarter (per The Interview Guys); free plan is 5 scans",
+      "channels": [
+        "Affiliate program"
+      ],
+      "topContent": [],
+      "contentStrategy": "Pays creators and sites through an affiliate programme rather than posting a lot itself.",
+      "ads": [],
+      "adStrategy": "Meta Ad Library and TikTok Creative Center could not be opened from this run (permission/robots block), so no ad creatives were verified. Jobscan runs an affiliate programme: 15% of each order, paid monthly, application and approval required, no bidding on its brand terms, no coupon sites.",
+      "howTheyGrew": "Affiliate-driven reach plus review roundups.",
+      "lessonForUs": "15% is the benchmark for creator commission in this category. Your flat fee plus affiliate share should be at least that on Pro."
+    },
+    {
+      "name": "Careerflow",
+      "url": "https://www.careerflow.ai",
+      "oneLiner": "LinkedIn profile optimizer, job tracker and Chrome extension.",
+      "price": "Free; Premium $23.99/month (about $14.41/month yearly); Premium Plus $44.99/month",
+      "channels": [
+        "Trustpilot 3.8/5 from ~20 reviews"
+      ],
+      "topContent": [],
+      "contentStrategy": "Positions on LinkedIn profile optimising; claims 'well over a million users' (their claim).",
+      "ads": [],
+      "adStrategy": "Meta Ad Library and TikTok Creative Center could not be opened from this run (permission/robots block), so no ad creatives were verified.",
+      "howTheyGrew": "Not documented in what I could read; the million-user figure is their own claim.",
+      "lessonForUs": "Reviewers cite lost progress, a tight free plan and surprise renewals. Make the free plan generous and the renewal email clear."
+    },
+    {
+      "name": "AIApply",
+      "url": "https://aiapply.co",
+      "oneLiner": "AI resume, cover letter, interview tools and auto-apply.",
+      "price": "Premium $29/month or $144/year; Auto Apply $49/month (~100 applications); add-ons $12-19/month each",
+      "channels": [
+        "Trustpilot 4.3/5 from ~2,000 reviews"
+      ],
+      "topContent": [],
+      "contentStrategy": "Sells automation volume.",
+      "ads": [],
+      "adStrategy": "Meta Ad Library and TikTok Creative Center could not be opened from this run (permission/robots block), so no ad creatives were verified.",
+      "howTheyGrew": "Not documented in what I could read.",
+      "lessonForUs": "Total cost climbs to $49-78+/month with add-ons, and users complain it applies to poor-fit jobs and refunds are hard. Position LinkedAI as 'fewer, better messages' not bulk."
+    },
+    {
+      "name": "Weekday (free recruiter outreach writer)",
+      "url": "https://www.weekday.works/recruiter-outreach-writer",
+      "oneLiner": "Free no-sign-up page that drafts a cold message to a recruiter from details you type in.",
+      "price": "Free",
+      "channels": [
+        "SEO page targeting 'how to message a recruiter on LinkedIn'"
+      ],
+      "topContent": [],
+      "contentStrategy": "A free, search-optimised tool is the top of its funnel into the job board and auto-apply.",
+      "ads": [],
+      "adStrategy": "Free tool as the entry point; no ads verified.",
+      "howTheyGrew": "SEO tool pages feeding a job-board funnel. Its performance claims (50%+ replies, etc.) are its own, unverified.",
+      "lessonForUs": "This is the closest rival to the outreach feature. It only works from what you type in; LinkedAI reads both profiles and finds common ground itself. Publish your own problem-first page for the same search."
+    }
+  ],
+  "competitorsUpdated": "2026-11-02T15:55:55Z"
 }
