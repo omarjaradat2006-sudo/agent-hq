@@ -1,14 +1,14 @@
 {
   "team": "tiktok",
   "hired": true,
-  "updatedAt": "2026-11-02T15:47:03Z",
+  "updatedAt": "2026-11-02T15:47:56Z",
   "agents": [
     {
       "id": "analyst",
       "name": "Analyst",
       "role": "Finds outlier videos",
-      "status": "waiting",
-      "doing": "Waiting for the review",
+      "status": "working",
+      "doing": "Researching what is working right now",
       "lastRun": "2026-10-28T13:52:33Z",
       "nextRun": "2026-10-29T13:41:00Z"
     },
@@ -33,10 +33,10 @@
     {
       "id": "reviewer",
       "name": "Performance Reviewer",
-      "status": "working",
-      "doing": "Reviewing how your last videos did",
+      "status": "ok",
+      "doing": "Reviewed 20 videos: topic captions ~285 median, shirt story still best since the drop",
       "role": "Explains why videos won or flopped",
-      "lastRun": "2026-10-28T13:52:33Z",
+      "lastRun": "2026-11-02T15:47:56Z",
       "nextRun": "2026-10-29T13:41:00Z"
     },
     {
@@ -59,6 +59,11 @@
     }
   ],
   "log": [
+    {
+      "t": "2026-11-02T15:47:56Z",
+      "agent": "Performance Reviewer",
+      "msg": "Topic captions didn't fix reach; the relatable shirt story still leads"
+    },
     {
       "t": "2026-11-02T15:47:03Z",
       "agent": "Performance Reviewer",
@@ -1099,102 +1104,125 @@
     2
   ],
   "review": {
-    "date": "2026-10-28",
-    "createdAt": "2026-10-28T13:53:00Z",
-    "headline": "Reach still stuck near 250-300; first keyword caption shows promise",
-    "summary": "Nothing new passed the 48-hour mark since yesterday, so your 19 judged videos still split cleanly: ~700-830 views before Oct 21, 249-303 after. Your newest post (the embarrassing-shirt overthinking video, Oct 27) is only ~35 hours old but already at 346 views, higher than any of the five drop-period posts, and it's the first one in weeks with a caption that says what the video is about. Too early to call, but it's the first sign the caption change might matter.",
+    "date": "2026-11-02",
+    "createdAt": "2026-11-02T15:47:56Z",
+    "headline": "Topic captions didn't fix reach; the relatable shirt story still leads",
+    "summary": "All 20 of your recent videos are now past 48 hours. The 4 posts with topic captions (Oct 27-31) got a median of about 285 views, basically the same as the 4 'Follow for more' posts from Oct 21-24 (about 270), so the caption change alone didn't bring reach back. The one that did a bit better was the embarrassing-shirt video (367 views, 18 likes), which opens on a moment everyone's lived; the three scripts that opened on a survey stat or a debate claim landed at 237-293.",
     "winners": [
       {
         "title": "Gratitude reflection ('Comment down what else your thankful for')",
         "url": "https://www.tiktok.com/@o.hustle44/video/7695983607550102791",
         "views": 834,
-        "vsAvg": "1.2x your median",
-        "why": "36s faith/gratitude reflection with a specific question caption (Oct 13). Only 1 comment, so the lift likely came from watch time. I can't watch it, so I can't judge the opening line."
+        "vsAvg": "1.58x your median",
+        "why": "36s faith/gratitude reflection with a question caption, posted Oct 13 before the reach drop. I can't watch it, so I can't judge the opening line."
       },
       {
-        "title": "Self-improvement talking video (#success #ai, Oct 8)",
+        "title": "Self-improvement talking video (Oct 8, 'Follow for more')",
         "url": "https://www.tiktok.com/@o.hustle44/video/7694102142541466888",
-        "views": 788,
-        "vsAvg": "1.13x your median",
-        "why": "40s with a 'Follow for more' caption, so the caption tells me nothing about the hook. Within the normal pre-Oct 21 range; weak signal."
+        "views": 790,
+        "vsAvg": "1.49x your median",
+        "why": "40s, generic caption, pre-drop. It sits in the normal ~700-830 range from before Oct 21, so it's a reach-era signal more than a hook signal."
       },
       {
         "title": "'Always choose the right' reminder (Oct 9)",
         "url": "https://www.tiktok.com/@o.hustle44/video/7694492529596615954",
-        "views": 783,
-        "vsAvg": "1.12x your median",
-        "why": "39s faith reminder with 54 likes (6.9% like rate, about double your usual). The topic connects with the people who see it."
+        "views": 785,
+        "vsAvg": "1.48x your median",
+        "why": "39s faith reminder with 54 likes (6.9% like rate, still your best). The topic lands hard with the people who see it."
       }
     ],
     "losers": [
       {
-        "title": "'Ts too hard' 2-second clip (Oct 5)",
-        "url": "https://www.tiktok.com/@o.hustle44/video/7693012871998885127",
-        "views": 34,
-        "vsAvg": "0.05x your median",
-        "why": "2-second meme clip, not a talking video. Off-format, not a fair comparison."
+        "title": "Connections beat hard work, but nobody tells you that's a skill too",
+        "url": "https://www.tiktok.com/@o.hustle44/video/7701860159441603847",
+        "views": 237,
+        "vsAvg": "0.45x your median",
+        "why": "Matches the 'Who you know is a skill, not luck' script (Debate line, opened on 'Most guys our age think who you know beats how hard you work'). Lowest of all 20. It's an abstract career claim with no scene, though it did pull 2 comments."
       },
       {
-        "title": "Self-improvement talking video (Oct 21)",
+        "title": "Self-improvement talking video (Oct 21, 'Follow for more')",
         "url": "https://www.tiktok.com/@o.hustle44/video/7698934409180744978",
-        "views": 249,
-        "vsAvg": "0.36x your median",
-        "why": "34s, 'Follow for more' caption. First post of the drop; the four after it stayed at 256-303 whatever the length, which points to reach, not this hook."
+        "views": 255,
+        "vsAvg": "0.48x your median",
+        "why": "34s, first post of the drop. Everything after it stayed at 237-367 whatever the length, caption or topic, so this is reach, not this hook."
       },
       {
-        "title": "Self-improvement talking video (Oct 23)",
-        "url": "https://www.tiktok.com/@o.hustle44/video/7699690091102375176",
-        "views": 256,
-        "vsAvg": "0.37x your median",
-        "why": "61s, one of your longest, 'Follow for more' caption. Every post in this stretch landed ~250-300, so I can't separate length from the drop."
+        "title": "'Comment down skill for the step by step guide' (Oct 15, AI)",
+        "url": "https://www.tiktok.com/@o.hustle44/video/7697044866387266832",
+        "views": 259,
+        "vsAvg": "0.49x your median",
+        "why": "Off-niche AI tool video, posted before the drop. It flopped while every on-niche post around it got ~700."
       }
     ],
     "patterns": [
-      "Step change on Oct 21 still holds: 13 of 14 posts before it got 690-834 views; all 5 judged posts since got 249-303, same posting window (9-11pm Toronto).",
-      "Your newest post (Oct 27, 346 views at ~35h, not yet judged) is the first with a topic caption ('Most people didn't even notice the embarrassing shirt. Stop overthinking...') and is already ahead of every drop-period post.",
-      "Faith/gratitude reflections hold the best like rates (54 and 21 likes) and 2 of the top 3 spots.",
-      "Winners were 31-40s; none of your 57-64s posts beat the median.",
-      "Off-niche posts (AI tool tutorial 259, UFC take 303) were the only sub-400 posts before the drop."
+      "Topic captions alone didn't move reach: Oct 27-31 topic-caption posts got 237-367 (median ~285) vs 255-312 for the Oct 21-24 'Follow for more' posts.",
+      "Since the drop, the best post (shirt, 367 views, 18 likes = 4.9% like rate) opens on an everyday moment; the three scripted posts that opened on a survey stat ('Six in ten guys...'), a debate claim ('who you know') or a research fact got 237-293 and 3.1-3.6% like rates.",
+      "Faith/gratitude reflections still own the best like rates (54 and 21 likes), but none has been posted since the drop, so there's no fresh data on them.",
+      "Comments are near zero on all 4 recent posts; none of their captions asked a question.",
+      "Recent captions tag #muslim on non-faith videos and still carry #fyp/#viral; I can't tell from 4 posts whether that helps or hurts."
     ],
     "formatScores": [
       {
-        "name": "Faith / gratitude reflection",
-        "videos": 2,
-        "medianViews": 808,
-        "vsAvg": "1.16x"
+        "name": "Relatable moment + psychology (shirt)",
+        "videos": 1,
+        "medianViews": 367,
+        "vsAvg": "0.69x (best since Oct 21)"
       },
       {
-        "name": "General self-improvement talking head",
-        "videos": 14,
-        "medianViews": 696,
-        "vsAvg": "1.0x"
+        "name": "Calm hard truth with number (habits)",
+        "videos": 1,
+        "medianViews": 293,
+        "vsAvg": "0.55x"
       },
       {
-        "name": "Off-niche (AI tool, UFC)",
+        "name": "Curiosity loop opened on a survey stat (control)",
+        "videos": 1,
+        "medianViews": 278,
+        "vsAvg": "0.53x"
+      },
+      {
+        "name": "Debate line on career (connections)",
+        "videos": 1,
+        "medianViews": 237,
+        "vsAvg": "0.45x"
+      },
+      {
+        "name": "Faith / gratitude reflection (pre-drop)",
         "videos": 2,
-        "medianViews": 281,
-        "vsAvg": "0.4x"
+        "medianViews": 810,
+        "vsAvg": "1.53x"
       }
     ],
     "doMore": [
-      "Topic caption line every post (like the shirt video), plus the same keyword on screen in the first 3 seconds",
-      "Keep videos 30-40s and open on the payoff",
-      "Psychology/overthinking angles: the shirt video (a real psychology finding) is your best post since the drop",
-      "One faith/gratitude reflection every few days"
+      "Open on a moment the viewer has lived (the shirt video's shape), then name the idea behind it",
+      "Keep 30-45s",
+      "End the caption with one specific question; nothing has asked one since the drop",
+      "Try one faith/gratitude reflection this week: best like rates, no post-drop test yet"
     ],
     "stopDoing": [
-      "'Follow for more' as the caption",
-      "Off-niche posts (AI tools, sports takes)",
-      "60s+ videos until reach recovers"
+      "Opening on a survey stat about 'guys our age'",
+      "Abstract career/networking debate hooks without a scene",
+      "'Follow for more' captions (still the rule)"
     ],
     "skillSuggestions": [
-      "content-scripts: make the caption step mandatory: first line is a search phrase for the topic, never 'Follow for more' (still on 15 of your last 20)",
-      "content-scripts: cap default versions at 40s; none of your 57-64s posts beat your median",
+      "content-scripts: make 'Relatable moment' (open on a specific everyday scene, e.g. the shirt) one of the default 3 hook families; your 3 stat/debate opens all landed below it",
+      "content-scripts: in the caption step, only use #muslim on faith videos for the next 5 posts so the reviewer can compare",
       "content-scripts: the 'references/hook-playbook.md' file the skill points to is still missing; re-add it",
-      "NEW SKILL idea: a 'posted' log where you mark which script each upload used, so the reviewer can match hooks to results"
+      "NEW SKILL idea: a 'posted' log (or use the site's Done button) so filmed scripts get matched to results; 3 posted scripts are still marked approved or skipped"
     ]
   },
   "reviewHistory": [
+    {
+      "date": "2026-11-02",
+      "headline": "Topic captions didn't fix reach; the relatable shirt story still leads",
+      "patterns": [
+        "Topic captions alone didn't move reach: Oct 27-31 topic-caption posts got 237-367 (median ~285) vs 255-312 for the Oct 21-24 'Follow for more' posts.",
+        "Since the drop, the best post (shirt, 367 views, 18 likes = 4.9% like rate) opens on an everyday moment; the three scripted posts that opened on a survey stat ('Six in ten guys...'), a debate claim ('who you know') or a research fact got 237-293 and 3.1-3.6% like rates.",
+        "Faith/gratitude reflections still own the best like rates (54 and 21 likes), but none has been posted since the drop, so there's no fresh data on them.",
+        "Comments are near zero on all 4 recent posts; none of their captions asked a question.",
+        "Recent captions tag #muslim on non-faith videos and still carry #fyp/#viral; I can't tell from 4 posts whether that helps or hurts."
+      ]
+    },
     {
       "date": "2026-10-28",
       "headline": "Reach still stuck near 250-300; first keyword caption shows promise",
