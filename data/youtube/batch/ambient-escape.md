@@ -97,4 +97,4 @@ Only upgrades marked done are installed. Use those; never use one that is only a
 - If this session can push to omarjaradat2006-sudo/agent-hq: set `made: true` on each lineup item made and `status: "done"` (and `doneAt` now) on each used idea in data/youtube/state.json, then commit and push. Never change any other status. Otherwise list the idea ids so Omar can press "I did it" on the site.
 - Then wait. When Omar says everything is uploaded/scheduled ("okay", "done"), clean up yourself with the delete permission you asked for at the start: empty `_system\Local Render\work`, `_system\parts` and `_system\Uploaded (delete later)`, plus any `.part`/temp files. Never delete anything still listed in a `queue.json`. Say how much space was freed. If you can't delete, tell him to run `python render.py clean`.
 
-_Generated 2026-11-02 16:14 UTC_
+_Generated 2026-11-02 23:13 UTC_
