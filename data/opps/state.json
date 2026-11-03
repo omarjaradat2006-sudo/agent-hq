@@ -1,7 +1,7 @@
 {
   "team": "opps",
   "hired": true,
-  "updatedAt": "2026-10-28T14:46:36Z",
+  "updatedAt": "2026-11-03T03:35:35Z",
   "agents": [
     {
       "id": "lead",
@@ -49,6 +49,11 @@
     }
   ],
   "log": [
+    {
+      "t": "2026-11-03T03:35:35Z",
+      "agent": "Venture Lead",
+      "msg": "Added copy-paste build prompts; ChatGPT app plan corrected (no upsells allowed) and already built"
+    },
     {
       "t": "2026-11-03T03:26:45Z",
       "agent": "Omar",
@@ -216,15 +221,16 @@
         }
       ],
       "status": "pending",
-      "createdAt": "2026-10-28T14:42:42Z"
+      "createdAt": "2026-10-28T14:42:42Z",
+      "buildPrompt": "Context: I'm Omar Jaradat, a university student in Mississauga, Ontario (Canada). I'm Muslim, so nothing haram (gambling, interest, adult, etc.). Small budget, Windows laptop; I download files to Downloads and run steps in PowerShell. I already run a Python video pipeline for my YouTube channels (Bounce Theory and Ambient Escape) and know Remotion and Whisper basics.\n\nGoal: a working clipping kit for Whop Content Rewards that turns one source video into 5 ready-to-post 9:16 clips with burned-in captions and a hook title, so I can post 3-5 clips a day in about 30 minutes.\n\nWork step by step and build it yourself:\n1. Check Whop Content Rewards' CURRENT rules and typical pay per 1K views (web search, cite the pages), including payouts to Canada and fees. Then list what campaign types to skip: gambling/casino, crypto-casino, dating, haram music or content.\n2. Write a Python script, clipper.py, that takes a video file or a URL I'm allowed to download (campaigns provide source files), transcribes it with faster-whisper on CPU, picks the 5 strongest 30-60s moments (a clear hook in the first 3 seconds, a complete thought), crops to 9:16 with a centered face or subject, burns in word-by-word captions, and adds a short hook title on top. Use only free tools (ffmpeg, faster-whisper, Python).\n3. Test it here on a short sample, fix bugs, and package it as clipper.zip with requirements.txt and one PowerShell install-and-run command for Windows. Tell me exactly where to put it (Downloads\\clipper).\n4. Give me a simple Google Sheet layout (or CSV) to track clip, campaign, platform, link, views and approved views.\n5. Write captions and 10 hook-title templates in my voice (use the voiceprint skill if available).\nRemember: clipping accounts are separate from my main TikTok. 2-week test: 40+ clips posted; under 50K approved views means stop, and a campaign with 100K+ means double down."
     },
     {
       "id": "opps-2026-10-28-3",
       "title": "Put LinkedAI inside ChatGPT as an app",
-      "hook": "Turn LinkedAI's post-writing into a ChatGPT App Directory listing that links to a paid upgrade; upside is free discovery, earnings likely small at first ($0-200/month).",
+      "hook": "A free LinkedAI app inside ChatGPT: write posts in your voice from notes, rewrite drafts, and get hooks, with a LinkedIn preview. It's a free billboard for LinkedAI, not a paywall.",
       "why": "You already have LinkedAI's prompts and logic; the App Directory is a new, uncrowded shelf. In-chat sales of digital goods aren't allowed yet, so money comes from linking out to your existing paid tier.",
       "format": "Hours: 15-25 to build, 2/week · Cost: $0-20/month hosting · First $: ~4-6 weeks (review time)",
-      "script": "1. Read OpenAI's Apps SDK docs; an app is an MCP server plus a small UI.\n2. Reuse LinkedAI's core: 'write a LinkedIn post from my notes', 'rewrite in my voice', 'make a hook'. Expose 3 tools only.\n3. Host the MCP server free/cheap (Cloudflare Workers or Vercel), with Claude helping write it.\n4. Add a free limit (e.g. 5 posts/week) and a link to your existing LinkedAI upgrade page.\n5. Submit to the directory; meanwhile post a demo on your TikTok and LinkedIn.\nRisks: app review can reject or delay; ChatGPT can already write LinkedIn posts, so the app must save real steps (voice profile, saved drafts); rules on monetization may change.\n2-week test (after approval): 100+ installs and 3+ upgrade clicks per day; if not, keep it as a free funnel only.",
+      "script": "UPDATED 2026-11-02: already built and tested in Claude (linkedai-chatgpt-app.zip). Rule check: OpenAI's app guidelines allow commerce only for physical goods and ban subscriptions/credits and freemium upsells 'directly or indirectly', so there's NO usage limit and NO upgrade link. The app is fully free and the LinkedAI name is the funnel.\n1. Unzip to Downloads, run setup.ps1 (Cloudflare free plan; $0 to run, because ChatGPT writes the text and the server only stores voice and drafts).\n2. Turn on ChatGPT Developer Mode, add the /mcp URL as a connector, and test the 3 tools.\n3. Start OpenAI org verification now (it takes days). Follow SUBMISSION.md: logo, 706px screenshots, web and mobile demo video, 5 positive and 3 negative test cases.\n4. Submit, and post the demo on TikTok and LinkedIn meanwhile.\nRisks: review takes 1-2 weeks and can bounce on assets; the workers.dev domain might not pass domain verification (move to a custom domain if so).\n2-week test after approval: 100+ users (Cloudflare request metrics). Count Chrome Web Store installs where users say they found LinkedAI in ChatGPT. If it misses, keep it free; it costs nothing.",
       "score": 5,
       "sources": [
         {
@@ -234,7 +240,8 @@
       ],
       "status": "approved",
       "createdAt": "2026-10-28T14:42:42Z",
-      "decidedAt": "2026-11-03T03:26:45Z"
+      "decidedAt": "2026-11-03T03:26:45Z",
+      "buildPrompt": "Context: I'm Omar Jaradat, a university student in Mississauga, Ontario (Canada). I'm Muslim, so nothing haram (gambling, interest, adult, etc.). Small budget, Windows laptop; I download files to Downloads and run steps in PowerShell.\n\nI have a finished ChatGPT app for my LinkedAI brand in Downloads\\linkedai-chatgpt-app (from linkedai-chatgpt-app.zip). It's a Cloudflare Worker MCP server (stateless Streamable HTTP, JSON responses, no SDK) with 3 tools (save_my_voice, get_my_voice, show_post), a LinkedIn-preview widget (text/html+skybridge) in src/widget.js, KV storage bound as VOICES, privacy/terms pages, and test/smoke.mjs with 14 checks. README.md and SUBMISSION.md explain everything.\n\nGoal: get it live, working in my ChatGPT, and submitted to the ChatGPT app directory.\n\nWork step by step, doing everything you can yourself:\n1. Read README.md, SUBMISSION.md, wrangler.toml and src/index.js.\n2. Give me the exact PowerShell commands to deploy (powershell -ExecutionPolicy Bypass -File .\\setup.ps1), one per line. Wait for my output and fix any error with the smallest change.\n3. Walk me through connecting the /mcp URL in ChatGPT Developer Mode and running the 3 test prompts from README.md.\n4. Check OpenAI's CURRENT app submission guidelines (developers.openai.com/apps-sdk) for anything that changed, especially monetization. Keep the app free with no upsell unless the rules now allow it.\n5. Make the submission assets: a square PNG logo (no border, no rounded corners), 1-4 widget screenshots 706px wide at 2x with no chat text, and the listing text, test cases and annotation justifications from SUBMISSION.md.\n6. If domain verification rejects workers.dev, walk me through adding a custom domain in Cloudflare and putting the OpenAI token in OPENAI_APPS_TOKEN.\nDon't add an SDK, framework, login, or paid service. Finish line: the app is submitted, plus a checklist of what's still waiting on me (org verification, demo video)."
     }
   ],
   "research": [
