@@ -1,12 +1,10 @@
-# Ambient Escape: today's batch (2026-11-02)
+# Ambient Escape: today's batch (2026-11-03)
 
 Planned by Omar's Agent HQ YouTube team. Omar approves everything, so make exactly these 17 videos, in this order, with these titles. Use the `ambient-escape-videos` skill for content rules, folders, upload sheet and scheduling.
 
 **Rendering happens on Omar's laptop, not in this chat.** Write the job file `_system\Local Render\jobs\ambient_today.py` (contract at the top of `_system\Local Render\render.py`), plus queue.json and UPLOAD SHEET.txt, then give Omar the `python render.py ...` and upload commands. Render only 3-second previews of brand-new formats to check them; this overrides any skill step that says to render in the cloud.
 
 Full data (ideas, footage, review): https://raw.githubusercontent.com/omarjaradat2006-sudo/agent-hq/main/data/youtube/state.json
-
-> **STOP: this plan is from 2026-11-02, not today (2026-11-03). These videos were probably already made and uploaded.** Don't remake them. Tell Omar the YouTube team didn't plan today and ask him to have it run again (or to say "plan it yourself").
 
 ## Hard rules
 1. **Long videos use the REAL downloaded clips below. Never draw, render or AI-generate a background scene for a slot whose clip says READY.** Download each clip from its link, check it with ffprobe, and list the downloaded files to Omar before rendering anything.
@@ -24,58 +22,55 @@ Most of these are remixes of videos that already won. Keep each winner's recipe 
 
 | Slot | Kind | Title | Format | Based on | Today's twist | Clip |
 |---|---|---|---|---|---|---|
-| S01 | Short | Allah will bring ease after hardship / Quran 65:7 #shorts #quran | ayah_reminder | Your hit: 'Allah hasn't forgotten you / Quran 93:3' · 1,336 views · 96% watched | Starry sky loop; Quran 65:7 ('Allah will bring about, after hardship, ease'), 'ease' in yellow; 11 s | `AE-starry-sky-01.mp4` READY |
-| S02 | Short | What Allah says about patience 🤍 #shorts #islam #quran | what_allah_says | Your hit: 'What Allah says about your parents 🤍' · 1,296 views · 99% watched | Forest mist loop; topic: patience, Quran 2:153 ('Indeed, Allah is with the patient'); 13 s | `AE-forest-mist-01.mp4` READY |
-| S03 | Short | Every bounce, the ring gets SMALLER 😳 Wait for the end #shorts | bounce sim (off-niche) | Your hit: 'Every bounce, the ball gets BIGGER 😳 Wait for the end' · 3,417 views · 76% watched | Same 27 s Bounce Engine scene, now the ring shrinks in teal and gold with a calm bell note per bounce and no Islamic text; generated, no footage |  |
-| S04 | Short | Don't despair of Allah's mercy / Quran 39:53 #shorts #quran | ayah_reminder | Your hit: 'Where hearts find rest / Quran 13:28' · 1,175 views · 99% watched | Ocean waves loop; Quran 39:53 ('Do not despair of the mercy of Allah'), 'mercy' in yellow; 11 s | `AE-ocean-waves-01.mp4` READY |
-| S05 | Short | What Allah says about your plans 🤍 #shorts #islam #quran | what_allah_says | Your hit: 'What Allah says about being grateful 🤍' · 950 views · 123% watched | Candle glow loop; topic: plans, Quran 3:159 ('when you have decided, then rely upon Allah'); 13 s | `AE-candle-glow-01.mp4` READY |
-| S06 | Short | 3 things that follow you after you die 🤍 #shorts #islam #reminder | question_hook_reflection | Your hit: '3 questions in the grave. Are you ready? 🤍' · 1,438 views · 108% watched | Night rain window; ongoing charity, beneficial knowledge, a righteous child who prays for him (Sahih Muslim 1631 on screen); one item per 3 s; 13 s | `AE-night-rain-window-01.mp4` READY |
-| S07 | Short | The version of you that prays Isha on time wins #shorts #salah | discipline_reminder | Your hit: 'The version of you that prays on time wins' · 1,457 views · 97% watched | Moon night loop; same identity line aimed at Isha, last line in yellow; 10 s | `AE-moon-night-01.mp4` READY |
-| S08 | Short | How many verses are in Surah Al-Fatiha? 🤔 #shorts #quran #quiz | number_quiz | Your hit: 'How many surahs are in the Quran? 🤔' · 912 views · 97% watched | Starry sky; options 5 / 7 / 9, answer 7, then 'comment the one you love most'; 13 s | `AE-starry-sky-01.mp4` READY |
-| S09 | Short | Which surah has no Bismillah at its start? 🤍 #shorts #quiz | guess_the_surah | Your hit: 'Only real ones know this surah 🤍' · 1,017 views · 220% watched | Forest mist; answer At-Tawbah (9), 3-s answer reveal; 13 s | `AE-forest-mist-01.mp4` READY |
-| S10 | Short | He is with you wherever you are / Quran 57:4 #shorts #quran | ayah_reminder | Your hit: 'Allah is closer to you than you think / Quran 50:16' · 785 views · 141% watched | Ocean waves loop; Quran 57:4 ('And He is with you wherever you are'), 'with you' in yellow; 11 s | `AE-ocean-waves-01.mp4` READY |
-| S11 | Short | No signal... so I listened to the rain 🌧️ #shorts #rain #sleep | Rain story Short | Winning elsewhere: 'Power Cut on a Hot Summer Night 🌙 Then the Monsoon Rain Begins!' by Ghibli Village Stories · 4.3x their average (178,950 views) | Candle-lit silence → first drops on the window → full rain, story text only, new line each beat; 22 s | `AE-night-rain-window-01.mp4` READY |
-| S12 | Short | Surah Al-Fatiha, line by line, in English 🤍 #shorts #quran | fatiha_meaning_text | Winning elsewhere: 'beautiful quran recitation ... surah Al fatiha' by Rah-e-noor · 21.0x their average (41,857 views) | Text only, no reciter audio: the 7 ayat as English meaning, one line per 3 s over a rain-on-leaves loop with synthesized rain, last line in yellow; 20 s | `AE-rain-leaves-01.mp4` READY |
-| S13 | Short | Snowed in. Phone off. 3 hours of this on the channel ❄️🔥 #shorts | seasonal_room_short | Winning elsewhere: 'Cozy Winter Cabin in a Blizzard' by Istorium · 2.9x their average (404,734 views) | Fireplace loop with synthesized crackle and soft wind, no Islamic text, one line in yellow, points to the 3-hour long; 15 s | `AE-fire-portrait-01.mp4` MISSING (not_found) |
-| S14 | Short | Complete the ayah 🤲 Only 1% get it right #shorts #quran #quiz | Complete the Ayah (3-option quiz) ★ NEW | Test: your guess_the_surah quizzes reach 1,017 views at 220% watched; a complete-the-verse quiz adds a choice to tap | Follow the approved Complete the Ayah spec; verse reference on screen and answer re-checked against the Quran text; 20 s | `AE-starry-sky-01.mp4` READY |
-| S15 | Short | What Allah says about your night prayer 🤍 #shorts #islam #quran | what_allah_says | Your hit: 'What Allah says about being grateful 🤍' · 950 views · 123% watched | Moon night loop; topic: tahajjud, Quran 17:79 ('...pray with it as additional worship for you; it is expected that your Lord will resurrect you to a praised station'); 13 s | `AE-moon-night-01.mp4` READY |
-| L1 | Long | Heavy Rain & Thunder on a Stormy Night ⛈️ Dark Screen for Sleep / 3 Hours | rain_thunder_long | Winning elsewhere: 'Heavy Rain and Thunder Sounds for Sleeping / Defeat Insomnia ... Black Screen' by Deep Sleep Rain · 9.5x their average (54,089 views) | Scene: dark storm-cloud loop dimmed to 85% black after 20 min; audio: heavy rain -8 dB, thunder roll every ~12 min -18 dB, wind -26 dB, brown noise -30 dB, no music; 3:00:00. Test & Compare titles: 1) this one, 2) 'Heavy Rain and Thunder Storm ⛈️ Fall Asleep Fast / Dark Screen 3 Hours', 3) 'Can't Sleep? Thunderstorm & Pouring Rain 🌧️ Black Screen' | `AE-storm-clouds-01.mp4` READY |
-| L2 | Long | Snowed In at a Mountain Lodge ❄️ Blizzard Wind & Crackling Fire / 3 Hours | blizzard_cabin_long | Winning elsewhere: 'Cozy Winter Cabin in a Blizzard' by Istorium · 2.9x their average (404,734 views); 'Halloween Living Room Ambience' by Phantom Melodies · 6.8x (99,386) | Scene: snowy cabin night loop, fireplace clip crossfaded in every 20 min; audio: blizzard wind -12 dB, fire crackle -14 dB, brown noise -28 dB, no music, no thunder (differs from L1); 3:00:00. Test & Compare titles: 1) this one, 2) 'Blizzard Outside, Fire Inside ❄️🔥 Cozy Cabin for Deep Sleep / 3 Hours', 3) 'Winter Storm Cabin Ambience ❄️ Snowstorm & Fireplace' | `AE-snowy-cabin-night-01.mp4 + AE-fireplace-close-01.mp4` MISSING (wanted) |
+| S01 | Short | Hardship is never the end / Quran 94:6 #shorts #quran | ayah_reminder | Your hit: 'Allah hasn't forgotten you / Quran 93:3' · 1,336 views · 96% watched | Falling-snow loop; Quran 94:6 ('Indeed, with hardship comes ease'), 'ease' in yellow; 11 s | `AE-snowfall-night-01.mp4` MISSING (not_found) |
+| S02 | Short | What Allah says about forgiveness 🤍 #shorts #islam #quran | what_allah_says | Your hit: 'What Allah says about your parents 🤍' · 1,296 views · 99% watched | Sunrise-clouds loop; Quran 4:110 ('whoever seeks forgiveness of Allah will find Allah Forgiving and Merciful'), 'Forgiving' in yellow; 13 s | `AE-sunrise-clouds-01.mp4` READY |
+| S03 | Short | Every bounce, the ball gets BIGGER 😳 Can it fit the circle? #shorts | bounce sim (off-niche) | Your hit: 'Every bounce, the ball gets BIGGER 😳 Wait for the end' · 3,417 views · 76% watched | Same 27 s Bounce Engine scene, now violet and gold with a calm bell note per bounce and a yellow ball-size counter, no Islamic text |  |
+| S04 | Short | Remember Me and I will remember you / Quran 2:152 #shorts #quran | ayah_reminder | Your hit: 'Where hearts find rest / Quran 13:28' · 1,175 views · 99% watched | Waterfall loop; Quran 2:152 ('So remember Me; I will remember you'), 'remember you' in yellow; 11 s | `AE-waterfall-forest-01.mp4` READY |
+| S05 | Short | What Allah says about your rizq 🤍 #shorts #islam #quran | what_allah_says | Your hit: 'What Allah says about being grateful 🤍' · 950 views · 123% watched | Fire-flames loop; Quran 11:6 ('There is no creature on earth but that its provision is on Allah'), 'provision' in yellow; 13 s | `AE-fire-flames-01.mp4` READY |
+| S06 | Short | The heaviest thing on your scale, and it costs nothing 🤍 #shorts #islam #reminder | question_hook_reflection | Your hit: '3 questions in the grave. Are you ready? 🤍' · 1,438 views · 108% watched | Rain-on-leaves loop; 'Nothing is heavier on the Scale than good character' (Sunan al-Tirmidhi 2002), 'good character' in yellow; 12 s | `AE-rain-leaves-01.mp4` READY |
+| S07 | Short | The version of you that prays Fajr on time wins #shorts #salah | discipline_reminder | Your hit: 'The version of you that prays on time wins' · 1,457 views · 97% watched | Moon-night loop; same identity line aimed at Fajr, last line in yellow; 10 s | `AE-moon-night-01.mp4` READY |
+| S08 | Short | How many prophets are named in the Quran? 🤔 #shorts #quran #quiz | number_quiz | Your hit: 'How many surahs are in the Quran? 🤔' · 912 views · 97% watched | Falling-snow loop; options 15 / 25 / 35, answer 25, then 'comment the one you love most'; 13 s | `AE-snowfall-night-01.mp4` MISSING (not_found) |
+| S09 | Short | Which is the longest surah in the Quran? 🤍 #shorts #quiz | guess_the_surah | Your hit: 'Only real ones know this surah 🤍' · 1,017 views · 220% watched | Desert-dunes loop; options Al-Baqarah / Al-Imran / An-Nisa, answer Al-Baqarah (2), 3-s answer reveal; 13 s (format is 0.4x median overall, so one slot only) | `AE-desert-dunes-01.mp4` READY |
+| S10 | Short | Allah never burdens a soul beyond its capacity / Quran 2:286 #shorts #quran | ayah_reminder | Your hit: 'You hate it now, but it may be good for you / Quran 2:216' · 1,112 views · 100% watched | Desert-dunes loop; Quran 2:286 ('Allah does not burden a soul beyond its capacity'), 'capacity' in yellow; 11 s | `AE-desert-dunes-01.mp4` READY |
+| S11 | Short | Snowed in. No signal... so I watched the snow ❄️ #shorts #cozy #sleep | weather_story_short | Winning elsewhere: 'Cozy Winter Cabin in a Blizzard' by Istorium · 404,734 views · 2.9x their average | Snow-night loop, story text only (one new line per beat: lights flicker → wind rises → full snowfall), synthesized soft wind; 22 s | `AE-snowfall-night-01.mp4` MISSING (not_found) |
+| S12 | Short | Surah Al-Ikhlas, line by line, in English 🤍 #shorts #quran | surah_meaning_text | Winning elsewhere: 'beautiful quran recitation ... surah Al fatiha' by Rah-e-noor · 42,023 views · 21.3x their average | Text only, no reciter audio: the 4 ayat of Surah 112 as English meaning, one line per 3 s over a waterfall loop with soft synthesized water ambience; 14 s | `AE-waterfall-forest-01.mp4` READY |
+| S13 | Short | Fireplace on, snow outside. 3 hours of this on the channel 🔥❄️ #shorts | seasonal_room_short | Winning elsewhere: '(NO MID-ROLL ADS) Halloween Living Room Ambience' by Phantom Melodies · 100,549 views · 7.0x their average | Fire-flames loop with synthesized crackle and soft wind, no Islamic text, one line in yellow pointing to today's 3-hour Christmas-cozy video; 12 s | `AE-fire-flames-01.mp4` READY |
+| S14 | Short | Complete the ayah 🤲 Only 1% get it right #shorts #quran #quiz | complete_the_ayah ★ NEW | Test: your guess_the_surah quizzes hit 1,017 views at 220% watched; the Complete the Ayah spec (done) is a different quiz mechanic with the same pull | Quran 13:28 'Verily, in the remembrance of Allah do ___ find rest' options hearts / eyes / souls, answer hearts, reference on screen, answer re-checked; 13 s | `AE-sunrise-clouds-01.mp4` READY |
+| S15 | Short | What Allah says about your tongue 🤍 #shorts #islam #quran | what_allah_says | Your hit: 'What Allah says about being grateful 🤍' · 950 views · 123% watched | Moon-night loop; Quran 50:18 ('Man does not utter any word except that with him is an observer prepared [to record]'), 'observer' in yellow; 13 s | `AE-moon-night-01.mp4` READY |
+| L1 | Long | Cozy Christmas Living Room ❄️ Crackling Fireplace & Snowfall / 3 Hours | christmas_cozy_long | Winning elsewhere: 'Cozy Christmas Ambience 4K' by Christmas Notes · 29,598 views · 6.0x their average; 'Halloween Living Room Ambience' by Phantom Melodies · 100,549 views · 7.0x | Scene: Christmas-tree lights loop with the snowy cabin clip crossfaded in every 25 min; audio: fire crackle -10 dB, soft wind -22 dB, no music, no thunder (different from yesterday's storm long) | `AE-christmas-lights-01.mp4 + AE-snowy-cabin-night-01.mp4` MISSING (wanted) |
+| L2 | Long | Rain on the Window & Soft Piano 🌧️ Fall Asleep Fast / 3 Hours | rain_piano_long | Winning elsewhere: '(No Ads) Peaceful Rain and Piano Music for Healing Sleep' by Relaxation & Sleep · 65,934 views · 8.9x their average | Scene: landscape rain-on-window clip dimmed 30% after 20 min; audio: steady rain -9 dB, synthesized soft piano pad (own notes, no recorded music) -20 dB, no thunder (different from yesterday's cabin long) | `AE-rain-window-02.mp4` READY |
 
 ## Clips to download first
 
-- **AE-starry-sky-01.mp4** for S01, S08, S14: READY (28s · 15.6 MB)
-  - Download: `curl -L -o "AE-starry-sky-01.mp4" "https://github.com/omarjaradat2006-sudo/agent-hq/releases/download/footage-2026-10-26/AE-starry-sky-01.mp4"`
-  - Description credit: Video by bellergy on Pixabay
-- **AE-forest-mist-01.mp4** for S02, S09: READY (1080x1920 · 54s · 71.2 MB)
-  - Download: `curl -L -o "AE-forest-mist-01.mp4" "https://github.com/omarjaradat2006-sudo/agent-hq/releases/download/footage-2026-10-27/AE-forest-mist-01.mp4"`
-  - Description credit: Video by Matthias_Groeneveld on Pixabay
-- **AE-ocean-waves-01.mp4** for S04, S10: READY (1080x1920 · 16s · 10.0 MB)
-  - Download: `curl -L -o "AE-ocean-waves-01.mp4" "https://github.com/omarjaradat2006-sudo/agent-hq/releases/download/footage-2026-10-26/AE-ocean-waves-01.mp4"`
-  - Description credit: Video by Mario_Krimer on Pixabay
-- **AE-candle-glow-01.mp4** for S05: READY (1080x1920 · 20s · 2.0 MB)
-  - Download: `curl -L -o "AE-candle-glow-01.mp4" "https://github.com/omarjaradat2006-sudo/agent-hq/releases/download/footage-2026-10-27/AE-candle-glow-01.mp4"`
-  - Description credit: Video by Placidplace on Pixabay
-- **AE-night-rain-window-01.mp4** for S06, S11: READY (2160x3840 · 10s · 16.7 MB)
-  - Download: `curl -L -o "AE-night-rain-window-01.mp4" "https://github.com/omarjaradat2006-sudo/agent-hq/releases/download/footage-2026-10-28/AE-night-rain-window-01.mp4"`
-  - Description credit: Video by Turning_Pages on Pixabay
+- **AE-snowfall-night-01.mp4** for S01, S08, S11: MISSING (not_found). Use another READY clip that fits, or an existing scene, and say so.
+- **AE-sunrise-clouds-01.mp4** for S02, S14: READY (2160x3840 · 20s · 114.9 MB)
+  - Download: `curl -L -o "AE-sunrise-clouds-01.mp4" "https://github.com/omarjaradat2006-sudo/agent-hq/releases/download/footage-2026-11-03/AE-sunrise-clouds-01.mp4"`
+  - Description credit: Video by Kanenori on Pixabay
+- **AE-waterfall-forest-01.mp4** for S04, S12: READY (2160x3840 · 20s · 211.7 MB)
+  - Download: `curl -L -o "AE-waterfall-forest-01.mp4" "https://github.com/omarjaradat2006-sudo/agent-hq/releases/download/footage-2026-11-03/AE-waterfall-forest-01.mp4"`
+  - Description credit: Video by Kanenori on Pixabay
+- **AE-fire-flames-01.mp4** for S05, S13: READY (2160x2760 · 15s · 3.1 MB)
+  - Download: `curl -L -o "AE-fire-flames-01.mp4" "https://github.com/omarjaradat2006-sudo/agent-hq/releases/download/footage-2026-11-03/AE-fire-flames-01.mp4"`
+  - Description credit: Video by Chris2Far on Pixabay
+- **AE-rain-leaves-01.mp4** for S06: READY (2160x3840 · 10s · 21.6 MB)
+  - Download: `curl -L -o "AE-rain-leaves-01.mp4" "https://github.com/omarjaradat2006-sudo/agent-hq/releases/download/footage-2026-11-02/AE-rain-leaves-01.mp4"`
+  - Description credit: Video by TravelGardenB on Pixabay
 - **AE-moon-night-01.mp4** for S07, S15: READY (2160x3840 · 24s · 68.4 MB)
   - Download: `curl -L -o "AE-moon-night-01.mp4" "https://github.com/omarjaradat2006-sudo/agent-hq/releases/download/footage-2026-11-02/AE-moon-night-01.mp4"`
   - Description credit: Video by Kanenori on Pixabay
-- **AE-rain-leaves-01.mp4** for S12: READY (2160x3840 · 10s · 21.6 MB)
-  - Download: `curl -L -o "AE-rain-leaves-01.mp4" "https://github.com/omarjaradat2006-sudo/agent-hq/releases/download/footage-2026-11-02/AE-rain-leaves-01.mp4"`
-  - Description credit: Video by TravelGardenB on Pixabay
-- **AE-fire-portrait-01.mp4** for S13: MISSING (not_found). Use another READY clip that fits, or an existing scene, and say so.
-- **AE-storm-clouds-01.mp4** for L1: READY (1920x1080 · 40s · 25.7 MB)
-  - Download: `curl -L -o "AE-storm-clouds-01.mp4" "https://github.com/omarjaradat2006-sudo/agent-hq/releases/download/footage-2026-11-02/AE-storm-clouds-01.mp4"`
-  - Description credit: Video by Macb3t on Pixabay
-- **AE-snowy-cabin-night-01.mp4 + AE-fireplace-close-01.mp4** for L2: MISSING (not requested). Use another READY clip that fits, or an existing scene, and say so.
-- **AE-fireplace-close-01.mp4** for L2: READY (3840x2160 · 10s · 23.5 MB)
-  - Download: `curl -L -o "AE-fireplace-close-01.mp4" "https://github.com/omarjaradat2006-sudo/agent-hq/releases/download/footage-2026-10-28/AE-fireplace-close-01.mp4"`
-  - Description credit: Video by MountainDweller on Pixabay
-- **AE-snowy-cabin-night-01.mp4** for L2: READY (3840x2160 · 30s · 32.0 MB)
+- **AE-desert-dunes-01.mp4** for S09, S10: READY (2160x3840 · 17s · 32.4 MB)
+  - Download: `curl -L -o "AE-desert-dunes-01.mp4" "https://github.com/omarjaradat2006-sudo/agent-hq/releases/download/footage-2026-11-03/AE-desert-dunes-01.mp4"`
+  - Description credit: Video by antonlukin on Pixabay
+- **AE-christmas-lights-01.mp4 + AE-snowy-cabin-night-01.mp4** for L1: MISSING (not requested). Use another READY clip that fits, or an existing scene, and say so.
+- **AE-rain-window-02.mp4** for L2: READY (1920x1080 · 33s · 17.7 MB)
+  - Download: `curl -L -o "AE-rain-window-02.mp4" "https://github.com/omarjaradat2006-sudo/agent-hq/releases/download/footage-2026-11-03/AE-rain-window-02.mp4"`
+  - Description credit: Video by Iconikmg on Pixabay
+- **AE-snowy-cabin-night-01.mp4** for L1: READY (3840x2160 · 30s · 32.0 MB)
   - Download: `curl -L -o "AE-snowy-cabin-night-01.mp4" "https://github.com/omarjaradat2006-sudo/agent-hq/releases/download/footage-2026-11-02/AE-snowy-cabin-night-01.mp4"`
   - Description credit: Video by soundsrelaxing89 on Pixabay
+- **AE-christmas-lights-01.mp4** for L1: READY (1920x1080 · 17s · 9.3 MB)
+  - Download: `curl -L -o "AE-christmas-lights-01.mp4" "https://github.com/omarjaradat2006-sudo/agent-hq/releases/download/footage-2026-11-03/AE-christmas-lights-01.mp4"`
+  - Description credit: Video by Skylent on Pixabay
 
 ## Build specs for the new concepts
 
@@ -99,4 +94,4 @@ Only upgrades marked done are installed. Use those; never use one that is only a
 - If this session can push to omarjaradat2006-sudo/agent-hq: set `made: true` on each lineup item made and `status: "done"` (and `doneAt` now) on each used idea in data/youtube/state.json, then commit and push. Never change any other status. Otherwise list the idea ids so Omar can press "I did it" on the site.
 - Then wait. When Omar says everything is uploaded/scheduled ("okay", "done"), clean up yourself with the delete permission you asked for at the start: empty `_system\Local Render\work`, `_system\parts` and `_system\Uploaded (delete later)`, plus any `.part`/temp files. Never delete anything still listed in a `queue.json`. Say how much space was freed. If you can't delete, tell him to run `python render.py clean`.
 
-_Generated 2026-11-03 15:17 UTC_
+_Generated 2026-11-03 15:20 UTC_
