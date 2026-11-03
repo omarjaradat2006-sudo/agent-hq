@@ -249,7 +249,7 @@
     if (t.cfg.id === "youtube") out.splice(1, 0, ["lineup", "Today's lineup"]), out.splice(3, 0, ["shots", "Footage"]);
     if (t.cfg.id === "tiktok" || t.cfg.id === "youtube") out.splice(out.findIndex(x => x[0] === "ideas") + 1, 0, ["review", "Review"]);
     if (t.cfg.id === "linkedai" || t.cfg.id === "growth") out.splice(2, 0, ["competitors", "Competitors"]);
-    if (t.cfg.id === "opps") out.splice(out.findIndex(x => x[0] === "ideas") + 1, 0, ["swarm", "100-person test"]);
+    if (t.cfg.id === "opps" || t.cfg.id === "growth") out.splice(out.findIndex(x => x[0] === "ideas") + 1, 0, ["swarm", "100-person test"]);
     if (t.cfg.id === "lab") out.splice(1, 0, ["leads", "Leads for each team"]);
     out.push(["research", "Research"], ["activity", "Activity"]);
     return out;
@@ -439,7 +439,7 @@
       else if (st === "approved") { add("I did it", "done", "primary"); add("Skip", "skip"); }
       else if (st === "done") add("Not done yet", "undone");
       else add("Back to review", "review");
-      if (i.buildPrompt) { const m = el("button", "btn", "Copy build prompt"); m.onclick = async () => { try { await navigator.clipboard.writeText(i.buildPrompt); toast("Copied. Paste it into a new Claude chat to build this."); } catch { const ta = el("textarea"); ta.value = i.buildPrompt; ta.style.width = "100%"; ta.rows = 6; c.append(ta); ta.select(); toast("Select and copy the text below."); } }; act.append(m); }
+      if (i.buildPrompt) { const m = el("button", "btn", "Copy build prompt"); m.onclick = async () => { try { await navigator.clipboard.writeText(i.buildPrompt); toast("Copied. Paste it where its first line says."); } catch { const ta = el("textarea"); ta.value = i.buildPrompt; ta.style.width = "100%"; ta.rows = 6; c.append(ta); ta.select(); toast("Select and copy the text below."); } }; act.append(m); }
       if (t.cfg.id === "youtube" && (st === "pending" || st === "approved")) { const m = el("button", "btn", "Copy 'make it' prompt"); m.onclick = async () => { const txt = makeItPrompt(t, i); try { await navigator.clipboard.writeText(txt); toast("Copied. Paste it into Claude to make this video."); } catch { const ta = el("textarea"); ta.value = txt; ta.style.width = "100%"; ta.rows = 5; c.append(ta); ta.select(); toast("Select and copy the text below."); } }; act.append(m); }
       act.append(el("span", "small", ago(i.createdAt))); c.append(act); body.append(c); });
     if (!LS.get("hq.ghToken")) { const b = el("button", "btn", "Connect GitHub so buttons save by themselves"); b.onclick = () => openSettings(); body.append(b); }

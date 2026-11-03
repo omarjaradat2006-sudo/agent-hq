@@ -32,7 +32,8 @@ window.HQ_CONFIG = {
         { id: "lead", name: "Product Lead", role: "Weekly read on the market", kind: "brief" },
         { id: "watch", name: "Competitor Watch", role: "Their content, ads and growth", kind: "competitors" },
         { id: "copywriter", name: "Copywriter", role: "Promo scripts and posts", kind: "ideas" },
-        { id: "liaison", name: "R&D Liaison", role: "Brings in the R&D Lab's finds", kind: "research" } ] },
+        { id: "liaison", name: "R&D Liaison", role: "Brings in the R&D Lab's finds", kind: "research" },
+        { id: "upgrades", name: "Upgrade Lab", role: "Product upgrades, 100-person tested, Mon + Thu", kind: "swarm" } ] },
     { id: "opps", name: "AI Opportunities", color: "#ffd23d", grid: [1, 1], tagline: "New ways to make money with AI", ideaWord: "Opportunities",
       agents: [
         { id: "lead", name: "Venture Lead", role: "Picks the best bets", kind: "brief" },
