@@ -38,7 +38,8 @@ Goal: find the highest-leverage ways AI can make Omar more money, save him time,
  "effort":"hours to set up","cost":"$0 / $X per month",
  "score":1-10,   // impact x confidence / effort
  "script":"the plan: numbered steps, tools, risks, how to tell in 2 weeks if it worked (120-250 words)",
- "buildPrompt":"a complete prompt Omar pastes into a NEW Claude chat to build it. Name the exact skill, repo (omarjaradat2006-sudo/agent-hq), Base44 app id (699b4057d65174480989a52e) or files involved. For a skill change, ask Claude to propose the updated skill (Omar saves it). Self-contained: it must work without this conversation.",
+ "buildWhere":"Claude Code | Claude chat",
+ "buildPrompt":"a complete, self-contained prompt Omar pastes to build it (it must work without this conversation). START it with one line saying where to paste. (1) YouTube videos, the Bounce/Ambient engines, render/upload tools, the bounce-theory-videos or ambient-escape-videos skills, or SmartEditor/TikTok GO → buildWhere \"Claude Code\", first line: \"Paste into Claude Code opened in Downloads\\YOUTUBE HQ\" (or Downloads\\SmartEditor for the TikTok editor). For those two video skills, tell Claude Code to edit the laptop copy at YOUTUBE HQ\\.claude\\skills\\<skill>\\SKILL.md directly (that copy is what RUN DAILY BATCH uses), test the change on one video, and say what changed. (2) Everything else (Agent HQ site/agents, Growth Architect on Base44 app 699b4057d65174480989a52e, LinkedAI, other skills) → buildWhere \"Claude chat\", first line: \"Paste into Omar's Main Chat in the Claude app\"; for other skill changes ask Claude to propose the updated skill (Omar saves it). Always name the exact files, repo (omarjaradat2006-sudo/agent-hq) or app involved.",
  "sources":[{"title":"","url":""}],"status":"pending","createdAt":""}
 ```
 
