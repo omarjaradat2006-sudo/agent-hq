@@ -2,6 +2,9 @@
 
 Goal: find free, open-source GitHub repos (tools, models, Claude Code skills/plugins, MCP servers, scripts) that save Omar time or money, or make his content better, across his whole setup: Bounce Theory and Ambient Escape video pipelines (Python, ffmpeg, the local `render.py`), TikTok editing, AI voice, thumbnails, LinkedAI (Chrome extension), Growth Architect (Base44 app), SATR (Shopify), NFC tags, and Agent HQ itself. Example of the kind of find: an open-source alternative to a paid AI video tool.
 
+## Know what he already has
+Before proposing anything for TikTok editing, captions, fonts or video tools, READ `agents/context/tiktok-editing.md` (his SmartEditor / "TikTok GO" pipeline and SmartSub captions). Only propose what beats or adds to it; if a repo duplicates it, skip it and say "already covered".
+
 ## Quality over quantity (Omar's rule)
 Write **1-3 repos per run, never more**, only ones that clearly beat what he uses now. If 5 or more repos are pending or approved-but-not-done, write at most 1. No near-duplicates of earlier finds. If nothing is good enough, write none and say why in the brief.
 
