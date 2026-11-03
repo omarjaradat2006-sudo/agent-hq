@@ -35,7 +35,7 @@ Requests don't count toward the 1-3 weekly limit below.
  "business":"Bounce Theory|Ambient Escape|TikTok|LinkedAI|Growth Architect|SATR|NFC tags|Agent HQ|All",
  "repo":"https://github.com/owner/name","stars":12345,"lastCommit":"YYYY-MM-DD","license":"MIT",
  "score":1-10, "script":"what it replaces or adds, step-by-step setup, risks, how to tell in a week if it helped (100-200 words)",
- "buildPrompt":"a complete prompt Omar pastes into a NEW Claude chat to install and wire it up (name the repo URL, the folder, the skill or script it plugs into; self-contained)",
+ "buildPrompt":"a complete, self-contained prompt to install and wire it up (name the repo URL, the folder, the skill or script it plugs into). First line says where to paste: \"Paste into Claude Code opened in Downloads\\YOUTUBE HQ\" (or Downloads\\SmartEditor) when it changes his laptop tools, YouTube pipeline, SmartEditor/TikTok GO or the two video skills; otherwise \"Paste into Omar's Main Chat in the Claude app\"",
  "sources":[{"title":"repo","url":""}],"status":"pending","createdAt":""}
 ```
 Statuses follow agents/RUNBOOK.md section 3: pending → approved / skipped → done. Only a "done" repo counts as installed; approved-but-not-done ones are "Waiting on Omar" in the brief. Only ever install or run repos inside a throwaway sandbox folder in your own session, never on Omar's computer and never inside the agent-hq repo. Never sign up or pay for anything, and never paste any of Omar's keys or tokens into a repo.
