@@ -542,26 +542,15 @@
         return `${n}. ${ch} (${(L.channels[ch] || []).length} videos) with my ${SKILL[ch]} skill. Plan: ${urlOf(ch)}\n(If you can't open it, run: curl -sL "${urlOf(ch)}")\n` +
           (longs.length ? `   The long videos MUST loop the real downloaded clips from that file (${longs.join(", ")}). Never generate or draw scenes for them. Download the clips first and list them to me before rendering.\n` : "") +
           (ch === "Bounce Theory" ? `   Every video MUST visibly use its "Today's twist" (frame, colours, counts, rules, melody). Never re-render a format with its default settings or reuse an old render. Compare each contact sheet with that format's last upload and redo any that look the same.\n` : ""); };
-      const txt = `Prepare today's YouTube batches for BOTH my channels in this one chat. My laptop does the rendering, NOT you: rendering in this chat wastes my usage.\n\n` +
+      const txt = `Run today's YouTube batch for both channels. Follow CLAUDE.md exactly, from step 1 to the final report.\n\n` +
         chans.map((ch, i) => part(ch, i + 1)).join("\n") +
-        `\nFor both: most videos are remixes of what already won (each row says what it's based on). Keep the winner's recipe (format, hook, length, pacing) and change only the listed twist. Keep the file's order and titles.\n\n` +
-        `HOW TO WORK (read the header of "Downloads\\YOUTUBE HQ\\_system\\Local Render\\render.py" first: it has the job-file contract):\n` +
-        `1. Ask me for every folder and delete permission you'll need in ONE go at the start, so I can approve and step away.\n` +
-        `2. Build any new formats as functions in a new file in _system\\Bounce Engine (e.g. todayNN.py). Time escape/race seeds with dry=True. Never edit engine.py or old files.\n` +
-        `3. Write the job files: _system\\Local Render\\jobs\\bounce_today.py and ambient_today.py (JOBS in lineup order, DOWNLOADS for the ready clips, thumbnails last; Ambient longs use R.loop_long with copyright-safe audio layers). No /home/claude paths.\n` +
-        `4. Write queue.json (EVERY item gets a slot 0, 1, 2... in the file's order) and UPLOAD SHEET.txt into each "Upload Today" folder.\n` +
-        `5. Check your work cheaply: import each job file without errors, and render ONLY a 3-second preview of each brand-new format. Never render the full batch here.\n` +
-        `6. Then give me the exact steps, one channel at a time, as copy-paste Command Prompt lines:\n` +
-        `   cd "%USERPROFILE%\\Downloads\\YOUTUBE HQ\\_system\\Local Render"\n   python render.py bounce   (then)   python "..\\Upload Tool\\upload.py" bounce\n   python render.py ambient  (then)   python "..\\Upload Tool\\upload.py" ambient\n` +
-        `   and roughly how long each render takes.\n\n` +
-        `RULES: English only (titles, on-screen text, descriptions, voice-over; never Spanish or any other language). Never remake a video that's already uploaded: check _system\\Upload Tool\\logs\\*_uploaded_log.json first. If a plan file's date isn't today, STOP and tell me: it's an old plan that was already uploaded.\n\n` +
-        `Then wait. If I paste an error from render.py, fix that job and tell me which command to rerun (finished videos are skipped). When I say all the videos are uploaded and scheduled ("okay", "done"), clean up EVERYTHING yourself with the delete permission from step 1: empty _system\\Local Render\\work, _system\\parts and _system\\Uploaded (delete later), and delete leftover .part/temp files; never delete anything still listed in a queue.json. Mark the used Agent HQ ideas done if you can push to the repo, and tell me how much space you freed. (If deleting is blocked, tell me to run  python render.py clean .)`;
+        `\nYou are on my laptop: render, check, upload, mark Agent HQ and clean up yourself. Don't hand me commands.`;
       const row = el("div", "row"); row.style.gap = "8px"; row.style.flexWrap = "wrap"; row.style.margin = "6px 0 10px";
       const todayStr = new Date().toLocaleDateString("en-CA");
       if (L.date && L.date !== todayStr) body.append(empty("This lineup is old (" + L.date + ")", "The YouTube team hasn't planned today yet, so these videos were probably already made. Don't paste the prompt until today's plan shows up."));
       body.append(el("div", "small", "Planned " + (L.date || ago(L.createdAt)) + " · one prompt sets up both channels · your laptop renders them"));
-      const b = el("button", "btn primary", "Copy batch prompt (both channels)");
-      b.onclick = async () => { try { await navigator.clipboard.writeText(txt); toast("Copied. Paste it into a new Claude chat."); } catch { const ta = el("textarea"); ta.value = txt; ta.rows = 7; ta.style.width = "100%"; row.after(ta); ta.select(); toast("Select and copy the text below."); } };
+      const b = el("button", "btn primary", "Copy Claude Code batch prompt (both channels)");
+      b.onclick = async () => { try { await navigator.clipboard.writeText(txt); toast("Copied. Double-click RUN DAILY BATCH.bat in YOUTUBE HQ, or paste this into Claude Code there."); } catch { const ta = el("textarea"); ta.value = txt; ta.rows = 7; ta.style.width = "100%"; row.after(ta); ta.select(); toast("Select and copy the text below."); } };
       row.append(b);
       if (SLUG[statSel]) { const a = el("a", "btn", "Open " + statSel + " batch file"); a.href = urlOf(statSel).replace("raw.githubusercontent.com", "github.com").replace("/main/", "/blob/main/"); a.target = "_blank"; a.rel = "noopener"; row.append(a); }
       body.append(row); }
