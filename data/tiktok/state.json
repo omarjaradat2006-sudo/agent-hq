@@ -1,64 +1,89 @@
 {
   "team": "tiktok",
   "hired": true,
-  "updatedAt": "2026-11-03T14:42:10Z",
+  "updatedAt": "2026-11-03T14:44:45Z",
   "agents": [
     {
       "id": "analyst",
       "name": "Analyst",
       "role": "Finds outlier videos",
-      "status": "waiting",
-      "doing": "Found 5 signals: same-exam comparison (309K/day), man's character list (21x), Movember",
-      "lastRun": "2026-11-02T16:02:18Z",
-      "nextRun": "2026-11-03T14:41:00Z"
+      "status": "ok",
+      "doing": "Writing day: using 2026-11-02's review and research",
+      "lastRun": "2026-11-03T14:44:45Z",
+      "nextRun": "2026-11-04T14:41:00Z"
     },
     {
       "id": "strategist",
       "name": "Strategist",
       "role": "Picks what to film next",
-      "status": "waiting",
-      "doing": "Picked 3 scene-first angles: discipline, character, comparison (1 faith)",
-      "lastRun": "2026-11-02T16:02:18Z",
-      "nextRun": "2026-11-03T14:41:00Z"
+      "status": "ok",
+      "doing": "Picked 3 lived-moment angles: psychology, Seneca, apologies (0 faith)",
+      "lastRun": "2026-11-03T14:44:45Z",
+      "nextRun": "2026-11-04T14:41:00Z"
     },
     {
       "id": "copywriter",
       "name": "Copywriter",
       "role": "Hooks and full scripts",
-      "status": "waiting",
-      "doing": "Wrote 3 scripts (A/B/C), VoicePrint pass done",
-      "lastRun": "2026-11-02T16:02:18Z",
-      "nextRun": "2026-11-03T14:41:00Z"
+      "status": "ok",
+      "doing": "Wrote 3 scripts (A/B/C), content-scripts + VoicePrint pass done",
+      "lastRun": "2026-11-03T14:44:45Z",
+      "nextRun": "2026-11-04T14:41:00Z"
     },
     {
       "id": "reviewer",
       "name": "Performance Reviewer",
-      "status": "working",
-      "doing": "Reviewing how your last videos did",
+      "status": "ok",
+      "doing": "Writing day: using 2026-11-02's review and research",
       "role": "Explains why videos won or flopped",
-      "lastRun": "2026-11-02T16:02:18Z",
-      "nextRun": "2026-11-03T14:41:00Z"
+      "lastRun": "2026-11-03T14:44:45Z",
+      "nextRun": "2026-11-04T14:41:00Z"
     },
     {
       "id": "liaison",
       "name": "R&D Liaison",
       "role": "Brings in the R&D Lab's finds",
-      "status": "waiting",
-      "doing": "Used 2 Lab caption leads; asked the Lab why keyword captions didn't lift reach",
-      "lastRun": "2026-11-02T16:02:18Z",
-      "nextRun": "2026-11-03T14:41:00Z"
+      "status": "ok",
+      "doing": "Used 2 Lab caption leads again; repeated the reach-drop research request",
+      "lastRun": "2026-11-03T14:44:45Z",
+      "nextRun": "2026-11-04T14:41:00Z"
     },
     {
       "id": "captions",
       "name": "Caption Coach",
       "role": "Search-friendly captions and on-screen keywords",
-      "status": "waiting",
+      "status": "ok",
       "doing": "Wrote 3 caption packs: search phrase + question, no #fyp",
-      "lastRun": "2026-11-02T16:02:18Z",
-      "nextRun": "2026-11-03T14:41:00Z"
+      "lastRun": "2026-11-03T14:44:45Z",
+      "nextRun": "2026-11-04T14:41:00Z"
     }
   ],
   "log": [
+    {
+      "t": "2026-11-03T14:44:45Z",
+      "agent": "Caption Coach",
+      "msg": "Wrote 3 caption packs; question captions still untested on real posts"
+    },
+    {
+      "t": "2026-11-03T14:44:45Z",
+      "agent": "Copywriter",
+      "msg": "Wrote 3 scripts: Overthinking at night? Your brain's leaving you a reminder; Seneca on wasting time at 11pm; If your apology has a 'but' in it"
+    },
+    {
+      "t": "2026-11-03T14:44:45Z",
+      "agent": "Strategist",
+      "msg": "All 3 open on a moment he's lived (bed, 11pm scroll, the 'but' apology); new themes vs Nov 2; faith slot left to the approved 1am comparison script"
+    },
+    {
+      "t": "2026-11-03T14:44:45Z",
+      "agent": "R&D Liaison",
+      "msg": "Used Lab leads: keyword-first caption line and a question caption"
+    },
+    {
+      "t": "2026-11-03T14:44:45Z",
+      "agent": "Performance Reviewer",
+      "msg": "Writing day (Tue): reusing Nov 2 review, open on a lived moment, not a stat"
+    },
     {
       "t": "2026-11-03T14:42:10Z",
       "agent": "Performance Reviewer",
@@ -1145,6 +1170,205 @@
       "status": "approved",
       "createdAt": "2026-11-02T16:01:53Z",
       "decidedAt": "2026-11-03T03:21:37Z"
+    },
+    {
+      "id": "tiktok-2026-11-03-1",
+      "title": "Overthinking at night? Your brain's leaving you a reminder",
+      "hook": "Can't stop overthinking at night? Your brain's not broken. It's reminding you.",
+      "why": "The review says open on a moment the viewer has lived: lying in bed replaying unfinished stuff is that moment. Uses the R&D Lab lead 'Keyword in the first caption line, on screen and said aloud' (search phrase in the hook, on screen and in caption line 1).",
+      "format": "Talking head 48s",
+      "hookFamily": "Curiosity loop",
+      "length": 48,
+      "onScreen": "how to stop overthinking at night (100-year-old psychology)",
+      "scenes": [
+        {
+          "label": "Hook",
+          "time": "0-5s",
+          "line": "Can't stop overthinking at night? Your brain's not broken. It's reminding you.",
+          "delivery": "lean in, flat and calm"
+        },
+        {
+          "label": "The moment",
+          "time": "5-13s",
+          "line": "You know the one. Lights off, and you remember the assignment. The email. The thing you said in class.",
+          "delivery": "softer, small eye-roll on 'the thing you said'"
+        },
+        {
+          "label": "Re-hook",
+          "time": "13-17s",
+          "line": "But it's always the unfinished stuff. There's a reason for that.",
+          "delivery": "slow down, slight pause before 'reason'"
+        },
+        {
+          "label": "Value",
+          "time": "17-30s",
+          "line": "A psychologist called Bluma Zeigarnik noticed this about a hundred years ago. Unfinished stuff sticks in your head way more than finished stuff. Your brain keeps poking you so you don't drop it.",
+          "delivery": "explaining to a friend, hands open"
+        },
+        {
+          "label": "Payoff",
+          "time": "30-44s",
+          "line": "Later research found you don't have to finish it to shut it up. You need a plan. Before bed, write the next step. One line. When and where. Then your brain lets it go.",
+          "delivery": "sure, counting the steps on your fingers"
+        },
+        {
+          "label": "Last line",
+          "time": "44-48s",
+          "line": "Try it tonight. What's the thing that keeps you up?",
+          "delivery": "straight to camera, genuine question, ties back to the hook's 'reminding you'"
+        }
+      ],
+      "hooksToTest": [
+        "If you overthink at night, that's not anxiety talking every time. Sometimes it's just a to-do list. (Calm hard truth)",
+        "The reason you overthink in bed and not at 2pm is kind of funny actually. (Curiosity loop, alt wording)",
+        "Guys who say they 'can't switch off' at night, try this before bed tonight. (Call-out)"
+      ],
+      "caption": "how to stop overthinking at night. What's the one thing that keeps you up? #fyppppppppppppppppppppppp #viral #fyp #overthinking #psychology",
+      "script": "Can't stop overthinking at night? Your brain's not broken. It's reminding you.\n[pause]\nYou know the one. Lights off, and you remember the assignment. The email. The thing you said in class.\n[pause]\nBut it's always the unfinished stuff. There's a reason for that.\n[pause]\nA psychologist called Bluma Zeigarnik noticed this about a hundred years ago. Unfinished stuff sticks in your head way more than finished stuff. Your brain keeps poking you so you don't drop it.\n[pause]\nLater research found you don't have to finish it to shut it up. You need a plan. Before bed, write the next step. One line. When and where. Then your brain lets it go.\n[pause]\nTry it tonight. What's the thing that keeps you up?",
+      "formatted": "**VERSION A - Curiosity loop (~48s)**\n- **Why this one:** 'Your brain's reminding you' opens a loop the viewer can't close until the Zeigarnik reveal and the one-line fix.\n- **On-screen text (first 3-5s):** how to stop overthinking at night (100-year-old psychology)\n\n**Scene 1 - Hook (0-5s)**\n> Can't stop overthinking at night? Your brain's not broken. It's reminding you.\n\n*Delivery:* lean in, flat and calm\n\n[pause]\n\n**Scene 2 - The moment (5-13s)**\n> You know the one. Lights off, and you remember the assignment. The email. The thing you said in class.\n\n*Delivery:* softer, small eye-roll on 'the thing you said'\n\n[pause]\n\n**Scene 3 - Re-hook (13-17s)**\n> But it's always the unfinished stuff. There's a reason for that.\n\n*Delivery:* slow down, slight pause before 'reason'\n\n[pause]\n\n**Scene 4 - Value (17-30s)**\n> A psychologist called Bluma Zeigarnik noticed this about a hundred years ago. Unfinished stuff sticks in your head way more than finished stuff. Your brain keeps poking you so you don't drop it.\n\n*Delivery:* explaining to a friend, hands open\n\n[pause]\n\n**Scene 5 - Payoff (30-44s)**\n> Later research found you don't have to finish it to shut it up. You need a plan. Before bed, write the next step. One line. When and where. Then your brain lets it go.\n\n*Delivery:* sure, counting the steps on your fingers\n\n[pause]\n\n**Scene 6 - Last line (44-48s)**\n> Try it tonight. What's the thing that keeps you up?\n\n*Delivery:* straight to camera, genuine question, ties back to the hook's 'reminding you'\n\n**Last line:** \"Try it tonight. What's the thing that keeps you up?\" (straight to camera, genuine question, ties back to the hook's 'reminding you')\n\n- **Hooks to test:**\n  - If you overthink at night, that's not anxiety talking every time. Sometimes it's just a to-do list. (Calm hard truth)\n  - The reason you overthink in bed and not at 2pm is kind of funny actually. (Curiosity loop, alt wording)\n  - Guys who say they 'can't switch off' at night, try this before bed tonight. (Call-out)\n- **Caption:** how to stop overthinking at night. What's the one thing that keeps you up? #fyppppppppppppppppppppppp #viral #fyp #overthinking #psychology",
+      "score": 8,
+      "sources": [
+        {
+          "title": "Zeigarnik effect (Wikipedia)",
+          "url": "https://en.wikipedia.org/wiki/Zeigarnik_effect"
+        },
+        {
+          "title": "Masicampo & Baumeister (2011), Consider it done! Plan making can eliminate the cognitive effects of unfulfilled goals",
+          "url": "https://doi.org/10.1037/a0024192"
+        }
+      ],
+      "status": "pending",
+      "createdAt": "2026-11-03T14:44:45Z"
+    },
+    {
+      "id": "tiktok-2026-11-03-2",
+      "title": "Seneca on wasting time at 11pm",
+      "hook": "Nobody plans to waste time. It's 11pm, you open your phone for one video.",
+      "why": "You approved Epictetus and the motivation-vs-discipline scene, and the research shows named old thinkers (warrior/philosopher lessons, 1.2M views) still pull. This drops the viewer into the 11pm scroll first, the 'lived moment' shape the review says beats stat opens.",
+      "format": "Talking head 55s",
+      "hookFamily": "Story / progressive reveal",
+      "length": 55,
+      "onScreen": "how to stop wasting time (a 2,000-year-old fix)",
+      "scenes": [
+        {
+          "label": "Hook",
+          "time": "0-6s",
+          "line": "Nobody plans to waste time. It's 11pm, you open your phone for one video.",
+          "delivery": "matter-of-fact, like you're describing his night back to him"
+        },
+        {
+          "label": "Clues",
+          "time": "6-14s",
+          "line": "Then it's a guy reviewing a car you'll never buy. Then a podcast clip. You look up and it's 12:40.",
+          "delivery": "speed up a little through the list, then stop dead on '12:40'"
+        },
+        {
+          "label": "Re-hook",
+          "time": "14-20s",
+          "line": "And the part that got me? A guy figured this out two thousand years ago.",
+          "delivery": "lean in, half smile"
+        },
+        {
+          "label": "Reveal",
+          "time": "20-37s",
+          "line": "Seneca, the Stoic. In On the Shortness of Life he wrote, it's not that we have a short time to live, it's that we waste a lot of it. People guard their money, he said, but hand their time to anyone who asks.",
+          "delivery": "slow and clear on the quote, name the book plainly"
+        },
+        {
+          "label": "Payoff",
+          "time": "37-50s",
+          "line": "That's us. You'd never let a stranger take forty bucks off you. But an app takes an hour and we don't blink. I checked mine last night. [fill in: your real screen time]",
+          "delivery": "honest, a bit embarrassed on the screen time"
+        },
+        {
+          "label": "Last line",
+          "time": "50-55s",
+          "line": "So tonight, before that one video, ask who you're handing the hour to.",
+          "delivery": "calm, loops back to 'one video' in the hook"
+        }
+      ],
+      "hooksToTest": [
+        "Seneca said we don't have a short life. We just waste most of it. (Calm hard truth)",
+        "If you lose two hours a night to your phone, a Stoic from Rome already called you out. (Call-out)",
+        "I checked my screen time last night and kind of felt sick. [fill in only if true] (Vulnerable admission)"
+      ],
+      "caption": "seneca on how to stop wasting time. What was your screen time last night? #fyppppppppppppppppppppppp #viral #fyp #stoicism #seneca",
+      "script": "Nobody plans to waste time. It's 11pm, you open your phone for one video.\n[pause]\nThen it's a guy reviewing a car you'll never buy. Then a podcast clip. You look up and it's 12:40.\n[pause]\nAnd the part that got me? A guy figured this out two thousand years ago.\n[pause]\nSeneca, the Stoic. In On the Shortness of Life he wrote, it's not that we have a short time to live, it's that we waste a lot of it. People guard their money, he said, but hand their time to anyone who asks.\n[pause]\nThat's us. You'd never let a stranger take forty bucks off you. But an app takes an hour and we don't blink. I checked mine last night. [fill in: your real screen time]\n[pause]\nSo tonight, before that one video, ask who you're handing the hour to.",
+      "formatted": "**VERSION B - Story / progressive reveal (~55s)**\n- **Why this one:** Every line adds a clue to a night he's lived, and Seneca lands late as the reveal, so he stays to see where the 12:40 story is going.\n- **On-screen text (first 3-5s):** how to stop wasting time (a 2,000-year-old fix)\n\n**Scene 1 - Hook (0-6s)**\n> Nobody plans to waste time. It's 11pm, you open your phone for one video.\n\n*Delivery:* matter-of-fact, like you're describing his night back to him\n\n[pause]\n\n**Scene 2 - Clues (6-14s)**\n> Then it's a guy reviewing a car you'll never buy. Then a podcast clip. You look up and it's 12:40.\n\n*Delivery:* speed up a little through the list, then stop dead on '12:40'\n\n[pause]\n\n**Scene 3 - Re-hook (14-20s)**\n> And the part that got me? A guy figured this out two thousand years ago.\n\n*Delivery:* lean in, half smile\n\n[pause]\n\n**Scene 4 - Reveal (20-37s)**\n> Seneca, the Stoic. In On the Shortness of Life he wrote, it's not that we have a short time to live, it's that we waste a lot of it. People guard their money, he said, but hand their time to anyone who asks.\n\n*Delivery:* slow and clear on the quote, name the book plainly\n\n[pause]\n\n**Scene 5 - Payoff (37-50s)**\n> That's us. You'd never let a stranger take forty bucks off you. But an app takes an hour and we don't blink. I checked mine last night. [fill in: your real screen time]\n\n*Delivery:* honest, a bit embarrassed on the screen time\n\n[pause]\n\n**Scene 6 - Last line (50-55s)**\n> So tonight, before that one video, ask who you're handing the hour to.\n\n*Delivery:* calm, loops back to 'one video' in the hook\n\n**Last line:** \"So tonight, before that one video, ask who you're handing the hour to.\" (calm, loops back to 'one video' in the hook)\n\n- **Hooks to test:**\n  - Seneca said we don't have a short life. We just waste most of it. (Calm hard truth)\n  - If you lose two hours a night to your phone, a Stoic from Rome already called you out. (Call-out)\n  - I checked my screen time last night and kind of felt sick. [fill in only if true] (Vulnerable admission)\n- **Caption:** seneca on how to stop wasting time. What was your screen time last night? #fyppppppppppppppppppppppp #viral #fyp #stoicism #seneca",
+      "score": 7,
+      "sources": [
+        {
+          "title": "De Brevitate Vitae (On the Shortness of Life), Seneca (Wikipedia)",
+          "url": "https://en.wikipedia.org/wiki/De_Brevitate_Vitae_(Seneca)"
+        }
+      ],
+      "status": "pending",
+      "createdAt": "2026-11-03T14:44:45Z"
+    },
+    {
+      "id": "tiktok-2026-11-03-3",
+      "title": "If your apology has a 'but' in it",
+      "hook": "If your apology has the word 'but' in it, you didn't apologize.",
+      "why": "New angle for the page (relationships), and it opens on a moment every guy has had with family instead of a stat or abstract debate, which the review says to stop. Short hard-truth format, 20-35s.",
+      "format": "Talking head 40s",
+      "hookFamily": "Calm hard truth",
+      "length": 40,
+      "onScreen": "how to apologize properly (no 'but')",
+      "scenes": [
+        {
+          "label": "Hook",
+          "time": "0-5s",
+          "line": "If your apology has the word 'but' in it, you didn't apologize.",
+          "delivery": "flat, slow, dead serious"
+        },
+        {
+          "label": "The moment",
+          "time": "5-13s",
+          "line": "You snap at your mom. Or your little brother. Later you go, my bad, but you were being annoying too.",
+          "delivery": "a little guilty laugh, you've done it too"
+        },
+        {
+          "label": "Re-hook",
+          "time": "13-17s",
+          "line": "That second half? It's the only part they hear.",
+          "delivery": "pause, then quiet"
+        },
+        {
+          "label": "Value",
+          "time": "17-26s",
+          "line": "Psychologist Harriet Lerner wrote a whole book on apologies. Her point is, 'but' cancels everything before it. Your sorry turns into an argument.",
+          "delivery": "steady, explaining"
+        },
+        {
+          "label": "Payoff",
+          "time": "26-36s",
+          "line": "A real one's short. I was wrong. I'm sorry. Here's what I'll do different. Then stop. If they were wrong too, that's another conversation.",
+          "delivery": "count the three lines on your fingers, slow"
+        },
+        {
+          "label": "Last line",
+          "time": "36-40s",
+          "line": "Takes more spine than winning the argument ever did.",
+          "delivery": "calm and sure, hold eye contact a beat after"
+        }
+      ],
+      "hooksToTest": [
+        "The most manly thing I've learned this year is how to say sorry without a 'but'. (Vulnerable admission)",
+        "Guys who apologize and then explain why it wasn't their fault, this one's for you. (Call-out)",
+        "Saying sorry properly is three sentences. Most of us can't do it. (Curiosity loop)"
+      ],
+      "caption": "how to apologize properly as a guy. Who do you owe a real sorry to? #fyppppppppppppppppppppppp #viral #fyp #relationships #masculinity",
+      "script": "If your apology has the word 'but' in it, you didn't apologize.\n[pause]\nYou snap at your mom. Or your little brother. Later you go, my bad, but you were being annoying too.\n[pause]\nThat second half? It's the only part they hear.\n[pause]\nPsychologist Harriet Lerner wrote a whole book on apologies. Her point is, 'but' cancels everything before it. Your sorry turns into an argument.\n[pause]\nA real one's short. I was wrong. I'm sorry. Here's what I'll do different. Then stop. If they were wrong too, that's another conversation.\n[pause]\nTakes more spine than winning the argument ever did.",
+      "formatted": "**VERSION C - Calm hard truth (~40s)**\n- **Why this one:** One quiet line that could sit on screen as a quote, then the 'but' moment he's lived proves it.\n- **On-screen text (first 3-5s):** how to apologize properly (no 'but')\n\n**Scene 1 - Hook (0-5s)**\n> If your apology has the word 'but' in it, you didn't apologize.\n\n*Delivery:* flat, slow, dead serious\n\n[pause]\n\n**Scene 2 - The moment (5-13s)**\n> You snap at your mom. Or your little brother. Later you go, my bad, but you were being annoying too.\n\n*Delivery:* a little guilty laugh, you've done it too\n\n[pause]\n\n**Scene 3 - Re-hook (13-17s)**\n> That second half? It's the only part they hear.\n\n*Delivery:* pause, then quiet\n\n[pause]\n\n**Scene 4 - Value (17-26s)**\n> Psychologist Harriet Lerner wrote a whole book on apologies. Her point is, 'but' cancels everything before it. Your sorry turns into an argument.\n\n*Delivery:* steady, explaining\n\n[pause]\n\n**Scene 5 - Payoff (26-36s)**\n> A real one's short. I was wrong. I'm sorry. Here's what I'll do different. Then stop. If they were wrong too, that's another conversation.\n\n*Delivery:* count the three lines on your fingers, slow\n\n[pause]\n\n**Scene 6 - Last line (36-40s)**\n> Takes more spine than winning the argument ever did.\n\n*Delivery:* calm and sure, hold eye contact a beat after\n\n**Last line:** \"Takes more spine than winning the argument ever did.\" (calm and sure, hold eye contact a beat after)\n\n- **Hooks to test:**\n  - The most manly thing I've learned this year is how to say sorry without a 'but'. (Vulnerable admission)\n  - Guys who apologize and then explain why it wasn't their fault, this one's for you. (Call-out)\n  - Saying sorry properly is three sentences. Most of us can't do it. (Curiosity loop)\n- **Caption:** how to apologize properly as a guy. Who do you owe a real sorry to? #fyppppppppppppppppppppppp #viral #fyp #relationships #masculinity",
+      "score": 7,
+      "sources": [
+        {
+          "title": "Harriet Lerner, author of Why Won't You Apologize? (Wikipedia)",
+          "url": "https://en.wikipedia.org/wiki/Harriet_Lerner"
+        }
+      ],
+      "status": "pending",
+      "createdAt": "2026-11-03T14:44:45Z"
     }
   ],
   "research": [
@@ -1368,23 +1592,25 @@
     }
   ],
   "brief": {
-    "date": "2026-11-02",
-    "createdAt": "2026-11-02T16:02:18Z",
-    "headline": "Captions didn't fix reach; open on a real moment instead",
-    "summary": "Your last 4 posts got 237-367 views, about the same as the drop week, so topic captions alone didn't bring reach back. The lesson: the shirt video, which opens on a moment everyone's lived, still beats the scripts that opened on a stat or a debate claim. Best idea today is 'Motivation vs discipline: same exam, three guys', built on a format that hit 309K views in a day.",
+    "date": "2026-11-03",
+    "createdAt": "2026-11-03T14:44:45Z",
+    "headline": "Open on a moment he's lived; three new angles today",
+    "summary": "Your last 4 posts sat at 237-367 views, so reach still hasn't come back, and the review's lesson holds: open on a moment everyone's lived, like the shirt video, not a stat. Today's best new idea is 'Overthinking at night? Your brain's leaving you a reminder', which opens on lying in bed replaying stuff and ends on a one-line fix.",
     "filmToday": [
       "Motivation vs discipline: same exam, three guys — Motivation vs discipline. Same exam Friday, three different guys.",
-      "Three small moments that show a man's real character — Your real character shows up in three small moments. Money's in none of them.",
-      "Comparing yourself at 1am? Look the other way — Comparing yourself to guys on your feed? You're looking the wrong direction."
+      "Comparing yourself at 1am? Look the other way — Comparing yourself to guys on your feed? You're looking the wrong direction.",
+      "Overthinking at night? Your brain's leaving you a reminder — Can't stop overthinking at night? Your brain's not broken. It's reminding you."
     ],
     "approvals": [
       "3 new ideas waiting for your approve/pass",
+      "Waiting on Omar: Motivation vs discipline: same exam, three guys",
+      "Waiting on Omar: Comparing yourself at 1am? Look the other way",
       "Waiting on Omar: Epictetus' fix for feeling out of control (looks like you posted it Oct 30; tap Done if so)",
       "Waiting on Omar: Who you know is a skill, not luck (looks like you posted it Oct 28; tap Done if so)"
     ],
     "notes": [
-      "Your recent captions still carry #muslim plus #fyp/#viral on non-faith videos and none asks a question. Try the Caption Coach's packs on the next 3 posts so we can compare.",
-      "Reviewer skill suggestion: make 'Relatable moment' a default hook family in content-scripts, since the shirt video beat all 3 stat/debate opens. Say 'apply the reviewer's skill suggestions' to apply it."
+      "Writing day: no new review or research today; the next full review runs Wednesday.",
+      "Reviewer skill suggestions still open: make 'Relatable moment' a default hook family in content-scripts, and settle the caption rule (the team's 5-tag format with #fyp vs content-scripts' 2-4 specific tags), so scripts and the Caption Coach agree."
     ]
   },
   "processedIssues": [
@@ -1535,53 +1761,53 @@
     }
   ],
   "labFeedback": {
-    "date": "2026-11-02",
+    "date": "2026-11-03",
     "used": [
       "Keyword in the first caption line, on screen and said aloud",
       "Ask a question in the caption, never ask for likes"
     ],
     "skipped": [
-      "Mention a relevant account (small accounts only): today's scripts quote Marcus Aurelius and a hadith, no TikTok creator's work to credit honestly"
+      "Mention a relevant account (small accounts only): today's scripts credit Zeigarnik, Seneca and Harriet Lerner, no TikTok creator to credit honestly"
     ],
-    "request": "The 4 keyword-caption posts (Oct 27-31) stayed at 237-367 views, same as before. Find what else small talking-head accounts (under 1k followers) changed when reach dropped after ~300 posts: posting time, length, first-frame text, or reposting old winners"
+    "request": "Still open from Nov 2: what small talking-head accounts changed when reach dropped after ~300 posts (posting time, length, first-frame text, reposting old winners)"
   },
   "captionPacks": {
-    "date": "2026-11-02",
+    "date": "2026-11-03",
     "packs": [
       {
-        "ideaId": "tiktok-2026-11-02-1",
-        "firstLine": "motivation vs discipline explained with one exam",
-        "question": "Which of the three guys were you this week?",
+        "ideaId": "tiktok-2026-11-03-1",
+        "firstLine": "how to stop overthinking at night",
+        "question": "What's the one thing that keeps you up at night?",
         "hashtags": [
-          "#discipline",
-          "#studymotivation",
-          "#selfimprovement"
+          "#overthinking",
+          "#psychology",
+          "#sleep"
         ],
-        "onScreen": "motivation vs discipline (which guy are you?)"
+        "onScreen": "how to stop overthinking at night"
       },
       {
-        "ideaId": "tiktok-2026-11-02-2",
-        "firstLine": "what shows a man's real character (stoic advice)",
-        "question": "Which of the three moments do you fail most?",
+        "ideaId": "tiktok-2026-11-03-2",
+        "firstLine": "seneca on how to stop wasting time",
+        "question": "What was your screen time last night?",
         "hashtags": [
           "#stoicism",
-          "#marcusaurelius",
-          "#masculinity"
+          "#seneca",
+          "#screentime"
         ],
-        "onScreen": "what shows a man's real character (none of it is money)"
+        "onScreen": "how to stop wasting time (seneca)"
       },
       {
-        "ideaId": "tiktok-2026-11-02-3",
-        "firstLine": "how to stop comparing yourself to others (islamic reminder)",
-        "question": "What's one blessing you forgot you had?",
+        "ideaId": "tiktok-2026-11-03-3",
+        "firstLine": "how to apologize properly as a guy",
+        "question": "Who do you owe a real sorry to?",
         "hashtags": [
-          "#muslim",
-          "#comparison",
-          "#gratitude"
+          "#relationships",
+          "#masculinity",
+          "#apology"
         ],
-        "onScreen": "how to stop comparing yourself (1am scroll edition)"
+        "onScreen": "how to apologize properly (no 'but')"
       }
     ],
-    "note": "4 of your last 10 captions were topic lines (237-367 views, median ~286); the other 6 were 'Follow for more' (255-702, but 4 of those were the drop week at 255-312). None of the 10 asked a question and all 10 carried #fyp/#viral, so the question line and dropping generic tags are still untested."
+    "note": "No new metrics since Nov 2: the last 4 topic-caption posts got 237-367 views (median ~285) and none asked a question, so the question line is still untested."
   }
 }
