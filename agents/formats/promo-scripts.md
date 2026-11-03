@@ -1,6 +1,6 @@
 # LinkedAI / Growth Architect promo scripts
 
-Promo video scripts use exactly the same format as Omar's TikTok scripts. Read agents/formats/tiktok-scripts.md and follow its Structure, VoicePrint pass and Self-check. The faith rules don't apply here.
+Promo video scripts use exactly the same format as Omar's TikTok scripts. Read agents/formats/tiktok-scripts.md and follow its Structure, VoicePrint pass and Self-check. The faith rules don't apply here. Omar films these sit-down and edits them with his own SmartEditor (see agents/context/tiktok-editing.md): captions, keyword highlights, zooms and cuts are automatic, so don't write editing or caption-styling notes into the script.
 
 Differences for promos:
 - The speaker is a creator who found a useful tool (a student job hunting, a side-hustler, a small-business owner). Never the builder. Never "my app", "we built".

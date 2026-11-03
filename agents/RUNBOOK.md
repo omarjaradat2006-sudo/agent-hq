@@ -41,4 +41,5 @@ On every other day, skip both: don't search the web, don't rewrite `review` or a
 Set the failing agent's status to `"error"` with a plain-English `doing` line, log it, push. Never leave status as "working".
 
 ## Rules
+**Before proposing anything about video editing, captions, subtitles, fonts, zooms, cuts or posting tools, read `agents/context/tiktok-editing.md`.** Omar's own SmartEditor / TikTok GO already does burned-in Montserrat captions with keyword highlighting, silence and retake cuts, zooms, shake, flashes, AI captions and draft upload. Never re-suggest those; only propose what that file lists as a real gap or what clearly beats it.
 Don't post, message, email, or publish anywhere else. Only use real sources you found; never invent creators, numbers, links, hadith or ayat. Hadith/ayat must be authentic with the source named.
