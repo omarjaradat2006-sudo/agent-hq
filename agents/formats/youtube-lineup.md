@@ -13,6 +13,24 @@ The best remixes go in the first slots (S01-S05), because the first uploads of a
 
 Weight by results: a format with a 30K-view hit gets more slots than one that peaks at 1K. Use the review's `formatScores`. Formats the review marks as weak (low median views and low retention) get at most 1 slot, or none.
 
+## Ambient Escape experiment: 8 animated explainers + 7 proven (Omar's rule, from 2026-11-04)
+Omar's current Ambient Shorts are flat, so **every Ambient Escape lineup has exactly 8 animated explainer Shorts + 7 Shorts from the mix above** (the 7 = the strongest proven remixes). This overrides the 9-11 / 3-5 / 0-2 split for Ambient Shorts only; Bounce Theory is unchanged. Keep it until Omar changes it; the Performance Reviewer compares the two groups (views, % watched) in every review and says which wins.
+
+They are rendered by `explainer.py` on his laptop (`_system\Local Render\lib\explainer.py`, all drawn in code: glowing figures, dark scenes, gold keyword, synthesized sound effects, no footage, no reciter audio). Inspired by @tanzil_quran (POV road-rage → hadith) and @soulofbaraqah ("8 Islamic ways to unblock your rizq"). Never copy their wording, scenes or topics word for word.
+
+Two formats (use both every day, at least 3 of each):
+- **`explainer_pov`** (15-25 s): "POV: <everyday situation a young Muslim knows>" → 2-3 tension beats → the hadith/ayah revealed word by word (Arabic + English gloss + an icon per word) → a share line ("Send this to a friend who …"). Situations: getting cut off, someone insults you online, parents asking for help when you're tired, a friend backbiting, missing Fajr, exam stress, losing a game, waiting in a long line.
+- **`explainer_list`** (30-50 s): "N Islamic ways to <outcome>" / "N things the Prophet ﷺ did <when>" → one scene per point (counter 01/N, title with one gold keyword, one-line meaning, source) → ending line + share CTA. 4-8 points.
+
+Put 3 explainers in S01-S05 (first uploads get the most reach) and spread the rest. Titles: "POV: <situation> 🤍 #shorts #islam #hadith" or "<N> Islamic ways to <outcome> 🤍 #shorts #islam" (under 70 chars).
+
+**Every explainer slot's `note` must hold the full spec** so the batch can render it without guessing, in this exact shape:
+- pov: `POV hook: "<situation>" | beats: "<line>" (red) ; "<line>" ; "<line>" | reveal: <Arabic words with English gloss, each "ar=en"> | icons: <one per word from no, flex, throw, calm, gauge, heart, hand, scale, star> | source: <collection + number> | end: "<line>" / "<line2>" | cta: "Send this to a friend who <...>"`
+- list: `hook: "<title with *keyword*>" (scene) | 1) "<title *kw*>" — "<meaning>" — <source> — <scene>/<pose> ; 2) ... | end: "<line>" / "<line2>" | cta: "..."`
+- Scenes available: dark, window_dawn, lamp_sofa, market, houses, field_rain, table_lamp, spotlight, sunset_birds, pipe, pipe_flow, road_pov, masjid_night, desk_night, door_light. Poses: stand, ruku, sujud, sit, give, dua, walk, none. Pick the scene that shows the point.
+- **Religious accuracy is non-negotiable:** Quran with surah:ayah, only sahih/hasan hadith with collection and number, meanings paraphrased faithfully, Arabic text exactly as in the source. If you are not sure of a reference, pick a different point. Never invent or merge hadith.
+- `basis`: "Winning elsewhere: '<their title>' by @tanzil_quran / @soulofbaraqah (TikTok, Omar's pick)" or a real outlier the Analyst found. `footage`: omit (no clip needed).
+
 ## Long videos (L1, L2)
 Long videos have no big hits yet, so base them on what wins elsewhere plus Omar's strongest Short formats:
 - **Bounce Theory:** L1 = a compilation or tournament built ONLY from his top Short formats (e.g. the pendulum wave and string art that got 31K and 9K), with text. L2 = "Satisfying Clips for Edits Vol. N (No Text)" from the same top formats.
