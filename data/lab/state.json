@@ -1,25 +1,25 @@
 {
   "team": "lab",
   "hired": true,
-  "updatedAt": "2026-11-04T11:55:00Z",
+  "updatedAt": "2026-11-04T12:05:00Z",
   "agents": [
     {
       "id": "lead",
       "name": "Lab Director",
       "role": "Picks the upgrades worth doing",
-      "status": "waiting",
-      "doing": "Brief ready: make the Bounce long a marble race",
-      "lastRun": "2026-10-28T11:25:00Z",
-      "nextRun": "2026-10-29T10:23:00Z"
+      "status": "ok",
+      "doing": "Brief ready: 3 good longs a week, not 14",
+      "lastRun": "2026-11-04T12:05:00Z",
+      "nextRun": "2026-11-05T11:23:00Z"
     },
     {
       "id": "scout",
       "name": "Tool Scout",
       "role": "New AI tools, models and APIs",
       "status": "ok",
-      "doing": "Found YPP 2027 rules, Metricool long-form data, MOSS-SoundEffect",
-      "lastRun": "2026-10-28T11:25:00Z",
-      "nextRun": "2026-10-29T10:23:00Z"
+      "doing": "Found YPP 2027 rules + Metricool long-form data",
+      "lastRun": "2026-11-04T12:05:00Z",
+      "nextRun": "2026-11-05T11:23:00Z"
     },
     {
       "id": "hunter",
@@ -27,20 +27,40 @@
       "role": "What makes rival videos more engaging",
       "status": "ok",
       "doing": "5 new format leads for the YouTube team",
-      "lastRun": "2026-10-28T11:25:00Z",
-      "nextRun": "2026-10-29T10:23:00Z"
+      "lastRun": "2026-11-04T12:05:00Z",
+      "nextRun": "2026-11-05T11:23:00Z"
     },
     {
       "id": "engineer",
       "name": "Upgrade Engineer",
       "role": "Turns finds into build plans",
-      "status": "working",
-      "doing": "Turning finds into build plans",
-      "lastRun": "2026-10-28T11:25:00Z",
-      "nextRun": "2026-10-29T10:23:00Z"
+      "status": "ok",
+      "doing": "1 build plan ready (8/10)",
+      "lastRun": "2026-11-04T12:05:00Z",
+      "nextRun": "2026-11-05T11:23:00Z"
     }
   ],
   "log": [
+    {
+      "t": "2026-11-04T12:05:00Z",
+      "agent": "Lab Director",
+      "msg": "No self-upgrade: no Agent HQ upgrade is approved and waiting"
+    },
+    {
+      "t": "2026-11-04T12:05:00Z",
+      "agent": "Lab Director",
+      "msg": "No hire this run: the main gap (longs) already has the Long-Form Doctor; no new gap clearly needs its own agent"
+    },
+    {
+      "t": "2026-11-04T12:05:00Z",
+      "agent": "Lab Director",
+      "msg": "Checked hires: kept Caption Coach (TikTok, wrote caption packs Nov 3) and Long-Form Doctor (YouTube, wrote longFix Nov 3); both ran ok"
+    },
+    {
+      "t": "2026-11-04T12:05:00Z",
+      "agent": "Upgrade Engineer",
+      "msg": "Planned 1 upgrade: Fewer, findable longs: 3 a week per channel (only one cleared the 8/10 bar)"
+    },
     {
       "t": "2026-11-04T11:55:00Z",
       "agent": "Format Hunter",
@@ -228,6 +248,38 @@
     }
   ],
   "ideas": [
+    {
+      "id": "lab-2026-11-04-1",
+      "title": "Fewer, findable longs: 3 a week per channel",
+      "hook": "Swap 14 unwatched longs a week for 3 built ones, aimed at watch hours",
+      "why": "Every long on both channels is at 0-41 views, including the Marble Run Special the Lab pitched (10 views, 1.6% watched after 6 days). Each channel posts 2 longs a day (14 a week). Metricool's 2026 study of 799,718 videos found 2-4 long uploads a week gave the best results per video, and more than 7 a week lowered total monthly views. YouTube's Feb 1, 2027 YPP rules make long-form watch hours the realistic way in: Shorts pay will need 10M Shorts views per 90 days, and new applicants need 8,000 watch hours (Bounce Theory has ~217K views a month and 165 subs).",
+      "format": "YouTube · Growth · 1h",
+      "business": "YouTube",
+      "type": "Growth",
+      "impact": "Saves ~2 render hours a day across both channels. Goal: first longs above 100 views and some long-form watch hours each week (now ~0). Results aren't guaranteed; the study is correlational.",
+      "effort": "1h",
+      "cost": "$0",
+      "score": 8,
+      "script": "1. Approve this, and the R&D Lab edits agents/formats/youtube-lineup.md on its next run: longs only on Mon, Wed and Fri, 1 per channel each day (3 a week, down from 14). On other days the lineup is 15 Shorts only.\n2. Paste the build prompt into Claude Code in YOUTUBE HQ so both video skills make a long only when the lineup has one.\n3. Each long uses the Long-Form Doctor's L1/L2 advice plus a Lab Long lead ('Escape to a <place>' rain long, an explainer long), and gets 3 title options.\n4. When each long goes public, open YouTube Studio and set it as the 'Related video' on that day's 3 strongest Shorts on the same channel, so Shorts viewers have a path to it (manual, ~2 min).\n5. Spend the freed render time on Shorts quality.\nRisks: fewer uploads can mean fewer chances to get lucky, so keep at least 3 a week.\nCheck in 2 weeks: the median views per long should be above the 0-41 baseline, and Studio → Earn should show long-form watch hours moving. If not, go back to the old count.",
+      "buildWhere": "Claude Code",
+      "buildPrompt": "Paste into Claude Code opened in Downloads\\YOUTUBE HQ\n\nGoal: Bounce Theory and Ambient Escape should make long videos only 3 times a week (Monday, Wednesday, Friday, 1 long per channel), not 2 every day. The daily lineup from Agent HQ (repo omarjaradat2006-sudo/agent-hq, agents/formats/youtube-lineup.md, which the R&D Lab is updating) will only include L1 on those days.\n\n1. Open YOUTUBE HQ\\.claude\\skills\\bounce-theory-videos\\SKILL.md and YOUTUBE HQ\\.claude\\skills\\ambient-escape-videos\\SKILL.md (the laptop copies that RUN DAILY BATCH uses). Find every place that says each day has 2 long videos, or that always renders L1 and L2.\n2. Change them so that: the batch renders exactly the long slots listed in today's lineup (zero, one or two) and never adds a long that isn't in it; if the lineup has no long, the day is 15 Shorts only; every rendered long gets 3 title options written to its queue note so Omar can pick one.\n3. Add one line to each skill's upload checklist: 'After a long goes public, set it as the Related video on the day's 3 strongest Shorts on the same channel (YouTube Studio → Short → Related video).'\n4. Don't change anything else about Shorts, audio, footage rules or scheduling (the 5 PM-8 AM window stays).\n5. Test: dry-run today's batch with a lineup that has no long, and confirm only 15 Shorts are planned per channel; then with a lineup that has one long, confirm exactly one long is planned. Tell me exactly what changed in each SKILL.md.",
+      "sources": [
+        {
+          "title": "YouTube Trends 2026 (Metricool)",
+          "url": "https://metricool.com/youtube-trends/"
+        },
+        {
+          "title": "YouTube Partner Program updates for 2027",
+          "url": "https://blog.youtube/news-and-events/youtube-partner-program-updates-2027-new-opportunities-earn/"
+        },
+        {
+          "title": "YPP changes 2027 for faceless channels (archived lives count)",
+          "url": "https://easyviral.ai/blog/youtube-partner-program-changes-2027"
+        }
+      ],
+      "status": "pending",
+      "createdAt": "2026-11-04T12:05:00Z"
+    },
     {
       "id": "lab-2026-10-28-1",
       "title": "Marble Run Special: Bounce Theory's first real long",
@@ -691,20 +743,20 @@
     }
   ],
   "brief": {
-    "date": "2026-10-28",
-    "createdAt": "2026-10-28T11:20:00Z",
-    "headline": "Make Bounce Theory's long a marble race, not a compilation",
-    "summary": "Your best upgrade today is a Marble Run Special long for Bounce Theory: one continuous race is at 2.27M views (21.7x) right now, while your compilation longs sit at 0-11 views. For Ambient Escape, the top new lead is seasonal cozy-room longs (a winter library hideaway hit 27.5x). I hired a Caption Coach for TikTok, since your views fell to ~250 and most captions still say 'Follow for more'.",
+    "date": "2026-11-04",
+    "createdAt": "2026-11-04T12:05:00Z",
+    "headline": "Make 3 good longs a week, not 14 unwatched ones",
+    "summary": "Your best upgrade today is cutting longs to 3 a week per channel. Every long you've posted is at 0-41 views, including my Marble Run Special pick (10 views, 1.6% watched), and Metricool's data says 2-4 longs a week beat 7+. YouTube's new rules from Feb 1 also mean Shorts alone won't pay at your size, so long-form watch hours are the way in. Best new format lead: 'Can The Ball Reach Final Form' (122,773 views, 9.4x its channel) for Bounce Theory. No agents hired or removed.",
     "filmToday": [
-      "Marble Run Special: Bounce Theory's first real long — paste its build prompt into a new Claude chat to get the marble_run_long code"
+      "Fewer, findable longs: 3 a week per channel — approve it, then paste its build prompt into Claude Code in YOUTUBE HQ"
     ],
     "approvals": [
-      "10 upgrades waiting (5 new today)"
+      "1 upgrade to review"
     ],
     "notes": [
-      "Answered team requests: TikTok caption data came from Metricool's 2026 study (question captions +26% comments); nothing reliable found on reach drops after ~300 posts. I couldn't find an English Islamic Shorts channel with trustworthy per-video numbers; today's Islamic lead is Arabic (event-timed hook, 159K).",
-      "Growth team: the pages ranking for 'marketing plan for a bakery' are per-business-type template pages (ClickUp), not generic generators; traffic numbers aren't public.",
-      "YouTube Shorts series (seasons and episodes) is rolling out since Sept 23: a tidy way to run a Bounce Theory tournament. The AI Opportunities team still hasn't run since it was hired."
+      "YouTube's YPP changes on Feb 1, 2027: Shorts revenue needs 10M qualified Shorts views in 90 days, and new applicants need 1,000 subs plus 8,000 watch hours (or 20M Shorts views). Until then it's 1,000 subs + 4,000 hours or 10M Shorts views. Archived live streams count as watch hours, which is why there's a live-battle lead.",
+      "MOSS-SoundEffect v2.0 is an open text-to-sound model (Apache 2.0 according to a review; I couldn't open the model page to confirm). It could make richer rain and fire layers, but discovery is what's holding the longs back, not audio, so I didn't pitch it yet.",
+      "Team requests answered: Google's AI calling still isn't in Canada (Opps); Simplify has ~500K users and 4.8★ (LinkedAI); no free ads source with performance data (Growth). I still found no Islamic quiz Shorts channel with public view numbers (YouTube), and no solid data on TikTok reach drops."
     ]
   },
   "processedIssues": [],
