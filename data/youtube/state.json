@@ -1,72 +1,82 @@
 {
  "team": "youtube",
  "hired": true,
- "updatedAt": "2026-11-04T15:35:00Z",
+ "updatedAt": "2026-11-04T15:55:00Z",
  "agents": [
   {
    "id": "lead",
    "name": "Channel Lead",
    "role": "Runs both channels",
-   "status": "waiting",
-   "doing": "Waiting for the review",
-   "lastRun": "2026-11-03T15:18:12Z",
-   "nextRun": "2026-11-04T15:13:00Z"
+   "status": "ok",
+   "doing": "Brief ready: 34 videos planned",
+   "lastRun": "2026-11-04T15:55:00Z",
+   "nextRun": "2026-11-05T15:13:00Z"
   },
   {
    "id": "analyst",
    "name": "Analyst",
    "role": "Niche and competitor outliers",
    "status": "ok",
-   "doing": "Research done: 8 findings, 4 per channel",
-   "lastRun": "2026-11-04T15:35:00Z",
-   "nextRun": "2026-11-04T15:13:00Z"
+   "doing": "Research done: 8 findings",
+   "lastRun": "2026-11-04T15:55:00Z",
+   "nextRun": "2026-11-05T15:13:00Z"
   },
   {
    "id": "strategist",
    "name": "Strategist",
    "role": "Topics and titles",
-   "status": "working",
-   "doing": "Building the 34-video lineup",
-   "lastRun": "2026-11-03T15:18:12Z",
-   "nextRun": "2026-11-04T15:13:00Z"
+   "status": "ok",
+   "doing": "Lineup set: 17 per channel",
+   "lastRun": "2026-11-04T15:55:00Z",
+   "nextRun": "2026-11-05T15:13:00Z"
   },
   {
    "id": "producer",
    "name": "Producer",
    "role": "Formats for your pipelines",
-   "status": "waiting",
-   "doing": "Waiting for the review",
-   "lastRun": "2026-11-03T15:18:12Z",
-   "nextRun": "2026-11-04T15:13:00Z"
+   "status": "ok",
+   "doing": "2 new concepts + 4 clips requested",
+   "lastRun": "2026-11-04T15:55:00Z",
+   "nextRun": "2026-11-05T15:13:00Z"
   },
   {
    "id": "reviewer",
    "name": "Performance Reviewer",
    "status": "ok",
-   "doing": "Review done: winners and losers per channel",
-   "lastRun": "2026-11-04T15:26:00Z",
-   "nextRun": "2026-11-04T15:13:00Z"
+   "doing": "Review done",
+   "lastRun": "2026-11-04T15:55:00Z",
+   "nextRun": "2026-11-05T15:13:00Z"
   },
   {
    "id": "liaison",
    "name": "R&D Liaison",
    "role": "Brings in the R&D Lab's finds",
-   "status": "waiting",
-   "doing": "Used 4 Lab leads, skipped 2",
-   "lastRun": "2026-11-03T15:18:12Z",
-   "nextRun": "2026-11-04T15:13:00Z"
+   "status": "ok",
+   "doing": "Used Lab leads: Final Form, named-city rain, Marble Run",
+   "lastRun": "2026-11-04T15:55:00Z",
+   "nextRun": "2026-11-05T15:13:00Z"
   },
   {
    "id": "longdoc",
    "name": "Long-Form Doctor",
    "role": "Fixes long videos that aren't getting views",
-   "status": "waiting",
-   "doing": "Long fix: gold-orb Marble Special + Christmas/rain sleep longs",
-   "lastRun": "2026-11-03T15:18:12Z",
-   "nextRun": "2026-11-04T15:13:00Z"
+   "status": "ok",
+   "doing": "Long fix: eyeball Marble Run Special + rain cabin / fireplace longs",
+   "lastRun": "2026-11-04T15:55:00Z",
+   "nextRun": "2026-11-05T15:13:00Z"
   }
  ],
  "log": [
+  {
+   "t": "2026-11-04T15:55:00Z",
+   "agent": "Producer",
+   "msg": "2 new concepts (Final Form, named-city rain) and 4 stock clips requested"
+  },
+  {
+   "t": "2026-11-04T15:50:00Z",
+   "agent": "Strategist",
+   "msg": "Planned 34 videos: 16 remixes of your hits, 8 proven elsewhere, 2 tests, 8 Ambient explainers; requested 4 stock clips"
+  },
   {
    "t": "2026-11-04T15:35:00Z",
    "agent": "Analyst",
@@ -344,6 +354,40 @@
   }
  ],
  "ideas": [
+  {
+   "id": "youtube-2026-11-04-1",
+   "title": "Final Form: Can the Ball Reach Form 7?",
+   "hook": "Frame 1: a small grey ball is already bouncing inside a glowing ring, with a yellow 'FORM 1/7' counter at the top",
+   "why": "ASMR Ball Simulations' 'Can The Ball Reach Final Form' is at 122,773 views (9.4x its channel average) and the Lab lists it as a Bounce Theory lead. The tier-up counter gives a reason to wait for the last spectacle, the same payoff as your 107%-watched brick breaker, and your own 'ball gets BIGGER' sim hit 3,417 views. Test slot: it needs a new sims.py function (final_form), built from this spec.",
+   "format": "Bounce Theory · Final Form ball evolution (new sims.py function final_form)",
+   "script": "Build: new final_form() in sims.py. 1080x1920, 60 fps, near-black background, saturated glowing colours. One ball inside one white glowing ring (radius 400, centred x540 y820) with real gravity and bounce. Every 4th bounce the ball evolves to the next form with a flash and a rising tier-up sound: Form 1 grey (r 20), 2 brown (r 26), 3 orange + short trail (r 32), 4 yellow + longer trail (r 38), 5 cyan glow + spark trail (r 46), 6 magenta + comet trail (r 54), 7 FINAL FORM: gold core with rotating rainbow trail (r 62). On-screen (white + yellow, y 120-1450): white 'CAN THE BALL REACH FINAL FORM?' at y=180; yellow 'FORM 3/7' counter at y=290 updating on each tier-up; tier name in small white text under the counter for 1 s. Win: at bounce 28 the ball hits Form 7, the ring gets a rainbow outline burst, ball explodes into 200 particles that re-form the ball (loop ending: counter resets to FORM 1/7 and the ball is grey again at the last frame). Sound: one sine note per bounce stepping up a scale, a chime on each tier-up, a deep boom on Form 7. Length 28-32 s. Description: 'Can the ball reach its Final Form? 7 forms, one ring.' Hashtags: #shorts #satisfying #physics #bouncingball #simulation. Tags: bouncing ball, final form, ball evolution, satisfying, physics simulation, ball simulation, asmr, oddly satisfying, evolution, ring escape.",
+   "score": 7,
+   "sources": [
+    {
+     "title": "Can The Ball Reach Final Form (ASMR Ball Simulations, 122,773 views)",
+     "url": "https://www.youtube.com/watch?v=U0WGicEwa9s"
+    }
+   ],
+   "status": "approved",
+   "createdAt": "2026-11-04T15:50:00Z"
+  },
+  {
+   "id": "youtube-2026-11-04-2",
+   "title": "Rain in <City> Tonight (named-city rain Short)",
+   "hook": "Frame 1: a portrait night-city rain clip with raindrops already streaking, white text 'RAIN IN LONDON TONIGHT' and a small yellow 'let it play' line",
+   "why": "Ashwini ganesh's 'pune weather #punerain #rainsounds' is at 71,160 views (88.4x its channel average, 1 day old) and the Lab lists the named-city rain clip as an Ambient Escape Short lead. It has no voice and no faces, so a stock rain clip plus your synthesized rain fits copyright rules. Test slot: new city each day.",
+   "format": "Ambient Escape · Named-city rain Short",
+   "script": "Footage: AE-city-rain-night-01.mp4 (portrait stock rain on a night street, no faces or logos); loop it seamlessly to 20 s. Audio: synthesized steady rain -9 dB, soft low wind -26 dB, no music, no thunder. On-screen (white, y 120-1450): line 1 'RAIN IN LONDON TONIGHT' at y=200 (use a different real city each day: London, Istanbul, Toronto, Cairo, Seoul), line 2 yellow 'Put your phone down. Let it play.' at y=1300. Length 20 s. Description: 'Rain in <City> tonight. Sleep sounds from Ambient Escape.' Hashtags: #shorts #rain #rainsounds #sleep #cozy. Tags: rain, rain sounds, city rain, rainy night, sleep sounds, relaxing rain, ambient, cozy, night rain, rain asmr.",
+   "score": 6,
+   "sources": [
+    {
+     "title": "pune weather (Ashwini ganesh, 71,160 views)",
+     "url": "https://www.youtube.com/watch?v=xKYf5HyaoZg"
+    }
+   ],
+   "status": "approved",
+   "createdAt": "2026-11-04T15:50:00Z"
+  },
   {
    "id": "youtube-2026-11-03-1",
    "title": "Merge Up: Will 1,024 Rocks Become the Sun?",
@@ -839,22 +883,23 @@
   }
  ],
  "brief": {
-  "date": "2026-11-03",
-  "createdAt": "2026-11-03T15:18:12Z",
-  "headline": "Doubling down on pendulums, bricks, string art and verse lines",
-  "summary": "Today is a writing day, so the plan reuses yesterday's review: Bounce Theory leads (208K views and +155 subs in 28 days vs Ambient Escape's 42.8K and +130). Bounce opens with the pendulum wave (32.3K), the brick-wall duel (12.3K) and brick breaker (9.6K), adds a giant-orb marble Special like the 7.5M Dragon Balls outlier, and tests a new Merge Up Short based on LED Physics' 1M-view 'rocks become the Sun'. Ambient Escape leads with verse reminders and 'What Allah says' lines (1.1-1.4K at 96-100% watched), and its longs switch to a Christmas-cozy living room and rain-with-piano.",
+  "date": "2026-11-04",
+  "createdAt": "2026-11-04T15:50:00Z",
+  "headline": "Pendulums and bricks double down; Ambient starts explainers",
+  "summary": "Bounce Theory leads with 217K views and +160 subs in 28 days against Ambient Escape's 43.6K and +131, so today's lineup doubles down on the pendulum wave (32.3K), the brick-wall duel (12.3K) and string art (9.3K), with tests of Final Form and Merge Up. Ambient Escape starts Omar's rule today: 8 animated explainers (4 POV, 4 lists, each with an authentic hadith or ayah) next to 7 proven verse and reminder Shorts, and there are no explainer numbers yet to compare, so the benchmark is Ambient's 644-view median. Every long is still near zero, so L1 copies a winning rain-cabin title and L2 a November fireplace title.",
   "filmToday": [
-   "Bounce Theory: Watch 36 pendulums line up again... ✨ #shorts #physics",
-   "Bounce Theory: 4 balls, 1 brick wall... who breaks free first? 🧱 #shorts",
-   "Ambient Escape: Hardship is never the end | Quran 94:6 #shorts #quran"
+   "Bounce Theory: Watch 49 pendulums line up again... 🌌 #shorts #physics",
+   "Bounce Theory: 3 balls, 1 brick wall... who breaks free first? 🧱 #shorts",
+   "Ambient Escape: POV: someone cuts you off in traffic 🤍 #shorts #islam #hadith"
   ],
   "approvals": [
-   "Today's lineup is ready: 34 videos. Footage downloads by itself. Copy the batch prompt from Today's lineup into a new Claude chat."
+   "Today's lineup is ready: 34 videos. Footage downloads by itself. Double-click RUN DAILY BATCH.bat in YOUTUBE HQ on your laptop.",
+   "Waiting on Omar: Fewer, findable longs: 3 a week per channel"
   ],
   "notes": [
-   "New Test slot: Merge Up (youtube-2026-11-03-1) is a new sims.py function; if you'd rather skip building it, skip the idea and S15 gets replaced next run.",
-   "Skill suggestions worth applying: add the 'two balls, one brick wall' duel to bounce-theory-videos and cap colour_escape / marble_race / ring_escape / colour_battle at 1-2 a day.",
-   "Quran 2:152, 4:110, 11:6, 50:18, 94:6, 2:286, 13:28 and Tirmidhi 2002 are used today; please double-check them in the batch chat before upload."
+   "Explainer specs use only authentic references (Bukhari 6114, 247, 2311, 5009, 5641, 5986; Muslim 657, 2557, 2573, 2589, 2727, 2999; Tirmidhi 2317, 2344, 2416; Quran 3:200, 17:23, 25:63, 39:10, 65:2-3, 71:10-12 and more); please skim them once.",
+   "Two new tests need builds: Final Form (new sims.py function) and the named-city rain Short (uses stock footage you get automatically).",
+   "Skill suggestions worth applying: cap colour_escape / ring_escape / colour_battle at 1 a day and retire guess_the_surah quizzes (median 2 views over the last 6)."
   ]
  },
  "processedIssues": [],
@@ -864,7 +909,7 @@
    "query": "moon night",
    "orientation": "portrait",
    "minSeconds": 10,
-   "for": "S07,S15",
+   "for": "S02",
    "status": "ready",
    "url": "https://github.com/omarjaradat2006-sudo/agent-hq/releases/download/footage-2026-11-02/AE-moon-night-01.mp4",
    "page": "https://pixabay.com/videos/id-250395/",
@@ -877,88 +922,11 @@
    "sourceId": "pixabay:250395"
   },
   {
-   "file": "AE-rain-leaves-01.mp4",
-   "query": "rain leaves",
-   "orientation": "portrait",
-   "minSeconds": 10,
-   "for": "S06",
-   "status": "ready",
-   "url": "https://github.com/omarjaradat2006-sudo/agent-hq/releases/download/footage-2026-11-02/AE-rain-leaves-01.mp4",
-   "page": "https://pixabay.com/videos/id-172759/",
-   "credit": "Video by TravelGardenB on Pixabay",
-   "seconds": 10,
-   "size": "2160x3840",
-   "mb": 21.6,
-   "preview": "https://cdn.pixabay.com/video/2023/07/22/172759-847869814_large.jpg",
-   "fetchedAt": "2026-11-02T16:14:11Z",
-   "sourceId": "pixabay:172759"
-  },
-  {
-   "file": "AE-snowy-cabin-night-01.mp4",
-   "query": "snowy cabin night",
-   "orientation": "landscape",
-   "minSeconds": 10,
-   "for": "L1",
-   "status": "ready",
-   "url": "https://github.com/omarjaradat2006-sudo/agent-hq/releases/download/footage-2026-11-02/AE-snowy-cabin-night-01.mp4",
-   "page": "https://pixabay.com/videos/id-107573/",
-   "credit": "Video by soundsrelaxing89 on Pixabay",
-   "seconds": 30,
-   "size": "3840x2160",
-   "mb": 32.0,
-   "preview": "https://cdn.pixabay.com/video/2022/02/13/107573-678540733_large.jpg",
-   "fetchedAt": "2026-11-02T16:14:11Z",
-   "sourceId": "pixabay:107573"
-  },
-  {
-   "file": "AE-christmas-lights-01.mp4",
-   "query": "christmas tree lights",
-   "orientation": "landscape",
-   "minSeconds": 10,
-   "for": "L1",
-   "status": "ready",
-   "url": "https://github.com/omarjaradat2006-sudo/agent-hq/releases/download/footage-2026-11-03/AE-christmas-lights-01.mp4",
-   "page": "https://pixabay.com/videos/id-3565/",
-   "credit": "Video by Skylent on Pixabay",
-   "seconds": 17,
-   "size": "1920x1080",
-   "mb": 9.3,
-   "preview": "https://cdn.pixabay.com/video/2016/06/27/3565-172488151_large.jpg",
-   "fetchedAt": "2026-11-03T15:19:31Z",
-   "sourceId": "pixabay:3565"
-  },
-  {
-   "file": "AE-rain-window-02.mp4",
-   "query": "rain window",
-   "orientation": "landscape",
-   "minSeconds": 10,
-   "for": "L2",
-   "status": "ready",
-   "url": "https://github.com/omarjaradat2006-sudo/agent-hq/releases/download/footage-2026-11-03/AE-rain-window-02.mp4",
-   "page": "https://pixabay.com/videos/id-11722/",
-   "credit": "Video by Iconikmg on Pixabay",
-   "seconds": 33,
-   "size": "1920x1080",
-   "mb": 17.7,
-   "preview": "https://cdn.pixabay.com/video/2017/08/30/11722-231759069_large.jpg",
-   "fetchedAt": "2026-11-03T15:19:31Z",
-   "sourceId": "pixabay:11722"
-  },
-  {
-   "file": "AE-snowfall-night-01.mp4",
-   "query": "snow falling",
-   "orientation": "portrait",
-   "minSeconds": 10,
-   "for": "S01,S08,S11",
-   "status": "not_found",
-   "note": "No free clip matched. The team will try a different search."
-  },
-  {
    "file": "AE-sunrise-clouds-01.mp4",
    "query": "sunrise clouds",
    "orientation": "portrait",
    "minSeconds": 10,
-   "for": "S02,S14",
+   "for": "S04",
    "status": "ready",
    "url": "https://github.com/omarjaradat2006-sudo/agent-hq/releases/download/footage-2026-11-03/AE-sunrise-clouds-01.mp4",
    "page": "https://pixabay.com/videos/id-298643/",
@@ -975,7 +943,7 @@
    "query": "waterfall",
    "orientation": "portrait",
    "minSeconds": 10,
-   "for": "S04,S12",
+   "for": "S14",
    "status": "ready",
    "url": "https://github.com/omarjaradat2006-sudo/agent-hq/releases/download/footage-2026-11-03/AE-waterfall-forest-01.mp4",
    "page": "https://pixabay.com/videos/id-228847/",
@@ -988,11 +956,28 @@
    "sourceId": "pixabay:228847"
   },
   {
+   "file": "AE-desert-dunes-01.mp4",
+   "query": "desert sand",
+   "orientation": "portrait",
+   "minSeconds": 10,
+   "for": "S08",
+   "status": "ready",
+   "url": "https://github.com/omarjaradat2006-sudo/agent-hq/releases/download/footage-2026-11-03/AE-desert-dunes-01.mp4",
+   "page": "https://pixabay.com/videos/id-284568/",
+   "credit": "Video by antonlukin on Pixabay",
+   "seconds": 17,
+   "size": "2160x3840",
+   "mb": 32.4,
+   "preview": "https://cdn.pixabay.com/video/2025/06/09/284568_large.jpg",
+   "fetchedAt": "2026-11-03T15:19:31Z",
+   "sourceId": "pixabay:284568"
+  },
+  {
    "file": "AE-fire-flames-01.mp4",
    "query": "fire flames",
    "orientation": "portrait",
    "minSeconds": 10,
-   "for": "S05,S13",
+   "for": "S11",
    "status": "ready",
    "url": "https://github.com/omarjaradat2006-sudo/agent-hq/releases/download/footage-2026-11-03/AE-fire-flames-01.mp4",
    "page": "https://pixabay.com/videos/id-212710/",
@@ -1005,359 +990,334 @@
    "sourceId": "pixabay:212710"
   },
   {
-   "file": "AE-desert-dunes-01.mp4",
-   "query": "desert sand",
+   "file": "AE-forest-cabin-01.mp4",
+   "query": "forest cabin",
+   "orientation": "landscape",
+   "minSeconds": 10,
+   "for": "L1",
+   "status": "wanted"
+  },
+  {
+   "file": "AE-fireplace-room-01.mp4",
+   "query": "fireplace",
+   "orientation": "landscape",
+   "minSeconds": 10,
+   "for": "L2",
+   "status": "wanted"
+  },
+  {
+   "file": "AE-city-rain-night-01.mp4",
+   "query": "rain city night",
    "orientation": "portrait",
    "minSeconds": 10,
-   "for": "S09,S10",
-   "status": "ready",
-   "url": "https://github.com/omarjaradat2006-sudo/agent-hq/releases/download/footage-2026-11-03/AE-desert-dunes-01.mp4",
-   "page": "https://pixabay.com/videos/id-284568/",
-   "credit": "Video by antonlukin on Pixabay",
-   "seconds": 17,
-   "size": "2160x3840",
-   "mb": 32.4,
-   "preview": "https://cdn.pixabay.com/video/2025/06/09/284568_large.jpg",
-   "fetchedAt": "2026-11-03T15:19:31Z",
-   "sourceId": "pixabay:284568"
+   "for": "S15",
+   "status": "wanted"
+  },
+  {
+   "file": "AE-autumn-leaves-01.mp4",
+   "query": "autumn leaves",
+   "orientation": "portrait",
+   "minSeconds": 10,
+   "for": "S06",
+   "status": "wanted"
   }
  ],
  "lineup": {
-  "date": "2026-11-03",
-  "createdAt": "2026-11-03T15:18:12Z",
+  "date": "2026-11-04",
+  "createdAt": "2026-11-04T15:50:00Z",
   "channels": {
    "Bounce Theory": [
     {
      "slot": "S01",
      "kind": "Short",
-     "title": "Watch 36 pendulums line up again... ✨ #shorts #physics",
+     "title": "Watch 49 pendulums line up again... 🌌 #shorts #physics",
      "format": "pendulum_wave",
-     "basis": "Your hit: 'Watch them line up again... 🌊' · 32,252 views · 92% watched",
-     "note": "Same 33 s wave and re-alignment payoff, now a radial fan of 36 orbs in a teal → pink gradient with a marimba note per pass and a white flash at the re-alignment",
-     "made": true
+     "basis": "Your hit: 'Watch them line up again... 🌊' · 32,296 views · 92% watched",
+     "note": "Same 33 s wave and re-alignment payoff, now a spiral of 49 orbs in a gold → violet gradient with a harp pluck per pass and a white ring pulse at the re-alignment"
     },
     {
      "slot": "S02",
      "kind": "Short",
-     "title": "4 balls, 1 brick wall... who breaks free first? 🧱 #shorts",
+     "title": "3 balls, 1 brick wall... who breaks free first? 🧱 #shorts",
      "format": "brick_breaker",
-     "basis": "Your hit: '2 balls, 1 brick wall... who breaks free first?' · 12,312 views · 85% watched",
-     "note": "Four balls (red, cyan, gold, lime) on a purple-and-orange brick wall with a yellow brick counter per ball; 29 s",
-     "made": true
+     "basis": "Your hit: '2 balls, 1 brick wall... who breaks free first?' · 12,328 views · 85% watched",
+     "note": "Three balls (white, magenta, lime) on a teal-and-gold brick wall, each ball with its own yellow brick counter; first to break out wins; 28 s"
     },
     {
      "slot": "S03",
      "kind": "Short",
-     "title": "Every hit breaks a brick... can it escape the heart? ❤️ #shorts",
+     "title": "Every hit breaks a brick... can it escape the star? ⭐ #shorts",
      "format": "brick_breaker",
-     "basis": "Your hit: 'Every hit breaks a brick... when does it escape?' · 9,618 views · 107% watched",
-     "note": "Heart-shaped brick cage glowing pink → white, yellow bricks-left counter, ends on the escape; 21 s",
-     "made": true
+     "basis": "Your hit: 'Every hit breaks a brick... when does it escape?' · 9,621 views · 107% watched",
+     "note": "One ball, bricks laid out as a five-point star outline in orange and pink, yellow 'BRICKS LEFT' countdown, last brick opens the exit; 21 s"
     },
     {
      "slot": "S04",
      "kind": "Short",
-     "title": "Every bounce adds a string... watch the hexagon appear ⬡ #shorts",
+     "title": "Every bounce adds a string... watch the star appear ⭐ #shorts",
      "format": "string_art",
-     "basis": "Your hit: 'Every bounce adds a string 🎨' · 9,338 views · 89% watched · 28 subs",
-     "note": "Cyan hexagon outline on near-black, string count in yellow, soft glass note per string; 24 s",
-     "made": true
+     "basis": "Your hit: 'Every bounce adds a string 🎨' · 9,342 views · 89% watched",
+     "note": "Same 24 s build, now a 7-point star in cyan → gold strings, thin white frame, a soft marimba note per string"
     },
     {
      "slot": "S05",
      "kind": "Short",
-     "title": "Slow vs fast pendulums... who catches up? 🌊 #shorts #physics",
+     "title": "Short vs long pendulums... who lines up first? 🌊 #shorts",
      "format": "pendulum_wave",
-     "basis": "Your hit: 'Different lengths, same start... wait for it' · 8,116 views · 80% watched",
-     "note": "12 pendulums split into a red team and a blue team with long trails and a yellow countdown to the first re-alignment; 31 s",
-     "made": true
+     "basis": "Your hit: 'Different lengths, same start... wait for it' · 8,130 views · 80% watched",
+     "note": "Two rows of 12 pendulums (cool blue vs hot pink) with different length steps; the pink row re-aligns first, with a yellow 'ALIGNED' flash; 31 s"
     },
     {
      "slot": "S06",
      "kind": "Short",
-     "title": "It breaks a brick every hit... triangle edition 🔺 #shorts #satisfying",
-     "format": "brick_breaker",
-     "basis": "Your hit: 'It breaks a brick every hit...' · 6,024 views · 98% watched",
-     "note": "Triangle bricks in neon blue and violet, one ball, yellow bricks-left counter; 20 s",
-     "made": true
+     "title": "The circle shrinks every bounce 😬 5 balls inside #shorts",
+     "format": "shrinking_circle",
+     "basis": "Your hit: 'The circle shrinks every bounce 😬' · 5,322 views · 141% watched",
+     "note": "Same 15 s loop with 5 neon balls instead of 3 (cyan, pink, lime, gold, white) and a red ring that glows hotter each shrink"
     },
     {
      "slot": "S07",
      "kind": "Short",
-     "title": "The circle shrinks every bounce 😬 3 balls inside #shorts",
-     "format": "shrinking_circle",
-     "basis": "Your hit: 'The circle shrinks every bounce 😬' · 5,319 views · 141% watched",
-     "note": "Plain circle again with three balls (pink, cyan, gold) and a yellow size % counter; 15 s",
-     "made": true
+     "title": "One bounce = one line ✍️ guess the shape? #shorts",
+     "format": "string_art",
+     "basis": "Your hit: 'One bounce = one line ✍️' · 3,412 views · 83% watched",
+     "note": "Same one-line-per-bounce build, but the shape is a mystery: a pink paper-plane drawn in white lines, 'GUESS THE SHAPE?' in yellow, reveal at the end; 26 s"
     },
     {
      "slot": "S08",
      "kind": "Short",
-     "title": "One bounce = one line ✍️ guess the animal? #shorts",
-     "format": "string_art",
-     "basis": "Your hit: 'One bounce = one line ✍️' · 3,407 views · 83% watched (same format as the 9.3K string-art hit)",
-     "note": "Lines draw a hidden butterfly (or fish), title asks for the guess, reveal in the last 3 s; 26 s",
-     "made": true
+     "title": "700 balls dropped at once 🤯 where do they land? #shorts",
+     "format": "chaos_fan",
+     "basis": "Your hit: '400 balls dropped at once 🤯' · 3,336 views · 92% watched",
+     "note": "Same 23 s drop, 700 balls in a red → blue gradient into a 3-hole funnel, yellow percentage counter per hole"
     },
     {
      "slot": "S09",
      "kind": "Short",
-     "title": "600 balls dropped at once 🤯 #shorts #physics",
-     "format": "chaos_fan",
-     "basis": "Your hit: '400 balls dropped at once 🤯' · 3,334 views · 92% watched",
-     "note": "600 balls coloured pink → gold by start offset, fanning out from one narrow funnel; 23 s",
-     "made": true
+     "title": "Every hit breaks a brick... triangle edition 🔺 #shorts",
+     "format": "brick_breaker",
+     "basis": "Your hit: 'It breaks a brick every hit... 🧱' · 6,028 views · 98% watched",
+     "note": "One ball and a pyramid of purple/orange bricks, a yellow bricks-left counter, last brick fires a gold burst; 20 s"
     },
     {
      "slot": "S10",
      "kind": "Short",
-     "title": "Fastest marble wins 🏁 Pick one #shorts #satisfying",
-     "format": "marble_race",
-     "basis": "Your hit: 'Fastest marble wins 🏁 Pick one' · 3,974 views · 123% watched",
-     "note": "Eight named-colour marbles on a zig-zag ramp course (yesterday was a spiral peg course), gold glow on the winner; 14 s",
-     "made": true
+     "title": "Will 2,048 rocks become the Sun? ☀️ #shorts #satisfying",
+     "format": "Merge Up (done idea)",
+     "basis": "Test: 'Will 1,024 rocks become the Sun?' by LED Physics · 1,031,751 views · 99.3x their average; your first Merge Up Short went up yesterday and has no numbers yet",
+     "note": "Follow the Merge Up spec (youtube-2026-11-03-1) with a violet-and-cyan jar (new colours) and a 12-tier ladder ending at 2,048 SUN; 28 s",
+     "newIdea": "youtube-2026-11-03-1"
     },
     {
      "slot": "S11",
      "kind": "Short",
-     "title": "Pick a color before it escapes 🔴🔵🟢🟡 #shorts #satisfying",
-     "format": "colour_escape",
-     "basis": "Your hit: 'Pick a color before it escapes 🔴🔵' · 3,176 views · 136% watched",
-     "note": "Four colours, each ball in its own ring quarter, 12 s",
-     "made": true
+     "title": "Can anything stop this glass-shattering spiral? 🌀 #shorts",
+     "format": "spiral chain reaction (done idea)",
+     "basis": "Winning elsewhere: 'Can Anything Stop This Glass-Shattering Spiral?' by Satisfy Dynamics · 664,038 views · 28.7x their average",
+     "note": "Use the Spiral Chain Reaction spec (youtube-2026-10-26-2): a ball spirals inward through glass-blue panes that shatter on every hit, yellow 'PANES LEFT' counter, gold flash on the last pane; 30 s",
+     "newIdea": "youtube-2026-10-26-2"
     },
     {
      "slot": "S12",
      "kind": "Short",
-     "title": "Every bounce is a note... guess the song? 🎵 #shorts",
+     "title": "Can 12 balls build one chord? 🎹 #shorts #satisfying",
      "format": "ring_escape (melody)",
-     "basis": "Winning elsewhere: 'Guess The Song// ... 999 varied bouncing orbs' by Mo Lucky · 683,864 views · 10.1x their average",
-     "note": "Ode to Joy (public domain, synthesized) on cyan and gold orbs, note shown in yellow as it plays; 20 s",
-     "made": true
+     "basis": "Winning elsewhere: 'Can 12 Balls Build One Chord?' by Bouncy Physics · 222,856 views · 5.6x their average",
+     "note": "12 coloured balls each tied to one note of a C major chord (synthesized sine/bell), dropping onto a glowing floor one by one; the full chord rings together on the 12th ball with a white flash; 22 s"
     },
     {
      "slot": "S13",
      "kind": "Short",
-     "title": "Red vs Green... who wins the weapon ball battle? ⚔️ #shorts",
+     "title": "Blue vs Orange... who wins the weapon ball battle? ⚔️ #shorts",
      "format": "weapon_ball_battle",
-     "basis": "Winning elsewhere: 'Real Madrid vs Manchester City | Weapon Ball Battle' by Cell Wars Game · 3,314 views · 6.0x their average",
-     "note": "Two colour teams (no club names): red sword-ball and axe-ball vs green spear-ball and shield-ball, HP bars, winner card; 20 s",
-     "made": true
+     "basis": "Winning elsewhere: 'Real Madrid vs Manchester City | Weapon Ball Battle' by Cell Wars Game · 6.0x their average",
+     "note": "Two colour teams (no club names): blue bow-ball and hammer-ball vs orange sword-ball and shield-ball, HP bars, winner card; 20 s"
     },
     {
      "slot": "S14",
      "kind": "Short",
-     "title": "Which marble will be the last? 🏁 One gets eliminated every 2 seconds #shorts",
+     "title": "Which marble will be the last? 🏁 One drops every 2 s #shorts",
      "format": "marble_race",
-     "basis": "Winning elsewhere: 'Which marble will be the last?' by 3Ds Marble Show · 1,199,018 views · 3.3x their average",
-     "note": "Ten named marbles on a funnel course, the last one at each checkpoint is knocked out, counter 10 → 1 in yellow; 22 s",
-     "made": true
+     "basis": "Winning elsewhere: 'Which marble will be the last?' by 3Ds Marble Show · 1,334,800 views · 3.7x their average",
+     "note": "Eight marbles on a funnel track; the slowest drops through a trapdoor every 2 s, yellow 'LEFT: 8' counter, gold crown on the last marble; 25 s"
     },
     {
      "slot": "S15",
      "kind": "Short",
-     "title": "Will 1,024 rocks become the Sun? ☀️ #shorts #satisfying",
-     "format": "Merge Up (new)",
-     "basis": "Test: 'Will 1,024 rocks become the Sun? #shorts' by LED Physics · 1,031,751 views · 99.3x their average",
-     "note": "Follow the approved Merge Up spec: grey rocks merge up the tier ladder in a glass jar to a gold Sun; 28 s",
-     "newIdea": "youtube-2026-11-03-1",
-     "made": true
+     "title": "Can the ball reach FINAL FORM? 🔥 7 forms, 1 ring #shorts",
+     "format": "Final Form ball evolution (new)",
+     "basis": "Test: 'Can The Ball Reach Final Form' by ASMR Ball Simulations · 122,773 views · 9.4x their average (Lab lead)",
+     "note": "Follow the Final Form spec: grey ball evolves to a gold rainbow-trail Form 7 in a white ring, yellow FORM x/7 counter; 28-32 s",
+     "newIdea": "youtube-2026-11-04-1"
     },
     {
      "slot": "L1",
      "kind": "Long",
-     "title": "Marble Run Special 🌟 10 Marbles, Collect the Gold Orbs | Who Wins?",
+     "title": "Marble Run Special 👁️ 10 Eyeball Marbles, Giant Course | Who Wins?",
      "format": "marble_run_long",
-     "basis": "Winning elsewhere: 'Marble Run 🌟 How many Dragon Balls can you collect⁉️' by Marble Run REAL · 7,483,764 views · 16.3x their average",
-     "note": "Same continuous 10-minute Special as yesterday on a new course (gold-orb gates, spinner garden, elevator) where each marble earns a gold orb per gate and the orb count decides the winner card; 3 test titles",
-     "made": true
+     "basis": "Winning elsewhere: 'Marble Run ☆ Giant Eyeball Ball Race' by Marble Run REAL · 6,142,014 views · 13.4x their average; 'Marble Run☆Louis's Genius Ball Run②' · 16,447,959 views · 28.5x",
+     "note": "Third Special, one continuous 10-minute course (see-saw bridge, bumper pit, spinner garden); each marble is a glowing eyeball (white sphere, coloured iris, drawn in code) and a gold-orb count decides the winner card; 3 test titles"
     },
     {
      "slot": "L2",
      "kind": "Long",
-     "title": "Satisfying Clips for Edits Vol. 11 (No Text) 🟣🟡 Free to Use | Split-Screen Background",
+     "title": "Satisfying Clips for Edits Vol. 12 (No Text) 🔵🟠 Free to Use | Split-Screen Background",
      "format": "compilation (no text): pendulum_wave + brick_breaker + string_art",
-     "basis": "Your hits: pendulum wave 32,252 · brick breaker 12,312 · string art 9,338 views",
-     "note": "No text, 10-12 s clips only from the 3 top formats in new colour sets (teal-pink pendulum fan, heart bricks, hexagon strings); one 'Clips for Edits' long per day, as the Long-Form Doctor says",
-     "made": true
+     "basis": "Your hits: pendulum wave 32,296 · brick breaker 12,328 · string art 9,342 views",
+     "note": "No text, 10-12 s clips from the 3 top formats in new colour sets (gold-violet spiral pendulums, star bricks, star strings); one 'Clips for Edits' long per day"
     }
    ],
    "Ambient Escape": [
     {
      "slot": "S01",
      "kind": "Short",
-     "title": "Hardship is never the end | Quran 94:6 #shorts #quran",
-     "format": "ayah_reminder",
-     "basis": "Your hit: 'Allah hasn't forgotten you | Quran 93:3' · 1,336 views · 96% watched",
-     "note": "Falling-snow loop; Quran 94:6 ('Indeed, with hardship comes ease'), 'ease' in yellow; 11 s",
-     "footage": "AE-snowfall-night-01.mp4",
-     "made": true
+     "title": "POV: someone cuts you off in traffic 🤍 #shorts #islam #hadith",
+     "format": "explainer_pov",
+     "basis": "Winning elsewhere: '8 Islamic ways to unblock your rizq' / POV hadith explainers by @soulofbaraqah / @tanzil_quran (TikTok, Omar's pick)",
+     "note": "POV hook: \"POV: someone cuts you off in traffic\" | beats: \"HONK. He cut right in front of you.\" (red) ; \"Your hands tighten on the wheel\" ; \"Everything in you wants to shout back\" | reveal: ليس الشديد=the strong is not, بالصرعة=the one who overpowers, إنما الشديد=the strong one is only, الذي يملك نفسه=who controls himself, عند الغضب=when angry | icons: no, throw, flex, calm, gauge | source: Sahih al-Bukhari 6114, Sahih Muslim 2609 | end: \"The strongest move is staying calm.\" / \"Be strong today.\" | cta: \"Send this to a friend who drives angry\""
     },
     {
      "slot": "S02",
      "kind": "Short",
-     "title": "What Allah says about forgiveness 🤍 #shorts #islam #quran",
-     "format": "what_allah_says",
-     "basis": "Your hit: 'What Allah says about your parents 🤍' · 1,296 views · 99% watched",
-     "note": "Sunrise-clouds loop; Quran 4:110 ('whoever seeks forgiveness of Allah will find Allah Forgiving and Merciful'), 'Forgiving' in yellow; 13 s",
-     "footage": "AE-sunrise-clouds-01.mp4",
-     "made": true
+     "title": "He hears you and He sees you | Quran 20:46 #shorts #quran",
+     "format": "ayah_reminder",
+     "basis": "Your hit: 'Allah hasn't forgotten you | Quran 93:3' · 1,336 views · 96% watched",
+     "note": "Moon-night loop; Quran 20:46 ('Fear not; indeed I am with you both, hearing and seeing'), 'hearing and seeing' in yellow; 11 s",
+     "footage": "AE-moon-night-01.mp4"
     },
     {
      "slot": "S03",
      "kind": "Short",
-     "title": "Every bounce, the ball gets BIGGER 😳 Can it fit the circle? #shorts",
-     "format": "bounce sim (off-niche)",
-     "basis": "Your hit: 'Every bounce, the ball gets BIGGER 😳 Wait for the end' · 3,417 views · 76% watched",
-     "note": "Same 27 s Bounce Engine scene, now violet and gold with a calm bell note per bounce and a yellow ball-size counter, no Islamic text",
-     "made": true
+     "title": "5 Quran & Sunnah habits that open your rizq 🤍 #shorts #islam",
+     "format": "explainer_list",
+     "basis": "Winning elsewhere: '8 Islamic ways to unblock your rizq' / POV hadith explainers by @soulofbaraqah / @tanzil_quran (TikTok, Omar's pick)",
+     "note": "hook: \"5 habits that open the doors of *rizq*\" (door_light) | 1) \"Have *taqwa*\" — \"Whoever fears Allah, He makes a way out and provides from where he never expected\" — Quran 65:2-3 — door_light/stand ; 2) \"Keep family *ties*\" — \"Whoever wants his provision widened should keep his family ties\" — Sahih al-Bukhari 5986, Sahih Muslim 2557 — lamp_sofa/sit ; 3) \"Be *grateful*\" — \"If you are grateful, I will surely give you more\" — Quran 14:7 — sunset_birds/dua ; 4) \"Rely on *Allah*\" — \"Trust Him as the birds do: they leave hungry and return full\" — Jami at-Tirmidhi 2344 — sunset_birds/walk ; 5) \"Seek *forgiveness*\" — \"Ask your Lord for forgiveness… He will send rain and increase your wealth\" — Quran 71:10-12 — field_rain/dua | end: \"Rizq is in Allah's hands.\" / \"Do your part, then trust Him.\" | cta: \"Send this to someone stressed about money\""
     },
     {
      "slot": "S04",
      "kind": "Short",
-     "title": "Remember Me and I will remember you | Quran 2:152 #shorts #quran",
-     "format": "ayah_reminder",
-     "basis": "Your hit: 'Where hearts find rest | Quran 13:28' · 1,175 views · 99% watched",
-     "note": "Waterfall loop; Quran 2:152 ('So remember Me; I will remember you'), 'remember you' in yellow; 11 s",
-     "footage": "AE-waterfall-forest-01.mp4",
-     "made": true
+     "title": "What Allah says when you feel lost 🤍 #shorts #islam #quran",
+     "format": "what_allah_says",
+     "basis": "Your hit: 'What Allah says about your parents 🤍' · 1,296 views · 99% watched",
+     "note": "Sunrise-cloud loop; text 'He found you lost and guided you' with Quran 93:7 on screen, 'guided' in yellow; 12 s",
+     "footage": "AE-sunrise-clouds-01.mp4"
     },
     {
      "slot": "S05",
      "kind": "Short",
-     "title": "What Allah says about your rizq 🤍 #shorts #islam #quran",
-     "format": "what_allah_says",
-     "basis": "Your hit: 'What Allah says about being grateful 🤍' · 950 views · 123% watched",
-     "note": "Fire-flames loop; Quran 11:6 ('There is no creature on earth but that its provision is on Allah'), 'provision' in yellow; 13 s",
-     "footage": "AE-fire-flames-01.mp4",
-     "made": true
+     "title": "POV: your mum asks for help the second you sit down 🤍 #shorts #islam",
+     "format": "explainer_pov",
+     "basis": "Winning elsewhere: '8 Islamic ways to unblock your rizq' / POV hadith explainers by @soulofbaraqah / @tanzil_quran (TikTok, Omar's pick)",
+     "note": "POV hook: \"POV: your mum asks for help the second you sit down\" | beats: \"You just got home. Everything hurts.\" (red) ; \"She says: 'Can you help me?'\" ; \"You almost sigh\" | reveal: فلا تقل لهما=so do not say to them, أف=\"uff\", ولا تنهرهما=nor scold them, وقل لهما=and speak to them, قولا كريما=noble words | icons: no, gauge, throw, hand, heart | source: Quran 17:23 (Al-Isra) | end: \"Speak softly today.\" / \"Even when you are tired.\" | cta: \"Send this to a friend who needs to call their mum\""
     },
     {
      "slot": "S06",
      "kind": "Short",
-     "title": "The heaviest thing on your scale, and it costs nothing 🤍 #shorts #islam #reminder",
-     "format": "question_hook_reflection",
-     "basis": "Your hit: '3 questions in the grave. Are you ready? 🤍' · 1,438 views · 108% watched",
-     "note": "Rain-on-leaves loop; 'Nothing is heavier on the Scale than good character' (Sunan al-Tirmidhi 2002), 'good character' in yellow; 12 s",
-     "footage": "AE-rain-leaves-01.mp4",
-     "made": true
+     "title": "Every bounce, the ball gets BIGGER 😳 Will it still fit? #shorts",
+     "format": "bounce sim (off-niche)",
+     "basis": "Your hit: 'Every bounce, the ball gets BIGGER 😳 Wait for the end' · 3,417 views · 76% watched",
+     "note": "Same 27 s Bounce Engine scene, now teal and magenta with a calm bell per bounce, a yellow 'SIZE x1.0 → x6.0' counter and a gap in the ring it must fit through; no Islamic text"
     },
     {
      "slot": "S07",
      "kind": "Short",
-     "title": "The version of you that prays Fajr on time wins #shorts #salah",
-     "format": "discipline_reminder",
-     "basis": "Your hit: 'The version of you that prays on time wins' · 1,457 views · 97% watched",
-     "note": "Moon-night loop; same identity line aimed at Fajr, last line in yellow; 10 s",
-     "footage": "AE-moon-night-01.mp4",
-     "made": true
+     "title": "5 things the Prophet ﷺ said about your tongue 🤍 #shorts #islam",
+     "format": "explainer_list",
+     "basis": "Winning elsewhere: '8 Islamic ways to unblock your rizq' / POV hadith explainers by @soulofbaraqah / @tanzil_quran (TikTok, Omar's pick)",
+     "note": "hook: \"5 things the Prophet ﷺ said about your *tongue*\" (spotlight) | 1) \"Speak *good* or stay silent\" — \"Whoever believes in Allah and the Last Day, let him speak good or keep silent\" — Sahih al-Bukhari 6018, Sahih Muslim 47 — table_lamp/sit ; 2) \"Leave what is *pointless*\" — \"Part of the excellence of a person's Islam is leaving what does not concern him\" — Jami at-Tirmidhi 2317 — spotlight/stand ; 3) \"Avoid *backbiting*\" — \"Mentioning your brother with what he dislikes\" — Sahih Muslim 2589 — market/walk ; 4) \"Words are *recorded*\" — \"He does not utter a word except that a watcher is ready\" — Quran 50:18 — spotlight/none ; 5) \"Say what is *best*\" — \"Tell My servants to say that which is best\" — Quran 17:53 — lamp_sofa/give | end: \"Your words are a trust.\" / \"Spend them well.\" | cta: \"Send this to a friend who talks too much\""
     },
     {
      "slot": "S08",
      "kind": "Short",
-     "title": "How many prophets are named in the Quran? 🤔 #shorts #quran #quiz",
-     "format": "number_quiz",
-     "basis": "Your hit: 'How many surahs are in the Quran? 🤔' · 912 views · 97% watched",
-     "note": "Falling-snow loop; options 15 / 25 / 35, answer 25, then 'comment the one you love most'; 13 s",
-     "footage": "AE-snowfall-night-01.mp4",
-     "made": true
+     "title": "The version of you that never misses Asr wins #shorts #salah #muslim",
+     "format": "discipline_reminder",
+     "basis": "Your hit: 'The version of you that prays on time wins' · 1,458 views · 97% watched",
+     "note": "Desert-dune loop; the line 'The version of you that never misses Asr wins' with 'wins' in yellow; synthesized soft pad; 9 s",
+     "footage": "AE-desert-dunes-01.mp4"
     },
     {
      "slot": "S09",
      "kind": "Short",
-     "title": "Which is the longest surah in the Quran? 🤍 #shorts #quiz",
-     "format": "guess_the_surah",
-     "basis": "Your hit: 'Only real ones know this surah 🤍' · 1,017 views · 220% watched",
-     "note": "Desert-dunes loop; options Al-Baqarah / Al-Imran / An-Nisa, answer Al-Baqarah (2), 3-s answer reveal; 13 s (format is 0.4x median overall, so one slot only)",
-     "footage": "AE-desert-dunes-01.mp4",
-     "made": true
+     "title": "POV: a stranger insults you in the comments 🤍 #shorts #islam",
+     "format": "explainer_pov",
+     "basis": "Winning elsewhere: '8 Islamic ways to unblock your rizq' / POV hadith explainers by @soulofbaraqah / @tanzil_quran (TikTok, Omar's pick)",
+     "note": "POV hook: \"POV: a stranger insults you in the comments\" | beats: \"'You're so cringe.' 47 likes.\" (red) ; \"Your thumbs are already typing\" ; \"You delete it. Then you type it again\" | reveal: وإذا خاطبهم الجاهلون=when the ignorant address them, قالوا=they say, سلاما=\"Peace\" | icons: scale, hand, heart | source: Quran 25:63 (Al-Furqan) | end: \"Do not feed it.\" / \"Peace is a reply too.\" | cta: \"Send this to a friend who argues in the comments\""
     },
     {
      "slot": "S10",
      "kind": "Short",
-     "title": "Allah never burdens a soul beyond its capacity | Quran 2:286 #shorts #quran",
-     "format": "ayah_reminder",
-     "basis": "Your hit: 'You hate it now, but it may be good for you / Quran 2:216' · 1,112 views · 100% watched",
-     "note": "Desert-dunes loop; Quran 2:286 ('Allah does not burden a soul beyond its capacity'), 'capacity' in yellow; 11 s",
-     "footage": "AE-desert-dunes-01.mp4",
-     "made": true
+     "title": "4 things the Prophet ﷺ did before sleep 🤍 #shorts #islam #sunnah",
+     "format": "explainer_list",
+     "basis": "Winning elsewhere: '8 Islamic ways to unblock your rizq' / POV hadith explainers by @soulofbaraqah / @tanzil_quran (TikTok, Omar's pick)",
+     "note": "hook: \"4 things the Prophet ﷺ did before *sleep*\" (desk_night) | 1) \"Make *wudu*\" — \"When you go to bed, make wudu like for prayer, then lie on your right side\" — Sahih al-Bukhari 247 — desk_night/sit ; 2) \"Recite *Ayat al-Kursi*\" — \"A protector from Allah stays with you until morning\" — Sahih al-Bukhari 2311 — masjid_night/sit ; 3) \"Last two verses of *Al-Baqarah*\" — \"Whoever recites them at night, they will suffice him\" — Sahih al-Bukhari 5009, Sahih Muslim 807 — table_lamp/sit ; 4) \"Say *tasbih*\" — \"SubhanAllah 33, Alhamdulillah 33, Allahu Akbar 34\" — Sahih Muslim 2727 — dark/dua | end: \"End the day with His name.\" / \"Sleep well.\" | cta: \"Send this to a friend who scrolls till 3 AM\""
     },
     {
      "slot": "S11",
      "kind": "Short",
-     "title": "Snowed in. No signal... so I watched the snow ❄️ #shorts #cozy #sleep",
-     "format": "weather_story_short",
-     "basis": "Winning elsewhere: 'Cozy Winter Cabin in a Blizzard' by Istorium · 404,734 views · 2.9x their average",
-     "note": "Snow-night loop, story text only (one new line per beat: lights flicker → wind rises → full snowfall), synthesized soft wind; 22 s",
-     "footage": "AE-snowfall-night-01.mp4",
-     "made": true
+     "title": "5 things you will be asked about on Judgement Day 🤍 #shorts #islam",
+     "format": "question_hook_reflection",
+     "basis": "Your hit: '3 questions in the grave. Are you ready? 🤍' · 1,439 views · 108% watched",
+     "note": "Flame loop; five on-screen lines in order (your life, your youth, how you earned your wealth, how you spent it, what you did with your knowledge) from Jami at-Tirmidhi 2416; 'youth' in yellow; 15 s",
+     "footage": "AE-fire-flames-01.mp4"
     },
     {
      "slot": "S12",
      "kind": "Short",
-     "title": "Surah Al-Ikhlas, line by line, in English 🤍 #shorts #quran",
-     "format": "surah_meaning_text",
-     "basis": "Winning elsewhere: 'beautiful quran recitation ... surah Al fatiha' by Rah-e-noor · 42,023 views · 21.3x their average",
-     "note": "Text only, no reciter audio: the 4 ayat of Surah 112 as English meaning, one line per 3 s over a waterfall loop with soft synthesized water ambience; 14 s",
-     "footage": "AE-waterfall-forest-01.mp4",
-     "made": true
+     "title": "POV: your Fajr alarm rings and the bed is warm 🤍 #shorts #islam",
+     "format": "explainer_pov",
+     "basis": "Winning elsewhere: '8 Islamic ways to unblock your rizq' / POV hadith explainers by @soulofbaraqah / @tanzil_quran (TikTok, Omar's pick)",
+     "note": "POV hook: \"POV: your Fajr alarm rings and your bed is warm\" | beats: \"5:12 AM. The alarm again.\" (red) ; \"'Five more minutes…'\" ; \"The blanket feels like a hug\" | reveal: من صلى الصبح=whoever prays Fajr, فهو=then he is, في ذمة الله=in Allah's protection | icons: hand, heart, star | source: Sahih Muslim 657 | end: \"Stand up for Fajr.\" / \"You are in His care.\" | cta: \"Send this to a friend who snoozes Fajr\""
     },
     {
      "slot": "S13",
      "kind": "Short",
-     "title": "Fireplace on, snow outside. 3 hours of this on the channel 🔥❄️ #shorts",
-     "format": "seasonal_room_short",
-     "basis": "Winning elsewhere: '(NO MID-ROLL ADS) Halloween Living Room Ambience' by Phantom Melodies · 100,549 views · 7.0x their average",
-     "note": "Fire-flames loop with synthesized crackle and soft wind, no Islamic text, one line in yellow pointing to today's 3-hour Christmas-cozy video; 12 s",
-     "footage": "AE-fire-flames-01.mp4",
-     "made": true
+     "title": "4 things that happen when you stay patient 🤍 #shorts #islam",
+     "format": "explainer_list",
+     "basis": "Winning elsewhere: '8 Islamic ways to unblock your rizq' / POV hadith explainers by @soulofbaraqah / @tanzil_quran (TikTok, Omar's pick)",
+     "note": "hook: \"4 things that happen when you stay *patient*\" (window_dawn) | 1) \"Everything is *good* for you\" — \"The believer's affair is wonderful: patient in hardship, it is good for him\" — Sahih Muslim 2999 — window_dawn/stand ; 2) \"Sins are *forgiven*\" — \"Even a thorn prick, worry or fatigue — Allah expiates sins through it\" — Sahih al-Bukhari 5641, Sahih Muslim 2573 — lamp_sofa/sit ; 3) \"Success is *near*\" — \"Be patient, persevere, and fear Allah that you may succeed\" — Quran 3:200 — field_rain/stand ; 4) \"Reward *without limit*\" — \"The patient will be given their reward without account\" — Quran 39:10 — sunset_birds/none | end: \"Patience is never wasted.\" / \"Keep going.\" | cta: \"Send this to someone going through a hard time\""
     },
     {
      "slot": "S14",
      "kind": "Short",
-     "title": "Complete the ayah 🤲 Only 1% get it right #shorts #quran #quiz",
-     "format": "complete_the_ayah",
-     "basis": "Test: your guess_the_surah quizzes hit 1,017 views at 220% watched; the Complete the Ayah spec (done) is a different quiz mechanic with the same pull",
-     "note": "Quran 13:28 'Verily, in the remembrance of Allah do ___ find rest' options hearts / eyes / souls, answer hearts, reference on screen, answer re-checked; 13 s",
-     "newIdea": "youtube-2026-10-26-4",
-     "footage": "AE-sunrise-clouds-01.mp4",
-     "made": true
+     "title": "Don't lose hope, don't grieve | Quran 3:139 #shorts #quran #islam",
+     "format": "ayah_reminder",
+     "basis": "Your hit: 'Where hearts find rest | Quran 13:28' · 1,175 views · 99% watched",
+     "note": "Forest-waterfall loop; Quran 3:139 ('Do not weaken and do not grieve, and you will be superior if you are believers'), 'superior' in yellow; 12 s",
+     "footage": "AE-waterfall-forest-01.mp4"
     },
     {
      "slot": "S15",
      "kind": "Short",
-     "title": "What Allah says about your tongue 🤍 #shorts #islam #quran",
-     "format": "what_allah_says",
-     "basis": "Your hit: 'What Allah says about being grateful 🤍' · 950 views · 123% watched",
-     "note": "Moon-night loop; Quran 50:18 ('Man does not utter any word except that with him is an observer prepared [to record]'), 'observer' in yellow; 13 s",
-     "footage": "AE-moon-night-01.mp4",
-     "made": true
+     "title": "Rain in London tonight 🌧️ let it play #shorts #rain #sleep",
+     "format": "Named-city rain Short",
+     "basis": "Winning elsewhere: 'pune weather ☁️ #punerain #rainsounds' by Ashwini ganesh · 71,160 views · 88.4x their average",
+     "note": "Follow the Named-city rain spec: night-street rain loop, 'RAIN IN LONDON TONIGHT', synthesized rain only; 20 s",
+     "newIdea": "youtube-2026-11-04-2",
+     "footage": "AE-city-rain-night-01.mp4"
     },
     {
      "slot": "L1",
      "kind": "Long",
-     "title": "Cozy Christmas Living Room ❄️ Crackling Fireplace & Snowfall | 3 Hours",
-     "format": "christmas_cozy_long",
-     "basis": "Winning elsewhere: 'Cozy Christmas Ambience 4K' by Christmas Notes · 29,598 views · 6.0x their average; 'Halloween Living Room Ambience' by Phantom Melodies · 100,549 views · 7.0x",
-     "note": "Scene: Christmas-tree lights loop with the snowy cabin clip crossfaded in every 25 min; audio: fire crackle -10 dB, soft wind -22 dB, no music, no thunder (different from yesterday's storm long)",
-     "footage": "AE-christmas-lights-01.mp4 + AE-snowy-cabin-night-01.mp4",
-     "made": true
+     "title": "Rain Sounds for Deep Sleep | Escape to a Misty Forest Cabin | 3 Hours",
+     "format": "rain_cabin_long",
+     "basis": "Winning elsewhere: 'Rain Sounds for Deep Sleep | Escape to a Cozy Forest Cabin' by Rainful · 33,502 views · 11.6x their average",
+     "note": "Scene: landscape forest-cabin clip looped seamlessly, dimmed 25% after 30 min; audio: steady rain on roof -9 dB, distant thunder every ~12 min -20 dB, no music (different from yesterday's fire and piano longs)",
+     "footage": "AE-forest-cabin-01.mp4"
     },
     {
      "slot": "L2",
      "kind": "Long",
-     "title": "Rain on the Window & Soft Piano 🌧️ Fall Asleep Fast | 3 Hours",
-     "format": "rain_piano_long",
-     "basis": "Winning elsewhere: '(No Ads) Peaceful Rain and Piano Music for Healing Sleep' by Relaxation & Sleep · 65,934 views · 8.9x their average",
-     "note": "Scene: landscape rain-on-window clip dimmed 30% after 20 min; audio: steady rain -9 dB, synthesized soft piano pad (own notes, no recorded music) -20 dB, no thunder (different from yesterday's cabin long)",
-     "footage": "AE-rain-window-02.mp4",
-     "made": true
+     "title": "November Fireplace Ambience | Soft Piano & Crackling Fire | 3 Hours",
+     "format": "fireplace_piano_long",
+     "basis": "Winning elsewhere: '🍂 November Fireplace Ambience | Slow Jazz Guitar & Piano...' by Golden Hour Jazz · 153,974 views · 3.0x their average; 'Enchanted Christmas Library' by Tranquil Jazz Nook · 103,838 views · 11.3x",
+     "note": "Scene: landscape fireplace clip looped seamlessly; audio: crackling fire -8 dB, synthesized slow music-box notes (own notes, no recorded music) -22 dB, brown noise -30 dB, no rain, no thunder",
+     "footage": "AE-fireplace-room-01.mp4"
     }
    ]
   }
  },
- "lastRun": "2026-11-03T15:18:12Z",
- "nextRun": "2026-11-04T15:13:00Z",
+ "lastRun": "2026-11-04T15:55:00Z",
+ "nextRun": "2026-11-05T15:13:00Z",
  "review": {
   "date": "2026-11-04",
   "createdAt": "2026-11-04T15:25:00Z",
@@ -1874,36 +1834,371 @@
   }
  ],
  "labFeedback": {
-  "date": "2026-11-03",
+  "date": "2026-11-04",
   "used": [
-   "Marble Run 'Special' (collect-the-orbs course)",
-   "Guess the Song bouncing orbs",
-   "Weapon Ball Battle (sims.py, done)",
-   "Seasonal cozy room (Christmas living room)"
+   "Final Form ball evolution",
+   "Named-city rain clip Short",
+   "'Escape to a <place>' rain sleep long",
+   "Marble Run Special (eyeball course)"
   ],
   "skipped": [
-   "Every bounce = +1 ball: own adds-a-ball format sits at 1.0x median",
-   "Quran story long: needs a scholar-checked script"
+   "Live physics battle (archived live stream): needs OBS and stream-key setup first",
+   "'Every X explained in N minutes' Islamic explainer long: wait for the explainer Shorts numbers",
+   "Fewer longs: upgrade pending, slot count unchanged"
   ],
-  "request": "Find Islamic text-and-quiz Shorts channels that use only synthesized or licensed audio and show real view counts; the last two searches returned none."
+  "request": "Find what makes short rain/weather clips (named city, no voice) spread, and whether a daily new city is worth a slot."
  },
  "longFix": {
-  "date": "2026-11-03",
+  "date": "2026-11-04",
   "diagnosis": [
-   "Bounce Theory longs: best is 39 views (7% watched); numbered compilations sit at 27-39. Elsewhere one continuous marble course is at 15.4M (Marble Run Louis, 27.3x) and 7.5M (Marble Run REAL 'Dragon Balls', 16.3x).",
-   "Ambient Escape longs: median 1 view; the winners elsewhere carry a place + mood + sound in the title: Phantom Melodies Halloween Living Room 100,549 (7.0x), Relaxation & Sleep Rain and Piano 65,934 (8.9x), Christmas Notes 29,598 (6.0x)."
+   "Bounce Theory longs: median 30 views, best 41 (11% watched); numbered compilations are stuck at 29-41, while one continuous marble course is at 16.4M (Marble Run Louis, 28.5x) and 6.1M (Marble Run REAL eyeball race, 13.4x).",
+   "Ambient Escape longs: median 1.5 views, best 6; winners elsewhere use place + mood + sound titles: Rainful forest cabin 33,502 (11.6x), Golden Hour Jazz November fireplace 153,974 (3.0x), Tranquil Jazz Nook Christmas library 103,838 (11.3x)."
   ],
   "L1": {
    "channel": "Bounce Theory",
-   "change": "Second Marble Run Special with a collect-the-gold-orbs course, 3 test titles (Marble Run REAL 'Dragon Balls' 7,483,764 views, 16.3x)."
+   "change": "Third Marble Run Special as one continuous course with eyeball marbles (Marble Run REAL 6,142,014 views, 13.4x)."
   },
   "L2": {
    "channel": "Ambient Escape",
-   "change": "Make L1 a Christmas-cozy living room long and L2 a rain-on-window long with synthesized soft piano, each with 'Fall Asleep Fast' or a place + sound promise in the title (Christmas Notes 29,598 / Relaxation & Sleep 65,934)."
+   "change": "Make L1 a 'Rain Sounds for Deep Sleep | Escape to a Misty Forest Cabin' long and L2 a 'November Fireplace Ambience' long, both with synthesized sound only."
   },
-  "stopDoing": "Numbered 'Satisfying Physics Compilation Vol. N' longs (27-28 views); only one 'Clips for Edits' long per day (31-39 views)."
+  "stopDoing": "Numbered 'Satisfying Physics Compilation' longs (27-35 views); keep one 'Clips for Edits' long a day."
  },
  "pastLineups": [
+  {
+   "date": "2026-11-03",
+   "createdAt": "2026-11-03T15:18:12Z",
+   "channels": {
+    "Bounce Theory": [
+     {
+      "slot": "S01",
+      "kind": "Short",
+      "title": "Watch 36 pendulums line up again... ✨ #shorts #physics",
+      "format": "pendulum_wave",
+      "basis": "Your hit: 'Watch them line up again... 🌊' · 32,252 views · 92% watched",
+      "note": "Same 33 s wave and re-alignment payoff, now a radial fan of 36 orbs in a teal → pink gradient with a marimba note per pass and a white flash at the re-alignment",
+      "made": true
+     },
+     {
+      "slot": "S02",
+      "kind": "Short",
+      "title": "4 balls, 1 brick wall... who breaks free first? 🧱 #shorts",
+      "format": "brick_breaker",
+      "basis": "Your hit: '2 balls, 1 brick wall... who breaks free first?' · 12,312 views · 85% watched",
+      "note": "Four balls (red, cyan, gold, lime) on a purple-and-orange brick wall with a yellow brick counter per ball; 29 s",
+      "made": true
+     },
+     {
+      "slot": "S03",
+      "kind": "Short",
+      "title": "Every hit breaks a brick... can it escape the heart? ❤️ #shorts",
+      "format": "brick_breaker",
+      "basis": "Your hit: 'Every hit breaks a brick... when does it escape?' · 9,618 views · 107% watched",
+      "note": "Heart-shaped brick cage glowing pink → white, yellow bricks-left counter, ends on the escape; 21 s",
+      "made": true
+     },
+     {
+      "slot": "S04",
+      "kind": "Short",
+      "title": "Every bounce adds a string... watch the hexagon appear ⬡ #shorts",
+      "format": "string_art",
+      "basis": "Your hit: 'Every bounce adds a string 🎨' · 9,338 views · 89% watched · 28 subs",
+      "note": "Cyan hexagon outline on near-black, string count in yellow, soft glass note per string; 24 s",
+      "made": true
+     },
+     {
+      "slot": "S05",
+      "kind": "Short",
+      "title": "Slow vs fast pendulums... who catches up? 🌊 #shorts #physics",
+      "format": "pendulum_wave",
+      "basis": "Your hit: 'Different lengths, same start... wait for it' · 8,116 views · 80% watched",
+      "note": "12 pendulums split into a red team and a blue team with long trails and a yellow countdown to the first re-alignment; 31 s",
+      "made": true
+     },
+     {
+      "slot": "S06",
+      "kind": "Short",
+      "title": "It breaks a brick every hit... triangle edition 🔺 #shorts #satisfying",
+      "format": "brick_breaker",
+      "basis": "Your hit: 'It breaks a brick every hit...' · 6,024 views · 98% watched",
+      "note": "Triangle bricks in neon blue and violet, one ball, yellow bricks-left counter; 20 s",
+      "made": true
+     },
+     {
+      "slot": "S07",
+      "kind": "Short",
+      "title": "The circle shrinks every bounce 😬 3 balls inside #shorts",
+      "format": "shrinking_circle",
+      "basis": "Your hit: 'The circle shrinks every bounce 😬' · 5,319 views · 141% watched",
+      "note": "Plain circle again with three balls (pink, cyan, gold) and a yellow size % counter; 15 s",
+      "made": true
+     },
+     {
+      "slot": "S08",
+      "kind": "Short",
+      "title": "One bounce = one line ✍️ guess the animal? #shorts",
+      "format": "string_art",
+      "basis": "Your hit: 'One bounce = one line ✍️' · 3,407 views · 83% watched (same format as the 9.3K string-art hit)",
+      "note": "Lines draw a hidden butterfly (or fish), title asks for the guess, reveal in the last 3 s; 26 s",
+      "made": true
+     },
+     {
+      "slot": "S09",
+      "kind": "Short",
+      "title": "600 balls dropped at once 🤯 #shorts #physics",
+      "format": "chaos_fan",
+      "basis": "Your hit: '400 balls dropped at once 🤯' · 3,334 views · 92% watched",
+      "note": "600 balls coloured pink → gold by start offset, fanning out from one narrow funnel; 23 s",
+      "made": true
+     },
+     {
+      "slot": "S10",
+      "kind": "Short",
+      "title": "Fastest marble wins 🏁 Pick one #shorts #satisfying",
+      "format": "marble_race",
+      "basis": "Your hit: 'Fastest marble wins 🏁 Pick one' · 3,974 views · 123% watched",
+      "note": "Eight named-colour marbles on a zig-zag ramp course (yesterday was a spiral peg course), gold glow on the winner; 14 s",
+      "made": true
+     },
+     {
+      "slot": "S11",
+      "kind": "Short",
+      "title": "Pick a color before it escapes 🔴🔵🟢🟡 #shorts #satisfying",
+      "format": "colour_escape",
+      "basis": "Your hit: 'Pick a color before it escapes 🔴🔵' · 3,176 views · 136% watched",
+      "note": "Four colours, each ball in its own ring quarter, 12 s",
+      "made": true
+     },
+     {
+      "slot": "S12",
+      "kind": "Short",
+      "title": "Every bounce is a note... guess the song? 🎵 #shorts",
+      "format": "ring_escape (melody)",
+      "basis": "Winning elsewhere: 'Guess The Song// ... 999 varied bouncing orbs' by Mo Lucky · 683,864 views · 10.1x their average",
+      "note": "Ode to Joy (public domain, synthesized) on cyan and gold orbs, note shown in yellow as it plays; 20 s",
+      "made": true
+     },
+     {
+      "slot": "S13",
+      "kind": "Short",
+      "title": "Red vs Green... who wins the weapon ball battle? ⚔️ #shorts",
+      "format": "weapon_ball_battle",
+      "basis": "Winning elsewhere: 'Real Madrid vs Manchester City | Weapon Ball Battle' by Cell Wars Game · 3,314 views · 6.0x their average",
+      "note": "Two colour teams (no club names): red sword-ball and axe-ball vs green spear-ball and shield-ball, HP bars, winner card; 20 s",
+      "made": true
+     },
+     {
+      "slot": "S14",
+      "kind": "Short",
+      "title": "Which marble will be the last? 🏁 One gets eliminated every 2 seconds #shorts",
+      "format": "marble_race",
+      "basis": "Winning elsewhere: 'Which marble will be the last?' by 3Ds Marble Show · 1,199,018 views · 3.3x their average",
+      "note": "Ten named marbles on a funnel course, the last one at each checkpoint is knocked out, counter 10 → 1 in yellow; 22 s",
+      "made": true
+     },
+     {
+      "slot": "S15",
+      "kind": "Short",
+      "title": "Will 1,024 rocks become the Sun? ☀️ #shorts #satisfying",
+      "format": "Merge Up (new)",
+      "basis": "Test: 'Will 1,024 rocks become the Sun? #shorts' by LED Physics · 1,031,751 views · 99.3x their average",
+      "note": "Follow the approved Merge Up spec: grey rocks merge up the tier ladder in a glass jar to a gold Sun; 28 s",
+      "newIdea": "youtube-2026-11-03-1",
+      "made": true
+     },
+     {
+      "slot": "L1",
+      "kind": "Long",
+      "title": "Marble Run Special 🌟 10 Marbles, Collect the Gold Orbs | Who Wins?",
+      "format": "marble_run_long",
+      "basis": "Winning elsewhere: 'Marble Run 🌟 How many Dragon Balls can you collect⁉️' by Marble Run REAL · 7,483,764 views · 16.3x their average",
+      "note": "Same continuous 10-minute Special as yesterday on a new course (gold-orb gates, spinner garden, elevator) where each marble earns a gold orb per gate and the orb count decides the winner card; 3 test titles",
+      "made": true
+     },
+     {
+      "slot": "L2",
+      "kind": "Long",
+      "title": "Satisfying Clips for Edits Vol. 11 (No Text) 🟣🟡 Free to Use | Split-Screen Background",
+      "format": "compilation (no text): pendulum_wave + brick_breaker + string_art",
+      "basis": "Your hits: pendulum wave 32,252 · brick breaker 12,312 · string art 9,338 views",
+      "note": "No text, 10-12 s clips only from the 3 top formats in new colour sets (teal-pink pendulum fan, heart bricks, hexagon strings); one 'Clips for Edits' long per day, as the Long-Form Doctor says",
+      "made": true
+     }
+    ],
+    "Ambient Escape": [
+     {
+      "slot": "S01",
+      "kind": "Short",
+      "title": "Hardship is never the end | Quran 94:6 #shorts #quran",
+      "format": "ayah_reminder",
+      "basis": "Your hit: 'Allah hasn't forgotten you | Quran 93:3' · 1,336 views · 96% watched",
+      "note": "Falling-snow loop; Quran 94:6 ('Indeed, with hardship comes ease'), 'ease' in yellow; 11 s",
+      "footage": "AE-snowfall-night-01.mp4",
+      "made": true
+     },
+     {
+      "slot": "S02",
+      "kind": "Short",
+      "title": "What Allah says about forgiveness 🤍 #shorts #islam #quran",
+      "format": "what_allah_says",
+      "basis": "Your hit: 'What Allah says about your parents 🤍' · 1,296 views · 99% watched",
+      "note": "Sunrise-clouds loop; Quran 4:110 ('whoever seeks forgiveness of Allah will find Allah Forgiving and Merciful'), 'Forgiving' in yellow; 13 s",
+      "footage": "AE-sunrise-clouds-01.mp4",
+      "made": true
+     },
+     {
+      "slot": "S03",
+      "kind": "Short",
+      "title": "Every bounce, the ball gets BIGGER 😳 Can it fit the circle? #shorts",
+      "format": "bounce sim (off-niche)",
+      "basis": "Your hit: 'Every bounce, the ball gets BIGGER 😳 Wait for the end' · 3,417 views · 76% watched",
+      "note": "Same 27 s Bounce Engine scene, now violet and gold with a calm bell note per bounce and a yellow ball-size counter, no Islamic text",
+      "made": true
+     },
+     {
+      "slot": "S04",
+      "kind": "Short",
+      "title": "Remember Me and I will remember you | Quran 2:152 #shorts #quran",
+      "format": "ayah_reminder",
+      "basis": "Your hit: 'Where hearts find rest | Quran 13:28' · 1,175 views · 99% watched",
+      "note": "Waterfall loop; Quran 2:152 ('So remember Me; I will remember you'), 'remember you' in yellow; 11 s",
+      "footage": "AE-waterfall-forest-01.mp4",
+      "made": true
+     },
+     {
+      "slot": "S05",
+      "kind": "Short",
+      "title": "What Allah says about your rizq 🤍 #shorts #islam #quran",
+      "format": "what_allah_says",
+      "basis": "Your hit: 'What Allah says about being grateful 🤍' · 950 views · 123% watched",
+      "note": "Fire-flames loop; Quran 11:6 ('There is no creature on earth but that its provision is on Allah'), 'provision' in yellow; 13 s",
+      "footage": "AE-fire-flames-01.mp4",
+      "made": true
+     },
+     {
+      "slot": "S06",
+      "kind": "Short",
+      "title": "The heaviest thing on your scale, and it costs nothing 🤍 #shorts #islam #reminder",
+      "format": "question_hook_reflection",
+      "basis": "Your hit: '3 questions in the grave. Are you ready? 🤍' · 1,438 views · 108% watched",
+      "note": "Rain-on-leaves loop; 'Nothing is heavier on the Scale than good character' (Sunan al-Tirmidhi 2002), 'good character' in yellow; 12 s",
+      "footage": "AE-rain-leaves-01.mp4",
+      "made": true
+     },
+     {
+      "slot": "S07",
+      "kind": "Short",
+      "title": "The version of you that prays Fajr on time wins #shorts #salah",
+      "format": "discipline_reminder",
+      "basis": "Your hit: 'The version of you that prays on time wins' · 1,457 views · 97% watched",
+      "note": "Moon-night loop; same identity line aimed at Fajr, last line in yellow; 10 s",
+      "footage": "AE-moon-night-01.mp4",
+      "made": true
+     },
+     {
+      "slot": "S08",
+      "kind": "Short",
+      "title": "How many prophets are named in the Quran? 🤔 #shorts #quran #quiz",
+      "format": "number_quiz",
+      "basis": "Your hit: 'How many surahs are in the Quran? 🤔' · 912 views · 97% watched",
+      "note": "Falling-snow loop; options 15 / 25 / 35, answer 25, then 'comment the one you love most'; 13 s",
+      "footage": "AE-snowfall-night-01.mp4",
+      "made": true
+     },
+     {
+      "slot": "S09",
+      "kind": "Short",
+      "title": "Which is the longest surah in the Quran? 🤍 #shorts #quiz",
+      "format": "guess_the_surah",
+      "basis": "Your hit: 'Only real ones know this surah 🤍' · 1,017 views · 220% watched",
+      "note": "Desert-dunes loop; options Al-Baqarah / Al-Imran / An-Nisa, answer Al-Baqarah (2), 3-s answer reveal; 13 s (format is 0.4x median overall, so one slot only)",
+      "footage": "AE-desert-dunes-01.mp4",
+      "made": true
+     },
+     {
+      "slot": "S10",
+      "kind": "Short",
+      "title": "Allah never burdens a soul beyond its capacity | Quran 2:286 #shorts #quran",
+      "format": "ayah_reminder",
+      "basis": "Your hit: 'You hate it now, but it may be good for you / Quran 2:216' · 1,112 views · 100% watched",
+      "note": "Desert-dunes loop; Quran 2:286 ('Allah does not burden a soul beyond its capacity'), 'capacity' in yellow; 11 s",
+      "footage": "AE-desert-dunes-01.mp4",
+      "made": true
+     },
+     {
+      "slot": "S11",
+      "kind": "Short",
+      "title": "Snowed in. No signal... so I watched the snow ❄️ #shorts #cozy #sleep",
+      "format": "weather_story_short",
+      "basis": "Winning elsewhere: 'Cozy Winter Cabin in a Blizzard' by Istorium · 404,734 views · 2.9x their average",
+      "note": "Snow-night loop, story text only (one new line per beat: lights flicker → wind rises → full snowfall), synthesized soft wind; 22 s",
+      "footage": "AE-snowfall-night-01.mp4",
+      "made": true
+     },
+     {
+      "slot": "S12",
+      "kind": "Short",
+      "title": "Surah Al-Ikhlas, line by line, in English 🤍 #shorts #quran",
+      "format": "surah_meaning_text",
+      "basis": "Winning elsewhere: 'beautiful quran recitation ... surah Al fatiha' by Rah-e-noor · 42,023 views · 21.3x their average",
+      "note": "Text only, no reciter audio: the 4 ayat of Surah 112 as English meaning, one line per 3 s over a waterfall loop with soft synthesized water ambience; 14 s",
+      "footage": "AE-waterfall-forest-01.mp4",
+      "made": true
+     },
+     {
+      "slot": "S13",
+      "kind": "Short",
+      "title": "Fireplace on, snow outside. 3 hours of this on the channel 🔥❄️ #shorts",
+      "format": "seasonal_room_short",
+      "basis": "Winning elsewhere: '(NO MID-ROLL ADS) Halloween Living Room Ambience' by Phantom Melodies · 100,549 views · 7.0x their average",
+      "note": "Fire-flames loop with synthesized crackle and soft wind, no Islamic text, one line in yellow pointing to today's 3-hour Christmas-cozy video; 12 s",
+      "footage": "AE-fire-flames-01.mp4",
+      "made": true
+     },
+     {
+      "slot": "S14",
+      "kind": "Short",
+      "title": "Complete the ayah 🤲 Only 1% get it right #shorts #quran #quiz",
+      "format": "complete_the_ayah",
+      "basis": "Test: your guess_the_surah quizzes hit 1,017 views at 220% watched; the Complete the Ayah spec (done) is a different quiz mechanic with the same pull",
+      "note": "Quran 13:28 'Verily, in the remembrance of Allah do ___ find rest' options hearts / eyes / souls, answer hearts, reference on screen, answer re-checked; 13 s",
+      "newIdea": "youtube-2026-10-26-4",
+      "footage": "AE-sunrise-clouds-01.mp4",
+      "made": true
+     },
+     {
+      "slot": "S15",
+      "kind": "Short",
+      "title": "What Allah says about your tongue 🤍 #shorts #islam #quran",
+      "format": "what_allah_says",
+      "basis": "Your hit: 'What Allah says about being grateful 🤍' · 950 views · 123% watched",
+      "note": "Moon-night loop; Quran 50:18 ('Man does not utter any word except that with him is an observer prepared [to record]'), 'observer' in yellow; 13 s",
+      "footage": "AE-moon-night-01.mp4",
+      "made": true
+     },
+     {
+      "slot": "L1",
+      "kind": "Long",
+      "title": "Cozy Christmas Living Room ❄️ Crackling Fireplace & Snowfall | 3 Hours",
+      "format": "christmas_cozy_long",
+      "basis": "Winning elsewhere: 'Cozy Christmas Ambience 4K' by Christmas Notes · 29,598 views · 6.0x their average; 'Halloween Living Room Ambience' by Phantom Melodies · 100,549 views · 7.0x",
+      "note": "Scene: Christmas-tree lights loop with the snowy cabin clip crossfaded in every 25 min; audio: fire crackle -10 dB, soft wind -22 dB, no music, no thunder (different from yesterday's storm long)",
+      "footage": "AE-christmas-lights-01.mp4 + AE-snowy-cabin-night-01.mp4",
+      "made": true
+     },
+     {
+      "slot": "L2",
+      "kind": "Long",
+      "title": "Rain on the Window & Soft Piano 🌧️ Fall Asleep Fast | 3 Hours",
+      "format": "rain_piano_long",
+      "basis": "Winning elsewhere: '(No Ads) Peaceful Rain and Piano Music for Healing Sleep' by Relaxation & Sleep · 65,934 views · 8.9x their average",
+      "note": "Scene: landscape rain-on-window clip dimmed 30% after 20 min; audio: steady rain -9 dB, synthesized soft piano pad (own notes, no recorded music) -20 dB, no thunder (different from yesterday's cabin long)",
+      "footage": "AE-rain-window-02.mp4",
+      "made": true
+     }
+    ]
+   }
+  },
   {
    "date": "2026-11-02",
    "createdAt": "2026-11-02T16:13:09Z",
