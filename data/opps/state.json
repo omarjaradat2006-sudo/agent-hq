@@ -1,7 +1,7 @@
 {
   "team": "opps",
   "hired": true,
-  "updatedAt": "2026-11-04T15:24:37Z",
+  "updatedAt": "2026-11-04T15:32:35Z",
   "agents": [
     {
       "id": "lead",
@@ -16,17 +16,17 @@
       "id": "scout",
       "name": "Scout",
       "role": "Finds opportunities",
-      "status": "working",
-      "doing": "Hunting for new AI money-makers",
-      "lastRun": "2026-10-28T14:46:36Z",
+      "status": "ok",
+      "doing": "Found 5 leads this run",
+      "lastRun": "2026-11-04T15:32:35Z",
       "nextRun": "2026-10-31T14:23:00Z"
     },
     {
       "id": "planner",
       "name": "Planner",
       "role": "How-to, hours, cost",
-      "status": "waiting",
-      "doing": "Waiting for the Scout",
+      "status": "working",
+      "doing": "Writing 3 plans with rule checks",
       "lastRun": "2026-10-28T14:46:36Z",
       "nextRun": "2026-10-31T14:23:00Z"
     },
@@ -49,6 +49,11 @@
     }
   ],
   "log": [
+    {
+      "t": "2026-11-04T15:32:35Z",
+      "agent": "Scout",
+      "msg": "Most promising find: a listed AI chat-organizer Chrome extension reports ~$23k/month (seller-reported, unverified); Picsart Earn is open but Canada isn't confirmed"
+    },
     {
       "t": "2026-11-04T15:24:37Z",
       "agent": "Scout",
@@ -250,6 +255,47 @@
     }
   ],
   "research": [
+    {
+      "date": "2026-11-04",
+      "createdAt": "2026-11-04T15:32:35Z",
+      "items": [
+        {
+          "title": "AI chat-organizer Chrome extension listed for sale at $920k",
+          "creator": "Acquire.com listing (seller-reported)",
+          "url": "https://app.acquire.com/public/ymn189qc4d-ai-chat-management-chrome-extension-with-40k-installs-and-1-700-paying-users",
+          "metric": "Listing says $23.4k revenue last month, ~40,000 users, 2,100+ paying (1,499 lifetime + 753 subscriptions); the listing's own figures are inconsistent, so treat as unverified",
+          "whyItWorks": "Folders, search and export for ChatGPT/Claude/Gemini chats is a boring, sticky utility; lifetime deals ($99-199) plus $9.99/month tiers show people pay for it."
+        },
+        {
+          "title": "Picsart Earn: open program paying creators for AI-made videos",
+          "creator": "TechIntelPro (Jul 2026), citing Picsart",
+          "url": "https://techintelpro.com/Marketing/AI/picsart-earn-program-surpasses-1m-in-creator-payouts-worldwide",
+          "metric": ">$1M paid to creators in under 2 months; 80,000+ registered; top creators up to $10,000/month (company-reported)",
+          "whyItWorks": "No follower minimum; you post campaign-brief videos on your own TikTok/Reels/Shorts and get paid on views and engagement via Stripe. Terms don't list Canada, so availability must be checked in-app."
+        },
+        {
+          "title": "Whop Content Rewards: terms and real-world payout caveats",
+          "creator": "Whop terms + OpusClip blog",
+          "url": "https://whop.com/content-rewards-terms-of-service/",
+          "metric": "Typical live campaigns $0.50-1.50 per 1K views (mid-2026); Whop's 10% fee is charged to the brand, paid in Whop Credits",
+          "whyItWorks": "Brands fund per-view campaigns; clips must be wholly original per campaign and bots are clawed back. Reports of unpaid clips exist, so the Muslim Clippers community (unverified 19k members) is worth a read before joining."
+        },
+        {
+          "title": "X replaces revenue sharing with Original Content Rewards",
+          "creator": "AI Weekly",
+          "url": "https://aiweekly.co/alerts/x-ends-revenue-sharing-launches-original-content-rewards",
+          "metric": "Needs Premium + 500 verified followers + 500K impressions in 90 days; payout amounts not published",
+          "whyItWorks": "Rewards original posts, not reposts, so it favors real creators. Closed to you for now (follower threshold), but worth watching."
+        },
+        {
+          "title": "Where MCP/AI-tool builders can get paid in 2026",
+          "creator": "DEV Community (author sells their own MCP server, so biased)",
+          "url": "https://dev.to/kirothebot/the-state-of-mcp-monetization-in-2026-where-builders-actually-get-paid-34k9",
+          "metric": "MCP Marketplace keeps 85% to the developer; Apify pays 80/20 with $500K+ monthly payouts platform-wide (not per builder)",
+          "whyItWorks": "Paid MCP marketplaces let you charge for tools without building billing, but the page shows no per-builder revenue, so it's a long shot."
+        }
+      ]
+    },
     {
       "date": "2026-10-28",
       "createdAt": "2026-10-28T14:42:09Z",
