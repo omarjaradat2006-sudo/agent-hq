@@ -1,7 +1,7 @@
 {
   "team": "lab",
   "hired": true,
-  "updatedAt": "2026-11-04T11:26:00Z",
+  "updatedAt": "2026-11-04T11:55:00Z",
   "agents": [
     {
       "id": "lead",
@@ -16,8 +16,8 @@
       "id": "scout",
       "name": "Tool Scout",
       "role": "New AI tools, models and APIs",
-      "status": "waiting",
-      "doing": "Found Shorts series, Base44 social posting, TikTok caption data",
+      "status": "ok",
+      "doing": "Found YPP 2027 rules, Metricool long-form data, MOSS-SoundEffect",
       "lastRun": "2026-10-28T11:25:00Z",
       "nextRun": "2026-10-29T10:23:00Z"
     },
@@ -25,8 +25,8 @@
       "id": "hunter",
       "name": "Format Hunter",
       "role": "What makes rival videos more engaging",
-      "status": "working",
-      "doing": "Hunting for new formats that are winning right now",
+      "status": "ok",
+      "doing": "5 new format leads for the YouTube team",
       "lastRun": "2026-10-28T11:25:00Z",
       "nextRun": "2026-10-29T10:23:00Z"
     },
@@ -34,13 +34,23 @@
       "id": "engineer",
       "name": "Upgrade Engineer",
       "role": "Turns finds into build plans",
-      "status": "waiting",
-      "doing": "5 build plans ready",
+      "status": "working",
+      "doing": "Turning finds into build plans",
       "lastRun": "2026-10-28T11:25:00Z",
       "nextRun": "2026-10-29T10:23:00Z"
     }
   ],
   "log": [
+    {
+      "t": "2026-11-04T11:55:00Z",
+      "agent": "Format Hunter",
+      "msg": "Best find: 'Can The Ball Reach Final Form' (ASMR Ball Simulations, 122,773 views, 9.4x); 5 format leads written"
+    },
+    {
+      "t": "2026-11-04T11:55:00Z",
+      "agent": "Tool Scout",
+      "msg": "Key find: YouTube's Feb 1, 2027 YPP rules (Shorts pay needs 10M views/90d; new entry 8,000 watch hours) make long-form watch time the money metric"
+    },
     {
       "t": "2026-11-04T11:26:00Z",
       "agent": "Format Hunter",
@@ -495,6 +505,68 @@
   ],
   "research": [
     {
+      "date": "2026-11-04",
+      "createdAt": "2026-11-04T11:55:00Z",
+      "items": [
+        {
+          "title": "New opportunities to earn and changes to the YouTube Partner Program",
+          "creator": "YouTube Official Blog",
+          "url": "https://blog.youtube/news-and-events/youtube-partner-program-updates-2027-new-opportunities-earn/",
+          "metric": "From Feb 1, 2027: Shorts revenue only for channels with 10M qualified Shorts views in 90 days; new applicants need 8,000 watch hours/365 days or 20M Shorts views/90 days",
+          "whyItWorks": "Neither channel will reach the Shorts bar soon (Bounce Theory ~217K views/28d), so long-form watch hours are the realistic path to monetisation. Archived livestreams count toward watch hours (easyviral.ai summary)."
+        },
+        {
+          "title": "YouTube Trends 2026: What 799,718 Videos Tell Us",
+          "creator": "Metricool",
+          "url": "https://metricool.com/youtube-trends/",
+          "metric": "Long-form: 2-4 uploads a week gave the best per-video results (~10,552 views/post); more than 7 a week lowered total monthly views",
+          "whyItWorks": "Omar's channels post 14 longs a week each and every long sits at 0-41 views. Fewer, better longs is backed by data across 71,177 accounts (correlational)."
+        },
+        {
+          "title": "Can The Ball Reach Final Form #satisfyingvideo #bouncingball #physics",
+          "creator": "ASMR Ball Simulations",
+          "url": "https://www.youtube.com/watch?v=U0WGicEwa9s",
+          "metric": "122,773 views · 9.4x channel average · 5 days old",
+          "whyItWorks": "An 'evolution' goal on a bouncing ball: a new form every few bounces and a promised final form. Same engine as his ball-grows Shorts."
+        },
+        {
+          "title": "FLAG WASH LIVE 🌍🫧 Which Country Will Survive? | Country Balls Battle",
+          "creator": "Battle Island",
+          "url": "https://www.youtube.com/watch?v=Q3k4VMg0WYE",
+          "metric": "3,603 views · 3.6x channel average · same day",
+          "whyItWorks": "A looping physics battle run as a live stream; archived lives add long-form watch hours, the thing his channels lack."
+        },
+        {
+          "title": "Every Ironman Suit Explained in 15 Minutes",
+          "creator": "Stickman 616",
+          "url": "https://outlierkit.com/channel/stickman616x",
+          "metric": "1.4M views on a 19.2K-sub channel (7.3M views over 30 videos, ~5.8x its average)",
+          "whyItWorks": "'Every X explained in N minutes' with simple drawn figures; maps onto explainer.py for an Ambient Escape long (no depictions of prophets or companions)."
+        },
+        {
+          "title": "Rain Sounds for Deep Sleep | Escape to a Cozy Forest Cabin",
+          "creator": "Rainful",
+          "url": "https://www.youtube.com/watch?v=ZVj-iSQclFM",
+          "metric": "31,374 views · 11.0x channel average · 1 day old",
+          "whyItWorks": "Place + 'Escape to' + rain promise in one title; buildable from a cabin clip and his rain layers."
+        },
+        {
+          "title": "YouTube Shorts: prioritizing original content (Oct 1, 2026)",
+          "creator": "TeamYouTube via OutlierKit",
+          "url": "https://outlierkit.com/resources/youtube-shorts-original-content-update/",
+          "metric": "Reach cut for Shorts that reuse other creators' videos without meaningful additions; 'template-based changes' don't count as original",
+          "whyItWorks": "His sims are rendered fresh, so low risk, but remixes should change the actual simulation, not only colours."
+        },
+        {
+          "title": "MOSS-SoundEffect v2.0 review",
+          "creator": "Communeify (OpenMOSS model)",
+          "url": "https://www.communeify.com/en/blog/openmoss-soundeffect-v2-0-review-ai-audio-generation-guide/",
+          "metric": "Apache 2.0, 48 kHz, up to 30 s per clip (per the review; hardware not stated)",
+          "whyItWorks": "An open text-to-sound model that could replace flat synthesized rain/fire layers in Ambient longs; check the licence on the Hugging Face page before monetised use."
+        }
+      ]
+    },
+    {
       "date": "2026-10-28",
       "createdAt": "2026-10-28T10:55:00Z",
       "items": [
@@ -639,296 +711,209 @@
   "formatLeads": [
     {
       "channel": "Bounce Theory",
-      "kind": "Long",
-      "name": "Marble Run 'Special' (one continuous course)",
+      "kind": "Short",
+      "name": "Final Form ball evolution",
       "example": {
-        "title": "Marble Run♡Durururu Special",
-        "url": "https://www.youtube.com/watch?v=u3MxJiJTkZk",
-        "creator": "Marble corn",
-        "views": "2,267,948",
-        "vsAvg": "21.7x channel avg"
+        "title": "Can The Ball Reach Final Form #satisfyingvideo #bouncingball #physics",
+        "url": "https://www.youtube.com/watch?v=U0WGicEwa9s",
+        "creator": "ASMR Ball Simulations",
+        "views": "122,773",
+        "vsAvg": "9.4x"
       },
-      "howToMake": "New sims.py long: one 10-15 min continuous course (funnels, zig-zag ramps, spinners, elevators) with 8-12 named colour marbles, a live leaderboard and a winner card. Synth plinks per collision, no compilation cuts.",
-      "why": "The strongest long-form outlier in today's trending pull (and a second Marble corn upload at 2.9x, plus サマーマーブル's run at 4.9x / 1.06M). Long-Form Doctor found numbered compilations fell to 0-11 views; one continuous race is the opposite of that.",
-      "createdAt": "2026-10-28T10:55:00Z"
+      "howToMake": "New sims.py variant of the ball-grows logic: every N bounces the ball evolves to the next tier (colour, glow, trail, shape, size) with an on-screen 'FORM 3/7' counter and a tier-up sound; the last form is the spectacle (rainbow trail + burst). 25-35 s, one ball, one ring. Test slot until it has numbers.",
+      "why": "An evolution goal gives a reason to wait for the end, like the re-align payoff on his 32K pendulum wave; Ambient Escape's 'Every bounce, the ball gets BIGGER' already hit 3,417.",
+      "createdAt": "2026-11-04T11:55:00Z"
     },
     {
       "channel": "Bounce Theory",
-      "kind": "Short",
-      "name": "Guess the Song bouncing orbs (repeat winner)",
+      "kind": "Long",
+      "name": "Live physics battle (archived live stream)",
       "example": {
-        "title": "Guess The Song// Satisfying physics simulation - 999 varied bouncing orbs",
-        "url": "https://www.youtube.com/watch?v=ANIRrsIdP3k",
-        "creator": "Mo Lucky",
-        "views": "683,864",
-        "vsAvg": "10.1x channel avg"
+        "title": "FLAG WASH LIVE 🌍🫧 Which Country Will Survive? | Country Balls Battle",
+        "url": "https://www.youtube.com/watch?v=Q3k4VMg0WYE",
+        "creator": "Battle Island",
+        "views": "3,603",
+        "vsAvg": "3.6x"
       },
-      "howToMake": "ring_escape/orb sim where each bounce plays the next note of a public-domain melody (Für Elise, Ode to Joy, Canon in D); title asks 'Guess the song'. Only public-domain tunes, synthesized by sims.py.",
-      "why": "It repeats: Mo Lucky's second upload of the same format is at 264,263 (3.9x). A format that wins twice on one channel is safer than a one-off.",
-      "createdAt": "2026-10-28T10:55:00Z"
-    },
-    {
-      "channel": "Bounce Theory",
-      "kind": "Short",
-      "name": "Every bounce = +1 ball (1 → 500?)",
-      "example": {
-        "title": "Every Bounce = +1 Ball 🎃 1 → 500?! #satisfying #shorts",
-        "url": "https://www.youtube.com/watch?v=_mvEjWoIq8A",
-        "creator": "Jokhio Interactive",
-        "views": "1,349",
-        "vsAvg": "3.4x channel avg"
-      },
-      "howToMake": "Start with one ball in a circle; every wall hit spawns one more; on-screen counter races to a target (500 or 1,000). Same engine as brick_breaker, so it is a quick variant.",
-      "why": "Small channel, but it is the same 'count-up to a big number' hook as the stacking lead and fits Omar's 20-25 s sweet spot. Test slot, not a proven slot.",
-      "createdAt": "2026-10-28T10:55:00Z"
-    },
-    {
-      "channel": "Bounce Theory",
-      "kind": "Short",
-      "name": "Character balls 'X vs Y' (still rising)",
-      "example": {
-        "title": "Sigma Ball vs Verity #satisfying #physics #simulation #ball",
-        "url": "https://www.youtube.com/watch?v=nZPtSGMxGsA",
-        "creator": "Velique",
-        "views": "1,345,323",
-        "vsAvg": "3.9x channel avg"
-      },
-      "howToMake": "Two named balls (meme names, no copyrighted characters) in one arena with HP or size bars; first to escape or win. Already in yesterday's lineup, keep it in the elsewhere slots while it climbs.",
-      "why": "Grew from 1.20M to 1.35M views since yesterday's pull, so the format is still being pushed.",
-      "createdAt": "2026-10-28T10:55:00Z"
+      "howToMake": "Loop an endless sims.py battle (colour teams or country flags, no club names) and stream it with OBS for 1-3 hours, archived as public. Needs a one-time OBS + stream-key setup on the laptop, so it is a Test, not a daily slot.",
+      "why": "Archived livestreams count toward YPP watch hours, and his longs earn almost none; a live also gets its own Live feed slot.",
+      "createdAt": "2026-11-04T11:55:00Z"
     },
     {
       "channel": "Ambient Escape",
       "kind": "Long",
-      "name": "Seasonal cozy room (winter library hideaway)",
+      "name": "'Every X explained in N minutes' Islamic explainer long",
       "example": {
-        "title": "The Christmas Library Hideaway | Christmas Jazz, Snowy Village Views & Crackling Fireplace",
-        "url": "https://www.youtube.com/watch?v=UWn5bwctWbA",
-        "creator": "Tranquil Jazz Nook",
-        "views": "22,389",
-        "vsAvg": "27.5x channel avg"
+        "title": "Every Ironman Suit Explained in 15 Minutes",
+        "url": "https://outlierkit.com/channel/stickman616x",
+        "creator": "Stickman 616",
+        "views": "1.4M",
+        "vsAvg": "~5.8x (7.3M views / 30 videos)"
       },
-      "howToMake": "Pexels/Pixabay library or cabin-window clip with falling snow + his synthesized fireplace crackle and soft wind; title as a place ('The Winter Library Hideaway | Snowy Window & Crackling Fireplace | 3 Hours'). No Christmas branding and no jazz unless the music is CC0/licensed for monetised use.",
-      "why": "Biggest ambience outlier in today's trending pull; the hook is a named, seasonal place, which Omar's sleep longs (0-4 views) don't have.",
-      "createdAt": "2026-10-28T10:55:00Z"
+      "howToMake": "Chain explainer.py list scenes into a 10-15 min long, e.g. 'Every Major Sign of the Day of Judgement Explained in 12 Minutes': one scene per point with counter, gold keyword and source; AI voice optional, never Omar's voice; never depict prophets or companions (scenes and text only); sahih/hasan sources only, script checked before render.",
+      "why": "Simple-art 'explained' longs win on script and a complete-list promise (The Paint Explainer 2.01M subs, EverythingProfessor 677K per TaleTok); Ambient's explainer Shorts start today, so the scenes already exist.",
+      "createdAt": "2026-11-04T11:55:00Z"
     },
     {
       "channel": "Ambient Escape",
       "kind": "Long",
-      "name": "Autumn morning room ambience",
+      "name": "'Escape to a <place>' rain sleep long",
       "example": {
-        "title": "Cozy Fall Morning Ambience 🍂 Autumn Sunroom & Fireplace | Pumpkin Bake Day",
-        "url": "https://www.youtube.com/watch?v=phLFXYQ4OK8",
-        "creator": "Delger Family Farm",
-        "views": "20,284",
-        "vsAvg": "5.0x channel avg"
+        "title": "Rain Sounds for Deep Sleep | Escape to a Cozy Forest Cabin",
+        "url": "https://www.youtube.com/watch?v=ZVj-iSQclFM",
+        "creator": "Rainful",
+        "views": "31,374",
+        "vsAvg": "11.0x"
       },
-      "howToMake": "Sunroom/porch stock clip, leaves outside, light rain + fireplace mix from his pipeline; morning framing ('for study and calm mornings') instead of sleep.",
-      "why": "Second seasonal-room outlier in the same pull, so the seasonal-place pattern is not a one-off. Works now; switch to winter titles from mid-November.",
-      "createdAt": "2026-10-28T10:55:00Z"
+      "howToMake": "One forest-cabin stock clip (Pexels/Pixabay) looped with his rain + soft fire layers, 3 h, title 'Rain Sounds for Deep Sleep | Escape to a <place>'. Never reciter audio.",
+      "why": "Fresh 11x outlier, 1 day old; the place-in-the-title pattern matches the Long-Form Doctor's diagnosis.",
+      "createdAt": "2026-11-04T11:55:00Z"
     },
     {
       "channel": "Ambient Escape",
       "kind": "Short",
-      "name": "Rain story short ('power cut, then the rain begins')",
+      "name": "Named-city rain clip Short",
       "example": {
-        "title": "Power Cut on a Hot Summer Night 🌙 Then the Monsoon Rain Begins! | 90s Village Life #shorts",
-        "url": "https://www.youtube.com/watch?v=_6pK4Z8-61M",
-        "creator": "Ghibli Village Stories",
-        "views": "178,950",
-        "vsAvg": "4.3x channel avg"
+        "title": "pune weather ☁️ #punerain #weather #rain #diwali #rainsounds",
+        "url": "https://www.youtube.com/watch?v=xKYf5HyaoZg",
+        "creator": "Ashwini ganesh",
+        "views": "57,714",
+        "vsAvg": "93.9x"
       },
-      "howToMake": "20-30 s Short with a tiny story arc: hot, silent night clip → first drops → full rain (stock clips cross-faded, his rain synth swelling). Text: 'The power went out... then the rain came 🌧️'. Avoid the word 'Ghibli' and any Ghibli-style imitation in titles.",
-      "why": "A story arc on top of plain rain ambience gives a reason to watch to the end; works as a Short that points to the 3-hour rain long.",
-      "createdAt": "2026-10-28T10:55:00Z"
-    },
-    {
-      "channel": "Ambient Escape",
-      "kind": "Long",
-      "name": "Nostalgic rainy-village night (story ambience)",
-      "example": {
-        "title": "90s Indian Rural Life After a Storm 🌧️ | Pumpkin Curry, Puri & Dried Prawn | Ghibli Nostalgia",
-        "url": "https://outlierkit.com/channel/theghibliechoes",
-        "creator": "Ghibli Echoes (via OutlierKit)",
-        "views": "1.1M",
-        "vsAvg": "9.4x channel median"
-      },
-      "howToMake": "Long rain ambience framed as a place and time ('A Rainy Night in an Old Village House | Rain on Clay Roof & Distant Thunder | 3 Hours') using stock village/rain clips; no faces, no AI imitation of a studio's style.",
-      "why": "The channel has 354K subs and 1.8M average views with 8 outliers, all rain/village nostalgia. Data is from OutlierKit's page, not checked on YouTube.",
-      "createdAt": "2026-10-28T10:55:00Z"
-    },
-    {
-      "channel": "Ambient Escape",
-      "kind": "Short",
-      "name": "Event-timed Sunnah reminder (rain dua)",
-      "example": {
-        "title": "كسوف الشمس ⚠️احذر من هذا الخطأ (Solar eclipse: beware this mistake)",
-        "url": "https://outlierkit.com/channel/alkamalii",
-        "creator": "Basa'ir @alkamalii (via OutlierKit)",
-        "views": "159K",
-        "vsAvg": "27.4x recent median"
-      },
-      "howToMake": "On a rainy or windy day in Ontario, post a Short over his rain footage: 'It's raining — say this' + the dua the Prophet ﷺ said when it rained ('Allahumma sayyiban nafi'a', Sahih al-Bukhari 1032) with the reference on screen. Have the reference checked before upload.",
-      "why": "The biggest Islamic outlier found today was tied to a live event with a 'do this / avoid this' hook. Rain is an event Omar can match to his existing rain clips. Note: Arabic channel; no English channel with reliable per-video numbers was found this run.",
-      "createdAt": "2026-10-28T10:55:00Z"
-    },
-    {
-      "channel": "Ambient Escape",
-      "kind": "Long",
-      "name": "Quran story long (Ya'juj and Ma'juj, from Surah Al-Kahf)",
-      "example": {
-        "title": "Yajuj Majuj Ka Waqia",
-        "url": "https://outlierkit.com/channel/sareligiousvoice",
-        "creator": "SA Religious Voice (via OutlierKit)",
-        "views": "390K",
-        "vsAvg": "10.2x"
-      },
-      "howToMake": "English narration (AI voice, never Omar's) over landscapes and wind, every claim tied to Surah Al-Kahf 18:94-99 and sahih hadith shown on screen; no depictions of people or prophets; checked by someone knowledgeable before upload.",
-      "why": "Same channel as the 1.4M 'Day in Jannah' lead; its #2 outlier is a Quran story, so story longs are a repeatable pattern, not one hit.",
-      "createdAt": "2026-10-28T10:55:00Z"
+      "howToMake": "10-15 s real rain stock clip of a named city street or window (Pexels/Pixabay, location from the clip page) + his rain layer, title '<City> rain at night 🌧️ #rain #rainsounds #shorts'. Only name a city the clip really shows, and never say 'right now'.",
+      "why": "Biggest outlier in today's scan; place + weather is a search people make. Low effort, so a cheap Test.",
+      "createdAt": "2026-11-04T11:55:00Z"
     }
   ],
   "teamLeads": {
     "tiktok": [
       {
-        "title": "Keyword in the first caption line, on screen and said aloud",
-        "what": "TikTok reads the first caption line, on-screen text and the transcript to decide what a video is about.",
+        "title": "'Answer in One Word' trend",
+        "what": "Creators answer personal questions in one word, then expand on the most revealing answer",
         "evidence": {
-          "title": "TikTok SEO Guide 2026 (Metricool's 2026 TikTok study)",
-          "url": "https://metricool.com/tiktok-seo/",
-          "creator": "Metricool",
-          "metric": "1+ hashtag ≈ +5% views; skip #fyp/#viral; keep 1-5 specific tags"
+          "title": "TikTok Trends: November 2026",
+          "url": "https://newengen.com/insights/tiktok-trends/",
+          "creator": "NewEngen",
+          "metric": "Listed as a November 2026 trend (no view counts given)"
         },
-        "howToUse": "Replace 'Follow for more' with a first caption line like 'stoic advice for young muslim men' and put the same phrase as text in the first 3 seconds; say it in the first sentence.",
-        "createdAt": "2026-10-28T10:55:00Z"
+        "howToUse": "One script: rapid one-word answers to 5 questions about discipline/faith ('Fajr?' 'Hard.'), then 30 s on the one that hurts most. Opens on a lived moment, which is what the review says works.",
+        "createdAt": "2026-11-04T11:55:00Z"
       },
       {
-        "title": "Ask a question in the caption, never ask for likes",
-        "what": "Question captions get more comments; like-CTAs backfire.",
+        "title": "Answer to your reach-drop request: repeat the 3x format",
+        "what": "When one post does ~3x your average, make ~10 more in the same structure with different topics for 30 days",
         "evidence": {
-          "title": "TikTok SEO Guide 2026",
-          "url": "https://metricool.com/tiktok-seo/",
-          "creator": "Metricool",
-          "metric": "question captions +26.19% comments; comment CTA ~+14% comments; like CTA ~-60% likes"
+          "title": "How Small Accounts Hit 10K TikTok Followers in 2026",
+          "url": "https://www.socialync.io/blog/small-accounts-10k-tiktok-followers-2026",
+          "creator": "Socialync",
+          "metric": "Author's advice, not measured data; the site sells a cross-posting tool"
         },
-        "howToUse": "End each caption with one specific question tied to the script ('What's one thing you stopped controlling?'). Drop any 'like if…' line.",
-        "createdAt": "2026-10-28T10:55:00Z"
-      },
-      {
-        "title": "Mention a relevant account (small accounts only)",
-        "what": "Small accounts that @mention someone relevant saw more reach.",
-        "evidence": {
-          "title": "TikTok SEO Guide 2026",
-          "url": "https://metricool.com/tiktok-seo/",
-          "creator": "Metricool",
-          "metric": "mentions: comments +45%, reach up to +20% for tiny/small accounts"
-        },
-        "howToUse": "Only when it is honest: credit the creator or page whose stat or quote the script uses. Test on 3 posts and compare views.",
-        "createdAt": "2026-10-28T10:55:00Z"
+        "howToUse": "Treat the shirt-story structure (367 views, his best recent) as the series: same 'moment everyone's lived' opening, new moments. I found no trustworthy data on what talking-head accounts changed after a reach drop; this is the best-supported advice.",
+        "createdAt": "2026-11-04T11:55:00Z"
       }
     ],
     "linkedai": [
       {
-        "title": "Write about the problem, not the extension",
-        "what": "Long-tail problem posts and a one-page SEO landing page bring steady installs for Chrome extensions.",
+        "title": "Simplify Copilot's live store numbers",
+        "what": "~500K users, 4.8★ from 3.9K ratings, updated Nov 3, 2026; autofill 'free forever', premium unpriced on the listing",
         "evidence": {
-          "title": "7 Proven Ways to Get More Users for Your Chrome Extension",
-          "url": "https://www.stefanvd.net/blog/?p=2493",
-          "creator": "Stefan vd (Turn Off the Lights)",
-          "metric": "author says one well-ranked post brings 'thousands' of visitors over time (no hard data)"
+          "title": "Simplify Copilot - Chrome Web Store",
+          "url": "https://chromewebstore.google.com/detail/pbanhockgagggenencehbnadejlgchfc",
+          "creator": "Simplify",
+          "metric": "~500,000 users · 4.8/5 · 3.9K ratings"
         },
-        "howToUse": "Turn the 'Stop applying, start messaging' angle into a page answering 'how to message a recruiter on LinkedIn' with 3 templates and a LinkedAI install button.",
-        "createdAt": "2026-10-28T10:55:00Z"
+        "howToUse": "Answers your request (Teal and Careerflow not checked this run). Simplify is application autofill, not LinkedIn messaging, so position LinkedAI as the free tool for the outreach step Simplify doesn't do.",
+        "createdAt": "2026-11-04T11:55:00Z"
       },
       {
-        "title": "Reddit: disclose you're the dev and ask for feedback",
-        "what": "Helpful answers in job-search subreddits with a disclosed mention beat promo posts.",
+        "title": "Store listing as a landing page",
+        "what": "Keywords in the title, a tight 132-character short description, annotated screenshots, ask for a review right after the first success",
         "evidence": {
-          "title": "7 Proven Ways to Get More Users for Your Chrome Extension",
-          "url": "https://www.stefanvd.net/blog/?p=2493",
-          "creator": "Stefan vd",
-          "metric": "no numbers given"
+          "title": "How I'd get a Chrome extension to 1,000 installs in 2026",
+          "url": "https://dev.to/quangpl/how-id-get-a-chrome-extension-to-1000-installs-in-2026-after-watching-86-fail-4n26",
+          "creator": "dev.to (quangpl)",
+          "metric": "Store-wide stat quoted: 86.3% of extensions have under 1,000 users (unsourced); author writes for a paid install service, skip that part"
         },
-        "howToUse": "Draft 2 answers to real 'how do I reach recruiters' threads for Omar to post himself; say he built LinkedAI and asks for honest feedback.",
-        "createdAt": "2026-10-28T10:55:00Z"
+        "howToUse": "Write one idea that rewrites LinkedAI's store title, short description and screenshot captions around 'message recruiters on LinkedIn'.",
+        "createdAt": "2026-11-04T11:55:00Z"
       }
     ],
     "growth": [
       {
-        "title": "One template page per business type ranks for 'marketing plan for a <business>'",
-        "what": "Searching 'marketing plan for a bakery' returns ClickUp pages for bakery, cake shop and home-based bakery, each its own page.",
+        "title": "Base44 AI Visibility tab",
+        "what": "Shows whether AI assistants can read your pages, which pages they used and how they describe the app (Pro plan and above)",
         "evidence": {
-          "title": "Bakery Business Marketing Plan Template",
-          "url": "https://clickup.com/templates/marketing-plan/bakery-business",
-          "creator": "ClickUp",
-          "metric": "ranks on page 1 alongside GanttPRO and Slidesgo; traffic numbers not public"
-        },
-        "howToUse": "Answer to your request: the pages that rank are per-business-type template pages, not generic generators. Pick 3 of Omar's audience types (barber, café, home bakery) and write ideas around a sample Growth Architect plan for each.",
-        "createdAt": "2026-10-28T10:55:00Z"
-      },
-      {
-        "title": "Base44 can now post social content on the user's behalf",
-        "what": "Base44 added LinkedIn/Instagram/Facebook posting for social content (Oct 13) and an email performance dashboard (Oct 8).",
-        "evidence": {
-          "title": "Base44 changelog",
+          "title": "Base44 changelog (Sep 22, 2026)",
           "url": "https://docs.base44.com/changelog",
           "creator": "Base44",
-          "metric": "Oct 13: social posting; Oct 8: email performance dashboard"
+          "metric": "Feature launch, no numbers"
         },
-        "howToUse": "Product idea: a 'Post this week's plan' button that drafts the posts and only posts after the user approves each one. Content idea: 'your plan now writes the posts too'.",
-        "createdAt": "2026-10-28T10:55:00Z"
+        "howToUse": "If Omar's plan includes it, check how assistants describe Growth Architect and write content that fixes the description; otherwise skip.",
+        "createdAt": "2026-11-04T11:55:00Z"
+      },
+      {
+        "title": "Answer to your ads request: what's reachable",
+        "what": "Meta Ad Library is the free official source but only shows ads that are active now, with no performance data; TikTok Creative Center is inspiration-only",
+        "evidence": {
+          "title": "Ad library alternatives for TikTok",
+          "url": "https://adlibrary.com/alternatives/ad-library-alternative-for-tiktok",
+          "creator": "adlibrary.com",
+          "metric": "No free source with performance data found"
+        },
+        "howToUse": "Ask Omar to open Meta Ad Library himself for Template.net, Predis.ai and Venturekit and paste screenshots; automated runs can't reach it.",
+        "createdAt": "2026-11-04T11:55:00Z"
       }
     ],
     "opps": [
       {
-        "title": "Shorts series + microdramas",
-        "what": "YouTube now lets creators group Shorts into seasons and episodes; microdramas passed 6.5B views in H1 2026.",
+        "title": "Answer: Google AI business calling is still not in Canada",
+        "what": "US only; Canada 'expected later in 2026'. US categories: auto shops, nail salons, then home repair, beauty and pet care (summer 2026)",
         "evidence": {
-          "title": "YouTube on TV 2026: Shorts Series & Living Room Features",
-          "url": "https://blog.youtube/news-and-events/made-on-youtube-creators-shorts-series-tv-features/",
-          "creator": "YouTube Official Blog",
-          "metric": "microdramas 6.5B views H1 2026; TV microdrama views +90% YoY"
+          "title": "When the first customer to call your business is an AI Assistant",
+          "url": "https://retail-insider.com/articles/2026/08/when-the-first-customer-to-call-your-business-is-an-ai-assistant/",
+          "creator": "Retail Insider (Aug 2026)",
+          "metric": "No Canadian launch found as of this run"
         },
-        "howToUse": "Check whether a faceless, halal episodic series (e.g. sourced Quran stories in 6 episodes) could be a new channel or a series on Ambient Escape.",
-        "createdAt": "2026-10-28T10:55:00Z"
+        "howToUse": "Keep it out of any Mississauga pitch until a Canadian launch is confirmed.",
+        "createdAt": "2026-11-04T11:55:00Z"
       },
       {
-        "title": "NFC review stands: one-time vs $50-100/month platforms",
-        "what": "Single-location shops pay $5-48 one-time on Etsy, while Podium/Birdeye start around $50-100/month.",
+        "title": "YouTube's new non-Shorts-pool incentives",
+        "what": "For channels under 10M Shorts views/90 days, YouTube plans milestone bonuses for Shopping, brand-deal incentives and trend boosts (details 'soon')",
         "evidence": {
-          "title": "Best Google Review Cards and Stands for Small Businesses in 2026",
-          "url": "https://onrec.com/node/129063",
-          "creator": "Onrec (partner content)",
-          "metric": "Etsy $5-48; marketplace $5-36; subscriptions $50-100+/mo"
+          "title": "New opportunities to earn and changes to the YouTube Partner Program",
+          "url": "https://blog.youtube/news-and-events/youtube-partner-program-updates-2027-new-opportunities-earn/",
+          "creator": "YouTube",
+          "metric": "Effective Feb 1, 2027"
         },
-        "howToUse": "Size a 'no monthly fee' NFC stand offer for Mississauga shops; check the claim that cheap cards often link to the profile instead of the direct review link.",
-        "createdAt": "2026-10-28T10:55:00Z"
+        "howToUse": "Watch for the details; SATR covers via YouTube Shopping on Ambient Escape could become a halal money path once eligible.",
+        "createdAt": "2026-11-04T11:55:00Z"
       }
     ],
     "youtube": [
       {
-        "title": "Shorts series for tournaments",
-        "what": "Shorts can be grouped into seasons/episodes with sequential playback (rolling out since Sept 23, 2026).",
+        "title": "Fewer longs: 2-4 a week beats 7+",
+        "what": "Metricool's 2026 study: 2-4 long uploads a week gave ~10,552 views per post; over 7 a week lowered total monthly views (correlational)",
         "evidence": {
-          "title": "YouTube on TV 2026: Shorts Series",
-          "url": "https://blog.youtube/news-and-events/made-on-youtube-creators-shorts-series-tv-features/",
-          "creator": "YouTube Official Blog",
-          "metric": "no view data yet"
+          "title": "YouTube Trends 2026",
+          "url": "https://metricool.com/youtube-trends/",
+          "creator": "Metricool",
+          "metric": "799,718 videos, 71,177 accounts"
         },
-        "howToUse": "Bounce Theory: run a 'Ball World Cup' as a Shorts series (Round of 16 → Final), each episode a top format; Omar groups them in Studio.",
-        "createdAt": "2026-10-28T10:55:00Z"
+        "howToUse": "Long-Form Doctor: weigh this against the 14 longs a week each channel posts. The upgrade 'Fewer, findable longs' is pending, so don't change the slot count until Omar marks it done.",
+        "createdAt": "2026-11-04T11:55:00Z"
       },
       {
-        "title": "Title A/B tests for longs only",
-        "what": "YouTube tests up to 3 titles and picks by watch-time share; not available for Shorts.",
+        "title": "YPP from Feb 1, 2027",
+        "what": "Shorts revenue only at 10M qualified Shorts views/90 days; new applicants need 1,000 subs + 8,000 watch hours/365 days or 20M Shorts views/90 days; archived lives count toward watch hours",
         "evidence": {
-          "title": "YouTube Launches New Title A/B Testing Tool",
-          "url": "https://vidiq.com/blog/post/youtube-launches-new-title-testing-tool/",
-          "creator": "vidIQ",
-          "metric": "3 variants, 1-14 days, needs Advanced Features"
+          "title": "YouTube Partner Program updates",
+          "url": "https://blog.youtube/news-and-events/youtube-partner-program-updates-2027-new-opportunities-earn/",
+          "creator": "YouTube",
+          "metric": "Bounce Theory: 165 subs, 217K views/28d; Ambient: 155 subs"
         },
-        "howToUse": "Give each L1/L2 three titles (one-sound+promise, place-name, question) so Omar can paste them into Test & Compare.",
-        "createdAt": "2026-10-28T10:55:00Z"
+        "howToUse": "Treat long-form watch time as the money metric; every long should be built to be watched, not just uploaded.",
+        "createdAt": "2026-11-04T11:55:00Z"
       }
     ]
   }
