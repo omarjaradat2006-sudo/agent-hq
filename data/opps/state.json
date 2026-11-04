@@ -1,14 +1,14 @@
 {
   "team": "opps",
   "hired": true,
-  "updatedAt": "2026-11-04T15:33:22Z",
+  "updatedAt": "2026-11-04T15:34:07Z",
   "agents": [
     {
       "id": "lead",
       "name": "Venture Lead",
       "role": "Picks the best bets",
-      "status": "waiting",
-      "doing": "Waiting for the Scout",
+      "status": "working",
+      "doing": "Writing the brief",
       "lastRun": "2026-10-28T14:46:36Z",
       "nextRun": "2026-10-31T14:23:00Z"
     },
@@ -33,9 +33,9 @@
     {
       "id": "swarm",
       "name": "Swarm Tester",
-      "status": "working",
-      "doing": "Testing the top idea on 100 simulated people",
-      "lastRun": "2026-10-28T14:46:36Z",
+      "status": "ok",
+      "doing": "Tested the top idea on 100 simulated people: 45% for",
+      "lastRun": "2026-11-04T15:34:07Z",
       "nextRun": "2026-10-31T14:23:00Z"
     },
     {
@@ -49,6 +49,11 @@
     }
   ],
   "log": [
+    {
+      "t": "2026-11-04T15:34:07Z",
+      "agent": "Swarm Tester",
+      "msg": "100-person test of the Ramadan planner: 45% for, 28% against, 27% undecided. Verdict: yes if it's for guys, sourced, and about $9"
+    },
     {
       "t": "2026-11-04T15:33:22Z",
       "agent": "Planner",
@@ -262,7 +267,7 @@
       "id": "opps-2026-11-04-1",
       "title": "Ramadan 2027 'discipline planner' PDF for young Muslim guys",
       "hook": "A printable and fillable 30-day Ramadan planner (prayer, Quran, fasting, phone-time, habits) sold on Gumroad, promoted from your TikTok. Realistic first Ramadan: $50-300, plus a new product for your page.",
-      "why": "It is your exact TikTok audience (self-improvement for young Muslim guys), costs almost nothing, and Ramadan is expected to start about Feb 8, 2027, so a listing live by mid-December gets weeks of ramp. Many sellers already list Ramadan planners on Gumroad and Etsy, so demand exists, but I found no revenue figures, and most are generic or aimed at women and kids.",
+      "why": "It is your exact TikTok audience (self-improvement for young Muslim guys), costs almost nothing, and Ramadan is expected to start about Feb 8, 2027, so a listing live by mid-December gets weeks of ramp. Many sellers already list Ramadan planners on Gumroad and Etsy, so demand exists, but I found no revenue figures, and most are generic or aimed at women and kids. 100-person test: 45% for, 28% against; would buy if sample pages are free and sources are named.",
       "format": "Hours: 8 to build, 2/week to promote · Cost: $0 · First $: ~Dec 15 to Jan (Ramadan buying peaks late Jan to mid-Feb)",
       "script": "1. Pick the angle: 'Ramadan for guys who want discipline', not a generic planner. Use trend-ideas to check what your audience is asking for.\n2. Use the build prompt in a new Claude chat to make the PDF (30 daily pages, salah + Quran + fast + sleep + screen-time + 'one habit to build, one to quit', last-10-nights page, Eid plan), the cover, 4 mockup images and the listing text.\n3. Create a free Gumroad account, upload the PDF, set price $9 (pay-what-you-want from $7 is an option), publish by Dec 15.\n4. Use content-scripts and voiceprint to make 6 TikToks from the planner (show one page per video, pin the link in your bio). Post 3 a week from mid-December.\n5. Optional: a second listing on Etsy (see rule check) once Gumroad works.\n6. Reuse: your TikTok page, Montserrat caption style, Ambient Escape Quran-ambience audience as a cross-post.\nRule check: Gumroad charges 10% + $0.50 on direct sales and 30% on Discover sales, with no monthly fee (pricing page). Etsy allows seller-prompted AI designs as digital downloads but requires an AI disclosure in the listing and prohibits AI prompt bundles. Only include ayat or hadith with the source named, and skip any you can't verify. Confirm Canadian payouts in Gumroad settings before launch.\nRisks: crowded niche, no revenue proof, seasonal (sales stop after Eid).\n2-week test (after launch): 500+ link clicks, 10+ sales. If under 3 sales, treat it as content for your page, not income.",
       "buildPrompt": "Context: I'm Omar Jaradat, a university student in Mississauga, Ontario (Canada). I'm Muslim, so everything must be halal and religious quotes must be accurate. Small budget, Windows laptop; I download files to Downloads and run steps in PowerShell. I run a TikTok page on self-improvement for young Muslim guys and have skills called content-scripts, voiceprint and trend-ideas.\n\nGoal: Build a sellable 'Ramadan 2027 Discipline Planner' for young Muslim men (Ramadan is expected to start around Feb 8, 2027). Finish line, all in Downloads\\ramadan-planner: (1) planner.pdf, A4 and US Letter, clean dark-and-gold look: cover, how-to-use page, 30 daily pages (5 prayers, Quran pages target, fast tracker, sleep, screen-time limit, 'one habit to build and one to quit', gratitude line), last-10-nights page, Eid plan, 30-day review; (2) 4 mockup PNGs for the listing; (3) gumroad-listing.txt with title, 5-bullet description, price suggestion in USD and tags; (4) etsy-listing.txt with an AI-use disclosure sentence in the description (Etsy requires it); (5) 6 TikTok scripts using my content-scripts and voiceprint skills, each showing one page.\n\nBuild it, don't explain it: write a Python script (reportlab or similar) yourself, run it, check every page by rendering to images and looking at them, and fix layout bugs. Package everything as one zip and give me one PowerShell command to open the folder. Ask me only for things you can't do (Gumroad login, uploading).\n\nConstraints: free tools only. Every ayah or hadith must name its source (surah and ayah number, or collection and number); if you are not sure it is authentic, leave it out. No music, no imagery of people. Don't claim guaranteed results.\n\nHow to know it worked (2 weeks after launch): [ ] listed on Gumroad by Dec 15 [ ] 500+ link clicks [ ] 10+ sales [ ] 3 TikToks posted per week. If fewer than 3 sales, reuse it as free content for the page.",
@@ -286,7 +291,68 @@
         }
       ],
       "status": "pending",
-      "createdAt": "2026-11-04T15:33:22Z"
+      "createdAt": "2026-11-04T15:33:22Z",
+      "swarm": {
+        "date": "2026-11-04",
+        "createdAt": "2026-11-04T15:34:07Z",
+        "ideaId": "opps-2026-11-04-1",
+        "idea": "Ramadan 2027 'discipline planner' PDF for young Muslim guys",
+        "verdict": "People would back it as a cheap seasonal product if it is clearly for guys, has sourced religious references, is priced at about $9 or less, and shows sample pages first.",
+        "score": 6,
+        "support": {
+          "for": 45,
+          "against": 28,
+          "undecided": 27
+        },
+        "groups": [
+          {
+            "name": "Investors",
+            "for": 30,
+            "quote": "Not investable and not trying to be. As a side income with $0 cost it's fine, but the TAM per seller is a few hundred dollars a season.",
+            "username": "@seedfund_sam"
+          },
+          {
+            "name": "Target customers",
+            "for": 65,
+            "quote": "Every planner I've seen is pastel and for sisters. I'd pay $9 for something blunt for guys with a screen-time tracker and a quit-one-habit page.",
+            "username": "@msa_brother_ali"
+          },
+          {
+            "name": "Skeptics",
+            "for": 25,
+            "quote": "Another AI-generated PDF on a crowded marketplace. Gumroad is full of Ramadan planners at $3-5.",
+            "username": "@reddit_grump"
+          },
+          {
+            "name": "Marketers/creators",
+            "for": 55,
+            "quote": "The hook is 'Ramadan for guys who want discipline'. One page per TikTok, link in bio. Post from mid-December, not February.",
+            "username": "@halal_hustle_dee"
+          },
+          {
+            "name": "Everyday users",
+            "for": 50,
+            "quote": "I would share it in our family WhatsApp if it's under $10 and gives a version for kids.",
+            "username": "@mom_noor"
+          }
+        ],
+        "topPraise": [
+          "A blunt, guys-focused planner fills a gap; most listings are pastel and aimed at women or kids",
+          "Costs $0 and promotes from an audience he already has"
+        ],
+        "topObjections": [
+          "Crowded niche with $3-5 competitors and free Notion templates",
+          "Sales stop after Eid, and he has no revenue proof yet",
+          "Made-up hadith or ayat in planners would sink trust"
+        ],
+        "changedMinds": "A skeptic dropped the 'generic PDF' objection once the angle was specifically for guys and every religious reference had a named source.",
+        "fixes": [
+          "Give away a free 3-page sampler first and sell the full planner second",
+          "Name a source for every ayah or hadith, or leave it out",
+          "Add a last-10-nights page and a post-Ramadan habit plan so it is worth about $9"
+        ],
+        "limits": "One model played all 100 agents in a condensed pass (about 20 key posts written out, remaining stances assigned from persona), so this is a rehearsal, not a forecast."
+      }
     },
     {
       "id": "opps-2026-11-04-2",
@@ -450,6 +516,67 @@
     "request": "Find out whether Picsart Earn pays Canadian accounts and what a typical campaign rate is per 1,000 views."
   },
   "swarms": [
+    {
+      "date": "2026-11-04",
+      "createdAt": "2026-11-04T15:34:07Z",
+      "ideaId": "opps-2026-11-04-1",
+      "idea": "Ramadan 2027 'discipline planner' PDF for young Muslim guys",
+      "verdict": "People would back it as a cheap seasonal product if it is clearly for guys, has sourced religious references, is priced at about $9 or less, and shows sample pages first.",
+      "score": 6,
+      "support": {
+        "for": 45,
+        "against": 28,
+        "undecided": 27
+      },
+      "groups": [
+        {
+          "name": "Investors",
+          "for": 30,
+          "quote": "Not investable and not trying to be. As a side income with $0 cost it's fine, but the TAM per seller is a few hundred dollars a season.",
+          "username": "@seedfund_sam"
+        },
+        {
+          "name": "Target customers",
+          "for": 65,
+          "quote": "Every planner I've seen is pastel and for sisters. I'd pay $9 for something blunt for guys with a screen-time tracker and a quit-one-habit page.",
+          "username": "@msa_brother_ali"
+        },
+        {
+          "name": "Skeptics",
+          "for": 25,
+          "quote": "Another AI-generated PDF on a crowded marketplace. Gumroad is full of Ramadan planners at $3-5.",
+          "username": "@reddit_grump"
+        },
+        {
+          "name": "Marketers/creators",
+          "for": 55,
+          "quote": "The hook is 'Ramadan for guys who want discipline'. One page per TikTok, link in bio. Post from mid-December, not February.",
+          "username": "@halal_hustle_dee"
+        },
+        {
+          "name": "Everyday users",
+          "for": 50,
+          "quote": "I would share it in our family WhatsApp if it's under $10 and gives a version for kids.",
+          "username": "@mom_noor"
+        }
+      ],
+      "topPraise": [
+        "A blunt, guys-focused planner fills a gap; most listings are pastel and aimed at women or kids",
+        "Costs $0 and promotes from an audience he already has"
+      ],
+      "topObjections": [
+        "Crowded niche with $3-5 competitors and free Notion templates",
+        "Sales stop after Eid, and he has no revenue proof yet",
+        "Made-up hadith or ayat in planners would sink trust"
+      ],
+      "changedMinds": "A skeptic dropped the 'generic PDF' objection once the angle was specifically for guys and every religious reference had a named source.",
+      "fixes": [
+        "Give away a free 3-page sampler first and sell the full planner second",
+        "Name a source for every ayah or hadith, or leave it out",
+        "Add a last-10-nights page and a post-Ramadan habit plan so it is worth about $9"
+      ],
+      "limits": "One model played all 100 agents in a condensed pass (about 20 key posts written out, remaining stances assigned from persona), so this is a rehearsal, not a forecast."
+    },
     {
       "date": "2026-10-28",
       "createdAt": "2026-10-28T14:46:25Z",
