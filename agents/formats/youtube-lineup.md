@@ -22,6 +22,8 @@ Two formats (use both every day, at least 3 of each):
 - **`explainer_pov`** (15-25 s): "POV: <everyday situation a young Muslim knows>" → 2-3 tension beats → the hadith/ayah revealed word by word (Arabic + English gloss + an icon per word) → a share line ("Send this to a friend who …"). Situations: getting cut off, someone insults you online, parents asking for help when you're tired, a friend backbiting, missing Fajr, exam stress, losing a game, waiting in a long line.
 - **`explainer_list`** (30-50 s): "N Islamic ways to <outcome>" / "N things the Prophet ﷺ did <when>" → one scene per point (counter 01/N, title with one gold keyword, one-line meaning, source) → ending line + share CTA. 4-8 points.
 
+**Variety (Omar's rule):** never reuse a hadith, ayah, POV situation or list topic used in the last 14 days. Check `pastLineups` and the upload logs first. Spread the 8 across different life areas each day (anger, family, money/rizq, salah, friends, school/work, phone/social media, gratitude, sleep, character) and vary the scenes; when no existing scene fits, write `new scene: <what to draw>` in the note so the batch adds it to explainer.py.
+
 Put 3 explainers in S01-S05 (first uploads get the most reach) and spread the rest. Titles: "POV: <situation> 🤍 #shorts #islam #hadith" or "<N> Islamic ways to <outcome> 🤍 #shorts #islam" (under 70 chars).
 
 **Every explainer slot's `note` must hold the full spec** so the batch can render it without guessing, in this exact shape:
