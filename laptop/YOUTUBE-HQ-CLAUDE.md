@@ -54,6 +54,7 @@ These are drawn entirely in code by `_system\Local Render\lib\explainer.py` (alr
 - If you improve explainer.py (a new scene, pose or icon), keep everything that works, back it up first (`explainer_backup_<date>.py`), and say what you added.
 
 ## Rules
+- **Channel check (never break):** Ambient Escape never gets a Bounce Engine / physics-sim / bounce / race / battle video, and Bounce Theory never gets Islamic, ambience or stock-footage videos. If a plan slot breaks this, skip that slot, don't render or upload it, and say so in the final report. Before uploading, check every item in each queue.json belongs to that channel.
 - English only, everywhere (titles, on-screen text, descriptions, voice-over).
 - Keep each plan's order and titles. Most videos are remixes of winners: keep the winner's recipe (format, hook, length, pacing) and change only the listed twist.
 - Never open, print or copy `client_secret_*.json`, `token_*.json` or any key file. upload.py uses them itself.
