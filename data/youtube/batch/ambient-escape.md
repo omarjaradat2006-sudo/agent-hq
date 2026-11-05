@@ -6,6 +6,8 @@ Planned by Omar's Agent HQ YouTube team. Omar approves everything, so make exact
 
 Full data (ideas, footage, review): https://raw.githubusercontent.com/omarjaradat2006-sudo/agent-hq/main/data/youtube/state.json
 
+> **STOP: this plan is from 2026-11-04, not today (2026-11-05). These videos were probably already made and uploaded.** Don't remake them. Tell Omar the YouTube team didn't plan today and ask him to have it run again (or to say "plan it yourself").
+
 ## Hard rules
 1. **Long videos use the REAL downloaded clips below. Never draw, render or AI-generate a background scene for a slot whose clip says READY.** Download each clip from its link, check it with ffprobe, and list the downloaded files to Omar before rendering anything.
 2. A generated or existing scene is only allowed for a slot whose clip is MISSING, and the finish message must name those slots.
@@ -80,6 +82,7 @@ Footage: AE-city-rain-night-01.mp4 (portrait stock rain on a night street, no fa
 ## R&D upgrades
 
 Only upgrades marked done are installed. Use those; never use one that is only approved.
+- Installed (use it): Fewer, findable longs: 3 a week per channel  (`lab-2026-11-04-1`)
 - Installed (use it): Seasonal room longs for Ambient Escape  (`lab-2026-10-28-3`)
 - Installed (use it): A Day in Jannah: AI-visual long videos  (`lab-2026-10-27-1`)
 
@@ -89,4 +92,4 @@ Only upgrades marked done are installed. Use those; never use one that is only a
 - If this session can push to omarjaradat2006-sudo/agent-hq: set `made: true` on each lineup item made and `status: "done"` (and `doneAt` now) on each used idea in data/youtube/state.json, then commit and push. Never change any other status. Otherwise list the idea ids so Omar can press "I did it" on the site.
 - Then wait. When Omar says everything is uploaded/scheduled ("okay", "done"), clean up yourself with the delete permission you asked for at the start: empty `_system\Local Render\work`, `_system\parts` and `_system\Uploaded (delete later)`, plus any `.part`/temp files. Never delete anything still listed in a `queue.json`. Say how much space was freed. If you can't delete, tell him to run `python render.py clean`.
 
-_Generated 2026-11-04 21:29 UTC_
+_Generated 2026-11-05 15:20 UTC_
