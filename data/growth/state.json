@@ -1,7 +1,7 @@
 {
   "team": "growth",
   "hired": true,
-  "updatedAt": "2026-11-05T18:42:00Z",
+  "updatedAt": "2026-11-05T19:20:00Z",
   "agents": [
     {
       "id": "lead",
@@ -42,11 +42,18 @@
     {
       "id": "upgrades",
       "name": "Upgrade Lab",
-      "status": "working",
-      "doing": "Researching Growth Architect upgrades"
+      "status": "ok",
+      "doing": "Planned 1 upgrade: Approval Queue (tested on 100 people, 67 for)",
+      "lastRun": "2026-11-05T19:20:00Z",
+      "nextRun": "2026-11-09T18:41:00Z"
     }
   ],
   "log": [
+    {
+      "t": "2026-11-05T19:20:00Z",
+      "agent": "Upgrade Lab",
+      "msg": "Planned 1 upgrades: Approval Queue: nothing goes out without you"
+    },
     {
       "t": "2026-11-05T18:42:00Z",
       "agent": "Upgrade Lab",
@@ -109,6 +116,101 @@
     }
   ],
   "ideas": [
+    {
+      "id": "growth-2026-11-05-u1",
+      "title": "Approval Queue: nothing goes out without you",
+      "format": "Product upgrade",
+      "hook": "Your AI agents draft real work, and you clear it all in one calm inbox with one tap: Send it, Fix it, Not this.",
+      "why": "Anthropic's Claude for Small Business (May 2026) and Gusto's AI teammate both lead with approvals, and owners on Indie Hackers say they want an approval list before anything is sent. The 100-person test backed it 67 for, 12 against, 21 undecided, with the condition that it takes one tap and drafts are specific.",
+      "score": 7,
+      "impact": "High",
+      "effort": "M",
+      "tier": "All",
+      "script": "What it does: each office gets an Approvals inbox. When the team briefing runs, agents also write 3-6 finished drafts (a customer reply, a price change, a post) based on the company description and live Shopify or Stripe stats. Screen: a new Approvals section inside the office, plus a line at the top of the Morning Brief ('4 things waiting for you'). The owner taps Send it, Fix it (edit inline, then approve) or Not this (one-line reason). Approve all low-risk handles internal and public items; money and customer items always need a tap. Nothing is sent for real yet, so Send it marks approved and offers Copy and Mark as sent. Data: a new ApprovalItem entity (plan_id, agent_name, kind, risk, title, draft, why, status, edited_draft, skip_reason, decided_at) and a decision log with CSV export. Pricing: Free sees 3 items a week, paid tiers see all, so safety is never paywalled. Two-week check: share of drafts approved within 24h (target 60%+), daily opens of Approvals, and Free-to-paid conversions after hitting the cap. Risks: it becomes a graveyard if it nags or drafts are generic; competitors can copy the buttons, so draft quality is the moat.",
+      "buildPrompt": "Paste into Omar's Main Chat in the Claude app.\n\nUse the Base44 connector on Growth Architect (app id 699b4057d65174480989a52e). First read these files: src/pages/Office.jsx, src/components/hq/Tasks.jsx, src/components/hq/useBriefing.js, src/components/hq/shared.jsx, base44/functions/teamBriefing, base44/entities/CompanyTask.jsonc and src/data/pricing.js. Then create a checkpoint, then build the change by editing the app's files directly.\n\nBuild an \"Approval Queue\" for each office (company). Promise on screen: \"Nothing goes out without you.\"\n\n1) New entity ApprovalItem: plan_id, agent_name, kind (reply, price_change, post, email, task), risk (money, customer, public, internal), title, draft, why (one plain sentence on what the agent saw), status (pending, approved, edited, skipped), edited_draft, skip_reason, decided_at. Same row-level rules as CompanyTask (only the creator reads and writes).\n\n2) Extend the teamBriefing backend function so that besides notes and tasks it also writes 3 to 6 ApprovalItem rows, each a finished draft grounded in the company's real description and live DataSource stats (for example a customer reply, a price change, a social post). Reuse the existing AI call pattern in that function. Do not add new credit costs; it runs inside the existing team briefing.\n\n3) New \"Approvals\" section inside the office (not a left sidebar, not a new top-level page): a calm inbox grouped by agent, each card showing the title, the draft, the \"why\" line and three buttons: \"Send it\", \"Fix it\" (inline edit then approve) and \"Not this\" (asks for a one-line reason). Add \"Approve all low-risk\" for internal and public items only. Money and customer items always need their own tap. Because nothing is connected to a real sending service yet, \"Send it\" marks the item approved and shows \"Copy\" plus \"Mark as sent\". Do not pretend anything was sent.\n\n4) Morning Brief: lead with \"N things waiting for you\" linking to Approvals. One daily digest only, no repeated pings. Add a weekly recap line: \"You approved X things this week.\"\n\n5) Tiers: Free sees 3 pending items per week and a quiet \"N more waiting, upgrade to see them\" line. Paid tiers see everything. Update TIER_FEATURES in pricing.js accordingly. Do not paywall the Skip button.\n\n6) Add a \"Decision log\" tab listing every decision by agent with a CSV export.\n\nRules to repeat: keep the Stripe integration exactly as it is; keep the professional look (no bright \"dopamine\" styling); connections and settings belong to each office; no left sidebar.\n\nFinish line: with a test company the briefing creates items, Send it, Fix it and Not this all work and persist after refresh, the Free cap shows correctly, and the Morning Brief links to Approvals. Test it in the preview with show_app_preview, then report what changed.",
+      "swarm": {
+        "date": "2026-11-05",
+        "createdAt": "2026-11-05T19:20:00Z",
+        "ideaId": "growth-2026-11-05-u1",
+        "idea": "Approval Queue: nothing goes out without you",
+        "verdict": "Most people would back it: 'nothing goes out without you' is the trust story, but only if it takes one tap and the drafts are specific, not generic.",
+        "score": 7,
+        "support": {
+          "for": 67,
+          "against": 12,
+          "undecided": 21
+        },
+        "groups": [
+          {
+            "name": "Small-business owners",
+            "for": 75,
+            "quote": "I let an AI answer one customer and it quoted the wrong price. A one-tap approve before anything goes out is the only way I'd connect my email.",
+            "username": "@dev_detailing"
+          },
+          {
+            "name": "Growth Architect customers",
+            "for": 85,
+            "quote": "I'd pay Pro for the 'nothing goes out without you' promise alone. It's what lets me connect my email.",
+            "username": "@grace_coach"
+          },
+          {
+            "name": "Skeptics",
+            "for": 40,
+            "quote": "It's a table in a database with a status column. I could build that in a weekend. The value is entirely whether the drafts are good.",
+            "username": "@rick_nowrap"
+          },
+          {
+            "name": "Marketers and agencies",
+            "for": 70,
+            "quote": "Okay, batch approve plus a client-shareable queue changes my read. I'd test it for two clients. Graveyard risk stays if the brief doesn't nag.",
+            "username": "@lia_agency"
+          },
+          {
+            "name": "Investors and SaaS founders",
+            "for": 65,
+            "quote": "As a buyer: trust is the sale. Letting a small-business owner say 'it only does what I approve' beats every feature list.",
+            "username": "@lucy_cmo"
+          }
+        ],
+        "topPraise": [
+          "'Nothing goes out without you' is a clear trust promise that lets owners connect email and shops",
+          "The decision log works as an audit trail",
+          "Morning brief that says '4 waiting' gives a daily reason to open the app"
+        ],
+        "topObjections": [
+          "Approval inboxes become graveyards if it takes more than a tap or pings all day",
+          "Generic drafts stay generic with an Approve button on them",
+          "Not a moat: competitors ship approvals too, and a queue is easy to copy"
+        ],
+        "changedMinds": "Batch approve and a rules layer ('always ask on money and refunds, auto-send FAQ replies') moved several against voices to undecided or for; a free taste of 3 items a week answered the paywall complaint.",
+        "fixes": [
+          "Add one-tap Approve all for low-risk items, plus one digest per day instead of many pings",
+          "Keep money items (prices, refunds) always in the queue, and let Free users see 3 items a week so safety is not paywalled",
+          "Show a real sample draft with real numbers on the page, and record a reason when someone skips so drafts improve"
+        ],
+        "limits": "One model played all 100 invented agents (82 spoke or voted; 18 silent ones are counted at their seeded lean), so this is a rehearsal, not a forecast."
+      },
+      "sources": [
+        {
+          "title": "Anthropic's new AI assistant for SMEs (every workflow needs explicit user approval)",
+          "url": "https://techround.co.uk/artificial-intelligence/anthropics-new-ai-assistant-could-replace-your-smes-next-admin-hire/"
+        },
+        {
+          "title": "Gusto introduces an AI teammate for small businesses (exception flagging and approvals)",
+          "url": "https://www.pulse.bot/ai/news/gusto-introduces-an-ai-teammate-for-small-businesses-04c274c4-e948-4244-a0f9-6171b0f1a519/"
+        },
+        {
+          "title": "Indie Hackers: what customer message should AI never send without owner approval",
+          "url": "https://www.indiehackers.com/post/what-customer-message-should-ai-never-send-without-owner-approval-4930048ad0"
+        },
+        {
+          "title": "Indie Hackers: a tiny AI employee for the inbox is probably the safest first one",
+          "url": "https://www.indiehackers.com/post/a-tiny-ai-employee-for-the-inbox-is-probably-the-safest-first-one-0a16c62506"
+        }
+      ],
+      "status": "pending",
+      "createdAt": "2026-11-05T19:20:00Z"
+    },
     {
       "id": "growth-2026-11-03-1",
       "title": "A plan that fits every business fits none",
@@ -685,5 +787,77 @@
       "Base44 can now post social content on the user's behalf (a product build Omar hasn't approved or built, so no content depends on it)"
     ],
     "request": "Find any reachable source of competitors' live ads (Meta Ad Library, TikTok Creative Center and LinkedIn Ad Library were blocked again), for Template.net, Predis.ai and Venturekit."
+  },
+  "swarms": [
+    {
+      "date": "2026-11-05",
+      "createdAt": "2026-11-05T19:20:00Z",
+      "ideaId": "growth-2026-11-05-u1",
+      "idea": "Approval Queue: nothing goes out without you",
+      "verdict": "Most people would back it: 'nothing goes out without you' is the trust story, but only if it takes one tap and the drafts are specific, not generic.",
+      "score": 7,
+      "support": {
+        "for": 67,
+        "against": 12,
+        "undecided": 21
+      },
+      "groups": [
+        {
+          "name": "Small-business owners",
+          "for": 75,
+          "quote": "I let an AI answer one customer and it quoted the wrong price. A one-tap approve before anything goes out is the only way I'd connect my email.",
+          "username": "@dev_detailing"
+        },
+        {
+          "name": "Growth Architect customers",
+          "for": 85,
+          "quote": "I'd pay Pro for the 'nothing goes out without you' promise alone. It's what lets me connect my email.",
+          "username": "@grace_coach"
+        },
+        {
+          "name": "Skeptics",
+          "for": 40,
+          "quote": "It's a table in a database with a status column. I could build that in a weekend. The value is entirely whether the drafts are good.",
+          "username": "@rick_nowrap"
+        },
+        {
+          "name": "Marketers and agencies",
+          "for": 70,
+          "quote": "Okay, batch approve plus a client-shareable queue changes my read. I'd test it for two clients. Graveyard risk stays if the brief doesn't nag.",
+          "username": "@lia_agency"
+        },
+        {
+          "name": "Investors and SaaS founders",
+          "for": 65,
+          "quote": "As a buyer: trust is the sale. Letting a small-business owner say 'it only does what I approve' beats every feature list.",
+          "username": "@lucy_cmo"
+        }
+      ],
+      "topPraise": [
+        "'Nothing goes out without you' is a clear trust promise that lets owners connect email and shops",
+        "The decision log works as an audit trail",
+        "Morning brief that says '4 waiting' gives a daily reason to open the app"
+      ],
+      "topObjections": [
+        "Approval inboxes become graveyards if it takes more than a tap or pings all day",
+        "Generic drafts stay generic with an Approve button on them",
+        "Not a moat: competitors ship approvals too, and a queue is easy to copy"
+      ],
+      "changedMinds": "Batch approve and a rules layer ('always ask on money and refunds, auto-send FAQ replies') moved several against voices to undecided or for; a free taste of 3 items a week answered the paywall complaint.",
+      "fixes": [
+        "Add one-tap Approve all for low-risk items, plus one digest per day instead of many pings",
+        "Keep money items (prices, refunds) always in the queue, and let Free users see 3 items a week so safety is not paywalled",
+        "Show a real sample draft with real numbers on the page, and record a reason when someone skips so drafts improve"
+      ],
+      "limits": "One model played all 100 invented agents (82 spoke or voted; 18 silent ones are counted at their seeded lean), so this is a rehearsal, not a forecast."
+    }
+  ],
+  "upgradeBrief": {
+    "date": "2026-11-05",
+    "createdAt": "2026-11-05T19:20:00Z",
+    "headline": "Approval Queue: the trust feature that lets owners connect everything",
+    "summary": "Omar, the best upgrade is an Approval Queue where every agent draft waits for one tap. Anthropic and Gusto both ship approvals, and owners say they will not connect email without it. The 100-person test came out 67 for, 12 against and 21 undecided, as long as it stays one tap and drafts are specific.",
+    "pick": "Approval Queue: nothing goes out without you — tap Copy build prompt and paste it into your Main Chat",
+    "waiting": []
   }
 }
