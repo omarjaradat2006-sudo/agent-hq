@@ -13,6 +13,12 @@ The best remixes go in the first slots (S01-S05), because the first uploads of a
 
 Weight by results: a format with a 30K-view hit gets more slots than one that peaks at 1K. Use the review's `formatScores`. Formats the review marks as weak (low median views and low retention) get at most 1 slot, or none.
 
+## Channel separation (Omar's rule, never break it)
+Each channel only gets its own kind of video, even if an off-niche video once did well there.
+- **Ambient Escape:** only calm sleep/ambience longs, Islamic reminders, quizzes and animated explainers. **Never** a Bounce Engine video, physics simulation, ball/ring/marble/race/battle format or any 'bounce sim (off-niche)' slot. Ambient's old bounce hit ('Every bounce, the ball gets BIGGER') is NOT a remix source for Ambient; leave it out of Ambient's winners.
+- **Bounce Theory:** only Bounce Engine simulations. Never Islamic content, stock footage or ambience.
+- If a format belongs to the other channel, put it in that channel's lineup instead.
+
 ## Ambient Escape experiment: 8 animated explainers + 7 proven (Omar's rule, from 2026-11-04)
 Omar's current Ambient Shorts are flat, so **every Ambient Escape lineup has exactly 8 animated explainer Shorts + 7 Shorts from the mix above** (the 7 = the strongest proven remixes). This overrides the 9-11 / 3-5 / 0-2 split for Ambient Shorts only; Bounce Theory is unchanged. Keep it until Omar changes it; the Performance Reviewer compares the two groups (views, % watched) in every review and says which wins.
 
