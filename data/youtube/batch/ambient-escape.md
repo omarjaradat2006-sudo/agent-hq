@@ -6,7 +6,7 @@ Planned by Omar's Agent HQ YouTube team. Omar approves everything, so make exact
 
 Full data (ideas, footage, review): https://raw.githubusercontent.com/omarjaradat2006-sudo/agent-hq/main/data/youtube/state.json
 
-> **STOP: this plan is from 2026-11-06, not today (2026-11-07). These videos were probably already made and uploaded.** Don't remake them. Tell Omar the YouTube team didn't plan today and ask him to have it run again (or to say "plan it yourself").
+> **STOP: this plan is from 2026-11-06, not today (2026-11-08). These videos were probably already made and uploaded.** Don't remake them. Tell Omar the YouTube team didn't plan today and ask him to have it run again (or to say "plan it yourself").
 
 ## Hard rules
 1. **Long videos use the REAL downloaded clips below. Never draw, render or AI-generate a background scene for a slot whose clip says READY.** Download each clip from its link, check it with ffprobe, and list the downloaded files to Omar before rendering anything.
@@ -79,4 +79,4 @@ Only upgrades marked done are installed. Use those; never use one that is only a
 - If this session can push to omarjaradat2006-sudo/agent-hq: set `made: true` on each lineup item made and `status: "done"` (and `doneAt` now) on each used idea in data/youtube/state.json, then commit and push. Never change any other status. Otherwise list the idea ids so Omar can press "I did it" on the site.
 - Then wait. When Omar says everything is uploaded/scheduled ("okay", "done"), clean up yourself with the delete permission you asked for at the start: empty `_system\Local Render\work`, `_system\parts` and `_system\Uploaded (delete later)`, plus any `.part`/temp files. Never delete anything still listed in a `queue.json`. Say how much space was freed. If you can't delete, tell him to run `python render.py clean`.
 
-_Generated 2026-11-07 19:38 UTC_
+_Generated 2026-11-08 19:57 UTC_
