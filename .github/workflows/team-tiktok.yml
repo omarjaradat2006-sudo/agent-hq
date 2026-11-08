@@ -1,0 +1,44 @@
+name: TikTok team (Gemini)
+on:
+  schedule:
+    - cron: "41 14 * * *"   # 9:41 AM Toronto (EST). Becomes 10:41 during daylight time.
+  workflow_dispatch:
+    inputs:
+      force_research:
+        description: "Do the review + web research even if it isn't Mon/Wed/Fri"
+        type: boolean
+        default: false
+permissions:
+  contents: write
+concurrency:
+  group: data-writes
+  cancel-in-progress: false
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Team writes today's work
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_MODEL: ${{ vars.GEMINI_MODEL }}
+          FORCE_RESEARCH: ${{ inputs.force_research && '1' || '0' }}
+        run: python agents/gemini/tiktok_team.py
+      - name: Save to the dashboard
+        run: |
+          git config user.name "Agent HQ (Gemini)"
+          git config user.email "actions@users.noreply.github.com"
+          for i in 1 2 3; do
+            git fetch -q origin main && git reset -q --hard origin/main
+            python agents/gemini/apply_patch.py tiktok
+            git add data/tiktok/state.json
+            git diff --cached --quiet && { echo "No changes"; exit 0; }
+            git commit -qm "TikTok team (Gemini): 3 new scripts"
+            git push -q origin HEAD:main && exit 0
+            sleep 5
+          done
+          exit 1
