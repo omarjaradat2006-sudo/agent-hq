@@ -1,0 +1,71 @@
+name: Agent teams (Gemini)
+on:
+  schedule:                      # times are UTC; Toronto (EST) = UTC-5
+    - cron: "13 15 * * *"        # youtube   10:13 daily
+    - cron: "17 15 * * 1"        # linkedai  Mon 10:17
+    - cron: "19 15 * * 2"        # growth    Tue 10:19
+    - cron: "41 18 * * 1,4"      # upgrades  Mon+Thu 13:41
+    - cron: "23 15 * * 3"        # opps      Wed 10:23
+    - cron: "23 11 */3 * *"      # lab       every 3 days 6:23
+    - cron: "37 20 * * 0"        # repos     Sun 15:37
+    - cron: "42 16 * * 1"        # chief     Mon 11:42
+  workflow_dispatch:
+    inputs:
+      team:
+        description: "Which team to run now"
+        type: choice
+        options: [youtube, linkedai, growth, upgrades, opps, lab, repos, chief]
+permissions:
+  contents: write
+concurrency:
+  group: data-writes
+  cancel-in-progress: false
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Pick the team
+        id: pick
+        run: |
+          case "${{ github.event.schedule }}" in
+            "13 15 * * *") T=youtube;; "17 15 * * 1") T=linkedai;; "19 15 * * 2") T=growth;;
+            "41 18 * * 1,4") T=upgrades;; "23 15 * * 3") T=opps;; "23 11 */3 * *") T=lab;;
+            "37 20 * * 0") T=repos;; "42 16 * * 1") T=chief;; *) T="${{ inputs.team }}";;
+          esac
+          echo "team=$T" >> "$GITHUB_OUTPUT"; echo "Running $T"
+      - name: Team does its work
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_MODEL: ${{ vars.GEMINI_MODEL }}
+        run: python agents/gemini/team.py ${{ steps.pick.outputs.team }}
+      - name: Save to the dashboard
+        run: |
+          T=${{ steps.pick.outputs.team }}
+          git config user.name "Agent HQ (Gemini)"
+          git config user.email "actions@users.noreply.github.com"
+          for i in 1 2 3; do
+            git fetch -q origin main && git reset -q --hard origin/main
+            python agents/gemini/apply_patch.py $T
+            git add data
+            git diff --cached --quiet && { echo "No changes"; exit 0; }
+            git commit -qm "$T team (Gemini): daily work"
+            git push -q origin HEAD:main && exit 0
+            sleep 5
+          done
+          exit 1
+      - name: Footage + batch files (YouTube only)
+        if: steps.pick.outputs.team == 'youtube'
+        env:
+          PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
+          PIXABAY_API_KEY: ${{ secrets.PIXABAY_API_KEY }}
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          git fetch -q origin main && git reset -q --hard origin/main
+          python collectors/footage.py && python collectors/batch_brief.py
+          git add data/youtube
+          git diff --cached --quiet || { git commit -qm "Footage fetcher: clips for today's lineup"; git pull -q --rebase && git push -q origin HEAD:main; }
