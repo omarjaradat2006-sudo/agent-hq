@@ -26,24 +26,9 @@ echo      save, close Notepad, then come back here.
 notepad "trading_bot\.env"
 pause
 
-REM ---- 4. X / Reddit through Agent Reach (secondary accounts)
+REM ---- 4. X / Reddit: done separately by setup_x_reddit.bat (after the install below)
 echo.
-set /p REACH="4/4  Set up X + Reddit reading with Agent Reach? (Y/N): "
-if /i not "%REACH%"=="Y" goto install
-where uv >nul 2>&1 || powershell -ExecutionPolicy ByPass -NoProfile -c "irm https://astral.sh/uv/install.ps1 | iex"
-set "PATH=%USERPROFILE%\.local\bin;%PATH%"
-where agent-reach >nul 2>&1 || uv tool install https://github.com/Panniantong/Agent-Reach/releases/latest/download/agent-reach.zip
-call agent-reach setup
-call agent-reach add twitter
-call agent-reach add reddit
-echo.
-echo  IMPORTANT: a browser window opens for X. Sign in with your SECONDARY X account (not your main one),
-echo  then close that window. Then the same for Reddit with your SECONDARY Reddit account.
-pause
-call agent-reach login twitter
-pause
-call agent-reach login reddit
-pause
+echo 4/4  X + Reddit: after this finishes, double-click setup_x_reddit.bat (secondary accounts only).
 
 :install
 echo.

@@ -82,15 +82,24 @@ def rss_news(since):
 
 
 # ------------------------------------------------------------------ X + Reddit (Agent Reach)
+def reach_cmd():
+    """Prefer Agent Reach installed inside the bot's own Python (works when Windows blocks
+    the unsigned agent-reach.exe launcher); fall back to the agent-reach command."""
+    import importlib.util, sys
+    if importlib.util.find_spec("agent_reach") is not None:
+        return [sys.executable, "-m", "agent_reach.cli"]
+    exe = shutil.which("agent-reach")
+    return [exe] if exe else None
+
+
 def agent_reach_available():
-    return shutil.which("agent-reach") is not None
+    return reach_cmd() is not None
 
 
 def _reach(args, timeout=90):
-    """Run `agent-reach <args>` and return its items (it prints one JSON object)."""
-    exe = shutil.which("agent-reach")
+    """Run Agent Reach and return its items (it prints one JSON object)."""
     try:
-        p = subprocess.run([exe, *args], capture_output=True, text=True, encoding="utf-8", errors="replace", timeout=timeout)
+        p = subprocess.run([*reach_cmd(), *args], capture_output=True, text=True, encoding="utf-8", errors="replace", timeout=timeout)
     except (subprocess.TimeoutExpired, OSError) as e:
         return None, f"agent-reach {args[0]} {args[1]}: {e}"
     try:

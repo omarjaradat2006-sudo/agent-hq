@@ -44,12 +44,13 @@ def run():
     except ImportError:
         bad += 1; line(False, "TradingAgents", "not installed: run setup.bat again")
     # Agent Reach
-    exe = shutil.which("agent-reach")
-    if not exe:
-        line(None, "Agent Reach (X/Reddit)", "not installed: bot will use news feeds only")
+    from .news import reach_cmd
+    cmd = reach_cmd()
+    if not cmd:
+        line(None, "Agent Reach (X/Reddit)", "not installed: bot will use news feeds only (run setup_x_reddit.bat)")
     else:
         for ch in ("twitter", "reddit"):
-            r = subprocess.run([exe, "check", ch], capture_output=True, text=True, timeout=180)
+            r = subprocess.run([*cmd, "check", ch], capture_output=True, text=True, timeout=180)
             line(r.returncode == 0, f"Agent Reach {ch}", "logged in" if r.returncode == 0 else
                  f"run: agent-reach login {ch}   (sign in with your SECONDARY account)")
     # GitHub saving
