@@ -20,7 +20,9 @@ export TZ=America/Toronto
 PY=~/bounce-venv/bin/python
 LOGDIR=~/logs; mkdir -p "$LOGDIR" "$BOUNCE_STUDIO" "$BOUNCE_LOGS" "$BOUNCE_UPLOADED"
 LOG="$LOGDIR/bounce-$(date +%F).log"
-[ "$MODE" = full ] && exec >>"$LOG" 2>&1 </dev/null    # test modes print to the screen
+exec </dev/null                                         # never let keystrokes reach ffmpeg
+[ "$MODE" = full ] && exec >>"$LOG" 2>&1               # test modes print to the screen
+export BOUNCE_WORKERS=${BOUNCE_WORKERS:-2}              # 2 at a time on the 2-OCPU server
 exec 8>/tmp/bounce.lock; flock -n 8 || { echo "another Bounce run is going; exiting"; exit 0; }
 echo "=== $(date '+%F %T') Bounce Theory batch ($MODE) ==="
 
