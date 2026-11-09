@@ -23,10 +23,10 @@ RULES = """Hard rules:
 - Write plainly, like a person, no hype words. English only."""
 
 TEAMS = {
-  "youtube": dict(state="youtube", prefix="youtube", search=True, extra=["metrics:youtube", "lab:formatLeads"],
+  "youtube": dict(state="youtube", prefix="youtube", search=True, extra=["metrics:youtube", "lab:formatLeads", "bounce:templates"],
     formats=["youtube-lineup.md", "performance-review.md"], keys=["review", "research", "ideas", "footage", "lineup", "brief"],
     agents=["reviewer", "analyst", "strategist", "producer", "lead"], hour="15:13",
-    job="""YouTube team for Bounce Theory and Ambient Escape. Review both channels from the metrics (Shorts and longs separately; compare Ambient explainer Shorts vs the rest once they are 2+ days old), find what's winning on other channels now, write at most 1 new concept per channel (only with real evidence), today's footage list (Ambient only, 4-8 clips) and the FULL day's lineup exactly as youtube-lineup.md says: per channel 15 Shorts + 2 longs (Ambient: exactly 8 explainer Shorts with full specs in the note + 7 proven Shorts). Channel separation is absolute. Mostly remixes of Omar's own winners; at most 2 tests per channel. Then a brief whose approvals start with "Today's lineup is ready: 34 videos." """,
+    job="""YouTube team for Bounce Theory and Ambient Escape. Review both channels from the metrics (Shorts and longs separately; compare Ambient explainer Shorts vs the rest once they are 2+ days old), find what's winning on other channels now, write at most 1 new concept per channel (only with real evidence), today's footage list (Ambient only, 4-8 clips) and the FULL day's lineup exactly as youtube-lineup.md says: per channel 15 Shorts + 2 longs (Ambient: exactly 8 explainer Shorts with full specs in the note + 7 proven Shorts). Every Bounce Theory item MUST have a `settings` object built only from the Bounce template menu (template + knob params; L2 uses settings.clips), as youtube-lineup.md says: the server renders Bounce Theory from those settings with no Claude. Channel separation is absolute. Mostly remixes of Omar's own winners; at most 2 tests per channel. Then a brief whose approvals start with "Today's lineup is ready: 34 videos." """,
     research="what YouTube Shorts and long videos are winning right now in: satisfying physics simulation Shorts, marble races, battle royale sims, quiz Shorts; long sleep / rain / ambient / noise videos (titles, lengths); Islamic reminder and quiz Shorts; animated Islamic explainer Shorts (POV and 'N ways' lists). Real channels, titles and view numbers."),
   "linkedai": dict(state="linkedai", prefix="linkedai", search=True, formats=["competitor-intel.md", "promo-scripts.md", "tiktok-scripts.md"],
     keys=["competitors", "research", "ideas", "brief"], agents=["watch", "copywriter", "lead"], hour="Mon 15:17",
@@ -79,6 +79,15 @@ def context(cfg, state):
             parts.append(f"{e}: " + json.dumps(m, ensure_ascii=False)[:25000])
         elif e == "lab:formatLeads":
             parts.append("R&D formatLeads: " + json.dumps(load(os.path.join(ROOT, "data/lab/state.json"), {}).get("formatLeads"), ensure_ascii=False)[:6000])
+        elif e == "bounce:templates":
+            m = load(os.path.join(ROOT, "data/youtube/bounce_templates.json"), {})
+            lines = [f"colors: {', '.join(m.get('colors', []))}", f"tunes: {', '.join(m.get('choices', {}).get('tune', []))}"]
+            for n, t in (m.get("templates") or {}).items():
+                ks = ", ".join(f"{k}={json.dumps(v.get('default'))}" for k, v in t.get("knobs", {}).items())
+                lines.append(f"{n} [{t.get('kind')}{', ~' + str(t['secs']) + ' s' if t.get('secs') else ''}]: {ks}")
+            rep = load(os.path.join(ROOT, "data/youtube/bounce_report.json"), {})
+            parts.append("Bounce template menu (template [kind]: knob=default, ...):\n" + "\n".join(lines)[:22000]
+                         + "\n\nYesterday's Bounce batch report: " + json.dumps({k: rep.get(k) for k in ("date", "issues", "notMade")}, ensure_ascii=False)[:3000])
         elif e == "briefs":
             b = {}
             for t in sorted(os.listdir(os.path.join(ROOT, "data"))):

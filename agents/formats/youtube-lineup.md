@@ -39,6 +39,21 @@ Put 3 explainers in S01-S05 (first uploads get the most reach) and spread the re
 - **Religious accuracy is non-negotiable:** Quran with surah:ayah, only sahih/hasan hadith with collection and number, meanings paraphrased faithfully, Arabic text exactly as in the source. If you are not sure of a reference, pick a different point. Never invent or merge hadith.
 - `basis`: "Winning elsewhere: '<their title>' by @tanzil_quran / @soulofbaraqah (TikTok, Omar's pick)" or a real outlier the Analyst found. `footage`: omit (no clip needed).
 
+## Bounce Theory: every slot is a template + settings (the server makes the batch, no Claude)
+Bounce Theory is rendered automatically on the server at 7 AM from your lineup. The server can only use the formats in the **Bounce template menu** (in your context; full file: data/youtube/bounce_templates.json). It cannot write new code. So every Bounce Theory item MUST carry:
+```
+"settings": {"template": "<menu name>", "params": {"<knob>": <value>, ...}, "secs": [lo, hi]}
+```
+- `template`: a name from the menu, of the right kind (Short for S01-S15, Long for L1). Pick the template that matches the winner the slot remixes (same family: pendulum, brick, string, marble, shrink, chaos, merge, melody, weapon...).
+- `params`: the visible twist, ONLY through that template's knobs and only with the listed colour names. Colour knobs take one colour name ("GOLD"); list knobs take a list (["RED", "CYAN"]). `l1`/`l2` are the on-screen title lines (uppercase, max 40 characters each, a question or challenge). Counts, sizes and speeds stay within about half to double the default. Never invent a knob.
+- Change at least 2 things vs the winner (e.g. colours + count, or shape + colours), so no video is a default re-render. Colours/seeds you leave out are filled with fresh ones the server hasn't used on that template in 7 days.
+- `secs` (optional): the length window for Shorts, e.g. [20, 26] to cut a format that loses viewers late. Default [13, 34].
+- `note` stays: one plain sentence describing what these settings will show.
+- **L1** (marble run): `{"template": "<a Long marble_run_* template>"}` plus `"titleOptions": [3 titles]` on the item. The server fits the course to about 10 minutes.
+- **L2** ("Clips for Edits", no text): `{"clips": ["<template>", "<template>", "<template>"]}`: three Short templates from his top formats; the server renders 10 clips of each with new colours (about 5-6 min). Add `"minutes": N` (max 60) to loop it longer. A title must never promise more than the video is: no "10 Hours" titles; the server skips a long whose title claims over 60 min.
+- A format that is NOT in the menu needs a build: don't put it in the lineup. Write it as a Producer idea (title starting "Needs build:", with the full spec) so Omar can build it in Claude Code; once built it appears in the menu by itself. Test slots must also use menu templates (a new combination of knobs counts as a test).
+- Bad or missing settings never stop the batch: the server falls back to the closest template in the slot's family and reports it in data/youtube/bounce_report.json. Read yesterday's report and fix whatever fell back.
+
 ## Long videos (L1, L2)
 Long videos have no big hits yet, so base them on what wins elsewhere plus Omar's strongest Short formats:
 - **Bounce Theory:** L1 = a compilation or tournament built ONLY from his top Short formats (e.g. the pendulum wave and string art that got 31K and 9K), with text. L2 = "Satisfying Clips for Edits Vol. N (No Text)" from the same top formats.
@@ -69,7 +84,7 @@ After it has real numbers (ageDays >= 3) and beats the channel median, it become
 The R&D Lab's upgrades (ideas in data/lab/state.json for Bounce Theory, Ambient Escape or YouTube: new sims.py formats, audio upgrades, pipeline changes) have a status Omar sets: pending → approved / skipped → done. See agents/RUNBOOK.md section 3.
 - Plan slots that rely on an upgrade (a new format function, new audio, a new pipeline step) **only when that upgrade's status is `done`**. `approved` means Omar hasn't built it yet.
 - Approved-but-not-done upgrades are "waiting on Omar": no slot may depend on them. List them in the brief's `approvals` as "Waiting on Omar: <title>".
-- Lab `formatLeads` that need a new build count as a Test slot (0-2), built in the batch from a Producer idea's spec, never from an upgrade that isn't done.
+- Lab `formatLeads` that need a new build can't go in a Bounce Theory lineup until they're in the template menu: write them as a "Needs build:" Producer idea instead (see the template section).
 - Your own video ideas: new ones are `approved` (up next); the batch marks them `done` when made, or Omar presses "I did it". `skipped` ideas never go in a lineup.
 
 ## Scheduling (Omar's rule)

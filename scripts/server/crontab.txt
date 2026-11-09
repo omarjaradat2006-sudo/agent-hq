@@ -1,7 +1,7 @@
 # Agent HQ teams on the Oracle server (server clock = Toronto time). Install: crontab ~/agent-hq/scripts/server/crontab.txt
 
 41 9  * * *    /home/ubuntu/agent-hq/scripts/server/run_team.sh tiktok
-13 10 * * *    /home/ubuntu/agent-hq/scripts/server/run_team.sh youtube
+13 6  * * *    /home/ubuntu/agent-hq/scripts/server/run_team.sh youtube
 17 10 * * 1    /home/ubuntu/agent-hq/scripts/server/run_team.sh linkedai
 19 10 * * 2    /home/ubuntu/agent-hq/scripts/server/run_team.sh growth
 41 13 * * 1,4  /home/ubuntu/agent-hq/scripts/server/run_team.sh upgrades
@@ -9,3 +9,6 @@
 23 6  */3 * *  /home/ubuntu/agent-hq/scripts/server/run_team.sh lab
 37 15 * * 0    /home/ubuntu/agent-hq/scripts/server/run_team.sh repos
 42 11 * * 1    /home/ubuntu/agent-hq/scripts/server/run_team.sh chief
+
+# Bounce Theory daily batch: plan from today's lineup -> render -> upload (scheduled 5 PM - 8 AM) -> mark Agent HQ. No Claude.
+5 7  * * *     /home/ubuntu/agent-hq/scripts/server/run_bounce.sh

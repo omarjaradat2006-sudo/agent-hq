@@ -1,0 +1,5297 @@
+{
+ "colors": [
+  "AMBER",
+  "AQUA",
+  "AQUA2",
+  "BLUE",
+  "BROWN",
+  "COOLBLUE",
+  "CORAL",
+  "CRYSTAL",
+  "CYAN",
+  "DEEP",
+  "DEEPCYAN",
+  "ELEC",
+  "EMBER",
+  "FIRE",
+  "FMAJ",
+  "FROST",
+  "GLASS",
+  "GOLD",
+  "GREEN",
+  "HONEY",
+  "HOTPINK",
+  "ICE",
+  "ICEW",
+  "LAVA",
+  "LIME",
+  "MAGENTA",
+  "MINT",
+  "NEON",
+  "ORANGE",
+  "PINK",
+  "PLUM",
+  "PURPLE",
+  "RED",
+  "ROSE",
+  "RUBY",
+  "SKY",
+  "STEEL",
+  "SUN",
+  "TEAL",
+  "TEALG",
+  "VIOLET",
+  "VIOLET2",
+  "WHITE",
+  "YELLOW"
+ ],
+ "choices": {
+  "tune": [
+   "CANON IN D",
+   "FRERE JACQUES",
+   "FUR ELISE",
+   "HALL OF THE MOUNTAIN KING",
+   "LONDON BRIDGE",
+   "MARY HAD A LITTLE LAMB",
+   "ODE TO JOY",
+   "OLD MACDONALD",
+   "TURKISH MARCH",
+   "TWINKLE TWINKLE"
+  ]
+ },
+ "templates": {
+  "adds_ball": {
+   "kind": "Short",
+   "file": "sims",
+   "secs": null,
+   "knobs": {
+    "cap": {
+     "kind": "int",
+     "default": 200
+    },
+    "l1": {
+     "kind": "text",
+     "default": "EVERY BOUNCE"
+    },
+    "l2": {
+     "kind": "text",
+     "default": "ADDS ONE MORE BALL"
+    },
+    "sub": {
+     "kind": "text",
+     "default": "Guess the final number"
+    }
+   }
+  },
+  "adds_hex64": {
+   "kind": "Short",
+   "file": "today1106",
+   "secs": 26.2,
+   "knobs": {
+    "R": {
+     "kind": "float",
+     "default": 450.0
+    },
+    "cy": {
+     "kind": "float",
+     "default": 960.0
+    },
+    "r": {
+     "kind": "float",
+     "default": 14.0
+    },
+    "cap": {
+     "kind": "int",
+     "default": 64
+    },
+    "cool": {
+     "kind": "float",
+     "default": 0.3
+    },
+    "spin": {
+     "kind": "float",
+     "default": 0.12
+    },
+    "g": {
+     "kind": "float",
+     "default": 950.0
+    },
+    "minsp": {
+     "kind": "float",
+     "default": 760.0
+    },
+    "maxs": {
+     "kind": "float",
+     "default": 30.0
+    },
+    "boom_hold": {
+     "kind": "float",
+     "default": 3.4
+    },
+    "l1": {
+     "kind": "text",
+     "default": "EVERY BOUNCE ADDS A BALL"
+    },
+    "l2": {
+     "kind": "text",
+     "default": "UNTIL THEY ALL EXPLODE"
+    }
+   }
+  },
+  "ball_gap": {
+   "kind": "Short",
+   "file": "today1104",
+   "secs": 24.4,
+   "knobs": {
+    "ballc": {
+     "kind": "color",
+     "default": "TEAL"
+    },
+    "ringc": {
+     "kind": "color",
+     "default": "MAGENTA"
+    },
+    "R": {
+     "kind": "float",
+     "default": 450.0
+    },
+    "r0": {
+     "kind": "float",
+     "default": 22.0
+    },
+    "inc": {
+     "kind": "float",
+     "default": 3.2
+    },
+    "gapw": {
+     "kind": "float",
+     "default": 260.0
+    },
+    "om": {
+     "kind": "float",
+     "default": 0.55
+    },
+    "t_open": {
+     "kind": "float",
+     "default": 21.0
+    },
+    "maxs": {
+     "kind": "int",
+     "default": 40
+    },
+    "hold": {
+     "kind": "float",
+     "default": 2.4
+    },
+    "l1": {
+     "kind": "text",
+     "default": "EVERY BOUNCE, THE BALL"
+    },
+    "l2": {
+     "kind": "text",
+     "default": "GETS BIGGER"
+    },
+    "sub": {
+     "kind": "text",
+     "default": "Will it still fit through the gap?"
+    }
+   }
+  },
+  "ball_grow": {
+   "kind": "Short",
+   "file": "today1103",
+   "secs": 17.3,
+   "knobs": {
+    "ballc": {
+     "kind": "color",
+     "default": "VIOLET"
+    },
+    "ringc": {
+     "kind": "color",
+     "default": "GOLD"
+    },
+    "R": {
+     "kind": "float",
+     "default": 450.0
+    },
+    "r0": {
+     "kind": "float",
+     "default": 26.0
+    },
+    "inc": {
+     "kind": "float",
+     "default": 7.0
+    },
+    "maxs": {
+     "kind": "int",
+     "default": 32
+    },
+    "hold": {
+     "kind": "float",
+     "default": 2.4
+    },
+    "l1": {
+     "kind": "text",
+     "default": "EVERY BOUNCE, THE BALL"
+    },
+    "l2": {
+     "kind": "text",
+     "default": "GETS BIGGER"
+    },
+    "sub": {
+     "kind": "text",
+     "default": "Can it fit the circle?"
+    },
+    "done_txt": {
+     "kind": "text",
+     "default": "IT FILLS THE CIRCLE!"
+    }
+   }
+  },
+  "brick_cage": {
+   "kind": "Short",
+   "file": "today1102",
+   "secs": 7.8,
+   "knobs": {
+    "nb": {
+     "kind": "int",
+     "default": 40
+    },
+    "hp": {
+     "kind": "int",
+     "default": 2
+    },
+    "c0": {
+     "kind": "color",
+     "default": null
+    },
+    "c1": {
+     "kind": "color",
+     "default": null
+    },
+    "ballc": {
+     "kind": "color",
+     "default": null
+    },
+    "maxs": {
+     "kind": "int",
+     "default": 23
+    },
+    "l1": {
+     "kind": "text",
+     "default": "EVERY HIT BREAKS A BRICK"
+    },
+    "l2": {
+     "kind": "text",
+     "default": "CAN IT ESCAPE THE DIAMOND?"
+    },
+    "sub": {
+     "kind": "text",
+     "default": "Guess the bricks left"
+    },
+    "done": {
+     "kind": "str",
+     "default": "ESCAPED WITH {left} LEFT!"
+    }
+   }
+  },
+  "brick_diamond2": {
+   "kind": "Short",
+   "file": "today1106",
+   "secs": 34.9,
+   "knobs": {}
+  },
+  "brick_heart": {
+   "kind": "Short",
+   "file": "today28",
+   "secs": 20.9,
+   "knobs": {
+    "nb": {
+     "kind": "int",
+     "default": 40
+    },
+    "hp": {
+     "kind": "int",
+     "default": 2
+    },
+    "c0": {
+     "kind": "color",
+     "default": null
+    },
+    "c1": {
+     "kind": "color",
+     "default": null
+    },
+    "ballc": {
+     "kind": "color",
+     "default": null
+    },
+    "maxs": {
+     "kind": "int",
+     "default": 23
+    },
+    "l1": {
+     "kind": "text",
+     "default": "EVERY HIT BREAKS A BRICK"
+    },
+    "l2": {
+     "kind": "text",
+     "default": "CAN IT ESCAPE THE HEART?"
+    },
+    "sub": {
+     "kind": "text",
+     "default": "Guess the bricks left"
+    }
+   }
+  },
+  "brick_heart2": {
+   "kind": "Short",
+   "file": "today1103",
+   "secs": 6.8,
+   "knobs": {
+    "maxs": {
+     "kind": "int",
+     "default": 24
+    }
+   }
+  },
+  "brick_hex": {
+   "kind": "Short",
+   "file": "today27",
+   "secs": 8.4,
+   "knobs": {
+    "per": {
+     "kind": "int",
+     "default": 8
+    },
+    "hp": {
+     "kind": "int",
+     "default": 2
+    },
+    "a": {
+     "kind": "int",
+     "default": 400
+    },
+    "spin": {
+     "kind": "float",
+     "default": 0.22
+    },
+    "ballc": {
+     "kind": "color",
+     "default": null
+    },
+    "l1": {
+     "kind": "text",
+     "default": "EVERY HIT BREAKS A BRICK"
+    },
+    "l2": {
+     "kind": "text",
+     "default": "CAN IT GET FREE?"
+    },
+    "sub": {
+     "kind": "text",
+     "default": "Guess the bricks left"
+    }
+   }
+  },
+  "brick_hex2": {
+   "kind": "Short",
+   "file": "today1105",
+   "secs": 999.0,
+   "knobs": {
+    "teams": {
+     "kind": "color_names",
+     "default": [
+      "CYAN",
+      "ORANGE"
+     ]
+    },
+    "wall": {
+     "kind": "color_names",
+     "default": [
+      "VIOLET",
+      "GOLD"
+     ]
+    },
+    "hr": {
+     "kind": "float",
+     "default": 32.0
+    },
+    "rows": {
+     "kind": "int",
+     "default": 5
+    },
+    "speed": {
+     "kind": "int",
+     "default": 1450
+    },
+    "maxs": {
+     "kind": "int",
+     "default": 40
+    },
+    "hold": {
+     "kind": "float",
+     "default": 2.6
+    },
+    "rig": {
+     "kind": "float",
+     "default": 16.0
+    },
+    "l1": {
+     "kind": "text",
+     "default": "2 BALLS, 1 HEX WALL"
+    },
+    "l2": {
+     "kind": "text",
+     "default": "WHO BREAKS FREE FIRST?"
+    },
+    "sub": {
+     "kind": "text",
+     "default": "Pick a ball: cyan or orange"
+    }
+   }
+  },
+  "brick_honeycomb": {
+   "kind": "Short",
+   "file": "today1102",
+   "secs": 999.0,
+   "knobs": {
+    "s": {
+     "kind": "float",
+     "default": 40.0
+    },
+    "R1": {
+     "kind": "float",
+     "default": 250.0
+    },
+    "R2": {
+     "kind": "float",
+     "default": 400.0
+    },
+    "hp": {
+     "kind": "int",
+     "default": 2
+    },
+    "maxs": {
+     "kind": "int",
+     "default": 22
+    },
+    "cy": {
+     "kind": "float",
+     "default": 960.0
+    },
+    "l1": {
+     "kind": "text",
+     "default": "IT BREAKS A BRICK EVERY HIT"
+    },
+    "l2": {
+     "kind": "text",
+     "default": "HONEYCOMB EDITION"
+    },
+    "sub": {
+     "kind": "text",
+     "default": "Guess the bricks left"
+    }
+   }
+  },
+  "brick_maze": {
+   "kind": "Short",
+   "file": "today1106",
+   "secs": 999.0,
+   "knobs": {
+    "X0": {
+     "kind": "float",
+     "default": 130.0
+    },
+    "X1": {
+     "kind": "float",
+     "default": 950.0
+    },
+    "Y0": {
+     "kind": "float",
+     "default": 430.0
+    },
+    "Y1": {
+     "kind": "float",
+     "default": 1220.0
+    },
+    "wall": {
+     "kind": "float",
+     "default": 24.0
+    },
+    "div_bot": {
+     "kind": "float",
+     "default": 990.0
+    },
+    "cols_": {
+     "kind": "int",
+     "default": 4
+    },
+    "rows": {
+     "kind": "int",
+     "default": 3
+    },
+    "bw": {
+     "kind": "float",
+     "default": 86.0
+    },
+    "bh": {
+     "kind": "float",
+     "default": 34.0
+    },
+    "speed": {
+     "kind": "float",
+     "default": 1250.0
+    },
+    "g": {
+     "kind": "float",
+     "default": 0.0
+    },
+    "rig": {
+     "kind": "float",
+     "default": 3.0
+    },
+    "maxs": {
+     "kind": "float",
+     "default": 26.0
+    },
+    "hold": {
+     "kind": "float",
+     "default": 2.6
+    },
+    "l1": {
+     "kind": "text",
+     "default": "EVERY HIT BREAKS A BRICK"
+    },
+    "l2": {
+     "kind": "text",
+     "default": "CAN IT ESCAPE THE MAZE?"
+    },
+    "sub": {
+     "kind": "text",
+     "default": "Guess the bricks left"
+    }
+   }
+  },
+  "brick_pentagon": {
+   "kind": "Short",
+   "file": "today1106",
+   "secs": 13.9,
+   "knobs": {
+    "maxs": {
+     "kind": "int",
+     "default": 24
+    },
+    "nb": {
+     "kind": "int",
+     "default": 40
+    },
+    "hp": {
+     "kind": "int",
+     "default": 2
+    }
+   }
+  },
+  "brick_rings4": {
+   "kind": "Short",
+   "file": "today1101",
+   "secs": 2.0,
+   "knobs": {
+    "teams": {
+     "kind": "color_names",
+     "default": [
+      "GOLD",
+      "VIOLET",
+      "MINT",
+      "ROSE"
+     ]
+    },
+    "nb": {
+     "kind": "int",
+     "default": 30
+    },
+    "hpb": {
+     "kind": "int",
+     "default": 3
+    },
+    "R": {
+     "kind": "float",
+     "default": 195.0
+    },
+    "maxs": {
+     "kind": "int",
+     "default": 26
+    },
+    "l1": {
+     "kind": "text",
+     "default": "4 BALLS, 4 BRICK RINGS"
+    },
+    "l2": {
+     "kind": "text",
+     "default": "WHO BREAKS OUT FIRST?"
+    },
+    "sub": {
+     "kind": "text",
+     "default": "Pick a ring"
+    }
+   }
+  },
+  "brick_spiral": {
+   "kind": "Short",
+   "file": "today1105",
+   "secs": 999.0,
+   "knobs": {
+    "turns": {
+     "kind": "float",
+     "default": 2.4
+    },
+    "r0": {
+     "kind": "float",
+     "default": 120.0
+    },
+    "r1": {
+     "kind": "float",
+     "default": 430.0
+    },
+    "blen": {
+     "kind": "float",
+     "default": 90.0
+    },
+    "th": {
+     "kind": "float",
+     "default": 26.0
+    },
+    "Rout": {
+     "kind": "float",
+     "default": 478.0
+    },
+    "cy": {
+     "kind": "float",
+     "default": 960.0
+    },
+    "g": {
+     "kind": "float",
+     "default": 900.0
+    },
+    "minsp": {
+     "kind": "float",
+     "default": 860.0
+    },
+    "rig": {
+     "kind": "float",
+     "default": 13.0
+    },
+    "maxs": {
+     "kind": "float",
+     "default": 26.0
+    },
+    "hold": {
+     "kind": "float",
+     "default": 2.6
+    },
+    "l1": {
+     "kind": "text",
+     "default": "EVERY HIT BREAKS A BRICK"
+    },
+    "l2": {
+     "kind": "text",
+     "default": "CAN IT ESCAPE THE SPIRAL?"
+    },
+    "sub": {
+     "kind": "text",
+     "default": "Guess the bricks left"
+    }
+   }
+  },
+  "brick_split": {
+   "kind": "Short",
+   "file": "today27",
+   "secs": 1.0,
+   "knobs": {
+    "teams": {
+     "kind": "color_names",
+     "default": [
+      "RED",
+      "BLUE"
+     ]
+    },
+    "rows": {
+     "kind": "int",
+     "default": 4
+    },
+    "cols_": {
+     "kind": "int",
+     "default": 5
+    },
+    "speed": {
+     "kind": "int",
+     "default": 1700
+    },
+    "l1": {
+     "kind": "text",
+     "default": "2 BALLS, 1 BRICK WALL"
+    },
+    "l2": {
+     "kind": "text",
+     "default": "WHO BREAKS FREE FIRST?"
+    },
+    "sub": {
+     "kind": "text",
+     "default": "Pick a side"
+    }
+   }
+  },
+  "brick_splitter": {
+   "kind": "Short",
+   "file": "today1101",
+   "secs": 8.9,
+   "knobs": {
+    "secs": {
+     "kind": "float",
+     "default": 17.5
+    },
+    "cols_": {
+     "kind": "int",
+     "default": 6
+    },
+    "rows": {
+     "kind": "int",
+     "default": 8
+    },
+    "cap": {
+     "kind": "int",
+     "default": 320
+    },
+    "hpmax": {
+     "kind": "int",
+     "default": 16
+    },
+    "l1": {
+     "kind": "text",
+     "default": "1 BALL SPLITS ON EVERY HIT"
+    },
+    "l2": {
+     "kind": "text",
+     "default": "CAN IT CLEAR THE WALL?"
+    },
+    "sub": {
+     "kind": "text",
+     "default": "Guess the bricks left"
+    }
+   }
+  },
+  "brick_star": {
+   "kind": "Short",
+   "file": "today1101",
+   "secs": 7.6,
+   "knobs": {
+    "nb": {
+     "kind": "int",
+     "default": 40
+    },
+    "hp": {
+     "kind": "int",
+     "default": 2
+    },
+    "c0": {
+     "kind": "color",
+     "default": null
+    },
+    "c1": {
+     "kind": "color",
+     "default": null
+    },
+    "ballc": {
+     "kind": "color",
+     "default": null
+    },
+    "maxs": {
+     "kind": "int",
+     "default": 23
+    },
+    "l1": {
+     "kind": "text",
+     "default": "EVERY HIT BREAKS A BRICK"
+    },
+    "l2": {
+     "kind": "text",
+     "default": "CAN IT ESCAPE THE STAR?"
+    },
+    "sub": {
+     "kind": "text",
+     "default": "Guess the bricks left"
+    }
+   }
+  },
+  "brick_towers": {
+   "kind": "Short",
+   "file": "today28",
+   "secs": 2.0,
+   "knobs": {
+    "teams": {
+     "kind": "color_names",
+     "default": [
+      "CYAN",
+      "LIME",
+      "CORAL"
+     ]
+    },
+    "rows": {
+     "kind": "int",
+     "default": 10
+    },
+    "cols_": {
+     "kind": "int",
+     "default": 3
+    },
+    "speed": {
+     "kind": "int",
+     "default": 1700
+    },
+    "maxs": {
+     "kind": "int",
+     "default": 26
+    },
+    "l1": {
+     "kind": "text",
+     "default": "3 BALLS, 3 BRICK TOWERS"
+    },
+    "l2": {
+     "kind": "text",
+     "default": "WHO BREAKS OUT FIRST?"
+    },
+    "sub": {
+     "kind": "text",
+     "default": "Pick a tower"
+    }
+   }
+  },
+  "brick_tri": {
+   "kind": "Short",
+   "file": "today1103",
+   "secs": 999.0,
+   "knobs": {
+    "s": {
+     "kind": "float",
+     "default": 74.0
+    },
+    "R1": {
+     "kind": "float",
+     "default": 250.0
+    },
+    "R2": {
+     "kind": "float",
+     "default": 420.0
+    },
+    "hp": {
+     "kind": "int",
+     "default": 1
+    },
+    "maxs": {
+     "kind": "int",
+     "default": 22
+    },
+    "cy": {
+     "kind": "float",
+     "default": 960.0
+    },
+    "cols2": {
+     "kind": "color_names",
+     "default": [
+      "NEON",
+      "VIOLET"
+     ]
+    },
+    "l1": {
+     "kind": "text",
+     "default": "IT BREAKS A BRICK EVERY HIT"
+    },
+    "l2": {
+     "kind": "text",
+     "default": "TRIANGLE EDITION"
+    },
+    "sub": {
+     "kind": "text",
+     "default": "Guess the bricks left"
+    }
+   }
+  },
+  "brick_volley": {
+   "kind": "Short",
+   "file": "today28",
+   "secs": 11.0,
+   "knobs": {
+    "secs": {
+     "kind": "float",
+     "default": 17.5
+    },
+    "nball": {
+     "kind": "int",
+     "default": 100
+    },
+    "cols_": {
+     "kind": "int",
+     "default": 7
+    },
+    "rows": {
+     "kind": "int",
+     "default": 7
+    },
+    "l1": {
+     "kind": "text",
+     "default": "100 BALLS VS NUMBERED BRICKS"
+    },
+    "l2": {
+     "kind": "text",
+     "default": "HOW MANY ARE LEFT?"
+    },
+    "sub": {
+     "kind": "text",
+     "default": "Guess the bricks left"
+    }
+   }
+  },
+  "brick_wall": {
+   "kind": "Short",
+   "file": "sims",
+   "secs": 18.2,
+   "knobs": {
+    "nb": {
+     "kind": "int",
+     "default": 40
+    },
+    "hp": {
+     "kind": "int",
+     "default": 1
+    },
+    "R": {
+     "kind": "int",
+     "default": 440
+    },
+    "spin": {
+     "kind": "float",
+     "default": 0.25
+    },
+    "col_a": {
+     "kind": "color",
+     "default": "CYAN"
+    },
+    "col_b": {
+     "kind": "color",
+     "default": "PURPLE"
+    },
+    "l1": {
+     "kind": "text",
+     "default": "EVERY HIT BREAKS A BRICK"
+    },
+    "l2": {
+     "kind": "text",
+     "default": "WHEN DOES IT BREAK OUT?"
+    },
+    "sub": {
+     "kind": "text",
+     "default": "Guess the bricks left \ud83d\udc47"
+    }
+   }
+  },
+  "brick_wall3": {
+   "kind": "Short",
+   "file": "today1102",
+   "secs": 1.0,
+   "knobs": {
+    "teams": {
+     "kind": "color_names",
+     "default": [
+      "RED",
+      "CYAN",
+      "GOLD"
+     ]
+    },
+    "rows": {
+     "kind": "int",
+     "default": 10
+    },
+    "cols_": {
+     "kind": "int",
+     "default": 4
+    },
+    "speed": {
+     "kind": "int",
+     "default": 1650
+    },
+    "maxs": {
+     "kind": "int",
+     "default": 45
+    },
+    "l1": {
+     "kind": "text",
+     "default": "3 BALLS, 1 BRICK WALL"
+    },
+    "l2": {
+     "kind": "text",
+     "default": "WHO BREAKS FREE FIRST?"
+    },
+    "sub": {
+     "kind": "text",
+     "default": "Pick a ball"
+    }
+   }
+  },
+  "brick_wall4": {
+   "kind": "Short",
+   "file": "today1103",
+   "secs": 38.2,
+   "knobs": {
+    "teams": {
+     "kind": "color_names",
+     "default": [
+      "RED",
+      "CYAN",
+      "GOLD",
+      "LIME"
+     ]
+    },
+    "wall": {
+     "kind": "color_names",
+     "default": [
+      "PURPLE",
+      "ORANGE"
+     ]
+    },
+    "rows": {
+     "kind": "int",
+     "default": 10
+    },
+    "cols_": {
+     "kind": "int",
+     "default": 4
+    },
+    "speed": {
+     "kind": "int",
+     "default": 1500
+    },
+    "maxs": {
+     "kind": "int",
+     "default": 45
+    },
+    "hold": {
+     "kind": "float",
+     "default": 2.6
+    },
+    "l1": {
+     "kind": "text",
+     "default": "4 BALLS, 1 BRICK WALL"
+    },
+    "l2": {
+     "kind": "text",
+     "default": "WHO BREAKS FREE FIRST?"
+    },
+    "sub": {
+     "kind": "text",
+     "default": "Pick a ball"
+    }
+   }
+  },
+  "chaos": {
+   "kind": "Short",
+   "file": "sims",
+   "secs": null,
+   "knobs": {
+    "n": {
+     "kind": "int",
+     "default": 300
+    },
+    "shape": {
+     "kind": "choice",
+     "default": "circle"
+    },
+    "secs": {
+     "kind": "int",
+     "default": 22
+    },
+    "l1": {
+     "kind": "text",
+     "default": null
+    },
+    "l2": {
+     "kind": "text",
+     "default": "ALMOST THE SAME START"
+    },
+    "sub": {
+     "kind": "text",
+     "default": "Watch them split apart..."
+    }
+   }
+  },
+  "chaos_bins": {
+   "kind": "Short",
+   "file": "today1104",
+   "secs": 23.1,
+   "knobs": {
+    "n": {
+     "kind": "int",
+     "default": 700
+    },
+    "secs": {
+     "kind": "float",
+     "default": 20.5
+    },
+    "hold": {
+     "kind": "float",
+     "default": 2.6
+    },
+    "c0": {
+     "kind": "color",
+     "default": null
+    },
+    "c1": {
+     "kind": "color",
+     "default": null
+    },
+    "t_open": {
+     "kind": "float",
+     "default": 7.0
+    },
+    "gap": {
+     "kind": "float",
+     "default": 0.085
+    },
+    "widen": {
+     "kind": "float",
+     "default": 14.0
+    },
+    "g": {
+     "kind": "float",
+     "default": 1100.0
+    },
+    "R": {
+     "kind": "float",
+     "default": 420.0
+    },
+    "cy": {
+     "kind": "float",
+     "default": 800.0
+    },
+    "l1": {
+     "kind": "text",
+     "default": "700 BALLS DROPPED AT ONCE"
+    },
+    "l2": {
+     "kind": "text",
+     "default": "WHERE DO THEY LAND?"
+    },
+    "sub": {
+     "kind": "text",
+     "default": "Pick a hole: left, middle or right?"
+    }
+   }
+  },
+  "chaos_cross": {
+   "kind": "Short",
+   "file": "today28",
+   "secs": null,
+   "knobs": {
+    "n": {
+     "kind": "int",
+     "default": 600
+    },
+    "secs": {
+     "kind": "float",
+     "default": 20.5
+    },
+    "w": {
+     "kind": "float",
+     "default": 0.55
+    },
+    "l1": {
+     "kind": "text",
+     "default": "600 BALLS DROPPED"
+    },
+    "l2": {
+     "kind": "text",
+     "default": "THROUGH A SPINNING CROSS"
+    },
+    "sub": {
+     "kind": "text",
+     "default": "Watch the rainbow split"
+    }
+   }
+  },
+  "chaos_cross4": {
+   "kind": "Short",
+   "file": "today1106",
+   "secs": null,
+   "knobs": {}
+  },
+  "chaos_cups5": {
+   "kind": "Short",
+   "file": "today1106",
+   "secs": 23.1,
+   "knobs": {}
+  },
+  "chaos_funnel": {
+   "kind": "Short",
+   "file": "today1102",
+   "secs": null,
+   "knobs": {
+    "n": {
+     "kind": "int",
+     "default": 400
+    },
+    "secs": {
+     "kind": "float",
+     "default": 20.5
+    },
+    "hold": {
+     "kind": "float",
+     "default": 2.5
+    },
+    "l1": {
+     "kind": "text",
+     "default": "400 BALLS, ALMOST THE SAME START"
+    },
+    "l2": {
+     "kind": "text",
+     "default": "WATCH THEM FAN OUT"
+    },
+    "sub": {
+     "kind": "text",
+     "default": "Colour = how far it started from the middle"
+    }
+   }
+  },
+  "chaos_funnel2": {
+   "kind": "Short",
+   "file": "today1103",
+   "secs": null,
+   "knobs": {
+    "n": {
+     "kind": "int",
+     "default": 600
+    },
+    "secs": {
+     "kind": "float",
+     "default": 20.5
+    },
+    "hold": {
+     "kind": "float",
+     "default": 2.5
+    },
+    "c0": {
+     "kind": "color",
+     "default": null
+    },
+    "c1": {
+     "kind": "color",
+     "default": null
+    },
+    "l1": {
+     "kind": "text",
+     "default": "600 BALLS DROPPED AT ONCE"
+    },
+    "l2": {
+     "kind": "text",
+     "default": "ONE NARROW FUNNEL"
+    },
+    "sub": {
+     "kind": "text",
+     "default": "Colour = how far it started from the middle"
+    },
+    "done_txt": {
+     "kind": "text",
+     "default": "600 BALLS, 600 PATHS!"
+    }
+   }
+  },
+  "chaos_holes4": {
+   "kind": "Short",
+   "file": "today1105",
+   "secs": 23.1,
+   "knobs": {
+    "n": {
+     "kind": "int",
+     "default": 1000
+    },
+    "secs": {
+     "kind": "float",
+     "default": 20.5
+    },
+    "hold": {
+     "kind": "float",
+     "default": 2.6
+    },
+    "c0": {
+     "kind": "color",
+     "default": null
+    },
+    "c1": {
+     "kind": "color",
+     "default": null
+    },
+    "t_open": {
+     "kind": "float",
+     "default": 6.5
+    },
+    "gap": {
+     "kind": "float",
+     "default": 0.07
+    },
+    "widen": {
+     "kind": "float",
+     "default": 13.5
+    },
+    "g": {
+     "kind": "float",
+     "default": 1100.0
+    },
+    "R": {
+     "kind": "float",
+     "default": 420.0
+    },
+    "cy": {
+     "kind": "float",
+     "default": 800.0
+    },
+    "l1": {
+     "kind": "text",
+     "default": "1,000 BALLS DROPPED AT ONCE"
+    },
+    "l2": {
+     "kind": "text",
+     "default": "WHICH HOLE WINS?"
+    },
+    "sub": {
+     "kind": "text",
+     "default": "Pick a hole: 1, 2, 3 or 4?"
+    }
+   }
+  },
+  "chaos_triangle": {
+   "kind": "Short",
+   "file": "today1101",
+   "secs": null,
+   "knobs": {
+    "n": {
+     "kind": "int",
+     "default": 777
+    },
+    "secs": {
+     "kind": "float",
+     "default": 21.0
+    },
+    "w": {
+     "kind": "float",
+     "default": 0.7
+    },
+    "R": {
+     "kind": "float",
+     "default": 450.0
+    },
+    "l1": {
+     "kind": "text",
+     "default": "777 BALLS, ALMOST THE SAME START"
+    },
+    "l2": {
+     "kind": "text",
+     "default": "ONE SPINNING TRIANGLE"
+    },
+    "sub": {
+     "kind": "text",
+     "default": "Watch them split apart..."
+    }
+   }
+  },
+  "chord_drop": {
+   "kind": "Short",
+   "file": "today1104",
+   "secs": null,
+   "knobs": {
+    "secs": {
+     "kind": "float",
+     "default": 22.0
+    },
+    "every": {
+     "kind": "float",
+     "default": 1.42
+    },
+    "first": {
+     "kind": "float",
+     "default": 0.5
+    },
+    "l1": {
+     "kind": "text",
+     "default": "CAN 12 BALLS"
+    },
+    "l2": {
+     "kind": "text",
+     "default": "BUILD ONE CHORD?"
+    },
+    "g": {
+     "kind": "float",
+     "default": 1700.0
+    },
+    "e": {
+     "kind": "float",
+     "default": 0.74
+    }
+   }
+  },
+  "chord_drop9": {
+   "kind": "Short",
+   "file": "today1105",
+   "secs": null,
+   "knobs": {
+    "secs": {
+     "kind": "float",
+     "default": 21.0
+    },
+    "every": {
+     "kind": "float",
+     "default": 1.95
+    },
+    "first": {
+     "kind": "float",
+     "default": 0.5
+    },
+    "l1": {
+     "kind": "text",
+     "default": "CAN 9 BALLS"
+    },
+    "l2": {
+     "kind": "text",
+     "default": "BUILD ONE CHORD?"
+    },
+    "g": {
+     "kind": "float",
+     "default": 1700.0
+    },
+    "e": {
+     "kind": "float",
+     "default": 0.74
+    },
+    "chord": {
+     "kind": "str",
+     "default": "F MAJOR"
+    }
+   }
+  },
+  "color_battle": {
+   "kind": "Short",
+   "file": "sims",
+   "secs": null,
+   "knobs": {
+    "names": {
+     "kind": "color_names",
+     "default": [
+      "RED",
+      "BLUE"
+     ]
+    },
+    "secs": {
+     "kind": "int",
+     "default": 40
+    },
+    "l1": {
+     "kind": "text",
+     "default": null
+    },
+    "l2": {
+     "kind": "text",
+     "default": "WHO WINS?"
+    }
+   }
+  },
+  "color_escape": {
+   "kind": "Short",
+   "file": "sims",
+   "secs": 16.7,
+   "knobs": {
+    "names": {
+     "kind": "color_names",
+     "default": [
+      "RED",
+      "BLUE",
+      "GREEN",
+      "YELLOW"
+     ]
+    },
+    "gap": {
+     "kind": "float",
+     "default": 0.28
+    },
+    "R": {
+     "kind": "int",
+     "default": 430
+    },
+    "l1": {
+     "kind": "text",
+     "default": "WHICH COLOR"
+    },
+    "l2": {
+     "kind": "text",
+     "default": "ESCAPES FIRST?"
+    },
+    "sub": {
+     "kind": "text",
+     "default": "Comment your pick!"
+    }
+   }
+  },
+  "colour_escape3": {
+   "kind": "Short",
+   "file": "today1102",
+   "secs": 11.5,
+   "knobs": {
+    "names": {
+     "kind": "color_names",
+     "default": [
+      "RED",
+      "BLUE",
+      "GREEN"
+     ]
+    },
+    "R": {
+     "kind": "float",
+     "default": 430.0
+    },
+    "gap": {
+     "kind": "float",
+     "default": 0.42
+    },
+    "w": {
+     "kind": "float",
+     "default": 1.25
+    },
+    "speed": {
+     "kind": "int",
+     "default": 760
+    },
+    "maxs": {
+     "kind": "int",
+     "default": 14
+    },
+    "hold": {
+     "kind": "float",
+     "default": 2.2
+    },
+    "l1": {
+     "kind": "text",
+     "default": "PICK A COLOR"
+    },
+    "l2": {
+     "kind": "text",
+     "default": "BEFORE IT ESCAPES"
+    },
+    "sub": {
+     "kind": "text",
+     "default": "Each ball has its own room"
+    }
+   }
+  },
+  "colour_escape5": {
+   "kind": "Short",
+   "file": "today1105",
+   "secs": 3.0,
+   "knobs": {
+    "names": {
+     "kind": "color_names",
+     "default": [
+      "RED",
+      "BLUE",
+      "GREEN",
+      "YELLOW",
+      "PURPLE"
+     ]
+    },
+    "R": {
+     "kind": "float",
+     "default": 440.0
+    },
+    "gap": {
+     "kind": "float",
+     "default": 0.46
+    },
+    "w0": {
+     "kind": "float",
+     "default": 0.8
+    },
+    "acc": {
+     "kind": "float",
+     "default": 0.35
+    },
+    "speed": {
+     "kind": "int",
+     "default": 760
+    },
+    "maxs": {
+     "kind": "int",
+     "default": 14
+    },
+    "hold": {
+     "kind": "float",
+     "default": 2.2
+    },
+    "l1": {
+     "kind": "text",
+     "default": "PICK A COLOR"
+    },
+    "l2": {
+     "kind": "text",
+     "default": "BEFORE IT ESCAPES"
+    },
+    "sub": {
+     "kind": "text",
+     "default": "The gap spins faster every second"
+    }
+   }
+  },
+  "crystal_spiral": {
+   "kind": "Short",
+   "file": "today1105",
+   "secs": 999.0,
+   "knobs": {
+    "tune": {
+     "kind": "choice",
+     "default": "CANON IN D"
+    }
+   }
+  },
+  "double_ring_escape": {
+   "kind": "Short",
+   "file": "today1101",
+   "secs": 8.5,
+   "knobs": {
+    "names": {
+     "kind": "color_names",
+     "default": [
+      "RED",
+      "CYAN",
+      "LIME",
+      "GOLD",
+      "PINK"
+     ]
+    },
+    "R1": {
+     "kind": "float",
+     "default": 240.0
+    },
+    "R2": {
+     "kind": "float",
+     "default": 440.0
+    },
+    "g1": {
+     "kind": "float",
+     "default": 0.62
+    },
+    "g2": {
+     "kind": "float",
+     "default": 0.42
+    },
+    "maxs": {
+     "kind": "int",
+     "default": 16
+    },
+    "l1": {
+     "kind": "text",
+     "default": "PICK A COLOR"
+    },
+    "l2": {
+     "kind": "text",
+     "default": "BEFORE IT ESCAPES BOTH RINGS"
+    },
+    "sub": {
+     "kind": "text",
+     "default": "Comment your pick!"
+    }
+   }
+  },
+  "final_form": {
+   "kind": "Short",
+   "file": "today1104",
+   "secs": 25.4,
+   "knobs": {
+    "R": {
+     "kind": "float",
+     "default": 400.0
+    },
+    "cy": {
+     "kind": "float",
+     "default": 820.0
+    },
+    "g": {
+     "kind": "float",
+     "default": 1150.0
+    },
+    "minsp": {
+     "kind": "float",
+     "default": 760.0
+    },
+    "every": {
+     "kind": "int",
+     "default": 4
+    },
+    "maxs": {
+     "kind": "float",
+     "default": 36.0
+    },
+    "l1": {
+     "kind": "text",
+     "default": "CAN THE BALL REACH FINAL FORM?"
+    }
+   }
+  },
+  "final_form_sq": {
+   "kind": "Short",
+   "file": "today1105",
+   "secs": 23.2,
+   "knobs": {
+    "S": {
+     "kind": "float",
+     "default": 380.0
+    },
+    "cy": {
+     "kind": "float",
+     "default": 820.0
+    },
+    "g": {
+     "kind": "float",
+     "default": 1150.0
+    },
+    "minsp": {
+     "kind": "float",
+     "default": 760.0
+    },
+    "every": {
+     "kind": "int",
+     "default": 4
+    },
+    "maxs": {
+     "kind": "float",
+     "default": 36.0
+    },
+    "l1": {
+     "kind": "text",
+     "default": "CAN THE BALL REACH FINAL FORM?"
+    }
+   }
+  },
+  "fire_ice": {
+   "kind": "Short",
+   "file": "today1101",
+   "secs": 6.1,
+   "knobs": {
+    "maxs": {
+     "kind": "int",
+     "default": 22
+    },
+    "dmg": {
+     "kind": "float",
+     "default": 0.085
+    },
+    "icem": {
+     "kind": "float",
+     "default": 1.3
+    },
+    "l1": {
+     "kind": "text",
+     "default": "FIRE BALL VS ICE BALL"
+    },
+    "l2": {
+     "kind": "text",
+     "default": "WHO MELTS FIRST?"
+    }
+   }
+  },
+  "funnel_drop": {
+   "kind": "Short",
+   "file": "today27",
+   "secs": null,
+   "knobs": {
+    "n": {
+     "kind": "int",
+     "default": 500
+    },
+    "secs": {
+     "kind": "int",
+     "default": 21
+    },
+    "l1": {
+     "kind": "text",
+     "default": "500 BALLS"
+    },
+    "l2": {
+     "kind": "text",
+     "default": "DROPPED AT ONCE"
+    },
+    "sub": {
+     "kind": "text",
+     "default": "Watch the rainbow scramble"
+    }
+   }
+  },
+  "gear_escape": {
+   "kind": "Short",
+   "file": "today28",
+   "secs": 1.2,
+   "knobs": {
+    "names": {
+     "kind": "color_names",
+     "default": [
+      "ORANGE",
+      "CYAN",
+      "LIME",
+      "PURPLE"
+     ]
+    },
+    "teeth": {
+     "kind": "int",
+     "default": 12
+    },
+    "Ro": {
+     "kind": "int",
+     "default": 450
+    },
+    "Rr": {
+     "kind": "int",
+     "default": 375
+    },
+    "spin": {
+     "kind": "float",
+     "default": 0.8
+    },
+    "maxs": {
+     "kind": "int",
+     "default": 14
+    },
+    "l1": {
+     "kind": "text",
+     "default": "PICK A COLOR"
+    },
+    "l2": {
+     "kind": "text",
+     "default": "BEFORE IT ESCAPES THE GEAR"
+    },
+    "sub": {
+     "kind": "text",
+     "default": "Comment your pick!"
+    }
+   }
+  },
+  "giga_battle": {
+   "kind": "Short",
+   "file": "today28",
+   "secs": null,
+   "knobs": {
+    "secs": {
+     "kind": "float",
+     "default": 17.5
+    },
+    "l1": {
+     "kind": "text",
+     "default": "GIGA BALL VS MINI BALL"
+    },
+    "l2": {
+     "kind": "text",
+     "default": "WHO TAKES THE ARENA?"
+    }
+   }
+  },
+  "glass_spiral": {
+   "kind": "Short",
+   "file": "today1104",
+   "secs": 999.0,
+   "knobs": {
+    "turns": {
+     "kind": "float",
+     "default": 3.4
+    },
+    "r0": {
+     "kind": "float",
+     "default": 95.0
+    },
+    "r1": {
+     "kind": "float",
+     "default": 440.0
+    },
+    "pane": {
+     "kind": "float",
+     "default": 52.0
+    },
+    "om": {
+     "kind": "float",
+     "default": 0.35
+    },
+    "hp": {
+     "kind": "int",
+     "default": 1
+    },
+    "Rout": {
+     "kind": "float",
+     "default": 478.0
+    },
+    "cy": {
+     "kind": "float",
+     "default": 960.0
+    },
+    "g": {
+     "kind": "float",
+     "default": 900.0
+    },
+    "minsp": {
+     "kind": "float",
+     "default": 880.0
+    },
+    "rig": {
+     "kind": "float",
+     "default": 17.0
+    },
+    "maxs": {
+     "kind": "float",
+     "default": 33.0
+    },
+    "hold": {
+     "kind": "float",
+     "default": 2.4
+    },
+    "l1": {
+     "kind": "text",
+     "default": "CAN ANYTHING STOP"
+    },
+    "l2": {
+     "kind": "text",
+     "default": "THIS GLASS SPIRAL?"
+    },
+    "sub": {
+     "kind": "text",
+     "default": "Every hit shatters a pane"
+    }
+   }
+  },
+  "hex_escape": {
+   "kind": "Short",
+   "file": "sims",
+   "secs": 3.4,
+   "knobs": {
+    "names": {
+     "kind": "color_names",
+     "default": [
+      "RED",
+      "BLUE",
+      "YELLOW"
+     ]
+    },
+    "sides": {
+     "kind": "int",
+     "default": 6
+    },
+    "R": {
+     "kind": "int",
+     "default": 440
+    },
+    "l1": {
+     "kind": "text",
+     "default": "WHO ESCAPES"
+    },
+    "l2": {
+     "kind": "text",
+     "default": "THE SPINNING HEXAGON?"
+    },
+    "sub": {
+     "kind": "text",
+     "default": "Comment your pick!"
+    },
+    "open0": {
+     "kind": "float",
+     "default": 0.13
+    }
+   }
+  },
+  "last_inside": {
+   "kind": "Short",
+   "file": "sims",
+   "secs": 21.9,
+   "knobs": {
+    "names": {
+     "kind": "color_names",
+     "default": [
+      "RED",
+      "BLUE",
+      "GREEN",
+      "YELLOW",
+      "PURPLE",
+      "ORANGE",
+      "PINK",
+      "CYAN"
+     ]
+    },
+    "gap": {
+     "kind": "float",
+     "default": 0.3
+    },
+    "R": {
+     "kind": "int",
+     "default": 430
+    },
+    "l1": {
+     "kind": "text",
+     "default": "FALL OUT = ELIMINATED"
+    },
+    "l2": {
+     "kind": "text",
+     "default": "WHO STAYS INSIDE?"
+    },
+    "sub": {
+     "kind": "text",
+     "default": "Pick your survivor"
+    }
+   }
+  },
+  "marble_elim": {
+   "kind": "Short",
+   "file": "today1103",
+   "secs": null,
+   "knobs": {
+    "names": {
+     "kind": "color_names",
+     "default": [
+      "RED",
+      "BLUE",
+      "GREEN",
+      "YELLOW",
+      "PURPLE",
+      "ORANGE",
+      "PINK",
+      "CYAN",
+      "WHITE",
+      "LIME"
+     ]
+    },
+    "first": {
+     "kind": "float",
+     "default": 2.5
+    },
+    "every": {
+     "kind": "float",
+     "default": 2.0
+    },
+    "hold": {
+     "kind": "float",
+     "default": 3.0
+    },
+    "l1": {
+     "kind": "text",
+     "default": "WHICH MARBLE WILL BE THE LAST?"
+    },
+    "l2": {
+     "kind": "text",
+     "default": "ONE IS OUT EVERY 2 SECONDS"
+    },
+    "rail": {
+     "kind": "color",
+     "default": "GOLD"
+    }
+   }
+  },
+  "marble_es": {
+   "kind": "Short",
+   "file": "today27",
+   "secs": 14.2,
+   "knobs": {
+    "names": {
+     "kind": "color_names",
+     "default": [
+      "RED",
+      "BLUE",
+      "GREEN",
+      "YELLOW",
+      "PURPLE",
+      "ORANGE",
+      "PINK",
+      "CYAN",
+      "WHITE",
+      "GOLD"
+     ]
+    }
+   }
+  },
+  "marble_helix": {
+   "kind": "Short",
+   "file": "today1105",
+   "secs": 14.0,
+   "knobs": {
+    "names": {
+     "kind": "color_names",
+     "default": [
+      "RED",
+      "BLUE",
+      "GREEN",
+      "YELLOW",
+      "PINK",
+      "CYAN"
+     ]
+    },
+    "turns": {
+     "kind": "float",
+     "default": 4.0
+    },
+    "RX": {
+     "kind": "float",
+     "default": 330.0
+    },
+    "RY": {
+     "kind": "float",
+     "default": 78.0
+    },
+    "y0": {
+     "kind": "float",
+     "default": 520.0
+    },
+    "y1": {
+     "kind": "float",
+     "default": 1300.0
+    },
+    "GO": {
+     "kind": "float",
+     "default": 1.6
+    },
+    "hold": {
+     "kind": "float",
+     "default": 2.6
+    },
+    "maxs": {
+     "kind": "float",
+     "default": 18.0
+    },
+    "vbase": {
+     "kind": "float",
+     "default": 640.0
+    },
+    "l1": {
+     "kind": "text",
+     "default": "FASTEST MARBLE WINS"
+    },
+    "l2": {
+     "kind": "text",
+     "default": "PICK ONE"
+    },
+    "trackc": {
+     "kind": "color_name",
+     "default": "VIOLET"
+    }
+   }
+  },
+  "marble_paddles_es": {
+   "kind": "Short",
+   "file": "today1101",
+   "secs": 4.7,
+   "knobs": {
+    "names": {
+     "kind": "color_names",
+     "default": [
+      "RED",
+      "BLUE",
+      "GREEN",
+      "YELLOW",
+      "PURPLE",
+      "ORANGE",
+      "PINK",
+      "CYAN"
+     ]
+    },
+    "maxs": {
+     "kind": "int",
+     "default": 20
+    },
+    "hold": {
+     "kind": "float",
+     "default": 2.6
+    },
+    "g": {
+     "kind": "int",
+     "default": 1050
+    },
+    "vmax": {
+     "kind": "int",
+     "default": 1100
+    },
+    "delay": {
+     "kind": "float",
+     "default": 0.0
+    },
+    "l1": {
+     "kind": "text",
+     "default": "\u00a1ELIGE TU CANICA!"
+    },
+    "l2": {
+     "kind": "text",
+     "default": "LAS ASPAS DECIDEN"
+    },
+    "sub": {
+     "kind": "text",
+     "default": "Comenta tu color"
+    }
+   }
+  },
+  "marble_pegs": {
+   "kind": "Short",
+   "file": "today1102",
+   "secs": 9.4,
+   "knobs": {
+    "names": {
+     "kind": "color_names",
+     "default": [
+      "RED",
+      "BLUE",
+      "GREEN",
+      "YELLOW",
+      "PURPLE",
+      "ORANGE"
+     ]
+    },
+    "layout": {
+     "kind": "choice",
+     "default": "spiral"
+    },
+    "maxs": {
+     "kind": "int",
+     "default": 16
+    },
+    "g": {
+     "kind": "int",
+     "default": 1100
+    },
+    "vmax": {
+     "kind": "int",
+     "default": 1100
+    },
+    "delay": {
+     "kind": "float",
+     "default": 0.0
+    },
+    "rail": {
+     "kind": "color",
+     "default": "GOLD"
+    },
+    "r0": {
+     "kind": "float",
+     "default": 19.0
+    },
+    "hold": {
+     "kind": "float",
+     "default": 2.2
+    },
+    "l1": {
+     "kind": "text",
+     "default": "FASTEST MARBLE WINS"
+    },
+    "l2": {
+     "kind": "text",
+     "default": "PICK ONE NOW"
+    },
+    "sub": {
+     "kind": "text",
+     "default": "Comment your colour"
+    }
+   }
+  },
+  "marble_plinko": {
+   "kind": "Short",
+   "file": "today1101",
+   "secs": 5.6,
+   "knobs": {
+    "names": {
+     "kind": "color_names",
+     "default": [
+      "RED",
+      "BLUE",
+      "GREEN",
+      "YELLOW",
+      "PURPLE",
+      "ORANGE",
+      "PINK",
+      "CYAN"
+     ]
+    },
+    "maxs": {
+     "kind": "int",
+     "default": 18
+    },
+    "g": {
+     "kind": "int",
+     "default": 1100
+    },
+    "vmax": {
+     "kind": "int",
+     "default": 1100
+    },
+    "delay": {
+     "kind": "float",
+     "default": 0.0
+    },
+    "l1": {
+     "kind": "text",
+     "default": "PICK A MARBLE NOW"
+    },
+    "l2": {
+     "kind": "text",
+     "default": "THE PEGS DECIDE"
+    },
+    "sub": {
+     "kind": "text",
+     "default": "Comment your colour"
+    }
+   }
+  },
+  "marble_plinko6": {
+   "kind": "Short",
+   "file": "today1106",
+   "secs": 13.7,
+   "knobs": {
+    "maxs": {
+     "kind": "int",
+     "default": 20
+    }
+   }
+  },
+  "marble_race": {
+   "kind": "Short",
+   "file": "sims",
+   "secs": 10.3,
+   "knobs": {
+    "names": {
+     "kind": "color_names",
+     "default": [
+      "RED",
+      "BLUE",
+      "GREEN",
+      "YELLOW",
+      "PURPLE",
+      "ORANGE",
+      "PINK",
+      "CYAN"
+     ]
+    },
+    "l1": {
+     "kind": "text",
+     "default": "WHICH COLOR"
+    },
+    "l2": {
+     "kind": "text",
+     "default": "WINS THE RACE?"
+    },
+    "sub": {
+     "kind": "text",
+     "default": "Pick your color now"
+    }
+   }
+  },
+  "marble_run_eyes": {
+   "kind": "Long",
+   "file": "today1104",
+   "secs": null,
+   "knobs": {
+    "n": {
+     "kind": "int",
+     "default": 10
+    },
+    "laps": {
+     "kind": "int",
+     "default": 2
+    },
+    "pace": {
+     "kind": "float",
+     "default": 1.0
+    },
+    "max_race": {
+     "kind": "float",
+     "default": 900.0
+    },
+    "l1": {
+     "kind": "text",
+     "default": "MARBLE RUN SPECIAL"
+    },
+    "crf": {
+     "kind": "int",
+     "default": 20
+    },
+    "per_gate": {
+     "kind": "int",
+     "default": 3
+    }
+   }
+  },
+  "marble_run_giant": {
+   "kind": "Long",
+   "file": "today1102",
+   "secs": null,
+   "knobs": {
+    "n": {
+     "kind": "int",
+     "default": 10
+    },
+    "laps": {
+     "kind": "int",
+     "default": 2
+    },
+    "pace": {
+     "kind": "float",
+     "default": 1.0
+    },
+    "max_race": {
+     "kind": "float",
+     "default": 900.0
+    },
+    "l1": {
+     "kind": "text",
+     "default": "MARBLE RUN SPECIAL"
+    },
+    "crf": {
+     "kind": "int",
+     "default": 20
+    },
+    "giant_r": {
+     "kind": "float",
+     "default": 2.1
+    },
+    "giant_name": {
+     "kind": "str",
+     "default": "GIANT"
+    }
+   }
+  },
+  "marble_run_glow": {
+   "kind": "Long",
+   "file": "today1105",
+   "secs": null,
+   "knobs": {
+    "n": {
+     "kind": "int",
+     "default": 10
+    },
+    "laps": {
+     "kind": "int",
+     "default": 2
+    },
+    "pace": {
+     "kind": "float",
+     "default": 1.0
+    },
+    "max_race": {
+     "kind": "float",
+     "default": 900.0
+    },
+    "l1": {
+     "kind": "text",
+     "default": "MARBLE RUN SPECIAL"
+    },
+    "crf": {
+     "kind": "int",
+     "default": 20
+    },
+    "per_gate": {
+     "kind": "int",
+     "default": 3
+    }
+   }
+  },
+  "marble_run_lava": {
+   "kind": "Long",
+   "file": "today1106",
+   "secs": null,
+   "knobs": {
+    "n": {
+     "kind": "int",
+     "default": 10
+    },
+    "laps": {
+     "kind": "int",
+     "default": 2
+    },
+    "pace": {
+     "kind": "float",
+     "default": 1.0
+    },
+    "max_race": {
+     "kind": "float",
+     "default": 900.0
+    },
+    "l1": {
+     "kind": "text",
+     "default": "MARBLE RUN SPECIAL"
+    },
+    "crf": {
+     "kind": "int",
+     "default": 20
+    },
+    "per_gate": {
+     "kind": "int",
+     "default": 3
+    },
+    "fly": {
+     "kind": "float",
+     "default": 20.0
+    }
+   }
+  },
+  "marble_run_long": {
+   "kind": "Long",
+   "file": "sims",
+   "secs": null,
+   "knobs": {
+    "laps": {
+     "kind": "int",
+     "default": 2
+    },
+    "pace": {
+     "kind": "float",
+     "default": 1.0
+    },
+    "max_race": {
+     "kind": "float",
+     "default": 900.0
+    },
+    "l1": {
+     "kind": "text",
+     "default": "MARBLE RUN SPECIAL"
+    },
+    "crf": {
+     "kind": "int",
+     "default": 20
+    }
+   }
+  },
+  "marble_run_orbs": {
+   "kind": "Long",
+   "file": "today1103",
+   "secs": null,
+   "knobs": {
+    "n": {
+     "kind": "int",
+     "default": 10
+    },
+    "laps": {
+     "kind": "int",
+     "default": 2
+    },
+    "pace": {
+     "kind": "float",
+     "default": 1.0
+    },
+    "max_race": {
+     "kind": "float",
+     "default": 900.0
+    },
+    "l1": {
+     "kind": "text",
+     "default": "MARBLE RUN SPECIAL"
+    },
+    "crf": {
+     "kind": "int",
+     "default": 20
+    },
+    "per_gate": {
+     "kind": "int",
+     "default": 3
+    }
+   }
+  },
+  "marble_spiral_es": {
+   "kind": "Short",
+   "file": "today28",
+   "secs": 13.1,
+   "knobs": {
+    "names": {
+     "kind": "color_names",
+     "default": [
+      "RED",
+      "BLUE",
+      "GREEN",
+      "YELLOW",
+      "PURPLE",
+      "ORANGE",
+      "PINK",
+      "CYAN"
+     ]
+    },
+    "maxs": {
+     "kind": "int",
+     "default": 20
+    },
+    "hold": {
+     "kind": "float",
+     "default": 2.3
+    },
+    "l1": {
+     "kind": "text",
+     "default": "\u00a1ELIGE TU CANICA!"
+    },
+    "l2": {
+     "kind": "text",
+     "default": "\u00bfCU\u00c1L GANA?"
+    },
+    "sub": {
+     "kind": "text",
+     "default": "Comenta tu color"
+    }
+   }
+  },
+  "marble_trap10": {
+   "kind": "Short",
+   "file": "today1105",
+   "secs": null,
+   "knobs": {
+    "names": {
+     "kind": "color_names",
+     "default": [
+      "RED",
+      "BLUE",
+      "GREEN",
+      "YELLOW",
+      "PURPLE",
+      "ORANGE",
+      "PINK",
+      "CYAN",
+      "WHITE",
+      "LIME"
+     ]
+    },
+    "first": {
+     "kind": "float",
+     "default": 8.5
+    },
+    "every": {
+     "kind": "float",
+     "default": 3.0
+    },
+    "hold": {
+     "kind": "float",
+     "default": 4.5
+    },
+    "l1": {
+     "kind": "text",
+     "default": "WHICH MARBLE WILL BE THE LAST?"
+    },
+    "l2": {
+     "kind": "text",
+     "default": "TWO DROP EVERY 3 SECONDS"
+    },
+    "rail": {
+     "kind": "color",
+     "default": "VIOLET"
+    }
+   }
+  },
+  "marble_trap3": {
+   "kind": "Short",
+   "file": "today1106",
+   "secs": null,
+   "knobs": {}
+  },
+  "marble_trap8": {
+   "kind": "Short",
+   "file": "today1104",
+   "secs": null,
+   "knobs": {
+    "names": {
+     "kind": "color_names",
+     "default": [
+      "RED",
+      "BLUE",
+      "GREEN",
+      "YELLOW",
+      "PURPLE",
+      "ORANGE",
+      "PINK",
+      "CYAN"
+     ]
+    },
+    "first": {
+     "kind": "float",
+     "default": 5.0
+    },
+    "every": {
+     "kind": "float",
+     "default": 2.0
+    },
+    "hold": {
+     "kind": "float",
+     "default": 3.6
+    },
+    "l1": {
+     "kind": "text",
+     "default": "WHICH MARBLE WILL BE THE LAST?"
+    },
+    "l2": {
+     "kind": "text",
+     "default": "ONE DROPS EVERY 2 SECONDS"
+    },
+    "rail": {
+     "kind": "color",
+     "default": "TEAL"
+    }
+   }
+  },
+  "marble_zigzag": {
+   "kind": "Short",
+   "file": "today27",
+   "secs": 12.9,
+   "knobs": {
+    "l1": {
+     "kind": "text",
+     "default": "PICK YOUR MARBLE"
+    },
+    "l2": {
+     "kind": "text",
+     "default": "THE FASTEST ONE WINS"
+    },
+    "sub": {
+     "kind": "text",
+     "default": "Pick your colour now"
+    }
+   }
+  },
+  "marble_zz6": {
+   "kind": "Short",
+   "file": "today28",
+   "secs": 12.2,
+   "knobs": {
+    "names": {
+     "kind": "color_names",
+     "default": [
+      "RED",
+      "BLUE",
+      "GREEN",
+      "YELLOW",
+      "CYAN",
+      "ORANGE"
+     ]
+    },
+    "maxs": {
+     "kind": "int",
+     "default": 18
+    },
+    "l1": {
+     "kind": "text",
+     "default": "PICK A MARBLE NOW"
+    },
+    "l2": {
+     "kind": "text",
+     "default": "THE ZIG-ZAG DECIDES"
+    },
+    "sub": {
+     "kind": "text",
+     "default": "Comment your colour"
+    }
+   }
+  },
+  "marble_zz8": {
+   "kind": "Short",
+   "file": "today1103",
+   "secs": 15.2,
+   "knobs": {
+    "names": {
+     "kind": "color_names",
+     "default": [
+      "RED",
+      "BLUE",
+      "GREEN",
+      "YELLOW",
+      "PURPLE",
+      "ORANGE",
+      "PINK",
+      "CYAN"
+     ]
+    },
+    "maxs": {
+     "kind": "int",
+     "default": 18
+    },
+    "rail": {
+     "kind": "color",
+     "default": "TEAL"
+    },
+    "hold": {
+     "kind": "float",
+     "default": 2.3
+    },
+    "l1": {
+     "kind": "text",
+     "default": "FASTEST MARBLE WINS"
+    },
+    "l2": {
+     "kind": "text",
+     "default": "PICK ONE NOW"
+    },
+    "sub": {
+     "kind": "text",
+     "default": "Comment your colour"
+    }
+   }
+  },
+  "melody_bounce": {
+   "kind": "Short",
+   "file": "sims",
+   "secs": null,
+   "knobs": {
+    "tune": {
+     "kind": "choice",
+     "default": "ODE TO JOY"
+    },
+    "col": {
+     "kind": "color_name",
+     "default": "CYAN"
+    },
+    "grow": {
+     "kind": "float",
+     "default": 3.0
+    },
+    "l1": {
+     "kind": "text",
+     "default": "EVERY BOUNCE PLAYS A NOTE"
+    },
+    "l2": {
+     "kind": "text",
+     "default": "CAN YOU NAME THIS SONG?"
+    }
+   }
+  },
+  "melody_keyring": {
+   "kind": "Short",
+   "file": "today1101",
+   "secs": null,
+   "knobs": {
+    "secs": {
+     "kind": "float",
+     "default": 17.5
+    },
+    "R": {
+     "kind": "int",
+     "default": 440
+    },
+    "tune": {
+     "kind": "choice",
+     "default": "FUR ELISE"
+    },
+    "nkeys": {
+     "kind": "int",
+     "default": 16
+    },
+    "l1": {
+     "kind": "text",
+     "default": "EVERY BOUNCE PLAYS A NOTE"
+    },
+    "l2": {
+     "kind": "text",
+     "default": "CAN YOU NAME THIS SONG?"
+    },
+    "sub": {
+     "kind": "text",
+     "default": "Comment the song name"
+    },
+    "reveal": {
+     "kind": "str",
+     "default": "IT'S F\u00dcR ELISE!"
+    }
+   }
+  },
+  "merge_coins": {
+   "kind": "Short",
+   "file": "today1106",
+   "secs": 24.9,
+   "knobs": {
+    "t_end": {
+     "kind": "float",
+     "default": 18.0
+    },
+    "tau": {
+     "kind": "float",
+     "default": 3.4
+    },
+    "maxs": {
+     "kind": "float",
+     "default": 34.0
+    }
+   }
+  },
+  "merge_up": {
+   "kind": "Short",
+   "file": "today1103",
+   "secs": 28.7,
+   "knobs": {
+    "total": {
+     "kind": "int",
+     "default": 1024
+    },
+    "t_end": {
+     "kind": "float",
+     "default": 23.0
+    },
+    "tau": {
+     "kind": "float",
+     "default": 4.4
+    },
+    "magnet": {
+     "kind": "float",
+     "default": 2500.0
+    },
+    "hold_sun": {
+     "kind": "float",
+     "default": 2.2
+    },
+    "back": {
+     "kind": "float",
+     "default": 1.6
+    },
+    "maxs": {
+     "kind": "float",
+     "default": 34.0
+    },
+    "l1": {
+     "kind": "text",
+     "default": "WILL 1,024 ROCKS BECOME THE SUN?"
+    }
+   }
+  },
+  "merge_up12": {
+   "kind": "Short",
+   "file": "today1104",
+   "secs": 28.7,
+   "knobs": {
+    "total": {
+     "kind": "int",
+     "default": 2048
+    },
+    "t_end": {
+     "kind": "float",
+     "default": 23.0
+    },
+    "tau": {
+     "kind": "float",
+     "default": 4.0
+    },
+    "magnet": {
+     "kind": "float",
+     "default": 2600.0
+    },
+    "hold_sun": {
+     "kind": "float",
+     "default": 2.2
+    },
+    "back": {
+     "kind": "float",
+     "default": 1.6
+    },
+    "maxs": {
+     "kind": "float",
+     "default": 34.0
+    },
+    "r0": {
+     "kind": "float",
+     "default": 15.0
+    },
+    "grow": {
+     "kind": "float",
+     "default": 1.27
+    },
+    "l1": {
+     "kind": "text",
+     "default": "WILL 2,048 ROCKS BECOME THE SUN?"
+    }
+   }
+  },
+  "merge_up13": {
+   "kind": "Short",
+   "file": "today1105",
+   "secs": 28.1,
+   "knobs": {
+    "total": {
+     "kind": "int",
+     "default": 4096
+    },
+    "t_end": {
+     "kind": "float",
+     "default": 22.0
+    },
+    "tau": {
+     "kind": "float",
+     "default": 3.8
+    },
+    "magnet": {
+     "kind": "float",
+     "default": 2700.0
+    },
+    "hold_sun": {
+     "kind": "float",
+     "default": 2.4
+    },
+    "back": {
+     "kind": "float",
+     "default": 1.6
+    },
+    "maxs": {
+     "kind": "float",
+     "default": 34.0
+    },
+    "r0": {
+     "kind": "float",
+     "default": 13.0
+    },
+    "grow": {
+     "kind": "float",
+     "default": 1.245
+    },
+    "l1": {
+     "kind": "text",
+     "default": "WILL 4,096 ROCKS BECOME A BLACK HOLE?"
+    }
+   }
+  },
+  "orbs_duo": {
+   "kind": "Short",
+   "file": "today1103",
+   "secs": null,
+   "knobs": {
+    "n": {
+     "kind": "int",
+     "default": 999
+    },
+    "secs": {
+     "kind": "float",
+     "default": 17.4
+    },
+    "R": {
+     "kind": "int",
+     "default": 440
+    },
+    "tune": {
+     "kind": "choice",
+     "default": "ODE TO JOY"
+    },
+    "gap0": {
+     "kind": "float",
+     "default": 0.32
+    },
+    "hold": {
+     "kind": "float",
+     "default": 2.6
+    },
+    "c0": {
+     "kind": "color",
+     "default": null
+    },
+    "c1": {
+     "kind": "color",
+     "default": null
+    },
+    "l1": {
+     "kind": "text",
+     "default": "EVERY BOUNCE IS A NOTE"
+    },
+    "l2": {
+     "kind": "text",
+     "default": "CAN YOU NAME THIS SONG?"
+    },
+    "sub": {
+     "kind": "text",
+     "default": "Comment the song name"
+    },
+    "reveal": {
+     "kind": "str",
+     "default": "IT'S ODE TO JOY!"
+    }
+   }
+  },
+  "orbs_keys": {
+   "kind": "Short",
+   "file": "today28",
+   "secs": null,
+   "knobs": {
+    "n": {
+     "kind": "int",
+     "default": 999
+    },
+    "secs": {
+     "kind": "float",
+     "default": 17.6
+    },
+    "R": {
+     "kind": "int",
+     "default": 430
+    },
+    "tune": {
+     "kind": "choice",
+     "default": "HALL OF THE MOUNTAIN KING"
+    },
+    "gap0": {
+     "kind": "float",
+     "default": 0.3
+    },
+    "l1": {
+     "kind": "text",
+     "default": "999 ORBS PLAY A SONG"
+    },
+    "l2": {
+     "kind": "text",
+     "default": "CAN YOU GUESS IT?"
+    },
+    "sub": {
+     "kind": "text",
+     "default": "Comment the song name"
+    },
+    "reveal": {
+     "kind": "str",
+     "default": "IT'S IN THE HALL OF|THE MOUNTAIN KING!"
+    }
+   }
+  },
+  "orbs_melody": {
+   "kind": "Short",
+   "file": "today27",
+   "secs": null,
+   "knobs": {
+    "n": {
+     "kind": "int",
+     "default": 999
+    },
+    "secs": {
+     "kind": "float",
+     "default": 17.5
+    },
+    "R": {
+     "kind": "int",
+     "default": 440
+    },
+    "tune": {
+     "kind": "choice",
+     "default": "ODE TO JOY"
+    },
+    "gap0": {
+     "kind": "float",
+     "default": 0.3
+    },
+    "l1": {
+     "kind": "text",
+     "default": "999 BALLS PLAY A SONG"
+    },
+    "l2": {
+     "kind": "text",
+     "default": "CAN YOU GUESS IT?"
+    },
+    "sub": {
+     "kind": "text",
+     "default": "Comment the song name"
+    }
+   }
+  },
+  "orbs_rainbow": {
+   "kind": "Short",
+   "file": "today1102",
+   "secs": null,
+   "knobs": {
+    "n": {
+     "kind": "int",
+     "default": 999
+    },
+    "secs": {
+     "kind": "float",
+     "default": 17.4
+    },
+    "R": {
+     "kind": "int",
+     "default": 440
+    },
+    "tune": {
+     "kind": "choice",
+     "default": "TWINKLE TWINKLE"
+    },
+    "gap0": {
+     "kind": "float",
+     "default": 0.34
+    },
+    "hold": {
+     "kind": "float",
+     "default": 2.6
+    },
+    "l1": {
+     "kind": "text",
+     "default": "EVERY BOUNCE IS A NOTE"
+    },
+    "l2": {
+     "kind": "text",
+     "default": "GUESS THE SONG?"
+    },
+    "sub": {
+     "kind": "text",
+     "default": "Comment the song name"
+    },
+    "reveal": {
+     "kind": "str",
+     "default": "IT'S TWINKLE TWINKLE!"
+    }
+   }
+  },
+  "pend_countdown": {
+   "kind": "Short",
+   "file": "today1102",
+   "secs": null,
+   "knobs": {
+    "n": {
+     "kind": "int",
+     "default": 20
+    },
+    "secs": {
+     "kind": "int",
+     "default": 31
+    },
+    "cycle": {
+     "kind": "int",
+     "default": 28
+    },
+    "c0": {
+     "kind": "color",
+     "default": null
+    },
+    "c1": {
+     "kind": "color",
+     "default": null
+    },
+    "decay": {
+     "kind": "float",
+     "default": 0.955
+    },
+    "l1": {
+     "kind": "text",
+     "default": "DIFFERENT LENGTHS, SAME START"
+    },
+    "l2": {
+     "kind": "text",
+     "default": "WHO LINES UP FIRST?"
+    },
+    "done_txt": {
+     "kind": "text",
+     "default": "ALL 20 LINED UP!"
+    }
+   }
+  },
+  "pend_fan": {
+   "kind": "Short",
+   "file": "today1103",
+   "secs": null,
+   "knobs": {
+    "n": {
+     "kind": "int",
+     "default": 36
+    },
+    "secs": {
+     "kind": "int",
+     "default": 33
+    },
+    "cycle": {
+     "kind": "int",
+     "default": 30
+    },
+    "c0": {
+     "kind": "color",
+     "default": null
+    },
+    "c1": {
+     "kind": "color",
+     "default": null
+    },
+    "decay": {
+     "kind": "float",
+     "default": 0.86
+    },
+    "amp": {
+     "kind": "float",
+     "default": 0.46
+    },
+    "l1": {
+     "kind": "text",
+     "default": "WATCH 36 PENDULUMS"
+    },
+    "l2": {
+     "kind": "text",
+     "default": "LINE UP AGAIN..."
+    },
+    "sub": {
+     "kind": "text",
+     "default": "Every pass plays a note"
+    },
+    "done_txt": {
+     "kind": "text",
+     "default": "THEY LINED UP!"
+    }
+   }
+  },
+  "pend_harp": {
+   "kind": "Short",
+   "file": "today1102",
+   "secs": null,
+   "knobs": {
+    "n": {
+     "kind": "int",
+     "default": 30
+    },
+    "secs": {
+     "kind": "int",
+     "default": 33
+    },
+    "cycle": {
+     "kind": "int",
+     "default": 30
+    },
+    "c0": {
+     "kind": "color",
+     "default": null
+    },
+    "c1": {
+     "kind": "color",
+     "default": null
+    },
+    "decay": {
+     "kind": "float",
+     "default": 0.88
+    },
+    "l1": {
+     "kind": "text",
+     "default": "WATCH 30 PENDULUMS"
+    },
+    "l2": {
+     "kind": "text",
+     "default": "LINE UP AGAIN..."
+    },
+    "sub": {
+     "kind": "text",
+     "default": "Every pass plays a harp note"
+    },
+    "done_txt": {
+     "kind": "text",
+     "default": "THEY LINED UP!"
+    }
+   }
+  },
+  "pend_helix40": {
+   "kind": "Short",
+   "file": "today1106",
+   "secs": null,
+   "knobs": {
+    "n": {
+     "kind": "int",
+     "default": 20
+    },
+    "secs": {
+     "kind": "int",
+     "default": 33
+    },
+    "cycle": {
+     "kind": "int",
+     "default": 30
+    },
+    "c0": {
+     "kind": "color",
+     "default": null
+    },
+    "c1": {
+     "kind": "color",
+     "default": null
+    },
+    "K": {
+     "kind": "int",
+     "default": 8
+    },
+    "decay": {
+     "kind": "float",
+     "default": 0.9
+    },
+    "cy": {
+     "kind": "float",
+     "default": 930.0
+    },
+    "Ra": {
+     "kind": "float",
+     "default": 300.0
+    },
+    "x0": {
+     "kind": "float",
+     "default": 150.0
+    },
+    "x1": {
+     "kind": "float",
+     "default": 930.0
+    },
+    "l1": {
+     "kind": "text",
+     "default": "40 PENDULUMS, A DOUBLE HELIX"
+    },
+    "l2": {
+     "kind": "text",
+     "default": "WATCH THEM LINE UP AGAIN"
+    },
+    "sub": {
+     "kind": "text",
+     "default": "Every pass plays a glass chime"
+    },
+    "done_txt": {
+     "kind": "text",
+     "default": "THEY LINED UP AGAIN!"
+    }
+   }
+  },
+  "pend_rainbow24": {
+   "kind": "Short",
+   "file": "today1106",
+   "secs": null,
+   "knobs": {}
+  },
+  "pend_ring36": {
+   "kind": "Short",
+   "file": "today1105",
+   "secs": null,
+   "knobs": {
+    "n": {
+     "kind": "int",
+     "default": 36
+    },
+    "secs": {
+     "kind": "int",
+     "default": 33
+    },
+    "cycle": {
+     "kind": "int",
+     "default": 30
+    },
+    "c0": {
+     "kind": "color",
+     "default": null
+    },
+    "c1": {
+     "kind": "color",
+     "default": null
+    },
+    "K": {
+     "kind": "int",
+     "default": 12
+    },
+    "decay": {
+     "kind": "float",
+     "default": 0.9
+    },
+    "cy": {
+     "kind": "float",
+     "default": 950.0
+    },
+    "Rm": {
+     "kind": "float",
+     "default": 300.0
+    },
+    "Ra": {
+     "kind": "float",
+     "default": 140.0
+    },
+    "l1": {
+     "kind": "text",
+     "default": "WATCH 36 PENDULUMS"
+    },
+    "l2": {
+     "kind": "text",
+     "default": "IN A CIRCLE... LINE UP AGAIN"
+    },
+    "sub": {
+     "kind": "text",
+     "default": "Every pass plays a kalimba note"
+    },
+    "done_txt": {
+     "kind": "text",
+     "default": "A PERFECT CIRCLE AGAIN!"
+    }
+   }
+  },
+  "pend_rows2": {
+   "kind": "Short",
+   "file": "today1104",
+   "secs": null,
+   "knobs": {
+    "n": {
+     "kind": "int",
+     "default": 12
+    },
+    "secs": {
+     "kind": "int",
+     "default": 31
+    },
+    "cyc_short": {
+     "kind": "float",
+     "default": 17.0
+    },
+    "cyc_long": {
+     "kind": "float",
+     "default": 28.5
+    },
+    "K": {
+     "kind": "int",
+     "default": 12
+    },
+    "decay": {
+     "kind": "float",
+     "default": 0.95
+    },
+    "l1": {
+     "kind": "text",
+     "default": "SHORT VS LONG PENDULUMS"
+    },
+    "l2": {
+     "kind": "text",
+     "default": "WHO LINES UP FIRST?"
+    }
+   }
+  },
+  "pend_rows3": {
+   "kind": "Short",
+   "file": "today1105",
+   "secs": null,
+   "knobs": {
+    "n": {
+     "kind": "int",
+     "default": 10
+    },
+    "secs": {
+     "kind": "int",
+     "default": 31
+    },
+    "K": {
+     "kind": "int",
+     "default": 10
+    },
+    "decay": {
+     "kind": "float",
+     "default": 0.95
+    },
+    "l1": {
+     "kind": "text",
+     "default": "3 ROWS OF PENDULUMS, 1 START"
+    },
+    "l2": {
+     "kind": "text",
+     "default": "WHICH ROW RE-ALIGNS FIRST?"
+    }
+   }
+  },
+  "pend_spiral": {
+   "kind": "Short",
+   "file": "today1102",
+   "secs": null,
+   "knobs": {
+    "n": {
+     "kind": "int",
+     "default": 24
+    },
+    "secs": {
+     "kind": "int",
+     "default": 11
+    },
+    "cycle": {
+     "kind": "int",
+     "default": 10
+    },
+    "c0": {
+     "kind": "color",
+     "default": null
+    },
+    "c1": {
+     "kind": "color",
+     "default": null
+    }
+   }
+  },
+  "pend_spiral49": {
+   "kind": "Short",
+   "file": "today1104",
+   "secs": null,
+   "knobs": {
+    "n": {
+     "kind": "int",
+     "default": 49
+    },
+    "secs": {
+     "kind": "int",
+     "default": 33
+    },
+    "cycle": {
+     "kind": "int",
+     "default": 30
+    },
+    "c0": {
+     "kind": "color",
+     "default": null
+    },
+    "c1": {
+     "kind": "color",
+     "default": null
+    },
+    "K": {
+     "kind": "int",
+     "default": 6
+    },
+    "decay": {
+     "kind": "float",
+     "default": 0.9
+    },
+    "l1": {
+     "kind": "text",
+     "default": "WATCH 49 PENDULUMS"
+    },
+    "l2": {
+     "kind": "text",
+     "default": "LINE UP AGAIN..."
+    },
+    "sub": {
+     "kind": "text",
+     "default": "Every pass plays a harp note"
+    },
+    "done_txt": {
+     "kind": "text",
+     "default": "THEY LINED UP AGAIN!"
+    },
+    "cy": {
+     "kind": "float",
+     "default": 950.0
+    }
+   }
+  },
+  "pend_teams": {
+   "kind": "Short",
+   "file": "today1103",
+   "secs": null,
+   "knobs": {
+    "n": {
+     "kind": "int",
+     "default": 12
+    },
+    "secs": {
+     "kind": "int",
+     "default": 31
+    },
+    "cycle": {
+     "kind": "int",
+     "default": 28
+    },
+    "decay": {
+     "kind": "float",
+     "default": 0.965
+    },
+    "l1": {
+     "kind": "text",
+     "default": "SLOW VS FAST PENDULUMS"
+    },
+    "l2": {
+     "kind": "text",
+     "default": "WHO CATCHES UP?"
+    },
+    "done_txt": {
+     "kind": "text",
+     "default": "ALL 12 LINED UP!"
+    }
+   }
+  },
+  "pendulum36": {
+   "kind": "Short",
+   "file": "today27",
+   "secs": null,
+   "knobs": {
+    "n": {
+     "kind": "int",
+     "default": 36
+    },
+    "secs": {
+     "kind": "int",
+     "default": 33
+    },
+    "cycle": {
+     "kind": "int",
+     "default": 30
+    },
+    "l1": {
+     "kind": "text",
+     "default": "WATCH 36 PENDULUMS"
+    },
+    "l2": {
+     "kind": "text",
+     "default": "LINE UP AGAIN"
+    },
+    "sub": {
+     "kind": "text",
+     "default": "Wait for it..."
+    },
+    "done_txt": {
+     "kind": "text",
+     "default": "THEY LINED UP!"
+    }
+   }
+  },
+  "pendulum_mirror": {
+   "kind": "Short",
+   "file": "today28",
+   "secs": null,
+   "knobs": {
+    "n": {
+     "kind": "int",
+     "default": 14
+    },
+    "secs": {
+     "kind": "int",
+     "default": 31
+    },
+    "cycle": {
+     "kind": "int",
+     "default": 29
+    },
+    "l1": {
+     "kind": "text",
+     "default": "SAME START, 2 MIRRORED ROWS"
+    },
+    "l2": {
+     "kind": "text",
+     "default": "WAIT FOR IT..."
+    },
+    "sub": {
+     "kind": "text",
+     "default": "Watch them meet in the middle"
+    },
+    "done": {
+     "kind": "str",
+     "default": "THEY MET AGAIN!"
+    }
+   }
+  },
+  "pendulum_orbits": {
+   "kind": "Short",
+   "file": "today1101",
+   "secs": null,
+   "knobs": {
+    "n": {
+     "kind": "int",
+     "default": 5
+    },
+    "secs": {
+     "kind": "int",
+     "default": 33
+    },
+    "cycle": {
+     "kind": "int",
+     "default": 30
+    },
+    "c0": {
+     "kind": "color",
+     "default": null
+    },
+    "c1": {
+     "kind": "color",
+     "default": null
+    },
+    "l1": {
+     "kind": "text",
+     "default": "WATCH 25 PENDULUMS"
+    },
+    "l2": {
+     "kind": "text",
+     "default": "SPIN BACK INTO LINE"
+    },
+    "sub": {
+     "kind": "text",
+     "default": "Wait for them to sync..."
+    },
+    "done": {
+     "kind": "str",
+     "default": "THEY SYNCED UP!"
+    }
+   }
+  },
+  "pendulum_ring": {
+   "kind": "Short",
+   "file": "today28",
+   "secs": null,
+   "knobs": {
+    "n": {
+     "kind": "int",
+     "default": 24
+    },
+    "secs": {
+     "kind": "int",
+     "default": 33
+    },
+    "cycle": {
+     "kind": "int",
+     "default": 30
+    },
+    "c0": {
+     "kind": "color",
+     "default": null
+    },
+    "c1": {
+     "kind": "color",
+     "default": null
+    },
+    "l1": {
+     "kind": "text",
+     "default": "WATCH 24 PENDULUMS"
+    },
+    "l2": {
+     "kind": "text",
+     "default": "LINE UP AGAIN"
+    },
+    "sub": {
+     "kind": "text",
+     "default": "Wait for the circle..."
+    },
+    "done": {
+     "kind": "str",
+     "default": "THEY LINED UP!"
+    }
+   }
+  },
+  "pendulum_rope": {
+   "kind": "Short",
+   "file": "today1101",
+   "secs": null,
+   "knobs": {
+    "n": {
+     "kind": "int",
+     "default": 30
+    },
+    "secs": {
+     "kind": "int",
+     "default": 31
+    },
+    "cycle": {
+     "kind": "int",
+     "default": 29
+    },
+    "c0": {
+     "kind": "color",
+     "default": null
+    },
+    "c1": {
+     "kind": "color",
+     "default": null
+    },
+    "l1": {
+     "kind": "text",
+     "default": "SAME START, ONE GLOWING ROPE"
+    },
+    "l2": {
+     "kind": "text",
+     "default": "WAIT FOR IT..."
+    },
+    "sub": {
+     "kind": "text",
+     "default": "Watch the rope untangle"
+    },
+    "done": {
+     "kind": "str",
+     "default": "STRAIGHT AGAIN!"
+    }
+   }
+  },
+  "pendulum_rows": {
+   "kind": "Short",
+   "file": "today27",
+   "secs": null,
+   "knobs": {
+    "n": {
+     "kind": "int",
+     "default": 12
+    },
+    "secs": {
+     "kind": "int",
+     "default": 31
+    },
+    "l1": {
+     "kind": "text",
+     "default": "DIFFERENT LENGTHS, SAME START"
+    },
+    "l2": {
+     "kind": "text",
+     "default": "NOW 3 ROWS"
+    },
+    "sub": {
+     "kind": "text",
+     "default": "Watch each row line up"
+    }
+   }
+  },
+  "pendulum_wave": {
+   "kind": "Short",
+   "file": "sims",
+   "secs": null,
+   "knobs": {
+    "n": {
+     "kind": "int",
+     "default": 20
+    },
+    "secs": {
+     "kind": "int",
+     "default": 32
+    },
+    "cycle": {
+     "kind": "int",
+     "default": 64
+    },
+    "l1": {
+     "kind": "text",
+     "default": "WATCH THEM"
+    },
+    "l2": {
+     "kind": "text",
+     "default": "LINE UP AGAIN"
+    },
+    "sub": {
+     "kind": "text",
+     "default": "Wait for it..."
+    }
+   }
+  },
+  "portal_rush": {
+   "kind": "Short",
+   "file": "sims",
+   "secs": 15.4,
+   "knobs": {
+    "goal": {
+     "kind": "int",
+     "default": 20
+    },
+    "R": {
+     "kind": "int",
+     "default": 440
+    },
+    "pw": {
+     "kind": "float",
+     "default": 0.75
+    },
+    "l1": {
+     "kind": "text",
+     "default": "EVERY PORTAL = FASTER"
+    },
+    "l2": {
+     "kind": "text",
+     "default": "HOW FAST CAN IT GET?"
+    },
+    "sub": {
+     "kind": "text",
+     "default": "Guess the top speed"
+    }
+   }
+  },
+  "rhythm4": {
+   "kind": "Short",
+   "file": "today1106",
+   "secs": null,
+   "knobs": {
+    "T0": {
+     "kind": "float",
+     "default": 2.0
+    },
+    "end": {
+     "kind": "float",
+     "default": 20.4
+    },
+    "hold": {
+     "kind": "float",
+     "default": 2.6
+    },
+    "l1": {
+     "kind": "text",
+     "default": "CAN 4 RHYTHMS"
+    },
+    "l2": {
+     "kind": "text",
+     "default": "MAKE ONE SONG?"
+    }
+   }
+  },
+  "ring_hot": {
+   "kind": "Short",
+   "file": "today1104",
+   "secs": 13.0,
+   "knobs": {
+    "cols": {
+     "kind": "color_names",
+     "default": [
+      "CYAN",
+      "PINK",
+      "LIME",
+      "GOLD",
+      "WHITE"
+     ]
+    },
+    "R0": {
+     "kind": "float",
+     "default": 470.0
+    },
+    "dec": {
+     "kind": "float",
+     "default": 5.0
+    },
+    "r": {
+     "kind": "float",
+     "default": 20.0
+    },
+    "maxs": {
+     "kind": "int",
+     "default": 17
+    },
+    "endR": {
+     "kind": "float",
+     "default": 78.0
+    },
+    "l1": {
+     "kind": "text",
+     "default": "THE CIRCLE SHRINKS"
+    },
+    "l2": {
+     "kind": "text",
+     "default": "EVERY BOUNCE"
+    },
+    "sub": {
+     "kind": "text",
+     "default": "5 balls inside... wait for it"
+    },
+    "done_txt": {
+     "kind": "text",
+     "default": "IT CLOSED ON ALL 5!"
+    },
+    "minsp": {
+     "kind": "int",
+     "default": 820
+    }
+   }
+  },
+  "ring_shrink": {
+   "kind": "Short",
+   "file": "today1102",
+   "secs": 16.0,
+   "knobs": {
+    "cols": {
+     "kind": "color_names",
+     "default": [
+      "PINK",
+      "CYAN"
+     ]
+    },
+    "ringc": {
+     "kind": "color",
+     "default": "WHITE"
+    },
+    "R0": {
+     "kind": "float",
+     "default": 470.0
+    },
+    "dec": {
+     "kind": "float",
+     "default": 10.0
+    },
+    "r": {
+     "kind": "float",
+     "default": 22.0
+    },
+    "maxs": {
+     "kind": "int",
+     "default": 17
+    },
+    "tone": {
+     "kind": "choice",
+     "default": "pluck"
+    },
+    "counter": {
+     "kind": "str",
+     "default": "size"
+    },
+    "l1": {
+     "kind": "text",
+     "default": "THE CIRCLE SHRINKS"
+    },
+    "l2": {
+     "kind": "text",
+     "default": "EVERY BOUNCE"
+    },
+    "sub": {
+     "kind": "text",
+     "default": "2 balls inside... wait for it"
+    },
+    "done_txt": {
+     "kind": "text",
+     "default": "IT CLOSED!"
+    },
+    "minsp": {
+     "kind": "int",
+     "default": 820
+    }
+   }
+  },
+  "ring_shrink4": {
+   "kind": "Short",
+   "file": "today1106",
+   "secs": 12.2,
+   "knobs": {
+    "dec": {
+     "kind": "float",
+     "default": 6.5
+    },
+    "maxs": {
+     "kind": "int",
+     "default": 17
+    }
+   }
+  },
+  "ring_shrink7": {
+   "kind": "Short",
+   "file": "today1105",
+   "secs": 12.0,
+   "knobs": {
+    "cols": {
+     "kind": "color_names",
+     "default": [
+      "RED",
+      "ORANGE",
+      "YELLOW",
+      "GREEN",
+      "CYAN",
+      "BLUE",
+      "PURPLE"
+     ]
+    },
+    "R0": {
+     "kind": "float",
+     "default": 470.0
+    },
+    "dec": {
+     "kind": "float",
+     "default": 5.0
+    },
+    "r": {
+     "kind": "float",
+     "default": 18.0
+    },
+    "maxs": {
+     "kind": "int",
+     "default": 17
+    },
+    "endR": {
+     "kind": "float",
+     "default": 92.0
+    },
+    "l1": {
+     "kind": "text",
+     "default": "THE CIRCLE SHRINKS"
+    },
+    "l2": {
+     "kind": "text",
+     "default": "EVERY BOUNCE"
+    },
+    "sub": {
+     "kind": "text",
+     "default": "7 balls inside... wait for it"
+    },
+    "done_txt": {
+     "kind": "text",
+     "default": "IT CLOSED ON ALL 7!"
+    },
+    "minsp": {
+     "kind": "int",
+     "default": 820
+    }
+   }
+  },
+  "rings_escape": {
+   "kind": "Short",
+   "file": "sims",
+   "secs": 39.2,
+   "knobs": {
+    "n": {
+     "kind": "int",
+     "default": 12
+    },
+    "gap": {
+     "kind": "float",
+     "default": 0.85
+    },
+    "rin": {
+     "kind": "int",
+     "default": 110
+    },
+    "rout": {
+     "kind": "int",
+     "default": 480
+    },
+    "l1": {
+     "kind": "text",
+     "default": "CAN IT ESCAPE"
+    },
+    "l2": {
+     "kind": "text",
+     "default": null
+    },
+    "sub": {
+     "kind": "text",
+     "default": "Wait for the last ring..."
+    }
+   }
+  },
+  "shrink_grow": {
+   "kind": "Short",
+   "file": "sims",
+   "secs": null,
+   "knobs": {
+    "mode": {
+     "kind": "choice",
+     "default": "shrink"
+    },
+    "l1": {
+     "kind": "text",
+     "default": null
+    },
+    "l2": {
+     "kind": "text",
+     "default": null
+    },
+    "sub": {
+     "kind": "text",
+     "default": "Wait for the end..."
+    },
+    "col": {
+     "kind": "color_name",
+     "default": "GREEN"
+    }
+   }
+  },
+  "shrink_poly": {
+   "kind": "Short",
+   "file": "today1101",
+   "secs": 999.0,
+   "knobs": {
+    "sides": {
+     "kind": "int",
+     "default": 6
+    },
+    "s0": {
+     "kind": "int",
+     "default": 520
+    },
+    "dec": {
+     "kind": "float",
+     "default": 9.0
+    },
+    "maxs": {
+     "kind": "int",
+     "default": 17
+    },
+    "ballc": {
+     "kind": "color",
+     "default": null
+    },
+    "framec": {
+     "kind": "color",
+     "default": null
+    },
+    "l1": {
+     "kind": "text",
+     "default": "EVERY BOUNCE,"
+    },
+    "l2": {
+     "kind": "text",
+     "default": "THE HEXAGON SHRINKS"
+    },
+    "sub": {
+     "kind": "text",
+     "default": "Wait for the end..."
+    }
+   }
+  },
+  "shrink_square": {
+   "kind": "Short",
+   "file": "today27",
+   "secs": 19.4,
+   "knobs": {
+    "s0": {
+     "kind": "int",
+     "default": 430
+    },
+    "dec": {
+     "kind": "float",
+     "default": 11.5
+    },
+    "ballc": {
+     "kind": "color",
+     "default": null
+    },
+    "l1": {
+     "kind": "text",
+     "default": "EVERY BOUNCE,"
+    },
+    "l2": {
+     "kind": "text",
+     "default": "THE SQUARE SHRINKS"
+    },
+    "sub": {
+     "kind": "text",
+     "default": "Wait for the end..."
+    }
+   }
+  },
+  "shrink_triangle": {
+   "kind": "Short",
+   "file": "today28",
+   "secs": 14.6,
+   "knobs": {
+    "s0": {
+     "kind": "int",
+     "default": 560
+    },
+    "dec": {
+     "kind": "float",
+     "default": 10.6
+    },
+    "maxs": {
+     "kind": "int",
+     "default": 17
+    },
+    "ballc": {
+     "kind": "color",
+     "default": null
+    },
+    "framec": {
+     "kind": "color",
+     "default": null
+    },
+    "l1": {
+     "kind": "text",
+     "default": "EVERY BOUNCE,"
+    },
+    "l2": {
+     "kind": "text",
+     "default": "THE TRIANGLE SHRINKS"
+    },
+    "sub": {
+     "kind": "text",
+     "default": "Wait for the end..."
+    }
+   }
+  },
+  "sigma_battle": {
+   "kind": "Short",
+   "file": "today27",
+   "secs": null,
+   "knobs": {
+    "secs": {
+     "kind": "int",
+     "default": 22
+    },
+    "l1": {
+     "kind": "text",
+     "default": "SIGMA BALL VS TINY BALL"
+    },
+    "l2": {
+     "kind": "text",
+     "default": "WHO TAKES THE ARENA?"
+    }
+   }
+  },
+  "softbody_escape": {
+   "kind": "Short",
+   "file": "today27",
+   "secs": 12.0,
+   "knobs": {
+    "secs": {
+     "kind": "int",
+     "default": 25
+    },
+    "R": {
+     "kind": "int",
+     "default": 440
+    },
+    "gapc": {
+     "kind": "float",
+     "default": 118.0
+    },
+    "spin": {
+     "kind": "float",
+     "default": 0.9
+    },
+    "l1": {
+     "kind": "text",
+     "default": "0% VS 100% SOFT"
+    },
+    "l2": {
+     "kind": "text",
+     "default": "WHICH ONE ESCAPES?"
+    }
+   }
+  },
+  "softbody_four": {
+   "kind": "Short",
+   "file": "today1101",
+   "secs": null,
+   "knobs": {
+    "secs": {
+     "kind": "float",
+     "default": 17.5
+    },
+    "gapc": {
+     "kind": "float",
+     "default": 62.0
+    },
+    "l1": {
+     "kind": "text",
+     "default": "0%, 25%, 50% OR 100% SOFT"
+    },
+    "l2": {
+     "kind": "text",
+     "default": "WHICH ONE ESCAPES FIRST?"
+    }
+   }
+  },
+  "softbody_three": {
+   "kind": "Short",
+   "file": "today28",
+   "secs": null,
+   "knobs": {
+    "secs": {
+     "kind": "float",
+     "default": 17.5
+    },
+    "gapc": {
+     "kind": "float",
+     "default": 64.0
+    },
+    "l1": {
+     "kind": "text",
+     "default": "0%, 50% OR 100% SOFT"
+    },
+    "l2": {
+     "kind": "text",
+     "default": "WHICH ONE ESCAPES?"
+    }
+   }
+  },
+  "spiral_chain": {
+   "kind": "Short",
+   "file": "today1102",
+   "secs": 35.1,
+   "knobs": {
+    "b": {
+     "kind": "float",
+     "default": 14.5
+    },
+    "turns": {
+     "kind": "float",
+     "default": 4.5
+    },
+    "a": {
+     "kind": "float",
+     "default": 60.0
+    },
+    "om": {
+     "kind": "float",
+     "default": 0.35
+    },
+    "pull": {
+     "kind": "float",
+     "default": 60.0
+    },
+    "speed": {
+     "kind": "float",
+     "default": 92.0
+    },
+    "cap": {
+     "kind": "int",
+     "default": 999
+    },
+    "split_p": {
+     "kind": "float",
+     "default": 0.9
+    },
+    "cool": {
+     "kind": "float",
+     "default": 0.5
+    },
+    "vmax": {
+     "kind": "float",
+     "default": 102.0
+    },
+    "swirl": {
+     "kind": "float",
+     "default": 2.0
+    },
+    "pop": {
+     "kind": "float",
+     "default": 1.4
+    },
+    "maxs": {
+     "kind": "int",
+     "default": 40
+    },
+    "core": {
+     "kind": "float",
+     "default": 45.0
+    },
+    "l1": {
+     "kind": "text",
+     "default": "EVERY HIT = 2 BALLS"
+    },
+    "l2": {
+     "kind": "text",
+     "default": "CAN 1 REACH THE CENTRE?"
+    }
+   }
+  },
+  "star_escape": {
+   "kind": "Short",
+   "file": "today27",
+   "secs": 10.4,
+   "knobs": {
+    "names": {
+     "kind": "color_names",
+     "default": [
+      "RED",
+      "BLUE",
+      "GREEN",
+      "YELLOW",
+      "PINK"
+     ]
+    },
+    "Ro": {
+     "kind": "int",
+     "default": 470
+    },
+    "Ri": {
+     "kind": "int",
+     "default": 210
+    },
+    "gap0": {
+     "kind": "float",
+     "default": 0.22
+    },
+    "spin": {
+     "kind": "float",
+     "default": 0.7
+    },
+    "l1": {
+     "kind": "text",
+     "default": "PICK A COLOUR"
+    },
+    "l2": {
+     "kind": "text",
+     "default": "BEFORE IT ESCAPES THE STAR"
+    },
+    "sub": {
+     "kind": "text",
+     "default": "Comment your pick!"
+    }
+   }
+  },
+  "string_art": {
+   "kind": "Short",
+   "file": "sims",
+   "secs": null,
+   "knobs": {
+    "maxhits": {
+     "kind": "int",
+     "default": 50
+    },
+    "R": {
+     "kind": "int",
+     "default": 440
+    },
+    "l1": {
+     "kind": "text",
+     "default": "EVERY BOUNCE"
+    },
+    "l2": {
+     "kind": "text",
+     "default": "ADDS A STRING"
+    },
+    "sub": {
+     "kind": "text",
+     "default": null
+    }
+   }
+  },
+  "string_duel": {
+   "kind": "Short",
+   "file": "today28",
+   "secs": null,
+   "knobs": {
+    "secs": {
+     "kind": "int",
+     "default": 22
+    },
+    "R": {
+     "kind": "int",
+     "default": 440
+    },
+    "cn": {
+     "kind": "color_names",
+     "default": [
+      "RED",
+      "BLUE"
+     ]
+    },
+    "l1": {
+     "kind": "text",
+     "default": "2 BALLS, EVERY BOUNCE"
+    },
+    "l2": {
+     "kind": "text",
+     "default": "ADDS A STRING"
+    },
+    "sub": {
+     "kind": "text",
+     "default": "Red or blue? Pick one"
+    }
+   }
+  },
+  "string_duel_sq": {
+   "kind": "Short",
+   "file": "today1101",
+   "secs": null,
+   "knobs": {
+    "secs": {
+     "kind": "int",
+     "default": 22
+    },
+    "Hs": {
+     "kind": "int",
+     "default": 420
+    },
+    "cn": {
+     "kind": "color_names",
+     "default": [
+      "GREEN",
+      "PURPLE"
+     ]
+    },
+    "l1": {
+     "kind": "text",
+     "default": "2 BALLS IN A SQUARE"
+    },
+    "l2": {
+     "kind": "text",
+     "default": "EVERY BOUNCE ADDS A STRING"
+    },
+    "sub": {
+     "kind": "text",
+     "default": "Green or purple? Pick one"
+    }
+   }
+  },
+  "string_fish": {
+   "kind": "Short",
+   "file": "today1106",
+   "secs": null,
+   "knobs": {}
+  },
+  "string_flower": {
+   "kind": "Short",
+   "file": "today27",
+   "secs": null,
+   "knobs": {
+    "secs": {
+     "kind": "float",
+     "default": 21.5
+    },
+    "R": {
+     "kind": "int",
+     "default": 430
+    },
+    "petals": {
+     "kind": "int",
+     "default": 8
+    },
+    "depth": {
+     "kind": "float",
+     "default": 0.18
+    },
+    "c1": {
+     "kind": "color",
+     "default": null
+    },
+    "c2": {
+     "kind": "color",
+     "default": null
+    },
+    "l1": {
+     "kind": "text",
+     "default": "EVERY BOUNCE ADDS A STRING"
+    },
+    "l2": {
+     "kind": "text",
+     "default": "...INTO A FLOWER"
+    },
+    "sub": {
+     "kind": "text",
+     "default": "Wait for the bloom..."
+    }
+   }
+  },
+  "string_heart": {
+   "kind": "Short",
+   "file": "today1106",
+   "secs": null,
+   "knobs": {
+    "secs": {
+     "kind": "float",
+     "default": 21.2
+    }
+   }
+  },
+  "string_hidden": {
+   "kind": "Short",
+   "file": "today1102",
+   "secs": null,
+   "knobs": {
+    "secs": {
+     "kind": "float",
+     "default": 23.0
+    },
+    "reveal": {
+     "kind": "float",
+     "default": 3.0
+    },
+    "shape": {
+     "kind": "choice",
+     "default": "heart"
+    },
+    "nedge": {
+     "kind": "int",
+     "default": 48
+    },
+    "l1": {
+     "kind": "text",
+     "default": "ONE BOUNCE = ONE LINE"
+    },
+    "l2": {
+     "kind": "text",
+     "default": "GUESS THE SHAPE?"
+    },
+    "sub": {
+     "kind": "text",
+     "default": "Comment your guess before the end"
+    }
+   }
+  },
+  "string_mandala": {
+   "kind": "Short",
+   "file": "today1101",
+   "secs": null,
+   "knobs": {
+    "secs": {
+     "kind": "float",
+     "default": 21.5
+    },
+    "R": {
+     "kind": "int",
+     "default": 440
+    },
+    "sym": {
+     "kind": "int",
+     "default": 4
+    },
+    "c0": {
+     "kind": "color",
+     "default": null
+    },
+    "c1": {
+     "kind": "color",
+     "default": null
+    },
+    "l1": {
+     "kind": "text",
+     "default": "EVERY BOUNCE ADDS A STRING"
+    },
+    "l2": {
+     "kind": "text",
+     "default": "WATCH THE MANDALA GROW"
+    },
+    "sub": {
+     "kind": "text",
+     "default": "Wait for the pattern..."
+    }
+   }
+  },
+  "string_poly": {
+   "kind": "Short",
+   "file": "today1103",
+   "secs": null,
+   "knobs": {
+    "secs": {
+     "kind": "float",
+     "default": 21.4
+    },
+    "c0": {
+     "kind": "color",
+     "default": null
+    },
+    "c1": {
+     "kind": "color",
+     "default": null
+    },
+    "framec": {
+     "kind": "color",
+     "default": null
+    },
+    "l1": {
+     "kind": "text",
+     "default": "EVERY BOUNCE ADDS A STRING"
+    },
+    "l2": {
+     "kind": "text",
+     "default": "WATCH THE HEXAGON APPEAR"
+    },
+    "sub": {
+     "kind": "text",
+     "default": "Wait for the hexagon..."
+    },
+    "done_txt": {
+     "kind": "text",
+     "default": "THE HEXAGON APPEARED!"
+    },
+    "hold": {
+     "kind": "float",
+     "default": 2.6
+    }
+   }
+  },
+  "string_shape": {
+   "kind": "Short",
+   "file": "today1103",
+   "secs": null,
+   "knobs": {
+    "secs": {
+     "kind": "float",
+     "default": 23.0
+    },
+    "reveal": {
+     "kind": "float",
+     "default": 3.0
+    },
+    "shape": {
+     "kind": "choice",
+     "default": "butterfly"
+    },
+    "nedge": {
+     "kind": "int",
+     "default": 48
+    },
+    "c0": {
+     "kind": "color",
+     "default": null
+    },
+    "c1": {
+     "kind": "color",
+     "default": null
+    },
+    "l1": {
+     "kind": "text",
+     "default": "ONE BOUNCE = ONE LINE"
+    },
+    "l2": {
+     "kind": "text",
+     "default": "GUESS THE ANIMAL?"
+    },
+    "sub": {
+     "kind": "text",
+     "default": "Comment your guess before the end"
+    }
+   }
+  },
+  "string_star": {
+   "kind": "Short",
+   "file": "today28",
+   "secs": null,
+   "knobs": {
+    "secs": {
+     "kind": "float",
+     "default": 21.5
+    },
+    "R": {
+     "kind": "int",
+     "default": 440
+    },
+    "c0": {
+     "kind": "color",
+     "default": null
+    },
+    "c1": {
+     "kind": "color",
+     "default": null
+    },
+    "l1": {
+     "kind": "text",
+     "default": "EVERY BOUNCE ADDS A STRING"
+    },
+    "l2": {
+     "kind": "text",
+     "default": "WATCH THE STAR APPEAR"
+    },
+    "sub": {
+     "kind": "text",
+     "default": "Wait for the star..."
+    }
+   }
+  },
+  "string_star5": {
+   "kind": "Short",
+   "file": "today1102",
+   "secs": null,
+   "knobs": {
+    "secs": {
+     "kind": "float",
+     "default": 21.4
+    },
+    "c0": {
+     "kind": "color",
+     "default": null
+    },
+    "c1": {
+     "kind": "color",
+     "default": null
+    },
+    "framec": {
+     "kind": "color",
+     "default": null
+    },
+    "l1": {
+     "kind": "text",
+     "default": "EVERY BOUNCE ADDS A STRING"
+    },
+    "l2": {
+     "kind": "text",
+     "default": "WATCH THE STAR APPEAR"
+    },
+    "sub": {
+     "kind": "text",
+     "default": "Wait for the star..."
+    },
+    "hold": {
+     "kind": "float",
+     "default": 2.6
+    }
+   }
+  },
+  "string_star7": {
+   "kind": "Short",
+   "file": "today1104",
+   "secs": null,
+   "knobs": {
+    "secs": {
+     "kind": "float",
+     "default": 21.4
+    },
+    "c0": {
+     "kind": "color",
+     "default": null
+    },
+    "c1": {
+     "kind": "color",
+     "default": null
+    },
+    "framec": {
+     "kind": "color",
+     "default": null
+    },
+    "l1": {
+     "kind": "text",
+     "default": "EVERY BOUNCE ADDS A STRING"
+    },
+    "l2": {
+     "kind": "text",
+     "default": "WATCH THE STAR APPEAR"
+    },
+    "sub": {
+     "kind": "text",
+     "default": "Wait for the 7-point star..."
+    },
+    "done_txt": {
+     "kind": "text",
+     "default": "A 7-POINT STAR!"
+    },
+    "hold": {
+     "kind": "float",
+     "default": 2.6
+    },
+    "timbre": {
+     "kind": "str",
+     "default": "marimba"
+    },
+    "frame_th": {
+     "kind": "int",
+     "default": 3
+    }
+   }
+  },
+  "string_three": {
+   "kind": "Short",
+   "file": "today27",
+   "secs": null,
+   "knobs": {
+    "secs": {
+     "kind": "float",
+     "default": 21.5
+    },
+    "R": {
+     "kind": "int",
+     "default": 440
+    },
+    "cnames": {
+     "kind": "color_names",
+     "default": [
+      "CYAN",
+      "GOLD",
+      "PINK"
+     ]
+    },
+    "l1": {
+     "kind": "text",
+     "default": "3 BALLS, EVERY BOUNCE"
+    },
+    "l2": {
+     "kind": "text",
+     "default": "ADDS A STRING"
+    },
+    "sub": {
+     "kind": "text",
+     "default": "Which colour draws the most?"
+    }
+   }
+  },
+  "weapon_battle": {
+   "kind": "Short",
+   "file": "sims",
+   "secs": 20.1,
+   "knobs": {
+    "speed": {
+     "kind": "int",
+     "default": 650
+    },
+    "arena": {
+     "kind": "choice",
+     "default": "circle"
+    },
+    "R": {
+     "kind": "int",
+     "default": 470
+    },
+    "g": {
+     "kind": "int",
+     "default": 450
+    },
+    "ball_r": {
+     "kind": "int",
+     "default": 51
+    },
+    "chase": {
+     "kind": "int",
+     "default": 160
+    },
+    "maxs": {
+     "kind": "int",
+     "default": 40
+    },
+    "overtime": {
+     "kind": "float",
+     "default": 19.0
+    },
+    "slowmo": {
+     "kind": "float",
+     "default": 1.0
+    },
+    "slow": {
+     "kind": "float",
+     "default": 0.25
+    },
+    "hold": {
+     "kind": "float",
+     "default": 2.0
+    },
+    "l1": {
+     "kind": "text",
+     "default": null
+    },
+    "l2": {
+     "kind": "text",
+     "default": null
+    },
+    "sub": {
+     "kind": "text",
+     "default": "Pick your fighter now"
+    }
+   }
+  },
+  "weapon_bow": {
+   "kind": "Short",
+   "file": "today1104",
+   "secs": 26.0,
+   "knobs": {
+    "names": {
+     "kind": "color_names",
+     "default": [
+      "BLUE",
+      "BLUE",
+      "ORANGE",
+      "ORANGE"
+     ]
+    },
+    "team_names": {
+     "kind": "color_names",
+     "default": [
+      "BLUE",
+      "ORANGE"
+     ]
+    },
+    "fire_every": {
+     "kind": "float",
+     "default": 0.95
+    },
+    "arrow_v": {
+     "kind": "float",
+     "default": 1250.0
+    },
+    "speed": {
+     "kind": "int",
+     "default": 650
+    },
+    "arena": {
+     "kind": "choice",
+     "default": "circle"
+    },
+    "R": {
+     "kind": "int",
+     "default": 470
+    },
+    "g": {
+     "kind": "int",
+     "default": 450
+    },
+    "ball_r": {
+     "kind": "int",
+     "default": 51
+    },
+    "chase": {
+     "kind": "int",
+     "default": 160
+    },
+    "maxs": {
+     "kind": "int",
+     "default": 40
+    },
+    "overtime": {
+     "kind": "float",
+     "default": 19.0
+    },
+    "slowmo": {
+     "kind": "float",
+     "default": 1.0
+    },
+    "slow": {
+     "kind": "float",
+     "default": 0.25
+    },
+    "hold": {
+     "kind": "float",
+     "default": 2.0
+    },
+    "l1": {
+     "kind": "text",
+     "default": null
+    },
+    "l2": {
+     "kind": "text",
+     "default": null
+    },
+    "sub": {
+     "kind": "text",
+     "default": "Pick your fighter now"
+    }
+   }
+  },
+  "weapon_teams": {
+   "kind": "Short",
+   "file": "today1103",
+   "secs": 21.9,
+   "knobs": {
+    "names": {
+     "kind": "color_names",
+     "default": [
+      "RED",
+      "RED",
+      "GREEN",
+      "GREEN"
+     ]
+    },
+    "team_names": {
+     "kind": "color_names",
+     "default": [
+      "RED",
+      "GREEN"
+     ]
+    },
+    "speed": {
+     "kind": "int",
+     "default": 650
+    },
+    "arena": {
+     "kind": "choice",
+     "default": "circle"
+    },
+    "R": {
+     "kind": "int",
+     "default": 470
+    },
+    "g": {
+     "kind": "int",
+     "default": 450
+    },
+    "ball_r": {
+     "kind": "int",
+     "default": 51
+    },
+    "chase": {
+     "kind": "int",
+     "default": 160
+    },
+    "maxs": {
+     "kind": "int",
+     "default": 40
+    },
+    "overtime": {
+     "kind": "float",
+     "default": 19.0
+    },
+    "slowmo": {
+     "kind": "float",
+     "default": 1.0
+    },
+    "slow": {
+     "kind": "float",
+     "default": 0.25
+    },
+    "hold": {
+     "kind": "float",
+     "default": 2.0
+    },
+    "l1": {
+     "kind": "text",
+     "default": null
+    },
+    "l2": {
+     "kind": "text",
+     "default": null
+    },
+    "sub": {
+     "kind": "text",
+     "default": "Pick your fighter now"
+    }
+   }
+  }
+ }
+}
