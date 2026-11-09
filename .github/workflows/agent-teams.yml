@@ -42,7 +42,9 @@ jobs:
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GEMINI_MODEL: ${{ vars.GEMINI_MODEL }}
-        run: python agents/gemini/team.py ${{ steps.pick.outputs.team }}
+        run: |
+          set -o pipefail
+          python agents/gemini/team.py ${{ steps.pick.outputs.team }} 2>&1 | tee run.log || { echo "::error::$(tail -c 1500 run.log | tr '\n' ' ')"; exit 1; }
       - name: Save to the dashboard
         run: |
           T=${{ steps.pick.outputs.team }}
