@@ -20,7 +20,7 @@ export TZ=America/Toronto
 PY=~/bounce-venv/bin/python
 LOGDIR=~/logs; mkdir -p "$LOGDIR" "$BOUNCE_STUDIO" "$BOUNCE_LOGS" "$BOUNCE_UPLOADED"
 LOG="$LOGDIR/bounce-$(date +%F).log"
-exec >>"$LOG" 2>&1
+[ "$MODE" = full ] && exec >>"$LOG" 2>&1 </dev/null    # test modes print to the screen
 exec 8>/tmp/bounce.lock; flock -n 8 || { echo "another Bounce run is going; exiting"; exit 0; }
 echo "=== $(date '+%F %T') Bounce Theory batch ($MODE) ==="
 
@@ -45,7 +45,7 @@ sync_repos || { echo "!! git sync failed"; exit 1; }
 [ -f "$BOUNCE_LOGS/BounceTheory_uploaded_log.json" ] || cp "$ENGINE/Upload Tool/logs/"* "$BOUNCE_LOGS/"
 
 # New formats since the last run? Smoke-test just those (a few minutes)
-$PY "$ENGINE/templates/smoke.py" --missing | tail -2
+$PY "$ENGINE/templates/smoke.py" --missing </dev/null
 
 # Publish the template menu for the YouTube team (only when it changed)
 $PY "$ENGINE/templates/catalog.py" menu "$HQ/data/youtube/bounce_templates.json" >/dev/null && save_hq "Bounce template menu (server)"
@@ -64,11 +64,16 @@ while :; do
   if [ $rc -eq 3 ] && [ "$(date +%H)" -lt 12 ]; then echo "waiting 20 min for today's lineup"; sleep 1200; sync_repos; continue; fi
   echo "!! planning stopped (code $rc)"; exit $rc
 done
-[ "$MODE" = plan ] && exit 0
+[ "$MODE" = plan ] && { rm -f "$BOUNCE_STUDIO/2 Bounce Theory - Upload Today/queue.json"; echo "plan only: nothing rendered"; exit 0; }
 
 # 2) Render (finished videos are skipped if this is re-run)
 cd "$ENGINE/Local Render" && $PY render.py bounce; RENDER_OK=$([ $? -eq 0 ] && echo 1 || echo 0)
-[ "$MODE" = noupload ] && { echo "noupload: stopping before upload"; exit 0; }
+if [ "$MODE" = noupload ]; then   # test run: report, then clear the test videos so the 7 AM run never uploads them
+  OUTD="$BOUNCE_STUDIO/2 Bounce Theory - Upload Today"
+  for f in "$OUTD"/*.mp4; do [ -f "$f" ] && echo "  $(ffprobe -v error -show_entries format=duration:stream=width,height -of csv=p=0 "$f" | tr '\n' ' ') $(basename "$f")"; done
+  rm -f "$OUTD"/*.mp4 "$OUTD"/*.jpg "$OUTD"/queue.json; rm -rf "$ENGINE/Local Render/work"
+  echo "noupload: test videos checked and deleted; nothing was uploaded"; exit 0
+fi
 
 # 3) Upload + schedule (5 PM - 8 AM window, one at a time). Broken/missing files are skipped by upload.py.
 cd "$ENGINE/Upload Tool" && $PY upload.py bounce --yes

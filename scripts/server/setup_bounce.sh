@@ -34,7 +34,7 @@ sudo apt-get -qq update && sudo apt-get -qq install -y ffmpeg python3-venv >/dev
 ~/bounce-venv/bin/python -c "import numpy, cv2, PIL, scipy, googleapiclient; print('python packages ok')"
 ffmpeg -version | head -1
 
-mkdir -p ~/yt-secrets ~/bounce-studio ~/bounce-data/logs ~/bounce-data/uploaded && chmod 700 ~/yt-secrets
+mkdir -p ~/logs ~/yt-secrets ~/bounce-studio ~/bounce-data/logs ~/bounce-data/uploaded && chmod 700 ~/yt-secrets
 if ls ~/yt-secrets/token_bounce.json ~/yt-secrets/client_secret_bounce.json >/dev/null 2>&1; then
   chmod 600 ~/yt-secrets/*; echo "YouTube secrets: present"
 else
@@ -44,7 +44,7 @@ fi
 # Template smoke test on this machine (ARM): only templates that pass here are used
 if [ ! -f ~/bounce-data/verified.json ]; then
   echo "Smoke-testing every template on this server (about 20-30 min) ..."
-  (cd ~/bounce-engine && BOUNCE_VERIFIED=~/bounce-data/verified.json SMOKE_WORKERS=3 ~/bounce-venv/bin/python templates/smoke.py | tail -3)
+  (cd ~/bounce-engine && BOUNCE_VERIFIED=~/bounce-data/verified.json SMOKE_WORKERS=3 ~/bounce-venv/bin/python templates/smoke.py </dev/null > ~/logs/smoke.log 2>&1; tail -1 ~/logs/smoke.log)
 fi
 crontab ~/agent-hq/scripts/server/crontab.txt && echo "crontab installed:" && crontab -l | grep -c run_
 echo "Setup done."
