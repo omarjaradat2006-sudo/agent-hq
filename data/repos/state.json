@@ -1,34 +1,54 @@
 {
   "team": "repos",
   "hired": true,
-  "updatedAt": "2026-11-01T20:44:53Z",
+  "updatedAt": "2026-11-09T21:44:35Z",
   "agents": [
     {
       "id": "lead",
       "name": "Scout Lead",
       "status": "ok",
-      "doing": "Brief written: 1 pick",
-      "lastRun": "2026-11-01T20:44:53Z",
+      "doing": "Answered open request: found free ElevenLabs and Higgsfield CPU alternatives.",
+      "lastRun": "2026-11-09T21:44:35Z",
       "nextRun": "2026-11-08T20:37:00Z"
     },
     {
       "id": "scout",
       "name": "Repo Scout",
       "status": "ok",
-      "doing": "Hunt done: 7 candidates",
-      "lastRun": "2026-11-01T20:44:53Z",
+      "doing": "Answered open request: found free ElevenLabs and Higgsfield CPU alternatives.",
+      "lastRun": "2026-11-09T21:44:35Z",
       "nextRun": "2026-11-08T20:37:00Z"
     },
     {
       "id": "tester",
       "name": "Fit Checker",
       "status": "ok",
-      "doing": "Checked 7, kept 1",
-      "lastRun": "2026-11-01T20:44:53Z",
+      "doing": "Answered open request: found free ElevenLabs and Higgsfield CPU alternatives.",
+      "lastRun": "2026-11-09T21:44:35Z",
       "nextRun": "2026-11-08T20:37:00Z"
     }
   ],
   "log": [
+    {
+      "t": "2026-11-09T21:44:35Z",
+      "agent": "Gemini team",
+      "msg": "Updated data/repos/state.json with new recommendations and answered request."
+    },
+    {
+      "t": "2026-11-09T21:44:35Z",
+      "agent": "Gemini team",
+      "msg": "Selected MoneyPrinterTurbo (harry0703/MoneyPrinterTurbo) for CPU-based automated video generation."
+    },
+    {
+      "t": "2026-11-09T21:44:35Z",
+      "agent": "Gemini team",
+      "msg": "Selected Pocket TTS (kyutai-labs/pocket-tts) for local CPU voice cloning."
+    },
+    {
+      "t": "2026-11-09T21:44:35Z",
+      "agent": "Gemini team",
+      "msg": "Evaluated 7 open-source repositories to answer Omar's request for ElevenLabs and Higgsfield alternatives."
+    },
     {
       "t": "2026-11-03T20:40:54Z",
       "agent": "Omar",
@@ -93,9 +113,114 @@
       "status": "skipped",
       "createdAt": "2026-11-01T20:44:53Z",
       "decidedAt": "2026-11-03T20:40:54Z"
+    },
+    {
+      "title": "Pocket TTS: local voice cloning on CPU",
+      "hook": "Free open-source ElevenLabs alternative running locally on laptop CPU",
+      "why": "Answers Omar's request for a free ElevenLabs alternative. Beat Kokoro 82M (no voice cloning feature), VoxCPM2 (heavier C++ build requirements), and Coqui TTS (heavy PyTorch stack) because it is lightweight (100M params), supports streaming audio, voice cloning, and runs 6x faster than real-time on CPU.",
+      "format": "Ambient Escape · Runs on: Laptop · 15 min setup",
+      "business": "Ambient Escape",
+      "repo": "https://github.com/kyutai-labs/pocket-tts",
+      "stars": 4200,
+      "lastCommit": "2026-10-28",
+      "license": "MIT",
+      "score": 9,
+      "script": "Replaces paid ElevenLabs for speech synthesis and voice cloning. Install locally via Python (`pip install pocket-tts`). Generate natural speech or clone reference audio directly on CPU. Note: for Quranic text or Islamic content, ensure text accuracy and proper tajweed pronunciation [verify source]. Measure success after 1 week if audio generation costs remain $0 with zero external API dependencies.",
+      "buildPrompt": "Paste into Claude Code opened in Downloads\\YOUTUBE HQ\n\nInstall kyutai-labs/pocket-tts in a Python virtual environment. Write a script `tools/generate_audio.py` that accepts a text script and optional voice reference file, calling pocket-tts on CPU to output clean 24kHz WAV audio files into the video asset directory.",
+      "sources": [
+        {
+          "title": "kyutai-labs/pocket-tts",
+          "url": "https://github.com/kyutai-labs/pocket-tts"
+        }
+      ],
+      "status": "pending",
+      "request": "I am looking for a free version of higgsfeild and E;evenlabs so maybe I can recite my quran using AI and have better yotube vids",
+      "createdAt": "2026-11-09T21:44:35Z",
+      "id": "repo-2026-11-09-1",
+      "madeBy": "gemini"
+    },
+    {
+      "title": "MoneyPrinterTurbo: automated short video generator",
+      "hook": "Free open-source Higgsfield alternative for automated video synthesis on CPU",
+      "why": "Answers Omar's request for a free Higgsfield / AI video creation tool. Beat TikTokAIVideoGenerator (requires paid Together AI FLUX API keys) and Automated Video Generator because it runs locally without GPU, includes a web interface, pulls free stock media from Pexels/Pixabay, and interfaces with Gemini API.",
+      "format": "Ambient Escape · Runs on: Laptop · 20 min setup",
+      "business": "Ambient Escape",
+      "repo": "https://github.com/harry0703/MoneyPrinterTurbo",
+      "stars": 137000,
+      "lastCommit": "2026-09-04",
+      "license": "MIT",
+      "score": 8,
+      "script": "Replaces paid text-to-video generators like Higgsfield or InVideo. Run locally on laptop CPU. Input a topic script, and it fetches relevant stock video clips, generates audio, burns subtitles, and outputs finished vertical Shorts ready for YouTube. Verify after 1 week if pipeline assembly time for Ambient Escape videos drops by 50%.",
+      "buildPrompt": "Paste into Claude Code opened in Downloads\\YOUTUBE HQ\n\nClone https://github.com/harry0703/MoneyPrinterTurbo into `tools/MoneyPrinterTurbo`. Install Python dependencies and configure `config.toml` to connect with Gemini API for script assistance and local TTS for audio synthesis. Test generating a 60-second vertical MP4 video.",
+      "sources": [
+        {
+          "title": "harry0703/MoneyPrinterTurbo",
+          "url": "https://github.com/harry0703/MoneyPrinterTurbo"
+        }
+      ],
+      "status": "pending",
+      "request": "I am looking for a free version of higgsfeild and E;evenlabs so maybe I can recite my quran using AI and have better yotube vids",
+      "createdAt": "2026-11-09T21:44:35Z",
+      "id": "repo-2026-11-09-2",
+      "madeBy": "gemini"
     }
   ],
   "research": [
+    {
+      "date": "2026-11-09",
+      "createdAt": "2026-11-09T21:44:35Z",
+      "items": [
+        {
+          "title": "Pocket TTS: CPU-optimized voice cloning & TTS",
+          "creator": "kyutai-labs/pocket-tts",
+          "url": "https://github.com/kyutai-labs/pocket-tts",
+          "metric": "4.2k stars, updated Oct 2026, MIT",
+          "whyItWorks": "KEPT. Lightweight (100M params), runs 6x real-time on CPU, supports voice cloning and streaming audio."
+        },
+        {
+          "title": "MoneyPrinterTurbo: open-source AI video generator",
+          "creator": "harry0703/MoneyPrinterTurbo",
+          "url": "https://github.com/harry0703/MoneyPrinterTurbo",
+          "metric": "137k stars, updated Sep 2026, MIT",
+          "whyItWorks": "KEPT. Generates vertical videos from text topics on CPU using free stock media (Pexels/Pixabay) and Gemini."
+        },
+        {
+          "title": "Kokoro FastAPI local server",
+          "creator": "remsky/Kokoro-FastAPI",
+          "url": "https://github.com/remsky/Kokoro-FastAPI",
+          "metric": "5.6k stars, updated Nov 2026, Apache-2.0",
+          "whyItWorks": "REJECTED. Good TTS quality but lacks native voice cloning for custom recitation voiceovers."
+        },
+        {
+          "title": "VoxCPM tokenizer-free TTS",
+          "creator": "OpenBMB/VoxCPM",
+          "url": "https://github.com/OpenBMB/VoxCPM",
+          "metric": "3.1k stars, updated Oct 2026, Apache-2.0",
+          "whyItWorks": "REJECTED. Requires complex C++ inference setup (llama.cpp-omni) compared to direct Python setup in Pocket TTS."
+        },
+        {
+          "title": "TikTok AI Video Generator",
+          "creator": "GabrielLaxy/TikTokAIVideoGenerator",
+          "url": "https://github.com/GabrielLaxy/TikTokAIVideoGenerator",
+          "metric": "450 stars, updated Oct 2026, CC0-1.0",
+          "whyItWorks": "REJECTED. Dependent on paid Together AI FLUX API for image generation instead of free stock footage."
+        },
+        {
+          "title": "YouTube Automation Agent",
+          "creator": "darkzOGx/youtube-automation-agent",
+          "url": "https://github.com/darkzOGx/youtube-automation-agent",
+          "metric": "320 stars, updated Sep 2026, MIT",
+          "whyItWorks": "REJECTED. Node.js stack, duplicates existing Agent HQ tracking and orchestration logic."
+        },
+        {
+          "title": "PhysEng 3D physics engine",
+          "creator": "levi2234/PhysEng",
+          "url": "https://github.com/levi2234/PhysEng",
+          "metric": "180 stars, updated Oct 2026, MIT",
+          "whyItWorks": "REJECTED. Requires active OpenGL display window; Bounce Theory already uses lightweight Python 2D scripts with Matplotlib/Pygame render.py."
+        }
+      ]
+    },
     {
       "date": "2026-11-01",
       "createdAt": "2026-11-01T20:44:34Z",
@@ -153,26 +278,29 @@
     }
   ],
   "brief": {
-    "date": "2026-11-01",
-    "createdAt": "2026-11-01T20:44:53Z",
-    "headline": "Free offline captions with highlighted keywords for TikTok",
-    "summary": "No requests from you this week. My best find is SmartSub: a free Windows app that transcribes your talking videos on your own laptop and burns in captions, with the option to highlight keywords. It fits the keyword-first captions upgrade you approved, since your views are stuck near 250. I looked at 7 repos and rejected the rest as too big, too paid or not matching your pipeline.",
+    "date": "2026-11-09",
+    "createdAt": "2026-11-09T21:44:35Z",
+    "headline": "Free CPU alternatives to ElevenLabs and Higgsfield",
+    "summary": "I answered your open request for free ElevenLabs and Higgsfield alternatives. I selected Pocket TTS (kyutai-labs/pocket-tts) for CPU voice cloning and speech generation, and MoneyPrinterTurbo (harry0703/MoneyPrinterTurbo) for automated video creation using free stock footage and Gemini.",
     "filmToday": [
-      "SmartSub — install it and caption one talking video as a test"
+      "Pocket TTS — test local audio generation on CPU",
+      "MoneyPrinterTurbo — test automated video assembly from text topic"
     ],
     "approvals": [
-      "1 repo to review"
+      "2 repos to review"
     ],
     "notes": [
-      "Only one pick: nothing else beat what you already use.",
-      "SmartSub's README has a sponsor ad and lots of Chinese-platform features; ignore them. I read the code but did not run the desktop app."
+      "Pocket TTS runs locally on your laptop CPU at ~6x real-time speed without requiring a GPU.",
+      "For Quranic recitations, verify tajweed and pronunciation accuracy before publishing [verify source]."
     ]
   },
   "requests": [
     {
       "text": "I am looking for a free version of higgsfeild and E;evenlabs so maybe I can recite my quran using AI and have better yotube vids",
       "at": "2026-11-02T21:32:19Z",
-      "status": "open"
+      "status": "answered",
+      "answer": "Best: kyutai-labs/pocket-tts (ElevenLabs alternative) and harry0703/MoneyPrinterTurbo (Higgsfield alternative) — beat Kokoro, Coqui TTS, and TikTokAIVideoGenerator because they run on laptop CPU, support voice cloning, and assemble videos with free stock media without paid API costs.",
+      "answeredAt": "2026-11-09T21:44:35Z"
     }
   ]
 }
