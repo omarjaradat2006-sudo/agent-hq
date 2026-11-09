@@ -14,7 +14,7 @@ on:
       team:
         description: "Which team to run now"
         type: choice
-        options: [youtube, linkedai, growth, upgrades, opps, lab, repos, chief]
+        options: [all, youtube, linkedai, growth, upgrades, opps, lab, repos, chief]
 permissions:
   contents: write
 concurrency:
@@ -23,7 +23,7 @@ concurrency:
 jobs:
   run:
     runs-on: ubuntu-latest
-    timeout-minutes: 25
+    timeout-minutes: 75
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -38,30 +38,41 @@ jobs:
             "37 20 * * 0") T=repos;; "42 16 * * 1") T=chief;; *) T="${{ inputs.team }}";;
           esac
           echo "team=$T" >> "$GITHUB_OUTPUT"; echo "Running $T"
-      - name: Team does its work
+      - name: Team does its work and saves to the dashboard
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GEMINI_MODEL: ${{ vars.GEMINI_MODEL }}
         run: |
-          set -o pipefail
-          python agents/gemini/team.py ${{ steps.pick.outputs.team }} 2>&1 | tee run.log || { echo "::error::$(tail -c 1500 run.log | tr '\n' ' ')"; exit 1; }
-      - name: Save to the dashboard
-        run: |
           T=${{ steps.pick.outputs.team }}
+          [ "$T" = all ] && LIST="youtube linkedai growth upgrades opps lab repos chief" || LIST="$T"
           git config user.name "Agent HQ (Gemini)"
           git config user.email "actions@users.noreply.github.com"
-          for i in 1 2 3; do
+          FAILED=""
+          for TEAM in $LIST; do
+            echo "::group::$TEAM"
             git fetch -q origin main && git reset -q --hard origin/main
-            python agents/gemini/apply_patch.py $T
-            git add data
-            git diff --cached --quiet && { echo "No changes"; exit 0; }
-            git commit -qm "$T team (Gemini): daily work"
-            git push -q origin HEAD:main && exit 0
-            sleep 5
+            if ! python agents/gemini/team.py $TEAM > run.log 2>&1; then
+              cat run.log; echo "::error::$TEAM failed: $(tail -c 1200 run.log | tr '\n' ' ')"
+              FAILED="$FAILED $TEAM"; echo "::endgroup::"; continue
+            fi
+            cat run.log
+            SAVED=no
+            for i in 1 2 3; do
+              git fetch -q origin main && git reset -q --hard origin/main
+              python agents/gemini/apply_patch.py $TEAM || { echo "apply failed"; break; }
+              git add data
+              if git diff --cached --quiet; then echo "No changes"; SAVED=yes; break; fi
+              git commit -qm "$TEAM team (Gemini): daily work"
+              git push -q origin HEAD:main && { SAVED=yes; break; }
+              sleep 5
+            done
+            [ $SAVED = yes ] || { echo "::error::$TEAM could not save"; FAILED="$FAILED $TEAM"; }
+            echo "::endgroup::"
           done
-          exit 1
+          [ -z "$FAILED" ] || { echo "::error::Failed teams:$FAILED"; exit 1; }
+          echo "All done: $LIST"
       - name: Footage + batch files (YouTube only)
-        if: steps.pick.outputs.team == 'youtube'
+        if: always() && (steps.pick.outputs.team == 'youtube' || steps.pick.outputs.team == 'all')
         env:
           PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
           PIXABAY_API_KEY: ${{ secrets.PIXABAY_API_KEY }}
