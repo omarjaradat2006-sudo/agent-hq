@@ -15,33 +15,46 @@ def _req(method, path, body=None, timeout=180):
         return json.loads(r.read().decode())
 
 
-def model():
-    """GEMINI_MODEL if set, else the newest free Flash text model this key can use."""
+def models():
+    """Models to try, best first. GEMINI_MODEL (if set) goes first, then free Flash models
+    newest-first, then Flash-Lite. If one is busy (503) or out of free quota (429),
+    the next one is used."""
     global _model
     if _model:
         return _model
-    _model = (os.environ.get("GEMINI_MODEL") or "").strip()
-    if not _model:
-        names = []
+    pinned = (os.environ.get("GEMINI_MODEL") or "").strip()
+    flash, lite = [], []
+    try:
         for m in _req("GET", "models?pageSize=200").get("models", []):
             n = m["name"].split("/")[-1]
             if "generateContent" not in m.get("supportedGenerationMethods", []):
                 continue
-            if "flash" in n and not re.search(r"lite|image|tts|live|audio|thinking|exp|preview", n):
-                names.append(n)
-        def ver(n):
-            v = re.search(r"gemini-(\d+(?:\.\d+)?)", n)
-            return float(v.group(1)) if v else 0
-        names.sort(key=lambda n: (ver(n), "latest" not in n), reverse=True)
-        if not names:
-            raise RuntimeError("No Gemini Flash model available for this key")
-        _model = names[0]
-    print("Gemini model:", _model, flush=True)
+            if "flash" not in n or re.search(r"image|tts|live|audio|thinking|exp|preview", n):
+                continue
+            (lite if "lite" in n else flash).append(n)
+    except Exception as e:
+        print("Could not list models:", e, flush=True)
+    def ver(n):
+        v = re.search(r"gemini-(\d+(?:\.\d+)?)", n)
+        return float(v.group(1)) if v else 0
+    key = lambda n: (ver(n), "latest" not in n)
+    order = sorted(flash, key=key, reverse=True) + sorted(lite, key=key, reverse=True)
+    if pinned:
+        order = [pinned] + [n for n in order if n != pinned]
+    if not order:
+        raise RuntimeError("No Gemini Flash model available for this key")
+    _model = order[:6]
+    print("Gemini models to try:", ", ".join(_model), flush=True)
     return _model
 
 
-def generate(prompt, system=None, search=False, json_out=False, temperature=0.8, retries=4):
-    """Returns (text, sources). sources = [(title, url)] from Google Search grounding."""
+def model():
+    return models()[0]
+
+
+def generate(prompt, system=None, search=False, json_out=False, temperature=0.8, retries=2):
+    """Returns (text, sources). sources = [(title, url)] from Google Search grounding.
+    Tries each model in models(); on 429/503 moves to the next model."""
     body = {"contents": [{"role": "user", "parts": [{"text": prompt}]}],
             "generationConfig": {"temperature": temperature}}
     if system:
@@ -50,30 +63,37 @@ def generate(prompt, system=None, search=False, json_out=False, temperature=0.8,
         body["tools"] = [{"google_search": {}}]
     if json_out and not search:
         body["generationConfig"]["responseMimeType"] = "application/json"
-    for attempt in range(retries):
-        try:
-            r = _req("POST", f"models/{model()}:generateContent", body)
-            cand = (r.get("candidates") or [{}])[0]
-            text = "".join(p.get("text", "") for p in cand.get("content", {}).get("parts", []))
-            meta = cand.get("groundingMetadata") or {}
-            sources = [(c["web"].get("title", ""), c["web"].get("uri", ""))
-                       for c in meta.get("groundingChunks", []) if "web" in c]
-            if not text.strip():
-                raise RuntimeError(f"empty reply: {json.dumps(r)[:300]}")
-            return text, sources
-        except urllib.error.HTTPError as e:
-            msg = e.read().decode()[:400]
-            if e.code in (429, 500, 503) and attempt < retries - 1:
-                wait = 30 * (attempt + 1)
-                print(f"Gemini {e.code}, retrying in {wait}s: {msg[:150]}", flush=True)
-                time.sleep(wait)
-                continue
-            raise RuntimeError(f"Gemini HTTP {e.code}: {msg}")
-        except (urllib.error.URLError, TimeoutError, RuntimeError) as e:
-            if attempt < retries - 1:
-                time.sleep(20)
-                continue
-            raise
+    last = None
+    for rnd in range(retries):
+        for name in models():
+            try:
+                r = _req("POST", f"models/{name}:generateContent", body)
+                cand = (r.get("candidates") or [{}])[0]
+                text = "".join(p.get("text", "") for p in cand.get("content", {}).get("parts", []))
+                meta = cand.get("groundingMetadata") or {}
+                sources = [(c["web"].get("title", ""), c["web"].get("uri", ""))
+                           for c in meta.get("groundingChunks", []) if "web" in c]
+                if not text.strip():
+                    raise RuntimeError(f"empty reply: {json.dumps(r)[:300]}")
+                if name != models()[0]:
+                    print(f"(answered by {name})", flush=True)
+                return text, sources
+            except urllib.error.HTTPError as e:
+                msg = e.read().decode()[:300]
+                last = f"Gemini HTTP {e.code} on {name}: {msg}"
+                print(f"Gemini {e.code} on {name}, trying next model", flush=True)
+                if e.code == 429 and len(_model) > 1:  # out of quota: stop trying it first this run
+                    _model.remove(name); _model.append(name)
+                if e.code not in (429, 500, 503, 404, 400):
+                    raise RuntimeError(last)
+            except (urllib.error.URLError, TimeoutError, RuntimeError) as e:
+                last = f"{name}: {e}"
+                print("Gemini error on", name, "-", str(e)[:150], flush=True)
+            time.sleep(4)
+        if rnd < retries - 1:
+            print("All models busy, waiting 60s", flush=True)
+            time.sleep(60)
+    raise RuntimeError("All Gemini models failed. Last error: " + str(last))
 
 
 def parse_json(text):
