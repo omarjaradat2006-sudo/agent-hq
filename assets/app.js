@@ -23,7 +23,8 @@
   let M = null, raw = "";
   async function load() {
     const res = await Promise.all(CFG.teams.map(async t => [t.id, await getJSON(`data/${t.id}/state.json`), t.virtual ? null : await getJSON(`data/${t.id}/metrics.json`)]));
-    const sig = JSON.stringify(res); if (sig === raw) return false; raw = sig;
+    const bt = CFG.teams.some(t => t.id === "trading") ? await getJSON("data/trading/backtest.json") : null;
+    const sig = JSON.stringify([res, bt && bt.ranAt]); if (sig === raw) return false; raw = sig;
     const teams = {};
     res.forEach(([id, st, mt]) => {
       const cfg = CFG.teams.find(t => t.id === id); const s = st || {}; const hired = !!s.hired;
@@ -37,6 +38,7 @@
       const log = [...(s.log || []), ...((mt && mt.log) || []).map(l => ({ ...l, agent: l.agent || "Data Collector" }))].sort((a, b) => (b.t || "").localeCompare(a.t || ""));
       teams[id] = { cfg, hired, state: s, metrics: mt, agents, log };
     });
+    if (teams.trading) teams.trading.backtest = bt;
     M = { teams };
     return true;
   }
@@ -47,7 +49,7 @@
   const P = (x, y, z = 0) => [(x - y) * TW / 2, (x + y) * TH / 2 - z];
   const pts = a => a.map(p => p[0].toFixed(1) + "," + p[1].toFixed(1)).join(" ");
   const roomOrigin = t => [t.cfg.grid[0] * (S + G), t.cfg.grid[1] * (S + G)];
-  const SLOTSET = { 3: [[0.4, 0.4], [2.75, 0.35], [0.35, 2.75]], 4: [[0.2, 0.2], [2.8, 0.3], [0.3, 2.8], [2.3, 2.3]], 5: [[0.2, 0.2], [2.8, 0.3], [0.3, 2.8], [2.8, 2.0], [1.9, 2.8]], 6: [[0.15, 0.15], [1.55, 0.15], [2.9, 0.4], [0.2, 2.85], [1.6, 2.9], [2.9, 1.9]] };
+  const SLOTSET = { 3: [[0.4, 0.4], [2.75, 0.35], [0.35, 2.75]], 4: [[0.2, 0.2], [2.8, 0.3], [0.3, 2.8], [2.3, 2.3]], 5: [[0.2, 0.2], [2.8, 0.3], [0.3, 2.8], [2.8, 2.0], [1.9, 2.8]], 6: [[0.15, 0.15], [1.55, 0.15], [2.9, 0.4], [0.2, 2.85], [1.6, 2.9], [2.9, 1.9]], 8: [[0.1, 0.1], [1.45, 0.1], [2.85, 0.15], [0.1, 1.45], [2.9, 1.45], [0.15, 2.85], [1.5, 2.9], [2.9, 2.85]] };
   const COLS = Math.max(...CFG.teams.map(t => t.grid[0])) + 1, ROWS = Math.max(...CFG.teams.map(t => t.grid[1])) + 1;
   const W0 = { x0: -1.2, y0: -1.2, x1: COLS * S + (COLS - 1) * G + 1.2, y1: ROWS * S + (ROWS - 1) * G + 1.2 };
   let svg, worldBox, roomBoxes = {};
@@ -231,7 +233,7 @@
 
   /* ---------------- panel ---------------- */
   let tab = "overview", agentSel = null, ideaFilter = "pending", statSel = null;
-  function tabForKind(t, kind) { return ["stats", "research", "ideas", "review", "competitors", "swarm"].includes(kind) ? kind : "overview"; }
+  function tabForKind(t, kind) { return ["stats", "research", "ideas", "review", "competitors", "swarm", "positions", "trades", "news", "coins"].includes(kind) ? kind : "overview"; }
   function focusTeam(id, tb, agentId) {
     if (!M.teams[id]) return; focused = id; tab = tb || "overview"; agentSel = agentId || null; statSel = null; ideaFilter = id === "youtube" ? "approved" : "pending";
     $("#panel").classList.add("open"); renderPanel(); syncTeambar();
@@ -243,6 +245,7 @@
 
   function tabsFor(t) {
     if (t.cfg.virtual) return [["overview", "Brief"], ["activity", "Activity"]];
+    if (t.cfg.id === "trading") return [["overview", "Overview"], ["positions", "Positions"], ["trades", "Trades"], ["pnl", "P&L vs SPY"], ["news", "News desk"], ["coins", "Coin watch"], ["backtest", "Backtest"], ["activity", "Activity"]];
     const out = [["overview", "Overview"], ["ideas", t.cfg.ideaWord || "Ideas"]];
     if (t.metrics) out.push(["stats", "Stats"]);
     if (t.metrics && (t.metrics.trending || []).length) out.push(["trending", "Trending"]);
@@ -262,12 +265,13 @@
     const x = el("button", "xbtn", "×"); x.setAttribute("aria-label", "Close and zoom out"); x.onclick = zoomOut; top.append(tt, x); ph.append(top);
     const tabs = el("div", "tabs"); tabs.setAttribute("role", "tablist");
     tabsFor(t).forEach(([k, l]) => { const b = el("button", null, l); b.setAttribute("role", "tab"); b.setAttribute("aria-selected", String(tab === k));
+      if (k === "positions") b.append(el("span", "n", String((t.state.positions || []).length)));
       if (k === "ideas") b.append(el("span", "n", String((t.state.ideas || []).filter(i => t.cfg.id === "youtube" ? ["pending", "approved"].includes(effectiveStatus(i).status) : effectiveStatus(i).status === "pending").length)));
       if (k === "shots") b.append(el("span", "n", String((t.state.footage || []).filter(f => f.status === "ready").length)));
       b.onclick = () => { tab = k; renderPanel(); }; tabs.append(b); });
     ph.append(tabs); p.append(ph);
     const body = el("div", "pb"); p.append(body);
-    ({ overview: vOverview, ideas: vIdeas, review: vReview, competitors: vCompetitors, swarm: vSwarm, leads: vLeads, lineup: vLineup, shots: vShots, stats: vStats, trending: vTrending, research: vResearch, activity: vActivity }[tab] || vOverview)(t, body);
+    ({ overview: vOverview, ideas: vIdeas, review: vReview, competitors: vCompetitors, swarm: vSwarm, leads: vLeads, lineup: vLineup, positions: vTPositions, trades: vTTrades, pnl: vTPnl, news: vTNews, coins: vTCoins, backtest: vTBacktest, shots: vShots, stats: vStats, trending: vTrending, research: vResearch, activity: vActivity }[tab] || vOverview)(t, body);
   }
   function pill(s) { return el("span", "pill s-" + (s || "idle"), ST[s] || s || "Idle"); }
   function empty(title, text) { const e = el("div", "empty"); e.append(el("strong", null, title)); e.append(el("span", null, text)); return e; }
@@ -276,11 +280,16 @@
     r.append(nm, pill(a.status)); c.append(r);
     if (a.doing) c.append(el("div", null, a.doing));
     c.append(el("div", "small", (a.lastRun ? "Last run " + ago(a.lastRun) : "Hasn't run yet") + (a.nextRun ? " · next " + until(a.nextRun) : "")));
-    const k = tabForKind(t, a.kind); if (k !== "overview") { const b = el("button", "btn primary", { stats: "See the stats", research: "See what they found", review: "See the review", competitors: "See the competitors", swarm: "See the debate" }[k] || "See what they wrote"); b.onclick = () => { tab = k; renderPanel(); }; c.append(b); }
+    const k = tabForKind(t, a.kind); if (k !== "overview") { const b = el("button", "btn primary", { stats: "See the stats", research: "See what they found", review: "See the review", competitors: "See the competitors", swarm: "See the debate", positions: "See open positions", trades: "See every trade", news: "See the news desk", coins: "See coin watch" }[k] || "See what they wrote"); b.onclick = () => { tab = k; renderPanel(); }; c.append(b); }
     return c;
   }
   function vOverview(t, body) {
     if (t.cfg.id === "repos") requestCard(t, body);
+    if (t.cfg.id === "trading") tradingTop(t, body);
+    if (t.cfg.virtual && M.teams.trading && (M.teams.trading.state.brief || {}).headline) {
+      const c = el("div", "card"); c.append(el("div", "label", "Trading Desk · paper money · " + ago(M.teams.trading.state.updatedAt)));
+      c.append(el("div", null, M.teams.trading.state.brief.headline));
+      const b = el("button", "btn", "Open the Trading Desk"); b.onclick = () => focusTeam("trading"); c.append(b); body.append(c); }
     if (agentSel) { const a = t.agents.find(x => x.id === agentSel); if (a) body.append(agentCard(t, a)); }
     const b = t.state.brief;
     if (b) { const c = el("div", "card brief"); c.append(el("div", "label", (t.cfg.virtual ? "Chief of Staff · " : "Brief · ") + (b.date || ago(b.createdAt))));
@@ -621,6 +630,107 @@
     c.append(ul); body.append(c);
   }
 
+
+  /* ---------------- trading desk ---------------- */
+  const money = n => n == null ? "—" : (n < 0 ? "-$" : "$") + Math.abs(n).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+  const pct = n => n == null ? "—" : (n >= 0 ? "+" : "") + Number(n).toFixed(2) + "%";
+  const sgn = n => n == null ? "" : n >= 0 ? "up" : "down";
+  function tk(v, k, d, dc) { const x = el("div", "kpi"); x.append(el("div", "v", v)); x.append(el("div", "k", k)); if (d) x.append(el("div", "d " + (dc || ""), d)); return x; }
+  function srcLinks(list) { const w = el("div", "small"); (list || []).forEach((x, i) => { if (i) w.append(document.createTextNode(" · ")); const u = safeUrl(x.url); const a = el(u ? "a" : "span", null, x.publisher || "source"); if (u) { a.href = u; a.target = "_blank"; a.rel = "noopener"; a.title = x.title || ""; } w.append(a); }); return w; }
+  function tradingTop(t, body) {
+    const st = t.state, a = st.account || {}, s = st.status || {};
+    const banner = el("div", "card"); banner.style.borderColor = "#d9dde6";
+    banner.append(el("div", "label", "Paper trading · fake money · Alpaca paper account"));
+    if (s.killed) { const k = el("div", "card"); k.style.borderColor = "var(--bad)"; k.append(el("h3", "down", "Kill switch is ON")); k.append(el("div", null, "The account fell 10% from the start, so the bot sold everything and locked itself. Review the trades, then run unlock on the laptop.")); body.append(k); }
+    if (s.haltedToday) body.append(el("div", "card down", "Down 3% today: no new trades until tomorrow."));
+    if (!st.account) { body.append(empty("Waiting for the bot", "Start it on your laptop (start_trading_bot.bat). Results show up here a few times a day.")); return; }
+    const k = el("div", "kpis");
+    k.append(tk(money(a.equity), "Account value", "started at " + money(a.startEquity)));
+    k.append(tk(money(a.dayPnl), "Today", pct(a.dayPct), sgn(a.dayPnl)));
+    k.append(tk(pct(a.totalPct), "Total since start", money(a.totalPnl), sgn(a.totalPnl)));
+    k.append(tk(a.vsSpyPct == null ? "—" : pct(a.vsSpyPct), "vs just holding SPY", "SPY " + pct(a.spyPct), sgn(a.vsSpyPct)));
+    body.append(k);
+    body.append(el("div", "small", `${(st.positions || []).length} open · TradingAgents checks today ${s.deepUsed || 0}/${s.deepMax || 5} · halal list: ${(s.universe || {}).stocks || 0} stocks + ${(s.universe || {}).crypto || 0} coins · X/Reddit: ${s.social && s.social.at ? "read " + ago(s.social.at) : "off"} · saved ${ago(st.updatedAt)}`));
+  }
+  function tradeCard(t, open) {
+    const c = el("div", "card"); const r = el("div", "row between"); const nm = el("div");
+    nm.append(el("h3", null, t.symbol + (t.asset === "crypto" ? " (crypto)" : ""))); nm.append(el("div", "muted", (t.news || {}).summary || ""));
+    const right = el("div", "kpi"); right.style.padding = "6px 10px";
+    if (open) { right.append(el("div", "v " + sgn(t.unrealizedPct), pct(t.unrealizedPct))); right.append(el("div", "k", t.status === "pending" ? "order sent" : "unrealized")); }
+    else if (t.status === "closed") { right.append(el("div", "v " + sgn(t.pnl), money(t.pnl))); right.append(el("div", "k", pct(t.pnlPct))); }
+    else { right.append(el("div", "v", t.status)); }
+    r.append(nm, right); c.append(r);
+    const qty = t.qty == null ? "" : (t.asset === "crypto" ? Number(t.qty).toPrecision(4) : t.qty) + " @ ";
+    c.append(el("div", "small", `${qty}${money(t.entryPrice)} · stop ${money(t.stop)} · target ${money(t.target)} · opened ${ago(t.openedAt)}` + (t.closedAt ? ` · closed ${ago(t.closedAt)}: ${t.exitReason}` : "")));
+    const d = el("details"); d.append(el("summary", null, "Why it bought"));
+    const rs = t.reason || {}; const ul = el("ul");
+    [["News", (t.news || {}).summary], ["Gemini", `${rs.triage || ""} (confidence ${Math.round((rs.confidence || 0) * 100)}%)`], ["Sources", (rs.publishers || []).join(", ")],
+     ["Market check", rs.confirmation], ["TradingAgents", rs.tradingAgents + (rs.taSummary ? ": " + rs.taSummary.slice(0, 400) : "")]].forEach(([k2, v]) => { if (v) { const li = el("li"); li.append(el("b", null, k2 + ": ")); li.append(document.createTextNode(v)); ul.append(li); } });
+    d.append(ul); d.append(srcLinks((t.news || {}).sources)); c.append(d);
+    return c;
+  }
+  function vTPositions(t, body) {
+    const ps = t.state.positions || []; if (!ps.length) { body.append(empty("No open positions", "When news passes every check, the trade shows up here with its stop-loss and target.")); return; }
+    ps.forEach(p => body.append(tradeCard(p, true)));
+    body.append(el("div", "small", "Stop-losses sit on Alpaca's servers, so they work even with the laptop off."));
+  }
+  function vTTrades(t, body) {
+    const tr = (t.state.trades || []).filter(x => x.status === "closed" || x.status === "cancelled");
+    if (!tr.length) { body.append(empty("No finished trades yet", "Every trade lands here with the news that triggered it and the reason.")); return; }
+    const w = tr.filter(x => x.pnl > 0).length; body.append(el("div", "small", `${tr.length} trades · ${w} winners · total ${money(tr.reduce((n, x) => n + (x.pnl || 0), 0))}`));
+    tr.forEach(x => body.append(tradeCard(x, false)));
+  }
+  function lineChart(series, labels) {
+    const W = 420, H = 170, pl = 44, pb = 22, pt = 12; const all = series.flatMap(s => s.vals).filter(v => v != null);
+    const s0 = document.createElementNS(NS, "svg"); s0.setAttribute("viewBox", `0 0 ${W} ${H}`); s0.setAttribute("class", "chart"); s0.setAttribute("role", "img");
+    if (all.length < 2) return s0; let lo = Math.min(...all), hi = Math.max(...all); if (hi - lo < 1) { hi += 1; lo -= 1; }
+    const n = labels.length, X = i => pl + (W - pl - 6) * i / Math.max(1, n - 1), Y = v => pt + (H - pt - pb) * (1 - (v - lo) / (hi - lo));
+    [lo, (lo + hi) / 2, hi].forEach(v => { sv("line", { x1: pl, x2: W, y1: Y(v), y2: Y(v), stroke: "#2a2442" }, s0); const tx = sv("text", { x: pl - 6, y: Y(v) + 4, "text-anchor": "end", fill: "#6b6489", "font-size": 10 }, s0); tx.textContent = "$" + fmt(Math.round(v)); });
+    series.forEach(sr => { const d = sr.vals.map((v, i) => v == null ? null : `${X(i)},${Y(v)}`).filter(Boolean).join(" "); sv("polyline", { points: d, fill: "none", stroke: sr.color, "stroke-width": 2.2, "stroke-dasharray": sr.dash || "" }, s0); });
+    [0, n - 1].forEach(i => { const tx = sv("text", { x: X(i), y: H - 6, "text-anchor": i ? "end" : "start", fill: "#6b6489", "font-size": 9.5 }, s0); tx.textContent = labels[i] || ""; });
+    return s0;
+  }
+  function vTPnl(t, body) {
+    const st = t.state, eq = st.equity || []; tradingTop(t, body);
+    if (eq.length < 2) { body.append(empty("Chart starts after a few hours", "The bot records the account value every 30 minutes.")); return; }
+    const s0 = eq.find(p => p.spy) || {}; const start = (st.account || {}).startEquity || eq[0].equity;
+    const hold = eq.map(p => p.spy && s0.spy ? start * p.spy / s0.spy : null);
+    const c = el("div", "card"); c.append(el("div", "label", "Bot (silver) vs putting the same money in SPY (blue, dashed)"));
+    c.append(lineChart([{ vals: hold, color: "#6fd3ff", dash: "5 4" }, { vals: eq.map(p => p.equity), color: t.cfg.color }], eq.map(p => new Date(p.t).toLocaleDateString([], { month: "short", day: "numeric" }))));
+    body.append(c);
+  }
+  function vTNews(t, body) {
+    const st = t.state; const ds = st.decisions || [];
+    const c = el("div", "card"); c.append(el("div", "label", "Decisions: what it did and why (newest first)"));
+    if (!ds.length) c.append(el("div", "muted", "Nothing has passed the news filter yet. No trade is a valid decision."));
+    ds.slice(0, 40).forEach(d => { const s2 = el("div", "shot"); s2.append(el("div", "t", `${d.symbol} · ${d.outcome}`)); s2.append(el("div", "m", ago(d.t) + (d.event ? " · " + d.event : ""))); s2.append(el("p", null, d.why)); c.append(s2); });
+    body.append(c);
+    const c2 = el("div", "card"); c2.append(el("div", "label", "Stories it is following (last 24h)"));
+    (st.events || []).forEach(e => { const s2 = el("div", "shot"); s2.append(el("div", "t", e.summary)); const as = Object.entries(e.assets || {}).map(([k2, v]) => `${k2} ${v.direction === "up" ? "▲" : "▼"} ${Math.round(v.confidence * 100)}%`).join("  ");
+      s2.append(el("div", "m", `${e.category || ""} · ${(e.publishers || []).length} source(s) · first seen ${ago(e.firstSeen)}` + (as ? " · " + as : ""))); s2.append(srcLinks(e.sources)); c2.append(s2); });
+    if (!(st.events || []).length) c2.append(el("div", "muted", "No market-moving stories right now."));
+    body.append(c2);
+  }
+  function vTCoins(t, body) {
+    const w = t.state.watch || [], sm = t.state.watchSummary || {};
+    body.append(el("div", "card", "Watch mode only: meme and brand-new celebrity coins are never bought, not even with paper money. This shows what the rules would have done, so you can review a week of results before deciding anything."));
+    const k = el("div", "kpis"); k.append(tk(String(sm.closed || 0), "Finished", `${sm.wins || 0} would have won`)); k.append(tk(sm.avgPct == null ? "—" : pct(sm.avgPct), "Average result", `${sm.open || 0} still being watched`, sgn(sm.avgPct))); body.append(k);
+    if (!w.length) { body.append(empty("No meme coins spotted yet", "When the news desk sees a meme-coin story it starts a pretend trade here.")); return; }
+    const c = el("div", "card"); w.slice().reverse().forEach(x => { const r = el("div", "vid"); r.append(el("span", "t", `${x.coin} · ${x.event || ""}`)); r.append(el("span", "n " + sgn(x.pnlPct), x.status === "closed" ? pct(x.pnlPct) : "watching"));
+      r.append(el("span", "m", `${ago(x.openedAt)} · entry $${x.entry == null ? "—" : Number(x.entry).toPrecision(4)}`)); r.append(el("span", "m", x.exitReason || (x.last ? "now $" + Number(x.last).toPrecision(4) : ""))); c.append(r); }); body.append(c);
+  }
+  function vTBacktest(t, body) {
+    const b = t.backtest; if (!b) { body.append(empty("No backtest yet", "Run trading_bot\\windows\\run_backtest.bat on the laptop. It replays the rules over the last 30 days of real news and prices.")); return; }
+    const s2 = b.summary || {}, ta = b.tradingAgents || {};
+    body.append(el("div", "small", `Last ${b.days} days · ${b.headlines} headlines → ${b.stories} stories · ran ${ago(b.ranAt)}`));
+    const k = el("div", "kpis"); k.append(tk(String(s2.trades || 0), "Trades", `${s2.winRate == null ? "—" : s2.winRate + "%"} winners`)); k.append(tk(pct(s2.totalPct), "Total return", "SPY " + pct(b.spyPct), sgn((s2.totalPct || 0) - (b.spyPct || 0))));
+    k.append(tk(pct(s2.avgPct), "Average trade", "max drop " + pct(s2.maxDrawdownPct), sgn(s2.avgPct))); k.append(tk(`${ta.approved || 0}/${ta.checked || 0}`, "TradingAgents approved", `approved avg ${pct(ta.approvedAvgPct)} · rejected avg ${pct(ta.rejectedAvgPct)}`)); body.append(k);
+    if ((b.curve || []).length > 1) { const c = el("div", "card"); c.append(el("div", "label", "Backtest account value")); c.append(lineChart([{ vals: b.curve.map(p => p.equity), color: t.cfg.color }], b.curve.map(p => new Date(p.t).toLocaleDateString([], { month: "short", day: "numeric" })))); body.append(c); }
+    const cv = el("div", "card"); cv.append(el("div", "label", "Read this before trusting it")); const ul = el("ul"); (b.caveats || []).forEach(x => ul.append(el("li", null, x))); cv.append(ul); body.append(cv);
+    const c = el("div", "card"); c.append(el("div", "label", "Backtest trades")); (b.trades || []).slice().reverse().forEach(x => { const r = el("div", "vid"); r.append(el("span", "t", `${x.symbol} · ${x.event || ""}`)); r.append(el("span", "n " + sgn(x.pnl), pct(x.pnlPct)));
+      r.append(el("span", "m", new Date(x.t).toLocaleDateString() + " · " + (x.exitReason || ""))); r.append(el("span", "m", x.tradingAgents ? "TradingAgents: " + x.tradingAgents : "")); c.append(r); }); body.append(c);
+  }
+
   /* ---------------- HUD ---------------- */
   function renderHUD() {
     const all = Object.values(M.teams); const working = all.reduce((n, t) => n + t.agents.filter(a => a.status === "working").length, 0);
@@ -632,6 +742,8 @@
     chip(String(working), "Working now"); chip(String(pending), "Ideas to review");
     if (fol) chip(fmt(fol.value), "TikTok followers", fol.delta ? el("div", "d " + (fol.delta >= 0 ? "up" : "down"), (fol.delta >= 0 ? "+" : "") + fol.delta) : null);
     if (subs) chip(fmt(subs), "YouTube subs");
+    const ta = M.teams.trading && M.teams.trading.state.account;
+    if (ta && ta.totalPct != null) chip((ta.totalPct >= 0 ? "+" : "") + ta.totalPct.toFixed(2) + "%", "Paper P&L");
     $("#liveText").textContent = "Live · " + all.filter(t => t.hired && !t.cfg.virtual).length + " of " + all.filter(t => !t.cfg.virtual).length + " teams hired";
     const bar = $("#teambar"); bar.replaceChildren();
     CFG.teams.forEach(c => { const t = M.teams[c.id]; const b = el("button"); b.dataset.id = c.id; const sw = el("span", "sw"); sw.style.background = c.color; b.append(sw, document.createTextNode(c.virtual ? "HQ" : c.name));
