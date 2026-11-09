@@ -1,7 +1,7 @@
 {
   "team": "growth",
   "hired": true,
-  "updatedAt": "2026-11-09T21:20:47Z",
+  "updatedAt": "2026-11-09T21:23:38Z",
   "agents": [
     {
       "id": "lead",
@@ -43,12 +43,32 @@
       "id": "upgrades",
       "name": "Upgrade Lab",
       "status": "ok",
-      "doing": "Planned 1 upgrade: Approval Queue (tested on 100 people, 67 for)",
-      "lastRun": "2026-11-05T19:20:00Z",
+      "doing": "Researched and proposed 'AI Marketing Campaign Builder with Approval Workflow' with a simulated 100-person test.",
+      "lastRun": "2026-11-09T21:23:38Z",
       "nextRun": "2026-11-09T18:41:00Z"
     }
   ],
   "log": [
+    {
+      "t": "2026-11-09T21:23:38Z",
+      "agent": "Gemini team",
+      "msg": "Generated product upgrade details, build prompt, swarm test results, and the upgrade brief."
+    },
+    {
+      "t": "2026-11-09T21:23:38Z",
+      "agent": "Gemini team",
+      "msg": "Simulated a 100-person reaction test on the selected upgrade."
+    },
+    {
+      "t": "2026-11-09T21:23:38Z",
+      "agent": "Gemini team",
+      "msg": "Identified 'AI Marketing Campaign Builder with Approval Workflow' as the top upgrade candidate."
+    },
+    {
+      "t": "2026-11-09T21:23:38Z",
+      "agent": "Gemini team",
+      "msg": "Researched recent AI marketing tools and user complaints for small e-commerce stores."
+    },
     {
       "t": "2026-11-09T21:20:47Z",
       "agent": "Gemini team",
@@ -684,6 +704,103 @@
       "description": "Revise the Growth Architect landing page to feature a full, downloadable sample marketing plan for a *named, fictional small e-commerce business* (e.g., 'The Daily Grind Coffee Co. Marketing Plan'). This plan should be detailed, showing how Growth Architect's agents provide specific, actionable steps, not generic advice. Prominently display the clear, flat monthly pricing ($9.99/$19.99/$39.99) directly above the fold, emphasizing 'no hidden fees, cancel anytime' (if true). This combats competitor weaknesses around generic outputs and unpredictable billing.",
       "createdAt": "2026-11-09T21:20:47Z",
       "madeBy": "gemini"
+    },
+    {
+      "id": "growth-u-2026-11-09-1",
+      "title": "AI Marketing Campaign Builder with Approval Workflow",
+      "format": "Product upgrade",
+      "hook": "Generate multi-channel marketing campaigns in minutes, with full control over every piece of content.",
+      "why": "Competitors like Shopify's Campaign Autopilot are implementing approval rules, and user complaints consistently highlight the need for human oversight to prevent generic content and 'hallucinations'. The 100-person test showed strong support for this feature, emphasizing time-saving and quality control.",
+      "score": 9,
+      "impact": "High",
+      "effort": "M",
+      "tier": "Pro",
+      "script": "This upgrade adds a 'Campaigns' section to the Growth Architect office. Users click 'New Campaign' and fill a simple form (product, promotion, target audience, dates). AI agents then generate drafts for social media posts (e.g., Instagram/Facebook captions, hashtags), email newsletters (subject line, body), and ad copy (variations for Google/Meta). All generated content appears in a centralized 'Approval Queue' dashboard. Each item can be previewed, edited in-app, approved, or rejected. Approving moves it to a 'Scheduled' or 'Exported' status, while rejecting allows for feedback to refine future AI output. This feature is for the Pro tier ($19.99/month). Success can be measured in 2 weeks by user engagement with the 'Campaigns' module, number of approved campaigns, and feedback on content quality. Risk: Initial AI output might still be generic, requiring user patience for the AI to learn.",
+      "buildPrompt": "Paste into Omar's Main Chat in the Claude app.\n\nUse the Base44 connector on Growth Architect (app id 699b4057d65174480989a52e). First read the relevant files, specifically existing UI components for dashboards and forms, and create a checkpoint. Then build the change by editing the app's files directly.\n\nCreate a new 'Campaigns' section accessible from the main office interface, perhaps as a new 'floor' or a distinct 'department' within the existing 'Agents' tab. This section will contain two primary views:\n\n1.  **New Campaign Form:** A user-friendly form to initiate a campaign. This form should capture:\n    *   `Campaign Name` (text input)\n    *   `Product/Promotion Details` (large text area, e.g., 'New collection of sustainable Islamic art prints, launching next month, target audience: eco-conscious Muslims aged 25-45')\n    *   `Key Message/Goal` (text input, e.g., 'Increase pre-orders by 15%')\n    *   `Start Date` and `End Date` (date pickers)\n    *   A 'Generate Campaign' button.\n\n2.  **Approval Queue Dashboard:** This dashboard will display all AI-generated content drafts. Each draft should be presented as a card or row, showing:\n    *   `Content Type` (e.g., 'Instagram Post', 'Email Newsletter', 'Meta Ad Copy')\n    *   A truncated `Content Preview` (full content viewable on click).\n    *   `Channel` (e.g., 'Instagram', 'Email', 'Meta Ads').\n    *   Three action buttons: 'Edit' (opens an in-app text editor for the content), 'Approve' (changes status to 'Approved'), and 'Reject' (changes status to 'Rejected', and prompts for a brief feedback input to guide the AI).\n\nImplement an underlying entity schema for `Campaigns` and `CampaignAssets` to store the campaign brief, generated content, approval status, and user feedback. The AI agent logic (using Gemini) will take the campaign brief, generate content for social media (e.g., 3 variations of captions with relevant hashtags), email (subject line, body), and ad copy (e.g., 2 variations of headlines/descriptions). The system must learn from user edits and rejections to refine its generation for future campaigns, adapting to the user's specific brand voice and preferences.\n\nKeep the Stripe integration exactly as it is; keep the professional look (no bright 'dopamine' styling); connections and settings belong to each office; no left sidebar. This feature will be available for Growth Architect's Pro tier ($19.99/month).\n\nWhat must work: Users can create a campaign, view generated content, edit, approve, or reject it. The AI should show improvement over time based on feedback. How to test it in the preview: Create a sample campaign, review the generated content, make edits, and approve some items. Verify the status changes correctly. Report what files and components were added or changed.",
+      "swarm": {
+        "date": "2026-11-09",
+        "createdAt": "2026-11-09T21:23:38Z",
+        "ideaId": "growth-2026-11-09-u1",
+        "idea": "AI Marketing Campaign Builder with Approval Workflow",
+        "verdict": "People would strongly back this if it genuinely saves time, ensures brand voice through the approval queue, and the AI learns effectively from feedback.",
+        "score": 9,
+        "support": {
+          "for": 78,
+          "against": 7,
+          "undecided": 15
+        },
+        "groups": [
+          {
+            "name": "Small Business Owners",
+            "for": 90,
+            "quote": "This is exactly what I need. I spend hours trying to come up with content for different platforms. If this gives me drafts I can quickly approve, it's a huge time-saver.",
+            "username": "@ShopOwnerSarah"
+          },
+          {
+            "name": "Current/Likely Growth Architect Customers",
+            "for": 85,
+            "quote": "The approval queue is critical. I trust AI for ideas, but not for final output. This combines the best of both worlds – speed and control.",
+            "username": "@GrowthFanaticMark"
+          },
+          {
+            "name": "Skeptics who tried AI tools that disappointed them",
+            "for": 60,
+            "quote": "My main concern with AI has always been generic, templated content. If the editing and learning aspect truly works, and I have final say, this could be different.",
+            "username": "@AIToolSkeptic"
+          },
+          {
+            "name": "Marketers/Agency People",
+            "for": 80,
+            "quote": "For small e-commerce clients, this is a scalable way to produce consistent, multi-channel content without needing a huge team. The approval workflow is a smart move.",
+            "username": "@AgencyProMia"
+          },
+          {
+            "name": "Investors/SaaS Founders",
+            "for": 75,
+            "quote": "This addresses a clear market need: efficient content creation with quality control for SMBs. The learning feedback loop is a strong retention driver. Pricing model needs to be clear.",
+            "username": "@SaaSVCFund"
+          }
+        ],
+        "topPraise": [
+          "Massive time savings on content creation across multiple channels.",
+          "The approval queue ensures brand voice consistency and prevents errors.",
+          "The AI learning from edits is a key differentiator and builds trust.",
+          "Streamlines marketing efforts from a single brief, making campaigns more cohesive."
+        ],
+        "topObjections": [
+          "Initial AI output might still be too generic, requiring significant edits.",
+          "Desire for more direct publishing integrations to social media/email platforms.",
+          "Concerns about over-reliance on AI potentially stifling human creativity."
+        ],
+        "changedMinds": "The emphasis on the one-tap approval queue and the AI's ability to learn from user edits and rejections significantly swayed skeptics who previously found AI content generic or untrustworthy.",
+        "fixes": [
+          "Clearly communicate that the AI improves over time with user feedback.",
+          "Prioritize integrations for direct publishing to popular social media platforms and email services.",
+          "Offer templates or guides to help users provide more specific campaign briefs for better initial AI output."
+        ],
+        "limits": "one model played all 100 agents; this is a rehearsal, not a forecast"
+      },
+      "sources": [
+        {
+          "title": "AI Marketing Landscape for Small Online Stores: Recent Developments, User Complaints, and Opportunities for Growth Architect",
+          "url": "[internal research document]"
+        },
+        {
+          "title": "Shopify's Campaign Autopilot",
+          "url": "https://searchengineland.com/shopify-campaign-autopilot-early-access-441695"
+        },
+        {
+          "title": "Gorgias AI",
+          "url": "https://www.gorgias.com"
+        },
+        {
+          "title": "Klaviyo AI",
+          "url": "https://www.klaviyo.com"
+        }
+      ],
+      "status": "pending",
+      "createdAt": "2026-11-09T21:23:38Z",
+      "madeBy": "gemini"
     }
   ],
   "research": [
@@ -985,6 +1102,69 @@
   },
   "swarms": [
     {
+      "date": "2026-11-09",
+      "createdAt": "2026-11-09T21:23:38Z",
+      "ideaId": "growth-2026-11-09-u1",
+      "idea": "AI Marketing Campaign Builder with Approval Workflow",
+      "verdict": "People would strongly back this if it genuinely saves time, ensures brand voice through the approval queue, and the AI learns effectively from feedback.",
+      "score": 9,
+      "support": {
+        "for": 78,
+        "against": 7,
+        "undecided": 15
+      },
+      "groups": [
+        {
+          "name": "Small Business Owners",
+          "for": 90,
+          "quote": "This is exactly what I need. I spend hours trying to come up with content for different platforms. If this gives me drafts I can quickly approve, it's a huge time-saver.",
+          "username": "@ShopOwnerSarah"
+        },
+        {
+          "name": "Current/Likely Growth Architect Customers",
+          "for": 85,
+          "quote": "The approval queue is critical. I trust AI for ideas, but not for final output. This combines the best of both worlds – speed and control.",
+          "username": "@GrowthFanaticMark"
+        },
+        {
+          "name": "Skeptics who tried AI tools that disappointed them",
+          "for": 60,
+          "quote": "My main concern with AI has always been generic, templated content. If the editing and learning aspect truly works, and I have final say, this could be different.",
+          "username": "@AIToolSkeptic"
+        },
+        {
+          "name": "Marketers/Agency People",
+          "for": 80,
+          "quote": "For small e-commerce clients, this is a scalable way to produce consistent, multi-channel content without needing a huge team. The approval workflow is a smart move.",
+          "username": "@AgencyProMia"
+        },
+        {
+          "name": "Investors/SaaS Founders",
+          "for": 75,
+          "quote": "This addresses a clear market need: efficient content creation with quality control for SMBs. The learning feedback loop is a strong retention driver. Pricing model needs to be clear.",
+          "username": "@SaaSVCFund"
+        }
+      ],
+      "topPraise": [
+        "Massive time savings on content creation across multiple channels.",
+        "The approval queue ensures brand voice consistency and prevents errors.",
+        "The AI learning from edits is a key differentiator and builds trust.",
+        "Streamlines marketing efforts from a single brief, making campaigns more cohesive."
+      ],
+      "topObjections": [
+        "Initial AI output might still be too generic, requiring significant edits.",
+        "Desire for more direct publishing integrations to social media/email platforms.",
+        "Concerns about over-reliance on AI potentially stifling human creativity."
+      ],
+      "changedMinds": "The emphasis on the one-tap approval queue and the AI's ability to learn from user edits and rejections significantly swayed skeptics who previously found AI content generic or untrustworthy.",
+      "fixes": [
+        "Clearly communicate that the AI improves over time with user feedback.",
+        "Prioritize integrations for direct publishing to popular social media platforms and email services.",
+        "Offer templates or guides to help users provide more specific campaign briefs for better initial AI output."
+      ],
+      "limits": "one model played all 100 agents; this is a rehearsal, not a forecast"
+    },
+    {
       "date": "2026-11-05",
       "createdAt": "2026-11-05T19:20:00Z",
       "ideaId": "growth-2026-11-05-u1",
@@ -1048,11 +1228,22 @@
     }
   ],
   "upgradeBrief": {
-    "date": "2026-11-05",
-    "createdAt": "2026-11-05T19:20:00Z",
-    "headline": "Approval Queue: the trust feature that lets owners connect everything",
-    "summary": "Omar, the best upgrade is an Approval Queue where every agent draft waits for one tap. Anthropic and Gusto both ship approvals, and owners say they will not connect email without it. The 100-person test came out 67 for, 12 against and 21 undecided, as long as it stays one tap and drafts are specific.",
-    "pick": "Approval Queue: nothing goes out without you — tap Copy build prompt and paste it into your Main Chat",
-    "waiting": []
+    "date": "2026-11-09",
+    "createdAt": "2026-11-09T21:23:38Z",
+    "headline": "AI Campaign Builder with Approval: Speed + Control",
+    "summary": "Omar, the best upgrade is an AI Marketing Campaign Builder with Approval Workflow. It directly addresses the 'AI marketing production gap' and generic content complaints by letting agents generate multi-channel content drafts that you review and approve. The 100-person test showed strong support, praising the time-saving and control, with a verdict that people will back it if the AI learns from feedback.",
+    "pick": "AI Marketing Campaign Builder with Approval Workflow — tap Copy build prompt and paste it into your Main Chat",
+    "waiting": [
+      "Waiting on Omar: Approval Queue: nothing goes out without you",
+      "Waiting on Omar: A plan that fits every business fits none",
+      "Waiting on Omar: Home bakery, zero strangers",
+      "Waiting on Omar: Landing page: one business, one clear price",
+      "Waiting on Omar: Every AI marketing plan said 'post consistently'",
+      "Waiting on Omar: Zero customers and I hate marketing",
+      "Waiting on Omar: Own 'marketing plan', not 'business plan'",
+      "Waiting on Omar: Overwhelmed E-com Owner: The AI Office",
+      "Waiting on Omar: No More Surprise Bills: Predictable AI Pricing",
+      "Waiting on Omar: Landing Page: Real Sample Plan + Transparent Pricing"
+    ]
   }
 }
