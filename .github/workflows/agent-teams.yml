@@ -59,7 +59,7 @@ jobs:
             SAVED=no
             for i in 1 2 3; do
               git fetch -q origin main && git reset -q --hard origin/main
-              python agents/gemini/apply_patch.py $TEAM || { echo "apply failed"; break; }
+              python agents/gemini/apply_patch.py $TEAM > apply.log 2>&1 || { cat apply.log; echo "::error::$TEAM merge failed: $(tail -c 800 apply.log | tr '\n' ' ')"; break; }
               git add data
               if git diff --cached --quiet; then echo "No changes"; SAVED=yes; break; fi
               git commit -qm "$TEAM team (Gemini): daily work"
