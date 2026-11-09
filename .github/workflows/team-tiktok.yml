@@ -1,7 +1,6 @@
 name: TikTok team (Gemini)
 on:
-  schedule:
-    - cron: "41 14 * * *"   # 9:41 AM Toronto (EST). Becomes 10:41 during daylight time.
+  # Daily schedule now runs on the Oracle server (scripts/server/crontab.txt). This is the manual backup.
   workflow_dispatch:
     inputs:
       force_research:

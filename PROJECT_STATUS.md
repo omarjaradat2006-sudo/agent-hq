@@ -10,15 +10,15 @@ Rules in force: no Claude in daily operations (Gemini only) · no keys in chat o
 |---|---|---|
 | Agent HQ site (GitHub Pages) | WORKS | Reads `data/<team>/state.json`. Button statuses are never overwritten. |
 | Data collectors (Actions) | WORKS, UNRELIABLE TIMING | Hourly cron, but GitHub ran it only ~3 times on Nov 9. |
-| 9 Gemini agent teams (TikTok, YouTube, LinkedAI, Growth, Upgrades, Opps, Lab, Repos, Chief) | BUILT, NEVER RUN | Workflows registered and active, but zero runs so far. Needs a manual test run. |
+| 9 Gemini agent teams (TikTok, YouTube, LinkedAI, Growth, Upgrades, Opps, Lab, Repos, Chief) | WORKS | All 9 tested Nov 9. Fall back across free Flash models on 429/503. Daily schedule runs on the Oracle server (`scripts/server/crontab.txt`); GitHub workflows are now manual backup only. |
 | `GEMINI_API_KEY` secret | DONE | Added by Omar. |
 | Claude scheduled tasks | PAUSED | Paused, not deleted. Retire once the Gemini teams are proven. |
 | YouTube upload (`upload.py` + duplicate log) | WORKS | 17 uploads per channel per day, Oct 28–Nov 5, with no quota errors. |
 | Rendering (`render.py`, explainers v2) | WORKS ON LAPTOP | Daily batch still depends on Claude Code writing `today*.py`. **This is the main Claude dependency left.** |
 | Bounce Theory template engine | NOT STARTED | Settings-based engine to replace the daily Claude scripting. |
-| Cloud server (Oracle Always Free, Toronto) | BLOCKED: OUT OF CAPACITY | Catcher reached try 552 by Nov 9 15:43. |
+| Cloud server (Oracle Always Free, Toronto) | WORKS | "openclaw", 2 OCPU/12 GB/200 GB, Ubuntu 24.04, 40.233.127.117. Pay As You Go + $1 budget alert. Security updates + fail2ban on. Deploy key (agent-hq only). Gemini key in ~/.agent-hq.env (600). Logs in ~/logs. SSH key on laptop: Downloads\\oracle.key.key |
 | Trading bot (`trading_bot/`) | BUILT, NOT STARTED | Paper mode, 19/19 tests pass, risk limits are correct. Not running on the laptop yet. |
-| Perplexity research | NOT STARTED | No free API tier (see costs below). |
+| Perplexity research | SKIPPED (Omar agreed) | No free API tier; the MCP needs the same paid key. Gemini grounding does it for free. |
 | Fight & Court Intelligence (UFC + NBA) | NOT STARTED | Research and recommendations only. |
 | Video-editing repo shortlist | NOT STARTED | |
 | OpenClaw | LATER | Waits for the server. Least-privilege access only. |
@@ -33,8 +33,8 @@ Rules in force: no Claude in daily operations (Gemini only) · no keys in chat o
 ## 3. Order of work
 
 1. ✅ Audit + this file
-2. ⏳ Verify the 9 Gemini teams: Omar triggers one run each; fix failures; then check that they actually run on schedule.
-3. Cloud: Oracle Pay As You Go decision → server → move the schedule to the server (more reliable than GitHub cron).
+2. ✅ Verify the 9 Gemini teams: Omar triggers one run each; fix failures; then check that they actually run on schedule.
+3. ✅ Cloud: Oracle Pay As You Go decision → server → move the schedule to the server (more reliable than GitHub cron).
 4. Bounce Theory template engine + daily runner (removes the last daily Claude dependency).
 5. Trading bot: start paper trading on the laptop or server, then review at 30, 60 and 90 days.
 6. Fight & Court Intelligence: odds plus Gemini research; CAD $25 a week cap; "no bet" is a valid answer; track results.
@@ -44,3 +44,5 @@ Rules in force: no Claude in daily operations (Gemini only) · no keys in chat o
 
 ## 4. Log
 - 2026-11-09: Audit done. Found that the Gemini teams have never run. Oracle catcher at try 552.
+- 2026-11-09: All 9 Gemini teams pass. Oracle server caught (try 572), set up, runs teams via cron. Claude scheduled tasks stay paused.
+- NEXT: Bounce Theory template engine + daily runner on the server (removes last daily Claude use).
