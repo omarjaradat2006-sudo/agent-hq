@@ -65,7 +65,7 @@ def generate(prompt, system=None, search=False, json_out=False, temperature=0.8,
         body["generationConfig"]["responseMimeType"] = "application/json"
     last = None
     for rnd in range(retries):
-        for name in models():
+        for name in list(models()):
             try:
                 r = _req("POST", f"models/{name}:generateContent", body)
                 cand = (r.get("candidates") or [{}])[0]
