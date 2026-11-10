@@ -46,6 +46,14 @@ Rules in force: no Claude in daily operations (Gemini only) · no keys in chat o
 8. OpenClaw plan (after the server exists).
 9. End-of-day report.
 
+## 10-day plan (set Nov 9, night)
+- **Tue Nov 10:** check the first server runs (Bounce 7:05, Ambient 7:20, Fight & Court 1:27 PM). If good: Bounce to 24 Shorts a day, one per hour around the clock (check YouTube's upload limit). **Requirement from Omar: new ideas on the YouTube board must get built, not just remixes.** Add an automatic "idea to new template" step (the best new idea gets built into a real template, tested, then added to the menu).
+- **Wed Nov 11:** GTA 6 clipping pipeline (prompt in YOUTUBE HQ/GTA 6 Channel). Legal sources only (CC BY YouTube + Twitch clips from streamers who allow clipping). Test privately with GTA 5 footage.
+- **Thu-Fri Nov 12-13:** Roblox game (before GTA 6). Last attempt with Claude Code went badly, so start with a smaller scope and a playable test each day.
+- **Sat-Sun Nov 14-15:** Growth Architect full rebrand.
+- **Mon Nov 16:** trading bot 7-day report + backtest, then Omar decides on real money (live only on his explicit OK).
+- **Tue-Wed Nov 17-18:** buffer + final GTA test. **Thu Nov 19: GTA 6 launch.**
+
 ## 4. Log
 - 2026-11-09 (night): Step 4b built. Ambient Escape runs on the server with no Claude, same shape as Bounce: plan (`ambient/plan.py`, Gemini) → render (`render.py ambient`, after Bounce) → upload → `verify.py` → delete only verified videos → mark Agent HQ → clean temp files. Today's Gemini lineup had a wrong source in it (S03 cites Ibn Majah 1977 as "best to their families"; the hadith says "best to his wife"): this is exactly what the new claim check catches. Today's footage list was plain text, not clip records, so the fetcher got nothing; the server uses the 29-clip library instead (new fetched clips are added automatically). **Render times measured on 2 CPUs (cloud test machine, x86; the ARM server's own numbers come from `run_ambient.sh bench`):** text reminder Short ~0.5 min · explainer Short (40 s, voice) ~2.4-3 min · 3-hour long 6-9 min, 2.6-6 GB · 10-hour long ~20 min, ~8 GB (dark-screen clip). A full day (8 explainers + 7 reminders + one 3 h long) ≈ 30-40 min of CPU, after Bounce. CPU isn't the limit: 2 longs a day, 10-hour longs, or even 24 Shorts a day would still fit in about 1-1.5 h. The real limits are YouTube's daily upload quota per Google project (17/day works today; more needs checking), upload size (10 h ≈ 8-20 GB) and Gemini's free daily calls (2-6 per slot, shared with the 9 teams).
 - 2026-11-09: Audit done. Found that the Gemini teams have never run. Oracle catcher at try 552.
