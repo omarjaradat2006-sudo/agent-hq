@@ -12,6 +12,8 @@ exec 9>/tmp/agenthq.lock; flock 9          # one job at a time (shared with the 
 set -a; . ~/.agent-hq.env; set +a
 cd "$REPO" || exit 1
 echo "=== $(date '+%F %T') fight $* ==="
+# a half-finished save from any job blocks every push afterwards: clear it first
+git rebase --abort >/dev/null 2>&1; rm -rf .git/rebase-merge .git/rebase-apply
 git fetch -q origin main && git reset -q --hard origin/main
 
 # If the last run saved locally but couldn't push, bring that newer ledger back.
@@ -29,7 +31,8 @@ git add data/fight
 if ! git diff --cached --quiet; then
   git -c user.name="Agent HQ (server)" -c user.email="openclaw@users.noreply.github.com" commit -qm "Fight & Court (server): $*"
   for i in 1 2 3; do
-    git pull -q --rebase origin main && git push -q origin HEAD:main && { echo "saved"; break; }
+    if git pull -q --rebase origin main; then git push -q origin HEAD:main && { echo "saved"; break; }
+    else git rebase --abort >/dev/null 2>&1; rm -rf .git/rebase-merge .git/rebase-apply; fi
     echo "push failed, retry $i"; sleep 5
   done
 fi
