@@ -8,6 +8,14 @@ path = os.path.join(ROOT, "data", team, "state.json")
 s = json.load(open(path, encoding="utf-8"))
 ids = {i.get("id") for i in s.get("ideas", [])}
 s.setdefault("ideas", []).extend(i for i in patch.get("ideas", []) if isinstance(i, dict) and i.get("id") and i["id"] not in ids)
+if isinstance(patch.get("lineup"), dict):  # always store as {date, createdAt, channels}: the server batches read lineup.date/channels
+    L = patch["lineup"]
+    if "channels" not in L:
+        L = {"channels": {k: v for k, v in L.items() if isinstance(v, list)}}
+    import datetime, zoneinfo
+    today = datetime.datetime.now(zoneinfo.ZoneInfo("America/Toronto")).strftime("%Y-%m-%d")
+    L.setdefault("date", today); L.setdefault("createdAt", patch.get("at"))
+    patch["lineup"] = {"date": L["date"], "createdAt": L["createdAt"], "channels": L["channels"]}
 if "lineup" in patch and s.get("lineup"):
     s["pastLineups"] = ([s["lineup"]] + s.get("pastLineups", []))[:7]
 for k in ("review", "brief", "competitors", "formatLeads", "teamLeads", "upgradeBrief", "lineup", "footage"):
