@@ -58,6 +58,14 @@ window.HQ_CONFIG = {
         { id: "lead", name: "Scout Lead", role: "Picks the few repos worth your time", kind: "brief" },
         { id: "scout", name: "Repo Scout", role: "Searches GitHub for free tools", kind: "research" },
         { id: "tester", name: "Fit Checker", role: "Checks licence, safety and if it runs for you", kind: "ideas" } ] },
+    { id: "fight", name: "Fight & Court", color: "#ff5a3c", grid: [3, 1], tagline: "UFC + NBA research: Ontario odds, value or no bet, tracked record", ideaWord: "Picks",
+      agents: [
+        { id: "lead", name: "Desk Lead", role: "Today's card and the honest record", kind: "brief" },
+        { id: "odds", name: "Odds Scout", role: "Ontario-licensed prices only, Bet365 excluded", kind: "books" },
+        { id: "court", name: "Court Analyst", role: "NBA: injuries, rest, form, matchups", kind: "picks" },
+        { id: "fight", name: "Fight Analyst", role: "UFC: weigh-ins, styles, form, late news", kind: "picks" },
+        { id: "value", name: "Value & Underdog Checker", role: "Implied vs fair probability; no value = no bet", kind: "underdogs" },
+        { id: "grader", name: "Results Grader", role: "Settles every pick automatically", kind: "record" } ] },
     { id: "lab", name: "R&D Lab", color: "#2ee6d6", grid: [1, 2], tagline: "Upgrades for every business, pipeline and this site", ideaWord: "Upgrades",
       agents: [
         { id: "lead", name: "Lab Director", role: "Picks the upgrades worth doing", kind: "brief" },

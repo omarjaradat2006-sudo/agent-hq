@@ -12,3 +12,11 @@
 
 # Bounce Theory daily batch: plan from today's lineup -> render -> upload (scheduled 5 PM - 8 AM) -> mark Agent HQ. No Claude.
 5 7  * * *     /home/ubuntu/agent-hq/scripts/server/run_bounce.sh
+
+# Fight & Court Intelligence (UFC + NBA): research and recommendations only, never bets. Odds API free plan (~270 of 500 credits/month).
+27 13 * * *    /home/ubuntu/agent-hq/scripts/server/run_fight.sh picks nba
+37 18 * * *    /home/ubuntu/agent-hq/scripts/server/run_fight.sh close nba
+33 14 * * 5    /home/ubuntu/agent-hq/scripts/server/run_fight.sh picks ufc
+43 17 * * 6    /home/ubuntu/agent-hq/scripts/server/run_fight.sh close ufc
+47 9  * * *    /home/ubuntu/agent-hq/scripts/server/run_fight.sh grade
+53 12 * * 0    /home/ubuntu/agent-hq/scripts/server/run_fight.sh books

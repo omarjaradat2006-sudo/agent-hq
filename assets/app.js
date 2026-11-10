@@ -235,7 +235,7 @@
 
   /* ---------------- panel ---------------- */
   let tab = "overview", agentSel = null, ideaFilter = "pending", statSel = null;
-  function tabForKind(t, kind) { return ["stats", "research", "ideas", "review", "competitors", "swarm", "positions", "trades", "news", "coins"].includes(kind) ? kind : "overview"; }
+  function tabForKind(t, kind) { return ["stats", "research", "ideas", "review", "competitors", "swarm", "positions", "trades", "news", "coins", "picks", "underdogs", "record", "books"].includes(kind) ? kind : "overview"; }
   function focusTeam(id, tb, agentId) {
     if (!M.teams[id]) return; focused = id; tab = tb || "overview"; agentSel = agentId || null; statSel = null; ideaFilter = id === "youtube" ? "approved" : "pending";
     $("#panel").classList.add("open"); renderPanel(); syncTeambar();
@@ -247,6 +247,7 @@
 
   function tabsFor(t) {
     if (t.cfg.virtual) return [["overview", "Brief"], ["activity", "Activity"]];
+    if (t.cfg.id === "fight") return [["overview", "Overview"], ["picks", "Today's picks"], ["underdogs", "Underdogs"], ["record", "Record"], ["analysis", "Research"], ["books", "Odds & books"], ["activity", "Activity"]];
     if (t.cfg.id === "trading") return [["overview", "Overview"], ["positions", "Positions"], ["trades", "Trades"], ["pnl", "P&L vs SPY"], ["week", "7-day test"], ["news", "News desk"], ["coins", "Coin watch"], ["backtest", "Backtest"], ["activity", "Activity"]];
     const out = [["overview", "Overview"], ["ideas", t.cfg.ideaWord || "Ideas"]];
     if (t.metrics) out.push(["stats", "Stats"]);
@@ -267,13 +268,14 @@
     const x = el("button", "xbtn", "×"); x.setAttribute("aria-label", "Close and zoom out"); x.onclick = zoomOut; top.append(tt, x); ph.append(top);
     const tabs = el("div", "tabs"); tabs.setAttribute("role", "tablist");
     tabsFor(t).forEach(([k, l]) => { const b = el("button", null, l); b.setAttribute("role", "tab"); b.setAttribute("aria-selected", String(tab === k));
+      if (k === "picks") b.append(el("span", "n", String(Object.values(t.state.cards || {}).reduce((n, c) => n + (c.picks || []).length + (c.parlays || []).length, 0))));
       if (k === "positions") b.append(el("span", "n", String((t.state.positions || []).length)));
       if (k === "ideas") b.append(el("span", "n", String((t.state.ideas || []).filter(i => t.cfg.id === "youtube" ? ["pending", "approved"].includes(effectiveStatus(i).status) : effectiveStatus(i).status === "pending").length)));
       if (k === "shots") b.append(el("span", "n", String((t.state.footage || []).filter(f => f.status === "ready").length)));
       b.onclick = () => { tab = k; renderPanel(); }; tabs.append(b); });
     ph.append(tabs); p.append(ph);
     const body = el("div", "pb"); p.append(body);
-    ({ overview: vOverview, ideas: vIdeas, review: vReview, competitors: vCompetitors, swarm: vSwarm, leads: vLeads, lineup: vLineup, positions: vTPositions, trades: vTTrades, pnl: vTPnl, news: vTNews, coins: vTCoins, backtest: vTBacktest, week: vTWeek, shots: vShots, stats: vStats, trending: vTrending, research: vResearch, activity: vActivity }[tab] || vOverview)(t, body);
+    ({ overview: vOverview, ideas: vIdeas, review: vReview, competitors: vCompetitors, swarm: vSwarm, leads: vLeads, lineup: vLineup, picks: vFPicks, underdogs: vFDogs, record: vFRecord, analysis: vFAnalysis, books: vFBooks, positions: vTPositions, trades: vTTrades, pnl: vTPnl, news: vTNews, coins: vTCoins, backtest: vTBacktest, week: vTWeek, shots: vShots, stats: vStats, trending: vTrending, research: vResearch, activity: vActivity }[tab] || vOverview)(t, body);
   }
   function pill(s) { return el("span", "pill s-" + (s || "idle"), ST[s] || s || "Idle"); }
   function empty(title, text) { const e = el("div", "empty"); e.append(el("strong", null, title)); e.append(el("span", null, text)); return e; }
@@ -282,11 +284,12 @@
     r.append(nm, pill(a.status)); c.append(r);
     if (a.doing) c.append(el("div", null, a.doing));
     c.append(el("div", "small", (a.lastRun ? "Last run " + ago(a.lastRun) : "Hasn't run yet") + (a.nextRun ? " · next " + until(a.nextRun) : "")));
-    const k = tabForKind(t, a.kind); if (k !== "overview") { const b = el("button", "btn primary", { stats: "See the stats", research: "See what they found", review: "See the review", competitors: "See the competitors", swarm: "See the debate", positions: "See open positions", trades: "See every trade", news: "See the news desk", coins: "See coin watch" }[k] || "See what they wrote"); b.onclick = () => { tab = k; renderPanel(); }; c.append(b); }
+    const k = tabForKind(t, a.kind); if (k !== "overview") { const b = el("button", "btn primary", { stats: "See the stats", research: "See what they found", review: "See the review", competitors: "See the competitors", swarm: "See the debate", positions: "See open positions", trades: "See every trade", news: "See the news desk", coins: "See coin watch", picks: "See today's picks", underdogs: "See the underdog check", record: "See the record", books: "See odds sources" }[k] || "See what they wrote"); b.onclick = () => { tab = k; renderPanel(); }; c.append(b); }
     return c;
   }
   function vOverview(t, body) {
     if (t.cfg.id === "repos") requestCard(t, body);
+    if (t.cfg.id === "fight") fightTop(t, body);
     if (t.cfg.id === "trading") tradingTop(t, body);
     if (t.cfg.virtual && M.teams.trading && (M.teams.trading.state.brief || {}).headline) {
       const c = el("div", "card"); c.append(el("div", "label", "Trading Desk · paper money · " + ago(M.teams.trading.state.updatedAt)));
@@ -296,7 +299,7 @@
     const b = t.state.brief;
     if (b) { const c = el("div", "card brief"); c.append(el("div", "label", (t.cfg.virtual ? "Chief of Staff · " : "Brief · ") + (b.date || ago(b.createdAt))));
       c.append(el("h3", null, b.headline || "Today's brief")); if (b.summary) c.append(el("div", "why", b.summary));
-      [["Film today", b.filmToday], ["Needs you", b.approvals], ["Heads up", b.notes]].forEach(([l, arr]) => { if (!Array.isArray(arr) || !arr.length) return; c.append(el("div", "label", l)); const ul = el("ul"); arr.forEach(i => ul.append(el("li", null, String(i)))); c.append(ul); });
+      [[t.cfg.id === "fight" ? "On today's card" : "Film today", b.filmToday], ["Needs you", b.approvals], ["Heads up", b.notes]].forEach(([l, arr]) => { if (!Array.isArray(arr) || !arr.length) return; c.append(el("div", "label", l)); const ul = el("ul"); arr.forEach(i => ul.append(el("li", null, String(i)))); c.append(ul); });
       body.append(c); }
     else if (t.cfg.virtual) body.append(empty("No brief yet", "The Chief of Staff writes one every day before noon."));
     if (!t.hired && !t.cfg.virtual) body.append(empty("This team hasn't started yet", "Its first run fills this floor with research and ideas."));
@@ -759,6 +762,101 @@
       r.append(el("span", "m", new Date(x.t).toLocaleDateString() + " · " + (x.exitReason || ""))); r.append(el("span", "m", x.tradingAgents ? "TradingAgents: " + x.tradingAgents : "")); c.append(r); }); body.append(c);
   }
 
+  /* ---------------- fight & court ---------------- */
+  const SPORTN = { nba: "NBA", ufc: "UFC" };
+  const RES = { won: ["Won", "up"], lost: ["Lost", "down"], push: ["Push", ""], void: ["Void", ""], unresolved: ["Couldn't confirm", ""], open: ["Open", ""] };
+  const usd = n => n == null ? "—" : (n < 0 ? "-$" : "+$") + Math.abs(n).toFixed(2);
+  const when = iso => { const d = new Date(iso); return isNaN(d) ? "" : d.toLocaleString([], { weekday: "short", hour: "numeric", minute: "2-digit" }); };
+  function fightTop(t, body) {
+    const c = el("div", "card"); c.style.borderColor = t.cfg.color;
+    c.append(el("div", "label", "Research and recommendations only"));
+    c.append(el("div", null, "Never places bets and never logs into a sportsbook. Ontario-licensed books only; Bet365 is excluded everywhere. “No bet” is a valid answer, and nothing is ever called a lock."));
+    body.append(c);
+    const r = (t.state.record || {}).all;
+    if (r) { const k = el("div", "kpis");
+      k.append(tk(r.picks ? `${r.won}-${r.lost}${r.push ? "-" + r.push : ""}` : "0-0", "Record (W-L)", `${(t.state.record || {}).open || 0} still to play`));
+      k.append(tk(r.winRate == null ? "—" : r.winRate + "%", "Win rate", r.picks ? `${r.picks} settled` : "no results yet"));
+      k.append(tk(r.profitPer100 == null ? "—" : usd(r.profitPer100), "Profit per $100 staked", r.picks ? `${usd(r.profit)} total at $100 a pick` : "", sgn(r.profitPer100)));
+      k.append(tk(r.beatClose == null ? "—" : r.beatClose + "%", "Beat the closing price", r.clvCount ? `avg ${pct(r.clvAvg)} over ${r.clvCount}` : "earliest sign it works", r.clvAvg == null ? "" : sgn(r.clvAvg)));
+      body.append(k); }
+  }
+  function priceLine(p) {
+    const s2 = el("div", "small");
+    s2.textContent = `Implied ${p.impliedPct}% at ${p.american} · market fair (no-vig) ${p.fairPct}% · our estimate ${p.ourPct}%` +
+      (p.edgePct != null ? ` · edge ${p.edgePct >= 0 ? "+" : ""}${p.edgePct} pts` : "") + ` · EV ${usd(p.evPer100)} per $100`;
+    return s2;
+  }
+  function pickCard(p) {
+    const c = el("div", "card"); const r = el("div", "row between"); const nm = el("div");
+    nm.append(el("div", "label", `${SPORTN[p.sport] || ""} · ${{ single: "Single", underdog: "Underdog", parlay: "Parlay" }[p.type] || p.type}${p.commence ? " · " + when(p.commence) : ""}`));
+    nm.append(el("h3", null, p.selection)); nm.append(el("div", "muted", p.event));
+    const right = el("div", "kpi"); right.style.padding = "6px 10px"; right.style.textAlign = "right";
+    right.append(el("div", "v", p.american)); right.append(el("div", "k", p.bookName));
+    r.append(nm, right); c.append(r);
+    const st = RES[p.status] || RES.open;
+    if (p.status && p.status !== "open") { const x = el("div", "d " + st[1], `${st[0]}${p.profit != null ? " · " + usd(p.profit) + " on $100" : ""}${p.finalScore ? " · " + p.finalScore : ""}`); x.style.fontWeight = "600"; c.append(x); }
+    c.append(el("div", "why", (p.value ? "Real value: " : "No value: ") + (p.reasoning || "")));
+    c.append(priceLine(p));
+    if ((p.legs || []).length) { const ul = el("ul"); p.legs.forEach(l => { const li = el("li"); li.append(el("b", null, `${l.selection} ${l.american}`)); li.append(document.createTextNode(` · ${l.event} · our ${l.ourPct}% vs fair ${l.fairPct}%` + (l.status && l.status !== "open" ? ` · ${(RES[l.status] || [l.status])[0]}` : "") + (l.reasoning ? ` · ${l.reasoning}` : ""))); ul.append(li); }); c.append(ul); }
+    if ((p.keyFactors || []).length) { const ul = el("ul"); p.keyFactors.forEach(f => ul.append(el("li", null, f))); c.append(ul); }
+    if (p.allPrices) { const d = el("details"); d.append(el("summary", null, "Every Ontario price for this side"));
+      d.append(el("div", "small", Object.entries(p.allPrices).map(([b, a]) => `${b} ${a}`).join(" · "))); c.append(d); }
+    if (p.close) c.append(el("div", "small", `Closing price ${p.close.american} · ${p.close.clvPct >= 0 ? "beat" : "missed"} the close by ${Math.abs(p.close.clvPct)}%`));
+    c.append(el("div", "small", `Price from ${p.bookName}'s ${p.feed || ""} feed. Check it in the Ontario app before deciding; prices move.`));
+    return c;
+  }
+  function vFPicks(t, body) {
+    const cards = t.state.cards || {}; let any = false;
+    ["nba", "ufc"].forEach(sp => { const cd = cards[sp]; if (!cd) return; any = true;
+      const h = el("div", "label", `${SPORTN[sp]} · ${cd.date}${cd.event ? " · " + cd.event : ""} · ${cd.games || 0} event(s) checked · made ${ago(cd.createdAt)}`); body.append(h);
+      if (cd.noBet) { const c = el("div", "card"); c.append(el("h3", null, cd.noGames ? "Nothing scheduled" : "No bet")); c.append(el("div", null, cd.noBet)); body.append(c); }
+      (cd.picks || []).forEach(p => body.append(pickCard(p)));
+      (cd.parlays || []).forEach(p => body.append(pickCard(p)));
+      if (cd.slateNotes) body.append(el("div", "small", cd.slateNotes)); });
+    if (!any) body.append(empty("No card yet", "NBA picks come out daily around 1:30 PM and UFC picks Friday afternoon, after weigh-ins. It needs the free Odds API key on the server first."));
+  }
+  function vFDogs(t, body) {
+    const cards = t.state.cards || {}; let n = 0;
+    body.append(el("div", "small", "Every underdog on today's slates: the price's implied chance vs the fair chance and our estimate. Only the ones marked Value become picks."));
+    ["nba", "ufc"].forEach(sp => { const ds = (cards[sp] || {}).underdogs || []; if (!ds.length) return; n += ds.length;
+      const c = el("div", "card"); c.append(el("div", "label", SPORTN[sp] + " underdogs"));
+      ds.forEach(d => { const s2 = el("div", "shot"); s2.append(el("div", "t", `${d.side} ${d.american} (${d.bookName}) · ${d.verdict}`)); s2.append(el("div", "m", `${d.event} · implied ${d.impliedPct}% · fair ${d.fairPct}% · ours ${d.ourPct}% · EV ${usd(d.evPer100)} per $100`)); s2.append(el("p", null, d.reasoning)); c.append(s2); });
+      body.append(c); });
+    if (!n) body.append(empty("No underdogs to review yet", "They show up with each day's card."));
+  }
+  function vFRecord(t, body) {
+    fightTop(t, body); const R = t.state.record || {};
+    const tbl = (rows) => { const c = el("div", "card"); rows.forEach(([name, s2]) => { const r = el("div", "vid"); r.append(el("span", "t", name)); r.append(el("span", "n " + sgn(s2.profitPer100), s2.profitPer100 == null ? "—" : usd(s2.profitPer100) + " / $100"));
+      r.append(el("span", "m", s2.picks ? `${s2.won}-${s2.lost}${s2.push ? "-" + s2.push : ""} · ${s2.winRate == null ? "—" : s2.winRate + "%"} wins` : "no settled picks")); r.append(el("span", "m", s2.picks ? `${usd(s2.profit)} total` : "")); c.append(r); }); return c; };
+    const bt = R.byType || {}, bs = R.bySport || {};
+    body.append(el("div", "label", "By bet type"));
+    body.append(tbl([["Singles", bt.single || {}], ["Underdogs", bt.underdog || {}], ["Parlays", bt.parlay || {}]]));
+    body.append(el("div", "label", "By sport · last 30 days"));
+    body.append(tbl([["NBA", bs.nba || {}], ["UFC", bs.ufc || {}], ["Last 30 days", R.last30 || {}]]));
+    body.append(el("div", "small", `Flat $100 on every pick. Pushes return the stake; void and unconfirmed results are left out (${R.void || 0} void, ${R.unresolved || 0} unconfirmed). No-bet days: ${R.noBetDays || 0} of ${R.cards || 0}. Under ~100 picks the win rate is mostly noise; beating the closing price is the earlier signal.`));
+    const ser = R.series || [];
+    if (ser.length > 1) { const c = el("div", "card"); c.append(el("div", "label", "Running profit at $100 a pick")); c.append(lineChart([{ vals: ser.map(x => x.profit), color: t.cfg.color }], ser.map(x => new Date(x.t).toLocaleDateString([], { month: "short", day: "numeric" })))); body.append(c); }
+    const rec = t.state.recent || []; body.append(el("div", "label", "Settled picks"));
+    if (!rec.length) body.append(empty("Nothing settled yet", "The Results Grader settles every pick on its own each morning."));
+    rec.forEach(p => body.append(pickCard(p)));
+  }
+  function vFAnalysis(t, body) {
+    const cards = t.state.cards || {}; let any = false;
+    ["nba", "ufc"].forEach(sp => { const cd = cards[sp]; if (!cd || !(cd.analysis || []).length) return; any = true;
+      const c = el("div", "card"); c.append(el("div", "label", `${SPORTN[sp]} research · ${cd.date}`));
+      cd.analysis.forEach(a => { const s2 = el("div", "shot"); s2.append(el("div", "t", a.event)); if (a.summary) s2.append(el("p", null, a.summary)); if ((a.keyFactors || []).length) s2.append(el("div", "m", a.keyFactors.join(" · "))); c.append(s2); });
+      c.append(srcLinks((cd.sources || []).map(x => ({ url: x.url, publisher: x.title, title: x.title })))); body.append(c); });
+    if (!any) body.append(empty("No research yet", "Each card comes with the research behind it and its sources."));
+  }
+  function vFBooks(t, body) {
+    const b = t.state.books || {}, cr = t.state.credits || {};
+    const k = el("div", "kpis"); k.append(tk(cr.cost || "$0", "Odds data cost", cr.plan || "")); k.append(tk(cr.remaining == null ? "—" : String(cr.remaining), "Credits left this month", `about ${cr.estimatePerMonth || 270} used a month`)); body.append(k);
+    const c = el("div", "card"); c.append(el("div", "label", "Ontario-licensed books compared"));
+    (b.active || []).forEach(x => { const r = el("div", "vid"); r.append(el("span", "t", x.name)); r.append(el("span", "m", `${x.feed} price feed`)); c.append(r); });
+    c.append(el("div", "small", `${b.excluded || "Bet365 excluded"}. Licence check ${b.checkedAt ? ago(b.checkedAt) : "runs every Sunday"} against iGaming Ontario / AGCO.`)); body.append(c);
+    const rules = el("div", "card"); rules.append(el("div", "label", "How picks are made")); const ul = el("ul"); (t.state.rules || []).forEach(x => ul.append(el("li", null, x))); rules.append(ul); body.append(rules);
+  }
+
   /* ---------------- HUD ---------------- */
   function renderHUD() {
     const all = Object.values(M.teams); const working = all.reduce((n, t) => n + t.agents.filter(a => a.status === "working").length, 0);
@@ -772,6 +870,8 @@
     if (subs) chip(fmt(subs), "YouTube subs");
     const ta = M.teams.trading && M.teams.trading.state.account;
     if (ta && ta.totalPct != null) chip((ta.totalPct >= 0 ? "+" : "") + ta.totalPct.toFixed(2) + "%", "Paper P&L");
+    const fr = M.teams.fight && (M.teams.fight.state.record || {}).all;
+    if (fr && fr.picks) chip(`${fr.won}-${fr.lost}`, "Picks record", el("div", "d " + (fr.profitPer100 >= 0 ? "up" : "down"), (fr.profitPer100 >= 0 ? "+$" : "-$") + Math.abs(fr.profitPer100).toFixed(2) + " per $100"));
     $("#liveText").textContent = "Live · " + all.filter(t => t.hired && !t.cfg.virtual).length + " of " + all.filter(t => !t.cfg.virtual).length + " teams hired";
     const bar = $("#teambar"); bar.replaceChildren();
     CFG.teams.forEach(c => { const t = M.teams[c.id]; const b = el("button"); b.dataset.id = c.id; const sw = el("span", "sw"); sw.style.background = c.color; b.append(sw, document.createTextNode(c.virtual ? "HQ" : c.name));

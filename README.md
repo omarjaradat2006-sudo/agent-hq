@@ -5,6 +5,7 @@ Omar's AI agent teams: TikTok, YouTube, LinkedAI, Growth Architect, AI Opportuni
 - Live sites: https://omarjaradat2006-sudo.github.io/agent-hq/
 - Setup and data connections: [SETUP.md](SETUP.md)
 - Trading Desk (paper-trading bot, runs on the laptop): [trading_bot/README.md](trading_bot/README.md)
+- Fight & Court Intelligence (UFC + NBA research, Oracle server, never bets): `agents/fight/run.py`, set up with `scripts/server/setup_fight.sh`
 
 ## How it works
 
