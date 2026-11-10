@@ -4,6 +4,9 @@ import config as C
 import oddsmath as M
 import wording as W
 
+# Optional own key (a separate free Google AI Studio project) so the video and trading jobs can't use up its quota.
+if os.environ.get("FIGHT_GEMINI_API_KEY", "").strip():
+    os.environ["GEMINI_API_KEY"] = os.environ["FIGHT_GEMINI_API_KEY"].strip()
 sys.path.insert(0, os.path.join(C.ROOT, "agents", "gemini"))
 import gemini as G  # noqa: E402
 
