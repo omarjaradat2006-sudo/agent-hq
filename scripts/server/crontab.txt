@@ -7,7 +7,7 @@
 41 13 * * 1,4  /home/ubuntu/agent-hq/scripts/server/run_team.sh upgrades
 23 10 * * 3    /home/ubuntu/agent-hq/scripts/server/run_team.sh opps
 23 6  */3 * *  /home/ubuntu/agent-hq/scripts/server/run_team.sh lab
-37 15 * * 0    /home/ubuntu/agent-hq/scripts/server/run_team.sh repos
+37 15 */3 * *  /home/ubuntu/agent-hq/scripts/server/run_team.sh repos
 42 11 * * 1    /home/ubuntu/agent-hq/scripts/server/run_team.sh chief
 
 # Bounce Theory daily batch: plan from today's lineup -> render -> upload (scheduled 5 PM - 8 AM) -> mark Agent HQ. No Claude.
