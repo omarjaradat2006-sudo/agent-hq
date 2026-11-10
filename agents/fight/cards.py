@@ -47,7 +47,7 @@ def run_nba(force=False):
     # props for as many games as the credit budget allows, most promising games first
     budget = min(O.daily_prop_budget(), len(raw))
     order = sorted(raw, key=lambda e: next((i for i, g in enumerate(ranked) if W.short(e["home_team"]).lower() in g.lower()), 99))
-    prop_games, players = 0, {}
+    prop_games, players, prop_ids, prop_names = 0, {}, [], []
     for e in order[:budget]:
         try:
             eo = O.fetch_event_odds(C.NBA_KEY, e["id"], C.NBA_PROPS)
@@ -55,24 +55,29 @@ def run_nba(force=False):
             break
         pc = O.candidates(eo, "nba") if eo else []
         cands += pc
-        prop_games += 1 if pc else 0
+        if pc:
+            prop_games += 1; prop_ids.append(e["id"]); prop_names.append(f"{W.short(e['away_team'])} vs {W.short(e['home_team'])}")
         ps = sorted({c["player"] for c in pc if c.get("player")})
         if ps:
             players[f"{e['away_team']} @ {e['home_team']}"] = ps
     extra, src2 = ("", [])
     if players:
         extra, src2 = A.nba_props_research(today, players)
-    text, idx = A.lines(cands)
+    # same-game parlays are built only from the prop games; keep milestones between -400 and +400 so the list stays sane
+    sgp_ids = [e for e in prop_ids]
+    cands = [c for c in cands if not (c["market"].endswith("_alternate") and not any(1.25 <= d <= 5.0 for d in c["prices"].values()))]
+    text, idx = A.lines([c for c in cands if c["eventId"] in sgp_ids])
     est = A.estimate("nba", text, notes, src + src2, today, extra=extra)
     analyzed = A.apply_estimates(est, idx)
-    parlays = B.build(cands, "nba", cid, today)
+    parlays = B.build_sgp(cands, cid, today, sgp_ids)
     A.why_lines(parlays)
-    card.update(games=len(raw), propGames=prop_games, analyzedLines=analyzed, totalLines=len(idx), parlays=parlays,
-                sources=[{"title": t, "url": u} for t, u in (src + src2)[:20]])
-    if len(parlays) < 3:
-        card["message"] = (f"Only {len(parlays)} parlay(s) today: with {len(raw)} game(s) on the slate there weren't enough separate games "
-                           "to reach every target with one leg per game.") if parlays else "No parlay today: not enough games or listed lines."
-    msg = f"NBA: {len(parlays)} parlay(s) from {len(raw)} games ({prop_games} with player props, {analyzed} lines analyzed)"
+    card.update(games=len(raw), propGames=prop_games, propGameNames=prop_names, analyzedLines=analyzed, totalLines=len(idx), parlays=parlays,
+                propBudget=budget, sources=[{"title": t, "url": u} for t, u in (src + src2)[:20]])
+    if not prop_ids:
+        card["message"] = "No same-game parlays today: no player props were available (odds credits or books hadn't posted props yet)."
+    elif len(parlays) < 3:
+        card["message"] = f"Only {len(parlays)} slip(s) today: the {prop_games} game(s) with props didn't have enough allowed legs to reach every target."
+    msg = f"NBA: {len(parlays)} same-game parlay(s); props for {prop_games} of {len(raw)} games ({', '.join(prop_names)}); {analyzed} lines analyzed"
     return _finish(card, "court", msg, parlays)
 
 

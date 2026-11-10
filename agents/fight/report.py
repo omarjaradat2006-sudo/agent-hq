@@ -11,7 +11,7 @@ AGENTS = [
     {"id": "value", "name": "Parlay Builder", "role": "3 placeable parlays, one leg per game, one book"},
     {"id": "grader", "name": "Results Grader", "role": "Grades every parlay and underdog pick"},
 ]
-KINDS = {"nba_parlay": "NBA parlays", "ufc_parlay": "UFC parlays", "ufc_dog": "UFC underdog picks"}
+KINDS = {"nba_parlay": "NBA same-game parlays (at estimated odds)", "ufc_parlay": "UFC parlays", "ufc_dog": "UFC underdog picks"}
 
 
 def stats(bets):
@@ -54,8 +54,8 @@ def refresh(st, lg):
     st["credits"] = {**O.credits(), "planCredits": C.PLAN_CREDITS,
                      "plan": "Free (500 credits a month)" if C.PLAN_CREDITS <= 500 else f"Paid ({C.PLAN_CREDITS:,} credits a month)"}
     st["costInfo"] = [
-        "Now: free plan, $0. Covers NBA winner, spread and game total for every game, plus player points/rebounds/assists/threes and team totals for about 2 games a day (that's what 500 credits a month allows).",
-        "Upgrade option (not done): The Odds API 20K plan, $30 USD a month (about $42 CAD). Gives player props and team totals for every NBA game every day (about 1,300 credits a month used).",
+        "Now: free plan, $0. Same-game parlays need player props, which cost 5 credits per game (points, rebounds, assists, threes, 20+ style milestones). The free plan covers props for 2 games a day on average (3 a day for the rest of this month, since credits carried over). Slips are built from the best of those games.",
+        "Upgrade option (not done): The Odds API 20K plan, $30 USD a month (about $42 CAD). Gives props for every NBA game every day (about 1,300 credits a month used), so slips can come from any game.",
         "UFC: the feed carries fight winner and, at some books, total rounds. It does NOT carry method of victory, significant strikes or takedowns on any plan, so UFC underdog picks are tracked as straight wins.",
         "Grading costs no odds credits: NBA results and box scores come from ESPN's free public data; UFC results from a sourced Google search.",
         "Credits left are checked before every call; it stops spending 25 credits before the limit and posts fewer prop games instead.",
@@ -63,7 +63,7 @@ def refresh(st, lg):
     st["books"] = {"active": list(C.BOOKS.values()), "excluded": "Bet365 is excluded everywhere. No other book is read or shown."}
     st["rules"] = ["Research and recommendations only. It never places bets and never logs into a sportsbook.",
                    "FanDuel and DraftKings only. Every leg came from that app's live odds when it was posted.",
-                   "One leg per game, all legs on one app: a normal parlay the app accepts, total odds = the legs multiplied.",
+                   "NBA slips are same-game parlays (one game, one app). Combos the apps block are never built; the app sets the final SGP price, so confirm it before placing.",
                    "Most analyzed, not safest. Nothing is ever called a lock or guaranteed.",
                    "No budget, stake or deposit advice. You decide your own money.",
                    "Every parlay and underdog pick is graded automatically at a flat $100 so the record shows if it profits."]

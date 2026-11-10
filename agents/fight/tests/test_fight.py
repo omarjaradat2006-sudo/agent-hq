@@ -33,10 +33,14 @@ def nba_game(i, away, home, start):
 
 
 def props(i, away, home):
-    p1, p2 = f"Star{i} Guy", f"Big{i} Man"
-    m = [mk("player_points", [{"name": "Over", "description": p1, "price": 1.87, "point": 24.5}, {"name": "Under", "description": p1, "price": 1.95, "point": 24.5}]),
-         mk("player_rebounds", [{"name": "Over", "description": p2, "price": 1.90, "point": 10.5}, {"name": "Under", "description": p2, "price": 1.90, "point": 10.5}]),
-         mk("player_threes", [{"name": "Over", "description": p1, "price": 2.10, "point": 2.5}, {"name": "Under", "description": p1, "price": 1.72, "point": 2.5}])]
+    p1, p2, p3 = f"Star{i} Guy", f"Big{i} Man", f"Point{i} Guard"
+    ou = lambda who, pt, o, u: [{"name": "Over", "description": who, "price": o, "point": pt}, {"name": "Under", "description": who, "price": u, "point": pt}]
+    m = [mk("player_points", ou(p1, 24.5, 1.87, 1.95) + ou(p3, 18.5, 1.90, 1.90)),
+         mk("player_rebounds", ou(p2, 10.5, 1.90, 1.90)),
+         mk("player_assists", ou(p3, 7.5, 1.95, 1.85)),
+         mk("player_threes", ou(p1, 2.5, 2.10, 1.72)),
+         mk("player_points_alternate", [{"name": "Over", "description": p1, "price": 1.30, "point": 19.5}, {"name": "Over", "description": p1, "price": 3.40, "point": 29.5},
+                                        {"name": "Over", "description": p2, "price": 1.55, "point": 14.5}, {"name": "Over", "description": p3, "price": 12.0, "point": 39.5}])]
     return {"id": f"g{i}", "commence_time": iso(5 + i * 0.5), "home_team": home, "away_team": away,
             "bookmakers": [book("fanduel", m), book("draftkings", m[:2]), book("bet365", m, "bet365")]}
 
@@ -96,6 +100,11 @@ class T(unittest.TestCase):
         self.assertEqual(W.leg_text({**c, "market": "player_threes"}, "draftkings"), "Lakers vs Celtics: LeBron James Over 24.5 Threes")
         self.assertEqual(W.leg_text({**c, "market": "spreads", "side": "Boston Celtics", "point": -5.5}, "fanduel"), "Lakers vs Celtics: Celtics -5.5")
         self.assertEqual(W.short("Portland Trail Blazers"), "Trail Blazers")
+        self.assertEqual(W.leg_text({**c, "market": "player_points_alternate", "point": 19.5}, "fanduel", with_game=False), "LeBron James 20+ Points")
+        a = {**c, "id": "a"}; b = {**c, "id": "b", "market": "player_points_alternate", "point": 19.5}
+        self.assertFalse(B.sgp_ok([a, b]))                                                     # same player + stat twice
+        self.assertFalse(B.sgp_ok([{**c, "market": "h2h", "player": None}, {**c, "market": "spreads", "player": None}]))  # ML + spread
+        self.assertTrue(B.sgp_ok([a, {**c, "market": "player_assists"}]))
 
     def test_only_fanduel_draftkings(self):
         cs = O.candidates(nba_game(0, *TEAMS[0], 5), "nba")
@@ -107,10 +116,15 @@ class T(unittest.TestCase):
         st, lg = S.state(), S.ledger()
         ps = st["cards"]["nba"]["parlays"]
         self.assertEqual([p["tier"] for p in ps], ["+100", "+500", "+1000"])
+        self.assertEqual(st["cards"]["nba"]["propGames"], 2)
         for p, (_, lo, hi) in zip(ps, C.TARGETS):
             self.assertIn(p["bookName"], ("FanDuel", "DraftKings"))
-            self.assertEqual(len({l["eventId"] for l in p["legs"]}), len(p["legs"]))       # one leg per game
-            self.assertGreaterEqual(len(p["legs"]), 2)
+            self.assertTrue(p["sgp"] and p["estimated"])
+            self.assertEqual(len({l["eventId"] for l in p["legs"]}), 1)                      # one game per slip
+            self.assertIn(p["eventId"], ("g0", "g1"))                                          # only games with props
+            self.assertTrue(2 <= len(p["legs"]) <= 5)
+            self.assertTrue(B.sgp_ok([{**l, "id": str(i)} for i, l in enumerate(p["legs"])]))
+            self.assertTrue(all(":" not in l["tap"] for l in p["legs"]))
             self.assertAlmostEqual(p["dec"], M.parlay_decimal([l["dec"] for l in p["legs"]]), places=2)
             self.assertTrue(lo * 0.85 <= p["dec"] <= hi * 1.25)
             self.assertIn(p["strength"], ("Strong", "Medium", "Long shot"))
@@ -119,7 +133,7 @@ class T(unittest.TestCase):
         for bad in ("bet365", "betmgm", "BetMGM"):
             self.assertNotIn(bad, json.dumps(lg).replace("[excluded book]", ""))
         self.assertNotIn("Bet365 has", dump)
-        self.assertTrue(any(":" in l["text"] and ("Points" in l["text"] or "Moneyline" in l["text"] or "Total" in l["text"] or "Rebounds" in l["text"] or "Threes" in l["text"] or re.search(r"[+-]\d", l["text"])) for p in ps for l in p["legs"]))
+        self.assertTrue(any(l.get("player") for p in ps for l in p["legs"]))                # props are used
         self.assertEqual(len(lg["bets"]), 3)
 
     def test_ufc_no_event(self):
@@ -160,7 +174,9 @@ class T(unittest.TestCase):
         S.save(S.LEDGER, lg)
         Gr.espn_game = lambda leg: {"id": leg["eventId"], "completed": True, "postponed": False, "home": 110, "away": 100}
         Gr.espn_box = lambda gid: {"Star0 Guy": {"played": True, "PTS": 30, "REB": 5, "AST": 4, "3PT": 4}, "Big0 Man": {"played": False},
-                                   "Star1 Guy": {"played": True, "PTS": 10, "REB": 2, "AST": 1, "3PT": 0}, "Big1 Man": {"played": True, "PTS": 8, "REB": 14, "AST": 1, "3PT": 0}}
+                                   "Point0 Guard": {"played": True, "PTS": 21, "REB": 3, "AST": 9, "3PT": 1},
+                                   "Star1 Guy": {"played": True, "PTS": 10, "REB": 2, "AST": 1, "3PT": 0}, "Big1 Man": {"played": True, "PTS": 8, "REB": 14, "AST": 1, "3PT": 0},
+                                   "Point1 Guard": {"played": True, "PTS": 15, "REB": 2, "AST": 6, "3PT": 2}}
         Gr.run()
         lg = S.ledger()
         self.assertTrue(all(b["status"] in ("won", "lost", "push") for b in lg["bets"]))
@@ -170,8 +186,10 @@ class T(unittest.TestCase):
                 self.assertEqual(l["status"], "won" if l["side"] == l["home"] else "lost")
             if l.get("player") == "Big0 Man":
                 self.assertEqual(l["status"], "void")
+            if l.get("player") == "Star0 Guy" and l["market"] == "player_points_alternate" and l["point"] == 19.5:
+                self.assertEqual(l["status"], "won")
         lines = S.state()["record"]["lines"]
-        self.assertTrue(re.match(r"NBA parlays: \d+ won, \d+ lost.*(up|down) \$\d+\.\d\d per \$100", lines[0]), lines[0])
+        self.assertTrue(re.match(r"NBA same-game parlays \(at estimated odds\): \d+ won, \d+ lost.*(up|down) \$\d+\.\d\d per \$100", lines[0]), lines[0])
 
     def test_sanitize(self):
         self.assertEqual(S.sanitize("This is basically guaranteed, a lock."), "This is likely, a lean.")

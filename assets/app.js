@@ -791,17 +791,18 @@
   function slip(p) {
     const c = el("div", "card");
     const h = el("div", "row between");
-    h.append(el("h3", null, `${p.sport.toUpperCase()} ${p.tier} parlay`), tag(p.strength, STRC[p.strength]));
+    h.append(el("h3", null, p.sgp ? `${p.game} · ${p.tier} same-game parlay` : `${p.sport.toUpperCase()} ${p.tier} parlay`), tag(p.strength, STRC[p.strength]));
     c.append(h);
-    const book = el("div", null, `Place on ${p.bookName} as one parlay`); book.style.fontWeight = "700"; book.style.margin = "4px 0 6px"; c.append(book);
-    (p.legs || []).forEach(l => c.append(legLine(l.text, l.american, l.status)));
-    const tot = el("div", "row between"); tot.style.marginTop = "8px"; const tl = el("div", null, "Total odds"); const tv = el("div", null, p.american); tv.style.fontWeight = "800"; tv.style.fontSize = "1.15em"; tot.append(tl, tv); c.append(tot);
+    const book = el("div", null, p.sgp ? `Place on ${p.bookName} as a Same Game Parlay (${p.game})` : `Place on ${p.bookName} as one parlay`); book.style.fontWeight = "700"; book.style.margin = "4px 0 6px"; c.append(book);
+    (p.legs || []).forEach(l => c.append(legLine(p.sgp ? (l.tap || l.text) : l.text, l.american, l.status)));
+    const tot = el("div", "row between"); tot.style.marginTop = "8px"; const tl = el("div", null, p.sgp ? "Estimated total odds" : "Total odds"); const tv = el("div", null, (p.sgp ? "~" : "") + p.american); tv.style.fontWeight = "800"; tv.style.fontSize = "1.15em"; tot.append(tl, tv); c.append(tot);
+    if (p.sgp) c.append(el("div", "small", `${p.bookName} prices same-game parlays itself, so the final number in the app can be different (usually a bit lower). Confirm the total odds in the app before placing.`));
     if (p.why) c.append(el("div", "why", p.why));
     const r = resultLine(p); if (r) c.append(r);
     const d = el("details"); d.append(el("summary", null, "Details"));
     d.append(el("div", "small", `Our estimate: hits about ${p.chancePct}% of the time (the odds imply ${p.impliedPct}%). Expected result ${usd(p.evPer100)} per $100 over many bets like this.`));
     const ul = el("ul"); (p.legs || []).forEach(l => { const li = el("li"); li.append(el("b", null, l.text)); li.append(el("div", "small", `Why: ${l.why}`)); li.append(el("div", "small", `In the app: ${l.where} · our chance ${l.chancePct}% vs ${l.impliedPct}% implied${l.final ? " · result: " + l.final : ""}`)); ul.append(li); });
-    d.append(ul); d.append(el("div", "small", "One leg per game, so the app takes it as a normal parlay. Odds were live when posted; check the price in the app, it can move.")); c.append(d);
+    d.append(ul); d.append(el("div", "small", p.sgp ? "All legs are from one game and avoid combos the app blocks (both sides of a line, the same player and stat twice, moneyline + spread). Leg odds were live when posted; the chance assumes the legs are independent, so treat it as rough." : "One leg per game, so the app takes it as a normal parlay. Odds were live when posted; check the price in the app, it can move.")); c.append(d);
     return c;
   }
   function dogCard(x) {
@@ -829,6 +830,7 @@
     const cards = t.state.cards || {}, n = cards.nba, u = cards.ufc;
     if (n) {
       body.append(el("div", "label", `NBA · ${n.date}`));
+      if (n.propGameNames && n.propGameNames.length) body.append(el("div", "small", `Player props checked today (free plan): ${n.propGameNames.join(", ")}. Slips are built from the best of these games.`));
       if (n.message) { const m = el("div", "card", n.message); body.append(m); }
       (n.parlays || []).forEach(p => body.append(slip(p)));
     } else body.append(empty("No NBA slips yet", "NBA parlays post every day at 1:27 PM."));

@@ -58,7 +58,7 @@ window.HQ_CONFIG = {
         { id: "lead", name: "Scout Lead", role: "Picks the few repos worth your time", kind: "brief" },
         { id: "scout", name: "Repo Scout", role: "Searches GitHub for free tools", kind: "research" },
         { id: "tester", name: "Fit Checker", role: "Checks licence, safety and if it runs for you", kind: "ideas" } ] },
-    { id: "fight", name: "Fight & Court", color: "#ff5a3c", grid: [3, 1], tagline: "NBA daily + UFC Fridays: 3 placeable parlays on FanDuel/DraftKings, tracked record", ideaWord: "Slips",
+    { id: "fight", name: "Fight & Court", color: "#ff5a3c", grid: [3, 1], tagline: "NBA same-game parlays daily + UFC Fridays, FanDuel/DraftKings only, tracked record", ideaWord: "Slips",
       agents: [
         { id: "lead", name: "Desk Lead", role: "Posts the slips and the plain-words record", kind: "brief" },
         { id: "odds", name: "Odds Scout", role: "FanDuel + DraftKings live lines only", kind: "books" },

@@ -112,7 +112,7 @@ def nba_leg(leg, home, away, box=None):
     rec = next((v for k, v in box.items() if same_player(k, leg["player"])), None)
     if rec is None or not rec.get("played"):
         return "void"  # FanDuel/DraftKings void a prop when the player doesn't play
-    return over_under(rec[STATKEY[leg["market"]]], side, float(pt))
+    return over_under(rec[STATKEY[leg["market"].replace("_alternate", "")]], side, float(pt))
 
 
 def ufc_leg(leg, r):
@@ -156,7 +156,7 @@ def ufc_result(leg):
 
 
 def nba_search(leg):
-    stat = f" and {leg['player']}'s {STATKEY.get(leg['market'], '')} (made threes for 3PT)" if leg.get("player") else ""
+    stat = f" and {leg['player']}'s {STATKEY.get(leg['market'].replace('_alternate', ''), '')} (made threes for 3PT)" if leg.get("player") else ""
     r, url = search(f"Search the final box score of the NBA game {leg['away']} at {leg['home']} on {str(leg['commence'])[:10]}: final score{stat}. "
                     'Reply JSON only: {"status":"finished|postponed|unknown","homeScore":0,"awayScore":0,"played":true,"stat":0}')
     return (r, url) if r and url else (None, None)
@@ -187,7 +187,7 @@ def settle_leg(sport, leg):
             return None, None
         box = None
         if leg.get("player"):
-            box = {leg["player"]: {"played": bool(r.get("played")), STATKEY[leg["market"]]: r.get("stat")}} if r.get("stat") is not None or not r.get("played") else None
+            box = {leg["player"]: {"played": bool(r.get("played")), STATKEY[leg["market"].replace("_alternate", "")]: r.get("stat")}} if r.get("stat") is not None or not r.get("played") else None
             if box is None:
                 return None, None
         return nba_leg(leg, h, a, box), f"search: {url}"

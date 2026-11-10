@@ -60,7 +60,8 @@ def lines(cands):
             parts.append(f"{c['side']}{'' if c['point'] is None or mk == 'totals' or mk.startswith('player') or mk == 'team_totals' else ' ' + format(c['point'], '+g')} [{pr}] fair {c['fair']*100:.0f}%")
         label = {"h2h": "Winner", "spreads": "Spread", "totals": "Game total" if cs[0]["sport"] == "nba" else "Total rounds",
                  "team_totals": f"{who} team total", "player_points": f"{who} points", "player_rebounds": f"{who} rebounds",
-                 "player_assists": f"{who} assists", "player_threes": f"{who} threes"}.get(mk, mk)
+                 "player_assists": f"{who} assists", "player_threes": f"{who} threes",
+                 "player_points_alternate": f"{who} points milestone (Over {pt} = {int((pt or 0) + 0.5)}+ points)"}.get(mk, mk)
         line_pt = "" if pt is None or mk in ("h2h", "spreads") else f" {pt:g}"
         rows.append(f"{lid} | {W.game(cs[0])} | {label}{line_pt} | " + " | ".join(parts))
     return "\n".join(rows), idx
@@ -125,6 +126,7 @@ Research notes:
 Sources:
 {src}
 
+{"These lines will be combined into SAME-GAME parlays (2-5 legs from one game), so prefer legs that fit one believable game script and avoid legs that contradict each other." if sport == "nba" else ""}
 Pick up to 45 lines where the research gives you a concrete, specific reason to disagree with or confirm the market, and estimate the TRUE chance of the side you'd choose.
 - Start from the fair chance and move only for specific reasons (injury, role change, rest, matchup, recent form, weigh-in, style).
 - Moves above 10 points need a strong specific reason.
