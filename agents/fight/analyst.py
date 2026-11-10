@@ -111,6 +111,7 @@ def apply_estimates(est, idx):
         others = [s for s in grp if s != hit]
         if len(others) == 1 and grp[others[0]].get("model") is None:
             grp[others[0]]["model"], grp[others[0]]["why"] = 1 - p, f"Other side of: {e.get('why', '')}"[:220]
+            grp[others[0]]["derived"] = True   # never put on a slip: the research didn't choose this side
         n += 1
     return n
 
@@ -223,7 +224,8 @@ def why_lines(parlays):
     if not parlays:
         return
     body = "\n".join(f"P{i}: " + " + ".join(f"{l['text']} ({l['why']})" for l in p["legs"]) for i, p in enumerate(parlays))
-    out = json_call("For each parlay write ONE short plain sentence (max 22 words) on why it was built, no jargon, no numbers, never 'lock' or 'guaranteed'.\n"
+    out = json_call("For each parlay write ONE short plain sentence (max 22 words) on why it was built, no jargon, no numbers, never 'lock' or 'guaranteed'. "
+                    "Only use facts in the leg reasons below; don't say which team a player plays for unless a reason says so.\n"
                     + body + '\nReturn JSON only: {"why":{"P0":"...","P1":"..."}}')
     for i, p in enumerate(parlays):
         p["why"] = str((out.get("why") or {}).get(f"P{i}") or p["legs"][0]["why"])[:200]

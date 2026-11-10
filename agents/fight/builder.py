@@ -21,7 +21,7 @@ def strength(ch, ev, all_analyzed):
 
 
 def _pool(legs, book):
-    analyzed = [c for c in legs if book in c["prices"] and c.get("model") is not None]
+    analyzed = [c for c in legs if book in c["prices"] and c.get("model") is not None and not c.get("derived")]
     for c in analyzed:
         c["_edge"] = chance(c) - M.implied(c["prices"][book])
     ok = [c for c in analyzed if c["_edge"] > -0.02]
@@ -105,7 +105,7 @@ def sgp_ok(combo):
 
 
 def _sgp_pool(legs):
-    ok = [c for c in legs if c.get("model") is not None]
+    ok = [c for c in legs if c.get("model") is not None and not c.get("derived")]
     for c in ok:
         c["_edge"] = chance(c) - M.implied(c["_price"])
     ok = [c for c in ok if c["_edge"] > -0.03]
