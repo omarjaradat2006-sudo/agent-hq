@@ -1,5 +1,262 @@
 {
- "status": "not_started",
- "updatedAt": "2026-11-10T00:52:45Z",
- "note": "The bot hasn't made its first run yet, so the 7-day test hasn't started."
+ "status": "running",
+ "updatedAt": "2026-11-10T21:45:01Z",
+ "mode": "PAPER",
+ "from": "2026-11-10T01:51:53Z",
+ "to": "2026-11-17T01:51:53Z",
+ "day": 1,
+ "days": 7,
+ "trades": {
+  "opened": 0,
+  "closed": 0,
+  "open": 0,
+  "wins": 0,
+  "losses": 0,
+  "winRate": null,
+  "realizedPnl": 0,
+  "avgPct": null,
+  "avgWinPct": null,
+  "avgLossPct": null,
+  "best": null,
+  "worst": null,
+  "byExit": {}
+ },
+ "account": {
+  "startEquity": 100000.0,
+  "endEquity": 100000.0,
+  "pnl": 0.0,
+  "pnlPct": 0.0,
+  "spyPct": -0.37,
+  "vsSpyPct": 0.37,
+  "maxDrawdownPct": 0.0,
+  "maxDrawdownAt": null,
+  "curveSource": "Alpaca 15-min history + bot samples",
+  "openPnl": 0
+ },
+ "riskRules": [
+  {
+   "rule": "stock_entry_window",
+   "label": "Stock entry window (first 10 / last 30 min)",
+   "kind": "risk",
+   "count": 15,
+   "symbols": [
+    "XOM",
+    "CVX",
+    "OXY"
+   ],
+   "first": "2026-11-10T20:35:03Z",
+   "last": "2026-11-10T20:56:50Z",
+   "example": "last 30 min before the close"
+  }
+ ],
+ "riskTimeline": [
+  {
+   "t": "2026-11-10T20:35:03Z",
+   "kind": "risk",
+   "rule": "stock_entry_window",
+   "symbol": "XOM",
+   "msg": "last 30 min before the close",
+   "times": 1,
+   "lastT": "2026-11-10T20:35:03Z"
+  },
+  {
+   "t": "2026-11-10T20:35:03Z",
+   "kind": "risk",
+   "rule": "stock_entry_window",
+   "symbol": "CVX",
+   "msg": "last 30 min before the close",
+   "times": 1,
+   "lastT": "2026-11-10T20:35:03Z"
+  },
+  {
+   "t": "2026-11-10T20:35:03Z",
+   "kind": "risk",
+   "rule": "stock_entry_window",
+   "symbol": "OXY",
+   "msg": "last 30 min before the close",
+   "times": 1,
+   "lastT": "2026-11-10T20:35:03Z"
+  },
+  {
+   "t": "2026-11-10T20:40:09Z",
+   "kind": "risk",
+   "rule": "stock_entry_window",
+   "symbol": "XOM",
+   "msg": "last 30 min before the close",
+   "times": 1,
+   "lastT": "2026-11-10T20:40:09Z"
+  },
+  {
+   "t": "2026-11-10T20:40:09Z",
+   "kind": "risk",
+   "rule": "stock_entry_window",
+   "symbol": "CVX",
+   "msg": "last 30 min before the close",
+   "times": 1,
+   "lastT": "2026-11-10T20:40:09Z"
+  },
+  {
+   "t": "2026-11-10T20:40:09Z",
+   "kind": "risk",
+   "rule": "stock_entry_window",
+   "symbol": "OXY",
+   "msg": "last 30 min before the close",
+   "times": 1,
+   "lastT": "2026-11-10T20:40:09Z"
+  },
+  {
+   "t": "2026-11-10T20:46:29Z",
+   "kind": "risk",
+   "rule": "stock_entry_window",
+   "symbol": "XOM",
+   "msg": "last 30 min before the close",
+   "times": 1,
+   "lastT": "2026-11-10T20:46:29Z"
+  },
+  {
+   "t": "2026-11-10T20:46:29Z",
+   "kind": "risk",
+   "rule": "stock_entry_window",
+   "symbol": "CVX",
+   "msg": "last 30 min before the close",
+   "times": 1,
+   "lastT": "2026-11-10T20:46:29Z"
+  },
+  {
+   "t": "2026-11-10T20:46:29Z",
+   "kind": "risk",
+   "rule": "stock_entry_window",
+   "symbol": "OXY",
+   "msg": "last 30 min before the close",
+   "times": 1,
+   "lastT": "2026-11-10T20:46:29Z"
+  },
+  {
+   "t": "2026-11-10T20:51:44Z",
+   "kind": "risk",
+   "rule": "stock_entry_window",
+   "symbol": "XOM",
+   "msg": "last 30 min before the close",
+   "times": 1,
+   "lastT": "2026-11-10T20:51:44Z"
+  },
+  {
+   "t": "2026-11-10T20:51:44Z",
+   "kind": "risk",
+   "rule": "stock_entry_window",
+   "symbol": "CVX",
+   "msg": "last 30 min before the close",
+   "times": 1,
+   "lastT": "2026-11-10T20:51:44Z"
+  },
+  {
+   "t": "2026-11-10T20:51:44Z",
+   "kind": "risk",
+   "rule": "stock_entry_window",
+   "symbol": "OXY",
+   "msg": "last 30 min before the close",
+   "times": 1,
+   "lastT": "2026-11-10T20:51:44Z"
+  },
+  {
+   "t": "2026-11-10T20:56:50Z",
+   "kind": "risk",
+   "rule": "stock_entry_window",
+   "symbol": "XOM",
+   "msg": "last 30 min before the close",
+   "times": 1,
+   "lastT": "2026-11-10T20:56:50Z"
+  },
+  {
+   "t": "2026-11-10T20:56:50Z",
+   "kind": "risk",
+   "rule": "stock_entry_window",
+   "symbol": "CVX",
+   "msg": "last 30 min before the close",
+   "times": 1,
+   "lastT": "2026-11-10T20:56:50Z"
+  },
+  {
+   "t": "2026-11-10T20:56:50Z",
+   "kind": "risk",
+   "rule": "stock_entry_window",
+   "symbol": "OXY",
+   "msg": "last 30 min before the close",
+   "times": 1,
+   "lastT": "2026-11-10T20:56:50Z"
+  }
+ ],
+ "errors": [
+  {
+   "rule": "gemini_triage",
+   "label": "gemini triage",
+   "kind": "error",
+   "count": 2,
+   "symbols": [],
+   "first": "2026-11-10T02:00:27Z",
+   "last": "2026-11-10T20:13:25Z",
+   "example": "Expecting ':' delimiter: line 16 column 7 (char 409)"
+  },
+  {
+   "rule": "sec_unreachable",
+   "label": "sec unreachable",
+   "kind": "error",
+   "count": 2,
+   "symbols": [],
+   "first": "2026-11-10T19:59:22Z",
+   "last": "2026-11-10T19:59:30Z",
+   "example": "HTTP 403 https://www.sec.gov/files/company_tickers.json"
+  }
+ ],
+ "errorTimeline": [
+  {
+   "t": "2026-11-10T02:00:27Z",
+   "kind": "error",
+   "rule": "gemini_triage",
+   "symbol": null,
+   "msg": "Expecting ':' delimiter: line 16 column 7 (char 409)",
+   "times": 1,
+   "lastT": "2026-11-10T02:00:27Z"
+  },
+  {
+   "t": "2026-11-10T19:59:22Z",
+   "kind": "error",
+   "rule": "sec_unreachable",
+   "symbol": null,
+   "msg": "HTTP 403 https://www.sec.gov/files/company_tickers.json",
+   "times": 2,
+   "lastT": "2026-11-10T19:59:30Z"
+  },
+  {
+   "t": "2026-11-10T20:13:25Z",
+   "kind": "error",
+   "rule": "gemini_triage",
+   "symbol": null,
+   "msg": "All Gemini models failed. Last error: Gemini HTTP 429 on gemini-3.8-flash-lite-tts: {\n  \"error\": {\n    \"code\": 429,\n    \"message\": \"You exceeded your current quota, please check your plan and billing ",
+   "times": 1,
+   "lastT": "2026-11-10T20:13:25Z"
+  }
+ ],
+ "restarts": 2,
+ "killSwitch": false,
+ "tradeList": [],
+ "limits": {
+  "risk": {
+   "max_pct_per_trade": 0.05,
+   "max_open_positions": 5,
+   "stop_loss_pct": 0.03,
+   "take_profit_pct": 0.06,
+   "stock_max_hold_trading_days": 3,
+   "stock_no_new_trades_before_close_min": 30,
+   "stock_first_entry_after_open_min": 10,
+   "crypto_max_hold_hours": 48,
+   "daily_loss_halt_pct": 0.03,
+   "total_loss_kill_pct": 0.1
+  }
+ },
+ "caveats": [
+  "One week is a very small sample: a few lucky or unlucky trades can swing every number here.",
+  "Paper fills are kinder than real ones (no partial fills, little slippage).",
+  "Use this together with the 6-12 month backtest before deciding anything about real money."
+ ]
 }
