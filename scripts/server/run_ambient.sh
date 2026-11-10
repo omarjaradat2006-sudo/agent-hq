@@ -66,9 +66,11 @@ if [ "$MODE" = bench ]; then
 fi
 
 # 0) Yesterday hit YouTube's daily limit? Upload what's left first (planning refuses to overwrite a non-empty queue)
+$PY "$ENGINE/ambient/plan.py" --reconcile           # drop anything YouTube already has from the queue
 if [ -s "$OUTD/queue.json" ] && [ "$(tr -d ' \n' < "$OUTD/queue.json")" != "[]" ] && [ "$MODE" = full ]; then
   echo "leftover queue from an earlier day: uploading it first"
   (cd "$ENGINE/Upload Tool" && $PY upload.py ambient --yes)
+  $PY "$ENGINE/ambient/plan.py" --reconcile
   (cd "$ENGINE/Upload Tool" && $PY verify.py ambient)
 fi
 
@@ -96,6 +98,7 @@ fi
 
 # 3) Upload + schedule (5 PM - 8 AM window, one at a time). Broken/missing files are skipped by upload.py.
 cd "$ENGINE/Upload Tool" && $PY upload.py ambient --yes
+$PY "$ENGINE/ambient/plan.py" --reconcile           # queue.json keeps only what YouTube doesn't have yet
 
 # 4) Delete each uploaded video ONLY after YouTube confirms it has it (anything unconfirmed is kept and reported)
 cd "$ENGINE/Upload Tool" && $PY verify.py ambient
