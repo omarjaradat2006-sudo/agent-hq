@@ -8,7 +8,7 @@
    "role": "Posts the slips and the plain-words record",
    "status": "ok",
    "doing": "Next NBA slips at 1:27 PM",
-   "lastRun": "2026-11-10T20:04:51Z"
+   "lastRun": "2026-11-10T21:50:18Z"
   },
   {
    "id": "odds",
@@ -22,9 +22,9 @@
    "id": "court",
    "name": "Court Analyst",
    "role": "NBA: injuries, rest, matchups, form, player props",
-   "status": "ok",
-   "doing": "NBA: no bet today (6 events checked)",
-   "lastRun": "2026-11-10T18:28:25Z"
+   "status": "error",
+   "doing": "picks failed: All Gemini models failed. Last error: Gemini HTTP 429 on gemini-omni-1.1-flash: {\n  \"error\": {\n    \"code\": 429",
+   "lastRun": "2026-11-10T21:50:18Z"
   },
   {
    "id": "fight",
@@ -52,6 +52,11 @@
  ],
  "log": [
   {
+   "t": "2026-11-10T21:50:18Z",
+   "agent": "Court Analyst",
+   "msg": "picks nba failed: All Gemini models failed. Last error: Gemini HTTP 429 on gemini-omni-1.1-flash: {\n  \"error\": {\n    \"code\": 429,\n    \"message\": \"You exceeded your current quota, please check your p"
+  },
+  {
    "t": "2026-11-10T20:04:51Z",
    "agent": "Desk Lead",
    "msg": "Rebuilt: FanDuel + DraftKings only, 3 NBA parlays daily, UFC Fridays 8 PM with underdog picks."
@@ -67,7 +72,7 @@
    "msg": "Fight & Court Intelligence built: UFC + NBA, Ontario-licensed books only. Waiting for the Odds API key."
   }
  ],
- "updatedAt": "2026-11-10T20:04:51Z",
+ "updatedAt": "2026-11-10T21:50:18Z",
  "record": {
   "all": {
    "bets": 0,
@@ -108,7 +113,7 @@
    }
   },
   "lines": [
-   "NBA parlays: no results yet",
+   "NBA same-game parlays (at estimated odds): no results yet",
    "UFC parlays: no results yet",
    "UFC underdog picks: no results yet"
   ],
@@ -120,15 +125,15 @@
    "UFC +500 parlays: no results yet",
    "UFC +1000 parlays: no results yet"
   ],
-  "updatedAt": "2026-11-10T20:04:51Z"
+  "updatedAt": "2026-11-10T21:50:18Z"
  },
  "credits": {
-  "remaining": 497,
-  "used": 3,
+  "remaining": 473,
+  "used": 27,
   "last": {
-   "call": "nba odds (3 credits)",
+   "call": "basketball_nba h2h,spreads,totals (3 credits)",
    "cost": "3",
-   "at": "2026-11-10T18:27:02Z"
+   "at": "2026-11-10T21:48:28Z"
   },
   "planCredits": 500,
   "plan": "Free (500 credits a month)"
@@ -143,16 +148,16 @@
  "rules": [
   "Research and recommendations only. It never places bets and never logs into a sportsbook.",
   "FanDuel and DraftKings only. Every leg came from that app's live odds when it was posted.",
-  "One leg per game, all legs on one app: a normal parlay the app accepts, total odds = the legs multiplied.",
+  "NBA slips are same-game parlays (one game, one app). Combos the apps block are never built; the app sets the final SGP price, so confirm it before placing.",
   "Most analyzed, not safest. Nothing is ever called a lock or guaranteed.",
   "No budget, stake or deposit advice. You decide your own money.",
   "Every parlay and underdog pick is graded automatically at a flat $100 so the record shows if it profits."
  ],
  "brief": {
   "date": "2026-11-10",
-  "createdAt": "2026-11-10T20:04:51Z",
+  "createdAt": "2026-11-10T21:50:18Z",
   "headline": "Next NBA slips at 1:27 PM",
-  "summary": "NBA parlays: no results yet · UFC parlays: no results yet · UFC underdog picks: no results yet",
+  "summary": "NBA same-game parlays (at estimated odds): no results yet · UFC parlays: no results yet · UFC underdog picks: no results yet",
   "filmToday": [],
   "approvals": [],
   "notes": []
@@ -160,8 +165,8 @@
  "cards": {},
  "history": [],
  "costInfo": [
-  "Now: free plan, $0. Covers NBA winner, spread and game total for every game, plus player points/rebounds/assists/threes and team totals for about 2 games a day (that's what 500 credits a month allows).",
-  "Upgrade option (not done): The Odds API 20K plan, $30 USD a month (about $42 CAD). Gives player props and team totals for every NBA game every day (about 1,300 credits a month used).",
+  "Now: free plan, $0. Same-game parlays need player props, which cost 5 credits per game (points, rebounds, assists, threes, 20+ style milestones). The free plan covers props for 2 games a day on average (3 a day for the rest of this month, since credits carried over). Slips are built from the best of those games.",
+  "Upgrade option (not done): The Odds API 20K plan, $30 USD a month (about $42 CAD). Gives props for every NBA game every day (about 1,300 credits a month used), so slips can come from any game.",
   "UFC: the feed carries fight winner and, at some books, total rounds. It does NOT carry method of victory, significant strikes or takedowns on any plan, so UFC underdog picks are tracked as straight wins.",
   "Grading costs no odds credits: NBA results and box scores come from ESPN's free public data; UFC results from a sourced Google search.",
   "Credits left are checked before every call; it stops spending 25 credits before the limit and posts fewer prop games instead."
