@@ -38,6 +38,10 @@ BOOKS = {
 for _k, _b in BOOKS.items():
     assert not BANNED.search(_k) and not BANNED.search(_b["name"]), "Bet365 must never be in the book list"
 
+# Omar's own books: best price, value, parlays and "where to find it" use ONLY these.
+# The other Ontario books above are still read (same credit cost) to work out the fair price.
+MY_BOOKS = ["fanduel", "draftkings", "betmgm", "betrivers"]
+
 # The Odds API: every 10 named bookmakers cost the same as 1 region. Free plan = 500 credits/month.
 ODDS_BASE = "https://api.the-odds-api.com/v4"
 CREDIT_RESERVE = 40          # never spend below this (keeps grading alive at month end)

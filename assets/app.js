@@ -799,7 +799,7 @@
     c.append(priceLine(p));
     if ((p.legs || []).length) { const ul = el("ul"); p.legs.forEach(l => { const li = el("li"); li.append(el("b", null, `${l.selection} ${l.american}`)); li.append(document.createTextNode(` · ${l.event} · our ${l.ourPct}% vs fair ${l.fairPct}%` + (l.status && l.status !== "open" ? ` · ${(RES[l.status] || [l.status])[0]}` : "") + (l.reasoning ? ` · ${l.reasoning}` : ""))); ul.append(li); }); c.append(ul); }
     if ((p.keyFactors || []).length) { const ul = el("ul"); p.keyFactors.forEach(f => ul.append(el("li", null, f))); c.append(ul); }
-    if (p.allPrices) { const d = el("details"); d.append(el("summary", null, "Every Ontario price for this side"));
+    if (p.allPrices) { const d = el("details"); d.append(el("summary", null, "Price at each of your books"));
       d.append(el("div", "small", Object.entries(p.allPrices).map(([b, a]) => `${b} ${a}`).join(" · "))); c.append(d); }
     if (p.close) c.append(el("div", "small", `Closing price ${p.close.american} · ${p.close.clvPct >= 0 ? "beat" : "missed"} the close by ${Math.abs(p.close.clvPct)}%`));
     c.append(el("div", "small", `Price from ${p.bookName}'s ${p.feed || ""} feed. Check it in the Ontario app before deciding; prices move.`));
@@ -852,7 +852,7 @@
     const b = t.state.books || {}, cr = t.state.credits || {};
     const k = el("div", "kpis"); k.append(tk(cr.cost || "$0", "Odds data cost", cr.plan || "")); k.append(tk(cr.remaining == null ? "—" : String(cr.remaining), "Credits left this month", `about ${cr.estimatePerMonth || 270} used a month`)); body.append(k);
     const c = el("div", "card"); c.append(el("div", "label", "Ontario-licensed books compared"));
-    (b.active || []).forEach(x => { const r = el("div", "vid"); r.append(el("span", "t", x.name)); r.append(el("span", "m", `${x.feed} price feed`)); c.append(r); });
+    (b.active || []).forEach(x => { const r = el("div", "vid"); r.append(el("span", "t", x.name)); r.append(el("span", "m", `${x.mine ? "your book · " : "fair-price check only · "}${x.feed} feed`)); c.append(r); });
     c.append(el("div", "small", `${b.excluded || "Bet365 excluded"}. Licence check ${b.checkedAt ? ago(b.checkedAt) : "runs every Sunday"} against iGaming Ontario / AGCO.`)); body.append(c);
     const rules = el("div", "card"); rules.append(el("div", "label", "How picks are made")); const ul = el("ul"); (t.state.rules || []).forEach(x => ul.append(el("li", null, x))); rules.append(ul); body.append(rules);
   }

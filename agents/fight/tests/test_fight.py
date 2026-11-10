@@ -153,7 +153,7 @@ class T(unittest.TestCase):
         O.fetch_scores = lambda sport, d=3: []
         Gr.run()
         p = S.ledger()["picks"][0]
-        self.assertEqual((p["status"], p["profit"], p["gradedBy"]), ("won", 175.0, "search with source"))
+        self.assertEqual((p["status"], p["profit"], p["gradedBy"]), ("won", 170.0, "search with source"))
 
 
 if __name__ == "__main__":

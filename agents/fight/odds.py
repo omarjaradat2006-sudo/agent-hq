@@ -173,7 +173,7 @@ def build_lines(event):
             continue
         outcomes = []
         for n in names:
-            pr = {b: d for b, d in prices.get(n, {}).items() if not _too_long(d)}
+            pr = {b: d for b, d in prices.get(n, {}).items() if b in C.MY_BOOKS and not _too_long(d)}
             if not pr:
                 continue
             best_book = max(pr, key=pr.get)

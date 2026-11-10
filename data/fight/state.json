@@ -6,9 +6,9 @@
    "id": "lead",
    "name": "Desk Lead",
    "role": "Today's card and the honest record",
-   "status": "waiting",
-   "doing": "Waiting for the free Odds API key on the server (setup_fight.sh)",
-   "lastRun": "2026-11-10T00:55:39Z"
+   "status": "ok",
+   "doing": "No NBA or UFC card today",
+   "lastRun": "2026-11-10T00:59:54Z"
   },
   {
    "id": "odds",
@@ -53,7 +53,7 @@
    "msg": "Fight & Court Intelligence built: UFC + NBA, Ontario-licensed books only. Waiting for the Odds API key."
   }
  ],
- "updatedAt": "2026-11-10T00:55:39Z",
+ "updatedAt": "2026-11-10T00:59:54Z",
  "record": {
   "all": {
    "picks": 0,
@@ -156,7 +156,7 @@
   "void": 0,
   "cards": 0,
   "noBetDays": 0,
-  "updatedAt": "2026-11-10T00:55:39Z"
+  "updatedAt": "2026-11-10T00:59:54Z"
  },
  "recent": [],
  "openPicks": [],
@@ -170,47 +170,56 @@
    {
     "key": "betmgm",
     "name": "BetMGM",
-    "feed": "US"
+    "feed": "US",
+    "mine": true
    },
    {
     "key": "fanduel",
     "name": "FanDuel",
-    "feed": "US"
+    "feed": "US",
+    "mine": true
    },
    {
     "key": "draftkings",
     "name": "DraftKings",
-    "feed": "US"
+    "feed": "US",
+    "mine": true
    },
    {
     "key": "williamhill_us",
     "name": "Caesars Sportsbook",
-    "feed": "US"
+    "feed": "US",
+    "mine": false
    },
    {
     "key": "betrivers",
     "name": "BetRivers",
-    "feed": "US"
+    "feed": "US",
+    "mine": true
    },
    {
     "key": "betway",
     "name": "Betway",
-    "feed": "UK"
+    "feed": "UK",
+    "mine": false
    },
    {
     "key": "sport888",
     "name": "888sport",
-    "feed": "UK"
+    "feed": "UK",
+    "mine": false
    },
    {
     "key": "leovegas",
     "name": "LeoVegas",
-    "feed": "UK"
+    "feed": "UK",
+    "mine": false
    },
    {
     "key": "pinnacle",
     "name": "Pinnacle",
-    "feed": "Global"
+    "feed": "Global",
+    "mine": false
    }
   ],
   "excluded": "Bet365 (excluded everywhere)",
@@ -219,6 +228,7 @@
  },
  "rules": [
   "Research and recommendations only. It never places bets and never logs into a sportsbook.",
+  "Best odds are picked only from your books: FanDuel, DraftKings, BetMGM and BetRivers. The other Ontario books only help work out the fair price.",
   "Ontario-licensed sportsbooks only. Bet365 is excluded from odds, comparisons and calculations.",
   "A pick needs our blended probability at least 2.5 points above the no-vig market and +2% expected value at the best price. Otherwise: no bet.",
   "Blended probability = market fair price moved halfway toward the research estimate (AI estimates run overconfident).",
@@ -227,9 +237,9 @@
  ],
  "brief": {
   "date": "2026-11-09",
-  "createdAt": "2026-11-10T00:55:39Z",
-  "headline": "Built and scheduled. Waiting for the free Odds API key.",
-  "summary": "Run setup_fight.sh on the server once. Then NBA picks come out daily around 1:30 PM and UFC picks Friday afternoon after weigh-ins, and every result is graded on its own.",
+  "createdAt": "2026-11-10T00:59:54Z",
+  "headline": "No NBA or UFC card today",
+  "summary": "Record: 0-0. No settled picks yet.",
   "filmToday": [],
   "approvals": [],
   "notes": [

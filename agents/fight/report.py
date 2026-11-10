@@ -92,9 +92,10 @@ def refresh(st, lg):
     st["openPicks"] = [p for p in lg.get("picks", []) if p.get("status") == "open"]
     st["credits"] = {**O.credits(), "plan": "Free (500 credits/month, no card)", "estimatePerMonth": 270, "cost": "$0"}
     books = S.load(f"{C.DATA}/books.json", {})
-    st["books"] = {"active": [{"key": k, "name": b["name"], "feed": b["feed"]} for k, b in O.active_books().items()],
+    st["books"] = {"active": [{"key": k, "name": b["name"], "feed": b["feed"], "mine": k in C.MY_BOOKS} for k, b in O.active_books().items()],
                    "excluded": "Bet365 (excluded everywhere)", "checkedAt": books.get("checkedAt"), "results": books.get("results")}
     st["rules"] = ["Research and recommendations only. It never places bets and never logs into a sportsbook.",
+                   "Best odds are picked only from your books: FanDuel, DraftKings, BetMGM and BetRivers. The other Ontario books only help work out the fair price.",
                    "Ontario-licensed sportsbooks only. Bet365 is excluded from odds, comparisons and calculations.",
                    f"A pick needs our blended probability at least {C.MIN_EDGE*100:g} points above the no-vig market and +{C.MIN_EV*100:g}% expected value at the best price. Otherwise: no bet.",
                    "Blended probability = market fair price moved halfway toward the research estimate (AI estimates run overconfident).",
