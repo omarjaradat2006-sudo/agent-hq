@@ -1,15 +1,15 @@
 {
   "team": "lab",
   "hired": true,
-  "updatedAt": "2026-11-09T21:28:38Z",
+  "updatedAt": "2026-11-10T11:23:02Z",
   "agents": [
     {
       "id": "lead",
       "name": "Lab Director",
       "role": "Picks the upgrades worth doing",
       "status": "ok",
-      "doing": "Explored improvements across Omar's ecosystem, focusing on high-leverage AI applications and generating one key upgrade for Growth Architect",
-      "lastRun": "2026-11-09T21:28:38Z",
+      "doing": "Writing day: using 2026-11-09's review and research.",
+      "lastRun": "2026-11-10T11:23:02Z",
       "nextRun": "2026-11-05T11:23:00Z"
     },
     {
@@ -17,8 +17,8 @@
       "name": "Tool Scout",
       "role": "New AI tools, models and APIs",
       "status": "ok",
-      "doing": "Explored improvements across Omar's ecosystem, focusing on high-leverage AI applications and generating one key upgrade for Growth Architect",
-      "lastRun": "2026-11-09T21:28:38Z",
+      "doing": "Writing day: using 2026-11-09's review and research.",
+      "lastRun": "2026-11-10T11:23:02Z",
       "nextRun": "2026-11-05T11:23:00Z"
     },
     {
@@ -26,8 +26,8 @@
       "name": "Format Hunter",
       "role": "What makes rival videos more engaging",
       "status": "ok",
-      "doing": "Explored improvements across Omar's ecosystem, focusing on high-leverage AI applications and generating one key upgrade for Growth Architect",
-      "lastRun": "2026-11-09T21:28:38Z",
+      "doing": "Writing day: using 2026-11-09's review and research.",
+      "lastRun": "2026-11-10T11:23:02Z",
       "nextRun": "2026-11-05T11:23:00Z"
     },
     {
@@ -35,12 +35,32 @@
       "name": "Upgrade Engineer",
       "role": "Turns finds into build plans",
       "status": "ok",
-      "doing": "Explored improvements across Omar's ecosystem, focusing on high-leverage AI applications and generating one key upgrade for Growth Architect",
-      "lastRun": "2026-11-09T21:28:38Z",
+      "doing": "Writing day: using 2026-11-09's review and research.",
+      "lastRun": "2026-11-10T11:23:02Z",
       "nextRun": "2026-11-05T11:23:00Z"
     }
   ],
   "log": [
+    {
+      "t": "2026-11-10T11:23:02Z",
+      "agent": "Gemini team",
+      "msg": "Drafted brief focusing on the selected LinkedAI upgrade and the high number of pending tasks."
+    },
+    {
+      "t": "2026-11-10T11:23:02Z",
+      "agent": "Gemini team",
+      "msg": "Consolidated 'Waiting on Omar' approvals from all team briefs."
+    },
+    {
+      "t": "2026-11-10T11:23:02Z",
+      "agent": "Gemini team",
+      "msg": "Identified LinkedAI's 'Personalized Outreach Message Generator' as the highest-scoring upgrade (9/10)."
+    },
+    {
+      "t": "2026-11-10T11:23:02Z",
+      "agent": "Gemini team",
+      "msg": "Reused 2026-11-09's research and leads for writing day."
+    },
     {
       "t": "2026-11-09T21:28:38Z",
       "agent": "Gemini team",
@@ -618,9 +638,89 @@
       "createdAt": "2026-11-09T21:28:38Z",
       "id": "lab-2026-11-09-1",
       "madeBy": "gemini"
+    },
+    {
+      "id": "lab-2026-11-10-1",
+      "title": "LinkedAI: Personalized Outreach Message Generator",
+      "hook": "Generate highly personalized LinkedIn outreach messages for free users, increasing conversion to Pro.",
+      "why": "LinkedAI's competitive advantage lies in authentic AI and common ground. This upgrade directly enhances that by providing immediate, tangible value to free users, showcasing the power of personalized AI outreach and differentiating from generic AI tools. This addresses the pain point of generic AI content and helps justify paid tiers.",
+      "format": "LinkedAI · Product · 2h",
+      "business": "LinkedAI",
+      "type": "Product",
+      "impact": "High - Increases value for free users, potentially converting them to paid tiers, and improves user experience by delivering highly relevant, personalized content. Estimated 5-10% increase in freemium to paid conversion.",
+      "effort": "2h",
+      "cost": "$0 / $0 per month",
+      "score": 9,
+      "script": "1. **Integrate Gemini API:** Add a call to the Gemini free tier API within the LinkedAI Chrome extension's codebase. 2. **UI Button:** Implement a 'Generate Outreach Message' button on the LinkedIn profile view. 3. **Data Extraction:** Configure the extension to pull public information from the displayed LinkedIn profile (name, current role, company, recent posts/activity if available). 4. **AI Generation:** Send the extracted data to the Gemini API with a specific prompt to generate a personalized, professional outreach message. 5. **Display Message:** Show the generated message to the user in a pop-up or text area for easy copying and editing. 6. **Testing:** Test on 10 diverse LinkedIn profiles to ensure message quality and relevance. Success will be measured by user feedback and A/B testing on conversion rates to Pro.",
+      "buildWhere": "Claude chat",
+      "buildPrompt": "Paste into Omar's Main Chat in the Claude app\nAs an AI assistant, I need to integrate a 'Personalized Outreach Message Generator' feature into the LinkedAI Chrome extension. This feature will use the Gemini free tier API. Please provide the step-by-step instructions, including code snippets for JavaScript (for the Chrome extension) and API calls (for Gemini), to:\n1. Add a button to the LinkedIn profile page (e.g., next to the 'Connect' button).\n2. When clicked, extract public information from the current LinkedIn profile (name, current job title, company, and ideally, a summary of their recent activity or skills).\n3. Send this information to the Gemini API to generate a personalized connection request message. The message should be concise, respectful, professional, and explicitly state a relevant reason for connecting (e.g., 'to learn from your insights on [topic]' or 'to discuss shared interests in [skill]'). Ensure it does not sound salesy or generic.\n4. Display the generated message in a user-friendly format (e.g., a modal or text area) within the extension for the user to copy/edit.\nAssume the user has already granted necessary LinkedIn profile access permissions to the extension. Name any specific files in the LinkedAI repo (e.g., `content.js`, `popup.html`, `background.js`) that would need modification.",
+      "sources": [
+        {
+          "title": "Google Gemini API",
+          "url": "[verify]"
+        }
+      ],
+      "status": "pending",
+      "createdAt": "2026-11-10T11:23:02Z",
+      "madeBy": "gemini"
     }
   ],
   "research": [
+    {
+      "date": "2026-11-10",
+      "createdAt": "2026-11-10T11:23:02Z",
+      "items": [
+        {
+          "title": "Faceless Animated Explainers (Kurzgesagt, The Infographics Show)",
+          "creator": "Kurzgesagt - In a Nutshell / The Infographics Show",
+          "url": "https://www.youtube.com/@kurzgesagt / https://www.youtube.com/@TheInfographicsShow",
+          "metric": "Kurzgesagt: 25.7M subscribers, 4.0B views; The Infographics Show: 15.5M subscribers",
+          "whyItWorks": "High-quality animated videos make complex topics engaging and shareable, building strong visual brand identity and leading to high retention and evergreen content. Applicable to Bounce Theory (physics) and Ambient Escape (Islamic explainers)."
+        },
+        {
+          "title": "AI & Tech Explainers (Screen Recording + Voiceover)",
+          "creator": "10X Income",
+          "url": "https://www.youtube.com/@10xincome",
+          "metric": "Over 340K subscribers, high CPM ($8-$20)",
+          "whyItWorks": "Demonstrates software and AI tools primarily through screen recordings with clear voiceover, minimizing production complexity while delivering high-value information. Directly applicable to LinkedAI tutorials and Growth Architect demos."
+        },
+        {
+          "title": "Ambient 24/7 Livestreams with Strong Visual Identity",
+          "creator": "Lofi Girl",
+          "url": "https://www.youtube.com/@LofiGirl",
+          "metric": "15.8M subscribers",
+          "whyItWorks": "Continuous live streams with consistent, recognizable looping visuals accumulate significant watch hours and foster a loyal community around a distinct brand. Ambient Escape could adapt this for maximizing watch time and community engagement."
+        },
+        {
+          "title": "CapCut Desktop App for Efficient Editing",
+          "creator": "CapCut",
+          "url": "[verify]",
+          "metric": "Free, no watermark, auto-captions, trending templates",
+          "whyItWorks": "Significantly speeds up short-form content production for TikTok, allowing for more frequent posting and trend participation. Also useful for general video editing across channels."
+        },
+        {
+          "title": "Microsoft Edge TTS for Natural Voiceovers",
+          "creator": "Microsoft",
+          "url": "[verify]",
+          "metric": "Free, unlimited, commercial use allowed",
+          "whyItWorks": "Generates natural-sounding voiceovers, suitable for faceless content on TikTok, LinkedAI tutorials, or Growth Architect demos, without cost or usage limits."
+        },
+        {
+          "title": "Google Veo 3 via AI Studio for Cinematic B-roll",
+          "creator": "Google AI Studio",
+          "url": "[verify]",
+          "metric": "Free tier with daily credits, watermark-free generative video",
+          "whyItWorks": "Can generate cinematic B-roll or abstract visual elements to enhance the visual appeal of physics simulations (Bounce Theory) and other videos, providing high-quality generative video."
+        },
+        {
+          "title": "Make (formerly Integromat) for Workflow Automation",
+          "creator": "Make",
+          "url": "[verify]",
+          "metric": "Free tier, multi-step automation capabilities",
+          "whyItWorks": "Automates internal workflows for Growth Architect, such as client onboarding sequences or automated follow-up emails, improving operational efficiency."
+        }
+      ]
+    },
     {
       "date": "2026-11-09",
       "createdAt": "2026-11-09T21:28:38Z",
@@ -863,14 +963,15 @@
     }
   ],
   "brief": {
-    "date": "2026-11-09",
-    "createdAt": "2026-11-09T21:28:38Z",
-    "headline": "Unlock Growth Architect's value with a new content agent",
-    "summary": "Omar, your best upgrade today is to build a 'Social Media Content Generator' AI agent for Growth Architect. This directly delivers tangible value to clients by automating e-commerce content, addressing the need for specific, actionable plans and justifying your subscription tiers. This is crucial given the high number of pending tasks across your ecosystem.",
+    "date": "2026-11-10",
+    "createdAt": "2026-11-10T11:23:02Z",
+    "headline": "Enhance LinkedAI with Personalized Outreach Agent",
+    "summary": "Omar, your best upgrade today is to build a 'Personalized Outreach Message Generator' for LinkedAI. This directly delivers tangible value to free users by automating highly relevant LinkedIn outreach, showcasing the extension's power and driving conversions to paid tiers. This is crucial given the high number of pending tasks across your ecosystem.",
     "filmToday": [
-      "Growth Architect: AI Agent-Powered E-commerce Content Generator — Paste its build prompt into Omar's Main Chat in the Claude app"
+      "LinkedAI: Personalized Outreach Message Generator — Paste its build prompt into Omar's Main Chat in the Claude app"
     ],
     "approvals": [
+      "N upgrades to review",
       "Waiting on Omar: Approval Queue: nothing goes out without you",
       "Waiting on Omar: A plan that fits every business fits none",
       "Waiting on Omar: Home bakery, zero strangers",
@@ -888,10 +989,14 @@
       "Waiting on Omar: Rain on a Tin Roof, No Thunder (3 Hours, Dark Screen)",
       "Waiting on Omar: Soft Body 0% vs 100% Escape",
       "Waiting on Omar: Blizzard Cabin Fireplace + Brown Noise 3 Hours",
-      "Waiting on Omar: Physics Paradox: How Does This Ball Escape? 🤔 #shorts"
+      "Waiting on Omar: Physics Paradox: How Does This Ball Escape? 🤔 #shorts",
+      "Waiting on Omar: Faceless Animated Physics Explainers (Long)",
+      "Waiting on Omar: Faceless Animated Islamic Explainers (Long)",
+      "Waiting on Omar: Branded 24/7 Ambient Livestream",
+      "Waiting on Omar: Needs build: Hydraulic Press: Every Press = 4x More Pieces"
     ],
     "notes": [
-      "There are 18 upgrades (across all teams) currently 'Waiting on Omar'. This is why only one, high-impact upgrade is proposed this run.",
+      "There are 22 upgrades (across all teams) currently 'Waiting on Omar'. This is why only one, high-impact upgrade is proposed this run.",
       "YouTube's new YPP rules (Feb 1, 2027) emphasize long-form watch hours. Faceless animated explainers and 24/7 livestreams are strong formats to target this.",
       "CapCut Desktop app (free, no watermark, auto-captions) and Microsoft Edge TTS (free, unlimited, commercial use) are excellent tools to speed up content creation across TikTok and YouTube explainers."
     ]
@@ -900,38 +1005,23 @@
   "formatLeads": [
     {
       "channel": "Bounce Theory",
-      "kind": "Long",
-      "name": "Faceless Animated Physics Explainers",
+      "kind": "Short",
+      "name": "AI-Generated Physics Simulations",
       "example": {
-        "title": "What If The Sun Suddenly Disappeared?",
-        "url": "https://www.youtube.com/watch?v=rltC7h33M5Q",
-        "creator": "Kurzgesagt – In a Nutshell",
-        "views": "77M",
+        "title": "The Action Lab Shorts",
+        "url": "https://www.youtube.com/@TheActionLabShorts",
+        "creator": "The Action Lab Shorts",
+        "views": "1M+",
         "vsAvg": "5x+"
       },
-      "howToMake": "Adapt Kurzgesagt's style for physics concepts: use simple, distinct flat-design animations (e.g., created in Canva or with AI image tools) to explain core physics principles or simulation outcomes. AI voiceover (e.g., Microsoft Edge TTS) narrates the explanation. No filming, no complex 3D.",
-      "why": "This format excels at making educational content highly engaging and shareable, maintaining viewer interest through strong visual narratives. Directly addresses the need for long-form watch hours and educational value.",
-      "createdAt": "2026-11-09T21:28:38Z"
+      "howToMake": "Leverage free AI video generators (e.g., Kaiber AI, RunwayML's free tier) to create complex and visually stunning physics simulations. Add AI voiceover (e.g., ElevenLabs free tier, Google TTS) for narrative explanation. Edit with CapCut, adding on-screen text.",
+      "why": "High rewatchability, educational yet entertaining, easily digestible. Appeals to a broad audience interested in science and visual problem-solving.",
+      "createdAt": "2026-11-10T11:23:02Z"
     },
     {
       "channel": "Ambient Escape",
       "kind": "Long",
-      "name": "Faceless Animated Islamic Explainers",
-      "example": {
-        "title": "What Happens After Death? - Islamic Perspective",
-        "url": "https://www.youtube.com/watch?v=Jj3uN9r-9W0",
-        "creator": "The Prophets Path",
-        "views": "1.2M",
-        "vsAvg": "5x+"
-      },
-      "howToMake": "Similar to the Bounce Theory explainer, but for Islamic topics. Use simple, culturally appropriate animations (no depictions of prophets/companions) to explain concepts like 'The Day of Judgment' or 'Stories of the Prophets'. AI voiceover (e.g., TTSMaker) narrates. Script must be fact-checked against authentic Islamic sources (Quran, Sahih Hadith) before production.",
-      "why": "Engaging visual storytelling for educational content, proven to attract and retain viewers for long durations. Leverages existing explainer.py scenes and expands on the success of short Islamic explainers.",
-      "createdAt": "2026-11-09T21:28:38Z"
-    },
-    {
-      "channel": "Ambient Escape",
-      "kind": "Long",
-      "name": "Branded 24/7 Ambient Livestream",
+      "name": "Ambient with AI Islamic Reminder Overlays",
       "example": {
         "title": "lofi hip hop radio - beats to relax/study to",
         "url": "https://www.youtube.com/watch?v=jfKfPfyMdFI",
@@ -939,9 +1029,24 @@
         "views": "Ongoing Live Stream (15.8M subs)",
         "vsAvg": "N/A (continuous)"
       },
-      "howToMake": "Create a consistent, recognizable looping visual (e.g., a cozy animated masjid interior, a stylized forest with rain) and pair it with Omar's existing 3-hour ambient music or sounds. Stream 24/7, archiving the stream as public. Requires a one-time OBS setup and strong visual branding.",
-      "why": "Accumulates significant watch hours for YPP and fosters a loyal community around a distinct, recurring visual identity. Enhances Ambient Escape's brand recognition beyond single videos.",
-      "createdAt": "2026-11-09T21:28:38Z"
+      "howToMake": "Integrate AI-generated animated explainers for Islamic concepts or short, reflective prompts within existing 3-hour Ambient Escape videos. Use free stock footage for the main ambient track and AI video generators (e.g., RunwayML's free tier, Canva's Magic Media) for the reminder overlay. Generate a gentle AI voiceover for the reminder (e.g., ElevenLabs free tier).",
+      "why": "Provides a calm background while offering spiritual upliftment. Enhances engagement for long-form videos and adds unique value, potentially increasing watch time.",
+      "createdAt": "2026-11-10T11:23:02Z"
+    },
+    {
+      "channel": "TikTok",
+      "kind": "Short",
+      "name": "AI-Enhanced Talking Head Self-Improvement",
+      "example": {
+        "title": "Jay Shetty",
+        "url": "[verify]",
+        "creator": "Jay Shetty (TikTok/IG)",
+        "views": "High engagement",
+        "vsAvg": "N/A"
+      },
+      "howToMake": "Use free AI script assistants to refine talking points for conciseness and impact. Employ AI video editors (e.g., CapCut's AI features) to quickly add dynamic on-screen text, engaging visual elements, or AI-generated background elements/B-roll to Omar's talking-head videos.",
+      "why": "Combines personal connection with polished, fast-paced delivery. AI tools help achieve higher production quality and engagement without significant manual effort.",
+      "createdAt": "2026-11-10T11:23:02Z"
     }
   ],
   "teamLeads": {
@@ -956,7 +1061,7 @@
           "metric": "Free, no watermark, auto-captions, trending templates"
         },
         "howToUse": "Integrate CapCut into Omar's TikTok GO pipeline for faster script-to-video turnaround, especially for self-improvement talking head videos. Leverage its auto-captioning and template features.",
-        "createdAt": "2026-11-09T21:28:38Z"
+        "createdAt": "2026-11-10T11:23:02Z"
       },
       {
         "title": "Microsoft Edge TTS for Faceless Content",
@@ -968,59 +1073,59 @@
           "metric": "Free, unlimited, commercial use"
         },
         "howToUse": "Experiment with faceless self-improvement Shorts using Edge TTS narration for topics where Omar's on-camera presence isn't strictly necessary, expanding content variety and reducing filming time.",
-        "createdAt": "2026-11-09T21:28:38Z"
+        "createdAt": "2026-11-10T11:23:02Z"
       }
     ],
     "linkedai": [
       {
-        "title": "AI & Tech Explainer Videos for LinkedAI",
-        "what": "Create screen recording-based videos with voiceovers to demonstrate LinkedAI's features and benefits.",
+        "title": "AI for Personalized Outreach",
+        "what": "Explore free AI tools that can help generate highly personalized LinkedIn outreach messages based on a prospect's profile and recent activity.",
         "evidence": {
-          "title": "10X Income YouTube Channel",
-          "url": "https://www.youtube.com/@10xincome",
-          "creator": "10X Income",
-          "metric": "Over 340K subscribers, high CPM ($8-$20)"
+          "title": "LinkedAI core value proposition",
+          "url": "[internal]",
+          "creator": "LinkedAI",
+          "metric": "N/A"
         },
-        "howToUse": "Develop a series of short tutorial videos for LinkedAI using screen recordings of the extension in action, narrated by an AI voice (e.g., Microsoft Edge TTS). Focus on common pain points like 'How to find a recruiter' or 'Crafting personalized outreach'.",
-        "createdAt": "2026-11-09T21:28:38Z"
+        "howToUse": "Investigate and integrate a free AI API/model (e.g., Gemini free tier) into the LinkedAI Chrome extension to automatically draft personalized connection requests or outreach messages based on the viewed LinkedIn profile.",
+        "createdAt": "2026-11-10T11:23:02Z"
       },
       {
-        "title": "Perplexity AI for Job Market Research",
-        "what": "Use Perplexity AI (free tier) for quick research on current job market trends and LinkedIn best practices.",
+        "title": "Automation for Lead Qualification",
+        "what": "Investigate free AI automation tools that can help identify and qualify potential leads for LinkedAI, streamlining the sales process.",
         "evidence": {
-          "title": "Perplexity AI Website",
-          "url": "https://www.perplexity.ai/",
-          "creator": "Perplexity AI",
-          "metric": "Free tier available"
+          "title": "Make (formerly Integromat) for Workflow Automation",
+          "url": "https://www.make.com/",
+          "creator": "Make",
+          "metric": "Free tier, multi-step automation capabilities"
         },
-        "howToUse": "Inform LinkedAI's marketing content and user education by quickly researching trending job search queries, effective LinkedIn strategies, and common recruiter questions using Perplexity AI.",
-        "createdAt": "2026-11-09T21:28:38Z"
+        "howToUse": "Use Make.com's free tier to set up automated workflows that scrape public LinkedIn data (within terms of service) or process user-input data to identify high-potential leads for LinkedAI's Pro features.",
+        "createdAt": "2026-11-10T11:23:02Z"
       }
     ],
     "growth": [
       {
-        "title": "Case Study Videos with Stock Footage Voiceover",
-        "what": "Produce case study videos for small e-commerce clients using a 'Stock-Footage Voiceover Narration' format to show Growth Architect's value.",
+        "title": "AI for E-commerce Content Generation",
+        "what": "Research free AI tools that can generate product descriptions, social media captions, or blog post ideas for small e-commerce stores.",
         "evidence": {
-          "title": "ColdFusion / MagnatesMedia YouTube Channels",
-          "url": "https://www.youtube.com/@ColdFusion / https://www.youtube.com/@MagnatesMedia",
-          "creator": "ColdFusion / MagnatesMedia",
-          "metric": "Millions of views on explainer/case study style videos"
+          "title": "Google Gemini (free tier)",
+          "url": "[verify]",
+          "creator": "Google",
+          "metric": "Free tier available"
         },
-        "howToUse": "Create short (2-3 minute) videos using free stock footage, AI voiceover (e.g., Microsoft Edge TTS), and on-screen text to illustrate a hypothetical small e-commerce store's journey with Growth Architect, highlighting specific results and features.",
-        "createdAt": "2026-11-09T21:28:38Z"
+        "howToUse": "Develop an AI agent within Growth Architect using Gemini's free tier to offer clients automated generation of product descriptions, social media posts, and blog outlines tailored to their e-commerce products.",
+        "createdAt": "2026-11-10T11:23:02Z"
       },
       {
-        "title": "Automate Workflows with Make (Integromat)",
-        "what": "Implement Make (formerly Integromat), using its free tier, to automate internal Growth Architect workflows.",
+        "title": "AI for Customer Service Automation",
+        "what": "Look into free AI chatbots or automation tools that can handle basic customer inquiries for e-commerce stores, which Growth Architect could help implement for its clients.",
         "evidence": {
-          "title": "Make Website",
-          "url": "https://www.make.com/",
-          "creator": "Make",
-          "metric": "Free tier with multi-step automation"
+          "title": "ManyChat (free tier for basic chatbots)",
+          "url": "https://manychat.com/",
+          "creator": "ManyChat",
+          "metric": "Free tier available"
         },
-        "howToUse": "Set up automated sequences for client onboarding (e.g., welcome emails, initial setup guides) or automated follow-up emails based on user activity within Growth Architect, freeing up Omar's time.",
-        "createdAt": "2026-11-09T21:28:38Z"
+        "howToUse": "Research free chatbot platforms (e.g., ManyChat's free tier) and integrate a guide or template within Growth Architect to help clients set up basic AI-powered customer service for common FAQs.",
+        "createdAt": "2026-11-10T11:23:02Z"
       }
     ],
     "opps": [
@@ -1034,7 +1139,7 @@
           "metric": "Platform for paid communities"
         },
         "howToUse": "Research platforms like Circle.so for building a paid community around SATR, offering exclusive content or digital products related to Islamic art and journaling, leveraging Omar's existing audience and brand.",
-        "createdAt": "2026-11-09T21:28:38Z"
+        "createdAt": "2026-11-10T11:23:02Z"
       },
       {
         "title": "SATR: Affiliate Marketing Integration",
@@ -1046,7 +1151,7 @@
           "metric": "General guide on affiliate marketing"
         },
         "howToUse": "Identify halal-compliant affiliate programs for Islamic books, apps, or educational resources. Promote these through SATR's social media, blog, or email newsletters to generate additional income without inventory expansion.",
-        "createdAt": "2026-11-09T21:28:38Z"
+        "createdAt": "2026-11-10T11:23:02Z"
       }
     ],
     "youtube": [
@@ -1060,7 +1165,7 @@
           "metric": "Free tier with daily credits, watermark-free generative video"
         },
         "howToUse": "For Bounce Theory Shorts, use Veo 3 to create short, abstract visual inserts that highlight key physics phenomena or add a 'cinematic' feel to the simulations, potentially increasing viewer engagement and perceived production value.",
-        "createdAt": "2026-11-09T21:28:38Z"
+        "createdAt": "2026-11-10T11:23:02Z"
       },
       {
         "title": "Canva AI for Animated Explainer Shorts",
@@ -1072,7 +1177,7 @@
           "metric": "Text-to-video generation, auto-captions"
         },
         "howToUse": "Utilize Canva AI's text-to-video and auto-caption features to quickly generate simple animated scenes for Ambient Escape's Islamic explainer Shorts, streamlining the visual production process and potentially improving retention over static text.",
-        "createdAt": "2026-11-09T21:28:38Z"
+        "createdAt": "2026-11-10T11:23:02Z"
       }
     ]
   }
