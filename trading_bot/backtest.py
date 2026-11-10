@@ -43,7 +43,7 @@ def _item(n):
             "symbols": n.get("symbols") or []}
 
 
-def _fetch_window(a, symbols, s, e, seen, out, stats):
+def _fetch_window(a, symbols, s, e, seen, out, stats, general=True):
     chunks = [symbols[i:i + 40] for i in range(0, len(symbols), 40)]
     # symbol news in 10-day slices (each slice can hold up to 4,000 articles per 40 symbols)
     t = s
@@ -58,7 +58,7 @@ def _fetch_window(a, symbols, s, e, seen, out, stats):
                     seen.add(n["id"]); out.append(_item(n))
         t = u
     # general market news (war, Fed, oil...) one day at a time, newest 200 per day
-    d = s
+    d = s if general else e
     while d < e:
         for n in a.news(start=iso(d), end=iso(min(e, d + timedelta(days=1))), limit=50, max_pages=4):
             if n["id"] not in seen:
@@ -75,12 +75,17 @@ def fetch_news(a, symbols, start, end, per_day=150):
         c = read_json(f, {}) or {}
         want_to = min(m1, end)
         have_to = parse_time(c.get("fetchedTo"))
-        if not have_to or have_to < want_to:
+        have_syms = set(c.get("symbols") or [])
+        missing = [x for x in symbols if x not in have_syms]       # e.g. the halal list was empty last time
+        if not have_to or have_to < want_to or missing:
             seen = {x["id"][2:] if x["id"].startswith("bz") else x["id"] for x in c.get("items", [])}
             seen = {int(x) if str(x).isdigit() else x for x in seen}
             out = list(c.get("items", []))
-            _fetch_window(a, symbols, have_to or m0, want_to, seen, out, stats)
-            c = {"fetchedTo": iso(want_to), "items": out}
+            if have_to and missing:     # past part of the month: only the symbols we didn't have
+                _fetch_window(a, missing, m0, min(have_to, want_to), seen, out, stats, general=False)
+            if not have_to or have_to < want_to:
+                _fetch_window(a, symbols, have_to or m0, want_to, seen, out, stats)
+            c = {"fetchedTo": iso(max(want_to, have_to or want_to)), "symbols": sorted(have_syms | set(symbols)), "items": out}
             write_json(f, c)
             log(f"Backtest: {m0:%b %Y} news saved ({len(out)} headlines)", "Backtester")
         items.extend(x for x in c["items"] if start <= parse_time(x["time"]) < end)
@@ -97,25 +102,34 @@ def triage_all(by_day, universe, max_calls=150):
     from .triage import triage
     cache = read_json(CACHE, {}) or {}
     calls, done_days, stopped = 0, 0, None
+    ufp = f"u{len(universe.get('stocks') or {})}-{len(universe.get('crypto') or {})}"   # new halal list -> read again
     events = {}
     for day, items in by_day.items():
         day_ok = True
         for i in range(0, len(items), 70):
             batch = items[i:i + 70]
-            key = f"{day}|{batch[0]['id']}|{batch[-1]['id']}|{len(batch)}"
+            key = f"{day}|{ufp}|{batch[0]['id']}|{batch[-1]['id']}|{len(batch)}"
             if key not in cache:
                 if stopped or calls >= max_calls:
                     stopped = stopped or f"used this run's budget of {max_calls} Gemini calls"
                     day_ok = False
                     break
-                try:
-                    calls += 1
-                    cache[key] = triage(batch, {}, universe, [], raise_on_fail=True)
-                    write_json(CACHE, cache)
-                except Exception as e:  # noqa: BLE001  quota / network: stop, keep what we have
-                    stopped = f"Gemini stopped answering ({str(e)[:120]})"
+                res = None
+                for attempt in range(2):
+                    try:
+                        calls += 1
+                        res = triage(batch, {}, universe, [], raise_on_fail=True)
+                        break
+                    except ValueError:            # Gemini sent broken JSON: try once more, then skip this batch
+                        res = [] if attempt else None
+                    except Exception as e:  # noqa: BLE001  quota / network: stop, keep what we have
+                        stopped = f"Gemini stopped answering ({str(e)[:120]})"
+                        break
+                if res is None:
                     day_ok = False
                     break
+                cache[key] = res
+                write_json(CACHE, cache)
             by_id = {b["id"]: b for b in batch}
             for ev in cache[key]:
                 if not ev.get("is_market_news", True):
@@ -305,7 +319,11 @@ def run(days=30, ta_sample=10, max_calls=150, per_day=None):
     end = datetime.now(timezone.utc).replace(hour=0, minute=0, second=0, microsecond=0)   # whole days only (cache-friendly)
     start = end - timedelta(days=days)
     uni = halal.build_universe(a)
+    if uni.get("partial") or not uni.get("stocks"):
+        uni = halal.build_universe(a, force=True)
     syms = list((uni.get("stocks") or {}).keys())
+    if uni.get("partial"):
+        log(f"Backtest: halal screen incomplete ({uni.get('problem')}), so only coins + Shariah ETFs are tested", "Backtester")
     log(f"Backtest: {days} days ({start:%Y-%m-%d} to {end:%Y-%m-%d}), {len(syms)} halal stocks + crypto", "Backtester")
     by_day, fstats = fetch_news(a, syms + [c.replace("/", "") for c in (uni.get("crypto") or {})], start, end, per_day)
     n_items = sum(len(v) for v in by_day.values())

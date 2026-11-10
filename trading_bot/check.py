@@ -27,6 +27,13 @@ def run():
         bad += 1; line(False, "Alpaca", str(e))
     except HttpError as e:
         bad += 1; line(False, "Alpaca", f"{e} (check they are PAPER keys: laptop trading_bot/.env, server ~/.trading-bot.env)")
+    # SEC (the halal screen reads company filings from the SEC; without it no company stock can be traded)
+    try:
+        from . import halal
+        t = halal._sec("https://www.sec.gov/files/company_tickers.json")
+        line(len(t) > 1000, "SEC filings (halal screen)", f"{len(t):,} companies listed")
+    except HttpError as e:
+        bad += 1; line(False, "SEC filings (halal screen)", halal._short(e) + " (coins + Shariah ETFs still trade)")
     # Gemini
     try:
         sys.path.insert(0, str(ROOT / "agents" / "gemini"))

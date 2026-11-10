@@ -6,6 +6,8 @@
 #   tb report           build the 7-day report now and save it to the Trading tab
 #   tb backtest 365     backtest the last N days in the background (safe to log out); continues where it stopped
 #   tb backtest-log     follow the backtest
+#   tb universe         re-run the halal screen now and show how many stocks + coins pass
+#   tb unlock           turn the kill switch off again (only after you've reviewed why it fired)
 #   tb update           pull the newest code from GitHub and restart the bot
 set -euo pipefail
 REPO=~/agent-hq-trading
@@ -23,6 +25,8 @@ case "${1:-help}" in
                 nohup nice -n 10 "$PY" -m trading_bot.backtest "$D" "$@" >> ~/logs/backtest.log 2>&1 &
                 echo "Backtest of the last $D days started in the background (pid $!). Watch it: tb backtest-log" ;;
   backtest-log) tail -n 40 -f ~/logs/backtest.log ;;
+  universe)     "$PY" -m trading_bot.bot universe ;;
+  unlock)       "$PY" -m trading_bot.bot unlock ;;
   update)       git pull -q --rebase origin main && sudo systemctl restart agenthq-trading && echo "Updated + restarted." ;;
-  *)            sed -n '2,11p' "$0" ;;
+  *)            sed -n '2,13p' "$0" ;;
 esac

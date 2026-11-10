@@ -403,3 +403,74 @@ def test_live_key_refused():
     from trading_bot.alpaca import Alpaca
     with pytest.raises(SystemExit):
         Alpaca(key="AKLIVE123", secret="b")
+
+
+# ---------------------------------------------------------------- Nov 10: empty watchlist (SEC 403) + plain-words tab
+def test_sec_user_agent_has_contact_email():
+    import trading_bot.halal as H
+    assert "@" in H.sec_ua()          # the SEC answers 403 to any User-Agent without a contact email
+
+
+def test_sec_down_still_trades_coins_and_etfs_and_retries_hourly(monkeypatch, tmpdirs):
+    import trading_bot.halal as H
+    calls = []
+    def boom(url):
+        calls.append(url)
+        raise util.HttpError(403, "<!DOCTYPE html><html>Undeclared Automated Tool</html>", url)
+    monkeypatch.setattr(H, "_sec", boom)
+    u = H.build_universe(FakeAlpaca())
+    assert u["partial"] and len(u["crypto"]) == len(C.CRYPTO_ALLOWED)
+    assert set(u["stocks"]) == set(C.SHARIAH_ETFS) - set(C.BLOCKLIST)
+    assert "DOCTYPE" not in u["problem"]
+    H.build_universe(FakeAlpaca())              # inside the hour: no new SEC call
+    assert len(calls) == 1
+    u2 = util.read_json(H.UNIVERSE_FILE); u2["retryAt"] = T(NOW - timedelta(minutes=1)); util.write_json(H.UNIVERSE_FILE, u2)
+    H.build_universe(FakeAlpaca())              # after the hour: tries again
+    assert len(calls) == 2
+    assert H.allowed("BTC/USD", u) and not H.allowed("XOM", u)     # company stocks stay blocked until verified
+
+
+def test_sec_works_builds_full_list(monkeypatch, tmpdirs):
+    import trading_bot.halal as H
+    def sec(url):
+        if "company_tickers" in url:
+            return {"0": {"ticker": "XOM", "cik_str": 34088}}
+        if "submissions" in url:
+            return {"sic": "2911", "sicDescription": "Petroleum Refining"}
+        return {"facts": {"us-gaap": {"LongTermDebt": {"units": {"USD": [{"form": "10-K", "end": "2026-06-30", "val": 4e10}]}}},
+                          "dei": {"EntityCommonStockSharesOutstanding": {"units": {"shares": [{"end": "2026-06-30", "val": 4e9}]}}}}}
+    monkeypatch.setattr(H, "_sec", sec)
+    monkeypatch.setattr(C, "THEMES", {"oil_gas": ["XOM"], "shariah_etfs": ["SPUS"]})
+    class A(FakeAlpaca):
+        def get(self, path, params=None, data=False): return {"trades": {"XOM": {"p": 110.0}}}
+    u = H.build_universe(A())
+    assert not u.get("partial") and "XOM" in u["stocks"]
+
+
+def test_plain_words_summary(monkeypatch, tmpdirs):
+    fake = FakeAlpaca()
+    B = wire(monkeypatch, fake, [{"symbol": "XOM", "direction": "up", "confidence": 0.8, "why": "supply shock"}])
+    import trading_bot.report as R
+    b = B.Bot(); b.cycle()
+    fake.equity = 100250.0
+    st = R.write(b)
+    p = st["plain"]
+    assert p["top"].startswith("Up $250.00 since start")
+    assert any("Scanned the news" in x for x in p["today"])
+    assert p["holding"] and "Allowed to trade" in p["watchlist"]
+
+
+def test_backtest_skips_a_broken_gemini_reply(monkeypatch, tmpdirs):
+    import trading_bot.backtest as BT, trading_bot.triage as TR
+    monkeypatch.setattr(BT, "CACHE", tmpdirs / "local" / "bt.json")
+    n = []
+    def flaky(batch, ev, uni, held, raise_on_fail=False):
+        n.append(1)
+        if batch[0]["id"] == "a0":
+            raise ValueError("Expecting ':' delimiter")
+        return []
+    monkeypatch.setattr(TR, "triage", flaky)
+    by_day = {"2026-01-01": [{"id": "a0", "time": "2026-01-01T15:00:00Z", "symbols": []}],
+              "2026-01-02": [{"id": "b0", "time": "2026-01-02T15:00:00Z", "symbols": []}]}
+    ev, info = BT.triage_all(by_day, UNIVERSE, max_calls=10)
+    assert info["daysRead"] == 2 and not info["stopped"] and len(n) == 3     # retried once, skipped, carried on

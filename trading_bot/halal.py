@@ -8,12 +8,21 @@ A stock is only tradable if it passes all three. If a check can't be verified, i
 Shariah ETFs are screened by their index provider, so only the blocklist applies to them.
 Crypto: only the major coins in config.CRYPTO_ALLOWED; lending tokens blocked; meme coins watch-only.
 """
-import os, time
+import os, re, time
+from datetime import timedelta
 from . import config as C
-from .util import http, HttpError, read_json, write_json, iso, now_utc, parse_time, DATA, log
+from .util import http, HttpError, read_json, write_json, iso, now_utc, parse_time, DATA, log, event
 
 UNIVERSE_FILE = DATA / "universe.json"
-SEC_UA = os.environ.get("SEC_USER_AGENT") or "AgentHQ paper-trading research bot (github.com/omarjaradat2006-sudo/agent-hq)"
+# The SEC blocks (HTTP 403 "undeclared automated tool") any User-Agent without a contact email address:
+# https://www.sec.gov/os/accessing-edgar-data  ->  "Company Name AdminContact@domain.com".
+# Default = the public GitHub noreply address of the repo owner (not a personal inbox). Override with SEC_USER_AGENT.
+SEC_UA_DEFAULT = "AgentHQ PaperTradingBot omarjaradat2006-sudo@users.noreply.github.com"
+RETRY_MINUTES = 60      # if the SEC is down, try again hourly (not every 5-minute cycle)
+
+
+def sec_ua():
+    return os.environ.get("SEC_USER_AGENT") or SEC_UA_DEFAULT
 DEBT_TAGS = ["LongTermDebt", "LongTermDebtNoncurrent", "LongTermDebtCurrent", "DebtCurrent",
              "ShortTermBorrowings", "CommercialPaper", "LongTermDebtAndCapitalLeaseObligations",
              "OperatingLeaseLiability", "FinanceLeaseLiability"]
@@ -32,7 +41,8 @@ def sic_reason(sic):
 
 def _sec(url):
     time.sleep(0.15)   # SEC asks for <= 10 requests/second
-    return http("GET", url, headers={"User-Agent": SEC_UA, "Accept": "application/json"}, timeout=40)
+    return http("GET", url, headers={"User-Agent": sec_ua(), "Accept": "application/json",
+                                     "Accept-Encoding": "identity", "Host": url.split("/")[2]}, timeout=40)
 
 
 def _latest(facts, tag, unit="USD"):
@@ -97,19 +107,66 @@ def screen_stock(sym, cik_map, price):
     return True, f"passes (debt {ratio:.0%} of market value)", detail
 
 
+def _short(e):
+    """HttpError text without the HTML page the SEC sends back."""
+    return re.sub(r"\s+", " ", re.sub(r"<[^>]*>|<!DOCTYPE.*", "", str(e).split(": <")[0])).strip()[:160]
+
+
+def no_sec_fallback(alpaca):
+    """What can be traded without the SEC: Shariah-index ETFs (screened by their index) + the major coins."""
+    stocks = {}
+    for s in sorted(C.SHARIAH_ETFS):
+        try:
+            a = alpaca.asset(s)
+            if a and a.get("tradable") and a.get("status") == "active" and s not in C.BLOCKLIST:
+                stocks[s] = {"theme": "shariah_etfs", "why": "Shariah-index ETF"}
+        except HttpError:
+            pass
+    return stocks
+
+
+def crypto_list(alpaca):
+    crypto = {}
+    for c in C.CRYPTO_ALLOWED:
+        try:
+            a = alpaca.asset(c)
+            if a and a.get("tradable"):
+                crypto[c] = {"theme": "crypto", "why": "major established coin"}
+        except HttpError:
+            pass
+    return crypto
+
+
 def build_universe(alpaca, force=False):
-    """Weekly: screen every candidate, keep only what passes and Alpaca can trade."""
+    """Weekly: screen every candidate, keep only what passes and Alpaca can trade.
+    If the SEC can't be reached, the coins and Shariah ETFs still trade (they don't need SEC data),
+    company stocks stay blocked (strict: unverified = not halal), and the screen retries every hour."""
     old = read_json(UNIVERSE_FILE, {}) or {}
     age = (now_utc() - parse_time(old["builtAt"])).days if old.get("builtAt") else 999
-    if not force and age < 7 and old.get("stocks"):
-        return old
+    if not force and old.get("stocks") is not None:
+        if old.get("partial"):
+            if now_utc() < (parse_time(old.get("retryAt")) or now_utc()):
+                return old
+        elif age < 7 and old.get("stocks"):
+            return old
     log("Re-running the weekly halal screen", "Halal Screener")
     try:
         tick = _sec("https://www.sec.gov/files/company_tickers.json")
         cik_map = {v["ticker"].upper(): int(v["cik_str"]) for v in tick.values()}
     except HttpError as e:
-        log(f"SEC unreachable ({e}); keeping last week's list", "Halal Screener")
-        return old
+        msg = _short(e)
+        event("error", "sec_unreachable", msg)
+        if old.get("stocks") and not old.get("partial"):
+            log(f"SEC unreachable ({msg}); keeping last week's list, retrying in an hour", "Halal Screener")
+            old["retryNote"] = msg
+            return old
+        uni = {"builtAt": old.get("builtAt"), "partial": True, "retryAt": iso(now_utc() + timedelta(minutes=RETRY_MINUTES)),
+               "problem": f"SEC unreachable: {msg}", "stocks": no_sec_fallback(alpaca), "crypto": crypto_list(alpaca),
+               "rejected": {}, "note": "SEC data missing: only coins + Shariah ETFs are tradable until the screen completes."}
+        write_json(UNIVERSE_FILE, uni)
+        log(f"SEC unreachable ({msg}). Trading only {len(uni['crypto'])} coins + {len(uni['stocks'])} Shariah ETFs "
+            f"until it works; retrying in {RETRY_MINUTES} min", "Halal Screener")
+        return uni
     theme_of = {s: th for th, syms in C.THEMES.items() for s in syms}
     cands = sorted(theme_of)
     prices = {}
@@ -131,19 +188,20 @@ def build_universe(alpaca, force=False):
         except HttpError as e:
             ok, why, detail = False, f"check failed ({e.code})", {}
         (stocks if ok else rejected)[s] = {"theme": theme_of[s], "why": why, **detail} if ok else why
-    crypto = {}
-    for c in C.CRYPTO_ALLOWED:
-        try:
-            a = alpaca.asset(c)
-            if a and a.get("tradable"):
-                crypto[c] = {"theme": "crypto", "why": "major established coin"}
-        except HttpError:
-            pass
+    crypto = crypto_list(alpaca)
     uni = {"builtAt": iso(), "stocks": stocks, "crypto": crypto, "rejected": rejected,
            "note": "Basic screen: business type (SEC industry code) + debt under 33% of market value + blocklist. Not a fatwa."}
-    if not stocks and old.get("stocks"):
-        log("Screen returned nothing (likely a data problem); keeping last week's list", "Halal Screener")
-        return old
+    checked = [v for v in rejected.values() if not str(v).startswith(("check failed", "not tradable"))]
+    if not checked and not [s for s in stocks if s not in C.SHARIAH_ETFS]:
+        # every SEC lookup failed: treat like "SEC unreachable" instead of saving an empty list for a week
+        uni.update({"builtAt": old.get("builtAt"), "partial": True, "retryAt": iso(now_utc() + timedelta(minutes=RETRY_MINUTES)),
+                    "problem": "every SEC lookup failed"})
+        if old.get("stocks") and not old.get("partial"):
+            return old
+        write_json(UNIVERSE_FILE, uni)
+        log("Every SEC lookup failed; coins + Shariah ETFs only, retrying in an hour", "Halal Screener")
+        event("error", "sec_lookups_failed", "every SEC lookup failed")
+        return uni
     write_json(UNIVERSE_FILE, uni)
     log(f"Halal screen done: {len(stocks)} stocks + {len(crypto)} coins pass, {len(rejected)} rejected", "Halal Screener")
     return uni

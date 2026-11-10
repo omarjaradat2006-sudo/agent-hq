@@ -646,9 +646,19 @@
     const st = t.state, a = st.account || {}, s = st.status || {};
     const banner = el("div", "card"); banner.style.borderColor = "#d9dde6";
     banner.append(el("div", "label", "Paper trading · fake money · Alpaca paper account"));
-    if (s.killed) { const k = el("div", "card"); k.style.borderColor = "var(--bad)"; k.append(el("h3", "down", "Kill switch is ON")); k.append(el("div", null, "The account fell 10% from the start, so the bot sold everything and locked itself. Review the trades, then run unlock on the laptop.")); body.append(k); }
+    if (s.killed) { const k = el("div", "card"); k.style.borderColor = "var(--bad)"; k.append(el("h3", "down", "Kill switch is ON")); k.append(el("div", null, "The account fell 10% from the start, so the bot sold everything and locked itself. Review the trades, then run tb unlock on the server.")); body.append(k); }
     if (s.haltedToday) body.append(el("div", "card down", "Down 3% today: no new trades until tomorrow."));
-    if (!st.account) { body.append(empty("Waiting for the bot", "Start it on your laptop (start_trading_bot.bat). Results show up here a few times a day.")); return; }
+    if (!st.account) { body.append(empty("Waiting for the bot", "It runs on the Oracle server (tb start). Results show up here a few times a day.")); return; }
+    const pw = st.plain;
+    if (pw) {
+      const c = el("div", "card plain");
+      const h = el("h2", pw.up ? "up" : "down", pw.top); h.style.margin = "0 0 10px"; c.append(h);
+      const sec = (title, lines) => { c.append(el("div", "label", title)); const ul = el("ul"); ul.style.margin = "4px 0 10px"; lines.forEach(x => ul.append(el("li", null, x))); c.append(ul); };
+      sec("What it's holding", pw.holding || []);
+      sec("What it did today", pw.today || []);
+      c.append(el("div", "small", (pw.watchlist || "") + (pw.lastScan ? " Last scan " + ago(pw.lastScan) + "." : "")));
+      body.append(c);
+    }
     const k = el("div", "kpis");
     k.append(tk(money(a.equity), "Account value", "started at " + money(a.startEquity)));
     k.append(tk(money(a.dayPnl), "Today", pct(a.dayPct), sgn(a.dayPnl)));

@@ -83,6 +83,9 @@ class Bot:
 
         # 3. read the news, triage it, fold into running stories
         self.universe = halal.build_universe(self.a)
+        c, _ = self.today_count("scans")
+        c["scans"] = c.get("scans", 0) + 1
+        c["lastScan"] = iso()
         items = news.collect(self.a, self.s, include_social=social)
         if items:
             held = [t["symbol"] for t in self.open_trades()]
@@ -90,6 +93,9 @@ class Bot:
             triage.merge(self.s["events"], tri, {i["id"]: i for i in items})
             n_real = sum(1 for e in tri if e.get("assets"))
             log(f"Read {len(items)} new headlines/posts, {n_real} market-moving stories", "News Scout")
+            c, _ = self.today_count("headlines")
+            c["headlines"] = c.get("headlines", 0) + len(items)
+            c["stories"] = c.get("stories", 0) + n_real
 
         # 4. bad news on something we hold -> sell
         self.bad_news_exits()
@@ -393,6 +399,12 @@ def run_forever():
     with SingleInstance():
         log("Paper-trading bot started (Alpaca PAPER account only). Close this window to stop it.", "Trader")
         event("info", "bot_started", "started (PAPER only)")
+        try:   # save to the dashboard right after a (re)start, so a fix shows up within minutes
+            st = read_json(STATE, {}) or {}
+            st["publishNow"], st["lastPublish"] = True, None
+            write_json(STATE, st)
+        except OSError:
+            pass
         if not agent_reach_available():
             log("Agent Reach not found: running on news feeds only (no X/Reddit)", "News Scout")
         last_social = None
@@ -437,7 +449,12 @@ def main(argv):
         from . import halal
         from .alpaca import Alpaca
         u = halal.build_universe(Alpaca(), force=True)
-        print(f"{len(u.get('stocks', {}))} stocks, {len(u.get('crypto', {}))} coins pass")
+        print(f"{len(u.get('stocks', {}))} stocks/ETFs + {len(u.get('crypto', {}))} coins pass the halal screen "
+              f"({len(u.get('rejected', {}))} rejected)")
+        if u.get("partial"):
+            print("PARTIAL: " + u.get("problem", "") + " -> only coins + Shariah ETFs for now, retries hourly.")
+        else:
+            print("Sample: " + ", ".join(sorted(u.get("stocks", {}))[:25]))
     elif cmd == "publish":
         from . import publish
         publish.push("Trading bot: manual save")
