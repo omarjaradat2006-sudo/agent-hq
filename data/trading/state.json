@@ -1,23 +1,24 @@
 {
  "team": "trading",
  "plain": {
-  "top": "Even since start (still $100,000.00) · just holding SPY would be -0.49%",
+  "top": "Even since start (still $100,000.00) · just holding SPY would be -0.20%",
   "up": true,
   "holding": [
    "Nothing right now (all cash)."
   ],
   "today": [
-   "Scanned the news 5 times today: read 130 headlines, found 8 that could move a stock or coin it's allowed to trade. None passed every check, so no trade (that's normal).",
+   "Scanned the news 14 times today: read 584 headlines, found 22 that could move a stock or coin it's allowed to trade. None passed every check, so no trade (that's normal).",
+   "Passed on CVX: volume only 0.8x normal (need 1.5x).",
    "Passed on OXY: volume only 1.0x normal (need 1.5x).",
    "Passed on XOM: volume only 0.3x normal (need 1.5x).",
-   "Passed on CVX: volume only 0.8x normal (need 1.5x).",
-   "Passed on CVX: volume only 0.7x normal (need 1.5x)."
+   "Passed on OXY: price hasn't moved the expected way yet (-0.31%).",
+   "Safety rules that stepped in: stock entry window (x15)."
   ],
   "watchlist": "Allowed to trade: 69 halal stocks, 5 Shariah ETFs, 9 coins.",
-  "lastScan": "2026-11-10T20:19:25Z"
+  "lastScan": "2026-11-10T21:18:11Z"
  },
  "hired": true,
- "updatedAt": "2026-11-10T20:19:43Z",
+ "updatedAt": "2026-11-10T21:18:31Z",
  "mode": "PAPER",
  "agents": [
   {
@@ -25,8 +26,8 @@
    "name": "News Scout",
    "role": "Reads X, Reddit and news feeds",
    "status": "working",
-   "doing": "Read 21 new headlines/posts, 3 market-moving stories",
-   "lastRun": "2026-11-10T20:19:41Z"
+   "doing": "Read 252 new headlines/posts, 4 market-moving stories",
+   "lastRun": "2026-11-10T21:18:30Z"
   },
   {
    "id": "analyst",
@@ -64,7 +65,7 @@
    "id": "trader",
    "name": "Trader",
    "role": "Places paper orders on Alpaca",
-   "status": "working",
+   "status": "ok",
    "doing": "Saved results to the Agent HQ dashboard",
    "lastRun": "2026-11-10T20:02:44Z"
   },
@@ -86,6 +87,51 @@
   }
  ],
  "log": [
+  {
+   "t": "2026-11-10T21:18:30Z",
+   "agent": "News Scout",
+   "msg": "Read 252 new headlines/posts, 4 market-moving stories"
+  },
+  {
+   "t": "2026-11-10T21:03:11Z",
+   "agent": "News Scout",
+   "msg": "Read 41 new headlines/posts, 1 market-moving stories"
+  },
+  {
+   "t": "2026-11-10T20:56:50Z",
+   "agent": "News Scout",
+   "msg": "Read 26 new headlines/posts, 2 market-moving stories"
+  },
+  {
+   "t": "2026-11-10T20:51:44Z",
+   "agent": "News Scout",
+   "msg": "Read 24 new headlines/posts, 1 market-moving stories"
+  },
+  {
+   "t": "2026-11-10T20:46:29Z",
+   "agent": "News Scout",
+   "msg": "Read 10 new headlines/posts, 1 market-moving stories"
+  },
+  {
+   "t": "2026-11-10T20:40:09Z",
+   "agent": "News Scout",
+   "msg": "Read 31 new headlines/posts, 1 market-moving stories"
+  },
+  {
+   "t": "2026-11-10T20:35:03Z",
+   "agent": "News Scout",
+   "msg": "Read 21 new headlines/posts, 1 market-moving stories"
+  },
+  {
+   "t": "2026-11-10T20:29:55Z",
+   "agent": "News Scout",
+   "msg": "Read 26 new headlines/posts, 1 market-moving stories"
+  },
+  {
+   "t": "2026-11-10T20:24:48Z",
+   "agent": "News Scout",
+   "msg": "Read 23 new headlines/posts, 2 market-moving stories"
+  },
   {
    "t": "2026-11-10T20:19:41Z",
    "agent": "News Scout",
@@ -790,57 +836,12 @@
    "t": "2026-11-10T16:18:42Z",
    "agent": "News Scout",
    "msg": "Read 28 new headlines/posts, 0 market-moving stories"
-  },
-  {
-   "t": "2026-11-10T16:18:23Z",
-   "agent": "Halal Screener",
-   "msg": "SEC unreachable (HTTP 403 https://www.sec.gov/files/company_tickers.json: <!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\n<html xmlns=\"http://www.w3.org/1999/xhtml\">\n<head>\n<meta http-equiv=\"Content-T); keeping last week's list"
-  },
-  {
-   "t": "2026-11-10T16:18:23Z",
-   "agent": "Halal Screener",
-   "msg": "Re-running the weekly halal screen"
-  },
-  {
-   "t": "2026-11-10T16:13:22Z",
-   "agent": "News Scout",
-   "msg": "Read 56 new headlines/posts, 0 market-moving stories"
-  },
-  {
-   "t": "2026-11-10T16:13:18Z",
-   "agent": "Halal Screener",
-   "msg": "SEC unreachable (HTTP 403 https://www.sec.gov/files/company_tickers.json: <!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\n<html xmlns=\"http://www.w3.org/1999/xhtml\">\n<head>\n<meta http-equiv=\"Content-T); keeping last week's list"
-  },
-  {
-   "t": "2026-11-10T16:13:17Z",
-   "agent": "Halal Screener",
-   "msg": "Re-running the weekly halal screen"
-  },
-  {
-   "t": "2026-11-10T16:08:17Z",
-   "agent": "News Scout",
-   "msg": "Read 64 new headlines/posts, 0 market-moving stories"
-  },
-  {
-   "t": "2026-11-10T16:08:04Z",
-   "agent": "Halal Screener",
-   "msg": "SEC unreachable (HTTP 403 https://www.sec.gov/files/company_tickers.json: <!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\n<html xmlns=\"http://www.w3.org/1999/xhtml\">\n<head>\n<meta http-equiv=\"Content-T); keeping last week's list"
-  },
-  {
-   "t": "2026-11-10T16:08:04Z",
-   "agent": "Halal Screener",
-   "msg": "Re-running the weekly halal screen"
-  },
-  {
-   "t": "2026-11-10T16:03:03Z",
-   "agent": "News Scout",
-   "msg": "Read 78 new headlines/posts, 0 market-moving stories"
   }
  ],
  "brief": {
   "date": "Tue Nov 10",
-  "createdAt": "2026-11-10T20:19:43Z",
-  "headline": "Paper account +$0 today (+0.00%), +0.00% total vs SPY -0.49% · 0 open",
+  "createdAt": "2026-11-10T21:18:31Z",
+  "headline": "Paper account +$0 today (+0.00%), +0.00% total vs SPY -0.20% · 0 open",
   "summary": "0 trade(s) closed today, 0/0 winners overall. TradingAgents checks used today: 0/5.",
   "notes": []
  },
@@ -853,8 +854,8 @@
   "dayPct": 0.0,
   "totalPnl": 0.0,
   "totalPct": 0.0,
-  "spyPct": -0.49,
-  "vsSpyPct": 0.49
+  "spyPct": -0.2,
+  "vsSpyPct": 0.2
  },
  "status": {
   "killed": false,
@@ -871,6 +872,48 @@
  "positions": [],
  "trades": [],
  "decisions": [
+  {
+   "t": "2026-11-10T20:29:56Z",
+   "symbol": "OXY",
+   "outcome": "waiting",
+   "why": "price hasn't moved the expected way yet (-0.31%)",
+   "event": "Escalating conflict involving Iran and Hormuz Strait tanker explosions point to tighter oil supplies and strong defense/oil positioning."
+  },
+  {
+   "t": "2026-11-10T20:29:55Z",
+   "symbol": "CVX",
+   "outcome": "waiting",
+   "why": "volume only 0.8x normal (need 1.5x)",
+   "event": "Escalating conflict involving Iran and Hormuz Strait tanker explosions point to tighter oil supplies and strong defense/oil positioning."
+  },
+  {
+   "t": "2026-11-10T20:29:55Z",
+   "symbol": "XOM",
+   "outcome": "waiting",
+   "why": "volume only 0.5x normal (need 1.5x)",
+   "event": "Escalating conflict involving Iran and Hormuz Strait tanker explosions point to tighter oil supplies and strong defense/oil positioning."
+  },
+  {
+   "t": "2026-11-10T20:24:49Z",
+   "symbol": "OXY",
+   "outcome": "waiting",
+   "why": "volume only 1.1x normal (need 1.5x)",
+   "event": "Escalating conflict involving Iran and Hormuz Strait tanker explosions point to tighter oil supplies and strong defense/oil positioning."
+  },
+  {
+   "t": "2026-11-10T20:24:48Z",
+   "symbol": "CVX",
+   "outcome": "waiting",
+   "why": "volume only 0.8x normal (need 1.5x)",
+   "event": "Escalating conflict involving Iran and Hormuz Strait tanker explosions point to tighter oil supplies and strong defense/oil positioning."
+  },
+  {
+   "t": "2026-11-10T20:24:48Z",
+   "symbol": "XOM",
+   "outcome": "waiting",
+   "why": "volume only 0.6x normal (need 1.5x)",
+   "event": "Escalating conflict involving Iran and Hormuz Strait tanker explosions point to tighter oil supplies and strong defense/oil positioning."
+  },
   {
    "t": "2026-11-10T20:19:42Z",
    "symbol": "OXY",
@@ -1099,6 +1142,11 @@
    "t": "2026-11-10T20:19:42Z",
    "equity": 100000.0,
    "spy": 749.01
+  },
+  {
+   "t": "2026-11-10T20:51:44Z",
+   "equity": 100000.0,
+   "spy": 751.18
   }
  ],
  "watch": [],
@@ -1110,7 +1158,358 @@
  },
  "events": [
   {
-   "summary": "Crude oil prices dipped below $90 as diplomatic push and remarks about the Iran conflict ending soon raised hopes of de-escalation.",
+   "summary": "Nvidia shares continue to sell off following fallout and scrutiny surrounding CEO Jensen Huang.",
+   "category": "company_bad_news",
+   "firstSeen": "2026-11-10T02:06:25Z",
+   "publishers": [
+    "AP",
+    "Benzinga",
+    "CNBC",
+    "Decrypt",
+    "Reuters",
+    "The Spokesman-Review",
+    "bloomingbit",
+    "fiscal.ai"
+   ],
+   "assets": {
+    "NVDA": {
+     "direction": "down",
+     "confidence": 0.8,
+     "why": "CEO scandal and ongoing selloff pressure the stock."
+    }
+   },
+   "sources": [
+    {
+     "id": "7e779ec43d194f41",
+     "publisher": "Benzinga",
+     "kind": "news",
+     "title": "'Materially False and Misleading': Nvidia, Jensen Huang Sued Over Alleged Chinese Spy Affair, Shareholder Says NVDA Stock Was 'Artificially Inflated'",
+     "url": "https://www.benzinga.com/markets/tech/26/11/63077533/nvidia-jensen-huang-sued-class-action-megaspeed-alice-huang-chinese-spy",
+     "time": "2026-11-10T02:14:11Z"
+    },
+    {
+     "id": "b13c33e1c6b78db8",
+     "publisher": "The Spokesman-Review",
+     "kind": "news",
+     "title": "Stocks jump as oil tumbles, Nvidia falls amid internal probe - The Spokesman-Review",
+     "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxQRzBNX0NnSGJXLWxPSjV1bjFCTVM0aExoaURsaHlESWl2U1dfd2EtcU5VTkxZYkpkU2hJQ19LSUdLMUNkS2JpZTZDZzJLY3JFeDgtSXRTOF9MeUlPSkhoajBQU09qZEdld2VwTXpTSHVPZmJ2N0xFSGwxQzRWN1hmdjExaEx0OW54R3ZnWldmX1ByX19VQkV6NjZPYjBYQQ?oc=5",
+     "time": "2026-11-10T02:06:25Z"
+    },
+    {
+     "id": "c28ef162d5e09bce",
+     "publisher": "fiscal.ai",
+     "kind": "news",
+     "title": "Securities Class Action Lawsuit Filed Against NVIDIA Corporation",
+     "url": "https://www.globenewswire.com/news-release/2026/11/10/3399115/32716/en/nvda-investor-alert-hagens-berman-urges-nvidia-corporation-nasdaq-nvda-investors-with-substantial-losses-to-contact-firm-ahead-of-january-8-2027-lead-plaintiff-deadline.html",
+     "time": "2026-11-10T03:01:19Z"
+    },
+    {
+     "id": "43afd4d88c5a549b",
+     "publisher": "AP",
+     "kind": "news",
+     "title": "Trump says FBI is looking at Nvidia CEO Jensen Huang’s affair with alleged Chinese agent",
+     "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPQWY3b0NNRFBNRG5jZVdXM05URnhOV19vQ24zV29la0k2S3FzZmN4ZzB3WlRwSXJMbHB6RE90MFVEZ2p4UUhMQUFlV0RMdmVZZUUxeFFEa2ljZTFlTlhXOFozaEczRlpPS2dmRXgxcGw2ZWdpNVJQVEltazV5UUZMUmpNMUdoX2NJRG1wVnJhbFRCTHBwbE1LcjZnMk4?oc=5",
+     "time": "2026-11-10T03:43:01Z"
+    },
+    {
+     "id": "094051eb2da1b91e",
+     "publisher": "AP",
+     "kind": "news",
+     "title": "Timeline: How did Nvidia’s CEO get caught up in an alleged spy plot?",
+     "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPVENSejl5V04tRUR2M1JIRHZibWlHcm5tUWNndEMzRnBqM1p4aG5XTnp4azBycWIxcjlzeWJqZjh5WnNfRzdfSmNudmRMN3l1OVFmTjE1VS10a2pFN3BWNDZDS05SMkNFQ01WR2Z5UHhBY1pRZDhiVXBHZy1DTDFuRmowbzRkZ2xKcGxsOVVMOG5OYmczUTdYem5Rc1MtLVVpSmNkWGRRWXo0M0ZXWkZZUW9ERk9jeHRrR1pKZ20yRU4?oc=5",
+     "time": "2026-11-10T03:32:00Z"
+    }
+   ]
+  },
+  {
+   "summary": "Hot October CPI data and comments from Fed officials have increased expectations of a half-point rate hike in December, pressuring tech and growth stocks.",
+   "category": "central_bank_hawkish",
+   "firstSeen": "2026-11-10T09:39:09Z",
+   "publishers": [
+    "24/7 Wall St.",
+    "93.3 The Drive",
+    "ABC7 New York",
+    "AFP.com",
+    "ANI News",
+    "AP",
+    "Action Forex",
+    "Al Jazeera",
+    "Altcoin Buzz",
+    "American Banker",
+    "Anadolu Ajansı",
+    "Asianet Newsable",
+    "Axios",
+    "Barron's",
+    "Beinsure",
+    "Benzinga",
+    "BigGo Finance",
+    "Bitcoin Foundation",
+    "Bloomberg.com",
+    "Business Insider",
+    "Business Standard",
+    "CNA",
+    "CNBC",
+    "Central Oregon Daily",
+    "Chosunbiz",
+    "CoinDesk",
+    "Crypto Briefing",
+    "Crypto News",
+    "CryptoPotato",
+    "CryptoTicker.io",
+    "CurrencyNews.co.uk",
+    "Decrypt",
+    "Euronext Markets: Real-time Stock Market Data | live",
+    "FOX 9 Minneapolis-St. Paul",
+    "FXStreet",
+    "Forbes",
+    "Fox Business",
+    "Global Banking & Finance Review",
+    "IndexBox",
+    "International Business Times",
+    "Investing.com",
+    "InvestmentNews",
+    "Invezz",
+    "JournalArta",
+    "KELO-AM",
+    "KSL News",
+    "KXLH News Helena",
+    "Kitco",
+    "Livewire Markets",
+    "MLQ.ai",
+    "MishTalk",
+    "Moneycontrol.com",
+    "Moomoo",
+    "NDTV Profit",
+    "Nacionale",
+    "New Jersey Business & Industry Association",
+    "New York Post",
+    "Newsmax",
+    "Pluang",
+    "Quartz",
+    "RealEstateNews.com",
+    "Reuters",
+    "Rock Hill Herald",
+    "Rolling Out",
+    "SBS 뉴스",
+    "SSBCrack",
+    "Scripps News",
+    "Seeking Alpha",
+    "South Florida Reporter",
+    "Startup Fortune",
+    "Stock Titan",
+    "Stocktwits",
+    "StreetInsider",
+    "TechJuice",
+    "The American Conservative",
+    "The Business Times",
+    "The Economic Times",
+    "The Edge Malaysia",
+    "The Hill",
+    "The Independent",
+    "The Mighty 790 KFGO",
+    "The Real Economy Blog",
+    "The Standard (HK)",
+    "The Sunday Guardian",
+    "The Times",
+    "The Washington Post",
+    "Times Now",
+    "TipRanks",
+    "TradingKey",
+    "TradingNEWS",
+    "TradingView",
+    "USA Today",
+    "WKZO",
+    "WSJ",
+    "WTVB",
+    "WXYZ Channel 7",
+    "Xinhua",
+    "Yahoo Finance",
+    "Zawya",
+    "bloomingbit",
+    "cbs19.tv",
+    "finance.biggo.com",
+    "iHeart",
+    "marketscreener.com",
+    "news.sbs.co.kr",
+    "streamlinefeed.co.ke",
+    "www.thenationalnews.com",
+    "شبكة تواصل الإخبارية",
+    "富途牛牛"
+   ],
+   "assets": {
+    "BTC/USD": {
+     "direction": "down",
+     "confidence": 0.8,
+     "why": "Hot inflation and hawkish Fed rate hike expectations create headwinds for crypto."
+    },
+    "ETH/USD": {
+     "direction": "down",
+     "confidence": 0.8,
+     "why": "Hot inflation and rate hike expectations are bearish for risk assets and crypto."
+    },
+    "SOL/USD": {
+     "direction": "down",
+     "confidence": 0.8,
+     "why": "Hot inflation and rate hike expectations are bearish for risk assets and crypto."
+    },
+    "NVDA": {
+     "direction": "down",
+     "confidence": 0.85,
+     "why": "Hot inflation and rising yields weigh heavily on growth and tech stocks like Nvidia."
+    },
+    "MSFT": {
+     "direction": "down",
+     "confidence": 0.75,
+     "why": "Higher interest rate expectations and hot CPI weigh on growth tech stocks."
+    },
+    "AAPL": {
+     "direction": "down",
+     "confidence": 0.75,
+     "why": "Higher interest rate expectations and hot CPI weigh on growth tech stocks."
+    },
+    "AMZN": {
+     "direction": "down",
+     "confidence": 0.75,
+     "why": "Higher interest rate expectations and hot CPI weigh on growth tech stocks."
+    },
+    "AMAT": {
+     "direction": "down",
+     "confidence": 0.7,
+     "why": "Broader tech sell-off driven by hawkish Fed outlook."
+    },
+    "GOOGL": {
+     "direction": "down",
+     "confidence": 0.75,
+     "why": "Higher interest rate expectations and hot CPI weigh on growth tech stocks."
+    },
+    "META": {
+     "direction": "down",
+     "confidence": 0.75,
+     "why": "Higher interest rate expectations and hot CPI weigh on growth tech stocks."
+    }
+   },
+   "sources": [
+    {
+     "id": "d9df815319391cbb",
+     "publisher": "The Edge Malaysia",
+     "kind": "news",
+     "title": "Fed’s Waller backs rate hike in December, says open to larger move",
+     "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE9aSnktcDlXbzBpMU1SQkZvRktGTnkyX1J4LU92VGxBZVVhcGQtRTVEaDBqLVRPS213cFpTMkFad1BkS0xpdmVVbGU2bVhsUTA2?oc=5",
+     "time": "2026-11-10T09:39:09Z"
+    },
+    {
+     "id": "252cbcbd6b6cd044",
+     "publisher": "Seeking Alpha",
+     "kind": "news",
+     "title": "Waller backs December rate hike, says 50-basis-point move may be on the table (TLT:NASDAQ)",
+     "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOc004NEQ1TjItUHFWanNEbWxpTlpFQ0tIaUcxZDJpTkQyZ3ppdHZtZ280ZlpnQ0NWU3g4Nms1M1dTVEdjZEpwbXcwUVBlRkRzTjNyWEctZEdNT2JwSFlSeGJIWFRTZXB2NEczeUtKY1dIQU9JbFFDaHQyOUxHZ05kU1h4QTQxQzlmSFFjRTQ0OTlaczl3NGhiMHNidko2SGVrWHZaTk8tZlN1OXR2S29HRWVMcXo?oc=5",
+     "time": "2026-11-10T10:10:00Z"
+    },
+    {
+     "id": "1816a3bd028bffbd",
+     "publisher": "MLQ.ai",
+     "kind": "news",
+     "title": "Fed's Waller backs a December rate hike and says a half-point move should be considered if core inflation runs hot",
+     "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxQMWRZU0pVdkJiU1J1MUdOX3Y5QVF1cHpRdG5zTndjOE4xaWhuVFVWSzFZem9zNHdFVjBhYk5TZFN1VEN2RnZfdF9UV21Za09HM2hZTGpMXzUzTG01ZzZ0QzFrNy1NZENQSEsyQjNCb1plSWtWX2lSQW9xSzZXbk5zelQ4S01mRmVqMU9NTzhHb3ZWbW9yUVdOMkhLemVTSmlUNGg5bFNXTjRiVmFYenVJekRkeXluZVNhVVZNYWdYMTc5MDM4NnV3RldkSW5hS2c?oc=5",
+     "time": "2026-11-10T10:44:05Z"
+    },
+    {
+     "id": "177d64cb4badd873",
+     "publisher": "FXStreet",
+     "kind": "news",
+     "title": "Fed's Waller signals risk of larger rate hikes as inflation stays high",
+     "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNbk83dS05U3dLMmRJelhNR2Q1dndmRTExMDI4ajVLNEM3bWNTZktYV1gydFhjOVhzR19wUm55NXFMQmF4ME56VUJDSlFKRkVHZXR4TmxSSUVwMmFZRWVsbnh3VnVaWTZlQ3JZeFdzSnNmR2RuSzJoeUEyZGprblZ5bHhBMzI4eG5iMGNPNjRuemduS1NvdTh0bzg3SVByc1ZCdm5uUnJITQ?oc=5",
+     "time": "2026-11-10T10:43:44Z"
+    },
+    {
+     "id": "a3ff32444bd7c9b3",
+     "publisher": "ANI News",
+     "kind": "news",
+     "title": "Fed Governor Christopher J. Waller favors 25 bps rate hike in December; 50 bps may be needed if inflation persists",
+     "url": "https://news.google.com/rss/articles/CBMi9gFBVV95cUxQZVUtaWxLdmtZVGV6bDBwaDRTRk9saVd1R1FlUXowOVV1eVp6Qks5LWZVN0ZzS0Q1U09yemlnTVZjaEVlempESldNVEo4RE5Fb0R5OTAtU2R2cW5zMnF1SllpTXJUR3BDeWZYUjQ2U1VkZ2kzZ3VkNjRDQzhobEpSaW45NWlTSTlvMmhhYXRqUFNFeWRKRWJlUDdaMmNfR0kxOEZSa1JoS0syVFUtNG84Q3B4akh0dWNQajZ1S05FSlN2RFZYSmFLcjY0dzdNNi1wYmRqLVVvQVBOZkRJeURwajN4TjlkZUZ0blJmdktvMEFuLTFnMmc?oc=5",
+     "time": "2026-11-10T10:41:00Z"
+    }
+   ]
+  },
+  {
+   "summary": "Ongoing regional conflict in the Middle East and attacks on shipping and oil infrastructure maintain tensions and support defense and energy positioning.",
+   "category": "war_escalation",
+   "firstSeen": "2026-11-10T20:01:23Z",
+   "publishers": [
+    "Al-Monitor",
+    "Crude Oil Prices Today | OilPrice.com",
+    "News18",
+    "The National",
+    "شبكة تواصل الإخبارية",
+    "وكالة سبأ"
+   ],
+   "assets": {
+    "XOM": {
+     "direction": "up",
+     "confidence": 0.7,
+     "why": "Middle East supply disruptions and tanker attacks support oil & gas equities."
+    },
+    "CVX": {
+     "direction": "up",
+     "confidence": 0.7,
+     "why": "Middle East supply disruptions and tanker attacks support oil & gas equities."
+    },
+    "OXY": {
+     "direction": "up",
+     "confidence": 0.7,
+     "why": "Middle East military escalation and Hormuz Strait supply risks push oil and gas stocks higher."
+    },
+    "PLTR": {
+     "direction": "up",
+     "confidence": 0.65,
+     "why": "Geopolitical conflict escalation benefits defense tech stocks."
+    }
+   },
+   "sources": [
+    {
+     "id": "df336258cfae123d",
+     "publisher": "وكالة سبأ",
+     "kind": "news",
+     "title": "IRGC: Third oil tanker explodes in Hormuz Strait",
+     "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE1VclA4VmQtT2UzUkdKdW5SLUtkZXRIWXk2Z0Vnc25KU3pZWGNlcktBczNMV3lEVDNEc2hDblVhdVZQNlFGUnJRODVSaHJBYUE?oc=5",
+     "time": "2026-11-10T20:04:16Z"
+    },
+    {
+     "id": "f3a25bf802b51027",
+     "publisher": "شبكة تواصل الإخبارية",
+     "kind": "news",
+     "title": "Rubio predicts Iran will lose the ability to export oil",
+     "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE9HYWl1b25NdkltTTFLc0pwM3J2aU5qTVpoZ2Fla2kzaDRSakp6OHotV0J2NnJkNjJ1WXFySklmYThoNnhZOXo1YzZUOEtNOThNZVRr?oc=5",
+     "time": "2026-11-10T20:03:52Z"
+    },
+    {
+     "id": "53aab7bcd37b0b8c",
+     "publisher": "News18",
+     "kind": "news",
+     "title": "'Iran Started This War 47 Years Ago, We Didn't': Hegseth Defends US Military Campaign Against Tehran",
+     "url": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxNNGZkYnAxaTZYNFloTUZKT1hfVmtOOTRWSmZEMU1OMzA1d0pPY3RkWUZ3Wl9SM3ZHMFBpT2Mxa3FUV2JncDFNWjBrWm9RcXpuMy1xZnJRaW5vR0VTSkVUWWRFV2lCWktpRFY5REh3ZVBfSWxzZFJFRFR3eUdSRFZPcHhBOGNGR292TEJxNGg0emVMOERMeC1lRXE3eWlIaXVibzQ3Ul9TdWFXMlpOVWdOd0t4bGR2RjdQTkh0RDZJVUE1WlVMZENFbGYwblgtdWdsbHktbldxdTZNUmNVT2p3dVR5a3BILVREQVHSAe8BQVVfeXFMTU5qb0VLdS14U05sc1UtYkttRVRSSG9RLXE0dzN4TlIyT3M1c2xNalVyblNzdi0zekRqSnpfaU5VaVQyZkdEZnhwVHdyeUNHRkN3REcyRnVkWTdxUmNkdTR5dXYza0prNi1GNTIwZDVDdmZEalkyRkFRaFNvU2pLajVPLWhCNHNYa1dobzNsa3JwNm05c2xTaXNKeUJwR1BCVVdRT2hWQW81RTJJSmw2aVR2T0N1b3dRMlhuVWk2RU5ZbzlmSVFicktIUGpwbWV5Q1JSR2JVRG9hRFg1dzluZTZTeGR5VDQyYnZhSVdmcWM?oc=5",
+     "time": "2026-11-10T20:01:23Z"
+    },
+    {
+     "id": "a0f4fb7035efa43e",
+     "publisher": "Crude Oil Prices Today | OilPrice.com",
+     "kind": "news",
+     "title": "Houthis Launch Another Attack on Pumping Stations Along Crucial Saudi East-West",
+     "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxOMm5mWEtVVG5peGFmQTQ5SFVYd1NNR2QxV3VyTUtDNC1hT3hYUjVtR0hEblJHcTgzelBOOFBDdFE0NzMzLUYwMUp0X3dIZmZ2cy1QS1dtdjVWenc2OE5ESEd0elcyREpXZ1V0Z2xmb1FOMW05bHJ2NU56bldJamk5UEdoVVhSYklJWVBzRE9nckhMazhiYmZnYVdSY3ZKaVlhT0NmNExfcDhMMnBPdTBOT0dpTUt1eW5hOFRCX09KWVJQaXhkaUlsdGw4Y9IBywFBVV95cUxOMm5mWEtVVG5peGFmQTQ5SFVYd1NNR2QxV3VyTUtDNC1hT3hYUjVtR0hEblJHcTgzelBOOFBDdFE0NzMzLUYwMUp0X3dIZmZ2cy1QS1dtdjVWenc2OE5ESEd0elcyREpXZ1V0Z2xmb1FOMW05bHJ2NU56bldJamk5UEdoVVhSYklJWVBzRE9nckhMazhiYmZnYVdSY3ZKaVlhT0NmNExfcDhMMnBPdTBOT0dpTUt1eW5hOFRCX09KWVJQaXhkaUlsdGw4Yw?oc=5",
+     "time": "2026-11-10T21:00:00Z"
+    },
+    {
+     "id": "da93a25057608f46",
+     "publisher": "The National",
+     "kind": "news",
+     "title": "Middle East latest: Ship attacked in UAE waters, says operator Adnoc",
+     "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPdTMwLTRPRTZsZHJPR0lQTVNtNHdyWWxZNHMydXJzUjEySVZIZzJfUFlvbXZfQWJPc25aSm5kM3lzNmxFMFVMdFl3NTZLZWVjZnZPaTFyWjZtcl9peGd6ZlpDU2hnQmxDVFBLRlF1cVR3U2QwR2R4dWRRNEFDaDBzSTY2YUFWZEsyZ3dIOGQwX2tudV81a1pRRXQtVzl0TWYw?oc=5",
+     "time": "2026-11-10T20:59:26Z"
+    }
+   ]
+  },
+  {
+   "summary": "Crude oil prices fell due to diplomatic optimism aimed at ending the Iran conflict.",
    "category": "deescalation",
    "firstSeen": "2026-11-10T01:57:53Z",
    "publishers": [
@@ -1188,6 +1587,7 @@
     "Inshorts",
     "Investing.com",
     "Investing.com Canada",
+    "Invezz",
     "IraqiNews",
     "Irish Independent",
     "Jagran Josh",
@@ -1326,13 +1726,13 @@
    "assets": {
     "XOM": {
      "direction": "down",
-     "confidence": 0.6,
-     "why": "Falling oil prices put downward pressure on oil and gas stocks."
+     "confidence": 0.65,
+     "why": "De-escalation hopes in the Middle East and falling crude prices negatively impact oil & gas equities."
     },
     "CVX": {
      "direction": "down",
-     "confidence": 0.6,
-     "why": "Falling oil prices put downward pressure on oil and gas stocks."
+     "confidence": 0.65,
+     "why": "Diplomatic optimism and lower oil prices drive profit-taking in major oil stocks."
     }
    },
    "sources": [
@@ -1375,297 +1775,6 @@
      "title": "ASX Jumps as Oil Prices Fall on Trump Iran Remarks",
      "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxNNzRqNnJkRHVzZTEtaVJYaGxMNEFRYUtlRmtiR1RLeWVtU1UxeUx5NEdUeDl3VG5acXhKWFVpNkgzUTBsMzhrbm9uQWdGRWJ1S3psbjFrZ291dl9qc2pWRHdHVXEyTmZEQzBEdnluUi1RSFhjNmNadlF5N1FMRGc3aWlUUjhEdw?oc=5",
      "time": "2026-11-10T02:07:12Z"
-    }
-   ]
-  },
-  {
-   "summary": "Lawmakers are seeking congressional briefings and answers regarding Nvidia CEO's ties, increasing regulatory scrutiny.",
-   "category": "company_bad_news",
-   "firstSeen": "2026-11-10T02:06:25Z",
-   "publishers": [
-    "AP",
-    "Benzinga",
-    "CNBC",
-    "Reuters",
-    "The Spokesman-Review",
-    "bloomingbit",
-    "fiscal.ai"
-   ],
-   "assets": {
-    "NVDA": {
-     "direction": "down",
-     "confidence": 0.65,
-     "why": "Political scrutiny and potential subpoenas create regulatory headwinds for the company."
-    }
-   },
-   "sources": [
-    {
-     "id": "7e779ec43d194f41",
-     "publisher": "Benzinga",
-     "kind": "news",
-     "title": "'Materially False and Misleading': Nvidia, Jensen Huang Sued Over Alleged Chinese Spy Affair, Shareholder Says NVDA Stock Was 'Artificially Inflated'",
-     "url": "https://www.benzinga.com/markets/tech/26/11/63077533/nvidia-jensen-huang-sued-class-action-megaspeed-alice-huang-chinese-spy",
-     "time": "2026-11-10T02:14:11Z"
-    },
-    {
-     "id": "b13c33e1c6b78db8",
-     "publisher": "The Spokesman-Review",
-     "kind": "news",
-     "title": "Stocks jump as oil tumbles, Nvidia falls amid internal probe - The Spokesman-Review",
-     "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxQRzBNX0NnSGJXLWxPSjV1bjFCTVM0aExoaURsaHlESWl2U1dfd2EtcU5VTkxZYkpkU2hJQ19LSUdLMUNkS2JpZTZDZzJLY3JFeDgtSXRTOF9MeUlPSkhoajBQU09qZEdld2VwTXpTSHVPZmJ2N0xFSGwxQzRWN1hmdjExaEx0OW54R3ZnWldmX1ByX19VQkV6NjZPYjBYQQ?oc=5",
-     "time": "2026-11-10T02:06:25Z"
-    },
-    {
-     "id": "c28ef162d5e09bce",
-     "publisher": "fiscal.ai",
-     "kind": "news",
-     "title": "Securities Class Action Lawsuit Filed Against NVIDIA Corporation",
-     "url": "https://www.globenewswire.com/news-release/2026/11/10/3399115/32716/en/nvda-investor-alert-hagens-berman-urges-nvidia-corporation-nasdaq-nvda-investors-with-substantial-losses-to-contact-firm-ahead-of-january-8-2027-lead-plaintiff-deadline.html",
-     "time": "2026-11-10T03:01:19Z"
-    },
-    {
-     "id": "43afd4d88c5a549b",
-     "publisher": "AP",
-     "kind": "news",
-     "title": "Trump says FBI is looking at Nvidia CEO Jensen Huang’s affair with alleged Chinese agent",
-     "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPQWY3b0NNRFBNRG5jZVdXM05URnhOV19vQ24zV29la0k2S3FzZmN4ZzB3WlRwSXJMbHB6RE90MFVEZ2p4UUhMQUFlV0RMdmVZZUUxeFFEa2ljZTFlTlhXOFozaEczRlpPS2dmRXgxcGw2ZWdpNVJQVEltazV5UUZMUmpNMUdoX2NJRG1wVnJhbFRCTHBwbE1LcjZnMk4?oc=5",
-     "time": "2026-11-10T03:43:01Z"
-    },
-    {
-     "id": "094051eb2da1b91e",
-     "publisher": "AP",
-     "kind": "news",
-     "title": "Timeline: How did Nvidia’s CEO get caught up in an alleged spy plot?",
-     "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPVENSejl5V04tRUR2M1JIRHZibWlHcm5tUWNndEMzRnBqM1p4aG5XTnp4azBycWIxcjlzeWJqZjh5WnNfRzdfSmNudmRMN3l1OVFmTjE1VS10a2pFN3BWNDZDS05SMkNFQ01WR2Z5UHhBY1pRZDhiVXBHZy1DTDFuRmowbzRkZ2xKcGxsOVVMOG5OYmczUTdYem5Rc1MtLVVpSmNkWGRRWXo0M0ZXWkZZUW9ERk9jeHRrR1pKZ20yRU4?oc=5",
-     "time": "2026-11-10T03:32:00Z"
-    }
-   ]
-  },
-  {
-   "summary": "Hotter-than-expected inflation reports and comments from Fed officials pointing toward potential rate hikes drove the S&P 500 lower.",
-   "category": "central_bank_hawkish",
-   "firstSeen": "2026-11-10T09:39:09Z",
-   "publishers": [
-    "24/7 Wall St.",
-    "ABC7 New York",
-    "AFP.com",
-    "ANI News",
-    "AP",
-    "Action Forex",
-    "Al Jazeera",
-    "Altcoin Buzz",
-    "American Banker",
-    "Anadolu Ajansı",
-    "Asianet Newsable",
-    "Axios",
-    "Barron's",
-    "Beinsure",
-    "Benzinga",
-    "BigGo Finance",
-    "Bitcoin Foundation",
-    "Bloomberg.com",
-    "Business Insider",
-    "Business Standard",
-    "CNA",
-    "CNBC",
-    "Central Oregon Daily",
-    "Chosunbiz",
-    "CoinDesk",
-    "Crypto Briefing",
-    "Crypto News",
-    "CryptoPotato",
-    "CryptoTicker.io",
-    "CurrencyNews.co.uk",
-    "Decrypt",
-    "FOX 9 Minneapolis-St. Paul",
-    "FXStreet",
-    "Forbes",
-    "Fox Business",
-    "Global Banking & Finance Review",
-    "IndexBox",
-    "International Business Times",
-    "Investing.com",
-    "InvestmentNews",
-    "Invezz",
-    "JournalArta",
-    "KELO-AM",
-    "KSL News",
-    "KXLH News Helena",
-    "Kitco",
-    "MLQ.ai",
-    "MishTalk",
-    "Moneycontrol.com",
-    "Moomoo",
-    "NDTV Profit",
-    "Nacionale",
-    "New York Post",
-    "Newsmax",
-    "Pluang",
-    "Quartz",
-    "Reuters",
-    "Rock Hill Herald",
-    "Rolling Out",
-    "SSBCrack",
-    "Scripps News",
-    "Seeking Alpha",
-    "South Florida Reporter",
-    "Startup Fortune",
-    "Stock Titan",
-    "Stocktwits",
-    "StreetInsider",
-    "TechJuice",
-    "The American Conservative",
-    "The Business Times",
-    "The Economic Times",
-    "The Edge Malaysia",
-    "The Independent",
-    "The Mighty 790 KFGO",
-    "The Real Economy Blog",
-    "The Standard (HK)",
-    "The Sunday Guardian",
-    "The Times",
-    "The Washington Post",
-    "Times Now",
-    "TipRanks",
-    "TradingKey",
-    "TradingNEWS",
-    "TradingView",
-    "USA Today",
-    "WSJ",
-    "WTVB",
-    "WXYZ Channel 7",
-    "Xinhua",
-    "Yahoo Finance",
-    "Zawya",
-    "bloomingbit",
-    "cbs19.tv",
-    "iHeart",
-    "marketscreener.com",
-    "news.sbs.co.kr",
-    "streamlinefeed.co.ke",
-    "www.thenationalnews.com",
-    "شبكة تواصل الإخبارية"
-   ],
-   "assets": {
-    "BTC/USD": {
-     "direction": "down",
-     "confidence": 0.8,
-     "why": "Tighter monetary policy expectations and hot CPI drive Bitcoin down."
-    },
-    "ETH/USD": {
-     "direction": "down",
-     "confidence": 0.8,
-     "why": "Hot inflation and rate hike expectations are bearish for risk assets and crypto."
-    },
-    "SOL/USD": {
-     "direction": "down",
-     "confidence": 0.8,
-     "why": "Hot inflation and rate hike expectations are bearish for risk assets and crypto."
-    },
-    "NVDA": {
-     "direction": "down",
-     "confidence": 0.85,
-     "why": "Hot inflation and rising yields weigh heavily on growth and tech stocks like Nvidia."
-    },
-    "MSFT": {
-     "direction": "down",
-     "confidence": 0.6,
-     "why": "Higher yields and rate hike fears weigh on growth and mega-cap tech."
-    }
-   },
-   "sources": [
-    {
-     "id": "d9df815319391cbb",
-     "publisher": "The Edge Malaysia",
-     "kind": "news",
-     "title": "Fed’s Waller backs rate hike in December, says open to larger move",
-     "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE9aSnktcDlXbzBpMU1SQkZvRktGTnkyX1J4LU92VGxBZVVhcGQtRTVEaDBqLVRPS213cFpTMkFad1BkS0xpdmVVbGU2bVhsUTA2?oc=5",
-     "time": "2026-11-10T09:39:09Z"
-    },
-    {
-     "id": "252cbcbd6b6cd044",
-     "publisher": "Seeking Alpha",
-     "kind": "news",
-     "title": "Waller backs December rate hike, says 50-basis-point move may be on the table (TLT:NASDAQ)",
-     "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOc004NEQ1TjItUHFWanNEbWxpTlpFQ0tIaUcxZDJpTkQyZ3ppdHZtZ280ZlpnQ0NWU3g4Nms1M1dTVEdjZEpwbXcwUVBlRkRzTjNyWEctZEdNT2JwSFlSeGJIWFRTZXB2NEczeUtKY1dIQU9JbFFDaHQyOUxHZ05kU1h4QTQxQzlmSFFjRTQ0OTlaczl3NGhiMHNidko2SGVrWHZaTk8tZlN1OXR2S29HRWVMcXo?oc=5",
-     "time": "2026-11-10T10:10:00Z"
-    },
-    {
-     "id": "1816a3bd028bffbd",
-     "publisher": "MLQ.ai",
-     "kind": "news",
-     "title": "Fed's Waller backs a December rate hike and says a half-point move should be considered if core inflation runs hot",
-     "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxQMWRZU0pVdkJiU1J1MUdOX3Y5QVF1cHpRdG5zTndjOE4xaWhuVFVWSzFZem9zNHdFVjBhYk5TZFN1VEN2RnZfdF9UV21Za09HM2hZTGpMXzUzTG01ZzZ0QzFrNy1NZENQSEsyQjNCb1plSWtWX2lSQW9xSzZXbk5zelQ4S01mRmVqMU9NTzhHb3ZWbW9yUVdOMkhLemVTSmlUNGg5bFNXTjRiVmFYenVJekRkeXluZVNhVVZNYWdYMTc5MDM4NnV3RldkSW5hS2c?oc=5",
-     "time": "2026-11-10T10:44:05Z"
-    },
-    {
-     "id": "177d64cb4badd873",
-     "publisher": "FXStreet",
-     "kind": "news",
-     "title": "Fed's Waller signals risk of larger rate hikes as inflation stays high",
-     "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNbk83dS05U3dLMmRJelhNR2Q1dndmRTExMDI4ajVLNEM3bWNTZktYV1gydFhjOVhzR19wUm55NXFMQmF4ME56VUJDSlFKRkVHZXR4TmxSSUVwMmFZRWVsbnh3VnVaWTZlQ3JZeFdzSnNmR2RuSzJoeUEyZGprblZ5bHhBMzI4eG5iMGNPNjRuemduS1NvdTh0bzg3SVByc1ZCdm5uUnJITQ?oc=5",
-     "time": "2026-11-10T10:43:44Z"
-    },
-    {
-     "id": "a3ff32444bd7c9b3",
-     "publisher": "ANI News",
-     "kind": "news",
-     "title": "Fed Governor Christopher J. Waller favors 25 bps rate hike in December; 50 bps may be needed if inflation persists",
-     "url": "https://news.google.com/rss/articles/CBMi9gFBVV95cUxQZVUtaWxLdmtZVGV6bDBwaDRTRk9saVd1R1FlUXowOVV1eVp6Qks5LWZVN0ZzS0Q1U09yemlnTVZjaEVlempESldNVEo4RE5Fb0R5OTAtU2R2cW5zMnF1SllpTXJUR3BDeWZYUjQ2U1VkZ2kzZ3VkNjRDQzhobEpSaW45NWlTSTlvMmhhYXRqUFNFeWRKRWJlUDdaMmNfR0kxOEZSa1JoS0syVFUtNG84Q3B4akh0dWNQajZ1S05FSlN2RFZYSmFLcjY0dzdNNi1wYmRqLVVvQVBOZkRJeURwajN4TjlkZUZ0blJmdktvMEFuLTFnMmc?oc=5",
-     "time": "2026-11-10T10:41:00Z"
-    }
-   ]
-  },
-  {
-   "summary": "Escalating conflict involving Iran and Hormuz Strait tanker explosions point to tighter oil supplies and strong defense/oil positioning.",
-   "category": "war_escalation",
-   "firstSeen": "2026-11-10T20:01:23Z",
-   "publishers": [
-    "News18",
-    "شبكة تواصل الإخبارية",
-    "وكالة سبأ"
-   ],
-   "assets": {
-    "XOM": {
-     "direction": "up",
-     "confidence": 0.7,
-     "why": "Middle East military escalation and Hormuz Strait supply risks push oil and gas stocks higher."
-    },
-    "CVX": {
-     "direction": "up",
-     "confidence": 0.7,
-     "why": "Middle East military escalation and Hormuz Strait supply risks push oil and gas stocks higher."
-    },
-    "OXY": {
-     "direction": "up",
-     "confidence": 0.7,
-     "why": "Middle East military escalation and Hormuz Strait supply risks push oil and gas stocks higher."
-    }
-   },
-   "sources": [
-    {
-     "id": "df336258cfae123d",
-     "publisher": "وكالة سبأ",
-     "kind": "news",
-     "title": "IRGC: Third oil tanker explodes in Hormuz Strait",
-     "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE1VclA4VmQtT2UzUkdKdW5SLUtkZXRIWXk2Z0Vnc25KU3pZWGNlcktBczNMV3lEVDNEc2hDblVhdVZQNlFGUnJRODVSaHJBYUE?oc=5",
-     "time": "2026-11-10T20:04:16Z"
-    },
-    {
-     "id": "f3a25bf802b51027",
-     "publisher": "شبكة تواصل الإخبارية",
-     "kind": "news",
-     "title": "Rubio predicts Iran will lose the ability to export oil",
-     "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE9HYWl1b25NdkltTTFLc0pwM3J2aU5qTVpoZ2Fla2kzaDRSakp6OHotV0J2NnJkNjJ1WXFySklmYThoNnhZOXo1YzZUOEtNOThNZVRr?oc=5",
-     "time": "2026-11-10T20:03:52Z"
-    },
-    {
-     "id": "53aab7bcd37b0b8c",
-     "publisher": "News18",
-     "kind": "news",
-     "title": "'Iran Started This War 47 Years Ago, We Didn't': Hegseth Defends US Military Campaign Against Tehran",
-     "url": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxNNGZkYnAxaTZYNFloTUZKT1hfVmtOOTRWSmZEMU1OMzA1d0pPY3RkWUZ3Wl9SM3ZHMFBpT2Mxa3FUV2JncDFNWjBrWm9RcXpuMy1xZnJRaW5vR0VTSkVUWWRFV2lCWktpRFY5REh3ZVBfSWxzZFJFRFR3eUdSRFZPcHhBOGNGR292TEJxNGg0emVMOERMeC1lRXE3eWlIaXVibzQ3Ul9TdWFXMlpOVWdOd0t4bGR2RjdQTkh0RDZJVUE1WlVMZENFbGYwblgtdWdsbHktbldxdTZNUmNVT2p3dVR5a3BILVREQVHSAe8BQVVfeXFMTU5qb0VLdS14U05sc1UtYkttRVRSSG9RLXE0dzN4TlIyT3M1c2xNalVyblNzdi0zekRqSnpfaU5VaVQyZkdEZnhwVHdyeUNHRkN3REcyRnVkWTdxUmNkdTR5dXYza0prNi1GNTIwZDVDdmZEalkyRkFRaFNvU2pLajVPLWhCNHNYa1dobzNsa3JwNm05c2xTaXNKeUJwR1BCVVdRT2hWQW81RTJJSmw2aVR2T0N1b3dRMlhuVWk2RU5ZbzlmSVFicktIUGpwbWV5Q1JSR2JVRG9hRFg1dzluZTZTeGR5VDQyYnZhSVdmcWM?oc=5",
-     "time": "2026-11-10T20:01:23Z"
     }
    ]
   },
