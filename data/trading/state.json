@@ -1,19 +1,23 @@
 {
  "team": "trading",
  "plain": {
-  "top": "Even since start (still $100,000.00) · just holding SPY would be -0.53%",
+  "top": "Even since start (still $100,000.00) · just holding SPY would be -0.49%",
   "up": true,
   "holding": [
    "Nothing right now (all cash)."
   ],
   "today": [
-   "Scanned the news 2 times today: read 41 headlines, found 2 that could move a stock or coin it's allowed to trade. None passed every check, so no trade (that's normal)."
+   "Scanned the news 5 times today: read 130 headlines, found 8 that could move a stock or coin it's allowed to trade. None passed every check, so no trade (that's normal).",
+   "Passed on OXY: volume only 1.0x normal (need 1.5x).",
+   "Passed on XOM: volume only 0.3x normal (need 1.5x).",
+   "Passed on CVX: volume only 0.8x normal (need 1.5x).",
+   "Passed on CVX: volume only 0.7x normal (need 1.5x)."
   ],
-  "watchlist": "Allowed to trade: 0 halal stocks, 5 Shariah ETFs, 9 coins. Halal stock screen not finished (SEC unreachable: HTTP 403 https://www.sec.gov/files/company_tickers.json); retrying hourly.",
-  "lastScan": "2026-11-10T20:02:34Z"
+  "watchlist": "Allowed to trade: 69 halal stocks, 5 Shariah ETFs, 9 coins.",
+  "lastScan": "2026-11-10T20:19:25Z"
  },
  "hired": true,
- "updatedAt": "2026-11-10T20:02:42Z",
+ "updatedAt": "2026-11-10T20:19:43Z",
  "mode": "PAPER",
  "agents": [
   {
@@ -21,8 +25,8 @@
    "name": "News Scout",
    "role": "Reads X, Reddit and news feeds",
    "status": "working",
-   "doing": "Read 32 new headlines/posts, 1 market-moving stories",
-   "lastRun": "2026-11-10T20:02:42Z"
+   "doing": "Read 21 new headlines/posts, 3 market-moving stories",
+   "lastRun": "2026-11-10T20:19:41Z"
   },
   {
    "id": "analyst",
@@ -61,8 +65,8 @@
    "name": "Trader",
    "role": "Places paper orders on Alpaca",
    "status": "working",
-   "doing": "Paper-trading bot started (Alpaca PAPER account only). Close this window to stop it.",
-   "lastRun": "2026-11-10T20:02:33Z"
+   "doing": "Saved results to the Agent HQ dashboard",
+   "lastRun": "2026-11-10T20:02:44Z"
   },
   {
    "id": "coins",
@@ -76,12 +80,32 @@
    "id": "screener",
    "name": "Halal Screener",
    "role": "Weekly Shariah screen",
-   "status": "working",
+   "status": "ok",
    "doing": "SEC unreachable (HTTP 403 https://www.sec.gov/files/company_tickers.json). Trading only 9 coins + 5 Shariah ETFs until it works; retrying in 60 min",
    "lastRun": "2026-11-10T19:59:23Z"
   }
  ],
  "log": [
+  {
+   "t": "2026-11-10T20:19:41Z",
+   "agent": "News Scout",
+   "msg": "Read 21 new headlines/posts, 3 market-moving stories"
+  },
+  {
+   "t": "2026-11-10T20:14:24Z",
+   "agent": "News Scout",
+   "msg": "Read 33 new headlines/posts, 2 market-moving stories"
+  },
+  {
+   "t": "2026-11-10T20:09:15Z",
+   "agent": "News Scout",
+   "msg": "Read 35 new headlines/posts, 1 market-moving stories"
+  },
+  {
+   "t": "2026-11-10T20:02:44Z",
+   "agent": "Trader",
+   "msg": "Saved results to the Agent HQ dashboard"
+  },
   {
    "t": "2026-11-10T20:02:42Z",
    "agent": "News Scout",
@@ -811,32 +835,12 @@
    "t": "2026-11-10T16:03:03Z",
    "agent": "News Scout",
    "msg": "Read 78 new headlines/posts, 0 market-moving stories"
-  },
-  {
-   "t": "2026-11-10T16:02:49Z",
-   "agent": "Halal Screener",
-   "msg": "SEC unreachable (HTTP 403 https://www.sec.gov/files/company_tickers.json: <!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\n<html xmlns=\"http://www.w3.org/1999/xhtml\">\n<head>\n<meta http-equiv=\"Content-T); keeping last week's list"
-  },
-  {
-   "t": "2026-11-10T16:02:49Z",
-   "agent": "Halal Screener",
-   "msg": "Re-running the weekly halal screen"
-  },
-  {
-   "t": "2026-11-10T15:57:49Z",
-   "agent": "News Scout",
-   "msg": "Read 40 new headlines/posts, 0 market-moving stories"
-  },
-  {
-   "t": "2026-11-10T15:57:44Z",
-   "agent": "Halal Screener",
-   "msg": "SEC unreachable (HTTP 403 https://www.sec.gov/files/company_tickers.json: <!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\n<html xmlns=\"http://www.w3.org/1999/xhtml\">\n<head>\n<meta http-equiv=\"Content-T); keeping last week's list"
   }
  ],
  "brief": {
   "date": "Tue Nov 10",
-  "createdAt": "2026-11-10T20:02:42Z",
-  "headline": "Paper account +$0 today (+0.00%), +0.00% total vs SPY -0.53% · 0 open",
+  "createdAt": "2026-11-10T20:19:43Z",
+  "headline": "Paper account +$0 today (+0.00%), +0.00% total vs SPY -0.49% · 0 open",
   "summary": "0 trade(s) closed today, 0/0 winners overall. TradingAgents checks used today: 0/5.",
   "notes": []
  },
@@ -849,8 +853,8 @@
   "dayPct": 0.0,
   "totalPnl": 0.0,
   "totalPct": 0.0,
-  "spyPct": -0.53,
-  "vsSpyPct": 0.53
+  "spyPct": -0.49,
+  "vsSpyPct": 0.49
  },
  "status": {
   "killed": false,
@@ -859,14 +863,57 @@
   "deepMax": 5,
   "social": {},
   "universe": {
-   "stocks": 5,
+   "stocks": 74,
    "crypto": 9
   },
   "alert": null
  },
  "positions": [],
  "trades": [],
- "decisions": [],
+ "decisions": [
+  {
+   "t": "2026-11-10T20:19:42Z",
+   "symbol": "OXY",
+   "outcome": "waiting",
+   "why": "volume only 1.0x normal (need 1.5x)",
+   "event": "Escalating conflict involving Iran and Hormuz Strait tanker explosions point to tighter oil supplies and strong defense/oil positioning."
+  },
+  {
+   "t": "2026-11-10T20:19:42Z",
+   "symbol": "CVX",
+   "outcome": "waiting",
+   "why": "volume only 0.8x normal (need 1.5x)",
+   "event": "Escalating conflict involving Iran and Hormuz Strait tanker explosions point to tighter oil supplies and strong defense/oil positioning."
+  },
+  {
+   "t": "2026-11-10T20:19:42Z",
+   "symbol": "XOM",
+   "outcome": "waiting",
+   "why": "volume only 0.3x normal (need 1.5x)",
+   "event": "Escalating conflict involving Iran and Hormuz Strait tanker explosions point to tighter oil supplies and strong defense/oil positioning."
+  },
+  {
+   "t": "2026-11-10T20:14:25Z",
+   "symbol": "OXY",
+   "outcome": "waiting",
+   "why": "volume only 1.0x normal (need 1.5x)",
+   "event": "Escalating conflict involving Iran and Hormuz Strait tanker explosions point to tighter oil supplies and strong defense/oil positioning."
+  },
+  {
+   "t": "2026-11-10T20:14:24Z",
+   "symbol": "CVX",
+   "outcome": "waiting",
+   "why": "volume only 0.7x normal (need 1.5x)",
+   "event": "Escalating conflict involving Iran and Hormuz Strait tanker explosions point to tighter oil supplies and strong defense/oil positioning."
+  },
+  {
+   "t": "2026-11-10T20:14:24Z",
+   "symbol": "XOM",
+   "outcome": "waiting",
+   "why": "volume only 0.3x normal (need 1.5x)",
+   "event": "Escalating conflict involving Iran and Hormuz Strait tanker explosions point to tighter oil supplies and strong defense/oil positioning."
+  }
+ ],
  "equity": [
   {
    "t": "2026-11-10T01:51:59Z",
@@ -1047,6 +1094,11 @@
    "t": "2026-11-10T19:45:22Z",
    "equity": 100000.0,
    "spy": 748.7
+  },
+  {
+   "t": "2026-11-10T20:19:42Z",
+   "equity": 100000.0,
+   "spy": 749.01
   }
  ],
  "watch": [],
@@ -1058,10 +1110,11 @@
  },
  "events": [
   {
-   "summary": "U.S. officials, including Rubio, indicated no need for major combat operations against Iran, pointing to de-escalation.",
+   "summary": "Crude oil prices dipped below $90 as diplomatic push and remarks about the Iran conflict ending soon raised hopes of de-escalation.",
    "category": "deescalation",
    "firstSeen": "2026-11-10T01:57:53Z",
    "publishers": [
+    "21st CENTURY CHRONICLE",
     "24 News HD",
     "24/7 Wall St.",
     "3News",
@@ -1152,6 +1205,7 @@
     "London South East",
     "MM News",
     "MSN",
+    "MTV Lebanon",
     "MUFG Research",
     "Madhyamam",
     "Manila Standard",
@@ -1269,7 +1323,18 @@
     "アラブニュース",
     "巴士的報"
    ],
-   "assets": {},
+   "assets": {
+    "XOM": {
+     "direction": "down",
+     "confidence": 0.6,
+     "why": "Falling oil prices put downward pressure on oil and gas stocks."
+    },
+    "CVX": {
+     "direction": "down",
+     "confidence": 0.6,
+     "why": "Falling oil prices put downward pressure on oil and gas stocks."
+    }
+   },
    "sources": [
     {
      "id": "7f88a57000e80ecc",
@@ -1314,7 +1379,70 @@
    ]
   },
   {
-   "summary": "Rising US inflation drove Bitcoin down as expectations shifted toward tighter monetary policy.",
+   "summary": "Lawmakers are seeking congressional briefings and answers regarding Nvidia CEO's ties, increasing regulatory scrutiny.",
+   "category": "company_bad_news",
+   "firstSeen": "2026-11-10T02:06:25Z",
+   "publishers": [
+    "AP",
+    "Benzinga",
+    "CNBC",
+    "Reuters",
+    "The Spokesman-Review",
+    "bloomingbit",
+    "fiscal.ai"
+   ],
+   "assets": {
+    "NVDA": {
+     "direction": "down",
+     "confidence": 0.65,
+     "why": "Political scrutiny and potential subpoenas create regulatory headwinds for the company."
+    }
+   },
+   "sources": [
+    {
+     "id": "7e779ec43d194f41",
+     "publisher": "Benzinga",
+     "kind": "news",
+     "title": "'Materially False and Misleading': Nvidia, Jensen Huang Sued Over Alleged Chinese Spy Affair, Shareholder Says NVDA Stock Was 'Artificially Inflated'",
+     "url": "https://www.benzinga.com/markets/tech/26/11/63077533/nvidia-jensen-huang-sued-class-action-megaspeed-alice-huang-chinese-spy",
+     "time": "2026-11-10T02:14:11Z"
+    },
+    {
+     "id": "b13c33e1c6b78db8",
+     "publisher": "The Spokesman-Review",
+     "kind": "news",
+     "title": "Stocks jump as oil tumbles, Nvidia falls amid internal probe - The Spokesman-Review",
+     "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxQRzBNX0NnSGJXLWxPSjV1bjFCTVM0aExoaURsaHlESWl2U1dfd2EtcU5VTkxZYkpkU2hJQ19LSUdLMUNkS2JpZTZDZzJLY3JFeDgtSXRTOF9MeUlPSkhoajBQU09qZEdld2VwTXpTSHVPZmJ2N0xFSGwxQzRWN1hmdjExaEx0OW54R3ZnWldmX1ByX19VQkV6NjZPYjBYQQ?oc=5",
+     "time": "2026-11-10T02:06:25Z"
+    },
+    {
+     "id": "c28ef162d5e09bce",
+     "publisher": "fiscal.ai",
+     "kind": "news",
+     "title": "Securities Class Action Lawsuit Filed Against NVIDIA Corporation",
+     "url": "https://www.globenewswire.com/news-release/2026/11/10/3399115/32716/en/nvda-investor-alert-hagens-berman-urges-nvidia-corporation-nasdaq-nvda-investors-with-substantial-losses-to-contact-firm-ahead-of-january-8-2027-lead-plaintiff-deadline.html",
+     "time": "2026-11-10T03:01:19Z"
+    },
+    {
+     "id": "43afd4d88c5a549b",
+     "publisher": "AP",
+     "kind": "news",
+     "title": "Trump says FBI is looking at Nvidia CEO Jensen Huang’s affair with alleged Chinese agent",
+     "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPQWY3b0NNRFBNRG5jZVdXM05URnhOV19vQ24zV29la0k2S3FzZmN4ZzB3WlRwSXJMbHB6RE90MFVEZ2p4UUhMQUFlV0RMdmVZZUUxeFFEa2ljZTFlTlhXOFozaEczRlpPS2dmRXgxcGw2ZWdpNVJQVEltazV5UUZMUmpNMUdoX2NJRG1wVnJhbFRCTHBwbE1LcjZnMk4?oc=5",
+     "time": "2026-11-10T03:43:01Z"
+    },
+    {
+     "id": "094051eb2da1b91e",
+     "publisher": "AP",
+     "kind": "news",
+     "title": "Timeline: How did Nvidia’s CEO get caught up in an alleged spy plot?",
+     "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPVENSejl5V04tRUR2M1JIRHZibWlHcm5tUWNndEMzRnBqM1p4aG5XTnp4azBycWIxcjlzeWJqZjh5WnNfRzdfSmNudmRMN3l1OVFmTjE1VS10a2pFN3BWNDZDS05SMkNFQ01WR2Z5UHhBY1pRZDhiVXBHZy1DTDFuRmowbzRkZ2xKcGxsOVVMOG5OYmczUTdYem5Rc1MtLVVpSmNkWGRRWXo0M0ZXWkZZUW9ERk9jeHRrR1pKZ20yRU4?oc=5",
+     "time": "2026-11-10T03:32:00Z"
+    }
+   ]
+  },
+  {
+   "summary": "Hotter-than-expected inflation reports and comments from Fed officials pointing toward potential rate hikes drove the S&P 500 lower.",
    "category": "central_bank_hawkish",
    "firstSeen": "2026-11-10T09:39:09Z",
    "publishers": [
@@ -1338,6 +1466,7 @@
     "Bloomberg.com",
     "Business Insider",
     "Business Standard",
+    "CNA",
     "CNBC",
     "Central Oregon Daily",
     "Chosunbiz",
@@ -1359,7 +1488,9 @@
     "InvestmentNews",
     "Invezz",
     "JournalArta",
+    "KELO-AM",
     "KSL News",
+    "KXLH News Helena",
     "Kitco",
     "MLQ.ai",
     "MishTalk",
@@ -1383,10 +1514,12 @@
     "Stocktwits",
     "StreetInsider",
     "TechJuice",
+    "The American Conservative",
     "The Business Times",
     "The Economic Times",
     "The Edge Malaysia",
     "The Independent",
+    "The Mighty 790 KFGO",
     "The Real Economy Blog",
     "The Standard (HK)",
     "The Sunday Guardian",
@@ -1399,6 +1532,7 @@
     "TradingView",
     "USA Today",
     "WSJ",
+    "WTVB",
     "WXYZ Channel 7",
     "Xinhua",
     "Yahoo Finance",
@@ -1409,13 +1543,14 @@
     "marketscreener.com",
     "news.sbs.co.kr",
     "streamlinefeed.co.ke",
+    "www.thenationalnews.com",
     "شبكة تواصل الإخبارية"
    ],
    "assets": {
     "BTC/USD": {
      "direction": "down",
      "confidence": 0.8,
-     "why": "Hot inflation and rate hike expectations are bearish for risk assets and crypto."
+     "why": "Tighter monetary policy expectations and hot CPI drive Bitcoin down."
     },
     "ETH/USD": {
      "direction": "down",
@@ -1426,6 +1561,16 @@
      "direction": "down",
      "confidence": 0.8,
      "why": "Hot inflation and rate hike expectations are bearish for risk assets and crypto."
+    },
+    "NVDA": {
+     "direction": "down",
+     "confidence": 0.85,
+     "why": "Hot inflation and rising yields weigh heavily on growth and tech stocks like Nvidia."
+    },
+    "MSFT": {
+     "direction": "down",
+     "confidence": 0.6,
+     "why": "Higher yields and rate hike fears weigh on growth and mega-cap tech."
     }
    },
    "sources": [
@@ -1472,58 +1617,55 @@
    ]
   },
   {
-   "summary": "House Republicans are considering issuing a subpoena to Nvidia CEO Jensen Huang amid an ongoing controversy and investigation.",
-   "category": "company_bad_news",
-   "firstSeen": "2026-11-10T02:06:25Z",
+   "summary": "Escalating conflict involving Iran and Hormuz Strait tanker explosions point to tighter oil supplies and strong defense/oil positioning.",
+   "category": "war_escalation",
+   "firstSeen": "2026-11-10T20:01:23Z",
    "publishers": [
-    "AP",
-    "Benzinga",
-    "CNBC",
-    "Reuters",
-    "The Spokesman-Review",
-    "fiscal.ai"
+    "News18",
+    "شبكة تواصل الإخبارية",
+    "وكالة سبأ"
    ],
-   "assets": {},
+   "assets": {
+    "XOM": {
+     "direction": "up",
+     "confidence": 0.7,
+     "why": "Middle East military escalation and Hormuz Strait supply risks push oil and gas stocks higher."
+    },
+    "CVX": {
+     "direction": "up",
+     "confidence": 0.7,
+     "why": "Middle East military escalation and Hormuz Strait supply risks push oil and gas stocks higher."
+    },
+    "OXY": {
+     "direction": "up",
+     "confidence": 0.7,
+     "why": "Middle East military escalation and Hormuz Strait supply risks push oil and gas stocks higher."
+    }
+   },
    "sources": [
     {
-     "id": "7e779ec43d194f41",
-     "publisher": "Benzinga",
+     "id": "df336258cfae123d",
+     "publisher": "وكالة سبأ",
      "kind": "news",
-     "title": "'Materially False and Misleading': Nvidia, Jensen Huang Sued Over Alleged Chinese Spy Affair, Shareholder Says NVDA Stock Was 'Artificially Inflated'",
-     "url": "https://www.benzinga.com/markets/tech/26/11/63077533/nvidia-jensen-huang-sued-class-action-megaspeed-alice-huang-chinese-spy",
-     "time": "2026-11-10T02:14:11Z"
+     "title": "IRGC: Third oil tanker explodes in Hormuz Strait",
+     "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE1VclA4VmQtT2UzUkdKdW5SLUtkZXRIWXk2Z0Vnc25KU3pZWGNlcktBczNMV3lEVDNEc2hDblVhdVZQNlFGUnJRODVSaHJBYUE?oc=5",
+     "time": "2026-11-10T20:04:16Z"
     },
     {
-     "id": "b13c33e1c6b78db8",
-     "publisher": "The Spokesman-Review",
+     "id": "f3a25bf802b51027",
+     "publisher": "شبكة تواصل الإخبارية",
      "kind": "news",
-     "title": "Stocks jump as oil tumbles, Nvidia falls amid internal probe - The Spokesman-Review",
-     "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxQRzBNX0NnSGJXLWxPSjV1bjFCTVM0aExoaURsaHlESWl2U1dfd2EtcU5VTkxZYkpkU2hJQ19LSUdLMUNkS2JpZTZDZzJLY3JFeDgtSXRTOF9MeUlPSkhoajBQU09qZEdld2VwTXpTSHVPZmJ2N0xFSGwxQzRWN1hmdjExaEx0OW54R3ZnWldmX1ByX19VQkV6NjZPYjBYQQ?oc=5",
-     "time": "2026-11-10T02:06:25Z"
+     "title": "Rubio predicts Iran will lose the ability to export oil",
+     "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE9HYWl1b25NdkltTTFLc0pwM3J2aU5qTVpoZ2Fla2kzaDRSakp6OHotV0J2NnJkNjJ1WXFySklmYThoNnhZOXo1YzZUOEtNOThNZVRr?oc=5",
+     "time": "2026-11-10T20:03:52Z"
     },
     {
-     "id": "c28ef162d5e09bce",
-     "publisher": "fiscal.ai",
+     "id": "53aab7bcd37b0b8c",
+     "publisher": "News18",
      "kind": "news",
-     "title": "Securities Class Action Lawsuit Filed Against NVIDIA Corporation",
-     "url": "https://www.globenewswire.com/news-release/2026/11/10/3399115/32716/en/nvda-investor-alert-hagens-berman-urges-nvidia-corporation-nasdaq-nvda-investors-with-substantial-losses-to-contact-firm-ahead-of-january-8-2027-lead-plaintiff-deadline.html",
-     "time": "2026-11-10T03:01:19Z"
-    },
-    {
-     "id": "43afd4d88c5a549b",
-     "publisher": "AP",
-     "kind": "news",
-     "title": "Trump says FBI is looking at Nvidia CEO Jensen Huang’s affair with alleged Chinese agent",
-     "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPQWY3b0NNRFBNRG5jZVdXM05URnhOV19vQ24zV29la0k2S3FzZmN4ZzB3WlRwSXJMbHB6RE90MFVEZ2p4UUhMQUFlV0RMdmVZZUUxeFFEa2ljZTFlTlhXOFozaEczRlpPS2dmRXgxcGw2ZWdpNVJQVEltazV5UUZMUmpNMUdoX2NJRG1wVnJhbFRCTHBwbE1LcjZnMk4?oc=5",
-     "time": "2026-11-10T03:43:01Z"
-    },
-    {
-     "id": "094051eb2da1b91e",
-     "publisher": "AP",
-     "kind": "news",
-     "title": "Timeline: How did Nvidia’s CEO get caught up in an alleged spy plot?",
-     "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPVENSejl5V04tRUR2M1JIRHZibWlHcm5tUWNndEMzRnBqM1p4aG5XTnp4azBycWIxcjlzeWJqZjh5WnNfRzdfSmNudmRMN3l1OVFmTjE1VS10a2pFN3BWNDZDS05SMkNFQ01WR2Z5UHhBY1pRZDhiVXBHZy1DTDFuRmowbzRkZ2xKcGxsOVVMOG5OYmczUTdYem5Rc1MtLVVpSmNkWGRRWXo0M0ZXWkZZUW9ERk9jeHRrR1pKZ20yRU4?oc=5",
-     "time": "2026-11-10T03:32:00Z"
+     "title": "'Iran Started This War 47 Years Ago, We Didn't': Hegseth Defends US Military Campaign Against Tehran",
+     "url": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxNNGZkYnAxaTZYNFloTUZKT1hfVmtOOTRWSmZEMU1OMzA1d0pPY3RkWUZ3Wl9SM3ZHMFBpT2Mxa3FUV2JncDFNWjBrWm9RcXpuMy1xZnJRaW5vR0VTSkVUWWRFV2lCWktpRFY5REh3ZVBfSWxzZFJFRFR3eUdSRFZPcHhBOGNGR292TEJxNGg0emVMOERMeC1lRXE3eWlIaXVibzQ3Ul9TdWFXMlpOVWdOd0t4bGR2RjdQTkh0RDZJVUE1WlVMZENFbGYwblgtdWdsbHktbldxdTZNUmNVT2p3dVR5a3BILVREQVHSAe8BQVVfeXFMTU5qb0VLdS14U05sc1UtYkttRVRSSG9RLXE0dzN4TlIyT3M1c2xNalVyblNzdi0zekRqSnpfaU5VaVQyZkdEZnhwVHdyeUNHRkN3REcyRnVkWTdxUmNkdTR5dXYza0prNi1GNTIwZDVDdmZEalkyRkFRaFNvU2pLajVPLWhCNHNYa1dobzNsa3JwNm05c2xTaXNKeUJwR1BCVVdRT2hWQW81RTJJSmw2aVR2T0N1b3dRMlhuVWk2RU5ZbzlmSVFicktIUGpwbWV5Q1JSR2JVRG9hRFg1dzluZTZTeGR5VDQyYnZhSVdmcWM?oc=5",
+     "time": "2026-11-10T20:01:23Z"
     }
    ]
   },
