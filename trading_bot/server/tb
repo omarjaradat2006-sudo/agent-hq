@@ -27,6 +27,6 @@ case "${1:-help}" in
   backtest-log) tail -n 40 -f ~/logs/backtest.log ;;
   universe)     "$PY" -m trading_bot.bot universe ;;
   unlock)       "$PY" -m trading_bot.bot unlock ;;
-  update)       git pull -q --rebase origin main && sudo systemctl restart agenthq-trading && echo "Updated + restarted." ;;
+  update)       git pull -q --rebase --autostash origin main && sudo systemctl restart agenthq-trading && echo "Updated + restarted." ;;
   *)            sed -n '2,13p' "$0" ;;
 esac
