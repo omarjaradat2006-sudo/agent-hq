@@ -191,6 +191,19 @@ class T(unittest.TestCase):
         lines = S.state()["record"]["lines"]
         self.assertTrue(re.match(r"NBA same-game parlays \(at estimated odds\): \d+ won, \d+ lost.*(up|down) \$\d+\.\d\d per \$100", lines[0]), lines[0])
 
+    def test_search_out_of_quota_falls_back(self):
+        fake = FakeGemini()
+        def no_search(prompt, system=None, search=False, **kw):
+            if search:
+                raise RuntimeError("All Gemini models failed. Last error: Gemini HTTP 429 ...")
+            return fake(prompt, system, search=False, **kw)
+        A.G.generate = no_search
+        A.SEARCH_OK = True
+        A.espn_injuries = lambda: "ESPN NBA injury report: Boston Celtics: Star Player - Out."
+        K.run_nba()
+        self.assertEqual(len(S.state()["cards"]["nba"]["parlays"]), 3)
+        self.assertFalse(A.SEARCH_OK)
+
     def test_sanitize(self):
         self.assertEqual(S.sanitize("This is basically guaranteed, a lock."), "This is likely, a lean.")
 

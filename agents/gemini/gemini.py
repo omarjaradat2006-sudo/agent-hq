@@ -29,7 +29,7 @@ def models():
             n = m["name"].split("/")[-1]
             if "generateContent" not in m.get("supportedGenerationMethods", []):
                 continue
-            if "flash" not in n or re.search(r"image|tts|live|audio|thinking|exp|preview", n):
+            if "flash" not in n or re.search(r"image|tts|live|audio|thinking|exp|preview|omni", n):  # omni: not on the free tier
                 continue
             (lite if "lite" in n else flash).append(n)
     except Exception as e:
@@ -38,7 +38,9 @@ def models():
         v = re.search(r"gemini-(\d+(?:\.\d+)?)", n)
         return float(v.group(1)) if v else 0
     key = lambda n: (ver(n), "latest" not in n)
-    order = sorted(flash, key=key, reverse=True) + sorted(lite, key=key, reverse=True)
+    flash, lite = sorted(flash, key=key, reverse=True), sorted(lite, key=key, reverse=True)
+    order = flash[:4] + lite[:2]          # always keep Flash-Lite as a fallback (separate free quota)
+    order += [n for n in flash + lite if n not in order]
     if pinned:
         order = [pinned] + [n for n in order if n != pinned]
     if not order:

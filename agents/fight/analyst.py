@@ -24,8 +24,25 @@ Rules:
 - Plain English, short sentences."""
 
 
-def gen(prompt, search=False, json_out=False, temperature=0.2):
-    return G.generate(prompt, SYSTEM, search=search, json_out=json_out, temperature=temperature)
+SEARCH_OK = True   # turns False for the rest of the run once Google Search is out of free quota
+
+
+def gen(prompt, search=False, json_out=False, temperature=0.2, fallback=""):
+    """One retry round only, so a bad quota day can't burn the whole daily allowance.
+    If Google Search is out of quota, answer without search, using `fallback` (e.g. ESPN's injury report) as the facts."""
+    global SEARCH_OK
+    if search and SEARCH_OK:
+        try:
+            return G.generate(prompt, SYSTEM, search=True, json_out=False, temperature=temperature, retries=1)
+        except RuntimeError as e:
+            if "429" not in str(e):
+                raise
+            SEARCH_OK = False
+            print("Google Search grounding is out of free quota; continuing without search", flush=True)
+    if search:
+        prompt = (f"{prompt}\n\nNOTE: live web search is unavailable right now. Use ONLY these facts for current news and say so:\n"
+                  f"{fallback or '(no live data available; give general matchup analysis only and do not state any injury as current)'}")
+    return G.generate(prompt, SYSTEM, search=False, json_out=json_out, temperature=temperature, retries=1)
 
 
 def parse(text):
@@ -35,7 +52,7 @@ def parse(text):
         return None
 
 
-def json_call(prompt, tries=3):
+def json_call(prompt, tries=2):
     for _ in range(tries):
         try:
             text, _ = gen(prompt, json_out=True)
@@ -100,13 +117,35 @@ def apply_estimates(est, idx):
 
 # ---------- NBA ----------
 
+def espn_injuries():
+    """ESPN's free public NBA injury report (no key). Used when Google Search is unavailable."""
+    import json as _j, urllib.request as _u
+    try:
+        with _u.urlopen(_u.Request("https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
+                                   headers={"User-Agent": "Mozilla/5.0 agent-hq"}), timeout=30) as r:
+            data = _j.loads(r.read().decode())
+    except Exception as e:
+        print("ESPN injuries unavailable:", e, flush=True)
+        return ""
+    rows = []
+    for team in data.get("injuries", []):
+        tname = team.get("displayName") or (team.get("team") or {}).get("displayName", "")
+        for i in team.get("injuries", []):
+            ath = (i.get("athlete") or {}).get("displayName", "")
+            st = i.get("status") or (i.get("type") or {}).get("description", "")
+            note = (i.get("shortComment") or i.get("longComment") or "")[:140]
+            if ath:
+                rows.append(f"{tname}: {ath} - {st}. {note}")
+    return "ESPN NBA injury report (official, current):\n" + "\n".join(rows[:150]) if rows else ""
+
+
 def nba_research(today, games):
     q = (f"Today is {today}. Research tonight's NBA games below for betting analysis: official injury report (out / questionable / probable), "
          "rest and back-to-backs, travel, recent form (last 10 games), pace, offensive and defensive ratings, matchup edges, "
          "and line-moving news from the last 24 hours. Also note which players' roles change because of injuries.\n"
          + "\n".join(games) +
          "\nEnd with one line exactly like: PROP_GAMES: <game>; <game>; ... listing the games with the most player-prop angles first.")
-    text, src = gen(q, search=True, temperature=0.3)
+    text, src = gen(q, search=True, temperature=0.3, fallback=espn_injuries())
     m = re.search(r"PROP_GAMES:\s*(.+)", text or "")
     ranked = [g.strip() for g in m.group(1).split(";")] if m else []
     return text, src, ranked
@@ -116,7 +155,7 @@ def nba_props_research(today, players_by_game):
     q = (f"Today is {today}. For these NBA players with prop lines tonight, find each one's last 5-10 games (points, rebounds, assists, made threes, minutes), "
          "season averages, tonight's role (starting? minutes limit? teammates out?) and the opponent's defense against their position. Be specific.\n"
          + "\n".join(f"{g}: {', '.join(ps[:10])}" for g, ps in players_by_game.items()))
-    return gen(q, search=True, temperature=0.3)
+    return gen(q, search=True, temperature=0.3, fallback=espn_injuries())
 
 
 def estimate(sport, lines_text, notes, sources, today, extra=""):
