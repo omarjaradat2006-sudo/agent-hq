@@ -54,9 +54,11 @@ $PY "$ENGINE/templates/catalog.py" menu "$HQ/data/youtube/bounce_templates.json"
 
 # 0) Yesterday hit YouTube's daily limit? Upload what's left first (planning refuses to overwrite a non-empty queue)
 Q="$BOUNCE_STUDIO/2 Bounce Theory - Upload Today/queue.json"
+$PY "$ENGINE/templates/daily.py" --reconcile        # drop anything YouTube already has from the queue
 if [ -s "$Q" ] && [ "$(tr -d ' \n' < "$Q")" != "[]" ] && [ "$MODE" = full ]; then
   echo "leftover queue from an earlier day: uploading it first"
   (cd "$ENGINE/Upload Tool" && $PY upload.py bounce --yes)
+  $PY "$ENGINE/templates/daily.py" --reconcile
 fi
 
 # 1) Plan. Exit 3 = today's lineup isn't there yet: wait for the YouTube team (until noon)
@@ -79,6 +81,7 @@ fi
 
 # 3) Upload + schedule (5 PM - 8 AM window, one at a time). Broken/missing files are skipped by upload.py.
 cd "$ENGINE/Upload Tool" && $PY upload.py bounce --yes
+$PY "$ENGINE/templates/daily.py" --reconcile        # queue.json keeps only what YouTube doesn't have yet
 
 # 3b) Delete each uploaded video ONLY after YouTube confirms it has it (anything unconfirmed is kept and reported)
 cd "$ENGINE/Upload Tool" && $PY verify.py bounce
