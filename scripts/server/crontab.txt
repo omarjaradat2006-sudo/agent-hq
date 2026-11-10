@@ -20,3 +20,6 @@
 43 17 * * 6    /home/ubuntu/agent-hq/scripts/server/run_fight.sh close ufc
 47 9  * * *    /home/ubuntu/agent-hq/scripts/server/run_fight.sh grade
 53 12 * * 0    /home/ubuntu/agent-hq/scripts/server/run_fight.sh books
+
+# Ambient Escape daily batch: Gemini specs (refs checked against the Quran/hadith texts) -> render after Bounce -> upload -> verify -> mark. No Claude.
+20 7 * * *    /home/ubuntu/agent-hq/scripts/server/run_ambient.sh

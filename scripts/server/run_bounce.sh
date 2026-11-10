@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Daily Bounce Theory batch on the Oracle server, no Claude: lineup -> templates -> render -> check -> upload -> mark Agent HQ -> clean.
+# Daily Bounce Theory batch on the Oracle server, no Claude: lineup -> templates -> render -> check -> upload -> verify (then delete) -> mark Agent HQ -> clean.
 # Cron runs it at 7:05 AM Toronto. If the YouTube team hasn't planned today yet, it waits and retries until noon.
 # Usage: run_bounce.sh            full run
 #        run_bounce.sh plan       plan only (job file + queue), no render/upload (for checking)
@@ -69,7 +69,7 @@ done
 [ "$MODE" = plan ] && { rm -f "$BOUNCE_STUDIO/2 Bounce Theory - Upload Today/queue.json"; echo "plan only: nothing rendered"; exit 0; }
 
 # 2) Render (finished videos are skipped if this is re-run)
-cd "$ENGINE/Local Render" && $PY render.py bounce; RENDER_OK=$([ $? -eq 0 ] && echo 1 || echo 0)
+( flock 7; cd "$ENGINE/Local Render" && $PY render.py bounce ) 7>/tmp/render.lock; RENDER_OK=$([ $? -eq 0 ] && echo 1 || echo 0)   # one render at a time (shared with Ambient)
 if [ "$MODE" = noupload ]; then   # test run: report, then clear the test videos so the 7 AM run never uploads them
   OUTD="$BOUNCE_STUDIO/2 Bounce Theory - Upload Today"
   for f in "$OUTD"/*.mp4; do [ -f "$f" ] && echo "  $(ffprobe -v error -show_entries format=duration:stream=width,height -of csv=p=0 "$f" | tr '\n' ' ') $(basename "$f")"; done
@@ -80,14 +80,16 @@ fi
 # 3) Upload + schedule (5 PM - 8 AM window, one at a time). Broken/missing files are skipped by upload.py.
 cd "$ENGINE/Upload Tool" && $PY upload.py bounce --yes
 
+# 3b) Delete each uploaded video ONLY after YouTube confirms it has it (anything unconfirmed is kept and reported)
+cd "$ENGINE/Upload Tool" && $PY verify.py bounce
+
 # 4) Mark Agent HQ, save history + report
 sync_repos >/dev/null 2>&1 || git -C "$HQ" pull -q --rebase origin main
 $PY "$ENGINE/templates/mark.py" "$RENDER_OK" && save_hq "Bounce Theory batch made on the server (templates, no Claude)"
 
-# 5) Clean up only when everything uploaded (anything still in queue.json is never deleted)
+# 5) Temp files only when everything uploaded (anything still in queue.json is never deleted)
 if [ "$(cat "$BOUNCE_STUDIO/2 Bounce Theory - Upload Today/queue.json" 2>/dev/null)" = "[]" ]; then
-  cd "$ENGINE/Local Render" && $PY render.py clean --yes
-  rm -rf "$BOUNCE_UPLOADED/2 Bounce Theory - Upload Today"
+  cd "$ENGINE/Local Render" && $PY render.py clean --work-only --yes   # uploaded videos were already deleted by verify.py
 fi
 df -h ~ | tail -1
 echo "=== $(date '+%F %T') done ==="

@@ -1,5 +1,7 @@
 # YOUTUBE HQ: daily batch for Ambient Escape (Claude Code on Omar's laptop)
 
+> **Ambient Escape is moving to the server too** (runner `scripts/server/run_ambient.sh`, code in bounce-engine `ambient/`). Before making an Ambient batch here, read `data/youtube/ambient_report.json` and `data/youtube/state.json`: if the report is dated today, or today's Ambient lineup items say `made: true`, the server already made them. Then only make the slots the report's `issues` hand back to the laptop (narrated story/explainer longs), and never re-upload anything else: it would double-post.
+>
 > **Bounce Theory is no longer made here.** Since 2026-11-09 the Oracle server makes, uploads and schedules it every day at 7 AM from the lineup's template settings (private repo `bounce-engine`, runner `scripts/server/run_bounce.sh`). Never render or upload Bounce Theory from the laptop: it would double-post. To change how Bounce videos look, add or improve formats in the bounce-engine repo (they appear in the template menu by themselves).
 
 You are running in Claude Code ON Omar's Windows laptop, inside `Downloads\YOUTUBE HQ`. You can read, write and run everything here directly. There is no cloud workspace, no file staging and no copying: render, check, upload and clean up yourself. Omar pastes one prompt and walks away, so never stop to hand him commands. Only stop for the cases under "Stop and tell Omar".
