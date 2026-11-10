@@ -298,3 +298,108 @@ def test_backtest_exit_logic():
     assert ex["exitReason"] == "target +6%" and ex["exit"] == pytest.approx(106)
     s = stats([{"pnl": 300, "pnlPct": 6, "exitT": T(NOW), "exitReason": "target +6%"}])
     assert s["winRate"] == 100 and s["totalPct"] == 0.3
+
+
+# ---------------------------------------------------------------- server move (Nov 9): bug fix, event log, 7-day report, long backtest
+def test_triage_model_is_a_list_of_flash_lite(monkeypatch):
+    import trading_bot.triage as TR
+    monkeypatch.setattr(TR.gemini, "_triage_set", False, raising=False)
+    monkeypatch.setattr(TR.gemini, "_model", None)
+    monkeypatch.setattr(TR.gemini, "_req", lambda *a, **k: {"models": [
+        {"name": "models/gemini-2.5-flash", "supportedGenerationMethods": ["generateContent"]},
+        {"name": "models/gemini-2.5-flash-lite", "supportedGenerationMethods": ["generateContent"]}]})
+    TR.use_triage_model()
+    assert TR.gemini._model == ["gemini-2.5-flash-lite"]          # a list, and never the teams' Flash model
+    assert TR.gemini.model() == "gemini-2.5-flash-lite"
+
+
+def test_paper_url_is_hardcoded():
+    assert C.ALPACA_TRADING_URL == "https://paper-api.alpaca.markets"
+
+
+def test_risk_vetoes_are_logged_and_reported(monkeypatch, tmpdirs):
+    import trading_bot.weekly as W
+    monkeypatch.setattr(W, "LEDGER", tmpdirs / "data" / "ledger.json")
+    fake = FakeAlpaca()
+    fake.equity = 96000.0; fake.last_equity = 100000.0          # down 4% today -> daily halt
+    B = wire(monkeypatch, fake, [{"symbol": "XOM", "direction": "up", "confidence": 0.8, "why": "x"}])
+    b = B.Bot(); b.ledger["startEquity"] = 100000.0; b.ledger["startedAt"] = T(NOW - timedelta(days=1)); b.cycle()
+    assert not fake.placed
+    rules = {e["rule"] for e in util.read_events()}
+    assert "daily_loss_halt" in rules
+    r = W.build(None, now=NOW + timedelta(minutes=1))
+    assert r["status"] == "running" and r["day"] == 2
+    assert any(g["rule"] == "daily_loss_halt" for g in r["riskRules"])
+    assert "Every risk-rule trigger" in W.markdown(r)
+
+
+def test_weekly_report_numbers(monkeypatch, tmpdirs):
+    import trading_bot.weekly as W
+    led = tmpdirs / "data" / "ledger.json"
+    monkeypatch.setattr(W, "LEDGER", led)
+    s = NOW - timedelta(days=8)
+    util.write_json(led, {"startEquity": 100000.0, "startedAt": T(s), "spyStart": 500.0,
+        "equity": [{"t": T(s + timedelta(days=1)), "equity": 101000.0, "spy": 505.0},
+                   {"t": T(s + timedelta(days=2)), "equity": 98980.0, "spy": 501.0},
+                   {"t": T(s + timedelta(days=6)), "equity": 100500.0, "spy": 510.0},
+                   {"t": T(s + timedelta(days=7, hours=5)), "equity": 90000.0, "spy": 400.0}],   # after the week: ignored
+        "trades": [
+            {"symbol": "XOM", "status": "closed", "openedAt": T(s + timedelta(days=1)), "closedAt": T(s + timedelta(days=2)),
+             "entryPrice": 100, "exitPrice": 106, "qty": 10, "pnl": 60.0, "pnlPct": 6.0, "exitReason": "target +6% hit"},
+            {"symbol": "NVDA", "status": "closed", "openedAt": T(s + timedelta(days=2)), "closedAt": T(s + timedelta(days=3)),
+             "entryPrice": 100, "exitPrice": 97, "qty": 10, "pnl": -30.0, "pnlPct": -3.0, "exitReason": "stop-loss -3% hit"},
+            {"symbol": "AMD", "status": "cancelled", "openedAt": T(s + timedelta(days=2))}]})
+    util.event("risk", "stop_loss_-3%", "x", "NVDA")
+    util.event("error", "cycle", "boom")
+    r = W.build(None, now=NOW)
+    assert r["status"] == "final"
+    assert r["trades"]["opened"] == 2 and r["trades"]["winRate"] == 50.0 and r["trades"]["realizedPnl"] == 30.0
+    assert r["account"]["maxDrawdownPct"] == pytest.approx(-2.0, abs=0.01)    # 101000 -> 98980
+    assert r["account"]["spyPct"] == 2.0                                       # 500 -> 510, last point in the week
+    # events were written "now" (after the week ended) so they fall outside the window
+    assert r["errors"] == []
+
+
+def test_backtest_triage_budget_and_resume(monkeypatch, tmpdirs):
+    import trading_bot.backtest as BT, trading_bot.triage as TR
+    monkeypatch.setattr(BT, "CACHE", tmpdirs / "local" / "bt.json")
+    calls = []
+    def fake_triage(batch, ev, uni, held, raise_on_fail=False):
+        calls.append(len(batch))
+        return [{"key": "k" + batch[0]["id"], "is_market_news": True, "summary": "s", "item_ids": [b["id"] for b in batch],
+                 "assets": [{"symbol": "XOM", "direction": "up", "confidence": 0.8}]}]
+    monkeypatch.setattr(TR, "triage", fake_triage)
+    by_day = {f"2026-0{m}-01": [{"id": f"{m}{i}", "time": f"2026-0{m}-01T15:0{i}:00Z", "symbols": []} for i in range(3)]
+              for m in range(1, 6)}
+    ev, info = BT.triage_all(by_day, UNIVERSE, max_calls=2)
+    assert info["calls"] == 2 and info["daysRead"] == 2 and "budget" in info["stopped"]
+    ev, info = BT.triage_all(by_day, UNIVERSE, max_calls=10)        # next run: only the 3 new days cost calls
+    assert info["calls"] == 3 and info["daysRead"] == 5 and not info["stopped"] and len(calls) == 5
+    assert all(e["confirmedAt"] for e in ev.values())
+
+
+def test_backtest_simulation_applies_risk_rules(monkeypatch):
+    import trading_bot.backtest as BT
+    news_at = (NOW - timedelta(days=4)).replace(hour=15, minute=0, second=0, microsecond=0)   # 10-11 AM New York
+    while news_at.weekday() >= 5:
+        news_at -= timedelta(days=1)
+    class A(FakeAlpaca):
+        def stock_bars(self, syms, tf, start, end=None, limit=None):
+            return {s: bars_spike(news_at=news_at, days=12) for s in syms}
+    syms = ["XOM", "CVX", "COP", "OXY", "EOG", "DVN", "XOM"]
+    events = {}
+    for i, s in enumerate(syms):
+        t = news_at - timedelta(minutes=1)
+        events[f"e{i}"] = {"key": f"e{i}", "summary": "oil", "firstSeen": T(t), "confirmedAt": T(t + timedelta(minutes=1)),
+                           "items": [{"time": T(t)}, {"time": T(t)}], "assets": {s: {"direction": "up", "confidence": 0.9}}}
+    trades, rules = BT.simulate(A(), events, NOW - timedelta(days=10), NOW)
+    assert 0 < len(trades) <= C.RISK["max_open_positions"]
+    assert rules.get("max 5 positions", 0) + rules.get("already holding it", 0) >= 1
+    for t in trades:
+        assert t["qty"] * t["entry"] <= 100000 * 0.05 + 1
+
+
+def test_live_key_refused():
+    from trading_bot.alpaca import Alpaca
+    with pytest.raises(SystemExit):
+        Alpaca(key="AKLIVE123", secret="b")

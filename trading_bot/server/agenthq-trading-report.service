@@ -1,0 +1,11 @@
+[Unit]
+Description=Agent HQ trading bot: 7-day paper report (saved to the Trading tab)
+After=network-online.target
+
+[Service]
+Type=oneshot
+User=__USER__
+WorkingDirectory=__REPO__
+ExecStart=__REPO__/trading_bot/.venv/bin/python -m trading_bot.weekly
+NoNewPrivileges=yes
+PrivateTmp=yes

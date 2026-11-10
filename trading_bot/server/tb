@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+# Shortcuts for the PAPER-trading bot on the Oracle server.  Usage: tb <command>
+#   tb check            test keys + connections (Alpaca paper, Gemini, TradingAgents, GitHub). Places no orders.
+#   tb start | stop | restart | status
+#   tb logs             follow the bot live (Ctrl+C stops watching, not the bot)
+#   tb report           build the 7-day report now and save it to the Trading tab
+#   tb backtest 365     backtest the last N days in the background (safe to log out); continues where it stopped
+#   tb backtest-log     follow the backtest
+#   tb update           pull the newest code from GitHub and restart the bot
+set -euo pipefail
+REPO=~/agent-hq-trading
+PY="$REPO/trading_bot/.venv/bin/python"
+cd "$REPO"
+case "${1:-help}" in
+  check)        "$PY" -m trading_bot.bot check ;;
+  start)        sudo systemctl start agenthq-trading && sleep 3 && systemctl --no-pager status agenthq-trading | head -5 ;;
+  stop)         sudo systemctl stop agenthq-trading && echo "Stopped (stop-losses stay live on Alpaca's side)." ;;
+  restart)      sudo systemctl restart agenthq-trading && echo "Restarted." ;;
+  status)       systemctl --no-pager status agenthq-trading | head -12; echo; systemctl --no-pager list-timers agenthq-trading-report.timer | head -3 ;;
+  logs)         journalctl -u agenthq-trading -f -n 50 ;;
+  report)       "$PY" -m trading_bot.weekly | head -40 ;;
+  backtest)     D="${2:-365}"; shift 2 2>/dev/null || shift
+                nohup nice -n 10 "$PY" -m trading_bot.backtest "$D" "$@" >> ~/logs/backtest.log 2>&1 &
+                echo "Backtest of the last $D days started in the background (pid $!). Watch it: tb backtest-log" ;;
+  backtest-log) tail -n 40 -f ~/logs/backtest.log ;;
+  update)       git pull -q --rebase origin main && sudo systemctl restart agenthq-trading && echo "Updated + restarted." ;;
+  *)            sed -n '2,11p' "$0" ;;
+esac

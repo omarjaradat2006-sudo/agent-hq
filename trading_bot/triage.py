@@ -6,7 +6,7 @@ confirmation + risk rules decide whether anything happens.
 import json, sys
 from datetime import timedelta
 from . import config as C
-from .util import ROOT, iso, now_utc, parse_time, log
+from .util import ROOT, iso, now_utc, parse_time, log, event
 
 sys.path.insert(0, str(ROOT / "agents" / "gemini"))
 import gemini  # noqa: E402  (Agent HQ's shared Gemini client, key from GEMINI_API_KEY)
@@ -20,16 +20,19 @@ def use_triage_model():
     import os
     gemini.KEY = gemini.KEY or os.environ.get("GEMINI_API_KEY", "").strip()
     m = os.environ.get("TRIAGE_MODEL")
-    if not m:
+    lites = [m] if m else []
+    if not lites:
         try:
             names = [x["name"].split("/")[-1] for x in gemini._req("GET", "models?pageSize=200").get("models", [])
                      if "generateContent" in x.get("supportedGenerationMethods", [])]
-            lites = sorted([n for n in names if "flash-lite" in n and "preview" not in n], reverse=True)
-            m = lites[0] if lites else None
+            lites = sorted([n for n in names if "flash-lite" in n and "preview" not in n], reverse=True)[:3]
         except Exception:  # noqa: BLE001
-            m = None
-    if m:
-        gemini._model = m
+            lites = []
+    if lites:
+        # Must be a LIST: gemini.generate() loops over it (a plain string made it try one letter at a time,
+        # so every triage call failed). Flash-Lite only, so a quota hit here never spends the Flash quota
+        # the 9 agent teams need: triage just skips that cycle (= no trades, which is safe).
+        gemini._model = list(lites)
     gemini._triage_set = True
 
 SYSTEM = """You are the news triage desk of a cautious, rules-based paper-trading bot.
@@ -51,7 +54,7 @@ SCHEMA = """{"events": [{
 }]}"""
 
 
-def triage(items, events, universe, held):
+def triage(items, events, universe, held, raise_on_fail=False):
     if not items:
         return []
     use_triage_model()
@@ -78,6 +81,9 @@ def triage(items, events, universe, held):
             data = gemini.parse_json(text)
         except Exception as e:  # noqa: BLE001  (network/quota) -> no events this cycle, no trades
             log(f"Gemini triage failed, skipping this batch: {str(e)[:160]}", "News Analyst")
+            event("error", "gemini_triage", str(e)[:200])
+            if raise_on_fail:
+                raise
             continue
         for ev in (data.get("events") if isinstance(data, dict) else data) or []:
             if not isinstance(ev, dict) or not ev.get("key"):

@@ -33,8 +33,24 @@ All limits are in `config.py`. The AI can only say no; it can't change a limit.
 
 Commands (from the repo folder): `python -m trading_bot.bot run | once | check | universe | publish | unlock`
 
-## Moving to the Oracle server
-1. On the server: `git clone https://github.com/omarjaradat2006-sudo/agent-hq && cd agent-hq && bash trading_bot/server/install.sh`
-2. Copy `trading_bot/.env` (and optionally `trading_bot/local/state.json`) from the laptop.
-3. On the laptop: run `remove_autostart.bat` and close the bot window, so only one copy trades.
-Trade history and the kill switch live in `data/trading/ledger.json`, which is already in git, so the server picks up where the laptop stopped.
+## On the Oracle server ("openclaw"): where it runs now (Nov 2026)
+Runs 24/7 as a systemd service, PAPER only, in its own copy of the repo (`~/agent-hq-trading`), so the Gemini
+team runner's hourly `git reset --hard` in `~/agent-hq` can never wipe unsaved trade history.
+
+| | |
+|---|---|
+| `server/install.sh` | one-time install: own clone, Python packages, systemd units (does not start the bot) |
+| `server/set_keys.sh` | type the Alpaca PAPER keys hidden (`read -s`) into `~/.trading-bot.env` (chmod 600, outside git). Refuses live `AK...` keys |
+| `server/tb` | `tb check / start / stop / status / logs / report / backtest 365 / backtest-log / update` |
+| `agenthq-trading.service` | the bot. `Restart=always`, starts at boot, refuses to start unless it points at the paper URL |
+| `agenthq-trading-report.timer` | builds the 7-day report every evening (4:45 PM New York) |
+
+The Gemini key is read from `~/.agent-hq.env` (same file the agent teams use). Never run the laptop copy at
+the same time: two bots on one paper account would double-trade.
+
+**7-day report** (`python -m trading_bot.weekly`): trades, win rate, P&L, max drawdown, every risk-rule trigger
+and every error for the first 7 days, from `data/trading/ledger.json` + `local/events.jsonl`. Written to
+`data/trading/report_7d.json` (Trading tab: "7-day test") and `data/trading/report_7d.md`.
+
+**Long backtest** (`tb backtest 365`): news cached per month, Gemini triage cached per day and capped at 150 calls a
+run (`--max-calls`), so it can take a few runs on the free tier and always continues where it stopped.

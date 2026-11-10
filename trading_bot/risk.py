@@ -80,3 +80,14 @@ def can_open(symbol, acct, positions, open_trades, state, start_equity):
     if acct.get("trading_blocked") or acct.get("account_blocked"):
         return False, "Alpaca account blocked"
     return True, ""
+
+
+def rule_name(reason):
+    """Short name of the risk rule behind a can_open() refusal (for the 7-day report)."""
+    r = reason.lower()
+    for key, rule in (("kill switch", "kill_switch"), ("down 10%", "kill_switch"), ("down 3%", "daily_loss_halt"),
+                      ("already holding", "one_position_per_asset"), ("open positions", "max_5_positions"),
+                      ("blocked", "alpaca_account_blocked")):
+        if key in r:
+            return rule
+    return "risk_check"

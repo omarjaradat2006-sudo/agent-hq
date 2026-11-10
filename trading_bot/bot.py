@@ -11,7 +11,7 @@
 import sys, time, traceback
 from datetime import timedelta
 from . import config as C
-from .util import (load_env, read_json, write_json, iso, now_utc, now_et, parse_time, log, DATA, LOCAL,
+from .util import (load_env, read_json, write_json, iso, now_utc, now_et, parse_time, log, event, DATA, LOCAL,
                    SingleInstance, HttpError, round_price)
 
 LEDGER = DATA / "ledger.json"          # committed: start equity, kill switch, every trade, equity curve
@@ -74,6 +74,7 @@ class Bot:
         if risk.daily_halt_hit(acct) and self.s.get("haltedDate") != now_et().date().isoformat():
             self.s["haltedDate"] = now_et().date().isoformat()
             log(f"Down {risk.day_change(acct):.1%} today: no new trades until tomorrow", "Risk Officer")
+            event("risk", "daily_loss_halt", f"down {risk.day_change(acct):.2%} today: no new trades until tomorrow")
 
         # 2. keep the trade book in sync with Alpaca, enforce time limits + crypto target
         self.reconcile(positions)
@@ -110,6 +111,7 @@ class Bot:
                 entry = self.a.order(t["entryOrderId"])
             except HttpError as e:
                 log(f"can't read order for {t['symbol']}: {e}", "Trader")
+                event("error", "read_order", e, t["symbol"])
                 continue
             if t["status"] == "pending":
                 if entry.get("status") == "filled":
@@ -127,6 +129,7 @@ class Bot:
                     log(f"Bought {t['qty']:g} {t['symbol']} at ${t['entryPrice']:,.2f} (stop ${t['stop']:,.2f}, target ${t['target']:,.2f})")
                 elif entry.get("status") in ("canceled", "expired", "rejected"):
                     t.update({"status": "cancelled", "closedAt": iso(), "exitReason": f"entry {entry.get('status')}"})
+                    event("error", "entry_order_" + str(entry.get("status")), "Alpaca did not fill the buy", t["symbol"])
                     continue
                 else:
                     continue
@@ -139,6 +142,7 @@ class Bot:
                     log(f"Stop-loss for {t['symbol']} placed on Alpaca at ${t['stop']:,.2f}", "Risk Officer")
                 except HttpError as e:
                     log(f"couldn't place {t['symbol']} stop, selling to stay safe: {e}", "Risk Officer")
+                    event("risk", "no_stop_loss_possible", f"couldn't place the stop, sold: {e}", t["symbol"])
                     self.close(t, "no stop-loss possible")
                     continue
             if ps in held:
@@ -165,12 +169,16 @@ class Bot:
                   "pnl": round((price - t["entryPrice"]) * t["qty"], 2),
                   "pnlPct": round((price - t["entryPrice"]) / t["entryPrice"] * 100, 2)})
         log(f"Closed {t['symbol']}: {reason}, {t['pnlPct']:+.2f}% (${t['pnl']:+,.2f})")
+        rule = exit_rule(reason)
+        if rule:
+            event("risk", rule, f"{reason}, {t['pnlPct']:+.2f}% (${t['pnl']:+,.2f})", t["symbol"])
 
     def close(self, t, reason):
         try:
             self.a.sell_all(t["symbol"])
         except HttpError as e:
             log(f"sell {t['symbol']} failed: {e}")
+            event("error", "sell_failed", e, t["symbol"])
             return
         t["closing"] = reason
         time.sleep(2)
@@ -217,10 +225,12 @@ class Bot:
         from .risk import total_change
         log(f"KILL SWITCH: account down {total_change(acct, self.ledger['startEquity']):.1%} from the start. "
             "Selling everything and stopping. Run 'unlock' after you review.", "Risk Officer")
+        event("risk", "kill_switch", f"down {total_change(acct, self.ledger['startEquity']):.2%} from the start: sold everything, locked")
         try:
             self.a.cancel_all_and_flatten()
         except HttpError as e:
             log(f"flatten failed: {e}", "Risk Officer")
+            event("error", "flatten_failed", e)
         for t in self.open_trades():
             self.finish(t, self.a.latest_price(t["symbol"]) or t.get("lastPrice") or t["entryPrice"], "kill switch")
         self.ledger.update({"killed": True, "killedAt": iso()})
@@ -256,6 +266,7 @@ class Bot:
                     continue
                 if not halal.allowed(sym, self.universe):
                     self.decide(key, sym, "blocked", "fails the halal screen", e)
+                    event("halal", "halal_screen", "fails the halal screen", sym)
                     continue
                 if a["confidence"] < C.CONFIRM["min_confidence"]:
                     continue
@@ -263,6 +274,8 @@ class Bot:
                     self.decide(key, sym, "waiting", f"only {len(pubs)} source(s) so far: {', '.join(sorted(pubs))}", e, final=False)
                     continue
                 if "/" not in sym and not stock_ok:
+                    if stock_why != "market closed":
+                        event("risk", "stock_entry_window", stock_why, sym)
                     continue
                 try:
                     chk = market.confirm(self.a, sym, "up", e["firstSeen"])
@@ -282,15 +295,21 @@ class Bot:
                                     {**self.s, "killed": self.ledger.get("killed")}, self.ledger["startEquity"])
             if not ok:
                 self.decide(key, sym, "waiting", why, e, final=False)
+                event("risk", risk.rule_name(why), why, sym)
                 continue
             counters, used = self.today_count("deep")
             if used >= C.DEEP["max_per_day"]:
                 self.decide(key, sym, "waiting", "used today's 5 TradingAgents checks", e, final=False)
+                event("limit", "tradingagents_daily_cap", "used today's 5 TradingAgents checks", sym)
                 continue
             counters["deep"] = used + 1
             self.save()
             ctx = f"News: {e['summary']} | why {sym}: {a['why']} | sources: {', '.join(sorted(pubs))}"
             verdict = deep.run(sym, context=ctx)
+            if verdict.get("error"):
+                event("error", "tradingagents", verdict["error"][:200], sym)
+            elif not verdict["approved"]:
+                event("ai", "tradingagents_said_no", f"TradingAgents said {verdict.get('rating')}", sym)
             if not verdict["approved"]:
                 self.decide(key, sym, "rejected", f"TradingAgents said {verdict.get('rating')}"
                             + (f" ({verdict['error'][:80]})" if verdict.get("error") else ""), e)
@@ -324,6 +343,10 @@ class Bot:
         except (HttpError, ValueError) as err:
             self.decide(key, sym, "error", f"order failed: {str(err)[:120]}", e)
             log(f"Order for {sym} failed: {err}")
+            if "not enough cash" in str(err):
+                event("risk", "cash_only_no_margin", str(err), sym)
+            else:
+                event("error", "order_failed", err, sym)
             return
         self.decide(key, sym, "bought", f"{chk['reason']}; TradingAgents: {verdict['rating']}", e)
         self.ledger["trades"].insert(0, {
@@ -338,6 +361,17 @@ class Bot:
         })
         log(f"BUY {sym}: {e['summary'][:90]} | {chk['reason']} | TradingAgents {verdict['rating']}")
         self.s["publishNow"] = True
+
+
+def exit_rule(reason):
+    """Which risk rule closed a trade (None for exits that aren't a risk rule)."""
+    r = reason.lower()
+    for key, rule in (("stop-loss", "stop_loss_-3%"), ("target", "take_profit_+6%"), ("3 trading-day", "stock_3_day_limit"),
+                      ("48h", "crypto_48h_limit"), ("bad news", "bad_news_exit"), ("kill switch", "kill_switch_exit"),
+                      ("no stop-loss", "no_stop_loss_possible"), ("outside the bot", "closed_outside_bot")):
+        if key in r:
+            return rule
+    return None
 
 
 def alert_popup(msg):
@@ -358,6 +392,7 @@ def run_forever():
     from .news import agent_reach_available
     with SingleInstance():
         log("Paper-trading bot started (Alpaca PAPER account only). Close this window to stop it.", "Trader")
+        event("info", "bot_started", "started (PAPER only)")
         if not agent_reach_available():
             log("Agent Reach not found: running on news feeds only (no X/Reddit)", "News Scout")
         last_social = None
@@ -380,6 +415,7 @@ def run_forever():
                 raise
             except Exception:  # noqa: BLE001  keep running; stop-losses live on Alpaca anyway
                 log("Cycle error (will retry): " + traceback.format_exc().strip().splitlines()[-1], "Trader")
+                event("error", "cycle", traceback.format_exc().strip().splitlines()[-1])
                 traceback.print_exc()
             wait = C.LOOP["market_minutes"] if open_now else C.LOOP["offhours_minutes"]
             time.sleep(wait * 60)

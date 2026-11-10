@@ -26,7 +26,7 @@ def run():
     except SystemExit as e:
         bad += 1; line(False, "Alpaca", str(e))
     except HttpError as e:
-        bad += 1; line(False, "Alpaca", f"{e} (check the keys in trading_bot/.env are PAPER keys)")
+        bad += 1; line(False, "Alpaca", f"{e} (check they are PAPER keys: laptop trading_bot/.env, server ~/.trading-bot.env)")
     # Gemini
     try:
         sys.path.insert(0, str(ROOT / "agents" / "gemini"))
@@ -57,5 +57,6 @@ def run():
     r = subprocess.run(["git", "-C", str(ROOT), "push", "--dry-run", "-q", "origin", "HEAD:main"], capture_output=True, text=True, timeout=90)
     if not line(r.returncode == 0, "Save results to GitHub", "" if r.returncode == 0 else r.stderr.strip()[:160]):
         bad += 1
-    print("\nAll good. Double-click start_trading_bot.bat to run it.\n" if not bad else f"\n{bad} problem(s) above to fix first.\n")
+    nxt = "Double-click start_trading_bot.bat to run it." if sys.platform == "win32" else "Start it with:  tb start"
+    print(f"\nAll good. {nxt}\n" if not bad else f"\n{bad} problem(s) above to fix first.\n")
     return bad

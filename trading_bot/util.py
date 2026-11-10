@@ -11,16 +11,31 @@ ET = ZoneInfo("America/New_York")
 UA = "AgentHQ-PaperTradingBot/1.0 (+https://github.com/omarjaradat2006-sudo/agent-hq)"
 
 
+ENV_FILES = [
+    ROOT / "trading_bot" / ".env",          # laptop
+    Path.home() / ".trading-bot.env",       # Oracle server: Alpaca PAPER keys (chmod 600, typed in hidden)
+    Path.home() / ".agent-hq.env",          # Oracle server: the Gemini key the agent teams already use
+]
+
+
 def load_env():
-    """Read trading_bot/.env (KEY=value lines). Keys never leave this machine."""
-    p = ROOT / "trading_bot" / ".env"
-    if p.exists():
-        for line in p.read_text(encoding="utf-8").splitlines():
+    """Read KEY=value lines from the env files above (first file to set a key wins; empty values are ignored).
+    Keys never leave this machine."""
+    for p in ENV_FILES:
+        try:
+            text = p.read_text(encoding="utf-8")
+        except OSError:
+            continue
+        for line in text.splitlines():
             line = line.strip()
+            if line.startswith("export "):
+                line = line[7:].strip()
             if not line or line.startswith("#") or "=" not in line:
                 continue
             k, v = line.split("=", 1)
-            os.environ.setdefault(k.strip(), v.strip().strip('"').strip("'"))
+            k, v = k.strip(), v.strip().strip('"').strip("'")
+            if v and not os.environ.get(k):
+                os.environ[k] = v
     # TradingAgents reads GOOGLE_API_KEY; Omar's key is GEMINI_API_KEY.
     if os.environ.get("GEMINI_API_KEY") and not os.environ.get("GOOGLE_API_KEY"):
         os.environ["GOOGLE_API_KEY"] = os.environ["GEMINI_API_KEY"]
@@ -134,6 +149,33 @@ def log(msg, agent="Trader"):
     LOCAL.mkdir(parents=True, exist_ok=True)
     with open(LOCAL / "bot.log", "a", encoding="utf-8") as f:
         f.write(line + "\n")
+
+
+def event(kind, rule, msg, symbol=None):
+    """Append-only record of every risk-rule trigger (kind="risk"/"halal"/"limit") and every error (kind="error").
+    The 7-day report is built from this file, so nothing is lost when the dashboard log rolls over."""
+    rec = {"t": iso(), "kind": kind, "rule": rule, "symbol": symbol, "msg": str(msg)[:300]}
+    try:
+        LOCAL.mkdir(parents=True, exist_ok=True)
+        with open(LOCAL / "events.jsonl", "a", encoding="utf-8") as f:
+            f.write(json.dumps(rec, ensure_ascii=False) + "\n")
+    except OSError:
+        pass
+    return rec
+
+
+def read_events():
+    out = []
+    try:
+        with open(LOCAL / "events.jsonl", encoding="utf-8") as f:
+            for line in f:
+                try:
+                    out.append(json.loads(line))
+                except json.JSONDecodeError:
+                    continue
+    except FileNotFoundError:
+        pass
+    return out
 
 
 def drain_log():

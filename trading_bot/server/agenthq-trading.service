@@ -1,14 +1,24 @@
 [Unit]
-Description=Agent HQ paper-trading bot
+Description=Agent HQ PAPER-trading bot (Alpaca paper account only)
 After=network-online.target
 Wants=network-online.target
+StartLimitIntervalSec=0
 
 [Service]
 User=__USER__
 WorkingDirectory=__REPO__
+Environment=PYTHONUNBUFFERED=1
+# Refuse to start unless it points at Alpaca PAPER and the key is not a live (AK...) key
+ExecStartPre=__REPO__/trading_bot/.venv/bin/python -m trading_bot.paper_guard
 ExecStart=__REPO__/trading_bot/.venv/bin/python -m trading_bot.bot run
 Restart=always
 RestartSec=60
+# Be a polite neighbour to the agent teams and the Bounce renders on the same 2-core server
+Nice=5
+MemoryMax=3G
+NoNewPrivileges=yes
+PrivateTmp=yes
+ProtectSystem=full
 
 [Install]
 WantedBy=multi-user.target

@@ -2,7 +2,7 @@
 import subprocess
 from datetime import timedelta
 from . import config as C
-from .util import ROOT, iso, now_utc, now_et, parse_time, log
+from .util import ROOT, iso, now_utc, now_et, parse_time, log, event
 
 MIN_GAP = timedelta(minutes=45)
 
@@ -56,12 +56,15 @@ def push(message):
             log(f"Save to GitHub: commit failed: {c.stderr.strip()[:150]}", "Trader")
             return False
         for _ in range(3):
-            _git("pull", "-q", "--rebase", "--autostash", "origin", "main")
+            if _git("pull", "-q", "--rebase", "--autostash", "origin", "main").returncode != 0:
+                _git("rebase", "--abort")      # never leave the clone stuck half-way through a rebase
             p = _git("push", "-q", "origin", "HEAD:main")
             if p.returncode == 0:
                 log("Saved results to the Agent HQ dashboard", "Trader")
                 return True
         log(f"Save to GitHub failed (will retry later): {p.stderr.strip()[:150]}", "Trader")
+        event("error", "save_to_github", p.stderr.strip()[:200])
     except (OSError, subprocess.TimeoutExpired) as e:
         log(f"Save to GitHub failed: {e}", "Trader")
+        event("error", "save_to_github", e)
     return False

@@ -23,8 +23,10 @@
   let M = null, raw = "";
   async function load() {
     const res = await Promise.all(CFG.teams.map(async t => [t.id, await getJSON(`data/${t.id}/state.json`), t.virtual ? null : await getJSON(`data/${t.id}/metrics.json`)]));
-    const bt = CFG.teams.some(t => t.id === "trading") ? await getJSON("data/trading/backtest.json") : null;
-    const sig = JSON.stringify([res, bt && bt.ranAt]); if (sig === raw) return false; raw = sig;
+    const hasT = CFG.teams.some(t => t.id === "trading");
+    const bt = hasT ? await getJSON("data/trading/backtest.json") : null;
+    const wk = hasT ? await getJSON("data/trading/report_7d.json") : null;
+    const sig = JSON.stringify([res, bt && bt.ranAt, wk && wk.updatedAt]); if (sig === raw) return false; raw = sig;
     const teams = {};
     res.forEach(([id, st, mt]) => {
       const cfg = CFG.teams.find(t => t.id === id); const s = st || {}; const hired = !!s.hired;
@@ -38,7 +40,7 @@
       const log = [...(s.log || []), ...((mt && mt.log) || []).map(l => ({ ...l, agent: l.agent || "Data Collector" }))].sort((a, b) => (b.t || "").localeCompare(a.t || ""));
       teams[id] = { cfg, hired, state: s, metrics: mt, agents, log };
     });
-    if (teams.trading) teams.trading.backtest = bt;
+    if (teams.trading) { teams.trading.backtest = bt; teams.trading.week = wk; }
     M = { teams };
     return true;
   }
@@ -245,7 +247,7 @@
 
   function tabsFor(t) {
     if (t.cfg.virtual) return [["overview", "Brief"], ["activity", "Activity"]];
-    if (t.cfg.id === "trading") return [["overview", "Overview"], ["positions", "Positions"], ["trades", "Trades"], ["pnl", "P&L vs SPY"], ["news", "News desk"], ["coins", "Coin watch"], ["backtest", "Backtest"], ["activity", "Activity"]];
+    if (t.cfg.id === "trading") return [["overview", "Overview"], ["positions", "Positions"], ["trades", "Trades"], ["pnl", "P&L vs SPY"], ["week", "7-day test"], ["news", "News desk"], ["coins", "Coin watch"], ["backtest", "Backtest"], ["activity", "Activity"]];
     const out = [["overview", "Overview"], ["ideas", t.cfg.ideaWord || "Ideas"]];
     if (t.metrics) out.push(["stats", "Stats"]);
     if (t.metrics && (t.metrics.trending || []).length) out.push(["trending", "Trending"]);
@@ -271,7 +273,7 @@
       b.onclick = () => { tab = k; renderPanel(); }; tabs.append(b); });
     ph.append(tabs); p.append(ph);
     const body = el("div", "pb"); p.append(body);
-    ({ overview: vOverview, ideas: vIdeas, review: vReview, competitors: vCompetitors, swarm: vSwarm, leads: vLeads, lineup: vLineup, positions: vTPositions, trades: vTTrades, pnl: vTPnl, news: vTNews, coins: vTCoins, backtest: vTBacktest, shots: vShots, stats: vStats, trending: vTrending, research: vResearch, activity: vActivity }[tab] || vOverview)(t, body);
+    ({ overview: vOverview, ideas: vIdeas, review: vReview, competitors: vCompetitors, swarm: vSwarm, leads: vLeads, lineup: vLineup, positions: vTPositions, trades: vTTrades, pnl: vTPnl, news: vTNews, coins: vTCoins, backtest: vTBacktest, week: vTWeek, shots: vShots, stats: vStats, trending: vTrending, research: vResearch, activity: vActivity }[tab] || vOverview)(t, body);
   }
   function pill(s) { return el("span", "pill s-" + (s || "idle"), ST[s] || s || "Idle"); }
   function empty(title, text) { const e = el("div", "empty"); e.append(el("strong", null, title)); e.append(el("span", null, text)); return e; }
@@ -719,13 +721,39 @@
     const c = el("div", "card"); w.slice().reverse().forEach(x => { const r = el("div", "vid"); r.append(el("span", "t", `${x.coin} · ${x.event || ""}`)); r.append(el("span", "n " + sgn(x.pnlPct), x.status === "closed" ? pct(x.pnlPct) : "watching"));
       r.append(el("span", "m", `${ago(x.openedAt)} · entry $${x.entry == null ? "—" : Number(x.entry).toPrecision(4)}`)); r.append(el("span", "m", x.exitReason || (x.last ? "now $" + Number(x.last).toPrecision(4) : ""))); c.append(r); }); body.append(c);
   }
+  function vTWeek(t, body) {
+    const w = t.week; if (!w || w.status === "not_started") { body.append(empty("7-day test not started", "Starts on the bot's first run on the Oracle server. The report updates every evening.")); return; }
+    const tr = w.trades || {}, a = w.account || {};
+    body.append(el("div", "small", `PAPER only · ${w.status === "final" ? "FINAL report" : `day ${w.day} of ${w.days}, still running`} · ${new Date(w.from).toLocaleDateString()} to ${new Date(w.to).toLocaleDateString()} · updated ${ago(w.updatedAt)}`));
+    const k = el("div", "kpis");
+    k.append(tk(`${tr.opened || 0}`, "Trades", `${tr.closed || 0} closed · ${tr.open || 0} open`));
+    k.append(tk(tr.winRate == null ? "—" : tr.winRate + "%", "Win rate", `${tr.wins || 0} won · ${tr.losses || 0} lost`));
+    k.append(tk(a.pnl == null ? "—" : (a.pnl >= 0 ? "+$" : "-$") + Math.abs(a.pnl).toFixed(2), "Account P&L", `${pct(a.pnlPct)} vs SPY ${pct(a.spyPct)}`, sgn(a.pnl)));
+    k.append(tk(pct(a.maxDrawdownPct), "Max drawdown", `realised $${(tr.realizedPnl || 0).toFixed(2)}`, "down"));
+    body.append(k);
+    const r = el("div", "card"); r.append(el("div", "label", `Risk rules that fired (${(w.riskRules || []).reduce((n, g) => n + g.count, 0)})`));
+    if (!(w.riskRules || []).length) r.append(el("div", "small", "None yet."));
+    (w.riskRules || []).forEach(g => { const x = el("div", "vid"); x.append(el("span", "t", g.label)); x.append(el("span", "n", "x" + g.count)); x.append(el("span", "m", (g.symbols || []).slice(0, 6).join(", ") || "account-wide")); x.append(el("span", "m", "last " + ago(g.last))); r.append(x); });
+    body.append(r);
+    const e = el("div", "card"); e.append(el("div", "label", `Errors (${(w.errors || []).reduce((n, g) => n + g.count, 0)}) · bot (re)starts: ${w.restarts || 0}`));
+    if (!(w.errors || []).length) e.append(el("div", "small", "None."));
+    (w.errors || []).forEach(g => { const x = el("div", "vid"); x.append(el("span", "t", g.rule)); x.append(el("span", "n down", "x" + g.count)); x.append(el("span", "m", g.example || "")); x.append(el("span", "m", "last " + ago(g.last))); e.append(x); });
+    body.append(e);
+    const c = el("div", "card"); c.append(el("div", "label", "Trades in the test week"));
+    if (!(w.tradeList || []).length) c.append(el("div", "small", "No trades yet. No trade is a valid decision."));
+    (w.tradeList || []).slice().reverse().forEach(x => { const row = el("div", "vid"); row.append(el("span", "t", `${x.symbol} · ${x.news || ""}`)); row.append(el("span", "n " + sgn(x.pnl), x.pnlPct == null ? x.status : pct(x.pnlPct))); row.append(el("span", "m", ago(x.openedAt))); row.append(el("span", "m", x.exitReason || "")); c.append(row); });
+    body.append(c);
+    const cv = el("div", "card"); cv.append(el("div", "label", "Read this before trusting it")); const ul = el("ul"); (w.caveats || []).forEach(x => ul.append(el("li", null, x))); cv.append(ul); body.append(cv);
+  }
   function vTBacktest(t, body) {
-    const b = t.backtest; if (!b) { body.append(empty("No backtest yet", "Run trading_bot\\windows\\run_backtest.bat on the laptop. It replays the rules over the last 30 days of real news and prices.")); return; }
+    const b = t.backtest; if (!b) { body.append(empty("No backtest yet", "On the Oracle server run: ~/agent-hq-trading/trading_bot/server/tb backtest 365. It replays the rules over past news and prices.")); return; }
     const s2 = b.summary || {}, ta = b.tradingAgents || {};
-    body.append(el("div", "small", `Last ${b.days} days · ${b.headlines} headlines → ${b.stories} stories · ran ${ago(b.ranAt)}`));
+    body.append(el("div", "small", `Last ${b.days} days · ${b.headlines} headlines → ${b.stories} stories · ran ${ago(b.ranAt)}` + (b.complete === false ? ` · PARTIAL: ${b.triagedPct}% of the news read so far, run it again to finish` : "")));
     const k = el("div", "kpis"); k.append(tk(String(s2.trades || 0), "Trades", `${s2.winRate == null ? "—" : s2.winRate + "%"} winners`)); k.append(tk(pct(s2.totalPct), "Total return", "SPY " + pct(b.spyPct), sgn((s2.totalPct || 0) - (b.spyPct || 0))));
     k.append(tk(pct(s2.avgPct), "Average trade", "max drop " + pct(s2.maxDrawdownPct), sgn(s2.avgPct))); k.append(tk(`${ta.approved || 0}/${ta.checked || 0}`, "TradingAgents approved", `approved avg ${pct(ta.approvedAvgPct)} · rejected avg ${pct(ta.rejectedAvgPct)}`)); body.append(k);
     if ((b.curve || []).length > 1) { const c = el("div", "card"); c.append(el("div", "label", "Backtest account value")); c.append(lineChart([{ vals: b.curve.map(p => p.equity), color: t.cfg.color }], b.curve.map(p => new Date(p.t).toLocaleDateString([], { month: "short", day: "numeric" })))); body.append(c); }
+    if ((b.months || []).length) { const m = el("div", "card"); m.append(el("div", "label", "Month by month")); b.months.forEach(x => { const r = el("div", "vid"); r.append(el("span", "t", x.month)); r.append(el("span", "n " + sgn(x.pnl), "$" + x.pnl.toFixed(0))); r.append(el("span", "m", `${x.trades} trades · ${x.winRate == null ? "—" : x.winRate + "%"} won`)); r.append(el("span", "m", "")); m.append(r); }); body.append(m); }
+    if (b.riskRules && Object.keys(b.riskRules).length) { const rr = el("div", "card"); rr.append(el("div", "label", "Risk rules that fired in the backtest")); Object.entries(b.riskRules).forEach(([n, v]) => { const r = el("div", "vid"); r.append(el("span", "t", n)); r.append(el("span", "n", "x" + v)); r.append(el("span", "m", "")); r.append(el("span", "m", "")); rr.append(r); }); body.append(rr); }
     const cv = el("div", "card"); cv.append(el("div", "label", "Read this before trusting it")); const ul = el("ul"); (b.caveats || []).forEach(x => ul.append(el("li", null, x))); cv.append(ul); body.append(cv);
     const c = el("div", "card"); c.append(el("div", "label", "Backtest trades")); (b.trades || []).slice().reverse().forEach(x => { const r = el("div", "vid"); r.append(el("span", "t", `${x.symbol} · ${x.event || ""}`)); r.append(el("span", "n " + sgn(x.pnl), pct(x.pnlPct)));
       r.append(el("span", "m", new Date(x.t).toLocaleDateString() + " · " + (x.exitReason || ""))); r.append(el("span", "m", x.tradingAgents ? "TradingAgents: " + x.tradingAgents : "")); c.append(r); }); body.append(c);

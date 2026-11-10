@@ -24,7 +24,9 @@ class Alpaca:
             raise SystemExit("Refusing to run: this bot only trades the Alpaca PAPER account.")
         self.t, self.d = trading_url, data_url
         if not self.key or not self.secret:
-            raise SystemExit("Missing ALPACA_API_KEY / ALPACA_SECRET_KEY in trading_bot/.env")
+            raise SystemExit("Missing ALPACA_API_KEY / ALPACA_SECRET_KEY (laptop: trading_bot/.env, server: ~/.trading-bot.env)")
+        if self.key.startswith("AK"):
+            raise SystemExit("Refusing to run: that is a LIVE Alpaca key (starts with AK). Use PAPER keys (start with PK).")
 
     def _h(self):
         return {"APCA-API-KEY-ID": self.key, "APCA-API-SECRET-KEY": self.secret}

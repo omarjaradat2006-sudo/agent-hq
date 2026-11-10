@@ -1,0 +1,9 @@
+[Unit]
+Description=Build the trading bot's 7-day paper report every evening
+
+[Timer]
+OnCalendar=*-*-* 16:45:00 America/New_York
+Persistent=true
+
+[Install]
+WantedBy=timers.target

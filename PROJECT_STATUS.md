@@ -1,8 +1,8 @@
 # PROJECT_STATUS.md
 
-Last updated: 2026-11-09 (Step 4: Bounce Theory template engine built; server setup waiting on Omar)
+Last updated: 2026-11-09 evening (Step 5: trading bot ready to install on the server; waiting on Omar's server commands)
 
-Rules in force: no Claude in daily operations (Gemini only) · no keys in chat or git · no purchases or paid APIs without Omar's OK · never delete a video before its upload is verified · no live trading · no automatic bets, no sportsbook logins, **no Bet365 anywhere** · one step at a time.
+Rules in force: no Claude in daily operations (Gemini only) · no keys in chat or git · no purchases or paid APIs without Omar's OK · never delete a video before its upload is verified · **no live trading, ever** (paper URL hard-coded, live `AK` keys refused, service won't start otherwise) · no automatic bets, no sportsbook logins, **no Bet365 anywhere** · one step at a time.
 
 ## 1. What exists today
 
@@ -17,7 +17,7 @@ Rules in force: no Claude in daily operations (Gemini only) · no keys in chat o
 | Rendering (`render.py`, explainers v2) | BOUNCE: SERVER READY · AMBIENT: LAPTOP | Engine, renderer and upload tool now live in the private repo `bounce-engine` (no keys). Ambient Escape still uses Claude Code on the laptop. |
 | Bounce Theory template engine | BUILT + TESTED, NOT LIVE YET | `bounce-engine/templates/`: 134 formats as templates (133 pass the smoke test), YouTube team writes `settings` per slot from `data/youtube/bounce_templates.json`, server runner `scripts/server/run_bounce.sh` (cron 7:05) plans, renders, uploads, marks Agent HQ, writes `data/youtube/bounce_report.json`. Tested: 3 real Shorts rendered + checked, compilation, marking. **Waits on Omar: deploy key, YouTube token copy, `setup_bounce.sh`.** |
 | Cloud server (Oracle Always Free, Toronto) | WORKS | "openclaw", 2 OCPU/12 GB/200 GB, Ubuntu 24.04, 40.233.127.117. Pay As You Go + $1 budget alert. Security updates + fail2ban on. Deploy key (agent-hq only). Gemini key in ~/.agent-hq.env (600). Logs in ~/logs. SSH key on laptop: Downloads\\oracle.key.key |
-| Trading bot (`trading_bot/`) | BUILT, NOT STARTED | Paper mode, 19/19 tests pass, risk limits are correct. Not running on the laptop yet. |
+| Trading bot (`trading_bot/`) | READY FOR SERVER, NOT STARTED | Moves to openclaw as systemd service `agenthq-trading` (Restart=always, starts at boot) in its own clone `~/agent-hq-trading`. PAPER only. Alpaca paper keys typed hidden into `~/.trading-bot.env` (600) by `set_keys.sh`; Gemini key reused from `~/.agent-hq.env`. Risk Officer is plain code (`risk.py` + `config.py`), runs before and after the AI and can veto any trade; the AI can only say no. Every risk trigger + error logged to `local/events.jsonl`. Trading tab updates 5x a day + after trades. 7-day report timer daily 4:45 PM ET. 26/26 tests pass. **Fixed a bug that made every live Gemini triage call fail** (model name was a string, not a list) and made triage Flash-Lite only so it can't eat the teams' Flash quota. **Waits on Omar: install, keys, check, start.** |
 | Perplexity research | SKIPPED (Omar agreed) | No free API tier; the MCP needs the same paid key. Gemini grounding does it for free. |
 | Fight & Court Intelligence (UFC + NBA) | NOT STARTED | Research and recommendations only. |
 | Video-editing repo shortlist | NOT STARTED | |
@@ -36,7 +36,7 @@ Rules in force: no Claude in daily operations (Gemini only) · no keys in chat o
 2. ✅ Verify the 9 Gemini teams: Omar triggers one run each; fix failures; then check that they actually run on schedule.
 3. ✅ Cloud: Oracle Pay As You Go decision → server → move the schedule to the server (more reliable than GitHub cron).
 4. 🔶 Bounce Theory template engine + daily runner: built and tested; goes live after Omar's 3 server steps and one supervised run (`run_bounce.sh noupload`).
-5. Trading bot: start paper trading on the laptop or server, then review at 30, 60 and 90 days.
+5. 🔶 Trading bot on the server: 1-week paper test (Omar chose 7 days, not 30/60/90) → 7-day report (`data/trading/report_7d.md`, Trading tab "7-day test") + backtest of the last 6-12 months (`tb backtest 365`, resumable on the free Gemini tier) → Omar decides. Real money is NOT part of this step; any change to live trading needs Omar's explicit decision and new code.
 6. Fight & Court Intelligence: odds plus Gemini research; CAD $25 a week cap; "no bet" is a valid answer; track results.
 7. Video-editing repo shortlist.
 8. OpenClaw plan (after the server exists).
@@ -46,4 +46,5 @@ Rules in force: no Claude in daily operations (Gemini only) · no keys in chat o
 - 2026-11-09: Audit done. Found that the Gemini teams have never run. Oracle catcher at try 552.
 - 2026-11-09: All 9 Gemini teams pass. Oracle server caught (try 572), set up, runs teams via cron. Claude scheduled tasks stay paused.
 - 2026-11-09: Bounce Engine code copied from the laptop to private repo bounce-engine (64 files, 3 MB, secret scan clean). Template engine built + tested in the cloud (render on 2 cores: ~1.3 min per Short). YouTube team now runs 6:13 AM so the 7:05 batch has a lineup. Laptop doc says Bounce is made on the server (copy it to the laptop only after the server's first good run).
-- NEXT: Omar's 3 server steps (deploy key, tokens, setup) → supervised `run_bounce.sh noupload` → first full run → retire Bounce from the laptop. Then step 5 (trading bot).
+- 2026-11-09 (evening): Trading bot prepared for the server. New: `trading_bot/server/` install.sh, set_keys.sh (hidden `read -s`), `tb` helper, systemd service + 7-day report timer, `paper_guard.py`; `weekly.py` (7-day report: trades, win rate, P&L, max drawdown, every risk-rule trigger, every error, restarts); backtest rebuilt for 6-12 months (monthly news cache, per-day Gemini cache, 150-call budget per run, no look-ahead in the equity maths, -10% kill switch simulated, month-by-month + risk-rule counts). Site: new "7-day test" tab, Backtest tab shows PARTIAL progress and months. Fixed: Gemini triage model bug (all live triage calls would have failed), stuck-rebase guard when saving to GitHub.
+- NEXT: Omar runs the trading server steps (install → set_keys → tb check → tb start → tb backtest 365). Day 7 ≈ one week after `tb start` → read the FINAL 7-day report + backtest together before any real-money decision. Bounce steps (deploy key, tokens, setup) still open in parallel.
