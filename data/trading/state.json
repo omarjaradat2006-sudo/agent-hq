@@ -1,7 +1,19 @@
 {
  "team": "trading",
+ "plain": {
+  "top": "Even since start (still $100,000.00) · just holding SPY would be -0.53%",
+  "up": true,
+  "holding": [
+   "Nothing right now (all cash)."
+  ],
+  "today": [
+   "Scanned the news 1 time today: read 9 headlines, found 1 that could move a stock or coin it's allowed to trade. None passed every check, so no trade (that's normal)."
+  ],
+  "watchlist": "Allowed to trade: 0 halal stocks, 5 Shariah ETFs, 9 coins. Halal stock screen not finished (SEC unreachable: HTTP 403 https://www.sec.gov/files/company_tickers.json); retrying hourly.",
+  "lastScan": "2026-11-10T19:59:23Z"
+ },
  "hired": true,
- "updatedAt": "2026-11-10T19:04:25Z",
+ "updatedAt": "2026-11-10T19:59:28Z",
  "mode": "PAPER",
  "agents": [
   {
@@ -9,8 +21,8 @@
    "name": "News Scout",
    "role": "Reads X, Reddit and news feeds",
    "status": "working",
-   "doing": "Read 187 new headlines/posts, 0 market-moving stories",
-   "lastRun": "2026-11-10T19:04:25Z"
+   "doing": "Read 9 new headlines/posts, 1 market-moving stories",
+   "lastRun": "2026-11-10T19:59:27Z"
   },
   {
    "id": "analyst",
@@ -48,9 +60,9 @@
    "id": "trader",
    "name": "Trader",
    "role": "Places paper orders on Alpaca",
-   "status": "ok",
-   "doing": "Saved results to the Agent HQ dashboard",
-   "lastRun": "2026-11-10T17:05:06Z"
+   "status": "working",
+   "doing": "Paper-trading bot started (Alpaca PAPER account only). Close this window to stop it.",
+   "lastRun": "2026-11-10T19:59:21Z"
   },
   {
    "id": "coins",
@@ -65,11 +77,191 @@
    "name": "Halal Screener",
    "role": "Weekly Shariah screen",
    "status": "working",
-   "doing": "SEC unreachable (HTTP 403 https://www.sec.gov/files/company_tickers.json: <!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\n<html xmlns=\"http://www.w3.org/1999/xhtml\">\n<head>\n<meta http-equiv=\"Content-T); keeping last week's list",
-   "lastRun": "2026-11-10T19:04:13Z"
+   "doing": "SEC unreachable (HTTP 403 https://www.sec.gov/files/company_tickers.json). Trading only 9 coins + 5 Shariah ETFs until it works; retrying in 60 min",
+   "lastRun": "2026-11-10T19:59:23Z"
   }
  ],
  "log": [
+  {
+   "t": "2026-11-10T19:59:27Z",
+   "agent": "News Scout",
+   "msg": "Read 9 new headlines/posts, 1 market-moving stories"
+  },
+  {
+   "t": "2026-11-10T19:59:23Z",
+   "agent": "Halal Screener",
+   "msg": "SEC unreachable (HTTP 403 https://www.sec.gov/files/company_tickers.json). Trading only 9 coins + 5 Shariah ETFs until it works; retrying in 60 min"
+  },
+  {
+   "t": "2026-11-10T19:59:21Z",
+   "agent": "Halal Screener",
+   "msg": "Re-running the weekly halal screen"
+  },
+  {
+   "t": "2026-11-10T19:59:21Z",
+   "agent": "News Scout",
+   "msg": "Agent Reach not found: running on news feeds only (no X/Reddit)"
+  },
+  {
+   "t": "2026-11-10T19:59:21Z",
+   "agent": "Trader",
+   "msg": "Paper-trading bot started (Alpaca PAPER account only). Close this window to stop it."
+  },
+  {
+   "t": "2026-11-10T19:56:50Z",
+   "agent": "News Scout",
+   "msg": "Read 29 new headlines/posts, 0 market-moving stories"
+  },
+  {
+   "t": "2026-11-10T19:56:44Z",
+   "agent": "Halal Screener",
+   "msg": "SEC unreachable (HTTP 403 https://www.sec.gov/files/company_tickers.json: <!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\n<html xmlns=\"http://www.w3.org/1999/xhtml\">\n<head>\n<meta http-equiv=\"Content-T); keeping last week's list"
+  },
+  {
+   "t": "2026-11-10T19:56:44Z",
+   "agent": "Halal Screener",
+   "msg": "Re-running the weekly halal screen"
+  },
+  {
+   "t": "2026-11-10T19:51:43Z",
+   "agent": "News Scout",
+   "msg": "Read 28 new headlines/posts, 0 market-moving stories"
+  },
+  {
+   "t": "2026-11-10T19:50:23Z",
+   "agent": "Halal Screener",
+   "msg": "SEC unreachable (HTTP 403 https://www.sec.gov/files/company_tickers.json: <!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\n<html xmlns=\"http://www.w3.org/1999/xhtml\">\n<head>\n<meta http-equiv=\"Content-T); keeping last week's list"
+  },
+  {
+   "t": "2026-11-10T19:50:23Z",
+   "agent": "Halal Screener",
+   "msg": "Re-running the weekly halal screen"
+  },
+  {
+   "t": "2026-11-10T19:45:22Z",
+   "agent": "News Scout",
+   "msg": "Read 24 new headlines/posts, 0 market-moving stories"
+  },
+  {
+   "t": "2026-11-10T19:45:15Z",
+   "agent": "Halal Screener",
+   "msg": "SEC unreachable (HTTP 403 https://www.sec.gov/files/company_tickers.json: <!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\n<html xmlns=\"http://www.w3.org/1999/xhtml\">\n<head>\n<meta http-equiv=\"Content-T); keeping last week's list"
+  },
+  {
+   "t": "2026-11-10T19:45:15Z",
+   "agent": "Halal Screener",
+   "msg": "Re-running the weekly halal screen"
+  },
+  {
+   "t": "2026-11-10T19:40:14Z",
+   "agent": "News Scout",
+   "msg": "Read 29 new headlines/posts, 0 market-moving stories"
+  },
+  {
+   "t": "2026-11-10T19:40:03Z",
+   "agent": "Halal Screener",
+   "msg": "SEC unreachable (HTTP 403 https://www.sec.gov/files/company_tickers.json: <!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\n<html xmlns=\"http://www.w3.org/1999/xhtml\">\n<head>\n<meta http-equiv=\"Content-T); keeping last week's list"
+  },
+  {
+   "t": "2026-11-10T19:40:03Z",
+   "agent": "Halal Screener",
+   "msg": "Re-running the weekly halal screen"
+  },
+  {
+   "t": "2026-11-10T19:35:02Z",
+   "agent": "News Scout",
+   "msg": "Read 23 new headlines/posts, 0 market-moving stories"
+  },
+  {
+   "t": "2026-11-10T19:34:55Z",
+   "agent": "Halal Screener",
+   "msg": "SEC unreachable (HTTP 403 https://www.sec.gov/files/company_tickers.json: <!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\n<html xmlns=\"http://www.w3.org/1999/xhtml\">\n<head>\n<meta http-equiv=\"Content-T); keeping last week's list"
+  },
+  {
+   "t": "2026-11-10T19:34:55Z",
+   "agent": "Halal Screener",
+   "msg": "Re-running the weekly halal screen"
+  },
+  {
+   "t": "2026-11-10T19:29:54Z",
+   "agent": "News Scout",
+   "msg": "Read 20 new headlines/posts, 0 market-moving stories"
+  },
+  {
+   "t": "2026-11-10T19:29:50Z",
+   "agent": "Halal Screener",
+   "msg": "SEC unreachable (HTTP 403 https://www.sec.gov/files/company_tickers.json: <!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\n<html xmlns=\"http://www.w3.org/1999/xhtml\">\n<head>\n<meta http-equiv=\"Content-T); keeping last week's list"
+  },
+  {
+   "t": "2026-11-10T19:29:49Z",
+   "agent": "Halal Screener",
+   "msg": "Re-running the weekly halal screen"
+  },
+  {
+   "t": "2026-11-10T19:24:49Z",
+   "agent": "News Scout",
+   "msg": "Read 28 new headlines/posts, 0 market-moving stories"
+  },
+  {
+   "t": "2026-11-10T19:24:45Z",
+   "agent": "Halal Screener",
+   "msg": "SEC unreachable (HTTP 403 https://www.sec.gov/files/company_tickers.json: <!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\n<html xmlns=\"http://www.w3.org/1999/xhtml\">\n<head>\n<meta http-equiv=\"Content-T); keeping last week's list"
+  },
+  {
+   "t": "2026-11-10T19:24:44Z",
+   "agent": "Halal Screener",
+   "msg": "Re-running the weekly halal screen"
+  },
+  {
+   "t": "2026-11-10T19:19:44Z",
+   "agent": "News Scout",
+   "msg": "Read 26 new headlines/posts, 0 market-moving stories"
+  },
+  {
+   "t": "2026-11-10T19:19:39Z",
+   "agent": "Halal Screener",
+   "msg": "SEC unreachable (HTTP 403 https://www.sec.gov/files/company_tickers.json: <!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\n<html xmlns=\"http://www.w3.org/1999/xhtml\">\n<head>\n<meta http-equiv=\"Content-T); keeping last week's list"
+  },
+  {
+   "t": "2026-11-10T19:19:39Z",
+   "agent": "Halal Screener",
+   "msg": "Re-running the weekly halal screen"
+  },
+  {
+   "t": "2026-11-10T19:14:39Z",
+   "agent": "News Scout",
+   "msg": "Read 56 new headlines/posts, 0 market-moving stories"
+  },
+  {
+   "t": "2026-11-10T19:14:33Z",
+   "agent": "Halal Screener",
+   "msg": "SEC unreachable (HTTP 403 https://www.sec.gov/files/company_tickers.json: <!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\n<html xmlns=\"http://www.w3.org/1999/xhtml\">\n<head>\n<meta http-equiv=\"Content-T); keeping last week's list"
+  },
+  {
+   "t": "2026-11-10T19:14:33Z",
+   "agent": "Halal Screener",
+   "msg": "Re-running the weekly halal screen"
+  },
+  {
+   "t": "2026-11-10T19:09:32Z",
+   "agent": "News Scout",
+   "msg": "Read 38 new headlines/posts, 0 market-moving stories"
+  },
+  {
+   "t": "2026-11-10T19:09:27Z",
+   "agent": "Halal Screener",
+   "msg": "SEC unreachable (HTTP 403 https://www.sec.gov/files/company_tickers.json: <!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\n<html xmlns=\"http://www.w3.org/1999/xhtml\">\n<head>\n<meta http-equiv=\"Content-T); keeping last week's list"
+  },
+  {
+   "t": "2026-11-10T19:09:27Z",
+   "agent": "Halal Screener",
+   "msg": "Re-running the weekly halal screen"
+  },
+  {
+   "t": "2026-11-10T19:04:27Z",
+   "agent": "Trader",
+   "msg": "Saved results to the Agent HQ dashboard"
+  },
   {
    "t": "2026-11-10T19:04:25Z",
    "agent": "News Scout",
@@ -639,192 +831,12 @@
    "t": "2026-11-10T15:52:31Z",
    "agent": "Halal Screener",
    "msg": "SEC unreachable (HTTP 403 https://www.sec.gov/files/company_tickers.json: <!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\n<html xmlns=\"http://www.w3.org/1999/xhtml\">\n<head>\n<meta http-equiv=\"Content-T); keeping last week's list"
-  },
-  {
-   "t": "2026-11-10T15:52:31Z",
-   "agent": "Halal Screener",
-   "msg": "Re-running the weekly halal screen"
-  },
-  {
-   "t": "2026-11-10T15:47:30Z",
-   "agent": "News Scout",
-   "msg": "Read 33 new headlines/posts, 0 market-moving stories"
-  },
-  {
-   "t": "2026-11-10T15:47:26Z",
-   "agent": "Halal Screener",
-   "msg": "SEC unreachable (HTTP 403 https://www.sec.gov/files/company_tickers.json: <!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\n<html xmlns=\"http://www.w3.org/1999/xhtml\">\n<head>\n<meta http-equiv=\"Content-T); keeping last week's list"
-  },
-  {
-   "t": "2026-11-10T15:47:26Z",
-   "agent": "Halal Screener",
-   "msg": "Re-running the weekly halal screen"
-  },
-  {
-   "t": "2026-11-10T15:42:25Z",
-   "agent": "News Scout",
-   "msg": "Read 37 new headlines/posts, 0 market-moving stories"
-  },
-  {
-   "t": "2026-11-10T15:42:20Z",
-   "agent": "Halal Screener",
-   "msg": "SEC unreachable (HTTP 403 https://www.sec.gov/files/company_tickers.json: <!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\n<html xmlns=\"http://www.w3.org/1999/xhtml\">\n<head>\n<meta http-equiv=\"Content-T); keeping last week's list"
-  },
-  {
-   "t": "2026-11-10T15:42:20Z",
-   "agent": "Halal Screener",
-   "msg": "Re-running the weekly halal screen"
-  },
-  {
-   "t": "2026-11-10T15:37:19Z",
-   "agent": "News Scout",
-   "msg": "Read 45 new headlines/posts, 0 market-moving stories"
-  },
-  {
-   "t": "2026-11-10T15:37:06Z",
-   "agent": "Halal Screener",
-   "msg": "SEC unreachable (HTTP 403 https://www.sec.gov/files/company_tickers.json: <!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\n<html xmlns=\"http://www.w3.org/1999/xhtml\">\n<head>\n<meta http-equiv=\"Content-T); keeping last week's list"
-  },
-  {
-   "t": "2026-11-10T15:37:06Z",
-   "agent": "Halal Screener",
-   "msg": "Re-running the weekly halal screen"
-  },
-  {
-   "t": "2026-11-10T15:32:05Z",
-   "agent": "News Scout",
-   "msg": "Read 40 new headlines/posts, 0 market-moving stories"
-  },
-  {
-   "t": "2026-11-10T15:31:55Z",
-   "agent": "Halal Screener",
-   "msg": "SEC unreachable (HTTP 403 https://www.sec.gov/files/company_tickers.json: <!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\n<html xmlns=\"http://www.w3.org/1999/xhtml\">\n<head>\n<meta http-equiv=\"Content-T); keeping last week's list"
-  },
-  {
-   "t": "2026-11-10T15:31:54Z",
-   "agent": "Halal Screener",
-   "msg": "Re-running the weekly halal screen"
-  },
-  {
-   "t": "2026-11-10T15:26:54Z",
-   "agent": "News Scout",
-   "msg": "Read 37 new headlines/posts, 0 market-moving stories"
-  },
-  {
-   "t": "2026-11-10T15:26:44Z",
-   "agent": "Halal Screener",
-   "msg": "SEC unreachable (HTTP 403 https://www.sec.gov/files/company_tickers.json: <!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\n<html xmlns=\"http://www.w3.org/1999/xhtml\">\n<head>\n<meta http-equiv=\"Content-T); keeping last week's list"
-  },
-  {
-   "t": "2026-11-10T15:26:44Z",
-   "agent": "Halal Screener",
-   "msg": "Re-running the weekly halal screen"
-  },
-  {
-   "t": "2026-11-10T15:21:43Z",
-   "agent": "News Scout",
-   "msg": "Read 36 new headlines/posts, 0 market-moving stories"
-  },
-  {
-   "t": "2026-11-10T15:21:34Z",
-   "agent": "Halal Screener",
-   "msg": "SEC unreachable (HTTP 403 https://www.sec.gov/files/company_tickers.json: <!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\n<html xmlns=\"http://www.w3.org/1999/xhtml\">\n<head>\n<meta http-equiv=\"Content-T); keeping last week's list"
-  },
-  {
-   "t": "2026-11-10T15:21:34Z",
-   "agent": "Halal Screener",
-   "msg": "Re-running the weekly halal screen"
-  },
-  {
-   "t": "2026-11-10T15:16:33Z",
-   "agent": "News Scout",
-   "msg": "Read 52 new headlines/posts, 0 market-moving stories"
-  },
-  {
-   "t": "2026-11-10T15:16:18Z",
-   "agent": "Halal Screener",
-   "msg": "SEC unreachable (HTTP 403 https://www.sec.gov/files/company_tickers.json: <!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\n<html xmlns=\"http://www.w3.org/1999/xhtml\">\n<head>\n<meta http-equiv=\"Content-T); keeping last week's list"
-  },
-  {
-   "t": "2026-11-10T15:16:18Z",
-   "agent": "Halal Screener",
-   "msg": "Re-running the weekly halal screen"
-  },
-  {
-   "t": "2026-11-10T15:11:17Z",
-   "agent": "News Scout",
-   "msg": "Read 27 new headlines/posts, 0 market-moving stories"
-  },
-  {
-   "t": "2026-11-10T15:09:53Z",
-   "agent": "Halal Screener",
-   "msg": "SEC unreachable (HTTP 403 https://www.sec.gov/files/company_tickers.json: <!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\n<html xmlns=\"http://www.w3.org/1999/xhtml\">\n<head>\n<meta http-equiv=\"Content-T); keeping last week's list"
-  },
-  {
-   "t": "2026-11-10T15:09:53Z",
-   "agent": "Halal Screener",
-   "msg": "Re-running the weekly halal screen"
-  },
-  {
-   "t": "2026-11-10T15:04:52Z",
-   "agent": "News Scout",
-   "msg": "Read 52 new headlines/posts, 0 market-moving stories"
-  },
-  {
-   "t": "2026-11-10T15:04:39Z",
-   "agent": "Halal Screener",
-   "msg": "SEC unreachable (HTTP 403 https://www.sec.gov/files/company_tickers.json: <!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\n<html xmlns=\"http://www.w3.org/1999/xhtml\">\n<head>\n<meta http-equiv=\"Content-T); keeping last week's list"
-  },
-  {
-   "t": "2026-11-10T15:04:39Z",
-   "agent": "Halal Screener",
-   "msg": "Re-running the weekly halal screen"
-  },
-  {
-   "t": "2026-11-10T14:59:38Z",
-   "agent": "News Scout",
-   "msg": "Read 38 new headlines/posts, 0 market-moving stories"
-  },
-  {
-   "t": "2026-11-10T14:59:33Z",
-   "agent": "Halal Screener",
-   "msg": "SEC unreachable (HTTP 403 https://www.sec.gov/files/company_tickers.json: <!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\n<html xmlns=\"http://www.w3.org/1999/xhtml\">\n<head>\n<meta http-equiv=\"Content-T); keeping last week's list"
-  },
-  {
-   "t": "2026-11-10T14:59:33Z",
-   "agent": "Halal Screener",
-   "msg": "Re-running the weekly halal screen"
-  },
-  {
-   "t": "2026-11-10T14:54:32Z",
-   "agent": "Trader",
-   "msg": "Saved results to the Agent HQ dashboard"
-  },
-  {
-   "t": "2026-11-10T14:54:30Z",
-   "agent": "News Scout",
-   "msg": "Read 52 new headlines/posts, 0 market-moving stories"
-  },
-  {
-   "t": "2026-11-10T14:54:26Z",
-   "agent": "Halal Screener",
-   "msg": "SEC unreachable (HTTP 403 https://www.sec.gov/files/company_tickers.json: <!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\n<html xmlns=\"http://www.w3.org/1999/xhtml\">\n<head>\n<meta http-equiv=\"Content-T); keeping last week's list"
-  },
-  {
-   "t": "2026-11-10T14:54:26Z",
-   "agent": "Halal Screener",
-   "msg": "Re-running the weekly halal screen"
-  },
-  {
-   "t": "2026-11-10T14:49:25Z",
-   "agent": "News Scout",
-   "msg": "Read 50 new headlines/posts, 0 market-moving stories"
   }
  ],
  "brief": {
   "date": "Tue Nov 10",
-  "createdAt": "2026-11-10T19:04:25Z",
-  "headline": "Paper account +$0 today (+0.00%), +0.00% total vs SPY -0.73% · 0 open",
+  "createdAt": "2026-11-10T19:59:28Z",
+  "headline": "Paper account +$0 today (+0.00%), +0.00% total vs SPY -0.53% · 0 open",
   "summary": "0 trade(s) closed today, 0/0 winners overall. TradingAgents checks used today: 0/5.",
   "notes": []
  },
@@ -837,8 +849,8 @@
   "dayPct": 0.0,
   "totalPnl": 0.0,
   "totalPct": 0.0,
-  "spyPct": -0.73,
-  "vsSpyPct": 0.73
+  "spyPct": -0.53,
+  "vsSpyPct": 0.53
  },
  "status": {
   "killed": false,
@@ -847,8 +859,8 @@
   "deepMax": 5,
   "social": {},
   "universe": {
-   "stocks": 0,
-   "crypto": 0
+   "stocks": 5,
+   "crypto": 9
   },
   "alert": null
  },
@@ -1025,6 +1037,16 @@
    "t": "2026-11-10T18:43:57Z",
    "equity": 100000.0,
    "spy": 747.24
+  },
+  {
+   "t": "2026-11-10T19:14:39Z",
+   "equity": 100000.0,
+   "spy": 747.88
+  },
+  {
+   "t": "2026-11-10T19:45:22Z",
+   "equity": 100000.0,
+   "spy": 748.7
   }
  ],
  "watch": [],
@@ -1036,7 +1058,7 @@
  },
  "events": [
   {
-   "summary": "Hotter-than-expected US inflation data pushed Treasury yields higher and boosted expectations of a December Fed rate hike, weighing on equities.",
+   "summary": "Hotter-than-expected inflation data and Federal Reserve comments drove Treasury yields higher and sparked fears of a rate hike.",
    "category": "central_bank_hawkish",
    "firstSeen": "2026-11-10T09:39:09Z",
    "publishers": [
@@ -1068,6 +1090,7 @@
     "Crypto News",
     "CryptoPotato",
     "CryptoTicker.io",
+    "CurrencyNews.co.uk",
     "Decrypt",
     "FOX 9 Minneapolis-St. Paul",
     "FXStreet",
@@ -1099,6 +1122,7 @@
     "Scripps News",
     "Seeking Alpha",
     "South Florida Reporter",
+    "Startup Fortune",
     "Stock Titan",
     "Stocktwits",
     "StreetInsider",
@@ -1117,18 +1141,36 @@
     "TradingNEWS",
     "TradingView",
     "USA Today",
+    "WSJ",
     "WXYZ Channel 7",
     "Xinhua",
     "Yahoo Finance",
     "Zawya",
     "bloomingbit",
+    "cbs19.tv",
     "iHeart",
     "marketscreener.com",
     "news.sbs.co.kr",
     "streamlinefeed.co.ke",
     "شبكة تواصل الإخبارية"
    ],
-   "assets": {},
+   "assets": {
+    "BTC/USD": {
+     "direction": "down",
+     "confidence": 0.8,
+     "why": "Hot inflation and rate hike expectations are bearish for risk assets and crypto."
+    },
+    "ETH/USD": {
+     "direction": "down",
+     "confidence": 0.8,
+     "why": "Hot inflation and rate hike expectations are bearish for risk assets and crypto."
+    },
+    "SOL/USD": {
+     "direction": "down",
+     "confidence": 0.8,
+     "why": "Hot inflation and rate hike expectations are bearish for risk assets and crypto."
+    }
+   },
    "sources": [
     {
      "id": "d9df815319391cbb",
@@ -1173,7 +1215,63 @@
    ]
   },
   {
-   "summary": "Crude oil prices fell to their lowest since August as statements and blockade updates pointed toward de-escalation in the Iran conflict.",
+   "summary": "House Republicans are considering issuing a subpoena to Nvidia CEO Jensen Huang amid an ongoing controversy and investigation.",
+   "category": "company_bad_news",
+   "firstSeen": "2026-11-10T02:06:25Z",
+   "publishers": [
+    "AP",
+    "Benzinga",
+    "CNBC",
+    "Reuters",
+    "The Spokesman-Review",
+    "fiscal.ai"
+   ],
+   "assets": {},
+   "sources": [
+    {
+     "id": "7e779ec43d194f41",
+     "publisher": "Benzinga",
+     "kind": "news",
+     "title": "'Materially False and Misleading': Nvidia, Jensen Huang Sued Over Alleged Chinese Spy Affair, Shareholder Says NVDA Stock Was 'Artificially Inflated'",
+     "url": "https://www.benzinga.com/markets/tech/26/11/63077533/nvidia-jensen-huang-sued-class-action-megaspeed-alice-huang-chinese-spy",
+     "time": "2026-11-10T02:14:11Z"
+    },
+    {
+     "id": "b13c33e1c6b78db8",
+     "publisher": "The Spokesman-Review",
+     "kind": "news",
+     "title": "Stocks jump as oil tumbles, Nvidia falls amid internal probe - The Spokesman-Review",
+     "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxQRzBNX0NnSGJXLWxPSjV1bjFCTVM0aExoaURsaHlESWl2U1dfd2EtcU5VTkxZYkpkU2hJQ19LSUdLMUNkS2JpZTZDZzJLY3JFeDgtSXRTOF9MeUlPSkhoajBQU09qZEdld2VwTXpTSHVPZmJ2N0xFSGwxQzRWN1hmdjExaEx0OW54R3ZnWldmX1ByX19VQkV6NjZPYjBYQQ?oc=5",
+     "time": "2026-11-10T02:06:25Z"
+    },
+    {
+     "id": "c28ef162d5e09bce",
+     "publisher": "fiscal.ai",
+     "kind": "news",
+     "title": "Securities Class Action Lawsuit Filed Against NVIDIA Corporation",
+     "url": "https://www.globenewswire.com/news-release/2026/11/10/3399115/32716/en/nvda-investor-alert-hagens-berman-urges-nvidia-corporation-nasdaq-nvda-investors-with-substantial-losses-to-contact-firm-ahead-of-january-8-2027-lead-plaintiff-deadline.html",
+     "time": "2026-11-10T03:01:19Z"
+    },
+    {
+     "id": "43afd4d88c5a549b",
+     "publisher": "AP",
+     "kind": "news",
+     "title": "Trump says FBI is looking at Nvidia CEO Jensen Huang’s affair with alleged Chinese agent",
+     "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPQWY3b0NNRFBNRG5jZVdXM05URnhOV19vQ24zV29la0k2S3FzZmN4ZzB3WlRwSXJMbHB6RE90MFVEZ2p4UUhMQUFlV0RMdmVZZUUxeFFEa2ljZTFlTlhXOFozaEczRlpPS2dmRXgxcGw2ZWdpNVJQVEltazV5UUZMUmpNMUdoX2NJRG1wVnJhbFRCTHBwbE1LcjZnMk4?oc=5",
+     "time": "2026-11-10T03:43:01Z"
+    },
+    {
+     "id": "094051eb2da1b91e",
+     "publisher": "AP",
+     "kind": "news",
+     "title": "Timeline: How did Nvidia’s CEO get caught up in an alleged spy plot?",
+     "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPVENSejl5V04tRUR2M1JIRHZibWlHcm5tUWNndEMzRnBqM1p4aG5XTnp4azBycWIxcjlzeWJqZjh5WnNfRzdfSmNudmRMN3l1OVFmTjE1VS10a2pFN3BWNDZDS05SMkNFQ01WR2Z5UHhBY1pRZDhiVXBHZy1DTDFuRmowbzRkZ2xKcGxsOVVMOG5OYmczUTdYem5Rc1MtLVVpSmNkWGRRWXo0M0ZXWkZZUW9ERk9jeHRrR1pKZ20yRU4?oc=5",
+     "time": "2026-11-10T03:32:00Z"
+    }
+   ]
+  },
+  {
+   "summary": "U.S. officials and President Trump declared that major combat operations in the Iran conflict are effectively over, furthering de-escalation.",
    "category": "deescalation",
    "firstSeen": "2026-11-10T01:57:53Z",
    "publishers": [
@@ -1226,6 +1324,7 @@
     "Energy Connects",
     "Energy Update",
     "Euronews.com",
+    "FOX 5 DC",
     "FT",
     "FXEmpire",
     "FinanceFeeds",
@@ -1329,6 +1428,7 @@
     "The Korea Times",
     "The National",
     "The New Indian Express",
+    "The New York Times",
     "The Siasat Daily",
     "The Spokesman-Review",
     "The Sunday Guardian",
@@ -1478,62 +1578,6 @@
      "title": "Henry Schein (NASDAQ:HSIC) Q3 2026: EPS Beat, Guidance Raised",
      "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQVFJrY3BzU0xQRTlJY3RTQmFSUlljM1k4QVlMbC0tNERtVXVITlhfenJ1Ui1wenVBMUxVRmozRncyU2p5T2tpUTBQZzRxOTR1N29fa01FWVFKOEZycERVRzhiMmJMMktIS0JLV0U0NzYwMWhXVUVSNU1fOVBJUkV4aEZmWFFpWVhCeUZBd1QtOGhOZjFyREZwUURXT19HT2RMQmI0Zg?oc=5",
      "time": "2026-11-10T15:10:00Z"
-    }
-   ]
-  },
-  {
-   "summary": "Nvidia shares continued to fall as investors weighed the potential fallout from executive controversy.",
-   "category": "company_bad_news",
-   "firstSeen": "2026-11-10T02:06:25Z",
-   "publishers": [
-    "AP",
-    "Benzinga",
-    "CNBC",
-    "Reuters",
-    "The Spokesman-Review",
-    "fiscal.ai"
-   ],
-   "assets": {},
-   "sources": [
-    {
-     "id": "7e779ec43d194f41",
-     "publisher": "Benzinga",
-     "kind": "news",
-     "title": "'Materially False and Misleading': Nvidia, Jensen Huang Sued Over Alleged Chinese Spy Affair, Shareholder Says NVDA Stock Was 'Artificially Inflated'",
-     "url": "https://www.benzinga.com/markets/tech/26/11/63077533/nvidia-jensen-huang-sued-class-action-megaspeed-alice-huang-chinese-spy",
-     "time": "2026-11-10T02:14:11Z"
-    },
-    {
-     "id": "b13c33e1c6b78db8",
-     "publisher": "The Spokesman-Review",
-     "kind": "news",
-     "title": "Stocks jump as oil tumbles, Nvidia falls amid internal probe - The Spokesman-Review",
-     "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxQRzBNX0NnSGJXLWxPSjV1bjFCTVM0aExoaURsaHlESWl2U1dfd2EtcU5VTkxZYkpkU2hJQ19LSUdLMUNkS2JpZTZDZzJLY3JFeDgtSXRTOF9MeUlPSkhoajBQU09qZEdld2VwTXpTSHVPZmJ2N0xFSGwxQzRWN1hmdjExaEx0OW54R3ZnWldmX1ByX19VQkV6NjZPYjBYQQ?oc=5",
-     "time": "2026-11-10T02:06:25Z"
-    },
-    {
-     "id": "c28ef162d5e09bce",
-     "publisher": "fiscal.ai",
-     "kind": "news",
-     "title": "Securities Class Action Lawsuit Filed Against NVIDIA Corporation",
-     "url": "https://www.globenewswire.com/news-release/2026/11/10/3399115/32716/en/nvda-investor-alert-hagens-berman-urges-nvidia-corporation-nasdaq-nvda-investors-with-substantial-losses-to-contact-firm-ahead-of-january-8-2027-lead-plaintiff-deadline.html",
-     "time": "2026-11-10T03:01:19Z"
-    },
-    {
-     "id": "43afd4d88c5a549b",
-     "publisher": "AP",
-     "kind": "news",
-     "title": "Trump says FBI is looking at Nvidia CEO Jensen Huang’s affair with alleged Chinese agent",
-     "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPQWY3b0NNRFBNRG5jZVdXM05URnhOV19vQ24zV29la0k2S3FzZmN4ZzB3WlRwSXJMbHB6RE90MFVEZ2p4UUhMQUFlV0RMdmVZZUUxeFFEa2ljZTFlTlhXOFozaEczRlpPS2dmRXgxcGw2ZWdpNVJQVEltazV5UUZMUmpNMUdoX2NJRG1wVnJhbFRCTHBwbE1LcjZnMk4?oc=5",
-     "time": "2026-11-10T03:43:01Z"
-    },
-    {
-     "id": "094051eb2da1b91e",
-     "publisher": "AP",
-     "kind": "news",
-     "title": "Timeline: How did Nvidia’s CEO get caught up in an alleged spy plot?",
-     "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPVENSejl5V04tRUR2M1JIRHZibWlHcm5tUWNndEMzRnBqM1p4aG5XTnp4azBycWIxcjlzeWJqZjh5WnNfRzdfSmNudmRMN3l1OVFmTjE1VS10a2pFN3BWNDZDS05SMkNFQ01WR2Z5UHhBY1pRZDhiVXBHZy1DTDFuRmowbzRkZ2xKcGxsOVVMOG5OYmczUTdYem5Rc1MtLVVpSmNkWGRRWXo0M0ZXWkZZUW9ERk9jeHRrR1pKZ20yRU4?oc=5",
-     "time": "2026-11-10T03:32:00Z"
     }
    ]
   },
