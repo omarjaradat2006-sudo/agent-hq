@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Fight & Court Intelligence on the Oracle server: research + recommendations only, never bets, never logs into a sportsbook.
-# Usage: run_fight.sh picks nba | picks ufc | close nba | close ufc | grade | books | report | check
+# Usage: run_fight.sh picks nba | picks ufc | grade | report | check   (add --force to redo today's picks)
 # Keys live in ~/.agent-hq.env (GEMINI_API_KEY, ODDS_API_KEY), never in git.
 set -u
 REPO=~/agent-hq

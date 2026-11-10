@@ -1,17 +1,16 @@
 """Fight & Court Intelligence. Usage:
-  python3 agents/fight/run.py picks nba|ufc [--force]   daily card (singles, parlays, underdogs, or no bet)
-  python3 agents/fight/run.py close nba|ufc             closing prices for picks about to start
-  python3 agents/fight/run.py grade                     settle finished picks, update the record
-  python3 agents/fight/run.py books                     weekly Ontario licence check
-  python3 agents/fight/run.py check                     test the Odds API key (free call) and show credits left
-  python3 agents/fight/run.py report                    rebuild state.json from the ledger (no API calls)
+  python3 agents/fight/run.py picks nba [--force]   daily NBA card: 3 parlays (+100 / +500 / +1000)
+  python3 agents/fight/run.py picks ufc [--force]   Friday UFC card: event check, 3 parlays, underdog picks
+  python3 agents/fight/run.py grade                 grade finished bets, update the record
+  python3 agents/fight/run.py check                 test the Odds API key (free call), show credits and markets
+  python3 agents/fight/run.py report                rebuild state.json from the ledger (no API calls)
 Research and recommendations only: it never places bets and never logs into a sportsbook."""
 import os, sys, traceback
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import odds as O
 import store as S
 
-AGENT_FOR = {"check": "odds", "picks": None, "close": "odds", "grade": "grader", "books": "odds", "report": "lead"}
+AGENT_FOR = {"check": "odds", "picks": None, "grade": "grader", "report": "lead"}
 NAME = {"court": "Court Analyst", "fight": "Fight Analyst", "odds": "Odds Scout", "grader": "Results Grader", "lead": "Desk Lead"}
 
 
@@ -21,19 +20,16 @@ def main(argv):
     aid = AGENT_FOR.get(job) or ("court" if sport == "nba" else "fight")
     try:
         if job == "picks":
-            import picks; picks.run(sport, force="--force" in argv)
-        elif job == "close":
-            import close; close.run(sport)
+            import cards
+            (cards.run_nba if sport == "nba" else cards.run_ufc)(force="--force" in argv)
         elif job == "grade":
             import grade; grade.run()
         elif job == "check":
-            sports = {x["key"] for x in O._get("sports", {}, 0, "sports list (free)", min_left=0)}
+            sports = {x["key"] for x in O.fetch_sports()}
             c = O.credits()
-            print("Odds API key works.", "NBA:", "basketball_nba" in sports, "| MMA/UFC:", "mma_mixed_martial_arts" in sports,
-                  "| credits left this month:", c.get("remaining"), "of 500 (free plan)")
-            print("Ontario books in use:", ", ".join(b["name"] for b in O.active_books().values()), "| Bet365: excluded")
-        elif job == "books":
-            import books; books.run()
+            print("Odds API key works. NBA:", "basketball_nba" in sports, "| UFC/MMA:", "mma_mixed_martial_arts" in sports,
+                  "| credits left this month:", c.get("remaining"))
+            print("Books: FanDuel + DraftKings only | Bet365: excluded | NBA games with props today (budget):", O.daily_prop_budget())
         else:
             import report; report.refresh(S.state(), S.ledger())
         return 0

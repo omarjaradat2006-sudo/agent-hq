@@ -13,13 +13,10 @@
 # Bounce Theory daily batch: plan from today's lineup -> render -> upload (scheduled 5 PM - 8 AM) -> mark Agent HQ. No Claude.
 5 7  * * *     /home/ubuntu/agent-hq/scripts/server/run_bounce.sh
 
-# Fight & Court Intelligence (UFC + NBA): research and recommendations only, never bets. Odds API free plan (~270 of 500 credits/month).
+# Fight & Court Intelligence: research only, never bets. FanDuel + DraftKings only. NBA slips daily, UFC Fridays 8 PM, grading every morning.
 27 13 * * *    /home/ubuntu/agent-hq/scripts/server/run_fight.sh picks nba
-37 18 * * *    /home/ubuntu/agent-hq/scripts/server/run_fight.sh close nba
-33 14 * * 5    /home/ubuntu/agent-hq/scripts/server/run_fight.sh picks ufc
-43 17 * * 6    /home/ubuntu/agent-hq/scripts/server/run_fight.sh close ufc
+0  20 * * 5    /home/ubuntu/agent-hq/scripts/server/run_fight.sh picks ufc
 47 9  * * *    /home/ubuntu/agent-hq/scripts/server/run_fight.sh grade
-53 12 * * 0    /home/ubuntu/agent-hq/scripts/server/run_fight.sh books
 
 # Ambient Escape daily batch: Gemini specs (refs checked against the Quran/hadith texts) -> render after Bounce -> upload -> verify -> mark. No Claude.
 20 7 * * *    /home/ubuntu/agent-hq/scripts/server/run_ambient.sh

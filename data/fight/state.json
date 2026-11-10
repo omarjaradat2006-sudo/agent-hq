@@ -5,15 +5,15 @@
   {
    "id": "lead",
    "name": "Desk Lead",
-   "role": "Today's card and the honest record",
+   "role": "Posts the slips and the plain-words record",
    "status": "ok",
-   "doing": "NBA: no bet",
-   "lastRun": "2026-11-10T18:28:25Z"
+   "doing": "Next NBA slips at 1:27 PM",
+   "lastRun": "2026-11-10T20:04:51Z"
   },
   {
    "id": "odds",
    "name": "Odds Scout",
-   "role": "Ontario-licensed prices only, Bet365 excluded",
+   "role": "FanDuel + DraftKings live lines only",
    "status": "ok",
    "doing": "NBA: 6 events priced at 9 Ontario books (Bet365 excluded)",
    "lastRun": "2026-11-10T18:27:02Z"
@@ -21,7 +21,7 @@
   {
    "id": "court",
    "name": "Court Analyst",
-   "role": "NBA: injuries, rest, form, matchups",
+   "role": "NBA: injuries, rest, matchups, form, player props",
    "status": "ok",
    "doing": "NBA: no bet today (6 events checked)",
    "lastRun": "2026-11-10T18:28:25Z"
@@ -29,14 +29,14 @@
   {
    "id": "fight",
    "name": "Fight Analyst",
-   "role": "UFC: weigh-ins, styles, form, late news",
+   "role": "UFC: full fighter breakdowns, weigh-ins, line moves",
    "status": "waiting",
    "doing": "Waiting for the free Odds API key on the server (setup_fight.sh)"
   },
   {
    "id": "value",
-   "name": "Value & Underdog Checker",
-   "role": "Implied vs fair probability; no value = no bet",
+   "name": "Parlay Builder",
+   "role": "3 placeable parlays, one leg per game, one book",
    "status": "ok",
    "doing": "Checked every side against the no-vig price: 0 with value, 0 value underdog(s)",
    "lastRun": "2026-11-10T18:28:25Z"
@@ -44,13 +44,18 @@
   {
    "id": "grader",
    "name": "Results Grader",
-   "role": "Settles every pick automatically",
+   "role": "Grades every parlay and underdog pick",
    "status": "ok",
    "doing": "Nothing to settle yet (0 open pick(s) still to play)",
    "lastRun": "2026-11-10T14:47:02Z"
   }
  ],
  "log": [
+  {
+   "t": "2026-11-10T20:04:51Z",
+   "agent": "Desk Lead",
+   "msg": "Rebuilt: FanDuel + DraftKings only, 3 NBA parlays daily, UFC Fridays 8 PM with underdog picks."
+  },
   {
    "t": "2026-11-10T18:28:25Z",
    "agent": "Court Analyst",
@@ -62,113 +67,61 @@
    "msg": "Fight & Court Intelligence built: UFC + NBA, Ontario-licensed books only. Waiting for the Odds API key."
   }
  ],
- "updatedAt": "2026-11-10T18:28:25Z",
+ "updatedAt": "2026-11-10T20:04:51Z",
  "record": {
   "all": {
-   "picks": 0,
+   "bets": 0,
    "won": 0,
    "lost": 0,
    "push": 0,
-   "winRate": null,
-   "staked": 0,
    "profit": 0,
-   "profitPer100": null,
-   "clvAvg": null,
-   "beatClose": null,
-   "clvCount": 0
+   "per100": null,
+   "open": 0
   },
-  "last30": {
-   "picks": 0,
-   "won": 0,
-   "lost": 0,
-   "push": 0,
-   "winRate": null,
-   "staked": 0,
-   "profit": 0,
-   "profitPer100": null,
-   "clvAvg": null,
-   "beatClose": null,
-   "clvCount": 0
-  },
-  "byType": {
-   "single": {
-    "picks": 0,
+  "byKind": {
+   "nba_parlay": {
+    "bets": 0,
     "won": 0,
     "lost": 0,
     "push": 0,
-    "winRate": null,
-    "staked": 0,
     "profit": 0,
-    "profitPer100": null,
-    "clvAvg": null,
-    "beatClose": null,
-    "clvCount": 0
+    "per100": null,
+    "open": 0
    },
-   "underdog": {
-    "picks": 0,
+   "ufc_parlay": {
+    "bets": 0,
     "won": 0,
     "lost": 0,
     "push": 0,
-    "winRate": null,
-    "staked": 0,
     "profit": 0,
-    "profitPer100": null,
-    "clvAvg": null,
-    "beatClose": null,
-    "clvCount": 0
+    "per100": null,
+    "open": 0
    },
-   "parlay": {
-    "picks": 0,
+   "ufc_dog": {
+    "bets": 0,
     "won": 0,
     "lost": 0,
     "push": 0,
-    "winRate": null,
-    "staked": 0,
     "profit": 0,
-    "profitPer100": null,
-    "clvAvg": null,
-    "beatClose": null,
-    "clvCount": 0
+    "per100": null,
+    "open": 0
    }
   },
-  "bySport": {
-   "nba": {
-    "picks": 0,
-    "won": 0,
-    "lost": 0,
-    "push": 0,
-    "winRate": null,
-    "staked": 0,
-    "profit": 0,
-    "profitPer100": null,
-    "clvAvg": null,
-    "beatClose": null,
-    "clvCount": 0
-   },
-   "ufc": {
-    "picks": 0,
-    "won": 0,
-    "lost": 0,
-    "push": 0,
-    "winRate": null,
-    "staked": 0,
-    "profit": 0,
-    "profitPer100": null,
-    "clvAvg": null,
-    "beatClose": null,
-    "clvCount": 0
-   }
-  },
-  "series": [],
-  "open": 0,
-  "unresolved": 0,
-  "void": 0,
-  "cards": 1,
-  "noBetDays": 1,
-  "updatedAt": "2026-11-10T18:28:25Z"
+  "lines": [
+   "NBA parlays: no results yet",
+   "UFC parlays: no results yet",
+   "UFC underdog picks: no results yet"
+  ],
+  "tierLines": [
+   "NBA +100 parlays: no results yet",
+   "NBA +500 parlays: no results yet",
+   "NBA +1000 parlays: no results yet",
+   "UFC +100 parlays: no results yet",
+   "UFC +500 parlays: no results yet",
+   "UFC +1000 parlays: no results yet"
+  ],
+  "updatedAt": "2026-11-10T20:04:51Z"
  },
- "recent": [],
- "openPicks": [],
  "credits": {
   "remaining": 497,
   "used": 3,
@@ -177,329 +130,40 @@
    "cost": "3",
    "at": "2026-11-10T18:27:02Z"
   },
-  "plan": "Free (500 credits/month, no card)",
-  "estimatePerMonth": 270,
-  "cost": "$0"
+  "planCredits": 500,
+  "plan": "Free (500 credits a month)"
  },
  "books": {
   "active": [
-   {
-    "key": "betmgm",
-    "name": "BetMGM",
-    "feed": "US",
-    "mine": true
-   },
-   {
-    "key": "fanduel",
-    "name": "FanDuel",
-    "feed": "US",
-    "mine": true
-   },
-   {
-    "key": "draftkings",
-    "name": "DraftKings",
-    "feed": "US",
-    "mine": true
-   },
-   {
-    "key": "williamhill_us",
-    "name": "Caesars Sportsbook",
-    "feed": "US",
-    "mine": false
-   },
-   {
-    "key": "betrivers",
-    "name": "BetRivers",
-    "feed": "US",
-    "mine": true
-   },
-   {
-    "key": "betway",
-    "name": "Betway",
-    "feed": "UK",
-    "mine": false
-   },
-   {
-    "key": "sport888",
-    "name": "888sport",
-    "feed": "UK",
-    "mine": false
-   },
-   {
-    "key": "leovegas",
-    "name": "LeoVegas",
-    "feed": "UK",
-    "mine": false
-   },
-   {
-    "key": "pinnacle",
-    "name": "Pinnacle",
-    "feed": "Global",
-    "mine": false
-   }
+   "FanDuel",
+   "DraftKings"
   ],
-  "excluded": "Bet365 (excluded everywhere)",
-  "checkedAt": null,
-  "results": null
+  "excluded": "Bet365 is excluded everywhere. No other book is read or shown."
  },
  "rules": [
   "Research and recommendations only. It never places bets and never logs into a sportsbook.",
-  "Best odds are picked only from your books: FanDuel, DraftKings, BetMGM and BetRivers. The other Ontario books only help work out the fair price.",
-  "Ontario-licensed sportsbooks only. Bet365 is excluded from odds, comparisons and calculations.",
-  "A pick needs our blended probability at least 2.5 points above the no-vig market and +2% expected value at the best price. Otherwise: no bet.",
-  "Blended probability = market fair price moved halfway toward the research estimate (AI estimates run overconfident).",
-  "Nothing is ever called a lock. No staking, budget or deposit advice.",
-  "Every pick is tracked at a flat $100 so the record shows whether this actually works."
+  "FanDuel and DraftKings only. Every leg came from that app's live odds when it was posted.",
+  "One leg per game, all legs on one app: a normal parlay the app accepts, total odds = the legs multiplied.",
+  "Most analyzed, not safest. Nothing is ever called a lock or guaranteed.",
+  "No budget, stake or deposit advice. You decide your own money.",
+  "Every parlay and underdog pick is graded automatically at a flat $100 so the record shows if it profits."
  ],
  "brief": {
   "date": "2026-11-10",
-  "createdAt": "2026-11-10T18:28:25Z",
-  "headline": "NBA: no bet",
-  "summary": "Record: 0-0. No settled picks yet.",
+  "createdAt": "2026-11-10T20:04:51Z",
+  "headline": "Next NBA slips at 1:27 PM",
+  "summary": "NBA parlays: no results yet · UFC parlays: no results yet · UFC underdog picks: no results yet",
   "filmToday": [],
   "approvals": [],
-  "notes": [
-   "Odds API credits left this month: 497 of 500 (free plan).",
-   "Prices come from each book's feed; confirm the price in the Ontario app before deciding.",
-   "Bet365 is excluded from every price, comparison and calculation."
-  ]
+  "notes": []
  },
- "cards": {
-  "nba": {
-   "id": "nba-2026-11-10",
-   "date": "2026-11-10",
-   "sport": "nba",
-   "createdAt": "2026-11-10T18:27:02Z",
-   "games": 6,
-   "picks": [],
-   "parlays": [],
-   "underdogs": [
-    {
-     "event": "Miami Heat @ Utah Jazz",
-     "commence": "2026-11-11T02:10:00Z",
-     "side": "Utah Jazz",
-     "american": "+340",
-     "bookName": "FanDuel",
-     "impliedPct": 22.7,
-     "fairPct": 26.7,
-     "ourPct": 24.8,
-     "evPer100": 9.27,
-     "value": false,
-     "reasoning": "The Utah Jazz are missing key players due to injury (Keyonte George, Jaren Jackson Jr.), while Giannis Antetokounmpo is probable for the Miami Heat, significantly strengthening their chances.",
-     "verdict": "No value: the price is fair or short"
-    },
-    {
-     "event": "Oklahoma City Thunder @ Portland Trail Blazers",
-     "commence": "2026-11-11T04:10:00Z",
-     "side": "Portland Trail Blazers",
-     "american": "+116",
-     "bookName": "FanDuel",
-     "impliedPct": 46.3,
-     "fairPct": 45.8,
-     "ourPct": 45.8,
-     "evPer100": -1.07,
-     "value": false,
-     "reasoning": "No research angle strong enough to move off the market price.",
-     "verdict": "No value: no research edge"
-    },
-    {
-     "event": "Boston Celtics @ Philadelphia 76ers",
-     "commence": "2026-11-11T01:10:00Z",
-     "side": "Philadelphia 76ers",
-     "american": "+105",
-     "bookName": "BetMGM",
-     "impliedPct": 48.8,
-     "fairPct": 46.6,
-     "ourPct": 47.3,
-     "evPer100": -3.08,
-     "value": false,
-     "reasoning": "While both teams are in excellent form, the 76ers' home court advantage and Joel Embiid's potential to exploit the Celtics' center position slightly reduce Boston's win probability from the market.",
-     "verdict": "No value: the price is fair or short"
-    },
-    {
-     "event": "Orlando Magic @ Sacramento Kings",
-     "commence": "2026-11-11T03:10:00Z",
-     "side": "Sacramento Kings",
-     "american": "+196",
-     "bookName": "DraftKings",
-     "impliedPct": 33.8,
-     "fairPct": 32.7,
-     "ourPct": 32.7,
-     "evPer100": -3.12,
-     "value": false,
-     "reasoning": "No research angle strong enough to move off the market price.",
-     "verdict": "No value: no research edge"
-    },
-    {
-     "event": "Milwaukee Bucks @ New York Knicks",
-     "commence": "2026-11-11T00:40:00Z",
-     "side": "Milwaukee Bucks",
-     "american": "+750",
-     "bookName": "FanDuel",
-     "impliedPct": 11.8,
-     "fairPct": 12.7,
-     "ourPct": 11.3,
-     "evPer100": -3.53,
-     "value": false,
-     "reasoning": "Knicks are in strong recent form, have a rest advantage, and superior season-long defensive metrics. The Bucks are struggling significantly, especially defensively, and Tyler Herro is questionable.",
-     "verdict": "No value: the price is fair or short"
-    },
-    {
-     "event": "Los Angeles Clippers @ Phoenix Suns",
-     "commence": "2026-11-11T02:10:00Z",
-     "side": "Los Angeles Clippers",
-     "american": "+142",
-     "bookName": "FanDuel",
-     "impliedPct": 41.3,
-     "fairPct": 39.7,
-     "ourPct": 39.7,
-     "evPer100": -3.9,
-     "value": false,
-     "reasoning": "No research angle strong enough to move off the market price.",
-     "verdict": "No value: no research edge"
-    }
-   ],
-   "noBet": "No bet: nothing on this slate has value at the best Ontario price. Closest was Utah Jazz to win (Miami Heat @ Utah Jazz) at +340, expected value +9.3 per $100.",
-   "sources": [
-    {
-     "title": "clutchpoints.com",
-     "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE71FeAvmG1yXQVbizlFy3F-jqm3sAym2UGNXVF1oN5va7-5rKDFhGnfv1vab7IwGA8LY5V57EfHMcnJHbbpgJi2s8nzyLx3xmjJD_H3CmJ51ZJnGJvwbPlwqJD0eSV-vq2veYmvE7zGyAZkLvnu5MBCTuyp9UF91EMZ5liYWW1q03W1gL_I6G5a1dap2dFwJ3muJv1U7IMPBwoefsWlaiiZZtf"
-    },
-    {
-     "title": "heavy.com",
-     "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGqBVw5EsQpMbywj1rBrdMAV81lUKwUjJKu406crWYEfq4i2VcMfU3DQomVpYXenQnNixXNBNeqdvMYlFLGp-dsutvqFewCzr24VPISCgWH3HBe9WkjAbABZvNABKROb_5no9SgQLhtSa-BtD4zZ6nQc1xTcDaywtNmdaZMPjJNYs_K"
-    },
-    {
-     "title": "nba.com",
-     "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG6FChDNPtq1Qf_Jphtw3klWenTmE0pGDJKKB6rDo_Xyza_8q0DkMbbMIbreyuhAvtJMTdASKHTFZlAvnS2vii2X0JqBBe-ZnbJMoyRtNfyHE-6SCwdWC4XAZtrg-J89VSN433SKLuX-Yv7pwRQODd1iWEXrxqRoQgGduWy2CStaj8yoxykfRHTPw8Igw=="
-    },
-    {
-     "title": "sportsmole.co.uk",
-     "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFa5tduNI0PwrG1Ijp3aPEfrpToAFEyOxHZRmz8YGWk82HUMDtKcRhDNEsOUbzVXaTNMkmj89cHjDKq-su9ugNhJjCaXQ_yAlDj3W8GAcwBg9CHgW1JD01zYTsPuxeSrYG9rHDLn2sKNsg4KSEJzN31nmnRZlI9ndmBU4GM63O4J87rJQwRXoaSiElEuGgAI5q4nyNoIQ020FJDSU-RaHQ0waDut3K7dG3f9ivnNRvzcz1bStxr3-Pe-DPRlQHr1ma49Zj-Qur2QBmcfgQSIbEfeVqdVwAmxFHK"
-    },
-    {
-     "title": "iheart.com",
-     "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG3R0xki8UCHhZf3Ip4AXmV49WNh9y-wh7TiJwlnxlmaSJxCfKiYUDaqKQj4g00td78KyWHqcD-0bRhYu5SA8jUih135ujpGS0H8YbXFIl62Y3dnz8o-uUUOE6QIv4MV-Y8eQh92a-ZEPE-zvw8AjRlFvTK9Y2Si65YyU5hFFo-x-EqQysyKBdKyFiRMDGVdw_i"
-    },
-    {
-     "title": "squawka.com",
-     "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFufb_aINBsAa8ZMsWfkQToepN1T3D7oRfCW_j85d9_49Bz_EvbrG5UmP6IczhysWlAaQofbjXVMajmGouPIwF53gO5o1GtbnIR4bI99mcOszLmEoqgrE-Ed6MP_pg8mriH4NQJEIOmhrHm5SyoBbs0TI3JlwL7A9ZJDPxgOQiKdPXPYCM="
-    },
-    {
-     "title": "oddscrowd.com",
-     "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHYOw18zwTmUnq1f4Rw1X61GWhZ8W_Gq9li_Fu2xgS4RvOFUO4eA-rAYBICTxXLR-0JuNSGHZxNO3FsKmHUVaSWqlWKHb2052duHSoUdGlssY-VkAPWyVkVy9mxPatbq4cNBpnNgiHIpJtr6zcwg9HiH8WPkjYRtHUgoUBRcr6OX_Tq52LXZQP9cR0njjV7qobihaagtGfDgiG2JVn_x7EzUW1L"
-    },
-    {
-     "title": "si.com",
-     "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFx8BoOAs2QSHB_Mq-PquKV8slDIyut_Qod_b3YZ9Kzjz_RQG8Eo7y2aPW_XWvtRwx8mOAX2lXPo8qUXckhu45R8ibv22pffSwVnnuveQLfWEyFfyNdkH4iaUHs1dMYG7mOq5bonzkR9wI02gE02NN4mmj_8q2_Ni4XufFC95rRVm-zW0Y5eSDQDuIq1gOFXt0wSSirFfopZLqqgjhOLUNUzwc7Eg=="
-    },
-    {
-     "title": "actionnetwork.com",
-     "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFrtARIhBpnDBI6jHWMoQqY26uMi991OWC0wnyFks8efGe6fdrpdxHO8TDFjPpFN9z2tEb1y_lMIbi5wpOClganSjKpcS8o1YJXLYrA1Tm6ncog9sSTR_VW6WdruyR3LhwLO_oM_0OOuLxX2uieU5cesgAja1KWUx0PWWfr2XxjhvdRjSb6IoV_aOdOztUnusxW"
-    },
-    {
-     "title": "iheart.com",
-     "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGDMyeotfnp4R9nwN3jgvPhAsHXiLT4X3MxV2_kDSL44Am22o3s3pSVSeQZXeVHubSdicf3M_sRIngkwdIRtgUj1p_ZAboNpKFekNq7l0u34BPjB5hRSn5PEx9f7Zln_MQXVEQXwFVkBxgsbP4Wr_iE9V0siUD-RddaIM_VYyu2-ct7GBX35-sStGZygDxSeRwLeBFB"
-    },
-    {
-     "title": "landofbasketball.com",
-     "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFM2n1rgLXEoKQj7XoNwMoCaO8WF3AUNgmaxVO4TRVNsHOCWRm8KH5_T8I-_KVSQ5BWe-QfVuNJd7zJ55EeWCAeh0boVy6nmKVIWzRAqYAiFyC3EjlHqKiBOl4tS7G2JGnkxE2mX2rXmftes0Y1JVA3rxcS4jKveCKO9cetf93ZKG8="
-    },
-    {
-     "title": "statz.ai",
-     "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFR_CZKakhqvMHcsKarwtTWnSXroJ1BvR70w5eUNBWKTz5GsGarosxDYHAHE2ACA2zj8tm89xzstNfxAJoz-SrOP4mSb8SAT-fTKSgNppOAYOgPx9-j_z9PUNXEJsk334rj_t789k4SWOlx7EuK0HBRq1vHBfeIuyy6puoo_XyaCCH8bdQYus-uIboylCgXPzffOiwybA3GSDgillZaUw=="
-    },
-    {
-     "title": "landofbasketball.com",
-     "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFTXbzm9TRKRWei0M6wD81-fajpYFp-ozLoHssxZq-vNjRdWlVWquvhv73-yG3YazzaQfJmU055NYqIIzsNTQXg0fwg1UL0kIx-LjggykjSFuYgmztXRKIWhzJ8tYKlX4jctmqxDIMtZts4kkBsJTb-xeT8H5F47iqwfx5VleEw_rto"
-    },
-    {
-     "title": "statmuse.com",
-     "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGTp7s1brwv9jx1ZnQ9n5gP3r7wmhOG0QA69Ml8zDrsPb3bu3qQE-Xkl8ncQ-Ui8ZCREZj22Ri2xGJjMekLsbV3E6kJPuVoja91HZE6UHcuBwZFdcic5HA_go00ip0ABU5u5aqM29fRDL6NSqFM64Ne7pDXzCLF4BFrkQy7VrI3kUY12h5GBDJ4bOjjbfeS3hEWM9tqVCRo5zk8"
-    },
-    {
-     "title": "bleachernation.com",
-     "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFCqyccNOVOJR6XBS8_s8pyRvXMY5kP6J1wRpGI1thmSKQZxG0VecsoqZfyR0kFBonkCz1Jna7HUvwRtb3SW8svyeWTGZMirwbR7P10nIERbFKcO_TcI7bDR6fC1Co-YTU5U87yByf8Nvs2WnPWOzjCKoMyuPmjygOD1CZAjcP3tvnlZdKxE759eJazFiNHn7fqWzshUjYF3in4BOsCnFndHsYzOQBT9Q9yQlYruemMrdR_7cIyMJKsjIItY3yB027N0KwEj34="
-    },
-    {
-     "title": "teamrankings.com",
-     "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHkVW8Rc9wGWeSbIkg_tfii2TLO3S58A0hKitDhaHod4cRye_aaqIsIRzNEknu0ERaQ-jh0HqbHVcLUb4xVSD483GcPUw9yeqrJ7uzQXllFcxQULURA3vcptXuLkAqFPnPbxZOOS85Mec1LNtjWiLw9i7w7xYN06Mn636V9RYTghTbOKijTjw=="
-    },
-    {
-     "title": "youtube.com",
-     "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHsGIzBgjwAiu0VtaJa5Nr__0Pj-RqGIbndfP8twir2cO5A9vqAK_J__djpJZmYbnHo19TF1XXjR7xgcyhxFDO7EujweqLB0k9GGeUhaGwzuSKHy-AyN3IpqnKOvopgyTa9KDClRfM="
-    },
-    {
-     "title": "covers.com",
-     "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFcm830hv-AS30u25vYpauEFrGQXBucWPWKa5eQnml7kx880WHMTkSPQ-uvP9162PHMGnvVK0_KBJ2CyK5s6K2cD84gDBRkxlFutPa9vpvyMEjbVs_9mHiWDB8Ruz2TBd5XA4aeIUndGw55fBwmEtXN5MQOEeNA0dc4wg4="
-    },
-    {
-     "title": "iheart.com",
-     "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE-7XtSjXrvspCYnA5KmieAXaYF3c5ska7FjHIQGd_xYFR26YMFHeuBG2wMNxM6q-IqgqOTHViz-BkBdy8OnwBzXkNoFSqI9drRxaf2_-oyiIHJnuVpcsYwZsxt1NKoU39ERLA8DyHJ_wQnEI16O0MXuNAHy7fLC33yO_DFedsfyNBru4TGfM-OzgO0B10DviJOij-WAhm38rnvLjs9"
-    },
-    {
-     "title": "iheart.com",
-     "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGN9gvyeptMbpMCioX8bvvenxOAYXOn7Mo0JPtsgcK7WCo48DCm9gMvzzO_3iEI93Z_C73GrWr7GbysCEczRzs54CPatxcYvlspvwpZxtGeRUteYab9lKly0ZRlyILg1gRnKcZ99vD0QE8jfpJI5miKcV4XcvMKN7dvtfOyF1Zkmkk1spbeEKEc4kNPEGcx5S5MjmJHCgymQbUN"
-    }
-   ],
-   "slateNotes": "Several games lack sufficient research data for confident probability estimates.",
-   "analysis": [
-    {
-     "event": "Milwaukee Bucks @ New York Knicks",
-     "summary": "The New York Knicks are in strong form with a rest advantage, facing a struggling Milwaukee Bucks team with key injury concerns. The Knicks' defense and Karl-Anthony Towns' matchup advantage are significant factors.",
-     "keyFactors": [
-      "Knicks' strong recent form and rest advantage",
-      "Bucks' poor defensive performance and losing streak",
-      "Tyler Herro's questionable status for Milwaukee",
-      "Karl-Anthony Towns' favorable matchup"
-     ]
-    },
-    {
-     "event": "Boston Celtics @ Philadelphia 76ers",
-     "summary": "This is a tight matchup between two top Eastern Conference teams in excellent form, with the 76ers playing at home and Joel Embiid posing a significant challenge to the Celtics' interior defense.",
-     "keyFactors": [
-      "Both teams in excellent recent form",
-      "76ers' home court advantage",
-      "Joel Embiid's potential impact against Celtics' interior defense",
-      "Strong defensive ratings for both teams"
-     ]
-    },
-    {
-     "event": "Los Angeles Clippers @ Phoenix Suns",
-     "summary": "Insufficient data on recent form, season ratings, and the Phoenix Suns' injury report prevents a confident probability estimate for this game.",
-     "keyFactors": [
-      "Lack of recent form data",
-      "Phoenix Suns' injury report not submitted",
-      "Lack of offensive/defensive ratings"
-     ]
-    },
-    {
-     "event": "Miami Heat @ Utah Jazz",
-     "summary": "The Miami Heat are heavily favored with Giannis Antetokounmpo probable, while the Utah Jazz are significantly weakened by multiple key injuries.",
-     "keyFactors": [
-      "Utah Jazz's significant injuries (George, Jackson Jr.)",
-      "Giannis Antetokounmpo probable for Miami Heat"
-     ]
-    },
-    {
-     "event": "Orlando Magic @ Sacramento Kings",
-     "summary": "Insufficient research data on injuries, recent form, or season statistics prevents a confident probability estimate for this game.",
-     "keyFactors": [
-      "Lack of injury report for either team",
-      "No recent form data",
-      "No offensive/defensive ratings available"
-     ]
-    },
-    {
-     "event": "Oklahoma City Thunder @ Portland Trail Blazers",
-     "summary": "Insufficient research data on injuries, recent form, or season statistics prevents a confident probability estimate for this game.",
-     "keyFactors": [
-      "Lack of injury report for either team",
-      "No recent form data",
-      "No offensive/defensive ratings available"
-     ]
-    }
-   ]
-  }
- }
+ "cards": {},
+ "history": [],
+ "costInfo": [
+  "Now: free plan, $0. Covers NBA winner, spread and game total for every game, plus player points/rebounds/assists/threes and team totals for about 2 games a day (that's what 500 credits a month allows).",
+  "Upgrade option (not done): The Odds API 20K plan, $30 USD a month (about $42 CAD). Gives player props and team totals for every NBA game every day (about 1,300 credits a month used).",
+  "UFC: the feed carries fight winner and, at some books, total rounds. It does NOT carry method of victory, significant strikes or takedowns on any plan, so UFC underdog picks are tracked as straight wins.",
+  "Grading costs no odds credits: NBA results and box scores come from ESPN's free public data; UFC results from a sourced Google search.",
+  "Credits left are checked before every call; it stops spending 25 credits before the limit and posts fewer prop games instead."
+ ]
 }

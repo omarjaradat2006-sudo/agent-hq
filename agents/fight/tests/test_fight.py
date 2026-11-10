@@ -1,160 +1,181 @@
-"""Offline tests: fake odds + fake Gemini. Run: python3 agents/fight/tests/test_fight.py"""
-import datetime, json, os, shutil, sys, tempfile, unittest
+"""Offline tests with fake odds, fake Gemini and fake box scores. Run: python3 agents/fight/tests/test_fight.py"""
+import datetime, json, os, re, shutil, sys, tempfile, unittest
 
 TMP = tempfile.mkdtemp()
 os.environ["FIGHT_DATA"] = TMP
 os.environ["ODDS_API_KEY"] = "test"
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-import config as C, oddsmath as M, odds as O, store as S, picks as P, grade as Gr, report as R  # noqa: E402
+import config as C, oddsmath as M, odds as O, store as S, analyst as A, cards as K, grade as Gr, builder as B, wording as W  # noqa
 
 UTC = datetime.timezone.utc
 iso = lambda h: (datetime.datetime.now(UTC) + datetime.timedelta(hours=h)).strftime("%Y-%m-%dT%H:%M:%SZ")
+TEAMS = [("New York Knicks", "Boston Celtics"), ("Phoenix Suns", "Los Angeles Lakers"), ("Chicago Bulls", "Miami Heat"),
+         ("Utah Jazz", "Denver Nuggets"), ("Portland Trail Blazers", "Golden State Warriors"), ("Orlando Magic", "Atlanta Hawks")]
 
 
-def bk(key, markets):
-    return {"key": key, "title": key, "markets": [{"key": k, "outcomes": v} for k, v in markets.items()]}
+def mk(key, outs):
+    return {"key": key, "outcomes": outs}
 
 
-def h2h(a, pa, b, pb):
-    return [{"name": a, "price": pa}, {"name": b, "price": pb}]
+def book(key, markets, title=None):
+    return {"key": key, "title": title or key, "markets": markets}
 
 
-def nba_events(start=5):
-    g1 = {"id": "g1", "commence_time": iso(start), "home_team": "Boston Celtics", "away_team": "New York Knicks", "bookmakers": [
-        bk("betmgm", {"h2h": h2h("Boston Celtics", 1.60, "New York Knicks", 2.45),
-                      "spreads": [{"name": "Boston Celtics", "price": 1.91, "point": -4.5}, {"name": "New York Knicks", "price": 1.91, "point": 4.5}],
-                      "totals": [{"name": "Over", "price": 1.91, "point": 225.5}, {"name": "Under", "price": 1.91, "point": 225.5}]}),
-        bk("fanduel", {"h2h": h2h("Boston Celtics", 1.62, "New York Knicks", 2.40),
-                       "spreads": [{"name": "Boston Celtics", "price": 1.95, "point": -4.5}, {"name": "New York Knicks", "price": 1.87, "point": 4.5}],
-                       "totals": [{"name": "Over", "price": 1.90, "point": 225.5}, {"name": "Under", "price": 1.92, "point": 225.5}]}),
-        bk("pinnacle", {"h2h": h2h("Boston Celtics", 1.63, "New York Knicks", 2.42),
-                        "spreads": [{"name": "Boston Celtics", "price": 1.95, "point": -5.0}, {"name": "New York Knicks", "price": 1.90, "point": 5.0}],
-                        "totals": [{"name": "Over", "price": 1.93, "point": 225.5}, {"name": "Under", "price": 1.93, "point": 225.5}]}),
-        {"key": "bet365", "title": "Bet365", "markets": [{"key": "h2h", "outcomes": h2h("Boston Celtics", 1.30, "New York Knicks", 3.50)}]},
-    ]}
-    g2 = {"id": "g2", "commence_time": iso(start + 1), "home_team": "Los Angeles Lakers", "away_team": "Phoenix Suns", "bookmakers": [
-        bk("betmgm", {"h2h": h2h("Los Angeles Lakers", 1.80, "Phoenix Suns", 2.05)}),
-        bk("draftkings", {"h2h": h2h("Los Angeles Lakers", 1.83, "Phoenix Suns", 2.02)}),
-        bk("pinnacle", {"h2h": h2h("Los Angeles Lakers", 1.85, "Phoenix Suns", 2.03)})]}
-    g3 = {"id": "g3", "commence_time": iso(start + 1), "home_team": "Miami Heat", "away_team": "Chicago Bulls", "bookmakers": [
-        bk("betmgm", {"h2h": h2h("Miami Heat", 1.70, "Chicago Bulls", 2.20)}),
-        bk("pinnacle", {"h2h": h2h("Miami Heat", 1.72, "Chicago Bulls", 2.22)})]}
-    return [g1, g2, g3]
+def nba_game(i, away, home, start):
+    fav = 1.45 + 0.05 * i
+    dog = round(1 / (1.05 - 1 / fav), 2)
+    main = lambda adj: [mk("h2h", [{"name": home, "price": fav + adj}, {"name": away, "price": dog + adj}]),
+                        mk("spreads", [{"name": home, "price": 1.91, "point": -5.5}, {"name": away, "price": 1.91, "point": 5.5}]),
+                        mk("totals", [{"name": "Over", "price": 1.91, "point": 224.5}, {"name": "Under", "price": 1.91, "point": 224.5}])]
+    return {"id": f"g{i}", "commence_time": iso(start + i * 0.5), "home_team": home, "away_team": away,
+            "bookmakers": [book("fanduel", main(0)), book("draftkings", main(0.02)),
+                           book("betmgm", main(0.5)), book("bet365", main(1.0), "Bet365")]}
+
+
+def props(i, away, home):
+    p1, p2 = f"Star{i} Guy", f"Big{i} Man"
+    m = [mk("player_points", [{"name": "Over", "description": p1, "price": 1.87, "point": 24.5}, {"name": "Under", "description": p1, "price": 1.95, "point": 24.5}]),
+         mk("player_rebounds", [{"name": "Over", "description": p2, "price": 1.90, "point": 10.5}, {"name": "Under", "description": p2, "price": 1.90, "point": 10.5}]),
+         mk("player_threes", [{"name": "Over", "description": p1, "price": 2.10, "point": 2.5}, {"name": "Under", "description": p1, "price": 1.72, "point": 2.5}])]
+    return {"id": f"g{i}", "commence_time": iso(5 + i * 0.5), "home_team": home, "away_team": away,
+            "bookmakers": [book("fanduel", m), book("draftkings", m[:2]), book("bet365", m, "bet365")]}
 
 
 class FakeGemini:
-    def __init__(self, estimates):
-        self.estimates = estimates
+    def __init__(self, ufc_event=True):
+        self.ufc_event = ufc_event
 
     def __call__(self, prompt, system=None, search=False, json_out=False, **kw):
         assert "lock" in system.lower() and "bet365" in system.lower()
-        if "UFC event(s)" in prompt:
-            return json.dumps({"events": [{"name": "UFC 999", "date": "2026-11-14", "bouts": [["Islam Makhachev", "Arman Tsarukyan"]]}]}), [("ufc.com", "https://ufc.com/x")]
-        if "official result" in prompt:
-            return json.dumps({"status": "finished", "winner": "Arman Tsarukyan", "method": "decision"}), [("ufc.com", "https://ufc.com/result")]
+        src = [("source", "https://example.com/s")]
+        if "Is there a UFC event" in prompt:
+            ev = {"event": {"name": "UFC 999", "date": "2026-11-14", "bouts": [["Islam Makhachev", "Arman Tsarukyan"], ["Sean Strickland", "Dricus Du Plessis"], ["Max Holloway", "Ilia Topuria"]]}} if self.ufc_event else {"event": None}
+            return json.dumps(ev), src
+        if "official result of the UFC fight" in prompt:
+            return json.dumps({"status": "finished", "winner": "Arman Tsarukyan", "method": "KO/TKO", "round": 2, "time": "3:10", "rounds": 5}), src
+        if "GENUINE path" in prompt:
+            names = re.findall(r"^- (.+?) \(vs", prompt, re.M)
+            return json.dumps({"underdogs": [{"fighter": n, "genuine": i == 0, "prob": 0.42, "path": "KO/TKO", "oneLine": "Heavy hands and the favourite gets hit a lot. A lock!",
+                                              "breakdown": {"style": "orthodox striker", "weighIn": "made weight easily"}} for i, n in enumerate(names)]}), []
+        if "ONE short plain sentence" in prompt:
+            n = len(re.findall(r"^P\d+:", prompt, re.M))
+            return json.dumps({"why": {f"P{i}": "Built on injury news and matchups; this is guaranteed." for i in range(n)}}), []
+        if json_out:  # estimates: favour the first side of every line by 8 points
+            picks = []
+            for lid, side, fair in re.findall(r"^(L\d+) \| [^|]+ \| [^|]+ \| ([^\[]+?) \[[^\]]*\] fair (\d+)%", prompt, re.M):
+                picks.append({"id": lid, "side": side.strip(), "prob": min(0.9, int(fair) / 100 + 0.08), "why": f"Specific reason for {side.strip()}."})
+            return json.dumps({"picks": picks}), []
         if search:
-            return "Research notes: Celtics missing two starters. Bet365 has Knicks at +250.", [("NBA injury report", "https://nba.com/injuries")]
-        return json.dumps(self.estimates), []
-
-
-EST = {"events": [
-    {"e": "E1", "summary": "Celtics short-handed. This is a lock.", "keyFactors": ["Two Celtics starters out"],
-     "estimates": [{"market": "h2h", "side": "New York Knicks", "point": None, "prob": 0.47, "reason": "Celtics without two starters; Knicks rested. Guaranteed winner."},
-                   {"market": "totals", "side": "Over", "point": 225.5, "prob": 0.50, "reason": "no edge"}]},
-    {"e": "E2", "summary": "Suns healthy, Lakers on a back-to-back.", "estimates": [{"market": "h2h", "side": "Phoenix Suns", "point": None, "prob": 0.55, "reason": "Lakers on the second night of a back-to-back."}]},
-    {"e": "E3", "summary": "No clear angle.", "estimates": []}], "slateNotes": "Two spots with injury and rest edges."}
+            return "Notes: two starters out. Bet365 has a better price.\nPROP_GAMES: Knicks @ Celtics; Suns @ Lakers", src
+        return "{}", []
 
 
 class T(unittest.TestCase):
     def setUp(self):
         shutil.rmtree(TMP, ignore_errors=True); os.makedirs(TMP)
         S.save(S.STATE, {"team": "fight", "agents": [], "log": []})
+        A.G.generate = FakeGemini()
+        games = [nba_game(i, a, h, 5) for i, (a, h) in enumerate(TEAMS)]
+        O.fetch_events = lambda key, h=36: [] if key == C.UFC_KEY and not getattr(self, "ufc", True) else (games if key == C.NBA_KEY else self.ufc_events())
+        O.fetch_odds = lambda key, markets, h=36: games if key == C.NBA_KEY else self.ufc_events()
+        O.fetch_event_odds = lambda key, eid, m: props(int(eid[1:]), *TEAMS[int(eid[1:])])
+        O.daily_prop_budget = lambda *a, **k: 2
 
-    def use(self, events, est):
-        O.fetch_events = lambda sport, h=36: [{"id": e["id"], "home_team": e["home_team"], "away_team": e["away_team"], "commence_time": e["commence_time"]} for e in events]
-        O.fetch_odds = lambda sport, h=36, min_left=None: events
-        P.G.generate = Gr.G.generate = FakeGemini(est)
+    def ufc_events(self):
+        f = lambda i, a, b, pa, pb: {"id": f"u{i}", "commence_time": iso(26 + i), "home_team": a, "away_team": b, "bookmakers": [
+            book("fanduel", [mk("h2h", [{"name": a, "price": pa}, {"name": b, "price": pb}]), mk("totals", [{"name": "Over", "price": 1.8, "point": 2.5}, {"name": "Under", "price": 2.0, "point": 2.5}])]),
+            book("draftkings", [mk("h2h", [{"name": a, "price": pa + 0.03}, {"name": b, "price": pb - 0.05}])]),
+            book("bet365", [mk("h2h", [{"name": a, "price": 3}, {"name": b, "price": 9}])], "Bet365")]}
+        return [f(0, "Islam Makhachev", "Arman Tsarukyan", 1.40, 3.10), f(1, "Dricus Du Plessis", "Sean Strickland", 1.65, 2.30),
+                f(2, "Ilia Topuria", "Max Holloway", 1.30, 3.70), f(3, "PFL Guy", "Other Guy", 1.5, 2.6)]
 
-    def test_math(self):
-        self.assertAlmostEqual(M.american_to_decimal(150), 2.5)
-        self.assertAlmostEqual(M.american_to_decimal(-200), 1.5)
+    def test_math_and_wording(self):
         self.assertEqual(M.fmt_american(2.5), "+150"); self.assertEqual(M.fmt_american(1.5), "-200")
-        self.assertAlmostEqual(sum(M.no_vig([1.91, 1.91])), 1.0)
-        self.assertAlmostEqual(M.ev(0.5, 2.0), 0.0)
-        self.assertEqual(M.profit_per_100("win", 2.45), 145.0)
+        c = {"sport": "nba", "home": "Boston Celtics", "away": "Los Angeles Lakers", "market": "player_points", "side": "Over", "point": 24.5, "player": "LeBron James"}
+        self.assertEqual(W.leg_text(c, "fanduel"), "Lakers vs Celtics: LeBron James Over 24.5 Points")
+        self.assertEqual(W.leg_text({**c, "market": "player_threes"}, "draftkings"), "Lakers vs Celtics: LeBron James Over 24.5 Threes")
+        self.assertEqual(W.leg_text({**c, "market": "spreads", "side": "Boston Celtics", "point": -5.5}, "fanduel"), "Lakers vs Celtics: Celtics -5.5")
+        self.assertEqual(W.short("Portland Trail Blazers"), "Trail Blazers")
 
-    def test_bet365_never_used(self):
-        self.assertNotIn("bet365", O.active_books())
-        lines = O.build_lines(nba_events()[0])
-        knicks = [o for l in lines if l["market"] == "h2h" for o in l["outcomes"] if o["name"] == "New York Knicks"][0]
-        self.assertEqual(knicks["best"], ["betmgm", 2.45])      # not Bet365's 3.50
-        self.assertNotIn("bet365", knicks["prices"])
-        spread = [l for l in lines if l["market"] == "spreads"][0]
-        self.assertEqual(spread["point"], -4.5)                   # Pinnacle's -5 line isn't mixed in
-        self.assertNotIn("pinnacle", spread["outcomes"][0]["prices"])
+    def test_only_fanduel_draftkings(self):
+        cs = O.candidates(nba_game(0, *TEAMS[0], 5), "nba")
+        self.assertTrue(all(set(c["prices"]) <= {"fanduel", "draftkings"} for c in cs))
+        self.assertEqual(len(cs), 6)
 
-    def test_full_day(self):
-        self.use(nba_events(), EST)
-        P.run("nba")
+    def test_nba_three_placeable_parlays(self):
+        K.run_nba()
         st, lg = S.state(), S.ledger()
-        card = st["cards"]["nba"]
-        self.assertIsNone(card["noBet"])
-        self.assertEqual([p["selection"] for p in card["picks"]], ["New York Knicks to win", "Phoenix Suns to win"])
-        k = card["picks"][0]
-        self.assertEqual((k["type"], k["bookName"], k["american"]), ("underdog", "BetMGM", "+145"))
-        self.assertEqual(k["impliedPct"], 40.8); self.assertTrue(k["value"]); self.assertGreater(k["evPer100"], 2)
-        self.assertEqual(len(card["parlays"]), 1)
-        self.assertEqual(card["parlays"][0]["bookName"], "BetMGM")
-        self.assertEqual(len(card["underdogs"]), 3)
+        ps = st["cards"]["nba"]["parlays"]
+        self.assertEqual([p["tier"] for p in ps], ["+100", "+500", "+1000"])
+        for p, (_, lo, hi) in zip(ps, C.TARGETS):
+            self.assertIn(p["bookName"], ("FanDuel", "DraftKings"))
+            self.assertEqual(len({l["eventId"] for l in p["legs"]}), len(p["legs"]))       # one leg per game
+            self.assertGreaterEqual(len(p["legs"]), 2)
+            self.assertAlmostEqual(p["dec"], M.parlay_decimal([l["dec"] for l in p["legs"]]), places=2)
+            self.assertTrue(lo * 0.85 <= p["dec"] <= hi * 1.25)
+            self.assertIn(p["strength"], ("Strong", "Medium", "Long shot"))
+            self.assertNotIn("guaranteed", p["why"].lower())
         dump = json.dumps(st) + json.dumps(lg)
-        for p in card["picks"]:
-            for word in ("lock", "Guaranteed"):
-                self.assertNotIn(word, p["reasoning"] + p["summary"])
+        for bad in ("bet365", "betmgm", "BetMGM"):
+            self.assertNotIn(bad, json.dumps(lg).replace("[excluded book]", ""))
         self.assertNotIn("Bet365 has", dump)
-        self.assertNotIn("bet365", json.dumps(lg).lower())
-        self.assertIn("Bet365", " ".join(st["rules"]))           # only in our own rule text
-        # results: Knicks win 110-105 -> Knicks single won, Suns lost, parlay lost
-        for p in lg["picks"]:
-            p["commence"] = iso(-10)
-            for l in p.get("legs", []):
+        self.assertTrue(any(":" in l["text"] and ("Points" in l["text"] or "Moneyline" in l["text"] or "Total" in l["text"] or "Rebounds" in l["text"] or "Threes" in l["text"] or re.search(r"[+-]\d", l["text"])) for p in ps for l in p["legs"]))
+        self.assertEqual(len(lg["bets"]), 3)
+
+    def test_ufc_no_event(self):
+        A.G.generate = FakeGemini(ufc_event=False)
+        K.run_ufc()
+        c = S.state()["cards"]["ufc"]
+        self.assertEqual(c["message"], "No UFC event this week")
+        self.assertEqual((c["parlays"], c["underdogs"]), ([], []))
+
+    def test_ufc_card_dogs_and_grading(self):
+        K.run_ufc()
+        c = S.state()["cards"]["ufc"]
+        self.assertEqual(c["fights"], 3)                                         # PFL bout ignored
+        self.assertEqual(len(c["underdogs"]), 1)                                 # only the genuine one
+        d = c["underdogs"][0]
+        self.assertEqual((d["risk"], d["path"], d["bookName"]), ("High risk", "KO/TKO", "FanDuel"))
+        self.assertIn("to Win", d["betText"]); self.assertNotIn("lock", d["why"].lower())
+        self.assertTrue(d["pathNote"])
+        self.assertGreaterEqual(len(c["parlays"]), 1)
+        lg = S.ledger()
+        for b in lg["bets"]:
+            for l in b["legs"]:
                 l["commence"] = iso(-10)
         S.save(S.LEDGER, lg)
-        O.fetch_scores = lambda sport, d=3: [
-            {"id": "g1", "completed": True, "home_team": "Boston Celtics", "away_team": "New York Knicks", "scores": [{"name": "Boston Celtics", "score": "105"}, {"name": "New York Knicks", "score": "110"}]},
-            {"id": "g2", "completed": True, "home_team": "Los Angeles Lakers", "away_team": "Phoenix Suns", "scores": [{"name": "Los Angeles Lakers", "score": "120"}, {"name": "Phoenix Suns", "score": "101"}]}]
         Gr.run()
+        lg = S.ledger()
+        dog = next(b for b in lg["bets"] if b["kind"] == "ufc_dog")
+        self.assertEqual(dog["status"], "won" if dog["legs"][0]["side"] == "Arman Tsarukyan" else "lost")
         rec = S.state()["record"]
-        self.assertEqual((rec["all"]["won"], rec["all"]["lost"]), (1, 2))
-        self.assertEqual(rec["all"]["profit"], -55.0)
-        self.assertEqual(rec["all"]["profitPer100"], -18.33)
-        self.assertEqual(rec["all"]["winRate"], 33.3)
-        self.assertEqual(rec["byType"]["underdog"]["profit"], 45.0)
-        self.assertEqual(rec["byType"]["parlay"]["lost"], 1)
+        self.assertTrue(rec["lines"][2].startswith("UFC underdog picks: "))
 
-    def test_no_bet(self):
-        self.use(nba_events(), {"events": [{"e": "E1", "estimates": []}], "slateNotes": ""})
-        P.run("nba")
-        card = S.state()["cards"]["nba"]
-        self.assertTrue(card["noBet"].startswith("No bet"))
-        self.assertEqual(card["picks"], []); self.assertEqual(card["parlays"], [])
-        self.assertEqual(S.state()["record"]["noBetDays"], 1)
-
-    def test_ufc_filter_and_search_grading(self):
-        ev = [{"id": "u1", "commence_time": iso(20), "home_team": "Islam Makhachev", "away_team": "Arman Tsarukyan",
-               "bookmakers": [bk("fanduel", {"h2h": h2h("Islam Makhachev", 1.50, "Arman Tsarukyan", 2.70)}), bk("pinnacle", {"h2h": h2h("Islam Makhachev", 1.48, "Arman Tsarukyan", 2.75)})]},
-              {"id": "p1", "commence_time": iso(20), "home_team": "PFL Guy", "away_team": "Other PFL Guy",
-               "bookmakers": [bk("fanduel", {"h2h": h2h("PFL Guy", 1.5, "Other PFL Guy", 2.7)})]}]
-        self.use(ev, {"events": [{"e": "E1", "summary": "Close fight", "estimates": [{"market": "h2h", "side": "Arman Tsarukyan", "prob": 0.45, "reason": "wrestling edge"}]}]})
-        P.run("ufc")
-        card = S.state()["cards"]["ufc"]
-        self.assertEqual(card["games"], 1)                       # PFL bout ignored
-        self.assertEqual(card["picks"][0]["side"], "Arman Tsarukyan")
-        lg = S.ledger(); lg["picks"][0]["commence"] = iso(-10); S.save(S.LEDGER, lg)
-        O.fetch_scores = lambda sport, d=3: []
+    def test_nba_grading_props_and_void(self):
+        K.run_nba()
+        lg = S.ledger()
+        for b in lg["bets"]:
+            for l in b["legs"]:
+                l["commence"] = iso(-10)
+        S.save(S.LEDGER, lg)
+        Gr.espn_game = lambda leg: {"id": leg["eventId"], "completed": True, "postponed": False, "home": 110, "away": 100}
+        Gr.espn_box = lambda gid: {"Star0 Guy": {"played": True, "PTS": 30, "REB": 5, "AST": 4, "3PT": 4}, "Big0 Man": {"played": False},
+                                   "Star1 Guy": {"played": True, "PTS": 10, "REB": 2, "AST": 1, "3PT": 0}, "Big1 Man": {"played": True, "PTS": 8, "REB": 14, "AST": 1, "3PT": 0}}
         Gr.run()
-        p = S.ledger()["picks"][0]
-        self.assertEqual((p["status"], p["profit"], p["gradedBy"]), ("won", 170.0, "search with source"))
+        lg = S.ledger()
+        self.assertTrue(all(b["status"] in ("won", "lost", "push") for b in lg["bets"]))
+        legs = [l for b in lg["bets"] for l in b["legs"]]
+        for l in legs:
+            if l["market"] == "h2h":
+                self.assertEqual(l["status"], "won" if l["side"] == l["home"] else "lost")
+            if l.get("player") == "Big0 Man":
+                self.assertEqual(l["status"], "void")
+        lines = S.state()["record"]["lines"]
+        self.assertTrue(re.match(r"NBA parlays: \d+ won, \d+ lost.*(up|down) \$\d+\.\d\d per \$100", lines[0]), lines[0])
+
+    def test_sanitize(self):
+        self.assertEqual(S.sanitize("This is basically guaranteed, a lock."), "This is likely, a lean.")
 
 
 if __name__ == "__main__":
-    unittest.main(verbosity=2)
+    unittest.main(verbosity=1)

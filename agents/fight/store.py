@@ -1,7 +1,4 @@
-"""Files for Fight & Court Intelligence:
-data/fight/state.json  - what Agent HQ shows (today's cards, record, brief, agents, log)
-data/fight/ledger.json - every pick ever made, with its result (the source of the record)
-"""
+"""Files: data/fight/state.json (what Agent HQ shows) and data/fight/ledger.json (every bet ever posted + result)."""
 import datetime, json, os
 from zoneinfo import ZoneInfo
 import config as C
@@ -42,29 +39,29 @@ def state():
 
 
 def ledger():
-    return load(LEDGER, {"picks": [], "cards": []})
+    lg = load(LEDGER, {"bets": [], "cards": []})
+    lg.setdefault("bets", []); lg.setdefault("cards", [])
+    return lg
 
 
 def log(s, agent, msg):
     s["log"] = ([{"t": now_iso(), "agent": agent, "msg": str(msg)[:240]}] + s.get("log", []))[:100]
 
 
-def agent(s, aid, status, doing, next_run=None):
+def agent(s, aid, status, doing):
     for a in s.get("agents", []):
         if a.get("id") == aid:
             a.update(status=status, doing=str(doing)[:160], lastRun=now_iso())
-            if next_run:
-                a["nextRun"] = next_run
-            return
 
 
 def sanitize(text):
-    """No 'lock'/'guaranteed' language and no Bet365 anywhere in what we show."""
+    """No 'lock' / 'guaranteed' / 'safest' wording, and no Bet365, in anything shown."""
     if not isinstance(text, str):
         return text
-    t = C.FORBIDDEN.sub(lambda m: "lean" if m.group(0).lower().startswith("lock") else "likely", text)
-    t = C.BANNED.sub("[excluded book]", t)
-    return t
+    def sub(m):
+        w = m.group(0).lower()
+        return "lean" if w.startswith("lock") else "most analyzed" if w == "safest" else "likely"
+    return C.BANNED.sub("[excluded book]", C.FORBIDDEN.sub(sub, text))
 
 
 def clean(obj):
