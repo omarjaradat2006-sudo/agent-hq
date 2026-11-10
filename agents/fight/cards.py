@@ -36,6 +36,7 @@ def run_nba(force=False):
     if _exists(cid) and not force:
         print(f"{cid} already posted; use --force to redo"); return
     card = {"id": cid, "date": today, "sport": "nba", "createdAt": S.now_iso(), "parlays": [], "message": None, "sources": []}
+    print("Gemini:", A.KEY_SOURCE, flush=True)
     events = O.fetch_events(C.NBA_KEY, 20)
     if not events:
         card["message"] = "No NBA games today."
