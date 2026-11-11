@@ -9,7 +9,7 @@
    "Nothing right now (all cash)."
   ],
   "today": [
-   "Scanned the news 117 times today: read 7157 headlines, found 162 that could move a stock or coin it's allowed to trade. None passed every check, so no trade (that's normal).",
+   "Scanned the news 118 times today: read 7160 headlines, found 163 that could move a stock or coin it's allowed to trade. None passed every check, so no trade (that's normal).",
    "Passed on AMAT, KLAC, LRCX, TSLA: only 1 source(s) so far: 24/7 Wall St..",
    "Passed on AMD: only 1 source(s) so far: Benzinga.",
    "Passed on AVAV, INTC, MU, NOW: volume only 0.4x normal (need 1.5x).",
@@ -17,10 +17,10 @@
    "Safety rules that stepped in: stock entry window (x21)."
   ],
   "watchlist": "Allowed to trade: 69 halal stocks, 5 Shariah ETFs, 9 coins.",
-  "lastScan": "2026-11-11T22:27:35Z"
+  "lastScan": "2026-11-11T22:28:43Z"
  },
  "hired": true,
- "updatedAt": "2026-11-11T22:27:40Z",
+ "updatedAt": "2026-11-11T22:28:46Z",
  "mode": "PAPER",
  "agents": [
   {
@@ -28,8 +28,8 @@
    "name": "News Scout",
    "role": "Reads X, Reddit and news feeds",
    "status": "working",
-   "doing": "Read 34 new headlines/posts, 1 market-moving stories",
-   "lastRun": "2026-11-11T22:27:39Z"
+   "doing": "Read 3 new headlines/posts, 1 market-moving stories",
+   "lastRun": "2026-11-11T22:28:45Z"
   },
   {
    "id": "analyst",
@@ -69,7 +69,7 @@
    "role": "Places paper orders on Alpaca",
    "status": "working",
    "doing": "Paper-trading bot started (Alpaca PAPER account only). Close this window to stop it.",
-   "lastRun": "2026-11-11T22:27:34Z"
+   "lastRun": "2026-11-11T22:28:42Z"
   },
   {
    "id": "coins",
@@ -89,6 +89,26 @@
   }
  ],
  "log": [
+  {
+   "t": "2026-11-11T22:28:45Z",
+   "agent": "News Scout",
+   "msg": "Read 3 new headlines/posts, 1 market-moving stories"
+  },
+  {
+   "t": "2026-11-11T22:28:44Z",
+   "agent": "News Scout",
+   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
+  },
+  {
+   "t": "2026-11-11T22:28:42Z",
+   "agent": "News Scout",
+   "msg": "Agent Reach not found: news feeds + Yahoo Finance + Reddit direct (no X)"
+  },
+  {
+   "t": "2026-11-11T22:28:42Z",
+   "agent": "Trader",
+   "msg": "Paper-trading bot started (Alpaca PAPER account only). Close this window to stop it."
+  },
   {
    "t": "2026-11-11T22:27:39Z",
    "agent": "News Scout",
@@ -818,31 +838,11 @@
    "t": "2026-11-11T01:54:06Z",
    "agent": "Trader",
    "msg": "Paper-trading bot started (Alpaca PAPER account only). Close this window to stop it."
-  },
-  {
-   "t": "2026-11-11T01:52:00Z",
-   "agent": "News Scout",
-   "msg": "Read 40 new headlines/posts, 1 market-moving stories"
-  },
-  {
-   "t": "2026-11-11T01:36:44Z",
-   "agent": "News Scout",
-   "msg": "Read 44 new headlines/posts, 1 market-moving stories"
-  },
-  {
-   "t": "2026-11-11T01:21:38Z",
-   "agent": "News Scout",
-   "msg": "Read 51 new headlines/posts, 1 market-moving stories"
-  },
-  {
-   "t": "2026-11-11T01:06:21Z",
-   "agent": "Trader",
-   "msg": "Saved results to the Agent HQ dashboard"
   }
  ],
  "brief": {
   "date": "Wed Nov 11",
-  "createdAt": "2026-11-11T22:27:40Z",
+  "createdAt": "2026-11-11T22:28:46Z",
   "headline": "Paper account +$0 today (+0.00%), +0.00% total vs SPY +0.98% · 0 open",
   "summary": "0 trade(s) closed today, 0/0 winners overall. TradingAgents checks used today: 1/5.",
   "notes": [
@@ -867,7 +867,7 @@
   "deepUsed": 1,
   "deepMax": 5,
   "social": {
-   "at": "2026-11-11T22:27:38Z",
+   "at": "2026-11-11T22:28:44Z",
    "items": 0,
    "source": "Reddit direct (X needs Agent Reach)",
    "problems": [
@@ -884,6 +884,34 @@
  "trades": [],
  "decisions": [
   {
+   "t": "2026-11-11T22:28:45Z",
+   "symbol": "KLAC",
+   "outcome": "waiting",
+   "why": "only 1 source(s) so far: 24/7 Wall St.",
+   "event": "Applied Materials and other major semiconductor stocks rallied strongly ahead of upcoming earnings reports amid a broader rebound in chip sector demand."
+  },
+  {
+   "t": "2026-11-11T22:28:45Z",
+   "symbol": "LRCX",
+   "outcome": "waiting",
+   "why": "only 1 source(s) so far: 24/7 Wall St.",
+   "event": "Applied Materials and other major semiconductor stocks rallied strongly ahead of upcoming earnings reports amid a broader rebound in chip sector demand."
+  },
+  {
+   "t": "2026-11-11T22:28:45Z",
+   "symbol": "AMAT",
+   "outcome": "waiting",
+   "why": "only 1 source(s) so far: 24/7 Wall St.",
+   "event": "Applied Materials and other major semiconductor stocks rallied strongly ahead of upcoming earnings reports amid a broader rebound in chip sector demand."
+  },
+  {
+   "t": "2026-11-11T22:28:45Z",
+   "symbol": "TSLA",
+   "outcome": "waiting",
+   "why": "only 1 source(s) so far: 24/7 Wall St.",
+   "event": "Tesla shares rose after Finland cleared its driver-assistance system ahead of an EU vote."
+  },
+  {
    "t": "2026-11-11T22:27:39Z",
    "symbol": "KLAC",
    "outcome": "waiting",
@@ -1271,34 +1299,6 @@
   {
    "t": "2026-11-11T20:35:01Z",
    "symbol": "LRCX",
-   "outcome": "waiting",
-   "why": "only 1 source(s) so far: 24/7 Wall St.",
-   "event": "Applied Materials and other major semiconductor stocks rallied strongly ahead of upcoming earnings reports amid a broader rebound in chip sector demand."
-  },
-  {
-   "t": "2026-11-11T20:35:01Z",
-   "symbol": "AMAT",
-   "outcome": "waiting",
-   "why": "only 1 source(s) so far: 24/7 Wall St.",
-   "event": "Applied Materials and other major semiconductor stocks rallied strongly ahead of upcoming earnings reports amid a broader rebound in chip sector demand."
-  },
-  {
-   "t": "2026-11-11T20:35:01Z",
-   "symbol": "TSLA",
-   "outcome": "waiting",
-   "why": "only 1 source(s) so far: 24/7 Wall St.",
-   "event": "Tesla shares rose after Finland cleared its driver-assistance system ahead of an EU vote."
-  },
-  {
-   "t": "2026-11-11T20:35:01Z",
-   "symbol": "AMD",
-   "outcome": "waiting",
-   "why": "only 1 source(s) so far: Benzinga",
-   "event": "AMD shares jumped premarket after Google chose its 5th-gen EPYC chips for TPU 8tx."
-  },
-  {
-   "t": "2026-11-11T20:29:56Z",
-   "symbol": "KLAC",
    "outcome": "waiting",
    "why": "only 1 source(s) so far: 24/7 Wall St.",
    "event": "Applied Materials and other major semiconductor stocks rallied strongly ahead of upcoming earnings reports amid a broader rebound in chip sector demand."
@@ -1750,6 +1750,79 @@
  },
  "events": [
   {
+   "summary": "Nvidia faces further executive controversy and allegations involving CEO Jensen Huang.",
+   "category": "company_bad_news",
+   "firstSeen": "2026-11-10T02:06:25Z",
+   "publishers": [
+    "AP",
+    "Benzinga",
+    "BigGo Finance",
+    "CNBC",
+    "Decrypt",
+    "Quartz",
+    "Reuters",
+    "Stock Titan",
+    "The Spokesman-Review",
+    "Yahoo Finance",
+    "bloomingbit",
+    "fiscal.ai"
+   ],
+   "assets": {
+    "NVDA": {
+     "direction": "down",
+     "confidence": 0.75,
+     "why": "Major analyst downgrade citing CEO scandal and China export/demand hurdles."
+    },
+    "MSFT": {
+     "direction": "up",
+     "confidence": 0.6,
+     "why": "Briefly overtook Nvidia as capital rotates away from Nvidia during the executive controversy."
+    }
+   },
+   "sources": [
+    {
+     "id": "7e779ec43d194f41",
+     "publisher": "Benzinga",
+     "kind": "news",
+     "title": "'Materially False and Misleading': Nvidia, Jensen Huang Sued Over Alleged Chinese Spy Affair, Shareholder Says NVDA Stock Was 'Artificially Inflated'",
+     "url": "https://www.benzinga.com/markets/tech/26/11/63077533/nvidia-jensen-huang-sued-class-action-megaspeed-alice-huang-chinese-spy",
+     "time": "2026-11-10T02:14:11Z"
+    },
+    {
+     "id": "b13c33e1c6b78db8",
+     "publisher": "The Spokesman-Review",
+     "kind": "news",
+     "title": "Stocks jump as oil tumbles, Nvidia falls amid internal probe - The Spokesman-Review",
+     "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxQRzBNX0NnSGJXLWxPSjV1bjFCTVM0aExoaURsaHlESWl2U1dfd2EtcU5VTkxZYkpkU2hJQ19LSUdLMUNkS2JpZTZDZzJLY3JFeDgtSXRTOF9MeUlPSkhoajBQU09qZEdld2VwTXpTSHVPZmJ2N0xFSGwxQzRWN1hmdjExaEx0OW54R3ZnWldmX1ByX19VQkV6NjZPYjBYQQ?oc=5",
+     "time": "2026-11-10T02:06:25Z"
+    },
+    {
+     "id": "c28ef162d5e09bce",
+     "publisher": "fiscal.ai",
+     "kind": "news",
+     "title": "Securities Class Action Lawsuit Filed Against NVIDIA Corporation",
+     "url": "https://www.globenewswire.com/news-release/2026/11/10/3399115/32716/en/nvda-investor-alert-hagens-berman-urges-nvidia-corporation-nasdaq-nvda-investors-with-substantial-losses-to-contact-firm-ahead-of-january-8-2027-lead-plaintiff-deadline.html",
+     "time": "2026-11-10T03:01:19Z"
+    },
+    {
+     "id": "43afd4d88c5a549b",
+     "publisher": "AP",
+     "kind": "news",
+     "title": "Trump says FBI is looking at Nvidia CEO Jensen Huang’s affair with alleged Chinese agent",
+     "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPQWY3b0NNRFBNRG5jZVdXM05URnhOV19vQ24zV29la0k2S3FzZmN4ZzB3WlRwSXJMbHB6RE90MFVEZ2p4UUhMQUFlV0RMdmVZZUUxeFFEa2ljZTFlTlhXOFozaEczRlpPS2dmRXgxcGw2ZWdpNVJQVEltazV5UUZMUmpNMUdoX2NJRG1wVnJhbFRCTHBwbE1LcjZnMk4?oc=5",
+     "time": "2026-11-10T03:43:01Z"
+    },
+    {
+     "id": "094051eb2da1b91e",
+     "publisher": "AP",
+     "kind": "news",
+     "title": "Timeline: How did Nvidia’s CEO get caught up in an alleged spy plot?",
+     "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPVENSejl5V04tRUR2M1JIRHZibWlHcm5tUWNndEMzRnBqM1p4aG5XTnp4azBycWIxcjlzeWJqZjh5WnNfRzdfSmNudmRMN3l1OVFmTjE1VS10a2pFN3BWNDZDS05SMkNFQ01WR2Z5UHhBY1pRZDhiVXBHZy1DTDFuRmowbzRkZ2xKcGxsOVVMOG5OYmczUTdYem5Rc1MtLVVpSmNkWGRRWXo0M0ZXWkZZUW9ERk9jeHRrR1pKZ20yRU4?oc=5",
+     "time": "2026-11-10T03:32:00Z"
+    }
+   ]
+  },
+  {
    "summary": "Israeli cabinet orders military to prepare for a possible new attack on Iran, escalating geopolitical risks.",
    "category": "war_escalation",
    "firstSeen": "2026-11-10T20:01:23Z",
@@ -2043,78 +2116,6 @@
      "title": "What Is Going on With Arm Holdings Stock on Wednesday?",
      "url": "https://www.benzinga.com/markets/tech/26/11/63153896/what-is-going-on-with-arm-holdings-stock-on-wednesday",
      "time": "2026-11-11T17:08:52Z"
-    }
-   ]
-  },
-  {
-   "summary": "Nvidia faces executive scrutiny and controversy regarding export controls and internal reporting relationships.",
-   "category": "company_bad_news",
-   "firstSeen": "2026-11-10T02:06:25Z",
-   "publishers": [
-    "AP",
-    "Benzinga",
-    "BigGo Finance",
-    "CNBC",
-    "Decrypt",
-    "Quartz",
-    "Reuters",
-    "Stock Titan",
-    "The Spokesman-Review",
-    "bloomingbit",
-    "fiscal.ai"
-   ],
-   "assets": {
-    "NVDA": {
-     "direction": "down",
-     "confidence": 0.75,
-     "why": "Major analyst downgrade citing CEO scandal and China export/demand hurdles."
-    },
-    "MSFT": {
-     "direction": "up",
-     "confidence": 0.6,
-     "why": "Briefly overtook Nvidia as capital rotates away from Nvidia during the executive controversy."
-    }
-   },
-   "sources": [
-    {
-     "id": "7e779ec43d194f41",
-     "publisher": "Benzinga",
-     "kind": "news",
-     "title": "'Materially False and Misleading': Nvidia, Jensen Huang Sued Over Alleged Chinese Spy Affair, Shareholder Says NVDA Stock Was 'Artificially Inflated'",
-     "url": "https://www.benzinga.com/markets/tech/26/11/63077533/nvidia-jensen-huang-sued-class-action-megaspeed-alice-huang-chinese-spy",
-     "time": "2026-11-10T02:14:11Z"
-    },
-    {
-     "id": "b13c33e1c6b78db8",
-     "publisher": "The Spokesman-Review",
-     "kind": "news",
-     "title": "Stocks jump as oil tumbles, Nvidia falls amid internal probe - The Spokesman-Review",
-     "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxQRzBNX0NnSGJXLWxPSjV1bjFCTVM0aExoaURsaHlESWl2U1dfd2EtcU5VTkxZYkpkU2hJQ19LSUdLMUNkS2JpZTZDZzJLY3JFeDgtSXRTOF9MeUlPSkhoajBQU09qZEdld2VwTXpTSHVPZmJ2N0xFSGwxQzRWN1hmdjExaEx0OW54R3ZnWldmX1ByX19VQkV6NjZPYjBYQQ?oc=5",
-     "time": "2026-11-10T02:06:25Z"
-    },
-    {
-     "id": "c28ef162d5e09bce",
-     "publisher": "fiscal.ai",
-     "kind": "news",
-     "title": "Securities Class Action Lawsuit Filed Against NVIDIA Corporation",
-     "url": "https://www.globenewswire.com/news-release/2026/11/10/3399115/32716/en/nvda-investor-alert-hagens-berman-urges-nvidia-corporation-nasdaq-nvda-investors-with-substantial-losses-to-contact-firm-ahead-of-january-8-2027-lead-plaintiff-deadline.html",
-     "time": "2026-11-10T03:01:19Z"
-    },
-    {
-     "id": "43afd4d88c5a549b",
-     "publisher": "AP",
-     "kind": "news",
-     "title": "Trump says FBI is looking at Nvidia CEO Jensen Huang’s affair with alleged Chinese agent",
-     "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPQWY3b0NNRFBNRG5jZVdXM05URnhOV19vQ24zV29la0k2S3FzZmN4ZzB3WlRwSXJMbHB6RE90MFVEZ2p4UUhMQUFlV0RMdmVZZUUxeFFEa2ljZTFlTlhXOFozaEczRlpPS2dmRXgxcGw2ZWdpNVJQVEltazV5UUZMUmpNMUdoX2NJRG1wVnJhbFRCTHBwbE1LcjZnMk4?oc=5",
-     "time": "2026-11-10T03:43:01Z"
-    },
-    {
-     "id": "094051eb2da1b91e",
-     "publisher": "AP",
-     "kind": "news",
-     "title": "Timeline: How did Nvidia’s CEO get caught up in an alleged spy plot?",
-     "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPVENSejl5V04tRUR2M1JIRHZibWlHcm5tUWNndEMzRnBqM1p4aG5XTnp4azBycWIxcjlzeWJqZjh5WnNfRzdfSmNudmRMN3l1OVFmTjE1VS10a2pFN3BWNDZDS05SMkNFQ01WR2Z5UHhBY1pRZDhiVXBHZy1DTDFuRmowbzRkZ2xKcGxsOVVMOG5OYmczUTdYem5Rc1MtLVVpSmNkWGRRWXo0M0ZXWkZZUW9ERk9jeHRrR1pKZ20yRU4?oc=5",
-     "time": "2026-11-10T03:32:00Z"
     }
    ]
   },
