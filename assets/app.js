@@ -545,7 +545,7 @@
   }
   function vLineup(t, body) {
     const L = t.state.lineup; const sub0 = L && L.channels ? Object.keys(L.channels) : [];
-    if (!sub0.length) { body.append(empty("No lineup yet", "Every morning the team plans all 17 videos for each channel: 15 Shorts and 2 long videos.")); return; }
+    if (!sub0.length) { body.append(empty("No lineup yet", "Every morning the team plans the day: Bounce Theory 24 Shorts + longs, Ambient Escape 15 Shorts + 2 longs.")); return; }
     statSel = sub0.includes(statSel) ? statSel : sub0[0];
     const sub = el("div", "subtabs"); sub0.forEach(ch => { const b = el("button", null, `${ch} ${(L.channels[ch] || []).length}`); b.setAttribute("aria-pressed", String(statSel === ch)); b.onclick = () => { statSel = ch; renderPanel(); }; sub.append(b); }); body.append(sub);
     { const SLUG = { "Bounce Theory": "bounce-theory", "Ambient Escape": "ambient-escape" }, SKILL = { "Bounce Theory": "bounce-theory-videos", "Ambient Escape": "ambient-escape-videos" };

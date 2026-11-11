@@ -26,7 +26,7 @@ TEAMS = {
   "youtube": dict(state="youtube", prefix="youtube", search=True, extra=["metrics:youtube", "lab:formatLeads", "bounce:templates"],
     formats=["youtube-lineup.md", "performance-review.md"], keys=["review", "research", "ideas", "footage", "lineup", "brief"],
     agents=["reviewer", "analyst", "strategist", "producer", "lead"], hour="15:13",
-    job="""YouTube team for Bounce Theory and Ambient Escape. Review both channels from the metrics (Shorts and longs separately; compare Ambient explainer Shorts vs the rest once they are 2+ days old), find what's winning on other channels now, write at most 1 new concept per channel (only with real evidence), today's footage list (Ambient only, 4-8 clips) and the FULL day's lineup exactly as youtube-lineup.md says: per channel 15 Shorts + 2 longs (Ambient: exactly 8 explainer Shorts with full specs in the note + 7 proven Shorts). Every Bounce Theory item MUST have a `settings` object built only from the Bounce template menu (template + knob params; L2 uses settings.clips), as youtube-lineup.md says: the server renders Bounce Theory from those settings with no Claude. Channel separation is absolute. Mostly remixes of Omar's own winners; at most 2 tests per channel. Then a brief whose approvals start with "Today's lineup is ready: 34 videos." """,
+    job="""YouTube team for Bounce Theory and Ambient Escape. Review both channels from the metrics (Shorts and longs separately; compare Ambient explainer Shorts vs the rest once they are 2+ days old), find what's winning on other channels now, write at most 1 new concept per channel (only with real evidence), today's footage list (Ambient only, 4-8 clips) and the FULL day's lineup exactly as youtube-lineup.md says: Bounce Theory 24 Shorts (S01-S24) + 2 longs, Ambient Escape 15 Shorts + 2 longs (Ambient: exactly 8 explainer Shorts with full specs in the note + 7 proven Shorts). NEVER reuse a title from the ALREADY UPLOADED lists or repeat a recent Bounce template+settings combo: every slot is a fresh variation (new colours, counts, shapes, hook). Every Bounce Theory item MUST have a `settings` object built only from the Bounce template menu (template + knob params; L2 uses settings.clips), as youtube-lineup.md says: the server renders Bounce Theory from those settings with no Claude. Channel separation is absolute. Mostly remixes of Omar's own winners; at most 2 tests per channel. Then a brief whose approvals start with "Today's lineup is ready: 43 videos." """,
     research="what YouTube Shorts and long videos are winning right now in: satisfying physics simulation Shorts, marble races, battle royale sims, quiz Shorts; long sleep / rain / ambient / noise videos (titles, lengths); Islamic reminder and quiz Shorts; animated Islamic explainer Shorts (POV and 'N ways' lists). Real channels, titles and view numbers."),
   "linkedai": dict(state="linkedai", prefix="linkedai", search=True, formats=["competitor-intel.md", "promo-scripts.md", "tiktok-scripts.md"],
     keys=["competitors", "research", "ideas", "brief"], agents=["watch", "copywriter", "lead"], hour="Mon 15:17",
@@ -86,6 +86,18 @@ def context(cfg, state):
                 ks = ", ".join(f"{k}={json.dumps(v.get('default'))}" for k, v in t.get("knobs", {}).items())
                 lines.append(f"{n} [{t.get('kind')}{', ~' + str(t['secs']) + ' s' if t.get('secs') else ''}]: {ks}")
             rep = load(os.path.join(ROOT, "data/youtube/bounce_report.json"), {})
+            # What's already on the channels: no lineup slot may reuse an uploaded title or a recent template+settings combo.
+            logs = os.environ.get("BOUNCE_LOGS") or os.path.expanduser("~/bounce-data/logs")
+            for ch, f in (("Bounce Theory", "BounceTheory"), ("Ambient Escape", "AmbientEscape")):
+                ups = load(os.path.join(logs, f + "_uploaded_log.json"), []) or []
+                titles = list(dict.fromkeys(x.get("title", "") for x in reversed(ups) if x.get("title")))[:250]
+                parts.append(f"ALREADY UPLOADED on {ch} (newest first; NEVER reuse one of these titles, not even with a new emoji):\n"
+                             + "\n".join(titles)[:14000])
+            bh = load(os.path.join(ROOT, "data/youtube/bounce_history.json"), {}) or {}
+            combos = [f"{d.get('date')} {s.get('template')} {json.dumps(s.get('params') or {}, sort_keys=True)} colors={s.get('colors')}"
+                      for d in (bh.get("days") or [])[:14] for s in d.get("slots", []) if s.get("template")]
+            parts.append("Bounce template+settings already rendered in the last 14 days (every new slot must differ in colours, "
+                         "counts, shapes or other knobs, and in its hook):\n" + "\n".join(combos)[:12000])
             parts.append("Bounce template menu (template [kind]: knob=default, ...):\n" + "\n".join(lines)[:22000]
                          + "\n\nYesterday's Bounce batch report: " + json.dumps({k: rep.get(k) for k in ("date", "issues", "notMade")}, ensure_ascii=False)[:3000])
         elif e == "briefs":

@@ -1,8 +1,8 @@
 # YouTube lineup: win-first
 
-The lineup exists to repeat what already wins, not to experiment. Every slot must be backed by evidence. Per channel per day: exactly 15 Shorts + 2 long videos.
+The lineup exists to repeat what already wins, not to experiment. Every slot must be backed by evidence. Per day: **Bounce Theory exactly 24 Shorts (S01-S24)** + its long videos; **Ambient Escape exactly 15 Shorts** + 2 long videos.
 
-## Slot mix for the 15 Shorts (per channel)
+## Slot mix for the Shorts (per channel; for Bounce's 24 Shorts scale the counts up by 1.6x)
 | Share | Type | What it is |
 |---|---|---|
 | 9-11 slots | **Proven (yours)** | A remix of one of Omar's own best videos from `metrics.json` → `topVideos` (top by views and retention over 90 days, `ageDays` >= 3). Keep the winner's recipe: same format, hook style, title pattern, length (within ±3 s) and pacing. Change ONE visible thing (colours, count, frame shape, melody, timer, matchup) so it is a fresh video, not a re-upload. |
@@ -12,6 +12,11 @@ The lineup exists to repeat what already wins, not to experiment. Every slot mus
 The best remixes go in the first slots (S01-S05), because the first uploads of a day get the most reach.
 
 Weight by results: a format with a 30K-view hit gets more slots than one that peaks at 1K. Use the review's `formatScores`. Formats the review marks as weak (low median views and low retention) get at most 1 slot, or none.
+
+## Never repeat what's already up (Omar's rule)
+- Your context lists every title ALREADY UPLOADED on each channel and the Bounce template+settings rendered in the last 14 days. **Never reuse an uploaded title**, not even with a new emoji or one word changed; write a new hook.
+- Every Bounce slot is a fresh variation of its winner: different colours AND at least one of count, shape/frame, speed or size vs that template's recent settings, and a hook that names the new thing ("PURPLE vs LIME", "12 balls", "HEXAGON edition").
+- If a slot would still repeat, the server changes its settings and title itself and makes it anyway; it never skips a slot.
 
 ## Channel separation (Omar's rule, never break it)
 Each channel only gets its own kind of video, even if an off-niche video once did well there.
@@ -44,7 +49,7 @@ Bounce Theory is rendered automatically on the server at 7 AM from your lineup. 
 ```
 "settings": {"template": "<menu name>", "params": {"<knob>": <value>, ...}, "secs": [lo, hi]}
 ```
-- `template`: a name from the menu, of the right kind (Short for S01-S15, Long for L1). Pick the template that matches the winner the slot remixes (same family: pendulum, brick, string, marble, shrink, chaos, merge, melody, weapon...).
+- `template`: a name from the menu, of the right kind (Short for S01-S24, Long for L1). Pick the template that matches the winner the slot remixes (same family: pendulum, brick, string, marble, shrink, chaos, merge, melody, weapon...).
 - `params`: the visible twist, ONLY through that template's knobs and only with the listed colour names. Colour knobs take one colour name ("GOLD"); list knobs take a list (["RED", "CYAN"]). `l1`/`l2` are the on-screen title lines (uppercase, max 40 characters each, a question or challenge). Counts, sizes and speeds stay within about half to double the default. Never invent a knob.
 - Change at least 2 things vs the winner (e.g. colours + count, or shape + colours), so no video is a default re-render. Colours/seeds you leave out are filled with fresh ones the server hasn't used on that template in 7 days.
 - `secs` (optional): the length window for Shorts, e.g. [20, 26] to cut a format that loses viewers late. Default [13, 34].
@@ -88,4 +93,4 @@ The R&D Lab's upgrades (ideas in data/lab/state.json for Bounce Theory, Ambient 
 - Your own video ideas: new ones are `approved` (up next); the batch marks them `done` when made, or Omar presses "I did it". `skipped` ideas never go in a lineup.
 
 ## Scheduling (Omar's rule)
-Every video in a lineup gets uploaded scheduled, never left Private: the batch gives every `queue.json` item a `slot` in lineup order, and Omar's upload tool spreads them across the 5 PM to 8 AM window, one at a time, never overlapping the previous batch. So order the lineup the way it should go public: strongest Shorts first (S01-S05), longs in the evening.
+Every video in a lineup gets uploaded scheduled, never left Private: the batch gives every `queue.json` item a `slot` in lineup order. **Bounce Theory** goes public one video every hour around the clock (24 a day), continuing from the previous batch. **Ambient Escape** is spread across the 5 PM to 8 AM window. So order the lineup the way it should go public: strongest Shorts first (S01-S05), longs in the evening.
