@@ -265,7 +265,7 @@ class Bot:
         cands = []
         stock_ok, stock_why = risk.stock_entry_window_open(clock)
         for e in self.s["events"].values():
-            if e["firstSeen"] < fresh_cut:
+            if e["firstSeen"] < fresh_cut and not (R.get("carry_overnight") and market.carry_ok(e["firstSeen"], now_utc())):
                 continue
             pubs, news_pubs = publishers(e)
             for sym, a in e["assets"].items():

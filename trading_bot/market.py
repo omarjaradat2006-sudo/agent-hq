@@ -36,6 +36,29 @@ def _price_at(bars, when):
     return float(best["c"]) if best else None
 
 
+def in_session(t):
+    et = parse_time(t).astimezone(ET)
+    return et.weekday() < 5 and (9, 30) <= (et.hour, et.minute) < (16, 0)
+
+
+def next_session_checks(t0):
+    """15-minute check times from 9:40 AM to 12:00 PM New York on the next weekday session after t0."""
+    et = parse_time(t0).astimezone(ET)
+    d = et if (et.hour, et.minute) < (9, 30) else et + timedelta(days=1)
+    while d.weekday() >= 5:
+        d += timedelta(days=1)
+    start = d.replace(hour=9, minute=40, second=0, microsecond=0)
+    return [start + timedelta(minutes=15 * k) for k in range(10)]
+
+
+def carry_ok(first_seen, now):
+    """Overnight news still tradable this morning (aggressive mode)."""
+    if in_session(first_seen):
+        return False
+    ch = next_session_checks(first_seen)
+    return ch[0] - timedelta(minutes=10) <= parse_time(now) <= ch[-1]
+
+
 def confirm(alpaca, symbol, direction, first_seen, now=None, bars=None, rules=None):
     R = rules or C.confirm_rules()
     now = now or now_utc()

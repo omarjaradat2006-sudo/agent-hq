@@ -514,3 +514,19 @@ def test_yahoo_and_reddit_sources(monkeypatch):
     st = {}
     got = N.reddit_direct(NOW - timedelta(hours=1), st)
     assert got and got[0]["kind"] == "social" and st["socialStatus"]["items"] == len(got)
+
+
+def test_aggressive_carries_overnight_news_to_next_morning():
+    from trading_bot import market as M
+    from zoneinfo import ZoneInfo
+    ny = ZoneInfo("America/New_York")
+    night = datetime(2026, 11, 10, 20, 0, tzinfo=ny)                 # Tuesday 8 PM
+    ch = M.next_session_checks(night)
+    assert ch[0] == datetime(2026, 11, 11, 9, 40, tzinfo=ny) and ch[-1].hour == 11
+    fri = datetime(2026, 11, 13, 18, 0, tzinfo=ny)                   # Friday evening -> Monday
+    assert M.next_session_checks(fri)[0].weekday() == 0
+    assert M.carry_ok(night, datetime(2026, 11, 11, 10, 0, tzinfo=ny))
+    assert not M.carry_ok(night, datetime(2026, 11, 11, 14, 0, tzinfo=ny))
+    assert not M.carry_ok(datetime(2026, 11, 11, 10, 0, tzinfo=ny), datetime(2026, 11, 11, 10, 30, tzinfo=ny))
+    R = C.confirm_rules("aggressive")
+    assert R["min_rvol"] == 1.0 and R["carry_overnight"] and C.RISK["stop_loss_pct"] == 0.03

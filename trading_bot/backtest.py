@@ -159,8 +159,8 @@ def _prep(bars):
     return bars
 
 
-def simulate(a, events, start, end, rules=None):
-    from .market import confirm
+def simulate(a, events, start, end, rules=None, diag=None):
+    from .market import confirm, next_session_checks
     syms = sorted({s for e in events.values() if e.get("confirmedAt") for s, x in e["assets"].items() if x["direction"] == "up"}
                   | {s for e in events.values() for s, x in e["assets"].items() if x["direction"] == "down"})
     stocks = [s for s in syms if "/" not in s]
@@ -181,17 +181,26 @@ def simulate(a, events, start, end, rules=None):
             continue
         for sym, x in e["assets"].items():
             if x["direction"] != "up" or x.get("confidence", 0) < C.CONFIRM["min_confidence"] or sym not in bars:
+                if diag is not None and sym not in bars:
+                    diag[(e["key"], sym)] = "no price data for it"
                 continue
             look = timedelta(days=8 if "/" in sym else 16)
             t0 = parse_time(e["confirmedAt"])
-            for k in range(0, C.CONFIRM["event_fresh_hours"] * 4):     # check every 15 minutes while fresh
-                t = t0 + timedelta(minutes=15 * k)
-                if "/" not in sym:
-                    et = t.astimezone(ET)
-                    if et.weekday() >= 5 or not ((et.hour, et.minute) >= (9, 40) and (et.hour, et.minute) <= (15, 30)):
-                        continue
+            checks = [t0 + timedelta(minutes=15 * k) for k in range(0, C.CONFIRM["event_fresh_hours"] * 4)]
+            if "/" not in sym:
+                ok_t = lambda t: t.astimezone(ET).weekday() < 5 and (9, 40) <= (t.astimezone(ET).hour, t.astimezone(ET).minute) <= (15, 30)
+                checks = [t for t in checks if ok_t(t)]
+                if not checks and (rules or {}).get("carry_overnight"):
+                    checks = next_session_checks(t0)
+            if diag is not None:
+                diag[(e["key"], sym)] = "news came while the market was closed and went stale before the open" if not checks else "?"
+            for t in checks:
+                if t > end:
+                    break
                 i0, i1 = bisect.bisect_left(times[sym], t - look), bisect.bisect_right(times[sym], t)
                 chk = confirm(None, sym, "up", e["firstSeen"], now=t, bars=bars[sym][i0:i1], rules=rules)
+                if diag is not None:
+                    diag[(e["key"], sym)] = chk["reason"]
                 if chk["passed"]:
                     if i1 < len(bars[sym]):
                         nxt = bars[sym][i1]
