@@ -7,7 +7,7 @@
    "Nothing right now (all cash)."
   ],
   "today": [
-   "Scanned the news 29 times today: read 2058 headlines, found 53 that could move a stock or coin it's allowed to trade. None passed every check, so no trade (that's normal).",
+   "Scanned the news 33 times today: read 2200 headlines, found 56 that could move a stock or coin it's allowed to trade. None passed every check, so no trade (that's normal).",
    "Passed on CVX: volume only 0.8x normal (need 1.5x).",
    "Passed on OXY: volume only 1.0x normal (need 1.5x).",
    "Passed on XOM: volume only 0.3x normal (need 1.5x).",
@@ -15,10 +15,10 @@
    "Safety rules that stepped in: stock entry window (x15)."
   ],
   "watchlist": "Allowed to trade: 69 halal stocks, 5 Shariah ETFs, 9 coins.",
-  "lastScan": "2026-11-11T01:05:56Z"
+  "lastScan": "2026-11-11T01:54:06Z"
  },
  "hired": true,
- "updatedAt": "2026-11-11T01:06:19Z",
+ "updatedAt": "2026-11-11T01:54:16Z",
  "mode": "PAPER",
  "agents": [
   {
@@ -26,8 +26,8 @@
    "name": "News Scout",
    "role": "Reads X, Reddit and news feeds",
    "status": "working",
-   "doing": "Read 78 new headlines/posts, 1 market-moving stories",
-   "lastRun": "2026-11-11T01:06:19Z"
+   "doing": "Read 7 new headlines/posts, 0 market-moving stories",
+   "lastRun": "2026-11-11T01:54:16Z"
   },
   {
    "id": "analyst",
@@ -65,9 +65,9 @@
    "id": "trader",
    "name": "Trader",
    "role": "Places paper orders on Alpaca",
-   "status": "ok",
-   "doing": "Saved results to the Agent HQ dashboard",
-   "lastRun": "2026-11-10T21:18:32Z"
+   "status": "working",
+   "doing": "Paper-trading bot started (Alpaca PAPER account only). Close this window to stop it.",
+   "lastRun": "2026-11-11T01:54:06Z"
   },
   {
    "id": "coins",
@@ -87,6 +87,41 @@
   }
  ],
  "log": [
+  {
+   "t": "2026-11-11T01:54:16Z",
+   "agent": "News Scout",
+   "msg": "Read 7 new headlines/posts, 0 market-moving stories"
+  },
+  {
+   "t": "2026-11-11T01:54:06Z",
+   "agent": "News Scout",
+   "msg": "Agent Reach not found: running on news feeds only (no X/Reddit)"
+  },
+  {
+   "t": "2026-11-11T01:54:06Z",
+   "agent": "Trader",
+   "msg": "Paper-trading bot started (Alpaca PAPER account only). Close this window to stop it."
+  },
+  {
+   "t": "2026-11-11T01:52:00Z",
+   "agent": "News Scout",
+   "msg": "Read 40 new headlines/posts, 1 market-moving stories"
+  },
+  {
+   "t": "2026-11-11T01:36:44Z",
+   "agent": "News Scout",
+   "msg": "Read 44 new headlines/posts, 1 market-moving stories"
+  },
+  {
+   "t": "2026-11-11T01:21:38Z",
+   "agent": "News Scout",
+   "msg": "Read 51 new headlines/posts, 1 market-moving stories"
+  },
+  {
+   "t": "2026-11-11T01:06:21Z",
+   "agent": "Trader",
+   "msg": "Saved results to the Agent HQ dashboard"
+  },
   {
    "t": "2026-11-11T01:06:19Z",
    "agent": "News Scout",
@@ -801,46 +836,11 @@
    "t": "2026-11-10T16:59:57Z",
    "agent": "News Scout",
    "msg": "Read 40 new headlines/posts, 0 market-moving stories"
-  },
-  {
-   "t": "2026-11-10T16:59:41Z",
-   "agent": "Halal Screener",
-   "msg": "SEC unreachable (HTTP 403 https://www.sec.gov/files/company_tickers.json: <!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\n<html xmlns=\"http://www.w3.org/1999/xhtml\">\n<head>\n<meta http-equiv=\"Content-T); keeping last week's list"
-  },
-  {
-   "t": "2026-11-10T16:59:41Z",
-   "agent": "Halal Screener",
-   "msg": "Re-running the weekly halal screen"
-  },
-  {
-   "t": "2026-11-10T16:54:40Z",
-   "agent": "News Scout",
-   "msg": "Read 36 new headlines/posts, 0 market-moving stories"
-  },
-  {
-   "t": "2026-11-10T16:54:36Z",
-   "agent": "Halal Screener",
-   "msg": "SEC unreachable (HTTP 403 https://www.sec.gov/files/company_tickers.json: <!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\n<html xmlns=\"http://www.w3.org/1999/xhtml\">\n<head>\n<meta http-equiv=\"Content-T); keeping last week's list"
-  },
-  {
-   "t": "2026-11-10T16:54:36Z",
-   "agent": "Halal Screener",
-   "msg": "Re-running the weekly halal screen"
-  },
-  {
-   "t": "2026-11-10T16:49:35Z",
-   "agent": "News Scout",
-   "msg": "Read 38 new headlines/posts, 0 market-moving stories"
-  },
-  {
-   "t": "2026-11-10T16:49:25Z",
-   "agent": "Halal Screener",
-   "msg": "SEC unreachable (HTTP 403 https://www.sec.gov/files/company_tickers.json: <!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\n<html xmlns=\"http://www.w3.org/1999/xhtml\">\n<head>\n<meta http-equiv=\"Content-T); keeping last week's list"
   }
  ],
  "brief": {
   "date": "Tue Nov 10",
-  "createdAt": "2026-11-11T01:06:19Z",
+  "createdAt": "2026-11-11T01:54:16Z",
   "headline": "Paper account +$0 today (+0.00%), +0.00% total vs SPY -0.37% · 0 open",
   "summary": "0 trade(s) closed today, 0/0 winners overall. TradingAgents checks used today: 0/5.",
   "notes": []
@@ -1194,6 +1194,11 @@
    "t": "2026-11-11T01:06:19Z",
    "equity": 100000.0,
    "spy": 749.93
+  },
+  {
+   "t": "2026-11-11T01:36:44Z",
+   "equity": 100000.0,
+   "spy": 749.93
   }
  ],
  "watch": [],
@@ -1205,7 +1210,7 @@
  },
  "events": [
   {
-   "summary": "Sticky U.S. core inflation in October reinforces expectations of Federal Reserve rate hikes.",
+   "summary": "Hot U.S. inflation data and hawkish Fed commentary have boosted expectations for interest rate hikes, putting downward pressure on equities, crypto, and gold.",
    "category": "central_bank_hawkish",
    "firstSeen": "2026-11-10T09:39:09Z",
    "publishers": [
@@ -1260,6 +1265,7 @@
     "InsuranceNewsNet",
     "International Business Times",
     "Investing.com",
+    "Investing.com India",
     "InvestmentNews",
     "Investor's Business Daily",
     "Invezz",
@@ -1274,6 +1280,7 @@
     "Livewire Markets",
     "London South East",
     "MLQ.ai",
+    "Malay Mail",
     "MarketWatch",
     "MishTalk",
     "Moneycontrol.com",
@@ -1285,6 +1292,7 @@
     "New Jersey Business & Industry Association",
     "New York Post",
     "Newsmax",
+    "Newswav",
     "Northeast Mississippi Daily Journal",
     "People's Daily Online",
     "Pluang",
@@ -1328,6 +1336,7 @@
     "TradingNEWS",
     "TradingView",
     "USA Today",
+    "Virginia Business",
     "WBFF",
     "WCTI",
     "WKZO",
@@ -1367,7 +1376,7 @@
     "SOL/USD": {
      "direction": "down",
      "confidence": 0.8,
-     "why": "Hot CPI and macro rate hike fears drive down Solana and broader crypto assets."
+     "why": "Macro headwinds and rate hike fears reduce risk appetite for altcoins."
     },
     "NVDA": {
      "direction": "down",
