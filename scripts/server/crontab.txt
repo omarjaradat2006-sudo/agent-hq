@@ -20,3 +20,6 @@
 
 # Ambient Escape daily batch: Gemini specs (refs checked against the Quran/hadith texts) -> render after Bounce -> upload -> verify -> mark. No Claude.
 20 7 * * *    /home/ubuntu/agent-hq/scripts/server/run_ambient.sh
+
+# WANTED LEVEL (GTA 6 clips): every hour. Before Nov 19 it only builds the clip-permission allow-list; from launch it posts one Short an hour.
+7 * * * *     /home/ubuntu/agent-hq/scripts/server/run_wanted.sh
