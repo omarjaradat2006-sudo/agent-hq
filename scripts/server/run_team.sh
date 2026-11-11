@@ -17,7 +17,15 @@ for TEAM in $LIST; do
   echo "=== $(date '+%F %T') $TEAM ==="
   git fetch -q origin main && git reset -q --hard origin/main
   if [ "$TEAM" = tiktok ]; then CMD="python3 agents/gemini/tiktok_team.py"; else CMD="python3 agents/gemini/team.py $TEAM"; fi
-  if ! $CMD; then echo "!! $TEAM failed"; FAILED="$FAILED $TEAM"; continue; fi
+  # The YouTube team plans both channels' daily lineups: it uses its own key (own Google project) first, then the shared key.
+  KEYS="$GEMINI_API_KEY"
+  [ "$TEAM" = youtube ] && [ -n "${GEMINI_API_KEY_YOUTUBE:-}" ] && KEYS="$GEMINI_API_KEY_YOUTUBE $GEMINI_API_KEY"
+  OK=no
+  for K in $KEYS; do
+    [ "$K" != "$GEMINI_API_KEY" ] && echo "(using the YouTube team's own Gemini key)" || { [ "$KEYS" != "$GEMINI_API_KEY" ] && echo "(falling back to the shared Gemini key)"; }
+    if GEMINI_API_KEY="$K" $CMD; then OK=yes; break; fi
+  done
+  if [ $OK = no ]; then echo "!! $TEAM failed"; FAILED="$FAILED $TEAM"; continue; fi
   SAVED=no
   for i in 1 2 3; do
     git fetch -q origin main && git reset -q --hard origin/main
