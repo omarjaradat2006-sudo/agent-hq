@@ -52,7 +52,7 @@ Rules in force: no Claude in daily operations (Gemini only) · no keys in chat o
 - **Thu-Fri Nov 12-13:** Roblox game (before GTA 6). Last attempt with Claude Code went badly, so start with a smaller scope and a playable test each day.
 - **Sat-Sun Nov 14-15:** Growth Architect full rebrand.
 - **Mon Nov 16:** trading bot 7-day report + backtest, then Omar decides on real money (live only on his explicit OK).
-- **Later, if time:** separate Gemini key (own Google project) for the trading bot as GEMINI_API_KEY_TRADING. The shared key hit daily limits on Nov 10 and Search grounding ran out. Betting already has GEMINI_API_KEY_FIGHT.
+- **Done Nov 10:** separate Gemini keys, each in its own Google project: GEMINI_API_KEY (agent teams), _FIGHT (betting), _VIDEO (Ambient/Bounce/GTA), _TRADING (trading bot). All in ~/.agent-hq.env on the server.
 - **Tue-Wed Nov 17-18:** buffer + final GTA test. **Thu Nov 19: GTA 6 launch.**
 
 ## 4. Log
