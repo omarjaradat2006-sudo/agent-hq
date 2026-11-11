@@ -36,6 +36,10 @@ def load_env():
             k, v = k.strip(), v.strip().strip('"').strip("'")
             if v and not os.environ.get(k):
                 os.environ[k] = v
+    # The bot's own Gemini key (own Google project), if Omar added one; otherwise the shared key.
+    if os.environ.get("GEMINI_API_KEY_TRADING"):
+        os.environ["GEMINI_API_KEY"] = os.environ["GEMINI_API_KEY_TRADING"]
+        os.environ["GOOGLE_API_KEY"] = os.environ["GEMINI_API_KEY_TRADING"]
     # TradingAgents reads GOOGLE_API_KEY; Omar's key is GEMINI_API_KEY.
     if os.environ.get("GEMINI_API_KEY") and not os.environ.get("GOOGLE_API_KEY"):
         os.environ["GOOGLE_API_KEY"] = os.environ["GEMINI_API_KEY"]
