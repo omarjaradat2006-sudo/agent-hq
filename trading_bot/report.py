@@ -88,7 +88,7 @@ def write(bot):
         "events": [{"summary": e["summary"], "category": e.get("category"), "firstSeen": e.get("firstSeen"),
                     "publishers": sorted({x["publisher"] for x in e["items"]}),
                     "assets": e.get("assets"), "sources": e["items"][:5]} for e in events],
-        "rules": {"risk": dict(C.RISK), "confirm": dict(C.CONFIRM), "halal": dict(C.HALAL)},
+        "rules": {"risk": dict(C.RISK), "confirm": C.confirm_rules(), "rulesMode": C.rules_mode(), "halal": dict(C.HALAL)},
     }
     write_json(DATA / "state.json", state)
     return state
@@ -167,5 +167,9 @@ def plain_words(bot, acct, eq, start, spy_pct, today, counters):
         watch += f" Halal stock screen not finished ({uni.get('problem', 'SEC data missing')}); retrying hourly."
     if not (n_st or n_etf or n_c):
         watch = "Allowed to trade: NOTHING yet. The halal list is empty, so every story is skipped."
-    return {"top": top, "up": diff >= 0, "holding": holding or ["Nothing right now (all cash)."], "today": did,
+    n_tr = len([t for t in led["trades"] if t["status"] != "cancelled"])
+    held = [t["symbol"] for t in led["trades"] if t["status"] in ("open", "pending")]
+    line = (("Even" if abs(diff) < 0.005 else ("Up " if diff > 0 else "Down ") + _money(diff)) + " since start · "
+            + _n(n_tr, "trade") + " · holding: " + (", ".join(held) if held else "nothing (all cash)"))
+    return {"line": line, "rulesMode": C.rules_mode(), "top": top, "up": diff >= 0, "holding": holding or ["Nothing right now (all cash)."], "today": did,
             "watchlist": watch, "lastScan": counters.get("lastScan")}

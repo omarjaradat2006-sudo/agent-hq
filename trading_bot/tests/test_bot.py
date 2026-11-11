@@ -107,7 +107,7 @@ def wire(monkeypatch, fake, assets, ta_rating="Buy", calls=None):
     monkeypatch.setattr("trading_bot.alpaca.Alpaca", lambda *a, **k: fake)
     monkeypatch.setattr(H, "build_universe", lambda a, force=False: UNIVERSE)
     items = news_items()
-    monkeypatch.setattr(N, "collect", lambda a, s, include_social: items)
+    monkeypatch.setattr(N, "collect", lambda a, s, include_social, symbols=(): items)
     reply = {"events": [{"key": "saudi-oil-attack", "is_market_news": True, "category": "oil_supply",
                          "summary": "Drone strike on Saudi oil facility", "item_ids": [i["id"] for i in items],
                          "assets": assets, "meme_coins": []}]}
@@ -474,3 +474,43 @@ def test_backtest_skips_a_broken_gemini_reply(monkeypatch, tmpdirs):
               "2026-01-02": [{"id": "b0", "time": "2026-01-02T15:00:00Z", "symbols": []}]}
     ev, info = BT.triage_all(by_day, UNIVERSE, max_calls=10)
     assert info["daysRead"] == 2 and not info["stopped"] and len(n) == 3     # retried once, skipped, carried on
+
+
+# ---------------------------------------------------------------- Nov 11: rule modes, replay, new sources
+def test_rule_modes_only_change_entry_filters(monkeypatch):
+    for m in ("strict", "loose", "any"):
+        monkeypatch.setenv("TRADING_RULES", m)
+        R = C.confirm_rules()
+        assert R["mode"] == m and R["max_move_pct"] == 0.03
+    assert C.confirm_rules("loose")["min_rvol"] == 1.2 and C.confirm_rules("strict")["min_rvol"] == 1.5
+    assert C.RISK["stop_loss_pct"] == 0.03 and C.RISK["daily_loss_halt_pct"] == 0.03 and C.RISK["total_loss_kill_pct"] == 0.10
+    S, L, A = (C.confirm_rules(m) for m in ("strict", "loose", "any"))
+    one_bz, one_247, one_x = {"Benzinga"}, {"24/7 Wall St."}, {"X"}
+    assert not C.sources_ok(one_bz, one_bz, S)[0]
+    assert C.sources_ok(one_bz, one_bz, L)[0] and not C.sources_ok(one_247, one_247, L)[0]
+    assert C.sources_ok(one_247, one_247, A)[0]
+    assert not C.sources_ok(one_x, set(), A)[0]                          # X/Reddit alone is never enough
+
+
+def test_replay_builds_events_per_mode():
+    import trading_bot.replay as RP
+    dec = [{"t": T(NOW - timedelta(hours=3)), "symbol": "TSLA", "outcome": "waiting", "why": "only 1 source(s) so far: 24/7 Wall St.", "event": "e1"},
+           {"t": T(NOW - timedelta(hours=2)), "symbol": "XOM", "outcome": "waiting", "why": "only 1 source(s) so far: Benzinga", "event": "e2"},
+           {"t": T(NOW - timedelta(hours=1)), "symbol": "CVX", "outcome": "waiting", "why": "volume only 0.9x normal (need 1.5x)", "event": "e3"}]
+    rows = RP.stories(dec, NOW - timedelta(days=1))
+    assert {k: len(RP.events_for(rows, k)) for k in ("strict", "loose", "any")} == {"strict": 1, "loose": 2, "any": 3}
+
+
+def test_yahoo_and_reddit_sources(monkeypatch):
+    import trading_bot.news as N
+    rss = ('<rss><channel><item><title>Exxon raises output</title><link>https://x</link>'
+           f'<pubDate>{NOW.strftime("%a, %d %b %Y %H:%M:%S +0000")}</pubDate></item></channel></rss>')
+    monkeypatch.setattr(N, "http", lambda *a, **k: rss)
+    got = N.yahoo_news(["XOM", "CVX", "BTC/USD"], NOW - timedelta(hours=1))
+    assert got and got[0]["publisher"] == "Yahoo Finance"
+    post = {"data": {"children": [{"data": {"title": "XOM to the moon", "created_utc": NOW.timestamp(), "permalink": "/r/x"}}]}}
+    monkeypatch.setattr(N, "http", lambda *a, **k: post)
+    monkeypatch.setattr(N.time, "sleep", lambda s: None)
+    st = {}
+    got = N.reddit_direct(NOW - timedelta(hours=1), st)
+    assert got and got[0]["kind"] == "social" and st["socialStatus"]["items"] == len(got)

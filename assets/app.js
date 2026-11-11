@@ -651,7 +651,8 @@
     const pw = st.plain;
     if (pw) {
       const c = el("div", "card plain");
-      const h = el("h2", pw.up ? "up" : "down", pw.top); h.style.margin = "0 0 10px"; c.append(h);
+      const h = el("h2", pw.up ? "up" : "down", pw.line || pw.top); h.style.margin = "0 0 4px"; c.append(h);
+      if (pw.line) c.append(el("div", "small", pw.top + (pw.rulesMode ? " · entry rules: " + pw.rulesMode : "")));
       const sec = (title, lines) => { c.append(el("div", "label", title)); const ul = el("ul"); ul.style.margin = "4px 0 10px"; lines.forEach(x => ul.append(el("li", null, x))); c.append(ul); };
       sec("What it's holding", pw.holding || []);
       sec("What it did today", pw.today || []);

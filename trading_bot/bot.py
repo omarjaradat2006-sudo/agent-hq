@@ -86,7 +86,8 @@ class Bot:
         c, _ = self.today_count("scans")
         c["scans"] = c.get("scans", 0) + 1
         c["lastScan"] = iso()
-        items = news.collect(self.a, self.s, include_social=social)
+        items = news.collect(self.a, self.s, include_social=social,
+                             symbols=sorted((self.universe or {}).get("stocks") or {}))
         if items:
             held = [t["symbol"] for t in self.open_trades()]
             tri = triage.triage(items, self.s["events"], self.universe, held)
@@ -259,6 +260,7 @@ class Bot:
     def entries(self, acct, clock):
         from . import market, risk, deep, halal
         from .triage import publishers
+        R = C.confirm_rules()
         fresh_cut = iso(now_utc() - timedelta(hours=C.CONFIRM["event_fresh_hours"]))
         cands = []
         stock_ok, stock_why = risk.stock_entry_window_open(clock)
@@ -276,7 +278,8 @@ class Bot:
                     continue
                 if a["confidence"] < C.CONFIRM["min_confidence"]:
                     continue
-                if len(pubs) < C.CONFIRM["min_publishers"] or len(news_pubs) < C.CONFIRM["min_news_publishers"]:
+                src_ok, _ = C.sources_ok(pubs, news_pubs, R)
+                if not src_ok:
                     self.decide(key, sym, "waiting", f"only {len(pubs)} source(s) so far: {', '.join(sorted(pubs))}", e, final=False)
                     continue
                 if "/" not in sym and not stock_ok:
@@ -284,7 +287,7 @@ class Bot:
                         event("risk", "stock_entry_window", stock_why, sym)
                     continue
                 try:
-                    chk = market.confirm(self.a, sym, "up", e["firstSeen"])
+                    chk = market.confirm(self.a, sym, "up", e["firstSeen"], rules=R)
                 except HttpError as err:
                     log(f"price check {sym} failed: {err}", "Analyst")
                     continue
@@ -292,7 +295,7 @@ class Bot:
                     final = "too late" in chk["reason"]
                     self.decide(key, sym, "skipped" if final else "waiting", chk["reason"], e, final=final)
                     continue
-                cands.append((a["confidence"] * min(chk["rvol"] / C.CONFIRM["min_rvol"], 2.0), key, sym, a, e, chk, pubs))
+                cands.append((a["confidence"] * min(chk["rvol"] / R["min_rvol"], 2.0), key, sym, a, e, chk, pubs))
         cands.sort(key=lambda c: c[0], reverse=True)
         for score, key, sym, a, e, chk, pubs in cands:
             acct = self.a.account()
@@ -321,7 +324,7 @@ class Bot:
                             + (f" ({verdict['error'][:80]})" if verdict.get("error") else ""), e)
                 continue
             # the analysis takes minutes: re-check the price is still inside the window
-            chk2 = market.confirm(self.a, sym, "up", e["firstSeen"])
+            chk2 = market.confirm(self.a, sym, "up", e["firstSeen"], rules=R)
             if chk2.get("movePct") is not None and chk2["movePct"] / 100 > C.CONFIRM["max_move_pct"]:
                 self.decide(key, sym, "skipped", f"moved {chk2['movePct']:+.2f}% while being analysed, too late", e)
                 continue
@@ -406,13 +409,13 @@ def run_forever():
         except OSError:
             pass
         if not agent_reach_available():
-            log("Agent Reach not found: running on news feeds only (no X/Reddit)", "News Scout")
+            log("Agent Reach not found: news feeds + Yahoo Finance + Reddit direct (no X)", "News Scout")
         last_social = None
         while True:
             open_now = False
             try:
                 bot = Bot()
-                social = agent_reach_available() and (last_social is None or
+                social = (last_social is None or
                                                       now_utc() - last_social >= timedelta(minutes=C.LOOP["social_minutes"]))
                 if social:
                     last_social = now_utc()

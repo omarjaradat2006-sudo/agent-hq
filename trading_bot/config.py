@@ -36,6 +36,45 @@ CONFIRM = _frozen({
     "sell_min_confidence": 0.60,      # bad news on a holding: 1 credible source is enough to exit
 })
 
+# Entry-rule modes (switch with `tb rules strict|loose|any`, saved as TRADING_RULES in ~/.trading-bot.env).
+# Only the ENTRY filters change. Stop-loss, 5%/trade, 5 positions, -3% day halt, -10% kill switch never change.
+RULE_MODES = {
+    "strict": {},                                                   # 2 publishers, volume 1.5x (the original)
+    "loose": {"min_rvol": 1.2, "single_source": "reputable"},       # 1 reputable outlet is enough when price+volume confirm
+    "any": {"min_rvol": 1.2, "single_source": "any_news"},          # 1 news outlet of any kind (not X/Reddit alone)
+}
+REPUTABLE = {
+    "benzinga", "reuters", "bloomberg", "associated press", "ap", "cnbc", "the wall street journal", "wsj",
+    "financial times", "marketwatch", "barron's", "dow jones", "yahoo finance", "investor's business daily",
+    "sec filing", "the new york times", "cnn business", "fox business", "axios", "nikkei", "coindesk", "the block",
+}
+
+
+def rules_mode():
+    import os
+    m = (os.environ.get("TRADING_RULES") or "strict").strip().lower()
+    return m if m in RULE_MODES else "strict"
+
+
+def confirm_rules(mode=None):
+    r = dict(CONFIRM)
+    r.update(RULE_MODES[mode or rules_mode()])
+    r["mode"] = mode or rules_mode()
+    return r
+
+
+def sources_ok(pubs, news_pubs, rules):
+    """(ok, label). 2+ publishers incl. 1 news outlet always passes; loose/any also accept a single outlet."""
+    if len(pubs) >= rules["min_publishers"] and len(news_pubs) >= rules["min_news_publishers"]:
+        return True, f"{len(pubs)} sources"
+    one = rules.get("single_source")
+    if one == "any_news" and news_pubs:
+        return True, "1 news source"
+    if one == "reputable" and any(p.lower() in REPUTABLE for p in news_pubs):
+        return True, "1 reputable source"
+    return False, None
+
+
 DEEP = _frozen({
     "max_per_day": 5,                 # TradingAgents runs per day (Gemini free tier)
     "approve_ratings": ("Buy", "Overweight"),

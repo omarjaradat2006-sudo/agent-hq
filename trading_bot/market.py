@@ -36,7 +36,8 @@ def _price_at(bars, when):
     return float(best["c"]) if best else None
 
 
-def confirm(alpaca, symbol, direction, first_seen, now=None, bars=None):
+def confirm(alpaca, symbol, direction, first_seen, now=None, bars=None, rules=None):
+    R = rules or C.confirm_rules()
     now = now or now_utc()
     first_seen = parse_time(first_seen)
     crypto = "/" in symbol
@@ -67,12 +68,12 @@ def confirm(alpaca, symbol, direction, first_seen, now=None, bars=None):
     rvol = (vol_now / vol_avg) if vol_avg else 0.0
     move = (last - ref) / ref * (1 if direction == "up" else -1)
     res.update({"price": last, "refPrice": ref, "movePct": round(move * 100, 2), "rvol": round(rvol, 2)})
-    if rvol < C.CONFIRM["min_rvol"]:
-        res["reason"] = f"volume only {rvol:.1f}x normal (need {C.CONFIRM['min_rvol']}x)"
-    elif move < C.CONFIRM["min_move_pct"]:
+    if rvol < R["min_rvol"]:
+        res["reason"] = f"volume only {rvol:.1f}x normal (need {R['min_rvol']}x)"
+    elif move < R["min_move_pct"]:
         res["reason"] = f"price hasn't moved the expected way yet ({move:+.2%})"
-    elif move > C.CONFIRM["max_move_pct"]:
-        res["reason"] = f"already moved {move:+.2%}, too late (max {C.CONFIRM['max_move_pct']:.0%})"
+    elif move > R["max_move_pct"]:
+        res["reason"] = f"already moved {move:+.2%}, too late (max {R['max_move_pct']:.0%})"
     else:
         res["passed"] = True
         res["reason"] = f"volume {rvol:.1f}x normal, price {move:+.2%} since the news"

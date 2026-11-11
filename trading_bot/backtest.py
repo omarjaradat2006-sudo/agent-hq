@@ -159,7 +159,7 @@ def _prep(bars):
     return bars
 
 
-def simulate(a, events, start, end):
+def simulate(a, events, start, end, rules=None):
     from .market import confirm
     syms = sorted({s for e in events.values() if e.get("confirmedAt") for s, x in e["assets"].items() if x["direction"] == "up"}
                   | {s for e in events.values() for s, x in e["assets"].items() if x["direction"] == "down"})
@@ -191,7 +191,7 @@ def simulate(a, events, start, end):
                     if et.weekday() >= 5 or not ((et.hour, et.minute) >= (9, 40) and (et.hour, et.minute) <= (15, 30)):
                         continue
                 i0, i1 = bisect.bisect_left(times[sym], t - look), bisect.bisect_right(times[sym], t)
-                chk = confirm(None, sym, "up", e["firstSeen"], now=t, bars=bars[sym][i0:i1])
+                chk = confirm(None, sym, "up", e["firstSeen"], now=t, bars=bars[sym][i0:i1], rules=rules)
                 if chk["passed"]:
                     if i1 < len(bars[sym]):
                         nxt = bars[sym][i1]
