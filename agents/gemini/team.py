@@ -107,7 +107,14 @@ def main(job):
     system = f"You are an Agent HQ team working for Omar.\n{OMAR}\n\n{RULES}"
     notes, sources = "", []
     if cfg.get("search"):
-        notes, sources = G.generate(f"Today is {TODAY}. Search the web and report the real findings (with names, links and numbers you actually saw) about: {cfg['research']}\nContext: {cfg['job'][:600]}", system, search=True, temperature=0.4)
+        # Web-search calls have a much smaller free quota than normal calls. If search is out of quota or busy,
+        # the team still does its job from the metrics and earlier research instead of failing the whole day.
+        try:
+            notes, sources = G.generate(f"Today is {TODAY}. Search the web and report the real findings (with names, links and numbers you actually saw) about: {cfg['research']}\nContext: {cfg['job'][:600]}", system, search=True, temperature=0.4, retries=1)
+        except Exception as e:
+            print(f"web search unavailable today ({str(e)[:160]}); continuing without it", flush=True)
+            notes = ("(No web search today: Gemini search was out of quota or busy. Work from the metrics, the performance data and "
+                     "earlier research in the state; don't claim new outside trends or add links that aren't already in the data.)")
     src = "\n".join(f"- {t}: {u}" for t, u in sources[:40])
     prompt = f"""Today is {TODAY} ({TODAY:%A}). Your job:\n{cfg['job']}
 

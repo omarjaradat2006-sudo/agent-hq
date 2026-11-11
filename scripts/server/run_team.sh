@@ -46,5 +46,18 @@ for TEAM in $LIST; do
   fi
 done
 echo "=== $(date '+%F %T') done. Failed:${FAILED:- none} ==="
+# Both channels' videos depend on the YouTube team's lineup. If it failed (Gemini busy/out of quota), try again later
+# instead of losing the day: after 10, 20, 30 and 40 minutes, only before 11 AM (Ambient/Bounce wait for it until noon).
+# The retry runs in the background, so this run's lock is released and other teams aren't blocked while it waits.
+case " $FAILED " in *" youtube "*)
+  N=${YT_RETRY:-0}; WAITS=(10 20 30 40)
+  if [ "$N" -lt ${#WAITS[@]} ] && [ "$(date +%H)" -lt 11 ]; then
+    W=${WAITS[$N]}
+    echo "youtube team will retry in $W min (retry $((N + 1)) of ${#WAITS[@]})"
+    nohup bash -c "sleep $((W * 60)); YT_RETRY=$((N + 1)) $REPO/scripts/server/run_team.sh youtube" >/dev/null 2>&1 &
+  else
+    echo "!! youtube team: no more retries today"
+  fi;;
+esac
 find "$LOGDIR" -name '*.log' -mtime +30 -delete
 [ -z "$FAILED" ]
