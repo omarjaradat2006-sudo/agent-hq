@@ -65,7 +65,7 @@ def run(days=None):
         res[mode] = (trades, s)
         label = {"strict": "STRICT (now: 2 sources, volume 1.5x)", "loose": "LOOSE (1 reputable source, volume 1.2x)",
                  "any": "ANY (1 news source of any kind, volume 1.2x)",
-                 "aggressive": "AGGRESSIVE (1 news source, volume 1.0x, overnight news tradable next morning)"}[mode]
+                 "aggressive": "AGGRESSIVE (1 news source, no volume rule, price must move +0.3% to +3%, overnight news next morning)"}[mode]
         if not trades:
             print(f"{label}: 0 trades  ({len(ev)} stories passed the source rule)")
             continue

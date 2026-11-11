@@ -42,9 +42,10 @@ RULE_MODES = {
     "strict": {},                                                   # 2 publishers, volume 1.5x (the original)
     "loose": {"min_rvol": 1.2, "single_source": "reputable"},       # 1 reputable outlet is enough when price+volume confirm
     "any": {"min_rvol": 1.2, "single_source": "any_news"},          # 1 news outlet of any kind (not X/Reddit alone)
-    # aggressive: 1 news outlet, volume just normal (1.0x), and news that breaks while the market is closed
-    # stays tradable until 12:00 PM New York the next trading day (otherwise it goes stale overnight)
-    "aggressive": {"min_rvol": 1.0, "single_source": "any_news", "carry_overnight": True},
+    # aggressive: 1 news outlet, NO volume rule (the free IEX feed sees ~2-3% of volume and the bot often reads
+    # the news after the volume burst), price must still be moving the right way (+0.3% to +3%), and news that
+    # breaks while the market is closed stays tradable until 12:00 PM New York the next trading day
+    "aggressive": {"min_rvol": 0.0, "single_source": "any_news", "carry_overnight": True},
 }
 REPUTABLE = {
     "benzinga", "reuters", "bloomberg", "associated press", "ap", "cnbc", "the wall street journal", "wsj",

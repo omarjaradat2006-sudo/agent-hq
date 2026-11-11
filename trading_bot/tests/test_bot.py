@@ -529,4 +529,15 @@ def test_aggressive_carries_overnight_news_to_next_morning():
     assert not M.carry_ok(night, datetime(2026, 11, 11, 14, 0, tzinfo=ny))
     assert not M.carry_ok(datetime(2026, 11, 11, 10, 0, tzinfo=ny), datetime(2026, 11, 11, 10, 30, tzinfo=ny))
     R = C.confirm_rules("aggressive")
-    assert R["min_rvol"] == 1.0 and R["carry_overnight"] and C.RISK["stop_loss_pct"] == 0.03
+    assert R["min_rvol"] == 0.0 and R["carry_overnight"] and C.RISK["stop_loss_pct"] == 0.03
+
+
+def test_aggressive_ignores_volume_but_still_needs_price_move():
+    from trading_bot import market as M
+    news_at = NOW - timedelta(hours=2)
+    flat = bars_spike(news_at=news_at, days=12)
+    for b in flat:
+        b["v"] = 100                                                 # volume never above normal
+    R = C.confirm_rules("aggressive")
+    assert M.confirm(None, "XOM", "up", T(news_at), now=NOW, bars=flat, rules=R)["passed"]
+    assert not M.confirm(None, "XOM", "up", T(news_at), now=NOW, bars=flat, rules=C.confirm_rules("any"))["passed"]

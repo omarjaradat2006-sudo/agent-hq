@@ -295,7 +295,7 @@ class Bot:
                     final = "too late" in chk["reason"]
                     self.decide(key, sym, "skipped" if final else "waiting", chk["reason"], e, final=final)
                     continue
-                cands.append((a["confidence"] * min(chk["rvol"] / R["min_rvol"], 2.0), key, sym, a, e, chk, pubs))
+                cands.append((a["confidence"] * min(chk["rvol"] / (R["min_rvol"] or 1.0), 2.0), key, sym, a, e, chk, pubs))
         cands.sort(key=lambda c: c[0], reverse=True)
         for score, key, sym, a, e, chk, pubs in cands:
             acct = self.a.account()

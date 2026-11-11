@@ -91,7 +91,7 @@ def confirm(alpaca, symbol, direction, first_seen, now=None, bars=None, rules=No
     rvol = (vol_now / vol_avg) if vol_avg else 0.0
     move = (last - ref) / ref * (1 if direction == "up" else -1)
     res.update({"price": last, "refPrice": ref, "movePct": round(move * 100, 2), "rvol": round(rvol, 2)})
-    if rvol < R["min_rvol"]:
+    if R["min_rvol"] > 0 and rvol < R["min_rvol"]:
         res["reason"] = f"volume only {rvol:.1f}x normal (need {R['min_rvol']}x)"
     elif move < R["min_move_pct"]:
         res["reason"] = f"price hasn't moved the expected way yet ({move:+.2%})"
