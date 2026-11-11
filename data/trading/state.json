@@ -1,24 +1,26 @@
 {
  "team": "trading",
  "plain": {
+  "line": "Even since start · 0 trades · holding: nothing (all cash)",
+  "rulesMode": "strict",
   "top": "Even since start (still $100,000.00) · just holding SPY would be +0.98%",
   "up": true,
   "holding": [
    "Nothing right now (all cash)."
   ],
   "today": [
-   "Scanned the news 112 times today: read 6850 headlines, found 157 that could move a stock or coin it's allowed to trade. None passed every check, so no trade (that's normal).",
+   "Scanned the news 116 times today: read 7123 headlines, found 161 that could move a stock or coin it's allowed to trade. None passed every check, so no trade (that's normal).",
    "Passed on AMAT, KLAC, LRCX, TSLA: only 1 source(s) so far: 24/7 Wall St..",
    "Passed on AMD: only 1 source(s) so far: Benzinga.",
-   "Passed on AVAV, INTC, MU, NOW: volume only 0.5x normal (need 1.5x).",
    "Passed on AVAV, INTC, MU, NOW: volume only 0.4x normal (need 1.5x).",
+   "Passed on AVAV, INTC, MU, NOW: volume only 0.5x normal (need 1.5x).",
    "Safety rules that stepped in: stock entry window (x21)."
   ],
   "watchlist": "Allowed to trade: 69 halal stocks, 5 Shariah ETFs, 9 coins.",
-  "lastScan": "2026-11-11T21:30:49Z"
+  "lastScan": "2026-11-11T22:17:11Z"
  },
  "hired": true,
- "updatedAt": "2026-11-11T21:30:54Z",
+ "updatedAt": "2026-11-11T22:17:15Z",
  "mode": "PAPER",
  "agents": [
   {
@@ -26,8 +28,8 @@
    "name": "News Scout",
    "role": "Reads X, Reddit and news feeds",
    "status": "working",
-   "doing": "Read 102 new headlines/posts, 1 market-moving stories",
-   "lastRun": "2026-11-11T21:30:54Z"
+   "doing": "Read 8 new headlines/posts, 1 market-moving stories",
+   "lastRun": "2026-11-11T22:17:15Z"
   },
   {
    "id": "analyst",
@@ -66,8 +68,8 @@
    "name": "Trader",
    "role": "Places paper orders on Alpaca",
    "status": "working",
-   "doing": "Saved results to the Agent HQ dashboard",
-   "lastRun": "2026-11-11T21:15:48Z"
+   "doing": "Paper-trading bot started (Alpaca PAPER account only). Close this window to stop it.",
+   "lastRun": "2026-11-11T22:17:10Z"
   },
   {
    "id": "coins",
@@ -87,6 +89,41 @@
   }
  ],
  "log": [
+  {
+   "t": "2026-11-11T22:17:15Z",
+   "agent": "News Scout",
+   "msg": "Read 8 new headlines/posts, 1 market-moving stories"
+  },
+  {
+   "t": "2026-11-11T22:17:13Z",
+   "agent": "News Scout",
+   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
+  },
+  {
+   "t": "2026-11-11T22:17:10Z",
+   "agent": "News Scout",
+   "msg": "Agent Reach not found: news feeds + Yahoo Finance + Reddit direct (no X)"
+  },
+  {
+   "t": "2026-11-11T22:17:10Z",
+   "agent": "Trader",
+   "msg": "Paper-trading bot started (Alpaca PAPER account only). Close this window to stop it."
+  },
+  {
+   "t": "2026-11-11T22:16:10Z",
+   "agent": "News Scout",
+   "msg": "Read 94 new headlines/posts, 2 market-moving stories"
+  },
+  {
+   "t": "2026-11-11T22:01:03Z",
+   "agent": "News Scout",
+   "msg": "Read 59 new headlines/posts, 1 market-moving stories"
+  },
+  {
+   "t": "2026-11-11T21:45:59Z",
+   "agent": "News Scout",
+   "msg": "Read 112 new headlines/posts, 0 market-moving stories"
+  },
   {
    "t": "2026-11-11T21:30:54Z",
    "agent": "News Scout",
@@ -801,49 +838,16 @@
    "t": "2026-11-11T00:20:38Z",
    "agent": "News Scout",
    "msg": "Read 60 new headlines/posts, 1 market-moving stories"
-  },
-  {
-   "t": "2026-11-11T00:05:24Z",
-   "agent": "News Scout",
-   "msg": "Read 74 new headlines/posts, 1 market-moving stories"
-  },
-  {
-   "t": "2026-11-10T23:50:06Z",
-   "agent": "News Scout",
-   "msg": "Read 60 new headlines/posts, 3 market-moving stories"
-  },
-  {
-   "t": "2026-11-10T23:35:00Z",
-   "agent": "News Scout",
-   "msg": "Read 50 new headlines/posts, 0 market-moving stories"
-  },
-  {
-   "t": "2026-11-10T23:35:00Z",
-   "agent": "News Analyst",
-   "msg": "Gemini triage failed, skipping this batch: Expecting property name enclosed in double quotes: line 13 column 9 (char 412)"
-  },
-  {
-   "t": "2026-11-10T23:19:55Z",
-   "agent": "News Scout",
-   "msg": "Read 86 new headlines/posts, 4 market-moving stories"
-  },
-  {
-   "t": "2026-11-10T23:04:47Z",
-   "agent": "News Scout",
-   "msg": "Read 204 new headlines/posts, 4 market-moving stories"
-  },
-  {
-   "t": "2026-11-10T22:49:35Z",
-   "agent": "News Scout",
-   "msg": "Read 78 new headlines/posts, 1 market-moving stories"
   }
  ],
  "brief": {
   "date": "Wed Nov 11",
-  "createdAt": "2026-11-11T21:30:54Z",
+  "createdAt": "2026-11-11T22:17:15Z",
   "headline": "Paper account +$0 today (+0.00%), +0.00% total vs SPY +0.98% · 0 open",
   "summary": "0 trade(s) closed today, 0/0 winners overall. TradingAgents checks used today: 1/5.",
-  "notes": []
+  "notes": [
+   "X/Reddit reader: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
+  ]
  },
  "account": {
   "equity": 100000.0,
@@ -862,7 +866,14 @@
   "haltedToday": false,
   "deepUsed": 1,
   "deepMax": 5,
-  "social": {},
+  "social": {
+   "at": "2026-11-11T22:17:13Z",
+   "items": 0,
+   "source": "Reddit direct (X needs Agent Reach)",
+   "problems": [
+    "r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
+   ]
+  },
   "universe": {
    "stocks": 74,
    "crypto": 9
@@ -873,6 +884,118 @@
  "trades": [],
  "decisions": [
   {
+   "t": "2026-11-11T22:17:15Z",
+   "symbol": "KLAC",
+   "outcome": "waiting",
+   "why": "only 1 source(s) so far: 24/7 Wall St.",
+   "event": "Applied Materials and other major semiconductor stocks rallied strongly ahead of upcoming earnings reports amid a broader rebound in chip sector demand."
+  },
+  {
+   "t": "2026-11-11T22:17:15Z",
+   "symbol": "LRCX",
+   "outcome": "waiting",
+   "why": "only 1 source(s) so far: 24/7 Wall St.",
+   "event": "Applied Materials and other major semiconductor stocks rallied strongly ahead of upcoming earnings reports amid a broader rebound in chip sector demand."
+  },
+  {
+   "t": "2026-11-11T22:17:15Z",
+   "symbol": "AMAT",
+   "outcome": "waiting",
+   "why": "only 1 source(s) so far: 24/7 Wall St.",
+   "event": "Applied Materials and other major semiconductor stocks rallied strongly ahead of upcoming earnings reports amid a broader rebound in chip sector demand."
+  },
+  {
+   "t": "2026-11-11T22:17:15Z",
+   "symbol": "TSLA",
+   "outcome": "waiting",
+   "why": "only 1 source(s) so far: 24/7 Wall St.",
+   "event": "Tesla shares rose after Finland cleared its driver-assistance system ahead of an EU vote."
+  },
+  {
+   "t": "2026-11-11T22:16:10Z",
+   "symbol": "KLAC",
+   "outcome": "waiting",
+   "why": "only 1 source(s) so far: 24/7 Wall St.",
+   "event": "Applied Materials and other major semiconductor stocks rallied strongly ahead of upcoming earnings reports amid a broader rebound in chip sector demand."
+  },
+  {
+   "t": "2026-11-11T22:16:10Z",
+   "symbol": "LRCX",
+   "outcome": "waiting",
+   "why": "only 1 source(s) so far: 24/7 Wall St.",
+   "event": "Applied Materials and other major semiconductor stocks rallied strongly ahead of upcoming earnings reports amid a broader rebound in chip sector demand."
+  },
+  {
+   "t": "2026-11-11T22:16:10Z",
+   "symbol": "AMAT",
+   "outcome": "waiting",
+   "why": "only 1 source(s) so far: 24/7 Wall St.",
+   "event": "Applied Materials and other major semiconductor stocks rallied strongly ahead of upcoming earnings reports amid a broader rebound in chip sector demand."
+  },
+  {
+   "t": "2026-11-11T22:16:10Z",
+   "symbol": "TSLA",
+   "outcome": "waiting",
+   "why": "only 1 source(s) so far: 24/7 Wall St.",
+   "event": "Tesla shares rose after Finland cleared its driver-assistance system ahead of an EU vote."
+  },
+  {
+   "t": "2026-11-11T22:01:03Z",
+   "symbol": "KLAC",
+   "outcome": "waiting",
+   "why": "only 1 source(s) so far: 24/7 Wall St.",
+   "event": "Applied Materials and other major semiconductor stocks rallied strongly ahead of upcoming earnings reports amid a broader rebound in chip sector demand."
+  },
+  {
+   "t": "2026-11-11T22:01:03Z",
+   "symbol": "LRCX",
+   "outcome": "waiting",
+   "why": "only 1 source(s) so far: 24/7 Wall St.",
+   "event": "Applied Materials and other major semiconductor stocks rallied strongly ahead of upcoming earnings reports amid a broader rebound in chip sector demand."
+  },
+  {
+   "t": "2026-11-11T22:01:03Z",
+   "symbol": "AMAT",
+   "outcome": "waiting",
+   "why": "only 1 source(s) so far: 24/7 Wall St.",
+   "event": "Applied Materials and other major semiconductor stocks rallied strongly ahead of upcoming earnings reports amid a broader rebound in chip sector demand."
+  },
+  {
+   "t": "2026-11-11T22:01:03Z",
+   "symbol": "TSLA",
+   "outcome": "waiting",
+   "why": "only 1 source(s) so far: 24/7 Wall St.",
+   "event": "Tesla shares rose after Finland cleared its driver-assistance system ahead of an EU vote."
+  },
+  {
+   "t": "2026-11-11T21:45:59Z",
+   "symbol": "KLAC",
+   "outcome": "waiting",
+   "why": "only 1 source(s) so far: 24/7 Wall St.",
+   "event": "Applied Materials and other major semiconductor stocks rallied strongly ahead of upcoming earnings reports amid a broader rebound in chip sector demand."
+  },
+  {
+   "t": "2026-11-11T21:45:59Z",
+   "symbol": "LRCX",
+   "outcome": "waiting",
+   "why": "only 1 source(s) so far: 24/7 Wall St.",
+   "event": "Applied Materials and other major semiconductor stocks rallied strongly ahead of upcoming earnings reports amid a broader rebound in chip sector demand."
+  },
+  {
+   "t": "2026-11-11T21:45:59Z",
+   "symbol": "AMAT",
+   "outcome": "waiting",
+   "why": "only 1 source(s) so far: 24/7 Wall St.",
+   "event": "Applied Materials and other major semiconductor stocks rallied strongly ahead of upcoming earnings reports amid a broader rebound in chip sector demand."
+  },
+  {
+   "t": "2026-11-11T21:45:59Z",
+   "symbol": "TSLA",
+   "outcome": "waiting",
+   "why": "only 1 source(s) so far: 24/7 Wall St.",
+   "event": "Tesla shares rose after Finland cleared its driver-assistance system ahead of an EU vote."
+  },
+  {
    "t": "2026-11-11T21:30:54Z",
    "symbol": "KLAC",
    "outcome": "waiting",
@@ -1179,118 +1302,6 @@
    "outcome": "waiting",
    "why": "volume only 0.4x normal (need 1.5x)",
    "event": "CoreWeave's strong third-quarter results continue to lift broader AI infrastructure sentiment and fabless chip stocks."
-  },
-  {
-   "t": "2026-11-11T20:29:55Z",
-   "symbol": "INTC",
-   "outcome": "waiting",
-   "why": "volume only 0.4x normal (need 1.5x)",
-   "event": "CoreWeave's strong third-quarter results continue to lift broader AI infrastructure sentiment and fabless chip stocks."
-  },
-  {
-   "t": "2026-11-11T20:29:55Z",
-   "symbol": "NVDA",
-   "outcome": "waiting",
-   "why": "volume only 0.8x normal (need 1.5x)",
-   "event": "CoreWeave's strong third-quarter results continue to lift broader AI infrastructure sentiment and fabless chip stocks."
-  },
-  {
-   "t": "2026-11-11T20:29:54Z",
-   "symbol": "MU",
-   "outcome": "waiting",
-   "why": "volume only 0.9x normal (need 1.5x)",
-   "event": "CoreWeave's strong third-quarter results continue to lift broader AI infrastructure sentiment and fabless chip stocks."
-  },
-  {
-   "t": "2026-11-11T20:29:54Z",
-   "symbol": "AMD",
-   "outcome": "waiting",
-   "why": "only 1 source(s) so far: Benzinga",
-   "event": "AMD shares jumped premarket after Google chose its 5th-gen EPYC chips for TPU 8tx."
-  },
-  {
-   "t": "2026-11-11T20:24:48Z",
-   "symbol": "KLAC",
-   "outcome": "waiting",
-   "why": "only 1 source(s) so far: 24/7 Wall St.",
-   "event": "Applied Materials and other major semiconductor stocks rallied strongly ahead of upcoming earnings reports amid a broader rebound in chip sector demand."
-  },
-  {
-   "t": "2026-11-11T20:24:48Z",
-   "symbol": "LRCX",
-   "outcome": "waiting",
-   "why": "only 1 source(s) so far: 24/7 Wall St.",
-   "event": "Applied Materials and other major semiconductor stocks rallied strongly ahead of upcoming earnings reports amid a broader rebound in chip sector demand."
-  },
-  {
-   "t": "2026-11-11T20:24:48Z",
-   "symbol": "AMAT",
-   "outcome": "waiting",
-   "why": "only 1 source(s) so far: 24/7 Wall St.",
-   "event": "Applied Materials and other major semiconductor stocks rallied strongly ahead of upcoming earnings reports amid a broader rebound in chip sector demand."
-  },
-  {
-   "t": "2026-11-11T20:24:48Z",
-   "symbol": "TSLA",
-   "outcome": "waiting",
-   "why": "only 1 source(s) so far: 24/7 Wall St.",
-   "event": "Tesla shares rose after Finland cleared its driver-assistance system ahead of an EU vote."
-  },
-  {
-   "t": "2026-11-11T20:24:48Z",
-   "symbol": "NOW",
-   "outcome": "waiting",
-   "why": "volume only 0.4x normal (need 1.5x)",
-   "event": "CoreWeave's strong third-quarter results continue to lift broader AI infrastructure sentiment and fabless chip stocks."
-  },
-  {
-   "t": "2026-11-11T20:24:47Z",
-   "symbol": "INTC",
-   "outcome": "waiting",
-   "why": "volume only 0.4x normal (need 1.5x)",
-   "event": "CoreWeave's strong third-quarter results continue to lift broader AI infrastructure sentiment and fabless chip stocks."
-  },
-  {
-   "t": "2026-11-11T20:24:47Z",
-   "symbol": "NVDA",
-   "outcome": "waiting",
-   "why": "volume only 0.8x normal (need 1.5x)",
-   "event": "CoreWeave's strong third-quarter results continue to lift broader AI infrastructure sentiment and fabless chip stocks."
-  },
-  {
-   "t": "2026-11-11T20:24:47Z",
-   "symbol": "MU",
-   "outcome": "waiting",
-   "why": "volume only 0.8x normal (need 1.5x)",
-   "event": "CoreWeave's strong third-quarter results continue to lift broader AI infrastructure sentiment and fabless chip stocks."
-  },
-  {
-   "t": "2026-11-11T20:24:46Z",
-   "symbol": "AMD",
-   "outcome": "waiting",
-   "why": "only 1 source(s) so far: Benzinga",
-   "event": "AMD shares jumped premarket after Google chose its 5th-gen EPYC chips for TPU 8tx."
-  },
-  {
-   "t": "2026-11-11T20:19:24Z",
-   "symbol": "KLAC",
-   "outcome": "waiting",
-   "why": "only 1 source(s) so far: 24/7 Wall St.",
-   "event": "Applied Materials and other major semiconductor stocks rallied strongly ahead of upcoming earnings reports amid a broader rebound in chip sector demand."
-  },
-  {
-   "t": "2026-11-11T20:19:24Z",
-   "symbol": "LRCX",
-   "outcome": "waiting",
-   "why": "only 1 source(s) so far: 24/7 Wall St.",
-   "event": "Applied Materials and other major semiconductor stocks rallied strongly ahead of upcoming earnings reports amid a broader rebound in chip sector demand."
-  },
-  {
-   "t": "2026-11-11T20:19:24Z",
-   "symbol": "AMAT",
-   "outcome": "waiting",
-   "why": "only 1 source(s) so far: 24/7 Wall St.",
-   "event": "Applied Materials and other major semiconductor stocks rallied strongly ahead of upcoming earnings reports amid a broader rebound in chip sector demand."
   }
  ],
  "equity": [
@@ -1718,6 +1729,16 @@
    "t": "2026-11-11T21:15:46Z",
    "equity": 100000.0,
    "spy": 760.13
+  },
+  {
+   "t": "2026-11-11T21:45:59Z",
+   "equity": 100000.0,
+   "spy": 760.13
+  },
+  {
+   "t": "2026-11-11T22:16:10Z",
+   "equity": 100000.0,
+   "spy": 760.13
   }
  ],
  "watch": [],
@@ -1729,7 +1750,7 @@
  },
  "events": [
   {
-   "summary": "CoreWeave CEO's statement that AI demand is outpacing global capacity drives a massive surge in memory stocks like Micron.",
+   "summary": "CoreWeave earnings and surging AI demand are driving a massive market rally in memory and semiconductor stocks.",
    "category": "earnings_beat",
    "firstSeen": "2026-11-11T16:45:35Z",
    "publishers": [
@@ -1740,6 +1761,7 @@
     "Nacionale",
     "Reuters",
     "TradingKey",
+    "Yahoo Finance",
     "Yahoo! Finance Canada",
     "富途牛牛"
    ],
@@ -1747,17 +1769,17 @@
     "MU": {
      "direction": "up",
      "confidence": 0.85,
-     "why": "CoreWeave commentary highlights unprecedented AI hardware demand benefiting memory makers like Micron."
+     "why": "CoreWeave and memory sector demand momentum drive Micron higher."
     },
     "NVDA": {
-     "direction": "up",
-     "confidence": 0.8,
-     "why": "CoreWeave earnings beat and AI semiconductor sentiment revival benefit Nvidia."
+     "direction": "down",
+     "confidence": 0.5,
+     "why": "Faced some late pressure despite the broader AI rally."
     },
     "AMD": {
      "direction": "up",
-     "confidence": 0.7,
-     "why": "Strong AI sector momentum and CoreWeave results spill over positively into hardware."
+     "confidence": 0.8,
+     "why": "Benefiting from the broad AI rally fueled by CoreWeave earnings."
     },
     "INTC": {
      "direction": "up",
@@ -1814,7 +1836,7 @@
    ]
   },
   {
-   "summary": "Nvidia faces ongoing volatility and scrutiny as investors assess whether executive executive affairs will create spillover effects on its business.",
+   "summary": "Nvidia faces executive scrutiny and controversy regarding export controls and internal reporting relationships.",
    "category": "company_bad_news",
    "firstSeen": "2026-11-10T02:06:25Z",
    "publishers": [
@@ -1882,6 +1904,216 @@
      "title": "Timeline: How did Nvidia’s CEO get caught up in an alleged spy plot?",
      "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPVENSejl5V04tRUR2M1JIRHZibWlHcm5tUWNndEMzRnBqM1p4aG5XTnp4azBycWIxcjlzeWJqZjh5WnNfRzdfSmNudmRMN3l1OVFmTjE1VS10a2pFN3BWNDZDS05SMkNFQ01WR2Z5UHhBY1pRZDhiVXBHZy1DTDFuRmowbzRkZ2xKcGxsOVVMOG5OYmczUTdYem5Rc1MtLVVpSmNkWGRRWXo0M0ZXWkZZUW9ERk9jeHRrR1pKZ20yRU4?oc=5",
      "time": "2026-11-10T03:32:00Z"
+    }
+   ]
+  },
+  {
+   "summary": "Geopolitical tensions persist as Ukrainian drones strike Russian oil infrastructure and reports indicate potential new US sanctions or strikes involving Iran.",
+   "category": "war_escalation",
+   "firstSeen": "2026-11-10T20:01:23Z",
+   "publishers": [
+    "790 KABC",
+    "ABS-CBN",
+    "ASHARQ AL-AWSAT English",
+    "Aaj English TV",
+    "Al Arabiya English",
+    "Al-Monitor",
+    "Anadolu Ajansı",
+    "Apa.az",
+    "Asia Insurance Post",
+    "AsiaOne.com",
+    "Bangladesh Sangbad Sangstha (BSS)",
+    "Barchart.com",
+    "Benzinga",
+    "Bloomberg.com",
+    "Bol News",
+    "Breakingthenews.net",
+    "Business Recorder",
+    "Channels Television",
+    "Crude Oil Prices Today | OilPrice.com",
+    "Cyprus Mail",
+    "Daily Beirut",
+    "Daily Pioneer",
+    "Daily Sun",
+    "Euronext Markets: Real-time Stock Market Data | live",
+    "FXEmpire",
+    "FXStreet",
+    "Foej Media",
+    "Fox News",
+    "France 24",
+    "Free Press Journal",
+    "GV Wire",
+    "Global Banking & Finance Review",
+    "Inshorts",
+    "International Business Times",
+    "Internazionale",
+    "Investing.com",
+    "Investing.com Australia",
+    "Investing.com India",
+    "Investing.com South Africa",
+    "Invezz",
+    "Islamabad Post",
+    "JournalArta",
+    "KBOI",
+    "KLSE Screener",
+    "Kitco",
+    "Kyiv Post",
+    "LIGA.net",
+    "Latest news from Azerbaijan",
+    "Logistics Middle East",
+    "London South East",
+    "MLQ.ai",
+    "MTV Lebanon",
+    "MarineLink",
+    "MarketForces Africa",
+    "Mashriq TV",
+    "Mehr News Agency",
+    "Mezha.net",
+    "Middle East Eye",
+    "Moomoo",
+    "NST Online",
+    "Nacionale",
+    "News18",
+    "News9live",
+    "Newswav",
+    "Odessa Journal",
+    "Open Magazine",
+    "Palestine Chronicle",
+    "Profit by Pakistan Today",
+    "Quantum Commodity Intelligence",
+    "RNZ",
+    "Rediff",
+    "Rediff MoneyWiz",
+    "Reuters",
+    "Sahara Reporters",
+    "Seeking Alpha",
+    "Ships & Ports",
+    "Sowetan",
+    "Splash247",
+    "The Arab Weekly",
+    "The Assam Tribune",
+    "The Avenue Mail",
+    "The Business Standard",
+    "The Canberra Times",
+    "The Economic Times",
+    "The Express Tribune",
+    "The Jerusalem Post",
+    "The Korea Times",
+    "The National",
+    "The New Indian Express",
+    "The Sun Malaysia",
+    "TimesLIVE",
+    "TradeWinds News",
+    "Traders Union",
+    "TradingNEWS",
+    "TradingPedia",
+    "Trak.in",
+    "UA.NEWS",
+    "UkrMedia News",
+    "WANA News Agency",
+    "WSJ",
+    "X",
+    "Yahoo Finance",
+    "Yahoo Finance UK",
+    "bloomingbit",
+    "houseofsaud.com",
+    "https://houseofsaud.com/",
+    "oodaloop.com",
+    "www.nktv.in",
+    "ІА Король Данило",
+    "Мілітарний",
+    "Українські Національні Новини (УНН)",
+    "شبكة تواصل الإخبارية",
+    "صوت الإمارات",
+    "وكالة سبأ"
+   ],
+   "assets": {
+    "XOM": {
+     "direction": "up",
+     "confidence": 0.8,
+     "why": "Strait of Hormuz tanker attacks and rising supply disruptions push oil and gas stocks up."
+    },
+    "CVX": {
+     "direction": "up",
+     "confidence": 0.8,
+     "why": "Rising geopolitical conflict in the Persian Gulf threatens oil flows, benefiting major producers."
+    },
+    "OXY": {
+     "direction": "up",
+     "confidence": 0.75,
+     "why": "Geopolitical risk in the Persian Gulf supports oil upstream producers."
+    },
+    "PLTR": {
+     "direction": "up",
+     "confidence": 0.7,
+     "why": "War and conflict escalation generally benefit defense tech stocks."
+    },
+    "AVAV": {
+     "direction": "up",
+     "confidence": 0.65,
+     "why": "Geopolitical conflict escalation supports defense tech stocks."
+    },
+    "NEM": {
+     "direction": "up",
+     "confidence": 0.65,
+     "why": "War escalation increases demand for safe-haven gold miners."
+    },
+    "COP": {
+     "direction": "up",
+     "confidence": 0.75,
+     "why": "Supply concerns in the Middle East drive crude and upstream producers higher."
+    },
+    "SLB": {
+     "direction": "up",
+     "confidence": 0.7,
+     "why": "Higher oil prices and persistent supply fears from the Iran conflict boost oilfield services."
+    },
+    "AEM": {
+     "direction": "up",
+     "confidence": 0.6,
+     "why": "War escalation and supply shocks increase safe-haven appeal for gold miners."
+    }
+   },
+   "sources": [
+    {
+     "id": "df336258cfae123d",
+     "publisher": "وكالة سبأ",
+     "kind": "news",
+     "title": "IRGC: Third oil tanker explodes in Hormuz Strait",
+     "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE1VclA4VmQtT2UzUkdKdW5SLUtkZXRIWXk2Z0Vnc25KU3pZWGNlcktBczNMV3lEVDNEc2hDblVhdVZQNlFGUnJRODVSaHJBYUE?oc=5",
+     "time": "2026-11-10T20:04:16Z"
+    },
+    {
+     "id": "f3a25bf802b51027",
+     "publisher": "شبكة تواصل الإخبارية",
+     "kind": "news",
+     "title": "Rubio predicts Iran will lose the ability to export oil",
+     "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE9HYWl1b25NdkltTTFLc0pwM3J2aU5qTVpoZ2Fla2kzaDRSakp6OHotV0J2NnJkNjJ1WXFySklmYThoNnhZOXo1YzZUOEtNOThNZVRr?oc=5",
+     "time": "2026-11-10T20:03:52Z"
+    },
+    {
+     "id": "53aab7bcd37b0b8c",
+     "publisher": "News18",
+     "kind": "news",
+     "title": "'Iran Started This War 47 Years Ago, We Didn't': Hegseth Defends US Military Campaign Against Tehran",
+     "url": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxNNGZkYnAxaTZYNFloTUZKT1hfVmtOOTRWSmZEMU1OMzA1d0pPY3RkWUZ3Wl9SM3ZHMFBpT2Mxa3FUV2JncDFNWjBrWm9RcXpuMy1xZnJRaW5vR0VTSkVUWWRFV2lCWktpRFY5REh3ZVBfSWxzZFJFRFR3eUdSRFZPcHhBOGNGR292TEJxNGg0emVMOERMeC1lRXE3eWlIaXVibzQ3Ul9TdWFXMlpOVWdOd0t4bGR2RjdQTkh0RDZJVUE1WlVMZENFbGYwblgtdWdsbHktbldxdTZNUmNVT2p3dVR5a3BILVREQVHSAe8BQVVfeXFMTU5qb0VLdS14U05sc1UtYkttRVRSSG9RLXE0dzN4TlIyT3M1c2xNalVyblNzdi0zekRqSnpfaU5VaVQyZkdEZnhwVHdyeUNHRkN3REcyRnVkWTdxUmNkdTR5dXYza0prNi1GNTIwZDVDdmZEalkyRkFRaFNvU2pLajVPLWhCNHNYa1dobzNsa3JwNm05c2xTaXNKeUJwR1BCVVdRT2hWQW81RTJJSmw2aVR2T0N1b3dRMlhuVWk2RU5ZbzlmSVFicktIUGpwbWV5Q1JSR2JVRG9hRFg1dzluZTZTeGR5VDQyYnZhSVdmcWM?oc=5",
+     "time": "2026-11-10T20:01:23Z"
+    },
+    {
+     "id": "a0f4fb7035efa43e",
+     "publisher": "Crude Oil Prices Today | OilPrice.com",
+     "kind": "news",
+     "title": "Houthis Launch Another Attack on Pumping Stations Along Crucial Saudi East-West",
+     "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxOMm5mWEtVVG5peGFmQTQ5SFVYd1NNR2QxV3VyTUtDNC1hT3hYUjVtR0hEblJHcTgzelBOOFBDdFE0NzMzLUYwMUp0X3dIZmZ2cy1QS1dtdjVWenc2OE5ESEd0elcyREpXZ1V0Z2xmb1FOMW05bHJ2NU56bldJamk5UEdoVVhSYklJWVBzRE9nckhMazhiYmZnYVdSY3ZKaVlhT0NmNExfcDhMMnBPdTBOT0dpTUt1eW5hOFRCX09KWVJQaXhkaUlsdGw4Y9IBywFBVV95cUxOMm5mWEtVVG5peGFmQTQ5SFVYd1NNR2QxV3VyTUtDNC1hT3hYUjVtR0hEblJHcTgzelBOOFBDdFE0NzMzLUYwMUp0X3dIZmZ2cy1QS1dtdjVWenc2OE5ESEd0elcyREpXZ1V0Z2xmb1FOMW05bHJ2NU56bldJamk5UEdoVVhSYklJWVBzRE9nckhMazhiYmZnYVdSY3ZKaVlhT0NmNExfcDhMMnBPdTBOT0dpTUt1eW5hOFRCX09KWVJQaXhkaUlsdGw4Yw?oc=5",
+     "time": "2026-11-10T21:00:00Z"
+    },
+    {
+     "id": "da93a25057608f46",
+     "publisher": "The National",
+     "kind": "news",
+     "title": "Middle East latest: Ship attacked in UAE waters, says operator Adnoc",
+     "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPdTMwLTRPRTZsZHJPR0lQTVNtNHdyWWxZNHMydXJzUjEySVZIZzJfUFlvbXZfQWJPc25aSm5kM3lzNmxFMFVMdFl3NTZLZWVjZnZPaTFyWjZtcl9peGd6ZlpDU2hnQmxDVFBLRlF1cVR3U2QwR2R4dWRRNEFDaDBzSTY2YUFWZEsyZ3dIOGQwX2tudV81a1pRRXQtVzl0TWYw?oc=5",
+     "time": "2026-11-10T20:59:26Z"
     }
    ]
   },
@@ -2527,211 +2759,6 @@
    ]
   },
   {
-   "summary": "Geopolitical tensions remain elevated as the Israeli security cabinet orders the military to prepare for a possible attack on Iran and the Iranian army issues warnings.",
-   "category": "war_escalation",
-   "firstSeen": "2026-11-10T20:01:23Z",
-   "publishers": [
-    "790 KABC",
-    "ABS-CBN",
-    "ASHARQ AL-AWSAT English",
-    "Aaj English TV",
-    "Al Arabiya English",
-    "Al-Monitor",
-    "Anadolu Ajansı",
-    "Apa.az",
-    "AsiaOne.com",
-    "Bangladesh Sangbad Sangstha (BSS)",
-    "Barchart.com",
-    "Benzinga",
-    "Bloomberg.com",
-    "Bol News",
-    "Breakingthenews.net",
-    "Business Recorder",
-    "Channels Television",
-    "Crude Oil Prices Today | OilPrice.com",
-    "Cyprus Mail",
-    "Daily Beirut",
-    "Daily Pioneer",
-    "Daily Sun",
-    "Euronext Markets: Real-time Stock Market Data | live",
-    "FXEmpire",
-    "FXStreet",
-    "Foej Media",
-    "Fox News",
-    "France 24",
-    "Free Press Journal",
-    "GV Wire",
-    "Global Banking & Finance Review",
-    "Inshorts",
-    "International Business Times",
-    "Internazionale",
-    "Investing.com",
-    "Investing.com Australia",
-    "Investing.com India",
-    "Investing.com South Africa",
-    "Invezz",
-    "Islamabad Post",
-    "JournalArta",
-    "KBOI",
-    "KLSE Screener",
-    "Kitco",
-    "Kyiv Post",
-    "LIGA.net",
-    "Latest news from Azerbaijan",
-    "Logistics Middle East",
-    "London South East",
-    "MLQ.ai",
-    "MTV Lebanon",
-    "MarineLink",
-    "MarketForces Africa",
-    "Mashriq TV",
-    "Mehr News Agency",
-    "Mezha.net",
-    "Middle East Eye",
-    "Moomoo",
-    "NST Online",
-    "News18",
-    "News9live",
-    "Newswav",
-    "Open Magazine",
-    "Palestine Chronicle",
-    "Profit by Pakistan Today",
-    "Quantum Commodity Intelligence",
-    "RNZ",
-    "Rediff",
-    "Rediff MoneyWiz",
-    "Reuters",
-    "Sahara Reporters",
-    "Ships & Ports",
-    "Sowetan",
-    "Splash247",
-    "The Arab Weekly",
-    "The Assam Tribune",
-    "The Avenue Mail",
-    "The Business Standard",
-    "The Canberra Times",
-    "The Economic Times",
-    "The Express Tribune",
-    "The Jerusalem Post",
-    "The Korea Times",
-    "The National",
-    "The New Indian Express",
-    "The Sun Malaysia",
-    "TimesLIVE",
-    "TradeWinds News",
-    "Traders Union",
-    "TradingNEWS",
-    "TradingPedia",
-    "Trak.in",
-    "UA.NEWS",
-    "UkrMedia News",
-    "WANA News Agency",
-    "WSJ",
-    "X",
-    "Yahoo Finance",
-    "Yahoo Finance UK",
-    "bloomingbit",
-    "houseofsaud.com",
-    "oodaloop.com",
-    "www.nktv.in",
-    "ІА Король Данило",
-    "Мілітарний",
-    "Українські Національні Новини (УНН)",
-    "شبكة تواصل الإخبارية",
-    "صوت الإمارات",
-    "وكالة سبأ"
-   ],
-   "assets": {
-    "XOM": {
-     "direction": "up",
-     "confidence": 0.8,
-     "why": "Geopolitical conflict risks threatening oil supplies drive oil & gas stocks higher."
-    },
-    "CVX": {
-     "direction": "up",
-     "confidence": 0.8,
-     "why": "Oil supply disruption concerns in the Middle East benefit major oil producers."
-    },
-    "OXY": {
-     "direction": "up",
-     "confidence": 0.75,
-     "why": "Geopolitical risk in the Persian Gulf supports oil upstream producers."
-    },
-    "PLTR": {
-     "direction": "up",
-     "confidence": 0.7,
-     "why": "War and conflict escalation generally benefit defense tech stocks."
-    },
-    "AVAV": {
-     "direction": "up",
-     "confidence": 0.65,
-     "why": "Geopolitical conflict escalation supports defense tech stocks."
-    },
-    "NEM": {
-     "direction": "up",
-     "confidence": 0.65,
-     "why": "War escalation increases demand for safe-haven gold miners."
-    },
-    "COP": {
-     "direction": "up",
-     "confidence": 0.75,
-     "why": "Supply concerns in the Middle East drive crude and upstream producers higher."
-    },
-    "SLB": {
-     "direction": "up",
-     "confidence": 0.7,
-     "why": "Higher oil prices and persistent supply fears from the Iran conflict boost oilfield services."
-    },
-    "AEM": {
-     "direction": "up",
-     "confidence": 0.6,
-     "why": "War escalation and supply shocks increase safe-haven appeal for gold miners."
-    }
-   },
-   "sources": [
-    {
-     "id": "df336258cfae123d",
-     "publisher": "وكالة سبأ",
-     "kind": "news",
-     "title": "IRGC: Third oil tanker explodes in Hormuz Strait",
-     "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE1VclA4VmQtT2UzUkdKdW5SLUtkZXRIWXk2Z0Vnc25KU3pZWGNlcktBczNMV3lEVDNEc2hDblVhdVZQNlFGUnJRODVSaHJBYUE?oc=5",
-     "time": "2026-11-10T20:04:16Z"
-    },
-    {
-     "id": "f3a25bf802b51027",
-     "publisher": "شبكة تواصل الإخبارية",
-     "kind": "news",
-     "title": "Rubio predicts Iran will lose the ability to export oil",
-     "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE9HYWl1b25NdkltTTFLc0pwM3J2aU5qTVpoZ2Fla2kzaDRSakp6OHotV0J2NnJkNjJ1WXFySklmYThoNnhZOXo1YzZUOEtNOThNZVRr?oc=5",
-     "time": "2026-11-10T20:03:52Z"
-    },
-    {
-     "id": "53aab7bcd37b0b8c",
-     "publisher": "News18",
-     "kind": "news",
-     "title": "'Iran Started This War 47 Years Ago, We Didn't': Hegseth Defends US Military Campaign Against Tehran",
-     "url": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxNNGZkYnAxaTZYNFloTUZKT1hfVmtOOTRWSmZEMU1OMzA1d0pPY3RkWUZ3Wl9SM3ZHMFBpT2Mxa3FUV2JncDFNWjBrWm9RcXpuMy1xZnJRaW5vR0VTSkVUWWRFV2lCWktpRFY5REh3ZVBfSWxzZFJFRFR3eUdSRFZPcHhBOGNGR292TEJxNGg0emVMOERMeC1lRXE3eWlIaXVibzQ3Ul9TdWFXMlpOVWdOd0t4bGR2RjdQTkh0RDZJVUE1WlVMZENFbGYwblgtdWdsbHktbldxdTZNUmNVT2p3dVR5a3BILVREQVHSAe8BQVVfeXFMTU5qb0VLdS14U05sc1UtYkttRVRSSG9RLXE0dzN4TlIyT3M1c2xNalVyblNzdi0zekRqSnpfaU5VaVQyZkdEZnhwVHdyeUNHRkN3REcyRnVkWTdxUmNkdTR5dXYza0prNi1GNTIwZDVDdmZEalkyRkFRaFNvU2pLajVPLWhCNHNYa1dobzNsa3JwNm05c2xTaXNKeUJwR1BCVVdRT2hWQW81RTJJSmw2aVR2T0N1b3dRMlhuVWk2RU5ZbzlmSVFicktIUGpwbWV5Q1JSR2JVRG9hRFg1dzluZTZTeGR5VDQyYnZhSVdmcWM?oc=5",
-     "time": "2026-11-10T20:01:23Z"
-    },
-    {
-     "id": "a0f4fb7035efa43e",
-     "publisher": "Crude Oil Prices Today | OilPrice.com",
-     "kind": "news",
-     "title": "Houthis Launch Another Attack on Pumping Stations Along Crucial Saudi East-West",
-     "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxOMm5mWEtVVG5peGFmQTQ5SFVYd1NNR2QxV3VyTUtDNC1hT3hYUjVtR0hEblJHcTgzelBOOFBDdFE0NzMzLUYwMUp0X3dIZmZ2cy1QS1dtdjVWenc2OE5ESEd0elcyREpXZ1V0Z2xmb1FOMW05bHJ2NU56bldJamk5UEdoVVhSYklJWVBzRE9nckhMazhiYmZnYVdSY3ZKaVlhT0NmNExfcDhMMnBPdTBOT0dpTUt1eW5hOFRCX09KWVJQaXhkaUlsdGw4Y9IBywFBVV95cUxOMm5mWEtVVG5peGFmQTQ5SFVYd1NNR2QxV3VyTUtDNC1hT3hYUjVtR0hEblJHcTgzelBOOFBDdFE0NzMzLUYwMUp0X3dIZmZ2cy1QS1dtdjVWenc2OE5ESEd0elcyREpXZ1V0Z2xmb1FOMW05bHJ2NU56bldJamk5UEdoVVhSYklJWVBzRE9nckhMazhiYmZnYVdSY3ZKaVlhT0NmNExfcDhMMnBPdTBOT0dpTUt1eW5hOFRCX09KWVJQaXhkaUlsdGw4Yw?oc=5",
-     "time": "2026-11-10T21:00:00Z"
-    },
-    {
-     "id": "da93a25057608f46",
-     "publisher": "The National",
-     "kind": "news",
-     "title": "Middle East latest: Ship attacked in UAE waters, says operator Adnoc",
-     "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPdTMwLTRPRTZsZHJPR0lQTVNtNHdyWWxZNHMydXJzUjEySVZIZzJfUFlvbXZfQWJPc25aSm5kM3lzNmxFMFVMdFl3NTZLZWVjZnZPaTFyWjZtcl9peGd6ZlpDU2hnQmxDVFBLRlF1cVR3U2QwR2R4dWRRNEFDaDBzSTY2YUFWZEsyZ3dIOGQwX2tudV81a1pRRXQtVzl0TWYw?oc=5",
-     "time": "2026-11-10T20:59:26Z"
-    }
-   ]
-  },
-  {
    "summary": "AMD's strategic partnership and hardware supply agreement as revealed in Anthropic's IPO filing highlights strong AI chip demand.",
    "category": "contract",
    "firstSeen": "2026-11-11T11:32:23Z",
@@ -2964,8 +2991,10 @@
    "min_move_pct": 0.003,
    "max_move_pct": 0.03,
    "event_fresh_hours": 6,
-   "sell_min_confidence": 0.6
+   "sell_min_confidence": 0.6,
+   "mode": "strict"
   },
+  "rulesMode": "strict",
   "halal": {
    "no_margin": true,
    "no_short": true,
