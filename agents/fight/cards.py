@@ -67,6 +67,12 @@ def run_nba(force=False):
     # same-game parlays are built only from the prop games; keep milestones between -400 and +400 so the list stays sane
     sgp_ids = [e for e in prop_ids]
     cands = [c for c in cands if not (c["market"].endswith("_alternate") and not any(1.25 <= d <= 5.0 for d in c["prices"].values()))]
+    # Omar's rule: no moneylines, no regular spreads; alternate spreads only with a big cushion (-300 or shorter)
+    cands = [c for c in cands if c["market"] not in C.NBA_BLOCKED_MARKETS]
+    for c in cands:
+        if c["market"] == "alternate_spreads":
+            c["prices"] = {b: d for b, d in c["prices"].items() if d <= C.ALT_SPREAD_MAX_DEC}
+    cands = [c for c in cands if c["prices"]]
     text, idx = A.lines([c for c in cands if c["eventId"] in sgp_ids])
     est = A.estimate("nba", text, notes, src + src2, today, extra=extra)
     analyzed = A.apply_estimates(est, idx)
@@ -113,13 +119,46 @@ def run_ufc(force=False):
     parlays = B.build(cands, "ufc", cid, today)
     A.why_lines(parlays)
     dogs = underdogs(cands, notes, sources, cid, today)
-    card.update(fights=len(raw), parlays=parlays, underdogs=dogs, sources=[{"title": t, "url": u} for t, u in sources[:20]])
+    main = main_event(cands, raw, bouts[0], notes, sources, cid, today)
+    card.update(fights=len(raw), parlays=parlays, main=main, underdogs=dogs, sources=[{"title": t, "url": u} for t, u in sources[:20]])
     if not dogs:
         card["dogMessage"] = "No underdog worth it this week."
     if len(parlays) < 3:
         card["message"] = f"Only {len(parlays)} parlay(s): not enough separate fights with listed odds to reach every target." if parlays else "No parlay: not enough fights with listed odds."
-    msg = f"UFC {card['event']}: {len(parlays)} parlay(s), {len(dogs)} underdog pick(s)"
-    return _finish(card, "fight", msg, parlays + dogs)
+    msg = f"UFC {card['event']}: {len(parlays)} parlay(s), main event slip, {len(dogs)} underdog pick(s)"
+    return _finish(card, "fight", msg, parlays + dogs + ([main] if main and main.get("legs") else []))
+
+
+def main_event(cands, raw, bout, notes, sources, cid, today):
+    """Main event slip: checked legs (winner / total rounds, with odds) + strike/takedown/method add-ons (no odds in our feed)."""
+    ev = next((e for e in raw if (same_fighter(e["home_team"], bout[0]) and same_fighter(e["away_team"], bout[1]))
+               or (same_fighter(e["home_team"], bout[1]) and same_fighter(e["away_team"], bout[0]))), None)
+    addons = S.clean(A.main_event_legs(today, bout, notes, sources))
+    slip = {"id": f"{cid}-main", "cardId": cid, "date": today, "sport": "ufc", "kind": "ufc_main", "tier": "Main event",
+            "game": f"{bout[0]} vs {bout[1]}", "sgp": True, "estimated": True, "addOns": addons, "legs": [], "status": "open", "why": ""}
+    if ev:
+        best = None
+        for book in C.BOOKS:
+            legs = [c for c in cands if c["eventId"] == ev["id"] and book in c["prices"] and c.get("model") is not None and not c.get("derived")]
+            win = max([c for c in legs if c["market"] == "h2h"], key=B.chance, default=None)
+            rnd = max([c for c in legs if c["market"] == "totals"], key=B.chance, default=None)
+            combo = [c for c in (win, rnd) if c]
+            if combo and (best is None or len(combo) > len(best[1])):
+                best = (book, combo)
+        if best:
+            book, combo = best
+            dec = M.parlay_decimal([c["prices"][book] for c in combo])
+            ch = M.parlay_prob([B.chance(c) for c in combo])
+            rows = []
+            for c in combo:
+                r = B.leg_row(c, book); r["tap"] = W.leg_text(c, book, with_game=False); rows.append(r)
+            slip.update(book=book, bookName=C.BOOKS[book], legs=rows, dec=round(dec, 3), american=W.american(dec), commence=combo[0]["commence"],
+                        chancePct=round(ch * 100, 1), impliedPct=round(100 / dec, 1), evPer100=round(M.ev(ch, dec) * 100, 2),
+                        strength=B.strength(ch, M.ev(ch, dec), True),
+                        why=(combo[0].get("why") or "")[:200])
+    if not slip["legs"] and not addons:
+        return None
+    return slip
 
 
 def underdogs(cands, notes, sources, cid, today):
@@ -148,14 +187,14 @@ def underdogs(cands, notes, sources, cid, today):
         book = c["_book"]
         dec = c["prices"][book]
         path = str(d.get("path") or "straight win").strip()
-        straight = path.lower() in ("straight win", "decision", "")
+        straight = path.lower() in ("straight win", "")
         leg = B.leg_row(c, book)
         res.append({
             "id": f"{cid}-dog-{len(res) + 1}", "cardId": cid, "date": today, "sport": "ufc", "kind": "ufc_dog", "risk": "High risk",
             "book": book, "bookName": C.BOOKS[book], "dec": round(dec, 3), "american": W.american(dec), "path": path,
-            "betText": leg["text"], "why": c["why"], "chancePct": round(ch * 100, 1), "impliedPct": round(100 / dec, 1),
+            "betText": leg["text"], "methodBet": None if straight else f"{c['side']} by {path}", "why": c["why"], "chancePct": round(ch * 100, 1), "impliedPct": round(100 / dec, 1),
             "evPer100": round(M.ev(ch, dec) * 100, 2), "breakdown": d.get("breakdown") or {}, "commence": c["commence"],
-            "pathNote": None if straight else (f"Their path is {path}. FanDuel/DraftKings method-of-victory odds aren't in our odds feed, so the "
-                                               f"tracked bet is the straight win. The \"{c['side']} by {path}\" version pays more but wasn't checked here."),
+            "pathNote": None if straight else (f"Find \"{c['side']} by {path}\" under Method of Victory in the app; its price isn't in our odds feed. "
+                                               f"The record tracks the straight win and whether the method was right."),
             "legs": [leg], "status": "open"})
     return res

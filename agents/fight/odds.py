@@ -100,7 +100,7 @@ def fetch_event_odds(sport_key, event_id, markets):
                 len(markets), f"props for one game (up to {len(markets)} credits)") or {}
 
 
-def daily_prop_budget(main_cost=3, per_game=len(C.NBA_PROPS)):
+def daily_prop_budget(main_cost=len(C.NBA_MAIN), per_game=len(C.NBA_PROPS)):
     """How many games can get props today without running out before the month resets."""
     have = credits().get("remaining")
     if have is None:
@@ -130,7 +130,7 @@ def candidates(event, sport):
             for o in m.get("outcomes", []):
                 who = o.get("description")
                 pt = o.get("point")
-                gkey = (bk, mk, who, abs(pt) if (mk == "spreads" and pt is not None) else pt)
+                gkey = (bk, mk, who, abs(pt) if (mk in ("spreads", "alternate_spreads") and pt is not None) else pt)
                 groups.setdefault(gkey, []).append(o)
     for (bk, mk, who, _), outs in groups.items():
         fair = M.no_vig([o["price"] for o in outs]) if len(outs) == 2 else [None] * len(outs)

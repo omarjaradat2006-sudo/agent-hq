@@ -805,12 +805,29 @@
     d.append(ul); d.append(el("div", "small", p.sgp ? "All legs are from one game and avoid combos the app blocks (both sides of a line, the same player and stat twice, moneyline + spread). Leg odds were live when posted; the chance assumes the legs are independent, so treat it as rough." : "One leg per game, so the app takes it as a normal parlay. Odds were live when posted; check the price in the app, it can move.")); c.append(d);
     return c;
   }
+  function mainSlip(m) {
+    const c = el("div", "card");
+    const h = el("div", "row between"); h.append(el("h3", null, `Main event parlay · ${m.game}`)); if (m.strength) h.append(tag(m.strength, STRC[m.strength])); c.append(h);
+    if ((m.legs || []).length) {
+      const b = el("div", null, `Place on ${m.bookName} as a Same Game Parlay`); b.style.fontWeight = "700"; b.style.margin = "4px 0 6px"; c.append(b);
+      m.legs.forEach(l => c.append(legLine(l.tap || l.text, l.american, l.status)));
+    }
+    if ((m.addOns || []).length) {
+      c.append(el("div", "label", "Add in the app (odds not in our feed, you decide)"));
+      m.addOns.forEach(a => { const r = legLine(a.bet, a.rating, null); c.append(r); if (a.why) c.append(el("div", "small", a.why)); });
+    }
+    if (m.american) { const tot = el("div", "row between"); tot.style.marginTop = "8px"; tot.append(el("div", null, "Estimated odds (checked legs only)")); const tv = el("div", null, "~" + m.american); tv.style.fontWeight = "800"; tot.append(tv); c.append(tot); }
+    c.append(el("div", "small", "Adding legs changes the total. The app shows the final same-game parlay price, so confirm it before placing. The record tracks the checked legs only."));
+    const r = resultLine(m); if (r) c.append(r);
+    return c;
+  }
   function dogCard(x) {
     const c = el("div", "card");
     const h = el("div", "row between"); h.append(el("h3", null, "UFC underdog pick"), tag(x.risk || "High risk", "#e2603c")); c.append(h);
     const book = el("div", null, `Place on ${x.bookName}`); book.style.fontWeight = "700"; book.style.margin = "4px 0 6px"; c.append(book);
-    c.append(legLine(x.betText, x.american, (x.legs || [{}])[0].status));
-    c.append(el("div", "why", `Path to win: ${x.path}. ${x.why || ""}`));
+    if (x.methodBet) c.append(legLine(x.methodBet, "price in app", null));
+    c.append(legLine(x.methodBet ? `Or straight win: ${x.betText.split(": ").pop()}` : x.betText, x.american, (x.legs || [{}])[0].status));
+    c.append(el("div", "why", `Why they could win: ${x.why || ""}`));
     if (x.pathNote) c.append(el("div", "small", x.pathNote));
     const r = resultLine(x); if (r) c.append(r);
     const d = el("details"); d.append(el("summary", null, "Details")); const ul = el("ul");
@@ -839,6 +856,7 @@
       if (u.noEvent) { body.append(el("div", "card", "No UFC event this week")); return; }
       if (u.message) body.append(el("div", "card", u.message));
       (u.parlays || []).forEach(p => body.append(slip(p)));
+      if (u.main) body.append(mainSlip(u.main));
       body.append(el("div", "label", "UFC underdog picks · high risk"));
       if (u.dogMessage) body.append(el("div", "card", u.dogMessage));
       (u.underdogs || []).forEach(x => body.append(dogCard(x)));

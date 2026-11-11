@@ -100,7 +100,7 @@ def nba_leg(leg, home, away, box=None):
     mine, theirs = (home, away) if side == leg["home"] else (away, home)
     if mk == "h2h":
         return "won" if mine > theirs else "lost"
-    if mk == "spreads":
+    if mk in ("spreads", "alternate_spreads"):
         d = mine + float(pt) - theirs
         return "push" if d == 0 else "won" if d > 0 else "lost"
     if mk == "totals":
@@ -199,6 +199,7 @@ def settle_leg(sport, leg):
     if r.get("status") != "finished":
         return None, None
     leg["final"] = f"{r.get('winner')} by {r.get('method')}" + (f", round {r.get('round')} {r.get('time')}" if r.get("round") else "")
+    leg["method"], leg["winner"] = str(r.get("method") or ""), str(r.get("winner") or "")
     return ufc_leg(leg, r), f"search: {url}"
 
 

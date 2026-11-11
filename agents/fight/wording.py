@@ -9,10 +9,10 @@ def base(mk):
 TAB = {
     "fanduel": {"h2h": "Popular / Game Lines", "spreads": "Popular / Game Lines", "totals": "Popular / Game Lines",
                 "team_totals": "Team Props", "player_points": "Player Points", "player_rebounds": "Player Rebounds",
-                "player_assists": "Player Assists", "player_threes": "Player Threes"},
+                "player_assists": "Player Assists", "player_threes": "Player Threes", "alternate_spreads": "Alternate Spread"},
     "draftkings": {"h2h": "Game Lines", "spreads": "Game Lines", "totals": "Game Lines", "team_totals": "Team Props",
                    "player_points": "Player Points", "player_rebounds": "Player Rebounds", "player_assists": "Player Assists",
-                   "player_threes": "Player Threes"},
+                   "player_threes": "Player Threes", "alternate_spreads": "Alternate Spread"},
 }
 UFC_TAB = {"h2h": "Fight Lines / Moneyline", "totals": "Total Rounds"}
 
@@ -44,6 +44,8 @@ def leg_text(c, book, with_game=True):
         return f"{g}: {side} to Win" if c["sport"] == "ufc" else f"{g}: {short(side)} Moneyline"
     if mk == "spreads":
         return f"{g}: {short(side)} {pt:+g}"
+    if mk == "alternate_spreads":
+        return f"{g}: {short(side)} {pt:+g} (Alternate Spread)"
     if mk == "totals":
         return f"{g}: {side} {num(pt)} Total {'Rounds' if c['sport'] == 'ufc' else 'Points'}"
     if mk == "team_totals":

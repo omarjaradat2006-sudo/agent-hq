@@ -90,7 +90,7 @@ def leg_row(c, book):
 # Combos FanDuel/DraftKings block or treat as correlated in an SGP, so we never build them:
 #  - both sides of a line, or two lines on the same player + stat (e.g. Over 24.5 Points + 20+ Points)
 #  - moneyline + spread in the same game; two game totals
-GAME_LINE = {"h2h": "side", "spreads": "side", "totals": "total"}
+GAME_LINE = {"h2h": "side", "spreads": "side", "alternate_spreads": "side", "totals": "total"}
 
 
 def sgp_ok(combo):

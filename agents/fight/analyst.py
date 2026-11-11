@@ -71,7 +71,7 @@ def lines(cands):
     groups = {}
     for c in cands:
         who = c.get("player") or c.get("team") or ""
-        pt = abs(c["point"]) if (c["market"] == "spreads" and c["point"] is not None) else c["point"]
+        pt = abs(c["point"]) if (c["market"] in ("spreads", "alternate_spreads") and c["point"] is not None) else c["point"]
         groups.setdefault((c["eventId"], c["market"], who, pt), []).append(c)
     rows, idx = [], {}
     for n, ((eid, mk, who, pt), cs) in enumerate(sorted(groups.items(), key=lambda kv: (kv[1][0]["commence"] or "", str(kv[0]))), 1):
@@ -81,11 +81,11 @@ def lines(cands):
         for c in cs:
             pr = " ".join(f"{C.BOOKS[b][:2]} {W.american(d)}" for b, d in c["prices"].items())
             parts.append(f"{c['side']}{'' if c['point'] is None or mk == 'totals' or mk.startswith('player') or mk == 'team_totals' else ' ' + format(c['point'], '+g')} [{pr}] fair {c['fair']*100:.0f}%")
-        label = {"h2h": "Winner", "spreads": "Spread", "totals": "Game total" if cs[0]["sport"] == "nba" else "Total rounds",
+        label = {"h2h": "Winner", "spreads": "Spread", "alternate_spreads": "Alternate spread (big cushion)", "totals": "Game total" if cs[0]["sport"] == "nba" else "Total rounds",
                  "team_totals": f"{who} team total", "player_points": f"{who} points", "player_rebounds": f"{who} rebounds",
                  "player_assists": f"{who} assists", "player_threes": f"{who} threes",
                  "player_points_alternate": f"{who} points milestone (Over {pt} = {int((pt or 0) + 0.5)}+ points)"}.get(mk, mk)
-        line_pt = "" if pt is None or mk in ("h2h", "spreads") else f" {pt:g}"
+        line_pt = "" if pt is None or mk in ("h2h", "spreads", "alternate_spreads") else f" {pt:g}"
         rows.append(f"{lid} | {W.game(cs[0])} | {label}{line_pt} | " + " | ".join(parts))
     return "\n".join(rows), idx
 
@@ -172,7 +172,7 @@ Research notes:
 Sources:
 {src}
 
-{"These lines will be combined into SAME-GAME parlays (2-5 legs from one game), so prefer legs that fit one believable game script and avoid legs that contradict each other." if sport == "nba" else ""}
+{"These lines will be combined into SAME-GAME parlays (2-5 legs from one game), so prefer legs that fit one believable game script and avoid legs that contradict each other. There are NO moneylines or regular spreads (Omar's rule); alternate spreads shown are only big-cushion ones." if sport == "nba" else ""}
 Pick up to 45 lines where the research gives you a concrete, specific reason to disagree with or confirm the market, and estimate the TRUE chance of the side you'd choose.
 - Start from the fair chance and move only for specific reasons (injury, role change, rest, matchup, recent form, weigh-in, style).
 - Moves above 10 points need a strong specific reason.
@@ -186,7 +186,7 @@ Return JSON only: {{"picks":[{{"id":"L12","side":"exact side name as shown (team
 def ufc_event(today):
     q = (f"Today is {today} (a Friday). Is there a UFC event this Friday, Saturday or Sunday? UFC only, not PFL, ONE or other promotions. "
          'Reply JSON only: {"event":{"name":"UFC ...","date":"YYYY-MM-DD","bouts":[["Fighter A","Fighter B"], ...]}} with every bout on the main card and prelims, '
-         'or {"event":null} if there is no UFC event.')
+         'or {"event":null} if there is no UFC event. List the MAIN EVENT bout FIRST.')
     text, src = gen(q, search=True, temperature=0.1)
     out = parse(text) or {}
     return out.get("event"), src
@@ -218,6 +218,26 @@ Return JSON only:
   "oneLine":"one plain sentence on why they could actually win",
   "breakdown":{{"style":"stance and style","matchup":"striker vs wrestler, reach, cardio, chin","form":"recent form and activity, layoffs","finishing":"finishing record and how they have been finished","weighIn":"weigh-in: missed weight / drained / short notice","camp":"camp or coaching changes","news":"injuries or bad news","media":"press conference and media","lineMove":"fight-week line movement"}}}}]}}"""
     return json_call(p)
+
+
+def main_event_legs(today, bout, notes, sources):
+    """Strike / takedown / method / round legs for the main event. The odds feed doesn't carry these, so no prices:
+    ranked by how strongly the research backs them; Omar checks the price in the app."""
+    src = "\n".join(f"- {t}: {u}" for t, u in sources[:20])
+    out = json_call(f"""Today is {today}. Main event: {bout[0]} vs {bout[1]}.
+Research notes:
+{notes[:16000]}
+Sources:
+{src}
+
+Suggest up to 5 legs for a main-event same-game parlay that FanDuel or DraftKings usually offer for a UFC main event:
+significant strikes (e.g. "X 60+ Significant Strikes"), takedowns (e.g. "X 2+ Takedowns"), method of victory ("X by KO/TKO", "X by Submission", "X by Decision"),
+"Fight Goes the Distance" / "Fight Doesn't Go the Distance", round totals. Word each exactly the way the app shows it.
+Only include legs the research specifically supports. Rank each: "Strongest", "Strong" or "Lean". Never call anything guaranteed or a lock.
+Return JSON only: {{"legs":[{{"bet":"...","rating":"Strongest|Strong|Lean","why":"one plain sentence"}}]}}""")
+    order = {"Strongest": 0, "Strong": 1, "Lean": 2}
+    legs = [l for l in (out.get("legs") or []) if isinstance(l, dict) and l.get("bet")]
+    return sorted(legs, key=lambda l: order.get(l.get("rating"), 3))[:5]
 
 
 def why_lines(parlays):

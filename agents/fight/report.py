@@ -11,7 +11,27 @@ AGENTS = [
     {"id": "value", "name": "Parlay Builder", "role": "3 placeable parlays, one leg per game, one book"},
     {"id": "grader", "name": "Results Grader", "role": "Grades every parlay and underdog pick"},
 ]
-KINDS = {"nba_parlay": "NBA same-game parlays (at estimated odds)", "ufc_parlay": "UFC parlays", "ufc_dog": "UFC underdog picks"}
+KINDS = {"nba_parlay": "NBA same-game parlays (at estimated odds)", "ufc_parlay": "UFC parlays",
+         "ufc_main": "UFC main event parlays (checked legs only)", "ufc_dog": "UFC underdog picks (straight win)"}
+
+
+def method_line(bets):
+    """How often an underdog pick won by the method we suggested (KO/TKO, submission, finish, decision)."""
+    graded = [b for b in bets if b.get("kind") == "ufc_dog" and b.get("methodBet") and b.get("status") in ("won", "lost")]
+    if not graded:
+        return None
+    def hit(b):
+        m, p = (b["legs"][0].get("method") or "").lower(), b["path"].lower()
+        if b["status"] != "won":
+            return False
+        if "ko" in p:
+            return "ko" in m
+        if "sub" in p:
+            return "sub" in m
+        if "finish" in p:
+            return "decision" not in m
+        return "decision" in m
+    return f"UFC underdog method calls: right {sum(map(hit, graded))} of {len(graded)}"
 
 
 def stats(bets):
@@ -37,7 +57,8 @@ def record(lg):
     for sp in ("nba", "ufc"):
         for t, _, _ in C.TARGETS:
             tl.append(line(f"{sp.upper()} {t} parlays", stats([b for b in bets if b.get("kind") == f"{sp}_parlay" and b.get("tier") == t])))
-    return {"all": stats(bets), "byKind": by, "lines": [line(KINDS[k], by[k]) for k in KINDS], "tierLines": tl, "updatedAt": S.now_iso()}
+    ml = method_line(bets)
+    return {"all": stats(bets), "byKind": by, "lines": [line(KINDS[k], by[k]) for k in KINDS] + ([ml] if ml else []), "tierLines": tl, "updatedAt": S.now_iso()}
 
 
 def refresh(st, lg):

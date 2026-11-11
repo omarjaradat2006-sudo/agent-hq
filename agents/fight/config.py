@@ -11,8 +11,12 @@ BANNED = re.compile(r"bet\s*-?\s*365", re.I)
 assert not any(BANNED.search(k) or BANNED.search(v) for k, v in BOOKS.items())
 
 NBA_KEY, UFC_KEY = "basketball_nba", "mma_mixed_martial_arts"
-NBA_MAIN = ["h2h", "spreads", "totals"]                  # one call for all games
-NBA_PROPS = ["player_points", "player_rebounds", "player_assists", "player_threes", "player_points_alternate"]  # per game; alternate = "20+ Points" milestones
+# Omar's rule (Nov 11): NO moneylines and NO regular spreads in NBA slips. Game totals, player props, milestones,
+# and alternate spreads only when they carry a big cushion (priced -300 or shorter).
+NBA_MAIN = ["totals"]                                     # one call for all games (1 credit)
+NBA_PROPS = ["player_points", "player_rebounds", "player_assists", "player_threes", "player_points_alternate", "alternate_spreads"]  # per game
+NBA_BLOCKED_MARKETS = {"h2h", "spreads"}
+ALT_SPREAD_MAX_DEC = 1.334                                # -300 or shorter
 UFC_MAIN = ["h2h", "totals"]                              # The Odds API: fight winner + total rounds (some books). No method/strikes/takedowns.
 
 # Odds API credits. 2 bookmakers = 1 region, so a call costs [markets returned] credits.

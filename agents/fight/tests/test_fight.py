@@ -40,7 +40,9 @@ def props(i, away, home):
          mk("player_assists", ou(p3, 7.5, 1.95, 1.85)),
          mk("player_threes", ou(p1, 2.5, 2.10, 1.72)),
          mk("player_points_alternate", [{"name": "Over", "description": p1, "price": 1.30, "point": 19.5}, {"name": "Over", "description": p1, "price": 3.40, "point": 29.5},
-                                        {"name": "Over", "description": p2, "price": 1.55, "point": 14.5}, {"name": "Over", "description": p3, "price": 12.0, "point": 39.5}])]
+                                        {"name": "Over", "description": p2, "price": 1.55, "point": 14.5}, {"name": "Over", "description": p3, "price": 12.0, "point": 39.5}]),
+         mk("alternate_spreads", [{"name": home, "price": 1.25, "point": 14.5}, {"name": away, "price": 4.0, "point": -14.5},
+                                  {"name": home, "price": 1.80, "point": 2.5}, {"name": away, "price": 2.0, "point": -2.5}])]
     return {"id": f"g{i}", "commence_time": iso(5 + i * 0.5), "home_team": home, "away_team": away,
             "bookmakers": [book("fanduel", m), book("draftkings", m[:2]), book("bet365", m, "bet365")]}
 
@@ -61,6 +63,10 @@ class FakeGemini:
             names = re.findall(r"^- (.+?) \(vs", prompt, re.M)
             return json.dumps({"underdogs": [{"fighter": n, "genuine": i == 0, "prob": 0.42, "path": "KO/TKO", "oneLine": "Heavy hands and the favourite gets hit a lot. A lock!",
                                               "breakdown": {"style": "orthodox striker", "weighIn": "made weight easily"}} for i, n in enumerate(names)]}), []
+        if "Main event:" in prompt:
+            return json.dumps({"legs": [{"bet": "Arman Tsarukyan 2+ Takedowns", "rating": "Strong", "why": "Wrestles first. Basically guaranteed."},
+                                        {"bet": "Fight Goes the Distance", "rating": "Lean", "why": "Both durable."},
+                                        {"bet": "Islam Makhachev by Submission", "rating": "Strongest", "why": "Elite top control."}]}), []
         if "ONE short plain sentence" in prompt:
             n = len(re.findall(r"^P\d+:", prompt, re.M))
             return json.dumps({"why": {f"P{i}": "Built on injury news and matchups; this is guaranteed." for i in range(n)}}), []
@@ -134,6 +140,11 @@ class T(unittest.TestCase):
             self.assertNotIn(bad, json.dumps(lg).replace("[excluded book]", ""))
         self.assertNotIn("Bet365 has", dump)
         self.assertTrue(any(l.get("player") for p in ps for l in p["legs"]))                # props are used
+        for p in ps:
+            for l in p["legs"]:
+                self.assertNotIn(l["market"], ("h2h", "spreads"))                              # Omar's rule: no moneyline / regular spread
+                if l["market"] == "alternate_spreads":
+                    self.assertLessEqual(l["dec"], C.ALT_SPREAD_MAX_DEC)
         self.assertEqual(len(lg["bets"]), 3)
 
     def test_ufc_no_event(self):
@@ -151,7 +162,12 @@ class T(unittest.TestCase):
         d = c["underdogs"][0]
         self.assertEqual((d["risk"], d["path"], d["bookName"]), ("High risk", "KO/TKO", "FanDuel"))
         self.assertIn("to Win", d["betText"]); self.assertNotIn("lock", d["why"].lower())
-        self.assertTrue(d["pathNote"])
+        self.assertTrue(d["pathNote"]); self.assertEqual(d["methodBet"], f"{d['legs'][0]['side']} by KO/TKO")
+        m = c["main"]
+        self.assertEqual(m["game"], "Islam Makhachev vs Arman Tsarukyan")
+        self.assertEqual([a["rating"] for a in m["addOns"]], ["Strongest", "Strong", "Lean"])
+        self.assertNotIn("guaranteed", json.dumps(m["addOns"]).lower())
+        self.assertTrue(1 <= len(m["legs"]) <= 2 and len({l["eventId"] for l in m["legs"]}) == 1)
         self.assertGreaterEqual(len(c["parlays"]), 1)
         lg = S.ledger()
         for b in lg["bets"]:
@@ -163,7 +179,8 @@ class T(unittest.TestCase):
         dog = next(b for b in lg["bets"] if b["kind"] == "ufc_dog")
         self.assertEqual(dog["status"], "won" if dog["legs"][0]["side"] == "Arman Tsarukyan" else "lost")
         rec = S.state()["record"]
-        self.assertTrue(rec["lines"][2].startswith("UFC underdog picks: "))
+        self.assertTrue(any(l.startswith("UFC underdog picks (straight win): ") for l in rec["lines"]))
+        self.assertTrue(any(l.startswith("UFC underdog method calls: right ") for l in rec["lines"]))
 
     def test_nba_grading_props_and_void(self):
         K.run_nba()
