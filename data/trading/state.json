@@ -2,14 +2,14 @@
  "team": "trading",
  "plain": {
   "line": "Even since start · 0 trades · holding: nothing (all cash)",
-  "rulesMode": "strict",
+  "rulesMode": "aggressive",
   "top": "Even since start (still $100,000.00) · just holding SPY would be +0.98%",
   "up": true,
   "holding": [
    "Nothing right now (all cash)."
   ],
   "today": [
-   "Scanned the news 118 times today: read 7160 headlines, found 163 that could move a stock or coin it's allowed to trade. None passed every check, so no trade (that's normal).",
+   "Scanned the news 119 times today: read 7162 headlines, found 163 that could move a stock or coin it's allowed to trade. None passed every check, so no trade (that's normal).",
    "Passed on AMAT, KLAC, LRCX, TSLA: only 1 source(s) so far: 24/7 Wall St..",
    "Passed on AMD: only 1 source(s) so far: Benzinga.",
    "Passed on AVAV, INTC, MU, NOW: volume only 0.4x normal (need 1.5x).",
@@ -17,10 +17,10 @@
    "Safety rules that stepped in: stock entry window (x21)."
   ],
   "watchlist": "Allowed to trade: 69 halal stocks, 5 Shariah ETFs, 9 coins.",
-  "lastScan": "2026-11-11T22:28:43Z"
+  "lastScan": "2026-11-11T22:29:15Z"
  },
  "hired": true,
- "updatedAt": "2026-11-11T22:28:46Z",
+ "updatedAt": "2026-11-11T22:29:18Z",
  "mode": "PAPER",
  "agents": [
   {
@@ -28,8 +28,8 @@
    "name": "News Scout",
    "role": "Reads X, Reddit and news feeds",
    "status": "working",
-   "doing": "Read 3 new headlines/posts, 1 market-moving stories",
-   "lastRun": "2026-11-11T22:28:45Z"
+   "doing": "Read 2 new headlines/posts, 0 market-moving stories",
+   "lastRun": "2026-11-11T22:29:17Z"
   },
   {
    "id": "analyst",
@@ -69,7 +69,7 @@
    "role": "Places paper orders on Alpaca",
    "status": "working",
    "doing": "Paper-trading bot started (Alpaca PAPER account only). Close this window to stop it.",
-   "lastRun": "2026-11-11T22:28:42Z"
+   "lastRun": "2026-11-11T22:29:15Z"
   },
   {
    "id": "coins",
@@ -89,6 +89,26 @@
   }
  ],
  "log": [
+  {
+   "t": "2026-11-11T22:29:17Z",
+   "agent": "News Scout",
+   "msg": "Read 2 new headlines/posts, 0 market-moving stories"
+  },
+  {
+   "t": "2026-11-11T22:29:16Z",
+   "agent": "News Scout",
+   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
+  },
+  {
+   "t": "2026-11-11T22:29:15Z",
+   "agent": "News Scout",
+   "msg": "Agent Reach not found: news feeds + Yahoo Finance + Reddit direct (no X)"
+  },
+  {
+   "t": "2026-11-11T22:29:15Z",
+   "agent": "Trader",
+   "msg": "Paper-trading bot started (Alpaca PAPER account only). Close this window to stop it."
+  },
   {
    "t": "2026-11-11T22:28:45Z",
    "agent": "News Scout",
@@ -818,31 +838,11 @@
    "t": "2026-11-11T02:09:23Z",
    "agent": "News Scout",
    "msg": "Read 56 new headlines/posts, 1 market-moving stories"
-  },
-  {
-   "t": "2026-11-11T01:54:18Z",
-   "agent": "Trader",
-   "msg": "Saved results to the Agent HQ dashboard"
-  },
-  {
-   "t": "2026-11-11T01:54:16Z",
-   "agent": "News Scout",
-   "msg": "Read 7 new headlines/posts, 0 market-moving stories"
-  },
-  {
-   "t": "2026-11-11T01:54:06Z",
-   "agent": "News Scout",
-   "msg": "Agent Reach not found: running on news feeds only (no X/Reddit)"
-  },
-  {
-   "t": "2026-11-11T01:54:06Z",
-   "agent": "Trader",
-   "msg": "Paper-trading bot started (Alpaca PAPER account only). Close this window to stop it."
   }
  ],
  "brief": {
   "date": "Wed Nov 11",
-  "createdAt": "2026-11-11T22:28:46Z",
+  "createdAt": "2026-11-11T22:29:18Z",
   "headline": "Paper account +$0 today (+0.00%), +0.00% total vs SPY +0.98% · 0 open",
   "summary": "0 trade(s) closed today, 0/0 winners overall. TradingAgents checks used today: 1/5.",
   "notes": [
@@ -867,7 +867,7 @@
   "deepUsed": 1,
   "deepMax": 5,
   "social": {
-   "at": "2026-11-11T22:28:44Z",
+   "at": "2026-11-11T22:29:16Z",
    "items": 0,
    "source": "Reddit direct (X needs Agent Reach)",
    "problems": [
@@ -2989,14 +2989,16 @@
    "min_publishers": 2,
    "min_news_publishers": 1,
    "min_confidence": 0.6,
-   "min_rvol": 1.5,
+   "min_rvol": 0.0,
    "min_move_pct": 0.003,
    "max_move_pct": 0.03,
    "event_fresh_hours": 6,
    "sell_min_confidence": 0.6,
-   "mode": "strict"
+   "single_source": "any_news",
+   "carry_overnight": true,
+   "mode": "aggressive"
   },
-  "rulesMode": "strict",
+  "rulesMode": "aggressive",
   "halal": {
    "no_margin": true,
    "no_short": true,
