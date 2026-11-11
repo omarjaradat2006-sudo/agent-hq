@@ -1,6 +1,6 @@
-# 7-day paper test: day 1 of 7 (running)
+# 7-day paper test: day 2 of 7 (running)
 
-PAPER account only. 2026-11-10 01:51 UTC to 2026-11-17 01:51 UTC. Updated 2026-11-10 21:45 UTC.
+PAPER account only. 2026-11-10 01:51 UTC to 2026-11-17 01:51 UTC. Updated 2026-11-11 21:45 UTC.
 
 ## Results
 
@@ -9,17 +9,17 @@ PAPER account only. 2026-11-10 01:51 UTC to 2026-11-17 01:51 UTC. Updated 2026-1
 | Trades opened / closed / still open | 0 / 0 / 0 |
 | Win rate | — (0 won, 0 lost) |
 | Realised P&L | $+0.00 (avg trade —, avg win —, avg loss —) |
-| Account change | $+0.00 (+0.00%) vs SPY -0.37% |
+| Account change | $+0.00 (+0.00%) vs SPY +0.98% |
 | Open positions P&L | $+0.00 |
 | Max drawdown | +0.00% (Alpaca 15-min history + bot samples) |
 | Kill switch | off |
-| Bot (re)starts | 2 |
+| Bot (re)starts | 3 |
 
 ## Every risk-rule trigger
 
 | Rule | Times | Assets | First | Last |
 |---|---|---|---|---|
-| Stock entry window (first 10 / last 30 min) | 15 | XOM, CVX, OXY | 2026-11-10T20:35 | 2026-11-10T20:56 |
+| Stock entry window (first 10 / last 30 min) | 36 | XOM, CVX, OXY, HAL, MU, NVDA, INTC, NOW | 2026-11-10T20:35 | 2026-11-11T20:55 |
 
 Timeline (repeats in a row folded together):
 
@@ -38,11 +38,34 @@ Timeline (repeats in a row folded together):
 - 2026-11-10 20:56 Stock entry window (first 10 / last 30 min) XOM: last 30 min before the close
 - 2026-11-10 20:56 Stock entry window (first 10 / last 30 min) CVX: last 30 min before the close
 - 2026-11-10 20:56 Stock entry window (first 10 / last 30 min) OXY: last 30 min before the close
+- 2026-11-11 14:37 Stock entry window (first 10 / last 30 min) HAL: first minutes after the open
+- 2026-11-11 20:35 Stock entry window (first 10 / last 30 min) MU: last 30 min before the close
+- 2026-11-11 20:35 Stock entry window (first 10 / last 30 min) NVDA: last 30 min before the close
+- 2026-11-11 20:35 Stock entry window (first 10 / last 30 min) INTC: last 30 min before the close
+- 2026-11-11 20:35 Stock entry window (first 10 / last 30 min) NOW: last 30 min before the close
+- 2026-11-11 20:40 Stock entry window (first 10 / last 30 min) MU: last 30 min before the close
+- 2026-11-11 20:40 Stock entry window (first 10 / last 30 min) NVDA: last 30 min before the close
+- 2026-11-11 20:40 Stock entry window (first 10 / last 30 min) INTC: last 30 min before the close
+- 2026-11-11 20:40 Stock entry window (first 10 / last 30 min) NOW: last 30 min before the close
+- 2026-11-11 20:45 Stock entry window (first 10 / last 30 min) MU: last 30 min before the close
+- 2026-11-11 20:45 Stock entry window (first 10 / last 30 min) NVDA: last 30 min before the close
+- 2026-11-11 20:45 Stock entry window (first 10 / last 30 min) INTC: last 30 min before the close
+- 2026-11-11 20:45 Stock entry window (first 10 / last 30 min) NOW: last 30 min before the close
+- 2026-11-11 20:50 Stock entry window (first 10 / last 30 min) MU: last 30 min before the close
+- 2026-11-11 20:50 Stock entry window (first 10 / last 30 min) NVDA: last 30 min before the close
+- 2026-11-11 20:50 Stock entry window (first 10 / last 30 min) INTC: last 30 min before the close
+- 2026-11-11 20:50 Stock entry window (first 10 / last 30 min) NOW: last 30 min before the close
+- 2026-11-11 20:55 Stock entry window (first 10 / last 30 min) MU: last 30 min before the close
+- 2026-11-11 20:55 Stock entry window (first 10 / last 30 min) NVDA: last 30 min before the close
+- 2026-11-11 20:55 Stock entry window (first 10 / last 30 min) INTC: last 30 min before the close
+- 2026-11-11 20:55 Stock entry window (first 10 / last 30 min) NOW: last 30 min before the close
 
 ## Errors
 
-- **gemini_triage** x2 (last 2026-11-10T20:13): Expecting ':' delimiter: line 16 column 7 (char 409)
+- **gemini_triage** x5 (last 2026-11-11T16:11): Expecting ':' delimiter: line 16 column 7 (char 409)
 - **sec_unreachable** x2 (last 2026-11-10T19:59): HTTP 403 https://www.sec.gov/files/company_tickers.json
+- **tradingagents** x1 (last 2026-11-11T18:44): rateContent. Call ModelService.ListModels to see the list of available models and their supported methods.', 'status': 'NOT_FOUND'}}
+During task with name 'agent' and id 'a1823eed-1591-4414-bf92-8c9f3
 
 ## Trades
 

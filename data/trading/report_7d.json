@@ -1,10 +1,10 @@
 {
  "status": "running",
- "updatedAt": "2026-11-10T21:45:01Z",
+ "updatedAt": "2026-11-11T21:45:01Z",
  "mode": "PAPER",
  "from": "2026-11-10T01:51:53Z",
  "to": "2026-11-17T01:51:53Z",
- "day": 1,
+ "day": 2,
  "days": 7,
  "trades": {
   "opened": 0,
@@ -26,8 +26,8 @@
   "endEquity": 100000.0,
   "pnl": 0.0,
   "pnlPct": 0.0,
-  "spyPct": -0.37,
-  "vsSpyPct": 0.37,
+  "spyPct": 0.98,
+  "vsSpyPct": -0.98,
   "maxDrawdownPct": 0.0,
   "maxDrawdownAt": null,
   "curveSource": "Alpaca 15-min history + bot samples",
@@ -38,14 +38,19 @@
    "rule": "stock_entry_window",
    "label": "Stock entry window (first 10 / last 30 min)",
    "kind": "risk",
-   "count": 15,
+   "count": 36,
    "symbols": [
     "XOM",
     "CVX",
-    "OXY"
+    "OXY",
+    "HAL",
+    "MU",
+    "NVDA",
+    "INTC",
+    "NOW"
    ],
    "first": "2026-11-10T20:35:03Z",
-   "last": "2026-11-10T20:56:50Z",
+   "last": "2026-11-11T20:55:30Z",
    "example": "last 30 min before the close"
   }
  ],
@@ -184,6 +189,195 @@
    "msg": "last 30 min before the close",
    "times": 1,
    "lastT": "2026-11-10T20:56:50Z"
+  },
+  {
+   "t": "2026-11-11T14:37:45Z",
+   "kind": "risk",
+   "rule": "stock_entry_window",
+   "symbol": "HAL",
+   "msg": "first minutes after the open",
+   "times": 1,
+   "lastT": "2026-11-11T14:37:45Z"
+  },
+  {
+   "t": "2026-11-11T20:35:01Z",
+   "kind": "risk",
+   "rule": "stock_entry_window",
+   "symbol": "MU",
+   "msg": "last 30 min before the close",
+   "times": 1,
+   "lastT": "2026-11-11T20:35:01Z"
+  },
+  {
+   "t": "2026-11-11T20:35:01Z",
+   "kind": "risk",
+   "rule": "stock_entry_window",
+   "symbol": "NVDA",
+   "msg": "last 30 min before the close",
+   "times": 1,
+   "lastT": "2026-11-11T20:35:01Z"
+  },
+  {
+   "t": "2026-11-11T20:35:01Z",
+   "kind": "risk",
+   "rule": "stock_entry_window",
+   "symbol": "INTC",
+   "msg": "last 30 min before the close",
+   "times": 1,
+   "lastT": "2026-11-11T20:35:01Z"
+  },
+  {
+   "t": "2026-11-11T20:35:01Z",
+   "kind": "risk",
+   "rule": "stock_entry_window",
+   "symbol": "NOW",
+   "msg": "last 30 min before the close",
+   "times": 1,
+   "lastT": "2026-11-11T20:35:01Z"
+  },
+  {
+   "t": "2026-11-11T20:40:06Z",
+   "kind": "risk",
+   "rule": "stock_entry_window",
+   "symbol": "MU",
+   "msg": "last 30 min before the close",
+   "times": 1,
+   "lastT": "2026-11-11T20:40:06Z"
+  },
+  {
+   "t": "2026-11-11T20:40:06Z",
+   "kind": "risk",
+   "rule": "stock_entry_window",
+   "symbol": "NVDA",
+   "msg": "last 30 min before the close",
+   "times": 1,
+   "lastT": "2026-11-11T20:40:06Z"
+  },
+  {
+   "t": "2026-11-11T20:40:06Z",
+   "kind": "risk",
+   "rule": "stock_entry_window",
+   "symbol": "INTC",
+   "msg": "last 30 min before the close",
+   "times": 1,
+   "lastT": "2026-11-11T20:40:06Z"
+  },
+  {
+   "t": "2026-11-11T20:40:06Z",
+   "kind": "risk",
+   "rule": "stock_entry_window",
+   "symbol": "NOW",
+   "msg": "last 30 min before the close",
+   "times": 1,
+   "lastT": "2026-11-11T20:40:06Z"
+  },
+  {
+   "t": "2026-11-11T20:45:18Z",
+   "kind": "risk",
+   "rule": "stock_entry_window",
+   "symbol": "MU",
+   "msg": "last 30 min before the close",
+   "times": 1,
+   "lastT": "2026-11-11T20:45:18Z"
+  },
+  {
+   "t": "2026-11-11T20:45:18Z",
+   "kind": "risk",
+   "rule": "stock_entry_window",
+   "symbol": "NVDA",
+   "msg": "last 30 min before the close",
+   "times": 1,
+   "lastT": "2026-11-11T20:45:18Z"
+  },
+  {
+   "t": "2026-11-11T20:45:18Z",
+   "kind": "risk",
+   "rule": "stock_entry_window",
+   "symbol": "INTC",
+   "msg": "last 30 min before the close",
+   "times": 1,
+   "lastT": "2026-11-11T20:45:18Z"
+  },
+  {
+   "t": "2026-11-11T20:45:18Z",
+   "kind": "risk",
+   "rule": "stock_entry_window",
+   "symbol": "NOW",
+   "msg": "last 30 min before the close",
+   "times": 1,
+   "lastT": "2026-11-11T20:45:18Z"
+  },
+  {
+   "t": "2026-11-11T20:50:26Z",
+   "kind": "risk",
+   "rule": "stock_entry_window",
+   "symbol": "MU",
+   "msg": "last 30 min before the close",
+   "times": 1,
+   "lastT": "2026-11-11T20:50:26Z"
+  },
+  {
+   "t": "2026-11-11T20:50:26Z",
+   "kind": "risk",
+   "rule": "stock_entry_window",
+   "symbol": "NVDA",
+   "msg": "last 30 min before the close",
+   "times": 1,
+   "lastT": "2026-11-11T20:50:26Z"
+  },
+  {
+   "t": "2026-11-11T20:50:26Z",
+   "kind": "risk",
+   "rule": "stock_entry_window",
+   "symbol": "INTC",
+   "msg": "last 30 min before the close",
+   "times": 1,
+   "lastT": "2026-11-11T20:50:26Z"
+  },
+  {
+   "t": "2026-11-11T20:50:26Z",
+   "kind": "risk",
+   "rule": "stock_entry_window",
+   "symbol": "NOW",
+   "msg": "last 30 min before the close",
+   "times": 1,
+   "lastT": "2026-11-11T20:50:26Z"
+  },
+  {
+   "t": "2026-11-11T20:55:30Z",
+   "kind": "risk",
+   "rule": "stock_entry_window",
+   "symbol": "MU",
+   "msg": "last 30 min before the close",
+   "times": 1,
+   "lastT": "2026-11-11T20:55:30Z"
+  },
+  {
+   "t": "2026-11-11T20:55:30Z",
+   "kind": "risk",
+   "rule": "stock_entry_window",
+   "symbol": "NVDA",
+   "msg": "last 30 min before the close",
+   "times": 1,
+   "lastT": "2026-11-11T20:55:30Z"
+  },
+  {
+   "t": "2026-11-11T20:55:30Z",
+   "kind": "risk",
+   "rule": "stock_entry_window",
+   "symbol": "INTC",
+   "msg": "last 30 min before the close",
+   "times": 1,
+   "lastT": "2026-11-11T20:55:30Z"
+  },
+  {
+   "t": "2026-11-11T20:55:30Z",
+   "kind": "risk",
+   "rule": "stock_entry_window",
+   "symbol": "NOW",
+   "msg": "last 30 min before the close",
+   "times": 1,
+   "lastT": "2026-11-11T20:55:30Z"
   }
  ],
  "errors": [
@@ -191,10 +385,10 @@
    "rule": "gemini_triage",
    "label": "gemini triage",
    "kind": "error",
-   "count": 2,
+   "count": 5,
    "symbols": [],
    "first": "2026-11-10T02:00:27Z",
-   "last": "2026-11-10T20:13:25Z",
+   "last": "2026-11-11T16:11:54Z",
    "example": "Expecting ':' delimiter: line 16 column 7 (char 409)"
   },
   {
@@ -206,6 +400,18 @@
    "first": "2026-11-10T19:59:22Z",
    "last": "2026-11-10T19:59:30Z",
    "example": "HTTP 403 https://www.sec.gov/files/company_tickers.json"
+  },
+  {
+   "rule": "tradingagents",
+   "label": "tradingagents",
+   "kind": "error",
+   "count": 1,
+   "symbols": [
+    "AMD"
+   ],
+   "first": "2026-11-11T18:44:18Z",
+   "last": "2026-11-11T18:44:18Z",
+   "example": "rateContent. Call ModelService.ListModels to see the list of available models and their supported methods.', 'status': 'NOT_FOUND'}}\nDuring task with name 'agent' and id 'a1823eed-1591-4414-bf92-8c9f3"
   }
  ],
  "errorTimeline": [
@@ -235,9 +441,36 @@
    "msg": "All Gemini models failed. Last error: Gemini HTTP 429 on gemini-3.8-flash-lite-tts: {\n  \"error\": {\n    \"code\": 429,\n    \"message\": \"You exceeded your current quota, please check your plan and billing ",
    "times": 1,
    "lastT": "2026-11-10T20:13:25Z"
+  },
+  {
+   "t": "2026-11-10T23:35:00Z",
+   "kind": "error",
+   "rule": "gemini_triage",
+   "symbol": null,
+   "msg": "Expecting property name enclosed in double quotes: line 13 column 9 (char 412)",
+   "times": 1,
+   "lastT": "2026-11-10T23:35:00Z"
+  },
+  {
+   "t": "2026-11-11T16:05:17Z",
+   "kind": "error",
+   "rule": "gemini_triage",
+   "symbol": null,
+   "msg": "All Gemini models failed. Last error: Gemini HTTP 400 on gemini-3.8-flash-lite-tts: {\n  \"error\": {\n    \"code\": 400,\n    \"message\": \"Developer instruction is not enabled for this model\",\n    \"status\": ",
+   "times": 2,
+   "lastT": "2026-11-11T16:11:54Z"
+  },
+  {
+   "t": "2026-11-11T18:44:18Z",
+   "kind": "error",
+   "rule": "tradingagents",
+   "symbol": "AMD",
+   "msg": "rateContent. Call ModelService.ListModels to see the list of available models and their supported methods.', 'status': 'NOT_FOUND'}}\nDuring task with name 'agent' and id 'a1823eed-1591-4414-bf92-8c9f3",
+   "times": 1,
+   "lastT": "2026-11-11T18:44:18Z"
   }
  ],
- "restarts": 2,
+ "restarts": 3,
  "killSwitch": false,
  "tradeList": [],
  "limits": {
