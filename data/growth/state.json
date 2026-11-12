@@ -1,7 +1,7 @@
 {
   "team": "growth",
   "hired": true,
-  "updatedAt": "2026-11-10T15:19:01Z",
+  "updatedAt": "2026-11-12T18:41:02Z",
   "agents": [
     {
       "id": "lead",
@@ -43,12 +43,32 @@
       "id": "upgrades",
       "name": "Upgrade Lab",
       "status": "ok",
-      "doing": "Researched and proposed 'AI Marketing Campaign Builder with Approval Workflow' with a simulated 100-person test.",
-      "lastRun": "2026-11-09T21:23:38Z",
+      "doing": "Upgrading Growth Architect with Shopify Live Pulse & Morning Briefing Desk and running 100-person simulation.",
+      "lastRun": "2026-11-12T18:41:02Z",
       "nextRun": "2026-11-09T18:41:00Z"
     }
   ],
   "log": [
+    {
+      "t": "2026-11-12T18:41:02Z",
+      "agent": "Gemini team",
+      "msg": "Generated self-contained Claude build prompt and updated upgrade brief."
+    },
+    {
+      "t": "2026-11-12T18:41:02Z",
+      "agent": "Gemini team",
+      "msg": "Ran simulated 100-person swarm reaction test: 84% support, final score 9/10."
+    },
+    {
+      "t": "2026-11-12T18:41:02Z",
+      "agent": "Gemini team",
+      "msg": "Designed Shopify Live Pulse & Morning Briefing Desk upgrade for Growth Architect e-com office floors."
+    },
+    {
+      "t": "2026-11-12T18:41:02Z",
+      "agent": "Gemini team",
+      "msg": "Evaluated competitor pain points (Gorgias AI double-billing, Klaviyo escalation, Shopify Sidekick generic responses)."
+    },
     {
       "t": "2026-11-10T15:19:01Z",
       "agent": "Gemini team",
@@ -953,6 +973,92 @@
       },
       "createdAt": "2026-11-10T15:19:01Z",
       "madeBy": "gemini"
+    },
+    {
+      "id": "growth-u-2026-11-12-1",
+      "title": "Shopify Live Pulse & Morning Briefing Desk",
+      "format": "Product upgrade",
+      "hook": "Connect Shopify metrics directly to your office desk so AI agents draft data-driven marketing campaigns for daily morning review.",
+      "why": "Shopify merchants complain that tools like Sidekick are generic while Klaviyo/Gorgias charge per interaction. The 100-person simulation scored 9/10 (84% support), praising live store telemetry driving approval-gated agent tasks.",
+      "score": 9,
+      "impact": "High",
+      "effort": "M",
+      "tier": "Pro",
+      "script": "Adds a Shopify Live Pulse integration box to the Sales & Commerce floor desk. Each morning at the customer's scheduled briefing time, the agent fetches store metrics (revenue, top seller, low stock, cart abandonment rate) and populates the Morning Brief panel with 2-3 metric-tailored action drafts (e.g. low-stock urgency promo, win-back email draft). The user reviews, edits, and approves actions directly from the briefing panel. Evaluated via 2-week active daily brief engagement rates.",
+      "buildPrompt": "Paste into Omar's Main Chat in the Claude app.\n\nUse the Base44 connector on Growth Architect (app id 699b4057d65174480989a52e). First read the office floor components, briefing panel, and schema files, then create a checkpoint before making changes.\n\nAdd a Shopify Live Pulse integration component to the Commerce/Sales office desk panel. Update the Office entity schema to store `shopifyStoreUrl`, `shopifyAccessToken` (read-only), and `dailyBriefTime` under office settings (not user settings).\n\nCreate a `MorningBriefCard` component inside the office view that displays:\n1. Top Store Pulse metrics: Daily Sales, Orders, Low Stock Alerts, Abandoned Carts.\n2. Recommended Agent Actions: 2-3 auto-generated draft tasks created by the Commerce and Marketing agents based on metric triggers (e.g., 'Low stock on Item X: Draft Instagram Story campaign').\n3. Single-click 'Approve Draft' and 'Modify Plan' buttons for each action item. Approved items move directly to the Office Task Log.\n\nRules to strictly follow:\n- Keep the Stripe integration and pricing tiers exactly as they are ($9.99/$19.99/$39.99).\n- Do not add a left sidebar or a Specialists tab; keep the navigation cleanly within the office floor overview and Agents tab.\n- Maintain a professional, clean UI style with descriptive, actionable notifications.\n- Ensure all API tokens and connection settings belong strictly to the individual office instance.\n\nVerify that the preview loads with `show_app_preview`, the Shopify settings persist per office, and mock metric triggers generate actionable morning brief drafts. Report all changed files.",
+      "swarm": {
+        "date": "2026-11-12",
+        "createdAt": "2026-11-12T18:41:02Z",
+        "ideaId": "growth-2026-11-12-u1",
+        "idea": "Shopify Live Pulse & Morning Briefing Desk",
+        "verdict": "Strong endorsement (84% support) provided store credentials remain isolated to the office environment and approval remains mandatory before any live execution.",
+        "score": 9,
+        "support": {
+          "for": 84,
+          "against": 9,
+          "undecided": 7
+        },
+        "groups": [
+          {
+            "name": "Investors",
+            "for": 80,
+            "quote": "Tying agent workflows directly to Shopify store telemetry solves the retention problem for e-com SaaS.",
+            "username": "@saas_vc_dave"
+          },
+          {
+            "name": "Target Customers",
+            "for": 90,
+            "quote": "If my AI morning brief spots low-stock items and drafts an email campaign for my approval, that saves 2 hours every single morning.",
+            "username": "@boutique_sarah"
+          },
+          {
+            "name": "Skeptics",
+            "for": 75,
+            "quote": "As long as it doesn't auto-send promo emails without my explicit click, this is actually useful rather than a wrapper gimmick.",
+            "username": "@no_ai_slop_guy"
+          },
+          {
+            "name": "Marketers",
+            "for": 90,
+            "quote": "Direct integration between real store performance metrics and AI content generation bridges the execution gap.",
+            "username": "@growth_mike"
+          },
+          {
+            "name": "Everyday Users",
+            "for": 85,
+            "quote": "Clear visibility into store metrics right on the office floor makes the app feel like a real command center.",
+            "username": "@ecom_newbie_alex"
+          }
+        ],
+        "topPraise": [
+          "Bridges real store performance with immediate AI action items",
+          "Maintains human control with mandatory approval before execution",
+          "Makes the office desk UI functional rather than decorative"
+        ],
+        "topObjections": [
+          "Concerns about complex API setup",
+          "Fear of automated AI actions executing without explicit review"
+        ],
+        "changedMinds": "Skeptics shifted from against to for once it was clarified that metrics only populate draft proposals and require manual single-click authorization.",
+        "fixes": [
+          "Enforce read-only Shopify API permissions for data sync",
+          "Explicitly label all metric-driven agent actions as 'Draft Pending Approval'"
+        ],
+        "limits": "One model simulated 100 representative personas across 12 simulation hours; this is a rehearsal, not a forecast."
+      },
+      "sources": [
+        {
+          "title": "Shopify Sidekick AI Assistant",
+          "url": "https://www.shopify.com/sidekick"
+        },
+        {
+          "title": "Gorgias AI Pricing & Reviews",
+          "url": "https://www.gorgias.com"
+        }
+      ],
+      "status": "pending",
+      "createdAt": "2026-11-12T18:41:02Z",
+      "madeBy": "gemini"
     }
   ],
   "research": [
@@ -1361,6 +1467,66 @@
   },
   "swarms": [
     {
+      "date": "2026-11-12",
+      "createdAt": "2026-11-12T18:41:02Z",
+      "ideaId": "growth-2026-11-12-u1",
+      "idea": "Shopify Live Pulse & Morning Briefing Desk",
+      "verdict": "Strong endorsement (84% support) provided store credentials remain isolated to the office environment and approval remains mandatory before any live execution.",
+      "score": 9,
+      "support": {
+        "for": 84,
+        "against": 9,
+        "undecided": 7
+      },
+      "groups": [
+        {
+          "name": "Investors",
+          "for": 80,
+          "quote": "Tying agent workflows directly to Shopify store telemetry solves the retention problem for e-com SaaS.",
+          "username": "@saas_vc_dave"
+        },
+        {
+          "name": "Target Customers",
+          "for": 90,
+          "quote": "If my AI morning brief spots low-stock items and drafts an email campaign for my approval, that saves 2 hours every single morning.",
+          "username": "@boutique_sarah"
+        },
+        {
+          "name": "Skeptics",
+          "for": 75,
+          "quote": "As long as it doesn't auto-send promo emails without my explicit click, this is actually useful rather than a wrapper gimmick.",
+          "username": "@no_ai_slop_guy"
+        },
+        {
+          "name": "Marketers",
+          "for": 90,
+          "quote": "Direct integration between real store performance metrics and AI content generation bridges the execution gap.",
+          "username": "@growth_mike"
+        },
+        {
+          "name": "Everyday Users",
+          "for": 85,
+          "quote": "Clear visibility into store metrics right on the office floor makes the app feel like a real command center.",
+          "username": "@ecom_newbie_alex"
+        }
+      ],
+      "topPraise": [
+        "Bridges real store performance with immediate AI action items",
+        "Maintains human control with mandatory approval before execution",
+        "Makes the office desk UI functional rather than decorative"
+      ],
+      "topObjections": [
+        "Concerns about complex API setup",
+        "Fear of automated AI actions executing without explicit review"
+      ],
+      "changedMinds": "Skeptics shifted from against to for once it was clarified that metrics only populate draft proposals and require manual single-click authorization.",
+      "fixes": [
+        "Enforce read-only Shopify API permissions for data sync",
+        "Explicitly label all metric-driven agent actions as 'Draft Pending Approval'"
+      ],
+      "limits": "One model simulated 100 representative personas across 12 simulation hours; this is a rehearsal, not a forecast."
+    },
+    {
       "date": "2026-11-09",
       "createdAt": "2026-11-09T21:23:38Z",
       "ideaId": "growth-2026-11-09-u1",
@@ -1487,11 +1653,11 @@
     }
   ],
   "upgradeBrief": {
-    "date": "2026-11-09",
-    "createdAt": "2026-11-09T21:23:38Z",
-    "headline": "AI Campaign Builder with Approval: Speed + Control",
-    "summary": "Omar, the best upgrade is an AI Marketing Campaign Builder with Approval Workflow. It directly addresses the 'AI marketing production gap' and generic content complaints by letting agents generate multi-channel content drafts that you review and approve. The 100-person test showed strong support, praising the time-saving and control, with a verdict that people will back it if the AI learns from feedback.",
-    "pick": "AI Marketing Campaign Builder with Approval Workflow — tap Copy build prompt and paste it into your Main Chat",
+    "date": "2026-11-12",
+    "createdAt": "2026-11-12T18:41:02Z",
+    "headline": "Shopify Live Pulse & Morning Briefing Desk: Data-Driven AI Office",
+    "summary": "Omar, the top product upgrade is connecting live Shopify store metrics (sales, low stock, abandoned carts) directly into the office floor's morning brief panel. The 100-person simulation achieved an 84% approval rating (9/10 score), praising the combination of live telemetry with strict human approval control.",
+    "pick": "Shopify Live Pulse & Morning Briefing Desk — tap Copy build prompt and paste it into your Main Chat",
     "waiting": [
       "Waiting on Omar: Approval Queue: nothing goes out without you",
       "Waiting on Omar: A plan that fits every business fits none",
@@ -1502,7 +1668,8 @@
       "Waiting on Omar: Own 'marketing plan', not 'business plan'",
       "Waiting on Omar: Overwhelmed E-com Owner: The AI Office",
       "Waiting on Omar: No More Surprise Bills: Predictable AI Pricing",
-      "Waiting on Omar: Landing Page: Real Sample Plan + Transparent Pricing"
+      "Waiting on Omar: Landing Page: Real Sample Plan + Transparent Pricing",
+      "Waiting on Omar: AI Marketing Campaign Builder with Approval Workflow"
     ]
   }
 }
