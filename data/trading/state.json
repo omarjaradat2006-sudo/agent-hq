@@ -3,23 +3,23 @@
  "plain": {
   "line": "Even since start · 0 trades · holding: nothing (all cash)",
   "rulesMode": "aggressive",
-  "top": "Even since start (still $100,000.00) · just holding SPY would be +0.32%",
+  "top": "Even since start (still $100,000.00) · just holding SPY would be +1.11%",
   "up": true,
   "holding": [
    "Nothing right now (all cash)."
   ],
   "today": [
-   "Scanned the news 40 times today: read 4913 headlines, found 141 that could move a stock or coin it's allowed to trade. None passed every check, so no trade (that's normal).",
+   "Scanned the news 61 times today: read 5933 headlines, found 172 that could move a stock or coin it's allowed to trade. None passed every check, so no trade (that's normal).",
+   "Passed on CRM: price hasn't moved the expected way yet (-1.17%).",
    "Passed on ABBV, REGN: TradingAgents said ERROR (rateContent. Call ModelService.ListModels to see the list of available models an).",
-   "Passed on CRM: price hasn't moved the expected way yet (-1.04%).",
-   "Passed on CRM: price hasn't moved the expected way yet (-1.05%).",
-   "Passed on CRM: price hasn't moved the expected way yet (-1.34%)."
+   "Passed on CRM: price hasn't moved the expected way yet (-0.13%).",
+   "Passed on CRM: price hasn't moved the expected way yet (-0.24%)."
   ],
   "watchlist": "Allowed to trade: 69 halal stocks, 5 Shariah ETFs, 9 coins.",
-  "lastScan": "2026-11-12T14:54:42Z"
+  "lastScan": "2026-11-12T17:01:48Z"
  },
  "hired": true,
- "updatedAt": "2026-11-12T14:54:49Z",
+ "updatedAt": "2026-11-12T17:04:12Z",
  "mode": "PAPER",
  "agents": [
   {
@@ -27,16 +27,16 @@
    "name": "News Scout",
    "role": "Reads X, Reddit and news feeds",
    "status": "working",
-   "doing": "Read 43 new headlines/posts, 2 market-moving stories",
-   "lastRun": "2026-11-12T14:54:48Z"
+   "doing": "Read 46 new headlines/posts, 2 market-moving stories",
+   "lastRun": "2026-11-12T17:04:12Z"
   },
   {
    "id": "analyst",
    "name": "News Analyst",
    "role": "Gemini: is it real, what moves, which way",
-   "status": "ok",
-   "doing": "Gemini triage failed, skipping this batch: All Gemini models failed. Last error: Gemini HTTP 400 on gemini-3.8-flash-lite-tts: {\n  \"error\": {\n    \"code\": 400,\n    \"message\": \"Developer instruction is not",
-   "lastRun": "2026-11-12T14:08:48Z"
+   "status": "working",
+   "doing": "Gemini triage failed, skipping this batch: All Gemini models failed. Last error: Gemini HTTP 429 on gemini-3.8-flash-lite-tts: {\n  \"error\": {\n    \"code\": 429,\n    \"message\": \"You exceeded your current qu",
+   "lastRun": "2026-11-12T16:56:48Z"
   },
   {
    "id": "confirm",
@@ -50,7 +50,7 @@
    "id": "deep",
    "name": "Deep Analyst",
    "role": "TradingAgents debate, max 5 a day",
-   "status": "working",
+   "status": "ok",
    "doing": "TradingAgents on ABBV: ERROR (rateContent. Call ModelService.ListModels to see the list of available models and their supported methods.', 'status': ')",
    "lastRun": "2026-11-12T14:44:29Z"
   },
@@ -68,7 +68,7 @@
    "role": "Places paper orders on Alpaca",
    "status": "ok",
    "doing": "Saved results to the Agent HQ dashboard",
-   "lastRun": "2026-11-12T01:01:56Z"
+   "lastRun": "2026-11-12T14:54:51Z"
   },
   {
    "id": "coins",
@@ -88,6 +88,186 @@
   }
  ],
  "log": [
+  {
+   "t": "2026-11-12T17:04:12Z",
+   "agent": "News Scout",
+   "msg": "Read 46 new headlines/posts, 2 market-moving stories"
+  },
+  {
+   "t": "2026-11-12T16:56:48Z",
+   "agent": "News Scout",
+   "msg": "Read 25 new headlines/posts, 0 market-moving stories"
+  },
+  {
+   "t": "2026-11-12T16:56:48Z",
+   "agent": "News Analyst",
+   "msg": "Gemini triage failed, skipping this batch: All Gemini models failed. Last error: Gemini HTTP 429 on gemini-3.8-flash-lite-tts: {\n  \"error\": {\n    \"code\": 429,\n    \"message\": \"You exceeded your current qu"
+  },
+  {
+   "t": "2026-11-12T16:50:03Z",
+   "agent": "News Scout",
+   "msg": "Read 38 new headlines/posts, 2 market-moving stories"
+  },
+  {
+   "t": "2026-11-12T16:49:55Z",
+   "agent": "News Scout",
+   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
+  },
+  {
+   "t": "2026-11-12T16:44:50Z",
+   "agent": "News Scout",
+   "msg": "Read 53 new headlines/posts, 3 market-moving stories"
+  },
+  {
+   "t": "2026-11-12T16:39:03Z",
+   "agent": "News Scout",
+   "msg": "Read 90 new headlines/posts, 0 market-moving stories"
+  },
+  {
+   "t": "2026-11-12T16:39:03Z",
+   "agent": "News Analyst",
+   "msg": "Gemini triage failed, skipping this batch: All Gemini models failed. Last error: Gemini HTTP 429 on gemini-3.8-flash-lite-tts: {\n  \"error\": {\n    \"code\": 429,\n    \"message\": \"You exceeded your current qu"
+  },
+  {
+   "t": "2026-11-12T16:36:42Z",
+   "agent": "News Analyst",
+   "msg": "Gemini triage failed, skipping this batch: All Gemini models failed. Last error: Gemini HTTP 400 on gemini-3.8-flash-lite-tts: {\n  \"error\": {\n    \"code\": 400,\n    \"message\": \"Developer instruction is not"
+  },
+  {
+   "t": "2026-11-12T16:29:36Z",
+   "agent": "News Scout",
+   "msg": "Read 31 new headlines/posts, 2 market-moving stories"
+  },
+  {
+   "t": "2026-11-12T16:29:28Z",
+   "agent": "News Scout",
+   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
+  },
+  {
+   "t": "2026-11-12T16:24:22Z",
+   "agent": "News Scout",
+   "msg": "Read 59 new headlines/posts, 0 market-moving stories"
+  },
+  {
+   "t": "2026-11-12T16:24:22Z",
+   "agent": "News Analyst",
+   "msg": "Gemini triage failed, skipping this batch: All Gemini models failed. Last error: Gemini HTTP 400 on gemini-3.8-flash-lite-tts: {\n  \"error\": {\n    \"code\": 400,\n    \"message\": \"Developer instruction is not"
+  },
+  {
+   "t": "2026-11-12T16:17:13Z",
+   "agent": "News Scout",
+   "msg": "Read 47 new headlines/posts, 3 market-moving stories"
+  },
+  {
+   "t": "2026-11-12T16:11:29Z",
+   "agent": "News Scout",
+   "msg": "Read 119 new headlines/posts, 2 market-moving stories"
+  },
+  {
+   "t": "2026-11-12T16:09:59Z",
+   "agent": "News Scout",
+   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
+  },
+  {
+   "t": "2026-11-12T16:04:53Z",
+   "agent": "News Scout",
+   "msg": "Read 36 new headlines/posts, 0 market-moving stories"
+  },
+  {
+   "t": "2026-11-12T16:04:53Z",
+   "agent": "News Analyst",
+   "msg": "Gemini triage failed, skipping this batch: All Gemini models failed. Last error: Gemini HTTP 429 on gemini-3.8-flash-lite-tts: {\n  \"error\": {\n    \"code\": 429,\n    \"message\": \"You exceeded your current qu"
+  },
+  {
+   "t": "2026-11-12T15:56:00Z",
+   "agent": "News Scout",
+   "msg": "Read 46 new headlines/posts, 3 market-moving stories"
+  },
+  {
+   "t": "2026-11-12T15:50:54Z",
+   "agent": "News Scout",
+   "msg": "Read 46 new headlines/posts, 4 market-moving stories"
+  },
+  {
+   "t": "2026-11-12T15:50:46Z",
+   "agent": "News Scout",
+   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
+  },
+  {
+   "t": "2026-11-12T15:45:41Z",
+   "agent": "News Scout",
+   "msg": "Read 45 new headlines/posts, 0 market-moving stories"
+  },
+  {
+   "t": "2026-11-12T15:45:41Z",
+   "agent": "News Analyst",
+   "msg": "Gemini triage failed, skipping this batch: All Gemini models failed. Last error: Gemini HTTP 400 on gemini-3.8-flash-lite-tts: {\n  \"error\": {\n    \"code\": 400,\n    \"message\": \"Developer instruction is not"
+  },
+  {
+   "t": "2026-11-12T15:39:02Z",
+   "agent": "News Scout",
+   "msg": "Read 46 new headlines/posts, 1 market-moving stories"
+  },
+  {
+   "t": "2026-11-12T15:33:51Z",
+   "agent": "News Scout",
+   "msg": "Read 65 new headlines/posts, 2 market-moving stories"
+  },
+  {
+   "t": "2026-11-12T15:32:31Z",
+   "agent": "News Scout",
+   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
+  },
+  {
+   "t": "2026-11-12T15:27:25Z",
+   "agent": "News Scout",
+   "msg": "Read 28 new headlines/posts, 0 market-moving stories"
+  },
+  {
+   "t": "2026-11-12T15:27:25Z",
+   "agent": "News Analyst",
+   "msg": "Gemini triage failed, skipping this batch: All Gemini models failed. Last error: Gemini HTTP 400 on gemini-3.8-flash-lite-tts: {\n  \"error\": {\n    \"code\": 400,\n    \"message\": \"Developer instruction is not"
+  },
+  {
+   "t": "2026-11-12T15:20:44Z",
+   "agent": "News Scout",
+   "msg": "Read 29 new headlines/posts, 2 market-moving stories"
+  },
+  {
+   "t": "2026-11-12T15:15:31Z",
+   "agent": "News Scout",
+   "msg": "Read 33 new headlines/posts, 0 market-moving stories"
+  },
+  {
+   "t": "2026-11-12T15:15:30Z",
+   "agent": "News Scout",
+   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
+  },
+  {
+   "t": "2026-11-12T15:10:26Z",
+   "agent": "News Scout",
+   "msg": "Read 47 new headlines/posts, 1 market-moving stories"
+  },
+  {
+   "t": "2026-11-12T15:05:18Z",
+   "agent": "News Scout",
+   "msg": "Read 53 new headlines/posts, 2 market-moving stories"
+  },
+  {
+   "t": "2026-11-12T15:00:05Z",
+   "agent": "News Scout",
+   "msg": "Read 38 new headlines/posts, 2 market-moving stories"
+  },
+  {
+   "t": "2026-11-12T14:59:55Z",
+   "agent": "News Scout",
+   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
+  },
+  {
+   "t": "2026-11-12T14:54:51Z",
+   "agent": "Trader",
+   "msg": "Saved results to the Agent HQ dashboard"
+  },
   {
    "t": "2026-11-12T14:54:48Z",
    "agent": "News Scout",
@@ -657,192 +837,12 @@
    "t": "2026-11-12T01:01:54Z",
    "agent": "News Scout",
    "msg": "Read 63 new headlines/posts, 1 market-moving stories"
-  },
-  {
-   "t": "2026-11-12T01:01:52Z",
-   "agent": "News Scout",
-   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
-  },
-  {
-   "t": "2026-11-12T00:46:48Z",
-   "agent": "News Scout",
-   "msg": "Read 38 new headlines/posts, 2 market-moving stories"
-  },
-  {
-   "t": "2026-11-12T00:46:46Z",
-   "agent": "News Scout",
-   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
-  },
-  {
-   "t": "2026-11-12T00:31:42Z",
-   "agent": "News Scout",
-   "msg": "Read 42 new headlines/posts, 2 market-moving stories"
-  },
-  {
-   "t": "2026-11-12T00:31:40Z",
-   "agent": "News Scout",
-   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
-  },
-  {
-   "t": "2026-11-12T00:16:36Z",
-   "agent": "News Scout",
-   "msg": "Read 61 new headlines/posts, 1 market-moving stories"
-  },
-  {
-   "t": "2026-11-12T00:16:35Z",
-   "agent": "News Scout",
-   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
-  },
-  {
-   "t": "2026-11-12T00:01:31Z",
-   "agent": "News Scout",
-   "msg": "Read 43 new headlines/posts, 1 market-moving stories"
-  },
-  {
-   "t": "2026-11-12T00:01:29Z",
-   "agent": "News Scout",
-   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
-  },
-  {
-   "t": "2026-11-11T23:46:24Z",
-   "agent": "News Scout",
-   "msg": "Read 54 new headlines/posts, 2 market-moving stories"
-  },
-  {
-   "t": "2026-11-11T23:46:23Z",
-   "agent": "News Scout",
-   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
-  },
-  {
-   "t": "2026-11-11T23:31:18Z",
-   "agent": "News Scout",
-   "msg": "Read 48 new headlines/posts, 3 market-moving stories"
-  },
-  {
-   "t": "2026-11-11T23:31:16Z",
-   "agent": "News Scout",
-   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
-  },
-  {
-   "t": "2026-11-11T23:16:12Z",
-   "agent": "News Scout",
-   "msg": "Read 165 new headlines/posts, 2 market-moving stories"
-  },
-  {
-   "t": "2026-11-11T23:16:08Z",
-   "agent": "News Scout",
-   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
-  },
-  {
-   "t": "2026-11-11T23:01:04Z",
-   "agent": "News Scout",
-   "msg": "Read 79 new headlines/posts, 1 market-moving stories"
-  },
-  {
-   "t": "2026-11-11T23:01:04Z",
-   "agent": "News Analyst",
-   "msg": "Gemini triage failed, skipping this batch: Expecting property name enclosed in double quotes: line 13 column 9 (char 383)"
-  },
-  {
-   "t": "2026-11-11T23:01:01Z",
-   "agent": "News Scout",
-   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
-  },
-  {
-   "t": "2026-11-11T22:44:28Z",
-   "agent": "News Scout",
-   "msg": "Read 201 new headlines/posts, 3 market-moving stories"
-  },
-  {
-   "t": "2026-11-11T22:44:24Z",
-   "agent": "News Scout",
-   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
-  },
-  {
-   "t": "2026-11-11T22:29:19Z",
-   "agent": "Trader",
-   "msg": "Saved results to the Agent HQ dashboard"
-  },
-  {
-   "t": "2026-11-11T22:29:17Z",
-   "agent": "News Scout",
-   "msg": "Read 2 new headlines/posts, 0 market-moving stories"
-  },
-  {
-   "t": "2026-11-11T22:29:16Z",
-   "agent": "News Scout",
-   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
-  },
-  {
-   "t": "2026-11-11T22:29:15Z",
-   "agent": "News Scout",
-   "msg": "Agent Reach not found: news feeds + Yahoo Finance + Reddit direct (no X)"
-  },
-  {
-   "t": "2026-11-11T22:29:15Z",
-   "agent": "Trader",
-   "msg": "Paper-trading bot started (Alpaca PAPER account only). Close this window to stop it."
-  },
-  {
-   "t": "2026-11-11T22:28:45Z",
-   "agent": "News Scout",
-   "msg": "Read 3 new headlines/posts, 1 market-moving stories"
-  },
-  {
-   "t": "2026-11-11T22:28:44Z",
-   "agent": "News Scout",
-   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
-  },
-  {
-   "t": "2026-11-11T22:28:42Z",
-   "agent": "News Scout",
-   "msg": "Agent Reach not found: news feeds + Yahoo Finance + Reddit direct (no X)"
-  },
-  {
-   "t": "2026-11-11T22:28:42Z",
-   "agent": "Trader",
-   "msg": "Paper-trading bot started (Alpaca PAPER account only). Close this window to stop it."
-  },
-  {
-   "t": "2026-11-11T22:27:39Z",
-   "agent": "News Scout",
-   "msg": "Read 34 new headlines/posts, 1 market-moving stories"
-  },
-  {
-   "t": "2026-11-11T22:27:38Z",
-   "agent": "News Scout",
-   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
-  },
-  {
-   "t": "2026-11-11T22:27:34Z",
-   "agent": "News Scout",
-   "msg": "Agent Reach not found: news feeds + Yahoo Finance + Reddit direct (no X)"
-  },
-  {
-   "t": "2026-11-11T22:27:34Z",
-   "agent": "Trader",
-   "msg": "Paper-trading bot started (Alpaca PAPER account only). Close this window to stop it."
-  },
-  {
-   "t": "2026-11-11T22:17:15Z",
-   "agent": "News Scout",
-   "msg": "Read 8 new headlines/posts, 1 market-moving stories"
-  },
-  {
-   "t": "2026-11-11T22:17:13Z",
-   "agent": "News Scout",
-   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
-  },
-  {
-   "t": "2026-11-11T22:17:10Z",
-   "agent": "News Scout",
-   "msg": "Agent Reach not found: news feeds + Yahoo Finance + Reddit direct (no X)"
   }
  ],
  "brief": {
   "date": "Thu Nov 12",
-  "createdAt": "2026-11-12T14:54:49Z",
-  "headline": "Paper account +$0 today (+0.00%), +0.00% total vs SPY +0.32% · 0 open",
+  "createdAt": "2026-11-12T17:04:12Z",
+  "headline": "Paper account +$0 today (+0.00%), +0.00% total vs SPY +1.11% · 0 open",
   "summary": "0 trade(s) closed today, 0/0 winners overall. TradingAgents checks used today: 2/5.",
   "notes": [
    "X/Reddit reader: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
@@ -857,8 +857,8 @@
   "dayPct": 0.0,
   "totalPnl": 0.0,
   "totalPct": 0.0,
-  "spyPct": 0.32,
-  "vsSpyPct": -0.32
+  "spyPct": 1.11,
+  "vsSpyPct": -1.11
  },
  "status": {
   "killed": false,
@@ -866,7 +866,7 @@
   "deepUsed": 2,
   "deepMax": 5,
   "social": {
-   "at": "2026-11-12T14:42:53Z",
+   "at": "2026-11-12T16:49:55Z",
    "items": 0,
    "source": "Reddit direct (X needs Agent Reach)",
    "problems": [
@@ -882,6 +882,132 @@
  "positions": [],
  "trades": [],
  "decisions": [
+  {
+   "t": "2026-11-12T16:50:04Z",
+   "symbol": "CRM",
+   "outcome": "waiting",
+   "why": "price hasn't moved the expected way yet (-0.13%)",
+   "event": "Salesforce's Missionforce National Security solution achieved Awardable status in the Department of War's Tradewinds Solutions Marketplace."
+  },
+  {
+   "t": "2026-11-12T16:39:04Z",
+   "symbol": "CRM",
+   "outcome": "waiting",
+   "why": "price hasn't moved the expected way yet (-0.24%)",
+   "event": "Salesforce's Missionforce National Security solution achieved Awardable status in the Department of War's Tradewinds Solutions Marketplace."
+  },
+  {
+   "t": "2026-11-12T16:29:37Z",
+   "symbol": "CRM",
+   "outcome": "waiting",
+   "why": "price hasn't moved the expected way yet (-0.48%)",
+   "event": "Salesforce's Missionforce National Security solution achieved Awardable status in the Department of War's Tradewinds Solutions Marketplace."
+  },
+  {
+   "t": "2026-11-12T16:24:23Z",
+   "symbol": "CRM",
+   "outcome": "waiting",
+   "why": "price hasn't moved the expected way yet (-0.44%)",
+   "event": "Salesforce's Missionforce National Security solution achieved Awardable status in the Department of War's Tradewinds Solutions Marketplace."
+  },
+  {
+   "t": "2026-11-12T16:17:14Z",
+   "symbol": "CRM",
+   "outcome": "waiting",
+   "why": "price hasn't moved the expected way yet (-0.38%)",
+   "event": "Salesforce's Missionforce National Security solution achieved Awardable status in the Department of War's Tradewinds Solutions Marketplace."
+  },
+  {
+   "t": "2026-11-12T16:11:29Z",
+   "symbol": "CRM",
+   "outcome": "waiting",
+   "why": "price hasn't moved the expected way yet (-0.60%)",
+   "event": "Salesforce's Missionforce National Security solution achieved Awardable status in the Department of War's Tradewinds Solutions Marketplace."
+  },
+  {
+   "t": "2026-11-12T16:04:54Z",
+   "symbol": "CRM",
+   "outcome": "waiting",
+   "why": "price hasn't moved the expected way yet (-0.80%)",
+   "event": "Salesforce's Missionforce National Security solution achieved Awardable status in the Department of War's Tradewinds Solutions Marketplace."
+  },
+  {
+   "t": "2026-11-12T15:56:01Z",
+   "symbol": "CRM",
+   "outcome": "waiting",
+   "why": "price hasn't moved the expected way yet (-0.96%)",
+   "event": "Salesforce's Missionforce National Security solution achieved Awardable status in the Department of War's Tradewinds Solutions Marketplace."
+  },
+  {
+   "t": "2026-11-12T15:50:54Z",
+   "symbol": "CRM",
+   "outcome": "waiting",
+   "why": "price hasn't moved the expected way yet (-0.97%)",
+   "event": "Salesforce's Missionforce National Security solution achieved Awardable status in the Department of War's Tradewinds Solutions Marketplace."
+  },
+  {
+   "t": "2026-11-12T15:45:42Z",
+   "symbol": "CRM",
+   "outcome": "waiting",
+   "why": "price hasn't moved the expected way yet (-1.00%)",
+   "event": "Salesforce's Missionforce National Security solution achieved Awardable status in the Department of War's Tradewinds Solutions Marketplace."
+  },
+  {
+   "t": "2026-11-12T15:39:03Z",
+   "symbol": "CRM",
+   "outcome": "waiting",
+   "why": "price hasn't moved the expected way yet (-1.12%)",
+   "event": "Salesforce's Missionforce National Security solution achieved Awardable status in the Department of War's Tradewinds Solutions Marketplace."
+  },
+  {
+   "t": "2026-11-12T15:33:52Z",
+   "symbol": "CRM",
+   "outcome": "waiting",
+   "why": "price hasn't moved the expected way yet (-1.21%)",
+   "event": "Salesforce's Missionforce National Security solution achieved Awardable status in the Department of War's Tradewinds Solutions Marketplace."
+  },
+  {
+   "t": "2026-11-12T15:27:25Z",
+   "symbol": "CRM",
+   "outcome": "waiting",
+   "why": "price hasn't moved the expected way yet (-1.17%)",
+   "event": "Salesforce's Missionforce National Security solution achieved Awardable status in the Department of War's Tradewinds Solutions Marketplace."
+  },
+  {
+   "t": "2026-11-12T15:20:44Z",
+   "symbol": "CRM",
+   "outcome": "waiting",
+   "why": "price hasn't moved the expected way yet (-1.02%)",
+   "event": "Salesforce's Missionforce National Security solution achieved Awardable status in the Department of War's Tradewinds Solutions Marketplace."
+  },
+  {
+   "t": "2026-11-12T15:15:33Z",
+   "symbol": "CRM",
+   "outcome": "waiting",
+   "why": "price hasn't moved the expected way yet (-0.94%)",
+   "event": "Salesforce's Missionforce National Security solution achieved Awardable status in the Department of War's Tradewinds Solutions Marketplace."
+  },
+  {
+   "t": "2026-11-12T15:10:26Z",
+   "symbol": "CRM",
+   "outcome": "waiting",
+   "why": "price hasn't moved the expected way yet (-1.18%)",
+   "event": "Salesforce's Missionforce National Security solution achieved Awardable status in the Department of War's Tradewinds Solutions Marketplace."
+  },
+  {
+   "t": "2026-11-12T15:05:19Z",
+   "symbol": "CRM",
+   "outcome": "waiting",
+   "why": "price hasn't moved the expected way yet (-1.17%)",
+   "event": "Salesforce's Missionforce National Security solution achieved Awardable status in the Department of War's Tradewinds Solutions Marketplace."
+  },
+  {
+   "t": "2026-11-12T15:00:05Z",
+   "symbol": "CRM",
+   "outcome": "waiting",
+   "why": "price hasn't moved the expected way yet (-1.22%)",
+   "event": "Salesforce's Missionforce National Security solution achieved Awardable status in the Department of War's Tradewinds Solutions Marketplace."
+  },
   {
    "t": "2026-11-12T14:54:48Z",
    "symbol": "CRM",
@@ -1175,132 +1301,6 @@
    "outcome": "waiting",
    "why": "only 1 source(s) so far: 24/7 Wall St.",
    "event": "Tesla shares rose after Finland cleared its driver-assistance system ahead of an EU vote."
-  },
-  {
-   "t": "2026-11-11T21:00:40Z",
-   "symbol": "AMD",
-   "outcome": "waiting",
-   "why": "only 1 source(s) so far: Benzinga",
-   "event": "AMD shares jumped premarket after Google chose its 5th-gen EPYC chips for TPU 8tx."
-  },
-  {
-   "t": "2026-11-11T20:55:30Z",
-   "symbol": "KLAC",
-   "outcome": "waiting",
-   "why": "only 1 source(s) so far: 24/7 Wall St.",
-   "event": "Applied Materials and other major semiconductor stocks rallied strongly ahead of upcoming earnings reports amid a broader rebound in chip sector demand."
-  },
-  {
-   "t": "2026-11-11T20:55:30Z",
-   "symbol": "LRCX",
-   "outcome": "waiting",
-   "why": "only 1 source(s) so far: 24/7 Wall St.",
-   "event": "Applied Materials and other major semiconductor stocks rallied strongly ahead of upcoming earnings reports amid a broader rebound in chip sector demand."
-  },
-  {
-   "t": "2026-11-11T20:55:30Z",
-   "symbol": "AMAT",
-   "outcome": "waiting",
-   "why": "only 1 source(s) so far: 24/7 Wall St.",
-   "event": "Applied Materials and other major semiconductor stocks rallied strongly ahead of upcoming earnings reports amid a broader rebound in chip sector demand."
-  },
-  {
-   "t": "2026-11-11T20:55:30Z",
-   "symbol": "TSLA",
-   "outcome": "waiting",
-   "why": "only 1 source(s) so far: 24/7 Wall St.",
-   "event": "Tesla shares rose after Finland cleared its driver-assistance system ahead of an EU vote."
-  },
-  {
-   "t": "2026-11-11T20:55:30Z",
-   "symbol": "AMD",
-   "outcome": "waiting",
-   "why": "only 1 source(s) so far: Benzinga",
-   "event": "AMD shares jumped premarket after Google chose its 5th-gen EPYC chips for TPU 8tx."
-  },
-  {
-   "t": "2026-11-11T20:50:26Z",
-   "symbol": "KLAC",
-   "outcome": "waiting",
-   "why": "only 1 source(s) so far: 24/7 Wall St.",
-   "event": "Applied Materials and other major semiconductor stocks rallied strongly ahead of upcoming earnings reports amid a broader rebound in chip sector demand."
-  },
-  {
-   "t": "2026-11-11T20:50:26Z",
-   "symbol": "LRCX",
-   "outcome": "waiting",
-   "why": "only 1 source(s) so far: 24/7 Wall St.",
-   "event": "Applied Materials and other major semiconductor stocks rallied strongly ahead of upcoming earnings reports amid a broader rebound in chip sector demand."
-  },
-  {
-   "t": "2026-11-11T20:50:26Z",
-   "symbol": "AMAT",
-   "outcome": "waiting",
-   "why": "only 1 source(s) so far: 24/7 Wall St.",
-   "event": "Applied Materials and other major semiconductor stocks rallied strongly ahead of upcoming earnings reports amid a broader rebound in chip sector demand."
-  },
-  {
-   "t": "2026-11-11T20:50:26Z",
-   "symbol": "TSLA",
-   "outcome": "waiting",
-   "why": "only 1 source(s) so far: 24/7 Wall St.",
-   "event": "Tesla shares rose after Finland cleared its driver-assistance system ahead of an EU vote."
-  },
-  {
-   "t": "2026-11-11T20:50:26Z",
-   "symbol": "AMD",
-   "outcome": "waiting",
-   "why": "only 1 source(s) so far: Benzinga",
-   "event": "AMD shares jumped premarket after Google chose its 5th-gen EPYC chips for TPU 8tx."
-  },
-  {
-   "t": "2026-11-11T20:45:18Z",
-   "symbol": "KLAC",
-   "outcome": "waiting",
-   "why": "only 1 source(s) so far: 24/7 Wall St.",
-   "event": "Applied Materials and other major semiconductor stocks rallied strongly ahead of upcoming earnings reports amid a broader rebound in chip sector demand."
-  },
-  {
-   "t": "2026-11-11T20:45:18Z",
-   "symbol": "LRCX",
-   "outcome": "waiting",
-   "why": "only 1 source(s) so far: 24/7 Wall St.",
-   "event": "Applied Materials and other major semiconductor stocks rallied strongly ahead of upcoming earnings reports amid a broader rebound in chip sector demand."
-  },
-  {
-   "t": "2026-11-11T20:45:18Z",
-   "symbol": "AMAT",
-   "outcome": "waiting",
-   "why": "only 1 source(s) so far: 24/7 Wall St.",
-   "event": "Applied Materials and other major semiconductor stocks rallied strongly ahead of upcoming earnings reports amid a broader rebound in chip sector demand."
-  },
-  {
-   "t": "2026-11-11T20:45:18Z",
-   "symbol": "TSLA",
-   "outcome": "waiting",
-   "why": "only 1 source(s) so far: 24/7 Wall St.",
-   "event": "Tesla shares rose after Finland cleared its driver-assistance system ahead of an EU vote."
-  },
-  {
-   "t": "2026-11-11T20:45:18Z",
-   "symbol": "AMD",
-   "outcome": "waiting",
-   "why": "only 1 source(s) so far: Benzinga",
-   "event": "AMD shares jumped premarket after Google chose its 5th-gen EPYC chips for TPU 8tx."
-  },
-  {
-   "t": "2026-11-11T20:40:06Z",
-   "symbol": "KLAC",
-   "outcome": "waiting",
-   "why": "only 1 source(s) so far: 24/7 Wall St.",
-   "event": "Applied Materials and other major semiconductor stocks rallied strongly ahead of upcoming earnings reports amid a broader rebound in chip sector demand."
-  },
-  {
-   "t": "2026-11-11T20:40:06Z",
-   "symbol": "LRCX",
-   "outcome": "waiting",
-   "why": "only 1 source(s) so far: 24/7 Wall St.",
-   "event": "Applied Materials and other major semiconductor stocks rallied strongly ahead of upcoming earnings reports amid a broader rebound in chip sector demand."
   }
  ],
  "equity": [
@@ -1893,6 +1893,26 @@
    "t": "2026-11-12T14:27:48Z",
    "equity": 100000.0,
    "spy": 755.12
+  },
+  {
+   "t": "2026-11-12T15:00:05Z",
+   "equity": 100000.0,
+   "spy": 757.62
+  },
+  {
+   "t": "2026-11-12T15:33:52Z",
+   "equity": 100000.0,
+   "spy": 757.17
+  },
+  {
+   "t": "2026-11-12T16:04:54Z",
+   "equity": 100000.0,
+   "spy": 760.13
+  },
+  {
+   "t": "2026-11-12T16:39:04Z",
+   "equity": 100000.0,
+   "spy": 761.085
   }
  ],
  "watch": [],
@@ -1904,7 +1924,7 @@
  },
  "events": [
   {
-   "summary": "Nvidia shares plunged and are set to lose massive value following the unexpected resignation of CEO Jensen Huang amid personal controversies.",
+   "summary": "Nvidia CEO Jensen Huang resigns following an affair, sending shockwaves through the tech sector and triggering analyst downgrades.",
    "category": "company_bad_news",
    "firstSeen": "2026-11-10T02:06:25Z",
    "publishers": [
@@ -1916,6 +1936,8 @@
     "CNBC",
     "Chosunbiz",
     "Decrypt",
+    "Firstpost",
+    "Howl.Link",
     "Moomoo",
     "Quartz",
     "Reuters",
@@ -1923,6 +1945,7 @@
     "Stocktwits",
     "The Economic Times",
     "The Spokesman-Review",
+    "TipRanks",
     "Yahoo Finance",
     "bloomingbit",
     "fiscal.ai",
@@ -1932,32 +1955,42 @@
     "NVDA": {
      "direction": "down",
      "confidence": 0.95,
-     "why": "CEO resignation and scandal causes massive sell-off."
+     "why": "CEO resignation in disgrace and subsequent analyst downgrades severely hurt near-term outlook."
     },
     "MSFT": {
-     "direction": "up",
+     "direction": "down",
      "confidence": 0.6,
-     "why": "Briefly overtook Nvidia as capital rotates away from Nvidia during the executive controversy."
+     "why": "Broader tech and AI sector drag from Nvidia leadership crisis."
     },
     "AMD": {
      "direction": "up",
      "confidence": 0.8,
-     "why": "Benefiting from Nvidia's leadership vacuum and stumble."
+     "why": "Beneficiary of Nvidia leadership uncertainty"
     },
     "AVGO": {
      "direction": "up",
-     "confidence": 0.7,
-     "why": "Alternative chipmaker beneficiary from Nvidia's reported leadership drama."
+     "confidence": 0.8,
+     "why": "Beneficiary of Nvidia leadership uncertainty"
     },
     "INTC": {
      "direction": "down",
      "confidence": 0.65,
-     "why": "Caught in the broader tech sell-off and Nvidia turmoil"
+     "why": "Spillover effects from NVIDIA leadership shakeup impact partner outlooks."
     },
     "BTC/USD": {
      "direction": "down",
      "confidence": 0.7,
      "why": "Bitcoin and risk assets tumbling below key thresholds amid the Nvidia rot and ETF outflows"
+    },
+    "SMCI": {
+     "direction": "down",
+     "confidence": 0.85,
+     "why": "AI infrastructure trade and close partners suffer collateral damage from Nvidia's leadership crisis."
+    },
+    "MU": {
+     "direction": "down",
+     "confidence": 0.8,
+     "why": "Collateral damage in chip stocks due to Nvidia's leadership crisis."
     }
    },
    "sources": [
@@ -2004,99 +2037,7 @@
    ]
   },
   {
-   "summary": "Bitcoin fell below $72,000 as broad market liquidations and negative pressures weighed on crypto.",
-   "category": "crypto_negative",
-   "firstSeen": "2026-11-12T08:32:42Z",
-   "publishers": [
-    "Altcoin Buzz",
-    "Benzinga",
-    "Bitcoin News",
-    "Bitcoinist.com",
-    "Coin Gabbar",
-    "CoinDesk",
-    "Coinfomania",
-    "Crypto Briefing",
-    "Crypto Economy",
-    "Crypto News",
-    "Cryptonews",
-    "Cryptonews.net",
-    "Decrypt",
-    "FXEmpire",
-    "FinanceFeeds",
-    "Moomoo",
-    "Pluang",
-    "Programming Insider",
-    "Traders Union",
-    "Univest",
-    "Yahoo Finance",
-    "ad-hoc-news.de",
-    "bloomingbit",
-    "openPR.com",
-    "www.trendingtopics.eu",
-    "Українські Національні Новини (УНН)"
-   ],
-   "assets": {
-    "BTC/USD": {
-     "direction": "down",
-     "confidence": 0.85,
-     "why": "Massive ETF outflows and heavy institutional selling pressure."
-    },
-    "ETH/USD": {
-     "direction": "down",
-     "confidence": 0.8,
-     "why": "ETF outflows and negative technical signals weigh on Ethereum."
-    },
-    "SOL/USD": {
-     "direction": "down",
-     "confidence": 0.7,
-     "why": "Dragged down by the broader crypto market sell-off."
-    }
-   },
-   "sources": [
-    {
-     "id": "f2c64de89a6bbd3c",
-     "publisher": "bloomingbit",
-     "kind": "news",
-     "title": "BlackRock’s Bitcoin ETF IBIT Extends Net Outflow Streak to 9 Sessions, Exceeding $2 Billion",
-     "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE9XY1BHRGVIT2hraXRmcGx1TGI3a2oybEJwMk9LWHNKdUM1R29nNEU1eWJIeXhtTC1pSXg0QUJDd18xNkJTTG4ySkRJTXd3cjN2NkxlZg?oc=5",
-     "time": "2026-11-12T08:32:42Z"
-    },
-    {
-     "id": "cc25c44ff767f291",
-     "publisher": "Crypto News",
-     "kind": "news",
-     "title": "BlackRock leads $300 million Bitcoin ETF outflows as BTC struggles near $73K",
-     "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNY3U0TE5Gcy0teVNsLWVBeGh1cmd4Z1dSaldmVmt2b3VYaVhFSTM0T29OUnhKUXpTNEZwLW1sVkwtZnQyUUdSVDFTUHpSYjYxVlU0SFZnYW5Xd0V0TzB4NjM4VGpGa1pPYnk4eEgzR2wxV0d1SkFPSDBwSG0tdFFTQTI3cXJiSWE1UHU0NzVCUjJ2VXNFa2pIZnd0VQ?oc=5",
-     "time": "2026-11-12T08:36:14Z"
-    },
-    {
-     "id": "fb7c71d0fe55957d",
-     "publisher": "bloomingbit",
-     "kind": "news",
-     "title": "Coinbase Bitcoin Premium Stays Negative for 50 Straight Days as U.S. Buying Weakens",
-     "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTFBfQTlkOUY1NnAyTlpoRnp0Qmc2NDZnUjdSVlRBYndfa2hHVXlZdjNmX0ZhRTdZMjMtV2xMMEdTWWJvdXpCbl9BREZ0TDR6cl9NcFJXNg?oc=5",
-     "time": "2026-11-12T08:59:27Z"
-    },
-    {
-     "id": "62235bb905723bf1",
-     "publisher": "Coinfomania",
-     "kind": "news",
-     "title": "U.S. Spot Bitcoin ETFs Experience $300 Million Net Outflows",
-     "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxORGNYaW5tLUhtT2tmVi1ETy1fRFV4QnFDQndvYkpDRkRTZTF6NEJRN2V6emkyV1MzeTZfTVlyX1NsRGNzaXJsRWk5OXpDajRfVTE5OGc1anBpNWVfSkJKTUg2QnFoTlFSNlRscFJUVlBuek04RkxsN2ZydUJUSjZBdjdURUtnOGhnb3c?oc=5",
-     "time": "2026-11-12T08:55:35Z"
-    },
-    {
-     "id": "44d885771c26dd4e",
-     "publisher": "Cryptonews",
-     "kind": "news",
-     "title": "Bitcoin ETF Outflow Says Crypto Walking Into a Bull Trap",
-     "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE1aa1RfZzhBaFRtOEctWFJSZDUyRzZ6bDV5LTVmSVNubFlfLTNvNkdHVGdGS1pNbmpfb3liS2V5djRKcHV6bWZLb1BQYVVYcTRBVE0wYXNyV3hSNkdhSm01YnFqZGUzelVCamxJeEFTZG83ZzA?oc=5",
-     "time": "2026-11-12T08:48:31Z"
-    }
-   ]
-  },
-  {
-   "summary": "Treasury yields jumped back above 5% alongside rising oil prices and expectations of further Fed rate hikes.",
+   "summary": "U.S. 10-year Treasury yields top 5% as expectations mount for further Federal Reserve rate hikes driven by persistent inflation pressure.",
    "category": "central_bank_hawkish",
    "firstSeen": "2026-11-10T09:39:09Z",
    "publishers": [
@@ -2448,47 +2389,154 @@
    ]
   },
   {
-   "summary": "AMD shares jumped on a stellar upgrade and strong market positioning as Nvidia faces severe turmoil.",
-   "category": "contract",
-   "firstSeen": "2026-11-11T15:20:36Z",
+   "summary": "Bitcoin selloff deepens as midterm political developments stall the crypto bill.",
+   "category": "crypto_negative",
+   "firstSeen": "2026-11-12T08:32:42Z",
    "publishers": [
+    "24/7 Wall St.",
+    "Altcoin Buzz",
     "Benzinga",
-    "Yahoo Finance"
+    "Bitcoin News",
+    "Bitcoin Sistemi",
+    "Bitcoinist.com",
+    "CaptainAltcoin",
+    "Coin Edition",
+    "Coin Gabbar",
+    "CoinDesk",
+    "Coinfomania",
+    "Coinpedia",
+    "Crypto Briefing",
+    "Crypto Economy",
+    "Crypto News",
+    "Cryptonews",
+    "Cryptonews.net",
+    "Decrypt",
+    "FOREX.com",
+    "FXEmpire",
+    "FinanceFeeds",
+    "MarketWatch",
+    "Moomoo",
+    "NewsBTC",
+    "Pluang",
+    "Programming Insider",
+    "The Crypto Times",
+    "The Economic Times",
+    "TipRanks",
+    "Traders Union",
+    "Univest",
+    "Yahoo Finance",
+    "ad-hoc-news.de",
+    "bloomingbit",
+    "openPR.com",
+    "www.trendingtopics.eu",
+    "Українські Національні Новини (УНН)"
    ],
    "assets": {
-    "AMD": {
-     "direction": "up",
+    "BTC/USD": {
+     "direction": "down",
      "confidence": 0.85,
-     "why": "Surging demand and bullish upgrades as rival Nvidia faces executive turmoil."
+     "why": "Bitcoin breaking below $72,000 triggers negative momentum and heavy selling."
+    },
+    "ETH/USD": {
+     "direction": "down",
+     "confidence": 0.8,
+     "why": "Spillover selling pressure dragging Ethereum below $2,000."
+    },
+    "SOL/USD": {
+     "direction": "down",
+     "confidence": 0.75,
+     "why": "Broader crypto market crash drags down major altcoins."
     }
    },
    "sources": [
     {
-     "id": "29fc6482cd6f29bd",
-     "publisher": "Benzinga",
+     "id": "f2c64de89a6bbd3c",
+     "publisher": "bloomingbit",
      "kind": "news",
-     "title": "What Is Going on With AMD Stock on Wednesday?",
-     "url": "https://www.benzinga.com/markets/tech/26/11/63144204/what-is-going-on-with-amd-stock-on-wednesday-3",
-     "time": "2026-11-11T15:20:36Z"
+     "title": "BlackRock’s Bitcoin ETF IBIT Extends Net Outflow Streak to 9 Sessions, Exceeding $2 Billion",
+     "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE9XY1BHRGVIT2hraXRmcGx1TGI3a2oybEJwMk9LWHNKdUM1R29nNEU1eWJIeXhtTC1pSXg0QUJDd18xNkJTTG4ySkRJTXd3cjN2NkxlZg?oc=5",
+     "time": "2026-11-12T08:32:42Z"
     },
     {
-     "id": "edbd46d99f519e9f",
-     "publisher": "Yahoo Finance",
+     "id": "cc25c44ff767f291",
+     "publisher": "Crypto News",
      "kind": "news",
-     "title": "AMD Shares Jump on Stunning Upgrade Amid Nvidia Turmoil",
-     "url": "https://finance.yahoo.com/technology/ai/articles/amd-shares-jump-stunning-upgrade-140414998.html?.tsrc=rss",
-     "time": "2026-11-12T14:04:14Z"
+     "title": "BlackRock leads $300 million Bitcoin ETF outflows as BTC struggles near $73K",
+     "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNY3U0TE5Gcy0teVNsLWVBeGh1cmd4Z1dSaldmVmt2b3VYaVhFSTM0T29OUnhKUXpTNEZwLW1sVkwtZnQyUUdSVDFTUHpSYjYxVlU0SFZnYW5Xd0V0TzB4NjM4VGpGa1pPYnk4eEgzR2wxV0d1SkFPSDBwSG0tdFFTQTI3cXJiSWE1UHU0NzVCUjJ2VXNFa2pIZnd0VQ?oc=5",
+     "time": "2026-11-12T08:36:14Z"
+    },
+    {
+     "id": "fb7c71d0fe55957d",
+     "publisher": "bloomingbit",
+     "kind": "news",
+     "title": "Coinbase Bitcoin Premium Stays Negative for 50 Straight Days as U.S. Buying Weakens",
+     "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTFBfQTlkOUY1NnAyTlpoRnp0Qmc2NDZnUjdSVlRBYndfa2hHVXlZdjNmX0ZhRTdZMjMtV2xMMEdTWWJvdXpCbl9BREZ0TDR6cl9NcFJXNg?oc=5",
+     "time": "2026-11-12T08:59:27Z"
+    },
+    {
+     "id": "62235bb905723bf1",
+     "publisher": "Coinfomania",
+     "kind": "news",
+     "title": "U.S. Spot Bitcoin ETFs Experience $300 Million Net Outflows",
+     "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxORGNYaW5tLUhtT2tmVi1ETy1fRFV4QnFDQndvYkpDRkRTZTF6NEJRN2V6emkyV1MzeTZfTVlyX1NsRGNzaXJsRWk5OXpDajRfVTE5OGc1anBpNWVfSkJKTUg2QnFoTlFSNlRscFJUVlBuek04RkxsN2ZydUJUSjZBdjdURUtnOGhnb3c?oc=5",
+     "time": "2026-11-12T08:55:35Z"
+    },
+    {
+     "id": "44d885771c26dd4e",
+     "publisher": "Cryptonews",
+     "kind": "news",
+     "title": "Bitcoin ETF Outflow Says Crypto Walking Into a Bull Trap",
+     "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE1aa1RfZzhBaFRtOEctWFJSZDUyRzZ6bDV5LTVmSVNubFlfLTNvNkdHVGdGS1pNbmpfb3liS2V5djRKcHV6bWZLb1BQYVVYcTRBVE0wYXNyV3hSNkdhSm01YnFqZGUzelVCamxJeEFTZG83ZzA?oc=5",
+     "time": "2026-11-12T08:48:31Z"
     }
    ]
   },
   {
-   "summary": "Oil prices jumped and tankers caught fire in the Strait of Hormuz after comments from President Trump raised concerns over ongoing conflict and supply disruptions.",
+   "summary": "YETI Holdings reported Q3 revenue growth but cut its full-year guidance, dragging shares lower.",
+   "category": "company_bad_news",
+   "firstSeen": "2026-11-12T15:43:48Z",
+   "publishers": [
+    "Benzinga",
+    "StockStory",
+    "scanx.trade"
+   ],
+   "assets": {},
+   "sources": [
+    {
+     "id": "fb8045cbfe86a60f",
+     "publisher": "Benzinga",
+     "kind": "news",
+     "title": "YETI Sounds the Alarm on Consumer Spending As Shoppers Hunt for Deals",
+     "url": "https://www.benzinga.com/markets/earnings/26/11/63197694/yeti-sounds-the-alarm-on-consumer-spending-as-shoppers-hunt-for-deals",
+     "time": "2026-11-12T15:43:48Z"
+    },
+    {
+     "id": "eb1007b02a637a06",
+     "publisher": "StockStory",
+     "kind": "news",
+     "title": "Why YETI shares are trading lower today",
+     "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNdl83SV9zdFlzM2FENVRJLTJxckhKNjZUMTFTM0FXUUZVQ0NzRG54ZFRXeERERnZDSWFDcmMxNU1rRVhrWUlnV2UtWFdmY2VpWDAxNkxudGV4NmpjeUJ3Z1NQUm1FUm1lU3dNTmEwdmxkNjFTdU9aTEt2THpfQmYyV05vNzJwa3VDSjZqQjdfYjVwQWttVzlNX0ZrdTlydXJU?oc=5",
+     "time": "2026-11-12T15:53:44Z"
+    },
+    {
+     "id": "c394152546c931b0",
+     "publisher": "scanx.trade",
+     "kind": "news",
+     "title": "YETI Holdings Q3FY26 Results: Revenue up 4.4% but guidance cut",
+     "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOdlBmR3l6ZUFQY29CWHFTT1p4Z0JOdEpxb2hiYWNuV3FQTjVKcTd0bml3S3RPWVY1SDVSUVR3dGFSb1BvbXByNzc4RURDd1E0YXdTT05pVWYyOVpjQ2JTYXVkMFByR05iaThHeUJfRDJuaWVKYVp3UkxndGxfNm9WeGxtV1h0dUFEUWtVM0tQaURPVWNuSGFiZmZBanBCc2tGQ0FhNjEyUEVZVUYzT1lGSWFFeW05clYz?oc=5",
+     "time": "2026-11-12T16:39:48Z"
+    }
+   ]
+  },
+  {
+   "summary": "Middle East supply risks mount as multiple oil tankers catch fire east of Hormuz amid ongoing regional tensions.",
    "category": "war_escalation",
    "firstSeen": "2026-11-10T20:01:23Z",
    "publishers": [
     "790 KABC",
     "930 WFMD Free Talk",
     "ABC7 WWSB",
+    "ABP Live English",
     "ABS-CBN",
     "ANI News",
     "ASHARQ AL-AWSAT English",
@@ -2533,6 +2581,7 @@
     "Global Banking & Finance Review",
     "Gulf Today",
     "Hawaii News Now",
+    "India TV News",
     "India Today",
     "Inshorts",
     "Interfax-Ukraine",
@@ -2568,6 +2617,7 @@
     "Mehr News Agency",
     "Mezha.net",
     "Middle East Eye",
+    "Middle East Monitor",
     "Moneycontrol.com",
     "Moomoo",
     "NST Online",
@@ -2666,12 +2716,12 @@
     "XOM": {
      "direction": "up",
      "confidence": 0.85,
-     "why": "Tanker explosions in the Strait of Hormuz threaten global oil supply, driving oil stocks up."
+     "why": "Middle East oil supply disruption and tanker attacks drive oil and gas prices higher."
     },
     "CVX": {
      "direction": "up",
      "confidence": 0.85,
-     "why": "Middle East conflict escalation and supply disruption threats benefit major oil producers."
+     "why": "Middle East oil supply disruption and tanker attacks drive oil and gas prices higher."
     },
     "OXY": {
      "direction": "up",
@@ -2680,8 +2730,8 @@
     },
     "PLTR": {
      "direction": "up",
-     "confidence": 0.7,
-     "why": "Defense tech benefits from rising military tensions and conflict escalation."
+     "confidence": 0.75,
+     "why": "Geopolitical conflict and naval attacks boost defense technology demand."
     },
     "AVAV": {
      "direction": "up",
@@ -2691,12 +2741,12 @@
     "NEM": {
      "direction": "up",
      "confidence": 0.75,
-     "why": "War escalation in the Middle East increases safe-haven demand for gold miners."
+     "why": "War escalation increases safe-haven demand for gold miners."
     },
     "COP": {
      "direction": "up",
      "confidence": 0.8,
-     "why": "Geopolitical conflict in the Strait of Hormuz benefits energy producers."
+     "why": "Oil supply risks push major producers up."
     },
     "SLB": {
      "direction": "up",
@@ -2711,7 +2761,7 @@
     "NVDA": {
      "direction": "down",
      "confidence": 0.6,
-     "why": "Broad market tech often pressured by major war/oil supply shocks."
+     "why": "Broad tech often sells off during sudden Middle East war escalations."
     },
     "APA": {
      "direction": "up",
@@ -2779,6 +2829,40 @@
      "title": "Middle East latest: Ship attacked in UAE waters, says operator Adnoc",
      "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPdTMwLTRPRTZsZHJPR0lQTVNtNHdyWWxZNHMydXJzUjEySVZIZzJfUFlvbXZfQWJPc25aSm5kM3lzNmxFMFVMdFl3NTZLZWVjZnZPaTFyWjZtcl9peGd6ZlpDU2hnQmxDVFBLRlF1cVR3U2QwR2R4dWRRNEFDaDBzSTY2YUFWZEsyZ3dIOGQwX2tudV81a1pRRXQtVzl0TWYw?oc=5",
      "time": "2026-11-10T20:59:26Z"
+    }
+   ]
+  },
+  {
+   "summary": "AMD shares jumped on a stellar upgrade and strong market positioning as Nvidia faces severe turmoil.",
+   "category": "contract",
+   "firstSeen": "2026-11-11T15:20:36Z",
+   "publishers": [
+    "Benzinga",
+    "Yahoo Finance"
+   ],
+   "assets": {
+    "AMD": {
+     "direction": "up",
+     "confidence": 0.85,
+     "why": "Surging demand and bullish upgrades as rival Nvidia faces executive turmoil."
+    }
+   },
+   "sources": [
+    {
+     "id": "29fc6482cd6f29bd",
+     "publisher": "Benzinga",
+     "kind": "news",
+     "title": "What Is Going on With AMD Stock on Wednesday?",
+     "url": "https://www.benzinga.com/markets/tech/26/11/63144204/what-is-going-on-with-amd-stock-on-wednesday-3",
+     "time": "2026-11-11T15:20:36Z"
+    },
+    {
+     "id": "edbd46d99f519e9f",
+     "publisher": "Yahoo Finance",
+     "kind": "news",
+     "title": "AMD Shares Jump on Stunning Upgrade Amid Nvidia Turmoil",
+     "url": "https://finance.yahoo.com/technology/ai/articles/amd-shares-jump-stunning-upgrade-140414998.html?.tsrc=rss",
+     "time": "2026-11-12T14:04:14Z"
     }
    ]
   },
@@ -3354,49 +3438,6 @@
      "title": "INTC, BABA Shares Slide Over Links To Firm Tied To Suspected Chinese Spy",
      "url": "https://stocktwits.com/news-articles/markets/equity/intc-baba-shares-slide-over-links-to-firm-tied-to-suspected-chinese-spy/cNGzod1R99H?.tsrc=rss",
      "time": "2026-11-12T08:04:46Z"
-    }
-   ]
-  },
-  {
-   "summary": "Halliburton plans a 50-well drilling program in Egypt, expanding its operational footprint.",
-   "category": "contract",
-   "firstSeen": "2026-11-11T13:04:04Z",
-   "publishers": [
-    "Benzinga",
-    "Egypt Oil & Gas",
-    "fiscal.ai"
-   ],
-   "assets": {
-    "HAL": {
-     "direction": "up",
-     "confidence": 0.75,
-     "why": "Secured a new project contract for energy services."
-    }
-   },
-   "sources": [
-    {
-     "id": "fe7f860802f36354",
-     "publisher": "Benzinga",
-     "kind": "news",
-     "title": "Sage Geosystems Selects Halliburton To Provide Cementing And Stimulation Services For Project Vector At Ormat Technologies’ Blue Mountain Geothermal Power Plant In Nevada",
-     "url": "https://www.benzinga.com/news/26/11/63135576/sage-geosystems-selects-halliburton-provide-cementing-and-stimulation-services-project-vector-ormat-",
-     "time": "2026-11-11T13:04:04Z"
-    },
-    {
-     "id": "f670f9de9a36f650",
-     "publisher": "fiscal.ai",
-     "kind": "news",
-     "title": "Halliburton Selected by Sage Geosystems for Nevada Geothermal Project",
-     "url": "https://www.marketscreener.com/news/halliburton-selected-by-sage-geosystems-for-nevada-geothermal-project-ce785edbdf88f323",
-     "time": "2026-11-11T14:33:18Z"
-    },
-    {
-     "id": "75d00b70af346997",
-     "publisher": "Egypt Oil & Gas",
-     "kind": "news",
-     "title": "Halliburton Plans 50-Well Drilling Program in Egypt",
-     "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxOZjNTTm9vNkI3VTdvWldpOXZVYzlaRTYzRjQ3bGVMSkJvZzRySU5SNEE2X0NpdTI2YklONVpQdk40YXh4U3V6eDV5cW1IbmVQTFQ1aGlKaGdfVU1QR3h6WEM1Tm1xVExzM2Z3ZV81TDNMNm5tTHhlQnJDem9Wd0FOVU84d2FlUW5Wc2c?oc=5",
-     "time": "2026-11-12T08:02:18Z"
     }
    ]
   }
