@@ -3,23 +3,24 @@
  "plain": {
   "line": "Even since start · 0 trades · holding: nothing (all cash)",
   "rulesMode": "aggressive",
-  "top": "Even since start (still $100,000.00) · just holding SPY would be +0.79%",
+  "top": "Even since start (still $100,000.00) · just holding SPY would be +0.66%",
   "up": true,
   "holding": [
    "Nothing right now (all cash)."
   ],
   "today": [
-   "Scanned the news 81 times today: read 6931 headlines, found 202 that could move a stock or coin it's allowed to trade. None passed every check, so no trade (that's normal).",
-   "Passed on CRM: price hasn't moved the expected way yet (-1.17%).",
-   "Passed on ABBV, REGN: TradingAgents said ERROR (rateContent. Call ModelService.ListModels to see the list of available models an).",
-   "Passed on AMD: price hasn't moved the expected way yet (-0.50%).",
-   "Passed on QCOM: price hasn't moved the expected way yet (-0.77%)."
+   "Scanned the news 102 times today: read 7475 headlines, found 236 that could move a stock or coin it's allowed to trade. None passed every check, so no trade (that's normal).",
+   "Passed on CRM, QCOM: price hasn't moved the expected way yet (-0.96%).",
+   "Passed on CRM, QCOM: price hasn't moved the expected way yet (-1.05%).",
+   "Passed on CRM, QCOM: price hasn't moved the expected way yet (-0.80%).",
+   "Passed on QCOM: price hasn't moved the expected way yet (-0.89%).",
+   "Safety rules that stepped in: stock entry window (x6)."
   ],
   "watchlist": "Allowed to trade: 69 halal stocks, 5 Shariah ETFs, 9 coins.",
-  "lastScan": "2026-11-12T19:03:22Z"
+  "lastScan": "2026-11-12T20:53:30Z"
  },
  "hired": true,
- "updatedAt": "2026-11-12T19:03:58Z",
+ "updatedAt": "2026-11-12T20:53:34Z",
  "mode": "PAPER",
  "agents": [
   {
@@ -27,16 +28,16 @@
    "name": "News Scout",
    "role": "Reads X, Reddit and news feeds",
    "status": "working",
-   "doing": "Read 188 new headlines/posts, 0 market-moving stories",
-   "lastRun": "2026-11-12T19:03:57Z"
+   "doing": "Read 6 new headlines/posts, 1 market-moving stories",
+   "lastRun": "2026-11-12T20:53:34Z"
   },
   {
    "id": "analyst",
    "name": "News Analyst",
    "role": "Gemini: is it real, what moves, which way",
-   "status": "working",
+   "status": "ok",
    "doing": "Gemini triage failed, skipping this batch: All Gemini models failed. Last error: Gemini HTTP 400 on gemini-3.8-flash-lite-tts: {\n  \"error\": {\n    \"code\": 400,\n    \"message\": \"Developer instruction is not",
-   "lastRun": "2026-11-12T18:58:20Z"
+   "lastRun": "2026-11-12T19:22:06Z"
   },
   {
    "id": "confirm",
@@ -51,8 +52,8 @@
    "name": "Deep Analyst",
    "role": "TradingAgents debate, max 5 a day",
    "status": "ok",
-   "doing": "TradingAgents on ABBV: ERROR (rateContent. Call ModelService.ListModels to see the list of available models and their supported methods.', 'status': ')",
-   "lastRun": "2026-11-12T14:44:29Z"
+   "doing": "TradingAgents on AMD: ERROR (r generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.', 'stat)",
+   "lastRun": "2026-11-12T19:37:32Z"
   },
   {
    "id": "risk",
@@ -66,9 +67,9 @@
    "id": "trader",
    "name": "Trader",
    "role": "Places paper orders on Alpaca",
-   "status": "ok",
-   "doing": "Saved results to the Agent HQ dashboard",
-   "lastRun": "2026-11-12T17:22:08Z"
+   "status": "working",
+   "doing": "Paper-trading bot started (Alpaca PAPER account only). Close this window to stop it.",
+   "lastRun": "2026-11-12T20:53:29Z"
   },
   {
    "id": "coins",
@@ -88,6 +89,176 @@
   }
  ],
  "log": [
+  {
+   "t": "2026-11-12T20:53:34Z",
+   "agent": "News Scout",
+   "msg": "Read 6 new headlines/posts, 1 market-moving stories"
+  },
+  {
+   "t": "2026-11-12T20:53:32Z",
+   "agent": "News Scout",
+   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
+  },
+  {
+   "t": "2026-11-12T20:53:29Z",
+   "agent": "News Scout",
+   "msg": "Agent Reach not found: news feeds + Yahoo Finance + Reddit direct (no X)"
+  },
+  {
+   "t": "2026-11-12T20:53:29Z",
+   "agent": "Trader",
+   "msg": "Paper-trading bot started (Alpaca PAPER account only). Close this window to stop it."
+  },
+  {
+   "t": "2026-11-12T20:51:56Z",
+   "agent": "News Scout",
+   "msg": "Read 16 new headlines/posts, 1 market-moving stories"
+  },
+  {
+   "t": "2026-11-12T20:46:51Z",
+   "agent": "News Scout",
+   "msg": "Read 22 new headlines/posts, 1 market-moving stories"
+  },
+  {
+   "t": "2026-11-12T20:46:50Z",
+   "agent": "News Scout",
+   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
+  },
+  {
+   "t": "2026-11-12T20:41:46Z",
+   "agent": "News Scout",
+   "msg": "Read 19 new headlines/posts, 1 market-moving stories"
+  },
+  {
+   "t": "2026-11-12T20:36:40Z",
+   "agent": "News Scout",
+   "msg": "Read 34 new headlines/posts, 3 market-moving stories"
+  },
+  {
+   "t": "2026-11-12T20:30:13Z",
+   "agent": "News Scout",
+   "msg": "Read 16 new headlines/posts, 3 market-moving stories"
+  },
+  {
+   "t": "2026-11-12T20:30:11Z",
+   "agent": "News Scout",
+   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
+  },
+  {
+   "t": "2026-11-12T20:25:05Z",
+   "agent": "News Scout",
+   "msg": "Read 25 new headlines/posts, 1 market-moving stories"
+  },
+  {
+   "t": "2026-11-12T20:19:59Z",
+   "agent": "News Scout",
+   "msg": "Read 23 new headlines/posts, 1 market-moving stories"
+  },
+  {
+   "t": "2026-11-12T20:14:48Z",
+   "agent": "News Scout",
+   "msg": "Read 21 new headlines/posts, 2 market-moving stories"
+  },
+  {
+   "t": "2026-11-12T20:14:43Z",
+   "agent": "News Scout",
+   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
+  },
+  {
+   "t": "2026-11-12T20:09:38Z",
+   "agent": "News Scout",
+   "msg": "Read 27 new headlines/posts, 2 market-moving stories"
+  },
+  {
+   "t": "2026-11-12T20:04:31Z",
+   "agent": "News Scout",
+   "msg": "Read 44 new headlines/posts, 2 market-moving stories"
+  },
+  {
+   "t": "2026-11-12T19:59:23Z",
+   "agent": "News Scout",
+   "msg": "Read 28 new headlines/posts, 2 market-moving stories"
+  },
+  {
+   "t": "2026-11-12T19:59:21Z",
+   "agent": "News Scout",
+   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
+  },
+  {
+   "t": "2026-11-12T19:54:16Z",
+   "agent": "News Scout",
+   "msg": "Read 16 new headlines/posts, 2 market-moving stories"
+  },
+  {
+   "t": "2026-11-12T19:47:48Z",
+   "agent": "News Scout",
+   "msg": "Read 22 new headlines/posts, 2 market-moving stories"
+  },
+  {
+   "t": "2026-11-12T19:42:41Z",
+   "agent": "News Scout",
+   "msg": "Read 11 new headlines/posts, 0 market-moving stories"
+  },
+  {
+   "t": "2026-11-12T19:42:36Z",
+   "agent": "News Scout",
+   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
+  },
+  {
+   "t": "2026-11-12T19:37:32Z",
+   "agent": "Deep Analyst",
+   "msg": "TradingAgents on AMD: ERROR (r generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.', 'stat)"
+  },
+  {
+   "t": "2026-11-12T19:37:28Z",
+   "agent": "News Scout",
+   "msg": "Read 28 new headlines/posts, 2 market-moving stories"
+  },
+  {
+   "t": "2026-11-12T19:32:19Z",
+   "agent": "News Scout",
+   "msg": "Read 17 new headlines/posts, 2 market-moving stories"
+  },
+  {
+   "t": "2026-11-12T19:27:12Z",
+   "agent": "News Scout",
+   "msg": "Read 34 new headlines/posts, 1 market-moving stories"
+  },
+  {
+   "t": "2026-11-12T19:27:11Z",
+   "agent": "News Scout",
+   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
+  },
+  {
+   "t": "2026-11-12T19:22:06Z",
+   "agent": "News Scout",
+   "msg": "Read 21 new headlines/posts, 0 market-moving stories"
+  },
+  {
+   "t": "2026-11-12T19:22:06Z",
+   "agent": "News Analyst",
+   "msg": "Gemini triage failed, skipping this batch: All Gemini models failed. Last error: Gemini HTTP 400 on gemini-3.8-flash-lite-tts: {\n  \"error\": {\n    \"code\": 400,\n    \"message\": \"Developer instruction is not"
+  },
+  {
+   "t": "2026-11-12T19:15:29Z",
+   "agent": "News Scout",
+   "msg": "Read 66 new headlines/posts, 2 market-moving stories"
+  },
+  {
+   "t": "2026-11-12T19:10:22Z",
+   "agent": "News Scout",
+   "msg": "Read 48 new headlines/posts, 3 market-moving stories"
+  },
+  {
+   "t": "2026-11-12T19:09:05Z",
+   "agent": "News Scout",
+   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
+  },
+  {
+   "t": "2026-11-12T19:04:00Z",
+   "agent": "Trader",
+   "msg": "Saved results to the Agent HQ dashboard"
+  },
   {
    "t": "2026-11-12T19:03:57Z",
    "agent": "News Scout",
@@ -667,183 +838,13 @@
    "t": "2026-11-12T09:53:08Z",
    "agent": "News Scout",
    "msg": "Read 88 new headlines/posts, 3 market-moving stories"
-  },
-  {
-   "t": "2026-11-12T09:53:05Z",
-   "agent": "News Scout",
-   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
-  },
-  {
-   "t": "2026-11-12T09:37:59Z",
-   "agent": "News Scout",
-   "msg": "Read 107 new headlines/posts, 3 market-moving stories"
-  },
-  {
-   "t": "2026-11-12T09:37:45Z",
-   "agent": "News Scout",
-   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
-  },
-  {
-   "t": "2026-11-12T09:22:40Z",
-   "agent": "News Scout",
-   "msg": "Read 83 new headlines/posts, 2 market-moving stories"
-  },
-  {
-   "t": "2026-11-12T09:22:29Z",
-   "agent": "News Scout",
-   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
-  },
-  {
-   "t": "2026-11-12T09:07:24Z",
-   "agent": "News Scout",
-   "msg": "Read 137 new headlines/posts, 4 market-moving stories"
-  },
-  {
-   "t": "2026-11-12T09:07:16Z",
-   "agent": "News Scout",
-   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
-  },
-  {
-   "t": "2026-11-12T08:52:12Z",
-   "agent": "News Scout",
-   "msg": "Read 89 new headlines/posts, 2 market-moving stories"
-  },
-  {
-   "t": "2026-11-12T08:52:10Z",
-   "agent": "News Scout",
-   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
-  },
-  {
-   "t": "2026-11-12T08:37:06Z",
-   "agent": "News Scout",
-   "msg": "Read 92 new headlines/posts, 5 market-moving stories"
-  },
-  {
-   "t": "2026-11-12T08:37:02Z",
-   "agent": "News Scout",
-   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
-  },
-  {
-   "t": "2026-11-12T08:21:57Z",
-   "agent": "News Scout",
-   "msg": "Read 123 new headlines/posts, 4 market-moving stories"
-  },
-  {
-   "t": "2026-11-12T08:21:44Z",
-   "agent": "News Scout",
-   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
-  },
-  {
-   "t": "2026-11-12T08:06:40Z",
-   "agent": "News Scout",
-   "msg": "Read 183 new headlines/posts, 5 market-moving stories"
-  },
-  {
-   "t": "2026-11-12T08:06:19Z",
-   "agent": "News Scout",
-   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
-  },
-  {
-   "t": "2026-11-12T07:51:15Z",
-   "agent": "News Scout",
-   "msg": "Read 84 new headlines/posts, 4 market-moving stories"
-  },
-  {
-   "t": "2026-11-12T07:50:49Z",
-   "agent": "News Scout",
-   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
-  },
-  {
-   "t": "2026-11-12T07:35:45Z",
-   "agent": "News Scout",
-   "msg": "Read 68 new headlines/posts, 2 market-moving stories"
-  },
-  {
-   "t": "2026-11-12T07:35:26Z",
-   "agent": "News Scout",
-   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
-  },
-  {
-   "t": "2026-11-12T07:20:22Z",
-   "agent": "News Scout",
-   "msg": "Read 99 new headlines/posts, 3 market-moving stories"
-  },
-  {
-   "t": "2026-11-12T07:20:17Z",
-   "agent": "News Scout",
-   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
-  },
-  {
-   "t": "2026-11-12T07:05:12Z",
-   "agent": "News Scout",
-   "msg": "Read 100 new headlines/posts, 1 market-moving stories"
-  },
-  {
-   "t": "2026-11-12T07:04:56Z",
-   "agent": "News Scout",
-   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
-  },
-  {
-   "t": "2026-11-12T06:49:53Z",
-   "agent": "News Scout",
-   "msg": "Read 64 new headlines/posts, 2 market-moving stories"
-  },
-  {
-   "t": "2026-11-12T06:49:50Z",
-   "agent": "News Scout",
-   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
-  },
-  {
-   "t": "2026-11-12T06:34:46Z",
-   "agent": "News Scout",
-   "msg": "Read 73 new headlines/posts, 2 market-moving stories"
-  },
-  {
-   "t": "2026-11-12T06:34:30Z",
-   "agent": "News Scout",
-   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
-  },
-  {
-   "t": "2026-11-12T06:19:25Z",
-   "agent": "News Scout",
-   "msg": "Read 84 new headlines/posts, 3 market-moving stories"
-  },
-  {
-   "t": "2026-11-12T06:19:22Z",
-   "agent": "News Scout",
-   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
-  },
-  {
-   "t": "2026-11-12T06:04:17Z",
-   "agent": "News Scout",
-   "msg": "Read 72 new headlines/posts, 2 market-moving stories"
-  },
-  {
-   "t": "2026-11-12T06:04:14Z",
-   "agent": "News Scout",
-   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
-  },
-  {
-   "t": "2026-11-12T05:49:11Z",
-   "agent": "News Scout",
-   "msg": "Read 57 new headlines/posts, 2 market-moving stories"
-  },
-  {
-   "t": "2026-11-12T05:49:09Z",
-   "agent": "News Scout",
-   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
-  },
-  {
-   "t": "2026-11-12T05:34:05Z",
-   "agent": "News Scout",
-   "msg": "Read 59 new headlines/posts, 1 market-moving stories"
   }
  ],
  "brief": {
   "date": "Thu Nov 12",
-  "createdAt": "2026-11-12T19:03:58Z",
-  "headline": "Paper account +$0 today (+0.00%), +0.00% total vs SPY +0.79% · 0 open",
-  "summary": "0 trade(s) closed today, 0/0 winners overall. TradingAgents checks used today: 2/5.",
+  "createdAt": "2026-11-12T20:53:34Z",
+  "headline": "Paper account +$0 today (+0.00%), +0.00% total vs SPY +0.66% · 0 open",
+  "summary": "0 trade(s) closed today, 0/0 winners overall. TradingAgents checks used today: 3/5.",
   "notes": [
    "X/Reddit reader: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
   ]
@@ -857,16 +858,16 @@
   "dayPct": 0.0,
   "totalPnl": 0.0,
   "totalPct": 0.0,
-  "spyPct": 0.79,
-  "vsSpyPct": -0.79
+  "spyPct": 0.66,
+  "vsSpyPct": -0.66
  },
  "status": {
   "killed": false,
   "haltedToday": false,
-  "deepUsed": 2,
+  "deepUsed": 3,
   "deepMax": 5,
   "social": {
-   "at": "2026-11-12T18:49:43Z",
+   "at": "2026-11-12T20:53:32Z",
    "items": 0,
    "source": "Reddit direct (X needs Agent Reach)",
    "problems": [
@@ -882,6 +883,146 @@
  "positions": [],
  "trades": [],
  "decisions": [
+  {
+   "t": "2026-11-12T20:25:05Z",
+   "symbol": "QCOM",
+   "outcome": "waiting",
+   "why": "price hasn't moved the expected way yet (-0.96%)",
+   "event": "Nvidia CEO Jensen Huang resigns and faces widening scandal and relationship inquiries, dealing a blow to the AI sector."
+  },
+  {
+   "t": "2026-11-12T20:19:59Z",
+   "symbol": "QCOM",
+   "outcome": "waiting",
+   "why": "price hasn't moved the expected way yet (-1.05%)",
+   "event": "Nvidia faces ongoing fallout and scrutiny following reports regarding former CEO Jensen Huang's conduct."
+  },
+  {
+   "t": "2026-11-12T20:14:49Z",
+   "symbol": "QCOM",
+   "outcome": "waiting",
+   "why": "price hasn't moved the expected way yet (-0.80%)",
+   "event": "Nvidia faces ongoing fallout and scrutiny following the forced exit of CEO Jensen Huang and related investigations."
+  },
+  {
+   "t": "2026-11-12T20:09:40Z",
+   "symbol": "QCOM",
+   "outcome": "waiting",
+   "why": "price hasn't moved the expected way yet (-0.73%)",
+   "event": "Nvidia faces severe leadership turmoil following the forced exit of CEO Jensen Huang and ongoing legal investigations."
+  },
+  {
+   "t": "2026-11-12T20:04:31Z",
+   "symbol": "QCOM",
+   "outcome": "waiting",
+   "why": "price hasn't moved the expected way yet (-0.89%)",
+   "event": "Analyst price targets for Nvidia were sharply slashed across Wall Street following leadership changes and mounting market scrutiny."
+  },
+  {
+   "t": "2026-11-12T19:59:23Z",
+   "symbol": "QCOM",
+   "outcome": "waiting",
+   "why": "price hasn't moved the expected way yet (-0.66%)",
+   "event": "Nvidia shares experienced turmoil after CEO Jensen Huang announced his resignation amid ongoing scrutiny."
+  },
+  {
+   "t": "2026-11-12T19:47:48Z",
+   "symbol": "QCOM",
+   "outcome": "waiting",
+   "why": "price hasn't moved the expected way yet (-0.65%)",
+   "event": "Nvidia faces severe leadership turmoil as CEO Jensen Huang resigns amid misconduct reports."
+  },
+  {
+   "t": "2026-11-12T19:42:41Z",
+   "symbol": "QCOM",
+   "outcome": "waiting",
+   "why": "price hasn't moved the expected way yet (-0.89%)",
+   "event": "Nvidia faces further leadership and scandal turmoil as reports emerge that former CEO Jensen Huang had a relationship with a second employee."
+  },
+  {
+   "t": "2026-11-12T19:37:32Z",
+   "symbol": "AMD",
+   "outcome": "rejected",
+   "why": "TradingAgents said ERROR (r generateContent. Call ModelService.ListModels to see the list of available mod)",
+   "event": "Nvidia faces further leadership and scandal turmoil as reports emerge that former CEO Jensen Huang had a relationship with a second employee."
+  },
+  {
+   "t": "2026-11-12T19:37:28Z",
+   "symbol": "QCOM",
+   "outcome": "waiting",
+   "why": "price hasn't moved the expected way yet (-0.61%)",
+   "event": "Nvidia faces further leadership and scandal turmoil as reports emerge that former CEO Jensen Huang had a relationship with a second employee."
+  },
+  {
+   "t": "2026-11-12T19:32:21Z",
+   "symbol": "AMD",
+   "outcome": "waiting",
+   "why": "price hasn't moved the expected way yet (+0.20%)",
+   "event": "Nvidia CEO Jensen Huang announced his resignation, adding to selling pressure and downward revisions."
+  },
+  {
+   "t": "2026-11-12T19:32:20Z",
+   "symbol": "QCOM",
+   "outcome": "waiting",
+   "why": "price hasn't moved the expected way yet (-0.75%)",
+   "event": "Nvidia CEO Jensen Huang announced his resignation, adding to selling pressure and downward revisions."
+  },
+  {
+   "t": "2026-11-12T19:27:13Z",
+   "symbol": "AMD",
+   "outcome": "waiting",
+   "why": "price hasn't moved the expected way yet (+0.20%)",
+   "event": "Nvidia CEO Jensen Huang announced his resignation, adding to selling pressure and downward revisions."
+  },
+  {
+   "t": "2026-11-12T19:27:12Z",
+   "symbol": "QCOM",
+   "outcome": "waiting",
+   "why": "price hasn't moved the expected way yet (-0.48%)",
+   "event": "Nvidia CEO Jensen Huang announced his resignation, adding to selling pressure and downward revisions."
+  },
+  {
+   "t": "2026-11-12T19:22:07Z",
+   "symbol": "AMD",
+   "outcome": "waiting",
+   "why": "price hasn't moved the expected way yet (+0.10%)",
+   "event": "Nvidia shares face continued selling pressure and further downgrades following the resignation of CEO Jensen Huang."
+  },
+  {
+   "t": "2026-11-12T19:22:07Z",
+   "symbol": "QCOM",
+   "outcome": "waiting",
+   "why": "price hasn't moved the expected way yet (-0.49%)",
+   "event": "Nvidia shares face continued selling pressure and further downgrades following the resignation of CEO Jensen Huang."
+  },
+  {
+   "t": "2026-11-12T19:15:30Z",
+   "symbol": "AMD",
+   "outcome": "waiting",
+   "why": "price hasn't moved the expected way yet (+0.22%)",
+   "event": "Nvidia shares face continued selling pressure and further downgrades following the resignation of CEO Jensen Huang."
+  },
+  {
+   "t": "2026-11-12T19:15:30Z",
+   "symbol": "QCOM",
+   "outcome": "waiting",
+   "why": "price hasn't moved the expected way yet (-0.66%)",
+   "event": "Nvidia shares face continued selling pressure and further downgrades following the resignation of CEO Jensen Huang."
+  },
+  {
+   "t": "2026-11-12T19:10:23Z",
+   "symbol": "AMD",
+   "outcome": "waiting",
+   "why": "price hasn't moved the expected way yet (-0.16%)",
+   "event": "Nvidia CEO Jensen Huang has stepped down, continuing the severe sell-off and market uncertainty across tech."
+  },
+  {
+   "t": "2026-11-12T19:10:22Z",
+   "symbol": "QCOM",
+   "outcome": "waiting",
+   "why": "price hasn't moved the expected way yet (-0.91%)",
+   "event": "Nvidia CEO Jensen Huang has stepped down, continuing the severe sell-off and market uncertainty across tech."
+  },
   {
    "t": "2026-11-12T19:03:58Z",
    "symbol": "AMD",
@@ -1157,146 +1298,6 @@
   },
   {
    "t": "2026-11-11T22:17:15Z",
-   "symbol": "AMAT",
-   "outcome": "waiting",
-   "why": "only 1 source(s) so far: 24/7 Wall St.",
-   "event": "Applied Materials and other major semiconductor stocks rallied strongly ahead of upcoming earnings reports amid a broader rebound in chip sector demand."
-  },
-  {
-   "t": "2026-11-11T22:17:15Z",
-   "symbol": "TSLA",
-   "outcome": "waiting",
-   "why": "only 1 source(s) so far: 24/7 Wall St.",
-   "event": "Tesla shares rose after Finland cleared its driver-assistance system ahead of an EU vote."
-  },
-  {
-   "t": "2026-11-11T22:16:10Z",
-   "symbol": "KLAC",
-   "outcome": "waiting",
-   "why": "only 1 source(s) so far: 24/7 Wall St.",
-   "event": "Applied Materials and other major semiconductor stocks rallied strongly ahead of upcoming earnings reports amid a broader rebound in chip sector demand."
-  },
-  {
-   "t": "2026-11-11T22:16:10Z",
-   "symbol": "LRCX",
-   "outcome": "waiting",
-   "why": "only 1 source(s) so far: 24/7 Wall St.",
-   "event": "Applied Materials and other major semiconductor stocks rallied strongly ahead of upcoming earnings reports amid a broader rebound in chip sector demand."
-  },
-  {
-   "t": "2026-11-11T22:16:10Z",
-   "symbol": "AMAT",
-   "outcome": "waiting",
-   "why": "only 1 source(s) so far: 24/7 Wall St.",
-   "event": "Applied Materials and other major semiconductor stocks rallied strongly ahead of upcoming earnings reports amid a broader rebound in chip sector demand."
-  },
-  {
-   "t": "2026-11-11T22:16:10Z",
-   "symbol": "TSLA",
-   "outcome": "waiting",
-   "why": "only 1 source(s) so far: 24/7 Wall St.",
-   "event": "Tesla shares rose after Finland cleared its driver-assistance system ahead of an EU vote."
-  },
-  {
-   "t": "2026-11-11T22:01:03Z",
-   "symbol": "KLAC",
-   "outcome": "waiting",
-   "why": "only 1 source(s) so far: 24/7 Wall St.",
-   "event": "Applied Materials and other major semiconductor stocks rallied strongly ahead of upcoming earnings reports amid a broader rebound in chip sector demand."
-  },
-  {
-   "t": "2026-11-11T22:01:03Z",
-   "symbol": "LRCX",
-   "outcome": "waiting",
-   "why": "only 1 source(s) so far: 24/7 Wall St.",
-   "event": "Applied Materials and other major semiconductor stocks rallied strongly ahead of upcoming earnings reports amid a broader rebound in chip sector demand."
-  },
-  {
-   "t": "2026-11-11T22:01:03Z",
-   "symbol": "AMAT",
-   "outcome": "waiting",
-   "why": "only 1 source(s) so far: 24/7 Wall St.",
-   "event": "Applied Materials and other major semiconductor stocks rallied strongly ahead of upcoming earnings reports amid a broader rebound in chip sector demand."
-  },
-  {
-   "t": "2026-11-11T22:01:03Z",
-   "symbol": "TSLA",
-   "outcome": "waiting",
-   "why": "only 1 source(s) so far: 24/7 Wall St.",
-   "event": "Tesla shares rose after Finland cleared its driver-assistance system ahead of an EU vote."
-  },
-  {
-   "t": "2026-11-11T21:45:59Z",
-   "symbol": "KLAC",
-   "outcome": "waiting",
-   "why": "only 1 source(s) so far: 24/7 Wall St.",
-   "event": "Applied Materials and other major semiconductor stocks rallied strongly ahead of upcoming earnings reports amid a broader rebound in chip sector demand."
-  },
-  {
-   "t": "2026-11-11T21:45:59Z",
-   "symbol": "LRCX",
-   "outcome": "waiting",
-   "why": "only 1 source(s) so far: 24/7 Wall St.",
-   "event": "Applied Materials and other major semiconductor stocks rallied strongly ahead of upcoming earnings reports amid a broader rebound in chip sector demand."
-  },
-  {
-   "t": "2026-11-11T21:45:59Z",
-   "symbol": "AMAT",
-   "outcome": "waiting",
-   "why": "only 1 source(s) so far: 24/7 Wall St.",
-   "event": "Applied Materials and other major semiconductor stocks rallied strongly ahead of upcoming earnings reports amid a broader rebound in chip sector demand."
-  },
-  {
-   "t": "2026-11-11T21:45:59Z",
-   "symbol": "TSLA",
-   "outcome": "waiting",
-   "why": "only 1 source(s) so far: 24/7 Wall St.",
-   "event": "Tesla shares rose after Finland cleared its driver-assistance system ahead of an EU vote."
-  },
-  {
-   "t": "2026-11-11T21:30:54Z",
-   "symbol": "KLAC",
-   "outcome": "waiting",
-   "why": "only 1 source(s) so far: 24/7 Wall St.",
-   "event": "Applied Materials and other major semiconductor stocks rallied strongly ahead of upcoming earnings reports amid a broader rebound in chip sector demand."
-  },
-  {
-   "t": "2026-11-11T21:30:54Z",
-   "symbol": "LRCX",
-   "outcome": "waiting",
-   "why": "only 1 source(s) so far: 24/7 Wall St.",
-   "event": "Applied Materials and other major semiconductor stocks rallied strongly ahead of upcoming earnings reports amid a broader rebound in chip sector demand."
-  },
-  {
-   "t": "2026-11-11T21:30:54Z",
-   "symbol": "AMAT",
-   "outcome": "waiting",
-   "why": "only 1 source(s) so far: 24/7 Wall St.",
-   "event": "Applied Materials and other major semiconductor stocks rallied strongly ahead of upcoming earnings reports amid a broader rebound in chip sector demand."
-  },
-  {
-   "t": "2026-11-11T21:30:54Z",
-   "symbol": "TSLA",
-   "outcome": "waiting",
-   "why": "only 1 source(s) so far: 24/7 Wall St.",
-   "event": "Tesla shares rose after Finland cleared its driver-assistance system ahead of an EU vote."
-  },
-  {
-   "t": "2026-11-11T21:15:46Z",
-   "symbol": "KLAC",
-   "outcome": "waiting",
-   "why": "only 1 source(s) so far: 24/7 Wall St.",
-   "event": "Applied Materials and other major semiconductor stocks rallied strongly ahead of upcoming earnings reports amid a broader rebound in chip sector demand."
-  },
-  {
-   "t": "2026-11-11T21:15:46Z",
-   "symbol": "LRCX",
-   "outcome": "waiting",
-   "why": "only 1 source(s) so far: 24/7 Wall St.",
-   "event": "Applied Materials and other major semiconductor stocks rallied strongly ahead of upcoming earnings reports amid a broader rebound in chip sector demand."
-  },
-  {
-   "t": "2026-11-11T21:15:46Z",
    "symbol": "AMAT",
    "outcome": "waiting",
    "why": "only 1 source(s) so far: 24/7 Wall St.",
@@ -1933,6 +1934,21 @@
    "t": "2026-11-12T18:51:20Z",
    "equity": 100000.0,
    "spy": 758.645
+  },
+  {
+   "t": "2026-11-12T19:22:07Z",
+   "equity": 100000.0,
+   "spy": 759.14
+  },
+  {
+   "t": "2026-11-12T19:54:17Z",
+   "equity": 100000.0,
+   "spy": 757.81
+  },
+  {
+   "t": "2026-11-12T20:25:06Z",
+   "equity": 100000.0,
+   "spy": 757.665
   }
  ],
  "watch": [],
@@ -1944,80 +1960,93 @@
  },
  "events": [
   {
-   "summary": "SecEdge integrated its SEC-TPM firmware with Lattice Semiconductor Root of Trust FPGAs to enhance security for hyperscale data center platforms.",
-   "category": "earnings_beat",
-   "firstSeen": "2026-11-11T19:02:00Z",
+   "summary": "Nvidia shares plunged following the unexpected resignation of CEO Jensen Huang amid scandal.",
+   "category": "company_bad_news",
+   "firstSeen": "2026-11-12T18:24:33Z",
    "publishers": [
-    "24/7 Wall St.",
+    "AP",
+    "Benzinga",
+    "CNBC",
+    "Invezz",
+    "Moomoo",
+    "Pluang",
+    "Reuters",
+    "The Economic Times",
     "Yahoo Finance",
-    "fiscal.ai"
+    "bloomingbit"
    ],
    "assets": {
-    "AMAT": {
-     "direction": "up",
-     "confidence": 0.75,
-     "why": "Rallied 8% ahead of earnings amidst a strong rebound in chip stocks."
-    },
-    "LRCX": {
-     "direction": "up",
-     "confidence": 0.7,
-     "why": "Lam Research jumps 9% alongside sector momentum."
-    },
-    "KLAC": {
-     "direction": "up",
-     "confidence": 0.7,
-     "why": "KLA climbs 7% following broader semiconductor strength."
-    },
     "NVDA": {
-     "direction": "up",
-     "confidence": 0.75,
-     "why": "Aggressive AI infrastructure investment lifts demand outlook."
+     "direction": "down",
+     "confidence": 0.95,
+     "why": "CEO resignation and scandal creates severe downward pressure on the stock."
     },
-    "MU": {
-     "direction": "up",
-     "confidence": 0.75,
-     "why": "Stronger AI spending boosts memory chip demand."
+    "BTC/USD": {
+     "direction": "down",
+     "confidence": 0.7,
+     "why": "Broader risk-off sentiment triggered by major tech leadership turmoil."
     },
-    "AVGO": {
+    "QCOM": {
      "direction": "up",
-     "confidence": 0.75,
-     "why": "Higher AI infrastructure spending benefits Broadcom."
+     "confidence": 0.65,
+     "why": "Capital is rotating out of Nvidia into competing AI semiconductor stocks following the CEO exit."
     },
     "AMD": {
-     "direction": "up",
-     "confidence": 0.75,
-     "why": "Aggressive AI spending environment aids chip demand."
+     "direction": "down",
+     "confidence": 0.5,
+     "why": "Broad sector contagion from major industry leader turmoil."
+    },
+    "AVGO": {
+     "direction": "down",
+     "confidence": 0.4,
+     "why": "Broad tech contagion from Nvidia leadership crisis."
     }
    },
    "sources": [
     {
-     "id": "10c165e609b73291",
-     "publisher": "24/7 Wall St.",
+     "id": "855265040ed1e43c",
+     "publisher": "Reuters",
      "kind": "news",
-     "title": "Applied Materials Rallies 8% Ahead of Earnings as Chip Stocks Rebound; Lam Research Jumps 9%, KLA Climbs 7%",
-     "url": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxOQXlzN3JDN2RsREQzWFcwR0JUY3ViR1d3c2x4MjRPZ3hzU1ZXNHRobXduZ1JxOWhhb3B0R0NuejJWTTZvU3BkY1FKcnRzNXRlaGRSZ19wOHgtMm9Lc3pKRUhOV25xSEpnOXFTREc4akhVUzBkSmZCVVdtOTMxUmk0VnhmVzVCQVlKMDBteUhKbEFPWmtMWmdsdVR3elFYVW5QekFkOFFfTXd5UzRCdFA1ekFIazh4MzRqMHZzQVd0NzNEWUlPcURxdWFwUGF1MThXMEh2V25OckRManVwMkcw?oc=5",
-     "time": "2026-11-11T19:02:00Z"
+     "title": "Nvidia CEO Jensen Huang resigns, in blow to AI boom he helped foster",
+     "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOMEFwN0FWdjB6blNtR0RZaTBWZXZDaWVwYkhXREttY2FaYVNNVC1qNEFHYm9Yd1pDODBDN2tvNzhnMTY4cmxWYTg1WVFidzFlNVFEdlZNb3IyZG1nS2FKcHAzUERhQW9EdG9oOER6YmwydXZOd0t1VHRub1BCdFdoR1V4dktlUVUydjZWeU53aVdKMGwtOGFtZmd2T3VhODF3eXhPazVtbV81b0hpUi1vcw?oc=5",
+     "time": "2026-11-12T18:31:55Z"
     },
     {
-     "id": "52b3ba400dabad09",
+     "id": "6c526a44313f07e5",
      "publisher": "Yahoo Finance",
      "kind": "news",
-     "title": "Great News for Nvidia, Micron, Broadcom, and AMD Stock Investors -- Wall Street Made a Mistake",
-     "url": "https://www.fool.com/investing/2026/11/12/great-news-nvidia-micron-broadcom-amd-wall-street-mistake/?.tsrc=rss",
-     "time": "2026-11-12T09:33:02Z"
+     "title": "Equities Rise Intraday Despite Nvidia Sell-Off Post CEO's Departure",
+     "url": "https://finance.yahoo.com/markets/stocks/articles/equities-rise-intraday-despite-nvidia-182433809.html?.tsrc=rss",
+     "time": "2026-11-12T18:24:33Z"
     },
     {
-     "id": "d66166c3634bad49",
-     "publisher": "fiscal.ai",
+     "id": "adfadefb8db21a4c",
+     "publisher": "AP",
      "kind": "news",
-     "title": "SecEdge Integrates SEC-TPM™ Firmware with Lattice Semiconductor Root of Trust FPGAs",
-     "url": "https://www.einpresswire.com/article/955673542/secedge-sec-tpm-brings-tpm-2-0-to-lattice-root-of-trust-fpgas",
-     "time": "2026-11-12T19:02:06Z"
+     "title": "What we know after Jensen Huang resigns as Nvidia’s CEO",
+     "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOMUxqUTE0WWZBT2xoV25SLUQ2dFgyWkhwZFZyRnk3d1Fibmtrb0d4T3otSXNpNmZiTVh0QUdkWTA4UmQ3cXQyVVM3ODc0V0g4YnVVbDJRYWF4VXlaXzMzZnJWNi1UR3YyZHJGbWNzaVFab2tiM3N2RjFIOUtWcnlJVWtMVnhQNmhJeTdPajNVUXZfU2NzWkw0aGJLVFMtaGY3?oc=5",
+     "time": "2026-11-12T18:38:00Z"
+    },
+    {
+     "id": "e45111d2af3013e1",
+     "publisher": "The Economic Times",
+     "kind": "news",
+     "title": "Bitcoin price today: BTC USD falls near $71,000 after Jensen Huang resigns as Nvidia CEO and ETF outflows",
+     "url": "https://news.google.com/rss/articles/CBMisgJBVV95cUxNNGkxSEhVaVRhRGl4UkxMZUoyeV9Bc25CTmNkY1Q3Z2JEbTB5S3JWbUt4clE4eEltNTFSbFZSOFJrM290QTFESGJiMHROMGRSNVhzV0tkRHRqU2hLTk5GYng1Mm9FaDVlTFNyNHdqWXNwNDhNazZJNmlqOXIxVjFvZ0hwSHRTSUcwSXRqWWU5Mi1BTVg3Zm12bml2STNnSFExQWlTaUlRdDNlVnNUZlh5dFJDN2pfQmhha2M1SVBYUm1fVDhiaThNTnBsRU0ySTJSR1o1QkMyVHJseHA4VHlkd2pYODRaZzFpUUQza2ZlT1JpU0ZodWVkR0pCb3ZZTnI3TTNGQTBxcnJ0VnVJZzV3NHltc3l0X19JbG03WjdwRXFEWEwxZE9uMmJMTTVQbFZVRmfSAbcCQVVfeXFMTXR1bEttcm9WdW1FU0VCR1dKbWkwVkpwVmpjOE9YY1ZDUTZOcE5HaWktRnU2UW55c2ZLWEpiRmFwQ3ZTd2otS0RqX2FSWFZwejRGbFZOcGFpa2oxdF8xYmxVWVp6UUl1QkRnYi1ZVVhNS0d4UDlxSGpwZjJFeG5KbDhZdUplRWh5QU9Lc2U1NWhMMm9EQVZISVVIdUxuWnQxaDRWNllMb1lFS2VJUXRxYTJKSVV1bjg1V2ROTnRLdTVIb3dvcllFbTgtTF9nZFhaVGVrSHpzM3lQOTM5bHp2LXBLZ0VldGppMm95dWZBeGlLNUFXdnE0VkdqbWUzNS1adjhCRVlIMGdEbHJ2djFZSm5GWHhJcmZEOTRLbTU0MGNEdm1MaGkxdlA1WEEyMFlyRm8wbEdmWnM?oc=5",
+     "time": "2026-11-12T18:34:50Z"
+    },
+    {
+     "id": "89cceff7950b3622",
+     "publisher": "Benzinga",
+     "kind": "news",
+     "title": "Jensen Huang Is Out At Nvidia: 4 Private Equity Giants with Big Bets on Its AI Infrastructure Future",
+     "url": "https://www.benzinga.com/markets/private-markets/26/11/63212619/jensen-huang-is-out-at-nvidia-4-private-equity-giants-with-big-bets-on-its-ai-infrastructure-future",
+     "time": "2026-11-12T18:45:12Z"
     }
    ]
   },
   {
-   "summary": "Fed officials signal potential for more rate hikes and a December interest rate hike amid rising inflation pressures.",
+   "summary": "Traders ramp up rate hike expectations with an 87% chance seen for a quarter-point increase in December.",
    "category": "central_bank_hawkish",
    "firstSeen": "2026-11-10T09:39:09Z",
    "publishers": [
@@ -2125,6 +2154,7 @@
     "KSHB 41 Kansas City",
     "KSL News",
     "KXLH News Helena",
+    "Kalshi News",
     "Kathleen Hays Presents: Central Bank Central",
     "Kiplinger",
     "Kitco",
@@ -2202,6 +2232,7 @@
     "The Motley Fool",
     "The National",
     "The Real Economy Blog",
+    "The San Joaquin Valley Sun",
     "The Standard (HK)",
     "The Star",
     "The Straits Times",
@@ -2374,7 +2405,7 @@
    ]
   },
   {
-   "summary": "Oil prices rise as disruptions and tanker attacks continue in the Strait of Hormuz and Middle East.",
+   "summary": "Yemen's Houthis attacked a pumping station on Saudi Arabia's East-West oil pipeline amid escalating Middle East tensions.",
    "category": "war_escalation",
    "firstSeen": "2026-11-10T20:01:23Z",
    "publishers": [
@@ -2388,6 +2419,7 @@
     "ASHARQ AL-AWSAT English",
     "AZ Family",
     "Aaj English TV",
+    "Ahram Online",
     "Al Arabiya English",
     "Al-Bawaba",
     "Al-Monitor",
@@ -2472,6 +2504,7 @@
     "Moomoo",
     "NST Online",
     "Nacionale",
+    "National Security Journal",
     "News18",
     "News9live",
     "NewsCord",
@@ -2573,17 +2606,17 @@
     "XOM": {
      "direction": "up",
      "confidence": 0.85,
-     "why": "Middle East war escalation and rising oil prices drive oil stocks higher"
+     "why": "Attacks on Saudi energy sites and Strait of Hormuz disrupt oil supply, pushing oil and gas stocks up."
     },
     "CVX": {
      "direction": "up",
      "confidence": 0.85,
-     "why": "Middle East war escalation and rising oil prices drive oil stocks higher"
+     "why": "Supply disruption in the Middle East boosts major oil producers."
     },
     "OXY": {
      "direction": "up",
      "confidence": 0.8,
-     "why": "Middle East war escalation and Hormuz threats support crude prices and oil producers."
+     "why": "Higher oil prices driven by geopolitical supply threats benefit oil producers."
     },
     "PLTR": {
      "direction": "up",
@@ -2690,79 +2723,331 @@
    ]
   },
   {
-   "summary": "Nvidia CEO Jensen Huang has resigned, triggering market uncertainty, a crypto selloff, and capital rotation to competitors.",
+   "summary": "Tesla faces a new lawsuit following a severe head-on collision related to a street-racing incident.",
    "category": "company_bad_news",
-   "firstSeen": "2026-11-12T18:24:33Z",
+   "firstSeen": "2026-11-12T15:43:48Z",
    "publishers": [
-    "AP",
     "Benzinga",
-    "Pluang",
-    "Reuters",
-    "The Economic Times",
-    "Yahoo Finance"
+    "StockStory",
+    "fiscal.ai",
+    "scanx.trade"
    ],
    "assets": {
-    "NVDA": {
+    "TSLA": {
      "direction": "down",
-     "confidence": 0.95,
-     "why": "Resignation of a visionary tech CEO causes immense volatility and selling."
-    },
-    "BTC/USD": {
-     "direction": "down",
-     "confidence": 0.7,
-     "why": "Broader risk-off sentiment triggered by major tech leadership turmoil."
-    },
-    "QCOM": {
-     "direction": "up",
-     "confidence": 0.65,
-     "why": "Capital is rotating out of Nvidia into competing AI semiconductor stocks following the CEO exit."
-    },
-    "AMD": {
-     "direction": "up",
-     "confidence": 0.65,
-     "why": "Investors rotate capital into alternative chipmakers as Nvidia faces leadership turmoil."
+     "confidence": 0.6,
+     "why": "New lawsuit filed against Tesla adds legal headline risk."
     }
    },
    "sources": [
     {
-     "id": "855265040ed1e43c",
-     "publisher": "Reuters",
-     "kind": "news",
-     "title": "Nvidia CEO Jensen Huang resigns, in blow to AI boom he helped foster",
-     "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOMEFwN0FWdjB6blNtR0RZaTBWZXZDaWVwYkhXREttY2FaYVNNVC1qNEFHYm9Yd1pDODBDN2tvNzhnMTY4cmxWYTg1WVFidzFlNVFEdlZNb3IyZG1nS2FKcHAzUERhQW9EdG9oOER6YmwydXZOd0t1VHRub1BCdFdoR1V4dktlUVUydjZWeU53aVdKMGwtOGFtZmd2T3VhODF3eXhPazVtbV81b0hpUi1vcw?oc=5",
-     "time": "2026-11-12T18:31:55Z"
-    },
-    {
-     "id": "6c526a44313f07e5",
-     "publisher": "Yahoo Finance",
-     "kind": "news",
-     "title": "Equities Rise Intraday Despite Nvidia Sell-Off Post CEO's Departure",
-     "url": "https://finance.yahoo.com/markets/stocks/articles/equities-rise-intraday-despite-nvidia-182433809.html?.tsrc=rss",
-     "time": "2026-11-12T18:24:33Z"
-    },
-    {
-     "id": "adfadefb8db21a4c",
-     "publisher": "AP",
-     "kind": "news",
-     "title": "What we know after Jensen Huang resigns as Nvidia’s CEO",
-     "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOMUxqUTE0WWZBT2xoV25SLUQ2dFgyWkhwZFZyRnk3d1Fibmtrb0d4T3otSXNpNmZiTVh0QUdkWTA4UmQ3cXQyVVM3ODc0V0g4YnVVbDJRYWF4VXlaXzMzZnJWNi1UR3YyZHJGbWNzaVFab2tiM3N2RjFIOUtWcnlJVWtMVnhQNmhJeTdPajNVUXZfU2NzWkw0aGJLVFMtaGY3?oc=5",
-     "time": "2026-11-12T18:38:00Z"
-    },
-    {
-     "id": "e45111d2af3013e1",
-     "publisher": "The Economic Times",
-     "kind": "news",
-     "title": "Bitcoin price today: BTC USD falls near $71,000 after Jensen Huang resigns as Nvidia CEO and ETF outflows",
-     "url": "https://news.google.com/rss/articles/CBMisgJBVV95cUxNNGkxSEhVaVRhRGl4UkxMZUoyeV9Bc25CTmNkY1Q3Z2JEbTB5S3JWbUt4clE4eEltNTFSbFZSOFJrM290QTFESGJiMHROMGRSNVhzV0tkRHRqU2hLTk5GYng1Mm9FaDVlTFNyNHdqWXNwNDhNazZJNmlqOXIxVjFvZ0hwSHRTSUcwSXRqWWU5Mi1BTVg3Zm12bml2STNnSFExQWlTaUlRdDNlVnNUZlh5dFJDN2pfQmhha2M1SVBYUm1fVDhiaThNTnBsRU0ySTJSR1o1QkMyVHJseHA4VHlkd2pYODRaZzFpUUQza2ZlT1JpU0ZodWVkR0pCb3ZZTnI3TTNGQTBxcnJ0VnVJZzV3NHltc3l0X19JbG03WjdwRXFEWEwxZE9uMmJMTTVQbFZVRmfSAbcCQVVfeXFMTXR1bEttcm9WdW1FU0VCR1dKbWkwVkpwVmpjOE9YY1ZDUTZOcE5HaWktRnU2UW55c2ZLWEpiRmFwQ3ZTd2otS0RqX2FSWFZwejRGbFZOcGFpa2oxdF8xYmxVWVp6UUl1QkRnYi1ZVVhNS0d4UDlxSGpwZjJFeG5KbDhZdUplRWh5QU9Lc2U1NWhMMm9EQVZISVVIdUxuWnQxaDRWNllMb1lFS2VJUXRxYTJKSVV1bjg1V2ROTnRLdTVIb3dvcllFbTgtTF9nZFhaVGVrSHpzM3lQOTM5bHp2LXBLZ0VldGppMm95dWZBeGlLNUFXdnE0VkdqbWUzNS1adjhCRVlIMGdEbHJ2djFZSm5GWHhJcmZEOTRLbTU0MGNEdm1MaGkxdlA1WEEyMFlyRm8wbEdmWnM?oc=5",
-     "time": "2026-11-12T18:34:50Z"
-    },
-    {
-     "id": "89cceff7950b3622",
+     "id": "fb8045cbfe86a60f",
      "publisher": "Benzinga",
      "kind": "news",
-     "title": "Jensen Huang Is Out At Nvidia: 4 Private Equity Giants with Big Bets on Its AI Infrastructure Future",
-     "url": "https://www.benzinga.com/markets/private-markets/26/11/63212619/jensen-huang-is-out-at-nvidia-4-private-equity-giants-with-big-bets-on-its-ai-infrastructure-future",
-     "time": "2026-11-12T18:45:12Z"
+     "title": "YETI Sounds the Alarm on Consumer Spending As Shoppers Hunt for Deals",
+     "url": "https://www.benzinga.com/markets/earnings/26/11/63197694/yeti-sounds-the-alarm-on-consumer-spending-as-shoppers-hunt-for-deals",
+     "time": "2026-11-12T15:43:48Z"
+    },
+    {
+     "id": "eb1007b02a637a06",
+     "publisher": "StockStory",
+     "kind": "news",
+     "title": "Why YETI shares are trading lower today",
+     "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNdl83SV9zdFlzM2FENVRJLTJxckhKNjZUMTFTM0FXUUZVQ0NzRG54ZFRXeERERnZDSWFDcmMxNU1rRVhrWUlnV2UtWFdmY2VpWDAxNkxudGV4NmpjeUJ3Z1NQUm1FUm1lU3dNTmEwdmxkNjFTdU9aTEt2THpfQmYyV05vNzJwa3VDSjZqQjdfYjVwQWttVzlNX0ZrdTlydXJU?oc=5",
+     "time": "2026-11-12T15:53:44Z"
+    },
+    {
+     "id": "c394152546c931b0",
+     "publisher": "scanx.trade",
+     "kind": "news",
+     "title": "YETI Holdings Q3FY26 Results: Revenue up 4.4% but guidance cut",
+     "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOdlBmR3l6ZUFQY29CWHFTT1p4Z0JOdEpxb2hiYWNuV3FQTjVKcTd0bml3S3RPWVY1SDVSUVR3dGFSb1BvbXByNzc4RURDd1E0YXdTT05pVWYyOVpjQ2JTYXVkMFByR05iaThHeUJfRDJuaWVKYVp3UkxndGxfNm9WeGxtV1h0dUFEUWtVM0tQaURPVWNuSGFiZmZBanBCc2tGQ0FhNjEyUEVZVUYzT1lGSWFFeW05clYz?oc=5",
+     "time": "2026-11-12T16:39:48Z"
+    },
+    {
+     "id": "cc6a00bf5e9f8ced",
+     "publisher": "fiscal.ai",
+     "kind": "news",
+     "title": "Lawsuit Filed Against Tesla Over San Mateo Street-Racing Incident",
+     "url": "https://newsfilter.io/sources/businesswire",
+     "time": "2026-11-12T20:01:33Z"
+    }
+   ]
+  },
+  {
+   "summary": "EIA data shows US crude oil inventories rose by 4.7 million barrels, pointing to oversupply and weighing on oil prices.",
+   "category": "oil_supply",
+   "firstSeen": "2026-11-12T06:53:00Z",
+   "publishers": [
+    "ASHARQ AL-AWSAT English",
+    "BW Businessworld",
+    "Benzinga",
+    "Chosunbiz",
+    "Crypto Briefing",
+    "Investing.com India",
+    "LEADERSHIP Newspapers",
+    "Latest news from Azerbaijan",
+    "Oil & Gas Journal",
+    "Profit by Pakistan Today",
+    "Public TV English",
+    "UA.NEWS"
+   ],
+   "assets": {
+    "XOM": {
+     "direction": "down",
+     "confidence": 0.75,
+     "why": "OPEC+ output boost and rising oversupply fears pressure crude prices down."
+    },
+    "CVX": {
+     "direction": "down",
+     "confidence": 0.75,
+     "why": "Higher oil output and oversupply concerns negatively impact oil majors."
+    },
+    "COP": {
+     "direction": "down",
+     "confidence": 0.7,
+     "why": "Rising US crude inventories increase oversupply concerns, negatively impacting oil and gas stocks."
+    },
+    "SLB": {
+     "direction": "down",
+     "confidence": 0.7,
+     "why": "Lower oil prices driven by oversupply could slow down oilfield services spending."
+    },
+    "OXY": {
+     "direction": "down",
+     "confidence": 0.6,
+     "why": "OPEC+ output growth heightens oversupply concerns."
+    }
+   },
+   "sources": [
+    {
+     "id": "4bb506049f64816d",
+     "publisher": "Latest news from Azerbaijan",
+     "kind": "news",
+     "title": "Oil prices decline as OPEC+ output boosts oversupply fears",
+     "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPZVJObGVhNHNqYldKVjk4SWFfUTd4VUgtdVFrSWh6WmRaN0J5NWNjcjc0T3hCOFhLZkFhUjktbnA3VS10aWxCUllUbEY0WEo4eUdRYmxBVjJqclk0NXRLZEduaE9tU2JMUlh1TXBLZ3c1VzA2Z0thLTZZZDJJMmZLQm5nZzk?oc=5",
+     "time": "2026-11-12T06:55:24Z"
+    },
+    {
+     "id": "74543532c5f84f94",
+     "publisher": "Public TV English",
+     "kind": "news",
+     "title": "OPEC+ oil output rises 2.04 million barrels per day in Oct as Saudi Arabia leads recovery amid West Asia crisis",
+     "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxNc3hMVUdaemN1YTRZQVpJaGNKZGQxYmFOdTVmRl9DYUxxNmtFV250ZmI1bnlrc3ZtdWZtYWRaeDRUcTl1azB6YkNqQVRndjhhYnpBWkU3N2w2X1VHaV9XVTYyclUyOHpudFp2NURkY2ZsOV9mb2wtYzdublNaLTRvdnFfbEhWV1FjM3gzZ05jNUJiOG9xb3ZacUZTb01fenM1MEc1Z3ZNcmxuczZnSVBlbmtyeVllZXRCck9fTXpjdkR2a2IzSGJUbVNiTmNyMFhnWGZyc2VB?oc=5",
+     "time": "2026-11-12T06:58:03Z"
+    },
+    {
+     "id": "a7dcf6881335f5e3",
+     "publisher": "BW Businessworld",
+     "kind": "news",
+     "title": "Opec+ Oil Output Rebounds 2.04 Million Bpd Amid Hormuz Disruption",
+     "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQQk5IV3BYU3hZMXhIelhESU9XSUhWQm1tLVM1eDR6ZHNfdG83alp6d0plallRYTNneEN3Wmd3LWd3MWhHUHRnbHV5ZGc1a3NacEVGRTFSSXl0anBrVGxNeWdvRngxaFRGUTQzSFNNZnBZVmxrdFpWU1dzNHhsUmxQRE1KbU9MYVotQmdrWVZ5YWhoTEdud0lLWktwOHpzNEY4cU9kOERVbVM1V0ly?oc=5",
+     "time": "2026-11-12T06:54:45Z"
+    },
+    {
+     "id": "13ef775feec7cccc",
+     "publisher": "Chosunbiz",
+     "kind": "news",
+     "title": "Oil prices fall as South Korea weighs path for price cap and compensation",
+     "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxOMUJYRlU0Y3d2ZFJvbWl6bjNvWnhaYlFmM2pNWXFEWEFsNnlpVXlwMUplSVRHcDB1dXNudTVKZUtDaXRJalM4Vk9OR1draHZzTHpid3NibkNPUW4xM2hwS1h2VUwzRFFkUDNQZnc3MTNzM2dvXzlCYVN1UmdKUlBmVzl30gGWAUFVX3lxTE9lRTYxWHlhNG9XWUxPMzU3LVVxZWJnVzZCUV9wblY4N29yaXZVRE5ydFZ3Q3FUblNTSG4ya1h0NkZmT0NucHdkdlptd2Y0aldnT3VoREZTSER5WUFnSDVFSDlTT0dRaE9XYjNlVHJhb2E5N1h3OWhQVExORERXV3RqMG5nWnF4UC1pZlVtaHgxOEstNHVnZw?oc=5",
+     "time": "2026-11-12T06:53:00Z"
+    },
+    {
+     "id": "d319dc3aaf7fda77",
+     "publisher": "Profit by Pakistan Today",
+     "kind": "news",
+     "title": "Oil falls over $1 on easing geopolitical fears and oversupply worries",
+     "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQd0RjdkpYTklPUzF2U293azdJRzhHR2tjMUt5RFYtYjZQX1BSN290cjBTb05Sb3BVTjFnaXVydnpsYzRVZDRQY0VNdEpKWUc4eGNlUnR4VldnNGdpejFqVmRDX2NuaUw1RHliVF94X012TzhsU084NklWUGdtTk1nUjJDdC1zb2JUTHZMdWI1cmhyZUVZWkZVOEpwRFVZU1JwdUxiQVNlM0NBSmdYYmhsWXd3Zk9iNnpVaDdRM0Rn?oc=5",
+     "time": "2026-11-12T07:44:38Z"
+    }
+   ]
+  },
+  {
+   "summary": "Cryptocurrency markets experienced a massive crash, wiping out $560 billion and dragging Bitcoin below $72,000.",
+   "category": "crypto_negative",
+   "firstSeen": "2026-11-12T08:32:42Z",
+   "publishers": [
+    "24/7 Wall St.",
+    "AMBCrypto",
+    "Altcoin Buzz",
+    "Benzinga",
+    "BigGo Finance",
+    "Bitcoin News",
+    "Bitcoin Sistemi",
+    "Bitcoinist.com",
+    "Brave New Coin",
+    "CaptainAltcoin",
+    "Coin Edition",
+    "Coin Gabbar",
+    "CoinDesk",
+    "Coinfomania",
+    "Coinpedia",
+    "Crypto Briefing",
+    "Crypto Economy",
+    "Crypto News",
+    "CryptoTicker.io",
+    "Cryptonews",
+    "Cryptonews.net",
+    "Decrypt",
+    "FOREX.com",
+    "FXEmpire",
+    "FinanceFeeds",
+    "Invezz",
+    "MarketWatch",
+    "Moomoo",
+    "NewsBTC",
+    "Pluang",
+    "Programming Insider",
+    "The Block",
+    "The Crypto Times",
+    "The Economic Times",
+    "TipRanks",
+    "Traders Union",
+    "TradingNEWS",
+    "Univest",
+    "Yahoo Finance",
+    "ad-hoc-news.de",
+    "bloomingbit",
+    "finance.biggo.com",
+    "openPR.com",
+    "www.trendingtopics.eu",
+    "Українські Національні Новини (УНН)"
+   ],
+   "assets": {
+    "BTC/USD": {
+     "direction": "down",
+     "confidence": 0.85,
+     "why": "Major crypto market crash wiping out billions and breaking key technical levels."
+    },
+    "ETH/USD": {
+     "direction": "down",
+     "confidence": 0.8,
+     "why": "Persistent ETF outflows and weak liquidity pressure Ethereum."
+    },
+    "SOL/USD": {
+     "direction": "down",
+     "confidence": 0.75,
+     "why": "Broader crypto market crash drags down major altcoins."
+    },
+    "XRP/USD": {
+     "direction": "down",
+     "confidence": 0.7,
+     "why": "Persistent ETF outflows and negative sentiment keep pressure on XRP."
+    }
+   },
+   "sources": [
+    {
+     "id": "f2c64de89a6bbd3c",
+     "publisher": "bloomingbit",
+     "kind": "news",
+     "title": "BlackRock’s Bitcoin ETF IBIT Extends Net Outflow Streak to 9 Sessions, Exceeding $2 Billion",
+     "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE9XY1BHRGVIT2hraXRmcGx1TGI3a2oybEJwMk9LWHNKdUM1R29nNEU1eWJIeXhtTC1pSXg0QUJDd18xNkJTTG4ySkRJTXd3cjN2NkxlZg?oc=5",
+     "time": "2026-11-12T08:32:42Z"
+    },
+    {
+     "id": "cc25c44ff767f291",
+     "publisher": "Crypto News",
+     "kind": "news",
+     "title": "BlackRock leads $300 million Bitcoin ETF outflows as BTC struggles near $73K",
+     "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNY3U0TE5Gcy0teVNsLWVBeGh1cmd4Z1dSaldmVmt2b3VYaVhFSTM0T29OUnhKUXpTNEZwLW1sVkwtZnQyUUdSVDFTUHpSYjYxVlU0SFZnYW5Xd0V0TzB4NjM4VGpGa1pPYnk4eEgzR2wxV0d1SkFPSDBwSG0tdFFTQTI3cXJiSWE1UHU0NzVCUjJ2VXNFa2pIZnd0VQ?oc=5",
+     "time": "2026-11-12T08:36:14Z"
+    },
+    {
+     "id": "fb7c71d0fe55957d",
+     "publisher": "bloomingbit",
+     "kind": "news",
+     "title": "Coinbase Bitcoin Premium Stays Negative for 50 Straight Days as U.S. Buying Weakens",
+     "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTFBfQTlkOUY1NnAyTlpoRnp0Qmc2NDZnUjdSVlRBYndfa2hHVXlZdjNmX0ZhRTdZMjMtV2xMMEdTWWJvdXpCbl9BREZ0TDR6cl9NcFJXNg?oc=5",
+     "time": "2026-11-12T08:59:27Z"
+    },
+    {
+     "id": "62235bb905723bf1",
+     "publisher": "Coinfomania",
+     "kind": "news",
+     "title": "U.S. Spot Bitcoin ETFs Experience $300 Million Net Outflows",
+     "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxORGNYaW5tLUhtT2tmVi1ETy1fRFV4QnFDQndvYkpDRkRTZTF6NEJRN2V6emkyV1MzeTZfTVlyX1NsRGNzaXJsRWk5OXpDajRfVTE5OGc1anBpNWVfSkJKTUg2QnFoTlFSNlRscFJUVlBuek04RkxsN2ZydUJUSjZBdjdURUtnOGhnb3c?oc=5",
+     "time": "2026-11-12T08:55:35Z"
+    },
+    {
+     "id": "44d885771c26dd4e",
+     "publisher": "Cryptonews",
+     "kind": "news",
+     "title": "Bitcoin ETF Outflow Says Crypto Walking Into a Bull Trap",
+     "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE1aa1RfZzhBaFRtOEctWFJSZDUyRzZ6bDV5LTVmSVNubFlfLTNvNkdHVGdGS1pNbmpfb3liS2V5djRKcHV6bWZLb1BQYVVYcTRBVE0wYXNyV3hSNkdhSm01YnFqZGUzelVCamxJeEFTZG83ZzA?oc=5",
+     "time": "2026-11-12T08:48:31Z"
+    }
+   ]
+  },
+  {
+   "summary": "SecEdge integrated its SEC-TPM firmware with Lattice Semiconductor Root of Trust FPGAs to enhance security for hyperscale data center platforms.",
+   "category": "earnings_beat",
+   "firstSeen": "2026-11-11T19:02:00Z",
+   "publishers": [
+    "24/7 Wall St.",
+    "Yahoo Finance",
+    "fiscal.ai"
+   ],
+   "assets": {
+    "AMAT": {
+     "direction": "up",
+     "confidence": 0.75,
+     "why": "Rallied 8% ahead of earnings amidst a strong rebound in chip stocks."
+    },
+    "LRCX": {
+     "direction": "up",
+     "confidence": 0.7,
+     "why": "Lam Research jumps 9% alongside sector momentum."
+    },
+    "KLAC": {
+     "direction": "up",
+     "confidence": 0.7,
+     "why": "KLA climbs 7% following broader semiconductor strength."
+    },
+    "NVDA": {
+     "direction": "up",
+     "confidence": 0.75,
+     "why": "Aggressive AI infrastructure investment lifts demand outlook."
+    },
+    "MU": {
+     "direction": "up",
+     "confidence": 0.75,
+     "why": "Stronger AI spending boosts memory chip demand."
+    },
+    "AVGO": {
+     "direction": "up",
+     "confidence": 0.75,
+     "why": "Higher AI infrastructure spending benefits Broadcom."
+    },
+    "AMD": {
+     "direction": "up",
+     "confidence": 0.75,
+     "why": "Aggressive AI spending environment aids chip demand."
+    }
+   },
+   "sources": [
+    {
+     "id": "10c165e609b73291",
+     "publisher": "24/7 Wall St.",
+     "kind": "news",
+     "title": "Applied Materials Rallies 8% Ahead of Earnings as Chip Stocks Rebound; Lam Research Jumps 9%, KLA Climbs 7%",
+     "url": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxOQXlzN3JDN2RsREQzWFcwR0JUY3ViR1d3c2x4MjRPZ3hzU1ZXNHRobXduZ1JxOWhhb3B0R0NuejJWTTZvU3BkY1FKcnRzNXRlaGRSZ19wOHgtMm9Lc3pKRUhOV25xSEpnOXFTREc4akhVUzBkSmZCVVdtOTMxUmk0VnhmVzVCQVlKMDBteUhKbEFPWmtMWmdsdVR3elFYVW5QekFkOFFfTXd5UzRCdFA1ekFIazh4MzRqMHZzQVd0NzNEWUlPcURxdWFwUGF1MThXMEh2V25OckRManVwMkcw?oc=5",
+     "time": "2026-11-11T19:02:00Z"
+    },
+    {
+     "id": "52b3ba400dabad09",
+     "publisher": "Yahoo Finance",
+     "kind": "news",
+     "title": "Great News for Nvidia, Micron, Broadcom, and AMD Stock Investors -- Wall Street Made a Mistake",
+     "url": "https://www.fool.com/investing/2026/11/12/great-news-nvidia-micron-broadcom-amd-wall-street-mistake/?.tsrc=rss",
+     "time": "2026-11-12T09:33:02Z"
+    },
+    {
+     "id": "d66166c3634bad49",
+     "publisher": "fiscal.ai",
+     "kind": "news",
+     "title": "SecEdge Integrates SEC-TPM™ Firmware with Lattice Semiconductor Root of Trust FPGAs",
+     "url": "https://www.einpresswire.com/article/955673542/secedge-sec-tpm-brings-tpm-2-0-to-lattice-root-of-trust-fpgas",
+     "time": "2026-11-12T19:02:06Z"
     }
    ]
   },
@@ -2878,241 +3163,6 @@
      "title": "Timeline: How did Nvidia’s CEO get caught up in an alleged spy plot?",
      "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPVENSejl5V04tRUR2M1JIRHZibWlHcm5tUWNndEMzRnBqM1p4aG5XTnp4azBycWIxcjlzeWJqZjh5WnNfRzdfSmNudmRMN3l1OVFmTjE1VS10a2pFN3BWNDZDS05SMkNFQ01WR2Z5UHhBY1pRZDhiVXBHZy1DTDFuRmowbzRkZ2xKcGxsOVVMOG5OYmczUTdYem5Rc1MtLVVpSmNkWGRRWXo0M0ZXWkZZUW9ERk9jeHRrR1pKZ20yRU4?oc=5",
      "time": "2026-11-10T03:32:00Z"
-    }
-   ]
-  },
-  {
-   "summary": "Ethereum tests $2,000 as crypto markets face heavy ETF outflows and thin liquidity.",
-   "category": "crypto_negative",
-   "firstSeen": "2026-11-12T08:32:42Z",
-   "publishers": [
-    "24/7 Wall St.",
-    "AMBCrypto",
-    "Altcoin Buzz",
-    "Benzinga",
-    "BigGo Finance",
-    "Bitcoin News",
-    "Bitcoin Sistemi",
-    "Bitcoinist.com",
-    "Brave New Coin",
-    "CaptainAltcoin",
-    "Coin Edition",
-    "Coin Gabbar",
-    "CoinDesk",
-    "Coinfomania",
-    "Coinpedia",
-    "Crypto Briefing",
-    "Crypto Economy",
-    "Crypto News",
-    "CryptoTicker.io",
-    "Cryptonews",
-    "Cryptonews.net",
-    "Decrypt",
-    "FOREX.com",
-    "FXEmpire",
-    "FinanceFeeds",
-    "Invezz",
-    "MarketWatch",
-    "Moomoo",
-    "NewsBTC",
-    "Pluang",
-    "Programming Insider",
-    "The Block",
-    "The Crypto Times",
-    "The Economic Times",
-    "TipRanks",
-    "Traders Union",
-    "TradingNEWS",
-    "Univest",
-    "Yahoo Finance",
-    "ad-hoc-news.de",
-    "bloomingbit",
-    "finance.biggo.com",
-    "openPR.com",
-    "www.trendingtopics.eu",
-    "Українські Національні Новини (УНН)"
-   ],
-   "assets": {
-    "BTC/USD": {
-     "direction": "down",
-     "confidence": 0.85,
-     "why": "Bitcoin breaking below key levels alongside persistent ETF outflows and risk-off sentiment."
-    },
-    "ETH/USD": {
-     "direction": "down",
-     "confidence": 0.8,
-     "why": "Persistent ETF outflows and weak liquidity pressure Ethereum."
-    },
-    "SOL/USD": {
-     "direction": "down",
-     "confidence": 0.75,
-     "why": "Broader crypto market crash drags down major altcoins."
-    }
-   },
-   "sources": [
-    {
-     "id": "f2c64de89a6bbd3c",
-     "publisher": "bloomingbit",
-     "kind": "news",
-     "title": "BlackRock’s Bitcoin ETF IBIT Extends Net Outflow Streak to 9 Sessions, Exceeding $2 Billion",
-     "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE9XY1BHRGVIT2hraXRmcGx1TGI3a2oybEJwMk9LWHNKdUM1R29nNEU1eWJIeXhtTC1pSXg0QUJDd18xNkJTTG4ySkRJTXd3cjN2NkxlZg?oc=5",
-     "time": "2026-11-12T08:32:42Z"
-    },
-    {
-     "id": "cc25c44ff767f291",
-     "publisher": "Crypto News",
-     "kind": "news",
-     "title": "BlackRock leads $300 million Bitcoin ETF outflows as BTC struggles near $73K",
-     "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNY3U0TE5Gcy0teVNsLWVBeGh1cmd4Z1dSaldmVmt2b3VYaVhFSTM0T29OUnhKUXpTNEZwLW1sVkwtZnQyUUdSVDFTUHpSYjYxVlU0SFZnYW5Xd0V0TzB4NjM4VGpGa1pPYnk4eEgzR2wxV0d1SkFPSDBwSG0tdFFTQTI3cXJiSWE1UHU0NzVCUjJ2VXNFa2pIZnd0VQ?oc=5",
-     "time": "2026-11-12T08:36:14Z"
-    },
-    {
-     "id": "fb7c71d0fe55957d",
-     "publisher": "bloomingbit",
-     "kind": "news",
-     "title": "Coinbase Bitcoin Premium Stays Negative for 50 Straight Days as U.S. Buying Weakens",
-     "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTFBfQTlkOUY1NnAyTlpoRnp0Qmc2NDZnUjdSVlRBYndfa2hHVXlZdjNmX0ZhRTdZMjMtV2xMMEdTWWJvdXpCbl9BREZ0TDR6cl9NcFJXNg?oc=5",
-     "time": "2026-11-12T08:59:27Z"
-    },
-    {
-     "id": "62235bb905723bf1",
-     "publisher": "Coinfomania",
-     "kind": "news",
-     "title": "U.S. Spot Bitcoin ETFs Experience $300 Million Net Outflows",
-     "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxORGNYaW5tLUhtT2tmVi1ETy1fRFV4QnFDQndvYkpDRkRTZTF6NEJRN2V6emkyV1MzeTZfTVlyX1NsRGNzaXJsRWk5OXpDajRfVTE5OGc1anBpNWVfSkJKTUg2QnFoTlFSNlRscFJUVlBuek04RkxsN2ZydUJUSjZBdjdURUtnOGhnb3c?oc=5",
-     "time": "2026-11-12T08:55:35Z"
-    },
-    {
-     "id": "44d885771c26dd4e",
-     "publisher": "Cryptonews",
-     "kind": "news",
-     "title": "Bitcoin ETF Outflow Says Crypto Walking Into a Bull Trap",
-     "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE1aa1RfZzhBaFRtOEctWFJSZDUyRzZ6bDV5LTVmSVNubFlfLTNvNkdHVGdGS1pNbmpfb3liS2V5djRKcHV6bWZLb1BQYVVYcTRBVE0wYXNyV3hSNkdhSm01YnFqZGUzelVCamxJeEFTZG83ZzA?oc=5",
-     "time": "2026-11-12T08:48:31Z"
-    }
-   ]
-  },
-  {
-   "summary": "Surging US crude oil and gasoline inventories point to oversupply, putting downward pressure on oil and gas stocks.",
-   "category": "oil_supply",
-   "firstSeen": "2026-11-12T06:53:00Z",
-   "publishers": [
-    "ASHARQ AL-AWSAT English",
-    "BW Businessworld",
-    "Benzinga",
-    "Chosunbiz",
-    "Crypto Briefing",
-    "Investing.com India",
-    "LEADERSHIP Newspapers",
-    "Latest news from Azerbaijan",
-    "Profit by Pakistan Today",
-    "Public TV English",
-    "UA.NEWS"
-   ],
-   "assets": {
-    "XOM": {
-     "direction": "down",
-     "confidence": 0.75,
-     "why": "OPEC+ output boost and rising oversupply fears pressure crude prices down."
-    },
-    "CVX": {
-     "direction": "down",
-     "confidence": 0.75,
-     "why": "Higher oil output and oversupply concerns negatively impact oil majors."
-    },
-    "COP": {
-     "direction": "down",
-     "confidence": 0.7,
-     "why": "Surging oil output weighs on exploration and production stocks."
-    },
-    "SLB": {
-     "direction": "down",
-     "confidence": 0.7,
-     "why": "Lower oil prices driven by oversupply could slow down oilfield services spending."
-    },
-    "OXY": {
-     "direction": "down",
-     "confidence": 0.6,
-     "why": "OPEC+ output growth heightens oversupply concerns."
-    }
-   },
-   "sources": [
-    {
-     "id": "4bb506049f64816d",
-     "publisher": "Latest news from Azerbaijan",
-     "kind": "news",
-     "title": "Oil prices decline as OPEC+ output boosts oversupply fears",
-     "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPZVJObGVhNHNqYldKVjk4SWFfUTd4VUgtdVFrSWh6WmRaN0J5NWNjcjc0T3hCOFhLZkFhUjktbnA3VS10aWxCUllUbEY0WEo4eUdRYmxBVjJqclk0NXRLZEduaE9tU2JMUlh1TXBLZ3c1VzA2Z0thLTZZZDJJMmZLQm5nZzk?oc=5",
-     "time": "2026-11-12T06:55:24Z"
-    },
-    {
-     "id": "74543532c5f84f94",
-     "publisher": "Public TV English",
-     "kind": "news",
-     "title": "OPEC+ oil output rises 2.04 million barrels per day in Oct as Saudi Arabia leads recovery amid West Asia crisis",
-     "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxNc3hMVUdaemN1YTRZQVpJaGNKZGQxYmFOdTVmRl9DYUxxNmtFV250ZmI1bnlrc3ZtdWZtYWRaeDRUcTl1azB6YkNqQVRndjhhYnpBWkU3N2w2X1VHaV9XVTYyclUyOHpudFp2NURkY2ZsOV9mb2wtYzdublNaLTRvdnFfbEhWV1FjM3gzZ05jNUJiOG9xb3ZacUZTb01fenM1MEc1Z3ZNcmxuczZnSVBlbmtyeVllZXRCck9fTXpjdkR2a2IzSGJUbVNiTmNyMFhnWGZyc2VB?oc=5",
-     "time": "2026-11-12T06:58:03Z"
-    },
-    {
-     "id": "a7dcf6881335f5e3",
-     "publisher": "BW Businessworld",
-     "kind": "news",
-     "title": "Opec+ Oil Output Rebounds 2.04 Million Bpd Amid Hormuz Disruption",
-     "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQQk5IV3BYU3hZMXhIelhESU9XSUhWQm1tLVM1eDR6ZHNfdG83alp6d0plallRYTNneEN3Wmd3LWd3MWhHUHRnbHV5ZGc1a3NacEVGRTFSSXl0anBrVGxNeWdvRngxaFRGUTQzSFNNZnBZVmxrdFpWU1dzNHhsUmxQRE1KbU9MYVotQmdrWVZ5YWhoTEdud0lLWktwOHpzNEY4cU9kOERVbVM1V0ly?oc=5",
-     "time": "2026-11-12T06:54:45Z"
-    },
-    {
-     "id": "13ef775feec7cccc",
-     "publisher": "Chosunbiz",
-     "kind": "news",
-     "title": "Oil prices fall as South Korea weighs path for price cap and compensation",
-     "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxOMUJYRlU0Y3d2ZFJvbWl6bjNvWnhaYlFmM2pNWXFEWEFsNnlpVXlwMUplSVRHcDB1dXNudTVKZUtDaXRJalM4Vk9OR1draHZzTHpid3NibkNPUW4xM2hwS1h2VUwzRFFkUDNQZnc3MTNzM2dvXzlCYVN1UmdKUlBmVzl30gGWAUFVX3lxTE9lRTYxWHlhNG9XWUxPMzU3LVVxZWJnVzZCUV9wblY4N29yaXZVRE5ydFZ3Q3FUblNTSG4ya1h0NkZmT0NucHdkdlptd2Y0aldnT3VoREZTSER5WUFnSDVFSDlTT0dRaE9XYjNlVHJhb2E5N1h3OWhQVExORERXV3RqMG5nWnF4UC1pZlVtaHgxOEstNHVnZw?oc=5",
-     "time": "2026-11-12T06:53:00Z"
-    },
-    {
-     "id": "d319dc3aaf7fda77",
-     "publisher": "Profit by Pakistan Today",
-     "kind": "news",
-     "title": "Oil falls over $1 on easing geopolitical fears and oversupply worries",
-     "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQd0RjdkpYTklPUzF2U293azdJRzhHR2tjMUt5RFYtYjZQX1BSN290cjBTb05Sb3BVTjFnaXVydnpsYzRVZDRQY0VNdEpKWUc4eGNlUnR4VldnNGdpejFqVmRDX2NuaUw1RHliVF94X012TzhsU084NklWUGdtTk1nUjJDdC1zb2JUTHZMdWI1cmhyZUVZWkZVOEpwRFVZU1JwdUxiQVNlM0NBSmdYYmhsWXd3Zk9iNnpVaDdRM0Rn?oc=5",
-     "time": "2026-11-12T07:44:38Z"
-    }
-   ]
-  },
-  {
-   "summary": "YETI Holdings reported Q3 revenue growth but cut its full-year guidance, dragging shares lower.",
-   "category": "company_bad_news",
-   "firstSeen": "2026-11-12T15:43:48Z",
-   "publishers": [
-    "Benzinga",
-    "StockStory",
-    "scanx.trade"
-   ],
-   "assets": {},
-   "sources": [
-    {
-     "id": "fb8045cbfe86a60f",
-     "publisher": "Benzinga",
-     "kind": "news",
-     "title": "YETI Sounds the Alarm on Consumer Spending As Shoppers Hunt for Deals",
-     "url": "https://www.benzinga.com/markets/earnings/26/11/63197694/yeti-sounds-the-alarm-on-consumer-spending-as-shoppers-hunt-for-deals",
-     "time": "2026-11-12T15:43:48Z"
-    },
-    {
-     "id": "eb1007b02a637a06",
-     "publisher": "StockStory",
-     "kind": "news",
-     "title": "Why YETI shares are trading lower today",
-     "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNdl83SV9zdFlzM2FENVRJLTJxckhKNjZUMTFTM0FXUUZVQ0NzRG54ZFRXeERERnZDSWFDcmMxNU1rRVhrWUlnV2UtWFdmY2VpWDAxNkxudGV4NmpjeUJ3Z1NQUm1FUm1lU3dNTmEwdmxkNjFTdU9aTEt2THpfQmYyV05vNzJwa3VDSjZqQjdfYjVwQWttVzlNX0ZrdTlydXJU?oc=5",
-     "time": "2026-11-12T15:53:44Z"
-    },
-    {
-     "id": "c394152546c931b0",
-     "publisher": "scanx.trade",
-     "kind": "news",
-     "title": "YETI Holdings Q3FY26 Results: Revenue up 4.4% but guidance cut",
-     "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOdlBmR3l6ZUFQY29CWHFTT1p4Z0JOdEpxb2hiYWNuV3FQTjVKcTd0bml3S3RPWVY1SDVSUVR3dGFSb1BvbXByNzc4RURDd1E0YXdTT05pVWYyOVpjQ2JTYXVkMFByR05iaThHeUJfRDJuaWVKYVp3UkxndGxfNm9WeGxtV1h0dUFEUWtVM0tQaURPVWNuSGFiZmZBanBCc2tGQ0FhNjEyUEVZVUYzT1lGSWFFeW05clYz?oc=5",
-     "time": "2026-11-12T16:39:48Z"
     }
    ]
   },
