@@ -9,7 +9,7 @@
    "Nothing right now (all cash)."
   ],
   "today": [
-   "Scanned the news 119 times today: read 7162 headlines, found 163 that could move a stock or coin it's allowed to trade. None passed every check, so no trade (that's normal).",
+   "Scanned the news 129 times today: read 7956 headlines, found 181 that could move a stock or coin it's allowed to trade. None passed every check, so no trade (that's normal).",
    "Passed on AMAT, KLAC, LRCX, TSLA: only 1 source(s) so far: 24/7 Wall St..",
    "Passed on AMD: only 1 source(s) so far: Benzinga.",
    "Passed on AVAV, INTC, MU, NOW: volume only 0.4x normal (need 1.5x).",
@@ -17,10 +17,10 @@
    "Safety rules that stepped in: stock entry window (x21)."
   ],
   "watchlist": "Allowed to trade: 69 halal stocks, 5 Shariah ETFs, 9 coins.",
-  "lastScan": "2026-11-11T22:29:15Z"
+  "lastScan": "2026-11-12T01:01:49Z"
  },
  "hired": true,
- "updatedAt": "2026-11-11T22:29:18Z",
+ "updatedAt": "2026-11-12T01:01:55Z",
  "mode": "PAPER",
  "agents": [
   {
@@ -28,16 +28,16 @@
    "name": "News Scout",
    "role": "Reads X, Reddit and news feeds",
    "status": "working",
-   "doing": "Read 2 new headlines/posts, 0 market-moving stories",
-   "lastRun": "2026-11-11T22:29:17Z"
+   "doing": "Read 63 new headlines/posts, 1 market-moving stories",
+   "lastRun": "2026-11-12T01:01:54Z"
   },
   {
    "id": "analyst",
    "name": "News Analyst",
    "role": "Gemini: is it real, what moves, which way",
    "status": "ok",
-   "doing": "Gemini triage failed, skipping this batch: All Gemini models failed. Last error: Gemini HTTP 400 on gemini-3.8-flash-lite-tts: {\n  \"error\": {\n    \"code\": 400,\n    \"message\": \"Developer instruction is not",
-   "lastRun": "2026-11-11T16:11:54Z"
+   "doing": "Gemini triage failed, skipping this batch: Expecting property name enclosed in double quotes: line 13 column 9 (char 383)",
+   "lastRun": "2026-11-11T23:01:04Z"
   },
   {
    "id": "confirm",
@@ -67,9 +67,9 @@
    "id": "trader",
    "name": "Trader",
    "role": "Places paper orders on Alpaca",
-   "status": "working",
-   "doing": "Paper-trading bot started (Alpaca PAPER account only). Close this window to stop it.",
-   "lastRun": "2026-11-11T22:29:15Z"
+   "status": "ok",
+   "doing": "Saved results to the Agent HQ dashboard",
+   "lastRun": "2026-11-11T22:29:19Z"
   },
   {
    "id": "coins",
@@ -89,6 +89,116 @@
   }
  ],
  "log": [
+  {
+   "t": "2026-11-12T01:01:54Z",
+   "agent": "News Scout",
+   "msg": "Read 63 new headlines/posts, 1 market-moving stories"
+  },
+  {
+   "t": "2026-11-12T01:01:52Z",
+   "agent": "News Scout",
+   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
+  },
+  {
+   "t": "2026-11-12T00:46:48Z",
+   "agent": "News Scout",
+   "msg": "Read 38 new headlines/posts, 2 market-moving stories"
+  },
+  {
+   "t": "2026-11-12T00:46:46Z",
+   "agent": "News Scout",
+   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
+  },
+  {
+   "t": "2026-11-12T00:31:42Z",
+   "agent": "News Scout",
+   "msg": "Read 42 new headlines/posts, 2 market-moving stories"
+  },
+  {
+   "t": "2026-11-12T00:31:40Z",
+   "agent": "News Scout",
+   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
+  },
+  {
+   "t": "2026-11-12T00:16:36Z",
+   "agent": "News Scout",
+   "msg": "Read 61 new headlines/posts, 1 market-moving stories"
+  },
+  {
+   "t": "2026-11-12T00:16:35Z",
+   "agent": "News Scout",
+   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
+  },
+  {
+   "t": "2026-11-12T00:01:31Z",
+   "agent": "News Scout",
+   "msg": "Read 43 new headlines/posts, 1 market-moving stories"
+  },
+  {
+   "t": "2026-11-12T00:01:29Z",
+   "agent": "News Scout",
+   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
+  },
+  {
+   "t": "2026-11-11T23:46:24Z",
+   "agent": "News Scout",
+   "msg": "Read 54 new headlines/posts, 2 market-moving stories"
+  },
+  {
+   "t": "2026-11-11T23:46:23Z",
+   "agent": "News Scout",
+   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
+  },
+  {
+   "t": "2026-11-11T23:31:18Z",
+   "agent": "News Scout",
+   "msg": "Read 48 new headlines/posts, 3 market-moving stories"
+  },
+  {
+   "t": "2026-11-11T23:31:16Z",
+   "agent": "News Scout",
+   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
+  },
+  {
+   "t": "2026-11-11T23:16:12Z",
+   "agent": "News Scout",
+   "msg": "Read 165 new headlines/posts, 2 market-moving stories"
+  },
+  {
+   "t": "2026-11-11T23:16:08Z",
+   "agent": "News Scout",
+   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
+  },
+  {
+   "t": "2026-11-11T23:01:04Z",
+   "agent": "News Scout",
+   "msg": "Read 79 new headlines/posts, 1 market-moving stories"
+  },
+  {
+   "t": "2026-11-11T23:01:04Z",
+   "agent": "News Analyst",
+   "msg": "Gemini triage failed, skipping this batch: Expecting property name enclosed in double quotes: line 13 column 9 (char 383)"
+  },
+  {
+   "t": "2026-11-11T23:01:01Z",
+   "agent": "News Scout",
+   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
+  },
+  {
+   "t": "2026-11-11T22:44:28Z",
+   "agent": "News Scout",
+   "msg": "Read 201 new headlines/posts, 3 market-moving stories"
+  },
+  {
+   "t": "2026-11-11T22:44:24Z",
+   "agent": "News Scout",
+   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
+  },
+  {
+   "t": "2026-11-11T22:29:19Z",
+   "agent": "Trader",
+   "msg": "Saved results to the Agent HQ dashboard"
+  },
   {
    "t": "2026-11-11T22:29:17Z",
    "agent": "News Scout",
@@ -728,121 +838,11 @@
    "t": "2026-11-11T07:42:29Z",
    "agent": "News Scout",
    "msg": "Read 64 new headlines/posts, 2 market-moving stories"
-  },
-  {
-   "t": "2026-11-11T07:27:24Z",
-   "agent": "News Scout",
-   "msg": "Read 70 new headlines/posts, 0 market-moving stories"
-  },
-  {
-   "t": "2026-11-11T07:12:19Z",
-   "agent": "News Scout",
-   "msg": "Read 109 new headlines/posts, 3 market-moving stories"
-  },
-  {
-   "t": "2026-11-11T06:57:11Z",
-   "agent": "News Scout",
-   "msg": "Read 54 new headlines/posts, 1 market-moving stories"
-  },
-  {
-   "t": "2026-11-11T06:42:07Z",
-   "agent": "News Scout",
-   "msg": "Read 66 new headlines/posts, 2 market-moving stories"
-  },
-  {
-   "t": "2026-11-11T06:27:02Z",
-   "agent": "News Scout",
-   "msg": "Read 64 new headlines/posts, 2 market-moving stories"
-  },
-  {
-   "t": "2026-11-11T06:11:54Z",
-   "agent": "News Scout",
-   "msg": "Read 86 new headlines/posts, 2 market-moving stories"
-  },
-  {
-   "t": "2026-11-11T05:56:39Z",
-   "agent": "News Scout",
-   "msg": "Read 50 new headlines/posts, 2 market-moving stories"
-  },
-  {
-   "t": "2026-11-11T05:41:26Z",
-   "agent": "News Scout",
-   "msg": "Read 64 new headlines/posts, 1 market-moving stories"
-  },
-  {
-   "t": "2026-11-11T05:26:12Z",
-   "agent": "News Scout",
-   "msg": "Read 66 new headlines/posts, 2 market-moving stories"
-  },
-  {
-   "t": "2026-11-11T05:11:06Z",
-   "agent": "News Scout",
-   "msg": "Read 88 new headlines/posts, 3 market-moving stories"
-  },
-  {
-   "t": "2026-11-11T04:55:59Z",
-   "agent": "News Scout",
-   "msg": "Read 58 new headlines/posts, 1 market-moving stories"
-  },
-  {
-   "t": "2026-11-11T04:40:54Z",
-   "agent": "News Scout",
-   "msg": "Read 68 new headlines/posts, 1 market-moving stories"
-  },
-  {
-   "t": "2026-11-11T04:25:49Z",
-   "agent": "News Scout",
-   "msg": "Read 64 new headlines/posts, 1 market-moving stories"
-  },
-  {
-   "t": "2026-11-11T04:10:42Z",
-   "agent": "News Scout",
-   "msg": "Read 57 new headlines/posts, 0 market-moving stories"
-  },
-  {
-   "t": "2026-11-11T03:55:33Z",
-   "agent": "News Scout",
-   "msg": "Read 48 new headlines/posts, 1 market-moving stories"
-  },
-  {
-   "t": "2026-11-11T03:40:24Z",
-   "agent": "News Scout",
-   "msg": "Read 56 new headlines/posts, 2 market-moving stories"
-  },
-  {
-   "t": "2026-11-11T03:25:16Z",
-   "agent": "News Scout",
-   "msg": "Read 69 new headlines/posts, 1 market-moving stories"
-  },
-  {
-   "t": "2026-11-11T03:10:08Z",
-   "agent": "News Scout",
-   "msg": "Read 70 new headlines/posts, 2 market-moving stories"
-  },
-  {
-   "t": "2026-11-11T02:55:02Z",
-   "agent": "News Scout",
-   "msg": "Read 54 new headlines/posts, 2 market-moving stories"
-  },
-  {
-   "t": "2026-11-11T02:39:51Z",
-   "agent": "News Scout",
-   "msg": "Read 60 new headlines/posts, 2 market-moving stories"
-  },
-  {
-   "t": "2026-11-11T02:24:38Z",
-   "agent": "News Scout",
-   "msg": "Read 69 new headlines/posts, 2 market-moving stories"
-  },
-  {
-   "t": "2026-11-11T02:09:23Z",
-   "agent": "News Scout",
-   "msg": "Read 56 new headlines/posts, 1 market-moving stories"
   }
  ],
  "brief": {
   "date": "Wed Nov 11",
-  "createdAt": "2026-11-11T22:29:18Z",
+  "createdAt": "2026-11-12T01:01:55Z",
   "headline": "Paper account +$0 today (+0.00%), +0.00% total vs SPY +0.98% · 0 open",
   "summary": "0 trade(s) closed today, 0/0 winners overall. TradingAgents checks used today: 1/5.",
   "notes": [
@@ -867,7 +867,7 @@
   "deepUsed": 1,
   "deepMax": 5,
   "social": {
-   "at": "2026-11-11T22:29:16Z",
+   "at": "2026-11-12T01:01:52Z",
    "items": 0,
    "source": "Reddit direct (X needs Agent Reach)",
    "problems": [
@@ -1739,6 +1739,31 @@
    "t": "2026-11-11T22:16:10Z",
    "equity": 100000.0,
    "spy": 760.13
+  },
+  {
+   "t": "2026-11-11T23:01:04Z",
+   "equity": 100000.0,
+   "spy": 760.13
+  },
+  {
+   "t": "2026-11-11T23:31:18Z",
+   "equity": 100000.0,
+   "spy": 760.13
+  },
+  {
+   "t": "2026-11-12T00:01:31Z",
+   "equity": 100000.0,
+   "spy": 760.13
+  },
+  {
+   "t": "2026-11-12T00:31:42Z",
+   "equity": 100000.0,
+   "spy": 760.13
+  },
+  {
+   "t": "2026-11-12T01:01:54Z",
+   "equity": 100000.0,
+   "spy": 760.13
   }
  ],
  "watch": [],
@@ -1750,86 +1775,17 @@
  },
  "events": [
   {
-   "summary": "Nvidia faces further executive controversy and allegations involving CEO Jensen Huang.",
-   "category": "company_bad_news",
-   "firstSeen": "2026-11-10T02:06:25Z",
-   "publishers": [
-    "AP",
-    "Benzinga",
-    "BigGo Finance",
-    "CNBC",
-    "Decrypt",
-    "Quartz",
-    "Reuters",
-    "Stock Titan",
-    "The Spokesman-Review",
-    "Yahoo Finance",
-    "bloomingbit",
-    "fiscal.ai"
-   ],
-   "assets": {
-    "NVDA": {
-     "direction": "down",
-     "confidence": 0.75,
-     "why": "Major analyst downgrade citing CEO scandal and China export/demand hurdles."
-    },
-    "MSFT": {
-     "direction": "up",
-     "confidence": 0.6,
-     "why": "Briefly overtook Nvidia as capital rotates away from Nvidia during the executive controversy."
-    }
-   },
-   "sources": [
-    {
-     "id": "7e779ec43d194f41",
-     "publisher": "Benzinga",
-     "kind": "news",
-     "title": "'Materially False and Misleading': Nvidia, Jensen Huang Sued Over Alleged Chinese Spy Affair, Shareholder Says NVDA Stock Was 'Artificially Inflated'",
-     "url": "https://www.benzinga.com/markets/tech/26/11/63077533/nvidia-jensen-huang-sued-class-action-megaspeed-alice-huang-chinese-spy",
-     "time": "2026-11-10T02:14:11Z"
-    },
-    {
-     "id": "b13c33e1c6b78db8",
-     "publisher": "The Spokesman-Review",
-     "kind": "news",
-     "title": "Stocks jump as oil tumbles, Nvidia falls amid internal probe - The Spokesman-Review",
-     "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxQRzBNX0NnSGJXLWxPSjV1bjFCTVM0aExoaURsaHlESWl2U1dfd2EtcU5VTkxZYkpkU2hJQ19LSUdLMUNkS2JpZTZDZzJLY3JFeDgtSXRTOF9MeUlPSkhoajBQU09qZEdld2VwTXpTSHVPZmJ2N0xFSGwxQzRWN1hmdjExaEx0OW54R3ZnWldmX1ByX19VQkV6NjZPYjBYQQ?oc=5",
-     "time": "2026-11-10T02:06:25Z"
-    },
-    {
-     "id": "c28ef162d5e09bce",
-     "publisher": "fiscal.ai",
-     "kind": "news",
-     "title": "Securities Class Action Lawsuit Filed Against NVIDIA Corporation",
-     "url": "https://www.globenewswire.com/news-release/2026/11/10/3399115/32716/en/nvda-investor-alert-hagens-berman-urges-nvidia-corporation-nasdaq-nvda-investors-with-substantial-losses-to-contact-firm-ahead-of-january-8-2027-lead-plaintiff-deadline.html",
-     "time": "2026-11-10T03:01:19Z"
-    },
-    {
-     "id": "43afd4d88c5a549b",
-     "publisher": "AP",
-     "kind": "news",
-     "title": "Trump says FBI is looking at Nvidia CEO Jensen Huang’s affair with alleged Chinese agent",
-     "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPQWY3b0NNRFBNRG5jZVdXM05URnhOV19vQ24zV29la0k2S3FzZmN4ZzB3WlRwSXJMbHB6RE90MFVEZ2p4UUhMQUFlV0RMdmVZZUUxeFFEa2ljZTFlTlhXOFozaEczRlpPS2dmRXgxcGw2ZWdpNVJQVEltazV5UUZMUmpNMUdoX2NJRG1wVnJhbFRCTHBwbE1LcjZnMk4?oc=5",
-     "time": "2026-11-10T03:43:01Z"
-    },
-    {
-     "id": "094051eb2da1b91e",
-     "publisher": "AP",
-     "kind": "news",
-     "title": "Timeline: How did Nvidia’s CEO get caught up in an alleged spy plot?",
-     "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPVENSejl5V04tRUR2M1JIRHZibWlHcm5tUWNndEMzRnBqM1p4aG5XTnp4azBycWIxcjlzeWJqZjh5WnNfRzdfSmNudmRMN3l1OVFmTjE1VS10a2pFN3BWNDZDS05SMkNFQ01WR2Z5UHhBY1pRZDhiVXBHZy1DTDFuRmowbzRkZ2xKcGxsOVVMOG5OYmczUTdYem5Rc1MtLVVpSmNkWGRRWXo0M0ZXWkZZUW9ERk9jeHRrR1pKZ20yRU4?oc=5",
-     "time": "2026-11-10T03:32:00Z"
-    }
-   ]
-  },
-  {
-   "summary": "Israeli cabinet orders military to prepare for a possible new attack on Iran, escalating geopolitical risks.",
+   "summary": "Geopolitical tensions persist as Iran rejects concessions and threatens a wider war while oil prices recover from recent lows.",
    "category": "war_escalation",
    "firstSeen": "2026-11-10T20:01:23Z",
    "publishers": [
     "790 KABC",
+    "930 WFMD Free Talk",
+    "ABC7 WWSB",
     "ABS-CBN",
+    "ANI News",
     "ASHARQ AL-AWSAT English",
+    "AZ Family",
     "Aaj English TV",
     "Al Arabiya English",
     "Al-Bawaba",
@@ -1838,6 +1794,7 @@
     "Apa.az",
     "Asia Insurance Post",
     "AsiaOne.com",
+    "Atlanta News First",
     "Bangladesh Sangbad Sangstha (BSS)",
     "Barchart.com",
     "Benzinga",
@@ -1852,6 +1809,9 @@
     "Daily Pioneer",
     "Daily Sun",
     "Euronext Markets: Real-time Stock Market Data | live",
+    "FOX Carolina News",
+    "FOX19 | Cincinnati",
+    "FT",
     "FXEmpire",
     "FXStreet",
     "Foej Media",
@@ -1860,6 +1820,7 @@
     "Free Press Journal",
     "GV Wire",
     "Global Banking & Finance Review",
+    "Hawaii News Now",
     "Inshorts",
     "International Business Times",
     "Internazionale",
@@ -1868,9 +1829,11 @@
     "Investing.com India",
     "Investing.com South Africa",
     "Invezz",
+    "Iran International",
     "Islamabad Post",
     "JournalArta",
     "KBOI",
+    "KCTV",
     "KLSE Screener",
     "Kitco",
     "Kyiv Post",
@@ -1891,6 +1854,7 @@
     "Nacionale",
     "News18",
     "News9live",
+    "NewsCord",
     "Newswav",
     "Odessa Journal",
     "Open Magazine",
@@ -1906,6 +1870,7 @@
     "Ships & Ports",
     "Sowetan",
     "Splash247",
+    "Tampa Free Press",
     "The Arab Weekly",
     "The Assam Tribune",
     "The Avenue Mail",
@@ -1917,7 +1882,9 @@
     "The Korea Times",
     "The National",
     "The New Indian Express",
+    "The Star",
     "The Sun Malaysia",
+    "The Vibes",
     "TimesLIVE",
     "TradeWinds News",
     "Traders Union",
@@ -1926,8 +1893,23 @@
     "Trak.in",
     "UA.NEWS",
     "UkrMedia News",
+    "Upper Michigan's Source",
+    "Vietnam.vn",
+    "WABI",
     "WANA News Agency",
+    "WBAY",
+    "WBTV",
+    "WCAX",
+    "WIBW",
+    "WITN",
+    "WJHG",
+    "WKYT",
+    "WLFI",
+    "WMTV 15 NEWS",
+    "WRDW",
     "WSJ",
+    "WTVA",
+    "WVLT",
     "X",
     "Yahoo Finance",
     "Yahoo Finance UK",
@@ -1935,7 +1917,9 @@
     "houseofsaud.com",
     "https://houseofsaud.com/",
     "oodaloop.com",
+    "wandtv.com",
     "www.nktv.in",
+    "www.proactiveinvestors.com.au",
     "ІА Король Данило",
     "Мілітарний",
     "Українські Національні Новини (УНН)",
@@ -1962,7 +1946,7 @@
     "PLTR": {
      "direction": "up",
      "confidence": 0.7,
-     "why": "Rising military conflicts boost defense tech demand."
+     "why": "Defense tech benefits from rising military tensions and conflict escalation."
     },
     "AVAV": {
      "direction": "up",
@@ -2034,93 +2018,92 @@
    ]
   },
   {
-   "summary": "CoreWeave earnings and surging AI demand are driving a massive market rally in memory and semiconductor stocks.",
-   "category": "earnings_beat",
-   "firstSeen": "2026-11-11T16:45:35Z",
+   "summary": "Nvidia shares and Nasdaq futures slide following reports regarding potential leadership turmoil and Jensen Huang's future as CEO.",
+   "category": "company_bad_news",
+   "firstSeen": "2026-11-10T02:06:25Z",
    "publishers": [
+    "AP",
     "Benzinga",
-    "Borneo Bulletin",
+    "BigGo Finance",
     "CNBC",
-    "FXLeaders",
-    "Nacionale",
+    "Decrypt",
+    "Moomoo",
+    "Quartz",
     "Reuters",
-    "TradingKey",
+    "Stock Titan",
+    "Stocktwits",
+    "The Spokesman-Review",
     "Yahoo Finance",
-    "Yahoo! Finance Canada",
-    "富途牛牛"
+    "bloomingbit",
+    "fiscal.ai"
    ],
    "assets": {
-    "MU": {
-     "direction": "up",
-     "confidence": 0.85,
-     "why": "CoreWeave and memory sector demand momentum drive Micron higher."
-    },
     "NVDA": {
      "direction": "down",
-     "confidence": 0.5,
-     "why": "Faced some late pressure despite the broader AI rally."
+     "confidence": 0.9,
+     "why": "Major executive scandal, impending CEO removal, and political scrutiny surrounding Jensen Huang heavily impact the stock."
+    },
+    "MSFT": {
+     "direction": "up",
+     "confidence": 0.6,
+     "why": "Briefly overtook Nvidia as capital rotates away from Nvidia during the executive controversy."
     },
     "AMD": {
      "direction": "up",
-     "confidence": 0.8,
-     "why": "Benefiting from the broad AI rally fueled by CoreWeave earnings."
-    },
-    "INTC": {
-     "direction": "up",
      "confidence": 0.75,
-     "why": "CoreWeave earnings boost semiconductor sector sentiment"
+     "why": "Investors fleeing Nvidia turmoil are rotating into rival chipmaker AMD."
     },
-    "NOW": {
+    "AVGO": {
      "direction": "up",
-     "confidence": 0.65,
-     "why": "Lifted by broader tech-led software sector rebound and AI demand."
+     "confidence": 0.7,
+     "why": "Alternative chipmaker beneficiary from Nvidia's reported leadership drama."
     }
    },
    "sources": [
     {
-     "id": "6fe3f6b6607122aa",
+     "id": "7e779ec43d194f41",
      "publisher": "Benzinga",
      "kind": "news",
-     "title": "Micron Stock Jumps 13% as CoreWeave Outlook Eases AI Spending Fears",
-     "url": "https://www.benzinga.com/trading-ideas/movers/26/11/63152060/micron-stock-jumps-13-as-coreweave-outlook-eases-ai-spending-fears",
-     "time": "2026-11-11T16:45:35Z"
+     "title": "'Materially False and Misleading': Nvidia, Jensen Huang Sued Over Alleged Chinese Spy Affair, Shareholder Says NVDA Stock Was 'Artificially Inflated'",
+     "url": "https://www.benzinga.com/markets/tech/26/11/63077533/nvidia-jensen-huang-sued-class-action-megaspeed-alice-huang-chinese-spy",
+     "time": "2026-11-10T02:14:11Z"
     },
     {
-     "id": "4bd7fa4b11530234",
-     "publisher": "TradingKey",
+     "id": "b13c33e1c6b78db8",
+     "publisher": "The Spokesman-Review",
      "kind": "news",
-     "title": "Why CoreWeave's Improving Profit Outlook Boosts AI Infrastructure Stocks: Financing Pressures Ease, Equipment Procurement Expectations Rebound",
-     "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxPQXB6TUQyR2FDbVQ0Z05IaUNhUGZGRTBmeDY2dW1rZHNnRVhjRGFwYUFWcFFZQUNOSmMzN0VlWkV3UTBjZTVTb2RHMDEwTkxveTNndXFXVkhtSThLR1RmMVdkYXQ4YTBldXR1UDFfUXo5NDhuM2JPZ1VjY3Z1VXNnZms5ZlprQmFyNm1VQ0gzUTRhUVRoaS1FYXpBbzctU2g2c0FtdldIRVl0aTF5b0VNMU4wTDhNTjZhQmVURW9sLTJFQ2ZLTlhfYjZqRTNLbEk?oc=5",
-     "time": "2026-11-11T16:55:39Z"
+     "title": "Stocks jump as oil tumbles, Nvidia falls amid internal probe - The Spokesman-Review",
+     "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxQRzBNX0NnSGJXLWxPSjV1bjFCTVM0aExoaURsaHlESWl2U1dfd2EtcU5VTkxZYkpkU2hJQ19LSUdLMUNkS2JpZTZDZzJLY3JFeDgtSXRTOF9MeUlPSkhoajBQU09qZEdld2VwTXpTSHVPZmJ2N0xFSGwxQzRWN1hmdjExaEx0OW54R3ZnWldmX1ByX19VQkV6NjZPYjBYQQ?oc=5",
+     "time": "2026-11-10T02:06:25Z"
     },
     {
-     "id": "c395829f297543d2",
-     "publisher": "Benzinga",
+     "id": "c28ef162d5e09bce",
+     "publisher": "fiscal.ai",
      "kind": "news",
-     "title": "Why Is Cipher Digital Stock Surging on Wednesday?",
-     "url": "https://www.benzinga.com/trading-ideas/movers/26/11/63154025/why-is-cipher-digital-stock-surging-on-wednesday-2",
-     "time": "2026-11-11T17:10:05Z"
+     "title": "Securities Class Action Lawsuit Filed Against NVIDIA Corporation",
+     "url": "https://www.globenewswire.com/news-release/2026/11/10/3399115/32716/en/nvda-investor-alert-hagens-berman-urges-nvidia-corporation-nasdaq-nvda-investors-with-substantial-losses-to-contact-firm-ahead-of-january-8-2027-lead-plaintiff-deadline.html",
+     "time": "2026-11-10T03:01:19Z"
     },
     {
-     "id": "748a1fc784517269",
-     "publisher": "Benzinga",
+     "id": "43afd4d88c5a549b",
+     "publisher": "AP",
      "kind": "news",
-     "title": "Crude Oil Gains 2%; CoreWeave Posts Upbeat Q3 Results",
-     "url": "https://www.benzinga.com/markets/market-summary/26/11/63153989/crude-oil-gains-2-coreweave-posts-upbeat-q3-results",
-     "time": "2026-11-11T17:09:41Z"
+     "title": "Trump says FBI is looking at Nvidia CEO Jensen Huang’s affair with alleged Chinese agent",
+     "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPQWY3b0NNRFBNRG5jZVdXM05URnhOV19vQ24zV29la0k2S3FzZmN4ZzB3WlRwSXJMbHB6RE90MFVEZ2p4UUhMQUFlV0RMdmVZZUUxeFFEa2ljZTFlTlhXOFozaEczRlpPS2dmRXgxcGw2ZWdpNVJQVEltazV5UUZMUmpNMUdoX2NJRG1wVnJhbFRCTHBwbE1LcjZnMk4?oc=5",
+     "time": "2026-11-10T03:43:01Z"
     },
     {
-     "id": "129eb11141a16de4",
-     "publisher": "Benzinga",
+     "id": "094051eb2da1b91e",
+     "publisher": "AP",
      "kind": "news",
-     "title": "What Is Going on With Arm Holdings Stock on Wednesday?",
-     "url": "https://www.benzinga.com/markets/tech/26/11/63153896/what-is-going-on-with-arm-holdings-stock-on-wednesday",
-     "time": "2026-11-11T17:08:52Z"
+     "title": "Timeline: How did Nvidia’s CEO get caught up in an alleged spy plot?",
+     "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPVENSejl5V04tRUR2M1JIRHZibWlHcm5tUWNndEMzRnBqM1p4aG5XTnp4azBycWIxcjlzeWJqZjh5WnNfRzdfSmNudmRMN3l1OVFmTjE1VS10a2pFN3BWNDZDS05SMkNFQ01WR2Z5UHhBY1pRZDhiVXBHZy1DTDFuRmowbzRkZ2xKcGxsOVVMOG5OYmczUTdYem5Rc1MtLVVpSmNkWGRRWXo0M0ZXWkZZUW9ERk9jeHRrR1pKZ20yRU4?oc=5",
+     "time": "2026-11-10T03:32:00Z"
     }
    ]
   },
   {
-   "summary": "Gold prices extended their decline as growing expectations of Federal Reserve rate hikes weighed on precious metals.",
+   "summary": "Hotter-than-expected inflation data drives 100% odds for Federal Reserve rate hikes, weighing on equities and gold.",
    "category": "central_bank_hawkish",
    "firstSeen": "2026-11-10T09:39:09Z",
    "publishers": [
@@ -2150,6 +2133,7 @@
     "BigGo Finance",
     "Bilyonaryo Business",
     "Bitcoin Foundation",
+    "Bloomberg",
     "Bloomberg.com",
     "Business Insider",
     "Business Standard",
@@ -2184,6 +2168,7 @@
     "FXStreet",
     "FinanceFeeds",
     "Forbes",
+    "Foreign Policy Journal",
     "Fox Business",
     "Free Malaysia Today",
     "Free Press Journal",
@@ -2324,12 +2309,14 @@
     "marketscreener.com",
     "news.sbs.co.kr",
     "streamlinefeed.co.ke",
+    "www.foreignpolicyjournal.com",
     "www.thenationalnews.com",
     "شبكة تواصل الإخبارية",
     "富途牛牛",
     "巴士的報",
     "아시아경제",
-    "조선일보"
+    "조선일보",
+    "파이낸셜뉴스"
    ],
    "assets": {
     "BTC/USD": {
@@ -2360,7 +2347,7 @@
     "AAPL": {
      "direction": "down",
      "confidence": 0.75,
-     "why": "Hawkish Fed rate hike expectations weigh negatively on growth and tech stocks."
+     "why": "Hot inflation and 100% Fed rate hike odds create a hawkish macro environment that hurts big tech."
     },
     "AMZN": {
      "direction": "down",
@@ -2447,7 +2434,7 @@
    ]
   },
   {
-   "summary": "Saudi Aramco reduced official oil sale prices while OPEC reported that oil production is nearing pre-Iran war levels.",
+   "summary": "Reports of U.S.-Iran diplomacy plans and Trump wanting out of the war caused oil prices to dip.",
    "category": "deescalation",
    "firstSeen": "2026-11-10T01:57:53Z",
    "publishers": [
@@ -2757,6 +2744,92 @@
      "title": "ASX Jumps as Oil Prices Fall on Trump Iran Remarks",
      "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxNNzRqNnJkRHVzZTEtaVJYaGxMNEFRYUtlRmtiR1RLeWVtU1UxeUx5NEdUeDl3VG5acXhKWFVpNkgzUTBsMzhrbm9uQWdGRWJ1S3psbjFrZ291dl9qc2pWRHdHVXEyTmZEQzBEdnluUi1RSFhjNmNadlF5N1FMRGc3aWlUUjhEdw?oc=5",
      "time": "2026-11-10T02:07:12Z"
+    }
+   ]
+  },
+  {
+   "summary": "CoreWeave earnings and surging AI demand are driving a massive market rally in memory and semiconductor stocks.",
+   "category": "earnings_beat",
+   "firstSeen": "2026-11-11T16:45:35Z",
+   "publishers": [
+    "Benzinga",
+    "Borneo Bulletin",
+    "CNBC",
+    "FXLeaders",
+    "Nacionale",
+    "Reuters",
+    "TradingKey",
+    "Yahoo Finance",
+    "Yahoo! Finance Canada",
+    "富途牛牛"
+   ],
+   "assets": {
+    "MU": {
+     "direction": "up",
+     "confidence": 0.85,
+     "why": "CoreWeave and memory sector demand momentum drive Micron higher."
+    },
+    "NVDA": {
+     "direction": "down",
+     "confidence": 0.5,
+     "why": "Faced some late pressure despite the broader AI rally."
+    },
+    "AMD": {
+     "direction": "up",
+     "confidence": 0.8,
+     "why": "Benefiting from the broad AI rally fueled by CoreWeave earnings."
+    },
+    "INTC": {
+     "direction": "up",
+     "confidence": 0.75,
+     "why": "CoreWeave earnings boost semiconductor sector sentiment"
+    },
+    "NOW": {
+     "direction": "up",
+     "confidence": 0.65,
+     "why": "Lifted by broader tech-led software sector rebound and AI demand."
+    }
+   },
+   "sources": [
+    {
+     "id": "6fe3f6b6607122aa",
+     "publisher": "Benzinga",
+     "kind": "news",
+     "title": "Micron Stock Jumps 13% as CoreWeave Outlook Eases AI Spending Fears",
+     "url": "https://www.benzinga.com/trading-ideas/movers/26/11/63152060/micron-stock-jumps-13-as-coreweave-outlook-eases-ai-spending-fears",
+     "time": "2026-11-11T16:45:35Z"
+    },
+    {
+     "id": "4bd7fa4b11530234",
+     "publisher": "TradingKey",
+     "kind": "news",
+     "title": "Why CoreWeave's Improving Profit Outlook Boosts AI Infrastructure Stocks: Financing Pressures Ease, Equipment Procurement Expectations Rebound",
+     "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxPQXB6TUQyR2FDbVQ0Z05IaUNhUGZGRTBmeDY2dW1rZHNnRVhjRGFwYUFWcFFZQUNOSmMzN0VlWkV3UTBjZTVTb2RHMDEwTkxveTNndXFXVkhtSThLR1RmMVdkYXQ4YTBldXR1UDFfUXo5NDhuM2JPZ1VjY3Z1VXNnZms5ZlprQmFyNm1VQ0gzUTRhUVRoaS1FYXpBbzctU2g2c0FtdldIRVl0aTF5b0VNMU4wTDhNTjZhQmVURW9sLTJFQ2ZLTlhfYjZqRTNLbEk?oc=5",
+     "time": "2026-11-11T16:55:39Z"
+    },
+    {
+     "id": "c395829f297543d2",
+     "publisher": "Benzinga",
+     "kind": "news",
+     "title": "Why Is Cipher Digital Stock Surging on Wednesday?",
+     "url": "https://www.benzinga.com/trading-ideas/movers/26/11/63154025/why-is-cipher-digital-stock-surging-on-wednesday-2",
+     "time": "2026-11-11T17:10:05Z"
+    },
+    {
+     "id": "748a1fc784517269",
+     "publisher": "Benzinga",
+     "kind": "news",
+     "title": "Crude Oil Gains 2%; CoreWeave Posts Upbeat Q3 Results",
+     "url": "https://www.benzinga.com/markets/market-summary/26/11/63153989/crude-oil-gains-2-coreweave-posts-upbeat-q3-results",
+     "time": "2026-11-11T17:09:41Z"
+    },
+    {
+     "id": "129eb11141a16de4",
+     "publisher": "Benzinga",
+     "kind": "news",
+     "title": "What Is Going on With Arm Holdings Stock on Wednesday?",
+     "url": "https://www.benzinga.com/markets/tech/26/11/63153896/what-is-going-on-with-arm-holdings-stock-on-wednesday",
+     "time": "2026-11-11T17:08:52Z"
     }
    ]
   },
