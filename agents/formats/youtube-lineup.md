@@ -1,6 +1,6 @@
 # YouTube lineup: win-first
 
-The lineup exists to repeat what already wins, not to experiment. Every slot must be backed by evidence. Per day: **Bounce Theory exactly 24 Shorts (S01-S24)** + its long videos; **Ambient Escape exactly 15 Shorts** + 2 long videos.
+The lineup exists to repeat what already wins, not to experiment. Every slot must be backed by evidence. Per day: **Bounce Theory exactly 24 Shorts (S01-S24)** + its long videos; **Ambient Escape exactly 24 Shorts** + 2 long videos.
 
 ## Slot mix for the Shorts (per channel; for Bounce's 24 Shorts scale the counts up by 1.6x)
 | Share | Type | What it is |
@@ -24,8 +24,8 @@ Each channel only gets its own kind of video, even if an off-niche video once di
 - **Bounce Theory:** only Bounce Engine simulations. Never Islamic content, stock footage or ambience.
 - If a format belongs to the other channel, put it in that channel's lineup instead.
 
-## Ambient Escape experiment: 8 animated explainers + 7 proven (Omar's rule, from 2026-11-04)
-Omar's current Ambient Shorts are flat, so **every Ambient Escape lineup has exactly 8 animated explainer Shorts + 7 Shorts from the mix above** (the 7 = the strongest proven remixes). This overrides the 9-11 / 3-5 / 0-2 split for Ambient Shorts only; Bounce Theory is unchanged. Keep it until Omar changes it; the Performance Reviewer compares the two groups (views, % watched) in every review and says which wins.
+## Ambient Escape: 12 animated explainers + 12 proven (Omar's rule, from 2026-11-04)
+Omar's current Ambient Shorts are flat, so **every Ambient Escape lineup has exactly 12 animated explainer Shorts + 12 Shorts from the mix above** (the 12 = the strongest proven remixes). This overrides the 9-11 / 3-5 / 0-2 split for Ambient Shorts only; Bounce Theory is unchanged. Keep it until Omar changes it; the Performance Reviewer compares the two groups (views, % watched) in every review and says which wins.
 
 They are rendered by **explainer2** (`render/explainer2/` in this repo, approved by Omar 2026-11-08): flat illustrated full-frame scenes, faceless characters acting the situation out, Kokoro narration with a different male voice on every video, small sound effects only (no background, no music), no footage, no reciter audio. Inspired by @tanzil_quran (POV road-rage → hadith) and @soulofbaraqah ("8 Islamic ways to unblock your rizq"). Never copy their wording, scenes or topics word for word.
 
@@ -33,7 +33,7 @@ Two formats (use both every day, at least 3 of each):
 - **`explainer_pov`** (15-25 s): "POV: <everyday situation a young Muslim knows>" → 2-3 tension beats → the hadith/ayah revealed word by word (Arabic + English gloss + an icon per word) → a share line ("Send this to a friend who …"). Situations: getting cut off, someone insults you online, parents asking for help when you're tired, a friend backbiting, missing Fajr, exam stress, losing a game, waiting in a long line.
 - **`explainer_list`** (30-50 s): "N Islamic ways to <outcome>" / "N things the Prophet ﷺ did <when>" → one scene per point (counter 01/N, title with one gold keyword, one-line meaning, source) → ending line + share CTA. 4-8 points.
 
-**Variety (Omar's rule):** never reuse a hadith, ayah, POV situation or list topic used in the last 14 days. Check `pastLineups` and the upload logs first. Spread the 8 across different life areas each day (anger, family, money/rizq, salah, friends, school/work, phone/social media, gratitude, sleep, character) and vary the scenes; when no existing scene fits, write `new scene: <what to draw>` in the note so the batch adds it to explainer2's scenes.py.
+**Variety (Omar's rule):** never reuse a hadith, ayah, POV situation or list topic used in the last 14 days. Check `pastLineups` and the upload logs first. Spread the 12 across different life areas each day (anger, family, money/rizq, salah, friends, school/work, phone/social media, gratitude, sleep, character) and vary the scenes; when no existing scene fits, write `new scene: <what to draw>` in the note so the batch adds it to explainer2's scenes.py.
 
 Put 3 explainers in S01-S05 (first uploads get the most reach) and spread the rest. Titles: "POV: <situation> 🤍 #shorts #islam #hadith" or "<N> Islamic ways to <outcome> 🤍 #shorts #islam" (under 70 chars).
 
