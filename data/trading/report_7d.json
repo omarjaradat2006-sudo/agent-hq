@@ -1,10 +1,10 @@
 {
  "status": "running",
- "updatedAt": "2026-11-12T21:45:01Z",
+ "updatedAt": "2026-11-13T21:45:15Z",
  "mode": "PAPER",
  "from": "2026-11-10T01:51:53Z",
  "to": "2026-11-17T01:51:53Z",
- "day": 3,
+ "day": 4,
  "days": 7,
  "trades": {
   "opened": 0,
@@ -26,8 +26,8 @@
   "endEquity": 100000.0,
   "pnl": 0.0,
   "pnlPct": 0.0,
-  "spyPct": 0.62,
-  "vsSpyPct": -0.62,
+  "spyPct": -0.1,
+  "vsSpyPct": 0.1,
   "maxDrawdownPct": 0.0,
   "maxDrawdownAt": null,
   "curveSource": "Alpaca 15-min history + bot samples",
@@ -38,7 +38,7 @@
    "rule": "stock_entry_window",
    "label": "Stock entry window (first 10 / last 30 min)",
    "kind": "risk",
-   "count": 43,
+   "count": 50,
    "symbols": [
     "XOM",
     "CVX",
@@ -48,10 +48,12 @@
     "NVDA",
     "INTC",
     "NOW",
-    "QCOM"
+    "QCOM",
+    "MSFT",
+    "AMZN"
    ],
    "first": "2026-11-10T20:35:03Z",
-   "last": "2026-11-12T20:58:42Z",
+   "last": "2026-11-13T21:00:02Z",
    "example": "last 30 min before the close"
   }
  ],
@@ -388,6 +390,24 @@
    "msg": "last 30 min before the close",
    "times": 7,
    "lastT": "2026-11-12T20:58:42Z"
+  },
+  {
+   "t": "2026-11-13T20:34:35Z",
+   "kind": "risk",
+   "rule": "stock_entry_window",
+   "symbol": "MSFT",
+   "msg": "last 30 min before the close",
+   "times": 6,
+   "lastT": "2026-11-13T21:00:02Z"
+  },
+  {
+   "t": "2026-11-13T21:00:02Z",
+   "kind": "risk",
+   "rule": "stock_entry_window",
+   "symbol": "AMZN",
+   "msg": "last 30 min before the close",
+   "times": 1,
+   "lastT": "2026-11-13T21:00:02Z"
   }
  ],
  "errors": [
@@ -395,24 +415,25 @@
    "rule": "gemini_triage",
    "label": "gemini triage",
    "kind": "error",
-   "count": 22,
+   "count": 24,
    "symbols": [],
    "first": "2026-11-10T02:00:27Z",
-   "last": "2026-11-12T19:22:06Z",
+   "last": "2026-11-13T14:37:46Z",
    "example": "Expecting ':' delimiter: line 16 column 7 (char 409)"
   },
   {
    "rule": "tradingagents",
    "label": "tradingagents",
    "kind": "error",
-   "count": 4,
+   "count": 5,
    "symbols": [
     "AMD",
     "REGN",
-    "ABBV"
+    "ABBV",
+    "BTC/USD"
    ],
    "first": "2026-11-11T18:44:18Z",
-   "last": "2026-11-12T19:37:32Z",
+   "last": "2026-11-13T13:36:36Z",
    "example": "rateContent. Call ModelService.ListModels to see the list of available models and their supported methods.', 'status': 'NOT_FOUND'}}\nDuring task with name 'agent' and id 'a1823eed-1591-4414-bf92-8c9f3"
   },
   {
@@ -579,9 +600,36 @@
    "msg": "r generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.', 'status': 'NOT_FOUND'}}\nDuring task with name 'agent' and id 'dfea4eb3-9b53-f31e-da81",
    "times": 1,
    "lastT": "2026-11-12T19:37:32Z"
+  },
+  {
+   "t": "2026-11-13T09:29:13Z",
+   "kind": "error",
+   "rule": "gemini_triage",
+   "symbol": null,
+   "msg": "All Gemini models failed. Last error: Gemini HTTP 503 on gemini-3.5-flash-lite: {\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experiencing high demand. Spikes in demand are u",
+   "times": 1,
+   "lastT": "2026-11-13T09:29:13Z"
+  },
+  {
+   "t": "2026-11-13T13:36:36Z",
+   "kind": "error",
+   "rule": "tradingagents",
+   "symbol": "BTC/USD",
+   "msg": "for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.', 'status': 'NOT_FOUND'}}\nDuring task with name 'agent' and id '201ab8ed-95b1-6c27-9c",
+   "times": 1,
+   "lastT": "2026-11-13T13:36:36Z"
+  },
+  {
+   "t": "2026-11-13T14:37:46Z",
+   "kind": "error",
+   "rule": "gemini_triage",
+   "symbol": null,
+   "msg": "Expecting property name enclosed in double quotes: line 13 column 9 (char 359)",
+   "times": 1,
+   "lastT": "2026-11-13T14:37:46Z"
   }
  ],
- "restarts": 10,
+ "restarts": 11,
  "killSwitch": false,
  "tradeList": [],
  "limits": {

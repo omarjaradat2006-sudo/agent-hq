@@ -1,6 +1,6 @@
-# 7-day paper test: day 3 of 7 (running)
+# 7-day paper test: day 4 of 7 (running)
 
-PAPER account only. 2026-11-10 01:51 UTC to 2026-11-17 01:51 UTC. Updated 2026-11-12 21:45 UTC.
+PAPER account only. 2026-11-10 01:51 UTC to 2026-11-17 01:51 UTC. Updated 2026-11-13 21:45 UTC.
 
 ## Results
 
@@ -9,17 +9,17 @@ PAPER account only. 2026-11-10 01:51 UTC to 2026-11-17 01:51 UTC. Updated 2026-1
 | Trades opened / closed / still open | 0 / 0 / 0 |
 | Win rate | — (0 won, 0 lost) |
 | Realised P&L | $+0.00 (avg trade —, avg win —, avg loss —) |
-| Account change | $+0.00 (+0.00%) vs SPY +0.62% |
+| Account change | $+0.00 (+0.00%) vs SPY -0.10% |
 | Open positions P&L | $+0.00 |
 | Max drawdown | +0.00% (Alpaca 15-min history + bot samples) |
 | Kill switch | off |
-| Bot (re)starts | 10 |
+| Bot (re)starts | 11 |
 
 ## Every risk-rule trigger
 
 | Rule | Times | Assets | First | Last |
 |---|---|---|---|---|
-| Stock entry window (first 10 / last 30 min) | 43 | XOM, CVX, OXY, HAL, MU, NVDA, INTC, NOW | 2026-11-10T20:35 | 2026-11-12T20:58 |
+| Stock entry window (first 10 / last 30 min) | 50 | XOM, CVX, OXY, HAL, MU, NVDA, INTC, NOW | 2026-11-10T20:35 | 2026-11-13T21:00 |
 
 Timeline (repeats in a row folded together):
 
@@ -60,11 +60,13 @@ Timeline (repeats in a row folded together):
 - 2026-11-11 20:55 Stock entry window (first 10 / last 30 min) INTC: last 30 min before the close
 - 2026-11-11 20:55 Stock entry window (first 10 / last 30 min) NOW: last 30 min before the close
 - 2026-11-12 20:30 Stock entry window (first 10 / last 30 min) QCOM: last 30 min before the close (x7, until 2026-11-12 20:58)
+- 2026-11-13 20:34 Stock entry window (first 10 / last 30 min) MSFT: last 30 min before the close (x6, until 2026-11-13 21:00)
+- 2026-11-13 21:00 Stock entry window (first 10 / last 30 min) AMZN: last 30 min before the close
 
 ## Errors
 
-- **gemini_triage** x22 (last 2026-11-12T19:22): Expecting ':' delimiter: line 16 column 7 (char 409)
-- **tradingagents** x4 (last 2026-11-12T19:37): rateContent. Call ModelService.ListModels to see the list of available models and their supported methods.', 'status': 'NOT_FOUND'}}
+- **gemini_triage** x24 (last 2026-11-13T14:37): Expecting ':' delimiter: line 16 column 7 (char 409)
+- **tradingagents** x5 (last 2026-11-13T13:36): rateContent. Call ModelService.ListModels to see the list of available models and their supported methods.', 'status': 'NOT_FOUND'}}
 During task with name 'agent' and id 'a1823eed-1591-4414-bf92-8c9f3
 - **sec_unreachable** x2 (last 2026-11-10T19:59): HTTP 403 https://www.sec.gov/files/company_tickers.json
 
