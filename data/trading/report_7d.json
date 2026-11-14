@@ -1,10 +1,10 @@
 {
  "status": "running",
- "updatedAt": "2026-11-13T21:45:15Z",
+ "updatedAt": "2026-11-14T21:45:22Z",
  "mode": "PAPER",
  "from": "2026-11-10T01:51:53Z",
  "to": "2026-11-17T01:51:53Z",
- "day": 4,
+ "day": 5,
  "days": 7,
  "trades": {
   "opened": 0,
@@ -26,8 +26,8 @@
   "endEquity": 100000.0,
   "pnl": 0.0,
   "pnlPct": 0.0,
-  "spyPct": -0.1,
-  "vsSpyPct": 0.1,
+  "spyPct": -0.08,
+  "vsSpyPct": 0.08,
   "maxDrawdownPct": 0.0,
   "maxDrawdownAt": null,
   "curveSource": "Alpaca 15-min history + bot samples",
@@ -415,10 +415,10 @@
    "rule": "gemini_triage",
    "label": "gemini triage",
    "kind": "error",
-   "count": 24,
+   "count": 25,
    "symbols": [],
    "first": "2026-11-10T02:00:27Z",
-   "last": "2026-11-13T14:37:46Z",
+   "last": "2026-11-14T15:57:47Z",
    "example": "Expecting ':' delimiter: line 16 column 7 (char 409)"
   },
   {
@@ -627,9 +627,18 @@
    "msg": "Expecting property name enclosed in double quotes: line 13 column 9 (char 359)",
    "times": 1,
    "lastT": "2026-11-13T14:37:46Z"
+  },
+  {
+   "t": "2026-11-14T15:57:47Z",
+   "kind": "error",
+   "rule": "gemini_triage",
+   "symbol": null,
+   "msg": "Expecting property name enclosed in double quotes: line 14 column 11 (char 442)",
+   "times": 1,
+   "lastT": "2026-11-14T15:57:47Z"
   }
  ],
- "restarts": 11,
+ "restarts": 12,
  "killSwitch": false,
  "tradeList": [],
  "limits": {

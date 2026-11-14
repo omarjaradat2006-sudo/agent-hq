@@ -1,6 +1,6 @@
-# 7-day paper test: day 4 of 7 (running)
+# 7-day paper test: day 5 of 7 (running)
 
-PAPER account only. 2026-11-10 01:51 UTC to 2026-11-17 01:51 UTC. Updated 2026-11-13 21:45 UTC.
+PAPER account only. 2026-11-10 01:51 UTC to 2026-11-17 01:51 UTC. Updated 2026-11-14 21:45 UTC.
 
 ## Results
 
@@ -9,11 +9,11 @@ PAPER account only. 2026-11-10 01:51 UTC to 2026-11-17 01:51 UTC. Updated 2026-1
 | Trades opened / closed / still open | 0 / 0 / 0 |
 | Win rate | — (0 won, 0 lost) |
 | Realised P&L | $+0.00 (avg trade —, avg win —, avg loss —) |
-| Account change | $+0.00 (+0.00%) vs SPY -0.10% |
+| Account change | $+0.00 (+0.00%) vs SPY -0.08% |
 | Open positions P&L | $+0.00 |
 | Max drawdown | +0.00% (Alpaca 15-min history + bot samples) |
 | Kill switch | off |
-| Bot (re)starts | 11 |
+| Bot (re)starts | 12 |
 
 ## Every risk-rule trigger
 
@@ -65,7 +65,7 @@ Timeline (repeats in a row folded together):
 
 ## Errors
 
-- **gemini_triage** x24 (last 2026-11-13T14:37): Expecting ':' delimiter: line 16 column 7 (char 409)
+- **gemini_triage** x25 (last 2026-11-14T15:57): Expecting ':' delimiter: line 16 column 7 (char 409)
 - **tradingagents** x5 (last 2026-11-13T13:36): rateContent. Call ModelService.ListModels to see the list of available models and their supported methods.', 'status': 'NOT_FOUND'}}
 During task with name 'agent' and id 'a1823eed-1591-4414-bf92-8c9f3
 - **sec_unreachable** x2 (last 2026-11-10T19:59): HTTP 403 https://www.sec.gov/files/company_tickers.json
