@@ -111,6 +111,70 @@ def context(cfg, state):
     return "\n\n".join(parts)
 
 
+def _norm_title(t):
+    t = re.sub(r"#\S+", "", str(t or "").lower())
+    return re.sub(r"[^a-z0-9]+", " ", t).strip()
+
+
+def uploaded_titles():
+    logs = os.environ.get("BOUNCE_LOGS") or os.path.expanduser("~/bounce-data/logs")
+    out = {}
+    for ch, f in (("Bounce Theory", "BounceTheory"), ("Ambient Escape", "AmbientEscape")):
+        ups = load(os.path.join(logs, f + "_uploaded_log.json"), []) or []
+        out[ch] = {_norm_title(x.get("title")) for x in ups if x.get("title")}
+    return out
+
+
+def fix_repeats(patch, system):
+    """Gemini often ignores 'never reuse a title'. Find lineup slots whose title is already uploaded and ask once
+    for fresh replacements (same channel, same kind/format); the servers skip any slot that still repeats."""
+    L = patch.get("lineup")
+    if not isinstance(L, dict):
+        return
+    chans = L.get("channels") if isinstance(L.get("channels"), dict) else L
+    seen = uploaded_titles()
+    dupes = []
+    for ch, slots in chans.items():
+        if not isinstance(slots, list) or ch not in seen:
+            continue
+        used = set(seen[ch])
+        for i, sl in enumerate(slots):
+            if not isinstance(sl, dict):
+                continue
+            n = _norm_title(sl.get("title"))
+            if n and n in used:
+                dupes.append((ch, i, sl))
+            used.add(n)
+    print(f"lineup repeats of uploaded titles: {len(dupes)}", flush=True)
+    if not dupes:
+        return
+    ask = [{"channel": ch, "index": i, "slot": sl} for ch, i, sl in dupes]
+    avoid = {ch: sorted(t for t in seen[ch])[:400] for ch in seen}
+    prompt = ("These lineup slots repeat titles that are ALREADY UPLOADED. Rewrite each one as a genuinely new video for the same "
+              "channel and the same kind/format: new title (not in the avoid list, not a reworded copy), new hook, and for Bounce Theory "
+              "a new `settings` from the same template with different colours/counts/knobs. Keep every other field the slot has.\n"
+              "Return JSON {\"slots\": [{\"channel\":..., \"index\":..., \"slot\": {...full slot...}}]}.\n\n"
+              f"Slots to rewrite:\n{json.dumps(ask, ensure_ascii=False)[:30000]}\n\nAvoid these (normalized) titles:\n"
+              f"{json.dumps(avoid, ensure_ascii=False)[:30000]}")
+    try:
+        text, _ = G.generate(prompt, system, json_out=True, temperature=0.9)
+        fixed = (G.parse_json(text) or {}).get("slots") or []
+    except Exception as e:
+        print("repeat fix failed:", str(e)[:200], flush=True)
+        return
+    done = 0
+    for f in fixed:
+        try:
+            ch, i, new = f["channel"], int(f["index"]), f["slot"]
+            old = chans[ch][i]
+            if isinstance(new, dict) and _norm_title(new.get("title")) not in seen.get(ch, set()):
+                new["slot"] = old.get("slot", new.get("slot"))
+                chans[ch][i] = new; done += 1
+        except Exception:
+            continue
+    print(f"lineup repeats fixed: {done}/{len(dupes)}", flush=True)
+
+
 def main(job):
     cfg = TEAMS[job]
     state = load(os.path.join(ROOT, "data", cfg["state"], "state.json"), {})
@@ -180,6 +244,8 @@ Include every key listed above."""
         patch["log"].append({"t": ISO, "agent": "Gemini team", "msg": str(line)[:240]})
     for a in cfg["agents"]:
         patch["agents"][a] = {"status": "ok", "doing": str(raw.get("doing", "Done (Gemini)"))[:140], "lastRun": ISO}
+    if job == "youtube":
+        fix_repeats(patch, system)
     os.makedirs(os.path.join(ROOT, "out"), exist_ok=True)
     json.dump(patch, open(os.path.join(ROOT, "out", f"{job}_patch.json"), "w", encoding="utf-8"), ensure_ascii=False, indent=1)
     print(f"{job}: wrote patch with keys {sorted(patch)} and {len(ideas)} ideas")
