@@ -25,7 +25,7 @@ def use_triage_model():
         try:
             names = [x["name"].split("/")[-1] for x in gemini._req("GET", "models?pageSize=200").get("models", [])
                      if "generateContent" in x.get("supportedGenerationMethods", [])]
-            lites = sorted([n for n in names if "flash-lite" in n and "preview" not in n], reverse=True)[:3]
+            lites = sorted([n for n in names if "flash-lite" in n and gemini.text_model_ok(n)], reverse=True)[:3]
         except Exception:  # noqa: BLE001
             lites = []
     if lites:

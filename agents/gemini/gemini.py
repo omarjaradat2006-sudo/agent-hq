@@ -98,6 +98,21 @@ def generate(prompt, system=None, search=False, json_out=False, temperature=0.8,
     raise RuntimeError("All Gemini models failed. Last error: " + str(last))
 
 
+BAD_MODEL = re.compile(r"image|tts|live|audio|thinking|exp|preview|omni|embed|aqa|native|robotics|computer-use")
+
+
+def text_model_ok(name):
+    """True for normal text-chat Gemini models. TTS/image/audio/live variants claim generateContent but fail with 400."""
+    return not BAD_MODEL.search(name)
+
+
+def _repair_json(t):
+    t = re.sub(r"//[^\n]*", "", t)                       # // comments
+    t = re.sub(r",\s*([}\]])", r"\1", t)                 # trailing commas
+    t = re.sub(r"([{,]\s*)([A-Za-z_][A-Za-z0-9_]*)\s*:", r'\1"\2":', t)   # unquoted keys
+    return t
+
+
 def parse_json(text):
     """Pull the first JSON object/array out of a reply (handles ```json fences)."""
     t = text.strip()
@@ -108,4 +123,7 @@ def parse_json(text):
         m = re.search(r"(\{.*\}|\[.*\])", t, re.S)
         if not m:
             raise
-        return json.loads(m.group(1))
+        try:
+            return json.loads(m.group(1))
+        except json.JSONDecodeError:
+            return json.loads(_repair_json(m.group(1)))   # Flash-Lite sometimes adds trailing commas / bare keys

@@ -18,7 +18,7 @@ def _models():
         try:
             names = [m["name"].split("/")[-1] for m in gemini._req("GET", "models?pageSize=200").get("models", [])
                      if "generateContent" in m.get("supportedGenerationMethods", [])]
-            lites = sorted([n for n in names if "flash-lite" in n and "preview" not in n], reverse=True)
+            lites = sorted([n for n in names if "flash-lite" in n and gemini.text_model_ok(n)], reverse=True)
             quick = lites[0] if lites else deep
         except Exception:  # noqa: BLE001
             quick = deep
