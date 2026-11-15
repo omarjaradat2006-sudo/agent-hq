@@ -67,6 +67,11 @@ def refresh(st, lg):
     for a in st["agents"]:
         a.setdefault("status", "idle")
     st.update(team="fight", hired=True, updatedAt=S.now_iso())
+    # UFC card disappears from the UFC tab once fight weekend is over (from Sunday). Bets stay in the ledger and the record.
+    import datetime as _d
+    u = st.get("cards", {}).get("ufc")
+    if u and u.get("date") and _d.date.fromisoformat(S.today()) >= _d.date.fromisoformat(u["date"]) + _d.timedelta(days=2):
+        st["cards"].pop("ufc", None)
     for k in ("recent", "openPicks"):
         st.pop(k, None)
     rec = record(lg)
