@@ -98,13 +98,44 @@ def yahoo_news(symbols, since):
     return out
 
 
+_REDDIT_TOKEN = {"v": None, "exp": 0}
+REDDIT_UA = "linux:agent-hq-paper-bot:1.0 (by /u/agenthq_research)"
+
+
+def _reddit_token():
+    """Reddit's official API (free 'script' app: REDDIT_CLIENT_ID / REDDIT_CLIENT_SECRET in ~/.trading-bot.env).
+    Reddit blocks logged-out requests from cloud servers (HTTP 403), so this is what makes Reddit work on the server."""
+    import base64, os, urllib.parse, urllib.request
+    cid, sec = os.environ.get("REDDIT_CLIENT_ID", "").strip(), os.environ.get("REDDIT_CLIENT_SECRET", "").strip()
+    if not (cid and sec):
+        return None
+    if _REDDIT_TOKEN["v"] and time.time() < _REDDIT_TOKEN["exp"]:
+        return _REDDIT_TOKEN["v"]
+    req = urllib.request.Request("https://www.reddit.com/api/v1/access_token",
+                                 data=urllib.parse.urlencode({"grant_type": "client_credentials"}).encode(), method="POST",
+                                 headers={"User-Agent": REDDIT_UA, "Authorization": "Basic " + base64.b64encode(f"{cid}:{sec}".encode()).decode()})
+    with urllib.request.urlopen(req, timeout=20) as r:
+        d = json.loads(r.read().decode())
+    _REDDIT_TOKEN.update(v=d["access_token"], exp=time.time() + int(d.get("expires_in", 3600)) - 120)
+    return _REDDIT_TOKEN["v"]
+
+
 def reddit_direct(since, state):
-    """Reddit's public JSON (no Agent Reach, no login). Social posts never count as a news source on their own."""
+    """Reddit via the official API when a free app key is set, else the public JSON. Social posts never count as a news source on their own."""
     out, problems = [], []
+    try:
+        tok = _reddit_token()
+    except Exception as e:  # noqa: BLE001
+        tok = None
+        problems.append(f"Reddit app login failed: {str(e)[:80]}")
     for sub in C.SUBREDDITS:
         try:
-            r = http("GET", f"https://www.reddit.com/r/{sub}/new.json?limit=25&raw_json=1", timeout=20, retries=0,
-                     headers={"User-Agent": "linux:agent-hq-paper-bot:1.0 (by /u/agenthq_research)"})
+            if tok:
+                r = http("GET", f"https://oauth.reddit.com/r/{sub}/new?limit=25&raw_json=1", timeout=20, retries=0,
+                         headers={"User-Agent": REDDIT_UA, "Authorization": f"Bearer {tok}"})
+            else:
+                r = http("GET", f"https://www.reddit.com/r/{sub}/new.json?limit=25&raw_json=1", timeout=20, retries=0,
+                         headers={"User-Agent": REDDIT_UA})
             for ch in ((r or {}).get("data") or {}).get("children", []) if isinstance(r, dict) else []:
                 d = ch.get("data") or {}
                 t = datetime.fromtimestamp(d.get("created_utc") or 0, tz=timezone.utc)
@@ -117,7 +148,7 @@ def reddit_direct(since, state):
             if "403" in str(e) or "429" in str(e):
                 break
         time.sleep(2)
-    state["socialStatus"] = {"at": iso(), "items": len(out), "source": "Reddit direct (X needs Agent Reach)",
+    state["socialStatus"] = {"at": iso(), "items": len(out), "source": ("Reddit API" if tok else "Reddit public JSON (blocked on servers: add REDDIT_CLIENT_ID/SECRET)") + "; X needs Agent Reach",
                              "problems": problems[:3]}
     if problems:
         log(f"Reddit: {problems[0]}", "News Scout")
