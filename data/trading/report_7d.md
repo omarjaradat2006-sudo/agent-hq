@@ -1,6 +1,6 @@
-# 7-day paper test: day 5 of 7 (running)
+# 7-day paper test: day 6 of 7 (running)
 
-PAPER account only. 2026-11-10 01:51 UTC to 2026-11-17 01:51 UTC. Updated 2026-11-14 21:45 UTC.
+PAPER account only. 2026-11-10 01:51 UTC to 2026-11-17 01:51 UTC. Updated 2026-11-15 21:45 UTC.
 
 ## Results
 
@@ -13,7 +13,7 @@ PAPER account only. 2026-11-10 01:51 UTC to 2026-11-17 01:51 UTC. Updated 2026-1
 | Open positions P&L | $+0.00 |
 | Max drawdown | +0.00% (Alpaca 15-min history + bot samples) |
 | Kill switch | off |
-| Bot (re)starts | 12 |
+| Bot (re)starts | 14 |
 
 ## Every risk-rule trigger
 
