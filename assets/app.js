@@ -26,7 +26,10 @@
     const hasT = CFG.teams.some(t => t.id === "trading");
     const bt = hasT ? await getJSON("data/trading/backtest.json") : null;
     const wk = hasT ? await getJSON("data/trading/report_7d.json") : null;
-    const sig = JSON.stringify([res, bt && bt.ranAt, wk && wk.updatedAt]); if (sig === raw) return false; raw = sig;
+    const hasY = CFG.teams.some(t => t.id === "youtube");
+    const camp = hasY ? await getJSON("data/youtube/wanted_campaigns.json") : null;
+    const dec = hasY ? await getJSON("data/youtube/wanted_decisions.json") : null;
+    const sig = JSON.stringify([res, bt && bt.ranAt, wk && wk.updatedAt, camp && camp.updatedAt, dec]); if (sig === raw) return false; raw = sig;
     const teams = {};
     res.forEach(([id, st, mt]) => {
       const cfg = CFG.teams.find(t => t.id === id); const s = st || {}; const hired = !!s.hired;
@@ -41,6 +44,7 @@
       teams[id] = { cfg, hired, state: s, metrics: mt, agents, log };
     });
     if (teams.trading) { teams.trading.backtest = bt; teams.trading.week = wk; }
+    if (teams.youtube) { teams.youtube.camp = camp; teams.youtube.dec = dec || {}; }
     M = { teams };
     return true;
   }
@@ -252,7 +256,7 @@
     const out = [["overview", "Overview"], ["ideas", t.cfg.ideaWord || "Ideas"]];
     if (t.metrics) out.push(["stats", "Stats"]);
     if (t.metrics && (t.metrics.trending || []).length) out.push(["trending", "Trending"]);
-    if (t.cfg.id === "youtube") out.splice(1, 0, ["lineup", "Today's lineup"]), out.splice(3, 0, ["shots", "Footage"]);
+    if (t.cfg.id === "youtube") out.splice(1, 0, ["lineup", "Today's lineup"]), out.splice(3, 0, ["shots", "Footage"]), out.splice(4, 0, ["clips", "Clip permissions"]);
     if (t.cfg.id === "tiktok" || t.cfg.id === "youtube") out.splice(out.findIndex(x => x[0] === "ideas") + 1, 0, ["review", "Review"]);
     if (t.cfg.id === "linkedai" || t.cfg.id === "growth") out.splice(2, 0, ["competitors", "Competitors"]);
     if (t.cfg.id === "opps" || t.cfg.id === "growth") out.splice(out.findIndex(x => x[0] === "ideas") + 1, 0, ["swarm", "100-person test"]);
@@ -275,7 +279,7 @@
       b.onclick = () => { tab = k; renderPanel(); }; tabs.append(b); });
     ph.append(tabs); p.append(ph);
     const body = el("div", "pb"); p.append(body);
-    ({ overview: vOverview, ideas: vIdeas, review: vReview, competitors: vCompetitors, swarm: vSwarm, leads: vLeads, lineup: vLineup, picks: vFToday, ufc: vFUfc, record: vFRecord, books: vFBooks, positions: vTPositions, trades: vTTrades, pnl: vTPnl, news: vTNews, coins: vTCoins, backtest: vTBacktest, week: vTWeek, shots: vShots, stats: vStats, trending: vTrending, research: vResearch, activity: vActivity, ...(t.cfg.id === "fight" && !agentSel ? { overview: vFToday } : {}) }[tab] || vOverview)(t, body);
+    ({ overview: vOverview, ideas: vIdeas, review: vReview, competitors: vCompetitors, swarm: vSwarm, leads: vLeads, lineup: vLineup, picks: vFToday, ufc: vFUfc, record: vFRecord, books: vFBooks, positions: vTPositions, trades: vTTrades, pnl: vTPnl, news: vTNews, coins: vTCoins, backtest: vTBacktest, week: vTWeek, shots: vShots, clips: vClips, stats: vStats, trending: vTrending, research: vResearch, activity: vActivity, ...(t.cfg.id === "fight" && !agentSel ? { overview: vFToday } : {}) }[tab] || vOverview)(t, body);
   }
   function pill(s) { return el("span", "pill s-" + (s || "idle"), ST[s] || s || "Idle"); }
   function empty(title, text) { const e = el("div", "empty"); e.append(el("strong", null, title)); e.append(el("span", null, text)); return e; }
@@ -571,6 +575,70 @@
       const tt = el("span", "t", (v.slot || "") + "  " + (v.title || "")); tt.title = v.title || ""; r.append(tt, el("span", "n", v.kind || ""));
       r.append(el("span", "m", [v.format, v.note].filter(Boolean).join(" · ")), el("span", "m", v.basis ? "↳ " + v.basis : ""), el("span", "m", [v.newIdea ? "★ new" : "", v.footage ? "🎞 " + v.footage : ""].filter(Boolean).join("  "))); c.append(r); });
     body.append(c);
+  }
+  /* WANTED LEVEL · Clip permissions: Omar joins each campaign himself, then clicks Done; the server only reads his clicks. */
+  async function commitDecision(key, status) {
+    const path = "contents/data/youtube/wanted_decisions.json";
+    for (let attempt = 0; attempt < 3; attempt++) {
+      const r = await fetch(`https://api.github.com/repos/${CFG.repo}/${path}?ref=main&t=${Date.now()}`, { cache: "no-store", headers: { Authorization: "Bearer " + LS.get("hq.ghToken"), Accept: "application/vnd.github+json" } });
+      if (r.status === 401) throw new Error("token");
+      let st = {}, sha;
+      if (r.ok) { const f = await r.json(); sha = f.sha; try { st = JSON.parse(b64ToText(f.content)) || {}; } catch { st = {}; } }
+      else if (r.status !== 404) throw new Error("http " + r.status);
+      st[key] = { status, at: new Date().toISOString().replace(/\.\d+Z$/, "Z") };
+      const put = await gh(path, { method: "PUT", body: JSON.stringify({ message: `Omar: ${status} ${key}`, content: textToB64(JSON.stringify(st, null, 1) + "\n"), ...(sha ? { sha } : {}), branch: "main" }) });
+      if (put.ok) return st; if (put.status !== 409 && put.status !== 422) throw new Error("http " + put.status);
+    }
+    throw new Error("busy");
+  }
+  function decide(t, key, status, msg) {
+    return async () => {
+      if (!LS.get("hq.ghToken")) { openSettings("Connect GitHub once so your clicks save by themselves."); return; }
+      toast("Saving…");
+      try { t.dec = await commitDecision(key, status); saveDecision(key, status); toast(msg); renderPanel(); }
+      catch (e) { toast(e.message === "token" ? "GitHub token expired: open settings" : "Couldn't save, try again"); }
+    };
+  }
+  function vClips(t, body) {
+    const C2 = t.camp || {}; const dec = { ...(t.dec || {}) };   // clicks show at once, even before GitHub Pages republishes
+    Object.entries(localDecisions()).forEach(([k, v]) => { if (Date.now() - v.at < 20 * 60e3 && (!dec[k] || Date.parse(dec[k].at) < v.at)) dec[k] = { status: v.status, at: new Date(v.at).toISOString() }; });
+    const stOf = c => (dec[c.id] || {}).status || c.status || "new";
+    const intro = el("div", "card brief"); intro.append(el("div", "label", "WANTED LEVEL · Clip permissions"));
+    intro.append(el("div", "why", "Clipping campaigns and streamers who allow clipping. Open the link, join it yourself, then click “Done: I joined”. On its next hourly run the server adds that streamer, saves the campaign link as proof and follows the campaign's rules. Nothing is ever joined for you."));
+    intro.append(el("div", "small", `Search runs ${C2.searchEvery || "once a day"} · last ${ago(C2.lastSearch)}${C2.searchNote ? " · " + C2.searchNote : ""}`));
+    body.append(intro);
+    const subs = (C2.submissions || []).filter(x => (dec["sub:" + x.video] || {}).status !== "submitted");
+    if (subs.length) {
+      body.append(el("div", "label", "Clip links to submit for payment"));
+      const c = el("div", "card"); c.append(el("div", "why", "These need submitting on the campaign page to count for payouts. This has to be done by you: Whop has no public way to submit links automatically."));
+      subs.forEach(x => { const r = el("div", "row between"); const a = el("a", "t", x.title || x.url); const u = safeUrl(x.url); if (u) { a.href = u; a.target = "_blank"; a.rel = "noopener"; }
+        const left = el("div"); left.append(a); left.append(el("div", "small", [x.streamer, x.program, x.mode === "test" ? "TEST video, don't submit" : null, x.deadline ? "submit " + (Date.parse(x.deadline) > Date.now() ? until(x.deadline) : "deadline passed") : null, x.where].filter(Boolean).join(" · ")));
+        const right = el("div", "row"); const ju = safeUrl(x.join_url); if (ju) { const j = el("a", "btn", "Open campaign"); j.href = ju; j.target = "_blank"; j.rel = "noopener"; right.append(j); }
+        const b = el("button", "btn primary", "Submitted"); b.onclick = decide(t, "sub:" + x.video, "submitted", "Saved · submitted"); right.append(b);
+        r.append(left, right); c.append(r); });
+      body.append(c);
+    }
+    const cs = C2.campaigns || [];
+    if (!cs.length) { body.append(empty("No campaigns yet", "The first search runs within the hour.")); return; }
+    [["new", "To look at"], ["joined", "Joined"], ["skipped", "Skipped"]].forEach(([k, lbl]) => {
+      const list = cs.filter(c => stOf(c) === k); if (!list.length) return;
+      body.append(el("div", "label", `${lbl} ${list.length}`));
+      list.forEach(c => { const k2 = el("div", "card"); const r = el("div", "row between"); r.append(el("h3", null, `${c.streamer} · ${c.program || "clipping"}`));
+        r.append(el("span", "pill s-" + (c.blocked ? "error" : k === "joined" ? (c.live ? "ok" : "waiting") : k === "skipped" ? "off" : "idle"),
+          c.blocked ? "Can't use" : k === "joined" ? (c.live ? "Clipping live" : "Next run") : k === "skipped" ? "Skipped" : "New")); k2.append(r);
+        k2.append(el("div", "small", [c.platform, "YouTube Shorts: " + (c.youtube_shorts || "unclear"), c.ends ? "ends " + c.ends : null, "found " + ago(c.found)].filter(Boolean).join(" · ")));
+        if (c.payout) k2.append(el("div", null, "Payout: " + c.payout));
+        if (c.rules) k2.append(el("div", "why", "Rules: " + c.rules));
+        const extra = [c.hashtag ? "hashtag " + c.hashtag : null, c.credit ? "credit " + c.credit : null, (c.clip_min || c.clip_max) ? `clips ${c.clip_min || "?"}-${c.clip_max || "?"} s` : null].filter(Boolean);
+        if (extra.length) k2.append(el("div", "small", "Server follows: " + extra.join(" · ")));
+        const sub = c.submit || {}; k2.append(el("div", "small", sub.needed ? `Submit clips: ${sub.where || "on the campaign page"}${sub.within_minutes ? " within " + sub.within_minutes + " min" : ""} · ${c.submitAuto ? "automatic" : "by you"}` : "No link submitting needed"));
+        if (c.blocked) k2.append(el("div", "why", c.blocked));
+        const row = el("div", "row"); const u = safeUrl(c.join_url);
+        if (u) { const a = el("a", "btn" + (k === "new" ? " primary" : ""), "Open link to join"); a.href = u; a.target = "_blank"; a.rel = "noopener"; row.append(a); }
+        if (k !== "joined") { const b = el("button", "btn primary", "Done: I joined"); b.onclick = decide(t, c.id, "joined", "Saved · server adds them on its next run"); row.append(b); }
+        if (k !== "skipped") { const b = el("button", "btn", "Skip"); b.onclick = decide(t, c.id, "skipped", "Saved · skipped"); row.append(b); }
+        k2.append(row); body.append(k2); });
+    });
   }
   function vShots(t, body) {
     const ft = t.state.footage || [];
