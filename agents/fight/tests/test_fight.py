@@ -59,10 +59,16 @@ class FakeGemini:
             return json.dumps(ev), src
         if "official result of the UFC fight" in prompt:
             return json.dumps({"status": "finished", "winner": "Arman Tsarukyan", "method": "KO/TKO", "round": 2, "time": "3:10", "rounds": 5}), src
-        if "GENUINE path" in prompt:
+        if "genuinely WRONG" in prompt:
             names = re.findall(r"^- (.+?) \(vs", prompt, re.M)
-            return json.dumps({"underdogs": [{"fighter": n, "genuine": i == 0, "prob": 0.42, "path": "KO/TKO", "oneLine": "Heavy hands and the favourite gets hit a lot. A lock!",
-                                              "breakdown": {"style": "orthodox striker", "weighIn": "made weight easily"}} for i, n in enumerate(names)]}), []
+            return json.dumps({"underdogs": [{"fighter": names[0], "prob": 0.42, "path": "KO/TKO", "whyOff": "Market ignores that the favourite gets hit a lot. A lock!",
+                                              "breakdown": {"style": "orthodox striker", "weighIn": "made weight easily"}}]}), []
+        if "Identify the MAIN EVENT" in prompt:
+            return json.dumps({"fights": [{"fight": "Islam Makhachev vs Arman Tsarukyan", "role": "Main event", "picks": [
+                {"type": "winner", "bet": "Islam Makhachev to Win", "odds": None, "book": None, "why": "Better grappler."},
+                {"type": "method", "bet": "Islam Makhachev by Submission", "odds": "+200", "book": "FanDuel", "why": "Top control. Basically guaranteed."},
+                {"type": "takedowns", "bet": "Islam Makhachev 3+ Takedowns", "odds": None, "book": None, "why": "Chain wrestling."},
+                {"type": "rounds", "bet": "Over 2.5 Total Rounds", "odds": None, "book": None, "why": "Both durable."}]}]}), src
         if "Main event:" in prompt:
             return json.dumps({"legs": [{"bet": "Arman Tsarukyan 2+ Takedowns", "rating": "Strong", "why": "Wrestles first. Basically guaranteed."},
                                         {"bet": "Fight Goes the Distance", "rating": "Lean", "why": "Both durable."},
@@ -90,6 +96,10 @@ class T(unittest.TestCase):
         O.fetch_odds = lambda key, markets, h=36: games if key == C.NBA_KEY else self.ufc_events()
         O.fetch_event_odds = lambda key, eid, m: props(int(eid[1:]), *TEAMS[int(eid[1:])])
         O.daily_prop_budget = lambda *a, **k: 2
+        A.espn_ufc_cards = lambda days=4: self.cards_espn()
+
+    def cards_espn(self):
+        return [{"name": "UFC 999", "date": "2026-11-14", "bouts": [["Islam Makhachev", "Arman Tsarukyan"], ["Sean Strickland", "Dricus Du Plessis"], ["Max Holloway", "Ilia Topuria"]]}]
 
     def ufc_events(self):
         f = lambda i, a, b, pa, pb: {"id": f"u{i}", "commence_time": iso(26 + i), "home_team": a, "away_team": b, "bookmakers": [
@@ -147,7 +157,24 @@ class T(unittest.TestCase):
                     self.assertLessEqual(l["dec"], C.ALT_SPREAD_MAX_DEC)
         self.assertEqual(len(lg["bets"]), 3)
 
+    def test_ufc_card_unchecked_posts_nothing(self):
+        A.espn_ufc_cards = lambda days=4: None
+        def fail(prompt, system=None, search=False, **kw):
+            raise RuntimeError("All Gemini models failed. 429")
+        A.G.generate = fail
+        K.run_ufc()
+        c = S.state()["cards"]["ufc"]
+        self.assertEqual(c["message"], "Couldn't check the UFC card this week, so no picks were posted.")
+        self.assertEqual((c["parlays"], c["underdogs"], c["keyFights"]), ([], [], []))
+        self.assertEqual(S.ledger()["bets"], [])
+
+    def test_strict_names(self):
+        self.assertFalse(Gr.same_fighter("Jim Miller", "Dan Miller"))
+        self.assertTrue(Gr.same_fighter("Jose Aldo", "José Aldo Jr."))
+        self.assertFalse(Gr.same_fighter("Silva", "Thiago Santos"))
+
     def test_ufc_no_event(self):
+        A.espn_ufc_cards = lambda days=4: []
         A.G.generate = FakeGemini(ufc_event=False)
         K.run_ufc()
         c = S.state()["cards"]["ufc"]
@@ -162,12 +189,13 @@ class T(unittest.TestCase):
         d = c["underdogs"][0]
         self.assertEqual((d["risk"], d["path"], d["bookName"]), ("High risk", "KO/TKO", "FanDuel"))
         self.assertIn("to Win", d["betText"]); self.assertNotIn("lock", d["why"].lower())
-        self.assertTrue(d["pathNote"]); self.assertEqual(d["methodBet"], f"{d['legs'][0]['side']} by KO/TKO")
-        m = c["main"]
-        self.assertEqual(m["game"], "Islam Makhachev vs Arman Tsarukyan")
-        self.assertEqual([a["rating"] for a in m["addOns"]], ["Strongest", "Strong", "Lean"])
-        self.assertNotIn("guaranteed", json.dumps(m["addOns"]).lower())
-        self.assertTrue(1 <= len(m["legs"]) <= 2 and len({l["eventId"] for l in m["legs"]}) == 1)
+        self.assertEqual(d["methodBet"], f"{d['legs'][0]['side']} by KO/TKO")
+        k = c["keyFights"][0]
+        self.assertEqual(k["role"], "Main event")
+        w = next(p for p in k["picks"] if p["type"] == "winner")
+        self.assertTrue(w["checked"] and w["odds"].startswith("-"))                          # winner odds from our feed
+        self.assertNotIn("guaranteed", json.dumps(k).lower())
+        self.assertTrue(all(e["eventId"] != "u3" for b in S.ledger()["bets"] for e in b["legs"]))  # PFL bout never used
         self.assertGreaterEqual(len(c["parlays"]), 1)
         lg = S.ledger()
         for b in lg["bets"]:

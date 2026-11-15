@@ -21,7 +21,10 @@ def main(argv):
     try:
         if job == "picks":
             import cards
-            (cards.run_nba if sport == "nba" else cards.run_ufc)(force="--force" in argv)
+            if sport == "nba":
+                cards.run_nba(force="--force" in argv)
+            else:
+                cards.run_ufc(force="--force" in argv, dwcs="--dwcs" in argv)
         elif job == "grade":
             import grade; grade.run()
         elif job == "check":

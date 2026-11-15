@@ -183,13 +183,55 @@ Return JSON only: {{"picks":[{{"id":"L12","side":"exact side name as shown (team
 
 # ---------- UFC ----------
 
+def espn_ufc_cards(days=4):
+    """Official UFC schedule from ESPN's free API (UFC only; PFL/Bellator/ONE are separate leagues there).
+    Returns list of {"name","date","bouts":[[a,b],...]} or None if ESPN couldn't be reached."""
+    import datetime as _d, json as _j, urllib.request as _u
+    t = _d.date.today()
+    rng = f"{t:%Y%m%d}-{t + _d.timedelta(days=days):%Y%m%d}"
+    try:
+        with _u.urlopen(_u.Request(f"https://site.api.espn.com/apis/site/v2/sports/mma/ufc/scoreboard?dates={rng}",
+                                   headers={"User-Agent": "Mozilla/5.0 agent-hq"}), timeout=30) as r:
+            data = _j.loads(r.read().decode())
+    except Exception as e:
+        print("ESPN UFC schedule unavailable:", e, flush=True)
+        return None
+    cards = []
+    for ev in data.get("events", []):
+        bouts = []
+        for comp in ev.get("competitions", []):
+            names = [(c.get("athlete") or {}).get("displayName") or c.get("displayName") for c in comp.get("competitors", [])]
+            if len(names) == 2 and all(names):
+                bouts.append(names)
+        if bouts:
+            cards.append({"name": ev.get("name") or ev.get("shortName") or "UFC", "date": str(ev.get("date", ""))[:10], "bouts": bouts})
+    return cards
+
+
 def ufc_event(today):
-    q = (f"Today is {today} (a Friday). Is there a UFC event this Friday, Saturday or Sunday? UFC only, not PFL, ONE or other promotions. "
-         'Reply JSON only: {"event":{"name":"UFC ...","date":"YYYY-MM-DD","bouts":[["Fighter A","Fighter B"], ...]}} with every bout on the main card and prelims, '
-         'or {"event":null} if there is no UFC event. List the MAIN EVENT bout FIRST.')
-    text, src = gen(q, search=True, temperature=0.1)
+    """Returns (status, event, sources). status: "ok" | "none" (checked: no UFC event) | "unchecked" (lookup failed).
+    Only UFC (incl. Dana White's Contender Series). Never PFL, Bellator, ONE or others."""
+    cards = espn_ufc_cards()
+    if cards:
+        ev = max(cards, key=lambda c: len(c["bouts"]))
+        return "ok", ev, [("ESPN UFC schedule", "https://www.espn.com/mma/schedule/_/league/ufc")]
+    q = (f"Today is {today}. Using UFC.com or ESPN's UFC schedule, is there a UFC event (including Dana White's Contender Series) "
+         "between today and 3 days from now? UFC only: never PFL, Bellator, ONE or other promotions. "
+         'Reply JSON only: {"event":{"name":"...","date":"YYYY-MM-DD","bouts":[["Fighter A","Fighter B"], ...]}} with every bout, '
+         'or {"event":null} if the official schedule shows none.')
+    try:
+        text, src = G.generate(q, SYSTEM, search=True, temperature=0.1, retries=1)
+    except Exception as e:
+        print("UFC card search failed:", e, flush=True)
+        return ("none" if cards == [] else "unchecked"), None, []
+    official = [s for s in src if any(d in s[1] for d in ("ufc.com", "espn.com"))]
     out = parse(text) or {}
-    return out.get("event"), src
+    if not official or "event" not in out:
+        return ("none" if cards == [] else "unchecked"), None, src
+    ev = out.get("event")
+    if not ev or not ev.get("bouts"):
+        return "none", None, official
+    return "ok", ev, official
 
 
 def ufc_research(today, event_name, bouts):
@@ -203,7 +245,7 @@ def ufc_research(today, event_name, bouts):
 
 def ufc_underdogs(today, dogs_text, notes, sources):
     src = "\n".join(f"- {t}: {u}" for t, u in sources[:30])
-    p = f"""Today is {today}. These are the underdogs on this UFC card with their best price on FanDuel/DraftKings and the market's fair chance:
+    p = f"""Today is {today}. These are ALL the underdogs on this UFC card, with their best FanDuel/DraftKings price and the market's fair chance:
 {dogs_text}
 
 Research notes:
@@ -212,12 +254,29 @@ Research notes:
 Sources:
 {src}
 
-For each underdog decide honestly whether they have a GENUINE path to winning (a real, specific way to win this matchup), or are just a big plus number with no real chance.
+Analyze every underdog. Then return ONLY the 1 to 3 whose line looks genuinely WRONG (mispriced) given style matchup, recent form,
+weigh-in, camp, injuries and activity. A big plus number alone is not a reason. If none are mispriced, return an empty list.
+For each: your honest win probability, the realistic winning path, and one line on why the odds are off.
 Return JSON only:
-{{"underdogs":[{{"fighter":"exact name","genuine":true,"prob":0.33,"path":"KO/TKO|submission|finish|decision|straight win",
-  "oneLine":"one plain sentence on why they could actually win",
-  "breakdown":{{"style":"stance and style","matchup":"striker vs wrestler, reach, cardio, chin","form":"recent form and activity, layoffs","finishing":"finishing record and how they have been finished","weighIn":"weigh-in: missed weight / drained / short notice","camp":"camp or coaching changes","news":"injuries or bad news","media":"press conference and media","lineMove":"fight-week line movement"}}}}]}}"""
+{{"underdogs":[{{"fighter":"exact name","prob":0.38,"path":"KO/TKO|submission|decision",
+  "whyOff":"one plain sentence: why the odds are wrong",
+  "breakdown":{{"style":"...","matchup":"...","form":"...","weighIn":"...","camp":"...","news":"...","lineMove":"..."}}}}]}}"""
     return json_call(p)
+
+
+def key_fights(today, bouts, notes, sources):
+    """Main event (and co-main if it's a big fight): individual picks with odds where a source shows them."""
+    src = "\n".join(f"- {t}: {u}" for t, u in sources[:20])
+    q = (f"Today is {today}. Official UFC card bouts:\n" + "\n".join(f"- {a} vs {b}" for a, b in bouts) +
+         f"\n\nResearch notes:\n{notes[:14000]}\n\nIdentify the MAIN EVENT and the CO-MAIN. Include the co-main only if it's a big fight "
+         "(title fight or two ranked top-15 fighters). For each fight give individual picks: winner, method (KO/TKO, submission or decision), "
+         "significant strikes, takedowns and rounds. Word each bet the way FanDuel/DraftKings show it. Give the American odds for each pick "
+         "ONLY if you found them on FanDuel or DraftKings in a source (else null). One plain line on why. Never call anything guaranteed or a lock.\n"
+         'Reply JSON only: {"fights":[{"fight":"A vs B","role":"Main event|Co-main","picks":[{"type":"winner|method|strikes|takedowns|rounds",'
+         '"bet":"...","odds":"+150 or null","book":"FanDuel|DraftKings|null","why":"..."}]}]}')
+    text, src2 = gen(q, search=True, temperature=0.2)
+    out = parse(text) or {}
+    return [f for f in (out.get("fights") or []) if isinstance(f, dict) and f.get("picks")][:2], src2
 
 
 def main_event_legs(today, bout, notes, sources):

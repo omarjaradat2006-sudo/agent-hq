@@ -20,8 +20,13 @@ def norm(name):
 
 
 def same_fighter(a, b):
+    """Strict: same last name and same first initial (single-name fighters: that name)."""
     na, nb = norm(a), norm(b)
-    return bool(na and nb) and (na[-1] == nb[-1] or na[-1] in nb or nb[-1] in na)
+    if not na or not nb:
+        return False
+    if len(na) == 1 or len(nb) == 1:
+        return na[-1] == nb[-1]
+    return na[-1] == nb[-1] and na[0][0] == nb[0][0]
 
 
 def same_player(a, b):

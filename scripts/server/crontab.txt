@@ -16,6 +16,7 @@
 # Fight & Court Intelligence: research only, never bets. FanDuel + DraftKings only. NBA slips daily, UFC Fridays 8 PM, grading every morning.
 27 13 * * *    /home/ubuntu/agent-hq/scripts/server/run_fight.sh picks nba
 0  20 * * 5    /home/ubuntu/agent-hq/scripts/server/run_fight.sh picks ufc
+0  18 * * 2    /home/ubuntu/agent-hq/scripts/server/run_fight.sh picks ufc --dwcs
 47 9  * * *    /home/ubuntu/agent-hq/scripts/server/run_fight.sh grade
 
 # Ambient Escape daily batch: Gemini specs (refs checked against the Quran/hadith texts) -> render after Bounce -> upload -> verify -> mark. No Claude.

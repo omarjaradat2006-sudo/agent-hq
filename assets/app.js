@@ -247,7 +247,7 @@
 
   function tabsFor(t) {
     if (t.cfg.virtual) return [["overview", "Brief"], ["activity", "Activity"]];
-    if (t.cfg.id === "fight") return [["overview", "Today"], ["record", "Record"], ["books", "Odds & cost"], ["activity", "Activity"]];
+    if (t.cfg.id === "fight") return [["overview", "NBA"], ["ufc", "UFC"], ["record", "Record"], ["books", "Odds & cost"], ["activity", "Activity"]];
     if (t.cfg.id === "trading") return [["overview", "Overview"], ["positions", "Positions"], ["trades", "Trades"], ["pnl", "P&L vs SPY"], ["week", "7-day test"], ["news", "News desk"], ["coins", "Coin watch"], ["backtest", "Backtest"], ["activity", "Activity"]];
     const out = [["overview", "Overview"], ["ideas", t.cfg.ideaWord || "Ideas"]];
     if (t.metrics) out.push(["stats", "Stats"]);
@@ -275,7 +275,7 @@
       b.onclick = () => { tab = k; renderPanel(); }; tabs.append(b); });
     ph.append(tabs); p.append(ph);
     const body = el("div", "pb"); p.append(body);
-    ({ overview: vOverview, ideas: vIdeas, review: vReview, competitors: vCompetitors, swarm: vSwarm, leads: vLeads, lineup: vLineup, picks: vFToday, record: vFRecord, books: vFBooks, positions: vTPositions, trades: vTTrades, pnl: vTPnl, news: vTNews, coins: vTCoins, backtest: vTBacktest, week: vTWeek, shots: vShots, stats: vStats, trending: vTrending, research: vResearch, activity: vActivity, ...(t.cfg.id === "fight" && !agentSel ? { overview: vFToday } : {}) }[tab] || vOverview)(t, body);
+    ({ overview: vOverview, ideas: vIdeas, review: vReview, competitors: vCompetitors, swarm: vSwarm, leads: vLeads, lineup: vLineup, picks: vFToday, ufc: vFUfc, record: vFRecord, books: vFBooks, positions: vTPositions, trades: vTTrades, pnl: vTPnl, news: vTNews, coins: vTCoins, backtest: vTBacktest, week: vTWeek, shots: vShots, stats: vStats, trending: vTrending, research: vResearch, activity: vActivity, ...(t.cfg.id === "fight" && !agentSel ? { overview: vFToday } : {}) }[tab] || vOverview)(t, body);
   }
   function pill(s) { return el("span", "pill s-" + (s || "idle"), ST[s] || s || "Idle"); }
   function empty(title, text) { const e = el("div", "empty"); e.append(el("strong", null, title)); e.append(el("span", null, text)); return e; }
@@ -828,7 +828,7 @@
     const book = el("div", null, `Place on ${x.bookName}`); book.style.fontWeight = "700"; book.style.margin = "4px 0 6px"; c.append(book);
     if (x.methodBet) c.append(legLine(x.methodBet, "price in app", null));
     c.append(legLine(x.methodBet ? `Or straight win: ${x.betText.split(": ").pop()}` : x.betText, x.american, (x.legs || [{}])[0].status));
-    c.append(el("div", "why", `Why they could win: ${x.why || ""}`));
+    c.append(el("div", "why", `Why the odds look wrong: ${x.why || ""} Realistic path: ${x.path}.`));
     if (x.pathNote) c.append(el("div", "small", x.pathNote));
     const r = resultLine(x); if (r) c.append(r);
     const d = el("details"); d.append(el("summary", null, "Details")); const ul = el("ul");
@@ -843,25 +843,33 @@
     body.append(c);
   }
   function vFToday(t, body) {
-    body.append(el("div", "small", "Research only: never places bets, never logs into a sportsbook. FanDuel and DraftKings only. Most analyzed, not safest; no locks."));
+    body.append(el("div", "small", "Research only: never places bets, never logs into a sportsbook. FanDuel and DraftKings only. No locks."));
     recordCard(t, body);
-    const cards = t.state.cards || {}, n = cards.nba, u = cards.ufc;
-    if (n) {
-      body.append(el("div", "label", `NBA · ${n.date}`));
-      if (n.propGameNames && n.propGameNames.length) body.append(el("div", "small", `Player props checked today (free plan): ${n.propGameNames.join(", ")}. Slips are built from the best of these games.`));
-      if (n.message) { const m = el("div", "card", n.message); body.append(m); }
-      (n.parlays || []).forEach(p => body.append(slip(p)));
-    } else body.append(empty("No NBA slips yet", "NBA parlays post every day at 1:27 PM."));
-    if (u) {
-      body.append(el("div", "label", `UFC · ${u.date}${u.event ? " · " + u.event : ""}`));
-      if (u.noEvent) { body.append(el("div", "card", "No UFC event this week")); return; }
-      if (u.message) body.append(el("div", "card", u.message));
-      (u.parlays || []).forEach(p => body.append(slip(p)));
-      if (u.main) body.append(mainSlip(u.main));
-      body.append(el("div", "label", "UFC underdog picks · high risk"));
-      if (u.dogMessage) body.append(el("div", "card", u.dogMessage));
-      (u.underdogs || []).forEach(x => body.append(dogCard(x)));
-    }
+    const n = (t.state.cards || {}).nba;
+    if (!n) { body.append(empty("No NBA slips yet", "NBA same-game parlays post every day at 1:27 PM.")); return; }
+    body.append(el("div", "label", `NBA · ${n.date}`));
+    if (n.propGameNames && n.propGameNames.length) body.append(el("div", "small", `Player props checked today (free plan): ${n.propGameNames.join(", ")}.`));
+    if (n.message) body.append(el("div", "card", n.message));
+    (n.parlays || []).forEach(p => body.append(slip(p)));
+  }
+  function keyFightCard(f) {
+    const c = el("div", "card"); c.append(el("h3", null, `${f.role || "Key fight"} · ${f.fight}`));
+    (f.picks || []).forEach(p => { c.append(legLine(p.bet, p.odds ? `${p.odds}${p.book ? " " + p.book : ""}${p.checked ? "" : " (check app)"}` : "check app", null)); if (p.why) c.append(el("div", "small", p.why)); });
+    c.append(el("div", "small", "Winner and rounds odds come from our live FanDuel/DraftKings feed. Method, strikes and takedowns odds are from the research; confirm them in the app."));
+    return c;
+  }
+  function vFUfc(t, body) {
+    const u = (t.state.cards || {}).ufc;
+    if (!u) { body.append(empty("No UFC card yet", "UFC posts every Friday at 8 PM (and Tuesdays when the Contender Series is on).")); return; }
+    body.append(el("div", "label", `UFC · ${u.date}${u.event ? " · " + u.event : ""}`));
+    if (u.noEvent || (u.message && !(u.parlays || []).length && !(u.keyFights || []).length)) { body.append(el("div", "card", u.message || "No UFC event this week")); return; }
+    if (u.message) body.append(el("div", "card", u.message));
+    (u.parlays || []).forEach(p => body.append(slip(p)));
+    (u.keyFights || []).forEach(f => body.append(keyFightCard(f)));
+    if (u.main) body.append(mainSlip(u.main));
+    body.append(el("div", "label", "Underdogs that look mispriced · high risk"));
+    if (u.dogMessage) body.append(el("div", "card", u.dogMessage));
+    (u.underdogs || []).forEach(x => body.append(dogCard(x)));
   }
   function vFRecord(t, body) {
     recordCard(t, body); const R = t.state.record || {};
