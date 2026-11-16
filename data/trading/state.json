@@ -9,18 +9,18 @@
    "Nothing right now (all cash)."
   ],
   "today": [
-   "Scanned the news 89 times today: read 6357 headlines, found 227 that could move a stock or coin it's allowed to trade. None passed every check, so no trade (that's normal).",
+   "Scanned the news 90 times today: read 6418 headlines, found 228 that could move a stock or coin it's allowed to trade. None passed every check, so no trade (that's normal).",
    "Passed on XOM: price hasn't moved the expected way yet (-0.30%).",
    "Passed on JNJ, LLY: price hasn't moved the expected way yet (-1.04%).",
    "Passed on TSLA: price hasn't moved the expected way yet (-1.75%).",
-   "Passed on JNJ, LLY: price hasn't moved the expected way yet (-0.45%).",
+   "Passed on JNJ, LLY: price hasn't moved the expected way yet (-0.44%).",
    "Safety rules that stepped in: stock entry window (x2)."
   ],
   "watchlist": "Allowed to trade: 69 halal stocks, 5 Shariah ETFs, 9 coins.",
-  "lastScan": "2026-11-16T19:08:12Z"
+  "lastScan": "2026-11-16T19:13:23Z"
  },
  "hired": true,
- "updatedAt": "2026-11-16T19:08:21Z",
+ "updatedAt": "2026-11-16T19:13:31Z",
  "mode": "PAPER",
  "agents": [
   {
@@ -28,8 +28,8 @@
    "name": "News Scout",
    "role": "Reads X, Reddit and news feeds",
    "status": "working",
-   "doing": "Read 112 new headlines/posts, 1 market-moving stories",
-   "lastRun": "2026-11-16T19:08:20Z"
+   "doing": "Read 61 new headlines/posts, 1 market-moving stories",
+   "lastRun": "2026-11-16T19:13:29Z"
   },
   {
    "id": "analyst",
@@ -69,7 +69,7 @@
    "role": "Places paper orders on Alpaca",
    "status": "working",
    "doing": "Save to GitHub failed (will retry later): To github.com:omarjaradat2006-sudo/agent-hq.git\n ! [rejected]        HEAD -> main (fetch first)\nerror: failed to push some refs to 'github.com:omarjar",
-   "lastRun": "2026-11-16T19:03:12Z"
+   "lastRun": "2026-11-16T19:08:22Z"
   },
   {
    "id": "coins",
@@ -89,6 +89,16 @@
   }
  ],
  "log": [
+  {
+   "t": "2026-11-16T19:13:29Z",
+   "agent": "News Scout",
+   "msg": "Read 61 new headlines/posts, 1 market-moving stories"
+  },
+  {
+   "t": "2026-11-16T19:08:22Z",
+   "agent": "Trader",
+   "msg": "Save to GitHub failed (will retry later): To github.com:omarjaradat2006-sudo/agent-hq.git\n ! [rejected]        HEAD -> main (fetch first)\nerror: failed to push some refs to 'github.com:omarjar"
+  },
   {
    "t": "2026-11-16T19:08:20Z",
    "agent": "News Scout",
@@ -828,21 +838,11 @@
    "t": "2026-11-16T11:13:59Z",
    "agent": "News Scout",
    "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
-  },
-  {
-   "t": "2026-11-16T10:58:56Z",
-   "agent": "News Scout",
-   "msg": "Read 83 new headlines/posts, 4 market-moving stories"
-  },
-  {
-   "t": "2026-11-16T10:58:52Z",
-   "agent": "News Scout",
-   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
   }
  ],
  "brief": {
   "date": "Mon Nov 16",
-  "createdAt": "2026-11-16T19:08:21Z",
+  "createdAt": "2026-11-16T19:13:31Z",
   "headline": "Paper account +$0 today (+0.00%), +0.00% total vs SPY -1.66% · 0 open",
   "summary": "0 trade(s) closed today, 0/0 winners overall. TradingAgents checks used today: 2/5.",
   "notes": [
@@ -883,6 +883,41 @@
  "positions": [],
  "trades": [],
  "decisions": [
+  {
+   "t": "2026-11-16T19:13:30Z",
+   "symbol": "JNJ",
+   "outcome": "waiting",
+   "why": "price hasn't moved the expected way yet (-0.44%)",
+   "event": "Johnson & Johnson is acquiring Ollin Biosciences for $2.2 billion and partnering with Blackstone."
+  },
+  {
+   "t": "2026-11-16T19:13:30Z",
+   "symbol": "XOM",
+   "outcome": "waiting",
+   "why": "price hasn't moved the expected way yet (-0.29%)",
+   "event": "ExxonMobil's daily production in Guyana is set to reach 1.1 million barrels per day as Uaru production begins."
+  },
+  {
+   "t": "2026-11-16T19:13:30Z",
+   "symbol": "JNJ",
+   "outcome": "waiting",
+   "why": "price hasn't moved the expected way yet (-1.19%)",
+   "event": "Johnson & Johnson has agreed to acquire eye disease therapy developer Ollin Biosciences in a deal valued up to $3.33 billion."
+  },
+  {
+   "t": "2026-11-16T19:13:30Z",
+   "symbol": "LLY",
+   "outcome": "waiting",
+   "why": "price hasn't moved the expected way yet (-1.53%)",
+   "event": "Johnson & Johnson has agreed to acquire eye disease therapy developer Ollin Biosciences in a deal valued up to $3.33 billion."
+  },
+  {
+   "t": "2026-11-16T19:13:30Z",
+   "symbol": "TSLA",
+   "outcome": "waiting",
+   "why": "price hasn't moved the expected way yet (-2.67%)",
+   "event": "Tesla plans to build 1 million Cybercabs near Berlin, expanding its German gigafactory footprint."
+  },
   {
    "t": "2026-11-16T19:08:21Z",
    "symbol": "JNJ",
@@ -1267,41 +1302,6 @@
    "outcome": "waiting",
    "why": "price hasn't moved the expected way yet (-2.35%)",
    "event": "Tesla plans a 3 billion euro investment to expand its German gigafactory for Cybercab production."
-  },
-  {
-   "t": "2026-11-16T18:11:10Z",
-   "symbol": "JNJ",
-   "outcome": "waiting",
-   "why": "price hasn't moved the expected way yet (-0.09%)",
-   "event": "Johnson & Johnson is acquiring Ollin Biosciences for $2.2 billion and partnering with Blackstone."
-  },
-  {
-   "t": "2026-11-16T18:11:10Z",
-   "symbol": "XOM",
-   "outcome": "waiting",
-   "why": "price hasn't moved the expected way yet (-0.30%)",
-   "event": "ExxonMobil's daily production in Guyana is set to reach 1.1 million barrels per day as Uaru production begins."
-  },
-  {
-   "t": "2026-11-16T18:11:10Z",
-   "symbol": "JNJ",
-   "outcome": "waiting",
-   "why": "price hasn't moved the expected way yet (-0.84%)",
-   "event": "Johnson & Johnson has agreed to acquire eye disease therapy developer Ollin Biosciences in a deal valued up to $3.33 billion."
-  },
-  {
-   "t": "2026-11-16T18:11:09Z",
-   "symbol": "LLY",
-   "outcome": "waiting",
-   "why": "price hasn't moved the expected way yet (-1.36%)",
-   "event": "Johnson & Johnson has agreed to acquire eye disease therapy developer Ollin Biosciences in a deal valued up to $3.33 billion."
-  },
-  {
-   "t": "2026-11-16T18:11:09Z",
-   "symbol": "TSLA",
-   "outcome": "waiting",
-   "why": "price hasn't moved the expected way yet (-2.36%)",
-   "event": "Tesla plans a $3.3 billion investment to expand its German gigafactory for Cybercab production."
   }
  ],
  "equity": [
@@ -2884,6 +2884,178 @@
   "avgPct": null
  },
  "events": [
+  {
+   "summary": "Crude oil prices decline as forecasts and rebounding exports project a surplus in global supply.",
+   "category": "oil_supply",
+   "firstSeen": "2026-11-12T06:53:00Z",
+   "publishers": [
+    "24 News HD",
+    "ANI News",
+    "ASHARQ AL-AWSAT English",
+    "Al-Monitor",
+    "Arab News",
+    "BW Businessworld",
+    "Bangladesh Sangbad Sangstha (BSS)",
+    "Barchart.com",
+    "Benzinga",
+    "BigGo Finance",
+    "Bloomberg.com",
+    "Breakingthenews.net",
+    "Business Recorder",
+    "CBC",
+    "CNA",
+    "CNBC",
+    "Castanet",
+    "Channels Television",
+    "Chosunbiz",
+    "Coinpaper",
+    "Crude Oil Prices Today | OilPrice.com",
+    "Crypto Briefing",
+    "DAILY TIMES Nigeria",
+    "Daily Times",
+    "DatamarNews",
+    "Dhaka Tribune",
+    "ET EnergyWorld",
+    "Egypt Oil & Gas",
+    "EnergyNow.com",
+    "Euronews.com",
+    "FXEmpire",
+    "FXLeaders",
+    "FXStreet",
+    "Financial Post",
+    "Free Malaysia Today",
+    "Geo News",
+    "HDFC Sky",
+    "Halifax",
+    "Head Topics",
+    "IndexBox",
+    "Investing.com",
+    "Investing.com India",
+    "IranOilGas",
+    "LEADERSHIP Newspapers",
+    "Laodong.vn",
+    "Latest news from Azerbaijan",
+    "Macau Business",
+    "Manila Bulletin",
+    "MarineLink",
+    "Minute Mirror",
+    "Moneycontrol.com",
+    "NTD News",
+    "Nation Thailand",
+    "Newsmax",
+    "Newswire",
+    "Oil & Gas 360",
+    "Oil & Gas Journal",
+    "Pluang",
+    "Profit by Pakistan Today",
+    "Public TV English",
+    "Qatar news agency",
+    "Quantum Commodity Intelligence",
+    "Quartz Africa",
+    "Reuters",
+    "Rigzone",
+    "Ship & Bunker",
+    "StreetInsider",
+    "The Business Times",
+    "The Globe and Mail",
+    "The Insight International",
+    "The Mighty 790 KFGO",
+    "The National",
+    "The Peninsula Qatar",
+    "The Star",
+    "The Times of India",
+    "Ticker News",
+    "Times of Oman",
+    "UA.NEWS",
+    "Vietnam.vn",
+    "WSJ",
+    "Western Standard",
+    "Yahoo! Finance Canada",
+    "fiscal.ai",
+    "grafa.com",
+    "houseofsaud.com",
+    "https://www.engine.online/",
+    "marketscreener.com",
+    "play 103.7",
+    "www.marketscreener.com",
+    "صحيفة مال",
+    "صوت الإمارات"
+   ],
+   "assets": {
+    "XOM": {
+     "direction": "down",
+     "confidence": 0.75,
+     "why": "Falling crude oil prices and recovering export shipments negatively impact near-term oil producer revenues."
+    },
+    "CVX": {
+     "direction": "down",
+     "confidence": 0.75,
+     "why": "Falling crude oil prices and recovering export shipments negatively impact near-term oil producer revenues."
+    },
+    "COP": {
+     "direction": "down",
+     "confidence": 0.75,
+     "why": "Global oil supply surplus and crashing crude prices weigh on oil and gas stocks."
+    },
+    "SLB": {
+     "direction": "down",
+     "confidence": 0.7,
+     "why": "Lower oil prices driven by oversupply could slow down oilfield services spending."
+    },
+    "OXY": {
+     "direction": "down",
+     "confidence": 0.75,
+     "why": "Growing oil supply surplus fears push crude and major oil stocks down."
+    },
+    "DVN": {
+     "direction": "down",
+     "confidence": 0.65,
+     "why": "Weakening oil strip and surplus projections weigh on exploration and production stocks."
+    }
+   },
+   "sources": [
+    {
+     "id": "4bb506049f64816d",
+     "publisher": "Latest news from Azerbaijan",
+     "kind": "news",
+     "title": "Oil prices decline as OPEC+ output boosts oversupply fears",
+     "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPZVJObGVhNHNqYldKVjk4SWFfUTd4VUgtdVFrSWh6WmRaN0J5NWNjcjc0T3hCOFhLZkFhUjktbnA3VS10aWxCUllUbEY0WEo4eUdRYmxBVjJqclk0NXRLZEduaE9tU2JMUlh1TXBLZ3c1VzA2Z0thLTZZZDJJMmZLQm5nZzk?oc=5",
+     "time": "2026-11-12T06:55:24Z"
+    },
+    {
+     "id": "74543532c5f84f94",
+     "publisher": "Public TV English",
+     "kind": "news",
+     "title": "OPEC+ oil output rises 2.04 million barrels per day in Oct as Saudi Arabia leads recovery amid West Asia crisis",
+     "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxNc3hMVUdaemN1YTRZQVpJaGNKZGQxYmFOdTVmRl9DYUxxNmtFV250ZmI1bnlrc3ZtdWZtYWRaeDRUcTl1azB6YkNqQVRndjhhYnpBWkU3N2w2X1VHaV9XVTYyclUyOHpudFp2NURkY2ZsOV9mb2wtYzdublNaLTRvdnFfbEhWV1FjM3gzZ05jNUJiOG9xb3ZacUZTb01fenM1MEc1Z3ZNcmxuczZnSVBlbmtyeVllZXRCck9fTXpjdkR2a2IzSGJUbVNiTmNyMFhnWGZyc2VB?oc=5",
+     "time": "2026-11-12T06:58:03Z"
+    },
+    {
+     "id": "a7dcf6881335f5e3",
+     "publisher": "BW Businessworld",
+     "kind": "news",
+     "title": "Opec+ Oil Output Rebounds 2.04 Million Bpd Amid Hormuz Disruption",
+     "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQQk5IV3BYU3hZMXhIelhESU9XSUhWQm1tLVM1eDR6ZHNfdG83alp6d0plallRYTNneEN3Wmd3LWd3MWhHUHRnbHV5ZGc1a3NacEVGRTFSSXl0anBrVGxNeWdvRngxaFRGUTQzSFNNZnBZVmxrdFpWU1dzNHhsUmxQRE1KbU9MYVotQmdrWVZ5YWhoTEdud0lLWktwOHpzNEY4cU9kOERVbVM1V0ly?oc=5",
+     "time": "2026-11-12T06:54:45Z"
+    },
+    {
+     "id": "13ef775feec7cccc",
+     "publisher": "Chosunbiz",
+     "kind": "news",
+     "title": "Oil prices fall as South Korea weighs path for price cap and compensation",
+     "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxOMUJYRlU0Y3d2ZFJvbWl6bjNvWnhaYlFmM2pNWXFEWEFsNnlpVXlwMUplSVRHcDB1dXNudTVKZUtDaXRJalM4Vk9OR1draHZzTHpid3NibkNPUW4xM2hwS1h2VUwzRFFkUDNQZnc3MTNzM2dvXzlCYVN1UmdKUlBmVzl30gGWAUFVX3lxTE9lRTYxWHlhNG9XWUxPMzU3LVVxZWJnVzZCUV9wblY4N29yaXZVRE5ydFZ3Q3FUblNTSG4ya1h0NkZmT0NucHdkdlptd2Y0aldnT3VoREZTSER5WUFnSDVFSDlTT0dRaE9XYjNlVHJhb2E5N1h3OWhQVExORERXV3RqMG5nWnF4UC1pZlVtaHgxOEstNHVnZw?oc=5",
+     "time": "2026-11-12T06:53:00Z"
+    },
+    {
+     "id": "d319dc3aaf7fda77",
+     "publisher": "Profit by Pakistan Today",
+     "kind": "news",
+     "title": "Oil falls over $1 on easing geopolitical fears and oversupply worries",
+     "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQd0RjdkpYTklPUzF2U293azdJRzhHR2tjMUt5RFYtYjZQX1BSN290cjBTb05Sb3BVTjFnaXVydnpsYzRVZDRQY0VNdEpKWUc4eGNlUnR4VldnNGdpejFqVmRDX2NuaUw1RHliVF94X012TzhsU084NklWUGdtTk1nUjJDdC1zb2JUTHZMdWI1cmhyZUVZWkZVOEpwRFVZU1JwdUxiQVNlM0NBSmdYYmhsWXd3Zk9iNnpVaDdRM0Rn?oc=5",
+     "time": "2026-11-12T07:44:38Z"
+    }
+   ]
+  },
   {
    "summary": "Cryptocurrency assets face downward pressure as Bitcoin slides toward $64,000, dragging down crypto-exposed stocks like Coinbase.",
    "category": "crypto_negative",
@@ -4965,177 +5137,6 @@
      "title": "ASX Jumps as Oil Prices Fall on Trump Iran Remarks",
      "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxNNzRqNnJkRHVzZTEtaVJYaGxMNEFRYUtlRmtiR1RLeWVtU1UxeUx5NEdUeDl3VG5acXhKWFVpNkgzUTBsMzhrbm9uQWdGRWJ1S3psbjFrZ291dl9qc2pWRHdHVXEyTmZEQzBEdnluUi1RSFhjNmNadlF5N1FMRGc3aWlUUjhEdw?oc=5",
      "time": "2026-11-10T02:07:12Z"
-    }
-   ]
-  },
-  {
-   "summary": "Crude oil prices are falling due to a combination of supply concerns and broader macroeconomic weakness.",
-   "category": "oil_supply",
-   "firstSeen": "2026-11-12T06:53:00Z",
-   "publishers": [
-    "24 News HD",
-    "ANI News",
-    "ASHARQ AL-AWSAT English",
-    "Al-Monitor",
-    "Arab News",
-    "BW Businessworld",
-    "Bangladesh Sangbad Sangstha (BSS)",
-    "Barchart.com",
-    "Benzinga",
-    "BigGo Finance",
-    "Bloomberg.com",
-    "Breakingthenews.net",
-    "Business Recorder",
-    "CBC",
-    "CNA",
-    "Castanet",
-    "Channels Television",
-    "Chosunbiz",
-    "Coinpaper",
-    "Crude Oil Prices Today | OilPrice.com",
-    "Crypto Briefing",
-    "DAILY TIMES Nigeria",
-    "Daily Times",
-    "DatamarNews",
-    "Dhaka Tribune",
-    "ET EnergyWorld",
-    "Egypt Oil & Gas",
-    "EnergyNow.com",
-    "Euronews.com",
-    "FXEmpire",
-    "FXLeaders",
-    "FXStreet",
-    "Financial Post",
-    "Free Malaysia Today",
-    "Geo News",
-    "HDFC Sky",
-    "Halifax",
-    "Head Topics",
-    "IndexBox",
-    "Investing.com",
-    "Investing.com India",
-    "IranOilGas",
-    "LEADERSHIP Newspapers",
-    "Laodong.vn",
-    "Latest news from Azerbaijan",
-    "Macau Business",
-    "Manila Bulletin",
-    "MarineLink",
-    "Minute Mirror",
-    "Moneycontrol.com",
-    "NTD News",
-    "Nation Thailand",
-    "Newsmax",
-    "Newswire",
-    "Oil & Gas 360",
-    "Oil & Gas Journal",
-    "Pluang",
-    "Profit by Pakistan Today",
-    "Public TV English",
-    "Qatar news agency",
-    "Quantum Commodity Intelligence",
-    "Quartz Africa",
-    "Reuters",
-    "Rigzone",
-    "Ship & Bunker",
-    "StreetInsider",
-    "The Business Times",
-    "The Globe and Mail",
-    "The Insight International",
-    "The Mighty 790 KFGO",
-    "The National",
-    "The Peninsula Qatar",
-    "The Star",
-    "The Times of India",
-    "Ticker News",
-    "Times of Oman",
-    "UA.NEWS",
-    "Vietnam.vn",
-    "WSJ",
-    "Western Standard",
-    "Yahoo! Finance Canada",
-    "fiscal.ai",
-    "grafa.com",
-    "houseofsaud.com",
-    "https://www.engine.online/",
-    "marketscreener.com",
-    "play 103.7",
-    "www.marketscreener.com",
-    "صحيفة مال",
-    "صوت الإمارات"
-   ],
-   "assets": {
-    "XOM": {
-     "direction": "down",
-     "confidence": 0.75,
-     "why": "Expected massive oil oversupply and surplus forecasts weigh on crude producers."
-    },
-    "CVX": {
-     "direction": "down",
-     "confidence": 0.75,
-     "why": "Oil and gas equities face headwinds from looming supply surpluses."
-    },
-    "COP": {
-     "direction": "down",
-     "confidence": 0.75,
-     "why": "Global oil supply surplus and crashing crude prices weigh on oil and gas stocks."
-    },
-    "SLB": {
-     "direction": "down",
-     "confidence": 0.7,
-     "why": "Lower oil prices driven by oversupply could slow down oilfield services spending."
-    },
-    "OXY": {
-     "direction": "down",
-     "confidence": 0.75,
-     "why": "Growing oil supply surplus fears push crude and major oil stocks down."
-    },
-    "DVN": {
-     "direction": "down",
-     "confidence": 0.65,
-     "why": "Weakening oil strip and surplus projections weigh on exploration and production stocks."
-    }
-   },
-   "sources": [
-    {
-     "id": "4bb506049f64816d",
-     "publisher": "Latest news from Azerbaijan",
-     "kind": "news",
-     "title": "Oil prices decline as OPEC+ output boosts oversupply fears",
-     "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPZVJObGVhNHNqYldKVjk4SWFfUTd4VUgtdVFrSWh6WmRaN0J5NWNjcjc0T3hCOFhLZkFhUjktbnA3VS10aWxCUllUbEY0WEo4eUdRYmxBVjJqclk0NXRLZEduaE9tU2JMUlh1TXBLZ3c1VzA2Z0thLTZZZDJJMmZLQm5nZzk?oc=5",
-     "time": "2026-11-12T06:55:24Z"
-    },
-    {
-     "id": "74543532c5f84f94",
-     "publisher": "Public TV English",
-     "kind": "news",
-     "title": "OPEC+ oil output rises 2.04 million barrels per day in Oct as Saudi Arabia leads recovery amid West Asia crisis",
-     "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxNc3hMVUdaemN1YTRZQVpJaGNKZGQxYmFOdTVmRl9DYUxxNmtFV250ZmI1bnlrc3ZtdWZtYWRaeDRUcTl1azB6YkNqQVRndjhhYnpBWkU3N2w2X1VHaV9XVTYyclUyOHpudFp2NURkY2ZsOV9mb2wtYzdublNaLTRvdnFfbEhWV1FjM3gzZ05jNUJiOG9xb3ZacUZTb01fenM1MEc1Z3ZNcmxuczZnSVBlbmtyeVllZXRCck9fTXpjdkR2a2IzSGJUbVNiTmNyMFhnWGZyc2VB?oc=5",
-     "time": "2026-11-12T06:58:03Z"
-    },
-    {
-     "id": "a7dcf6881335f5e3",
-     "publisher": "BW Businessworld",
-     "kind": "news",
-     "title": "Opec+ Oil Output Rebounds 2.04 Million Bpd Amid Hormuz Disruption",
-     "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQQk5IV3BYU3hZMXhIelhESU9XSUhWQm1tLVM1eDR6ZHNfdG83alp6d0plallRYTNneEN3Wmd3LWd3MWhHUHRnbHV5ZGc1a3NacEVGRTFSSXl0anBrVGxNeWdvRngxaFRGUTQzSFNNZnBZVmxrdFpWU1dzNHhsUmxQRE1KbU9MYVotQmdrWVZ5YWhoTEdud0lLWktwOHpzNEY4cU9kOERVbVM1V0ly?oc=5",
-     "time": "2026-11-12T06:54:45Z"
-    },
-    {
-     "id": "13ef775feec7cccc",
-     "publisher": "Chosunbiz",
-     "kind": "news",
-     "title": "Oil prices fall as South Korea weighs path for price cap and compensation",
-     "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxOMUJYRlU0Y3d2ZFJvbWl6bjNvWnhaYlFmM2pNWXFEWEFsNnlpVXlwMUplSVRHcDB1dXNudTVKZUtDaXRJalM4Vk9OR1draHZzTHpid3NibkNPUW4xM2hwS1h2VUwzRFFkUDNQZnc3MTNzM2dvXzlCYVN1UmdKUlBmVzl30gGWAUFVX3lxTE9lRTYxWHlhNG9XWUxPMzU3LVVxZWJnVzZCUV9wblY4N29yaXZVRE5ydFZ3Q3FUblNTSG4ya1h0NkZmT0NucHdkdlptd2Y0aldnT3VoREZTSER5WUFnSDVFSDlTT0dRaE9XYjNlVHJhb2E5N1h3OWhQVExORERXV3RqMG5nWnF4UC1pZlVtaHgxOEstNHVnZw?oc=5",
-     "time": "2026-11-12T06:53:00Z"
-    },
-    {
-     "id": "d319dc3aaf7fda77",
-     "publisher": "Profit by Pakistan Today",
-     "kind": "news",
-     "title": "Oil falls over $1 on easing geopolitical fears and oversupply worries",
-     "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQd0RjdkpYTklPUzF2U293azdJRzhHR2tjMUt5RFYtYjZQX1BSN290cjBTb05Sb3BVTjFnaXVydnpsYzRVZDRQY0VNdEpKWUc4eGNlUnR4VldnNGdpejFqVmRDX2NuaUw1RHliVF94X012TzhsU084NklWUGdtTk1nUjJDdC1zb2JUTHZMdWI1cmhyZUVZWkZVOEpwRFVZU1JwdUxiQVNlM0NBSmdYYmhsWXd3Zk9iNnpVaDdRM0Rn?oc=5",
-     "time": "2026-11-12T07:44:38Z"
     }
    ]
   }
