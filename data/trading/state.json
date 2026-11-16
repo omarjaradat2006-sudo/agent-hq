@@ -9,18 +9,18 @@
    "Nothing right now (all cash)."
   ],
   "today": [
-   "Scanned the news 93 times today: read 6492 headlines, found 231 that could move a stock or coin it's allowed to trade. None passed every check, so no trade (that's normal).",
+   "Scanned the news 94 times today: read 6522 headlines, found 234 that could move a stock or coin it's allowed to trade. None passed every check, so no trade (that's normal).",
    "Passed on JNJ, LLY: price hasn't moved the expected way yet (-1.39%).",
    "Passed on XOM: price hasn't moved the expected way yet (-0.30%).",
    "Passed on JNJ, LLY: price hasn't moved the expected way yet (-1.04%).",
-   "Passed on JNJ, LLY: price hasn't moved the expected way yet (-0.68%).",
+   "Passed on JNJ, LLY: price hasn't moved the expected way yet (-1.44%).",
    "Safety rules that stepped in: stock entry window (x2)."
   ],
   "watchlist": "Allowed to trade: 69 halal stocks, 5 Shariah ETFs, 9 coins.",
-  "lastScan": "2026-11-16T19:29:01Z"
+  "lastScan": "2026-11-16T19:34:09Z"
  },
  "hired": true,
- "updatedAt": "2026-11-16T19:29:07Z",
+ "updatedAt": "2026-11-16T19:34:43Z",
  "mode": "PAPER",
  "agents": [
   {
@@ -28,8 +28,8 @@
    "name": "News Scout",
    "role": "Reads X, Reddit and news feeds",
    "status": "working",
-   "doing": "Read 26 new headlines/posts, 0 market-moving stories",
-   "lastRun": "2026-11-16T19:29:06Z"
+   "doing": "Read 30 new headlines/posts, 3 market-moving stories",
+   "lastRun": "2026-11-16T19:34:42Z"
   },
   {
    "id": "analyst",
@@ -69,7 +69,7 @@
    "role": "Places paper orders on Alpaca",
    "status": "working",
    "doing": "Save to GitHub failed (will retry later): To github.com:omarjaradat2006-sudo/agent-hq.git\n ! [rejected]        HEAD -> main (fetch first)\nerror: failed to push some refs to 'github.com:omarjar",
-   "lastRun": "2026-11-16T19:24:00Z"
+   "lastRun": "2026-11-16T19:29:09Z"
   },
   {
    "id": "coins",
@@ -89,6 +89,16 @@
   }
  ],
  "log": [
+  {
+   "t": "2026-11-16T19:34:42Z",
+   "agent": "News Scout",
+   "msg": "Read 30 new headlines/posts, 3 market-moving stories"
+  },
+  {
+   "t": "2026-11-16T19:29:09Z",
+   "agent": "Trader",
+   "msg": "Save to GitHub failed (will retry later): To github.com:omarjaradat2006-sudo/agent-hq.git\n ! [rejected]        HEAD -> main (fetch first)\nerror: failed to push some refs to 'github.com:omarjar"
+  },
   {
    "t": "2026-11-16T19:29:06Z",
    "agent": "News Scout",
@@ -828,21 +838,11 @@
    "t": "2026-11-16T12:14:40Z",
    "agent": "News Scout",
    "msg": "Read 146 new headlines/posts, 4 market-moving stories"
-  },
-  {
-   "t": "2026-11-16T12:14:31Z",
-   "agent": "News Scout",
-   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
-  },
-  {
-   "t": "2026-11-16T11:59:26Z",
-   "agent": "News Scout",
-   "msg": "Read 102 new headlines/posts, 2 market-moving stories"
   }
  ],
  "brief": {
   "date": "Mon Nov 16",
-  "createdAt": "2026-11-16T19:29:07Z",
+  "createdAt": "2026-11-16T19:34:43Z",
   "headline": "Paper account +$0 today (+0.00%), +0.00% total vs SPY -1.59% · 0 open",
   "summary": "0 trade(s) closed today, 0/0 winners overall. TradingAgents checks used today: 2/5.",
   "notes": [
@@ -883,6 +883,41 @@
  "positions": [],
  "trades": [],
  "decisions": [
+  {
+   "t": "2026-11-16T19:34:43Z",
+   "symbol": "JNJ",
+   "outcome": "waiting",
+   "why": "price hasn't moved the expected way yet (-0.69%)",
+   "event": "Johnson & Johnson is acquiring Ollin Biosciences for $2.2 billion and partnering with Blackstone."
+  },
+  {
+   "t": "2026-11-16T19:34:43Z",
+   "symbol": "XOM",
+   "outcome": "waiting",
+   "why": "price hasn't moved the expected way yet (-0.58%)",
+   "event": "ExxonMobil's daily production in Guyana is set to reach 1.1 million barrels per day as Uaru production begins."
+  },
+  {
+   "t": "2026-11-16T19:34:43Z",
+   "symbol": "JNJ",
+   "outcome": "waiting",
+   "why": "price hasn't moved the expected way yet (-1.44%)",
+   "event": "Johnson & Johnson has agreed to acquire eye disease therapy developer Ollin Biosciences in a deal valued up to $3.33 billion."
+  },
+  {
+   "t": "2026-11-16T19:34:43Z",
+   "symbol": "LLY",
+   "outcome": "waiting",
+   "why": "price hasn't moved the expected way yet (-1.64%)",
+   "event": "Johnson & Johnson has agreed to acquire eye disease therapy developer Ollin Biosciences in a deal valued up to $3.33 billion."
+  },
+  {
+   "t": "2026-11-16T19:34:43Z",
+   "symbol": "TSLA",
+   "outcome": "waiting",
+   "why": "price hasn't moved the expected way yet (-3.01%)",
+   "event": "Tesla plans to build 1 million Cybercabs near Berlin, expanding its German gigafactory footprint."
+  },
   {
    "t": "2026-11-16T19:29:07Z",
    "symbol": "JNJ",
@@ -1266,41 +1301,6 @@
    "symbol": "TSLA",
    "outcome": "waiting",
    "why": "price hasn't moved the expected way yet (-2.96%)",
-   "event": "Tesla plans to build 1 million Cybercabs near Berlin, expanding its German gigafactory footprint."
-  },
-  {
-   "t": "2026-11-16T18:32:04Z",
-   "symbol": "JNJ",
-   "outcome": "waiting",
-   "why": "price hasn't moved the expected way yet (-0.17%)",
-   "event": "Johnson & Johnson is acquiring Ollin Biosciences for $2.2 billion and partnering with Blackstone."
-  },
-  {
-   "t": "2026-11-16T18:32:04Z",
-   "symbol": "XOM",
-   "outcome": "waiting",
-   "why": "price hasn't moved the expected way yet (-0.35%)",
-   "event": "ExxonMobil's daily production in Guyana is set to reach 1.1 million barrels per day as Uaru production begins."
-  },
-  {
-   "t": "2026-11-16T18:32:04Z",
-   "symbol": "JNJ",
-   "outcome": "waiting",
-   "why": "price hasn't moved the expected way yet (-0.92%)",
-   "event": "Johnson & Johnson has agreed to acquire eye disease therapy developer Ollin Biosciences in a deal valued up to $3.33 billion."
-  },
-  {
-   "t": "2026-11-16T18:32:04Z",
-   "symbol": "LLY",
-   "outcome": "waiting",
-   "why": "price hasn't moved the expected way yet (-1.52%)",
-   "event": "Johnson & Johnson has agreed to acquire eye disease therapy developer Ollin Biosciences in a deal valued up to $3.33 billion."
-  },
-  {
-   "t": "2026-11-16T18:32:04Z",
-   "symbol": "TSLA",
-   "outcome": "waiting",
-   "why": "price hasn't moved the expected way yet (-2.73%)",
    "event": "Tesla plans to build 1 million Cybercabs near Berlin, expanding its German gigafactory footprint."
   }
  ],
@@ -2890,6 +2890,435 @@
  },
  "events": [
   {
+   "summary": "Global oil shipping costs are falling and analysts are warning of a significant supply glut by 2027 due to surging Gulf production.",
+   "category": "oil_supply",
+   "firstSeen": "2026-11-12T06:53:00Z",
+   "publishers": [
+    "24 News HD",
+    "ANI News",
+    "ASHARQ AL-AWSAT English",
+    "Al-Monitor",
+    "Arab News",
+    "BW Businessworld",
+    "Bangladesh Sangbad Sangstha (BSS)",
+    "Barchart.com",
+    "Benzinga",
+    "BigGo Finance",
+    "Bloomberg.com",
+    "Breakingthenews.net",
+    "Business Recorder",
+    "CBC",
+    "CNA",
+    "CNBC",
+    "Castanet",
+    "Channels Television",
+    "Chosunbiz",
+    "Coinpaper",
+    "Crude Oil Prices Today | OilPrice.com",
+    "Crypto Briefing",
+    "DAILY TIMES Nigeria",
+    "Daily Times",
+    "DatamarNews",
+    "Dhaka Tribune",
+    "ET EnergyWorld",
+    "Egypt Oil & Gas",
+    "EnergyNow.com",
+    "Euronews.com",
+    "FXEmpire",
+    "FXLeaders",
+    "FXStreet",
+    "Financial Post",
+    "Free Malaysia Today",
+    "Geo News",
+    "HDFC Sky",
+    "Halifax",
+    "Head Topics",
+    "IndexBox",
+    "Investing.com",
+    "Investing.com India",
+    "IranOilGas",
+    "LEADERSHIP Newspapers",
+    "Laodong.vn",
+    "Latest news from Azerbaijan",
+    "Macau Business",
+    "Manila Bulletin",
+    "MarineLink",
+    "Middle East Online",
+    "Minute Mirror",
+    "Moneycontrol.com",
+    "NTD News",
+    "Nation Thailand",
+    "Newsmax",
+    "Newswire",
+    "Oil & Gas 360",
+    "Oil & Gas Journal",
+    "Pluang",
+    "Profit by Pakistan Today",
+    "Public TV English",
+    "Qatar news agency",
+    "Quantum Commodity Intelligence",
+    "Quartz Africa",
+    "Reuters",
+    "Rigzone",
+    "Ship & Bunker",
+    "StreetInsider",
+    "The Business Times",
+    "The Globe and Mail",
+    "The Insight International",
+    "The Mighty 790 KFGO",
+    "The National",
+    "The Peninsula Qatar",
+    "The Star",
+    "The Times of India",
+    "Ticker News",
+    "Times of Oman",
+    "UA.NEWS",
+    "UPPERNEWS",
+    "Vietnam.vn",
+    "WSJ",
+    "Western Standard",
+    "Yahoo! Finance Canada",
+    "fiscal.ai",
+    "grafa.com",
+    "houseofsaud.com",
+    "https://www.engine.online/",
+    "marketscreener.com",
+    "play 103.7",
+    "www.marketscreener.com",
+    "صحيفة مال",
+    "صوت الإمارات"
+   ],
+   "assets": {
+    "XOM": {
+     "direction": "down",
+     "confidence": 0.75,
+     "why": "Falling crude oil prices and recovering export shipments negatively impact near-term oil producer revenues."
+    },
+    "CVX": {
+     "direction": "down",
+     "confidence": 0.75,
+     "why": "Falling crude oil prices and recovering export shipments negatively impact near-term oil producer revenues."
+    },
+    "COP": {
+     "direction": "down",
+     "confidence": 0.75,
+     "why": "Global oil supply surplus and crashing crude prices weigh on oil and gas stocks."
+    },
+    "SLB": {
+     "direction": "down",
+     "confidence": 0.7,
+     "why": "Lower oil prices driven by oversupply could slow down oilfield services spending."
+    },
+    "OXY": {
+     "direction": "down",
+     "confidence": 0.75,
+     "why": "Growing oil supply surplus fears push crude and major oil stocks down."
+    },
+    "DVN": {
+     "direction": "down",
+     "confidence": 0.65,
+     "why": "Weakening oil strip and surplus projections weigh on exploration and production stocks."
+    },
+    "APA": {
+     "direction": "down",
+     "confidence": 0.6,
+     "why": "Increased supply and lower shipping costs signal potential downward pressure on oil prices."
+    },
+    "EOG": {
+     "direction": "down",
+     "confidence": 0.6,
+     "why": "Increased supply and lower shipping costs signal potential downward pressure on oil prices."
+    },
+    "FANG": {
+     "direction": "down",
+     "confidence": 0.6,
+     "why": "Increased supply and lower shipping costs signal potential downward pressure on oil prices."
+    },
+    "HAL": {
+     "direction": "down",
+     "confidence": 0.6,
+     "why": "Increased supply and lower shipping costs signal potential downward pressure on oil prices."
+    },
+    "MPC": {
+     "direction": "down",
+     "confidence": 0.6,
+     "why": "Increased supply and lower shipping costs signal potential downward pressure on oil prices."
+    },
+    "PSX": {
+     "direction": "down",
+     "confidence": 0.6,
+     "why": "Increased supply and lower shipping costs signal potential downward pressure on oil prices."
+    },
+    "VLO": {
+     "direction": "down",
+     "confidence": 0.6,
+     "why": "Increased supply and lower shipping costs signal potential downward pressure on oil prices."
+    }
+   },
+   "sources": [
+    {
+     "id": "4bb506049f64816d",
+     "publisher": "Latest news from Azerbaijan",
+     "kind": "news",
+     "title": "Oil prices decline as OPEC+ output boosts oversupply fears",
+     "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPZVJObGVhNHNqYldKVjk4SWFfUTd4VUgtdVFrSWh6WmRaN0J5NWNjcjc0T3hCOFhLZkFhUjktbnA3VS10aWxCUllUbEY0WEo4eUdRYmxBVjJqclk0NXRLZEduaE9tU2JMUlh1TXBLZ3c1VzA2Z0thLTZZZDJJMmZLQm5nZzk?oc=5",
+     "time": "2026-11-12T06:55:24Z"
+    },
+    {
+     "id": "74543532c5f84f94",
+     "publisher": "Public TV English",
+     "kind": "news",
+     "title": "OPEC+ oil output rises 2.04 million barrels per day in Oct as Saudi Arabia leads recovery amid West Asia crisis",
+     "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxNc3hMVUdaemN1YTRZQVpJaGNKZGQxYmFOdTVmRl9DYUxxNmtFV250ZmI1bnlrc3ZtdWZtYWRaeDRUcTl1azB6YkNqQVRndjhhYnpBWkU3N2w2X1VHaV9XVTYyclUyOHpudFp2NURkY2ZsOV9mb2wtYzdublNaLTRvdnFfbEhWV1FjM3gzZ05jNUJiOG9xb3ZacUZTb01fenM1MEc1Z3ZNcmxuczZnSVBlbmtyeVllZXRCck9fTXpjdkR2a2IzSGJUbVNiTmNyMFhnWGZyc2VB?oc=5",
+     "time": "2026-11-12T06:58:03Z"
+    },
+    {
+     "id": "a7dcf6881335f5e3",
+     "publisher": "BW Businessworld",
+     "kind": "news",
+     "title": "Opec+ Oil Output Rebounds 2.04 Million Bpd Amid Hormuz Disruption",
+     "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQQk5IV3BYU3hZMXhIelhESU9XSUhWQm1tLVM1eDR6ZHNfdG83alp6d0plallRYTNneEN3Wmd3LWd3MWhHUHRnbHV5ZGc1a3NacEVGRTFSSXl0anBrVGxNeWdvRngxaFRGUTQzSFNNZnBZVmxrdFpWU1dzNHhsUmxQRE1KbU9MYVotQmdrWVZ5YWhoTEdud0lLWktwOHpzNEY4cU9kOERVbVM1V0ly?oc=5",
+     "time": "2026-11-12T06:54:45Z"
+    },
+    {
+     "id": "13ef775feec7cccc",
+     "publisher": "Chosunbiz",
+     "kind": "news",
+     "title": "Oil prices fall as South Korea weighs path for price cap and compensation",
+     "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxOMUJYRlU0Y3d2ZFJvbWl6bjNvWnhaYlFmM2pNWXFEWEFsNnlpVXlwMUplSVRHcDB1dXNudTVKZUtDaXRJalM4Vk9OR1draHZzTHpid3NibkNPUW4xM2hwS1h2VUwzRFFkUDNQZnc3MTNzM2dvXzlCYVN1UmdKUlBmVzl30gGWAUFVX3lxTE9lRTYxWHlhNG9XWUxPMzU3LVVxZWJnVzZCUV9wblY4N29yaXZVRE5ydFZ3Q3FUblNTSG4ya1h0NkZmT0NucHdkdlptd2Y0aldnT3VoREZTSER5WUFnSDVFSDlTT0dRaE9XYjNlVHJhb2E5N1h3OWhQVExORERXV3RqMG5nWnF4UC1pZlVtaHgxOEstNHVnZw?oc=5",
+     "time": "2026-11-12T06:53:00Z"
+    },
+    {
+     "id": "d319dc3aaf7fda77",
+     "publisher": "Profit by Pakistan Today",
+     "kind": "news",
+     "title": "Oil falls over $1 on easing geopolitical fears and oversupply worries",
+     "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQd0RjdkpYTklPUzF2U293azdJRzhHR2tjMUt5RFYtYjZQX1BSN290cjBTb05Sb3BVTjFnaXVydnpsYzRVZDRQY0VNdEpKWUc4eGNlUnR4VldnNGdpejFqVmRDX2NuaUw1RHliVF94X012TzhsU084NklWUGdtTk1nUjJDdC1zb2JUTHZMdWI1cmhyZUVZWkZVOEpwRFVZU1JwdUxiQVNlM0NBSmdYYmhsWXd3Zk9iNnpVaDdRM0Rn?oc=5",
+     "time": "2026-11-12T07:44:38Z"
+    }
+   ]
+  },
+  {
+   "summary": "Adobe faces a legal setback regarding the use of the 'Foundry' name for its AI tools.",
+   "category": "company_bad_news",
+   "firstSeen": "2026-11-12T15:43:48Z",
+   "publishers": [
+    "AP",
+    "Benzinga",
+    "CNBC",
+    "Crypto Briefing",
+    "Cryptonews.net",
+    "JournalArta",
+    "Moomoo",
+    "Reuters",
+    "StockStory",
+    "TradingKey",
+    "Wccftech",
+    "Yahoo Finance",
+    "Yahoo Finance UK",
+    "fiscal.ai",
+    "scanx.trade"
+   ],
+   "assets": {
+    "TSLA": {
+     "direction": "down",
+     "confidence": 0.6,
+     "why": "New lawsuit filed against Tesla adds legal headline risk."
+    },
+    "NVDA": {
+     "direction": "down",
+     "confidence": 0.85,
+     "why": "CEO exit and executive turmoil directly weigh on Nvidia stock."
+    },
+    "LOW": {
+     "direction": "down",
+     "confidence": 0.8,
+     "why": "Analyst downgrade to Underperform directly weighs on the stock."
+    },
+    "TJX": {
+     "direction": "down",
+     "confidence": 0.65,
+     "why": "Downgraded to Hold by Gordon Haskett."
+    },
+    "AVGO": {
+     "direction": "down",
+     "confidence": 0.8,
+     "why": "Downgraded by Rothschild & Co Redburn due to AI financing concerns."
+    },
+    "HD": {
+     "direction": "down",
+     "confidence": 0.6,
+     "why": "Peer home improvement retailer pressured by negative sector sentiment."
+    },
+    "META": {
+     "direction": "down",
+     "confidence": 0.85,
+     "why": "Massive regulatory fine of $887 million from Italy."
+    },
+    "GOOGL": {
+     "direction": "down",
+     "confidence": 0.55,
+     "why": "Broader regulatory headwinds for big tech regarding user data in Europe."
+    },
+    "INTC": {
+     "direction": "down",
+     "confidence": 0.9,
+     "why": "Severe share price plunge and shareholder lawsuits highlight deep fundamental pressures for Intel."
+    },
+    "COST": {
+     "direction": "down",
+     "confidence": 0.6,
+     "why": "Regulatory fine and labor misclassification issue creates slight negative sentiment."
+    },
+    "MU": {
+     "direction": "down",
+     "confidence": 0.5,
+     "why": "Legal setbacks regarding price-fixing allegations create regulatory and financial uncertainty for the company."
+    },
+    "OXY": {
+     "direction": "down",
+     "confidence": 0.8,
+     "why": "Analyst downgrade creates downward selling pressure."
+    },
+    "FANG": {
+     "direction": "down",
+     "confidence": 0.65,
+     "why": "Large cash-and-stock acquisitions can dilute existing shareholders and create near-term capital allocation uncertainty."
+    },
+    "SMCI": {
+     "direction": "down",
+     "confidence": 0.75,
+     "why": "DOJ probe and leadership uncertainty create significant negative pressure"
+    },
+    "MSFT": {
+     "direction": "down",
+     "confidence": 0.6,
+     "why": "Patent infringement lawsuit from MIT introduces legal and financial headwinds"
+    },
+    "ADBE": {
+     "direction": "down",
+     "confidence": 0.5,
+     "why": "Legal disputes regarding branding can create uncertainty and potential rebranding costs."
+    }
+   },
+   "sources": [
+    {
+     "id": "fb8045cbfe86a60f",
+     "publisher": "Benzinga",
+     "kind": "news",
+     "title": "YETI Sounds the Alarm on Consumer Spending As Shoppers Hunt for Deals",
+     "url": "https://www.benzinga.com/markets/earnings/26/11/63197694/yeti-sounds-the-alarm-on-consumer-spending-as-shoppers-hunt-for-deals",
+     "time": "2026-11-12T15:43:48Z"
+    },
+    {
+     "id": "eb1007b02a637a06",
+     "publisher": "StockStory",
+     "kind": "news",
+     "title": "Why YETI shares are trading lower today",
+     "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNdl83SV9zdFlzM2FENVRJLTJxckhKNjZUMTFTM0FXUUZVQ0NzRG54ZFRXeERERnZDSWFDcmMxNU1rRVhrWUlnV2UtWFdmY2VpWDAxNkxudGV4NmpjeUJ3Z1NQUm1FUm1lU3dNTmEwdmxkNjFTdU9aTEt2THpfQmYyV05vNzJwa3VDSjZqQjdfYjVwQWttVzlNX0ZrdTlydXJU?oc=5",
+     "time": "2026-11-12T15:53:44Z"
+    },
+    {
+     "id": "c394152546c931b0",
+     "publisher": "scanx.trade",
+     "kind": "news",
+     "title": "YETI Holdings Q3FY26 Results: Revenue up 4.4% but guidance cut",
+     "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOdlBmR3l6ZUFQY29CWHFTT1p4Z0JOdEpxb2hiYWNuV3FQTjVKcTd0bml3S3RPWVY1SDVSUVR3dGFSb1BvbXByNzc4RURDd1E0YXdTT05pVWYyOVpjQ2JTYXVkMFByR05iaThHeUJfRDJuaWVKYVp3UkxndGxfNm9WeGxtV1h0dUFEUWtVM0tQaURPVWNuSGFiZmZBanBCc2tGQ0FhNjEyUEVZVUYzT1lGSWFFeW05clYz?oc=5",
+     "time": "2026-11-12T16:39:48Z"
+    },
+    {
+     "id": "cc6a00bf5e9f8ced",
+     "publisher": "fiscal.ai",
+     "kind": "news",
+     "title": "Lawsuit Filed Against Tesla Over San Mateo Street-Racing Incident",
+     "url": "https://newsfilter.io/sources/businesswire",
+     "time": "2026-11-12T20:01:33Z"
+    },
+    {
+     "id": "fab361ae0414d4da",
+     "publisher": "CNBC",
+     "kind": "news",
+     "title": "Stock futures edge lower after markets slide amid Nvidia woes: Live updates",
+     "url": "https://www.cnbc.com/2026/11/12/stock-market-today-live-updates.html",
+     "time": "2026-11-13T08:20:13Z"
+    }
+   ]
+  },
+  {
+   "summary": "New U.S. AI chip export restrictions are expected to negatively impact the growth of major semiconductor companies.",
+   "category": "tariffs",
+   "firstSeen": "2026-11-16T14:46:33Z",
+   "publishers": [
+    "Benzinga",
+    "CNBC",
+    "Yahoo Finance"
+   ],
+   "assets": {
+    "AMD": {
+     "direction": "down",
+     "confidence": 0.8,
+     "why": "New restrictions on advanced chips and remote access impact semiconductor companies."
+    },
+    "AVGO": {
+     "direction": "down",
+     "confidence": 0.75,
+     "why": "Broadcom slides following a downgrade and concerns over AI financing."
+    },
+    "NVDA": {
+     "direction": "down",
+     "confidence": 0.8,
+     "why": "Targeted by new Commerce rules addressing remote access loopholes for advanced chips."
+    },
+    "INTC": {
+     "direction": "down",
+     "confidence": 0.7,
+     "why": "Tech and chip stocks pressured by new U.S. Bureau of Industry and Security rules."
+    }
+   },
+   "sources": [
+    {
+     "id": "3a19c43d9348d3f4",
+     "publisher": "Benzinga",
+     "kind": "news",
+     "title": "'US moves to tighten AI chip export rules' - Financial Times",
+     "url": "https://www.benzinga.com/news/26/11/63292997/us-moves-tighten-ai-chip-export-rules-financial-times",
+     "time": "2026-11-16T14:46:33Z"
+    },
+    {
+     "id": "813f81bbd1d42712",
+     "publisher": "Yahoo Finance",
+     "kind": "news",
+     "title": "Chip stocks fall on US semiconductor restrictions: AlphaCheck",
+     "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPX0NYQzlGd3NpY1NLcXNmMm84U1pmQ1dKelhJSkRNY09iTHJVbnZfTGprZFNQWXBteHNCbnhmYVJXaDJIUEd6RkxXVlNEYzlVMzBMWnRQc0NZblllQlY3REtxN0hoQ1h2QTBzS3Q1QTh2OWdXbHBubm1IcGhBSndxNkVXa3JIMVpXUG5XV2RHcndCa2UtR1Z6NDkxTDZERXlMNmxFVUJHV2tRTXdpb1FEVkh4RlZZaTBoaWQw?oc=5",
+     "time": "2026-11-16T15:00:19Z"
+    },
+    {
+     "id": "68a869398c13256e",
+     "publisher": "Benzinga",
+     "kind": "news",
+     "title": "Rocket Lab, Firefly, AST SpaceMobile Stocks Drop: What’s Going On With Space Stocks Monday?",
+     "url": "https://www.benzinga.com/trading-ideas/movers/26/11/63295932/rocket-lab-firefly-ast-spacemobile-stocks-drop-whats-going-on-with-space-stocks-monday",
+     "time": "2026-11-16T15:13:57Z"
+    },
+    {
+     "id": "8223b993a457a316",
+     "publisher": "CNBC",
+     "kind": "news",
+     "title": "Nvidia fallout: Commerce targets loophole for China's data center use",
+     "url": "https://www.cnbc.com/2026/11/16/nvidia-commerce-china-lutnick.html",
+     "time": "2026-11-16T15:27:31Z"
+    },
+    {
+     "id": "1bb4f31019eb9bd1",
+     "publisher": "Benzinga",
+     "kind": "news",
+     "title": "Reported Earlier, U.S. Department Of Commerce's Bureau of Industry and Security Interim Final Rule To Address Remote Access To Advanced Super Intelligence Chips And Servers",
+     "url": "https://www.benzinga.com/news/26/11/63297268/reported-earlier-u-s-department-commerce-s-bureau-industry-and-security-interim-final-rule-address-r",
+     "time": "2026-11-16T15:26:35Z"
+    }
+   ]
+  },
+  {
    "summary": "Geopolitical tensions surrounding the Iran conflict persist with U.S. military assets deployed, contributing to market uncertainty.",
    "category": "war_escalation",
    "firstSeen": "2026-11-10T20:01:23Z",
@@ -3827,319 +4256,6 @@
    ]
   },
   {
-   "summary": "Crude oil prices decline as forecasts and rebounding exports project a surplus in global supply.",
-   "category": "oil_supply",
-   "firstSeen": "2026-11-12T06:53:00Z",
-   "publishers": [
-    "24 News HD",
-    "ANI News",
-    "ASHARQ AL-AWSAT English",
-    "Al-Monitor",
-    "Arab News",
-    "BW Businessworld",
-    "Bangladesh Sangbad Sangstha (BSS)",
-    "Barchart.com",
-    "Benzinga",
-    "BigGo Finance",
-    "Bloomberg.com",
-    "Breakingthenews.net",
-    "Business Recorder",
-    "CBC",
-    "CNA",
-    "CNBC",
-    "Castanet",
-    "Channels Television",
-    "Chosunbiz",
-    "Coinpaper",
-    "Crude Oil Prices Today | OilPrice.com",
-    "Crypto Briefing",
-    "DAILY TIMES Nigeria",
-    "Daily Times",
-    "DatamarNews",
-    "Dhaka Tribune",
-    "ET EnergyWorld",
-    "Egypt Oil & Gas",
-    "EnergyNow.com",
-    "Euronews.com",
-    "FXEmpire",
-    "FXLeaders",
-    "FXStreet",
-    "Financial Post",
-    "Free Malaysia Today",
-    "Geo News",
-    "HDFC Sky",
-    "Halifax",
-    "Head Topics",
-    "IndexBox",
-    "Investing.com",
-    "Investing.com India",
-    "IranOilGas",
-    "LEADERSHIP Newspapers",
-    "Laodong.vn",
-    "Latest news from Azerbaijan",
-    "Macau Business",
-    "Manila Bulletin",
-    "MarineLink",
-    "Minute Mirror",
-    "Moneycontrol.com",
-    "NTD News",
-    "Nation Thailand",
-    "Newsmax",
-    "Newswire",
-    "Oil & Gas 360",
-    "Oil & Gas Journal",
-    "Pluang",
-    "Profit by Pakistan Today",
-    "Public TV English",
-    "Qatar news agency",
-    "Quantum Commodity Intelligence",
-    "Quartz Africa",
-    "Reuters",
-    "Rigzone",
-    "Ship & Bunker",
-    "StreetInsider",
-    "The Business Times",
-    "The Globe and Mail",
-    "The Insight International",
-    "The Mighty 790 KFGO",
-    "The National",
-    "The Peninsula Qatar",
-    "The Star",
-    "The Times of India",
-    "Ticker News",
-    "Times of Oman",
-    "UA.NEWS",
-    "Vietnam.vn",
-    "WSJ",
-    "Western Standard",
-    "Yahoo! Finance Canada",
-    "fiscal.ai",
-    "grafa.com",
-    "houseofsaud.com",
-    "https://www.engine.online/",
-    "marketscreener.com",
-    "play 103.7",
-    "www.marketscreener.com",
-    "صحيفة مال",
-    "صوت الإمارات"
-   ],
-   "assets": {
-    "XOM": {
-     "direction": "down",
-     "confidence": 0.75,
-     "why": "Falling crude oil prices and recovering export shipments negatively impact near-term oil producer revenues."
-    },
-    "CVX": {
-     "direction": "down",
-     "confidence": 0.75,
-     "why": "Falling crude oil prices and recovering export shipments negatively impact near-term oil producer revenues."
-    },
-    "COP": {
-     "direction": "down",
-     "confidence": 0.75,
-     "why": "Global oil supply surplus and crashing crude prices weigh on oil and gas stocks."
-    },
-    "SLB": {
-     "direction": "down",
-     "confidence": 0.7,
-     "why": "Lower oil prices driven by oversupply could slow down oilfield services spending."
-    },
-    "OXY": {
-     "direction": "down",
-     "confidence": 0.75,
-     "why": "Growing oil supply surplus fears push crude and major oil stocks down."
-    },
-    "DVN": {
-     "direction": "down",
-     "confidence": 0.65,
-     "why": "Weakening oil strip and surplus projections weigh on exploration and production stocks."
-    }
-   },
-   "sources": [
-    {
-     "id": "4bb506049f64816d",
-     "publisher": "Latest news from Azerbaijan",
-     "kind": "news",
-     "title": "Oil prices decline as OPEC+ output boosts oversupply fears",
-     "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPZVJObGVhNHNqYldKVjk4SWFfUTd4VUgtdVFrSWh6WmRaN0J5NWNjcjc0T3hCOFhLZkFhUjktbnA3VS10aWxCUllUbEY0WEo4eUdRYmxBVjJqclk0NXRLZEduaE9tU2JMUlh1TXBLZ3c1VzA2Z0thLTZZZDJJMmZLQm5nZzk?oc=5",
-     "time": "2026-11-12T06:55:24Z"
-    },
-    {
-     "id": "74543532c5f84f94",
-     "publisher": "Public TV English",
-     "kind": "news",
-     "title": "OPEC+ oil output rises 2.04 million barrels per day in Oct as Saudi Arabia leads recovery amid West Asia crisis",
-     "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxNc3hMVUdaemN1YTRZQVpJaGNKZGQxYmFOdTVmRl9DYUxxNmtFV250ZmI1bnlrc3ZtdWZtYWRaeDRUcTl1azB6YkNqQVRndjhhYnpBWkU3N2w2X1VHaV9XVTYyclUyOHpudFp2NURkY2ZsOV9mb2wtYzdublNaLTRvdnFfbEhWV1FjM3gzZ05jNUJiOG9xb3ZacUZTb01fenM1MEc1Z3ZNcmxuczZnSVBlbmtyeVllZXRCck9fTXpjdkR2a2IzSGJUbVNiTmNyMFhnWGZyc2VB?oc=5",
-     "time": "2026-11-12T06:58:03Z"
-    },
-    {
-     "id": "a7dcf6881335f5e3",
-     "publisher": "BW Businessworld",
-     "kind": "news",
-     "title": "Opec+ Oil Output Rebounds 2.04 Million Bpd Amid Hormuz Disruption",
-     "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQQk5IV3BYU3hZMXhIelhESU9XSUhWQm1tLVM1eDR6ZHNfdG83alp6d0plallRYTNneEN3Wmd3LWd3MWhHUHRnbHV5ZGc1a3NacEVGRTFSSXl0anBrVGxNeWdvRngxaFRGUTQzSFNNZnBZVmxrdFpWU1dzNHhsUmxQRE1KbU9MYVotQmdrWVZ5YWhoTEdud0lLWktwOHpzNEY4cU9kOERVbVM1V0ly?oc=5",
-     "time": "2026-11-12T06:54:45Z"
-    },
-    {
-     "id": "13ef775feec7cccc",
-     "publisher": "Chosunbiz",
-     "kind": "news",
-     "title": "Oil prices fall as South Korea weighs path for price cap and compensation",
-     "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxOMUJYRlU0Y3d2ZFJvbWl6bjNvWnhaYlFmM2pNWXFEWEFsNnlpVXlwMUplSVRHcDB1dXNudTVKZUtDaXRJalM4Vk9OR1draHZzTHpid3NibkNPUW4xM2hwS1h2VUwzRFFkUDNQZnc3MTNzM2dvXzlCYVN1UmdKUlBmVzl30gGWAUFVX3lxTE9lRTYxWHlhNG9XWUxPMzU3LVVxZWJnVzZCUV9wblY4N29yaXZVRE5ydFZ3Q3FUblNTSG4ya1h0NkZmT0NucHdkdlptd2Y0aldnT3VoREZTSER5WUFnSDVFSDlTT0dRaE9XYjNlVHJhb2E5N1h3OWhQVExORERXV3RqMG5nWnF4UC1pZlVtaHgxOEstNHVnZw?oc=5",
-     "time": "2026-11-12T06:53:00Z"
-    },
-    {
-     "id": "d319dc3aaf7fda77",
-     "publisher": "Profit by Pakistan Today",
-     "kind": "news",
-     "title": "Oil falls over $1 on easing geopolitical fears and oversupply worries",
-     "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQd0RjdkpYTklPUzF2U293azdJRzhHR2tjMUt5RFYtYjZQX1BSN290cjBTb05Sb3BVTjFnaXVydnpsYzRVZDRQY0VNdEpKWUc4eGNlUnR4VldnNGdpejFqVmRDX2NuaUw1RHliVF94X012TzhsU084NklWUGdtTk1nUjJDdC1zb2JUTHZMdWI1cmhyZUVZWkZVOEpwRFVZU1JwdUxiQVNlM0NBSmdYYmhsWXd3Zk9iNnpVaDdRM0Rn?oc=5",
-     "time": "2026-11-12T07:44:38Z"
-    }
-   ]
-  },
-  {
-   "summary": "The state of California is suing OpenAI over alleged unauthorized data access by its AI models on companies like Hugging Face.",
-   "category": "company_bad_news",
-   "firstSeen": "2026-11-12T15:43:48Z",
-   "publishers": [
-    "AP",
-    "Benzinga",
-    "CNBC",
-    "Crypto Briefing",
-    "Cryptonews.net",
-    "JournalArta",
-    "Moomoo",
-    "Reuters",
-    "StockStory",
-    "TradingKey",
-    "Wccftech",
-    "Yahoo Finance",
-    "Yahoo Finance UK",
-    "fiscal.ai",
-    "scanx.trade"
-   ],
-   "assets": {
-    "TSLA": {
-     "direction": "down",
-     "confidence": 0.6,
-     "why": "New lawsuit filed against Tesla adds legal headline risk."
-    },
-    "NVDA": {
-     "direction": "down",
-     "confidence": 0.85,
-     "why": "CEO exit and executive turmoil directly weigh on Nvidia stock."
-    },
-    "LOW": {
-     "direction": "down",
-     "confidence": 0.8,
-     "why": "Analyst downgrade to Underperform directly weighs on the stock."
-    },
-    "TJX": {
-     "direction": "down",
-     "confidence": 0.65,
-     "why": "Downgraded to Hold by Gordon Haskett."
-    },
-    "AVGO": {
-     "direction": "down",
-     "confidence": 0.8,
-     "why": "Downgraded by Rothschild & Co Redburn due to AI financing concerns."
-    },
-    "HD": {
-     "direction": "down",
-     "confidence": 0.6,
-     "why": "Peer home improvement retailer pressured by negative sector sentiment."
-    },
-    "META": {
-     "direction": "down",
-     "confidence": 0.85,
-     "why": "Massive regulatory fine of $887 million from Italy."
-    },
-    "GOOGL": {
-     "direction": "down",
-     "confidence": 0.55,
-     "why": "Broader regulatory headwinds for big tech regarding user data in Europe."
-    },
-    "INTC": {
-     "direction": "down",
-     "confidence": 0.9,
-     "why": "Severe share price plunge and shareholder lawsuits highlight deep fundamental pressures for Intel."
-    },
-    "COST": {
-     "direction": "down",
-     "confidence": 0.6,
-     "why": "Regulatory fine and labor misclassification issue creates slight negative sentiment."
-    },
-    "MU": {
-     "direction": "down",
-     "confidence": 0.5,
-     "why": "Legal setbacks regarding price-fixing allegations create regulatory and financial uncertainty for the company."
-    },
-    "OXY": {
-     "direction": "down",
-     "confidence": 0.8,
-     "why": "Analyst downgrade creates downward selling pressure."
-    },
-    "FANG": {
-     "direction": "down",
-     "confidence": 0.65,
-     "why": "Large cash-and-stock acquisitions can dilute existing shareholders and create near-term capital allocation uncertainty."
-    },
-    "SMCI": {
-     "direction": "down",
-     "confidence": 0.75,
-     "why": "DOJ probe and leadership uncertainty create significant negative pressure"
-    },
-    "MSFT": {
-     "direction": "down",
-     "confidence": 0.6,
-     "why": "Patent infringement lawsuit from MIT introduces legal and financial headwinds"
-    }
-   },
-   "sources": [
-    {
-     "id": "fb8045cbfe86a60f",
-     "publisher": "Benzinga",
-     "kind": "news",
-     "title": "YETI Sounds the Alarm on Consumer Spending As Shoppers Hunt for Deals",
-     "url": "https://www.benzinga.com/markets/earnings/26/11/63197694/yeti-sounds-the-alarm-on-consumer-spending-as-shoppers-hunt-for-deals",
-     "time": "2026-11-12T15:43:48Z"
-    },
-    {
-     "id": "eb1007b02a637a06",
-     "publisher": "StockStory",
-     "kind": "news",
-     "title": "Why YETI shares are trading lower today",
-     "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNdl83SV9zdFlzM2FENVRJLTJxckhKNjZUMTFTM0FXUUZVQ0NzRG54ZFRXeERERnZDSWFDcmMxNU1rRVhrWUlnV2UtWFdmY2VpWDAxNkxudGV4NmpjeUJ3Z1NQUm1FUm1lU3dNTmEwdmxkNjFTdU9aTEt2THpfQmYyV05vNzJwa3VDSjZqQjdfYjVwQWttVzlNX0ZrdTlydXJU?oc=5",
-     "time": "2026-11-12T15:53:44Z"
-    },
-    {
-     "id": "c394152546c931b0",
-     "publisher": "scanx.trade",
-     "kind": "news",
-     "title": "YETI Holdings Q3FY26 Results: Revenue up 4.4% but guidance cut",
-     "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOdlBmR3l6ZUFQY29CWHFTT1p4Z0JOdEpxb2hiYWNuV3FQTjVKcTd0bml3S3RPWVY1SDVSUVR3dGFSb1BvbXByNzc4RURDd1E0YXdTT05pVWYyOVpjQ2JTYXVkMFByR05iaThHeUJfRDJuaWVKYVp3UkxndGxfNm9WeGxtV1h0dUFEUWtVM0tQaURPVWNuSGFiZmZBanBCc2tGQ0FhNjEyUEVZVUYzT1lGSWFFeW05clYz?oc=5",
-     "time": "2026-11-12T16:39:48Z"
-    },
-    {
-     "id": "cc6a00bf5e9f8ced",
-     "publisher": "fiscal.ai",
-     "kind": "news",
-     "title": "Lawsuit Filed Against Tesla Over San Mateo Street-Racing Incident",
-     "url": "https://newsfilter.io/sources/businesswire",
-     "time": "2026-11-12T20:01:33Z"
-    },
-    {
-     "id": "fab361ae0414d4da",
-     "publisher": "CNBC",
-     "kind": "news",
-     "title": "Stock futures edge lower after markets slide amid Nvidia woes: Live updates",
-     "url": "https://www.cnbc.com/2026/11/12/stock-market-today-live-updates.html",
-     "time": "2026-11-13T08:20:13Z"
-    }
-   ]
-  },
-  {
    "summary": "Firm Federal Reserve rate hike expectations continue to strengthen the U.S. dollar and pressure global equities and crypto.",
    "category": "central_bank_hawkish",
    "firstSeen": "2026-11-10T09:39:09Z",
@@ -4580,80 +4696,6 @@
      "title": "Tesla Wants to Build 1 Million Cybercabs Near Berlin",
      "url": "https://finance.yahoo.com/markets/stocks/articles/tesla-wants-build-1-million-181721398.html?.tsrc=rss",
      "time": "2026-11-16T18:17:21Z"
-    }
-   ]
-  },
-  {
-   "summary": "Semiconductor stocks slide due to AI chip selloffs and AI financing fears, amplified by regulatory pressures.",
-   "category": "tariffs",
-   "firstSeen": "2026-11-16T14:46:33Z",
-   "publishers": [
-    "Benzinga",
-    "CNBC",
-    "Yahoo Finance"
-   ],
-   "assets": {
-    "AMD": {
-     "direction": "down",
-     "confidence": 0.8,
-     "why": "New restrictions on advanced chips and remote access impact semiconductor companies."
-    },
-    "AVGO": {
-     "direction": "down",
-     "confidence": 0.75,
-     "why": "Broadcom slides following a downgrade and concerns over AI financing."
-    },
-    "NVDA": {
-     "direction": "down",
-     "confidence": 0.8,
-     "why": "Targeted by new Commerce rules addressing remote access loopholes for advanced chips."
-    },
-    "INTC": {
-     "direction": "down",
-     "confidence": 0.7,
-     "why": "Tech and chip stocks pressured by new U.S. Bureau of Industry and Security rules."
-    }
-   },
-   "sources": [
-    {
-     "id": "3a19c43d9348d3f4",
-     "publisher": "Benzinga",
-     "kind": "news",
-     "title": "'US moves to tighten AI chip export rules' - Financial Times",
-     "url": "https://www.benzinga.com/news/26/11/63292997/us-moves-tighten-ai-chip-export-rules-financial-times",
-     "time": "2026-11-16T14:46:33Z"
-    },
-    {
-     "id": "813f81bbd1d42712",
-     "publisher": "Yahoo Finance",
-     "kind": "news",
-     "title": "Chip stocks fall on US semiconductor restrictions: AlphaCheck",
-     "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPX0NYQzlGd3NpY1NLcXNmMm84U1pmQ1dKelhJSkRNY09iTHJVbnZfTGprZFNQWXBteHNCbnhmYVJXaDJIUEd6RkxXVlNEYzlVMzBMWnRQc0NZblllQlY3REtxN0hoQ1h2QTBzS3Q1QTh2OWdXbHBubm1IcGhBSndxNkVXa3JIMVpXUG5XV2RHcndCa2UtR1Z6NDkxTDZERXlMNmxFVUJHV2tRTXdpb1FEVkh4RlZZaTBoaWQw?oc=5",
-     "time": "2026-11-16T15:00:19Z"
-    },
-    {
-     "id": "68a869398c13256e",
-     "publisher": "Benzinga",
-     "kind": "news",
-     "title": "Rocket Lab, Firefly, AST SpaceMobile Stocks Drop: What’s Going On With Space Stocks Monday?",
-     "url": "https://www.benzinga.com/trading-ideas/movers/26/11/63295932/rocket-lab-firefly-ast-spacemobile-stocks-drop-whats-going-on-with-space-stocks-monday",
-     "time": "2026-11-16T15:13:57Z"
-    },
-    {
-     "id": "8223b993a457a316",
-     "publisher": "CNBC",
-     "kind": "news",
-     "title": "Nvidia fallout: Commerce targets loophole for China's data center use",
-     "url": "https://www.cnbc.com/2026/11/16/nvidia-commerce-china-lutnick.html",
-     "time": "2026-11-16T15:27:31Z"
-    },
-    {
-     "id": "1bb4f31019eb9bd1",
-     "publisher": "Benzinga",
-     "kind": "news",
-     "title": "Reported Earlier, U.S. Department Of Commerce's Bureau of Industry and Security Interim Final Rule To Address Remote Access To Advanced Super Intelligence Chips And Servers",
-     "url": "https://www.benzinga.com/news/26/11/63297268/reported-earlier-u-s-department-commerce-s-bureau-industry-and-security-interim-final-rule-address-r",
-     "time": "2026-11-16T15:26:35Z"
     }
    ]
   },
