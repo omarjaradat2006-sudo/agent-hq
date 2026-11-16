@@ -3,13 +3,13 @@
  "plain": {
   "line": "Even since start · 0 trades · holding: nothing (all cash)",
   "rulesMode": "aggressive",
-  "top": "Even since start (still $100,000.00) · just holding SPY would be -1.10%",
+  "top": "Even since start (still $100,000.00) · just holding SPY would be -1.21%",
   "up": true,
   "holding": [
    "Nothing right now (all cash)."
   ],
   "today": [
-   "Scanned the news 72 times today: read 5627 headlines, found 200 that could move a stock or coin it's allowed to trade. None passed every check, so no trade (that's normal).",
+   "Scanned the news 73 times today: read 5656 headlines, found 201 that could move a stock or coin it's allowed to trade. None passed every check, so no trade (that's normal).",
    "Passed on TSLA: price hasn't moved the expected way yet (-1.75%).",
    "Passed on LLY: price hasn't moved the expected way yet (-1.04%).",
    "Passed on JNJ, LLY: price hasn't moved the expected way yet (-1.07%).",
@@ -17,10 +17,10 @@
    "Safety rules that stepped in: stock entry window (x2)."
   ],
   "watchlist": "Allowed to trade: 69 halal stocks, 5 Shariah ETFs, 9 coins.",
-  "lastScan": "2026-11-16T17:36:57Z"
+  "lastScan": "2026-11-16T17:42:08Z"
  },
  "hired": true,
- "updatedAt": "2026-11-16T17:37:06Z",
+ "updatedAt": "2026-11-16T17:42:23Z",
  "mode": "PAPER",
  "agents": [
   {
@@ -28,8 +28,8 @@
    "name": "News Scout",
    "role": "Reads X, Reddit and news feeds",
    "status": "working",
-   "doing": "Read 56 new headlines/posts, 1 market-moving stories",
-   "lastRun": "2026-11-16T17:37:05Z"
+   "doing": "Read 29 new headlines/posts, 1 market-moving stories",
+   "lastRun": "2026-11-16T17:42:22Z"
   },
   {
    "id": "analyst",
@@ -69,7 +69,7 @@
    "role": "Places paper orders on Alpaca",
    "status": "working",
    "doing": "Save to GitHub failed (will retry later): To github.com:omarjaradat2006-sudo/agent-hq.git\n ! [rejected]        HEAD -> main (fetch first)\nerror: failed to push some refs to 'github.com:omarjar",
-   "lastRun": "2026-11-16T17:31:57Z"
+   "lastRun": "2026-11-16T17:37:08Z"
   },
   {
    "id": "coins",
@@ -89,6 +89,16 @@
   }
  ],
  "log": [
+  {
+   "t": "2026-11-16T17:42:22Z",
+   "agent": "News Scout",
+   "msg": "Read 29 new headlines/posts, 1 market-moving stories"
+  },
+  {
+   "t": "2026-11-16T17:37:08Z",
+   "agent": "Trader",
+   "msg": "Save to GitHub failed (will retry later): To github.com:omarjaradat2006-sudo/agent-hq.git\n ! [rejected]        HEAD -> main (fetch first)\nerror: failed to push some refs to 'github.com:omarjar"
+  },
   {
    "t": "2026-11-16T17:37:05Z",
    "agent": "News Scout",
@@ -828,22 +838,12 @@
    "t": "2026-11-16T06:09:37Z",
    "agent": "News Scout",
    "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
-  },
-  {
-   "t": "2026-11-16T05:54:33Z",
-   "agent": "News Scout",
-   "msg": "Read 50 new headlines/posts, 2 market-moving stories"
-  },
-  {
-   "t": "2026-11-16T05:54:31Z",
-   "agent": "News Scout",
-   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
   }
  ],
  "brief": {
   "date": "Mon Nov 16",
-  "createdAt": "2026-11-16T17:37:06Z",
-  "headline": "Paper account +$0 today (+0.00%), +0.00% total vs SPY -1.10% · 0 open",
+  "createdAt": "2026-11-16T17:42:23Z",
+  "headline": "Paper account +$0 today (+0.00%), +0.00% total vs SPY -1.21% · 0 open",
   "summary": "0 trade(s) closed today, 0/0 winners overall. TradingAgents checks used today: 2/5.",
   "notes": [
    "X/Reddit reader: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
@@ -858,8 +858,8 @@
   "dayPct": 0.0,
   "totalPnl": 0.0,
   "totalPct": 0.0,
-  "spyPct": -1.1,
-  "vsSpyPct": 1.1
+  "spyPct": -1.21,
+  "vsSpyPct": 1.21
  },
  "status": {
   "killed": false,
@@ -883,6 +883,34 @@
  "positions": [],
  "trades": [],
  "decisions": [
+  {
+   "t": "2026-11-16T17:42:22Z",
+   "symbol": "XOM",
+   "outcome": "waiting",
+   "why": "price hasn't moved the expected way yet (-0.07%)",
+   "event": "ExxonMobil's daily production in Guyana is set to reach 1.1 million barrels per day as Uaru production begins."
+  },
+  {
+   "t": "2026-11-16T17:42:22Z",
+   "symbol": "JNJ",
+   "outcome": "waiting",
+   "why": "price hasn't moved the expected way yet (-0.78%)",
+   "event": "Johnson & Johnson has agreed to acquire eye disease therapy developer Ollin Biosciences in a deal valued up to $3.33 billion."
+  },
+  {
+   "t": "2026-11-16T17:42:22Z",
+   "symbol": "LLY",
+   "outcome": "waiting",
+   "why": "price hasn't moved the expected way yet (-1.11%)",
+   "event": "Johnson & Johnson has agreed to acquire eye disease therapy developer Ollin Biosciences in a deal valued up to $3.33 billion."
+  },
+  {
+   "t": "2026-11-16T17:42:22Z",
+   "symbol": "TSLA",
+   "outcome": "waiting",
+   "why": "price hasn't moved the expected way yet (-2.31%)",
+   "event": "Tesla plans a $3.3 billion investment to expand its German gigafactory for Cybercab production."
+  },
   {
    "t": "2026-11-16T17:37:06Z",
    "symbol": "JNJ",
@@ -1273,34 +1301,6 @@
    "symbol": "LLY",
    "outcome": "waiting",
    "why": "price hasn't moved the expected way yet (-0.36%)",
-   "event": "Eli Lilly is acquiring Calytrix for up to $1.5 billion to expand its oncology portfolio."
-  },
-  {
-   "t": "2026-11-16T15:40:40Z",
-   "symbol": "TSLA",
-   "outcome": "waiting",
-   "why": "price hasn't moved the expected way yet (-2.30%)",
-   "event": "Tesla announced a 3 billion euro investment to expand its German factory to produce Cybercabs."
-  },
-  {
-   "t": "2026-11-16T15:35:24Z",
-   "symbol": "LLY",
-   "outcome": "waiting",
-   "why": "price hasn't moved the expected way yet (-0.38%)",
-   "event": "Eli Lilly is acquiring Calytrix for up to $1.5 billion to expand its oncology portfolio."
-  },
-  {
-   "t": "2026-11-16T15:35:24Z",
-   "symbol": "TSLA",
-   "outcome": "waiting",
-   "why": "price hasn't moved the expected way yet (-2.53%)",
-   "event": "Tesla announced a 3 billion euro investment to expand its German factory to produce Cybercabs."
-  },
-  {
-   "t": "2026-11-16T15:30:10Z",
-   "symbol": "LLY",
-   "outcome": "waiting",
-   "why": "price hasn't moved the expected way yet (-0.13%)",
    "event": "Eli Lilly is acquiring Calytrix for up to $1.5 billion to expand its oncology portfolio."
   }
  ],
@@ -2859,6 +2859,11 @@
    "t": "2026-11-16T17:10:50Z",
    "equity": 100000.0,
    "spy": 744.44
+  },
+  {
+   "t": "2026-11-16T17:42:22Z",
+   "equity": 100000.0,
+   "spy": 743.645
   }
  ],
  "watch": [],
@@ -2869,6 +2874,31 @@
   "avgPct": null
  },
  "events": [
+  {
+   "summary": "ExxonMobil's daily production in Guyana is set to reach 1.1 million barrels per day as Uaru production begins.",
+   "category": "oil_supply",
+   "firstSeen": "2026-11-16T17:29:15Z",
+   "publishers": [
+    "News Source Guyana"
+   ],
+   "assets": {
+    "XOM": {
+     "direction": "up",
+     "confidence": 0.65,
+     "why": "Production expansion and increased output capacity at major projects are positive for earnings."
+    }
+   },
+   "sources": [
+    {
+     "id": "bdbbba1edf607a7d",
+     "publisher": "News Source Guyana",
+     "kind": "news",
+     "title": "ExxonMobil's daily production in Guyana to hit 1.1 Million barrels per day as Uaru production begins",
+     "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxNWU1zUld1WEZKVFRZRFdaSllWZFN4YzR4R29iUUt2ZTFCQ1lIRVFSdFF6Z29oaHg3ellsZkpLZnRDRVBOb2J2MGFFekVTbUNPYmxJR240eGdPb0RIQngxYUcwMU5nWnJwXzdFZ1I1Q0JvaTZqeEJfdzlMaEZMLTdfcVllakZCZVdwdzZrSDNHX0Z5QU40VFdaYnZlc1pqNVZqbGxaTDJBVEVGLVlCTW1NVVZOSkFWWFlKYzRkYnA4NkhzdnBJSlBTS2JB?oc=5",
+     "time": "2026-11-16T17:29:15Z"
+    }
+   ]
+  },
   {
    "summary": "Nvidia shares continue to face downward pressure following ongoing fallout from the resignation of CEO Jensen Huang.",
    "category": "company_bad_news",
@@ -5097,31 +5127,6 @@
      "title": "Banca Akros lowers MARR target price to 6 euros",
      "url": "https://www.milanofinanza.it/newsmarketdriver/market-driver-marr-b-akros-riduce-tp-202611161244016633",
      "time": "2026-11-16T16:31:47Z"
-    }
-   ]
-  },
-  {
-   "summary": "BofA analysts project Nvidia will report a beat-and-raise for fiscal Q3 earnings.",
-   "category": "earnings_beat",
-   "firstSeen": "2026-11-16T15:54:14Z",
-   "publishers": [
-    "Yahoo Finance"
-   ],
-   "assets": {
-    "NVDA": {
-     "direction": "up",
-     "confidence": 0.6,
-     "why": "Positive analyst sentiment regarding upcoming earnings beat-and-raise."
-    }
-   },
-   "sources": [
-    {
-     "id": "25325cb7a3a08a9b",
-     "publisher": "Yahoo Finance",
-     "kind": "news",
-     "title": "Nvidia Likely to Post Beat-and-Raise for Fiscal Q3, Maintain 2028 Sales Growth Outlook, BofA Says",
-     "url": "https://finance.yahoo.com/markets/stocks/articles/nvidia-likely-post-beat-raise-155414370.html?.tsrc=rss",
-     "time": "2026-11-16T15:54:14Z"
     }
    ]
   }
