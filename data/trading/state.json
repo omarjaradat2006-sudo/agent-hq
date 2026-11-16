@@ -9,18 +9,18 @@
    "Nothing right now (all cash)."
   ],
   "today": [
-   "Scanned the news 81 times today: read 5950 headlines, found 215 that could move a stock or coin it's allowed to trade. None passed every check, so no trade (that's normal).",
+   "Scanned the news 82 times today: read 5973 headlines, found 217 that could move a stock or coin it's allowed to trade. None passed every check, so no trade (that's normal).",
    "Passed on TSLA: price hasn't moved the expected way yet (-1.75%).",
+   "Passed on JNJ, LLY: price hasn't moved the expected way yet (-0.92%).",
    "Passed on JNJ: price hasn't moved the expected way yet (-0.81%).",
    "Passed on JNJ: price hasn't moved the expected way yet (-0.85%).",
-   "Passed on JNJ: price hasn't moved the expected way yet (-0.09%).",
    "Safety rules that stepped in: stock entry window (x2)."
   ],
   "watchlist": "Allowed to trade: 69 halal stocks, 5 Shariah ETFs, 9 coins.",
-  "lastScan": "2026-11-16T18:26:44Z"
+  "lastScan": "2026-11-16T18:31:58Z"
  },
  "hired": true,
- "updatedAt": "2026-11-16T18:26:56Z",
+ "updatedAt": "2026-11-16T18:32:05Z",
  "mode": "PAPER",
  "agents": [
   {
@@ -28,8 +28,8 @@
    "name": "News Scout",
    "role": "Reads X, Reddit and news feeds",
    "status": "working",
-   "doing": "Read 15 new headlines/posts, 2 market-moving stories",
-   "lastRun": "2026-11-16T18:26:55Z"
+   "doing": "Read 23 new headlines/posts, 2 market-moving stories",
+   "lastRun": "2026-11-16T18:32:03Z"
   },
   {
    "id": "analyst",
@@ -69,7 +69,7 @@
    "role": "Places paper orders on Alpaca",
    "status": "working",
    "doing": "Save to GitHub failed (will retry later): To github.com:omarjaradat2006-sudo/agent-hq.git\n ! [rejected]        HEAD -> main (fetch first)\nerror: failed to push some refs to 'github.com:omarjar",
-   "lastRun": "2026-11-16T18:21:44Z"
+   "lastRun": "2026-11-16T18:26:57Z"
   },
   {
    "id": "coins",
@@ -89,6 +89,16 @@
   }
  ],
  "log": [
+  {
+   "t": "2026-11-16T18:32:03Z",
+   "agent": "News Scout",
+   "msg": "Read 23 new headlines/posts, 2 market-moving stories"
+  },
+  {
+   "t": "2026-11-16T18:26:57Z",
+   "agent": "Trader",
+   "msg": "Save to GitHub failed (will retry later): To github.com:omarjaradat2006-sudo/agent-hq.git\n ! [rejected]        HEAD -> main (fetch first)\nerror: failed to push some refs to 'github.com:omarjar"
+  },
   {
    "t": "2026-11-16T18:26:55Z",
    "agent": "News Scout",
@@ -828,21 +838,11 @@
    "t": "2026-11-16T08:40:49Z",
    "agent": "News Scout",
    "msg": "Read 103 new headlines/posts, 5 market-moving stories"
-  },
-  {
-   "t": "2026-11-16T08:40:45Z",
-   "agent": "News Scout",
-   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
-  },
-  {
-   "t": "2026-11-16T08:25:41Z",
-   "agent": "News Scout",
-   "msg": "Read 69 new headlines/posts, 2 market-moving stories"
   }
  ],
  "brief": {
   "date": "Mon Nov 16",
-  "createdAt": "2026-11-16T18:26:56Z",
+  "createdAt": "2026-11-16T18:32:05Z",
   "headline": "Paper account +$0 today (+0.00%), +0.00% total vs SPY -1.41% · 0 open",
   "summary": "0 trade(s) closed today, 0/0 winners overall. TradingAgents checks used today: 2/5.",
   "notes": [
@@ -883,6 +883,41 @@
  "positions": [],
  "trades": [],
  "decisions": [
+  {
+   "t": "2026-11-16T18:32:04Z",
+   "symbol": "JNJ",
+   "outcome": "waiting",
+   "why": "price hasn't moved the expected way yet (-0.17%)",
+   "event": "Johnson & Johnson is acquiring Ollin Biosciences for $2.2 billion and partnering with Blackstone."
+  },
+  {
+   "t": "2026-11-16T18:32:04Z",
+   "symbol": "XOM",
+   "outcome": "waiting",
+   "why": "price hasn't moved the expected way yet (-0.35%)",
+   "event": "ExxonMobil's daily production in Guyana is set to reach 1.1 million barrels per day as Uaru production begins."
+  },
+  {
+   "t": "2026-11-16T18:32:04Z",
+   "symbol": "JNJ",
+   "outcome": "waiting",
+   "why": "price hasn't moved the expected way yet (-0.92%)",
+   "event": "Johnson & Johnson has agreed to acquire eye disease therapy developer Ollin Biosciences in a deal valued up to $3.33 billion."
+  },
+  {
+   "t": "2026-11-16T18:32:04Z",
+   "symbol": "LLY",
+   "outcome": "waiting",
+   "why": "price hasn't moved the expected way yet (-1.52%)",
+   "event": "Johnson & Johnson has agreed to acquire eye disease therapy developer Ollin Biosciences in a deal valued up to $3.33 billion."
+  },
+  {
+   "t": "2026-11-16T18:32:04Z",
+   "symbol": "TSLA",
+   "outcome": "waiting",
+   "why": "price hasn't moved the expected way yet (-2.73%)",
+   "event": "Tesla plans to build 1 million Cybercabs near Berlin, expanding its German gigafactory footprint."
+  },
   {
    "t": "2026-11-16T18:26:55Z",
    "symbol": "JNJ",
@@ -1267,41 +1302,6 @@
    "outcome": "waiting",
    "why": "price hasn't moved the expected way yet (-0.97%)",
    "event": "Johnson & Johnson has agreed to acquire eye disease therapy developer Ollin Biosciences in a deal valued up to $3.33 billion."
-  },
-  {
-   "t": "2026-11-16T17:16:13Z",
-   "symbol": "LLY",
-   "outcome": "waiting",
-   "why": "price hasn't moved the expected way yet (-1.07%)",
-   "event": "Johnson & Johnson has agreed to acquire eye disease therapy developer Ollin Biosciences in a deal valued up to $3.33 billion."
-  },
-  {
-   "t": "2026-11-16T17:16:13Z",
-   "symbol": "TSLA",
-   "outcome": "waiting",
-   "why": "price hasn't moved the expected way yet (-2.17%)",
-   "event": "Tesla plans a $3.3 billion investment to expand its German gigafactory for Cybercab production."
-  },
-  {
-   "t": "2026-11-16T17:10:50Z",
-   "symbol": "JNJ",
-   "outcome": "waiting",
-   "why": "price hasn't moved the expected way yet (-1.07%)",
-   "event": "Johnson & Johnson has agreed to acquire eye disease therapy developer Ollin Biosciences in a deal valued up to $3.33 billion."
-  },
-  {
-   "t": "2026-11-16T17:10:50Z",
-   "symbol": "LLY",
-   "outcome": "waiting",
-   "why": "price hasn't moved the expected way yet (-1.21%)",
-   "event": "Johnson & Johnson has agreed to acquire eye disease therapy developer Ollin Biosciences in a deal valued up to $3.33 billion."
-  },
-  {
-   "t": "2026-11-16T17:10:50Z",
-   "symbol": "TSLA",
-   "outcome": "waiting",
-   "why": "price hasn't moved the expected way yet (-2.00%)",
-   "event": "Tesla plans a $3.3 billion investment to expand its German gigafactory for Cybercab production."
   }
  ],
  "equity": [
@@ -2880,6 +2880,130 @@
  },
  "events": [
   {
+   "summary": "Tesla plans to build 1 million Cybercabs near Berlin, expanding its German gigafactory footprint.",
+   "category": "contract",
+   "firstSeen": "2026-11-16T14:36:40Z",
+   "publishers": [
+    "Reuters",
+    "Yahoo Finance"
+   ],
+   "assets": {
+    "TSLA": {
+     "direction": "up",
+     "confidence": 0.75,
+     "why": "Major factory expansion and new product capacity announcement."
+    }
+   },
+   "sources": [
+    {
+     "id": "6e8622025ba61a6d",
+     "publisher": "Reuters",
+     "kind": "news",
+     "title": "Tesla announces $3.3 billion expansion of Germany plant",
+     "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNaHd0RC1iZmQwWUtkTl9CYjJVMUhGYmtxNEZyQU92Rm5mZS1OZ0Z2bHl6TmJuLUFJYWpQUW5GQ1h2anVqSHR5TDF3aThnaWhDd3lDYl9oY3VqbTVLaUMwMGtSME5IckZnZE5PQVhURTNPQ1BaS2tBejl6OU15X1B1N3VOM0o3dktRbnpLSjc1eWI5WWs4bjZqNnFOOA?oc=5",
+     "time": "2026-11-16T14:36:40Z"
+    },
+    {
+     "id": "2acd79a8e57ffcb3",
+     "publisher": "Yahoo Finance",
+     "kind": "news",
+     "title": "Tesla to invest 3 bn euros to expand German factory",
+     "url": "https://finance.yahoo.com/technology/articles/tesla-invest-3-bn-euros-144451294.html?.tsrc=rss",
+     "time": "2026-11-16T14:44:51Z"
+    },
+    {
+     "id": "c80edc1bc344d0f3",
+     "publisher": "Yahoo Finance",
+     "kind": "news",
+     "title": "Tesla Targets 2029 Cybercab Production Start In Giga Berlin With $3.3B Investment: Report",
+     "url": "https://stocktwits.com/news-articles/markets/equity/tesla-targets-2029-cybercab-production-start-in-giga-berlin-with-3-3-b-investment-report/cNb7MV2R9gJ?.tsrc=rss",
+     "time": "2026-11-16T16:46:09Z"
+    },
+    {
+     "id": "5a3964d15125684f",
+     "publisher": "Yahoo Finance",
+     "kind": "news",
+     "title": "Tesla Wants to Build 1 Million Cybercabs Near Berlin",
+     "url": "https://finance.yahoo.com/markets/stocks/articles/tesla-wants-build-1-million-181721398.html?.tsrc=rss",
+     "time": "2026-11-16T18:17:21Z"
+    }
+   ]
+  },
+  {
+   "summary": "Semiconductor stocks slide due to AI chip selloffs and AI financing fears, amplified by regulatory pressures.",
+   "category": "tariffs",
+   "firstSeen": "2026-11-16T14:46:33Z",
+   "publishers": [
+    "Benzinga",
+    "CNBC",
+    "Yahoo Finance"
+   ],
+   "assets": {
+    "AMD": {
+     "direction": "down",
+     "confidence": 0.8,
+     "why": "New restrictions on advanced chips and remote access impact semiconductor companies."
+    },
+    "AVGO": {
+     "direction": "down",
+     "confidence": 0.75,
+     "why": "Broadcom slides following a downgrade and concerns over AI financing."
+    },
+    "NVDA": {
+     "direction": "down",
+     "confidence": 0.8,
+     "why": "Targeted by new Commerce rules addressing remote access loopholes for advanced chips."
+    },
+    "INTC": {
+     "direction": "down",
+     "confidence": 0.7,
+     "why": "Tech and chip stocks pressured by new U.S. Bureau of Industry and Security rules."
+    }
+   },
+   "sources": [
+    {
+     "id": "3a19c43d9348d3f4",
+     "publisher": "Benzinga",
+     "kind": "news",
+     "title": "'US moves to tighten AI chip export rules' - Financial Times",
+     "url": "https://www.benzinga.com/news/26/11/63292997/us-moves-tighten-ai-chip-export-rules-financial-times",
+     "time": "2026-11-16T14:46:33Z"
+    },
+    {
+     "id": "813f81bbd1d42712",
+     "publisher": "Yahoo Finance",
+     "kind": "news",
+     "title": "Chip stocks fall on US semiconductor restrictions: AlphaCheck",
+     "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPX0NYQzlGd3NpY1NLcXNmMm84U1pmQ1dKelhJSkRNY09iTHJVbnZfTGprZFNQWXBteHNCbnhmYVJXaDJIUEd6RkxXVlNEYzlVMzBMWnRQc0NZblllQlY3REtxN0hoQ1h2QTBzS3Q1QTh2OWdXbHBubm1IcGhBSndxNkVXa3JIMVpXUG5XV2RHcndCa2UtR1Z6NDkxTDZERXlMNmxFVUJHV2tRTXdpb1FEVkh4RlZZaTBoaWQw?oc=5",
+     "time": "2026-11-16T15:00:19Z"
+    },
+    {
+     "id": "68a869398c13256e",
+     "publisher": "Benzinga",
+     "kind": "news",
+     "title": "Rocket Lab, Firefly, AST SpaceMobile Stocks Drop: What’s Going On With Space Stocks Monday?",
+     "url": "https://www.benzinga.com/trading-ideas/movers/26/11/63295932/rocket-lab-firefly-ast-spacemobile-stocks-drop-whats-going-on-with-space-stocks-monday",
+     "time": "2026-11-16T15:13:57Z"
+    },
+    {
+     "id": "8223b993a457a316",
+     "publisher": "CNBC",
+     "kind": "news",
+     "title": "Nvidia fallout: Commerce targets loophole for China's data center use",
+     "url": "https://www.cnbc.com/2026/11/16/nvidia-commerce-china-lutnick.html",
+     "time": "2026-11-16T15:27:31Z"
+    },
+    {
+     "id": "1bb4f31019eb9bd1",
+     "publisher": "Benzinga",
+     "kind": "news",
+     "title": "Reported Earlier, U.S. Department Of Commerce's Bureau of Industry and Security Interim Final Rule To Address Remote Access To Advanced Super Intelligence Chips And Servers",
+     "url": "https://www.benzinga.com/news/26/11/63297268/reported-earlier-u-s-department-commerce-s-bureau-industry-and-security-interim-final-rule-address-r",
+     "time": "2026-11-16T15:26:35Z"
+    }
+   ]
+  },
+  {
    "summary": "Geopolitical tensions escalate in the Middle East with reports of oil tankers hit by mines in the Strait of Hormuz.",
    "category": "war_escalation",
    "firstSeen": "2026-11-10T20:01:23Z",
@@ -3813,48 +3937,6 @@
    ]
   },
   {
-   "summary": "Tesla plans a 3 billion euro investment to expand its German gigafactory for Cybercab production.",
-   "category": "contract",
-   "firstSeen": "2026-11-16T14:36:40Z",
-   "publishers": [
-    "Reuters",
-    "Yahoo Finance"
-   ],
-   "assets": {
-    "TSLA": {
-     "direction": "up",
-     "confidence": 0.75,
-     "why": "Major factory expansion and new product capacity announcement."
-    }
-   },
-   "sources": [
-    {
-     "id": "6e8622025ba61a6d",
-     "publisher": "Reuters",
-     "kind": "news",
-     "title": "Tesla announces $3.3 billion expansion of Germany plant",
-     "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNaHd0RC1iZmQwWUtkTl9CYjJVMUhGYmtxNEZyQU92Rm5mZS1OZ0Z2bHl6TmJuLUFJYWpQUW5GQ1h2anVqSHR5TDF3aThnaWhDd3lDYl9oY3VqbTVLaUMwMGtSME5IckZnZE5PQVhURTNPQ1BaS2tBejl6OU15X1B1N3VOM0o3dktRbnpLSjc1eWI5WWs4bjZqNnFOOA?oc=5",
-     "time": "2026-11-16T14:36:40Z"
-    },
-    {
-     "id": "2acd79a8e57ffcb3",
-     "publisher": "Yahoo Finance",
-     "kind": "news",
-     "title": "Tesla to invest 3 bn euros to expand German factory",
-     "url": "https://finance.yahoo.com/technology/articles/tesla-invest-3-bn-euros-144451294.html?.tsrc=rss",
-     "time": "2026-11-16T14:44:51Z"
-    },
-    {
-     "id": "c80edc1bc344d0f3",
-     "publisher": "Yahoo Finance",
-     "kind": "news",
-     "title": "Tesla Targets 2029 Cybercab Production Start In Giga Berlin With $3.3B Investment: Report",
-     "url": "https://stocktwits.com/news-articles/markets/equity/tesla-targets-2029-cybercab-production-start-in-giga-berlin-with-3-3-b-investment-report/cNb7MV2R9gJ?.tsrc=rss",
-     "time": "2026-11-16T16:46:09Z"
-    }
-   ]
-  },
-  {
    "summary": "Johnson & Johnson is acquiring Ollin Biosciences for $2.2 billion and partnering with Blackstone.",
    "category": "contract",
    "firstSeen": "2026-11-16T17:56:34Z",
@@ -4653,80 +4735,6 @@
      "title": "Oil falls over $1 on easing geopolitical fears and oversupply worries",
      "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQd0RjdkpYTklPUzF2U293azdJRzhHR2tjMUt5RFYtYjZQX1BSN290cjBTb05Sb3BVTjFnaXVydnpsYzRVZDRQY0VNdEpKWUc4eGNlUnR4VldnNGdpejFqVmRDX2NuaUw1RHliVF94X012TzhsU084NklWUGdtTk1nUjJDdC1zb2JUTHZMdWI1cmhyZUVZWkZVOEpwRFVZU1JwdUxiQVNlM0NBSmdYYmhsWXd3Zk9iNnpVaDdRM0Rn?oc=5",
      "time": "2026-11-12T07:44:38Z"
-    }
-   ]
-  },
-  {
-   "summary": "The U.S. government is moving to restrict remote access to advanced AI chips, impacting semiconductor stocks.",
-   "category": "tariffs",
-   "firstSeen": "2026-11-16T14:46:33Z",
-   "publishers": [
-    "Benzinga",
-    "CNBC",
-    "Yahoo Finance"
-   ],
-   "assets": {
-    "AMD": {
-     "direction": "down",
-     "confidence": 0.8,
-     "why": "New restrictions on advanced chips and remote access impact semiconductor companies."
-    },
-    "AVGO": {
-     "direction": "down",
-     "confidence": 0.7,
-     "why": "Semiconductor restrictions negatively impact chip stocks."
-    },
-    "NVDA": {
-     "direction": "down",
-     "confidence": 0.8,
-     "why": "Targeted by new Commerce rules addressing remote access loopholes for advanced chips."
-    },
-    "INTC": {
-     "direction": "down",
-     "confidence": 0.7,
-     "why": "Tech and chip stocks pressured by new U.S. Bureau of Industry and Security rules."
-    }
-   },
-   "sources": [
-    {
-     "id": "3a19c43d9348d3f4",
-     "publisher": "Benzinga",
-     "kind": "news",
-     "title": "'US moves to tighten AI chip export rules' - Financial Times",
-     "url": "https://www.benzinga.com/news/26/11/63292997/us-moves-tighten-ai-chip-export-rules-financial-times",
-     "time": "2026-11-16T14:46:33Z"
-    },
-    {
-     "id": "813f81bbd1d42712",
-     "publisher": "Yahoo Finance",
-     "kind": "news",
-     "title": "Chip stocks fall on US semiconductor restrictions: AlphaCheck",
-     "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPX0NYQzlGd3NpY1NLcXNmMm84U1pmQ1dKelhJSkRNY09iTHJVbnZfTGprZFNQWXBteHNCbnhmYVJXaDJIUEd6RkxXVlNEYzlVMzBMWnRQc0NZblllQlY3REtxN0hoQ1h2QTBzS3Q1QTh2OWdXbHBubm1IcGhBSndxNkVXa3JIMVpXUG5XV2RHcndCa2UtR1Z6NDkxTDZERXlMNmxFVUJHV2tRTXdpb1FEVkh4RlZZaTBoaWQw?oc=5",
-     "time": "2026-11-16T15:00:19Z"
-    },
-    {
-     "id": "68a869398c13256e",
-     "publisher": "Benzinga",
-     "kind": "news",
-     "title": "Rocket Lab, Firefly, AST SpaceMobile Stocks Drop: What’s Going On With Space Stocks Monday?",
-     "url": "https://www.benzinga.com/trading-ideas/movers/26/11/63295932/rocket-lab-firefly-ast-spacemobile-stocks-drop-whats-going-on-with-space-stocks-monday",
-     "time": "2026-11-16T15:13:57Z"
-    },
-    {
-     "id": "8223b993a457a316",
-     "publisher": "CNBC",
-     "kind": "news",
-     "title": "Nvidia fallout: Commerce targets loophole for China's data center use",
-     "url": "https://www.cnbc.com/2026/11/16/nvidia-commerce-china-lutnick.html",
-     "time": "2026-11-16T15:27:31Z"
-    },
-    {
-     "id": "1bb4f31019eb9bd1",
-     "publisher": "Benzinga",
-     "kind": "news",
-     "title": "Reported Earlier, U.S. Department Of Commerce's Bureau of Industry and Security Interim Final Rule To Address Remote Access To Advanced Super Intelligence Chips And Servers",
-     "url": "https://www.benzinga.com/news/26/11/63297268/reported-earlier-u-s-department-commerce-s-bureau-industry-and-security-interim-final-rule-address-r",
-     "time": "2026-11-16T15:26:35Z"
     }
    ]
   },
