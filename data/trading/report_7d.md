@@ -1,6 +1,6 @@
-# 7-day paper test: day 6 of 7 (running)
+# 7-day paper test: day 7 of 7 (running)
 
-PAPER account only. 2026-11-10 01:51 UTC to 2026-11-17 01:51 UTC. Updated 2026-11-15 21:45 UTC.
+PAPER account only. 2026-11-10 01:51 UTC to 2026-11-17 01:51 UTC. Updated 2026-11-16 21:45 UTC.
 
 ## Results
 
@@ -9,17 +9,17 @@ PAPER account only. 2026-11-10 01:51 UTC to 2026-11-17 01:51 UTC. Updated 2026-1
 | Trades opened / closed / still open | 0 / 0 / 0 |
 | Win rate | — (0 won, 0 lost) |
 | Realised P&L | $+0.00 (avg trade —, avg win —, avg loss —) |
-| Account change | $+0.00 (+0.00%) vs SPY -0.08% |
+| Account change | $+0.00 (+0.00%) vs SPY -1.68% |
 | Open positions P&L | $+0.00 |
 | Max drawdown | +0.00% (Alpaca 15-min history + bot samples) |
 | Kill switch | off |
-| Bot (re)starts | 14 |
+| Bot (re)starts | 16 |
 
 ## Every risk-rule trigger
 
 | Rule | Times | Assets | First | Last |
 |---|---|---|---|---|
-| Stock entry window (first 10 / last 30 min) | 50 | XOM, CVX, OXY, HAL, MU, NVDA, INTC, NOW | 2026-11-10T20:35 | 2026-11-13T21:00 |
+| Stock entry window (first 10 / last 30 min) | 82 | XOM, CVX, OXY, HAL, MU, NVDA, INTC, NOW | 2026-11-10T20:35 | 2026-11-16T20:58 |
 
 Timeline (repeats in a row folded together):
 
@@ -62,11 +62,46 @@ Timeline (repeats in a row folded together):
 - 2026-11-12 20:30 Stock entry window (first 10 / last 30 min) QCOM: last 30 min before the close (x7, until 2026-11-12 20:58)
 - 2026-11-13 20:34 Stock entry window (first 10 / last 30 min) MSFT: last 30 min before the close (x6, until 2026-11-13 21:00)
 - 2026-11-13 21:00 Stock entry window (first 10 / last 30 min) AMZN: last 30 min before the close
+- 2026-11-16 14:32 Stock entry window (first 10 / last 30 min) JNJ: first minutes after the open (x2, until 2026-11-16 14:37)
+- 2026-11-16 20:30 Stock entry window (first 10 / last 30 min) TSLA: last 30 min before the close
+- 2026-11-16 20:30 Stock entry window (first 10 / last 30 min) LLY: last 30 min before the close
+- 2026-11-16 20:30 Stock entry window (first 10 / last 30 min) JNJ: last 30 min before the close
+- 2026-11-16 20:30 Stock entry window (first 10 / last 30 min) XOM: last 30 min before the close
+- 2026-11-16 20:30 Stock entry window (first 10 / last 30 min) JNJ: last 30 min before the close
+- 2026-11-16 20:32 Stock entry window (first 10 / last 30 min) TSLA: last 30 min before the close
+- 2026-11-16 20:32 Stock entry window (first 10 / last 30 min) LLY: last 30 min before the close
+- 2026-11-16 20:32 Stock entry window (first 10 / last 30 min) JNJ: last 30 min before the close
+- 2026-11-16 20:32 Stock entry window (first 10 / last 30 min) XOM: last 30 min before the close
+- 2026-11-16 20:32 Stock entry window (first 10 / last 30 min) JNJ: last 30 min before the close
+- 2026-11-16 20:38 Stock entry window (first 10 / last 30 min) LLY: last 30 min before the close
+- 2026-11-16 20:38 Stock entry window (first 10 / last 30 min) JNJ: last 30 min before the close
+- 2026-11-16 20:38 Stock entry window (first 10 / last 30 min) XOM: last 30 min before the close
+- 2026-11-16 20:38 Stock entry window (first 10 / last 30 min) JNJ: last 30 min before the close
+- 2026-11-16 20:43 Stock entry window (first 10 / last 30 min) LLY: last 30 min before the close
+- 2026-11-16 20:43 Stock entry window (first 10 / last 30 min) JNJ: last 30 min before the close
+- 2026-11-16 20:43 Stock entry window (first 10 / last 30 min) XOM: last 30 min before the close
+- 2026-11-16 20:43 Stock entry window (first 10 / last 30 min) JNJ: last 30 min before the close
+- 2026-11-16 20:48 Stock entry window (first 10 / last 30 min) LLY: last 30 min before the close
+- 2026-11-16 20:48 Stock entry window (first 10 / last 30 min) JNJ: last 30 min before the close
+- 2026-11-16 20:48 Stock entry window (first 10 / last 30 min) XOM: last 30 min before the close
+- 2026-11-16 20:48 Stock entry window (first 10 / last 30 min) JNJ: last 30 min before the close
+- 2026-11-16 20:53 Stock entry window (first 10 / last 30 min) LLY: last 30 min before the close
+- 2026-11-16 20:53 Stock entry window (first 10 / last 30 min) JNJ: last 30 min before the close
+- 2026-11-16 20:53 Stock entry window (first 10 / last 30 min) XOM: last 30 min before the close
+- 2026-11-16 20:53 Stock entry window (first 10 / last 30 min) JNJ: last 30 min before the close
+- 2026-11-16 20:58 Stock entry window (first 10 / last 30 min) LLY: last 30 min before the close
+- 2026-11-16 20:58 Stock entry window (first 10 / last 30 min) JNJ: last 30 min before the close
+- 2026-11-16 20:58 Stock entry window (first 10 / last 30 min) XOM: last 30 min before the close
+- 2026-11-16 20:58 Stock entry window (first 10 / last 30 min) JNJ: last 30 min before the close
 
 ## Errors
 
-- **gemini_triage** x25 (last 2026-11-14T15:57): Expecting ':' delimiter: line 16 column 7 (char 409)
-- **tradingagents** x5 (last 2026-11-13T13:36): rateContent. Call ModelService.ListModels to see the list of available models and their supported methods.', 'status': 'NOT_FOUND'}}
+- **save_to_github** x62 (last 2026-11-16T20:23): To github.com:omarjaradat2006-sudo/agent-hq.git
+ ! [rejected]        HEAD -> main (fetch first)
+error: failed to push some refs to 'github.com:omarjaradat2006-sudo/agent-hq.git'
+hint: Updates were rej
+- **gemini_triage** x28 (last 2026-11-16T17:04): Expecting ':' delimiter: line 16 column 7 (char 409)
+- **tradingagents** x7 (last 2026-11-16T16:34): rateContent. Call ModelService.ListModels to see the list of available models and their supported methods.', 'status': 'NOT_FOUND'}}
 During task with name 'agent' and id 'a1823eed-1591-4414-bf92-8c9f3
 - **sec_unreachable** x2 (last 2026-11-10T19:59): HTTP 403 https://www.sec.gov/files/company_tickers.json
 

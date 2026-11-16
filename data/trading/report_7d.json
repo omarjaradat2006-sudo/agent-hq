@@ -1,10 +1,10 @@
 {
  "status": "running",
- "updatedAt": "2026-11-15T21:45:22Z",
+ "updatedAt": "2026-11-16T21:45:08Z",
  "mode": "PAPER",
  "from": "2026-11-10T01:51:53Z",
  "to": "2026-11-17T01:51:53Z",
- "day": 6,
+ "day": 7,
  "days": 7,
  "trades": {
   "opened": 0,
@@ -26,8 +26,8 @@
   "endEquity": 100000.0,
   "pnl": 0.0,
   "pnlPct": 0.0,
-  "spyPct": -0.08,
-  "vsSpyPct": 0.08,
+  "spyPct": -1.68,
+  "vsSpyPct": 1.68,
   "maxDrawdownPct": 0.0,
   "maxDrawdownAt": null,
   "curveSource": "Alpaca 15-min history + bot samples",
@@ -38,7 +38,7 @@
    "rule": "stock_entry_window",
    "label": "Stock entry window (first 10 / last 30 min)",
    "kind": "risk",
-   "count": 50,
+   "count": 82,
    "symbols": [
     "XOM",
     "CVX",
@@ -50,10 +50,13 @@
     "NOW",
     "QCOM",
     "MSFT",
-    "AMZN"
+    "AMZN",
+    "JNJ",
+    "TSLA",
+    "LLY"
    ],
    "first": "2026-11-10T20:35:03Z",
-   "last": "2026-11-13T21:00:02Z",
+   "last": "2026-11-16T20:58:57Z",
    "example": "last 30 min before the close"
   }
  ],
@@ -408,32 +411,323 @@
    "msg": "last 30 min before the close",
    "times": 1,
    "lastT": "2026-11-13T21:00:02Z"
+  },
+  {
+   "t": "2026-11-16T14:32:31Z",
+   "kind": "risk",
+   "rule": "stock_entry_window",
+   "symbol": "JNJ",
+   "msg": "first minutes after the open",
+   "times": 2,
+   "lastT": "2026-11-16T14:37:43Z"
+  },
+  {
+   "t": "2026-11-16T20:30:13Z",
+   "kind": "risk",
+   "rule": "stock_entry_window",
+   "symbol": "TSLA",
+   "msg": "last 30 min before the close",
+   "times": 1,
+   "lastT": "2026-11-16T20:30:13Z"
+  },
+  {
+   "t": "2026-11-16T20:30:13Z",
+   "kind": "risk",
+   "rule": "stock_entry_window",
+   "symbol": "LLY",
+   "msg": "last 30 min before the close",
+   "times": 1,
+   "lastT": "2026-11-16T20:30:13Z"
+  },
+  {
+   "t": "2026-11-16T20:30:13Z",
+   "kind": "risk",
+   "rule": "stock_entry_window",
+   "symbol": "JNJ",
+   "msg": "last 30 min before the close",
+   "times": 1,
+   "lastT": "2026-11-16T20:30:13Z"
+  },
+  {
+   "t": "2026-11-16T20:30:13Z",
+   "kind": "risk",
+   "rule": "stock_entry_window",
+   "symbol": "XOM",
+   "msg": "last 30 min before the close",
+   "times": 1,
+   "lastT": "2026-11-16T20:30:13Z"
+  },
+  {
+   "t": "2026-11-16T20:30:13Z",
+   "kind": "risk",
+   "rule": "stock_entry_window",
+   "symbol": "JNJ",
+   "msg": "last 30 min before the close",
+   "times": 1,
+   "lastT": "2026-11-16T20:30:13Z"
+  },
+  {
+   "t": "2026-11-16T20:32:26Z",
+   "kind": "risk",
+   "rule": "stock_entry_window",
+   "symbol": "TSLA",
+   "msg": "last 30 min before the close",
+   "times": 1,
+   "lastT": "2026-11-16T20:32:26Z"
+  },
+  {
+   "t": "2026-11-16T20:32:26Z",
+   "kind": "risk",
+   "rule": "stock_entry_window",
+   "symbol": "LLY",
+   "msg": "last 30 min before the close",
+   "times": 1,
+   "lastT": "2026-11-16T20:32:26Z"
+  },
+  {
+   "t": "2026-11-16T20:32:26Z",
+   "kind": "risk",
+   "rule": "stock_entry_window",
+   "symbol": "JNJ",
+   "msg": "last 30 min before the close",
+   "times": 1,
+   "lastT": "2026-11-16T20:32:26Z"
+  },
+  {
+   "t": "2026-11-16T20:32:26Z",
+   "kind": "risk",
+   "rule": "stock_entry_window",
+   "symbol": "XOM",
+   "msg": "last 30 min before the close",
+   "times": 1,
+   "lastT": "2026-11-16T20:32:26Z"
+  },
+  {
+   "t": "2026-11-16T20:32:26Z",
+   "kind": "risk",
+   "rule": "stock_entry_window",
+   "symbol": "JNJ",
+   "msg": "last 30 min before the close",
+   "times": 1,
+   "lastT": "2026-11-16T20:32:26Z"
+  },
+  {
+   "t": "2026-11-16T20:38:04Z",
+   "kind": "risk",
+   "rule": "stock_entry_window",
+   "symbol": "LLY",
+   "msg": "last 30 min before the close",
+   "times": 1,
+   "lastT": "2026-11-16T20:38:04Z"
+  },
+  {
+   "t": "2026-11-16T20:38:04Z",
+   "kind": "risk",
+   "rule": "stock_entry_window",
+   "symbol": "JNJ",
+   "msg": "last 30 min before the close",
+   "times": 1,
+   "lastT": "2026-11-16T20:38:04Z"
+  },
+  {
+   "t": "2026-11-16T20:38:04Z",
+   "kind": "risk",
+   "rule": "stock_entry_window",
+   "symbol": "XOM",
+   "msg": "last 30 min before the close",
+   "times": 1,
+   "lastT": "2026-11-16T20:38:04Z"
+  },
+  {
+   "t": "2026-11-16T20:38:04Z",
+   "kind": "risk",
+   "rule": "stock_entry_window",
+   "symbol": "JNJ",
+   "msg": "last 30 min before the close",
+   "times": 1,
+   "lastT": "2026-11-16T20:38:04Z"
+  },
+  {
+   "t": "2026-11-16T20:43:23Z",
+   "kind": "risk",
+   "rule": "stock_entry_window",
+   "symbol": "LLY",
+   "msg": "last 30 min before the close",
+   "times": 1,
+   "lastT": "2026-11-16T20:43:23Z"
+  },
+  {
+   "t": "2026-11-16T20:43:23Z",
+   "kind": "risk",
+   "rule": "stock_entry_window",
+   "symbol": "JNJ",
+   "msg": "last 30 min before the close",
+   "times": 1,
+   "lastT": "2026-11-16T20:43:23Z"
+  },
+  {
+   "t": "2026-11-16T20:43:23Z",
+   "kind": "risk",
+   "rule": "stock_entry_window",
+   "symbol": "XOM",
+   "msg": "last 30 min before the close",
+   "times": 1,
+   "lastT": "2026-11-16T20:43:23Z"
+  },
+  {
+   "t": "2026-11-16T20:43:23Z",
+   "kind": "risk",
+   "rule": "stock_entry_window",
+   "symbol": "JNJ",
+   "msg": "last 30 min before the close",
+   "times": 1,
+   "lastT": "2026-11-16T20:43:23Z"
+  },
+  {
+   "t": "2026-11-16T20:48:35Z",
+   "kind": "risk",
+   "rule": "stock_entry_window",
+   "symbol": "LLY",
+   "msg": "last 30 min before the close",
+   "times": 1,
+   "lastT": "2026-11-16T20:48:35Z"
+  },
+  {
+   "t": "2026-11-16T20:48:35Z",
+   "kind": "risk",
+   "rule": "stock_entry_window",
+   "symbol": "JNJ",
+   "msg": "last 30 min before the close",
+   "times": 1,
+   "lastT": "2026-11-16T20:48:35Z"
+  },
+  {
+   "t": "2026-11-16T20:48:35Z",
+   "kind": "risk",
+   "rule": "stock_entry_window",
+   "symbol": "XOM",
+   "msg": "last 30 min before the close",
+   "times": 1,
+   "lastT": "2026-11-16T20:48:35Z"
+  },
+  {
+   "t": "2026-11-16T20:48:35Z",
+   "kind": "risk",
+   "rule": "stock_entry_window",
+   "symbol": "JNJ",
+   "msg": "last 30 min before the close",
+   "times": 1,
+   "lastT": "2026-11-16T20:48:35Z"
+  },
+  {
+   "t": "2026-11-16T20:53:44Z",
+   "kind": "risk",
+   "rule": "stock_entry_window",
+   "symbol": "LLY",
+   "msg": "last 30 min before the close",
+   "times": 1,
+   "lastT": "2026-11-16T20:53:44Z"
+  },
+  {
+   "t": "2026-11-16T20:53:44Z",
+   "kind": "risk",
+   "rule": "stock_entry_window",
+   "symbol": "JNJ",
+   "msg": "last 30 min before the close",
+   "times": 1,
+   "lastT": "2026-11-16T20:53:44Z"
+  },
+  {
+   "t": "2026-11-16T20:53:44Z",
+   "kind": "risk",
+   "rule": "stock_entry_window",
+   "symbol": "XOM",
+   "msg": "last 30 min before the close",
+   "times": 1,
+   "lastT": "2026-11-16T20:53:44Z"
+  },
+  {
+   "t": "2026-11-16T20:53:44Z",
+   "kind": "risk",
+   "rule": "stock_entry_window",
+   "symbol": "JNJ",
+   "msg": "last 30 min before the close",
+   "times": 1,
+   "lastT": "2026-11-16T20:53:44Z"
+  },
+  {
+   "t": "2026-11-16T20:58:57Z",
+   "kind": "risk",
+   "rule": "stock_entry_window",
+   "symbol": "LLY",
+   "msg": "last 30 min before the close",
+   "times": 1,
+   "lastT": "2026-11-16T20:58:57Z"
+  },
+  {
+   "t": "2026-11-16T20:58:57Z",
+   "kind": "risk",
+   "rule": "stock_entry_window",
+   "symbol": "JNJ",
+   "msg": "last 30 min before the close",
+   "times": 1,
+   "lastT": "2026-11-16T20:58:57Z"
+  },
+  {
+   "t": "2026-11-16T20:58:57Z",
+   "kind": "risk",
+   "rule": "stock_entry_window",
+   "symbol": "XOM",
+   "msg": "last 30 min before the close",
+   "times": 1,
+   "lastT": "2026-11-16T20:58:57Z"
+  },
+  {
+   "t": "2026-11-16T20:58:57Z",
+   "kind": "risk",
+   "rule": "stock_entry_window",
+   "symbol": "JNJ",
+   "msg": "last 30 min before the close",
+   "times": 1,
+   "lastT": "2026-11-16T20:58:57Z"
   }
  ],
  "errors": [
   {
+   "rule": "save_to_github",
+   "label": "save to github",
+   "kind": "error",
+   "count": 62,
+   "symbols": [],
+   "first": "2026-11-16T14:53:13Z",
+   "last": "2026-11-16T20:23:43Z",
+   "example": "To github.com:omarjaradat2006-sudo/agent-hq.git\n ! [rejected]        HEAD -> main (fetch first)\nerror: failed to push some refs to 'github.com:omarjaradat2006-sudo/agent-hq.git'\nhint: Updates were rej"
+  },
+  {
    "rule": "gemini_triage",
    "label": "gemini triage",
    "kind": "error",
-   "count": 25,
+   "count": 28,
    "symbols": [],
    "first": "2026-11-10T02:00:27Z",
-   "last": "2026-11-14T15:57:47Z",
+   "last": "2026-11-16T17:04:18Z",
    "example": "Expecting ':' delimiter: line 16 column 7 (char 409)"
   },
   {
    "rule": "tradingagents",
    "label": "tradingagents",
    "kind": "error",
-   "count": 5,
+   "count": 7,
    "symbols": [
     "AMD",
     "REGN",
     "ABBV",
-    "BTC/USD"
+    "BTC/USD",
+    "JNJ",
+    "NVDA"
    ],
    "first": "2026-11-11T18:44:18Z",
-   "last": "2026-11-13T13:36:36Z",
+   "last": "2026-11-16T16:34:41Z",
    "example": "rateContent. Call ModelService.ListModels to see the list of available models and their supported methods.', 'status': 'NOT_FOUND'}}\nDuring task with name 'agent' and id 'a1823eed-1591-4414-bf92-8c9f3"
   },
   {
@@ -636,9 +930,99 @@
    "msg": "Expecting property name enclosed in double quotes: line 14 column 11 (char 442)",
    "times": 1,
    "lastT": "2026-11-14T15:57:47Z"
+  },
+  {
+   "t": "2026-11-16T14:42:54Z",
+   "kind": "error",
+   "rule": "tradingagents",
+   "symbol": "JNJ",
+   "msg": "res and improvements. We recommend you to use the Interactions API (https://aistudio.google.com/docs/get-started).', 'status': 'NOT_FOUND'}}\nDuring task with name 'agent' and id '56a89884-3dc8-3687-db",
+   "times": 1,
+   "lastT": "2026-11-16T14:42:54Z"
+  },
+  {
+   "t": "2026-11-16T14:53:13Z",
+   "kind": "error",
+   "rule": "save_to_github",
+   "symbol": null,
+   "msg": "To github.com:omarjaradat2006-sudo/agent-hq.git\n ! [rejected]        HEAD -> main (fetch first)\nerror: failed to push some refs to 'github.com:omarjaradat2006-sudo/agent-hq.git'\nhint: Updates were rej",
+   "times": 16,
+   "lastT": "2026-11-16T16:13:28Z"
+  },
+  {
+   "t": "2026-11-16T16:18:39Z",
+   "kind": "error",
+   "rule": "gemini_triage",
+   "symbol": null,
+   "msg": "Expecting ':' delimiter: line 7 column 24 (char 144)",
+   "times": 1,
+   "lastT": "2026-11-16T16:18:39Z"
+  },
+  {
+   "t": "2026-11-16T16:18:42Z",
+   "kind": "error",
+   "rule": "save_to_github",
+   "symbol": null,
+   "msg": "To github.com:omarjaradat2006-sudo/agent-hq.git\n ! [rejected]        HEAD -> main (fetch first)\nerror: failed to push some refs to 'github.com:omarjaradat2006-sudo/agent-hq.git'\nhint: Updates were rej",
+   "times": 3,
+   "lastT": "2026-11-16T16:29:13Z"
+  },
+  {
+   "t": "2026-11-16T16:34:41Z",
+   "kind": "error",
+   "rule": "tradingagents",
+   "symbol": "NVDA",
+   "msg": "s and improvements. We recommend you to use the Interactions API (https://aistudio.google.com/docs/get-started).', 'status': 'NOT_FOUND'}}\nDuring task with name 'agent' and id '5dce0d24-06df-8a04-0563",
+   "times": 1,
+   "lastT": "2026-11-16T16:34:41Z"
+  },
+  {
+   "t": "2026-11-16T16:34:43Z",
+   "kind": "error",
+   "rule": "save_to_github",
+   "symbol": null,
+   "msg": "To github.com:omarjaradat2006-sudo/agent-hq.git\n ! [rejected]        HEAD -> main (fetch first)\nerror: failed to push some refs to 'github.com:omarjaradat2006-sudo/agent-hq.git'\nhint: Updates were rej",
+   "times": 2,
+   "lastT": "2026-11-16T16:39:52Z"
+  },
+  {
+   "t": "2026-11-16T16:46:32Z",
+   "kind": "error",
+   "rule": "gemini_triage",
+   "symbol": null,
+   "msg": "All Gemini models failed. Last error: Gemini HTTP 503 on gemini-3.1-flash-lite: {\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experiencing high demand. Spikes in demand are u",
+   "times": 1,
+   "lastT": "2026-11-16T16:46:32Z"
+  },
+  {
+   "t": "2026-11-16T16:46:35Z",
+   "kind": "error",
+   "rule": "save_to_github",
+   "symbol": null,
+   "msg": "To github.com:omarjaradat2006-sudo/agent-hq.git\n ! [rejected]        HEAD -> main (fetch first)\nerror: failed to push some refs to 'github.com:omarjaradat2006-sudo/agent-hq.git'\nhint: Updates were rej",
+   "times": 3,
+   "lastT": "2026-11-16T16:57:29Z"
+  },
+  {
+   "t": "2026-11-16T17:04:18Z",
+   "kind": "error",
+   "rule": "gemini_triage",
+   "symbol": null,
+   "msg": "All Gemini models failed. Last error: Gemini HTTP 503 on gemini-3.1-flash-lite: {\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experiencing high demand. Spikes in demand are u",
+   "times": 1,
+   "lastT": "2026-11-16T17:04:18Z"
+  },
+  {
+   "t": "2026-11-16T17:04:28Z",
+   "kind": "error",
+   "rule": "save_to_github",
+   "symbol": null,
+   "msg": "To github.com:omarjaradat2006-sudo/agent-hq.git\n ! [rejected]        HEAD -> main (fetch first)\nerror: failed to push some refs to 'github.com:omarjaradat2006-sudo/agent-hq.git'\nhint: Updates were rej",
+   "times": 38,
+   "lastT": "2026-11-16T20:23:43Z"
   }
  ],
- "restarts": 14,
+ "restarts": 16,
  "killSwitch": false,
  "tradeList": [],
  "limits": {
