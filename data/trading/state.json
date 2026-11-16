@@ -9,18 +9,18 @@
    "Nothing right now (all cash)."
   ],
   "today": [
-   "Scanned the news 100 times today: read 6693 headlines, found 244 that could move a stock or coin it's allowed to trade. None passed every check, so no trade (that's normal).",
+   "Scanned the news 101 times today: read 6713 headlines, found 246 that could move a stock or coin it's allowed to trade. None passed every check, so no trade (that's normal).",
+   "Passed on JNJ: price hasn't moved the expected way yet (-0.75%).",
    "Passed on TSLA: price hasn't moved the expected way yet (-2.90%).",
    "Passed on JNJ: price hasn't moved the expected way yet (-0.85%).",
    "Passed on JNJ, LLY: price hasn't moved the expected way yet (-1.39%).",
-   "Passed on XOM: price hasn't moved the expected way yet (-0.30%).",
    "Safety rules that stepped in: stock entry window (x2)."
   ],
   "watchlist": "Allowed to trade: 69 halal stocks, 5 Shariah ETFs, 9 coins.",
-  "lastScan": "2026-11-16T20:07:27Z"
+  "lastScan": "2026-11-16T20:12:51Z"
  },
  "hired": true,
- "updatedAt": "2026-11-16T20:07:49Z",
+ "updatedAt": "2026-11-16T20:13:01Z",
  "mode": "PAPER",
  "agents": [
   {
@@ -28,8 +28,8 @@
    "name": "News Scout",
    "role": "Reads X, Reddit and news feeds",
    "status": "working",
-   "doing": "Read 41 new headlines/posts, 2 market-moving stories",
-   "lastRun": "2026-11-16T20:07:48Z"
+   "doing": "Read 20 new headlines/posts, 2 market-moving stories",
+   "lastRun": "2026-11-16T20:13:00Z"
   },
   {
    "id": "analyst",
@@ -69,7 +69,7 @@
    "role": "Places paper orders on Alpaca",
    "status": "working",
    "doing": "Save to GitHub failed (will retry later): To github.com:omarjaradat2006-sudo/agent-hq.git\n ! [rejected]        HEAD -> main (fetch first)\nerror: failed to push some refs to 'github.com:omarjar",
-   "lastRun": "2026-11-16T20:02:27Z"
+   "lastRun": "2026-11-16T20:07:51Z"
   },
   {
    "id": "coins",
@@ -89,6 +89,26 @@
   }
  ],
  "log": [
+  {
+   "t": "2026-11-16T20:13:00Z",
+   "agent": "News Scout",
+   "msg": "Read 20 new headlines/posts, 2 market-moving stories"
+  },
+  {
+   "t": "2026-11-16T20:12:59Z",
+   "agent": "News Scout",
+   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
+  },
+  {
+   "t": "2026-11-16T20:12:56Z",
+   "agent": "News Scout",
+   "msg": "Google News feed skipped: HTTP 429 https://news.google.com/rss/search: <html><head><meta http-equiv=\"content-type\" content=\"text/html; charset=utf-8\"/><title>Sorry...</title><style> body { font-family: verdana, arial, sans-serif; background-color: #fff; color: #000; }</s"
+  },
+  {
+   "t": "2026-11-16T20:07:51Z",
+   "agent": "Trader",
+   "msg": "Save to GitHub failed (will retry later): To github.com:omarjaradat2006-sudo/agent-hq.git\n ! [rejected]        HEAD -> main (fetch first)\nerror: failed to push some refs to 'github.com:omarjar"
+  },
   {
    "t": "2026-11-16T20:07:48Z",
    "agent": "News Scout",
@@ -818,31 +838,11 @@
    "t": "2026-11-16T14:48:00Z",
    "agent": "News Scout",
    "msg": "Read 49 new headlines/posts, 3 market-moving stories"
-  },
-  {
-   "t": "2026-11-16T14:47:58Z",
-   "agent": "News Scout",
-   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
-  },
-  {
-   "t": "2026-11-16T14:42:54Z",
-   "agent": "Deep Analyst",
-   "msg": "TradingAgents on JNJ: ERROR (res and improvements. We recommend you to use the Interactions API (https://aistudio.google.com/docs/get-started).', 'st)"
-  },
-  {
-   "t": "2026-11-16T14:42:49Z",
-   "agent": "News Scout",
-   "msg": "Read 52 new headlines/posts, 3 market-moving stories"
-  },
-  {
-   "t": "2026-11-16T14:37:43Z",
-   "agent": "News Scout",
-   "msg": "Read 134 new headlines/posts, 1 market-moving stories"
   }
  ],
  "brief": {
   "date": "Mon Nov 16",
-  "createdAt": "2026-11-16T20:07:49Z",
+  "createdAt": "2026-11-16T20:13:01Z",
   "headline": "Paper account +$0 today (+0.00%), +0.00% total vs SPY -1.77% · 0 open",
   "summary": "0 trade(s) closed today, 0/0 winners overall. TradingAgents checks used today: 2/5.",
   "notes": [
@@ -867,7 +867,7 @@
   "deepUsed": 2,
   "deepMax": 5,
   "social": {
-   "at": "2026-11-16T19:56:56Z",
+   "at": "2026-11-16T20:12:59Z",
    "items": 0,
    "source": "Reddit direct (X needs Agent Reach)",
    "problems": [
@@ -883,6 +883,41 @@
  "positions": [],
  "trades": [],
  "decisions": [
+  {
+   "t": "2026-11-16T20:13:01Z",
+   "symbol": "JNJ",
+   "outcome": "waiting",
+   "why": "price hasn't moved the expected way yet (-0.75%)",
+   "event": "Johnson & Johnson is acquiring Ollin Biosciences for $2.2 billion to expand its retinal disease pipeline."
+  },
+  {
+   "t": "2026-11-16T20:13:01Z",
+   "symbol": "XOM",
+   "outcome": "waiting",
+   "why": "price hasn't moved the expected way yet (-0.60%)",
+   "event": "ExxonMobil's daily production in Guyana is set to reach 1.1 million barrels per day as Uaru production begins."
+  },
+  {
+   "t": "2026-11-16T20:13:01Z",
+   "symbol": "JNJ",
+   "outcome": "waiting",
+   "why": "price hasn't moved the expected way yet (-1.50%)",
+   "event": "Johnson & Johnson has agreed to acquire eye disease therapy developer Ollin Biosciences in a deal valued up to $3.33 billion."
+  },
+  {
+   "t": "2026-11-16T20:13:01Z",
+   "symbol": "LLY",
+   "outcome": "waiting",
+   "why": "price hasn't moved the expected way yet (-1.97%)",
+   "event": "Johnson & Johnson has agreed to acquire eye disease therapy developer Ollin Biosciences in a deal valued up to $3.33 billion."
+  },
+  {
+   "t": "2026-11-16T20:13:00Z",
+   "symbol": "TSLA",
+   "outcome": "waiting",
+   "why": "price hasn't moved the expected way yet (-2.86%)",
+   "event": "Tesla plans to build 1 million Cybercabs near Berlin, expanding its German gigafactory footprint."
+  },
   {
    "t": "2026-11-16T20:07:49Z",
    "symbol": "JNJ",
@@ -1266,41 +1301,6 @@
    "symbol": "TSLA",
    "outcome": "waiting",
    "why": "price hasn't moved the expected way yet (-2.67%)",
-   "event": "Tesla plans to build 1 million Cybercabs near Berlin, expanding its German gigafactory footprint."
-  },
-  {
-   "t": "2026-11-16T19:08:21Z",
-   "symbol": "JNJ",
-   "outcome": "waiting",
-   "why": "price hasn't moved the expected way yet (-0.45%)",
-   "event": "Johnson & Johnson is acquiring Ollin Biosciences for $2.2 billion and partnering with Blackstone."
-  },
-  {
-   "t": "2026-11-16T19:08:20Z",
-   "symbol": "XOM",
-   "outcome": "waiting",
-   "why": "price hasn't moved the expected way yet (-0.30%)",
-   "event": "ExxonMobil's daily production in Guyana is set to reach 1.1 million barrels per day as Uaru production begins."
-  },
-  {
-   "t": "2026-11-16T19:08:20Z",
-   "symbol": "JNJ",
-   "outcome": "waiting",
-   "why": "price hasn't moved the expected way yet (-1.20%)",
-   "event": "Johnson & Johnson has agreed to acquire eye disease therapy developer Ollin Biosciences in a deal valued up to $3.33 billion."
-  },
-  {
-   "t": "2026-11-16T19:08:20Z",
-   "symbol": "LLY",
-   "outcome": "waiting",
-   "why": "price hasn't moved the expected way yet (-1.62%)",
-   "event": "Johnson & Johnson has agreed to acquire eye disease therapy developer Ollin Biosciences in a deal valued up to $3.33 billion."
-  },
-  {
-   "t": "2026-11-16T19:08:20Z",
-   "symbol": "TSLA",
-   "outcome": "waiting",
-   "why": "price hasn't moved the expected way yet (-2.72%)",
    "event": "Tesla plans to build 1 million Cybercabs near Berlin, expanding its German gigafactory footprint."
   }
  ],
@@ -2895,7 +2895,7 @@
  },
  "events": [
   {
-   "summary": "Coinbase shares slide as Bitcoin hits August lows, fueling crypto market fears.",
+   "summary": "Solana experiences continued ETF outflows and low market sentiment amid broader crypto weakness.",
    "category": "crypto_negative",
    "firstSeen": "2026-11-12T08:32:42Z",
    "publishers": [
@@ -3103,7 +3103,7 @@
    ]
   },
   {
-   "summary": "Intel shares decline further amid an ongoing shareholder lawsuit and broader AI chip sector pressures.",
+   "summary": "OpenAI faces a lawsuit from the California Attorney General over inadequate safeguards and monitoring of AI models.",
    "category": "company_bad_news",
    "firstSeen": "2026-11-12T15:43:48Z",
    "publishers": [
@@ -3115,6 +3115,7 @@
     "Cryptonews.net",
     "JournalArta",
     "Moomoo",
+    "NBC Los Angeles",
     "Reuters",
     "StockStory",
     "TIKR.com",
