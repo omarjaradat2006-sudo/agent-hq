@@ -2,25 +2,25 @@
  "team": "trading",
  "plain": {
   "line": "Even since start · 0 trades · holding: nothing (all cash)",
-  "rulesMode": "aggressive",
+  "rulesMode": "ultra",
   "top": "Even since start (still $100,000.00) · just holding SPY would be -1.88%",
   "up": true,
   "holding": [
    "Nothing right now (all cash)."
   ],
   "today": [
-   "Scanned the news 105 times today: read 6783 headlines, found 248 that could move a stock or coin it's allowed to trade. None passed every check, so no trade (that's normal).",
+   "Scanned the news 106 times today: read 6793 headlines, found 248 that could move a stock or coin it's allowed to trade. None passed every check, so no trade (that's normal).",
    "Passed on TSLA: price hasn't moved the expected way yet (-2.72%).",
    "Passed on TSLA: price hasn't moved the expected way yet (-2.90%).",
    "Passed on JNJ: price hasn't moved the expected way yet (-0.85%).",
    "Passed on JNJ, LLY: price hasn't moved the expected way yet (-1.39%).",
-   "Safety rules that stepped in: stock entry window (x7)."
+   "Safety rules that stepped in: stock entry window (x12)."
   ],
   "watchlist": "Allowed to trade: 69 halal stocks, 5 Shariah ETFs, 9 coins.",
-  "lastScan": "2026-11-16T20:30:04Z"
+  "lastScan": "2026-11-16T20:32:01Z"
  },
  "hired": true,
- "updatedAt": "2026-11-16T20:30:13Z",
+ "updatedAt": "2026-11-16T20:32:26Z",
  "mode": "PAPER",
  "agents": [
   {
@@ -28,8 +28,8 @@
    "name": "News Scout",
    "role": "Reads X, Reddit and news feeds",
    "status": "working",
-   "doing": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet",
-   "lastRun": "2026-11-16T20:30:13Z"
+   "doing": "Read 10 new headlines/posts, 0 market-moving stories",
+   "lastRun": "2026-11-16T20:32:26Z"
   },
   {
    "id": "analyst",
@@ -69,7 +69,7 @@
    "role": "Places paper orders on Alpaca",
    "status": "working",
    "doing": "Paper-trading bot started (Alpaca PAPER account only). Close this window to stop it.",
-   "lastRun": "2026-11-16T20:30:04Z"
+   "lastRun": "2026-11-16T20:32:01Z"
   },
   {
    "id": "coins",
@@ -89,6 +89,26 @@
   }
  ],
  "log": [
+  {
+   "t": "2026-11-16T20:32:26Z",
+   "agent": "News Scout",
+   "msg": "Read 10 new headlines/posts, 0 market-moving stories"
+  },
+  {
+   "t": "2026-11-16T20:32:17Z",
+   "agent": "News Scout",
+   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
+  },
+  {
+   "t": "2026-11-16T20:32:01Z",
+   "agent": "News Scout",
+   "msg": "Agent Reach not found: news feeds + Yahoo Finance + Reddit direct (no X)"
+  },
+  {
+   "t": "2026-11-16T20:32:01Z",
+   "agent": "Trader",
+   "msg": "Paper-trading bot started (Alpaca PAPER account only). Close this window to stop it."
+  },
   {
    "t": "2026-11-16T20:30:13Z",
    "agent": "News Scout",
@@ -818,31 +838,11 @@
    "t": "2026-11-16T15:30:09Z",
    "agent": "News Scout",
    "msg": "Read 43 new headlines/posts, 4 market-moving stories"
-  },
-  {
-   "t": "2026-11-16T15:24:53Z",
-   "agent": "Trader",
-   "msg": "Save to GitHub failed (will retry later): To github.com:omarjaradat2006-sudo/agent-hq.git\n ! [rejected]        HEAD -> main (fetch first)\nerror: failed to push some refs to 'github.com:omarjar"
-  },
-  {
-   "t": "2026-11-16T15:24:51Z",
-   "agent": "News Scout",
-   "msg": "Read 33 new headlines/posts, 1 market-moving stories"
-  },
-  {
-   "t": "2026-11-16T15:19:40Z",
-   "agent": "Trader",
-   "msg": "Save to GitHub failed (will retry later): To github.com:omarjaradat2006-sudo/agent-hq.git\n ! [rejected]        HEAD -> main (fetch first)\nerror: failed to push some refs to 'github.com:omarjar"
-  },
-  {
-   "t": "2026-11-16T15:19:38Z",
-   "agent": "News Scout",
-   "msg": "Read 43 new headlines/posts, 3 market-moving stories"
   }
  ],
  "brief": {
   "date": "Mon Nov 16",
-  "createdAt": "2026-11-16T20:30:13Z",
+  "createdAt": "2026-11-16T20:32:26Z",
   "headline": "Paper account +$0 today (+0.00%), +0.00% total vs SPY -1.88% · 0 open",
   "summary": "0 trade(s) closed today, 0/0 winners overall. TradingAgents checks used today: 2/5.",
   "notes": [
@@ -867,7 +867,7 @@
   "deepUsed": 2,
   "deepMax": 5,
   "social": {
-   "at": "2026-11-16T20:30:13Z",
+   "at": "2026-11-16T20:32:17Z",
    "items": 0,
    "source": "Reddit public JSON (blocked on servers: add REDDIT_CLIENT_ID/SECRET); X needs Agent Reach",
    "problems": [
@@ -5240,15 +5240,16 @@
    "min_news_publishers": 1,
    "min_confidence": 0.6,
    "min_rvol": 0.0,
-   "min_move_pct": 0.003,
+   "min_move_pct": -1.0,
    "max_move_pct": 0.03,
    "event_fresh_hours": 6,
    "sell_min_confidence": 0.6,
    "single_source": "any_news",
    "carry_overnight": true,
-   "mode": "aggressive"
+   "skip_deep": true,
+   "mode": "ultra"
   },
-  "rulesMode": "aggressive",
+  "rulesMode": "ultra",
   "halal": {
    "no_margin": true,
    "no_short": true,
