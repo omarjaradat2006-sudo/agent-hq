@@ -3,24 +3,24 @@
  "plain": {
   "line": "Even since start · 0 trades · holding: nothing (all cash)",
   "rulesMode": "aggressive",
-  "top": "Even since start (still $100,000.00) · just holding SPY would be -0.90%",
+  "top": "Even since start (still $100,000.00) · just holding SPY would be -1.10%",
   "up": true,
   "holding": [
    "Nothing right now (all cash)."
   ],
   "today": [
-   "Scanned the news 66 times today: read 5386 headlines, found 189 that could move a stock or coin it's allowed to trade. None passed every check, so no trade (that's normal).",
+   "Scanned the news 67 times today: read 5444 headlines, found 192 that could move a stock or coin it's allowed to trade. None passed every check, so no trade (that's normal).",
    "Passed on TSLA: price hasn't moved the expected way yet (-1.75%).",
    "Passed on TSLA: price hasn't moved the expected way yet (-1.90%).",
-   "Passed on JNJ: price hasn't moved the expected way yet (-0.98%).",
-   "Passed on LLY: price hasn't moved the expected way yet (-1.10%).",
+   "Passed on JNJ: price hasn't moved the expected way yet (-1.07%).",
+   "Passed on LLY: price hasn't moved the expected way yet (-1.21%).",
    "Safety rules that stepped in: stock entry window (x2)."
   ],
   "watchlist": "Allowed to trade: 69 halal stocks, 5 Shariah ETFs, 9 coins.",
-  "lastScan": "2026-11-16T17:02:29Z"
+  "lastScan": "2026-11-16T17:09:29Z"
  },
  "hired": true,
- "updatedAt": "2026-11-16T17:04:26Z",
+ "updatedAt": "2026-11-16T17:10:51Z",
  "mode": "PAPER",
  "agents": [
   {
@@ -28,8 +28,8 @@
    "name": "News Scout",
    "role": "Reads X, Reddit and news feeds",
    "status": "working",
-   "doing": "Read 94 new headlines/posts, 4 market-moving stories",
-   "lastRun": "2026-11-16T17:04:26Z"
+   "doing": "Read 58 new headlines/posts, 3 market-moving stories",
+   "lastRun": "2026-11-16T17:10:50Z"
   },
   {
    "id": "analyst",
@@ -69,7 +69,7 @@
    "role": "Places paper orders on Alpaca",
    "status": "working",
    "doing": "Save to GitHub failed (will retry later): To github.com:omarjaradat2006-sudo/agent-hq.git\n ! [rejected]        HEAD -> main (fetch first)\nerror: failed to push some refs to 'github.com:omarjar",
-   "lastRun": "2026-11-16T16:57:29Z"
+   "lastRun": "2026-11-16T17:04:28Z"
   },
   {
    "id": "coins",
@@ -89,6 +89,16 @@
   }
  ],
  "log": [
+  {
+   "t": "2026-11-16T17:10:50Z",
+   "agent": "News Scout",
+   "msg": "Read 58 new headlines/posts, 3 market-moving stories"
+  },
+  {
+   "t": "2026-11-16T17:04:28Z",
+   "agent": "Trader",
+   "msg": "Save to GitHub failed (will retry later): To github.com:omarjaradat2006-sudo/agent-hq.git\n ! [rejected]        HEAD -> main (fetch first)\nerror: failed to push some refs to 'github.com:omarjar"
+  },
   {
    "t": "2026-11-16T17:04:26Z",
    "agent": "News Scout",
@@ -828,22 +838,12 @@
    "t": "2026-11-16T04:23:34Z",
    "agent": "News Scout",
    "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
-  },
-  {
-   "t": "2026-11-16T04:08:30Z",
-   "agent": "News Scout",
-   "msg": "Read 48 new headlines/posts, 0 market-moving stories"
-  },
-  {
-   "t": "2026-11-16T04:08:29Z",
-   "agent": "News Scout",
-   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
   }
  ],
  "brief": {
   "date": "Mon Nov 16",
-  "createdAt": "2026-11-16T17:04:26Z",
-  "headline": "Paper account +$0 today (+0.00%), +0.00% total vs SPY -0.90% · 0 open",
+  "createdAt": "2026-11-16T17:10:51Z",
+  "headline": "Paper account +$0 today (+0.00%), +0.00% total vs SPY -1.10% · 0 open",
   "summary": "0 trade(s) closed today, 0/0 winners overall. TradingAgents checks used today: 2/5.",
   "notes": [
    "X/Reddit reader: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
@@ -858,8 +858,8 @@
   "dayPct": 0.0,
   "totalPnl": 0.0,
   "totalPct": 0.0,
-  "spyPct": -0.9,
-  "vsSpyPct": 0.9
+  "spyPct": -1.1,
+  "vsSpyPct": 1.1
  },
  "status": {
   "killed": false,
@@ -883,6 +883,27 @@
  "positions": [],
  "trades": [],
  "decisions": [
+  {
+   "t": "2026-11-16T17:10:50Z",
+   "symbol": "JNJ",
+   "outcome": "waiting",
+   "why": "price hasn't moved the expected way yet (-1.07%)",
+   "event": "Johnson & Johnson has agreed to acquire eye disease therapy developer Ollin Biosciences in a deal valued up to $3.33 billion."
+  },
+  {
+   "t": "2026-11-16T17:10:50Z",
+   "symbol": "LLY",
+   "outcome": "waiting",
+   "why": "price hasn't moved the expected way yet (-1.21%)",
+   "event": "Johnson & Johnson has agreed to acquire eye disease therapy developer Ollin Biosciences in a deal valued up to $3.33 billion."
+  },
+  {
+   "t": "2026-11-16T17:10:50Z",
+   "symbol": "TSLA",
+   "outcome": "waiting",
+   "why": "price hasn't moved the expected way yet (-2.00%)",
+   "event": "Tesla plans a $3.3 billion investment to expand its German gigafactory for Cybercab production."
+  },
   {
    "t": "2026-11-16T17:04:26Z",
    "symbol": "JNJ",
@@ -1281,27 +1302,6 @@
    "outcome": "waiting",
    "why": "price hasn't moved the expected way yet (+0.25%)",
    "event": "Cerebras Systems jumps on a strong Q3 cloud revenue report and raised outlook."
-  },
-  {
-   "t": "2026-11-13T19:58:55Z",
-   "symbol": "MSFT",
-   "outcome": "waiting",
-   "why": "price hasn't moved the expected way yet (+0.22%)",
-   "event": "Cerebras Systems jumps on a strong Q3 cloud revenue report and raised outlook."
-  },
-  {
-   "t": "2026-11-13T19:53:49Z",
-   "symbol": "MSFT",
-   "outcome": "waiting",
-   "why": "price hasn't moved the expected way yet (+0.20%)",
-   "event": "Cerebras Systems jumps on a strong Q3 cloud revenue report and raised outlook."
-  },
-  {
-   "t": "2026-11-13T19:48:44Z",
-   "symbol": "MSFT",
-   "outcome": "waiting",
-   "why": "price hasn't moved the expected way yet (+0.12%)",
-   "event": "Cerebras Systems jumps on a new Microsoft deal and raised guidance, driving a surge in related assets."
   }
  ],
  "equity": [
@@ -2854,6 +2854,11 @@
    "t": "2026-11-16T16:39:49Z",
    "equity": 100000.0,
    "spy": 745.93
+  },
+  {
+   "t": "2026-11-16T17:10:50Z",
+   "equity": 100000.0,
+   "spy": 744.44
   }
  ],
  "watch": [],
@@ -2865,7 +2870,7 @@
  },
  "events": [
   {
-   "summary": "Geopolitical conflict in the Middle East escalates further as a third American aircraft carrier arrives in the region.",
+   "summary": "Geopolitical tensions in the Middle East persist as a third American aircraft carrier arrives in the region.",
    "category": "war_escalation",
    "firstSeen": "2026-11-10T20:01:23Z",
    "publishers": [
@@ -3041,6 +3046,7 @@
     "LIGA.net",
     "La Voce di New York",
     "Laodong.vn",
+    "Las Vegas Review-Journal",
     "Latest news from Azerbaijan",
     "Livemint",
     "Lloyd's List",
@@ -3439,6 +3445,355 @@
      "title": "Middle East latest: Ship attacked in UAE waters, says operator Adnoc",
      "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPdTMwLTRPRTZsZHJPR0lQTVNtNHdyWWxZNHMydXJzUjEySVZIZzJfUFlvbXZfQWJPc25aSm5kM3lzNmxFMFVMdFl3NTZLZWVjZnZPaTFyWjZtcl9peGd6ZlpDU2hnQmxDVFBLRlF1cVR3U2QwR2R4dWRRNEFDaDBzSTY2YUFWZEsyZ3dIOGQwX2tudV81a1pRRXQtVzl0TWYw?oc=5",
      "time": "2026-11-10T20:59:26Z"
+    }
+   ]
+  },
+  {
+   "summary": "Bitcoin dips amid persistent ETF outflows, tech sell-offs, and macroeconomic pressures.",
+   "category": "crypto_negative",
+   "firstSeen": "2026-11-12T08:32:42Z",
+   "publishers": [
+    "24/7 Wall St.",
+    "99Bitcoins",
+    "AMBCrypto",
+    "AOL.com",
+    "Action Forex",
+    "Altcoin Buzz",
+    "Anadolu Ajansı",
+    "Analytics Insight",
+    "Asianet Newsable",
+    "BeInCrypto",
+    "Benzinga",
+    "BigGo Finance",
+    "Bitbo",
+    "Bitcoin Foundation",
+    "Bitcoin Magazine",
+    "Bitcoin News",
+    "Bitcoin Sistemi",
+    "Bitcoinist.com",
+    "Blockonomi",
+    "Brandsynario",
+    "Brave New Coin",
+    "Briefs Finance",
+    "Business Standard",
+    "Businesskorea",
+    "CNBC",
+    "CNBC TV18",
+    "CaptainAltcoin",
+    "Coin Edition",
+    "Coin Gabbar",
+    "CoinCodex",
+    "CoinDesk",
+    "CoinGape",
+    "CoinMarketCap",
+    "Coinfomania",
+    "Coinpaper",
+    "Coinpedia",
+    "Cointribune",
+    "Crypto Briefing",
+    "Crypto Economy",
+    "Crypto News",
+    "CryptoDaily",
+    "CryptoPotato",
+    "CryptoRank",
+    "CryptoSlate",
+    "CryptoTicker.io",
+    "Cryptonews",
+    "Cryptonews.net",
+    "Cryptopolitan",
+    "Daily Beirut",
+    "Daily Forex",
+    "DailyCoin",
+    "Decrypt",
+    "Dimsum Daily",
+    "FOREX.com",
+    "FXEmpire",
+    "FXLeaders",
+    "FXStreet",
+    "FinanceFeeds",
+    "Finbold",
+    "Free Malaysia Today",
+    "Gadgets 360",
+    "HESPRESS English - Morocco News",
+    "Hindustan Times",
+    "Hokanews",
+    "Investing.com",
+    "Investing.com Canada",
+    "Investing.com Nigeria",
+    "Investor's Business Daily",
+    "Invezz",
+    "JournalArta",
+    "Kalkine Media",
+    "Kriptofoni",
+    "KuCoin",
+    "Livemint",
+    "MEXC",
+    "MarketForces Africa",
+    "MarketWatch",
+    "Moneycontrol.com",
+    "Moomoo",
+    "NAI500",
+    "NDTV Profit",
+    "NFTevening",
+    "Nacionale",
+    "NameCoinNews",
+    "NewsBTC",
+    "NewsBytes",
+    "Pluang",
+    "Proactive Investors Australia",
+    "Programming Insider",
+    "Quartz",
+    "RTTNews",
+    "Retail News Asia",
+    "SSBCrack",
+    "Serrari Group",
+    "Startup Fortune",
+    "Stocktwits",
+    "StreetInsider",
+    "SunCrypto",
+    "TechBullion",
+    "The Block",
+    "The Business Times",
+    "The Crypto Times",
+    "The Cryptonomist",
+    "The Defiant",
+    "The Economic Times",
+    "The Edge Malaysia",
+    "The Market Periodical",
+    "The Straits Times",
+    "TipRanks",
+    "Traders Union",
+    "TradingKey",
+    "TradingNEWS",
+    "TradingView",
+    "TronWeekly",
+    "U.Today",
+    "UA.NEWS",
+    "UkrMedia News",
+    "Univest",
+    "Vocal",
+    "XTB.com",
+    "Yahoo Finance",
+    "ad-hoc-news.de",
+    "bloomingbit",
+    "finance.biggo.com",
+    "grafa.com",
+    "openPR.com",
+    "www.blockhead.co",
+    "www.proactiveinvestors.com.au",
+    "www.tmgm.com",
+    "www.tokenpost.com",
+    "www.trendingtopics.eu",
+    "Українські Національні Новини (УНН)",
+    "صوت الإمارات",
+    "富途牛牛",
+    "머니투데이"
+   ],
+   "assets": {
+    "BTC/USD": {
+     "direction": "down",
+     "confidence": 0.88,
+     "why": "Heavy liquidations and persistent ETF outflows drive severe downside momentum."
+    },
+    "ETH/USD": {
+     "direction": "down",
+     "confidence": 0.9,
+     "why": "Ethereum price breaks key psychological support below $2,000 amid selling pressure from the Ethereum Foundation."
+    },
+    "SOL/USD": {
+     "direction": "down",
+     "confidence": 0.85,
+     "why": "Solana crashes to multi-month lows amid broader crypto market sell-offs and rate hike fears."
+    },
+    "XRP/USD": {
+     "direction": "down",
+     "confidence": 0.85,
+     "why": "Massive capital flight and ETF outflows crush XRP price action."
+    }
+   },
+   "sources": [
+    {
+     "id": "f2c64de89a6bbd3c",
+     "publisher": "bloomingbit",
+     "kind": "news",
+     "title": "BlackRock’s Bitcoin ETF IBIT Extends Net Outflow Streak to 9 Sessions, Exceeding $2 Billion",
+     "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE9XY1BHRGVIT2hraXRmcGx1TGI3a2oybEJwMk9LWHNKdUM1R29nNEU1eWJIeXhtTC1pSXg0QUJDd18xNkJTTG4ySkRJTXd3cjN2NkxlZg?oc=5",
+     "time": "2026-11-12T08:32:42Z"
+    },
+    {
+     "id": "cc25c44ff767f291",
+     "publisher": "Crypto News",
+     "kind": "news",
+     "title": "BlackRock leads $300 million Bitcoin ETF outflows as BTC struggles near $73K",
+     "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNY3U0TE5Gcy0teVNsLWVBeGh1cmd4Z1dSaldmVmt2b3VYaVhFSTM0T29OUnhKUXpTNEZwLW1sVkwtZnQyUUdSVDFTUHpSYjYxVlU0SFZnYW5Xd0V0TzB4NjM4VGpGa1pPYnk4eEgzR2wxV0d1SkFPSDBwSG0tdFFTQTI3cXJiSWE1UHU0NzVCUjJ2VXNFa2pIZnd0VQ?oc=5",
+     "time": "2026-11-12T08:36:14Z"
+    },
+    {
+     "id": "fb7c71d0fe55957d",
+     "publisher": "bloomingbit",
+     "kind": "news",
+     "title": "Coinbase Bitcoin Premium Stays Negative for 50 Straight Days as U.S. Buying Weakens",
+     "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTFBfQTlkOUY1NnAyTlpoRnp0Qmc2NDZnUjdSVlRBYndfa2hHVXlZdjNmX0ZhRTdZMjMtV2xMMEdTWWJvdXpCbl9BREZ0TDR6cl9NcFJXNg?oc=5",
+     "time": "2026-11-12T08:59:27Z"
+    },
+    {
+     "id": "62235bb905723bf1",
+     "publisher": "Coinfomania",
+     "kind": "news",
+     "title": "U.S. Spot Bitcoin ETFs Experience $300 Million Net Outflows",
+     "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxORGNYaW5tLUhtT2tmVi1ETy1fRFV4QnFDQndvYkpDRkRTZTF6NEJRN2V6emkyV1MzeTZfTVlyX1NsRGNzaXJsRWk5OXpDajRfVTE5OGc1anBpNWVfSkJKTUg2QnFoTlFSNlRscFJUVlBuek04RkxsN2ZydUJUSjZBdjdURUtnOGhnb3c?oc=5",
+     "time": "2026-11-12T08:55:35Z"
+    },
+    {
+     "id": "44d885771c26dd4e",
+     "publisher": "Cryptonews",
+     "kind": "news",
+     "title": "Bitcoin ETF Outflow Says Crypto Walking Into a Bull Trap",
+     "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE1aa1RfZzhBaFRtOEctWFJSZDUyRzZ6bDV5LTVmSVNubFlfLTNvNkdHVGdGS1pNbmpfb3liS2V5djRKcHV6bWZLb1BQYVVYcTRBVE0wYXNyV3hSNkdhSm01YnFqZGUzelVCamxJeEFTZG83ZzA?oc=5",
+     "time": "2026-11-12T08:48:31Z"
+    }
+   ]
+  },
+  {
+   "summary": "Nvidia shares and broader AI stocks face continued downward pressure due to market volatility and leadership uncertainty.",
+   "category": "company_bad_news",
+   "firstSeen": "2026-11-12T18:24:33Z",
+   "publishers": [
+    "AP",
+    "Barchart.com",
+    "Benzinga",
+    "BigGo Finance",
+    "Bloomberg.com",
+    "CNBC",
+    "Chosunbiz",
+    "Coin Gabbar",
+    "Crypto Economy",
+    "Cryptonews.net",
+    "Deccan Herald",
+    "Dimsum Daily",
+    "FXStreet",
+    "Finimize",
+    "Finviz",
+    "Fortune",
+    "Geo News",
+    "Invezz",
+    "JournalArta",
+    "Market Index",
+    "Moomoo",
+    "NST Online",
+    "Plataforma Media",
+    "Pluang",
+    "Profit by Pakistan Today",
+    "RTHK",
+    "RTHK News",
+    "RealMoney Pro",
+    "Reuters",
+    "SSBCrack",
+    "Stocktwits",
+    "The Economic Times",
+    "The Edge Malaysia",
+    "The Hawk",
+    "The Times of India",
+    "Traders Union",
+    "Wccftech",
+    "Yahoo Finance",
+    "bdnews24.com",
+    "bloomingbit",
+    "finance.biggo.com",
+    "fiscal.ai",
+    "marketscreener.com",
+    "news.sbs.co.kr",
+    "shattered.io",
+    "아시아경제",
+    "조선일보"
+   ],
+   "assets": {
+    "NVDA": {
+     "direction": "down",
+     "confidence": 0.95,
+     "why": "CEO resignation and scandal severely impacts investor confidence."
+    },
+    "BTC/USD": {
+     "direction": "down",
+     "confidence": 0.7,
+     "why": "Broader risk-off sentiment triggered by major tech leadership turmoil."
+    },
+    "QCOM": {
+     "direction": "up",
+     "confidence": 0.65,
+     "why": "Capital is rotating out of Nvidia into competing AI semiconductor stocks following the CEO exit."
+    },
+    "AMD": {
+     "direction": "down",
+     "confidence": 0.65,
+     "why": "Broader semiconductor sector sell-off triggered by Nvidia's leadership uncertainty."
+    },
+    "AVGO": {
+     "direction": "down",
+     "confidence": 0.5,
+     "why": "Spillover effect from tech and AI chip selloff."
+    },
+    "MSFT": {
+     "direction": "down",
+     "confidence": 0.65,
+     "why": "Broader tech and AI infrastructure sentiment hits related large-cap names."
+    },
+    "AAPL": {
+     "direction": "down",
+     "confidence": 0.3,
+     "why": "Broad market selloff induced by tech bellwether crash."
+    },
+    "SMCI": {
+     "direction": "down",
+     "confidence": 0.8,
+     "why": "Broader tech weakness and association with Nvidia probe extend losses."
+    },
+    "MU": {
+     "direction": "down",
+     "confidence": 0.65,
+     "why": "Semiconductor peer dragged down by Nvidia leadership turmoil."
+    }
+   },
+   "sources": [
+    {
+     "id": "855265040ed1e43c",
+     "publisher": "Reuters",
+     "kind": "news",
+     "title": "Nvidia CEO Jensen Huang resigns, in blow to AI boom he helped foster",
+     "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOMEFwN0FWdjB6blNtR0RZaTBWZXZDaWVwYkhXREttY2FaYVNNVC1qNEFHYm9Yd1pDODBDN2tvNzhnMTY4cmxWYTg1WVFidzFlNVFEdlZNb3IyZG1nS2FKcHAzUERhQW9EdG9oOER6YmwydXZOd0t1VHRub1BCdFdoR1V4dktlUVUydjZWeU53aVdKMGwtOGFtZmd2T3VhODF3eXhPazVtbV81b0hpUi1vcw?oc=5",
+     "time": "2026-11-12T18:31:55Z"
+    },
+    {
+     "id": "6c526a44313f07e5",
+     "publisher": "Yahoo Finance",
+     "kind": "news",
+     "title": "Equities Rise Intraday Despite Nvidia Sell-Off Post CEO's Departure",
+     "url": "https://finance.yahoo.com/markets/stocks/articles/equities-rise-intraday-despite-nvidia-182433809.html?.tsrc=rss",
+     "time": "2026-11-12T18:24:33Z"
+    },
+    {
+     "id": "adfadefb8db21a4c",
+     "publisher": "AP",
+     "kind": "news",
+     "title": "What we know after Jensen Huang resigns as Nvidia’s CEO",
+     "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOMUxqUTE0WWZBT2xoV25SLUQ2dFgyWkhwZFZyRnk3d1Fibmtrb0d4T3otSXNpNmZiTVh0QUdkWTA4UmQ3cXQyVVM3ODc0V0g4YnVVbDJRYWF4VXlaXzMzZnJWNi1UR3YyZHJGbWNzaVFab2tiM3N2RjFIOUtWcnlJVWtMVnhQNmhJeTdPajNVUXZfU2NzWkw0aGJLVFMtaGY3?oc=5",
+     "time": "2026-11-12T18:38:00Z"
+    },
+    {
+     "id": "e45111d2af3013e1",
+     "publisher": "The Economic Times",
+     "kind": "news",
+     "title": "Bitcoin price today: BTC USD falls near $71,000 after Jensen Huang resigns as Nvidia CEO and ETF outflows",
+     "url": "https://news.google.com/rss/articles/CBMisgJBVV95cUxNNGkxSEhVaVRhRGl4UkxMZUoyeV9Bc25CTmNkY1Q3Z2JEbTB5S3JWbUt4clE4eEltNTFSbFZSOFJrM290QTFESGJiMHROMGRSNVhzV0tkRHRqU2hLTk5GYng1Mm9FaDVlTFNyNHdqWXNwNDhNazZJNmlqOXIxVjFvZ0hwSHRTSUcwSXRqWWU5Mi1BTVg3Zm12bml2STNnSFExQWlTaUlRdDNlVnNUZlh5dFJDN2pfQmhha2M1SVBYUm1fVDhiaThNTnBsRU0ySTJSR1o1QkMyVHJseHA4VHlkd2pYODRaZzFpUUQza2ZlT1JpU0ZodWVkR0pCb3ZZTnI3TTNGQTBxcnJ0VnVJZzV3NHltc3l0X19JbG03WjdwRXFEWEwxZE9uMmJMTTVQbFZVRmfSAbcCQVVfeXFMTXR1bEttcm9WdW1FU0VCR1dKbWkwVkpwVmpjOE9YY1ZDUTZOcE5HaWktRnU2UW55c2ZLWEpiRmFwQ3ZTd2otS0RqX2FSWFZwejRGbFZOcGFpa2oxdF8xYmxVWVp6UUl1QkRnYi1ZVVhNS0d4UDlxSGpwZjJFeG5KbDhZdUplRWh5QU9Lc2U1NWhMMm9EQVZISVVIdUxuWnQxaDRWNllMb1lFS2VJUXRxYTJKSVV1bjg1V2ROTnRLdTVIb3dvcllFbTgtTF9nZFhaVGVrSHpzM3lQOTM5bHp2LXBLZ0VldGppMm95dWZBeGlLNUFXdnE0VkdqbWUzNS1adjhCRVlIMGdEbHJ2djFZSm5GWHhJcmZEOTRLbTU0MGNEdm1MaGkxdlA1WEEyMFlyRm8wbEdmWnM?oc=5",
+     "time": "2026-11-12T18:34:50Z"
+    },
+    {
+     "id": "89cceff7950b3622",
+     "publisher": "Benzinga",
+     "kind": "news",
+     "title": "Jensen Huang Is Out At Nvidia: 4 Private Equity Giants with Big Bets on Its AI Infrastructure Future",
+     "url": "https://www.benzinga.com/markets/private-markets/26/11/63212619/jensen-huang-is-out-at-nvidia-4-private-equity-giants-with-big-bets-on-its-ai-infrastructure-future",
+     "time": "2026-11-12T18:45:12Z"
     }
    ]
   },
@@ -4473,354 +4828,6 @@
      "title": "Fed Governor Christopher J. Waller favors 25 bps rate hike in December; 50 bps may be needed if inflation persists",
      "url": "https://news.google.com/rss/articles/CBMi9gFBVV95cUxQZVUtaWxLdmtZVGV6bDBwaDRTRk9saVd1R1FlUXowOVV1eVp6Qks5LWZVN0ZzS0Q1U09yemlnTVZjaEVlempESldNVEo4RE5Fb0R5OTAtU2R2cW5zMnF1SllpTXJUR3BDeWZYUjQ2U1VkZ2kzZ3VkNjRDQzhobEpSaW45NWlTSTlvMmhhYXRqUFNFeWRKRWJlUDdaMmNfR0kxOEZSa1JoS0syVFUtNG84Q3B4akh0dWNQajZ1S05FSlN2RFZYSmFLcjY0dzdNNi1wYmRqLVVvQVBOZkRJeURwajN4TjlkZUZ0blJmdktvMEFuLTFnMmc?oc=5",
      "time": "2026-11-10T10:41:00Z"
-    }
-   ]
-  },
-  {
-   "summary": "Bitcoin dips below $65K amid a broader tech sell-off and persistent ETF outflows.",
-   "category": "crypto_negative",
-   "firstSeen": "2026-11-12T08:32:42Z",
-   "publishers": [
-    "24/7 Wall St.",
-    "99Bitcoins",
-    "AMBCrypto",
-    "AOL.com",
-    "Action Forex",
-    "Altcoin Buzz",
-    "Anadolu Ajansı",
-    "Analytics Insight",
-    "Asianet Newsable",
-    "BeInCrypto",
-    "Benzinga",
-    "BigGo Finance",
-    "Bitbo",
-    "Bitcoin Foundation",
-    "Bitcoin Magazine",
-    "Bitcoin News",
-    "Bitcoin Sistemi",
-    "Bitcoinist.com",
-    "Blockonomi",
-    "Brandsynario",
-    "Brave New Coin",
-    "Briefs Finance",
-    "Business Standard",
-    "Businesskorea",
-    "CNBC",
-    "CNBC TV18",
-    "CaptainAltcoin",
-    "Coin Edition",
-    "Coin Gabbar",
-    "CoinCodex",
-    "CoinDesk",
-    "CoinGape",
-    "CoinMarketCap",
-    "Coinfomania",
-    "Coinpaper",
-    "Coinpedia",
-    "Cointribune",
-    "Crypto Briefing",
-    "Crypto Economy",
-    "Crypto News",
-    "CryptoDaily",
-    "CryptoPotato",
-    "CryptoRank",
-    "CryptoSlate",
-    "CryptoTicker.io",
-    "Cryptonews",
-    "Cryptonews.net",
-    "Cryptopolitan",
-    "Daily Beirut",
-    "Daily Forex",
-    "DailyCoin",
-    "Decrypt",
-    "Dimsum Daily",
-    "FOREX.com",
-    "FXEmpire",
-    "FXLeaders",
-    "FXStreet",
-    "FinanceFeeds",
-    "Finbold",
-    "Free Malaysia Today",
-    "Gadgets 360",
-    "HESPRESS English - Morocco News",
-    "Hindustan Times",
-    "Hokanews",
-    "Investing.com",
-    "Investing.com Canada",
-    "Investing.com Nigeria",
-    "Investor's Business Daily",
-    "Invezz",
-    "JournalArta",
-    "Kalkine Media",
-    "Kriptofoni",
-    "KuCoin",
-    "Livemint",
-    "MEXC",
-    "MarketForces Africa",
-    "MarketWatch",
-    "Moneycontrol.com",
-    "Moomoo",
-    "NAI500",
-    "NDTV Profit",
-    "NFTevening",
-    "Nacionale",
-    "NameCoinNews",
-    "NewsBTC",
-    "NewsBytes",
-    "Pluang",
-    "Proactive Investors Australia",
-    "Programming Insider",
-    "Quartz",
-    "RTTNews",
-    "Retail News Asia",
-    "SSBCrack",
-    "Serrari Group",
-    "Startup Fortune",
-    "Stocktwits",
-    "StreetInsider",
-    "SunCrypto",
-    "TechBullion",
-    "The Block",
-    "The Business Times",
-    "The Crypto Times",
-    "The Cryptonomist",
-    "The Defiant",
-    "The Economic Times",
-    "The Edge Malaysia",
-    "The Market Periodical",
-    "The Straits Times",
-    "TipRanks",
-    "Traders Union",
-    "TradingKey",
-    "TradingNEWS",
-    "TradingView",
-    "TronWeekly",
-    "U.Today",
-    "UA.NEWS",
-    "UkrMedia News",
-    "Univest",
-    "Vocal",
-    "XTB.com",
-    "Yahoo Finance",
-    "ad-hoc-news.de",
-    "bloomingbit",
-    "finance.biggo.com",
-    "grafa.com",
-    "openPR.com",
-    "www.blockhead.co",
-    "www.proactiveinvestors.com.au",
-    "www.tmgm.com",
-    "www.tokenpost.com",
-    "www.trendingtopics.eu",
-    "Українські Національні Новини (УНН)",
-    "صوت الإمارات",
-    "富途牛牛",
-    "머니투데이"
-   ],
-   "assets": {
-    "BTC/USD": {
-     "direction": "down",
-     "confidence": 0.88,
-     "why": "Heavy liquidations and persistent ETF outflows drive severe downside momentum."
-    },
-    "ETH/USD": {
-     "direction": "down",
-     "confidence": 0.9,
-     "why": "Ethereum price breaks key psychological support below $2,000 amid selling pressure from the Ethereum Foundation."
-    },
-    "SOL/USD": {
-     "direction": "down",
-     "confidence": 0.85,
-     "why": "Solana crashes to multi-month lows amid broader crypto market sell-offs and rate hike fears."
-    },
-    "XRP/USD": {
-     "direction": "down",
-     "confidence": 0.85,
-     "why": "Massive capital flight and ETF outflows crush XRP price action."
-    }
-   },
-   "sources": [
-    {
-     "id": "f2c64de89a6bbd3c",
-     "publisher": "bloomingbit",
-     "kind": "news",
-     "title": "BlackRock’s Bitcoin ETF IBIT Extends Net Outflow Streak to 9 Sessions, Exceeding $2 Billion",
-     "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE9XY1BHRGVIT2hraXRmcGx1TGI3a2oybEJwMk9LWHNKdUM1R29nNEU1eWJIeXhtTC1pSXg0QUJDd18xNkJTTG4ySkRJTXd3cjN2NkxlZg?oc=5",
-     "time": "2026-11-12T08:32:42Z"
-    },
-    {
-     "id": "cc25c44ff767f291",
-     "publisher": "Crypto News",
-     "kind": "news",
-     "title": "BlackRock leads $300 million Bitcoin ETF outflows as BTC struggles near $73K",
-     "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNY3U0TE5Gcy0teVNsLWVBeGh1cmd4Z1dSaldmVmt2b3VYaVhFSTM0T29OUnhKUXpTNEZwLW1sVkwtZnQyUUdSVDFTUHpSYjYxVlU0SFZnYW5Xd0V0TzB4NjM4VGpGa1pPYnk4eEgzR2wxV0d1SkFPSDBwSG0tdFFTQTI3cXJiSWE1UHU0NzVCUjJ2VXNFa2pIZnd0VQ?oc=5",
-     "time": "2026-11-12T08:36:14Z"
-    },
-    {
-     "id": "fb7c71d0fe55957d",
-     "publisher": "bloomingbit",
-     "kind": "news",
-     "title": "Coinbase Bitcoin Premium Stays Negative for 50 Straight Days as U.S. Buying Weakens",
-     "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTFBfQTlkOUY1NnAyTlpoRnp0Qmc2NDZnUjdSVlRBYndfa2hHVXlZdjNmX0ZhRTdZMjMtV2xMMEdTWWJvdXpCbl9BREZ0TDR6cl9NcFJXNg?oc=5",
-     "time": "2026-11-12T08:59:27Z"
-    },
-    {
-     "id": "62235bb905723bf1",
-     "publisher": "Coinfomania",
-     "kind": "news",
-     "title": "U.S. Spot Bitcoin ETFs Experience $300 Million Net Outflows",
-     "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxORGNYaW5tLUhtT2tmVi1ETy1fRFV4QnFDQndvYkpDRkRTZTF6NEJRN2V6emkyV1MzeTZfTVlyX1NsRGNzaXJsRWk5OXpDajRfVTE5OGc1anBpNWVfSkJKTUg2QnFoTlFSNlRscFJUVlBuek04RkxsN2ZydUJUSjZBdjdURUtnOGhnb3c?oc=5",
-     "time": "2026-11-12T08:55:35Z"
-    },
-    {
-     "id": "44d885771c26dd4e",
-     "publisher": "Cryptonews",
-     "kind": "news",
-     "title": "Bitcoin ETF Outflow Says Crypto Walking Into a Bull Trap",
-     "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE1aa1RfZzhBaFRtOEctWFJSZDUyRzZ6bDV5LTVmSVNubFlfLTNvNkdHVGdGS1pNbmpfb3liS2V5djRKcHV6bWZLb1BQYVVYcTRBVE0wYXNyV3hSNkdhSm01YnFqZGUzelVCamxJeEFTZG83ZzA?oc=5",
-     "time": "2026-11-12T08:48:31Z"
-    }
-   ]
-  },
-  {
-   "summary": "Nvidia shares remain under pressure due to ongoing uncertainty surrounding the CEO transition and market volatility.",
-   "category": "company_bad_news",
-   "firstSeen": "2026-11-12T18:24:33Z",
-   "publishers": [
-    "AP",
-    "Barchart.com",
-    "Benzinga",
-    "BigGo Finance",
-    "Bloomberg.com",
-    "CNBC",
-    "Chosunbiz",
-    "Coin Gabbar",
-    "Crypto Economy",
-    "Cryptonews.net",
-    "Deccan Herald",
-    "Dimsum Daily",
-    "FXStreet",
-    "Finviz",
-    "Fortune",
-    "Geo News",
-    "Invezz",
-    "JournalArta",
-    "Market Index",
-    "Moomoo",
-    "NST Online",
-    "Plataforma Media",
-    "Pluang",
-    "Profit by Pakistan Today",
-    "RTHK",
-    "RTHK News",
-    "RealMoney Pro",
-    "Reuters",
-    "SSBCrack",
-    "Stocktwits",
-    "The Economic Times",
-    "The Edge Malaysia",
-    "The Hawk",
-    "The Times of India",
-    "Traders Union",
-    "Wccftech",
-    "Yahoo Finance",
-    "bdnews24.com",
-    "bloomingbit",
-    "finance.biggo.com",
-    "fiscal.ai",
-    "marketscreener.com",
-    "news.sbs.co.kr",
-    "shattered.io",
-    "아시아경제",
-    "조선일보"
-   ],
-   "assets": {
-    "NVDA": {
-     "direction": "down",
-     "confidence": 0.95,
-     "why": "CEO resignation and scandal severely impacts investor confidence."
-    },
-    "BTC/USD": {
-     "direction": "down",
-     "confidence": 0.7,
-     "why": "Broader risk-off sentiment triggered by major tech leadership turmoil."
-    },
-    "QCOM": {
-     "direction": "up",
-     "confidence": 0.65,
-     "why": "Capital is rotating out of Nvidia into competing AI semiconductor stocks following the CEO exit."
-    },
-    "AMD": {
-     "direction": "down",
-     "confidence": 0.65,
-     "why": "Broader semiconductor sector sell-off triggered by Nvidia's leadership uncertainty."
-    },
-    "AVGO": {
-     "direction": "down",
-     "confidence": 0.5,
-     "why": "Spillover effect from tech and AI chip selloff."
-    },
-    "MSFT": {
-     "direction": "down",
-     "confidence": 0.65,
-     "why": "Broader tech and AI infrastructure sentiment hits related large-cap names."
-    },
-    "AAPL": {
-     "direction": "down",
-     "confidence": 0.3,
-     "why": "Broad market selloff induced by tech bellwether crash."
-    },
-    "SMCI": {
-     "direction": "down",
-     "confidence": 0.8,
-     "why": "Broader tech weakness and association with Nvidia probe extend losses."
-    },
-    "MU": {
-     "direction": "down",
-     "confidence": 0.65,
-     "why": "Semiconductor peer dragged down by Nvidia leadership turmoil."
-    }
-   },
-   "sources": [
-    {
-     "id": "855265040ed1e43c",
-     "publisher": "Reuters",
-     "kind": "news",
-     "title": "Nvidia CEO Jensen Huang resigns, in blow to AI boom he helped foster",
-     "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOMEFwN0FWdjB6blNtR0RZaTBWZXZDaWVwYkhXREttY2FaYVNNVC1qNEFHYm9Yd1pDODBDN2tvNzhnMTY4cmxWYTg1WVFidzFlNVFEdlZNb3IyZG1nS2FKcHAzUERhQW9EdG9oOER6YmwydXZOd0t1VHRub1BCdFdoR1V4dktlUVUydjZWeU53aVdKMGwtOGFtZmd2T3VhODF3eXhPazVtbV81b0hpUi1vcw?oc=5",
-     "time": "2026-11-12T18:31:55Z"
-    },
-    {
-     "id": "6c526a44313f07e5",
-     "publisher": "Yahoo Finance",
-     "kind": "news",
-     "title": "Equities Rise Intraday Despite Nvidia Sell-Off Post CEO's Departure",
-     "url": "https://finance.yahoo.com/markets/stocks/articles/equities-rise-intraday-despite-nvidia-182433809.html?.tsrc=rss",
-     "time": "2026-11-12T18:24:33Z"
-    },
-    {
-     "id": "adfadefb8db21a4c",
-     "publisher": "AP",
-     "kind": "news",
-     "title": "What we know after Jensen Huang resigns as Nvidia’s CEO",
-     "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOMUxqUTE0WWZBT2xoV25SLUQ2dFgyWkhwZFZyRnk3d1Fibmtrb0d4T3otSXNpNmZiTVh0QUdkWTA4UmQ3cXQyVVM3ODc0V0g4YnVVbDJRYWF4VXlaXzMzZnJWNi1UR3YyZHJGbWNzaVFab2tiM3N2RjFIOUtWcnlJVWtMVnhQNmhJeTdPajNVUXZfU2NzWkw0aGJLVFMtaGY3?oc=5",
-     "time": "2026-11-12T18:38:00Z"
-    },
-    {
-     "id": "e45111d2af3013e1",
-     "publisher": "The Economic Times",
-     "kind": "news",
-     "title": "Bitcoin price today: BTC USD falls near $71,000 after Jensen Huang resigns as Nvidia CEO and ETF outflows",
-     "url": "https://news.google.com/rss/articles/CBMisgJBVV95cUxNNGkxSEhVaVRhRGl4UkxMZUoyeV9Bc25CTmNkY1Q3Z2JEbTB5S3JWbUt4clE4eEltNTFSbFZSOFJrM290QTFESGJiMHROMGRSNVhzV0tkRHRqU2hLTk5GYng1Mm9FaDVlTFNyNHdqWXNwNDhNazZJNmlqOXIxVjFvZ0hwSHRTSUcwSXRqWWU5Mi1BTVg3Zm12bml2STNnSFExQWlTaUlRdDNlVnNUZlh5dFJDN2pfQmhha2M1SVBYUm1fVDhiaThNTnBsRU0ySTJSR1o1QkMyVHJseHA4VHlkd2pYODRaZzFpUUQza2ZlT1JpU0ZodWVkR0pCb3ZZTnI3TTNGQTBxcnJ0VnVJZzV3NHltc3l0X19JbG03WjdwRXFEWEwxZE9uMmJMTTVQbFZVRmfSAbcCQVVfeXFMTXR1bEttcm9WdW1FU0VCR1dKbWkwVkpwVmpjOE9YY1ZDUTZOcE5HaWktRnU2UW55c2ZLWEpiRmFwQ3ZTd2otS0RqX2FSWFZwejRGbFZOcGFpa2oxdF8xYmxVWVp6UUl1QkRnYi1ZVVhNS0d4UDlxSGpwZjJFeG5KbDhZdUplRWh5QU9Lc2U1NWhMMm9EQVZISVVIdUxuWnQxaDRWNllMb1lFS2VJUXRxYTJKSVV1bjg1V2ROTnRLdTVIb3dvcllFbTgtTF9nZFhaVGVrSHpzM3lQOTM5bHp2LXBLZ0VldGppMm95dWZBeGlLNUFXdnE0VkdqbWUzNS1adjhCRVlIMGdEbHJ2djFZSm5GWHhJcmZEOTRLbTU0MGNEdm1MaGkxdlA1WEEyMFlyRm8wbEdmWnM?oc=5",
-     "time": "2026-11-12T18:34:50Z"
-    },
-    {
-     "id": "89cceff7950b3622",
-     "publisher": "Benzinga",
-     "kind": "news",
-     "title": "Jensen Huang Is Out At Nvidia: 4 Private Equity Giants with Big Bets on Its AI Infrastructure Future",
-     "url": "https://www.benzinga.com/markets/private-markets/26/11/63212619/jensen-huang-is-out-at-nvidia-4-private-equity-giants-with-big-bets-on-its-ai-infrastructure-future",
-     "time": "2026-11-12T18:45:12Z"
     }
    ]
   },
