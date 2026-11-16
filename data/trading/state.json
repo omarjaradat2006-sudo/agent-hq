@@ -9,18 +9,18 @@
    "Nothing right now (all cash)."
   ],
   "today": [
-   "Scanned the news 76 times today: read 5749 headlines, found 207 that could move a stock or coin it's allowed to trade. None passed every check, so no trade (that's normal).",
+   "Scanned the news 77 times today: read 5823 headlines, found 209 that could move a stock or coin it's allowed to trade. None passed every check, so no trade (that's normal).",
    "Passed on TSLA: price hasn't moved the expected way yet (-1.75%).",
+   "Passed on JNJ, XOM: price hasn't moved the expected way yet (-0.07%).",
+   "Passed on LLY, TSLA: price hasn't moved the expected way yet (-1.27%).",
    "Passed on LLY, XOM: price hasn't moved the expected way yet (-0.13%).",
-   "Passed on JNJ: price hasn't moved the expected way yet (-0.75%).",
-   "Passed on LLY: price hasn't moved the expected way yet (-1.21%).",
    "Safety rules that stepped in: stock entry window (x2)."
   ],
   "watchlist": "Allowed to trade: 69 halal stocks, 5 Shariah ETFs, 9 coins.",
-  "lastScan": "2026-11-16T17:57:55Z"
+  "lastScan": "2026-11-16T18:04:23Z"
  },
  "hired": true,
- "updatedAt": "2026-11-16T17:59:21Z",
+ "updatedAt": "2026-11-16T18:06:00Z",
  "mode": "PAPER",
  "agents": [
   {
@@ -28,8 +28,8 @@
    "name": "News Scout",
    "role": "Reads X, Reddit and news feeds",
    "status": "working",
-   "doing": "Read 30 new headlines/posts, 3 market-moving stories",
-   "lastRun": "2026-11-16T17:59:20Z"
+   "doing": "Read 74 new headlines/posts, 2 market-moving stories",
+   "lastRun": "2026-11-16T18:05:59Z"
   },
   {
    "id": "analyst",
@@ -69,7 +69,7 @@
    "role": "Places paper orders on Alpaca",
    "status": "working",
    "doing": "Save to GitHub failed (will retry later): To github.com:omarjaradat2006-sudo/agent-hq.git\n ! [rejected]        HEAD -> main (fetch first)\nerror: failed to push some refs to 'github.com:omarjar",
-   "lastRun": "2026-11-16T17:52:55Z"
+   "lastRun": "2026-11-16T17:59:23Z"
   },
   {
    "id": "coins",
@@ -89,6 +89,21 @@
   }
  ],
  "log": [
+  {
+   "t": "2026-11-16T18:05:59Z",
+   "agent": "News Scout",
+   "msg": "Read 74 new headlines/posts, 2 market-moving stories"
+  },
+  {
+   "t": "2026-11-16T18:04:27Z",
+   "agent": "News Scout",
+   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
+  },
+  {
+   "t": "2026-11-16T17:59:23Z",
+   "agent": "Trader",
+   "msg": "Save to GitHub failed (will retry later): To github.com:omarjaradat2006-sudo/agent-hq.git\n ! [rejected]        HEAD -> main (fetch first)\nerror: failed to push some refs to 'github.com:omarjar"
+  },
   {
    "t": "2026-11-16T17:59:20Z",
    "agent": "News Scout",
@@ -823,26 +838,11 @@
    "t": "2026-11-16T07:25:09Z",
    "agent": "News Scout",
    "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
-  },
-  {
-   "t": "2026-11-16T07:10:05Z",
-   "agent": "News Scout",
-   "msg": "Read 84 new headlines/posts, 5 market-moving stories"
-  },
-  {
-   "t": "2026-11-16T07:10:01Z",
-   "agent": "News Scout",
-   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
-  },
-  {
-   "t": "2026-11-16T06:54:56Z",
-   "agent": "News Scout",
-   "msg": "Read 62 new headlines/posts, 3 market-moving stories"
   }
  ],
  "brief": {
   "date": "Mon Nov 16",
-  "createdAt": "2026-11-16T17:59:21Z",
+  "createdAt": "2026-11-16T18:06:00Z",
   "headline": "Paper account +$0 today (+0.00%), +0.00% total vs SPY -1.21% · 0 open",
   "summary": "0 trade(s) closed today, 0/0 winners overall. TradingAgents checks used today: 2/5.",
   "notes": [
@@ -867,7 +867,7 @@
   "deepUsed": 2,
   "deepMax": 5,
   "social": {
-   "at": "2026-11-16T17:47:32Z",
+   "at": "2026-11-16T18:04:27Z",
    "items": 0,
    "source": "Reddit direct (X needs Agent Reach)",
    "problems": [
@@ -883,6 +883,41 @@
  "positions": [],
  "trades": [],
  "decisions": [
+  {
+   "t": "2026-11-16T18:06:00Z",
+   "symbol": "JNJ",
+   "outcome": "waiting",
+   "why": "price hasn't moved the expected way yet (-0.07%)",
+   "event": "Johnson & Johnson is acquiring eye drug developer Ollin Biosciences for $2.2 billion and partnering with Blackstone."
+  },
+  {
+   "t": "2026-11-16T18:06:00Z",
+   "symbol": "XOM",
+   "outcome": "waiting",
+   "why": "price hasn't moved the expected way yet (-0.21%)",
+   "event": "ExxonMobil's daily production in Guyana is set to reach 1.1 million barrels per day as Uaru production begins."
+  },
+  {
+   "t": "2026-11-16T18:05:59Z",
+   "symbol": "JNJ",
+   "outcome": "waiting",
+   "why": "price hasn't moved the expected way yet (-0.79%)",
+   "event": "Johnson & Johnson has agreed to acquire eye disease therapy developer Ollin Biosciences in a deal valued up to $3.33 billion."
+  },
+  {
+   "t": "2026-11-16T18:05:59Z",
+   "symbol": "LLY",
+   "outcome": "waiting",
+   "why": "price hasn't moved the expected way yet (-1.27%)",
+   "event": "Johnson & Johnson has agreed to acquire eye disease therapy developer Ollin Biosciences in a deal valued up to $3.33 billion."
+  },
+  {
+   "t": "2026-11-16T18:05:59Z",
+   "symbol": "TSLA",
+   "outcome": "waiting",
+   "why": "price hasn't moved the expected way yet (-2.47%)",
+   "event": "Tesla plans a $3.3 billion investment to expand its German gigafactory for Cybercab production."
+  },
   {
    "t": "2026-11-16T17:59:21Z",
    "symbol": "JNJ",
@@ -1267,41 +1302,6 @@
    "outcome": "waiting",
    "why": "price hasn't moved the expected way yet (-1.78%)",
    "event": "Tesla announced a 3 billion euro investment to expand its German factory to produce Cybercabs."
-  },
-  {
-   "t": "2026-11-16T16:18:39Z",
-   "symbol": "NVDA",
-   "outcome": "waiting",
-   "why": "price hasn't moved the expected way yet (-0.04%)",
-   "event": "BofA analysts project Nvidia will report a beat-and-raise for fiscal Q3 earnings."
-  },
-  {
-   "t": "2026-11-16T16:18:39Z",
-   "symbol": "LLY",
-   "outcome": "waiting",
-   "why": "price hasn't moved the expected way yet (-0.48%)",
-   "event": "Eli Lilly has agreed to acquire Calytrix Bio for up to $1.5 billion during ObesityWeek."
-  },
-  {
-   "t": "2026-11-16T16:18:39Z",
-   "symbol": "TSLA",
-   "outcome": "waiting",
-   "why": "price hasn't moved the expected way yet (-1.88%)",
-   "event": "Tesla announced a 3 billion euro investment to expand its German factory to produce Cybercabs."
-  },
-  {
-   "t": "2026-11-16T16:13:26Z",
-   "symbol": "NVDA",
-   "outcome": "waiting",
-   "why": "price hasn't moved the expected way yet (-0.39%)",
-   "event": "BofA analysts project Nvidia will report a beat-and-raise for fiscal Q3 earnings."
-  },
-  {
-   "t": "2026-11-16T16:13:26Z",
-   "symbol": "LLY",
-   "outcome": "waiting",
-   "why": "price hasn't moved the expected way yet (-0.45%)",
-   "event": "Eli Lilly has agreed to acquire Calytrix Bio for up to $1.5 billion during ObesityWeek."
   }
  ],
  "equity": [
@@ -2875,7 +2875,7 @@
  },
  "events": [
   {
-   "summary": "Geopolitical tensions in the Strait of Hormuz rise further as a third oil tanker explodes following reported mine strikes.",
+   "summary": "Geopolitical tensions escalate significantly in the Strait of Hormuz after two oil tankers are reported sunk by naval mines.",
    "category": "war_escalation",
    "firstSeen": "2026-11-10T20:01:23Z",
    "publishers": [
@@ -3079,6 +3079,7 @@
     "Moneycontrol.com",
     "Moneyweb",
     "Moomoo",
+    "MundoNOW",
     "Muslim Network TV",
     "NDTV",
     "NDTV Profit",
@@ -3455,7 +3456,7 @@
    ]
   },
   {
-   "summary": "Bitcoin slides significantly amid ongoing market pressure and a weak weekly performance.",
+   "summary": "Bitcoin tests key support levels and slides toward $62,000 following a 12.6% weekly drop and liquidation cascades.",
    "category": "crypto_negative",
    "firstSeen": "2026-11-12T08:32:42Z",
    "publishers": [
@@ -3657,6 +3658,58 @@
      "title": "Bitcoin ETF Outflow Says Crypto Walking Into a Bull Trap",
      "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE1aa1RfZzhBaFRtOEctWFJSZDUyRzZ6bDV5LTVmSVNubFlfLTNvNkdHVGdGS1pNbmpfb3liS2V5djRKcHV6bWZLb1BQYVVYcTRBVE0wYXNyV3hSNkdhSm01YnFqZGUzelVCamxJeEFTZG83ZzA?oc=5",
      "time": "2026-11-12T08:48:31Z"
+    }
+   ]
+  },
+  {
+   "summary": "Legal & General shares decline after reporting third-quarter pension-buyout volumes that missed analyst consensus.",
+   "category": "earnings_miss",
+   "firstSeen": "2026-11-16T12:16:07Z",
+   "publishers": [
+    "Benzinga",
+    "fiscal.ai"
+   ],
+   "assets": {},
+   "sources": [
+    {
+     "id": "6545970b112d8030",
+     "publisher": "Benzinga",
+     "kind": "news",
+     "title": "Summit Therapeutics Faces FDA Hurdle For Lead Lung Cancer Drug, Stock Tumbles",
+     "url": "https://www.benzinga.com/news/fda/26/11/63284061/summit-therapeutics-faces-fda-hurdle-for-lead-lung-cancer-drug-stock-tumbles",
+     "time": "2026-11-16T12:16:07Z"
+    },
+    {
+     "id": "311440315bf82f04",
+     "publisher": "fiscal.ai",
+     "kind": "news",
+     "title": "Intermonte cuts MARR target price to 5.5 euros",
+     "url": "https://www.milanofinanza.it/newsmarketdriver/market-driver-marr-intermonte-taglia-stime-e-tp-202611161356024850",
+     "time": "2026-11-16T16:31:47Z"
+    },
+    {
+     "id": "7061c3adf22fc820",
+     "publisher": "fiscal.ai",
+     "kind": "news",
+     "title": "Equita cuts MARR target price to 5.60 euros",
+     "url": "https://www.milanofinanza.it/newsmarketdriver/market-driver-marr-equita-la-vede-a-5-60-euro-202611161500027953",
+     "time": "2026-11-16T16:31:47Z"
+    },
+    {
+     "id": "70a2128e2b7c729a",
+     "publisher": "fiscal.ai",
+     "kind": "news",
+     "title": "Banca Akros lowers MARR target price to 6 euros",
+     "url": "https://www.milanofinanza.it/newsmarketdriver/market-driver-marr-b-akros-riduce-tp-202611161244016633",
+     "time": "2026-11-16T16:31:47Z"
+    },
+    {
+     "id": "07213db184daf82e",
+     "publisher": "fiscal.ai",
+     "kind": "news",
+     "title": "Legal & General Reports Third-Quarter Pension-Buyout Volume Miss",
+     "url": "https://www.moomoo.com/hans/news/post/1004729443/legal-general-shares-fall-after-pension-buyouts-miss-views?futusource=news_newspage_recommend",
+     "time": "2026-11-16T18:02:12Z"
     }
    ]
   },
@@ -5066,48 +5119,6 @@
      "title": "Fed Governor Christopher J. Waller favors 25 bps rate hike in December; 50 bps may be needed if inflation persists",
      "url": "https://news.google.com/rss/articles/CBMi9gFBVV95cUxQZVUtaWxLdmtZVGV6bDBwaDRTRk9saVd1R1FlUXowOVV1eVp6Qks5LWZVN0ZzS0Q1U09yemlnTVZjaEVlempESldNVEo4RE5Fb0R5OTAtU2R2cW5zMnF1SllpTXJUR3BDeWZYUjQ2U1VkZ2kzZ3VkNjRDQzhobEpSaW45NWlTSTlvMmhhYXRqUFNFeWRKRWJlUDdaMmNfR0kxOEZSa1JoS0syVFUtNG84Q3B4akh0dWNQajZ1S05FSlN2RFZYSmFLcjY0dzdNNi1wYmRqLVVvQVBOZkRJeURwajN4TjlkZUZ0blJmdktvMEFuLTFnMmc?oc=5",
      "time": "2026-11-10T10:41:00Z"
-    }
-   ]
-  },
-  {
-   "summary": "Tesla plans a $3.3 billion investment to expand its German gigafactory for Cybercab production.",
-   "category": "contract",
-   "firstSeen": "2026-11-16T14:36:40Z",
-   "publishers": [
-    "Reuters",
-    "Yahoo Finance"
-   ],
-   "assets": {
-    "TSLA": {
-     "direction": "up",
-     "confidence": 0.75,
-     "why": "Major factory expansion and new product capacity announcement."
-    }
-   },
-   "sources": [
-    {
-     "id": "6e8622025ba61a6d",
-     "publisher": "Reuters",
-     "kind": "news",
-     "title": "Tesla announces $3.3 billion expansion of Germany plant",
-     "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNaHd0RC1iZmQwWUtkTl9CYjJVMUhGYmtxNEZyQU92Rm5mZS1OZ0Z2bHl6TmJuLUFJYWpQUW5GQ1h2anVqSHR5TDF3aThnaWhDd3lDYl9oY3VqbTVLaUMwMGtSME5IckZnZE5PQVhURTNPQ1BaS2tBejl6OU15X1B1N3VOM0o3dktRbnpLSjc1eWI5WWs4bjZqNnFOOA?oc=5",
-     "time": "2026-11-16T14:36:40Z"
-    },
-    {
-     "id": "2acd79a8e57ffcb3",
-     "publisher": "Yahoo Finance",
-     "kind": "news",
-     "title": "Tesla to invest 3 bn euros to expand German factory",
-     "url": "https://finance.yahoo.com/technology/articles/tesla-invest-3-bn-euros-144451294.html?.tsrc=rss",
-     "time": "2026-11-16T14:44:51Z"
-    },
-    {
-     "id": "c80edc1bc344d0f3",
-     "publisher": "Yahoo Finance",
-     "kind": "news",
-     "title": "Tesla Targets 2029 Cybercab Production Start In Giga Berlin With $3.3B Investment: Report",
-     "url": "https://stocktwits.com/news-articles/markets/equity/tesla-targets-2029-cybercab-production-start-in-giga-berlin-with-3-3-b-investment-report/cNb7MV2R9gJ?.tsrc=rss",
-     "time": "2026-11-16T16:46:09Z"
     }
    ]
   }
