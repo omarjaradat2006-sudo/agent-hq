@@ -9,18 +9,18 @@
    "Nothing right now (all cash)."
   ],
   "today": [
-   "Scanned the news 104 times today: read 6783 headlines, found 248 that could move a stock or coin it's allowed to trade. None passed every check, so no trade (that's normal).",
+   "Scanned the news 105 times today: read 6783 headlines, found 248 that could move a stock or coin it's allowed to trade. None passed every check, so no trade (that's normal).",
    "Passed on TSLA: price hasn't moved the expected way yet (-2.72%).",
    "Passed on TSLA: price hasn't moved the expected way yet (-2.90%).",
    "Passed on JNJ: price hasn't moved the expected way yet (-0.85%).",
    "Passed on JNJ, LLY: price hasn't moved the expected way yet (-1.39%).",
-   "Safety rules that stepped in: stock entry window (x2)."
+   "Safety rules that stepped in: stock entry window (x7)."
   ],
   "watchlist": "Allowed to trade: 69 halal stocks, 5 Shariah ETFs, 9 coins.",
-  "lastScan": "2026-11-16T20:28:44Z"
+  "lastScan": "2026-11-16T20:30:04Z"
  },
  "hired": true,
- "updatedAt": "2026-11-16T20:29:00Z",
+ "updatedAt": "2026-11-16T20:30:13Z",
  "mode": "PAPER",
  "agents": [
   {
@@ -28,8 +28,8 @@
    "name": "News Scout",
    "role": "Reads X, Reddit and news feeds",
    "status": "working",
-   "doing": "Read 33 new headlines/posts, 2 market-moving stories",
-   "lastRun": "2026-11-16T20:28:59Z"
+   "doing": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet",
+   "lastRun": "2026-11-16T20:30:13Z"
   },
   {
    "id": "analyst",
@@ -68,8 +68,8 @@
    "name": "Trader",
    "role": "Places paper orders on Alpaca",
    "status": "working",
-   "doing": "Save to GitHub failed (will retry later): To github.com:omarjaradat2006-sudo/agent-hq.git\n ! [rejected]        HEAD -> main (fetch first)\nerror: failed to push some refs to 'github.com:omarjar",
-   "lastRun": "2026-11-16T20:23:43Z"
+   "doing": "Paper-trading bot started (Alpaca PAPER account only). Close this window to stop it.",
+   "lastRun": "2026-11-16T20:30:04Z"
   },
   {
    "id": "coins",
@@ -89,6 +89,26 @@
   }
  ],
  "log": [
+  {
+   "t": "2026-11-16T20:30:13Z",
+   "agent": "News Scout",
+   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
+  },
+  {
+   "t": "2026-11-16T20:30:09Z",
+   "agent": "News Scout",
+   "msg": "Google News feed skipped: HTTP 429 https://news.google.com/rss/search: <html><head><meta http-equiv=\"content-type\" content=\"text/html; charset=utf-8\"/><title>Sorry...</title><style> body { font-family: verdana, arial, sans-serif; background-color: #fff; color: #000; }</s"
+  },
+  {
+   "t": "2026-11-16T20:30:04Z",
+   "agent": "News Scout",
+   "msg": "Agent Reach not found: news feeds + Yahoo Finance + Reddit direct (no X)"
+  },
+  {
+   "t": "2026-11-16T20:30:04Z",
+   "agent": "Trader",
+   "msg": "Paper-trading bot started (Alpaca PAPER account only). Close this window to stop it."
+  },
   {
    "t": "2026-11-16T20:28:59Z",
    "agent": "News Scout",
@@ -818,31 +838,11 @@
    "t": "2026-11-16T15:19:38Z",
    "agent": "News Scout",
    "msg": "Read 43 new headlines/posts, 3 market-moving stories"
-  },
-  {
-   "t": "2026-11-16T15:19:30Z",
-   "agent": "News Scout",
-   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
-  },
-  {
-   "t": "2026-11-16T15:14:25Z",
-   "agent": "Trader",
-   "msg": "Save to GitHub failed (will retry later): To github.com:omarjaradat2006-sudo/agent-hq.git\n ! [rejected]        HEAD -> main (fetch first)\nerror: failed to push some refs to 'github.com:omarjar"
-  },
-  {
-   "t": "2026-11-16T15:14:23Z",
-   "agent": "News Scout",
-   "msg": "Read 42 new headlines/posts, 1 market-moving stories"
-  },
-  {
-   "t": "2026-11-16T15:09:18Z",
-   "agent": "Trader",
-   "msg": "Save to GitHub failed (will retry later): To github.com:omarjaradat2006-sudo/agent-hq.git\n ! [rejected]        HEAD -> main (fetch first)\nerror: failed to push some refs to 'github.com:omarjar"
   }
  ],
  "brief": {
   "date": "Mon Nov 16",
-  "createdAt": "2026-11-16T20:29:00Z",
+  "createdAt": "2026-11-16T20:30:13Z",
   "headline": "Paper account +$0 today (+0.00%), +0.00% total vs SPY -1.88% · 0 open",
   "summary": "0 trade(s) closed today, 0/0 winners overall. TradingAgents checks used today: 2/5.",
   "notes": [
@@ -867,9 +867,9 @@
   "deepUsed": 2,
   "deepMax": 5,
   "social": {
-   "at": "2026-11-16T20:28:51Z",
+   "at": "2026-11-16T20:30:13Z",
    "items": 0,
-   "source": "Reddit direct (X needs Agent Reach)",
+   "source": "Reddit public JSON (blocked on servers: add REDDIT_CLIENT_ID/SECRET); X needs Agent Reach",
    "problems": [
     "r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
    ]
