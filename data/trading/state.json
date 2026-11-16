@@ -9,18 +9,18 @@
    "Nothing right now (all cash)."
   ],
   "today": [
-   "Scanned the news 62 times today: read 5204 headlines, found 178 that could move a stock or coin it's allowed to trade. None passed every check, so no trade (that's normal).",
+   "Scanned the news 63 times today: read 5233 headlines, found 178 that could move a stock or coin it's allowed to trade. None passed every check, so no trade (that's normal).",
    "Passed on TSLA: price hasn't moved the expected way yet (-1.75%).",
+   "Passed on LLY: price hasn't moved the expected way yet (-1.00%).",
+   "Passed on TSLA: price hasn't moved the expected way yet (-1.92%).",
    "Passed on LLY: price hasn't moved the expected way yet (-0.92%).",
-   "Passed on TSLA: price hasn't moved the expected way yet (-1.90%).",
-   "Passed on NVDA: TradingAgents said ERROR (s and improvements. We recommend you to use the Interactions API (https://aistud).",
    "Safety rules that stepped in: stock entry window (x2)."
   ],
   "watchlist": "Allowed to trade: 69 halal stocks, 5 Shariah ETFs, 9 coins.",
-  "lastScan": "2026-11-16T16:39:43Z"
+  "lastScan": "2026-11-16T16:44:52Z"
  },
  "hired": true,
- "updatedAt": "2026-11-16T16:39:50Z",
+ "updatedAt": "2026-11-16T16:46:33Z",
  "mode": "PAPER",
  "agents": [
   {
@@ -28,16 +28,16 @@
    "name": "News Scout",
    "role": "Reads X, Reddit and news feeds",
    "status": "working",
-   "doing": "Read 31 new headlines/posts, 2 market-moving stories",
-   "lastRun": "2026-11-16T16:39:49Z"
+   "doing": "Read 29 new headlines/posts, 0 market-moving stories",
+   "lastRun": "2026-11-16T16:46:32Z"
   },
   {
    "id": "analyst",
    "name": "News Analyst",
    "role": "Gemini: is it real, what moves, which way",
-   "status": "ok",
-   "doing": "Gemini triage failed, skipping this batch: Expecting ':' delimiter: line 7 column 24 (char 144)",
-   "lastRun": "2026-11-16T16:18:39Z"
+   "status": "working",
+   "doing": "Gemini triage failed, skipping this batch: All Gemini models failed. Last error: Gemini HTTP 503 on gemini-3.1-flash-lite: {\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experien",
+   "lastRun": "2026-11-16T16:46:32Z"
   },
   {
    "id": "confirm",
@@ -69,7 +69,7 @@
    "role": "Places paper orders on Alpaca",
    "status": "working",
    "doing": "Save to GitHub failed (will retry later): To github.com:omarjaradat2006-sudo/agent-hq.git\n ! [rejected]        HEAD -> main (fetch first)\nerror: failed to push some refs to 'github.com:omarjar",
-   "lastRun": "2026-11-16T16:34:43Z"
+   "lastRun": "2026-11-16T16:39:52Z"
   },
   {
    "id": "coins",
@@ -89,6 +89,21 @@
   }
  ],
  "log": [
+  {
+   "t": "2026-11-16T16:46:32Z",
+   "agent": "News Scout",
+   "msg": "Read 29 new headlines/posts, 0 market-moving stories"
+  },
+  {
+   "t": "2026-11-16T16:46:32Z",
+   "agent": "News Analyst",
+   "msg": "Gemini triage failed, skipping this batch: All Gemini models failed. Last error: Gemini HTTP 503 on gemini-3.1-flash-lite: {\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experien"
+  },
+  {
+   "t": "2026-11-16T16:39:52Z",
+   "agent": "Trader",
+   "msg": "Save to GitHub failed (will retry later): To github.com:omarjaradat2006-sudo/agent-hq.git\n ! [rejected]        HEAD -> main (fetch first)\nerror: failed to push some refs to 'github.com:omarjar"
+  },
   {
    "t": "2026-11-16T16:39:49Z",
    "agent": "News Scout",
@@ -823,26 +838,11 @@
    "t": "2026-11-16T03:07:59Z",
    "agent": "News Scout",
    "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
-  },
-  {
-   "t": "2026-11-16T02:52:54Z",
-   "agent": "News Scout",
-   "msg": "Read 44 new headlines/posts, 1 market-moving stories"
-  },
-  {
-   "t": "2026-11-16T02:52:53Z",
-   "agent": "News Scout",
-   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
-  },
-  {
-   "t": "2026-11-16T02:37:49Z",
-   "agent": "News Scout",
-   "msg": "Read 43 new headlines/posts, 1 market-moving stories"
   }
  ],
  "brief": {
   "date": "Mon Nov 16",
-  "createdAt": "2026-11-16T16:39:50Z",
+  "createdAt": "2026-11-16T16:46:33Z",
   "headline": "Paper account +$0 today (+0.00%), +0.00% total vs SPY -0.90% · 0 open",
   "summary": "0 trade(s) closed today, 0/0 winners overall. TradingAgents checks used today: 2/5.",
   "notes": [
@@ -883,6 +883,20 @@
  "positions": [],
  "trades": [],
  "decisions": [
+  {
+   "t": "2026-11-16T16:46:33Z",
+   "symbol": "LLY",
+   "outcome": "waiting",
+   "why": "price hasn't moved the expected way yet (-1.00%)",
+   "event": "Eli Lilly has agreed to acquire Calytrix Bio for up to $1.5 billion during ObesityWeek."
+  },
+  {
+   "t": "2026-11-16T16:46:32Z",
+   "symbol": "TSLA",
+   "outcome": "waiting",
+   "why": "price hasn't moved the expected way yet (-1.92%)",
+   "event": "Tesla announced a 3 billion euro investment to expand its German factory to produce Cybercabs."
+  },
   {
    "t": "2026-11-16T16:39:49Z",
    "symbol": "LLY",
@@ -1287,20 +1301,6 @@
    "symbol": "MSFT",
    "outcome": "waiting",
    "why": "price hasn't moved the expected way yet (+0.10%)",
-   "event": "Cerebras Systems jumps on a new Microsoft deal and raised guidance, driving a surge in related assets."
-  },
-  {
-   "t": "2026-11-13T19:02:47Z",
-   "symbol": "MSFT",
-   "outcome": "waiting",
-   "why": "price hasn't moved the expected way yet (+0.02%)",
-   "event": "Cerebras Systems jumps on a new Microsoft deal and raised guidance, driving a surge in related assets."
-  },
-  {
-   "t": "2026-11-13T18:57:41Z",
-   "symbol": "MSFT",
-   "outcome": "waiting",
-   "why": "price hasn't moved the expected way yet (+0.06%)",
    "event": "Cerebras Systems jumps on a new Microsoft deal and raised guidance, driving a surge in related assets."
   }
  ],
