@@ -9,18 +9,18 @@
    "Nothing right now (all cash)."
   ],
   "today": [
-   "Scanned the news 58 times today: read 5026 headlines, found 170 that could move a stock or coin it's allowed to trade. None passed every check, so no trade (that's normal).",
+   "Scanned the news 59 times today: read 5061 headlines, found 170 that could move a stock or coin it's allowed to trade. None passed every check, so no trade (that's normal).",
+   "Passed on NVDA: price hasn't moved the expected way yet (+0.24%).",
+   "Passed on LLY: price hasn't moved the expected way yet (-0.47%).",
+   "Passed on TSLA: price hasn't moved the expected way yet (-1.78%).",
    "Passed on NVDA: price hasn't moved the expected way yet (-0.04%).",
-   "Passed on LLY: price hasn't moved the expected way yet (-0.48%).",
-   "Passed on TSLA: price hasn't moved the expected way yet (-1.88%).",
-   "Passed on NVDA: price hasn't moved the expected way yet (-0.39%).",
    "Safety rules that stepped in: stock entry window (x2)."
   ],
   "watchlist": "Allowed to trade: 69 halal stocks, 5 Shariah ETFs, 9 coins.",
-  "lastScan": "2026-11-16T16:18:29Z"
+  "lastScan": "2026-11-16T16:23:42Z"
  },
  "hired": true,
- "updatedAt": "2026-11-16T16:18:40Z",
+ "updatedAt": "2026-11-16T16:23:47Z",
  "mode": "PAPER",
  "agents": [
   {
@@ -28,8 +28,8 @@
    "name": "News Scout",
    "role": "Reads X, Reddit and news feeds",
    "status": "working",
-   "doing": "Read 21 new headlines/posts, 0 market-moving stories",
-   "lastRun": "2026-11-16T16:18:39Z"
+   "doing": "Read 35 new headlines/posts, 0 market-moving stories",
+   "lastRun": "2026-11-16T16:23:46Z"
   },
   {
    "id": "analyst",
@@ -69,7 +69,7 @@
    "role": "Places paper orders on Alpaca",
    "status": "working",
    "doing": "Save to GitHub failed (will retry later): To github.com:omarjaradat2006-sudo/agent-hq.git\n ! [rejected]        HEAD -> main (fetch first)\nerror: failed to push some refs to 'github.com:omarjar",
-   "lastRun": "2026-11-16T16:13:28Z"
+   "lastRun": "2026-11-16T16:18:42Z"
   },
   {
    "id": "coins",
@@ -89,6 +89,21 @@
   }
  ],
  "log": [
+  {
+   "t": "2026-11-16T16:23:46Z",
+   "agent": "News Scout",
+   "msg": "Read 35 new headlines/posts, 0 market-moving stories"
+  },
+  {
+   "t": "2026-11-16T16:23:46Z",
+   "agent": "News Scout",
+   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
+  },
+  {
+   "t": "2026-11-16T16:18:42Z",
+   "agent": "Trader",
+   "msg": "Save to GitHub failed (will retry later): To github.com:omarjaradat2006-sudo/agent-hq.git\n ! [rejected]        HEAD -> main (fetch first)\nerror: failed to push some refs to 'github.com:omarjar"
+  },
   {
    "t": "2026-11-16T16:18:39Z",
    "agent": "News Scout",
@@ -823,26 +838,11 @@
    "t": "2026-11-16T01:37:26Z",
    "agent": "News Scout",
    "msg": "Read 52 new headlines/posts, 2 market-moving stories"
-  },
-  {
-   "t": "2026-11-16T01:37:25Z",
-   "agent": "News Scout",
-   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
-  },
-  {
-   "t": "2026-11-16T01:22:21Z",
-   "agent": "News Scout",
-   "msg": "Read 22 new headlines/posts, 1 market-moving stories"
-  },
-  {
-   "t": "2026-11-16T01:22:20Z",
-   "agent": "News Scout",
-   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
   }
  ],
  "brief": {
   "date": "Mon Nov 16",
-  "createdAt": "2026-11-16T16:18:40Z",
+  "createdAt": "2026-11-16T16:23:47Z",
   "headline": "Paper account +$0 today (+0.00%), +0.00% total vs SPY -0.83% · 0 open",
   "summary": "0 trade(s) closed today, 0/0 winners overall. TradingAgents checks used today: 1/5.",
   "notes": [
@@ -867,7 +867,7 @@
   "deepUsed": 1,
   "deepMax": 5,
   "social": {
-   "at": "2026-11-16T16:06:35Z",
+   "at": "2026-11-16T16:23:46Z",
    "items": 0,
    "source": "Reddit direct (X needs Agent Reach)",
    "problems": [
@@ -883,6 +883,27 @@
  "positions": [],
  "trades": [],
  "decisions": [
+  {
+   "t": "2026-11-16T16:23:47Z",
+   "symbol": "NVDA",
+   "outcome": "waiting",
+   "why": "price hasn't moved the expected way yet (+0.24%)",
+   "event": "BofA analysts project Nvidia will report a beat-and-raise for fiscal Q3 earnings."
+  },
+  {
+   "t": "2026-11-16T16:23:47Z",
+   "symbol": "LLY",
+   "outcome": "waiting",
+   "why": "price hasn't moved the expected way yet (-0.47%)",
+   "event": "Eli Lilly has agreed to acquire Calytrix Bio for up to $1.5 billion during ObesityWeek."
+  },
+  {
+   "t": "2026-11-16T16:23:46Z",
+   "symbol": "TSLA",
+   "outcome": "waiting",
+   "why": "price hasn't moved the expected way yet (-1.78%)",
+   "event": "Tesla announced a 3 billion euro investment to expand its German factory to produce Cybercabs."
+  },
   {
    "t": "2026-11-16T16:18:39Z",
    "symbol": "NVDA",
@@ -1281,27 +1302,6 @@
    "outcome": "waiting",
    "why": "price hasn't moved the expected way yet (+0.18%)",
    "event": "Cerebras Systems jumps on a new Microsoft deal and raised guidance, driving a surge in related assets."
-  },
-  {
-   "t": "2026-11-13T16:53:22Z",
-   "symbol": "XRP/USD",
-   "outcome": "waiting",
-   "why": "price hasn't moved the expected way yet (-0.91%)",
-   "event": "Japanese corporate giant Rakuten expands its institutional crypto exposure by joining Bitwise's XRP ETF holders."
-  },
-  {
-   "t": "2026-11-13T16:48:16Z",
-   "symbol": "XRP/USD",
-   "outcome": "waiting",
-   "why": "price hasn't moved the expected way yet (-1.26%)",
-   "event": "Japanese corporate giant Rakuten expands its institutional crypto exposure by joining Bitwise's XRP ETF holders."
-  },
-  {
-   "t": "2026-11-13T16:43:06Z",
-   "symbol": "XRP/USD",
-   "outcome": "waiting",
-   "why": "price hasn't moved the expected way yet (-1.17%)",
-   "event": "Japanese corporate giant Rakuten expands its institutional crypto exposure by joining Bitwise's XRP ETF holders."
   }
  ],
  "equity": [
