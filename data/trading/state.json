@@ -9,18 +9,18 @@
    "Nothing right now (all cash)."
   ],
   "today": [
-   "Scanned the news 85 times today: read 6061 headlines, found 221 that could move a stock or coin it's allowed to trade. None passed every check, so no trade (that's normal).",
+   "Scanned the news 86 times today: read 6089 headlines, found 221 that could move a stock or coin it's allowed to trade. None passed every check, so no trade (that's normal).",
    "Passed on JNJ, LLY: price hasn't moved the expected way yet (-1.04%).",
    "Passed on TSLA: price hasn't moved the expected way yet (-1.75%).",
-   "Passed on XOM: price hasn't moved the expected way yet (-0.28%).",
-   "Passed on XOM: price hasn't moved the expected way yet (-0.31%).",
+   "Passed on JNJ, LLY: price hasn't moved the expected way yet (-0.95%).",
+   "Passed on LLY: price hasn't moved the expected way yet (-1.39%).",
    "Safety rules that stepped in: stock entry window (x2)."
   ],
   "watchlist": "Allowed to trade: 69 halal stocks, 5 Shariah ETFs, 9 coins.",
-  "lastScan": "2026-11-16T18:47:30Z"
+  "lastScan": "2026-11-16T18:52:38Z"
  },
  "hired": true,
- "updatedAt": "2026-11-16T18:47:36Z",
+ "updatedAt": "2026-11-16T18:52:44Z",
  "mode": "PAPER",
  "agents": [
   {
@@ -28,8 +28,8 @@
    "name": "News Scout",
    "role": "Reads X, Reddit and news feeds",
    "status": "working",
-   "doing": "Read 35 new headlines/posts, 1 market-moving stories",
-   "lastRun": "2026-11-16T18:47:35Z"
+   "doing": "Read 28 new headlines/posts, 0 market-moving stories",
+   "lastRun": "2026-11-16T18:52:43Z"
   },
   {
    "id": "analyst",
@@ -69,7 +69,7 @@
    "role": "Places paper orders on Alpaca",
    "status": "working",
    "doing": "Save to GitHub failed (will retry later): To github.com:omarjaradat2006-sudo/agent-hq.git\n ! [rejected]        HEAD -> main (fetch first)\nerror: failed to push some refs to 'github.com:omarjar",
-   "lastRun": "2026-11-16T18:42:29Z"
+   "lastRun": "2026-11-16T18:47:38Z"
   },
   {
    "id": "coins",
@@ -89,6 +89,21 @@
   }
  ],
  "log": [
+  {
+   "t": "2026-11-16T18:52:43Z",
+   "agent": "News Scout",
+   "msg": "Read 28 new headlines/posts, 0 market-moving stories"
+  },
+  {
+   "t": "2026-11-16T18:52:42Z",
+   "agent": "News Scout",
+   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
+  },
+  {
+   "t": "2026-11-16T18:47:38Z",
+   "agent": "Trader",
+   "msg": "Save to GitHub failed (will retry later): To github.com:omarjaradat2006-sudo/agent-hq.git\n ! [rejected]        HEAD -> main (fetch first)\nerror: failed to push some refs to 'github.com:omarjar"
+  },
   {
    "t": "2026-11-16T18:47:35Z",
    "agent": "News Scout",
@@ -823,26 +838,11 @@
    "t": "2026-11-16T09:58:23Z",
    "agent": "News Scout",
    "msg": "Read 96 new headlines/posts, 2 market-moving stories"
-  },
-  {
-   "t": "2026-11-16T09:58:21Z",
-   "agent": "News Scout",
-   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
-  },
-  {
-   "t": "2026-11-16T09:43:17Z",
-   "agent": "News Scout",
-   "msg": "Read 91 new headlines/posts, 3 market-moving stories"
-  },
-  {
-   "t": "2026-11-16T09:42:54Z",
-   "agent": "News Scout",
-   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
   }
  ],
  "brief": {
   "date": "Mon Nov 16",
-  "createdAt": "2026-11-16T18:47:36Z",
+  "createdAt": "2026-11-16T18:52:44Z",
   "headline": "Paper account +$0 today (+0.00%), +0.00% total vs SPY -1.66% · 0 open",
   "summary": "0 trade(s) closed today, 0/0 winners overall. TradingAgents checks used today: 2/5.",
   "notes": [
@@ -867,7 +867,7 @@
   "deepUsed": 2,
   "deepMax": 5,
   "social": {
-   "at": "2026-11-16T18:37:11Z",
+   "at": "2026-11-16T18:52:42Z",
    "items": 0,
    "source": "Reddit direct (X needs Agent Reach)",
    "problems": [
@@ -883,6 +883,41 @@
  "positions": [],
  "trades": [],
  "decisions": [
+  {
+   "t": "2026-11-16T18:52:44Z",
+   "symbol": "JNJ",
+   "outcome": "waiting",
+   "why": "price hasn't moved the expected way yet (-0.19%)",
+   "event": "Johnson & Johnson is acquiring Ollin Biosciences for $2.2 billion and partnering with Blackstone."
+  },
+  {
+   "t": "2026-11-16T18:52:43Z",
+   "symbol": "XOM",
+   "outcome": "waiting",
+   "why": "price hasn't moved the expected way yet (-0.25%)",
+   "event": "ExxonMobil's daily production in Guyana is set to reach 1.1 million barrels per day as Uaru production begins."
+  },
+  {
+   "t": "2026-11-16T18:52:43Z",
+   "symbol": "JNJ",
+   "outcome": "waiting",
+   "why": "price hasn't moved the expected way yet (-0.95%)",
+   "event": "Johnson & Johnson has agreed to acquire eye disease therapy developer Ollin Biosciences in a deal valued up to $3.33 billion."
+  },
+  {
+   "t": "2026-11-16T18:52:43Z",
+   "symbol": "LLY",
+   "outcome": "waiting",
+   "why": "price hasn't moved the expected way yet (-1.39%)",
+   "event": "Johnson & Johnson has agreed to acquire eye disease therapy developer Ollin Biosciences in a deal valued up to $3.33 billion."
+  },
+  {
+   "t": "2026-11-16T18:52:43Z",
+   "symbol": "TSLA",
+   "outcome": "waiting",
+   "why": "price hasn't moved the expected way yet (-2.44%)",
+   "event": "Tesla plans to build 1 million Cybercabs near Berlin, expanding its German gigafactory footprint."
+  },
   {
    "t": "2026-11-16T18:47:35Z",
    "symbol": "JNJ",
@@ -1267,41 +1302,6 @@
    "outcome": "waiting",
    "why": "price hasn't moved the expected way yet (-0.11%)",
    "event": "ExxonMobil's daily production in Guyana is set to reach 1.1 million barrels per day as Uaru production begins."
-  },
-  {
-   "t": "2026-11-16T17:47:45Z",
-   "symbol": "JNJ",
-   "outcome": "waiting",
-   "why": "price hasn't moved the expected way yet (-0.83%)",
-   "event": "Johnson & Johnson has agreed to acquire eye disease therapy developer Ollin Biosciences in a deal valued up to $3.33 billion."
-  },
-  {
-   "t": "2026-11-16T17:47:44Z",
-   "symbol": "LLY",
-   "outcome": "waiting",
-   "why": "price hasn't moved the expected way yet (-1.21%)",
-   "event": "Johnson & Johnson has agreed to acquire eye disease therapy developer Ollin Biosciences in a deal valued up to $3.33 billion."
-  },
-  {
-   "t": "2026-11-16T17:47:44Z",
-   "symbol": "TSLA",
-   "outcome": "waiting",
-   "why": "price hasn't moved the expected way yet (-2.32%)",
-   "event": "Tesla plans a $3.3 billion investment to expand its German gigafactory for Cybercab production."
-  },
-  {
-   "t": "2026-11-16T17:42:22Z",
-   "symbol": "XOM",
-   "outcome": "waiting",
-   "why": "price hasn't moved the expected way yet (-0.07%)",
-   "event": "ExxonMobil's daily production in Guyana is set to reach 1.1 million barrels per day as Uaru production begins."
-  },
-  {
-   "t": "2026-11-16T17:42:22Z",
-   "symbol": "JNJ",
-   "outcome": "waiting",
-   "why": "price hasn't moved the expected way yet (-0.78%)",
-   "event": "Johnson & Johnson has agreed to acquire eye disease therapy developer Ollin Biosciences in a deal valued up to $3.33 billion."
   }
  ],
  "equity": [
@@ -2885,6 +2885,147 @@
  },
  "events": [
   {
+   "summary": "California sues OpenAI over alleged cyberattacks on other companies by its AI models.",
+   "category": "company_bad_news",
+   "firstSeen": "2026-11-12T15:43:48Z",
+   "publishers": [
+    "AP",
+    "Benzinga",
+    "CNBC",
+    "Crypto Briefing",
+    "Cryptonews.net",
+    "JournalArta",
+    "Moomoo",
+    "Reuters",
+    "StockStory",
+    "TradingKey",
+    "Wccftech",
+    "Yahoo Finance",
+    "Yahoo Finance UK",
+    "fiscal.ai",
+    "scanx.trade"
+   ],
+   "assets": {
+    "TSLA": {
+     "direction": "down",
+     "confidence": 0.6,
+     "why": "New lawsuit filed against Tesla adds legal headline risk."
+    },
+    "NVDA": {
+     "direction": "down",
+     "confidence": 0.85,
+     "why": "CEO exit and executive turmoil directly weigh on Nvidia stock."
+    },
+    "LOW": {
+     "direction": "down",
+     "confidence": 0.8,
+     "why": "Analyst downgrade to Underperform directly weighs on the stock."
+    },
+    "TJX": {
+     "direction": "down",
+     "confidence": 0.65,
+     "why": "Downgraded to Hold by Gordon Haskett."
+    },
+    "AVGO": {
+     "direction": "down",
+     "confidence": 0.8,
+     "why": "Downgraded by Rothschild & Co Redburn due to AI financing concerns."
+    },
+    "HD": {
+     "direction": "down",
+     "confidence": 0.6,
+     "why": "Peer home improvement retailer pressured by negative sector sentiment."
+    },
+    "META": {
+     "direction": "down",
+     "confidence": 0.85,
+     "why": "Massive regulatory fine of $887 million from Italy."
+    },
+    "GOOGL": {
+     "direction": "down",
+     "confidence": 0.55,
+     "why": "Broader regulatory headwinds for big tech regarding user data in Europe."
+    },
+    "INTC": {
+     "direction": "down",
+     "confidence": 0.9,
+     "why": "Severe share price plunge and shareholder lawsuits highlight deep fundamental pressures for Intel."
+    },
+    "COST": {
+     "direction": "down",
+     "confidence": 0.6,
+     "why": "Regulatory fine and labor misclassification issue creates slight negative sentiment."
+    },
+    "MU": {
+     "direction": "down",
+     "confidence": 0.5,
+     "why": "Legal setbacks regarding price-fixing allegations create regulatory and financial uncertainty for the company."
+    },
+    "OXY": {
+     "direction": "down",
+     "confidence": 0.8,
+     "why": "Analyst downgrade creates downward selling pressure."
+    },
+    "FANG": {
+     "direction": "down",
+     "confidence": 0.65,
+     "why": "Large cash-and-stock acquisitions can dilute existing shareholders and create near-term capital allocation uncertainty."
+    },
+    "SMCI": {
+     "direction": "down",
+     "confidence": 0.75,
+     "why": "DOJ probe and leadership uncertainty create significant negative pressure"
+    },
+    "MSFT": {
+     "direction": "down",
+     "confidence": 0.6,
+     "why": "Patent infringement lawsuit from MIT introduces legal and financial headwinds"
+    }
+   },
+   "sources": [
+    {
+     "id": "fb8045cbfe86a60f",
+     "publisher": "Benzinga",
+     "kind": "news",
+     "title": "YETI Sounds the Alarm on Consumer Spending As Shoppers Hunt for Deals",
+     "url": "https://www.benzinga.com/markets/earnings/26/11/63197694/yeti-sounds-the-alarm-on-consumer-spending-as-shoppers-hunt-for-deals",
+     "time": "2026-11-12T15:43:48Z"
+    },
+    {
+     "id": "eb1007b02a637a06",
+     "publisher": "StockStory",
+     "kind": "news",
+     "title": "Why YETI shares are trading lower today",
+     "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNdl83SV9zdFlzM2FENVRJLTJxckhKNjZUMTFTM0FXUUZVQ0NzRG54ZFRXeERERnZDSWFDcmMxNU1rRVhrWUlnV2UtWFdmY2VpWDAxNkxudGV4NmpjeUJ3Z1NQUm1FUm1lU3dNTmEwdmxkNjFTdU9aTEt2THpfQmYyV05vNzJwa3VDSjZqQjdfYjVwQWttVzlNX0ZrdTlydXJU?oc=5",
+     "time": "2026-11-12T15:53:44Z"
+    },
+    {
+     "id": "c394152546c931b0",
+     "publisher": "scanx.trade",
+     "kind": "news",
+     "title": "YETI Holdings Q3FY26 Results: Revenue up 4.4% but guidance cut",
+     "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOdlBmR3l6ZUFQY29CWHFTT1p4Z0JOdEpxb2hiYWNuV3FQTjVKcTd0bml3S3RPWVY1SDVSUVR3dGFSb1BvbXByNzc4RURDd1E0YXdTT05pVWYyOVpjQ2JTYXVkMFByR05iaThHeUJfRDJuaWVKYVp3UkxndGxfNm9WeGxtV1h0dUFEUWtVM0tQaURPVWNuSGFiZmZBanBCc2tGQ0FhNjEyUEVZVUYzT1lGSWFFeW05clYz?oc=5",
+     "time": "2026-11-12T16:39:48Z"
+    },
+    {
+     "id": "cc6a00bf5e9f8ced",
+     "publisher": "fiscal.ai",
+     "kind": "news",
+     "title": "Lawsuit Filed Against Tesla Over San Mateo Street-Racing Incident",
+     "url": "https://newsfilter.io/sources/businesswire",
+     "time": "2026-11-12T20:01:33Z"
+    },
+    {
+     "id": "fab361ae0414d4da",
+     "publisher": "CNBC",
+     "kind": "news",
+     "title": "Stock futures edge lower after markets slide amid Nvidia woes: Live updates",
+     "url": "https://www.cnbc.com/2026/11/12/stock-market-today-live-updates.html",
+     "time": "2026-11-13T08:20:13Z"
+    }
+   ]
+  },
+  {
    "summary": "Nvidia faces ongoing leadership turmoil and board opposition to Jensen Huang's return, continuing to weigh on the stock and broader AI sector.",
    "category": "company_bad_news",
    "firstSeen": "2026-11-12T18:24:33Z",
@@ -4428,147 +4569,6 @@
      "title": "ASX Jumps as Oil Prices Fall on Trump Iran Remarks",
      "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxNNzRqNnJkRHVzZTEtaVJYaGxMNEFRYUtlRmtiR1RLeWVtU1UxeUx5NEdUeDl3VG5acXhKWFVpNkgzUTBsMzhrbm9uQWdGRWJ1S3psbjFrZ291dl9qc2pWRHdHVXEyTmZEQzBEdnluUi1RSFhjNmNadlF5N1FMRGc3aWlUUjhEdw?oc=5",
      "time": "2026-11-10T02:07:12Z"
-    }
-   ]
-  },
-  {
-   "summary": "MIT sues Microsoft for patent infringement over data center technology.",
-   "category": "company_bad_news",
-   "firstSeen": "2026-11-12T15:43:48Z",
-   "publishers": [
-    "AP",
-    "Benzinga",
-    "CNBC",
-    "Crypto Briefing",
-    "Cryptonews.net",
-    "JournalArta",
-    "Moomoo",
-    "Reuters",
-    "StockStory",
-    "TradingKey",
-    "Wccftech",
-    "Yahoo Finance",
-    "Yahoo Finance UK",
-    "fiscal.ai",
-    "scanx.trade"
-   ],
-   "assets": {
-    "TSLA": {
-     "direction": "down",
-     "confidence": 0.6,
-     "why": "New lawsuit filed against Tesla adds legal headline risk."
-    },
-    "NVDA": {
-     "direction": "down",
-     "confidence": 0.85,
-     "why": "CEO exit and executive turmoil directly weigh on Nvidia stock."
-    },
-    "LOW": {
-     "direction": "down",
-     "confidence": 0.8,
-     "why": "Analyst downgrade to Underperform directly weighs on the stock."
-    },
-    "TJX": {
-     "direction": "down",
-     "confidence": 0.65,
-     "why": "Downgraded to Hold by Gordon Haskett."
-    },
-    "AVGO": {
-     "direction": "down",
-     "confidence": 0.8,
-     "why": "Downgraded by Rothschild & Co Redburn due to AI financing concerns."
-    },
-    "HD": {
-     "direction": "down",
-     "confidence": 0.6,
-     "why": "Peer home improvement retailer pressured by negative sector sentiment."
-    },
-    "META": {
-     "direction": "down",
-     "confidence": 0.85,
-     "why": "Massive regulatory fine of $887 million from Italy."
-    },
-    "GOOGL": {
-     "direction": "down",
-     "confidence": 0.55,
-     "why": "Broader regulatory headwinds for big tech regarding user data in Europe."
-    },
-    "INTC": {
-     "direction": "down",
-     "confidence": 0.9,
-     "why": "Severe share price plunge and shareholder lawsuits highlight deep fundamental pressures for Intel."
-    },
-    "COST": {
-     "direction": "down",
-     "confidence": 0.6,
-     "why": "Regulatory fine and labor misclassification issue creates slight negative sentiment."
-    },
-    "MU": {
-     "direction": "down",
-     "confidence": 0.5,
-     "why": "Legal setbacks regarding price-fixing allegations create regulatory and financial uncertainty for the company."
-    },
-    "OXY": {
-     "direction": "down",
-     "confidence": 0.8,
-     "why": "Analyst downgrade creates downward selling pressure."
-    },
-    "FANG": {
-     "direction": "down",
-     "confidence": 0.65,
-     "why": "Large cash-and-stock acquisitions can dilute existing shareholders and create near-term capital allocation uncertainty."
-    },
-    "SMCI": {
-     "direction": "down",
-     "confidence": 0.75,
-     "why": "DOJ probe and leadership uncertainty create significant negative pressure"
-    },
-    "MSFT": {
-     "direction": "down",
-     "confidence": 0.6,
-     "why": "Patent infringement lawsuit from MIT introduces legal and financial headwinds"
-    }
-   },
-   "sources": [
-    {
-     "id": "fb8045cbfe86a60f",
-     "publisher": "Benzinga",
-     "kind": "news",
-     "title": "YETI Sounds the Alarm on Consumer Spending As Shoppers Hunt for Deals",
-     "url": "https://www.benzinga.com/markets/earnings/26/11/63197694/yeti-sounds-the-alarm-on-consumer-spending-as-shoppers-hunt-for-deals",
-     "time": "2026-11-12T15:43:48Z"
-    },
-    {
-     "id": "eb1007b02a637a06",
-     "publisher": "StockStory",
-     "kind": "news",
-     "title": "Why YETI shares are trading lower today",
-     "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNdl83SV9zdFlzM2FENVRJLTJxckhKNjZUMTFTM0FXUUZVQ0NzRG54ZFRXeERERnZDSWFDcmMxNU1rRVhrWUlnV2UtWFdmY2VpWDAxNkxudGV4NmpjeUJ3Z1NQUm1FUm1lU3dNTmEwdmxkNjFTdU9aTEt2THpfQmYyV05vNzJwa3VDSjZqQjdfYjVwQWttVzlNX0ZrdTlydXJU?oc=5",
-     "time": "2026-11-12T15:53:44Z"
-    },
-    {
-     "id": "c394152546c931b0",
-     "publisher": "scanx.trade",
-     "kind": "news",
-     "title": "YETI Holdings Q3FY26 Results: Revenue up 4.4% but guidance cut",
-     "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOdlBmR3l6ZUFQY29CWHFTT1p4Z0JOdEpxb2hiYWNuV3FQTjVKcTd0bml3S3RPWVY1SDVSUVR3dGFSb1BvbXByNzc4RURDd1E0YXdTT05pVWYyOVpjQ2JTYXVkMFByR05iaThHeUJfRDJuaWVKYVp3UkxndGxfNm9WeGxtV1h0dUFEUWtVM0tQaURPVWNuSGFiZmZBanBCc2tGQ0FhNjEyUEVZVUYzT1lGSWFFeW05clYz?oc=5",
-     "time": "2026-11-12T16:39:48Z"
-    },
-    {
-     "id": "cc6a00bf5e9f8ced",
-     "publisher": "fiscal.ai",
-     "kind": "news",
-     "title": "Lawsuit Filed Against Tesla Over San Mateo Street-Racing Incident",
-     "url": "https://newsfilter.io/sources/businesswire",
-     "time": "2026-11-12T20:01:33Z"
-    },
-    {
-     "id": "fab361ae0414d4da",
-     "publisher": "CNBC",
-     "kind": "news",
-     "title": "Stock futures edge lower after markets slide amid Nvidia woes: Live updates",
-     "url": "https://www.cnbc.com/2026/11/12/stock-market-today-live-updates.html",
-     "time": "2026-11-13T08:20:13Z"
     }
    ]
   },
