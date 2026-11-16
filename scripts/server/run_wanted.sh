@@ -33,7 +33,9 @@ rc=$?
 
 save_hq() {
   for i in 1 2 3 4; do
-    git -C "$HQ" add data/youtube/wanted_report.json data/youtube/wanted_campaigns.json data/youtube/state.json 2>/dev/null
+    for f in wanted_report.json wanted_campaigns.json state.json; do      # one at a time: a missing file must not block the rest
+      [ -f "$HQ/data/youtube/$f" ] && git -C "$HQ" add "data/youtube/$f"
+    done
     git -C "$HQ" diff --cached --quiet && return 0
     git -C "$HQ" -c user.name="Agent HQ (server)" -c user.email="openclaw@users.noreply.github.com" commit -qm "$1"
     git -C "$HQ" pull -q --rebase origin main && git -C "$HQ" push -q origin HEAD:main && return 0
