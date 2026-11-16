@@ -9,7 +9,7 @@
    "Nothing right now (all cash)."
   ],
   "today": [
-   "Scanned the news 77 times today: read 5823 headlines, found 209 that could move a stock or coin it's allowed to trade. None passed every check, so no trade (that's normal).",
+   "Scanned the news 78 times today: read 5868 headlines, found 210 that could move a stock or coin it's allowed to trade. None passed every check, so no trade (that's normal).",
    "Passed on TSLA: price hasn't moved the expected way yet (-1.75%).",
    "Passed on JNJ, XOM: price hasn't moved the expected way yet (-0.07%).",
    "Passed on LLY, TSLA: price hasn't moved the expected way yet (-1.27%).",
@@ -17,10 +17,10 @@
    "Safety rules that stepped in: stock entry window (x2)."
   ],
   "watchlist": "Allowed to trade: 69 halal stocks, 5 Shariah ETFs, 9 coins.",
-  "lastScan": "2026-11-16T18:04:23Z"
+  "lastScan": "2026-11-16T18:11:02Z"
  },
  "hired": true,
- "updatedAt": "2026-11-16T18:06:00Z",
+ "updatedAt": "2026-11-16T18:11:10Z",
  "mode": "PAPER",
  "agents": [
   {
@@ -28,8 +28,8 @@
    "name": "News Scout",
    "role": "Reads X, Reddit and news feeds",
    "status": "working",
-   "doing": "Read 74 new headlines/posts, 2 market-moving stories",
-   "lastRun": "2026-11-16T18:05:59Z"
+   "doing": "Read 45 new headlines/posts, 1 market-moving stories",
+   "lastRun": "2026-11-16T18:11:09Z"
   },
   {
    "id": "analyst",
@@ -69,7 +69,7 @@
    "role": "Places paper orders on Alpaca",
    "status": "working",
    "doing": "Save to GitHub failed (will retry later): To github.com:omarjaradat2006-sudo/agent-hq.git\n ! [rejected]        HEAD -> main (fetch first)\nerror: failed to push some refs to 'github.com:omarjar",
-   "lastRun": "2026-11-16T17:59:23Z"
+   "lastRun": "2026-11-16T18:06:02Z"
   },
   {
    "id": "coins",
@@ -89,6 +89,16 @@
   }
  ],
  "log": [
+  {
+   "t": "2026-11-16T18:11:09Z",
+   "agent": "News Scout",
+   "msg": "Read 45 new headlines/posts, 1 market-moving stories"
+  },
+  {
+   "t": "2026-11-16T18:06:02Z",
+   "agent": "Trader",
+   "msg": "Save to GitHub failed (will retry later): To github.com:omarjaradat2006-sudo/agent-hq.git\n ! [rejected]        HEAD -> main (fetch first)\nerror: failed to push some refs to 'github.com:omarjar"
+  },
   {
    "t": "2026-11-16T18:05:59Z",
    "agent": "News Scout",
@@ -828,21 +838,11 @@
    "t": "2026-11-16T07:40:21Z",
    "agent": "News Scout",
    "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
-  },
-  {
-   "t": "2026-11-16T07:25:16Z",
-   "agent": "News Scout",
-   "msg": "Read 78 new headlines/posts, 3 market-moving stories"
-  },
-  {
-   "t": "2026-11-16T07:25:09Z",
-   "agent": "News Scout",
-   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
   }
  ],
  "brief": {
   "date": "Mon Nov 16",
-  "createdAt": "2026-11-16T18:06:00Z",
+  "createdAt": "2026-11-16T18:11:10Z",
   "headline": "Paper account +$0 today (+0.00%), +0.00% total vs SPY -1.21% · 0 open",
   "summary": "0 trade(s) closed today, 0/0 winners overall. TradingAgents checks used today: 2/5.",
   "notes": [
@@ -883,6 +883,41 @@
  "positions": [],
  "trades": [],
  "decisions": [
+  {
+   "t": "2026-11-16T18:11:10Z",
+   "symbol": "JNJ",
+   "outcome": "waiting",
+   "why": "price hasn't moved the expected way yet (-0.09%)",
+   "event": "Johnson & Johnson is acquiring Ollin Biosciences for $2.2 billion and partnering with Blackstone."
+  },
+  {
+   "t": "2026-11-16T18:11:10Z",
+   "symbol": "XOM",
+   "outcome": "waiting",
+   "why": "price hasn't moved the expected way yet (-0.30%)",
+   "event": "ExxonMobil's daily production in Guyana is set to reach 1.1 million barrels per day as Uaru production begins."
+  },
+  {
+   "t": "2026-11-16T18:11:10Z",
+   "symbol": "JNJ",
+   "outcome": "waiting",
+   "why": "price hasn't moved the expected way yet (-0.84%)",
+   "event": "Johnson & Johnson has agreed to acquire eye disease therapy developer Ollin Biosciences in a deal valued up to $3.33 billion."
+  },
+  {
+   "t": "2026-11-16T18:11:09Z",
+   "symbol": "LLY",
+   "outcome": "waiting",
+   "why": "price hasn't moved the expected way yet (-1.36%)",
+   "event": "Johnson & Johnson has agreed to acquire eye disease therapy developer Ollin Biosciences in a deal valued up to $3.33 billion."
+  },
+  {
+   "t": "2026-11-16T18:11:09Z",
+   "symbol": "TSLA",
+   "outcome": "waiting",
+   "why": "price hasn't moved the expected way yet (-2.36%)",
+   "event": "Tesla plans a $3.3 billion investment to expand its German gigafactory for Cybercab production."
+  },
   {
    "t": "2026-11-16T18:06:00Z",
    "symbol": "JNJ",
@@ -1267,41 +1302,6 @@
    "outcome": "waiting",
    "why": "price hasn't moved the expected way yet (+0.30%)",
    "event": "BofA analysts project Nvidia will report a beat-and-raise for fiscal Q3 earnings."
-  },
-  {
-   "t": "2026-11-16T16:29:11Z",
-   "symbol": "LLY",
-   "outcome": "waiting",
-   "why": "price hasn't moved the expected way yet (-0.71%)",
-   "event": "Eli Lilly has agreed to acquire Calytrix Bio for up to $1.5 billion during ObesityWeek."
-  },
-  {
-   "t": "2026-11-16T16:29:11Z",
-   "symbol": "TSLA",
-   "outcome": "waiting",
-   "why": "price hasn't moved the expected way yet (-1.75%)",
-   "event": "Tesla announced a 3 billion euro investment to expand its German factory to produce Cybercabs."
-  },
-  {
-   "t": "2026-11-16T16:23:47Z",
-   "symbol": "NVDA",
-   "outcome": "waiting",
-   "why": "price hasn't moved the expected way yet (+0.24%)",
-   "event": "BofA analysts project Nvidia will report a beat-and-raise for fiscal Q3 earnings."
-  },
-  {
-   "t": "2026-11-16T16:23:47Z",
-   "symbol": "LLY",
-   "outcome": "waiting",
-   "why": "price hasn't moved the expected way yet (-0.47%)",
-   "event": "Eli Lilly has agreed to acquire Calytrix Bio for up to $1.5 billion during ObesityWeek."
-  },
-  {
-   "t": "2026-11-16T16:23:46Z",
-   "symbol": "TSLA",
-   "outcome": "waiting",
-   "why": "price hasn't moved the expected way yet (-1.78%)",
-   "event": "Tesla announced a 3 billion euro investment to expand its German factory to produce Cybercabs."
   }
  ],
  "equity": [
@@ -2875,6 +2875,31 @@
  },
  "events": [
   {
+   "summary": "Johnson & Johnson is acquiring Ollin Biosciences for $2.2 billion and partnering with Blackstone.",
+   "category": "contract",
+   "firstSeen": "2026-11-16T17:56:34Z",
+   "publishers": [
+    "Benzinga"
+   ],
+   "assets": {
+    "JNJ": {
+     "direction": "up",
+     "confidence": 0.85,
+     "why": "Major acquisition of an eye drug developer for $2.2 billion is positive for growth."
+    }
+   },
+   "sources": [
+    {
+     "id": "f71df41c2675c859",
+     "publisher": "Benzinga",
+     "kind": "news",
+     "title": "Johnson & Johnson Inks $2.2B Deal for Eye Drug Developer Ollin Biosciences",
+     "url": "https://www.benzinga.com/m-a/26/11/63308924/johnson-johnson-inks-2-2b-deal-for-eye-drug-developer-ollin-biosciences",
+     "time": "2026-11-16T17:56:34Z"
+    }
+   ]
+  },
+  {
    "summary": "Geopolitical tensions escalate significantly in the Strait of Hormuz after two oil tankers are reported sunk by naval mines.",
    "category": "war_escalation",
    "firstSeen": "2026-11-10T20:01:23Z",
@@ -3710,31 +3735,6 @@
      "title": "Legal & General Reports Third-Quarter Pension-Buyout Volume Miss",
      "url": "https://www.moomoo.com/hans/news/post/1004729443/legal-general-shares-fall-after-pension-buyouts-miss-views?futusource=news_newspage_recommend",
      "time": "2026-11-16T18:02:12Z"
-    }
-   ]
-  },
-  {
-   "summary": "Johnson & Johnson is acquiring eye drug developer Ollin Biosciences for $2.2 billion and partnering with Blackstone.",
-   "category": "contract",
-   "firstSeen": "2026-11-16T17:56:34Z",
-   "publishers": [
-    "Benzinga"
-   ],
-   "assets": {
-    "JNJ": {
-     "direction": "up",
-     "confidence": 0.75,
-     "why": "Major multi-billion dollar acquisition of a therapy developer expands JNJ pipeline."
-    }
-   },
-   "sources": [
-    {
-     "id": "f71df41c2675c859",
-     "publisher": "Benzinga",
-     "kind": "news",
-     "title": "Johnson & Johnson Inks $2.2B Deal for Eye Drug Developer Ollin Biosciences",
-     "url": "https://www.benzinga.com/m-a/26/11/63308924/johnson-johnson-inks-2-2b-deal-for-eye-drug-developer-ollin-biosciences",
-     "time": "2026-11-16T17:56:34Z"
     }
    ]
   },
