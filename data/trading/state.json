@@ -3,13 +3,13 @@
  "plain": {
   "line": "Even since start · 0 trades · holding: nothing (all cash)",
   "rulesMode": "aggressive",
-  "top": "Even since start (still $100,000.00) · just holding SPY would be -1.77%",
+  "top": "Even since start (still $100,000.00) · just holding SPY would be -1.88%",
   "up": true,
   "holding": [
    "Nothing right now (all cash)."
   ],
   "today": [
-   "Scanned the news 102 times today: read 6732 headlines, found 246 that could move a stock or coin it's allowed to trade. None passed every check, so no trade (that's normal).",
+   "Scanned the news 103 times today: read 6750 headlines, found 246 that could move a stock or coin it's allowed to trade. None passed every check, so no trade (that's normal).",
    "Passed on TSLA: price hasn't moved the expected way yet (-2.90%).",
    "Passed on JNJ: price hasn't moved the expected way yet (-0.85%).",
    "Passed on JNJ, LLY: price hasn't moved the expected way yet (-1.39%).",
@@ -17,10 +17,10 @@
    "Safety rules that stepped in: stock entry window (x2)."
   ],
   "watchlist": "Allowed to trade: 69 halal stocks, 5 Shariah ETFs, 9 coins.",
-  "lastScan": "2026-11-16T20:18:04Z"
+  "lastScan": "2026-11-16T20:23:28Z"
  },
  "hired": true,
- "updatedAt": "2026-11-16T20:18:26Z",
+ "updatedAt": "2026-11-16T20:23:41Z",
  "mode": "PAPER",
  "agents": [
   {
@@ -28,8 +28,8 @@
    "name": "News Scout",
    "role": "Reads X, Reddit and news feeds",
    "status": "working",
-   "doing": "Read 19 new headlines/posts, 0 market-moving stories",
-   "lastRun": "2026-11-16T20:18:24Z"
+   "doing": "Read 18 new headlines/posts, 0 market-moving stories",
+   "lastRun": "2026-11-16T20:23:40Z"
   },
   {
    "id": "analyst",
@@ -69,7 +69,7 @@
    "role": "Places paper orders on Alpaca",
    "status": "working",
    "doing": "Save to GitHub failed (will retry later): To github.com:omarjaradat2006-sudo/agent-hq.git\n ! [rejected]        HEAD -> main (fetch first)\nerror: failed to push some refs to 'github.com:omarjar",
-   "lastRun": "2026-11-16T20:13:03Z"
+   "lastRun": "2026-11-16T20:18:28Z"
   },
   {
    "id": "coins",
@@ -89,6 +89,21 @@
   }
  ],
  "log": [
+  {
+   "t": "2026-11-16T20:23:40Z",
+   "agent": "News Scout",
+   "msg": "Read 18 new headlines/posts, 0 market-moving stories"
+  },
+  {
+   "t": "2026-11-16T20:23:33Z",
+   "agent": "News Scout",
+   "msg": "Google News feed skipped: HTTP 429 https://news.google.com/rss/search: <html><head><meta http-equiv=\"content-type\" content=\"text/html; charset=utf-8\"/><title>Sorry...</title><style> body { font-family: verdana, arial, sans-serif; background-color: #fff; color: #000; }</s"
+  },
+  {
+   "t": "2026-11-16T20:18:28Z",
+   "agent": "Trader",
+   "msg": "Save to GitHub failed (will retry later): To github.com:omarjaradat2006-sudo/agent-hq.git\n ! [rejected]        HEAD -> main (fetch first)\nerror: failed to push some refs to 'github.com:omarjar"
+  },
   {
    "t": "2026-11-16T20:18:24Z",
    "agent": "News Scout",
@@ -823,27 +838,12 @@
    "t": "2026-11-16T15:04:00Z",
    "agent": "News Scout",
    "msg": "Read 48 new headlines/posts, 2 market-moving stories"
-  },
-  {
-   "t": "2026-11-16T15:03:45Z",
-   "agent": "News Scout",
-   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
-  },
-  {
-   "t": "2026-11-16T14:58:41Z",
-   "agent": "Trader",
-   "msg": "Save to GitHub failed (will retry later): To github.com:omarjaradat2006-sudo/agent-hq.git\n ! [rejected]        HEAD -> main (fetch first)\nerror: failed to push some refs to 'github.com:omarjar"
-  },
-  {
-   "t": "2026-11-16T14:58:38Z",
-   "agent": "News Scout",
-   "msg": "Read 49 new headlines/posts, 3 market-moving stories"
   }
  ],
  "brief": {
   "date": "Mon Nov 16",
-  "createdAt": "2026-11-16T20:18:26Z",
-  "headline": "Paper account +$0 today (+0.00%), +0.00% total vs SPY -1.77% · 0 open",
+  "createdAt": "2026-11-16T20:23:41Z",
+  "headline": "Paper account +$0 today (+0.00%), +0.00% total vs SPY -1.88% · 0 open",
   "summary": "0 trade(s) closed today, 0/0 winners overall. TradingAgents checks used today: 2/5.",
   "notes": [
    "X/Reddit reader: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
@@ -858,8 +858,8 @@
   "dayPct": 0.0,
   "totalPnl": 0.0,
   "totalPct": 0.0,
-  "spyPct": -1.77,
-  "vsSpyPct": 1.77
+  "spyPct": -1.88,
+  "vsSpyPct": 1.88
  },
  "status": {
   "killed": false,
@@ -883,6 +883,41 @@
  "positions": [],
  "trades": [],
  "decisions": [
+  {
+   "t": "2026-11-16T20:23:41Z",
+   "symbol": "JNJ",
+   "outcome": "waiting",
+   "why": "price hasn't moved the expected way yet (-0.59%)",
+   "event": "Johnson & Johnson is acquiring Ollin Biosciences for $2.2 billion to expand its retinal disease pipeline."
+  },
+  {
+   "t": "2026-11-16T20:23:41Z",
+   "symbol": "XOM",
+   "outcome": "waiting",
+   "why": "price hasn't moved the expected way yet (-0.73%)",
+   "event": "ExxonMobil's daily production in Guyana is set to reach 1.1 million barrels per day as Uaru production begins."
+  },
+  {
+   "t": "2026-11-16T20:23:40Z",
+   "symbol": "JNJ",
+   "outcome": "waiting",
+   "why": "price hasn't moved the expected way yet (-1.34%)",
+   "event": "Johnson & Johnson has agreed to acquire eye disease therapy developer Ollin Biosciences in a deal valued up to $3.33 billion."
+  },
+  {
+   "t": "2026-11-16T20:23:40Z",
+   "symbol": "LLY",
+   "outcome": "waiting",
+   "why": "price hasn't moved the expected way yet (-1.92%)",
+   "event": "Johnson & Johnson has agreed to acquire eye disease therapy developer Ollin Biosciences in a deal valued up to $3.33 billion."
+  },
+  {
+   "t": "2026-11-16T20:23:40Z",
+   "symbol": "TSLA",
+   "outcome": "waiting",
+   "why": "price hasn't moved the expected way yet (-2.96%)",
+   "event": "Tesla plans to build 1 million Cybercabs near Berlin, expanding its German gigafactory footprint."
+  },
   {
    "t": "2026-11-16T20:18:25Z",
    "symbol": "JNJ",
@@ -1266,41 +1301,6 @@
    "symbol": "TSLA",
    "outcome": "waiting",
    "why": "price hasn't moved the expected way yet (-2.80%)",
-   "event": "Tesla plans to build 1 million Cybercabs near Berlin, expanding its German gigafactory footprint."
-  },
-  {
-   "t": "2026-11-16T19:18:48Z",
-   "symbol": "JNJ",
-   "outcome": "waiting",
-   "why": "price hasn't moved the expected way yet (-0.59%)",
-   "event": "Johnson & Johnson is acquiring Ollin Biosciences for $2.2 billion and partnering with Blackstone."
-  },
-  {
-   "t": "2026-11-16T19:18:48Z",
-   "symbol": "XOM",
-   "outcome": "waiting",
-   "why": "price hasn't moved the expected way yet (-0.36%)",
-   "event": "ExxonMobil's daily production in Guyana is set to reach 1.1 million barrels per day as Uaru production begins."
-  },
-  {
-   "t": "2026-11-16T19:18:47Z",
-   "symbol": "JNJ",
-   "outcome": "waiting",
-   "why": "price hasn't moved the expected way yet (-1.34%)",
-   "event": "Johnson & Johnson has agreed to acquire eye disease therapy developer Ollin Biosciences in a deal valued up to $3.33 billion."
-  },
-  {
-   "t": "2026-11-16T19:18:47Z",
-   "symbol": "LLY",
-   "outcome": "waiting",
-   "why": "price hasn't moved the expected way yet (-1.65%)",
-   "event": "Johnson & Johnson has agreed to acquire eye disease therapy developer Ollin Biosciences in a deal valued up to $3.33 billion."
-  },
-  {
-   "t": "2026-11-16T19:18:47Z",
-   "symbol": "TSLA",
-   "outcome": "waiting",
-   "why": "price hasn't moved the expected way yet (-2.62%)",
    "event": "Tesla plans to build 1 million Cybercabs near Berlin, expanding its German gigafactory footprint."
   }
  ],
@@ -2884,6 +2884,11 @@
    "t": "2026-11-16T19:51:46Z",
    "equity": 100000.0,
    "spy": 739.38
+  },
+  {
+   "t": "2026-11-16T20:23:41Z",
+   "equity": 100000.0,
+   "spy": 738.605
   }
  ],
  "watch": [],
