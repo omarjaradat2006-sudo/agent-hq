@@ -541,3 +541,27 @@ def test_aggressive_ignores_volume_but_still_needs_price_move():
     R = C.confirm_rules("aggressive")
     assert M.confirm(None, "XOM", "up", T(news_at), now=NOW, bars=flat, rules=R)["passed"]
     assert not M.confirm(None, "XOM", "up", T(news_at), now=NOW, bars=flat, rules=C.confirm_rules("any"))["passed"]
+
+
+def test_ultra_buys_on_news_even_if_price_dips_but_keeps_risk_limits(monkeypatch):
+    from trading_bot import market as M
+    news_at = NOW - timedelta(hours=2)
+    bars = bars_spike(news_at=news_at, days=12)
+    for b in bars:
+        if util.parse_time(b["t"]) > news_at:
+            for k in ("o", "h", "l", "c"):
+                b[k] = float(b[k]) * 0.985                           # falls 1.5% after the news
+    U = C.confirm_rules("ultra")
+    assert M.confirm(None, "XOM", "up", T(news_at), now=NOW, bars=bars, rules=U)["passed"]
+    assert not M.confirm(None, "XOM", "up", T(news_at), now=NOW, bars=bars, rules=C.confirm_rules("aggressive"))["passed"]
+    assert U["skip_deep"] and C.RISK["stop_loss_pct"] == 0.03 and C.RISK["total_loss_kill_pct"] == 0.10
+
+
+def test_ultra_mode_buys_without_tradingagents(monkeypatch, tmpdirs):
+    monkeypatch.setenv("TRADING_RULES", "ultra")
+    fake = FakeAlpaca()
+    B = wire(monkeypatch, fake, [{"symbol": "XOM", "direction": "up", "confidence": 0.8, "why": "supply shock"}])
+    import trading_bot.deep as D
+    monkeypatch.setattr(D, "run", lambda *a, **k: (_ for _ in ()).throw(AssertionError("TradingAgents should not run")))
+    B.Bot().cycle()
+    assert fake.placed

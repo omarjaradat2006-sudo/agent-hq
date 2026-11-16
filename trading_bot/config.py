@@ -46,6 +46,10 @@ RULE_MODES = {
     # the news after the volume burst), price must still be moving the right way (+0.3% to +3%), and news that
     # breaks while the market is closed stays tradable until 12:00 PM New York the next trading day
     "aggressive": {"min_rvol": 0.0, "single_source": "any_news", "carry_overnight": True},
+    # ultra: buy on the news itself. No volume rule, no "price must be rising" rule (only "not already up 3%+"),
+    # no TradingAgents gate. Stop-loss -3%, target +6%, 5%/trade, 5 positions, -3% day halt, -10% kill switch stay.
+    "ultra": {"min_rvol": 0.0, "single_source": "any_news", "carry_overnight": True, "min_move_pct": -1.0,
+              "skip_deep": True},
 }
 REPUTABLE = {
     "benzinga", "reuters", "bloomberg", "associated press", "ap", "cnbc", "the wall street journal", "wsj",

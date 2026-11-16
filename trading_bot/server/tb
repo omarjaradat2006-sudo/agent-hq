@@ -28,7 +28,7 @@ case "${1:-help}" in
                 echo "Backtest of the last $D days started in the background (pid $!). Watch it: tb backtest-log" ;;
   backtest-log) tail -n 40 -f ~/logs/backtest.log ;;
   replay)       "$PY" -m trading_bot.replay "${2:-}" ;;
-  rules)        M="${2:-}"; case "$M" in strict|loose|any|aggressive) ;; *) echo "Use: tb rules strict|loose|any|aggressive"; grep -h '^TRADING_RULES' ~/.trading-bot.env 2>/dev/null || echo "(now: strict)"; exit 1;; esac
+  rules)        M="${2:-}"; case "$M" in strict|loose|any|aggressive|ultra) ;; *) echo "Use: tb rules strict|loose|any|aggressive|ultra"; grep -h '^TRADING_RULES' ~/.trading-bot.env 2>/dev/null || echo "(now: strict)"; exit 1;; esac
                 touch ~/.trading-bot.env; chmod 600 ~/.trading-bot.env
                 sed -i '/^TRADING_RULES=/d' ~/.trading-bot.env && echo "TRADING_RULES=$M" >> ~/.trading-bot.env
                 sudo systemctl restart agenthq-trading && echo "Entry rules now: $M (stop-loss, day halt and kill switch unchanged). Bot restarted." ;;

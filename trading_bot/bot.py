@@ -307,6 +307,9 @@ class Bot:
                 event("risk", risk.rule_name(why), why, sym)
                 continue
             counters, used = self.today_count("deep")
+            if R.get("skip_deep"):          # ultra mode: no TradingAgents gate, buy on the news
+                self.buy(key, sym, a, e, chk, {"approved": True, "rating": "not used (ultra mode)"}, pubs, acct)
+                continue
             if used >= C.DEEP["max_per_day"]:
                 self.decide(key, sym, "waiting", "used today's 5 TradingAgents checks", e, final=False)
                 event("limit", "tradingagents_daily_cap", "used today's 5 TradingAgents checks", sym)

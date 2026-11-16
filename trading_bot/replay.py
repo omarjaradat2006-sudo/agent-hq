@@ -56,7 +56,7 @@ def run(days=None):
     print(f"\nReplay of {len(rows)} stories the bot logged since {since.astimezone(ET):%a %b %d %I:%M %p} ET "
           f"(paper, $100,000, same stop-loss / halt / kill switch)\n")
     res, why = {}, {}
-    for mode in ("strict", "loose", "any", "aggressive"):
+    for mode in ("strict", "loose", "any", "aggressive", "ultra"):
         ev = events_for(rows, mode)
         diag = {}
         trades, rules = simulate(a, ev, since, now_utc(), rules=C.confirm_rules(mode), diag=diag) if ev else ([], {})
@@ -65,7 +65,8 @@ def run(days=None):
         res[mode] = (trades, s)
         label = {"strict": "STRICT (now: 2 sources, volume 1.5x)", "loose": "LOOSE (1 reputable source, volume 1.2x)",
                  "any": "ANY (1 news source of any kind, volume 1.2x)",
-                 "aggressive": "AGGRESSIVE (1 news source, no volume rule, price must move +0.3% to +3%, overnight news next morning)"}[mode]
+                 "aggressive": "AGGRESSIVE (1 news source, no volume rule, price must move +0.3% to +3%, overnight news next morning)",
+                 "ultra": "ULTRA (buy on the news: no volume or rising-price rule, no TradingAgents; same stop/halt/kill)"}[mode]
         if not trades:
             print(f"{label}: 0 trades  ({len(ev)} stories passed the source rule)")
             continue
@@ -74,17 +75,17 @@ def run(days=None):
         for t in sorted(trades, key=lambda t: t["t"]):
             print(f"   {t['t'].astimezone(ET):%a %I:%M %p}  BUY {t['symbol']:<8} at {t['entry']:>10,.2f} -> "
                   f"{t['exitReason']:<26} {t['pnlPct']:+6.2f}%  ${t['pnl']:+9,.2f}   {t['event'][:60]}")
-    print("\nWhy each story didn't trade (AGGRESSIVE rules):")
-    traded = {(t["symbol"], t["event"]) for t in res["aggressive"][0]}
+    print("\nWhy each story didn't trade (ULTRA rules):")
+    traded = {(t["symbol"], t["event"]) for t in res["ultra"][0]}
     for i, x in enumerate(rows):
         if (x["symbol"], x["event"]) in traded:
             r = "TRADED"
         else:
-            r = why["aggressive"].get(f"r{i}", "source rule")
+            r = why["ultra"].get(f"r{i}", "source rule")
         print(f"   {parse_time(x['t0']).astimezone(ET):%a %I:%M %p}  {x['symbol']:<8} {r[:70]:<70} {x['event'][:50]}")
     print("\nNot replayed: TradingAgents (it may still say no, max 5 checks a day). Stop-loss -3%, 5% per trade,"
           " max 5 positions, -3% day halt and -10% kill switch were applied exactly as live.")
-    print("Switch on:  tb rules loose | any | aggressive        Switch back:  tb rules strict\n")
+    print("Switch on:  tb rules loose | any | aggressive | ultra        Switch back:  tb rules strict\n")
     return res
 
 
