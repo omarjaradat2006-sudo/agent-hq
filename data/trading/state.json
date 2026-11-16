@@ -9,18 +9,18 @@
    "Nothing right now (all cash)."
   ],
   "today": [
-   "Scanned the news 87 times today: read 6118 headlines, found 222 that could move a stock or coin it's allowed to trade. None passed every check, so no trade (that's normal).",
+   "Scanned the news 88 times today: read 6245 headlines, found 226 that could move a stock or coin it's allowed to trade. None passed every check, so no trade (that's normal).",
    "Passed on JNJ, LLY: price hasn't moved the expected way yet (-1.04%).",
    "Passed on TSLA: price hasn't moved the expected way yet (-1.75%).",
-   "Passed on JNJ, XOM: price hasn't moved the expected way yet (-0.21%).",
-   "Passed on JNJ, LLY: price hasn't moved the expected way yet (-0.95%).",
+   "Passed on JNJ, XOM: price hasn't moved the expected way yet (-0.35%).",
+   "Passed on XOM: price hasn't moved the expected way yet (-0.30%).",
    "Safety rules that stepped in: stock entry window (x2)."
   ],
   "watchlist": "Allowed to trade: 69 halal stocks, 5 Shariah ETFs, 9 coins.",
-  "lastScan": "2026-11-16T18:57:46Z"
+  "lastScan": "2026-11-16T19:02:58Z"
  },
  "hired": true,
- "updatedAt": "2026-11-16T18:57:55Z",
+ "updatedAt": "2026-11-16T19:03:10Z",
  "mode": "PAPER",
  "agents": [
   {
@@ -28,8 +28,8 @@
    "name": "News Scout",
    "role": "Reads X, Reddit and news feeds",
    "status": "working",
-   "doing": "Read 29 new headlines/posts, 1 market-moving stories",
-   "lastRun": "2026-11-16T18:57:54Z"
+   "doing": "Read 127 new headlines/posts, 4 market-moving stories",
+   "lastRun": "2026-11-16T19:03:09Z"
   },
   {
    "id": "analyst",
@@ -69,7 +69,7 @@
    "role": "Places paper orders on Alpaca",
    "status": "working",
    "doing": "Save to GitHub failed (will retry later): To github.com:omarjaradat2006-sudo/agent-hq.git\n ! [rejected]        HEAD -> main (fetch first)\nerror: failed to push some refs to 'github.com:omarjar",
-   "lastRun": "2026-11-16T18:52:46Z"
+   "lastRun": "2026-11-16T18:57:57Z"
   },
   {
    "id": "coins",
@@ -89,6 +89,16 @@
   }
  ],
  "log": [
+  {
+   "t": "2026-11-16T19:03:09Z",
+   "agent": "News Scout",
+   "msg": "Read 127 new headlines/posts, 4 market-moving stories"
+  },
+  {
+   "t": "2026-11-16T18:57:57Z",
+   "agent": "Trader",
+   "msg": "Save to GitHub failed (will retry later): To github.com:omarjaradat2006-sudo/agent-hq.git\n ! [rejected]        HEAD -> main (fetch first)\nerror: failed to push some refs to 'github.com:omarjar"
+  },
   {
    "t": "2026-11-16T18:57:54Z",
    "agent": "News Scout",
@@ -828,21 +838,11 @@
    "t": "2026-11-16T10:28:38Z",
    "agent": "News Scout",
    "msg": "Read 98 new headlines/posts, 3 market-moving stories"
-  },
-  {
-   "t": "2026-11-16T10:28:35Z",
-   "agent": "News Scout",
-   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
-  },
-  {
-   "t": "2026-11-16T10:13:31Z",
-   "agent": "News Scout",
-   "msg": "Read 122 new headlines/posts, 4 market-moving stories"
   }
  ],
  "brief": {
   "date": "Mon Nov 16",
-  "createdAt": "2026-11-16T18:57:55Z",
+  "createdAt": "2026-11-16T19:03:10Z",
   "headline": "Paper account +$0 today (+0.00%), +0.00% total vs SPY -1.66% · 0 open",
   "summary": "0 trade(s) closed today, 0/0 winners overall. TradingAgents checks used today: 2/5.",
   "notes": [
@@ -883,6 +883,41 @@
  "positions": [],
  "trades": [],
  "decisions": [
+  {
+   "t": "2026-11-16T19:03:10Z",
+   "symbol": "JNJ",
+   "outcome": "waiting",
+   "why": "price hasn't moved the expected way yet (-0.35%)",
+   "event": "Johnson & Johnson is acquiring Ollin Biosciences for $2.2 billion and partnering with Blackstone."
+  },
+  {
+   "t": "2026-11-16T19:03:09Z",
+   "symbol": "XOM",
+   "outcome": "waiting",
+   "why": "price hasn't moved the expected way yet (-0.30%)",
+   "event": "ExxonMobil's daily production in Guyana is set to reach 1.1 million barrels per day as Uaru production begins."
+  },
+  {
+   "t": "2026-11-16T19:03:09Z",
+   "symbol": "JNJ",
+   "outcome": "waiting",
+   "why": "price hasn't moved the expected way yet (-1.10%)",
+   "event": "Johnson & Johnson has agreed to acquire eye disease therapy developer Ollin Biosciences in a deal valued up to $3.33 billion."
+  },
+  {
+   "t": "2026-11-16T19:03:09Z",
+   "symbol": "LLY",
+   "outcome": "waiting",
+   "why": "price hasn't moved the expected way yet (-1.49%)",
+   "event": "Johnson & Johnson has agreed to acquire eye disease therapy developer Ollin Biosciences in a deal valued up to $3.33 billion."
+  },
+  {
+   "t": "2026-11-16T19:03:09Z",
+   "symbol": "TSLA",
+   "outcome": "waiting",
+   "why": "price hasn't moved the expected way yet (-2.71%)",
+   "event": "Tesla plans to build 1 million Cybercabs near Berlin, expanding its German gigafactory footprint."
+  },
   {
    "t": "2026-11-16T18:57:55Z",
    "symbol": "JNJ",
@@ -1266,41 +1301,6 @@
    "symbol": "TSLA",
    "outcome": "waiting",
    "why": "price hasn't moved the expected way yet (-2.47%)",
-   "event": "Tesla plans a $3.3 billion investment to expand its German gigafactory for Cybercab production."
-  },
-  {
-   "t": "2026-11-16T17:59:21Z",
-   "symbol": "JNJ",
-   "outcome": "waiting",
-   "why": "price hasn't moved the expected way yet (+0.00%)",
-   "event": "Johnson & Johnson is acquiring eye drug developer Ollin Biosciences for $2.2 billion and partnering with Blackstone."
-  },
-  {
-   "t": "2026-11-16T17:59:20Z",
-   "symbol": "XOM",
-   "outcome": "waiting",
-   "why": "price hasn't moved the expected way yet (-0.13%)",
-   "event": "ExxonMobil's daily production in Guyana is set to reach 1.1 million barrels per day as Uaru production begins."
-  },
-  {
-   "t": "2026-11-16T17:59:20Z",
-   "symbol": "JNJ",
-   "outcome": "waiting",
-   "why": "price hasn't moved the expected way yet (-0.70%)",
-   "event": "Johnson & Johnson has agreed to acquire eye disease therapy developer Ollin Biosciences in a deal valued up to $3.33 billion."
-  },
-  {
-   "t": "2026-11-16T17:59:20Z",
-   "symbol": "LLY",
-   "outcome": "waiting",
-   "why": "price hasn't moved the expected way yet (-1.26%)",
-   "event": "Johnson & Johnson has agreed to acquire eye disease therapy developer Ollin Biosciences in a deal valued up to $3.33 billion."
-  },
-  {
-   "t": "2026-11-16T17:59:20Z",
-   "symbol": "TSLA",
-   "outcome": "waiting",
-   "why": "price hasn't moved the expected way yet (-2.34%)",
    "event": "Tesla plans a $3.3 billion investment to expand its German gigafactory for Cybercab production."
   }
  ],
@@ -2885,623 +2885,401 @@
  },
  "events": [
   {
-   "summary": "XRP and broader crypto assets face downward pressure amid regulatory headwinds and hawkish Fed expectations.",
-   "category": "crypto_negative",
-   "firstSeen": "2026-11-12T08:32:42Z",
+   "summary": "Firm Federal Reserve rate hike expectations continue to strengthen the U.S. dollar and pressure global equities and crypto.",
+   "category": "central_bank_hawkish",
+   "firstSeen": "2026-11-10T09:39:09Z",
    "publishers": [
+    "13WHAM-TV",
+    "1470 & 100.3 WMBD",
     "24/7 Wall St.",
-    "99Bitcoins",
+    "93.3 The Drive",
+    "ABC7 New York",
+    "AFP.com",
     "AMBCrypto",
+    "ANI News",
     "AOL.com",
+    "AP",
+    "ARYnews.tv",
     "Action Forex",
     "Aktualita.co",
+    "Al Jazeera",
     "Altcoin Buzz",
+    "American Banker",
     "Anadolu Ajansı",
-    "Analytics Insight",
     "Asianet Newsable",
+    "Axios",
+    "BNN Bloomberg",
+    "Baltimore Sun",
+    "Barchart.com",
+    "Barron's",
     "BeInCrypto",
+    "Beinsure",
     "Benzinga",
+    "Big News Network.com",
     "BigGo Finance",
-    "Bitbo",
+    "Bilyonaryo Business",
+    "Binance",
     "Bitcoin Foundation",
-    "Bitcoin Magazine",
     "Bitcoin News",
     "Bitcoin Sistemi",
-    "Bitcoinist.com",
-    "Blockonomi",
-    "Brandsynario",
+    "Bloomberg",
+    "Bloomberg.com",
     "Brave New Coin",
-    "Briefs Finance",
+    "Breakingthenews.net",
+    "Business Insider",
+    "Business Recorder",
     "Business Standard",
+    "BusinessLine",
+    "BusinessToday Malaysia",
     "Businesskorea",
+    "CFO Dive",
+    "CNA",
     "CNBC",
-    "CNBC TV18",
-    "CaptainAltcoin",
-    "Coin Edition",
+    "Central Oregon Daily",
+    "Chosunbiz",
     "Coin Gabbar",
-    "CoinCodex",
     "CoinDesk",
     "CoinGape",
-    "CoinMarketCap",
-    "Coinfomania",
     "Coinpaper",
     "Coinpedia",
     "Cointribune",
+    "Crowdfund Insider",
     "Crypto Briefing",
-    "Crypto Economy",
     "Crypto News",
     "CryptoDaily",
     "CryptoPotato",
     "CryptoRank",
     "CryptoSlate",
     "CryptoTicker.io",
-    "Cryptonews",
     "Cryptonews.net",
-    "Cryptopolitan",
-    "Daily Beirut",
-    "Daily Forex",
-    "DailyCoin",
+    "CurrencyNews.co.uk",
+    "DD News",
+    "Daily Voice Of Asia",
     "Decrypt",
-    "Dimsum Daily",
-    "FOREX.com",
+    "Economies.com",
+    "Euronext Markets: Real-time Stock Market Data | live",
+    "Exchange Rates UK",
+    "FOX 17 West Michigan News",
+    "FOX 9 Minneapolis-St. Paul",
     "FXEmpire",
     "FXLeaders",
     "FXStreet",
+    "Finance & Commerce",
     "FinanceFeeds",
-    "Finbold",
+    "Finimize",
+    "Forbes",
+    "Foreign Policy Journal",
+    "Fox Business",
     "Free Malaysia Today",
+    "Free Press Journal",
     "Gadgets 360",
-    "HESPRESS English - Morocco News",
-    "Hindustan Times",
+    "Global Banking & Finance Review",
+    "Goldman Sachs",
+    "GuruFocus",
+    "Hiru News",
     "Hokanews",
+    "Honolulu Star-Advertiser",
+    "IndexBox",
+    "India's News.Net",
+    "IndiaIPO",
+    "Indianapolis Business Journal",
+    "Informat.ro",
+    "Insurance Business",
+    "InsuranceNewsNet",
+    "International Business Times",
     "Investing.com",
+    "Investing.com Australia",
     "Investing.com Canada",
+    "Investing.com India",
     "Investing.com Nigeria",
+    "Investing.com UK",
+    "InvestmentNews",
     "Investor's Business Daily",
     "Invezz",
     "JournalArta",
-    "Kalkine Media",
-    "Kriptofoni",
+    "KABB",
+    "KATV",
+    "KDNL",
+    "KELO-AM",
+    "KLSE Screener",
+    "KQ2",
+    "KRDO",
+    "KSHB 41 Kansas City",
+    "KSL",
+    "KSL News",
+    "KXLH News Helena",
+    "Kalshi News",
+    "Kathleen Hays Presents: Central Bank Central",
+    "Kiplinger",
+    "Kitco",
     "KuCoin",
+    "Latest news from Azerbaijan",
+    "Latin Times",
+    "LinkedIn",
     "Livemint",
-    "MEXC",
-    "MarketForces Africa",
+    "Livewire Markets",
+    "London South East",
+    "Loveland Reporter-Herald",
+    "MLQ.ai",
+    "Magnolia Tribune",
+    "Malay Mail",
+    "Manila Bulletin",
     "MarketWatch",
+    "Mezha.net",
+    "Mining.com.au",
+    "MishTalk",
     "Moneycontrol.com",
     "Moomoo",
+    "Morning Brew",
     "NAI500",
+    "NBC26",
     "NDTV Profit",
-    "NFTevening",
     "Nacionale",
-    "NameCoinNews",
-    "NewsBTC",
-    "NewsBytes",
+    "Nation Thailand",
+    "New Hampshire Union Leader",
+    "New Jersey Business & Industry Association",
+    "New York Post",
+    "News Channel 5 Nashville",
+    "News24",
+    "Newsday",
+    "Newsmax",
+    "Newsquawk",
+    "Newswav",
+    "Nikkei Asia",
+    "Northeast Mississippi Daily Journal",
+    "Northwest Arkansas Democrat-Gazette",
+    "Oz Arab Media",
+    "People's Daily Online",
     "Pluang",
-    "Proactive Investors Australia",
-    "Programming Insider",
+    "Press of Atlantic City",
+    "Profit by Pakistan Today",
     "Quartz",
-    "RTTNews",
-    "Retail News Asia",
+    "RTHK News",
+    "RealEstateNews.com",
+    "Rediff MoneyWiz",
+    "Reuters",
+    "Rock Hill Herald",
+    "Rolling Out",
+    "SBS 뉴스",
+    "SRN News",
     "SSBCrack",
-    "Serrari Group",
+    "SchiffGold.com",
+    "Scotsman Guide",
+    "Scripps News",
+    "Seeking Alpha",
+    "Sharecafe",
+    "South Florida Reporter",
     "Startup Fortune",
+    "Stock Titan",
     "Stocktwits",
+    "StoneX",
     "StreetInsider",
-    "SunCrypto",
-    "TechBullion",
-    "The Block",
+    "TechJuice",
+    "The American Conservative",
+    "The Arkansas Democrat-Gazette",
     "The Business Times",
     "The Crypto Times",
-    "The Cryptonomist",
-    "The Defiant",
+    "The Dark Side Of The Boom",
     "The Economic Times",
     "The Edge Malaysia",
+    "The Financial Express",
+    "The Globe and Mail",
+    "The Hill",
+    "The Independent",
+    "The Korea Herald",
+    "The Korea Times",
     "The Market Periodical",
+    "The Mighty 790 KFGO",
+    "The Mortgage Reports",
+    "The Motley Fool",
+    "The National",
+    "The Real Economy Blog",
+    "The San Joaquin Valley Sun",
+    "The Shillong Times",
+    "The Standard (HK)",
+    "The Star",
     "The Straits Times",
+    "The Sunday Guardian",
+    "The Times",
+    "The Times of India",
+    "The Washington Post",
+    "TheStreet",
+    "Times Now",
     "TipRanks",
     "Traders Union",
     "TradingKey",
     "TradingNEWS",
     "TradingView",
-    "TronWeekly",
     "U.Today",
     "UA.NEWS",
-    "UkrMedia News",
-    "Univest",
-    "Vocal",
-    "XTB.com",
+    "USA Today",
+    "VT Markets",
+    "ValueWalk",
+    "Vietnam.vn",
+    "Virginia Business",
+    "WBFF",
+    "WCTI",
+    "WHBL News",
+    "WKZO",
+    "WPBN",
+    "WSJ",
+    "WTVB",
+    "WXYZ Channel 7",
+    "Washington Examiner",
+    "Xinhua",
     "Yahoo Finance",
+    "Yahoo Finance Australia",
+    "Yahoo Finance Singapore",
+    "Zawya",
     "ad-hoc-news.de",
+    "bdnews24.com",
     "bloomingbit",
+    "cbs19.tv",
     "finance.biggo.com",
-    "grafa.com",
-    "openPR.com",
-    "www.blockhead.co",
-    "www.proactiveinvestors.com.au",
+    "fiscal.ai",
+    "https://streamlinefeed.co.ke/",
+    "iHeart",
+    "kaohoon international",
+    "marketscreener.com",
+    "news.sbs.co.kr",
+    "streamlinefeed.co.ke",
+    "www.equiti.com",
+    "www.foreignpolicyjournal.com",
+    "www.jordannews.jo",
+    "www.thenationalnews.com",
     "www.tmgm.com",
     "www.tokenpost.com",
-    "www.trendingtopics.eu",
-    "Українські Національні Новини (УНН)",
-    "صوت الإمارات",
+    "سانا",
+    "شبكة تواصل الإخبارية",
     "富途牛牛",
-    "머니투데이"
+    "巴士的報",
+    "아시아경제",
+    "재경일보",
+    "조선일보",
+    "파이낸셜뉴스"
    ],
    "assets": {
     "BTC/USD": {
      "direction": "down",
-     "confidence": 0.88,
-     "why": "Heavy liquidations and persistent ETF outflows drive severe downside momentum."
+     "confidence": 0.85,
+     "why": "Renewed Fed rate hike fears and worsening inflation drive Bitcoin down to a 12-week low."
     },
     "ETH/USD": {
      "direction": "down",
-     "confidence": 0.9,
-     "why": "Ethereum price breaks key psychological support below $2,000 amid selling pressure from the Ethereum Foundation."
+     "confidence": 0.85,
+     "why": "Hot inflation and rate hike fears trigger heavy long liquidations and pressure crypto prices."
     },
     "SOL/USD": {
      "direction": "down",
-     "confidence": 0.85,
-     "why": "Solana crashes to multi-month lows amid broader crypto market sell-offs and rate hike fears."
-    },
-    "XRP/USD": {
-     "direction": "down",
-     "confidence": 0.85,
-     "why": "Massive capital flight and ETF outflows crush XRP price action."
-    }
-   },
-   "sources": [
-    {
-     "id": "f2c64de89a6bbd3c",
-     "publisher": "bloomingbit",
-     "kind": "news",
-     "title": "BlackRock’s Bitcoin ETF IBIT Extends Net Outflow Streak to 9 Sessions, Exceeding $2 Billion",
-     "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE9XY1BHRGVIT2hraXRmcGx1TGI3a2oybEJwMk9LWHNKdUM1R29nNEU1eWJIeXhtTC1pSXg0QUJDd18xNkJTTG4ySkRJTXd3cjN2NkxlZg?oc=5",
-     "time": "2026-11-12T08:32:42Z"
-    },
-    {
-     "id": "cc25c44ff767f291",
-     "publisher": "Crypto News",
-     "kind": "news",
-     "title": "BlackRock leads $300 million Bitcoin ETF outflows as BTC struggles near $73K",
-     "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNY3U0TE5Gcy0teVNsLWVBeGh1cmd4Z1dSaldmVmt2b3VYaVhFSTM0T29OUnhKUXpTNEZwLW1sVkwtZnQyUUdSVDFTUHpSYjYxVlU0SFZnYW5Xd0V0TzB4NjM4VGpGa1pPYnk4eEgzR2wxV0d1SkFPSDBwSG0tdFFTQTI3cXJiSWE1UHU0NzVCUjJ2VXNFa2pIZnd0VQ?oc=5",
-     "time": "2026-11-12T08:36:14Z"
-    },
-    {
-     "id": "fb7c71d0fe55957d",
-     "publisher": "bloomingbit",
-     "kind": "news",
-     "title": "Coinbase Bitcoin Premium Stays Negative for 50 Straight Days as U.S. Buying Weakens",
-     "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTFBfQTlkOUY1NnAyTlpoRnp0Qmc2NDZnUjdSVlRBYndfa2hHVXlZdjNmX0ZhRTdZMjMtV2xMMEdTWWJvdXpCbl9BREZ0TDR6cl9NcFJXNg?oc=5",
-     "time": "2026-11-12T08:59:27Z"
-    },
-    {
-     "id": "62235bb905723bf1",
-     "publisher": "Coinfomania",
-     "kind": "news",
-     "title": "U.S. Spot Bitcoin ETFs Experience $300 Million Net Outflows",
-     "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxORGNYaW5tLUhtT2tmVi1ETy1fRFV4QnFDQndvYkpDRkRTZTF6NEJRN2V6emkyV1MzeTZfTVlyX1NsRGNzaXJsRWk5OXpDajRfVTE5OGc1anBpNWVfSkJKTUg2QnFoTlFSNlRscFJUVlBuek04RkxsN2ZydUJUSjZBdjdURUtnOGhnb3c?oc=5",
-     "time": "2026-11-12T08:55:35Z"
-    },
-    {
-     "id": "44d885771c26dd4e",
-     "publisher": "Cryptonews",
-     "kind": "news",
-     "title": "Bitcoin ETF Outflow Says Crypto Walking Into a Bull Trap",
-     "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE1aa1RfZzhBaFRtOEctWFJSZDUyRzZ6bDV5LTVmSVNubFlfLTNvNkdHVGdGS1pNbmpfb3liS2V5djRKcHV6bWZLb1BQYVVYcTRBVE0wYXNyV3hSNkdhSm01YnFqZGUzelVCamxJeEFTZG83ZzA?oc=5",
-     "time": "2026-11-12T08:48:31Z"
-    }
-   ]
-  },
-  {
-   "summary": "California sues OpenAI over alleged cyberattacks on other companies by its AI models.",
-   "category": "company_bad_news",
-   "firstSeen": "2026-11-12T15:43:48Z",
-   "publishers": [
-    "AP",
-    "Benzinga",
-    "CNBC",
-    "Crypto Briefing",
-    "Cryptonews.net",
-    "JournalArta",
-    "Moomoo",
-    "Reuters",
-    "StockStory",
-    "TradingKey",
-    "Wccftech",
-    "Yahoo Finance",
-    "Yahoo Finance UK",
-    "fiscal.ai",
-    "scanx.trade"
-   ],
-   "assets": {
-    "TSLA": {
-     "direction": "down",
-     "confidence": 0.6,
-     "why": "New lawsuit filed against Tesla adds legal headline risk."
+     "confidence": 0.8,
+     "why": "Macro headwinds and rate hike fears reduce risk appetite for altcoins."
     },
     "NVDA": {
      "direction": "down",
      "confidence": 0.85,
-     "why": "CEO exit and executive turmoil directly weigh on Nvidia stock."
-    },
-    "LOW": {
-     "direction": "down",
-     "confidence": 0.8,
-     "why": "Analyst downgrade to Underperform directly weighs on the stock."
-    },
-    "TJX": {
-     "direction": "down",
-     "confidence": 0.65,
-     "why": "Downgraded to Hold by Gordon Haskett."
-    },
-    "AVGO": {
-     "direction": "down",
-     "confidence": 0.8,
-     "why": "Downgraded by Rothschild & Co Redburn due to AI financing concerns."
-    },
-    "HD": {
-     "direction": "down",
-     "confidence": 0.6,
-     "why": "Peer home improvement retailer pressured by negative sector sentiment."
-    },
-    "META": {
-     "direction": "down",
-     "confidence": 0.85,
-     "why": "Massive regulatory fine of $887 million from Italy."
-    },
-    "GOOGL": {
-     "direction": "down",
-     "confidence": 0.55,
-     "why": "Broader regulatory headwinds for big tech regarding user data in Europe."
-    },
-    "INTC": {
-     "direction": "down",
-     "confidence": 0.9,
-     "why": "Severe share price plunge and shareholder lawsuits highlight deep fundamental pressures for Intel."
-    },
-    "COST": {
-     "direction": "down",
-     "confidence": 0.6,
-     "why": "Regulatory fine and labor misclassification issue creates slight negative sentiment."
-    },
-    "MU": {
-     "direction": "down",
-     "confidence": 0.5,
-     "why": "Legal setbacks regarding price-fixing allegations create regulatory and financial uncertainty for the company."
-    },
-    "OXY": {
-     "direction": "down",
-     "confidence": 0.8,
-     "why": "Analyst downgrade creates downward selling pressure."
-    },
-    "FANG": {
-     "direction": "down",
-     "confidence": 0.65,
-     "why": "Large cash-and-stock acquisitions can dilute existing shareholders and create near-term capital allocation uncertainty."
-    },
-    "SMCI": {
-     "direction": "down",
-     "confidence": 0.75,
-     "why": "DOJ probe and leadership uncertainty create significant negative pressure"
+     "why": "Higher interest rate expectations and inflation pressures weigh heavily on tech growth stocks like Nvidia."
     },
     "MSFT": {
      "direction": "down",
-     "confidence": 0.6,
-     "why": "Patent infringement lawsuit from MIT introduces legal and financial headwinds"
-    }
-   },
-   "sources": [
-    {
-     "id": "fb8045cbfe86a60f",
-     "publisher": "Benzinga",
-     "kind": "news",
-     "title": "YETI Sounds the Alarm on Consumer Spending As Shoppers Hunt for Deals",
-     "url": "https://www.benzinga.com/markets/earnings/26/11/63197694/yeti-sounds-the-alarm-on-consumer-spending-as-shoppers-hunt-for-deals",
-     "time": "2026-11-12T15:43:48Z"
-    },
-    {
-     "id": "eb1007b02a637a06",
-     "publisher": "StockStory",
-     "kind": "news",
-     "title": "Why YETI shares are trading lower today",
-     "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNdl83SV9zdFlzM2FENVRJLTJxckhKNjZUMTFTM0FXUUZVQ0NzRG54ZFRXeERERnZDSWFDcmMxNU1rRVhrWUlnV2UtWFdmY2VpWDAxNkxudGV4NmpjeUJ3Z1NQUm1FUm1lU3dNTmEwdmxkNjFTdU9aTEt2THpfQmYyV05vNzJwa3VDSjZqQjdfYjVwQWttVzlNX0ZrdTlydXJU?oc=5",
-     "time": "2026-11-12T15:53:44Z"
-    },
-    {
-     "id": "c394152546c931b0",
-     "publisher": "scanx.trade",
-     "kind": "news",
-     "title": "YETI Holdings Q3FY26 Results: Revenue up 4.4% but guidance cut",
-     "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOdlBmR3l6ZUFQY29CWHFTT1p4Z0JOdEpxb2hiYWNuV3FQTjVKcTd0bml3S3RPWVY1SDVSUVR3dGFSb1BvbXByNzc4RURDd1E0YXdTT05pVWYyOVpjQ2JTYXVkMFByR05iaThHeUJfRDJuaWVKYVp3UkxndGxfNm9WeGxtV1h0dUFEUWtVM0tQaURPVWNuSGFiZmZBanBCc2tGQ0FhNjEyUEVZVUYzT1lGSWFFeW05clYz?oc=5",
-     "time": "2026-11-12T16:39:48Z"
-    },
-    {
-     "id": "cc6a00bf5e9f8ced",
-     "publisher": "fiscal.ai",
-     "kind": "news",
-     "title": "Lawsuit Filed Against Tesla Over San Mateo Street-Racing Incident",
-     "url": "https://newsfilter.io/sources/businesswire",
-     "time": "2026-11-12T20:01:33Z"
-    },
-    {
-     "id": "fab361ae0414d4da",
-     "publisher": "CNBC",
-     "kind": "news",
-     "title": "Stock futures edge lower after markets slide amid Nvidia woes: Live updates",
-     "url": "https://www.cnbc.com/2026/11/12/stock-market-today-live-updates.html",
-     "time": "2026-11-13T08:20:13Z"
-    }
-   ]
-  },
-  {
-   "summary": "Nvidia faces ongoing leadership turmoil and board opposition to Jensen Huang's return, continuing to weigh on the stock and broader AI sector.",
-   "category": "company_bad_news",
-   "firstSeen": "2026-11-12T18:24:33Z",
-   "publishers": [
-    "AP",
-    "Barchart.com",
-    "Benzinga",
-    "BigGo Finance",
-    "Bloomberg.com",
-    "CNBC",
-    "Chosunbiz",
-    "Coin Gabbar",
-    "Crypto Economy",
-    "Cryptonews.net",
-    "Deccan Herald",
-    "Dimsum Daily",
-    "FXStreet",
-    "Finimize",
-    "Finviz",
-    "Fortune",
-    "Geo News",
-    "Invezz",
-    "JournalArta",
-    "Market Index",
-    "Moomoo",
-    "NST Online",
-    "Plataforma Media",
-    "Pluang",
-    "Profit by Pakistan Today",
-    "RTHK",
-    "RTHK News",
-    "RealMoney Pro",
-    "Reuters",
-    "SSBCrack",
-    "Stocktwits",
-    "The Economic Times",
-    "The Edge Malaysia",
-    "The Hawk",
-    "The Times of India",
-    "TipRanks",
-    "Traders Union",
-    "Wccftech",
-    "Yahoo Finance",
-    "bdnews24.com",
-    "bloomingbit",
-    "finance.biggo.com",
-    "fiscal.ai",
-    "marketscreener.com",
-    "news.sbs.co.kr",
-    "shattered.io",
-    "아시아경제",
-    "조선일보"
-   ],
-   "assets": {
-    "NVDA": {
-     "direction": "down",
-     "confidence": 0.95,
-     "why": "CEO resignation and scandal severely impacts investor confidence."
-    },
-    "BTC/USD": {
-     "direction": "down",
-     "confidence": 0.7,
-     "why": "Broader risk-off sentiment triggered by major tech leadership turmoil."
-    },
-    "QCOM": {
-     "direction": "up",
-     "confidence": 0.65,
-     "why": "Capital is rotating out of Nvidia into competing AI semiconductor stocks following the CEO exit."
-    },
-    "AMD": {
-     "direction": "up",
-     "confidence": 0.65,
-     "why": "Competitor AMD gains a major opportunity from Nvidia's leadership vacuum."
-    },
-    "AVGO": {
-     "direction": "down",
-     "confidence": 0.5,
-     "why": "Spillover effect from tech and AI chip selloff."
-    },
-    "MSFT": {
-     "direction": "down",
-     "confidence": 0.65,
-     "why": "Broader tech and AI infrastructure sentiment hits related large-cap names."
+     "confidence": 0.81,
+     "why": "Hawkish Fed rate hike expectations put downward pressure on major growth and tech stocks."
     },
     "AAPL": {
      "direction": "down",
-     "confidence": 0.3,
-     "why": "Broad market selloff induced by tech bellwether crash."
-    },
-    "SMCI": {
-     "direction": "down",
-     "confidence": 0.8,
-     "why": "Broader tech weakness and association with Nvidia probe extend losses."
-    },
-    "MU": {
-     "direction": "down",
-     "confidence": 0.65,
-     "why": "Semiconductor peer dragged down by Nvidia leadership turmoil."
-    }
-   },
-   "sources": [
-    {
-     "id": "855265040ed1e43c",
-     "publisher": "Reuters",
-     "kind": "news",
-     "title": "Nvidia CEO Jensen Huang resigns, in blow to AI boom he helped foster",
-     "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOMEFwN0FWdjB6blNtR0RZaTBWZXZDaWVwYkhXREttY2FaYVNNVC1qNEFHYm9Yd1pDODBDN2tvNzhnMTY4cmxWYTg1WVFidzFlNVFEdlZNb3IyZG1nS2FKcHAzUERhQW9EdG9oOER6YmwydXZOd0t1VHRub1BCdFdoR1V4dktlUVUydjZWeU53aVdKMGwtOGFtZmd2T3VhODF3eXhPazVtbV81b0hpUi1vcw?oc=5",
-     "time": "2026-11-12T18:31:55Z"
-    },
-    {
-     "id": "6c526a44313f07e5",
-     "publisher": "Yahoo Finance",
-     "kind": "news",
-     "title": "Equities Rise Intraday Despite Nvidia Sell-Off Post CEO's Departure",
-     "url": "https://finance.yahoo.com/markets/stocks/articles/equities-rise-intraday-despite-nvidia-182433809.html?.tsrc=rss",
-     "time": "2026-11-12T18:24:33Z"
-    },
-    {
-     "id": "adfadefb8db21a4c",
-     "publisher": "AP",
-     "kind": "news",
-     "title": "What we know after Jensen Huang resigns as Nvidia’s CEO",
-     "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOMUxqUTE0WWZBT2xoV25SLUQ2dFgyWkhwZFZyRnk3d1Fibmtrb0d4T3otSXNpNmZiTVh0QUdkWTA4UmQ3cXQyVVM3ODc0V0g4YnVVbDJRYWF4VXlaXzMzZnJWNi1UR3YyZHJGbWNzaVFab2tiM3N2RjFIOUtWcnlJVWtMVnhQNmhJeTdPajNVUXZfU2NzWkw0aGJLVFMtaGY3?oc=5",
-     "time": "2026-11-12T18:38:00Z"
-    },
-    {
-     "id": "e45111d2af3013e1",
-     "publisher": "The Economic Times",
-     "kind": "news",
-     "title": "Bitcoin price today: BTC USD falls near $71,000 after Jensen Huang resigns as Nvidia CEO and ETF outflows",
-     "url": "https://news.google.com/rss/articles/CBMisgJBVV95cUxNNGkxSEhVaVRhRGl4UkxMZUoyeV9Bc25CTmNkY1Q3Z2JEbTB5S3JWbUt4clE4eEltNTFSbFZSOFJrM290QTFESGJiMHROMGRSNVhzV0tkRHRqU2hLTk5GYng1Mm9FaDVlTFNyNHdqWXNwNDhNazZJNmlqOXIxVjFvZ0hwSHRTSUcwSXRqWWU5Mi1BTVg3Zm12bml2STNnSFExQWlTaUlRdDNlVnNUZlh5dFJDN2pfQmhha2M1SVBYUm1fVDhiaThNTnBsRU0ySTJSR1o1QkMyVHJseHA4VHlkd2pYODRaZzFpUUQza2ZlT1JpU0ZodWVkR0pCb3ZZTnI3TTNGQTBxcnJ0VnVJZzV3NHltc3l0X19JbG03WjdwRXFEWEwxZE9uMmJMTTVQbFZVRmfSAbcCQVVfeXFMTXR1bEttcm9WdW1FU0VCR1dKbWkwVkpwVmpjOE9YY1ZDUTZOcE5HaWktRnU2UW55c2ZLWEpiRmFwQ3ZTd2otS0RqX2FSWFZwejRGbFZOcGFpa2oxdF8xYmxVWVp6UUl1QkRnYi1ZVVhNS0d4UDlxSGpwZjJFeG5KbDhZdUplRWh5QU9Lc2U1NWhMMm9EQVZISVVIdUxuWnQxaDRWNllMb1lFS2VJUXRxYTJKSVV1bjg1V2ROTnRLdTVIb3dvcllFbTgtTF9nZFhaVGVrSHpzM3lQOTM5bHp2LXBLZ0VldGppMm95dWZBeGlLNUFXdnE0VkdqbWUzNS1adjhCRVlIMGdEbHJ2djFZSm5GWHhJcmZEOTRLbTU0MGNEdm1MaGkxdlA1WEEyMFlyRm8wbEdmWnM?oc=5",
-     "time": "2026-11-12T18:34:50Z"
-    },
-    {
-     "id": "89cceff7950b3622",
-     "publisher": "Benzinga",
-     "kind": "news",
-     "title": "Jensen Huang Is Out At Nvidia: 4 Private Equity Giants with Big Bets on Its AI Infrastructure Future",
-     "url": "https://www.benzinga.com/markets/private-markets/26/11/63212619/jensen-huang-is-out-at-nvidia-4-private-equity-giants-with-big-bets-on-its-ai-infrastructure-future",
-     "time": "2026-11-12T18:45:12Z"
-    }
-   ]
-  },
-  {
-   "summary": "Tesla plans to build 1 million Cybercabs near Berlin, expanding its German gigafactory footprint.",
-   "category": "contract",
-   "firstSeen": "2026-11-16T14:36:40Z",
-   "publishers": [
-    "Reuters",
-    "Yahoo Finance"
-   ],
-   "assets": {
-    "TSLA": {
-     "direction": "up",
      "confidence": 0.75,
-     "why": "Major factory expansion and new product capacity announcement."
-    }
-   },
-   "sources": [
-    {
-     "id": "6e8622025ba61a6d",
-     "publisher": "Reuters",
-     "kind": "news",
-     "title": "Tesla announces $3.3 billion expansion of Germany plant",
-     "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNaHd0RC1iZmQwWUtkTl9CYjJVMUhGYmtxNEZyQU92Rm5mZS1OZ0Z2bHl6TmJuLUFJYWpQUW5GQ1h2anVqSHR5TDF3aThnaWhDd3lDYl9oY3VqbTVLaUMwMGtSME5IckZnZE5PQVhURTNPQ1BaS2tBejl6OU15X1B1N3VOM0o3dktRbnpLSjc1eWI5WWs4bjZqNnFOOA?oc=5",
-     "time": "2026-11-16T14:36:40Z"
+     "why": "Hawkish Fed rate hike outlook weighs heavily on broad tech and growth stocks"
     },
-    {
-     "id": "2acd79a8e57ffcb3",
-     "publisher": "Yahoo Finance",
-     "kind": "news",
-     "title": "Tesla to invest 3 bn euros to expand German factory",
-     "url": "https://finance.yahoo.com/technology/articles/tesla-invest-3-bn-euros-144451294.html?.tsrc=rss",
-     "time": "2026-11-16T14:44:51Z"
-    },
-    {
-     "id": "c80edc1bc344d0f3",
-     "publisher": "Yahoo Finance",
-     "kind": "news",
-     "title": "Tesla Targets 2029 Cybercab Production Start In Giga Berlin With $3.3B Investment: Report",
-     "url": "https://stocktwits.com/news-articles/markets/equity/tesla-targets-2029-cybercab-production-start-in-giga-berlin-with-3-3-b-investment-report/cNb7MV2R9gJ?.tsrc=rss",
-     "time": "2026-11-16T16:46:09Z"
-    },
-    {
-     "id": "5a3964d15125684f",
-     "publisher": "Yahoo Finance",
-     "kind": "news",
-     "title": "Tesla Wants to Build 1 Million Cybercabs Near Berlin",
-     "url": "https://finance.yahoo.com/markets/stocks/articles/tesla-wants-build-1-million-181721398.html?.tsrc=rss",
-     "time": "2026-11-16T18:17:21Z"
-    }
-   ]
-  },
-  {
-   "summary": "Semiconductor stocks slide due to AI chip selloffs and AI financing fears, amplified by regulatory pressures.",
-   "category": "tariffs",
-   "firstSeen": "2026-11-16T14:46:33Z",
-   "publishers": [
-    "Benzinga",
-    "CNBC",
-    "Yahoo Finance"
-   ],
-   "assets": {
-    "AMD": {
-     "direction": "down",
-     "confidence": 0.8,
-     "why": "New restrictions on advanced chips and remote access impact semiconductor companies."
-    },
-    "AVGO": {
+    "AMZN": {
      "direction": "down",
      "confidence": 0.75,
-     "why": "Broadcom slides following a downgrade and concerns over AI financing."
+     "why": "Broad tech and growth sell-off triggered by hawkish central bank outlook."
     },
-    "NVDA": {
-     "direction": "down",
-     "confidence": 0.8,
-     "why": "Targeted by new Commerce rules addressing remote access loopholes for advanced chips."
-    },
-    "INTC": {
+    "AMAT": {
      "direction": "down",
      "confidence": 0.7,
-     "why": "Tech and chip stocks pressured by new U.S. Bureau of Industry and Security rules."
+     "why": "Broader tech sell-off driven by hawkish Fed outlook."
+    },
+    "GOOGL": {
+     "direction": "down",
+     "confidence": 0.75,
+     "why": "Higher interest rate expectations and hot CPI weigh on growth tech stocks."
+    },
+    "META": {
+     "direction": "down",
+     "confidence": 0.75,
+     "why": "Higher interest rate expectations and hot CPI weigh on growth tech stocks."
+    },
+    "TSLA": {
+     "direction": "down",
+     "confidence": 0.8,
+     "why": "Hawkish Fed rate hike expectations put downward pressure on major growth and tech stocks."
+    },
+    "NEM": {
+     "direction": "down",
+     "confidence": 0.8,
+     "why": "Rising rate-hike expectations put strong downward pressure on gold and precious metals."
+    },
+    "SPWO": {
+     "direction": "down",
+     "confidence": 0.75,
+     "why": "Broad equities tumble due to rising yields and hawkish rate bets."
+    },
+    "AEM": {
+     "direction": "down",
+     "confidence": 0.8,
+     "why": "Hawkish Fed rate hike expectations boost Treasury yields, weighing heavily on gold miners."
+    },
+    "AMD": {
+     "direction": "down",
+     "confidence": 0.85,
+     "why": "Hot PPI inflation reading and hawkish rate fears crush semiconductor sector, with AMD tumbling."
     }
    },
    "sources": [
     {
-     "id": "3a19c43d9348d3f4",
-     "publisher": "Benzinga",
+     "id": "d9df815319391cbb",
+     "publisher": "The Edge Malaysia",
      "kind": "news",
-     "title": "'US moves to tighten AI chip export rules' - Financial Times",
-     "url": "https://www.benzinga.com/news/26/11/63292997/us-moves-tighten-ai-chip-export-rules-financial-times",
-     "time": "2026-11-16T14:46:33Z"
+     "title": "Fed’s Waller backs rate hike in December, says open to larger move",
+     "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE9aSnktcDlXbzBpMU1SQkZvRktGTnkyX1J4LU92VGxBZVVhcGQtRTVEaDBqLVRPS213cFpTMkFad1BkS0xpdmVVbGU2bVhsUTA2?oc=5",
+     "time": "2026-11-10T09:39:09Z"
     },
     {
-     "id": "813f81bbd1d42712",
-     "publisher": "Yahoo Finance",
+     "id": "252cbcbd6b6cd044",
+     "publisher": "Seeking Alpha",
      "kind": "news",
-     "title": "Chip stocks fall on US semiconductor restrictions: AlphaCheck",
-     "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPX0NYQzlGd3NpY1NLcXNmMm84U1pmQ1dKelhJSkRNY09iTHJVbnZfTGprZFNQWXBteHNCbnhmYVJXaDJIUEd6RkxXVlNEYzlVMzBMWnRQc0NZblllQlY3REtxN0hoQ1h2QTBzS3Q1QTh2OWdXbHBubm1IcGhBSndxNkVXa3JIMVpXUG5XV2RHcndCa2UtR1Z6NDkxTDZERXlMNmxFVUJHV2tRTXdpb1FEVkh4RlZZaTBoaWQw?oc=5",
-     "time": "2026-11-16T15:00:19Z"
+     "title": "Waller backs December rate hike, says 50-basis-point move may be on the table (TLT:NASDAQ)",
+     "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOc004NEQ1TjItUHFWanNEbWxpTlpFQ0tIaUcxZDJpTkQyZ3ppdHZtZ280ZlpnQ0NWU3g4Nms1M1dTVEdjZEpwbXcwUVBlRkRzTjNyWEctZEdNT2JwSFlSeGJIWFRTZXB2NEczeUtKY1dIQU9JbFFDaHQyOUxHZ05kU1h4QTQxQzlmSFFjRTQ0OTlaczl3NGhiMHNidko2SGVrWHZaTk8tZlN1OXR2S29HRWVMcXo?oc=5",
+     "time": "2026-11-10T10:10:00Z"
     },
     {
-     "id": "68a869398c13256e",
-     "publisher": "Benzinga",
+     "id": "1816a3bd028bffbd",
+     "publisher": "MLQ.ai",
      "kind": "news",
-     "title": "Rocket Lab, Firefly, AST SpaceMobile Stocks Drop: What’s Going On With Space Stocks Monday?",
-     "url": "https://www.benzinga.com/trading-ideas/movers/26/11/63295932/rocket-lab-firefly-ast-spacemobile-stocks-drop-whats-going-on-with-space-stocks-monday",
-     "time": "2026-11-16T15:13:57Z"
+     "title": "Fed's Waller backs a December rate hike and says a half-point move should be considered if core inflation runs hot",
+     "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxQMWRZU0pVdkJiU1J1MUdOX3Y5QVF1cHpRdG5zTndjOE4xaWhuVFVWSzFZem9zNHdFVjBhYk5TZFN1VEN2RnZfdF9UV21Za09HM2hZTGpMXzUzTG01ZzZ0QzFrNy1NZENQSEsyQjNCb1plSWtWX2lSQW9xSzZXbk5zelQ4S01mRmVqMU9NTzhHb3ZWbW9yUVdOMkhLemVTSmlUNGg5bFNXTjRiVmFYenVJekRkeXluZVNhVVZNYWdYMTc5MDM4NnV3RldkSW5hS2c?oc=5",
+     "time": "2026-11-10T10:44:05Z"
     },
     {
-     "id": "8223b993a457a316",
-     "publisher": "CNBC",
+     "id": "177d64cb4badd873",
+     "publisher": "FXStreet",
      "kind": "news",
-     "title": "Nvidia fallout: Commerce targets loophole for China's data center use",
-     "url": "https://www.cnbc.com/2026/11/16/nvidia-commerce-china-lutnick.html",
-     "time": "2026-11-16T15:27:31Z"
+     "title": "Fed's Waller signals risk of larger rate hikes as inflation stays high",
+     "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNbk83dS05U3dLMmRJelhNR2Q1dndmRTExMDI4ajVLNEM3bWNTZktYV1gydFhjOVhzR19wUm55NXFMQmF4ME56VUJDSlFKRkVHZXR4TmxSSUVwMmFZRWVsbnh3VnVaWTZlQ3JZeFdzSnNmR2RuSzJoeUEyZGprblZ5bHhBMzI4eG5iMGNPNjRuemduS1NvdTh0bzg3SVByc1ZCdm5uUnJITQ?oc=5",
+     "time": "2026-11-10T10:43:44Z"
     },
     {
-     "id": "1bb4f31019eb9bd1",
-     "publisher": "Benzinga",
+     "id": "a3ff32444bd7c9b3",
+     "publisher": "ANI News",
      "kind": "news",
-     "title": "Reported Earlier, U.S. Department Of Commerce's Bureau of Industry and Security Interim Final Rule To Address Remote Access To Advanced Super Intelligence Chips And Servers",
-     "url": "https://www.benzinga.com/news/26/11/63297268/reported-earlier-u-s-department-commerce-s-bureau-industry-and-security-interim-final-rule-address-r",
-     "time": "2026-11-16T15:26:35Z"
+     "title": "Fed Governor Christopher J. Waller favors 25 bps rate hike in December; 50 bps may be needed if inflation persists",
+     "url": "https://news.google.com/rss/articles/CBMi9gFBVV95cUxQZVUtaWxLdmtZVGV6bDBwaDRTRk9saVd1R1FlUXowOVV1eVp6Qks5LWZVN0ZzS0Q1U09yemlnTVZjaEVlempESldNVEo4RE5Fb0R5OTAtU2R2cW5zMnF1SllpTXJUR3BDeWZYUjQ2U1VkZ2kzZ3VkNjRDQzhobEpSaW45NWlTSTlvMmhhYXRqUFNFeWRKRWJlUDdaMmNfR0kxOEZSa1JoS0syVFUtNG84Q3B4akh0dWNQajZ1S05FSlN2RFZYSmFLcjY0dzdNNi1wYmRqLVVvQVBOZkRJeURwajN4TjlkZUZ0blJmdktvMEFuLTFnMmc?oc=5",
+     "time": "2026-11-10T10:41:00Z"
     }
    ]
   },
   {
-   "summary": "Geopolitical tensions escalate in the Middle East with reports of oil tankers hit by mines in the Strait of Hormuz.",
+   "summary": "Geopolitical tensions persist as multiple U.S. aircraft carriers deploy and military options remain open concerning the Iran conflict.",
    "category": "war_escalation",
    "firstSeen": "2026-11-10T20:01:23Z",
    "publishers": [
@@ -4080,6 +3858,622 @@
      "title": "Middle East latest: Ship attacked in UAE waters, says operator Adnoc",
      "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPdTMwLTRPRTZsZHJPR0lQTVNtNHdyWWxZNHMydXJzUjEySVZIZzJfUFlvbXZfQWJPc25aSm5kM3lzNmxFMFVMdFl3NTZLZWVjZnZPaTFyWjZtcl9peGd6ZlpDU2hnQmxDVFBLRlF1cVR3U2QwR2R4dWRRNEFDaDBzSTY2YUFWZEsyZ3dIOGQwX2tudV81a1pRRXQtVzl0TWYw?oc=5",
      "time": "2026-11-10T20:59:26Z"
+    }
+   ]
+  },
+  {
+   "summary": "XRP and broader crypto assets face downward price pressure below key psychological levels amid macro and regulatory headwinds.",
+   "category": "crypto_negative",
+   "firstSeen": "2026-11-12T08:32:42Z",
+   "publishers": [
+    "24/7 Wall St.",
+    "99Bitcoins",
+    "AMBCrypto",
+    "AOL.com",
+    "Action Forex",
+    "Aktualita.co",
+    "Altcoin Buzz",
+    "Anadolu Ajansı",
+    "Analytics Insight",
+    "Asianet Newsable",
+    "BeInCrypto",
+    "Benzinga",
+    "BigGo Finance",
+    "Bitbo",
+    "Bitcoin Foundation",
+    "Bitcoin Magazine",
+    "Bitcoin News",
+    "Bitcoin Sistemi",
+    "Bitcoinist.com",
+    "Blockonomi",
+    "Brandsynario",
+    "Brave New Coin",
+    "Briefs Finance",
+    "Business Standard",
+    "Businesskorea",
+    "CNBC",
+    "CNBC TV18",
+    "CaptainAltcoin",
+    "Coin Edition",
+    "Coin Gabbar",
+    "CoinCodex",
+    "CoinDesk",
+    "CoinGape",
+    "CoinMarketCap",
+    "Coinfomania",
+    "Coinpaper",
+    "Coinpedia",
+    "Cointribune",
+    "Crypto Briefing",
+    "Crypto Economy",
+    "Crypto News",
+    "CryptoDaily",
+    "CryptoPotato",
+    "CryptoRank",
+    "CryptoSlate",
+    "CryptoTicker.io",
+    "Cryptonews",
+    "Cryptonews.net",
+    "Cryptopolitan",
+    "Daily Beirut",
+    "Daily Forex",
+    "DailyCoin",
+    "Decrypt",
+    "Dimsum Daily",
+    "FOREX.com",
+    "FXEmpire",
+    "FXLeaders",
+    "FXStreet",
+    "FinanceFeeds",
+    "Finbold",
+    "Free Malaysia Today",
+    "Gadgets 360",
+    "HESPRESS English - Morocco News",
+    "Hindustan Times",
+    "Hokanews",
+    "Investing.com",
+    "Investing.com Canada",
+    "Investing.com Nigeria",
+    "Investor's Business Daily",
+    "Invezz",
+    "JournalArta",
+    "Kalkine Media",
+    "Kriptofoni",
+    "KuCoin",
+    "Livemint",
+    "MEXC",
+    "MarketForces Africa",
+    "MarketWatch",
+    "Moneycontrol.com",
+    "Moomoo",
+    "NAI500",
+    "NDTV Profit",
+    "NFTevening",
+    "Nacionale",
+    "NameCoinNews",
+    "NewsBTC",
+    "NewsBytes",
+    "Pluang",
+    "Proactive Investors Australia",
+    "Programming Insider",
+    "Quartz",
+    "RTTNews",
+    "Retail News Asia",
+    "SSBCrack",
+    "Serrari Group",
+    "Startup Fortune",
+    "Stocktwits",
+    "StreetInsider",
+    "SunCrypto",
+    "TechBullion",
+    "The Block",
+    "The Business Times",
+    "The Crypto Times",
+    "The Cryptonomist",
+    "The Defiant",
+    "The Economic Times",
+    "The Edge Malaysia",
+    "The Market Periodical",
+    "The Straits Times",
+    "TipRanks",
+    "Traders Union",
+    "TradingKey",
+    "TradingNEWS",
+    "TradingView",
+    "TronWeekly",
+    "U.Today",
+    "UA.NEWS",
+    "UkrMedia News",
+    "Univest",
+    "Vocal",
+    "XTB.com",
+    "Yahoo Finance",
+    "ad-hoc-news.de",
+    "bloomingbit",
+    "finance.biggo.com",
+    "grafa.com",
+    "openPR.com",
+    "www.blockhead.co",
+    "www.proactiveinvestors.com.au",
+    "www.tmgm.com",
+    "www.tokenpost.com",
+    "www.trendingtopics.eu",
+    "Українські Національні Новини (УНН)",
+    "صوت الإمارات",
+    "富途牛牛",
+    "머니투데이"
+   ],
+   "assets": {
+    "BTC/USD": {
+     "direction": "down",
+     "confidence": 0.88,
+     "why": "Heavy liquidations and persistent ETF outflows drive severe downside momentum."
+    },
+    "ETH/USD": {
+     "direction": "down",
+     "confidence": 0.9,
+     "why": "Ethereum price breaks key psychological support below $2,000 amid selling pressure from the Ethereum Foundation."
+    },
+    "SOL/USD": {
+     "direction": "down",
+     "confidence": 0.85,
+     "why": "Solana crashes to multi-month lows amid broader crypto market sell-offs and rate hike fears."
+    },
+    "XRP/USD": {
+     "direction": "down",
+     "confidence": 0.85,
+     "why": "Massive capital flight and ETF outflows crush XRP price action."
+    }
+   },
+   "sources": [
+    {
+     "id": "f2c64de89a6bbd3c",
+     "publisher": "bloomingbit",
+     "kind": "news",
+     "title": "BlackRock’s Bitcoin ETF IBIT Extends Net Outflow Streak to 9 Sessions, Exceeding $2 Billion",
+     "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE9XY1BHRGVIT2hraXRmcGx1TGI3a2oybEJwMk9LWHNKdUM1R29nNEU1eWJIeXhtTC1pSXg0QUJDd18xNkJTTG4ySkRJTXd3cjN2NkxlZg?oc=5",
+     "time": "2026-11-12T08:32:42Z"
+    },
+    {
+     "id": "cc25c44ff767f291",
+     "publisher": "Crypto News",
+     "kind": "news",
+     "title": "BlackRock leads $300 million Bitcoin ETF outflows as BTC struggles near $73K",
+     "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNY3U0TE5Gcy0teVNsLWVBeGh1cmd4Z1dSaldmVmt2b3VYaVhFSTM0T29OUnhKUXpTNEZwLW1sVkwtZnQyUUdSVDFTUHpSYjYxVlU0SFZnYW5Xd0V0TzB4NjM4VGpGa1pPYnk4eEgzR2wxV0d1SkFPSDBwSG0tdFFTQTI3cXJiSWE1UHU0NzVCUjJ2VXNFa2pIZnd0VQ?oc=5",
+     "time": "2026-11-12T08:36:14Z"
+    },
+    {
+     "id": "fb7c71d0fe55957d",
+     "publisher": "bloomingbit",
+     "kind": "news",
+     "title": "Coinbase Bitcoin Premium Stays Negative for 50 Straight Days as U.S. Buying Weakens",
+     "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTFBfQTlkOUY1NnAyTlpoRnp0Qmc2NDZnUjdSVlRBYndfa2hHVXlZdjNmX0ZhRTdZMjMtV2xMMEdTWWJvdXpCbl9BREZ0TDR6cl9NcFJXNg?oc=5",
+     "time": "2026-11-12T08:59:27Z"
+    },
+    {
+     "id": "62235bb905723bf1",
+     "publisher": "Coinfomania",
+     "kind": "news",
+     "title": "U.S. Spot Bitcoin ETFs Experience $300 Million Net Outflows",
+     "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxORGNYaW5tLUhtT2tmVi1ETy1fRFV4QnFDQndvYkpDRkRTZTF6NEJRN2V6emkyV1MzeTZfTVlyX1NsRGNzaXJsRWk5OXpDajRfVTE5OGc1anBpNWVfSkJKTUg2QnFoTlFSNlRscFJUVlBuek04RkxsN2ZydUJUSjZBdjdURUtnOGhnb3c?oc=5",
+     "time": "2026-11-12T08:55:35Z"
+    },
+    {
+     "id": "44d885771c26dd4e",
+     "publisher": "Cryptonews",
+     "kind": "news",
+     "title": "Bitcoin ETF Outflow Says Crypto Walking Into a Bull Trap",
+     "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE1aa1RfZzhBaFRtOEctWFJSZDUyRzZ6bDV5LTVmSVNubFlfLTNvNkdHVGdGS1pNbmpfb3liS2V5djRKcHV6bWZLb1BQYVVYcTRBVE0wYXNyV3hSNkdhSm01YnFqZGUzelVCamxJeEFTZG83ZzA?oc=5",
+     "time": "2026-11-12T08:48:31Z"
+    }
+   ]
+  },
+  {
+   "summary": "The state of California is suing OpenAI over alleged cyberattacks by its AI models on companies like Hugging Face.",
+   "category": "company_bad_news",
+   "firstSeen": "2026-11-12T15:43:48Z",
+   "publishers": [
+    "AP",
+    "Benzinga",
+    "CNBC",
+    "Crypto Briefing",
+    "Cryptonews.net",
+    "JournalArta",
+    "Moomoo",
+    "Reuters",
+    "StockStory",
+    "TradingKey",
+    "Wccftech",
+    "Yahoo Finance",
+    "Yahoo Finance UK",
+    "fiscal.ai",
+    "scanx.trade"
+   ],
+   "assets": {
+    "TSLA": {
+     "direction": "down",
+     "confidence": 0.6,
+     "why": "New lawsuit filed against Tesla adds legal headline risk."
+    },
+    "NVDA": {
+     "direction": "down",
+     "confidence": 0.85,
+     "why": "CEO exit and executive turmoil directly weigh on Nvidia stock."
+    },
+    "LOW": {
+     "direction": "down",
+     "confidence": 0.8,
+     "why": "Analyst downgrade to Underperform directly weighs on the stock."
+    },
+    "TJX": {
+     "direction": "down",
+     "confidence": 0.65,
+     "why": "Downgraded to Hold by Gordon Haskett."
+    },
+    "AVGO": {
+     "direction": "down",
+     "confidence": 0.8,
+     "why": "Downgraded by Rothschild & Co Redburn due to AI financing concerns."
+    },
+    "HD": {
+     "direction": "down",
+     "confidence": 0.6,
+     "why": "Peer home improvement retailer pressured by negative sector sentiment."
+    },
+    "META": {
+     "direction": "down",
+     "confidence": 0.85,
+     "why": "Massive regulatory fine of $887 million from Italy."
+    },
+    "GOOGL": {
+     "direction": "down",
+     "confidence": 0.55,
+     "why": "Broader regulatory headwinds for big tech regarding user data in Europe."
+    },
+    "INTC": {
+     "direction": "down",
+     "confidence": 0.9,
+     "why": "Severe share price plunge and shareholder lawsuits highlight deep fundamental pressures for Intel."
+    },
+    "COST": {
+     "direction": "down",
+     "confidence": 0.6,
+     "why": "Regulatory fine and labor misclassification issue creates slight negative sentiment."
+    },
+    "MU": {
+     "direction": "down",
+     "confidence": 0.5,
+     "why": "Legal setbacks regarding price-fixing allegations create regulatory and financial uncertainty for the company."
+    },
+    "OXY": {
+     "direction": "down",
+     "confidence": 0.8,
+     "why": "Analyst downgrade creates downward selling pressure."
+    },
+    "FANG": {
+     "direction": "down",
+     "confidence": 0.65,
+     "why": "Large cash-and-stock acquisitions can dilute existing shareholders and create near-term capital allocation uncertainty."
+    },
+    "SMCI": {
+     "direction": "down",
+     "confidence": 0.75,
+     "why": "DOJ probe and leadership uncertainty create significant negative pressure"
+    },
+    "MSFT": {
+     "direction": "down",
+     "confidence": 0.6,
+     "why": "Patent infringement lawsuit from MIT introduces legal and financial headwinds"
+    }
+   },
+   "sources": [
+    {
+     "id": "fb8045cbfe86a60f",
+     "publisher": "Benzinga",
+     "kind": "news",
+     "title": "YETI Sounds the Alarm on Consumer Spending As Shoppers Hunt for Deals",
+     "url": "https://www.benzinga.com/markets/earnings/26/11/63197694/yeti-sounds-the-alarm-on-consumer-spending-as-shoppers-hunt-for-deals",
+     "time": "2026-11-12T15:43:48Z"
+    },
+    {
+     "id": "eb1007b02a637a06",
+     "publisher": "StockStory",
+     "kind": "news",
+     "title": "Why YETI shares are trading lower today",
+     "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNdl83SV9zdFlzM2FENVRJLTJxckhKNjZUMTFTM0FXUUZVQ0NzRG54ZFRXeERERnZDSWFDcmMxNU1rRVhrWUlnV2UtWFdmY2VpWDAxNkxudGV4NmpjeUJ3Z1NQUm1FUm1lU3dNTmEwdmxkNjFTdU9aTEt2THpfQmYyV05vNzJwa3VDSjZqQjdfYjVwQWttVzlNX0ZrdTlydXJU?oc=5",
+     "time": "2026-11-12T15:53:44Z"
+    },
+    {
+     "id": "c394152546c931b0",
+     "publisher": "scanx.trade",
+     "kind": "news",
+     "title": "YETI Holdings Q3FY26 Results: Revenue up 4.4% but guidance cut",
+     "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOdlBmR3l6ZUFQY29CWHFTT1p4Z0JOdEpxb2hiYWNuV3FQTjVKcTd0bml3S3RPWVY1SDVSUVR3dGFSb1BvbXByNzc4RURDd1E0YXdTT05pVWYyOVpjQ2JTYXVkMFByR05iaThHeUJfRDJuaWVKYVp3UkxndGxfNm9WeGxtV1h0dUFEUWtVM0tQaURPVWNuSGFiZmZBanBCc2tGQ0FhNjEyUEVZVUYzT1lGSWFFeW05clYz?oc=5",
+     "time": "2026-11-12T16:39:48Z"
+    },
+    {
+     "id": "cc6a00bf5e9f8ced",
+     "publisher": "fiscal.ai",
+     "kind": "news",
+     "title": "Lawsuit Filed Against Tesla Over San Mateo Street-Racing Incident",
+     "url": "https://newsfilter.io/sources/businesswire",
+     "time": "2026-11-12T20:01:33Z"
+    },
+    {
+     "id": "fab361ae0414d4da",
+     "publisher": "CNBC",
+     "kind": "news",
+     "title": "Stock futures edge lower after markets slide amid Nvidia woes: Live updates",
+     "url": "https://www.cnbc.com/2026/11/12/stock-market-today-live-updates.html",
+     "time": "2026-11-13T08:20:13Z"
+    }
+   ]
+  },
+  {
+   "summary": "Nvidia faces board opposition regarding Jensen Huang's reinstatement plans alongside ongoing national security investigations.",
+   "category": "company_bad_news",
+   "firstSeen": "2026-11-12T18:24:33Z",
+   "publishers": [
+    "AP",
+    "Barchart.com",
+    "Benzinga",
+    "BigGo Finance",
+    "Bloomberg.com",
+    "CNBC",
+    "Chosunbiz",
+    "Coin Gabbar",
+    "Crypto Economy",
+    "Cryptonews.net",
+    "Deccan Herald",
+    "Dimsum Daily",
+    "FXStreet",
+    "Finimize",
+    "Finviz",
+    "Fortune",
+    "Geo News",
+    "Invezz",
+    "JournalArta",
+    "Market Index",
+    "Moomoo",
+    "NST Online",
+    "Plataforma Media",
+    "Pluang",
+    "Profit by Pakistan Today",
+    "RTHK",
+    "RTHK News",
+    "RealMoney Pro",
+    "Reuters",
+    "SSBCrack",
+    "Stocktwits",
+    "The Economic Times",
+    "The Edge Malaysia",
+    "The Hawk",
+    "The Times of India",
+    "TipRanks",
+    "Traders Union",
+    "Wccftech",
+    "Yahoo Finance",
+    "bdnews24.com",
+    "bloomingbit",
+    "finance.biggo.com",
+    "fiscal.ai",
+    "marketscreener.com",
+    "news.sbs.co.kr",
+    "shattered.io",
+    "아시아경제",
+    "조선일보"
+   ],
+   "assets": {
+    "NVDA": {
+     "direction": "down",
+     "confidence": 0.95,
+     "why": "CEO resignation and scandal severely impacts investor confidence."
+    },
+    "BTC/USD": {
+     "direction": "down",
+     "confidence": 0.7,
+     "why": "Broader risk-off sentiment triggered by major tech leadership turmoil."
+    },
+    "QCOM": {
+     "direction": "up",
+     "confidence": 0.65,
+     "why": "Capital is rotating out of Nvidia into competing AI semiconductor stocks following the CEO exit."
+    },
+    "AMD": {
+     "direction": "up",
+     "confidence": 0.65,
+     "why": "Competitor AMD gains a major opportunity from Nvidia's leadership vacuum."
+    },
+    "AVGO": {
+     "direction": "down",
+     "confidence": 0.5,
+     "why": "Spillover effect from tech and AI chip selloff."
+    },
+    "MSFT": {
+     "direction": "down",
+     "confidence": 0.65,
+     "why": "Broader tech and AI infrastructure sentiment hits related large-cap names."
+    },
+    "AAPL": {
+     "direction": "down",
+     "confidence": 0.3,
+     "why": "Broad market selloff induced by tech bellwether crash."
+    },
+    "SMCI": {
+     "direction": "down",
+     "confidence": 0.8,
+     "why": "Broader tech weakness and association with Nvidia probe extend losses."
+    },
+    "MU": {
+     "direction": "down",
+     "confidence": 0.65,
+     "why": "Semiconductor peer dragged down by Nvidia leadership turmoil."
+    }
+   },
+   "sources": [
+    {
+     "id": "855265040ed1e43c",
+     "publisher": "Reuters",
+     "kind": "news",
+     "title": "Nvidia CEO Jensen Huang resigns, in blow to AI boom he helped foster",
+     "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOMEFwN0FWdjB6blNtR0RZaTBWZXZDaWVwYkhXREttY2FaYVNNVC1qNEFHYm9Yd1pDODBDN2tvNzhnMTY4cmxWYTg1WVFidzFlNVFEdlZNb3IyZG1nS2FKcHAzUERhQW9EdG9oOER6YmwydXZOd0t1VHRub1BCdFdoR1V4dktlUVUydjZWeU53aVdKMGwtOGFtZmd2T3VhODF3eXhPazVtbV81b0hpUi1vcw?oc=5",
+     "time": "2026-11-12T18:31:55Z"
+    },
+    {
+     "id": "6c526a44313f07e5",
+     "publisher": "Yahoo Finance",
+     "kind": "news",
+     "title": "Equities Rise Intraday Despite Nvidia Sell-Off Post CEO's Departure",
+     "url": "https://finance.yahoo.com/markets/stocks/articles/equities-rise-intraday-despite-nvidia-182433809.html?.tsrc=rss",
+     "time": "2026-11-12T18:24:33Z"
+    },
+    {
+     "id": "adfadefb8db21a4c",
+     "publisher": "AP",
+     "kind": "news",
+     "title": "What we know after Jensen Huang resigns as Nvidia’s CEO",
+     "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOMUxqUTE0WWZBT2xoV25SLUQ2dFgyWkhwZFZyRnk3d1Fibmtrb0d4T3otSXNpNmZiTVh0QUdkWTA4UmQ3cXQyVVM3ODc0V0g4YnVVbDJRYWF4VXlaXzMzZnJWNi1UR3YyZHJGbWNzaVFab2tiM3N2RjFIOUtWcnlJVWtMVnhQNmhJeTdPajNVUXZfU2NzWkw0aGJLVFMtaGY3?oc=5",
+     "time": "2026-11-12T18:38:00Z"
+    },
+    {
+     "id": "e45111d2af3013e1",
+     "publisher": "The Economic Times",
+     "kind": "news",
+     "title": "Bitcoin price today: BTC USD falls near $71,000 after Jensen Huang resigns as Nvidia CEO and ETF outflows",
+     "url": "https://news.google.com/rss/articles/CBMisgJBVV95cUxNNGkxSEhVaVRhRGl4UkxMZUoyeV9Bc25CTmNkY1Q3Z2JEbTB5S3JWbUt4clE4eEltNTFSbFZSOFJrM290QTFESGJiMHROMGRSNVhzV0tkRHRqU2hLTk5GYng1Mm9FaDVlTFNyNHdqWXNwNDhNazZJNmlqOXIxVjFvZ0hwSHRTSUcwSXRqWWU5Mi1BTVg3Zm12bml2STNnSFExQWlTaUlRdDNlVnNUZlh5dFJDN2pfQmhha2M1SVBYUm1fVDhiaThNTnBsRU0ySTJSR1o1QkMyVHJseHA4VHlkd2pYODRaZzFpUUQza2ZlT1JpU0ZodWVkR0pCb3ZZTnI3TTNGQTBxcnJ0VnVJZzV3NHltc3l0X19JbG03WjdwRXFEWEwxZE9uMmJMTTVQbFZVRmfSAbcCQVVfeXFMTXR1bEttcm9WdW1FU0VCR1dKbWkwVkpwVmpjOE9YY1ZDUTZOcE5HaWktRnU2UW55c2ZLWEpiRmFwQ3ZTd2otS0RqX2FSWFZwejRGbFZOcGFpa2oxdF8xYmxVWVp6UUl1QkRnYi1ZVVhNS0d4UDlxSGpwZjJFeG5KbDhZdUplRWh5QU9Lc2U1NWhMMm9EQVZISVVIdUxuWnQxaDRWNllMb1lFS2VJUXRxYTJKSVV1bjg1V2ROTnRLdTVIb3dvcllFbTgtTF9nZFhaVGVrSHpzM3lQOTM5bHp2LXBLZ0VldGppMm95dWZBeGlLNUFXdnE0VkdqbWUzNS1adjhCRVlIMGdEbHJ2djFZSm5GWHhJcmZEOTRLbTU0MGNEdm1MaGkxdlA1WEEyMFlyRm8wbEdmWnM?oc=5",
+     "time": "2026-11-12T18:34:50Z"
+    },
+    {
+     "id": "89cceff7950b3622",
+     "publisher": "Benzinga",
+     "kind": "news",
+     "title": "Jensen Huang Is Out At Nvidia: 4 Private Equity Giants with Big Bets on Its AI Infrastructure Future",
+     "url": "https://www.benzinga.com/markets/private-markets/26/11/63212619/jensen-huang-is-out-at-nvidia-4-private-equity-giants-with-big-bets-on-its-ai-infrastructure-future",
+     "time": "2026-11-12T18:45:12Z"
+    }
+   ]
+  },
+  {
+   "summary": "Tesla plans to build 1 million Cybercabs near Berlin, expanding its German gigafactory footprint.",
+   "category": "contract",
+   "firstSeen": "2026-11-16T14:36:40Z",
+   "publishers": [
+    "Reuters",
+    "Yahoo Finance"
+   ],
+   "assets": {
+    "TSLA": {
+     "direction": "up",
+     "confidence": 0.75,
+     "why": "Major factory expansion and new product capacity announcement."
+    }
+   },
+   "sources": [
+    {
+     "id": "6e8622025ba61a6d",
+     "publisher": "Reuters",
+     "kind": "news",
+     "title": "Tesla announces $3.3 billion expansion of Germany plant",
+     "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNaHd0RC1iZmQwWUtkTl9CYjJVMUhGYmtxNEZyQU92Rm5mZS1OZ0Z2bHl6TmJuLUFJYWpQUW5GQ1h2anVqSHR5TDF3aThnaWhDd3lDYl9oY3VqbTVLaUMwMGtSME5IckZnZE5PQVhURTNPQ1BaS2tBejl6OU15X1B1N3VOM0o3dktRbnpLSjc1eWI5WWs4bjZqNnFOOA?oc=5",
+     "time": "2026-11-16T14:36:40Z"
+    },
+    {
+     "id": "2acd79a8e57ffcb3",
+     "publisher": "Yahoo Finance",
+     "kind": "news",
+     "title": "Tesla to invest 3 bn euros to expand German factory",
+     "url": "https://finance.yahoo.com/technology/articles/tesla-invest-3-bn-euros-144451294.html?.tsrc=rss",
+     "time": "2026-11-16T14:44:51Z"
+    },
+    {
+     "id": "c80edc1bc344d0f3",
+     "publisher": "Yahoo Finance",
+     "kind": "news",
+     "title": "Tesla Targets 2029 Cybercab Production Start In Giga Berlin With $3.3B Investment: Report",
+     "url": "https://stocktwits.com/news-articles/markets/equity/tesla-targets-2029-cybercab-production-start-in-giga-berlin-with-3-3-b-investment-report/cNb7MV2R9gJ?.tsrc=rss",
+     "time": "2026-11-16T16:46:09Z"
+    },
+    {
+     "id": "5a3964d15125684f",
+     "publisher": "Yahoo Finance",
+     "kind": "news",
+     "title": "Tesla Wants to Build 1 Million Cybercabs Near Berlin",
+     "url": "https://finance.yahoo.com/markets/stocks/articles/tesla-wants-build-1-million-181721398.html?.tsrc=rss",
+     "time": "2026-11-16T18:17:21Z"
+    }
+   ]
+  },
+  {
+   "summary": "Semiconductor stocks slide due to AI chip selloffs and AI financing fears, amplified by regulatory pressures.",
+   "category": "tariffs",
+   "firstSeen": "2026-11-16T14:46:33Z",
+   "publishers": [
+    "Benzinga",
+    "CNBC",
+    "Yahoo Finance"
+   ],
+   "assets": {
+    "AMD": {
+     "direction": "down",
+     "confidence": 0.8,
+     "why": "New restrictions on advanced chips and remote access impact semiconductor companies."
+    },
+    "AVGO": {
+     "direction": "down",
+     "confidence": 0.75,
+     "why": "Broadcom slides following a downgrade and concerns over AI financing."
+    },
+    "NVDA": {
+     "direction": "down",
+     "confidence": 0.8,
+     "why": "Targeted by new Commerce rules addressing remote access loopholes for advanced chips."
+    },
+    "INTC": {
+     "direction": "down",
+     "confidence": 0.7,
+     "why": "Tech and chip stocks pressured by new U.S. Bureau of Industry and Security rules."
+    }
+   },
+   "sources": [
+    {
+     "id": "3a19c43d9348d3f4",
+     "publisher": "Benzinga",
+     "kind": "news",
+     "title": "'US moves to tighten AI chip export rules' - Financial Times",
+     "url": "https://www.benzinga.com/news/26/11/63292997/us-moves-tighten-ai-chip-export-rules-financial-times",
+     "time": "2026-11-16T14:46:33Z"
+    },
+    {
+     "id": "813f81bbd1d42712",
+     "publisher": "Yahoo Finance",
+     "kind": "news",
+     "title": "Chip stocks fall on US semiconductor restrictions: AlphaCheck",
+     "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPX0NYQzlGd3NpY1NLcXNmMm84U1pmQ1dKelhJSkRNY09iTHJVbnZfTGprZFNQWXBteHNCbnhmYVJXaDJIUEd6RkxXVlNEYzlVMzBMWnRQc0NZblllQlY3REtxN0hoQ1h2QTBzS3Q1QTh2OWdXbHBubm1IcGhBSndxNkVXa3JIMVpXUG5XV2RHcndCa2UtR1Z6NDkxTDZERXlMNmxFVUJHV2tRTXdpb1FEVkh4RlZZaTBoaWQw?oc=5",
+     "time": "2026-11-16T15:00:19Z"
+    },
+    {
+     "id": "68a869398c13256e",
+     "publisher": "Benzinga",
+     "kind": "news",
+     "title": "Rocket Lab, Firefly, AST SpaceMobile Stocks Drop: What’s Going On With Space Stocks Monday?",
+     "url": "https://www.benzinga.com/trading-ideas/movers/26/11/63295932/rocket-lab-firefly-ast-spacemobile-stocks-drop-whats-going-on-with-space-stocks-monday",
+     "time": "2026-11-16T15:13:57Z"
+    },
+    {
+     "id": "8223b993a457a316",
+     "publisher": "CNBC",
+     "kind": "news",
+     "title": "Nvidia fallout: Commerce targets loophole for China's data center use",
+     "url": "https://www.cnbc.com/2026/11/16/nvidia-commerce-china-lutnick.html",
+     "time": "2026-11-16T15:27:31Z"
+    },
+    {
+     "id": "1bb4f31019eb9bd1",
+     "publisher": "Benzinga",
+     "kind": "news",
+     "title": "Reported Earlier, U.S. Department Of Commerce's Bureau of Industry and Security Interim Final Rule To Address Remote Access To Advanced Super Intelligence Chips And Servers",
+     "url": "https://www.benzinga.com/news/26/11/63297268/reported-earlier-u-s-department-commerce-s-bureau-industry-and-security-interim-final-rule-address-r",
+     "time": "2026-11-16T15:26:35Z"
     }
    ]
   },
@@ -4741,54 +5135,6 @@
      "title": "Oil falls over $1 on easing geopolitical fears and oversupply worries",
      "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQd0RjdkpYTklPUzF2U293azdJRzhHR2tjMUt5RFYtYjZQX1BSN290cjBTb05Sb3BVTjFnaXVydnpsYzRVZDRQY0VNdEpKWUc4eGNlUnR4VldnNGdpejFqVmRDX2NuaUw1RHliVF94X012TzhsU084NklWUGdtTk1nUjJDdC1zb2JUTHZMdWI1cmhyZUVZWkZVOEpwRFVZU1JwdUxiQVNlM0NBSmdYYmhsWXd3Zk9iNnpVaDdRM0Rn?oc=5",
      "time": "2026-11-12T07:44:38Z"
-    }
-   ]
-  },
-  {
-   "summary": "Johnson & Johnson has agreed to acquire eye disease therapy developer Ollin Biosciences in a deal valued up to $3.33 billion.",
-   "category": "contract",
-   "firstSeen": "2026-11-16T15:16:01Z",
-   "publishers": [
-    "Benzinga",
-    "Reuters",
-    "Yahoo Finance"
-   ],
-   "assets": {
-    "LLY": {
-     "direction": "up",
-     "confidence": 0.85,
-     "why": "Acquiring Calytrix Bio for up to $1.5 billion expands Eli Lilly's lucrative cardiometabolic and obesity pipeline."
-    },
-    "JNJ": {
-     "direction": "up",
-     "confidence": 0.65,
-     "why": "Strategic pipeline acquisition expands its healthcare portfolio."
-    }
-   },
-   "sources": [
-    {
-     "id": "aa3cf2b8335332cf",
-     "publisher": "Reuters",
-     "kind": "news",
-     "title": "Lilly to buy Calytrix for up to $1.5 billion in rare blood cancer bet",
-     "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNeVZwVTIyUlI1TTE2elVDeGp2Skg2LUVlLVItSWpPUEVrSVp5MzVtcDNua0xHZzhqMTlyWDZjbDNRLVVWRXJFSGJSSUVqUWN3cVZjYjRhalFscFVTZVBFTXBkWk1Yc2hjUTVoU1QySF8wakRUN3JiWTFaSDRnY1R1TjlRM1hVbWFsczVnM0FYZ2J1YmZncWRYSlhyYnlHb1ZTQTFITTNyQnJzTHpi?oc=5",
-     "time": "2026-11-16T15:16:01Z"
-    },
-    {
-     "id": "b6d2b053ebbf3012",
-     "publisher": "Benzinga",
-     "kind": "news",
-     "title": "Eli Lilly Agrees to Buy Calytrix Bio for Up to $1.5 Billion As ObesityWeek Data Roll In",
-     "url": "https://www.benzinga.com/m-a/26/11/63299707/eli-lilly-agrees-to-buy-calytrix-bio-for-up-to-1-5-billion-as-obesityweek-data-roll-in",
-     "time": "2026-11-16T15:48:52Z"
-    },
-    {
-     "id": "c704fbf3dffe71d6",
-     "publisher": "Yahoo Finance",
-     "kind": "news",
-     "title": "Johnson & Johnson Agrees to Buy Ollin Biosciences in Up to $3.33 Billion Deal",
-     "url": "https://finance.yahoo.com/healthcare/articles/johnson-johnson-agrees-buy-ollin-165031669.html?.tsrc=rss",
-     "time": "2026-11-16T16:50:31Z"
     }
    ]
   }
