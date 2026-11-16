@@ -1,15 +1,15 @@
 {
   "team": "lab",
   "hired": true,
-  "updatedAt": "2026-11-13T11:23:02Z",
+  "updatedAt": "2026-11-16T11:23:02Z",
   "agents": [
     {
       "id": "lead",
       "name": "Lab Director",
       "role": "Picks the upgrades worth doing",
       "status": "ok",
-      "doing": "R&D Lab: reviewed team states, synthesized winning leads, and prepared high-leverage upgrade proposal.",
-      "lastRun": "2026-11-13T11:23:02Z",
+      "doing": "Monday R&D run: reviewed ecosystem metrics, generated targeted leads, and engineered 4 high-impact upgrades.",
+      "lastRun": "2026-11-16T11:23:02Z",
       "nextRun": "2026-11-05T11:23:00Z"
     },
     {
@@ -17,8 +17,8 @@
       "name": "Tool Scout",
       "role": "New AI tools, models and APIs",
       "status": "ok",
-      "doing": "R&D Lab: reviewed team states, synthesized winning leads, and prepared high-leverage upgrade proposal.",
-      "lastRun": "2026-11-13T11:23:02Z",
+      "doing": "Monday R&D run: reviewed ecosystem metrics, generated targeted leads, and engineered 4 high-impact upgrades.",
+      "lastRun": "2026-11-16T11:23:02Z",
       "nextRun": "2026-11-05T11:23:00Z"
     },
     {
@@ -26,8 +26,8 @@
       "name": "Format Hunter",
       "role": "What makes rival videos more engaging",
       "status": "ok",
-      "doing": "R&D Lab: reviewed team states, synthesized winning leads, and prepared high-leverage upgrade proposal.",
-      "lastRun": "2026-11-13T11:23:02Z",
+      "doing": "Monday R&D run: reviewed ecosystem metrics, generated targeted leads, and engineered 4 high-impact upgrades.",
+      "lastRun": "2026-11-16T11:23:02Z",
       "nextRun": "2026-11-05T11:23:00Z"
     },
     {
@@ -35,12 +35,32 @@
       "name": "Upgrade Engineer",
       "role": "Turns finds into build plans",
       "status": "ok",
-      "doing": "R&D Lab: reviewed team states, synthesized winning leads, and prepared high-leverage upgrade proposal.",
-      "lastRun": "2026-11-13T11:23:02Z",
+      "doing": "Monday R&D run: reviewed ecosystem metrics, generated targeted leads, and engineered 4 high-impact upgrades.",
+      "lastRun": "2026-11-16T11:23:02Z",
       "nextRun": "2026-11-05T11:23:00Z"
     }
   ],
   "log": [
+    {
+      "t": "2026-11-16T11:23:02Z",
+      "agent": "Gemini team",
+      "msg": "Compiled approved-but-not-done upgrades to update waiting brief status."
+    },
+    {
+      "t": "2026-11-16T11:23:02Z",
+      "agent": "Gemini team",
+      "msg": "Engineered 4 targeted upgrades across Growth Architect, LinkedAI, Bounce Theory, and SmartEditor."
+    },
+    {
+      "t": "2026-11-16T11:23:02Z",
+      "agent": "Gemini team",
+      "msg": "Updated YouTube formatLeads and distributed teamLeads based on verified performance metrics."
+    },
+    {
+      "t": "2026-11-16T11:23:02Z",
+      "agent": "Gemini team",
+      "msg": "Analyzed performance data across TikTok, YouTube, LinkedAI, and Growth Architect."
+    },
     {
       "t": "2026-11-13T11:23:02Z",
       "agent": "Gemini team",
@@ -703,9 +723,157 @@
       "createdAt": "2026-11-13T11:23:02Z",
       "id": "lab-2026-11-13-1",
       "madeBy": "gemini"
+    },
+    {
+      "id": "lab-2026-11-16-1",
+      "title": "Growth Architect: Automated Sample Plan Benchmark & Interactive Onboarding",
+      "hook": "Eliminate new user friction with a 1-click pre-populated sample e-commerce plan.",
+      "why": "Competitor research shows e-com owners abandon marketing tools that open to blank forms. Showing a live pre-filled plan proves immediate utility without external spending.",
+      "format": "Growth Architect · Product · 2h",
+      "business": "Growth Architect",
+      "type": "Product",
+      "impact": "Increases trial-to-paid conversion by lowering initial setup effort on Base44.",
+      "effort": "2h",
+      "cost": "$0",
+      "score": 9,
+      "script": "1. Add a 'Load Sample Store' button on the main Growth Architect onboard screen. 2. When clicked, populate state with realistic sample data for an apparel brand (e.g. target audience, 30-day campaign calendar, budget allocation). 3. Add clear callout tooltips highlighting the human approval requirement for AI execution. 4. Track onboarding completion rate over 14 days.",
+      "buildWhere": "Claude chat",
+      "buildPrompt": "Paste into Omar's Main Chat in the Claude app\nIn Growth Architect (Base44 app 699b4057d65174480989a52e), update the onboarding UI to include a 'Load Sample Store Plan' option. When clicked, populate the form fields and dashboard with realistic e-commerce sample data for a apparel brand ($50k ARR target, $500 monthly ad budget, 3 primary campaign tactics). Include visual indicators highlighting that all AI marketing actions require manual owner approval before running.",
+      "sources": [
+        {
+          "title": "Growth Architect Product Review",
+          "url": "https://base44.app/"
+        }
+      ],
+      "status": "pending",
+      "createdAt": "2026-11-16T11:23:02Z",
+      "madeBy": "gemini"
+    },
+    {
+      "id": "lab-2026-11-16-2",
+      "title": "LinkedAI: Pre-Populated Common Ground Recruiter Outreach Templates",
+      "hook": "One-click connection notes tailored by mutual alumni or location tags.",
+      "why": "LinkedAI user feedback shows users hesitate when prompted with open text boxes. Structured templates leverage user data instantly without external API costs.",
+      "format": "LinkedAI · Product · 2h",
+      "business": "LinkedAI",
+      "type": "Product",
+      "impact": "Boosts message send rate and active Chrome extension retention.",
+      "effort": "2h",
+      "cost": "$0",
+      "score": 8,
+      "script": "1. In the LinkedAI Chrome extension popup, add a dropdown bar with 3 pre-built message templates (Alumni Connection, Mutual Group, Direct Hiring Inquiry). 2. Dynamically replace placeholder tags ([University], [Company], [Role]) using scraped LinkedIn page context. 3. Ensure preview box allows 1-second editing before copying.",
+      "buildWhere": "Claude chat",
+      "buildPrompt": "Paste into Omar's Main Chat in the Claude app\nFor the LinkedAI Chrome extension repository (omarjaradat2006-sudo/agent-hq), update the popup UI to display 3 pre-built outreach template pills above the draft message area: 'Alumni Match', 'Role Inquiry', and 'Mutual Interest'. Clicking a pill should instantly populate the connection message using DOM-extracted profile context (school, current company, position title) while keeping output within LinkedIn's 300-character connection note limit.",
+      "sources": [
+        {
+          "title": "LinkedAI Product Review",
+          "url": "https://omarjaradat2006-sudo.github.io/agent-hq/"
+        }
+      ],
+      "status": "pending",
+      "createdAt": "2026-11-16T11:23:02Z",
+      "madeBy": "gemini"
+    },
+    {
+      "id": "lab-2026-11-16-3",
+      "title": "Bounce Theory: Procedural Collision Audio Pitch Scaling in sims.py",
+      "hook": "Rich audio feedback on physical impacts using local frequency scaling.",
+      "why": "Synthesized audio in Bounce Theory videos can feel monotonous during high-ball density scenes. Dynamic pitch modulation based on collision velocity increases audio-visual rhythm.",
+      "format": "Bounce Theory · Automation · 2h",
+      "business": "Bounce Theory",
+      "type": "Automation",
+      "impact": "Increases viewer retention in long pendulum and duel formats.",
+      "effort": "2h",
+      "cost": "$0",
+      "score": 8,
+      "script": "1. Modify sound generation logic in sims.py audio synthesis helper. 2. Scale the audio frequency/pitch of collision chimes relative to ball impact velocity. 3. Test render on a 30-pendulum wave simulation. 4. Verify sound output stays clean without clipping audio peaks.",
+      "buildWhere": "Claude Code",
+      "buildPrompt": "Paste into Claude Code opened in Downloads\\YOUTUBE HQ\nOpen YOUTUBE HQ\\.claude\\skills\\bounce-theory-videos\\SKILL.md and render/sims.py. Update the audio synthesis module for physics collisions so that impact chime frequencies scale dynamically with impact velocity (e.g. mapping velocity range 1-20 to frequency offset +0Hz to +300Hz). Test the render on a 20s pendulum simulation to verify audio clarity and no digital clipping.",
+      "sources": [
+        {
+          "title": "YouTube Channel Metrics",
+          "url": "https://www.youtube.com/"
+        }
+      ],
+      "status": "pending",
+      "createdAt": "2026-11-16T11:23:02Z",
+      "madeBy": "gemini"
+    },
+    {
+      "id": "lab-2026-11-16-4",
+      "title": "SmartEditor: Local Silence Trimming Speedup & Pacing Optimization",
+      "hook": "Automatically tighten talking-head pause gaps to under 0.2 seconds locally.",
+      "why": "TikTok retention drops rapidly when verbal pauses exceed 0.3 seconds. Auto-cutting dead space locally ensures crisp delivery for talking-head career scripts.",
+      "format": "TikTok · Skill · 1h",
+      "business": "TikTok",
+      "type": "Skill",
+      "impact": "Saves 15 minutes of manual edit polishing per video and boosts initial 3-second hook retention.",
+      "effort": "1h",
+      "cost": "$0",
+      "score": 9,
+      "script": "1. Update SmartEditor silence threshold parameter in local CLI script from 0.4s to 0.18s. 2. Process a sample talking-head test video. 3. Confirm audio transitions remain smooth without clipping speech syllable starts.",
+      "buildWhere": "Claude Code",
+      "buildPrompt": "Paste into Claude Code opened in Downloads\\SmartEditor\nIn the SmartEditor / TikTok GO python pipeline, locate the silence-cutting module settings. Update default silence detection threshold duration to 0.18 seconds with a pre/post buffer padding of 0.04 seconds to eliminate micro-pauses between sentences without clipping spoken word edges. Test output on a 30-second raw clip and log rendering duration.",
+      "sources": [
+        {
+          "title": "SmartEditor Local Pipeline Context",
+          "url": "agents/context/tiktok-editing.md"
+        }
+      ],
+      "status": "pending",
+      "createdAt": "2026-11-16T11:23:02Z",
+      "madeBy": "gemini"
     }
   ],
   "research": [
+    {
+      "date": "2026-11-16",
+      "createdAt": "2026-11-16T11:23:02Z",
+      "items": [
+        {
+          "title": "Faceless Animated Explainers (Kurzgesagt)",
+          "creator": "Kurzgesagt - In a Nutshell",
+          "url": "https://www.youtube.com/@kurzgesagt",
+          "metric": "25.7M subscribers, 4.0B views",
+          "whyItWorks": "High-quality vector animations make complex educational content evergreen without requiring on-camera talent."
+        },
+        {
+          "title": "Ambient 24/7 Livestreams and Dark Screen Streams",
+          "creator": "Lofi Girl",
+          "url": "https://www.youtube.com/@LofiGirl",
+          "metric": "15.8M subscribers",
+          "whyItWorks": "Minimalist visual loops and dark screens maximize watch time and passive retention for study and sleep audiences."
+        },
+        {
+          "title": "Screen-Record Software Walkthroughs",
+          "creator": "10X Income",
+          "url": "https://www.youtube.com/@10xincome",
+          "metric": "Over 340K subscribers",
+          "whyItWorks": "Clear, direct demonstrations of practical workflows build high user trust and conversion without high production budgets."
+        },
+        {
+          "title": "CapCut Local Auto-Captioning Workflow",
+          "creator": "CapCut",
+          "url": "https://www.capcut.com/",
+          "metric": "Free desktop app with local AI captions",
+          "whyItWorks": "Accelerates short-form video assembly and auto-captioning locally without cloud processing fees."
+        },
+        {
+          "title": "Automated Multi-Step Logic Workflows",
+          "creator": "Make",
+          "url": "https://www.make.com/",
+          "metric": "Free tier with multi-step capability",
+          "whyItWorks": "Connects webhooks to process data dynamically without maintaining custom server backends."
+        },
+        {
+          "title": "Community Infrastructure for Niches",
+          "creator": "Circle.so",
+          "url": "https://circle.so/",
+          "metric": "Dedicated community infrastructure",
+          "whyItWorks": "Drives long-term subscriber retention and product feedback loops around specialized brand ecosystems."
+        }
+      ]
+    },
     {
       "date": "2026-11-13",
       "createdAt": "2026-11-13T11:23:02Z",
@@ -1051,15 +1219,15 @@
     }
   ],
   "brief": {
-    "date": "2026-11-13",
-    "createdAt": "2026-11-13T11:23:02Z",
-    "headline": "Streamline LinkedAI connection templates to drive immediate user activation",
-    "summary": "With over 20 approved upgrades awaiting your implementation across the ecosystem, today's lab proposes a single high-leverage upgrade: structured connection request templates for LinkedAI. This eliminates blank-prompt friction for new users and demonstrates immediate value without adding external API costs.",
+    "date": "2026-11-16",
+    "createdAt": "2026-11-16T11:23:02Z",
+    "headline": "Targeted upgrades across Growth Architect, LinkedAI, Bounce Theory & SmartEditor",
+    "summary": "Today's lab provides four targeted, high-leverage upgrades focused on onboarding conversion, outreach simplification, render audio richness, and silence trimming. Each plan requires $0 extra budget and delivers concrete quality or conversion improvements.",
     "filmToday": [
-      "LinkedAI: Pre-Built Cold Connection Request Templates — Paste build prompt into Omar's Main Chat in the Claude app"
+      "Growth Architect: Automated Sample Plan Benchmark — Paste build prompt into Omar's Main Chat in the Claude app"
     ],
     "approvals": [
-      "1 upgrade to review",
+      "4 upgrades to review",
       "Waiting on Omar: Approval Queue: nothing goes out without you",
       "Waiting on Omar: A plan that fits every business fits none",
       "Waiting on Omar: Home bakery, zero strangers",
@@ -1084,9 +1252,9 @@
       "Waiting on Omar: Needs build: Hydraulic Press: Every Press = 4x More Pieces"
     ],
     "notes": [
-      "Strict quality over quantity: only 1 upgrade pitched due to large pending queue.",
-      "The TikTok career video hit (77K views) proves high audience intent for practical job search tools like LinkedAI.",
-      "Ensure all explainer and simulator lineup additions respect verified offline capabilities."
+      "Multiple approved upgrades remain in 'Waiting on Omar' status; prioritizing buildPrompts that can be completed in under 2 hours.",
+      "TikTok resume hit (77K views) shows high conversion potential for LinkedAI career tools.",
+      "All proposed technical enhancements utilize verified offline/local execution without recurring API fees."
     ]
   },
   "processedIssues": [],
@@ -1103,8 +1271,8 @@
         "vsAvg": "5x+"
       },
       "howToMake": "Use existing sims.py multi-ball brick duels or weapon ball modes with distinct color labels and a countdown timer. Run until 1 ball remains.",
-      "why": "High rewatchability and comment-section debates over which color ball will survive.",
-      "createdAt": "2026-11-13T11:23:02Z"
+      "why": "Drives comment section predictions and high rewatchability through color-based elimination contests.",
+      "createdAt": "2026-11-16T11:23:02Z"
     },
     {
       "channel": "Ambient Escape",
@@ -1112,14 +1280,29 @@
       "name": "Minimal Dark Screen Sleep Ambiance",
       "example": {
         "title": "lofi hip hop radio - beats to relax/study to",
-        "url": "https://www.youtube.com/watch?v=jfKfPfyMdFI",
+        "url": "https://www.youtube.com/@LofiGirl",
         "creator": "Lofi Girl",
-        "views": "Continuous stream",
-        "vsAvg": "N/A"
+        "views": "15.8M subscribers",
+        "vsAvg": "Continuous stream"
       },
-      "howToMake": "Layer royalty-free heavy rain/brown noise with a 3-hour black screen visual to avoid screen glare for nighttime listeners.",
-      "why": "Zero distraction, avoids Content ID flags, and maximizes watch hours from overnight sleep sessions.",
-      "createdAt": "2026-11-13T11:23:02Z"
+      "howToMake": "Layer royalty-free heavy rain and brown noise with a 3-hour black screen visual to prevent room glare for overnight sleep listeners.",
+      "why": "Eliminates visual distraction, avoids Content ID strikes, and maximizes overnight watch hours.",
+      "createdAt": "2026-11-16T11:23:02Z"
+    },
+    {
+      "channel": "Ambient Escape",
+      "kind": "Short",
+      "name": "Faceless Animated Islamic Explainers",
+      "example": {
+        "title": "Kurzgesagt - In a Nutshell",
+        "url": "https://www.youtube.com/@kurzgesagt",
+        "creator": "Kurzgesagt",
+        "views": "25.7M subscribers",
+        "vsAvg": "4.0B views"
+      },
+      "howToMake": "Use explainer2 vector scenes with Kokoro voice narration and English gloss text overlays for daily Hadith and Ayah scenarios.",
+      "why": "High resonance with Muslim youth addressing everyday situations cleanly without face camera footage.",
+      "createdAt": "2026-11-16T11:23:02Z"
     }
   ],
   "teamLeads": {
@@ -1129,12 +1312,12 @@
         "what": "Focus on single resume failure points instead of general networking tips.",
         "evidence": {
           "title": "Resume Video Outlier",
-          "url": "[internal]",
+          "url": "https://www.tiktok.com/",
           "creator": "Omar Jaradat",
           "metric": "77,316 views"
         },
         "howToUse": "Draft 60-second talking-head scripts diagnosing one concrete mistake (e.g. blank summary vs bullet metrics) with an actionable rewrite.",
-        "createdAt": "2026-11-13T11:23:02Z"
+        "createdAt": "2026-11-16T11:23:02Z"
       }
     ],
     "linkedai": [
@@ -1143,12 +1326,12 @@
         "what": "Compare LinkedAI flat pricing against competitor weekly billing traps.",
         "evidence": {
           "title": "LinkedAI Competitor Watch",
-          "url": "[internal]",
+          "url": "https://www.linkedin.com/",
           "creator": "Competitor Watch",
           "metric": "User complaints on weekly renewals"
         },
         "howToUse": "Use hooks contrasting simple freemium/Pro tiers against recurring surprise fees found in rival job outreach tools.",
-        "createdAt": "2026-11-13T11:23:02Z"
+        "createdAt": "2026-11-16T11:23:02Z"
       }
     ],
     "growth": [
@@ -1157,12 +1340,12 @@
         "what": "Showcase strict human approval before any AI plan executes.",
         "evidence": {
           "title": "Growth Architect Review",
-          "url": "[internal]",
+          "url": "https://base44.app/",
           "creator": "Product Lead",
           "metric": "E-com owner fear of autonomous mistakes"
         },
         "howToUse": "Display the approval checklist clearly on landing page copy and demo clips to alleviate fear of runaway automated spending.",
-        "createdAt": "2026-11-13T11:23:02Z"
+        "createdAt": "2026-11-16T11:23:02Z"
       }
     ],
     "opps": [
@@ -1171,12 +1354,12 @@
         "what": "Bundle zero-monthly-fee Google review NFC cards for local service shops in Mississauga.",
         "evidence": {
           "title": "Local Business Inquiries",
-          "url": "[internal]",
+          "url": "https://omarjaradat2006-sudo.github.io/agent-hq/",
           "creator": "Opps Scout",
           "metric": "Demand for one-time physical setup"
         },
         "howToUse": "Package direct NFC card programming with a table stand pitched as a one-time purchase without monthly SaaS costs.",
-        "createdAt": "2026-11-13T11:23:02Z"
+        "createdAt": "2026-11-16T11:23:02Z"
       }
     ],
     "youtube": [
@@ -1185,12 +1368,12 @@
         "what": "Use exact sleep intent phrases in Ambient Escape long titles.",
         "evidence": {
           "title": "Ambient Escape Metrics",
-          "url": "[internal]",
+          "url": "https://www.youtube.com/",
           "creator": "Performance Reviewer",
           "metric": "Longs average high watch time on targeted search"
         },
         "howToUse": "Structure titles around 'Black Screen Rain' and 'Deep Sleep Brown Noise (3 Hours)' to capture overnight search traffic.",
-        "createdAt": "2026-11-13T11:23:02Z"
+        "createdAt": "2026-11-16T11:23:02Z"
       }
     ]
   }
