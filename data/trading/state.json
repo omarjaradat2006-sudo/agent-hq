@@ -1,16 +1,16 @@
 {
  "team": "trading",
  "plain": {
-  "line": "Down $23.25 since start · 1 trade · holding: SOL/USD",
+  "line": "Down $12.30 since start · 1 trade · holding: SOL/USD",
   "rulesMode": "ultra",
-  "top": "Down $23.25 since start (-0.02%) · just holding SPY would be -1.68%",
+  "top": "Down $12.30 since start (-0.01%) · just holding SPY would be -1.68%",
   "up": false,
   "holding": [
-   "SOL/USD: buy order sent, waiting to fill"
+   "SOL/USD: 68.4354 coins worth $4,893.13, down $0.05 (sells at $75.79 or stops at $69.36)"
   ],
   "today": [
    "Bought SOL/USD after the news: Zelle has chosen Solana for a new stablecoin and cross-border payments push.",
-   "Scanned the news 126 times today: read 8236 headlines, found 276 that could move a stock or coin it's allowed to trade.",
+   "Scanned the news 129 times today: read 8446 headlines, found 281 that could move a stock or coin it's allowed to trade.",
    "Passed on TSLA: price hasn't moved the expected way yet (-2.72%).",
    "Passed on TSLA: price hasn't moved the expected way yet (-2.90%).",
    "Passed on JNJ: price hasn't moved the expected way yet (-0.85%).",
@@ -18,10 +18,10 @@
    "Safety rules that stepped in: stock entry window (x32)."
   ],
   "watchlist": "Allowed to trade: 69 halal stocks, 5 Shariah ETFs, 9 coins.",
-  "lastScan": "2026-11-17T00:39:56Z"
+  "lastScan": "2026-11-17T01:26:08Z"
  },
  "hired": true,
- "updatedAt": "2026-11-17T00:40:13Z",
+ "updatedAt": "2026-11-17T01:26:23Z",
  "mode": "PAPER",
  "agents": [
   {
@@ -29,8 +29,8 @@
    "name": "News Scout",
    "role": "Reads X, Reddit and news feeds",
    "status": "working",
-   "doing": "Read 47 new headlines/posts, 3 market-moving stories",
-   "lastRun": "2026-11-17T00:40:12Z"
+   "doing": "Read 60 new headlines/posts, 3 market-moving stories",
+   "lastRun": "2026-11-17T01:26:22Z"
   },
   {
    "id": "analyst",
@@ -60,17 +60,17 @@
    "id": "risk",
    "name": "Risk Officer",
    "role": "Hard limits, stop-losses, kill switch",
-   "status": "idle",
-   "doing": "",
-   "lastRun": null
+   "status": "ok",
+   "doing": "Stop-loss for SOL/USD placed on Alpaca at $69.36",
+   "lastRun": "2026-11-17T00:55:16Z"
   },
   {
    "id": "trader",
    "name": "Trader",
    "role": "Places paper orders on Alpaca",
-   "status": "working",
-   "doing": "BUY SOL/USD: Zelle has chosen Solana for a new stablecoin and cross-border payments push. | volume 0.5x normal, price -0.02% since the news | TradingAgents not used (ultra mode)",
-   "lastRun": "2026-11-17T00:40:13Z"
+   "status": "ok",
+   "doing": "Bought 68.6069 SOL/USD at $71.50 (stop $69.36, target $75.79)",
+   "lastRun": "2026-11-17T00:55:16Z"
   },
   {
    "id": "coins",
@@ -90,6 +90,51 @@
   }
  ],
  "log": [
+  {
+   "t": "2026-11-17T01:26:22Z",
+   "agent": "News Scout",
+   "msg": "Read 60 new headlines/posts, 3 market-moving stories"
+  },
+  {
+   "t": "2026-11-17T01:26:20Z",
+   "agent": "News Scout",
+   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
+  },
+  {
+   "t": "2026-11-17T01:11:07Z",
+   "agent": "News Scout",
+   "msg": "Read 105 new headlines/posts, 1 market-moving stories"
+  },
+  {
+   "t": "2026-11-17T01:10:57Z",
+   "agent": "News Scout",
+   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
+  },
+  {
+   "t": "2026-11-17T00:55:41Z",
+   "agent": "News Scout",
+   "msg": "Read 45 new headlines/posts, 1 market-moving stories"
+  },
+  {
+   "t": "2026-11-17T00:55:34Z",
+   "agent": "News Scout",
+   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
+  },
+  {
+   "t": "2026-11-17T00:55:16Z",
+   "agent": "Risk Officer",
+   "msg": "Stop-loss for SOL/USD placed on Alpaca at $69.36"
+  },
+  {
+   "t": "2026-11-17T00:55:16Z",
+   "agent": "Trader",
+   "msg": "Bought 68.6069 SOL/USD at $71.50 (stop $69.36, target $75.79)"
+  },
+  {
+   "t": "2026-11-17T00:40:16Z",
+   "agent": "Trader",
+   "msg": "Saved results to the Agent HQ dashboard"
+  },
   {
    "t": "2026-11-17T00:40:13Z",
    "agent": "Trader",
@@ -794,73 +839,28 @@
    "t": "2026-11-16T17:31:57Z",
    "agent": "Trader",
    "msg": "Save to GitHub failed (will retry later): To github.com:omarjaradat2006-sudo/agent-hq.git\n ! [rejected]        HEAD -> main (fetch first)\nerror: failed to push some refs to 'github.com:omarjar"
-  },
-  {
-   "t": "2026-11-16T17:31:54Z",
-   "agent": "News Scout",
-   "msg": "Read 26 new headlines/posts, 1 market-moving stories"
-  },
-  {
-   "t": "2026-11-16T17:31:47Z",
-   "agent": "News Scout",
-   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
-  },
-  {
-   "t": "2026-11-16T17:26:39Z",
-   "agent": "Trader",
-   "msg": "Save to GitHub failed (will retry later): To github.com:omarjaradat2006-sudo/agent-hq.git\n ! [rejected]        HEAD -> main (fetch first)\nerror: failed to push some refs to 'github.com:omarjar"
-  },
-  {
-   "t": "2026-11-16T17:26:37Z",
-   "agent": "News Scout",
-   "msg": "Read 33 new headlines/posts, 1 market-moving stories"
-  },
-  {
-   "t": "2026-11-16T17:21:30Z",
-   "agent": "Trader",
-   "msg": "Save to GitHub failed (will retry later): To github.com:omarjaradat2006-sudo/agent-hq.git\n ! [rejected]        HEAD -> main (fetch first)\nerror: failed to push some refs to 'github.com:omarjar"
-  },
-  {
-   "t": "2026-11-16T17:21:28Z",
-   "agent": "News Scout",
-   "msg": "Read 21 new headlines/posts, 2 market-moving stories"
-  },
-  {
-   "t": "2026-11-16T17:16:16Z",
-   "agent": "Trader",
-   "msg": "Save to GitHub failed (will retry later): To github.com:omarjaradat2006-sudo/agent-hq.git\n ! [rejected]        HEAD -> main (fetch first)\nerror: failed to push some refs to 'github.com:omarjar"
-  },
-  {
-   "t": "2026-11-16T17:16:13Z",
-   "agent": "News Scout",
-   "msg": "Read 47 new headlines/posts, 3 market-moving stories"
-  },
-  {
-   "t": "2026-11-16T17:15:56Z",
-   "agent": "News Scout",
-   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
   }
  ],
  "brief": {
   "date": "Mon Nov 16",
-  "createdAt": "2026-11-17T00:40:13Z",
-  "headline": "Paper account -$23 today (-0.02%), -0.02% total vs SPY -1.68% · 1 open",
+  "createdAt": "2026-11-17T01:26:23Z",
+  "headline": "Paper account -$12 today (-0.01%), -0.01% total vs SPY -1.68% · 1 open",
   "summary": "0 trade(s) closed today, 0/0 winners overall. TradingAgents checks used today: 2/5.",
   "notes": [
    "X/Reddit reader: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
   ]
  },
  "account": {
-  "equity": 99976.75,
+  "equity": 99987.7,
   "cash": 95094.57,
   "startEquity": 100000.0,
   "startedAt": "2026-11-10T01:51:53Z",
-  "dayPnl": -23.25,
-  "dayPct": -0.02,
-  "totalPnl": -23.25,
-  "totalPct": -0.02,
+  "dayPnl": -12.3,
+  "dayPct": -0.01,
+  "totalPnl": -12.3,
+  "totalPct": -0.01,
   "spyPct": -1.68,
-  "vsSpyPct": 1.66
+  "vsSpyPct": 1.67
  },
  "status": {
   "killed": false,
@@ -868,7 +868,7 @@
   "deepUsed": 2,
   "deepMax": 5,
   "social": {
-   "at": "2026-11-17T00:40:10Z",
+   "at": "2026-11-17T01:26:20Z",
    "items": 0,
    "source": "Reddit public JSON (blocked on servers: add REDDIT_CLIENT_ID/SECRET); X needs Agent Reach",
    "problems": [
@@ -886,14 +886,14 @@
    "id": "ahq-SOLUSD-20261117004013",
    "symbol": "SOL/USD",
    "asset": "crypto",
-   "status": "pending",
+   "status": "open",
    "entryOrderId": "217e4c34-6820-46d9-836a-db245295db5b",
-   "qty": null,
+   "qty": 68.435351746,
    "cost": 5000.0,
    "estPrice": 71.34,
-   "entryPrice": 71.34,
-   "stop": 69.2,
-   "target": 75.62,
+   "entryPrice": 71.50071403,
+   "stop": 69.36,
+   "target": 75.79,
    "openedAt": "2026-11-17T00:40:13Z",
    "news": {
     "summary": "Zelle has chosen Solana for a new stablecoin and cross-border payments push.",
@@ -917,7 +917,10 @@
     ],
     "tradingAgents": "not used (ultra mode)",
     "taSummary": ""
-   }
+   },
+   "stopOrderId": "d8fd6c27-f935-4ac9-8c22-c2f2a308b61c",
+   "lastPrice": 71.5,
+   "unrealizedPct": -0.0
   }
  ],
  "trades": [
@@ -925,14 +928,14 @@
    "id": "ahq-SOLUSD-20261117004013",
    "symbol": "SOL/USD",
    "asset": "crypto",
-   "status": "pending",
+   "status": "open",
    "entryOrderId": "217e4c34-6820-46d9-836a-db245295db5b",
-   "qty": null,
+   "qty": 68.435351746,
    "cost": 5000.0,
    "estPrice": 71.34,
-   "entryPrice": 71.34,
-   "stop": 69.2,
-   "target": 75.62,
+   "entryPrice": 71.50071403,
+   "stop": 69.36,
+   "target": 75.79,
    "openedAt": "2026-11-17T00:40:13Z",
    "news": {
     "summary": "Zelle has chosen Solana for a new stablecoin and cross-border payments push.",
@@ -956,7 +959,10 @@
     ],
     "tradingAgents": "not used (ultra mode)",
     "taSummary": ""
-   }
+   },
+   "stopOrderId": "d8fd6c27-f935-4ac9-8c22-c2f2a308b61c",
+   "lastPrice": 71.5,
+   "unrealizedPct": -0.0
   }
  ],
  "decisions": [
@@ -3006,6 +3012,11 @@
    "t": "2026-11-17T00:40:13Z",
    "equity": 100000.0,
    "spy": 740.04
+  },
+  {
+   "t": "2026-11-17T01:11:07Z",
+   "equity": 99996.46,
+   "spy": 740.04
   }
  ],
  "watch": [],
@@ -3017,453 +3028,7 @@
  },
  "events": [
   {
-   "summary": "Oil prices plunge and supertanker rates drop sharply as global supply surplus fears deepen.",
-   "category": "oil_supply",
-   "firstSeen": "2026-11-12T06:53:00Z",
-   "publishers": [
-    "24 News HD",
-    "ANI News",
-    "ASHARQ AL-AWSAT English",
-    "Al-Monitor",
-    "Arab News",
-    "BW Businessworld",
-    "Bangladesh Sangbad Sangstha (BSS)",
-    "Barchart.com",
-    "Benzinga",
-    "BigGo Finance",
-    "Bilyonaryo",
-    "Bloomberg.com",
-    "Breakingthenews.net",
-    "Business Recorder",
-    "CBC",
-    "CNA",
-    "CNBC",
-    "Castanet",
-    "Channels Television",
-    "Chosunbiz",
-    "Coinpaper",
-    "Crude Oil Prices Today | OilPrice.com",
-    "Crypto Briefing",
-    "DAILY TIMES Nigeria",
-    "Daily Times",
-    "DatamarNews",
-    "Dhaka Tribune",
-    "ET EnergyWorld",
-    "Egypt Oil & Gas",
-    "EnergyNow.com",
-    "Euronews.com",
-    "FXEmpire",
-    "FXLeaders",
-    "FXStreet",
-    "Financial Post",
-    "Free Malaysia Today",
-    "Geo News",
-    "HDFC Sky",
-    "Halifax",
-    "Head Topics",
-    "IndexBox",
-    "Investing.com",
-    "Investing.com India",
-    "IranOilGas",
-    "LEADERSHIP Newspapers",
-    "Laodong.vn",
-    "Latest news from Azerbaijan",
-    "Macau Business",
-    "Manila Bulletin",
-    "MarineLink",
-    "Middle East Online",
-    "Minute Mirror",
-    "Moneycontrol.com",
-    "NTD News",
-    "Nation Thailand",
-    "Newsmax",
-    "Newswire",
-    "Oil & Gas 360",
-    "Oil & Gas Journal",
-    "Pluang",
-    "Proactive Investors Australia",
-    "Profit by Pakistan Today",
-    "Public TV English",
-    "Qatar news agency",
-    "Quantum Commodity Intelligence",
-    "Quartz Africa",
-    "Reuters",
-    "Rigzone",
-    "Ship & Bunker",
-    "StreetInsider",
-    "The Business Times",
-    "The Globe and Mail",
-    "The Insight International",
-    "The Mighty 790 KFGO",
-    "The National",
-    "The Peninsula Qatar",
-    "The Star",
-    "The Times of India",
-    "Ticker News",
-    "Times of Oman",
-    "UA.NEWS",
-    "UPPERNEWS",
-    "Vietnam.vn",
-    "WSJ",
-    "Western Standard",
-    "Yahoo! Finance Canada",
-    "fiscal.ai",
-    "grafa.com",
-    "houseofsaud.com",
-    "https://www.engine.online/",
-    "marketscreener.com",
-    "play 103.7",
-    "www.marketscreener.com",
-    "صحيفة مال",
-    "صوت الإمارات"
-   ],
-   "assets": {
-    "XOM": {
-     "direction": "down",
-     "confidence": 0.75,
-     "why": "Falling crude oil prices and recovering export shipments negatively impact near-term oil producer revenues."
-    },
-    "CVX": {
-     "direction": "down",
-     "confidence": 0.75,
-     "why": "Falling crude oil prices and recovering export shipments negatively impact near-term oil producer revenues."
-    },
-    "COP": {
-     "direction": "down",
-     "confidence": 0.75,
-     "why": "Global oil supply surplus and crashing crude prices weigh on oil and gas stocks."
-    },
-    "SLB": {
-     "direction": "down",
-     "confidence": 0.7,
-     "why": "Lower oil prices driven by oversupply could slow down oilfield services spending."
-    },
-    "OXY": {
-     "direction": "down",
-     "confidence": 0.75,
-     "why": "Growing oil supply surplus fears push crude and major oil stocks down."
-    },
-    "DVN": {
-     "direction": "down",
-     "confidence": 0.65,
-     "why": "Weakening oil strip and surplus projections weigh on exploration and production stocks."
-    },
-    "APA": {
-     "direction": "down",
-     "confidence": 0.6,
-     "why": "Increased supply and lower shipping costs signal potential downward pressure on oil prices."
-    },
-    "EOG": {
-     "direction": "down",
-     "confidence": 0.6,
-     "why": "Increased supply and lower shipping costs signal potential downward pressure on oil prices."
-    },
-    "FANG": {
-     "direction": "down",
-     "confidence": 0.6,
-     "why": "Increased supply and lower shipping costs signal potential downward pressure on oil prices."
-    },
-    "HAL": {
-     "direction": "down",
-     "confidence": 0.6,
-     "why": "Increased supply and lower shipping costs signal potential downward pressure on oil prices."
-    },
-    "MPC": {
-     "direction": "down",
-     "confidence": 0.6,
-     "why": "Increased supply and lower shipping costs signal potential downward pressure on oil prices."
-    },
-    "PSX": {
-     "direction": "down",
-     "confidence": 0.6,
-     "why": "Increased supply and lower shipping costs signal potential downward pressure on oil prices."
-    },
-    "VLO": {
-     "direction": "down",
-     "confidence": 0.6,
-     "why": "Increased supply and lower shipping costs signal potential downward pressure on oil prices."
-    }
-   },
-   "sources": [
-    {
-     "id": "4bb506049f64816d",
-     "publisher": "Latest news from Azerbaijan",
-     "kind": "news",
-     "title": "Oil prices decline as OPEC+ output boosts oversupply fears",
-     "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPZVJObGVhNHNqYldKVjk4SWFfUTd4VUgtdVFrSWh6WmRaN0J5NWNjcjc0T3hCOFhLZkFhUjktbnA3VS10aWxCUllUbEY0WEo4eUdRYmxBVjJqclk0NXRLZEduaE9tU2JMUlh1TXBLZ3c1VzA2Z0thLTZZZDJJMmZLQm5nZzk?oc=5",
-     "time": "2026-11-12T06:55:24Z"
-    },
-    {
-     "id": "74543532c5f84f94",
-     "publisher": "Public TV English",
-     "kind": "news",
-     "title": "OPEC+ oil output rises 2.04 million barrels per day in Oct as Saudi Arabia leads recovery amid West Asia crisis",
-     "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxNc3hMVUdaemN1YTRZQVpJaGNKZGQxYmFOdTVmRl9DYUxxNmtFV250ZmI1bnlrc3ZtdWZtYWRaeDRUcTl1azB6YkNqQVRndjhhYnpBWkU3N2w2X1VHaV9XVTYyclUyOHpudFp2NURkY2ZsOV9mb2wtYzdublNaLTRvdnFfbEhWV1FjM3gzZ05jNUJiOG9xb3ZacUZTb01fenM1MEc1Z3ZNcmxuczZnSVBlbmtyeVllZXRCck9fTXpjdkR2a2IzSGJUbVNiTmNyMFhnWGZyc2VB?oc=5",
-     "time": "2026-11-12T06:58:03Z"
-    },
-    {
-     "id": "a7dcf6881335f5e3",
-     "publisher": "BW Businessworld",
-     "kind": "news",
-     "title": "Opec+ Oil Output Rebounds 2.04 Million Bpd Amid Hormuz Disruption",
-     "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQQk5IV3BYU3hZMXhIelhESU9XSUhWQm1tLVM1eDR6ZHNfdG83alp6d0plallRYTNneEN3Wmd3LWd3MWhHUHRnbHV5ZGc1a3NacEVGRTFSSXl0anBrVGxNeWdvRngxaFRGUTQzSFNNZnBZVmxrdFpWU1dzNHhsUmxQRE1KbU9MYVotQmdrWVZ5YWhoTEdud0lLWktwOHpzNEY4cU9kOERVbVM1V0ly?oc=5",
-     "time": "2026-11-12T06:54:45Z"
-    },
-    {
-     "id": "13ef775feec7cccc",
-     "publisher": "Chosunbiz",
-     "kind": "news",
-     "title": "Oil prices fall as South Korea weighs path for price cap and compensation",
-     "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxOMUJYRlU0Y3d2ZFJvbWl6bjNvWnhaYlFmM2pNWXFEWEFsNnlpVXlwMUplSVRHcDB1dXNudTVKZUtDaXRJalM4Vk9OR1draHZzTHpid3NibkNPUW4xM2hwS1h2VUwzRFFkUDNQZnc3MTNzM2dvXzlCYVN1UmdKUlBmVzl30gGWAUFVX3lxTE9lRTYxWHlhNG9XWUxPMzU3LVVxZWJnVzZCUV9wblY4N29yaXZVRE5ydFZ3Q3FUblNTSG4ya1h0NkZmT0NucHdkdlptd2Y0aldnT3VoREZTSER5WUFnSDVFSDlTT0dRaE9XYjNlVHJhb2E5N1h3OWhQVExORERXV3RqMG5nWnF4UC1pZlVtaHgxOEstNHVnZw?oc=5",
-     "time": "2026-11-12T06:53:00Z"
-    },
-    {
-     "id": "d319dc3aaf7fda77",
-     "publisher": "Profit by Pakistan Today",
-     "kind": "news",
-     "title": "Oil falls over $1 on easing geopolitical fears and oversupply worries",
-     "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQd0RjdkpYTklPUzF2U293azdJRzhHR2tjMUt5RFYtYjZQX1BSN290cjBTb05Sb3BVTjFnaXVydnpsYzRVZDRQY0VNdEpKWUc4eGNlUnR4VldnNGdpejFqVmRDX2NuaUw1RHliVF94X012TzhsU084NklWUGdtTk1nUjJDdC1zb2JUTHZMdWI1cmhyZUVZWkZVOEpwRFVZU1JwdUxiQVNlM0NBSmdYYmhsWXd3Zk9iNnpVaDdRM0Rn?oc=5",
-     "time": "2026-11-12T07:44:38Z"
-    }
-   ]
-  },
-  {
-   "summary": "Bitcoin and broader crypto assets face downward pressure amid rate hike expectations and liquidity concerns.",
-   "category": "crypto_negative",
-   "firstSeen": "2026-11-12T08:32:42Z",
-   "publishers": [
-    "24/7 Wall St.",
-    "99Bitcoins",
-    "AMBCrypto",
-    "AOL.com",
-    "Action Forex",
-    "Aktualita.co",
-    "Altcoin Buzz",
-    "Anadolu Ajansı",
-    "Analytics Insight",
-    "Asianet Newsable",
-    "BeInCrypto",
-    "Benzinga",
-    "BigGo Finance",
-    "Bitbo",
-    "Bitcoin Foundation",
-    "Bitcoin Magazine",
-    "Bitcoin News",
-    "Bitcoin Sistemi",
-    "Bitcoinist.com",
-    "Blockonomi",
-    "Brandsynario",
-    "Brave New Coin",
-    "Briefs Finance",
-    "Business Standard",
-    "Businesskorea",
-    "CNBC",
-    "CNBC TV18",
-    "CaptainAltcoin",
-    "Coin Edition",
-    "Coin Gabbar",
-    "CoinCodex",
-    "CoinDesk",
-    "CoinGape",
-    "CoinMarketCap",
-    "Coinfomania",
-    "Coinpaper",
-    "Coinpedia",
-    "Cointribune",
-    "Crypto Briefing",
-    "Crypto Economy",
-    "Crypto News",
-    "CryptoDaily",
-    "CryptoPotato",
-    "CryptoRank",
-    "CryptoSlate",
-    "CryptoTicker.io",
-    "Cryptonews",
-    "Cryptonews.net",
-    "Cryptopolitan",
-    "Daily Beirut",
-    "Daily Forex",
-    "DailyCoin",
-    "Decrypt",
-    "Dimsum Daily",
-    "FOREX.com",
-    "FXEmpire",
-    "FXLeaders",
-    "FXStreet",
-    "FinanceFeeds",
-    "Finbold",
-    "Free Malaysia Today",
-    "Gadgets 360",
-    "GuruFocus",
-    "HESPRESS English - Morocco News",
-    "Hindustan Times",
-    "Hokanews",
-    "Investing.com",
-    "Investing.com Canada",
-    "Investing.com Nigeria",
-    "Investor's Business Daily",
-    "Invezz",
-    "JournalArta",
-    "Kalkine Media",
-    "Kriptofoni",
-    "KuCoin",
-    "Livemint",
-    "MEXC",
-    "MarketForces Africa",
-    "MarketWatch",
-    "Moneycontrol.com",
-    "Moomoo",
-    "NAI500",
-    "NDTV Profit",
-    "NFTevening",
-    "Nacionale",
-    "NameCoinNews",
-    "NewsBTC",
-    "NewsBytes",
-    "Pluang",
-    "Proactive Investors Australia",
-    "Programming Insider",
-    "Quartz",
-    "RTTNews",
-    "Retail News Asia",
-    "SSBCrack",
-    "Serrari Group",
-    "Startup Fortune",
-    "Stocktwits",
-    "StreetInsider",
-    "SunCrypto",
-    "TOKENPOST",
-    "TechBullion",
-    "The Block",
-    "The Business Times",
-    "The Crypto Times",
-    "The Cryptonomist",
-    "The Defiant",
-    "The Economic Times",
-    "The Edge Malaysia",
-    "The Market Periodical",
-    "The Straits Times",
-    "TipRanks",
-    "Traders Union",
-    "Trading News",
-    "TradingKey",
-    "TradingNEWS",
-    "TradingView",
-    "TronWeekly",
-    "U.Today",
-    "UA.NEWS",
-    "UkrMedia News",
-    "Univest",
-    "Vocal",
-    "XTB.com",
-    "Yahoo Finance",
-    "ad-hoc-news.de",
-    "bloomingbit",
-    "finance.biggo.com",
-    "grafa.com",
-    "openPR.com",
-    "www.blockhead.co",
-    "www.proactiveinvestors.com.au",
-    "www.tmgm.com",
-    "www.tokenpost.com",
-    "www.trendingtopics.eu",
-    "Українські Національні Новини (УНН)",
-    "صوت الإمارات",
-    "富途牛牛",
-    "머니투데이"
-   ],
-   "assets": {
-    "BTC/USD": {
-     "direction": "down",
-     "confidence": 0.88,
-     "why": "Heavy liquidations and persistent ETF outflows drive severe downside momentum."
-    },
-    "ETH/USD": {
-     "direction": "down",
-     "confidence": 0.9,
-     "why": "Ethereum price breaks key psychological support below $2,000 amid selling pressure from the Ethereum Foundation."
-    },
-    "SOL/USD": {
-     "direction": "down",
-     "confidence": 0.85,
-     "why": "Solana crashes to multi-month lows amid broader crypto market sell-offs and rate hike fears."
-    },
-    "XRP/USD": {
-     "direction": "down",
-     "confidence": 0.85,
-     "why": "Massive capital flight and ETF outflows crush XRP price action."
-    }
-   },
-   "sources": [
-    {
-     "id": "f2c64de89a6bbd3c",
-     "publisher": "bloomingbit",
-     "kind": "news",
-     "title": "BlackRock’s Bitcoin ETF IBIT Extends Net Outflow Streak to 9 Sessions, Exceeding $2 Billion",
-     "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE9XY1BHRGVIT2hraXRmcGx1TGI3a2oybEJwMk9LWHNKdUM1R29nNEU1eWJIeXhtTC1pSXg0QUJDd18xNkJTTG4ySkRJTXd3cjN2NkxlZg?oc=5",
-     "time": "2026-11-12T08:32:42Z"
-    },
-    {
-     "id": "cc25c44ff767f291",
-     "publisher": "Crypto News",
-     "kind": "news",
-     "title": "BlackRock leads $300 million Bitcoin ETF outflows as BTC struggles near $73K",
-     "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNY3U0TE5Gcy0teVNsLWVBeGh1cmd4Z1dSaldmVmt2b3VYaVhFSTM0T29OUnhKUXpTNEZwLW1sVkwtZnQyUUdSVDFTUHpSYjYxVlU0SFZnYW5Xd0V0TzB4NjM4VGpGa1pPYnk4eEgzR2wxV0d1SkFPSDBwSG0tdFFTQTI3cXJiSWE1UHU0NzVCUjJ2VXNFa2pIZnd0VQ?oc=5",
-     "time": "2026-11-12T08:36:14Z"
-    },
-    {
-     "id": "fb7c71d0fe55957d",
-     "publisher": "bloomingbit",
-     "kind": "news",
-     "title": "Coinbase Bitcoin Premium Stays Negative for 50 Straight Days as U.S. Buying Weakens",
-     "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTFBfQTlkOUY1NnAyTlpoRnp0Qmc2NDZnUjdSVlRBYndfa2hHVXlZdjNmX0ZhRTdZMjMtV2xMMEdTWWJvdXpCbl9BREZ0TDR6cl9NcFJXNg?oc=5",
-     "time": "2026-11-12T08:59:27Z"
-    },
-    {
-     "id": "62235bb905723bf1",
-     "publisher": "Coinfomania",
-     "kind": "news",
-     "title": "U.S. Spot Bitcoin ETFs Experience $300 Million Net Outflows",
-     "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxORGNYaW5tLUhtT2tmVi1ETy1fRFV4QnFDQndvYkpDRkRTZTF6NEJRN2V6emkyV1MzeTZfTVlyX1NsRGNzaXJsRWk5OXpDajRfVTE5OGc1anBpNWVfSkJKTUg2QnFoTlFSNlRscFJUVlBuek04RkxsN2ZydUJUSjZBdjdURUtnOGhnb3c?oc=5",
-     "time": "2026-11-12T08:55:35Z"
-    },
-    {
-     "id": "44d885771c26dd4e",
-     "publisher": "Cryptonews",
-     "kind": "news",
-     "title": "Bitcoin ETF Outflow Says Crypto Walking Into a Bull Trap",
-     "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE1aa1RfZzhBaFRtOEctWFJSZDUyRzZ6bDV5LTVmSVNubFlfLTNvNkdHVGdGS1pNbmpfb3liS2V5djRKcHV6bWZLb1BQYVVYcTRBVE0wYXNyV3hSNkdhSm01YnFqZGUzelVCamxJeEFTZG83ZzA?oc=5",
-     "time": "2026-11-12T08:48:31Z"
-    }
-   ]
-  },
-  {
-   "summary": "Zelle has chosen Solana for a new stablecoin and cross-border payments push.",
-   "category": "crypto_positive",
-   "firstSeen": "2026-11-17T00:18:57Z",
-   "publishers": [
-    "Crypto Economy"
-   ],
-   "assets": {
-    "SOL/USD": {
-     "direction": "up",
-     "confidence": 0.7,
-     "why": "Adoption by a major payment network like Zelle is a strong positive catalyst for Solana."
-    }
-   },
-   "sources": [
-    {
-     "id": "95bd69bca18d8b5a",
-     "publisher": "Crypto Economy",
-     "kind": "news",
-     "title": "Zelle Chooses Solana for New Stablecoin and Cross-Border Payments Push",
-     "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxONmw1ZFZrVGY0TWNWdGlUYUlJSWdjU0RMQ0F3ZkVNV1dmR3owVEtyVGlyMkpvblVpdUNQclN0ajRaRnNIb1RTMVZZckVvM1Z1eUpNOTIwUjRsdVdJQzUtUXJuY0hEVVVKaDc0QmRZSW1GVFJEVnZIaWMyNThqSnJtZDRsTzhUazgtdDB0WHFWZFVfdE5jRmxNWnJQb0V5c2s?oc=5",
-     "time": "2026-11-17T00:18:57Z"
-    }
-   ]
-  },
-  {
-   "summary": "Oil prices fall sharply amid prospects of oversupply and declining fuel prices.",
+   "summary": "Crude oil prices fall further amid prospects of oversupply, recovering Gulf exports, and a stronger US dollar.",
    "category": "deescalation",
    "firstSeen": "2026-11-10T01:57:53Z",
    "publishers": [
@@ -3857,7 +3422,7 @@
    ]
   },
   {
-   "summary": "Gold prices hit a more than one-year low as the US dollar strengthens.",
+   "summary": "Gold prices hover near a one-year low as a firm US dollar and Fed rate-hike expectations weigh on the metal.",
    "category": "central_bank_hawkish",
    "firstSeen": "2026-11-10T09:39:09Z",
    "publishers": [
@@ -4247,6 +3812,608 @@
      "title": "Fed Governor Christopher J. Waller favors 25 bps rate hike in December; 50 bps may be needed if inflation persists",
      "url": "https://news.google.com/rss/articles/CBMi9gFBVV95cUxQZVUtaWxLdmtZVGV6bDBwaDRTRk9saVd1R1FlUXowOVV1eVp6Qks5LWZVN0ZzS0Q1U09yemlnTVZjaEVlempESldNVEo4RE5Fb0R5OTAtU2R2cW5zMnF1SllpTXJUR3BDeWZYUjQ2U1VkZ2kzZ3VkNjRDQzhobEpSaW45NWlTSTlvMmhhYXRqUFNFeWRKRWJlUDdaMmNfR0kxOEZSa1JoS0syVFUtNG84Q3B4akh0dWNQajZ1S05FSlN2RFZYSmFLcjY0dzdNNi1wYmRqLVVvQVBOZkRJeURwajN4TjlkZUZ0blJmdktvMEFuLTFnMmc?oc=5",
      "time": "2026-11-10T10:41:00Z"
+    }
+   ]
+  },
+  {
+   "summary": "Crypto traders cash out stablecoins as Bitcoin touches a four-month low amid broader market liquidity concerns.",
+   "category": "crypto_negative",
+   "firstSeen": "2026-11-12T08:32:42Z",
+   "publishers": [
+    "24/7 Wall St.",
+    "99Bitcoins",
+    "AMBCrypto",
+    "AOL.com",
+    "Action Forex",
+    "Aktualita.co",
+    "Altcoin Buzz",
+    "Anadolu Ajansı",
+    "Analytics Insight",
+    "Asianet Newsable",
+    "BeInCrypto",
+    "Benzinga",
+    "BigGo Finance",
+    "Bitbo",
+    "Bitcoin Foundation",
+    "Bitcoin Magazine",
+    "Bitcoin News",
+    "Bitcoin Sistemi",
+    "Bitcoinist.com",
+    "Blockonomi",
+    "Brandsynario",
+    "Brave New Coin",
+    "Briefs Finance",
+    "Business Standard",
+    "Businesskorea",
+    "CNBC",
+    "CNBC TV18",
+    "CaptainAltcoin",
+    "Coin Edition",
+    "Coin Gabbar",
+    "CoinCodex",
+    "CoinDesk",
+    "CoinGape",
+    "CoinMarketCap",
+    "Coinfomania",
+    "Coinpaper",
+    "Coinpedia",
+    "Cointribune",
+    "Crypto Briefing",
+    "Crypto Economy",
+    "Crypto News",
+    "CryptoDaily",
+    "CryptoPotato",
+    "CryptoRank",
+    "CryptoSlate",
+    "CryptoTicker.io",
+    "Cryptonews",
+    "Cryptonews.net",
+    "Cryptopolitan",
+    "Daily Beirut",
+    "Daily Forex",
+    "DailyCoin",
+    "Decrypt",
+    "Dimsum Daily",
+    "FOREX.com",
+    "FXEmpire",
+    "FXLeaders",
+    "FXStreet",
+    "FinanceFeeds",
+    "Finbold",
+    "Free Malaysia Today",
+    "Gadgets 360",
+    "GuruFocus",
+    "HESPRESS English - Morocco News",
+    "Hindustan Times",
+    "Hokanews",
+    "Investing.com",
+    "Investing.com Canada",
+    "Investing.com Nigeria",
+    "Investor's Business Daily",
+    "Invezz",
+    "JournalArta",
+    "Kalkine Media",
+    "Kriptofoni",
+    "KuCoin",
+    "Livemint",
+    "MEXC",
+    "MarketForces Africa",
+    "MarketWatch",
+    "Moneycontrol.com",
+    "Moomoo",
+    "NAI500",
+    "NDTV Profit",
+    "NFTevening",
+    "Nacionale",
+    "NameCoinNews",
+    "NewsBTC",
+    "NewsBytes",
+    "PYMNTS.com",
+    "Pluang",
+    "Proactive Investors Australia",
+    "Programming Insider",
+    "Quartz",
+    "RTTNews",
+    "Retail News Asia",
+    "SSBCrack",
+    "Serrari Group",
+    "Startup Fortune",
+    "Stocktwits",
+    "StreetInsider",
+    "SunCrypto",
+    "TOKENPOST",
+    "TechBullion",
+    "The Block",
+    "The Business Times",
+    "The Crypto Times",
+    "The Cryptonomist",
+    "The Defiant",
+    "The Economic Times",
+    "The Edge Malaysia",
+    "The Market Periodical",
+    "The Straits Times",
+    "TipRanks",
+    "Traders Union",
+    "Trading News",
+    "TradingKey",
+    "TradingNEWS",
+    "TradingView",
+    "TronWeekly",
+    "U.Today",
+    "UA.NEWS",
+    "UkrMedia News",
+    "Univest",
+    "Vocal",
+    "XTB.com",
+    "Yahoo Finance",
+    "ad-hoc-news.de",
+    "bloomingbit",
+    "finance.biggo.com",
+    "grafa.com",
+    "openPR.com",
+    "www.blockhead.co",
+    "www.proactiveinvestors.com.au",
+    "www.tmgm.com",
+    "www.tokenpost.com",
+    "www.trendingtopics.eu",
+    "Українські Національні Новини (УНН)",
+    "صوت الإمارات",
+    "富途牛牛",
+    "머니투데이"
+   ],
+   "assets": {
+    "BTC/USD": {
+     "direction": "down",
+     "confidence": 0.88,
+     "why": "Heavy liquidations and persistent ETF outflows drive severe downside momentum."
+    },
+    "ETH/USD": {
+     "direction": "down",
+     "confidence": 0.9,
+     "why": "Ethereum price breaks key psychological support below $2,000 amid selling pressure from the Ethereum Foundation."
+    },
+    "SOL/USD": {
+     "direction": "down",
+     "confidence": 0.85,
+     "why": "Solana crashes to multi-month lows amid broader crypto market sell-offs and rate hike fears."
+    },
+    "XRP/USD": {
+     "direction": "down",
+     "confidence": 0.85,
+     "why": "Massive capital flight and ETF outflows crush XRP price action."
+    }
+   },
+   "sources": [
+    {
+     "id": "f2c64de89a6bbd3c",
+     "publisher": "bloomingbit",
+     "kind": "news",
+     "title": "BlackRock’s Bitcoin ETF IBIT Extends Net Outflow Streak to 9 Sessions, Exceeding $2 Billion",
+     "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE9XY1BHRGVIT2hraXRmcGx1TGI3a2oybEJwMk9LWHNKdUM1R29nNEU1eWJIeXhtTC1pSXg0QUJDd18xNkJTTG4ySkRJTXd3cjN2NkxlZg?oc=5",
+     "time": "2026-11-12T08:32:42Z"
+    },
+    {
+     "id": "cc25c44ff767f291",
+     "publisher": "Crypto News",
+     "kind": "news",
+     "title": "BlackRock leads $300 million Bitcoin ETF outflows as BTC struggles near $73K",
+     "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNY3U0TE5Gcy0teVNsLWVBeGh1cmd4Z1dSaldmVmt2b3VYaVhFSTM0T29OUnhKUXpTNEZwLW1sVkwtZnQyUUdSVDFTUHpSYjYxVlU0SFZnYW5Xd0V0TzB4NjM4VGpGa1pPYnk4eEgzR2wxV0d1SkFPSDBwSG0tdFFTQTI3cXJiSWE1UHU0NzVCUjJ2VXNFa2pIZnd0VQ?oc=5",
+     "time": "2026-11-12T08:36:14Z"
+    },
+    {
+     "id": "fb7c71d0fe55957d",
+     "publisher": "bloomingbit",
+     "kind": "news",
+     "title": "Coinbase Bitcoin Premium Stays Negative for 50 Straight Days as U.S. Buying Weakens",
+     "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTFBfQTlkOUY1NnAyTlpoRnp0Qmc2NDZnUjdSVlRBYndfa2hHVXlZdjNmX0ZhRTdZMjMtV2xMMEdTWWJvdXpCbl9BREZ0TDR6cl9NcFJXNg?oc=5",
+     "time": "2026-11-12T08:59:27Z"
+    },
+    {
+     "id": "62235bb905723bf1",
+     "publisher": "Coinfomania",
+     "kind": "news",
+     "title": "U.S. Spot Bitcoin ETFs Experience $300 Million Net Outflows",
+     "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxORGNYaW5tLUhtT2tmVi1ETy1fRFV4QnFDQndvYkpDRkRTZTF6NEJRN2V6emkyV1MzeTZfTVlyX1NsRGNzaXJsRWk5OXpDajRfVTE5OGc1anBpNWVfSkJKTUg2QnFoTlFSNlRscFJUVlBuek04RkxsN2ZydUJUSjZBdjdURUtnOGhnb3c?oc=5",
+     "time": "2026-11-12T08:55:35Z"
+    },
+    {
+     "id": "44d885771c26dd4e",
+     "publisher": "Cryptonews",
+     "kind": "news",
+     "title": "Bitcoin ETF Outflow Says Crypto Walking Into a Bull Trap",
+     "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE1aa1RfZzhBaFRtOEctWFJSZDUyRzZ6bDV5LTVmSVNubFlfLTNvNkdHVGdGS1pNbmpfb3liS2V5djRKcHV6bWZLb1BQYVVYcTRBVE0wYXNyV3hSNkdhSm01YnFqZGUzelVCamxJeEFTZG83ZzA?oc=5",
+     "time": "2026-11-12T08:48:31Z"
+    }
+   ]
+  },
+  {
+   "summary": "Oil prices retreat further due to growing concerns over a global supply surplus and a stronger US dollar.",
+   "category": "oil_supply",
+   "firstSeen": "2026-11-12T06:53:00Z",
+   "publishers": [
+    "24 News HD",
+    "ANI News",
+    "ASHARQ AL-AWSAT English",
+    "Al-Monitor",
+    "Arab News",
+    "BW Businessworld",
+    "Bangladesh Sangbad Sangstha (BSS)",
+    "Barchart.com",
+    "Benzinga",
+    "BigGo Finance",
+    "Bilyonaryo",
+    "Bloomberg.com",
+    "Breakingthenews.net",
+    "Business Recorder",
+    "CBC",
+    "CNA",
+    "CNBC",
+    "Castanet",
+    "Channels Television",
+    "Chosunbiz",
+    "Coinpaper",
+    "Crude Oil Prices Today | OilPrice.com",
+    "Crypto Briefing",
+    "DAILY TIMES Nigeria",
+    "Daily Times",
+    "DatamarNews",
+    "Dhaka Tribune",
+    "ET EnergyWorld",
+    "Egypt Oil & Gas",
+    "EnergyNow.com",
+    "Euronews.com",
+    "FXEmpire",
+    "FXLeaders",
+    "FXStreet",
+    "Financial Post",
+    "Free Malaysia Today",
+    "Geo News",
+    "HDFC Sky",
+    "Halifax",
+    "Head Topics",
+    "IndexBox",
+    "Investing.com",
+    "Investing.com India",
+    "IranOilGas",
+    "KLSE Screener",
+    "LEADERSHIP Newspapers",
+    "Laodong.vn",
+    "Latest news from Azerbaijan",
+    "Macau Business",
+    "Manila Bulletin",
+    "MarineLink",
+    "Middle East Online",
+    "Minute Mirror",
+    "Moneycontrol.com",
+    "NTD News",
+    "Nation Thailand",
+    "Newsmax",
+    "Newswire",
+    "Oil & Gas 360",
+    "Oil & Gas Journal",
+    "Pluang",
+    "Proactive Investors Australia",
+    "Profit by Pakistan Today",
+    "Public TV English",
+    "Qatar news agency",
+    "Quantum Commodity Intelligence",
+    "Quartz Africa",
+    "Reuters",
+    "Rigzone",
+    "Ship & Bunker",
+    "StreetInsider",
+    "The Business Times",
+    "The Globe and Mail",
+    "The Insight International",
+    "The Mighty 790 KFGO",
+    "The National",
+    "The Peninsula Qatar",
+    "The Star",
+    "The Times of India",
+    "The Vibes",
+    "Ticker News",
+    "Times of Oman",
+    "UA.NEWS",
+    "UPPERNEWS",
+    "Vietnam.vn",
+    "WSJ",
+    "Western Standard",
+    "Yahoo! Finance Canada",
+    "fiscal.ai",
+    "grafa.com",
+    "houseofsaud.com",
+    "https://www.engine.online/",
+    "marketscreener.com",
+    "play 103.7",
+    "www.marketscreener.com",
+    "صحيفة مال",
+    "صوت الإمارات"
+   ],
+   "assets": {
+    "XOM": {
+     "direction": "down",
+     "confidence": 0.75,
+     "why": "Falling crude oil prices and recovering export shipments negatively impact near-term oil producer revenues."
+    },
+    "CVX": {
+     "direction": "down",
+     "confidence": 0.75,
+     "why": "Falling crude oil prices and recovering export shipments negatively impact near-term oil producer revenues."
+    },
+    "COP": {
+     "direction": "down",
+     "confidence": 0.75,
+     "why": "Global oil supply surplus and crashing crude prices weigh on oil and gas stocks."
+    },
+    "SLB": {
+     "direction": "down",
+     "confidence": 0.7,
+     "why": "Lower oil prices driven by oversupply could slow down oilfield services spending."
+    },
+    "OXY": {
+     "direction": "down",
+     "confidence": 0.75,
+     "why": "Growing oil supply surplus fears push crude and major oil stocks down."
+    },
+    "DVN": {
+     "direction": "down",
+     "confidence": 0.65,
+     "why": "Weakening oil strip and surplus projections weigh on exploration and production stocks."
+    },
+    "APA": {
+     "direction": "down",
+     "confidence": 0.6,
+     "why": "Increased supply and lower shipping costs signal potential downward pressure on oil prices."
+    },
+    "EOG": {
+     "direction": "down",
+     "confidence": 0.6,
+     "why": "Increased supply and lower shipping costs signal potential downward pressure on oil prices."
+    },
+    "FANG": {
+     "direction": "down",
+     "confidence": 0.6,
+     "why": "Increased supply and lower shipping costs signal potential downward pressure on oil prices."
+    },
+    "HAL": {
+     "direction": "down",
+     "confidence": 0.6,
+     "why": "Increased supply and lower shipping costs signal potential downward pressure on oil prices."
+    },
+    "MPC": {
+     "direction": "down",
+     "confidence": 0.6,
+     "why": "Increased supply and lower shipping costs signal potential downward pressure on oil prices."
+    },
+    "PSX": {
+     "direction": "down",
+     "confidence": 0.6,
+     "why": "Increased supply and lower shipping costs signal potential downward pressure on oil prices."
+    },
+    "VLO": {
+     "direction": "down",
+     "confidence": 0.6,
+     "why": "Increased supply and lower shipping costs signal potential downward pressure on oil prices."
+    }
+   },
+   "sources": [
+    {
+     "id": "4bb506049f64816d",
+     "publisher": "Latest news from Azerbaijan",
+     "kind": "news",
+     "title": "Oil prices decline as OPEC+ output boosts oversupply fears",
+     "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPZVJObGVhNHNqYldKVjk4SWFfUTd4VUgtdVFrSWh6WmRaN0J5NWNjcjc0T3hCOFhLZkFhUjktbnA3VS10aWxCUllUbEY0WEo4eUdRYmxBVjJqclk0NXRLZEduaE9tU2JMUlh1TXBLZ3c1VzA2Z0thLTZZZDJJMmZLQm5nZzk?oc=5",
+     "time": "2026-11-12T06:55:24Z"
+    },
+    {
+     "id": "74543532c5f84f94",
+     "publisher": "Public TV English",
+     "kind": "news",
+     "title": "OPEC+ oil output rises 2.04 million barrels per day in Oct as Saudi Arabia leads recovery amid West Asia crisis",
+     "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxNc3hMVUdaemN1YTRZQVpJaGNKZGQxYmFOdTVmRl9DYUxxNmtFV250ZmI1bnlrc3ZtdWZtYWRaeDRUcTl1azB6YkNqQVRndjhhYnpBWkU3N2w2X1VHaV9XVTYyclUyOHpudFp2NURkY2ZsOV9mb2wtYzdublNaLTRvdnFfbEhWV1FjM3gzZ05jNUJiOG9xb3ZacUZTb01fenM1MEc1Z3ZNcmxuczZnSVBlbmtyeVllZXRCck9fTXpjdkR2a2IzSGJUbVNiTmNyMFhnWGZyc2VB?oc=5",
+     "time": "2026-11-12T06:58:03Z"
+    },
+    {
+     "id": "a7dcf6881335f5e3",
+     "publisher": "BW Businessworld",
+     "kind": "news",
+     "title": "Opec+ Oil Output Rebounds 2.04 Million Bpd Amid Hormuz Disruption",
+     "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQQk5IV3BYU3hZMXhIelhESU9XSUhWQm1tLVM1eDR6ZHNfdG83alp6d0plallRYTNneEN3Wmd3LWd3MWhHUHRnbHV5ZGc1a3NacEVGRTFSSXl0anBrVGxNeWdvRngxaFRGUTQzSFNNZnBZVmxrdFpWU1dzNHhsUmxQRE1KbU9MYVotQmdrWVZ5YWhoTEdud0lLWktwOHpzNEY4cU9kOERVbVM1V0ly?oc=5",
+     "time": "2026-11-12T06:54:45Z"
+    },
+    {
+     "id": "13ef775feec7cccc",
+     "publisher": "Chosunbiz",
+     "kind": "news",
+     "title": "Oil prices fall as South Korea weighs path for price cap and compensation",
+     "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxOMUJYRlU0Y3d2ZFJvbWl6bjNvWnhaYlFmM2pNWXFEWEFsNnlpVXlwMUplSVRHcDB1dXNudTVKZUtDaXRJalM4Vk9OR1draHZzTHpid3NibkNPUW4xM2hwS1h2VUwzRFFkUDNQZnc3MTNzM2dvXzlCYVN1UmdKUlBmVzl30gGWAUFVX3lxTE9lRTYxWHlhNG9XWUxPMzU3LVVxZWJnVzZCUV9wblY4N29yaXZVRE5ydFZ3Q3FUblNTSG4ya1h0NkZmT0NucHdkdlptd2Y0aldnT3VoREZTSER5WUFnSDVFSDlTT0dRaE9XYjNlVHJhb2E5N1h3OWhQVExORERXV3RqMG5nWnF4UC1pZlVtaHgxOEstNHVnZw?oc=5",
+     "time": "2026-11-12T06:53:00Z"
+    },
+    {
+     "id": "d319dc3aaf7fda77",
+     "publisher": "Profit by Pakistan Today",
+     "kind": "news",
+     "title": "Oil falls over $1 on easing geopolitical fears and oversupply worries",
+     "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQd0RjdkpYTklPUzF2U293azdJRzhHR2tjMUt5RFYtYjZQX1BSN290cjBTb05Sb3BVTjFnaXVydnpsYzRVZDRQY0VNdEpKWUc4eGNlUnR4VldnNGdpejFqVmRDX2NuaUw1RHliVF94X012TzhsU084NklWUGdtTk1nUjJDdC1zb2JUTHZMdWI1cmhyZUVZWkZVOEpwRFVZU1JwdUxiQVNlM0NBSmdYYmhsWXd3Zk9iNnpVaDdRM0Rn?oc=5",
+     "time": "2026-11-12T07:44:38Z"
+    }
+   ]
+  },
+  {
+   "summary": "Nvidia's board rules out the return of Jensen Huang as CEO as the company prepares to report earnings, deepening leadership turbulence.",
+   "category": "company_bad_news",
+   "firstSeen": "2026-11-12T18:24:33Z",
+   "publishers": [
+    "AP",
+    "Barchart.com",
+    "Benzinga",
+    "BigGo Finance",
+    "Bloomberg.com",
+    "Breitbart News",
+    "CNBC",
+    "Chosunbiz",
+    "Coin Gabbar",
+    "Crypto Economy",
+    "Cryptonews.net",
+    "Deccan Herald",
+    "Dimsum Daily",
+    "FXStreet",
+    "Finimize",
+    "Finviz",
+    "Fortune",
+    "Geo News",
+    "Investing.com Canada",
+    "Invezz",
+    "JournalArta",
+    "Market Index",
+    "Moomoo",
+    "NST Online",
+    "Plataforma Media",
+    "Pluang",
+    "Proactive financial news",
+    "Profit by Pakistan Today",
+    "RTHK",
+    "RTHK News",
+    "RealMoney Pro",
+    "Reuters",
+    "SSBCrack",
+    "Stocktwits",
+    "The Economic Times",
+    "The Edge Malaysia",
+    "The Hawk",
+    "The Times of India",
+    "TipRanks",
+    "Traders Union",
+    "Wccftech",
+    "X",
+    "Yahoo Finance",
+    "bdnews24.com",
+    "bloomingbit",
+    "finance.biggo.com",
+    "fiscal.ai",
+    "marketscreener.com",
+    "news.sbs.co.kr",
+    "shattered.io",
+    "아시아경제",
+    "조선일보"
+   ],
+   "assets": {
+    "NVDA": {
+     "direction": "down",
+     "confidence": 0.95,
+     "why": "CEO resignation and scandal severely impacts investor confidence."
+    },
+    "BTC/USD": {
+     "direction": "down",
+     "confidence": 0.7,
+     "why": "Broader risk-off sentiment triggered by major tech leadership turmoil."
+    },
+    "QCOM": {
+     "direction": "up",
+     "confidence": 0.65,
+     "why": "Capital is rotating out of Nvidia into competing AI semiconductor stocks following the CEO exit."
+    },
+    "AMD": {
+     "direction": "up",
+     "confidence": 0.65,
+     "why": "Competitor AMD gains a major opportunity from Nvidia's leadership vacuum."
+    },
+    "AVGO": {
+     "direction": "down",
+     "confidence": 0.5,
+     "why": "Spillover effect from tech and AI chip selloff."
+    },
+    "MSFT": {
+     "direction": "down",
+     "confidence": 0.65,
+     "why": "Broader tech and AI infrastructure sentiment hits related large-cap names."
+    },
+    "AAPL": {
+     "direction": "down",
+     "confidence": 0.3,
+     "why": "Broad market selloff induced by tech bellwether crash."
+    },
+    "SMCI": {
+     "direction": "down",
+     "confidence": 0.8,
+     "why": "Broader tech weakness and association with Nvidia probe extend losses."
+    },
+    "MU": {
+     "direction": "down",
+     "confidence": 0.65,
+     "why": "Semiconductor peer dragged down by Nvidia leadership turmoil."
+    },
+    "PLTR": {
+     "direction": "down",
+     "confidence": 0.6,
+     "why": "Broader tech sector and AI stock sell-off spurred by Nvidia turmoil."
+    }
+   },
+   "sources": [
+    {
+     "id": "855265040ed1e43c",
+     "publisher": "Reuters",
+     "kind": "news",
+     "title": "Nvidia CEO Jensen Huang resigns, in blow to AI boom he helped foster",
+     "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOMEFwN0FWdjB6blNtR0RZaTBWZXZDaWVwYkhXREttY2FaYVNNVC1qNEFHYm9Yd1pDODBDN2tvNzhnMTY4cmxWYTg1WVFidzFlNVFEdlZNb3IyZG1nS2FKcHAzUERhQW9EdG9oOER6YmwydXZOd0t1VHRub1BCdFdoR1V4dktlUVUydjZWeU53aVdKMGwtOGFtZmd2T3VhODF3eXhPazVtbV81b0hpUi1vcw?oc=5",
+     "time": "2026-11-12T18:31:55Z"
+    },
+    {
+     "id": "6c526a44313f07e5",
+     "publisher": "Yahoo Finance",
+     "kind": "news",
+     "title": "Equities Rise Intraday Despite Nvidia Sell-Off Post CEO's Departure",
+     "url": "https://finance.yahoo.com/markets/stocks/articles/equities-rise-intraday-despite-nvidia-182433809.html?.tsrc=rss",
+     "time": "2026-11-12T18:24:33Z"
+    },
+    {
+     "id": "adfadefb8db21a4c",
+     "publisher": "AP",
+     "kind": "news",
+     "title": "What we know after Jensen Huang resigns as Nvidia’s CEO",
+     "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOMUxqUTE0WWZBT2xoV25SLUQ2dFgyWkhwZFZyRnk3d1Fibmtrb0d4T3otSXNpNmZiTVh0QUdkWTA4UmQ3cXQyVVM3ODc0V0g4YnVVbDJRYWF4VXlaXzMzZnJWNi1UR3YyZHJGbWNzaVFab2tiM3N2RjFIOUtWcnlJVWtMVnhQNmhJeTdPajNVUXZfU2NzWkw0aGJLVFMtaGY3?oc=5",
+     "time": "2026-11-12T18:38:00Z"
+    },
+    {
+     "id": "e45111d2af3013e1",
+     "publisher": "The Economic Times",
+     "kind": "news",
+     "title": "Bitcoin price today: BTC USD falls near $71,000 after Jensen Huang resigns as Nvidia CEO and ETF outflows",
+     "url": "https://news.google.com/rss/articles/CBMisgJBVV95cUxNNGkxSEhVaVRhRGl4UkxMZUoyeV9Bc25CTmNkY1Q3Z2JEbTB5S3JWbUt4clE4eEltNTFSbFZSOFJrM290QTFESGJiMHROMGRSNVhzV0tkRHRqU2hLTk5GYng1Mm9FaDVlTFNyNHdqWXNwNDhNazZJNmlqOXIxVjFvZ0hwSHRTSUcwSXRqWWU5Mi1BTVg3Zm12bml2STNnSFExQWlTaUlRdDNlVnNUZlh5dFJDN2pfQmhha2M1SVBYUm1fVDhiaThNTnBsRU0ySTJSR1o1QkMyVHJseHA4VHlkd2pYODRaZzFpUUQza2ZlT1JpU0ZodWVkR0pCb3ZZTnI3TTNGQTBxcnJ0VnVJZzV3NHltc3l0X19JbG03WjdwRXFEWEwxZE9uMmJMTTVQbFZVRmfSAbcCQVVfeXFMTXR1bEttcm9WdW1FU0VCR1dKbWkwVkpwVmpjOE9YY1ZDUTZOcE5HaWktRnU2UW55c2ZLWEpiRmFwQ3ZTd2otS0RqX2FSWFZwejRGbFZOcGFpa2oxdF8xYmxVWVp6UUl1QkRnYi1ZVVhNS0d4UDlxSGpwZjJFeG5KbDhZdUplRWh5QU9Lc2U1NWhMMm9EQVZISVVIdUxuWnQxaDRWNllMb1lFS2VJUXRxYTJKSVV1bjg1V2ROTnRLdTVIb3dvcllFbTgtTF9nZFhaVGVrSHpzM3lQOTM5bHp2LXBLZ0VldGppMm95dWZBeGlLNUFXdnE0VkdqbWUzNS1adjhCRVlIMGdEbHJ2djFZSm5GWHhJcmZEOTRLbTU0MGNEdm1MaGkxdlA1WEEyMFlyRm8wbEdmWnM?oc=5",
+     "time": "2026-11-12T18:34:50Z"
+    },
+    {
+     "id": "89cceff7950b3622",
+     "publisher": "Benzinga",
+     "kind": "news",
+     "title": "Jensen Huang Is Out At Nvidia: 4 Private Equity Giants with Big Bets on Its AI Infrastructure Future",
+     "url": "https://www.benzinga.com/markets/private-markets/26/11/63212619/jensen-huang-is-out-at-nvidia-4-private-equity-giants-with-big-bets-on-its-ai-infrastructure-future",
+     "time": "2026-11-12T18:45:12Z"
+    }
+   ]
+  },
+  {
+   "summary": "Zelle has chosen Solana for a new stablecoin and cross-border payments push.",
+   "category": "crypto_positive",
+   "firstSeen": "2026-11-17T00:18:57Z",
+   "publishers": [
+    "Crypto Economy"
+   ],
+   "assets": {
+    "SOL/USD": {
+     "direction": "up",
+     "confidence": 0.7,
+     "why": "Adoption by a major payment network like Zelle is a strong positive catalyst for Solana."
+    }
+   },
+   "sources": [
+    {
+     "id": "95bd69bca18d8b5a",
+     "publisher": "Crypto Economy",
+     "kind": "news",
+     "title": "Zelle Chooses Solana for New Stablecoin and Cross-Border Payments Push",
+     "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxONmw1ZFZrVGY0TWNWdGlUYUlJSWdjU0RMQ0F3ZkVNV1dmR3owVEtyVGlyMkpvblVpdUNQclN0ajRaRnNIb1RTMVZZckVvM1Z1eUpNOTIwUjRsdVdJQzUtUXJuY0hEVVVKaDc0QmRZSW1GVFJEVnZIaWMyNThqSnJtZDRsTzhUazgtdDB0WHFWZFVfdE5jRmxNWnJQb0V5c2s?oc=5",
+     "time": "2026-11-17T00:18:57Z"
     }
    ]
   },
@@ -5045,159 +5212,6 @@
      "title": "Stock futures edge lower after markets slide amid Nvidia woes: Live updates",
      "url": "https://www.cnbc.com/2026/11/12/stock-market-today-live-updates.html",
      "time": "2026-11-13T08:20:13Z"
-    }
-   ]
-  },
-  {
-   "summary": "Nvidia experiences leadership turbulence as CEO Jensen Huang steps down, raising questions about key industry relationships and sparking broader tech sector pressure.",
-   "category": "company_bad_news",
-   "firstSeen": "2026-11-12T18:24:33Z",
-   "publishers": [
-    "AP",
-    "Barchart.com",
-    "Benzinga",
-    "BigGo Finance",
-    "Bloomberg.com",
-    "Breitbart News",
-    "CNBC",
-    "Chosunbiz",
-    "Coin Gabbar",
-    "Crypto Economy",
-    "Cryptonews.net",
-    "Deccan Herald",
-    "Dimsum Daily",
-    "FXStreet",
-    "Finimize",
-    "Finviz",
-    "Fortune",
-    "Geo News",
-    "Investing.com Canada",
-    "Invezz",
-    "JournalArta",
-    "Market Index",
-    "Moomoo",
-    "NST Online",
-    "Plataforma Media",
-    "Pluang",
-    "Proactive financial news",
-    "Profit by Pakistan Today",
-    "RTHK",
-    "RTHK News",
-    "RealMoney Pro",
-    "Reuters",
-    "SSBCrack",
-    "Stocktwits",
-    "The Economic Times",
-    "The Edge Malaysia",
-    "The Hawk",
-    "The Times of India",
-    "TipRanks",
-    "Traders Union",
-    "Wccftech",
-    "X",
-    "Yahoo Finance",
-    "bdnews24.com",
-    "bloomingbit",
-    "finance.biggo.com",
-    "fiscal.ai",
-    "marketscreener.com",
-    "news.sbs.co.kr",
-    "shattered.io",
-    "아시아경제",
-    "조선일보"
-   ],
-   "assets": {
-    "NVDA": {
-     "direction": "down",
-     "confidence": 0.95,
-     "why": "CEO resignation and scandal severely impacts investor confidence."
-    },
-    "BTC/USD": {
-     "direction": "down",
-     "confidence": 0.7,
-     "why": "Broader risk-off sentiment triggered by major tech leadership turmoil."
-    },
-    "QCOM": {
-     "direction": "up",
-     "confidence": 0.65,
-     "why": "Capital is rotating out of Nvidia into competing AI semiconductor stocks following the CEO exit."
-    },
-    "AMD": {
-     "direction": "up",
-     "confidence": 0.65,
-     "why": "Competitor AMD gains a major opportunity from Nvidia's leadership vacuum."
-    },
-    "AVGO": {
-     "direction": "down",
-     "confidence": 0.5,
-     "why": "Spillover effect from tech and AI chip selloff."
-    },
-    "MSFT": {
-     "direction": "down",
-     "confidence": 0.65,
-     "why": "Broader tech and AI infrastructure sentiment hits related large-cap names."
-    },
-    "AAPL": {
-     "direction": "down",
-     "confidence": 0.3,
-     "why": "Broad market selloff induced by tech bellwether crash."
-    },
-    "SMCI": {
-     "direction": "down",
-     "confidence": 0.8,
-     "why": "Broader tech weakness and association with Nvidia probe extend losses."
-    },
-    "MU": {
-     "direction": "down",
-     "confidence": 0.65,
-     "why": "Semiconductor peer dragged down by Nvidia leadership turmoil."
-    },
-    "PLTR": {
-     "direction": "down",
-     "confidence": 0.6,
-     "why": "Broader tech sector and AI stock sell-off spurred by Nvidia turmoil."
-    }
-   },
-   "sources": [
-    {
-     "id": "855265040ed1e43c",
-     "publisher": "Reuters",
-     "kind": "news",
-     "title": "Nvidia CEO Jensen Huang resigns, in blow to AI boom he helped foster",
-     "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOMEFwN0FWdjB6blNtR0RZaTBWZXZDaWVwYkhXREttY2FaYVNNVC1qNEFHYm9Yd1pDODBDN2tvNzhnMTY4cmxWYTg1WVFidzFlNVFEdlZNb3IyZG1nS2FKcHAzUERhQW9EdG9oOER6YmwydXZOd0t1VHRub1BCdFdoR1V4dktlUVUydjZWeU53aVdKMGwtOGFtZmd2T3VhODF3eXhPazVtbV81b0hpUi1vcw?oc=5",
-     "time": "2026-11-12T18:31:55Z"
-    },
-    {
-     "id": "6c526a44313f07e5",
-     "publisher": "Yahoo Finance",
-     "kind": "news",
-     "title": "Equities Rise Intraday Despite Nvidia Sell-Off Post CEO's Departure",
-     "url": "https://finance.yahoo.com/markets/stocks/articles/equities-rise-intraday-despite-nvidia-182433809.html?.tsrc=rss",
-     "time": "2026-11-12T18:24:33Z"
-    },
-    {
-     "id": "adfadefb8db21a4c",
-     "publisher": "AP",
-     "kind": "news",
-     "title": "What we know after Jensen Huang resigns as Nvidia’s CEO",
-     "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOMUxqUTE0WWZBT2xoV25SLUQ2dFgyWkhwZFZyRnk3d1Fibmtrb0d4T3otSXNpNmZiTVh0QUdkWTA4UmQ3cXQyVVM3ODc0V0g4YnVVbDJRYWF4VXlaXzMzZnJWNi1UR3YyZHJGbWNzaVFab2tiM3N2RjFIOUtWcnlJVWtMVnhQNmhJeTdPajNVUXZfU2NzWkw0aGJLVFMtaGY3?oc=5",
-     "time": "2026-11-12T18:38:00Z"
-    },
-    {
-     "id": "e45111d2af3013e1",
-     "publisher": "The Economic Times",
-     "kind": "news",
-     "title": "Bitcoin price today: BTC USD falls near $71,000 after Jensen Huang resigns as Nvidia CEO and ETF outflows",
-     "url": "https://news.google.com/rss/articles/CBMisgJBVV95cUxNNGkxSEhVaVRhRGl4UkxMZUoyeV9Bc25CTmNkY1Q3Z2JEbTB5S3JWbUt4clE4eEltNTFSbFZSOFJrM290QTFESGJiMHROMGRSNVhzV0tkRHRqU2hLTk5GYng1Mm9FaDVlTFNyNHdqWXNwNDhNazZJNmlqOXIxVjFvZ0hwSHRTSUcwSXRqWWU5Mi1BTVg3Zm12bml2STNnSFExQWlTaUlRdDNlVnNUZlh5dFJDN2pfQmhha2M1SVBYUm1fVDhiaThNTnBsRU0ySTJSR1o1QkMyVHJseHA4VHlkd2pYODRaZzFpUUQza2ZlT1JpU0ZodWVkR0pCb3ZZTnI3TTNGQTBxcnJ0VnVJZzV3NHltc3l0X19JbG03WjdwRXFEWEwxZE9uMmJMTTVQbFZVRmfSAbcCQVVfeXFMTXR1bEttcm9WdW1FU0VCR1dKbWkwVkpwVmpjOE9YY1ZDUTZOcE5HaWktRnU2UW55c2ZLWEpiRmFwQ3ZTd2otS0RqX2FSWFZwejRGbFZOcGFpa2oxdF8xYmxVWVp6UUl1QkRnYi1ZVVhNS0d4UDlxSGpwZjJFeG5KbDhZdUplRWh5QU9Lc2U1NWhMMm9EQVZISVVIdUxuWnQxaDRWNllMb1lFS2VJUXRxYTJKSVV1bjg1V2ROTnRLdTVIb3dvcllFbTgtTF9nZFhaVGVrSHpzM3lQOTM5bHp2LXBLZ0VldGppMm95dWZBeGlLNUFXdnE0VkdqbWUzNS1adjhCRVlIMGdEbHJ2djFZSm5GWHhJcmZEOTRLbTU0MGNEdm1MaGkxdlA1WEEyMFlyRm8wbEdmWnM?oc=5",
-     "time": "2026-11-12T18:34:50Z"
-    },
-    {
-     "id": "89cceff7950b3622",
-     "publisher": "Benzinga",
-     "kind": "news",
-     "title": "Jensen Huang Is Out At Nvidia: 4 Private Equity Giants with Big Bets on Its AI Infrastructure Future",
-     "url": "https://www.benzinga.com/markets/private-markets/26/11/63212619/jensen-huang-is-out-at-nvidia-4-private-equity-giants-with-big-bets-on-its-ai-infrastructure-future",
-     "time": "2026-11-12T18:45:12Z"
     }
    ]
   },
