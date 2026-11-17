@@ -1,15 +1,15 @@
 {
- "status": "running",
- "updatedAt": "2026-11-16T21:45:08Z",
+ "status": "final",
+ "updatedAt": "2026-11-17T21:45:22Z",
  "mode": "PAPER",
  "from": "2026-11-10T01:51:53Z",
  "to": "2026-11-17T01:51:53Z",
  "day": 7,
  "days": 7,
  "trades": {
-  "opened": 0,
+  "opened": 1,
   "closed": 0,
-  "open": 0,
+  "open": 1,
   "wins": 0,
   "losses": 0,
   "winRate": null,
@@ -23,15 +23,15 @@
  },
  "account": {
   "startEquity": 100000.0,
-  "endEquity": 100000.0,
-  "pnl": 0.0,
-  "pnlPct": 0.0,
+  "endEquity": 99998.65,
+  "pnl": -1.35,
+  "pnlPct": -0.0,
   "spyPct": -1.68,
   "vsSpyPct": 1.68,
-  "maxDrawdownPct": 0.0,
-  "maxDrawdownAt": null,
+  "maxDrawdownPct": -0.02,
+  "maxDrawdownAt": "2026-11-17T01:00:00Z",
   "curveSource": "Alpaca 15-min history + bot samples",
-  "openPnl": 0
+  "openPnl": 163.89
  },
  "riskRules": [
   {
@@ -1024,7 +1024,21 @@
  ],
  "restarts": 16,
  "killSwitch": false,
- "tradeList": [],
+ "tradeList": [
+  {
+   "symbol": "SOL/USD",
+   "openedAt": "2026-11-17T00:40:13Z",
+   "closedAt": null,
+   "entryPrice": 71.50071403,
+   "exitPrice": null,
+   "qty": 68.435351746,
+   "pnl": null,
+   "pnlPct": null,
+   "exitReason": null,
+   "status": "open",
+   "news": "Zelle has chosen Solana for a new stablecoin and cross-border payments push."
+  }
+ ],
  "limits": {
   "risk": {
    "max_pct_per_trade": 0.05,
