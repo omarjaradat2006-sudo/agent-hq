@@ -577,7 +577,7 @@
     body.append(c);
   }
   /* WANTED LEVEL · Clip permissions: Omar joins each campaign himself, then clicks Done; the server only reads his clicks. */
-  async function commitDecision(key, status) {
+  async function commitDecision(key, status, extra) {
     const path = "contents/data/youtube/wanted_decisions.json";
     for (let attempt = 0; attempt < 3; attempt++) {
       const r = await fetch(`https://api.github.com/repos/${CFG.repo}/${path}?ref=main&t=${Date.now()}`, { cache: "no-store", headers: { Authorization: "Bearer " + LS.get("hq.ghToken"), Accept: "application/vnd.github+json" } });
@@ -585,17 +585,17 @@
       let st = {}, sha;
       if (r.ok) { const f = await r.json(); sha = f.sha; try { st = JSON.parse(b64ToText(f.content)) || {}; } catch { st = {}; } }
       else if (r.status !== 404) throw new Error("http " + r.status);
-      st[key] = { status, at: new Date().toISOString().replace(/\.\d+Z$/, "Z") };
+      st[key] = { status, at: new Date().toISOString().replace(/\.\d+Z$/, "Z"), ...(extra || {}) };
       const put = await gh(path, { method: "PUT", body: JSON.stringify({ message: `Omar: ${status} ${key}`, content: textToB64(JSON.stringify(st, null, 1) + "\n"), ...(sha ? { sha } : {}), branch: "main" }) });
       if (put.ok) return st; if (put.status !== 409 && put.status !== 422) throw new Error("http " + put.status);
     }
     throw new Error("busy");
   }
-  function decide(t, key, status, msg) {
+  function decide(t, key, status, msg, extra) {
     return async () => {
       if (!LS.get("hq.ghToken")) { openSettings("Connect GitHub once so your clicks save by themselves."); return; }
       toast("Saving…");
-      try { t.dec = await commitDecision(key, status); saveDecision(key, status); toast(msg); renderPanel(); }
+      try { t.dec = await commitDecision(key, status, extra); saveDecision(key, status); toast(msg); renderPanel(); }
       catch (e) { toast(e.message === "token" ? "GitHub token expired: open settings" : "Couldn't save, try again"); }
     };
   }
@@ -606,7 +606,20 @@
     const intro = el("div", "card brief"); intro.append(el("div", "label", "WANTED LEVEL · Clip permissions"));
     intro.append(el("div", "why", "Clipping campaigns and streamers who allow clipping. Open the link, join it yourself, then click “Done: I joined”. On its next hourly run the server adds that streamer, saves the campaign link as proof and follows the campaign's rules. Nothing is ever joined for you."));
     intro.append(el("div", "small", `Search runs ${C2.searchEvery || "once a day"} · last ${ago(C2.lastSearch)}${C2.searchNote ? " · " + C2.searchNote : ""}`));
-    body.append(intro);
+    // campaigns Omar joined that the search didn't find: Twitch name + campaign link -> allowed on the next run
+    const add = el("div", "card"); add.append(el("div", "label", "Add a campaign I joined"));
+    add.append(el("div", "small", "Joined a clipping campaign that isn't listed below? Add it here. The server adds that streamer within the hour."));
+    const row = el("div", "row"); const nIn = el("input"); nIn.placeholder = "Twitch name (e.g. lacy)"; const uIn = el("input"); uIn.placeholder = "Campaign link (https://…)";
+    [nIn, uIn].forEach(i => { i.style.flex = "1"; i.style.minWidth = "160px"; i.style.padding = "8px"; });
+    const go = el("button", "btn primary", "Add (I joined)");
+    go.onclick = async () => {
+      const login = (nIn.value || "").trim().toLowerCase().replace(/^.*twitch\.tv\//, "").replace(/[^a-z0-9_]/g, "");
+      const url = (uIn.value || "").trim();
+      if (!login || !/^https:\/\//.test(url)) { toast("Enter the Twitch name and a link starting with https://"); return; }
+      await decide(t, "add:" + login, "joined", `Saved · ${login} gets added within the hour`, { url })();
+      nIn.value = ""; uIn.value = "";
+    };
+    row.append(nIn, uIn, go); add.append(row); body.append(add);
     const subs = (C2.submissions || []).filter(x => (dec["sub:" + x.video] || {}).status !== "submitted");
     if (subs.length) {
       body.append(el("div", "label", "Clip links to submit for payment"));
