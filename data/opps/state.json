@@ -1,15 +1,15 @@
 {
   "team": "opps",
   "hired": true,
-  "updatedAt": "2026-11-09T21:25:32Z",
+  "updatedAt": "2026-11-18T15:23:02Z",
   "agents": [
     {
       "id": "lead",
       "name": "Venture Lead",
       "role": "Picks the best bets",
       "status": "ok",
-      "doing": "Found 3 new AI opportunities, scored them, ran a swarm test on the top one, and prepared the brief.",
-      "lastRun": "2026-11-09T21:25:32Z",
+      "doing": "Writing AI opportunities for Omar, running swarm test, and preparing brief",
+      "lastRun": "2026-11-18T15:23:02Z",
       "nextRun": "2026-11-11T15:23:00Z"
     },
     {
@@ -17,8 +17,8 @@
       "name": "Scout",
       "role": "Finds opportunities",
       "status": "ok",
-      "doing": "Found 3 new AI opportunities, scored them, ran a swarm test on the top one, and prepared the brief.",
-      "lastRun": "2026-11-09T21:25:32Z",
+      "doing": "Writing AI opportunities for Omar, running swarm test, and preparing brief",
+      "lastRun": "2026-11-18T15:23:02Z",
       "nextRun": "2026-11-11T15:23:00Z"
     },
     {
@@ -26,16 +26,16 @@
       "name": "Planner",
       "role": "How-to, hours, cost",
       "status": "ok",
-      "doing": "Found 3 new AI opportunities, scored them, ran a swarm test on the top one, and prepared the brief.",
-      "lastRun": "2026-11-09T21:25:32Z",
+      "doing": "Writing AI opportunities for Omar, running swarm test, and preparing brief",
+      "lastRun": "2026-11-18T15:23:02Z",
       "nextRun": "2026-11-11T15:23:00Z"
     },
     {
       "id": "swarm",
       "name": "Swarm Tester",
       "status": "ok",
-      "doing": "Found 3 new AI opportunities, scored them, ran a swarm test on the top one, and prepared the brief.",
-      "lastRun": "2026-11-09T21:25:32Z",
+      "doing": "Writing AI opportunities for Omar, running swarm test, and preparing brief",
+      "lastRun": "2026-11-18T15:23:02Z",
       "nextRun": "2026-11-11T15:23:00Z"
     },
     {
@@ -49,6 +49,26 @@
     }
   ],
   "log": [
+    {
+      "t": "2026-11-18T15:23:02Z",
+      "agent": "Gemini team",
+      "msg": "Compiled daily brief and updated state.json"
+    },
+    {
+      "t": "2026-11-18T15:23:02Z",
+      "agent": "Gemini team",
+      "msg": "Ran simulated 100-person swarm test on top opportunity"
+    },
+    {
+      "t": "2026-11-18T15:23:02Z",
+      "agent": "Gemini team",
+      "msg": "Generated 3 new AI opportunities fitting Omar's halal and student profile"
+    },
+    {
+      "t": "2026-11-18T15:23:02Z",
+      "agent": "Gemini team",
+      "msg": "Pulled repo and reviewed constraints for 2026-11-18"
+    },
     {
       "t": "2026-11-09T21:25:32Z",
       "agent": "Gemini team",
@@ -548,9 +568,84 @@
         "limits": "one model played all 100 agents; this is a rehearsal, not a forecast"
       },
       "madeBy": "gemini"
+    },
+    {
+      "title": "Automated Halal & Productivity Quote Reels with Affiliate Funnel",
+      "hook": "Turn free stock footage and authentic quotes into viral daily short-form videos with zero camera time.",
+      "why": "Fits existing Ambient Escape and TikTok workflow with minimal time commitment. Rule check: TikTok allows automated content as long as it adheres to community guidelines and is not spammy.",
+      "format": "Hours: 3 to set up, 3-4/week · Cost: $0 · First $: ~2-4 weeks",
+      "script": "Rule check: TikTok allows AI-assisted content if original editing and value are present. No financial or haram products promoted. 1. Pull free stock footage. 2. Overlay authentic quotes. 3. Auto-caption using existing pipeline. 4. Post to TikTok.",
+      "buildPrompt": "You are building an automated short-form video content generation script for Omar, a university student in Mississauga, Canada. Omar is Muslim, so all content must be strictly halal (no haram themes, no interest, no gambling). He has a Windows laptop and uses PowerShell. Reuse his existing assets: voiceprint, bounce-theory-videos, and ambient-escape-videos skills. Goal: Create a Python script in Downloads\\clipper that takes a text file of verified authentic quotes (with source notes), pairs them with free stock video clips, applies clean captions, and outputs ready-to-post 9:16 vertical videos. Build it completely with your tools, writing all necessary Python files and providing one single PowerShell command to run the pipeline. Constraints: Free or cheapest tools only, no new paid subscriptions. How to know it worked: The script successfully outputs 3 captioned 9:16 MP4 files in under 5 minutes without errors.",
+      "score": 8,
+      "sources": [
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHGi0RtPj6wvN8DV8E0pkpfwn9yfR6lnIQW-kd7q9fH7Rm1u14P81PR4Qoh__RzqO45rCoIfG5MNyBKCWT-UdUWofx5Nr6ou06m9a6wGdzPNMwwZnV2ikjxnq5ihvpvHhTu7ZxrQwsoZyGJ03bkE7EK9Bg="
+      ],
+      "status": "pending",
+      "id": "opps-2026-11-18-1",
+      "createdAt": "2026-11-18T15:23:02Z",
+      "madeBy": "gemini"
+    },
+    {
+      "title": "AI-Powered Local SEO Audit Reports for Mississauga Small Businesses",
+      "hook": "Generate instant, comprehensive Google Business Profile and local SEO audit reports for local shops to upsell Growth Architect services.",
+      "why": "Directly ties into Growth Architect's target audience of small e-commerce and local stores. Rule check: Outreach is fully compliant with Canadian anti-spam laws (CASL) when done via personalized manual outreach or compliant B2B channels.",
+      "format": "Hours: 5 to set up, 4/week · Cost: $0 · First $: ~2-3 weeks",
+      "script": "Rule check: B2B outreach to local businesses is permitted under CASL if sent individually with a clear opt-out. 1. Scrape local business listings in Mississauga. 2. Use Gemini free tier to generate an SEO audit. 3. Send via personalized email or LinkedIn DM.",
+      "buildPrompt": "You are building a lead generation and SEO audit tool for Omar, a university student in Mississauga, Canada. Omar runs Growth Architect (Base44 app id 699b4057d65174480989a52e). He uses a Windows laptop, PowerShell, and free Gemini tiers. Goal: Write a Python script that takes a CSV list of local Mississauga business names and websites, queries free APIs or page scrapers, and uses Gemini to output a clean one-page Markdown audit report highlighting missed local SEO opportunities and how Growth Architect can help. Build it completely: write the Python script, test it, and output a zip plus one PowerShell command to execute. Constraints: $0 cost, use free APIs. How to know it worked: Running the script generates 3 formatted Markdown audit reports in Downloads\\audits.",
+      "score": 8,
+      "sources": [
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHFP_cG0M1vM82q6IX_EnMEWDTnPdISclSl1bjBO0aSk0On6YbjocUBhj9G4DpEn1lGruTQri6STvTEMB1j9n16XDBcVc0Za0icIEX7M-BG5sgQNJhkLgUU4pEUTs0OZ0xXchNX4Otm0TTb5Ag15hIh-rTmrk9rME72Iz_zd9q3IqgZW2U="
+      ],
+      "status": "pending",
+      "id": "opps-2026-11-18-2",
+      "createdAt": "2026-11-18T15:23:02Z",
+      "madeBy": "gemini"
+    },
+    {
+      "title": "Minimalist Digital Habit & Prayer Tracker Notion Template",
+      "hook": "Sell aesthetic, highly functional Islamic productivity and habit trackers on Etsy and Gumroad.",
+      "why": "Low ongoing maintenance, taps into high-intent student and young professional markets. Rule check: Etsy and Gumroad fully support digital downloads and automated delivery for Canadian sellers.",
+      "format": "Hours: 6 to build, 2/week to market · Cost: $0.20 listing fee · First $: ~2-4 weeks",
+      "script": "Rule check: Etsy permits digital planners and templates with clear disclosure of digital delivery. 1. Build Notion template. 2. Create listing mockups using free tools. 3. Publish on Etsy and Gumroad.",
+      "buildPrompt": "You are building product description templates and marketing assets for Omar, a student in Mississauga, Canada. Omar is Muslim and builds halal digital products. Goal: Create 5 conversion-optimized product descriptions, tags, and a launch checklist for a Minimalist Islamic Habit & Prayer Tracker Notion template, formatted for Etsy and Gumroad. Build it directly: write the copy as a Markdown file in Downloads\\etsy_launch, and provide a clear 5-step checklist for Omar to publish. Constraints: Free tools only. How to know it worked: The Markdown file contains complete, ready-to-copy listings with optimized SEO tags and pricing structures.",
+      "score": 7,
+      "sources": [
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFEs2kx_53WLlLXbFwKe2ktHoFmZDNVHMyBXGcaSI7sRJaQNFHak2L5EKAAr66YKa2YDhMGkUr9WAp27jAq_E8EkPwVwkBfcK1QQSeVh41bjzKXHUDBu-Lm8zBQBl0XnSJT5b1RoTi_C8HMCr7BPnApLxut_rSPP_8GSaE="
+      ],
+      "status": "pending",
+      "id": "opps-2026-11-18-3",
+      "createdAt": "2026-11-18T15:23:02Z",
+      "madeBy": "gemini"
     }
   ],
   "research": [
+    {
+      "date": "2026-11-18",
+      "createdAt": "2026-11-18T15:23:02Z",
+      "items": [
+        {
+          "title": "AI Faceless YouTube Shorts (Educational/Islamic Reminders) earnings and policy",
+          "creator": "YouTube, Reddit creators",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHGi0RtPj6wvN8DV8E0pkpfwn9yfR6lnIQW-kd7q9fH7Rm1u14P81PR4Qoh__RzqO45rCoIfG5MNyBKCWT-UdUWofx5Nr6ou06m9a6wGdzPNMwwZnV2ikjxnq5ihvpvHhTu7ZxrQwsoZyGJ03bkE7EK9Bg=",
+          "metric": "Beginners report $500-$1,000/month; one creator reported $3,200/month. YouTube allows AI content if it adds value and is disclosed.",
+          "whyItWorks": "Leverages existing channels, automates content creation, fits halal niche, scalable."
+        },
+        {
+          "title": "Selling AI-Generated Digital Islamic Art & Planners on Etsy policies and earnings",
+          "creator": "Etsy Seller Handbook, marketingwords.com",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFEs2kx_53WLlLXbFwKe2ktHoFmZDNVHMyBXGcaSI7sRJaQNFHak2L5EKAAr66YKa2YDhMGkUr9WAp27jAq_E8EkPwVwkBfcK1QQSeVh41bjzKXHUDBu-Lm8zBQBl0XnSJT5b1RoTi_C8HMCr7BPnApLxut_rSPP_8GSaE=",
+          "metric": "Etsy permits AI-generated digital products with disclosure; $500-$3,000/month potential. A $29 kit with 50 sales = $1,450.",
+          "whyItWorks": "No inventory, high margins, leverages existing e-commerce experience, halal niche."
+        },
+        {
+          "title": "AI Social Media Content Services for Local Canadian Businesses earnings and platform policies",
+          "creator": "Meta, TikTok, Google, sidehustleschool.com",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHFP_cG0M1vM82q6IX_EnMEWDTnPdISclSl1bjBO0aSk0On6YbjocUBhj9G4DpEn1lGruTQri6STvTEMB1j9n16XDBcVc0Za0icIEX7M-BG5sgQNJhkLgUU4pEUTs0OZ0xXchNX4Otm0TTb5Ag15hIh-rTmrk9rME72Iz_zd9q3IqgZW2U=",
+          "metric": "Social media management $500-$3,000/month per client. One freelancer scaled to $8,400 MRR with 4 clients. Platforms require AI disclosure.",
+          "whyItWorks": "Recurring revenue, leverages AI tools, local market focus, fits Growth Architect's target audience."
+        }
+      ]
+    },
     {
       "date": "2026-11-09",
       "createdAt": "2026-11-09T21:25:32Z",
@@ -662,21 +757,20 @@
     }
   ],
   "brief": {
-    "date": "2026-11-09",
-    "createdAt": "2026-11-09T21:25:32Z",
-    "headline": "Best Bet: AI Social Media Services for Local Businesses",
-    "summary": "Your best bet is offering AI-powered social media content and management services to local businesses in Mississauga. It leverages your AI skills and Growth Architect's target audience, offering recurring revenue. In a 100-person test, 70% supported it, contingent on emphasizing human oversight, clear AI disclosure, a strong portfolio, and tiered pricing. Expect $500-$3,000/month per client.",
+    "date": "2026-11-18",
+    "createdAt": "2026-11-18T15:23:02Z",
+    "headline": "Best Bet: Automated Halal & Productivity Quote Reels",
+    "summary": "Your best bet is automating short-form halal and productivity quote reels to drive top-of-funnel traffic with zero camera time. In a 100-person simulation, 74% supported it, contingent on maintaining high visual quality and verified source attribution. Pair this with Growth Architect lead generation for local businesses.",
     "filmToday": [
-      "Build AI Social Media Content Services for Local Canadian Businesses — tap Copy build prompt and paste it into a new Claude chat"
+      "Build Automated Halal & Productivity Quote Reels — tap Copy build prompt and paste it into a new Claude chat"
     ],
     "approvals": [
       "6 ideas wait for your call",
       "Waiting on Omar: Put LinkedAI inside ChatGPT as an app"
     ],
     "notes": [
-      "The swarm test for AI Social Media Services suggests building a strong portfolio and clear tiered pricing are crucial to win over clients.",
-      "Picsart Earn (idea 3 from last week) doesn't list Canada in its terms. Check in the app for 10 minutes before spending any time on it.",
-      "The AI chat-organizer extension that's listed for sale reports ~$23k/month, but those are the seller's own figures and they don't add up, so treat it as unverified."
+      "The swarm test for Automated Quote Reels highlights the importance of unique visual framing to stand out from generic competitors.",
+      "Ensure all quotes use verified authentic sources with collection and number notes."
     ]
   },
   "processedIssues": [],
@@ -691,6 +785,66 @@
     "request": "Find out whether Picsart Earn pays Canadian accounts and what a typical campaign rate is per 1,000 views."
   },
   "swarms": [
+    {
+      "date": "2026-11-18",
+      "createdAt": "2026-11-18T15:23:02Z",
+      "ideaId": "opps-2026-11-18-1",
+      "idea": "Automated Halal & Productivity Quote Reels with Affiliate Funnel",
+      "verdict": "People would back it if content quality remains high and avoids feeling like generic spam.",
+      "score": 8,
+      "support": {
+        "for": 74,
+        "against": 16,
+        "undecided": 10
+      },
+      "groups": [
+        {
+          "name": "Investors",
+          "for": 80,
+          "quote": "Low overhead and clear niche appeal make this viable for bootstrapping.",
+          "username": "@angel_toronto"
+        },
+        {
+          "name": "Target customers",
+          "for": 75,
+          "quote": "I like daily reminders on my feed that align with my values.",
+          "username": "@student_mississauga"
+        },
+        {
+          "name": "Skeptics and critics",
+          "for": 55,
+          "quote": "There are a lot of automated quote pages out there; you need a unique visual hook.",
+          "username": "@reddit_critic_99"
+        },
+        {
+          "name": "Marketers",
+          "for": 80,
+          "quote": "Great top-of-funnel strategy if paired with a solid downstream offer.",
+          "username": "@growth_hacker_ca"
+        },
+        {
+          "name": "Everyday users",
+          "for": 80,
+          "quote": "Calming background videos with good reminders are nice to watch between classes.",
+          "username": "@casual_scroller_21"
+        }
+      ],
+      "topPraise": [
+        "Zero camera time required",
+        "Strong aligned audience in the halal/productivity niche",
+        "Low startup cost"
+      ],
+      "topObjections": [
+        "High competition in quote pages",
+        "Risk of platform algorithm fatigue if template is repetitive"
+      ],
+      "changedMinds": "Emphasizing custom stock footage rotation and authentic source attribution convinced several skeptics.",
+      "fixes": [
+        "Include a diverse rotation of free stock footage sources",
+        "Ensure every quote has verified primary source attribution"
+      ],
+      "limits": "One model played all 100 agents; this is a rehearsal, not a forecast."
+    },
     {
       "date": "2026-11-09",
       "createdAt": "2026-11-09T21:25:32Z",
