@@ -27,7 +27,7 @@ RULE_LABELS = {
     "stock_3_day_limit": "Stock 3-trading-day limit", "crypto_48h_limit": "Crypto 48h limit",
     "bad_news_exit": "Sold on bad news", "kill_switch": "Kill switch -10% (sold all, locked)",
     "kill_switch_exit": "Closed by the kill switch", "daily_loss_halt": "Daily -3% halt (no new trades)",
-    "max_5_positions": "Max 5 open positions", "one_position_per_asset": "Already holding that asset",
+    "max_invested": "Max % of account invested", "max_5_positions": "Max 5 open positions (old rule)", "one_position_per_asset": "Already holding that asset",
     "cash_only_no_margin": "Cash only, no margin (not enough cash)", "stock_entry_window": "Stock entry window (first 10 / last 30 min)",
     "no_stop_loss_possible": "Couldn't place a stop-loss, so sold", "alpaca_account_blocked": "Alpaca account blocked",
     "halal_screen": "Halal screen blocked the asset", "tradingagents_daily_cap": "TradingAgents 5-a-day cap",

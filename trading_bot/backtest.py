@@ -233,13 +233,14 @@ def simulate(a, events, start, end, rules=None, diag=None):
             killed = True; hit("kill switch -10%"); continue
         if any(o["symbol"] == c["symbol"] for o in open_):
             hit("already holding it"); continue
-        if len(open_) >= C.RISK["max_open_positions"]:
-            hit("max 5 positions"); continue
+        per, cap = C.sizing()
+        if sum(o["qty"] * o["entry"] for o in open_) + realized * per * 0.5 > realized * cap:
+            hit("max invested"); continue
         day = t.astimezone(ET).date()
         day_pnl = sum(x["pnl"] for x in trades if x["exitT"] <= t and x["exitT"].astimezone(ET).date() == day)
         if day_pnl <= -C.RISK["daily_loss_halt_pct"] * realized:
             hit("daily -3% halt"); continue
-        budget = min(realized * C.RISK["max_pct_per_trade"], cash)
+        budget = min(realized * per, cash, realized * cap - sum(o["qty"] * o["entry"] for o in open_))
         qty = budget / c["entry"] if "/" in c["symbol"] else int(budget // c["entry"])
         if qty <= 0:
             hit("cash only (no money left)"); continue

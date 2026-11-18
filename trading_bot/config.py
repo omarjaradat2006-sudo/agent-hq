@@ -58,6 +58,19 @@ REPUTABLE = {
 }
 
 
+def sizing():
+    """(per-trade fraction, max invested fraction). Set with `tb size <max %> [per-trade %]` (~/.trading-bot.env).
+    No limit on the NUMBER of trades: it opens as many as fit inside the max-invested budget, cash only."""
+    import os
+    def f(name, default):
+        try:
+            v = float(os.environ.get(name) or default)
+        except ValueError:
+            v = default
+        return max(0.5, min(100.0, v)) / 100
+    return f("PER_TRADE_PCT", 5), f("INVEST_PCT", 25)
+
+
 def rules_mode():
     import os
     m = (os.environ.get("TRADING_RULES") or "strict").strip().lower()

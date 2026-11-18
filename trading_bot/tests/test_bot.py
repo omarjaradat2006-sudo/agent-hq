@@ -175,12 +175,20 @@ def test_no_volume_spike(monkeypatch):
     assert not fake.placed
 
 
-def test_max_positions(monkeypatch):
-    fake = FakeAlpaca()
-    fake.pos = [{"symbol": s, "qty": "1"} for s in ["AAPL", "MSFT", "AMD", "LLY", "CAT"]]
+def test_max_invested_budget_not_a_trade_count(monkeypatch):
+    held = [{"symbol": s, "qty": "1"} for s in ["AAPL", "MSFT", "AMD", "LLY", "CAT", "COP", "DE"]]
+    fake = FakeAlpaca(); fake.pos = held; fake.cash = 76000.0              # 24% invested, default max 25%
     B = wire(monkeypatch, fake, [{"symbol": "XOM", "direction": "up", "confidence": 0.8, "why": "x"}])
     b = B.Bot(); b.cycle()
-    assert not fake.placed and "max 5" in b.ledger["decisions"][0]["why"]
+    assert not fake.placed and "invested" in b.ledger["decisions"][0]["why"]
+    monkeypatch.setenv("INVEST_PCT", "50")                                 # tb size 50: 7 holdings is fine
+    fake2 = FakeAlpaca(); fake2.pos = held; fake2.cash = 76000.0
+    B = wire(monkeypatch, fake2, [{"symbol": "XOM", "direction": "up", "confidence": 0.8, "why": "x"}])
+    B.Bot().cycle()
+    assert fake2.placed
+    assert C.sizing() == (0.05, 0.5)
+    monkeypatch.setenv("PER_TRADE_PCT", "10")
+    assert C.sizing() == (0.10, 0.5)
 
 
 def test_daily_halt(monkeypatch):

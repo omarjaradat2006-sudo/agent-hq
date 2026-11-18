@@ -84,7 +84,7 @@ def run(days=None):
             r = why["ultra"].get(f"r{i}", "source rule")
         print(f"   {parse_time(x['t0']).astimezone(ET):%a %I:%M %p}  {x['symbol']:<8} {r[:70]:<70} {x['event'][:50]}")
     print("\nNot replayed: TradingAgents (it may still say no, max 5 checks a day). Stop-loss -3%, 5% per trade,"
-          " max 5 positions, -3% day halt and -10% kill switch were applied exactly as live.")
+          " max-invested budget, -3% day halt and -10% kill switch were applied exactly as live.")
     print("Switch on:  tb rules loose | any | aggressive | ultra        Switch back:  tb rules strict\n")
     return res
 

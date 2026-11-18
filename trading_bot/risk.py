@@ -52,7 +52,9 @@ def stock_entry_window_open(clock, now=None):
 def size_order(acct, price, pending_cost=0.0):
     """5% of equity, cash only (never margin). Returns (qty_or_notional, cost) or (0, 0)."""
     eq, _, cash = account_numbers(acct)
-    budget = eq * R["max_pct_per_trade"]
+    per, cap = C.sizing()
+    budget = eq * per
+    budget = min(budget, eq * cap - (eq - cash) - pending_cost)   # stay inside the max-invested budget
     free_cash = cash - pending_cost
     budget = min(budget, free_cash)          # no margin: only money we actually have
     if budget <= 0 or not price:
@@ -75,8 +77,11 @@ def can_open(symbol, acct, positions, open_trades, state, start_equity):
     held = {p["symbol"] for p in positions} | {t["symbol"].replace("/", "") for t in open_trades}
     if symbol.replace("/", "") in held:
         return False, "already holding it"
-    if len(held) >= R["max_open_positions"]:
-        return False, f"already {len(held)} open positions (max {R['max_open_positions']})"
+    per, cap = C.sizing()
+    eq, _, cash = account_numbers(acct)
+    invested = max(0.0, eq - cash)
+    if eq and invested + eq * per * 0.5 > eq * cap:      # no room left for at least half a normal trade
+        return False, f"already {invested / eq:.0%} of the account invested (max {cap:.0%})"
     if acct.get("trading_blocked") or acct.get("account_blocked"):
         return False, "Alpaca account blocked"
     return True, ""
@@ -86,7 +91,7 @@ def rule_name(reason):
     """Short name of the risk rule behind a can_open() refusal (for the 7-day report)."""
     r = reason.lower()
     for key, rule in (("kill switch", "kill_switch"), ("down 10%", "kill_switch"), ("down 3%", "daily_loss_halt"),
-                      ("already holding", "one_position_per_asset"), ("open positions", "max_5_positions"),
+                      ("already holding", "one_position_per_asset"), ("invested", "max_invested"),
                       ("blocked", "alpaca_account_blocked")):
         if key in r:
             return rule
