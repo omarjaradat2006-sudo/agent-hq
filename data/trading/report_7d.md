@@ -1,6 +1,6 @@
 # 7-day paper test: FINAL
 
-PAPER account only. 2026-11-10 01:51 UTC to 2026-11-17 01:51 UTC. Updated 2026-11-17 21:45 UTC.
+PAPER account only. 2026-11-10 01:51 UTC to 2026-11-17 01:51 UTC. Updated 2026-11-18 21:45 UTC.
 
 ## Results
 
@@ -10,7 +10,7 @@ PAPER account only. 2026-11-10 01:51 UTC to 2026-11-17 01:51 UTC. Updated 2026-1
 | Win rate | — (0 won, 0 lost) |
 | Realised P&L | $+0.00 (avg trade —, avg win —, avg loss —) |
 | Account change | $-1.35 (-0.00%) vs SPY -1.68% |
-| Open positions P&L | $+163.89 |
+| Open positions P&L | $+97.13 |
 | Max drawdown | -0.02% (Alpaca 15-min history + bot samples) |
 | Kill switch | off |
 | Bot (re)starts | 16 |
