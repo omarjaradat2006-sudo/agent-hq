@@ -4,12 +4,12 @@
    "id": "ahq-MSFT-20261118170031",
    "symbol": "MSFT",
    "asset": "stock",
-   "status": "pending",
+   "status": "open",
    "entryOrderId": "30244509-07ee-4d65-8768-1fb9508d3bfa",
-   "qty": 9,
+   "qty": 9.0,
    "cost": 4532.85,
    "estPrice": 503.65,
-   "entryPrice": 503.65,
+   "entryPrice": 503.83,
    "stop": 488.54,
    "target": 533.87,
    "openedAt": "2026-11-18T17:00:31Z",
@@ -35,18 +35,20 @@
     ],
     "tradingAgents": "not used (ultra mode)",
     "taSummary": ""
-   }
+   },
+   "lastPrice": 509.51,
+   "unrealizedPct": 1.13
   },
   {
    "id": "ahq-INTC-20261118170031",
    "symbol": "INTC",
    "asset": "stock",
-   "status": "pending",
+   "status": "open",
    "entryOrderId": "b5d17708-22af-41cb-b77a-996d16a4f668",
-   "qty": 92,
+   "qty": 92.0,
    "cost": 4969.38,
    "estPrice": 54.015,
-   "entryPrice": 54.015,
+   "entryPrice": 54.01,
    "stop": 52.39,
    "target": 57.26,
    "openedAt": "2026-11-18T17:00:31Z",
@@ -72,7 +74,9 @@
     ],
     "tradingAgents": "not used (ultra mode)",
     "taSummary": ""
-   }
+   },
+   "lastPrice": 54.39,
+   "unrealizedPct": 0.7
   },
   {
    "id": "ahq-AMAT-20261118144533",
@@ -110,8 +114,8 @@
     "tradingAgents": "not used (ultra mode)",
     "taSummary": ""
    },
-   "lastPrice": 349.96,
-   "unrealizedPct": 1.57
+   "lastPrice": 349.06,
+   "unrealizedPct": 1.31
   },
   {
    "id": "ahq-TSLA-20261117144531",
@@ -149,8 +153,8 @@
     "tradingAgents": "not used (ultra mode)",
     "taSummary": ""
    },
-   "lastPrice": 381.4701,
-   "unrealizedPct": 0.03
+   "lastPrice": 385.455,
+   "unrealizedPct": 1.07
   },
   {
    "id": "ahq-CVX-20261117144531",
@@ -323,8 +327,8 @@
     "taSummary": ""
    },
    "stopOrderId": "d8fd6c27-f935-4ac9-8c22-c2f2a308b61c",
-   "lastPrice": 72.85,
-   "unrealizedPct": 1.89
+   "lastPrice": 73.5648,
+   "unrealizedPct": 2.89
   }
  ],
  "equity": [
@@ -2342,9 +2346,36 @@
    "t": "2026-11-18T16:54:57Z",
    "equity": 99784.91,
    "spy": 727.33
+  },
+  {
+   "t": "2026-11-18T17:26:44Z",
+   "equity": 100100.5,
+   "spy": 733.21
+  },
+  {
+   "t": "2026-11-18T17:58:30Z",
+   "equity": 99983.74,
+   "spy": 731.575
+  },
+  {
+   "t": "2026-11-18T18:29:40Z",
+   "equity": 99997.82,
+   "spy": 732.04
+  },
+  {
+   "t": "2026-11-18T19:01:39Z",
+   "equity": 100017.09,
+   "spy": 732.305
   }
  ],
  "decisions": [
+  {
+   "t": "2026-11-18T18:09:11Z",
+   "symbol": "LLY",
+   "outcome": "waiting",
+   "why": "already 5 open positions (max 5)",
+   "event": "Eli Lilly receives Health Canada approval for Mounjaro to reduce cardiovascular risk."
+  },
   {
    "t": "2026-11-18T17:00:31Z",
    "symbol": "MSFT",
@@ -3387,13 +3418,6 @@
    "outcome": "waiting",
    "why": "price hasn't moved the expected way yet (-0.13%)",
    "event": "ExxonMobil's daily production in Guyana is set to reach 1.1 million barrels per day as Uaru production begins."
-  },
-  {
-   "t": "2026-11-16T17:59:20Z",
-   "symbol": "JNJ",
-   "outcome": "waiting",
-   "why": "price hasn't moved the expected way yet (-0.70%)",
-   "event": "Johnson & Johnson has agreed to acquire eye disease therapy developer Ollin Biosciences in a deal valued up to $3.33 billion."
   }
  ],
  "startEquity": 100000.0,
