@@ -729,6 +729,7 @@
     if (s.killed) { const k = el("div", "card"); k.style.borderColor = "var(--bad)"; k.append(el("h3", "down", "Kill switch is ON")); k.append(el("div", null, "The account fell 10% from the start, so the bot sold everything and locked itself. Review the trades, then run tb unlock on the server.")); body.append(k); }
     if (s.haltedToday) body.append(el("div", "card down", "Down 3% today: no new trades until tomorrow."));
     if (!st.account) { body.append(empty("Waiting for the bot", "It runs on the Oracle server (tb start). Results show up here a few times a day.")); return; }
+    body.append(accountChart(st));
     const pw = st.plain;
     if (pw) {
       const c = el("div", "card plain");
@@ -740,6 +741,7 @@
       c.append(el("div", "small", (pw.watchlist || "") + (pw.lastScan ? " Last scan " + ago(pw.lastScan) + "." : "")));
       body.append(c);
     }
+
     const k = el("div", "kpis");
     k.append(tk(money(a.equity), "Account value", "started at " + money(a.startEquity)));
     k.append(tk(money(a.dayPnl), "Today", pct(a.dayPct), sgn(a.dayPnl)));
@@ -747,6 +749,73 @@
     k.append(tk(a.vsSpyPct == null ? "—" : pct(a.vsSpyPct), "vs just holding SPY", "SPY " + pct(a.spyPct), sgn(a.vsSpyPct)));
     body.append(k);
     body.append(el("div", "small", `${(st.positions || []).length} open · TradingAgents checks today ${s.deepUsed || 0}/${s.deepMax || 5} · halal list: ${(s.universe || {}).stocks || 0} stocks + ${(s.universe || {}).crypto || 0} coins · X/Reddit: ${s.social && s.social.at ? "read " + ago(s.social.at) : "off"} · saved ${ago(st.updatedAt)}`));
+  }
+  // ---------- stock-app style charts (hover/tap to read any point)
+  let acctRange = "1D";
+  const tLabel = (d, span) => span < 36 * 3600e3 ? d.toLocaleTimeString([], { hour: "numeric", minute: "2-digit" }) : d.toLocaleDateString([], { month: "short", day: "numeric" });
+  function stockChart(pts, o = {}) {
+    const W = 440, H = 220, pl = 4, pr = 66, pt = 12, pb = 22;
+    const s0 = document.createElementNS(NS, "svg"); s0.setAttribute("viewBox", `0 0 ${W} ${H}`); s0.setAttribute("class", "chart"); s0.setAttribute("role", "img");
+    pts = (pts || []).filter(p => p[1] != null).map(p => [new Date(p[0]).getTime(), +p[1]]);
+    if (pts.length < 2) { const tx = sv("text", { x: W / 2, y: H / 2, "text-anchor": "middle", fill: "#6b6489", "font-size": 13 }, s0); tx.textContent = "Not enough data yet"; return s0; }
+    const lines = (o.lines || []).filter(l => l.v != null);
+    const vals = pts.map(p => p[1]).concat(lines.map(l => l.v)); let lo = Math.min(...vals), hi = Math.max(...vals);
+    const pad = Math.max((hi - lo) * 0.08, hi * 0.0005, 0.01); lo -= pad; hi += pad;
+    const t0 = pts[0][0], t1 = pts[pts.length - 1][0], span = Math.max(1, t1 - t0);
+    const X = t => pl + (W - pl - pr) * (t - t0) / span, Y = v => pt + (H - pt - pb) * (1 - (v - lo) / (hi - lo));
+    const up = o.up != null ? o.up : pts[pts.length - 1][1] >= (o.base != null ? o.base : pts[0][1]), col = up ? "#3ddc97" : "#ff6b6b";
+    const dec = hi < 10 ? 4 : hi < 1000 ? 2 : 0, fy = v => "$" + v.toLocaleString(undefined, { minimumFractionDigits: dec, maximumFractionDigits: dec });
+    for (let i = 0; i <= 4; i++) { const v = lo + (hi - lo) * i / 4, y = Y(v); sv("line", { x1: pl, x2: W - pr, y1: y, y2: y, stroke: "#2a2442" }, s0); const tx = sv("text", { x: W - pr + 6, y: y + 4, fill: "#8a83a8", "font-size": 11 }, s0); tx.textContent = fy(v); }
+    for (let i = 0; i <= 3; i++) { const tt = t0 + span * i / 3, tx = sv("text", { x: X(tt), y: H - 6, "text-anchor": i === 0 ? "start" : i === 3 ? "end" : "middle", fill: "#8a83a8", "font-size": 11 }, s0); tx.textContent = tLabel(new Date(tt), span); }
+    const d = pts.map(p => `${X(p[0]).toFixed(1)},${Y(p[1]).toFixed(1)}`).join(" ");
+    sv("polygon", { points: `${X(t0)},${H - pb} ${d} ${X(t1)},${H - pb}`, fill: col, "fill-opacity": .1 }, s0);
+    sv("polyline", { points: d, fill: "none", stroke: col, "stroke-width": 2.2, "stroke-linejoin": "round" }, s0);
+    lines.forEach(l => { const y = Y(l.v); sv("line", { x1: pl, x2: W - pr, y1: y, y2: y, stroke: l.color, "stroke-dasharray": "5 4", "stroke-width": 1.3 }, s0);
+      const tx = sv("text", { x: pl + 4, y: y - 4, fill: l.color, "font-size": 11 }, s0); tx.textContent = `${l.label} ${fy(l.v)}`; });
+    (o.marks || []).forEach(m => { const tm = new Date(m.t).getTime(); if (tm < t0 || tm > t1) return; let best = pts[0]; pts.forEach(p => { if (Math.abs(p[0] - tm) < Math.abs(best[0] - tm)) best = p; });
+      sv("circle", { cx: X(best[0]), cy: Y(best[1]), r: 4.5, fill: m.color, stroke: "#14111f", "stroke-width": 1.5 }, s0); });
+    const vl = sv("line", { y1: pt, y2: H - pb, stroke: "#bdb7d6", "stroke-width": 1, visibility: "hidden" }, s0);
+    const dot = sv("circle", { r: 4.5, fill: col, stroke: "#fff", "stroke-width": 1.5, visibility: "hidden" }, s0);
+    const hit = sv("rect", { x: pl, y: 0, width: W - pl - pr, height: H, fill: "transparent" }, s0); hit.style.cursor = "crosshair";
+    const move = ev => { const r = s0.getBoundingClientRect(), x = (ev.clientX - r.left) * W / r.width, tm = t0 + (x - pl) / (W - pl - pr) * span;
+      let best = pts[0]; pts.forEach(p => { if (Math.abs(p[0] - tm) < Math.abs(best[0] - tm)) best = p; });
+      [vl, dot].forEach(e => e.setAttribute("visibility", "visible")); vl.setAttribute("x1", X(best[0])); vl.setAttribute("x2", X(best[0])); dot.setAttribute("cx", X(best[0])); dot.setAttribute("cy", Y(best[1]));
+      if (o.onHover) o.onHover(best[1], new Date(best[0])); };
+    const leave = () => { [vl, dot].forEach(e => e.setAttribute("visibility", "hidden")); if (o.onHover) o.onHover(null); };
+    hit.addEventListener("pointermove", move); hit.addEventListener("pointerdown", move); hit.addEventListener("pointerleave", leave);
+    return s0;
+  }
+  function accountChart(st) {
+    const c = el("div", "card"), ch = st.charts || {}, a = st.account || {}, acc = ch.account || {};
+    const ranges = [["1D", "Today"], ["1W", "1 week"], ["1M", "1 month"], ["ALL", "Since start"]];
+    const data = r => r === "ALL" ? (st.equity || []).map(p => [p.t, p.equity]).concat(a.equity ? [[st.updatedAt, a.equity]] : []) : (acc[r] || []);
+    if (!data(acctRange).length) acctRange = "ALL";
+    const pts = data(acctRange), first = pts.length ? +pts[0][1] : a.startEquity, base = acctRange === "ALL" ? (a.startEquity || first) : first;
+    const head = el("div"); const big = el("div"); big.style.cssText = "font-size:30px;font-weight:700;line-height:1.1";
+    const sub = el("div", "small"); head.append(el("div", "label", "Account value (paper)"), big, sub); c.append(head);
+    const show = (v, when) => { const val = v == null ? (a.equity != null ? a.equity : (pts.length ? +pts[pts.length - 1][1] : null)) : v;
+      big.textContent = money(val); const ch2 = val - base, p2 = base ? ch2 / base * 100 : 0;
+      sub.className = "small " + (ch2 >= 0 ? "up" : "down");
+      sub.textContent = `${ch2 >= 0 ? "+" : "-"}${money(Math.abs(ch2)).replace("-", "")} (${p2 >= 0 ? "+" : ""}${p2.toFixed(2)}%) ` + (when ? "at " + when.toLocaleString([], { month: "short", day: "numeric", hour: "numeric", minute: "2-digit" }) : ranges.find(r => r[0] === acctRange)[1].toLowerCase()); };
+    show(null);
+    const tabs = el("div", "subtabs"); ranges.forEach(([k, lab]) => { const b = el("button", null, lab); b.setAttribute("aria-pressed", String(acctRange === k)); b.onclick = () => { acctRange = k; renderPanel(); }; tabs.append(b); });
+    c.append(tabs);
+    const marks = (st.trades || []).flatMap(t => [t.openedAt && { t: t.openedAt, color: "#6fd3ff" }, t.closedAt && t.status === "closed" && { t: t.closedAt, color: (t.pnl || 0) >= 0 ? "#3ddc97" : "#ff6b6b" }]).filter(Boolean);
+    const nowV = a.equity != null ? a.equity : (pts.length ? +pts[pts.length - 1][1] : base);
+    c.append(stockChart(pts, { base, marks, onHover: show, up: nowV >= base }));
+    c.append(el("div", "small", "Drag or tap the chart to read any moment. Blue dots = buys, green/red dots = sells."));
+    return c;
+  }
+  function holdingChart(t, st) {
+    const h = ((st.charts || {}).holdings || {})[t.symbol]; if (!h || !(h.bars || []).length) return null;
+    const last = +h.bars[h.bars.length - 1][1], qty = h.qty || t.qty || 0, pl = (last - h.entry) * qty;
+    const c = el("div"); const info = el("div", "small " + (pl >= 0 ? "up" : "down"));
+    const show = (v, when) => { const px = v == null ? last : v; info.textContent = `${when ? when.toLocaleString([], { weekday: "short", hour: "numeric", minute: "2-digit" }) + ": " : "Now "}$${px.toLocaleString(undefined, { maximumFractionDigits: px < 10 ? 4 : 2 })} · you paid $${(+h.entry).toLocaleString(undefined, { maximumFractionDigits: 4 })} · ${(px - h.entry) * qty >= 0 ? "up" : "down"} ${money(Math.abs((px - h.entry) * qty))}`; };
+    show(null); c.append(info);
+    const upH = last >= h.entry;
+    c.append(stockChart(h.bars, { base: h.entry, onHover: show, up: upH, marks: [{ t: h.openedAt, color: "#6fd3ff" }],
+      lines: [{ v: h.target, label: "sell target", color: "#3ddc97" }, { v: h.entry, label: "bought", color: "#6fd3ff" }, { v: h.stop, label: "stop-loss", color: "#ff6b6b" }] }));
+    return c;
   }
   function tradeCard(t, open) {
     const c = el("div", "card"); const r = el("div", "row between"); const nm = el("div");
@@ -767,7 +836,7 @@
   }
   function vTPositions(t, body) {
     const ps = t.state.positions || []; if (!ps.length) { body.append(empty("No open positions", "When news passes every check, the trade shows up here with its stop-loss and target.")); return; }
-    ps.forEach(p => body.append(tradeCard(p, true)));
+    ps.forEach(p => { const k = tradeCard(p, true); const ch = holdingChart(p, t.state); if (ch) k.append(ch); body.append(k); });
     body.append(el("div", "small", "Stop-losses sit on Alpaca's servers, so they work even with the laptop off."));
   }
   function vTTrades(t, body) {

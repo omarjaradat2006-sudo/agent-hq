@@ -61,6 +61,7 @@ def write(bot):
         notes.append("X/Reddit reader: " + soc["problems"][0][:140])
     events = sorted(s.get("events", {}).values(), key=lambda e: e.get("lastSeen", ""), reverse=True)[:12]
 
+    charts = chart_data(bot, open_t)
     plain = plain_words(bot, acct, eq, start, spy_pct, today, counters if counters.get("day") == today else {})
 
     state = {
@@ -80,7 +81,7 @@ def write(bot):
                    "universe": {"stocks": len((bot.universe or {}).get("stocks") or {}),
                                 "crypto": len((bot.universe or {}).get("crypto") or {})},
                    "alert": s.get("alert")},
-        "positions": open_t,
+        "positions": open_t, "charts": charts,
         "trades": led["trades"][:120],
         "decisions": led.get("decisions", [])[:60],
         "equity": led.get("equity", [])[-400:],
@@ -173,3 +174,29 @@ def plain_words(bot, acct, eq, start, spy_pct, today, counters):
             + _n(n_tr, "trade") + " · holding: " + (", ".join(held) if held else "nothing (all cash)"))
     return {"line": line, "rulesMode": C.rules_mode(), "top": top, "up": diff >= 0, "holding": holding or ["Nothing right now (all cash)."], "today": did,
             "watchlist": watch, "lastScan": counters.get("lastScan")}
+
+
+def chart_data(bot, open_t):
+    """Stock-app style charts for the Trading tab: Alpaca's own account-value history (1D/1W/1M) and the recent
+    price of every holding with its buy price, stop-loss and target. A failure here never stops trading."""
+    from datetime import datetime, timedelta, timezone
+    out = {"account": {}, "holdings": {}}
+    for key, period, tf in (("1D", "1D", "5Min"), ("1W", "1W", "15Min"), ("1M", "1M", "1H")):
+        try:
+            h = bot.a.get("/v2/account/portfolio/history", {"period": period, "timeframe": tf, "extended_hours": "true"})
+            pts = [[datetime.fromtimestamp(ts, tz=timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"), round(float(v), 2)]
+                   for ts, v in zip(h.get("timestamp") or [], h.get("equity") or []) if v]
+            out["account"][key] = pts
+        except Exception:  # noqa: BLE001
+            pass
+    since = iso(now_utc() - timedelta(days=3))
+    for t in open_t:
+        sym = t["symbol"]
+        try:
+            bars = (bot.a.crypto_bars([sym], "15Min", since) if "/" in sym else bot.a.stock_bars([sym], "15Min", since)).get(sym) or []
+            out["holdings"][sym] = {"bars": [[b["t"], round(float(b["c"]), 4)] for b in bars][-300:],
+                                    "entry": t.get("entryPrice"), "stop": t.get("stop"), "target": t.get("target"),
+                                    "openedAt": t.get("openedAt"), "qty": t.get("qty")}
+        except Exception:  # noqa: BLE001
+            pass
+    return out
