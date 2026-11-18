@@ -1,6 +1,80 @@
 {
  "trades": [
   {
+   "id": "ahq-MSFT-20261118170031",
+   "symbol": "MSFT",
+   "asset": "stock",
+   "status": "pending",
+   "entryOrderId": "30244509-07ee-4d65-8768-1fb9508d3bfa",
+   "qty": 9,
+   "cost": 4532.85,
+   "estPrice": 503.65,
+   "entryPrice": 503.65,
+   "stop": 488.54,
+   "target": 533.87,
+   "openedAt": "2026-11-18T17:00:31Z",
+   "news": {
+    "summary": "Microsoft and Intel have expanded their long-term partnership to advance Azure infrastructure.",
+    "category": "contract",
+    "sources": [
+     {
+      "publisher": "Yahoo Finance",
+      "title": "Microsoft and Intel Deepen Collaboration to Deliver Differentiated Azure Infrastructure",
+      "url": "https://finance.yahoo.com/technology/ai/articles/microsoft-intel-deepen-collaboration-deliver-164700932.html?.tsrc=rss"
+     }
+    ]
+   },
+   "reason": {
+    "triage": "Strategic partnership strengthens Azure infrastructure and competitive positioning.",
+    "confidence": 0.6,
+    "confirmation": "volume 0.7x normal, price +0.25% since the news",
+    "rvol": 0.74,
+    "movePct": 0.25,
+    "publishers": [
+     "Yahoo Finance"
+    ],
+    "tradingAgents": "not used (ultra mode)",
+    "taSummary": ""
+   }
+  },
+  {
+   "id": "ahq-INTC-20261118170031",
+   "symbol": "INTC",
+   "asset": "stock",
+   "status": "pending",
+   "entryOrderId": "b5d17708-22af-41cb-b77a-996d16a4f668",
+   "qty": 92,
+   "cost": 4969.38,
+   "estPrice": 54.015,
+   "entryPrice": 54.015,
+   "stop": 52.39,
+   "target": 57.26,
+   "openedAt": "2026-11-18T17:00:31Z",
+   "news": {
+    "summary": "Microsoft and Intel have expanded their long-term partnership to advance Azure infrastructure.",
+    "category": "contract",
+    "sources": [
+     {
+      "publisher": "Yahoo Finance",
+      "title": "Microsoft and Intel Deepen Collaboration to Deliver Differentiated Azure Infrastructure",
+      "url": "https://finance.yahoo.com/technology/ai/articles/microsoft-intel-deepen-collaboration-deliver-164700932.html?.tsrc=rss"
+     }
+    ]
+   },
+   "reason": {
+    "triage": "Deepened collaboration with Microsoft on Azure infrastructure provides a growth catalyst.",
+    "confidence": 0.6,
+    "confirmation": "volume 0.9x normal, price +0.42% since the news",
+    "rvol": 0.88,
+    "movePct": 0.42,
+    "publishers": [
+     "Yahoo Finance"
+    ],
+    "tradingAgents": "not used (ultra mode)",
+    "taSummary": ""
+   }
+  },
+  {
    "id": "ahq-AMAT-20261118144533",
    "symbol": "AMAT",
    "asset": "stock",
@@ -36,8 +110,8 @@
     "tradingAgents": "not used (ultra mode)",
     "taSummary": ""
    },
-   "lastPrice": 350.3475,
-   "unrealizedPct": 1.69
+   "lastPrice": 349.96,
+   "unrealizedPct": 1.57
   },
   {
    "id": "ahq-TSLA-20261117144531",
@@ -75,8 +149,8 @@
     "tradingAgents": "not used (ultra mode)",
     "taSummary": ""
    },
-   "lastPrice": 380.82,
-   "unrealizedPct": -0.14
+   "lastPrice": 381.4701,
+   "unrealizedPct": 0.03
   },
   {
    "id": "ahq-CVX-20261117144531",
@@ -249,8 +323,8 @@
     "taSummary": ""
    },
    "stopOrderId": "d8fd6c27-f935-4ac9-8c22-c2f2a308b61c",
-   "lastPrice": 73.7694,
-   "unrealizedPct": 3.17
+   "lastPrice": 72.85,
+   "unrealizedPct": 1.89
   }
  ],
  "equity": [
@@ -2253,9 +2327,38 @@
    "t": "2026-11-18T15:17:06Z",
    "equity": 99960.48,
    "spy": 731.84
+  },
+  {
+   "t": "2026-11-18T15:50:36Z",
+   "equity": 99827.2,
+   "spy": 728.97
+  },
+  {
+   "t": "2026-11-18T16:23:39Z",
+   "equity": 99761.57,
+   "spy": 728.37
+  },
+  {
+   "t": "2026-11-18T16:54:57Z",
+   "equity": 99784.91,
+   "spy": 727.33
   }
  ],
  "decisions": [
+  {
+   "t": "2026-11-18T17:00:31Z",
+   "symbol": "MSFT",
+   "outcome": "bought",
+   "why": "volume 0.7x normal, price +0.25% since the news; TradingAgents: not used (ultra mode)",
+   "event": "Microsoft and Intel have expanded their long-term partnership to advance Azure infrastructure."
+  },
+  {
+   "t": "2026-11-18T17:00:31Z",
+   "symbol": "INTC",
+   "outcome": "bought",
+   "why": "volume 0.9x normal, price +0.42% since the news; TradingAgents: not used (ultra mode)",
+   "event": "Microsoft and Intel have expanded their long-term partnership to advance Azure infrastructure."
+  },
   {
    "t": "2026-11-18T14:45:33Z",
    "symbol": "AMAT",
@@ -3291,20 +3394,6 @@
    "outcome": "waiting",
    "why": "price hasn't moved the expected way yet (-0.70%)",
    "event": "Johnson & Johnson has agreed to acquire eye disease therapy developer Ollin Biosciences in a deal valued up to $3.33 billion."
-  },
-  {
-   "t": "2026-11-16T17:59:20Z",
-   "symbol": "LLY",
-   "outcome": "waiting",
-   "why": "price hasn't moved the expected way yet (-1.26%)",
-   "event": "Johnson & Johnson has agreed to acquire eye disease therapy developer Ollin Biosciences in a deal valued up to $3.33 billion."
-  },
-  {
-   "t": "2026-11-16T17:59:20Z",
-   "symbol": "TSLA",
-   "outcome": "waiting",
-   "why": "price hasn't moved the expected way yet (-2.34%)",
-   "event": "Tesla plans a $3.3 billion investment to expand its German gigafactory for Cybercab production."
   }
  ],
  "startEquity": 100000.0,
