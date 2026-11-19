@@ -1,6 +1,6 @@
 {
  "channel": "WANTED LEVEL",
- "at": "2026-11-18T21:14:23-05:00",
+ "at": "2026-11-18T22:14:23-05:00",
  "mode": "live",
  "note": "",
  "launch": "2026-11-18T13:00:00-05:00",
@@ -20,15 +20,8 @@
  "last24h": {
   "uploaded": 10,
   "made": 20,
-  "rejected": 8,
+  "rejected": 10,
   "errors": [
-   {
-    "t": "2026-11-18T15:34:58-05:00",
-    "kind": "error",
-    "where": "upload",
-    "id": "live_clix_1795033754",
-    "error": "<HttpError 400 when requesting None returned \"The user has exceeded the number of videos they may upload.\". Details: \"[{'message': 'The user has exceeded the number of videos they may upload.', 'domain': 'youtube.video', 'reason': 'uploadLimitExceeded'}]\">"
-   },
    {
     "t": "2026-11-18T15:39:17-05:00",
     "kind": "error",
@@ -87,6 +80,13 @@
    },
    {
     "t": "2026-11-18T21:09:30-05:00",
+    "kind": "error",
+    "where": "upload",
+    "id": "live_clix_1795033754",
+    "error": "<HttpError 400 when requesting None returned \"The user has exceeded the number of videos they may upload.\". Details: \"[{'message': 'The user has exceeded the number of videos they may upload.', 'domain': 'youtube.video', 'reason': 'uploadLimitExceeded'}]\">"
+   },
+   {
+    "t": "2026-11-18T22:09:31-05:00",
     "kind": "error",
     "where": "upload",
     "id": "live_clix_1795033754",
@@ -288,7 +288,7 @@
  "unclearReasons": [
   [
    "No mention of clipping permissions in the provided texts.",
-   108
+   109
   ],
   [
    "No mention of clipping permissions found in the provided texts.",
@@ -351,12 +351,45 @@
   {
    "id": "live_lacy_1795033604",
    "why": "mostly story cutscene"
+  },
+  {
+   "id": "live_clix_1795057537",
+   "why": "no strong moment: The clip consists entirely of static map menus and player talking heads with no gameplay action, stunts, or funny moment"
+  },
+  {
+   "id": "live_clix_1795057688",
+   "why": "mostly story cutscene"
   }
  ],
  "liveWatcher": {
-  "updated": "2026-11-18T21:14:18-05:00",
+  "updated": "2026-11-18T22:13:59-05:00",
   "mode": "live",
-  "watching": {},
+  "watching": {
+   "lacy": {
+    "game": "Grand Theft Auto VI",
+    "viewers": 18210,
+    "title": "🔴 GTA 6 MARATHON 🔴 LIVE 24/7 🔴 IN MIAMI 🔴 GIVING AWAY GTA 6 TO VIEWERS 🔴 GREATEST GAME EVER? 🔴 !CLIP",
+    "chat": {
+     "rate10s": 14,
+     "normal10s": 17,
+     "hype": 0.0,
+     "clipit": 0
+    },
+    "lastSpike": "22:10"
+   },
+   "clix": {
+    "game": "Grand Theft Auto VI",
+    "viewers": 3121,
+    "title": "🚨 FIRST PERSON TO PLAY GTA VI 🚨 24/7 MARATHON WITH CORE 🚨 PS5 GIVEAWAYS",
+    "chat": {
+     "rate10s": 11,
+     "normal10s": 15,
+     "hype": 0.09,
+     "clipit": 0
+    },
+    "lastSpike": "22:08"
+   }
+  },
   "liveUploadsLastHour": 0
  },
  "liveClips24h": 7
