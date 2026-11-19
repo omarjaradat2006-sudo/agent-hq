@@ -1,16 +1,16 @@
 # 7-day paper test: FINAL
 
-PAPER account only. 2026-11-10 01:51 UTC to 2026-11-17 01:51 UTC. Updated 2026-11-18 21:45 UTC.
+PAPER account only. 2026-11-10 01:51 UTC to 2026-11-17 01:51 UTC. Updated 2026-11-19 21:45 UTC.
 
 ## Results
 
 | | |
 |---|---|
-| Trades opened / closed / still open | 1 / 0 / 1 |
+| Trades opened / closed / still open | 1 / 0 / 0 |
 | Win rate | — (0 won, 0 lost) |
 | Realised P&L | $+0.00 (avg trade —, avg win —, avg loss —) |
 | Account change | $-1.35 (-0.00%) vs SPY -1.68% |
-| Open positions P&L | $+97.13 |
+| Open positions P&L | $+0.00 |
 | Max drawdown | -0.02% (Alpaca 15-min history + bot samples) |
 | Kill switch | off |
 | Bot (re)starts | 16 |
@@ -109,7 +109,7 @@ During task with name 'agent' and id 'a1823eed-1591-4414-bf92-8c9f3
 
 | Asset | Opened (UTC) | Entry | Exit | P&L | Why it ended | News |
 |---|---|---|---|---|---|---|
-| SOL/USD | 2026-11-17T00:40 | 71.50071403 | — | — | open | Zelle has chosen Solana for a new stablecoin and cross-border payments push. |
+| SOL/USD | 2026-11-17T00:40 | 71.50071403 | 73.06 | +2.18% | 48h limit | Zelle has chosen Solana for a new stablecoin and cross-border payments push. |
 
 ## Read this before trusting it
 
