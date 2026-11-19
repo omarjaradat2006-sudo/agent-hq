@@ -1,15 +1,15 @@
 {
  "team": "trading",
  "plain": {
-  "line": "Up $304.04 since start · 7 trades · holding: MSFT, INTC, AMAT, TSLA",
+  "line": "Up $274.10 since start · 7 trades · holding: MSFT, INTC, AMAT, TSLA",
   "rulesMode": "ultra",
-  "top": "Up $304.04 since start (+0.30%) · just holding SPY would be -2.87%",
+  "top": "Up $274.10 since start (+0.27%) · just holding SPY would be -2.87%",
   "up": true,
   "holding": [
-   "MSFT: 9 shares worth $4,614.66, up $80.19 (sells at $533.87 or stops at $488.54)",
-   "INTC: 92 shares worth $5,130.84, up $161.92 (sells at $57.26 or stops at $52.39)",
+   "MSFT: 9 shares worth $4,602.69, up $68.22 (sells at $533.87 or stops at $488.54)",
+   "INTC: 92 shares worth $5,116.12, up $147.20 (sells at $57.26 or stops at $52.39)",
    "AMAT: 14 shares worth $5,033.00, up $209.44 (sells at $364.63 or stops at $333.67)",
-   "TSLA: 13 shares worth $5,018.00, up $60.30 (sells at $404.20 or stops at $369.88)"
+   "TSLA: 13 shares worth $5,014.75, up $57.05 (sells at $404.20 or stops at $369.88)"
   ],
   "today": [
    "Bought MSFT after the news: Microsoft and Intel have expanded their long-term partnership to advance Azure infrastructure.",
@@ -17,15 +17,15 @@
    "Bought AMAT after the news: Bernstein has named Applied Materials as its top pick among U.S. semiconductor equipment stocks, setting an Outperform rating.",
    "Sold CVX (stop-loss -3% hit): lost $140.77.",
    "Sold SOL/USD (48h limit): made $106.71.",
-   "Scanned the news 143 times today: read 8245 headlines, found 315 that could move a stock or coin it's allowed to trade.",
+   "Scanned the news 144 times today: read 8271 headlines, found 315 that could move a stock or coin it's allowed to trade.",
    "Passed on LLY: already 5 open positions (max 5).",
    "Safety rules that stepped in: stop loss -3% (x1), max 5 positions (x28), stock entry window (x6), crypto 48h limit (x1)."
   ],
   "watchlist": "Allowed to trade: 69 halal stocks, 5 Shariah ETFs, 9 coins.",
-  "lastScan": "2026-11-19T04:33:47Z"
+  "lastScan": "2026-11-19T04:41:39Z"
  },
  "hired": true,
- "updatedAt": "2026-11-19T04:33:50Z",
+ "updatedAt": "2026-11-19T04:41:44Z",
  "mode": "PAPER",
  "agents": [
   {
@@ -33,8 +33,8 @@
    "name": "News Scout",
    "role": "Reads X, Reddit and news feeds",
    "status": "working",
-   "doing": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet",
-   "lastRun": "2026-11-19T04:33:49Z"
+   "doing": "Read 26 new headlines/posts, 0 market-moving stories",
+   "lastRun": "2026-11-19T04:41:43Z"
   },
   {
    "id": "analyst",
@@ -74,7 +74,7 @@
    "role": "Places paper orders on Alpaca",
    "status": "working",
    "doing": "Paper-trading bot started (Alpaca PAPER account only). Close this window to stop it.",
-   "lastRun": "2026-11-19T04:33:47Z"
+   "lastRun": "2026-11-19T04:41:38Z"
   },
   {
    "id": "coins",
@@ -94,6 +94,26 @@
   }
  ],
  "log": [
+  {
+   "t": "2026-11-19T04:41:43Z",
+   "agent": "News Scout",
+   "msg": "Read 26 new headlines/posts, 0 market-moving stories"
+  },
+  {
+   "t": "2026-11-19T04:41:42Z",
+   "agent": "News Scout",
+   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
+  },
+  {
+   "t": "2026-11-19T04:41:39Z",
+   "agent": "News Scout",
+   "msg": "Agent Reach not found: news feeds + Yahoo Finance + Reddit direct (no X)"
+  },
+  {
+   "t": "2026-11-19T04:41:38Z",
+   "agent": "Trader",
+   "msg": "Paper-trading bot started (Alpaca PAPER account only). Close this window to stop it."
+  },
   {
    "t": "2026-11-19T04:33:49Z",
    "agent": "News Scout",
@@ -823,48 +843,28 @@
    "t": "2026-11-18T17:00:31Z",
    "agent": "Trader",
    "msg": "BUY INTC: Microsoft and Intel have expanded their long-term partnership to advance Azure infrastruct | volume 0.9x normal, price +0.42% since the news | TradingAgents not used (ultra mode)"
-  },
-  {
-   "t": "2026-11-18T17:00:30Z",
-   "agent": "News Scout",
-   "msg": "Read 21 new headlines/posts, 2 market-moving stories"
-  },
-  {
-   "t": "2026-11-18T16:54:57Z",
-   "agent": "News Scout",
-   "msg": "Read 18 new headlines/posts, 1 market-moving stories"
-  },
-  {
-   "t": "2026-11-18T16:54:55Z",
-   "agent": "News Scout",
-   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
-  },
-  {
-   "t": "2026-11-18T16:49:51Z",
-   "agent": "News Scout",
-   "msg": "Read 26 new headlines/posts, 1 market-moving stories"
   }
  ],
  "brief": {
   "date": "Wed Nov 18",
-  "createdAt": "2026-11-19T04:33:50Z",
-  "headline": "Paper account +$384 today (+0.38%), +0.30% total vs SPY -2.87% · 4 open",
+  "createdAt": "2026-11-19T04:41:44Z",
+  "headline": "Paper account +$354 today (+0.35%), +0.27% total vs SPY -2.87% · 4 open",
   "summary": "2 trade(s) closed today, 1/3 winners overall. TradingAgents checks used today: 0/5.",
   "notes": [
    "X/Reddit reader: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
   ]
  },
  "account": {
-  "equity": 100304.04,
+  "equity": 100274.1,
   "cash": 80507.54,
   "startEquity": 100000.0,
   "startedAt": "2026-11-10T01:51:53Z",
-  "dayPnl": 383.6,
-  "dayPct": 0.38,
-  "totalPnl": 304.04,
-  "totalPct": 0.3,
+  "dayPnl": 353.66,
+  "dayPct": 0.35,
+  "totalPnl": 274.1,
+  "totalPct": 0.27,
   "spyPct": -2.87,
-  "vsSpyPct": 3.17
+  "vsSpyPct": 3.14
  },
  "status": {
   "killed": false,
@@ -872,14 +872,14 @@
   "deepUsed": 0,
   "deepMax": 5,
   "social": {
-   "at": "2026-11-19T04:33:49Z",
+   "at": "2026-11-19T04:41:42Z",
    "items": 0,
    "source": "Reddit public JSON (blocked on servers: add REDDIT_CLIENT_ID/SECRET); X needs Agent Reach",
    "problems": [
     "r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
    ],
    "wsb": {
-    "at": "2026-11-19T04:33:49Z",
+    "at": "2026-11-19T04:41:42Z",
     "tickers": 50,
     "items": 0,
     "key": false
@@ -928,8 +928,8 @@
     "tradingAgents": "not used (ultra mode)",
     "taSummary": ""
    },
-   "lastPrice": 512.74,
-   "unrealizedPct": 1.77
+   "lastPrice": 511.41,
+   "unrealizedPct": 1.5
   },
   {
    "id": "ahq-INTC-20261118170031",
@@ -967,8 +967,8 @@
     "tradingAgents": "not used (ultra mode)",
     "taSummary": ""
    },
-   "lastPrice": 55.77,
-   "unrealizedPct": 3.26
+   "lastPrice": 55.61,
+   "unrealizedPct": 2.96
   },
   {
    "id": "ahq-AMAT-20261118144533",
@@ -1045,8 +1045,8 @@
     "tradingAgents": "not used (ultra mode)",
     "taSummary": ""
    },
-   "lastPrice": 386.0,
-   "unrealizedPct": 1.22
+   "lastPrice": 385.75,
+   "unrealizedPct": 1.15
   }
  ],
  "charts": {
@@ -4624,8 +4624,8 @@
     "tradingAgents": "not used (ultra mode)",
     "taSummary": ""
    },
-   "lastPrice": 512.74,
-   "unrealizedPct": 1.77
+   "lastPrice": 511.41,
+   "unrealizedPct": 1.5
   },
   {
    "id": "ahq-INTC-20261118170031",
@@ -4663,8 +4663,8 @@
     "tradingAgents": "not used (ultra mode)",
     "taSummary": ""
    },
-   "lastPrice": 55.77,
-   "unrealizedPct": 3.26
+   "lastPrice": 55.61,
+   "unrealizedPct": 2.96
   },
   {
    "id": "ahq-AMAT-20261118144533",
@@ -4741,8 +4741,8 @@
     "tradingAgents": "not used (ultra mode)",
     "taSummary": ""
    },
-   "lastPrice": 386.0,
-   "unrealizedPct": 1.22
+   "lastPrice": 385.75,
+   "unrealizedPct": 1.15
   },
   {
    "id": "ahq-CVX-20261117144531",
