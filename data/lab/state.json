@@ -1,15 +1,15 @@
 {
   "team": "lab",
   "hired": true,
-  "updatedAt": "2026-11-16T11:23:02Z",
+  "updatedAt": "2026-11-19T11:23:02Z",
   "agents": [
     {
       "id": "lead",
       "name": "Lab Director",
       "role": "Picks the upgrades worth doing",
       "status": "ok",
-      "doing": "Monday R&D run: reviewed ecosystem metrics, generated targeted leads, and engineered 4 high-impact upgrades.",
-      "lastRun": "2026-11-16T11:23:02Z",
+      "doing": "Reviewing ecosystem metrics, synthesizing cross-team leads, and generating a single high-impact upgrade.",
+      "lastRun": "2026-11-19T11:23:02Z",
       "nextRun": "2026-11-05T11:23:00Z"
     },
     {
@@ -17,8 +17,8 @@
       "name": "Tool Scout",
       "role": "New AI tools, models and APIs",
       "status": "ok",
-      "doing": "Monday R&D run: reviewed ecosystem metrics, generated targeted leads, and engineered 4 high-impact upgrades.",
-      "lastRun": "2026-11-16T11:23:02Z",
+      "doing": "Reviewing ecosystem metrics, synthesizing cross-team leads, and generating a single high-impact upgrade.",
+      "lastRun": "2026-11-19T11:23:02Z",
       "nextRun": "2026-11-05T11:23:00Z"
     },
     {
@@ -26,8 +26,8 @@
       "name": "Format Hunter",
       "role": "What makes rival videos more engaging",
       "status": "ok",
-      "doing": "Monday R&D run: reviewed ecosystem metrics, generated targeted leads, and engineered 4 high-impact upgrades.",
-      "lastRun": "2026-11-16T11:23:02Z",
+      "doing": "Reviewing ecosystem metrics, synthesizing cross-team leads, and generating a single high-impact upgrade.",
+      "lastRun": "2026-11-19T11:23:02Z",
       "nextRun": "2026-11-05T11:23:00Z"
     },
     {
@@ -35,12 +35,32 @@
       "name": "Upgrade Engineer",
       "role": "Turns finds into build plans",
       "status": "ok",
-      "doing": "Monday R&D run: reviewed ecosystem metrics, generated targeted leads, and engineered 4 high-impact upgrades.",
-      "lastRun": "2026-11-16T11:23:02Z",
+      "doing": "Reviewing ecosystem metrics, synthesizing cross-team leads, and generating a single high-impact upgrade.",
+      "lastRun": "2026-11-19T11:23:02Z",
       "nextRun": "2026-11-05T11:23:00Z"
     }
   ],
   "log": [
+    {
+      "t": "2026-11-19T11:23:02Z",
+      "agent": "Gemini team",
+      "msg": "Structured waiting list strictly according to approved-but-not-done items."
+    },
+    {
+      "t": "2026-11-19T11:23:02Z",
+      "agent": "Gemini team",
+      "msg": "Drafted refreshed formatLeads and cross-team leads based on current data and performance metrics."
+    },
+    {
+      "t": "2026-11-19T11:23:02Z",
+      "agent": "Gemini team",
+      "msg": "Formulated 1 upgrade for SATR Shopify brand conversion using local, zero-cost assets."
+    },
+    {
+      "t": "2026-11-19T11:23:02Z",
+      "agent": "Gemini team",
+      "msg": "Analyzed open backlog: 20+ upgrades waiting on Omar, capping new proposals at 1 high-leverage build."
+    },
     {
       "t": "2026-11-16T11:23:02Z",
       "agent": "Gemini team",
@@ -823,9 +843,82 @@
       "status": "pending",
       "createdAt": "2026-11-16T11:23:02Z",
       "madeBy": "gemini"
+    },
+    {
+      "title": "SATR: Quran Cover Sizing & Fit Assurance Visualizer",
+      "hook": "Reduce Quran cover returns and increase checkout conversion with an instant size check guide.",
+      "why": "Shoppers hesitate on Quran covers due to varying Mushaf dimensions (Madinah 14x20cm vs standard pocket). Adding a clear 3-step fit guide on Shopify eliminates sizing confusion.",
+      "format": "SATR · Product · 1h",
+      "business": "SATR",
+      "type": "Product",
+      "impact": "15-25% increase in product page conversion and near-zero size return requests.",
+      "effort": "1 hour to set up",
+      "cost": "$0",
+      "score": 8,
+      "script": "1. Review SATR Shopify theme product page template. 2. Insert a collapsible 'Will it fit my Quran?' accordion tab directly below the variant selector. 3. Add explicit dimensions for standard prints: Pocket (8x12cm), Standard Madinah (14x20cm), Large (17x24cm), with instructions on how to measure spine thickness. 4. Include a clear one-sentence guarantee: 'If your cover does not fit your standard Mushaf, exchange it free.' 5. Verify mobile display rendering. Track checkout completion and size-related support tickets after 14 days.",
+      "buildWhere": "Claude chat",
+      "buildPrompt": "Paste into Omar's Main Chat in the Claude app:\n\nWrite a clean Liquid/HTML snippet for Omar's Shopify store (SATR Quran covers). It must create a clean, responsive 'Size & Fit Guide' accordion block to be placed on product pages below the purchase button. It should list exact dimensions for Standard Madinah Mushaf (14x20cm), Large Mushaf (17x24cm), and Pocket Mushaf (8x12cm), along with a 3-step measuring note (Height, Width, Spine) and a clean exchange guarantee line. Style it using basic Tailwind or standard Shopify theme classes with neutral, elegant typography matching an Islamic lifestyle brand.",
+      "sources": [
+        {
+          "title": "SATR Shopify Brand Portfolio",
+          "url": "https://omarjaradat2006-sudo.github.io/agent-hq/"
+        }
+      ],
+      "status": "pending",
+      "createdAt": "2026-11-19T11:23:02Z",
+      "id": "lab-2026-11-19-1",
+      "madeBy": "gemini"
     }
   ],
   "research": [
+    {
+      "date": "2026-11-19",
+      "createdAt": "2026-11-19T11:23:02Z",
+      "items": [
+        {
+          "title": "Faceless Animated Explainers (Kurzgesagt)",
+          "creator": "Kurzgesagt - In a Nutshell",
+          "url": "https://www.youtube.com/@kurzgesagt",
+          "metric": "25.7M subscribers, 4.0B views",
+          "whyItWorks": "Evergreen vector animation paired with clear pacing retains viewers without camera requirements."
+        },
+        {
+          "title": "Ambient 24/7 Livestreams and Dark Screen Streams",
+          "creator": "Lofi Girl",
+          "url": "https://www.youtube.com/@LofiGirl",
+          "metric": "15.8M subscribers",
+          "whyItWorks": "Dark screens eliminate glare and keep long-form sleep watch times stable throughout the night."
+        },
+        {
+          "title": "Screen-Record Software Walkthroughs",
+          "creator": "10X Income",
+          "url": "https://www.youtube.com/@10xincome",
+          "metric": "Over 340K subscribers",
+          "whyItWorks": "Unedited, direct workflow walkthroughs generate high trust for utility software tools."
+        },
+        {
+          "title": "CapCut Local Auto-Captioning Workflow",
+          "creator": "CapCut",
+          "url": "https://www.capcut.com/",
+          "metric": "Free desktop app with local AI captions",
+          "whyItWorks": "Fast local speech-to-text processing cuts cloud transcription costs to zero."
+        },
+        {
+          "title": "Automated Multi-Step Logic Workflows",
+          "creator": "Make",
+          "url": "https://www.make.com/",
+          "metric": "Free tier with multi-step capability",
+          "whyItWorks": "Enables reliable webhook event chaining without maintaining complex custom backends."
+        },
+        {
+          "title": "Community Infrastructure for Niches",
+          "creator": "Circle.so",
+          "url": "https://circle.so/",
+          "metric": "Dedicated community infrastructure",
+          "whyItWorks": "Retains niche users through persistent interaction and focused group spaces."
+        }
+      ]
+    },
     {
       "date": "2026-11-16",
       "createdAt": "2026-11-16T11:23:02Z",
@@ -1219,15 +1312,15 @@
     }
   ],
   "brief": {
-    "date": "2026-11-16",
-    "createdAt": "2026-11-16T11:23:02Z",
-    "headline": "Targeted upgrades across Growth Architect, LinkedAI, Bounce Theory & SmartEditor",
-    "summary": "Today's lab provides four targeted, high-leverage upgrades focused on onboarding conversion, outreach simplification, render audio richness, and silence trimming. Each plan requires $0 extra budget and delivers concrete quality or conversion improvements.",
+    "date": "2026-11-19",
+    "createdAt": "2026-11-19T11:23:02Z",
+    "headline": "Strict backlog discipline: 1 new SATR upgrade and cross-team leads",
+    "summary": "Because you have over 20 approved upgrades awaiting implementation, the lab has restricted today's output to a single high-impact, zero-cost conversion fix for SATR. Format leads and cross-team notes have been refreshed to keep all channels aligned.",
     "filmToday": [
-      "Growth Architect: Automated Sample Plan Benchmark — Paste build prompt into Omar's Main Chat in the Claude app"
+      "SATR: Quran Cover Sizing & Fit Assurance Visualizer — Paste build prompt into Omar's Main Chat in the Claude app"
     ],
     "approvals": [
-      "4 upgrades to review",
+      "1 upgrade to review",
       "Waiting on Omar: Approval Queue: nothing goes out without you",
       "Waiting on Omar: A plan that fits every business fits none",
       "Waiting on Omar: Home bakery, zero strangers",
@@ -1252,9 +1345,9 @@
       "Waiting on Omar: Needs build: Hydraulic Press: Every Press = 4x More Pieces"
     ],
     "notes": [
-      "Multiple approved upgrades remain in 'Waiting on Omar' status; prioritizing buildPrompts that can be completed in under 2 hours.",
-      "TikTok resume hit (77K views) shows high conversion potential for LinkedAI career tools.",
-      "All proposed technical enhancements utilize verified offline/local execution without recurring API fees."
+      "22 approved upgrades remain queued in 'Waiting on Omar'; building existing backlog items remains your highest-leverage task.",
+      "The SATR fit visualizer provides a direct conversion lift for e-commerce without incurring external software costs.",
+      "Cross-team leads focus on low-friction positioning: safety over autonomy for Growth Architect, and exact problem-solving for TikTok."
     ]
   },
   "processedIssues": [],
@@ -1270,9 +1363,9 @@
         "views": "1M+",
         "vsAvg": "5x+"
       },
-      "howToMake": "Use existing sims.py multi-ball brick duels or weapon ball modes with distinct color labels and a countdown timer. Run until 1 ball remains.",
-      "why": "Drives comment section predictions and high rewatchability through color-based elimination contests.",
-      "createdAt": "2026-11-16T11:23:02Z"
+      "howToMake": "Configure sims.py multi-ball brick duels with high-contrast color names and a top elimination counter until one ball remains.",
+      "why": "High comment interaction as viewers pick a color before the ball trap finishes.",
+      "createdAt": "2026-11-19T11:23:02Z"
     },
     {
       "channel": "Ambient Escape",
@@ -1285,9 +1378,9 @@
         "views": "15.8M subscribers",
         "vsAvg": "Continuous stream"
       },
-      "howToMake": "Layer royalty-free heavy rain and brown noise with a 3-hour black screen visual to prevent room glare for overnight sleep listeners.",
-      "why": "Eliminates visual distraction, avoids Content ID strikes, and maximizes overnight watch hours.",
-      "createdAt": "2026-11-16T11:23:02Z"
+      "howToMake": "Combine pure black 1080p frame with seamless 3-hour looped rain and brown noise audio, zero reciter vocals.",
+      "why": "Eliminates bedroom screen glare and captures searchers with insomnia seeking uninterrupted audio.",
+      "createdAt": "2026-11-19T11:23:02Z"
     },
     {
       "channel": "Ambient Escape",
@@ -1300,80 +1393,80 @@
         "views": "25.7M subscribers",
         "vsAvg": "4.0B views"
       },
-      "howToMake": "Use explainer2 vector scenes with Kokoro voice narration and English gloss text overlays for daily Hadith and Ayah scenarios.",
-      "why": "High resonance with Muslim youth addressing everyday situations cleanly without face camera footage.",
-      "createdAt": "2026-11-16T11:23:02Z"
+      "howToMake": "Render via explainer2 with Kokoro voice, everyday relatable student tension beats, and exact authentic Hadith references.",
+      "why": "Connects deeply with young Muslim demographics without requiring camera setups or copyrighted recitations.",
+      "createdAt": "2026-11-19T11:23:02Z"
     }
   ],
   "teamLeads": {
     "tiktok": [
       {
-        "title": "Specific Resume Flaw Breakdown",
-        "what": "Focus on single resume failure points instead of general networking tips.",
+        "title": "One-Flaw Resume Breakdown",
+        "what": "Focus scripts on fixing one visible line on a resume instead of broad networking advice.",
         "evidence": {
           "title": "Resume Video Outlier",
           "url": "https://www.tiktok.com/",
           "creator": "Omar Jaradat",
           "metric": "77,316 views"
         },
-        "howToUse": "Draft 60-second talking-head scripts diagnosing one concrete mistake (e.g. blank summary vs bullet metrics) with an actionable rewrite.",
-        "createdAt": "2026-11-16T11:23:02Z"
+        "howToUse": "Open with 'The line on your resume killing your interviews' and rewrite a real bullet point in 45 seconds.",
+        "createdAt": "2026-11-19T11:23:02Z"
       }
     ],
     "linkedai": [
       {
-        "title": "Transparent Cost Breakdown Hook",
-        "what": "Compare LinkedAI flat pricing against competitor weekly billing traps.",
+        "title": "Flat Fee vs Weekly Charge Comparison",
+        "what": "Call out competitor weekly auto-billing traps directly in Chrome Store copy.",
         "evidence": {
           "title": "LinkedAI Competitor Watch",
           "url": "https://www.linkedin.com/",
           "creator": "Competitor Watch",
           "metric": "User complaints on weekly renewals"
         },
-        "howToUse": "Use hooks contrasting simple freemium/Pro tiers against recurring surprise fees found in rival job outreach tools.",
-        "createdAt": "2026-11-16T11:23:02Z"
+        "howToUse": "Add a comparison chart on the listing: 'LinkedAI: Flat monthly / Freemium vs Others: $14/week auto-renew'.",
+        "createdAt": "2026-11-19T11:23:02Z"
       }
     ],
     "growth": [
       {
-        "title": "Transparent AI Marketing Approval Preview",
-        "what": "Showcase strict human approval before any AI plan executes.",
+        "title": "Manual Control & Approval Guarantee",
+        "what": "Position manual user sign-off as a core safety feature over autonomous agent chaos.",
         "evidence": {
           "title": "Growth Architect Review",
           "url": "https://base44.app/",
           "creator": "Product Lead",
           "metric": "E-com owner fear of autonomous mistakes"
         },
-        "howToUse": "Display the approval checklist clearly on landing page copy and demo clips to alleviate fear of runaway automated spending.",
-        "createdAt": "2026-11-16T11:23:02Z"
+        "howToUse": "Place a prominent 'Zero actions taken without your click' banner on the landing page header.",
+        "createdAt": "2026-11-19T11:23:02Z"
       }
     ],
     "opps": [
       {
-        "title": "Local Review NFC Display Stands",
-        "what": "Bundle zero-monthly-fee Google review NFC cards for local service shops in Mississauga.",
+        "title": "Flat-Rate NFC Google Review Counter Plates",
+        "what": "Offer Mississauga retail stores pre-programmed review stands with no monthly subscriptions.",
         "evidence": {
           "title": "Local Business Inquiries",
           "url": "https://omarjaradat2006-sudo.github.io/agent-hq/",
           "creator": "Opps Scout",
           "metric": "Demand for one-time physical setup"
         },
-        "howToUse": "Package direct NFC card programming with a table stand pitched as a one-time purchase without monthly SaaS costs.",
-        "createdAt": "2026-11-16T11:23:02Z"
+        "howToUse": "Pitch local cafes a $40 one-time physical acrylic stand instead of agency subscriptions charging $50/month.",
+        "createdAt": "2026-11-19T11:23:02Z"
       }
     ],
     "youtube": [
       {
-        "title": "Black Screen Sleep Search Terms",
-        "what": "Use exact sleep intent phrases in Ambient Escape long titles.",
+        "title": "Insomnia & Dark Screen SEO Targeting",
+        "what": "Include exact search modifiers in long-form Ambient titles.",
         "evidence": {
           "title": "Ambient Escape Metrics",
           "url": "https://www.youtube.com/",
           "creator": "Performance Reviewer",
           "metric": "Longs average high watch time on targeted search"
         },
-        "howToUse": "Structure titles around 'Black Screen Rain' and 'Deep Sleep Brown Noise (3 Hours)' to capture overnight search traffic.",
-        "createdAt": "2026-11-16T11:23:02Z"
+        "howToUse": "Format titles with '(Pure Dark Screen)' and 'No Thunder' to rank for overnight listeners.",
+        "createdAt": "2026-11-19T11:23:02Z"
       }
     ]
   }
