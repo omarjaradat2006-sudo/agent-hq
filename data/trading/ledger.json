@@ -1,6 +1,73 @@
 {
  "trades": [
   {
+   "id": "ahq-BTCUSD-20261119203245",
+   "symbol": "BTC/USD",
+   "asset": "crypto",
+   "status": "pending",
+   "entryOrderId": "638efc04-c90e-443d-a88b-4ebdc058b9a8",
+   "qty": null,
+   "cost": 12016.1,
+   "estPrice": 61700.0,
+   "entryPrice": 61700.0,
+   "stop": 59849.0,
+   "target": 65402.0,
+   "openedAt": "2026-11-19T20:32:45Z",
+   "news": {
+    "summary": "Anthropic's massive IPO debut tops a $2 trillion valuation, lifting broader crypto and tech sentiment.",
+    "category": "other",
+    "sources": [
+     {
+      "publisher": "Yahoo Finance",
+      "title": "Anthropic Stock Jumps 38% In Nasdaq Debut After Record $107.3B IPO",
+      "url": "https://stocktwits.com/news-articles/markets/equity/anthropic-stock-jumps-38-in-nasdaq-debut-after-record-107-3-b-ipo/cNbihePR900?.tsrc=rss"
+     },
+     {
+      "publisher": "Yahoo Finance",
+      "title": "Broadcom Stocks Rise 4.21% as Chip Supplier Joins Anthropic's $26 Billion Placement",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/broadcom-stocks-rise-4-21-173026533.html?.tsrc=rss"
+     },
+     {
+      "publisher": "Yahoo Finance",
+      "title": "AMD Stocks Rise 3.77% as Anthropic Deal Points to $20 Billion-Plus of Helios Spending",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/amd-stocks-rise-3-77-172606832.html?.tsrc=rss"
+     },
+     {
+      "publisher": "CNBC",
+      "title": "Dow dives 700 points as Anthropic IPO milestone causes investors to take profits: Live updates",
+      "url": "https://www.cnbc.com/2026/11/18/stock-market-today-live-updates.html"
+     },
+     {
+      "publisher": "CNBC",
+      "title": "Anthropic IPO live updates: AI lab tops $2 trillion market cap, Ashton Kutcher celebrates debut",
+      "url": "https://www.cnbc.com/2026/11/19/anthropic-ipo-ant-live-updates.html"
+     },
+     {
+      "publisher": "CNBC",
+      "title": "Dow dives 800 points as Anthropic IPO milestone causes investors to take profits: Live updates",
+      "url": "https://www.cnbc.com/2026/11/18/stock-market-today-live-updates.html"
+     }
+    ]
+   },
+   "reason": {
+    "triage": "Positive tech market sentiment from Anthropic IPO spilling over into crypto.",
+    "confidence": 0.65,
+    "confirmation": "volume 2.0x normal, price -1.43% since the news",
+    "rvol": 1.98,
+    "movePct": -1.43,
+    "publishers": [
+     "AP",
+     "CNBC",
+     "Cryptonews.net",
+     "Reuters",
+     "TipRanks",
+     "Yahoo Finance"
+    ],
+    "tradingAgents": "not used (ultra mode)",
+    "taSummary": ""
+   }
+  },
+  {
    "id": "ahq-AVGO-20261119174039",
    "symbol": "AVGO",
    "asset": "stock",
@@ -46,8 +113,8 @@
     "tradingAgents": "not used (ultra mode)",
     "taSummary": ""
    },
-   "lastPrice": 347.545,
-   "unrealizedPct": -1.34
+   "lastPrice": 346.8,
+   "unrealizedPct": -1.55
   },
   {
    "id": "ahq-AMD-20261119174038",
@@ -95,8 +162,8 @@
     "tradingAgents": "not used (ultra mode)",
     "taSummary": ""
    },
-   "lastPrice": 480.1625,
-   "unrealizedPct": -1.67
+   "lastPrice": 483.59,
+   "unrealizedPct": -0.97
   },
   {
    "id": "ahq-NVDA-20261119170632",
@@ -134,14 +201,14 @@
     "tradingAgents": "not used (ultra mode)",
     "taSummary": ""
    },
-   "lastPrice": 148.25,
-   "unrealizedPct": -0.13
+   "lastPrice": 147.01,
+   "unrealizedPct": -0.97
   },
   {
    "id": "ahq-GOOGL-20261119170631",
    "symbol": "GOOGL",
    "asset": "stock",
-   "status": "open",
+   "status": "closed",
    "entryOrderId": "98a11d19-aa49-4dfd-a478-6aad8acfda3e",
    "qty": 17.0,
    "cost": 4811.68,
@@ -173,8 +240,13 @@
     "tradingAgents": "not used (ultra mode)",
     "taSummary": ""
    },
-   "lastPrice": 278.68,
-   "unrealizedPct": -1.57
+   "lastPrice": 275.18,
+   "unrealizedPct": -2.81,
+   "closedAt": "2026-11-19T20:12:07Z",
+   "exitPrice": 274.53,
+   "exitReason": "stop-loss -3% hit",
+   "pnl": -146.2,
+   "pnlPct": -3.04
   },
   {
    "id": "ahq-MSFT-20261118170031",
@@ -2795,9 +2867,31 @@
    "t": "2026-11-19T18:49:06Z",
    "equity": 100247.24,
    "spy": 720.16
+  },
+  {
+   "t": "2026-11-19T19:20:31Z",
+   "equity": 100233.35,
+   "spy": 719.42
+  },
+  {
+   "t": "2026-11-19T19:51:35Z",
+   "equity": 100263.64,
+   "spy": 718.73
+  },
+  {
+   "t": "2026-11-19T20:22:25Z",
+   "equity": 100131.03,
+   "spy": 716.78
   }
  ],
  "decisions": [
+  {
+   "t": "2026-11-19T20:32:45Z",
+   "symbol": "BTC/USD",
+   "outcome": "bought",
+   "why": "volume 2.0x normal, price -1.43% since the news; TradingAgents: not used (ultra mode)",
+   "event": "Anthropic's massive IPO debut tops a $2 trillion valuation, lifting broader crypto and tech sentiment."
+  },
   {
    "t": "2026-11-19T17:40:39Z",
    "symbol": "AVGO",
@@ -3840,13 +3934,6 @@
    "outcome": "waiting",
    "why": "price hasn't moved the expected way yet (-0.21%)",
    "event": "ExxonMobil's daily production in Guyana is set to reach 1.1 million barrels per day as Uaru production begins."
-  },
-  {
-   "t": "2026-11-16T18:05:59Z",
-   "symbol": "JNJ",
-   "outcome": "waiting",
-   "why": "price hasn't moved the expected way yet (-0.79%)",
-   "event": "Johnson & Johnson has agreed to acquire eye disease therapy developer Ollin Biosciences in a deal valued up to $3.33 billion."
   }
  ],
  "startEquity": 100000.0,
