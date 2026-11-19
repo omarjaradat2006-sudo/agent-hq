@@ -94,3 +94,40 @@ The R&D Lab's upgrades (ideas in data/lab/state.json for Bounce Theory, Ambient 
 
 ## Scheduling (Omar's rule)
 Every video in a lineup gets uploaded scheduled, never left Private: the batch gives every `queue.json` item a `slot` in lineup order. **Bounce Theory** goes public one video every hour around the clock (24 a day), continuing from the previous batch. **Ambient Escape** is spread across the 5 PM to 8 AM window. So order the lineup the way it should go public: strongest Shorts first (S01-S05), longs in the evening.
+
+## Engine 2 templates (added 2026-11-19): use them, and keep inventing around them
+These 4 are in the Bounce template menu. They look and sound far better than the old formats, so put at least 3 of them in every daily lineup.
+- **jelly_drop**: a 1,000-ball jelly sheet drops on a trampoline and every kick sends real waves through it. Twist it every time with knobs:
+  - `kicks`: the order of center, rim, ring, tilt, center2, rim2 and wave, always ending with launch.
+  - `every`, `k` (lower = wobblier), `e` (bounce), `hue0` and `hue_span` (colours), `n`, and new `l1`/`l2` hooks.
+- **claw_flood**: a wandering gear swings 2 claws, and every claw hit adds a ball until the circle breaks. Vary:
+  - `cap_balls`, `r`, `ra`/`sweep` (claw size and shape), `wander`, `pace` and `palette`.
+- **overflow_pendulum**: a wrecking ball in a bowl; every hit splits a ball until it overflows. Vary:
+  - `r`, `bob`, `amp`, `g`, `cap_balls`, `palette` and the hooks.
+- **fact_what_if**: a narrated science "what if" Short with a free local AI voice and word-by-word captions. Put 1-2 in every lineup.
+  - Do NOT reuse the same fact. Invent a NEW physics, space, scale or speed fact each time and pass it as `spec_json` (format below).
+  - Use the ready ideas (`idea`: laser_planet with a `target` planet, car_to_sun, drop_no_air) only when you have nothing new.
+  - Numbers must be real textbook values that you can show are correct (speed of light 299,792 km/s, g = 9.81 m/s², published distances and sizes). Round in speech, exact on screen.
+  - Avoid names the voice may say wrong unless they are already in the pronunciation list.
+- **Keep inventing:** every day, add 2 NEW Bounce physics ideas to the ideas board in the spirit of these templates. Things that split, multiply, wobble, swing, overflow or break, with a clear question hook and a payoff. The weekly autobuild turns the best one into a new template.
+```
+FACT SHORT SPEC (JSON). 25-45 s, 7-11 lines. Hook line first ("What if...?"), surprising number in the middle,
+a twist near the end, a final big-number card. Plain words, short sentences, numbers written as words in "say"
+(the screen shows digits). Every number computed from real constants. No copyrighted characters or brands.
+{
+  "title": "<YouTube title under 70 chars>", "voice": "am_michael", "speed": 1.1,
+  "lines": [ {"say": "<spoken sentence>", "scene": "<scene>", ...scene fields}, ... ]
+}
+Scenes (bodies: earth moon mars venus mercury jupiter saturn uranus neptune pluto sun star blackhole ball):
+  crowd    {"b": body}                                  - a crowd raises lasers/arms at body b
+  streak   {"big": "300,000 km", "sub": "EVERY SECOND"} - a glowing streak flies past a huge number
+  travel   {"a": body, "b": body, "from": 0, "to": 9573, "fmt": "hms"|"{:,.0f} km"|"{:.1f} YEARS"...,
+            "back": false}                              - a beam/object goes a->b (or b->a), counter runs from->to
+  scale    {"a": body, "b": body, "ratio": 109, "big": "109x WIDER"}  - b grows next to a until ratio is shown
+  spread   {"a": body, "b": body, "big": "1,435,000 km wide", "shrink": false} - a beam widens into a cone at b
+  counter  {"value": 8000000000, "fmt": "{:,.0f}", "sub": "PEOPLE"}    - a number rolls up
+  fall     {"height_m": 1000, "g": 9.81, "b": body}     - a ball drops with a real-physics timer t = sqrt(2h/g)
+  orbit    {"a": body, "b": body, "period": "365 DAYS"} - b circles a, label shows the period
+  card     {"big": "5h 19m", "sub": "ROUND TRIP"}       - final pop-up card
+
+```

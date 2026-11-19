@@ -521,7 +521,7 @@
   "brick_honeycomb": {
    "kind": "Short",
    "file": "today1102",
-   "secs": 21.5,
+   "secs": 999.0,
    "knobs": {
     "s": {
      "kind": "float",
@@ -1542,6 +1542,57 @@
     }
    }
   },
+  "claw_flood": {
+   "kind": "Short",
+   "file": "auto_bounce2",
+   "secs": 25.9,
+   "knobs": {
+    "cap_balls": {
+     "kind": "int",
+     "default": 1100
+    },
+    "r": {
+     "kind": "float",
+     "default": 10.0
+    },
+    "R": {
+     "kind": "float",
+     "default": 430.0
+    },
+    "ra": {
+     "kind": "float",
+     "default": 118.0
+    },
+    "sweep": {
+     "kind": "float",
+     "default": 250.0
+    },
+    "pace": {
+     "kind": "float",
+     "default": 24.0
+    },
+    "cd": {
+     "kind": "float",
+     "default": 0.18
+    },
+    "wander": {
+     "kind": "float",
+     "default": 165.0
+    },
+    "l1": {
+     "kind": "text",
+     "default": "EVERY CLAW HIT ADDS A BALL"
+    },
+    "l2": {
+     "kind": "text",
+     "default": "WILL THE CIRCLE BREAK?"
+    },
+    "max_secs": {
+     "kind": "int",
+     "default": 33
+    }
+   }
+  },
   "color_battle": {
    "kind": "Short",
    "file": "sims",
@@ -2073,6 +2124,57 @@
     }
    }
   },
+  "jelly_drop": {
+   "kind": "Short",
+   "file": "auto_bounce2",
+   "secs": 20.4,
+   "knobs": {
+    "n": {
+     "kind": "int",
+     "default": 1000
+    },
+    "every": {
+     "kind": "float",
+     "default": 2.3
+    },
+    "Rp": {
+     "kind": "float",
+     "default": 420.0
+    },
+    "k": {
+     "kind": "float",
+     "default": 450.0
+    },
+    "e": {
+     "kind": "float",
+     "default": 0.45
+    },
+    "g": {
+     "kind": "float",
+     "default": 2400.0
+    },
+    "hue0": {
+     "kind": "float",
+     "default": 0.33
+    },
+    "hue_span": {
+     "kind": "float",
+     "default": -0.62
+    },
+    "elev": {
+     "kind": "float",
+     "default": 24.0
+    },
+    "l1": {
+     "kind": "text",
+     "default": "1,000 BALLS ON A TRAMPOLINE"
+    },
+    "l2": {
+     "kind": "text",
+     "default": "WAIT FOR THE LAST BOUNCE"
+    }
+   }
+  },
   "last_inside": {
    "kind": "Short",
    "file": "sims",
@@ -2162,7 +2264,7 @@
   "marble_es": {
    "kind": "Short",
    "file": "today27",
-   "secs": 12.5,
+   "secs": 14.2,
    "knobs": {
     "names": {
      "kind": "color_names",
@@ -2302,7 +2404,7 @@
   "marble_pegs": {
    "kind": "Short",
    "file": "today1102",
-   "secs": 9.1,
+   "secs": 9.4,
    "knobs": {
     "names": {
      "kind": "color_names",
@@ -2423,7 +2525,7 @@
   "marble_race": {
    "kind": "Short",
    "file": "sims",
-   "secs": 9.1,
+   "secs": 10.3,
    "knobs": {
     "names": {
      "kind": "color_names",
@@ -3294,6 +3396,57 @@
     "reveal": {
      "kind": "str",
      "default": "IT'S TWINKLE TWINKLE!"
+    }
+   }
+  },
+  "overflow_pendulum": {
+   "kind": "Short",
+   "file": "auto_bounce2",
+   "secs": 35.8,
+   "knobs": {
+    "r": {
+     "kind": "float",
+     "default": 9.0
+    },
+    "bob": {
+     "kind": "float",
+     "default": 80.0
+    },
+    "g": {
+     "kind": "float",
+     "default": 1300.0
+    },
+    "cd": {
+     "kind": "float",
+     "default": 0.3
+    },
+    "cap_balls": {
+     "kind": "int",
+     "default": 1500
+    },
+    "pace": {
+     "kind": "float",
+     "default": 20.0
+    },
+    "amp": {
+     "kind": "float",
+     "default": 0.66
+    },
+    "spill_n": {
+     "kind": "int",
+     "default": 90
+    },
+    "l1": {
+     "kind": "text",
+     "default": "WILL IT OVERFLOW?"
+    },
+    "l2": {
+     "kind": "text",
+     "default": "EVERY HIT SPLITS A BALL"
+    },
+    "max_secs": {
+     "kind": "int",
+     "default": 33
     }
    }
   },
@@ -4608,29 +4761,6 @@
     "l2": {
      "kind": "text",
      "default": "CAN 1 REACH THE CENTRE?"
-    }
-   }
-  },
-  "stack_collapse": {
-   "kind": "Short",
-   "file": "today27",
-   "secs": 15.4,
-   "knobs": {
-    "secs": {
-     "kind": "float",
-     "default": 20.0
-    },
-    "jit": {
-     "kind": "int",
-     "default": 6
-    },
-    "lean": {
-     "kind": "float",
-     "default": 1.0
-    },
-    "topple_t": {
-     "kind": "float",
-     "default": 15.3
     }
    }
   },
