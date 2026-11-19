@@ -46,8 +46,8 @@ TEAMS = {
     research="ways people are actually making money with AI in the last 60 days: creator reward programs, marketplaces for AI-built products, local-business AI services, faceless content niches with proof of revenue. Include platform policy pages and real earnings reports."),
   "lab": dict(state="lab", prefix="lab", search=True, extra=["briefs"], formats=["rnd-lab.md", "youtube-lineup.md"],
     keys=["research", "formatLeads", "teamLeads", "ideas", "brief"], agents=["hunter", "scout", "engineer", "lead"], hour="every 3 days 11:23",
-    job="""R&D Lab. Explore improvements to Omar's whole ecosystem. Write formatLeads for the YouTube team (new formats winning now, with real examples and view numbers), teamLeads per team, and 4-5 upgrades in the exact rnd-lab.md format (business, type, impact, effort, cost, score, step-by-step script, complete buildPrompt), each for a different business. Never depend on upgrades that aren't done. Then a brief listing approved-but-not-done upgrades as 'Waiting on Omar'.""",
-    research="new short-form and YouTube formats winning right now (faceless, AI-generated, simulation, ambient, Islamic content), new free AI tools for video, voice and automation, and new ways small creators make money."),
+    job="""R&D Lab: upgrades the WHOLE SYSTEM. Follow rnd-lab.md and SYSTEM_MAP.md exactly. (1) 1-2 SYSTEM upgrades (business "System"): make the machine more efficient, reliable, cheaper and less manual, using the evidence in "All teams" (errors, empty outputs, stale runs, batch issues). (2) Up to 3 BUSINESS upgrades, max 1 each, business exactly one of TikTok / Bounce Theory / Ambient Escape / WANTED LEVEL / LinkedAI, only 8+/10 with evidence, never something SYSTEM_MAP.md says exists and never a reword of an EXISTING UPGRADE TITLE. Growth Architect is PAUSED: nothing about it anywhere. Also formatLeads for the YouTube team and teamLeads (tiktok, linkedai, opps, youtube only). Never depend on upgrades that aren't done. Then a brief listing approved-but-not-done upgrades as 'Waiting on Omar'.""",
+    research="ways to run an always-on AI agent + video automation system more efficiently on a free tier: Gemini API free-tier quota tips and new models, reliable cron/job monitoring and phone alerts (ntfy), faster video rendering on ARM CPUs, plus new short-form and YouTube formats winning right now (faceless, simulation, ambient, Islamic content) and LinkedIn job-search tool trends."),
   "repos": dict(state="repos", prefix="repo", search=True, formats=["github-scout.md"], keys=["research", "ideas", "brief", "requestAnswers"],
     agents=["scout", "tester", "lead"], hour="Sun 20:37",
     job="""GitHub Scout. Answer Omar's open requests first (compare 3-5 repos, pick the best). Then find 1-3 free, open-source GitHub repos that make his work easier or cheaper, checked properly (alive, licence, safety, runs on his laptop CPU or needs a GPU), in the exact github-scout.md format with a buildPrompt. Only real repos, real stars, real licences. Then a brief.""",
@@ -56,6 +56,11 @@ TEAMS = {
     keys=["brief"], agents=["chief"], hour="Mon 16:42",
     job="""Chief of Staff. Read every team's brief and status plus the stats, and write ONE short brief for Omar: headline (<12 words), summary (2-3 plain sentences: the most important thing across all teams, with any stat that moved), filmToday (1-3 '<team>: <title> - <hook>'), approvals (how many ideas wait + top 2-3 titles + oldest 'Waiting on Omar' items), notes (1-3 heads-ups, e.g. any agent in error)."""),
 }
+
+
+PAUSED = {"growth": "Growth Architect is under construction", "upgrades": "Growth Architect is under construction"}
+PAUSED_STATES = {"growth"}
+BUSINESSES = {"System", "TikTok", "Bounce Theory", "Ambient Escape", "WANTED LEVEL", "LinkedAI"}
 
 
 def load(p, d=None):
@@ -111,11 +116,16 @@ def context(cfg, state):
         elif e == "briefs":
             b = {}
             for t in sorted(os.listdir(os.path.join(ROOT, "data"))):
+                if t in PAUSED_STATES:
+                    continue
                 s = load(os.path.join(ROOT, "data", t, "state.json"), {})
                 b[t] = {"brief": s.get("brief"), "agents": [(a.get("name"), a.get("status"), a.get("lastRun")) for a in s.get("agents", [])],
                         "waiting": [i["title"] for i in s.get("ideas", []) if i.get("status") == "approved"][:6],
                         "pending": sum(1 for i in s.get("ideas", []) if i.get("status") == "pending")}
             parts.append("All teams: " + json.dumps(b, ensure_ascii=False)[:25000])
+    if cfg["state"] == "lab":
+        parts.append("EXISTING UPGRADE TITLES (pending, approved, done or skipped; never pitch these again or reword them):\n"
+                     + "\n".join(f"- [{i.get('status')}] {i.get('business', '')}: {i.get('title', '')}" for i in state.get("ideas", []))[:12000])
     return "\n\n".join(parts)
 
 
@@ -234,11 +244,40 @@ def fix_repeats(patch, system):
     print(f"lineup repeats fixed: {done}/{len(dupes)}", flush=True)
 
 
+_STOP = {"linkedai", "tiktok", "bounce", "theory", "ambient", "escape", "the", "a", "and", "for", "with", "to", "of", "in", "your"}
+
+
+def fix_lab(patch, state):
+    """R&D Lab: keep only allowed businesses, drop paused ones and repeats of existing upgrades, cap the counts."""
+    seen = [set(_idea_key(i.get("title", "")).split()) - _STOP for i in state.get("ideas", [])]
+    keep, per = [], {}
+    for i in patch.get("ideas", []) or []:
+        b = str(i.get("business", "")).strip()
+        if b in ("Agent HQ", "Site", "Server"):
+            b = i["business"] = "System"
+        if b not in BUSINESSES or "growth architect" in (str(i.get("title", "")) + " " + str(i.get("hook", ""))).lower():
+            print("lab: dropped (business not allowed / paused):", i.get("title"), flush=True); continue
+        w = set(_idea_key(i.get("title", "")).split()) - _STOP
+        if any(w and o and len(w & o) >= max(2, 0.6 * min(len(w), len(o))) for o in seen):
+            print("lab: dropped repeat:", i.get("title"), flush=True); continue
+        biz = sum(v for x, v in per.items() if x != "System")
+        if per.get(b, 0) >= (2 if b == "System" else 1) or (b != "System" and biz >= 3):
+            continue
+        per[b] = per.get(b, 0) + 1; seen.append(w); keep.append(i)
+    patch["ideas"] = keep
+    if isinstance(patch.get("teamLeads"), dict):
+        patch["teamLeads"].pop("growth", None)
+
+
 def main(job):
+    if job in PAUSED:
+        print(f"{job}: paused ({PAUSED[job]}). Not running.")
+        return
     cfg = TEAMS[job]
     state = load(os.path.join(ROOT, "data", cfg["state"], "state.json"), {})
     fmts = "\n\n".join(f"### {f}\n" + open(os.path.join(ROOT, "agents", "formats", f), encoding="utf-8").read()[:14000] for f in cfg["formats"])
     runbook = open(os.path.join(ROOT, "agents", "RUNBOOK.md"), encoding="utf-8").read()[:5000]
+    sysmap = open(os.path.join(ROOT, "agents", "SYSTEM_MAP.md"), encoding="utf-8").read()[:14000]
     system = f"You are an Agent HQ team working for Omar.\n{OMAR}\n\n{RULES}"
     notes, sources = "", []
     if cfg.get("search"):
@@ -252,6 +291,8 @@ def main(job):
                      "earlier research in the state; don't claim new outside trends or add links that aren't already in the data.)")
     src = "\n".join(f"- {t}: {u}" for t, u in sources[:40])
     prompt = f"""Today is {TODAY} ({TODAY:%A}). Your job:\n{cfg['job']}
+
+What Omar's system is and does TODAY (never pitch anything listed here as new; Growth Architect is paused):\n{sysmap}
 
 Rules for Omar's decisions (from RUNBOOK):\n{runbook}
 
@@ -308,6 +349,8 @@ Include every key listed above."""
         check_idea_slots(patch, state)
     if job == "youtube" and patch.get("ideas"):
         drop_repeat_ideas(patch, state)
+    if job == "lab":
+        fix_lab(patch, state)
     os.makedirs(os.path.join(ROOT, "out"), exist_ok=True)
     json.dump(patch, open(os.path.join(ROOT, "out", f"{job}_patch.json"), "w", encoding="utf-8"), ensure_ascii=False, indent=1)
     print(f"{job}: wrote patch with keys {sorted(patch)} and {len(ideas)} ideas")

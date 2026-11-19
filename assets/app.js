@@ -8,8 +8,8 @@
   const el = (t, c, x) => { const e = document.createElement(t); if (c) e.className = c; if (x != null) e.textContent = x; return e; };
   const sv = (t, a = {}, p) => { const e = document.createElementNS(NS, t); for (const k in a) e.setAttribute(k, a[k]); if (p) p.appendChild(e); return e; };
   const safeUrl = u => { try { const p = new URL(u); return /^https?:$/.test(p.protocol) ? p.href : null; } catch { return null; } };
-  const SC = { working: "#6fd3ff", ok: "#5fe0a0", idle: "#a37bff", waiting: "#ffc864", error: "#ff7a8e", off: "#4b4566" };
-  const ST = { working: "Working", ok: "Done", idle: "Idle", waiting: "Waiting", error: "Error", off: "Not hired" };
+  const SC = { working: "#6fd3ff", ok: "#5fe0a0", idle: "#a37bff", waiting: "#ffc864", error: "#ff7a8e", off: "#4b4566", recharging: "#3fb6c9" };
+  const ST = { working: "Working", ok: "Done", idle: "Idle", waiting: "Waiting", error: "Error", off: "Not hired", recharging: "Recharging" };
   const fmt = n => typeof n === "number" ? (Math.abs(n) >= 1e6 ? (n / 1e6).toFixed(1) + "M" : Math.abs(n) >= 1e4 ? (n / 1e3).toFixed(1) + "K" : n.toLocaleString()) : (n ?? "—");
   function ago(iso) { if (!iso) return "never"; const t = Date.parse(iso); if (isNaN(t)) return "—"; const s = Math.round((Date.now() - t) / 1000);
     if (s < 0) return until(iso); if (s < 60) return "just now"; if (s < 3600) return Math.floor(s / 60) + "m ago"; if (s < 86400) return Math.floor(s / 3600) + "h ago"; return Math.floor(s / 86400) + "d ago"; }
@@ -37,8 +37,8 @@
       const agents = cfg.agents.map(a => {
         let live = byId[a.id] || {};
         if (a.id === "collector") live = mt ? { status: mt.status === "needs_setup" ? "waiting" : mt.status === "error" ? "error" : "ok", doing: mt.message, lastRun: mt.updatedAt, nextRun: nextHour() } : { status: "off" };
-        const status = (!hired && a.id !== "collector") ? "off" : (live.status || "idle");
-        return { ...a, status, doing: live.doing || "", lastRun: live.lastRun, nextRun: live.nextRun };
+        const status = cfg.paused ? "recharging" : (!hired && a.id !== "collector") ? "off" : (live.status || "idle");
+        return { ...a, status, doing: cfg.paused ? "Offline, recharging until the rebuild is done" : (live.doing || ""), lastRun: live.lastRun, nextRun: live.nextRun };
       });
       const log = [...(s.log || []), ...((mt && mt.log) || []).map(l => ({ ...l, agent: l.agent || "Data Collector" }))].sort((a, b) => (b.t || "").localeCompare(a.t || ""));
       teams[id] = { cfg, hired, state: s, metrics: mt, agents, log };
@@ -251,6 +251,7 @@
 
   function tabsFor(t) {
     if (t.cfg.virtual) return [["overview", "Brief"], ["activity", "Activity"]];
+    if (t.cfg.paused) return [["overview", "Paused"]];
     if (t.cfg.id === "fight") return [["overview", "NBA"], ["ufc", "UFC"], ["record", "Record"], ["books", "Odds & cost"], ["activity", "Activity"]];
     if (t.cfg.id === "trading") return [["overview", "Overview"], ["positions", "Positions"], ["trades", "Trades"], ["pnl", "P&L vs SPY"], ["week", "7-day test"], ["news", "News desk"], ["coins", "Coin watch"], ["backtest", "Backtest"], ["activity", "Activity"]];
     const out = [["overview", "Overview"], ["ideas", t.cfg.ideaWord || "Ideas"]];
@@ -260,7 +261,8 @@
     if (t.cfg.id === "tiktok" || t.cfg.id === "youtube") out.splice(out.findIndex(x => x[0] === "ideas") + 1, 0, ["review", "Review"]);
     if (t.cfg.id === "linkedai" || t.cfg.id === "growth") out.splice(2, 0, ["competitors", "Competitors"]);
     if (t.cfg.id === "opps" || t.cfg.id === "growth") out.splice(out.findIndex(x => x[0] === "ideas") + 1, 0, ["swarm", "100-person test"]);
-    if (t.cfg.id === "lab") out.splice(1, 0, ["leads", "Leads for each team"]);
+    if (t.cfg.id === "lab") { out[1] = ["ideas", "System upgrades"]; out.splice(2, 0, ["leads", "Leads for each team"]); }
+    if (UPG[t.cfg.id] && M.teams.lab) out.splice(out.findIndex(x => x[0] === "ideas") + 1, 0, ["upgrades", "Upgrades"]);
     out.push(["research", "Research"], ["activity", "Activity"]);
     return out;
   }
@@ -279,7 +281,8 @@
       b.onclick = () => { tab = k; renderPanel(); }; tabs.append(b); });
     ph.append(tabs); p.append(ph);
     const body = el("div", "pb"); p.append(body);
-    ({ overview: vOverview, ideas: vIdeas, review: vReview, competitors: vCompetitors, swarm: vSwarm, leads: vLeads, lineup: vLineup, picks: vFToday, ufc: vFUfc, record: vFRecord, books: vFBooks, positions: vTPositions, trades: vTTrades, pnl: vTPnl, news: vTNews, coins: vTCoins, backtest: vTBacktest, week: vTWeek, shots: vShots, clips: vClips, stats: vStats, trending: vTrending, research: vResearch, activity: vActivity, ...(t.cfg.id === "fight" && !agentSel ? { overview: vFToday } : {}) }[tab] || vOverview)(t, body);
+    if (t.cfg.paused) { vPaused(t, body); return; }
+    ({ overview: vOverview, ideas: vIdeas, upgrades: vUpgrades, review: vReview, competitors: vCompetitors, swarm: vSwarm, leads: vLeads, lineup: vLineup, picks: vFToday, ufc: vFUfc, record: vFRecord, books: vFBooks, positions: vTPositions, trades: vTTrades, pnl: vTPnl, news: vTNews, coins: vTCoins, backtest: vTBacktest, week: vTWeek, shots: vShots, clips: vClips, stats: vStats, trending: vTrending, research: vResearch, activity: vActivity, ...(t.cfg.id === "fight" && !agentSel ? { overview: vFToday } : {}) }[tab] || vOverview)(t, body);
   }
   function pill(s) { return el("span", "pill s-" + (s || "idle"), ST[s] || s || "Idle"); }
   function empty(title, text) { const e = el("div", "empty"); e.append(el("strong", null, title)); e.append(el("span", null, text)); return e; }
@@ -438,7 +441,21 @@
     const f = (i.format || "").toLowerCase(); const skill = f.includes("ambient") ? "ambient-escape-videos" : "bounce-theory-videos";
     return `Use the ${skill} skill. Include this Agent HQ idea in today's batch (id ${i.id}):\n\nTitle: ${i.title}\nHook: ${i.hook || ""}\nFormat: ${i.format || ""}\n\nProduction notes:\n${i.script || ""}`;
   }
-  function vIdeas(t, body) {
+  // Upgrades: the R&D Lab writes every upgrade into data/lab/state.json. System ones show on the Lab floor;
+  // business ones show in that business's own "Upgrades" tab (buttons still save to the Lab's file).
+  const UPG = { tiktok: ["TikTok"], youtube: ["Bounce Theory", "Ambient Escape", "WANTED LEVEL", "YouTube"], linkedai: ["LinkedAI"] };
+  const BIZ_ALL = Object.values(UPG).flat();
+  function labView(match) { const lab = M.teams.lab; return { ...lab, state: { ...lab.state, ideas: (lab.state.ideas || []).filter(i => match(String(i.business || ""))) } }; }
+  function vUpgrades(t, body) {
+    body.append(el("div", "why", "Upgrades the R&D Lab found for " + t.cfg.name + ". Approve the ones you want, then press I did it once it's built."));
+    vIdeas(labView(b => UPG[t.cfg.id].includes(b)), body, true);
+  }
+  function vPaused(t, body) {
+    const c = el("div", "card"); c.append(el("div", "label", "Paused")); c.append(el("h3", null, "Under construction"));
+    c.append(el("div", "why", t.cfg.paused)); c.append(el("div", "small", "No runs, no ideas and no upgrades for this floor until you switch it back on.")); body.append(c);
+  }
+  function vIdeas(t, body, proxied) {
+    if (t.cfg.id === "lab" && !proxied) t = labView(b => !BIZ_ALL.includes(b) && !/growth architect/i.test(b));
     ideaLine(t, body);
     const ideas = t.state.ideas || []; const S2 = [["pending", "To review"], ["approved", t.cfg.id === "youtube" ? "Up next" : "Waiting on you"], ["done", t.cfg.id === "lab" || t.cfg.id === "repos" ? "Installed" : "Done"], ["skipped", "Skipped"]];
     const sub = el("div", "subtabs"); S2.forEach(([k, l]) => { const b = el("button", null, `${l} ${ideas.filter(i => effectiveStatus(i).status === k).length}`); b.setAttribute("aria-pressed", String(ideaFilter === k)); b.onclick = () => { ideaFilter = k; renderPanel(); }; sub.append(b); });
@@ -508,7 +525,7 @@
     ws.forEach(w => { const c = el("div", "card"); c.append(el("div", "label", (w.date || ago(w.createdAt)))); c.append(el("h3", null, w.idea || "Idea")); c.append(swarmBlock(w, false)); body.append(c); });
   }
   function vLeads(t, body) {
-    const st = t.state, fl = st.formatLeads || [], tl = st.teamLeads || {};
+    const st = t.state, fl = st.formatLeads || [], tl = Object.fromEntries(Object.entries(st.teamLeads || {}).filter(([k]) => !(M.teams[k] && M.teams[k].cfg.paused)));
     if (!fl.length && !Object.keys(tl).length) { body.append(empty("No leads yet", "Every morning the Lab hunts for what's winning right now and sends leads to each team. Each team's R&D Liaison uses them and reports back.")); return; }
     const yst = (M.teams.youtube && M.teams.youtube.state) || {};
     const bases = Object.values((yst.lineup && yst.lineup.channels) || {}).flatMap(a => Array.isArray(a) ? a : []).map(v => String((v && v.basis) || "")).filter(Boolean);
@@ -1052,7 +1069,7 @@
   /* ---------------- HUD ---------------- */
   function renderHUD() {
     const all = Object.values(M.teams); const working = all.reduce((n, t) => n + t.agents.filter(a => a.status === "working").length, 0);
-    const pending = all.reduce((n, t) => n + (t.state.ideas || []).filter(i => (i.status || "pending") === "pending").length, 0);
+    const pending = all.filter(t => !t.cfg.paused).reduce((n, t) => n + (t.state.ideas || []).filter(i => (i.status || "pending") === "pending").length, 0);
     const tk = (M.teams.tiktok.metrics || {}).kpis || []; const fol = tk.find(k => k.label === "Followers");
     const yk = (M.teams.youtube.metrics || {}).kpis || []; const subs = yk.filter(k => /subscribers$/.test(k.label)).reduce((n, k) => n + (k.value || 0), 0);
     const chips = $("#chips"); chips.replaceChildren();

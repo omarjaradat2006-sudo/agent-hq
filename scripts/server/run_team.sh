@@ -11,10 +11,12 @@ exec 9>/tmp/agenthq.lock; flock 9          # one team at a time
 set -a; . ~/.agent-hq.env; set +a
 cd "$REPO" || exit 1
 
-[ "${1:-}" = all ] && LIST="tiktok youtube linkedai growth upgrades opps lab repos chief" || LIST="$1"
+[ "${1:-}" = all ] && LIST="tiktok youtube linkedai opps lab repos chief" || LIST="$1"
 FAILED=""
 for TEAM in $LIST; do
   echo "=== $(date '+%F %T') $TEAM ==="
+  # Growth Architect is paused while Omar rebuilds it (agents show as recharging on the site).
+  case "$TEAM" in growth|upgrades) echo "$TEAM is paused: skipped"; continue;; esac
   git fetch -q origin main && git reset -q --hard origin/main
   if [ "$TEAM" = tiktok ]; then CMD="python3 agents/gemini/tiktok_team.py"; else CMD="python3 agents/gemini/team.py $TEAM"; fi
   # The YouTube team plans both channels' daily lineups: it uses its own key (own Google project) first, then the shared key.

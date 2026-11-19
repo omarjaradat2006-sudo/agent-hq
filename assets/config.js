@@ -27,7 +27,8 @@ window.HQ_CONFIG = {
         { id: "watch", name: "Competitor Watch", role: "Their content, ads and growth", kind: "competitors" },
         { id: "copywriter", name: "Copywriter", role: "Promo scripts and posts", kind: "ideas" },
         { id: "liaison", name: "R&D Liaison", role: "Brings in the R&D Lab's finds", kind: "research" } ] },
-    { id: "growth", name: "Growth Architect", color: "#3ddc97", grid: [0, 1], tagline: "AI marketing tools market and promo content", ideaWord: "Content",
+    { id: "growth", name: "Growth Architect", color: "#3ddc97", grid: [0, 1], tagline: "Paused: under construction", ideaWord: "Content",
+      paused: "Omar is rebuilding Growth Architect from the ground up. This floor's agents are offline and recharging: they don't run, research or write anything until the rebuild is done and he switches them back on.",
       agents: [
         { id: "lead", name: "Product Lead", role: "Weekly read on the market", kind: "brief" },
         { id: "watch", name: "Competitor Watch", role: "Their content, ads and growth", kind: "competitors" },
@@ -66,11 +67,11 @@ window.HQ_CONFIG = {
         { id: "fight", name: "Fight Analyst", role: "UFC: full fighter breakdowns, weigh-ins, line moves", kind: "picks" },
         { id: "value", name: "Parlay Builder", role: "3 placeable parlays, one leg per game, one book", kind: "picks" },
         { id: "grader", name: "Results Grader", role: "Grades every parlay and underdog pick", kind: "record" } ] },
-    { id: "lab", name: "R&D Lab", color: "#2ee6d6", grid: [1, 2], tagline: "Upgrades for every business, pipeline and this site", ideaWord: "Upgrades",
+    { id: "lab", name: "R&D Lab", color: "#2ee6d6", grid: [1, 2], tagline: "Upgrades the whole system: faster, cheaper, more reliable. Business upgrades go to each floor's Upgrades tab", ideaWord: "Upgrades",
       agents: [
         { id: "lead", name: "Lab Director", role: "Picks the upgrades worth doing", kind: "brief" },
-        { id: "scout", name: "Tool Scout", role: "New AI tools, models and APIs", kind: "research" },
+        { id: "scout", name: "Tool Scout", role: "Tools and models that make the system faster and cheaper", kind: "research" },
         { id: "hunter", name: "Format Hunter", role: "What makes rival videos more engaging", kind: "research" },
-        { id: "engineer", name: "Upgrade Engineer", role: "Turns finds into build plans", kind: "ideas" } ] }
+        { id: "engineer", name: "Systems Engineer", role: "Finds weak spots (errors, quota, slow jobs) and plans the fix", kind: "ideas" } ] }
   ]
 };
