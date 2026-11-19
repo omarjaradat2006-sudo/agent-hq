@@ -64,6 +64,9 @@ class Writer:
     def write(self, fr):
         self.n += 1
         if not self.dry: self.p.stdin.write(fr.buf.tobytes())
+        _m = __import__("sys").modules.get("__main__")
+        if not self.dry and getattr(_m, "Enough", None) and self.n >= getattr(_m, "FRAMES", 10**9):
+            self.p.stdin.close(); self.p.kill(); raise _m.Enough()
 
     def close(self, audio):
         dur = self.n / FPS
