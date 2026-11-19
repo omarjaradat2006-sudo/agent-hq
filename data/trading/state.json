@@ -1,15 +1,15 @@
 {
  "team": "trading",
  "plain": {
-  "line": "Up $57.62 since start · 12 trades · holding: BTC/USD, AVGO, AMD, NVDA",
+  "line": "Down $42.31 since start · 12 trades · holding: BTC/USD, AVGO, AMD, NVDA",
   "rulesMode": "ultra",
-  "top": "Up $57.62 since start (+0.06%) · just holding SPY would be -4.77%",
-  "up": true,
+  "top": "Down $42.31 since start (-0.04%) · just holding SPY would be -4.64%",
+  "up": false,
   "holding": [
-   "BTC/USD: buy order sent, waiting to fill",
-   "AVGO: 1 shares worth $346.89, down $5.37 (sells at $373.62 or stops at $341.90)",
-   "AMD: 11 shares worth $5,319.65, down $51.88 (sells at $517.29 or stops at $473.36)",
-   "NVDA: 33 shares worth $4,853.15, down $45.49 (sells at $157.26 or stops at $143.91)"
+   "BTC/USD: 0.189731 coins worth $11,682.97, down $72.43 (sells at $65,675.58 or stops at $60,099.35)",
+   "AVGO: 1 shares worth $347.50, down $4.76 (sells at $373.62 or stops at $341.90)",
+   "AMD: 11 shares worth $5,296.50, down $75.04 (sells at $517.29 or stops at $473.36)",
+   "NVDA: 33 shares worth $4,793.59, down $105.05 (sells at $157.26 or stops at $143.91)"
   ],
   "today": [
    "Bought BTC/USD after the news: Anthropic's massive IPO debut tops a $2 trillion valuation, lifting broader crypto and tech sentiment.",
@@ -22,14 +22,14 @@
    "Sold INTC (target +6% hit): made $354.20.",
    "Sold AMAT (target +6% hit): made $289.11.",
    "Sold TSLA (bad news: The Anthropic IPO debut triggers broad market profit-taking and weighs on equity): lost $42.92.",
-   "Scanned the news 100 times today: read 6104 headlines, found 234 that could move a stock or coin it's allowed to trade.",
+   "Scanned the news 107 times today: read 6306 headlines, found 244 that could move a stock or coin it's allowed to trade.",
    "Safety rules that stepped in: take profit +6% (x2), bad news exit (x2), stop loss -3% (x1)."
   ],
   "watchlist": "Allowed to trade: 69 halal stocks, 5 Shariah ETFs, 9 coins.",
-  "lastScan": "2026-11-19T20:32:40Z"
+  "lastScan": "2026-11-19T21:18:31Z"
  },
  "hired": true,
- "updatedAt": "2026-11-19T20:32:46Z",
+ "updatedAt": "2026-11-19T21:18:42Z",
  "mode": "PAPER",
  "agents": [
   {
@@ -37,8 +37,8 @@
    "name": "News Scout",
    "role": "Reads X, Reddit and news feeds",
    "status": "working",
-   "doing": "Read 31 new headlines/posts, 1 market-moving stories",
-   "lastRun": "2026-11-19T20:32:45Z"
+   "doing": "Read 67 new headlines/posts, 3 market-moving stories",
+   "lastRun": "2026-11-19T21:18:41Z"
   },
   {
    "id": "analyst",
@@ -68,17 +68,17 @@
    "id": "risk",
    "name": "Risk Officer",
    "role": "Hard limits, stop-losses, kill switch",
-   "status": "idle",
-   "doing": "",
-   "lastRun": null
+   "status": "ok",
+   "doing": "Stop-loss for BTC/USD placed on Alpaca at $60,099.35",
+   "lastRun": "2026-11-19T20:37:49Z"
   },
   {
    "id": "trader",
    "name": "Trader",
    "role": "Places paper orders on Alpaca",
-   "status": "working",
-   "doing": "BUY BTC/USD: Anthropic's massive IPO debut tops a $2 trillion valuation, lifting broader crypto and tec | volume 2.0x normal, price -1.43% since the news | TradingAgents not used (ultra mode)",
-   "lastRun": "2026-11-19T20:32:45Z"
+   "status": "ok",
+   "doing": "Bought 0.190207 BTC/USD at $61,958.09 (stop $60,099.35, target $65,675.58)",
+   "lastRun": "2026-11-19T20:37:49Z"
   },
   {
    "id": "coins",
@@ -98,6 +98,71 @@
   }
  ],
  "log": [
+  {
+   "t": "2026-11-19T21:18:41Z",
+   "agent": "News Scout",
+   "msg": "Read 67 new headlines/posts, 3 market-moving stories"
+  },
+  {
+   "t": "2026-11-19T21:18:34Z",
+   "agent": "News Scout",
+   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
+  },
+  {
+   "t": "2026-11-19T21:03:28Z",
+   "agent": "News Scout",
+   "msg": "Read 31 new headlines/posts, 1 market-moving stories"
+  },
+  {
+   "t": "2026-11-19T20:58:22Z",
+   "agent": "News Scout",
+   "msg": "Read 19 new headlines/posts, 2 market-moving stories"
+  },
+  {
+   "t": "2026-11-19T20:53:15Z",
+   "agent": "News Scout",
+   "msg": "Read 16 new headlines/posts, 3 market-moving stories"
+  },
+  {
+   "t": "2026-11-19T20:53:13Z",
+   "agent": "News Scout",
+   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
+  },
+  {
+   "t": "2026-11-19T20:48:07Z",
+   "agent": "News Scout",
+   "msg": "Read 21 new headlines/posts, 1 market-moving stories"
+  },
+  {
+   "t": "2026-11-19T20:43:01Z",
+   "agent": "News Scout",
+   "msg": "Read 25 new headlines/posts, 0 market-moving stories"
+  },
+  {
+   "t": "2026-11-19T20:37:54Z",
+   "agent": "News Scout",
+   "msg": "Read 23 new headlines/posts, 0 market-moving stories"
+  },
+  {
+   "t": "2026-11-19T20:37:53Z",
+   "agent": "News Scout",
+   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
+  },
+  {
+   "t": "2026-11-19T20:37:49Z",
+   "agent": "Risk Officer",
+   "msg": "Stop-loss for BTC/USD placed on Alpaca at $60,099.35"
+  },
+  {
+   "t": "2026-11-19T20:37:49Z",
+   "agent": "Trader",
+   "msg": "Bought 0.190207 BTC/USD at $61,958.09 (stop $60,099.35, target $65,675.58)"
+  },
+  {
+   "t": "2026-11-19T20:32:48Z",
+   "agent": "Trader",
+   "msg": "Saved results to the Agent HQ dashboard"
+  },
   {
    "t": "2026-11-19T20:32:45Z",
    "agent": "Trader",
@@ -782,93 +847,28 @@
    "t": "2026-11-19T11:02:14Z",
    "agent": "News Scout",
    "msg": "Read 104 new headlines/posts, 3 market-moving stories"
-  },
-  {
-   "t": "2026-11-19T11:02:11Z",
-   "agent": "News Scout",
-   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
-  },
-  {
-   "t": "2026-11-19T10:47:05Z",
-   "agent": "News Scout",
-   "msg": "Read 87 new headlines/posts, 3 market-moving stories"
-  },
-  {
-   "t": "2026-11-19T10:47:00Z",
-   "agent": "News Scout",
-   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
-  },
-  {
-   "t": "2026-11-19T10:31:54Z",
-   "agent": "News Scout",
-   "msg": "Read 84 new headlines/posts, 2 market-moving stories"
-  },
-  {
-   "t": "2026-11-19T10:31:44Z",
-   "agent": "News Scout",
-   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
-  },
-  {
-   "t": "2026-11-19T10:16:38Z",
-   "agent": "News Scout",
-   "msg": "Read 116 new headlines/posts, 3 market-moving stories"
-  },
-  {
-   "t": "2026-11-19T10:16:30Z",
-   "agent": "News Scout",
-   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
-  },
-  {
-   "t": "2026-11-19T10:01:25Z",
-   "agent": "News Scout",
-   "msg": "Read 82 new headlines/posts, 2 market-moving stories"
-  },
-  {
-   "t": "2026-11-19T10:01:18Z",
-   "agent": "News Scout",
-   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
-  },
-  {
-   "t": "2026-11-19T10:01:17Z",
-   "agent": "News Scout",
-   "msg": "Google News feed skipped: HTTP 429 https://news.google.com/rss/search: <html><head><meta http-equiv=\"content-type\" content=\"text/html; charset=utf-8\"/><title>Sorry...</title><style> body { font-family: verdana, arial, sans-serif; background-color: #fff; color: #000; }</s"
-  },
-  {
-   "t": "2026-11-19T09:46:00Z",
-   "agent": "News Scout",
-   "msg": "Read 72 new headlines/posts, 2 market-moving stories"
-  },
-  {
-   "t": "2026-11-19T09:45:57Z",
-   "agent": "News Scout",
-   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
-  },
-  {
-   "t": "2026-11-19T09:30:52Z",
-   "agent": "News Scout",
-   "msg": "Read 75 new headlines/posts, 5 market-moving stories"
   }
  ],
  "brief": {
   "date": "Thu Nov 19",
-  "createdAt": "2026-11-19T20:32:46Z",
-  "headline": "Paper account +$25 today (+0.03%), +0.06% total vs SPY -4.77% · 4 open",
+  "createdAt": "2026-11-19T21:18:42Z",
+  "headline": "Paper account -$75 today (-0.07%), -0.04% total vs SPY -4.64% · 4 open",
   "summary": "5 trade(s) closed today, 3/8 winners overall. TradingAgents checks used today: 0/5.",
   "notes": [
    "X/Reddit reader: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
   ]
  },
  "account": {
-  "equity": 100057.62,
+  "equity": 99957.69,
   "cash": 77831.54,
   "startEquity": 100000.0,
   "startedAt": "2026-11-10T01:51:53Z",
-  "dayPnl": 25.38,
-  "dayPct": 0.03,
-  "totalPnl": 57.62,
-  "totalPct": 0.06,
-  "spyPct": -4.77,
-  "vsSpyPct": 4.83
+  "dayPnl": -74.55,
+  "dayPct": -0.07,
+  "totalPnl": -42.31,
+  "totalPct": -0.04,
+  "spyPct": -4.64,
+  "vsSpyPct": 4.6
  },
  "status": {
   "killed": false,
@@ -876,14 +876,14 @@
   "deepUsed": 0,
   "deepMax": 5,
   "social": {
-   "at": "2026-11-19T20:22:24Z",
+   "at": "2026-11-19T21:18:34Z",
    "items": 0,
    "source": "Reddit public JSON (blocked on servers: add REDDIT_CLIENT_ID/SECRET); X needs Agent Reach",
    "problems": [
     "r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
    ],
    "wsb": {
-    "at": "2026-11-19T20:22:24Z",
+    "at": "2026-11-19T21:18:34Z",
     "tickers": 50,
     "items": 0,
     "key": false
@@ -900,14 +900,14 @@
    "id": "ahq-BTCUSD-20261119203245",
    "symbol": "BTC/USD",
    "asset": "crypto",
-   "status": "pending",
+   "status": "open",
    "entryOrderId": "638efc04-c90e-443d-a88b-4ebdc058b9a8",
-   "qty": null,
+   "qty": 0.189731492,
    "cost": 12016.1,
    "estPrice": 61700.0,
-   "entryPrice": 61700.0,
-   "stop": 59849.0,
-   "target": 65402.0,
+   "entryPrice": 61958.091492026,
+   "stop": 60099.35,
+   "target": 65675.58,
    "openedAt": "2026-11-19T20:32:45Z",
    "news": {
     "summary": "Anthropic's massive IPO debut tops a $2 trillion valuation, lifting broader crypto and tech sentiment.",
@@ -961,7 +961,10 @@
     ],
     "tradingAgents": "not used (ultra mode)",
     "taSummary": ""
-   }
+   },
+   "stopOrderId": "7a3b25d7-bcfd-4188-bb70-a20467ed1033",
+   "lastPrice": 61576.354679802,
+   "unrealizedPct": -0.62
   },
   {
    "id": "ahq-AVGO-20261119174039",
@@ -1009,8 +1012,8 @@
     "tradingAgents": "not used (ultra mode)",
     "taSummary": ""
    },
-   "lastPrice": 346.8,
-   "unrealizedPct": -1.55
+   "lastPrice": 348.0,
+   "unrealizedPct": -1.21
   },
   {
    "id": "ahq-AMD-20261119174038",
@@ -1058,8 +1061,8 @@
     "tradingAgents": "not used (ultra mode)",
     "taSummary": ""
    },
-   "lastPrice": 483.59,
-   "unrealizedPct": -0.97
+   "lastPrice": 481.7,
+   "unrealizedPct": -1.36
   },
   {
    "id": "ahq-NVDA-20261119170632",
@@ -1097,8 +1100,8 @@
     "tradingAgents": "not used (ultra mode)",
     "taSummary": ""
    },
-   "lastPrice": 147.01,
-   "unrealizedPct": -0.97
+   "lastPrice": 145.35,
+   "unrealizedPct": -2.08
   }
  ],
  "charts": {
@@ -1659,6 +1662,42 @@
     [
      "2026-11-19T20:30:00Z",
      100125.12
+    ],
+    [
+     "2026-11-19T20:35:00Z",
+     100118.88
+    ],
+    [
+     "2026-11-19T20:40:00Z",
+     100187.65
+    ],
+    [
+     "2026-11-19T20:45:00Z",
+     100222.9
+    ],
+    [
+     "2026-11-19T20:50:00Z",
+     100241.8
+    ],
+    [
+     "2026-11-19T20:55:00Z",
+     100262.62
+    ],
+    [
+     "2026-11-19T21:00:00Z",
+     100179.96
+    ],
+    [
+     "2026-11-19T21:05:00Z",
+     100084.68
+    ],
+    [
+     "2026-11-19T21:10:00Z",
+     100124.6
+    ],
+    [
+     "2026-11-19T21:15:00Z",
+     100132.68
     ]
    ],
    "1W": [
@@ -2889,24 +2928,24 @@
     [
      "2026-11-19T20:30:00Z",
      100125.12
+    ],
+    [
+     "2026-11-19T20:45:00Z",
+     100222.9
+    ],
+    [
+     "2026-11-19T21:00:00Z",
+     100179.96
+    ],
+    [
+     "2026-11-19T21:15:00Z",
+     100132.68
     ]
    ]
   },
   "holdings": {
    "BTC/USD": {
     "bars": [
-     [
-      "2026-11-16T20:45:00Z",
-      65009.68
-     ],
-     [
-      "2026-11-16T21:00:00Z",
-      64987.532
-     ],
-     [
-      "2026-11-16T21:15:00Z",
-      65197.97
-     ],
      [
       "2026-11-16T21:30:00Z",
       65252.8525
@@ -4045,21 +4084,29 @@
      ],
      [
       "2026-11-19T20:30:00Z",
-      61812.401
+      62048.1495
+     ],
+     [
+      "2026-11-19T20:45:00Z",
+      62051.7495
+     ],
+     [
+      "2026-11-19T21:00:00Z",
+      61926.633
+     ],
+     [
+      "2026-11-19T21:15:00Z",
+      61566.7115
      ]
     ],
-    "entry": 61700.0,
-    "stop": 59849.0,
-    "target": 65402.0,
+    "entry": 61958.091492026,
+    "stop": 60099.35,
+    "target": 65675.58,
     "openedAt": "2026-11-19T20:32:45Z",
-    "qty": null
+    "qty": 0.189731492
    },
    "AVGO": {
     "bars": [
-     [
-      "2026-11-16T20:45:00Z",
-      333.75
-     ],
      [
       "2026-11-17T13:30:00Z",
       336.85
@@ -4402,7 +4449,15 @@
      ],
      [
       "2026-11-19T20:30:00Z",
-      347.18
+      347.05
+     ],
+     [
+      "2026-11-19T20:45:00Z",
+      346.545
+     ],
+     [
+      "2026-11-19T21:00:00Z",
+      351.27
      ]
     ],
     "entry": 352.26,
@@ -4413,10 +4468,6 @@
    },
    "AMD": {
     "bars": [
-     [
-      "2026-11-16T20:45:00Z",
-      504.12
-     ],
      [
       "2026-11-17T13:00:00Z",
       517.26
@@ -4763,7 +4814,11 @@
      ],
      [
       "2026-11-19T20:30:00Z",
-      483.64
+      488.66
+     ],
+     [
+      "2026-11-19T20:45:00Z",
+      489.44
      ]
     ],
     "entry": 488.321818,
@@ -4774,18 +4829,6 @@
    },
    "NVDA": {
     "bars": [
-     [
-      "2026-11-16T20:45:00Z",
-      156.145
-     ],
-     [
-      "2026-11-16T21:00:00Z",
-      156.44
-     ],
-     [
-      "2026-11-16T21:15:00Z",
-      157.16
-     ],
      [
       "2026-11-16T21:30:00Z",
       156.66
@@ -5192,7 +5235,15 @@
      ],
      [
       "2026-11-19T20:30:00Z",
-      147.29
+      147.49
+     ],
+     [
+      "2026-11-19T20:45:00Z",
+      145.985
+     ],
+     [
+      "2026-11-19T21:00:00Z",
+      145.91
      ]
     ],
     "entry": 148.443636,
@@ -5208,14 +5259,14 @@
    "id": "ahq-BTCUSD-20261119203245",
    "symbol": "BTC/USD",
    "asset": "crypto",
-   "status": "pending",
+   "status": "open",
    "entryOrderId": "638efc04-c90e-443d-a88b-4ebdc058b9a8",
-   "qty": null,
+   "qty": 0.189731492,
    "cost": 12016.1,
    "estPrice": 61700.0,
-   "entryPrice": 61700.0,
-   "stop": 59849.0,
-   "target": 65402.0,
+   "entryPrice": 61958.091492026,
+   "stop": 60099.35,
+   "target": 65675.58,
    "openedAt": "2026-11-19T20:32:45Z",
    "news": {
     "summary": "Anthropic's massive IPO debut tops a $2 trillion valuation, lifting broader crypto and tech sentiment.",
@@ -5269,7 +5320,10 @@
     ],
     "tradingAgents": "not used (ultra mode)",
     "taSummary": ""
-   }
+   },
+   "stopOrderId": "7a3b25d7-bcfd-4188-bb70-a20467ed1033",
+   "lastPrice": 61576.354679802,
+   "unrealizedPct": -0.62
   },
   {
    "id": "ahq-AVGO-20261119174039",
@@ -5317,8 +5371,8 @@
     "tradingAgents": "not used (ultra mode)",
     "taSummary": ""
    },
-   "lastPrice": 346.8,
-   "unrealizedPct": -1.55
+   "lastPrice": 348.0,
+   "unrealizedPct": -1.21
   },
   {
    "id": "ahq-AMD-20261119174038",
@@ -5366,8 +5420,8 @@
     "tradingAgents": "not used (ultra mode)",
     "taSummary": ""
    },
-   "lastPrice": 483.59,
-   "unrealizedPct": -0.97
+   "lastPrice": 481.7,
+   "unrealizedPct": -1.36
   },
   {
    "id": "ahq-NVDA-20261119170632",
@@ -5405,8 +5459,8 @@
     "tradingAgents": "not used (ultra mode)",
     "taSummary": ""
    },
-   "lastPrice": 147.01,
-   "unrealizedPct": -0.97
+   "lastPrice": 145.35,
+   "unrealizedPct": -2.08
   },
   {
    "id": "ahq-GOOGL-20261119170631",
@@ -6234,11 +6288,6 @@
   }
  ],
  "equity": [
-  {
-   "t": "2026-11-11T06:11:54Z",
-   "equity": 100000.0,
-   "spy": 749.93
-  },
   {
    "t": "2026-11-11T06:42:07Z",
    "equity": 100000.0,
@@ -8233,6 +8282,11 @@
    "t": "2026-11-19T20:22:25Z",
    "equity": 100131.03,
    "spy": 716.78
+  },
+  {
+   "t": "2026-11-19T20:53:15Z",
+   "equity": 100266.46,
+   "spy": 717.76
   }
  ],
  "watch": [],
@@ -8244,99 +8298,7 @@
  },
  "events": [
   {
-   "summary": "Anthropic's massive IPO debut tops a $2 trillion valuation, lifting broader crypto and tech sentiment.",
-   "category": "other",
-   "firstSeen": "2026-11-19T16:52:24Z",
-   "publishers": [
-    "AP",
-    "CNBC",
-    "Cryptonews.net",
-    "Reuters",
-    "TipRanks",
-    "Yahoo Finance"
-   ],
-   "assets": {
-    "GOOGL": {
-     "direction": "down",
-     "confidence": 0.65,
-     "why": "Broad market profit-taking and tech sector pressure from Anthropic IPO debut weigh on mega-cap growth."
-    },
-    "NVDA": {
-     "direction": "down",
-     "confidence": 0.65,
-     "why": "Anthropic IPO milestone sparks broad tech profit-taking."
-    },
-    "AMD": {
-     "direction": "down",
-     "confidence": 0.65,
-     "why": "Anthropic IPO milestone sparks broad tech profit-taking."
-    },
-    "MSFT": {
-     "direction": "down",
-     "confidence": 0.6,
-     "why": "Broader equity market sell-off impacting mega-cap tech"
-    },
-    "AVGO": {
-     "direction": "down",
-     "confidence": 0.6,
-     "why": "Tech sector volatility linked to the Anthropic IPO milestone."
-    },
-    "TSLA": {
-     "direction": "down",
-     "confidence": 0.65,
-     "why": "Risk-off profit-taking in the broader market weighs on growth tech names."
-    },
-    "BTC/USD": {
-     "direction": "up",
-     "confidence": 0.65,
-     "why": "Positive tech market sentiment from Anthropic IPO spilling over into crypto."
-    }
-   },
-   "sources": [
-    {
-     "id": "703ff16f03cc0338",
-     "publisher": "Yahoo Finance",
-     "kind": "news",
-     "title": "Anthropic Stock Jumps 38% In Nasdaq Debut After Record $107.3B IPO",
-     "url": "https://stocktwits.com/news-articles/markets/equity/anthropic-stock-jumps-38-in-nasdaq-debut-after-record-107-3-b-ipo/cNbihePR900?.tsrc=rss",
-     "time": "2026-11-19T16:52:24Z"
-    },
-    {
-     "id": "2b42afc727538046",
-     "publisher": "Yahoo Finance",
-     "kind": "news",
-     "title": "Broadcom Stocks Rise 4.21% as Chip Supplier Joins Anthropic's $26 Billion Placement",
-     "url": "https://finance.yahoo.com/markets/stocks/articles/broadcom-stocks-rise-4-21-173026533.html?.tsrc=rss",
-     "time": "2026-11-19T17:30:26Z"
-    },
-    {
-     "id": "17b0fde6eed57e88",
-     "publisher": "Yahoo Finance",
-     "kind": "news",
-     "title": "AMD Stocks Rise 3.77% as Anthropic Deal Points to $20 Billion-Plus of Helios Spending",
-     "url": "https://finance.yahoo.com/markets/stocks/articles/amd-stocks-rise-3-77-172606832.html?.tsrc=rss",
-     "time": "2026-11-19T17:26:06Z"
-    },
-    {
-     "id": "61f706c2128a2d31",
-     "publisher": "CNBC",
-     "kind": "news",
-     "title": "Dow dives 700 points as Anthropic IPO milestone causes investors to take profits: Live updates",
-     "url": "https://www.cnbc.com/2026/11/18/stock-market-today-live-updates.html",
-     "time": "2026-11-19T18:03:05Z"
-    },
-    {
-     "id": "c44cbb15f7ebf76c",
-     "publisher": "CNBC",
-     "kind": "news",
-     "title": "Anthropic IPO live updates: AI lab tops $2 trillion market cap, Ashton Kutcher celebrates debut",
-     "url": "https://www.cnbc.com/2026/11/19/anthropic-ipo-ant-live-updates.html",
-     "time": "2026-11-19T17:54:07Z"
-    }
-   ]
-  },
-  {
-   "summary": "Senate Republicans block the war powers resolution, signaling ongoing geopolitical conflict and energy supply tensions.",
+   "summary": "Geopolitical tensions continue as energy flows through the Strait of Hormuz remain active alongside ongoing regional conflicts and high war costs.",
    "category": "war_escalation",
    "firstSeen": "2026-11-10T20:01:23Z",
    "publishers": [
@@ -8356,6 +8318,7 @@
     "ABS-CBN",
     "ANI News",
     "AOL.co.uk",
+    "AOL.com",
     "AP",
     "ARN News Centre",
     "ARYnews.tv",
@@ -8408,6 +8371,7 @@
     "Bloom Pakistan",
     "Bloomberg.com",
     "Bol News",
+    "Borneo Bulletin",
     "Boston 25 News",
     "Boston Herald",
     "BreakingNews.ie",
@@ -8531,6 +8495,7 @@
     "Hawaii News Now",
     "Heartlander News",
     "Henry Herald",
+    "Hilton Head Island Packet",
     "Hindustan Times",
     "Hiru News",
     "Hokanews",
@@ -8574,6 +8539,7 @@
     "JC Post",
     "JFeed",
     "JNS.org",
+    "Jewish Insider",
     "Jordan News",
     "JournalArta",
     "Just The News",
@@ -8883,6 +8849,7 @@
     "WHDH",
     "WIBW",
     "WITN",
+    "WJCL",
     "WJHG",
     "WKOW",
     "WKYT",
@@ -8902,6 +8869,7 @@
     "WVLT",
     "WWD",
     "WWMT",
+    "WXII",
     "WZDM",
     "WaltonTribune.com",
     "Washington Examiner",
@@ -8951,6 +8919,7 @@
     "kens5.com",
     "la Repubblica",
     "marketscreener.com",
+    "megaproject.com",
     "news.sbs.co.kr",
     "newsalert.com.pk",
     "newskarnataka.com",
@@ -9146,6 +9115,987 @@
      "title": "Middle East latest: Ship attacked in UAE waters, says operator Adnoc",
      "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPdTMwLTRPRTZsZHJPR0lQTVNtNHdyWWxZNHMydXJzUjEySVZIZzJfUFlvbXZfQWJPc25aSm5kM3lzNmxFMFVMdFl3NTZLZWVjZnZPaTFyWjZtcl9peGd6ZlpDU2hnQmxDVFBLRlF1cVR3U2QwR2R4dWRRNEFDaDBzSTY2YUFWZEsyZ3dIOGQwX2tudV81a1pRRXQtVzl0TWYw?oc=5",
      "time": "2026-11-10T20:59:26Z"
+    }
+   ]
+  },
+  {
+   "summary": "Bitcoin continues to face ongoing macro pressures and custodial shifts, keeping the leading cryptocurrency under downward pressure.",
+   "category": "crypto_negative",
+   "firstSeen": "2026-11-12T08:32:42Z",
+   "publishers": [
+    "24/7 Wall St.",
+    "99Bitcoins",
+    "AMBCrypto",
+    "AOL.com",
+    "Action Forex",
+    "Aktualita.co",
+    "Altcoin Buzz",
+    "Anadolu Ajansı",
+    "Analytics Insight",
+    "Apa.az",
+    "Asianet Newsable",
+    "BeInCrypto",
+    "Benzinga",
+    "BigGo Finance",
+    "Bitbo",
+    "Bitcoin Foundation",
+    "Bitcoin Magazine",
+    "Bitcoin News",
+    "Bitcoin Sistemi",
+    "Bitcoinist.com",
+    "Blockchain News",
+    "Blockonomi",
+    "Brandsynario",
+    "Brave New Coin",
+    "Briefs Finance",
+    "Business Standard",
+    "Businesskorea",
+    "CCN.com",
+    "CNBC",
+    "CNBC TV18",
+    "CaptainAltcoin",
+    "Chosunbiz",
+    "Coin Edition",
+    "Coin Gabbar",
+    "CoinCodex",
+    "CoinDesk",
+    "CoinGape",
+    "CoinMarketCap",
+    "Coinfomania",
+    "Coinpaper",
+    "Coinpedia",
+    "Cointribune",
+    "Crypto Briefing",
+    "Crypto Economy",
+    "Crypto News",
+    "CryptoDaily",
+    "CryptoPotato",
+    "CryptoRank",
+    "CryptoSlate",
+    "CryptoTicker.io",
+    "Cryptonews",
+    "Cryptonews.net",
+    "Cryptopolitan",
+    "Daily Beirut",
+    "Daily Forex",
+    "DailyCoin",
+    "Decrypt",
+    "Dimsum Daily",
+    "FOREX.com",
+    "FXEmpire",
+    "FXLeaders",
+    "FXStreet",
+    "FinanceFeeds",
+    "Finbold",
+    "Free Malaysia Today",
+    "Gadgets 360",
+    "GuruFocus",
+    "HESPRESS English - Morocco News",
+    "Hindustan Times",
+    "Hokanews",
+    "Investing.com",
+    "Investing.com Canada",
+    "Investing.com India",
+    "Investing.com Nigeria",
+    "Investing.com UK",
+    "Investor's Business Daily",
+    "Invezz",
+    "JournalArta",
+    "Kalkine Media",
+    "Kriptofoni",
+    "KuCoin",
+    "Livemint",
+    "MEXC",
+    "MarketForces Africa",
+    "MarketWatch",
+    "Moneycontrol.com",
+    "Moomoo",
+    "NAI500",
+    "NDTV Profit",
+    "NFTevening",
+    "Nacionale",
+    "NameCoinNews",
+    "NewsBTC",
+    "NewsBytes",
+    "PYMNTS.com",
+    "Pluang",
+    "Proactive Investors Australia",
+    "Programming Insider",
+    "Quartz",
+    "RTTNews",
+    "Retail News Asia",
+    "SSBCrack",
+    "Serrari Group",
+    "Startup Fortune",
+    "Stocktwits",
+    "StreetInsider",
+    "SunCrypto",
+    "TOKENPOST",
+    "TechBullion",
+    "TechJuice",
+    "The Block",
+    "The Business Times",
+    "The Crypto Times",
+    "The Cryptonomist",
+    "The Defiant",
+    "The Economic Times",
+    "The Edge Malaysia",
+    "The Globe and Mail",
+    "The Market Periodical",
+    "The Straits Times",
+    "The Sunday Guardian",
+    "TipRanks",
+    "Traders Union",
+    "Trading News",
+    "TradingKey",
+    "TradingNEWS",
+    "TradingPedia",
+    "TradingView",
+    "TronWeekly",
+    "U.Today",
+    "UA.NEWS",
+    "UkrMedia News",
+    "Univest",
+    "Vocal",
+    "XTB.com",
+    "Yahoo Finance",
+    "ad-hoc-news.de",
+    "blockchain.news",
+    "bloomingbit",
+    "finance.biggo.com",
+    "grafa.com",
+    "openPR.com",
+    "www.blockhead.co",
+    "www.proactiveinvestors.com.au",
+    "www.tmgm.com",
+    "www.tokenpost.com",
+    "www.trendingtopics.eu",
+    "Українські Національні Новини (УНН)",
+    "صوت الإمارات",
+    "富途牛牛",
+    "머니투데이"
+   ],
+   "assets": {
+    "BTC/USD": {
+     "direction": "down",
+     "confidence": 0.88,
+     "why": "Heavy liquidations and persistent ETF outflows drive severe downside momentum."
+    },
+    "ETH/USD": {
+     "direction": "down",
+     "confidence": 0.9,
+     "why": "Ethereum price breaks key psychological support below $2,000 amid selling pressure from the Ethereum Foundation."
+    },
+    "SOL/USD": {
+     "direction": "down",
+     "confidence": 0.85,
+     "why": "Solana crashes to multi-month lows amid broader crypto market sell-offs and rate hike fears."
+    },
+    "XRP/USD": {
+     "direction": "down",
+     "confidence": 0.85,
+     "why": "Massive capital flight and ETF outflows crush XRP price action."
+    },
+    "LINK/USD": {
+     "direction": "down",
+     "confidence": 0.6,
+     "why": "Persistent bearish bias and ETF outflows weigh on Chainlink despite holding support."
+    }
+   },
+   "sources": [
+    {
+     "id": "f2c64de89a6bbd3c",
+     "publisher": "bloomingbit",
+     "kind": "news",
+     "title": "BlackRock’s Bitcoin ETF IBIT Extends Net Outflow Streak to 9 Sessions, Exceeding $2 Billion",
+     "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE9XY1BHRGVIT2hraXRmcGx1TGI3a2oybEJwMk9LWHNKdUM1R29nNEU1eWJIeXhtTC1pSXg0QUJDd18xNkJTTG4ySkRJTXd3cjN2NkxlZg?oc=5",
+     "time": "2026-11-12T08:32:42Z"
+    },
+    {
+     "id": "cc25c44ff767f291",
+     "publisher": "Crypto News",
+     "kind": "news",
+     "title": "BlackRock leads $300 million Bitcoin ETF outflows as BTC struggles near $73K",
+     "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNY3U0TE5Gcy0teVNsLWVBeGh1cmd4Z1dSaldmVmt2b3VYaVhFSTM0T29OUnhKUXpTNEZwLW1sVkwtZnQyUUdSVDFTUHpSYjYxVlU0SFZnYW5Xd0V0TzB4NjM4VGpGa1pPYnk4eEgzR2wxV0d1SkFPSDBwSG0tdFFTQTI3cXJiSWE1UHU0NzVCUjJ2VXNFa2pIZnd0VQ?oc=5",
+     "time": "2026-11-12T08:36:14Z"
+    },
+    {
+     "id": "fb7c71d0fe55957d",
+     "publisher": "bloomingbit",
+     "kind": "news",
+     "title": "Coinbase Bitcoin Premium Stays Negative for 50 Straight Days as U.S. Buying Weakens",
+     "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTFBfQTlkOUY1NnAyTlpoRnp0Qmc2NDZnUjdSVlRBYndfa2hHVXlZdjNmX0ZhRTdZMjMtV2xMMEdTWWJvdXpCbl9BREZ0TDR6cl9NcFJXNg?oc=5",
+     "time": "2026-11-12T08:59:27Z"
+    },
+    {
+     "id": "62235bb905723bf1",
+     "publisher": "Coinfomania",
+     "kind": "news",
+     "title": "U.S. Spot Bitcoin ETFs Experience $300 Million Net Outflows",
+     "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxORGNYaW5tLUhtT2tmVi1ETy1fRFV4QnFDQndvYkpDRkRTZTF6NEJRN2V6emkyV1MzeTZfTVlyX1NsRGNzaXJsRWk5OXpDajRfVTE5OGc1anBpNWVfSkJKTUg2QnFoTlFSNlRscFJUVlBuek04RkxsN2ZydUJUSjZBdjdURUtnOGhnb3c?oc=5",
+     "time": "2026-11-12T08:55:35Z"
+    },
+    {
+     "id": "44d885771c26dd4e",
+     "publisher": "Cryptonews",
+     "kind": "news",
+     "title": "Bitcoin ETF Outflow Says Crypto Walking Into a Bull Trap",
+     "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE1aa1RfZzhBaFRtOEctWFJSZDUyRzZ6bDV5LTVmSVNubFlfLTNvNkdHVGdGS1pNbmpfb3liS2V5djRKcHV6bWZLb1BQYVVYcTRBVE0wYXNyV3hSNkdhSm01YnFqZGUzelVCamxJeEFTZG83ZzA?oc=5",
+     "time": "2026-11-12T08:48:31Z"
+    }
+   ]
+  },
+  {
+   "summary": "Anthropic's massive IPO debut tops a $2 trillion valuation, testing Wall Street's sentiment on AI growth and broader technology stocks.",
+   "category": "other",
+   "firstSeen": "2026-11-19T16:52:24Z",
+   "publishers": [
+    "AP",
+    "CNBC",
+    "Cryptonews.net",
+    "Reuters",
+    "TipRanks",
+    "Yahoo Finance"
+   ],
+   "assets": {
+    "GOOGL": {
+     "direction": "down",
+     "confidence": 0.65,
+     "why": "Broad market profit-taking and tech sector pressure from Anthropic IPO debut weigh on mega-cap growth."
+    },
+    "NVDA": {
+     "direction": "down",
+     "confidence": 0.65,
+     "why": "Anthropic IPO milestone sparks broad tech profit-taking."
+    },
+    "AMD": {
+     "direction": "down",
+     "confidence": 0.65,
+     "why": "Anthropic IPO milestone sparks broad tech profit-taking."
+    },
+    "MSFT": {
+     "direction": "down",
+     "confidence": 0.6,
+     "why": "Broader equity market sell-off impacting mega-cap tech"
+    },
+    "AVGO": {
+     "direction": "down",
+     "confidence": 0.6,
+     "why": "Tech sector volatility linked to the Anthropic IPO milestone."
+    },
+    "TSLA": {
+     "direction": "down",
+     "confidence": 0.65,
+     "why": "Risk-off profit-taking in the broader market weighs on growth tech names."
+    },
+    "BTC/USD": {
+     "direction": "up",
+     "confidence": 0.65,
+     "why": "Positive tech market sentiment from Anthropic IPO spilling over into crypto."
+    }
+   },
+   "sources": [
+    {
+     "id": "703ff16f03cc0338",
+     "publisher": "Yahoo Finance",
+     "kind": "news",
+     "title": "Anthropic Stock Jumps 38% In Nasdaq Debut After Record $107.3B IPO",
+     "url": "https://stocktwits.com/news-articles/markets/equity/anthropic-stock-jumps-38-in-nasdaq-debut-after-record-107-3-b-ipo/cNbihePR900?.tsrc=rss",
+     "time": "2026-11-19T16:52:24Z"
+    },
+    {
+     "id": "2b42afc727538046",
+     "publisher": "Yahoo Finance",
+     "kind": "news",
+     "title": "Broadcom Stocks Rise 4.21% as Chip Supplier Joins Anthropic's $26 Billion Placement",
+     "url": "https://finance.yahoo.com/markets/stocks/articles/broadcom-stocks-rise-4-21-173026533.html?.tsrc=rss",
+     "time": "2026-11-19T17:30:26Z"
+    },
+    {
+     "id": "17b0fde6eed57e88",
+     "publisher": "Yahoo Finance",
+     "kind": "news",
+     "title": "AMD Stocks Rise 3.77% as Anthropic Deal Points to $20 Billion-Plus of Helios Spending",
+     "url": "https://finance.yahoo.com/markets/stocks/articles/amd-stocks-rise-3-77-172606832.html?.tsrc=rss",
+     "time": "2026-11-19T17:26:06Z"
+    },
+    {
+     "id": "61f706c2128a2d31",
+     "publisher": "CNBC",
+     "kind": "news",
+     "title": "Dow dives 700 points as Anthropic IPO milestone causes investors to take profits: Live updates",
+     "url": "https://www.cnbc.com/2026/11/18/stock-market-today-live-updates.html",
+     "time": "2026-11-19T18:03:05Z"
+    },
+    {
+     "id": "c44cbb15f7ebf76c",
+     "publisher": "CNBC",
+     "kind": "news",
+     "title": "Anthropic IPO live updates: AI lab tops $2 trillion market cap, Ashton Kutcher celebrates debut",
+     "url": "https://www.cnbc.com/2026/11/19/anthropic-ipo-ant-live-updates.html",
+     "time": "2026-11-19T17:54:07Z"
+    }
+   ]
+  },
+  {
+   "summary": "Palo Alto Networks faces potential supply-chain vulnerability concerns stemming from third-party JavaScript attacks.",
+   "category": "company_bad_news",
+   "firstSeen": "2026-11-12T15:43:48Z",
+   "publishers": [
+    "24/7 Wall St.",
+    "AP",
+    "Benzinga",
+    "CNBC",
+    "Crypto Briefing",
+    "Cryptonews.net",
+    "GuruFocus",
+    "JournalArta",
+    "Moomoo",
+    "NBC Los Angeles",
+    "NBC News",
+    "Qualys",
+    "Reuters",
+    "StockStory",
+    "TIKR.com",
+    "The Economic Times",
+    "TipRanks",
+    "TradingKey",
+    "Wccftech",
+    "Yahoo Finance",
+    "Yahoo Finance UK",
+    "fiscal.ai",
+    "scanx.trade"
+   ],
+   "assets": {
+    "TSLA": {
+     "direction": "down",
+     "confidence": 0.65,
+     "why": "Analyst downgrade to Sell highlighting valuation and profitability concerns."
+    },
+    "NVDA": {
+     "direction": "down",
+     "confidence": 0.85,
+     "why": "CEO exit and executive turmoil directly weigh on Nvidia stock."
+    },
+    "LOW": {
+     "direction": "down",
+     "confidence": 0.8,
+     "why": "Analyst downgrade to Underperform directly weighs on the stock."
+    },
+    "TJX": {
+     "direction": "down",
+     "confidence": 0.65,
+     "why": "Downgraded to Hold by Gordon Haskett."
+    },
+    "AVGO": {
+     "direction": "down",
+     "confidence": 0.8,
+     "why": "Downgraded by Rothschild & Co Redburn due to AI financing concerns."
+    },
+    "HD": {
+     "direction": "down",
+     "confidence": 0.6,
+     "why": "Peer home improvement retailer pressured by negative sector sentiment."
+    },
+    "META": {
+     "direction": "down",
+     "confidence": 0.85,
+     "why": "Massive regulatory fine of $887 million from Italy creates significant negative pressure."
+    },
+    "GOOGL": {
+     "direction": "down",
+     "confidence": 0.55,
+     "why": "Broader regulatory headwinds for big tech regarding user data in Europe."
+    },
+    "INTC": {
+     "direction": "down",
+     "confidence": 0.9,
+     "why": "Severe share price plunge and shareholder lawsuits highlight deep fundamental pressures for Intel."
+    },
+    "COST": {
+     "direction": "down",
+     "confidence": 0.6,
+     "why": "Regulatory fine and labor misclassification issue creates slight negative sentiment."
+    },
+    "MU": {
+     "direction": "down",
+     "confidence": 0.5,
+     "why": "Legal setbacks regarding price-fixing allegations create regulatory and financial uncertainty for the company."
+    },
+    "OXY": {
+     "direction": "down",
+     "confidence": 0.8,
+     "why": "Analyst downgrade creates downward selling pressure."
+    },
+    "FANG": {
+     "direction": "down",
+     "confidence": 0.65,
+     "why": "Large cash-and-stock acquisitions can dilute existing shareholders and create near-term capital allocation uncertainty."
+    },
+    "SMCI": {
+     "direction": "down",
+     "confidence": 0.75,
+     "why": "DOJ probe and leadership uncertainty create significant negative pressure"
+    },
+    "MSFT": {
+     "direction": "down",
+     "confidence": 0.6,
+     "why": "Patent infringement lawsuit from MIT introduces legal and financial headwinds"
+    },
+    "ADBE": {
+     "direction": "down",
+     "confidence": 0.5,
+     "why": "Legal disputes regarding branding can create uncertainty and potential rebranding costs."
+    },
+    "AAPL": {
+     "direction": "down",
+     "confidence": 0.7,
+     "why": "Widespread service outages and internal technical failures weigh on near-term sentiment."
+    },
+    "MDT": {
+     "direction": "up",
+     "confidence": 0.75,
+     "why": "FDA clearance for the Hugo robotic-assisted surgery system is a major regulatory and commercial milestone."
+    },
+    "CRM": {
+     "direction": "down",
+     "confidence": 0.85,
+     "why": "Significant drop and negative investor sentiment following layoff reports."
+    },
+    "NKE": {
+     "direction": "down",
+     "confidence": 0.8,
+     "why": "Continued investor selling after disappointing Investor Day guidance."
+    },
+    "ABBV": {
+     "direction": "up",
+     "confidence": 0.55,
+     "why": "Strategic collaboration with DISCO Pharmaceuticals expands oncology pipeline."
+    },
+    "MRK": {
+     "direction": "up",
+     "confidence": 0.6,
+     "why": "Strategic research collaboration with Isomorphic Labs for oncology."
+    },
+    "AMD": {
+     "direction": "down",
+     "confidence": 0.8,
+     "why": "Short-seller allegations and new U.S. export rules on China create immediate downside risk."
+    },
+    "PANW": {
+     "direction": "down",
+     "confidence": 0.6,
+     "why": "Third-party supply-chain security flaws can impact cybersecurity stock sentiment."
+    }
+   },
+   "sources": [
+    {
+     "id": "fb8045cbfe86a60f",
+     "publisher": "Benzinga",
+     "kind": "news",
+     "title": "YETI Sounds the Alarm on Consumer Spending As Shoppers Hunt for Deals",
+     "url": "https://www.benzinga.com/markets/earnings/26/11/63197694/yeti-sounds-the-alarm-on-consumer-spending-as-shoppers-hunt-for-deals",
+     "time": "2026-11-12T15:43:48Z"
+    },
+    {
+     "id": "eb1007b02a637a06",
+     "publisher": "StockStory",
+     "kind": "news",
+     "title": "Why YETI shares are trading lower today",
+     "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNdl83SV9zdFlzM2FENVRJLTJxckhKNjZUMTFTM0FXUUZVQ0NzRG54ZFRXeERERnZDSWFDcmMxNU1rRVhrWUlnV2UtWFdmY2VpWDAxNkxudGV4NmpjeUJ3Z1NQUm1FUm1lU3dNTmEwdmxkNjFTdU9aTEt2THpfQmYyV05vNzJwa3VDSjZqQjdfYjVwQWttVzlNX0ZrdTlydXJU?oc=5",
+     "time": "2026-11-12T15:53:44Z"
+    },
+    {
+     "id": "c394152546c931b0",
+     "publisher": "scanx.trade",
+     "kind": "news",
+     "title": "YETI Holdings Q3FY26 Results: Revenue up 4.4% but guidance cut",
+     "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOdlBmR3l6ZUFQY29CWHFTT1p4Z0JOdEpxb2hiYWNuV3FQTjVKcTd0bml3S3RPWVY1SDVSUVR3dGFSb1BvbXByNzc4RURDd1E0YXdTT05pVWYyOVpjQ2JTYXVkMFByR05iaThHeUJfRDJuaWVKYVp3UkxndGxfNm9WeGxtV1h0dUFEUWtVM0tQaURPVWNuSGFiZmZBanBCc2tGQ0FhNjEyUEVZVUYzT1lGSWFFeW05clYz?oc=5",
+     "time": "2026-11-12T16:39:48Z"
+    },
+    {
+     "id": "cc6a00bf5e9f8ced",
+     "publisher": "fiscal.ai",
+     "kind": "news",
+     "title": "Lawsuit Filed Against Tesla Over San Mateo Street-Racing Incident",
+     "url": "https://newsfilter.io/sources/businesswire",
+     "time": "2026-11-12T20:01:33Z"
+    },
+    {
+     "id": "fab361ae0414d4da",
+     "publisher": "CNBC",
+     "kind": "news",
+     "title": "Stock futures edge lower after markets slide amid Nvidia woes: Live updates",
+     "url": "https://www.cnbc.com/2026/11/12/stock-market-today-live-updates.html",
+     "time": "2026-11-13T08:20:13Z"
+    }
+   ]
+  },
+  {
+   "summary": "Hawkish Fed expectations and rate hike concerns push gold to a 14-month low and pressure financial markets.",
+   "category": "central_bank_hawkish",
+   "firstSeen": "2026-11-10T09:39:09Z",
+   "publishers": [
+    "13WHAM-TV",
+    "1470 & 100.3 WMBD",
+    "24/7 Wall St.",
+    "93.3 The Drive",
+    "ABC News - Breaking News, Latest News and Videos",
+    "ABC7 New York",
+    "AFP.com",
+    "AL Circle",
+    "AMBCrypto",
+    "ANI News",
+    "AOL.com",
+    "AP",
+    "ARYnews.tv",
+    "Action Forex",
+    "AdvisorHub",
+    "Aktualita.co",
+    "Al Jazeera",
+    "Altcoin Buzz",
+    "American Banker",
+    "Anadolu Ajansı",
+    "Asia News Network",
+    "Asianet Newsable",
+    "Axios",
+    "AzerNews",
+    "BNN Bloomberg",
+    "Baltimore Sun",
+    "Bangladesh Post",
+    "Barchart.com",
+    "Barron's",
+    "BeInCrypto",
+    "Beinsure",
+    "Benzinga",
+    "Big News Network.com",
+    "BigGo Finance",
+    "Bilyonaryo Business",
+    "Binance",
+    "Bitbo",
+    "Bitcoin Foundation",
+    "Bitcoin Magazine",
+    "Bitcoin News",
+    "Bitcoin Sistemi",
+    "Bloomberg",
+    "Bloomberg.com",
+    "Bradenton Herald",
+    "Brave New Coin",
+    "Breakingthenews.net",
+    "Breitbart News",
+    "Briefs Finance",
+    "BullionVault",
+    "Business Day",
+    "Business Insider",
+    "Business Recorder",
+    "Business Standard",
+    "Business Today",
+    "BusinessLine",
+    "BusinessToday Malaysia",
+    "Businessamlive",
+    "Businesskorea",
+    "CFO Dive",
+    "CNA",
+    "CNBC",
+    "CNBC TV18",
+    "Central Oregon Daily",
+    "Chosunbiz",
+    "Coin Gabbar",
+    "CoinCodex",
+    "CoinDesk",
+    "CoinGape",
+    "CoinMarketCap",
+    "Coinpaper",
+    "Coinpedia",
+    "Cointribune",
+    "Crowdfund Insider",
+    "Crypto Briefing",
+    "Crypto News",
+    "CryptoDaily",
+    "CryptoPotato",
+    "CryptoRank",
+    "CryptoSlate",
+    "CryptoTicker.io",
+    "Cryptonews.net",
+    "CurrencyNews.co.uk",
+    "DD News",
+    "Daily Voice Of Asia",
+    "Dalal Street Investment Journal",
+    "Decrypt",
+    "Demokratis.co.id",
+    "Demócrata",
+    "Economies.com",
+    "Euronext Markets: Real-time Stock Market Data | live",
+    "Exchange Rates UK",
+    "FOX 17 West Michigan News",
+    "FOX 9 Minneapolis-St. Paul",
+    "FXEmpire",
+    "FXLeaders",
+    "FXStreet",
+    "Finance & Commerce",
+    "FinanceFeeds",
+    "Finimize",
+    "Firstpost",
+    "Forbes",
+    "Forbes Middle East",
+    "Foreign Policy Journal",
+    "Fox Business",
+    "Free Malaysia Today",
+    "Free Press Journal",
+    "Gadgets 360",
+    "Global Banking & Finance Review",
+    "Goldman Sachs",
+    "GuruFocus",
+    "Hindustan Times",
+    "Hiru News",
+    "Hokanews",
+    "Honolulu Star-Advertiser",
+    "IDNFinancials",
+    "Incrypted",
+    "IndexBox",
+    "India's News.Net",
+    "IndiaIPO",
+    "Indianapolis Business Journal",
+    "Informat.ro",
+    "Insurance Business",
+    "InsuranceNewsNet",
+    "International Business Times",
+    "International Business Times Australia",
+    "Investing News Network",
+    "Investing.com",
+    "Investing.com Australia",
+    "Investing.com Canada",
+    "Investing.com India",
+    "Investing.com Nigeria",
+    "Investing.com UK",
+    "InvestmentNews",
+    "Investor Strategy News",
+    "Investor's Business Daily",
+    "Invezz",
+    "Jagran Josh",
+    "JournalArta",
+    "KABB",
+    "KATV",
+    "KDNL",
+    "KELO-AM",
+    "KLSE Screener",
+    "KQ2",
+    "KRDO",
+    "KSHB 41 Kansas City",
+    "KSL",
+    "KSL News",
+    "KTVN",
+    "KXLH News Helena",
+    "Kalshi News",
+    "Kathleen Hays Presents: Central Bank Central",
+    "Kiplinger",
+    "Kitco",
+    "KuCoin",
+    "Latest news from Azerbaijan",
+    "Latin Times",
+    "Limapagi",
+    "LinkedIn",
+    "Livemint",
+    "Livewire Markets",
+    "London South East",
+    "Loveland Reporter-Herald",
+    "MLQ.ai",
+    "Magnolia Tribune",
+    "Malay Mail",
+    "Manila Bulletin",
+    "MarketWatch",
+    "Metrobank Wealth Insights",
+    "Mezha.net",
+    "Mining.com",
+    "Mining.com.au",
+    "MiningMX",
+    "MishTalk",
+    "Mitrade",
+    "Moneycontrol.com",
+    "Moomoo",
+    "Morning Brew",
+    "Mortgage Professional America",
+    "NAI500",
+    "NBC26",
+    "NDTV Profit",
+    "Nacionale",
+    "Nation Thailand",
+    "New Hampshire Union Leader",
+    "New Jersey Business & Industry Association",
+    "New York Post",
+    "News Channel 5 Nashville",
+    "News24",
+    "NewsBytes",
+    "Newsday",
+    "Newsmax",
+    "Newsquawk",
+    "Newswav",
+    "Nikkei Asia",
+    "Norada Real Estate Investments",
+    "Northeast Mississippi Daily Journal",
+    "Northwest Arkansas Democrat-Gazette",
+    "Oz Arab Media",
+    "People's Daily Online",
+    "Pintu",
+    "Pluang",
+    "Press of Atlantic City",
+    "Profit by Pakistan Today",
+    "Public TV English",
+    "Quartz",
+    "RTE.ie",
+    "RTHK News",
+    "RTL Today",
+    "RVBusiness",
+    "RealEstateNews.com",
+    "Realtor.com",
+    "Rediff MoneyWiz",
+    "Reuters",
+    "Rock Hill Herald",
+    "Rolling Out",
+    "SBS 뉴스",
+    "SRN News",
+    "SSBCrack",
+    "SchiffGold.com",
+    "Scotsman Guide",
+    "Scripps News",
+    "Seeking Alpha",
+    "Serrari Group",
+    "Sharecafe",
+    "South Florida Reporter",
+    "Startup Fortune",
+    "Stock Titan",
+    "Stocktwits",
+    "StoneX",
+    "StreetInsider",
+    "TechJuice",
+    "The American Conservative",
+    "The Arkansas Democrat-Gazette",
+    "The Business Times",
+    "The Crypto Times",
+    "The Dark Side Of The Boom",
+    "The Economic Times",
+    "The Edge Malaysia",
+    "The Financial Express",
+    "The Globe and Mail",
+    "The Hill",
+    "The Hindu",
+    "The Independent",
+    "The Korea Herald",
+    "The Korea Times",
+    "The Market Periodical",
+    "The Mighty 790 KFGO",
+    "The Mortgage Reports",
+    "The Motley Fool",
+    "The National",
+    "The Real Economy Blog",
+    "The San Joaquin Valley Sun",
+    "The Seattle Times",
+    "The Shillong Times",
+    "The Standard (HK)",
+    "The Star",
+    "The Straits Times",
+    "The Sunday Guardian",
+    "The Times",
+    "The Times of India",
+    "The Washington Post",
+    "TheBull.com.au",
+    "TheStreet",
+    "Times Now",
+    "TipRanks",
+    "TorFX News",
+    "Traders Union",
+    "TradingKey",
+    "TradingNEWS",
+    "TradingPedia",
+    "TradingView",
+    "U.Today",
+    "UA.NEWS",
+    "US News Money",
+    "USA Today",
+    "VT Markets",
+    "ValueWalk",
+    "Vietnam.vn",
+    "Virginia Business",
+    "WBFF",
+    "WCTI",
+    "WHBL News",
+    "WKZO",
+    "WPBN",
+    "WSJ",
+    "WTOP News",
+    "WTVB",
+    "WXYZ Channel 7",
+    "Washington Examiner",
+    "XTB.com",
+    "Xinhua",
+    "Yahoo",
+    "Yahoo Finance",
+    "Yahoo Finance Australia",
+    "Yahoo Finance Singapore",
+    "Zawya",
+    "ad-hoc-news.de",
+    "bdnews24.com",
+    "blockchain.news",
+    "bloomingbit",
+    "blue News",
+    "bsinews.id",
+    "cbs19.tv",
+    "eNCA",
+    "finance.biggo.com",
+    "fiscal.ai",
+    "https://streamlinefeed.co.ke/",
+    "iHeart",
+    "kaohoon international",
+    "marketscreener.com",
+    "news.sbs.co.kr",
+    "newsalert.com.pk",
+    "qz.com",
+    "richtv.io",
+    "streamlinefeed.co.ke",
+    "tippinsights",
+    "www.equiti.com",
+    "www.foreignpolicyjournal.com",
+    "www.jordannews.jo",
+    "www.thenationalnews.com",
+    "www.tmgm.com",
+    "www.tokenpost.com",
+    "سانا",
+    "شبكة تواصل الإخبارية",
+    "富途牛牛",
+    "巴士的報",
+    "联合早报",
+    "아시아경제",
+    "재경일보",
+    "조선일보",
+    "파이낸셜뉴스"
+   ],
+   "assets": {
+    "BTC/USD": {
+     "direction": "down",
+     "confidence": 0.85,
+     "why": "Hawkish Fed policy signals and ETF outflows weigh heavily on Bitcoin."
+    },
+    "ETH/USD": {
+     "direction": "down",
+     "confidence": 0.85,
+     "why": "Hot inflation and rate hike fears trigger heavy long liquidations and pressure crypto prices."
+    },
+    "SOL/USD": {
+     "direction": "down",
+     "confidence": 0.8,
+     "why": "Hawkish Fed rate hike expectations create a stronger dollar and pressure risk assets."
+    },
+    "NVDA": {
+     "direction": "down",
+     "confidence": 0.8,
+     "why": "Hawkish Fed commentary and rate hike expectations weigh on risk-on growth and tech stocks."
+    },
+    "MSFT": {
+     "direction": "down",
+     "confidence": 0.81,
+     "why": "Hawkish Fed rate hike expectations put downward pressure on major growth and tech stocks."
+    },
+    "AAPL": {
+     "direction": "down",
+     "confidence": 0.75,
+     "why": "Hawkish Fed rate hike outlook weighs heavily on broad tech and growth stocks"
+    },
+    "AMZN": {
+     "direction": "down",
+     "confidence": 0.75,
+     "why": "Broad tech and growth sell-off triggered by hawkish central bank outlook."
+    },
+    "AMAT": {
+     "direction": "down",
+     "confidence": 0.7,
+     "why": "Broader tech sell-off driven by hawkish Fed outlook."
+    },
+    "GOOGL": {
+     "direction": "down",
+     "confidence": 0.75,
+     "why": "Higher interest rate expectations and hot CPI weigh on growth tech stocks."
+    },
+    "META": {
+     "direction": "down",
+     "confidence": 0.75,
+     "why": "Higher interest rate expectations and hot CPI weigh on growth tech stocks."
+    },
+    "TSLA": {
+     "direction": "down",
+     "confidence": 0.8,
+     "why": "Hawkish Fed rate hike expectations put downward pressure on major growth and tech stocks."
+    },
+    "NEM": {
+     "direction": "down",
+     "confidence": 0.85,
+     "why": "Gold plunges to 52-week low following hawkish Fed minutes."
+    },
+    "SPWO": {
+     "direction": "down",
+     "confidence": 0.75,
+     "why": "Broad equities tumble due to rising yields and hawkish rate bets."
+    },
+    "AEM": {
+     "direction": "down",
+     "confidence": 0.85,
+     "why": "Hawkish Fed policy pushes gold prices down, hurting gold miners."
+    },
+    "AMD": {
+     "direction": "down",
+     "confidence": 0.85,
+     "why": "Hot PPI inflation reading and hawkish rate fears crush semiconductor sector, with AMD tumbling."
+    },
+    "CVX": {
+     "direction": "down",
+     "confidence": 0.6,
+     "why": "Broad macro pressure from hawkish Fed comments can negatively impact commodities."
+    },
+    "INTC": {
+     "direction": "down",
+     "confidence": 0.65,
+     "why": "Higher interest rate expectations put pressure on tech/growth stocks."
+    }
+   },
+   "sources": [
+    {
+     "id": "d9df815319391cbb",
+     "publisher": "The Edge Malaysia",
+     "kind": "news",
+     "title": "Fed’s Waller backs rate hike in December, says open to larger move",
+     "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE9aSnktcDlXbzBpMU1SQkZvRktGTnkyX1J4LU92VGxBZVVhcGQtRTVEaDBqLVRPS213cFpTMkFad1BkS0xpdmVVbGU2bVhsUTA2?oc=5",
+     "time": "2026-11-10T09:39:09Z"
+    },
+    {
+     "id": "252cbcbd6b6cd044",
+     "publisher": "Seeking Alpha",
+     "kind": "news",
+     "title": "Waller backs December rate hike, says 50-basis-point move may be on the table (TLT:NASDAQ)",
+     "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOc004NEQ1TjItUHFWanNEbWxpTlpFQ0tIaUcxZDJpTkQyZ3ppdHZtZ280ZlpnQ0NWU3g4Nms1M1dTVEdjZEpwbXcwUVBlRkRzTjNyWEctZEdNT2JwSFlSeGJIWFRTZXB2NEczeUtKY1dIQU9JbFFDaHQyOUxHZ05kU1h4QTQxQzlmSFFjRTQ0OTlaczl3NGhiMHNidko2SGVrWHZaTk8tZlN1OXR2S29HRWVMcXo?oc=5",
+     "time": "2026-11-10T10:10:00Z"
+    },
+    {
+     "id": "1816a3bd028bffbd",
+     "publisher": "MLQ.ai",
+     "kind": "news",
+     "title": "Fed's Waller backs a December rate hike and says a half-point move should be considered if core inflation runs hot",
+     "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxQMWRZU0pVdkJiU1J1MUdOX3Y5QVF1cHpRdG5zTndjOE4xaWhuVFVWSzFZem9zNHdFVjBhYk5TZFN1VEN2RnZfdF9UV21Za09HM2hZTGpMXzUzTG01ZzZ0QzFrNy1NZENQSEsyQjNCb1plSWtWX2lSQW9xSzZXbk5zelQ4S01mRmVqMU9NTzhHb3ZWbW9yUVdOMkhLemVTSmlUNGg5bFNXTjRiVmFYenVJekRkeXluZVNhVVZNYWdYMTc5MDM4NnV3RldkSW5hS2c?oc=5",
+     "time": "2026-11-10T10:44:05Z"
+    },
+    {
+     "id": "177d64cb4badd873",
+     "publisher": "FXStreet",
+     "kind": "news",
+     "title": "Fed's Waller signals risk of larger rate hikes as inflation stays high",
+     "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNbk83dS05U3dLMmRJelhNR2Q1dndmRTExMDI4ajVLNEM3bWNTZktYV1gydFhjOVhzR19wUm55NXFMQmF4ME56VUJDSlFKRkVHZXR4TmxSSUVwMmFZRWVsbnh3VnVaWTZlQ3JZeFdzSnNmR2RuSzJoeUEyZGprblZ5bHhBMzI4eG5iMGNPNjRuemduS1NvdTh0bzg3SVByc1ZCdm5uUnJITQ?oc=5",
+     "time": "2026-11-10T10:43:44Z"
+    },
+    {
+     "id": "a3ff32444bd7c9b3",
+     "publisher": "ANI News",
+     "kind": "news",
+     "title": "Fed Governor Christopher J. Waller favors 25 bps rate hike in December; 50 bps may be needed if inflation persists",
+     "url": "https://news.google.com/rss/articles/CBMi9gFBVV95cUxQZVUtaWxLdmtZVGV6bDBwaDRTRk9saVd1R1FlUXowOVV1eVp6Qks5LWZVN0ZzS0Q1U09yemlnTVZjaEVlempESldNVEo4RE5Fb0R5OTAtU2R2cW5zMnF1SllpTXJUR3BDeWZYUjQ2U1VkZ2kzZ3VkNjRDQzhobEpSaW45NWlTSTlvMmhhYXRqUFNFeWRKRWJlUDdaMmNfR0kxOEZSa1JoS0syVFUtNG84Q3B4akh0dWNQajZ1S05FSlN2RFZYSmFLcjY0dzdNNi1wYmRqLVVvQVBOZkRJeURwajN4TjlkZUZ0blJmdktvMEFuLTFnMmc?oc=5",
+     "time": "2026-11-10T10:41:00Z"
     }
    ]
   },
@@ -9584,699 +10534,6 @@
    ]
   },
   {
-   "summary": "Federal Reserve officials signal the continued need for policy adjustments and rate hikes amid stubborn inflationary pressures.",
-   "category": "central_bank_hawkish",
-   "firstSeen": "2026-11-10T09:39:09Z",
-   "publishers": [
-    "13WHAM-TV",
-    "1470 & 100.3 WMBD",
-    "24/7 Wall St.",
-    "93.3 The Drive",
-    "ABC News - Breaking News, Latest News and Videos",
-    "ABC7 New York",
-    "AFP.com",
-    "AL Circle",
-    "AMBCrypto",
-    "ANI News",
-    "AOL.com",
-    "AP",
-    "ARYnews.tv",
-    "Action Forex",
-    "AdvisorHub",
-    "Aktualita.co",
-    "Al Jazeera",
-    "Altcoin Buzz",
-    "American Banker",
-    "Anadolu Ajansı",
-    "Asia News Network",
-    "Asianet Newsable",
-    "Axios",
-    "AzerNews",
-    "BNN Bloomberg",
-    "Baltimore Sun",
-    "Bangladesh Post",
-    "Barchart.com",
-    "Barron's",
-    "BeInCrypto",
-    "Beinsure",
-    "Benzinga",
-    "Big News Network.com",
-    "BigGo Finance",
-    "Bilyonaryo Business",
-    "Binance",
-    "Bitbo",
-    "Bitcoin Foundation",
-    "Bitcoin Magazine",
-    "Bitcoin News",
-    "Bitcoin Sistemi",
-    "Bloomberg",
-    "Bloomberg.com",
-    "Bradenton Herald",
-    "Brave New Coin",
-    "Breakingthenews.net",
-    "Breitbart News",
-    "Briefs Finance",
-    "BullionVault",
-    "Business Day",
-    "Business Insider",
-    "Business Recorder",
-    "Business Standard",
-    "Business Today",
-    "BusinessLine",
-    "BusinessToday Malaysia",
-    "Businessamlive",
-    "Businesskorea",
-    "CFO Dive",
-    "CNA",
-    "CNBC",
-    "CNBC TV18",
-    "Central Oregon Daily",
-    "Chosunbiz",
-    "Coin Gabbar",
-    "CoinCodex",
-    "CoinDesk",
-    "CoinGape",
-    "CoinMarketCap",
-    "Coinpaper",
-    "Coinpedia",
-    "Cointribune",
-    "Crowdfund Insider",
-    "Crypto Briefing",
-    "Crypto News",
-    "CryptoDaily",
-    "CryptoPotato",
-    "CryptoRank",
-    "CryptoSlate",
-    "CryptoTicker.io",
-    "Cryptonews.net",
-    "CurrencyNews.co.uk",
-    "DD News",
-    "Daily Voice Of Asia",
-    "Dalal Street Investment Journal",
-    "Decrypt",
-    "Demokratis.co.id",
-    "Demócrata",
-    "Economies.com",
-    "Euronext Markets: Real-time Stock Market Data | live",
-    "Exchange Rates UK",
-    "FOX 17 West Michigan News",
-    "FOX 9 Minneapolis-St. Paul",
-    "FXEmpire",
-    "FXLeaders",
-    "FXStreet",
-    "Finance & Commerce",
-    "FinanceFeeds",
-    "Finimize",
-    "Firstpost",
-    "Forbes",
-    "Forbes Middle East",
-    "Foreign Policy Journal",
-    "Fox Business",
-    "Free Malaysia Today",
-    "Free Press Journal",
-    "Gadgets 360",
-    "Global Banking & Finance Review",
-    "Goldman Sachs",
-    "GuruFocus",
-    "Hindustan Times",
-    "Hiru News",
-    "Hokanews",
-    "Honolulu Star-Advertiser",
-    "IDNFinancials",
-    "Incrypted",
-    "IndexBox",
-    "India's News.Net",
-    "IndiaIPO",
-    "Indianapolis Business Journal",
-    "Informat.ro",
-    "Insurance Business",
-    "InsuranceNewsNet",
-    "International Business Times",
-    "International Business Times Australia",
-    "Investing.com",
-    "Investing.com Australia",
-    "Investing.com Canada",
-    "Investing.com India",
-    "Investing.com Nigeria",
-    "Investing.com UK",
-    "InvestmentNews",
-    "Investor Strategy News",
-    "Investor's Business Daily",
-    "Invezz",
-    "Jagran Josh",
-    "JournalArta",
-    "KABB",
-    "KATV",
-    "KDNL",
-    "KELO-AM",
-    "KLSE Screener",
-    "KQ2",
-    "KRDO",
-    "KSHB 41 Kansas City",
-    "KSL",
-    "KSL News",
-    "KTVN",
-    "KXLH News Helena",
-    "Kalshi News",
-    "Kathleen Hays Presents: Central Bank Central",
-    "Kiplinger",
-    "Kitco",
-    "KuCoin",
-    "Latest news from Azerbaijan",
-    "Latin Times",
-    "Limapagi",
-    "LinkedIn",
-    "Livemint",
-    "Livewire Markets",
-    "London South East",
-    "Loveland Reporter-Herald",
-    "MLQ.ai",
-    "Magnolia Tribune",
-    "Malay Mail",
-    "Manila Bulletin",
-    "MarketWatch",
-    "Metrobank Wealth Insights",
-    "Mezha.net",
-    "Mining.com",
-    "Mining.com.au",
-    "MiningMX",
-    "MishTalk",
-    "Mitrade",
-    "Moneycontrol.com",
-    "Moomoo",
-    "Morning Brew",
-    "Mortgage Professional America",
-    "NAI500",
-    "NBC26",
-    "NDTV Profit",
-    "Nacionale",
-    "Nation Thailand",
-    "New Hampshire Union Leader",
-    "New Jersey Business & Industry Association",
-    "New York Post",
-    "News Channel 5 Nashville",
-    "News24",
-    "NewsBytes",
-    "Newsday",
-    "Newsmax",
-    "Newsquawk",
-    "Newswav",
-    "Nikkei Asia",
-    "Norada Real Estate Investments",
-    "Northeast Mississippi Daily Journal",
-    "Northwest Arkansas Democrat-Gazette",
-    "Oz Arab Media",
-    "People's Daily Online",
-    "Pintu",
-    "Pluang",
-    "Press of Atlantic City",
-    "Profit by Pakistan Today",
-    "Public TV English",
-    "Quartz",
-    "RTE.ie",
-    "RTHK News",
-    "RTL Today",
-    "RVBusiness",
-    "RealEstateNews.com",
-    "Realtor.com",
-    "Rediff MoneyWiz",
-    "Reuters",
-    "Rock Hill Herald",
-    "Rolling Out",
-    "SBS 뉴스",
-    "SRN News",
-    "SSBCrack",
-    "SchiffGold.com",
-    "Scotsman Guide",
-    "Scripps News",
-    "Seeking Alpha",
-    "Serrari Group",
-    "Sharecafe",
-    "South Florida Reporter",
-    "Startup Fortune",
-    "Stock Titan",
-    "Stocktwits",
-    "StoneX",
-    "StreetInsider",
-    "TechJuice",
-    "The American Conservative",
-    "The Arkansas Democrat-Gazette",
-    "The Business Times",
-    "The Crypto Times",
-    "The Dark Side Of The Boom",
-    "The Economic Times",
-    "The Edge Malaysia",
-    "The Financial Express",
-    "The Globe and Mail",
-    "The Hill",
-    "The Hindu",
-    "The Independent",
-    "The Korea Herald",
-    "The Korea Times",
-    "The Market Periodical",
-    "The Mighty 790 KFGO",
-    "The Mortgage Reports",
-    "The Motley Fool",
-    "The National",
-    "The Real Economy Blog",
-    "The San Joaquin Valley Sun",
-    "The Seattle Times",
-    "The Shillong Times",
-    "The Standard (HK)",
-    "The Star",
-    "The Straits Times",
-    "The Sunday Guardian",
-    "The Times",
-    "The Times of India",
-    "The Washington Post",
-    "TheBull.com.au",
-    "TheStreet",
-    "Times Now",
-    "TipRanks",
-    "TorFX News",
-    "Traders Union",
-    "TradingKey",
-    "TradingNEWS",
-    "TradingPedia",
-    "TradingView",
-    "U.Today",
-    "UA.NEWS",
-    "US News Money",
-    "USA Today",
-    "VT Markets",
-    "ValueWalk",
-    "Vietnam.vn",
-    "Virginia Business",
-    "WBFF",
-    "WCTI",
-    "WHBL News",
-    "WKZO",
-    "WPBN",
-    "WSJ",
-    "WTOP News",
-    "WTVB",
-    "WXYZ Channel 7",
-    "Washington Examiner",
-    "XTB.com",
-    "Xinhua",
-    "Yahoo",
-    "Yahoo Finance",
-    "Yahoo Finance Australia",
-    "Yahoo Finance Singapore",
-    "Zawya",
-    "ad-hoc-news.de",
-    "bdnews24.com",
-    "blockchain.news",
-    "bloomingbit",
-    "blue News",
-    "bsinews.id",
-    "cbs19.tv",
-    "eNCA",
-    "finance.biggo.com",
-    "fiscal.ai",
-    "https://streamlinefeed.co.ke/",
-    "iHeart",
-    "kaohoon international",
-    "marketscreener.com",
-    "news.sbs.co.kr",
-    "newsalert.com.pk",
-    "qz.com",
-    "richtv.io",
-    "streamlinefeed.co.ke",
-    "tippinsights",
-    "www.equiti.com",
-    "www.foreignpolicyjournal.com",
-    "www.jordannews.jo",
-    "www.thenationalnews.com",
-    "www.tmgm.com",
-    "www.tokenpost.com",
-    "سانا",
-    "شبكة تواصل الإخبارية",
-    "富途牛牛",
-    "巴士的報",
-    "联合早报",
-    "아시아경제",
-    "재경일보",
-    "조선일보",
-    "파이낸셜뉴스"
-   ],
-   "assets": {
-    "BTC/USD": {
-     "direction": "down",
-     "confidence": 0.85,
-     "why": "Hawkish Fed policy signals and ETF outflows weigh heavily on Bitcoin."
-    },
-    "ETH/USD": {
-     "direction": "down",
-     "confidence": 0.85,
-     "why": "Hot inflation and rate hike fears trigger heavy long liquidations and pressure crypto prices."
-    },
-    "SOL/USD": {
-     "direction": "down",
-     "confidence": 0.8,
-     "why": "Hawkish Fed rate hike expectations create a stronger dollar and pressure risk assets."
-    },
-    "NVDA": {
-     "direction": "down",
-     "confidence": 0.8,
-     "why": "Hawkish Fed commentary and rate hike expectations weigh on risk-on growth and tech stocks."
-    },
-    "MSFT": {
-     "direction": "down",
-     "confidence": 0.81,
-     "why": "Hawkish Fed rate hike expectations put downward pressure on major growth and tech stocks."
-    },
-    "AAPL": {
-     "direction": "down",
-     "confidence": 0.75,
-     "why": "Hawkish Fed rate hike outlook weighs heavily on broad tech and growth stocks"
-    },
-    "AMZN": {
-     "direction": "down",
-     "confidence": 0.75,
-     "why": "Broad tech and growth sell-off triggered by hawkish central bank outlook."
-    },
-    "AMAT": {
-     "direction": "down",
-     "confidence": 0.7,
-     "why": "Broader tech sell-off driven by hawkish Fed outlook."
-    },
-    "GOOGL": {
-     "direction": "down",
-     "confidence": 0.75,
-     "why": "Higher interest rate expectations and hot CPI weigh on growth tech stocks."
-    },
-    "META": {
-     "direction": "down",
-     "confidence": 0.75,
-     "why": "Higher interest rate expectations and hot CPI weigh on growth tech stocks."
-    },
-    "TSLA": {
-     "direction": "down",
-     "confidence": 0.8,
-     "why": "Hawkish Fed rate hike expectations put downward pressure on major growth and tech stocks."
-    },
-    "NEM": {
-     "direction": "down",
-     "confidence": 0.85,
-     "why": "Gold plunges to 52-week low following hawkish Fed minutes."
-    },
-    "SPWO": {
-     "direction": "down",
-     "confidence": 0.75,
-     "why": "Broad equities tumble due to rising yields and hawkish rate bets."
-    },
-    "AEM": {
-     "direction": "down",
-     "confidence": 0.85,
-     "why": "Hawkish Fed policy pushes gold prices down, hurting gold miners."
-    },
-    "AMD": {
-     "direction": "down",
-     "confidence": 0.85,
-     "why": "Hot PPI inflation reading and hawkish rate fears crush semiconductor sector, with AMD tumbling."
-    },
-    "CVX": {
-     "direction": "down",
-     "confidence": 0.6,
-     "why": "Broad macro pressure from hawkish Fed comments can negatively impact commodities."
-    },
-    "INTC": {
-     "direction": "down",
-     "confidence": 0.65,
-     "why": "Higher interest rate expectations put pressure on tech/growth stocks."
-    }
-   },
-   "sources": [
-    {
-     "id": "d9df815319391cbb",
-     "publisher": "The Edge Malaysia",
-     "kind": "news",
-     "title": "Fed’s Waller backs rate hike in December, says open to larger move",
-     "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE9aSnktcDlXbzBpMU1SQkZvRktGTnkyX1J4LU92VGxBZVVhcGQtRTVEaDBqLVRPS213cFpTMkFad1BkS0xpdmVVbGU2bVhsUTA2?oc=5",
-     "time": "2026-11-10T09:39:09Z"
-    },
-    {
-     "id": "252cbcbd6b6cd044",
-     "publisher": "Seeking Alpha",
-     "kind": "news",
-     "title": "Waller backs December rate hike, says 50-basis-point move may be on the table (TLT:NASDAQ)",
-     "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOc004NEQ1TjItUHFWanNEbWxpTlpFQ0tIaUcxZDJpTkQyZ3ppdHZtZ280ZlpnQ0NWU3g4Nms1M1dTVEdjZEpwbXcwUVBlRkRzTjNyWEctZEdNT2JwSFlSeGJIWFRTZXB2NEczeUtKY1dIQU9JbFFDaHQyOUxHZ05kU1h4QTQxQzlmSFFjRTQ0OTlaczl3NGhiMHNidko2SGVrWHZaTk8tZlN1OXR2S29HRWVMcXo?oc=5",
-     "time": "2026-11-10T10:10:00Z"
-    },
-    {
-     "id": "1816a3bd028bffbd",
-     "publisher": "MLQ.ai",
-     "kind": "news",
-     "title": "Fed's Waller backs a December rate hike and says a half-point move should be considered if core inflation runs hot",
-     "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxQMWRZU0pVdkJiU1J1MUdOX3Y5QVF1cHpRdG5zTndjOE4xaWhuVFVWSzFZem9zNHdFVjBhYk5TZFN1VEN2RnZfdF9UV21Za09HM2hZTGpMXzUzTG01ZzZ0QzFrNy1NZENQSEsyQjNCb1plSWtWX2lSQW9xSzZXbk5zelQ4S01mRmVqMU9NTzhHb3ZWbW9yUVdOMkhLemVTSmlUNGg5bFNXTjRiVmFYenVJekRkeXluZVNhVVZNYWdYMTc5MDM4NnV3RldkSW5hS2c?oc=5",
-     "time": "2026-11-10T10:44:05Z"
-    },
-    {
-     "id": "177d64cb4badd873",
-     "publisher": "FXStreet",
-     "kind": "news",
-     "title": "Fed's Waller signals risk of larger rate hikes as inflation stays high",
-     "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNbk83dS05U3dLMmRJelhNR2Q1dndmRTExMDI4ajVLNEM3bWNTZktYV1gydFhjOVhzR19wUm55NXFMQmF4ME56VUJDSlFKRkVHZXR4TmxSSUVwMmFZRWVsbnh3VnVaWTZlQ3JZeFdzSnNmR2RuSzJoeUEyZGprblZ5bHhBMzI4eG5iMGNPNjRuemduS1NvdTh0bzg3SVByc1ZCdm5uUnJITQ?oc=5",
-     "time": "2026-11-10T10:43:44Z"
-    },
-    {
-     "id": "a3ff32444bd7c9b3",
-     "publisher": "ANI News",
-     "kind": "news",
-     "title": "Fed Governor Christopher J. Waller favors 25 bps rate hike in December; 50 bps may be needed if inflation persists",
-     "url": "https://news.google.com/rss/articles/CBMi9gFBVV95cUxQZVUtaWxLdmtZVGV6bDBwaDRTRk9saVd1R1FlUXowOVV1eVp6Qks5LWZVN0ZzS0Q1U09yemlnTVZjaEVlempESldNVEo4RE5Fb0R5OTAtU2R2cW5zMnF1SllpTXJUR3BDeWZYUjQ2U1VkZ2kzZ3VkNjRDQzhobEpSaW45NWlTSTlvMmhhYXRqUFNFeWRKRWJlUDdaMmNfR0kxOEZSa1JoS0syVFUtNG84Q3B4akh0dWNQajZ1S05FSlN2RFZYSmFLcjY0dzdNNi1wYmRqLVVvQVBOZkRJeURwajN4TjlkZUZ0blJmdktvMEFuLTFnMmc?oc=5",
-     "time": "2026-11-10T10:41:00Z"
-    }
-   ]
-  },
-  {
-   "summary": "Renewed rate hike fears from FOMC minutes pressuring Bitcoin down towards support levels.",
-   "category": "crypto_negative",
-   "firstSeen": "2026-11-12T08:32:42Z",
-   "publishers": [
-    "24/7 Wall St.",
-    "99Bitcoins",
-    "AMBCrypto",
-    "AOL.com",
-    "Action Forex",
-    "Aktualita.co",
-    "Altcoin Buzz",
-    "Anadolu Ajansı",
-    "Analytics Insight",
-    "Apa.az",
-    "Asianet Newsable",
-    "BeInCrypto",
-    "Benzinga",
-    "BigGo Finance",
-    "Bitbo",
-    "Bitcoin Foundation",
-    "Bitcoin Magazine",
-    "Bitcoin News",
-    "Bitcoin Sistemi",
-    "Bitcoinist.com",
-    "Blockchain News",
-    "Blockonomi",
-    "Brandsynario",
-    "Brave New Coin",
-    "Briefs Finance",
-    "Business Standard",
-    "Businesskorea",
-    "CCN.com",
-    "CNBC",
-    "CNBC TV18",
-    "CaptainAltcoin",
-    "Chosunbiz",
-    "Coin Edition",
-    "Coin Gabbar",
-    "CoinCodex",
-    "CoinDesk",
-    "CoinGape",
-    "CoinMarketCap",
-    "Coinfomania",
-    "Coinpaper",
-    "Coinpedia",
-    "Cointribune",
-    "Crypto Briefing",
-    "Crypto Economy",
-    "Crypto News",
-    "CryptoDaily",
-    "CryptoPotato",
-    "CryptoRank",
-    "CryptoSlate",
-    "CryptoTicker.io",
-    "Cryptonews",
-    "Cryptonews.net",
-    "Cryptopolitan",
-    "Daily Beirut",
-    "Daily Forex",
-    "DailyCoin",
-    "Decrypt",
-    "Dimsum Daily",
-    "FOREX.com",
-    "FXEmpire",
-    "FXLeaders",
-    "FXStreet",
-    "FinanceFeeds",
-    "Finbold",
-    "Free Malaysia Today",
-    "Gadgets 360",
-    "GuruFocus",
-    "HESPRESS English - Morocco News",
-    "Hindustan Times",
-    "Hokanews",
-    "Investing.com",
-    "Investing.com Canada",
-    "Investing.com India",
-    "Investing.com Nigeria",
-    "Investor's Business Daily",
-    "Invezz",
-    "JournalArta",
-    "Kalkine Media",
-    "Kriptofoni",
-    "KuCoin",
-    "Livemint",
-    "MEXC",
-    "MarketForces Africa",
-    "MarketWatch",
-    "Moneycontrol.com",
-    "Moomoo",
-    "NAI500",
-    "NDTV Profit",
-    "NFTevening",
-    "Nacionale",
-    "NameCoinNews",
-    "NewsBTC",
-    "NewsBytes",
-    "PYMNTS.com",
-    "Pluang",
-    "Proactive Investors Australia",
-    "Programming Insider",
-    "Quartz",
-    "RTTNews",
-    "Retail News Asia",
-    "SSBCrack",
-    "Serrari Group",
-    "Startup Fortune",
-    "Stocktwits",
-    "StreetInsider",
-    "SunCrypto",
-    "TOKENPOST",
-    "TechBullion",
-    "TechJuice",
-    "The Block",
-    "The Business Times",
-    "The Crypto Times",
-    "The Cryptonomist",
-    "The Defiant",
-    "The Economic Times",
-    "The Edge Malaysia",
-    "The Globe and Mail",
-    "The Market Periodical",
-    "The Straits Times",
-    "The Sunday Guardian",
-    "TipRanks",
-    "Traders Union",
-    "Trading News",
-    "TradingKey",
-    "TradingNEWS",
-    "TradingPedia",
-    "TradingView",
-    "TronWeekly",
-    "U.Today",
-    "UA.NEWS",
-    "UkrMedia News",
-    "Univest",
-    "Vocal",
-    "XTB.com",
-    "Yahoo Finance",
-    "ad-hoc-news.de",
-    "blockchain.news",
-    "bloomingbit",
-    "finance.biggo.com",
-    "grafa.com",
-    "openPR.com",
-    "www.blockhead.co",
-    "www.proactiveinvestors.com.au",
-    "www.tmgm.com",
-    "www.tokenpost.com",
-    "www.trendingtopics.eu",
-    "Українські Національні Новини (УНН)",
-    "صوت الإمارات",
-    "富途牛牛",
-    "머니투데이"
-   ],
-   "assets": {
-    "BTC/USD": {
-     "direction": "down",
-     "confidence": 0.88,
-     "why": "Heavy liquidations and persistent ETF outflows drive severe downside momentum."
-    },
-    "ETH/USD": {
-     "direction": "down",
-     "confidence": 0.9,
-     "why": "Ethereum price breaks key psychological support below $2,000 amid selling pressure from the Ethereum Foundation."
-    },
-    "SOL/USD": {
-     "direction": "down",
-     "confidence": 0.85,
-     "why": "Solana crashes to multi-month lows amid broader crypto market sell-offs and rate hike fears."
-    },
-    "XRP/USD": {
-     "direction": "down",
-     "confidence": 0.85,
-     "why": "Massive capital flight and ETF outflows crush XRP price action."
-    },
-    "LINK/USD": {
-     "direction": "down",
-     "confidence": 0.6,
-     "why": "Persistent bearish bias and ETF outflows weigh on Chainlink despite holding support."
-    }
-   },
-   "sources": [
-    {
-     "id": "f2c64de89a6bbd3c",
-     "publisher": "bloomingbit",
-     "kind": "news",
-     "title": "BlackRock’s Bitcoin ETF IBIT Extends Net Outflow Streak to 9 Sessions, Exceeding $2 Billion",
-     "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE9XY1BHRGVIT2hraXRmcGx1TGI3a2oybEJwMk9LWHNKdUM1R29nNEU1eWJIeXhtTC1pSXg0QUJDd18xNkJTTG4ySkRJTXd3cjN2NkxlZg?oc=5",
-     "time": "2026-11-12T08:32:42Z"
-    },
-    {
-     "id": "cc25c44ff767f291",
-     "publisher": "Crypto News",
-     "kind": "news",
-     "title": "BlackRock leads $300 million Bitcoin ETF outflows as BTC struggles near $73K",
-     "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNY3U0TE5Gcy0teVNsLWVBeGh1cmd4Z1dSaldmVmt2b3VYaVhFSTM0T29OUnhKUXpTNEZwLW1sVkwtZnQyUUdSVDFTUHpSYjYxVlU0SFZnYW5Xd0V0TzB4NjM4VGpGa1pPYnk4eEgzR2wxV0d1SkFPSDBwSG0tdFFTQTI3cXJiSWE1UHU0NzVCUjJ2VXNFa2pIZnd0VQ?oc=5",
-     "time": "2026-11-12T08:36:14Z"
-    },
-    {
-     "id": "fb7c71d0fe55957d",
-     "publisher": "bloomingbit",
-     "kind": "news",
-     "title": "Coinbase Bitcoin Premium Stays Negative for 50 Straight Days as U.S. Buying Weakens",
-     "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTFBfQTlkOUY1NnAyTlpoRnp0Qmc2NDZnUjdSVlRBYndfa2hHVXlZdjNmX0ZhRTdZMjMtV2xMMEdTWWJvdXpCbl9BREZ0TDR6cl9NcFJXNg?oc=5",
-     "time": "2026-11-12T08:59:27Z"
-    },
-    {
-     "id": "62235bb905723bf1",
-     "publisher": "Coinfomania",
-     "kind": "news",
-     "title": "U.S. Spot Bitcoin ETFs Experience $300 Million Net Outflows",
-     "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxORGNYaW5tLUhtT2tmVi1ETy1fRFV4QnFDQndvYkpDRkRTZTF6NEJRN2V6emkyV1MzeTZfTVlyX1NsRGNzaXJsRWk5OXpDajRfVTE5OGc1anBpNWVfSkJKTUg2QnFoTlFSNlRscFJUVlBuek04RkxsN2ZydUJUSjZBdjdURUtnOGhnb3c?oc=5",
-     "time": "2026-11-12T08:55:35Z"
-    },
-    {
-     "id": "44d885771c26dd4e",
-     "publisher": "Cryptonews",
-     "kind": "news",
-     "title": "Bitcoin ETF Outflow Says Crypto Walking Into a Bull Trap",
-     "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE1aa1RfZzhBaFRtOEctWFJSZDUyRzZ6bDV5LTVmSVNubFlfLTNvNkdHVGdGS1pNbmpfb3liS2V5djRKcHV6bWZLb1BQYVVYcTRBVE0wYXNyV3hSNkdhSm01YnFqZGUzelVCamxJeEFTZG83ZzA?oc=5",
-     "time": "2026-11-12T08:48:31Z"
-    }
-   ]
-  },
-  {
    "summary": "Institutional Bitcoin ETF holdings reached a record high, signaling continued strong inflows.",
    "category": "crypto_positive",
    "firstSeen": "2026-11-17T00:18:57Z",
@@ -10497,194 +10754,6 @@
      "title": "Chevron to buy Blackstone-backed oil producer for $5 billion, FT reports",
      "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxOM3oteG5ZbTdMY2NYYmpNblBHSk53eGZhbXNzak45c0JIVEd3WlRkVTlfUHBIQmtOX3dfQTZPaTBUeUFlQnNXUkVsdnp4OEhHazRJQ3h6NnBLVnhxTjFWRDdZbWNOZFZtc1U4YVJhdjdreERnY1QydExCOUVMTU5WNld4M3piZmttdlZxS3BtMWVsTERMZkp0SG9tLWg1NDc2MWs2MGJtVTRHd0U4RGJ4azBiNVZwQWZEVWpYOXN1Wnc?oc=5",
      "time": "2026-11-16T20:31:12Z"
-    }
-   ]
-  },
-  {
-   "summary": "GRAIL, Inc. is facing reports of a potential data breach involving the theft of over 56,000 records.",
-   "category": "company_bad_news",
-   "firstSeen": "2026-11-12T15:43:48Z",
-   "publishers": [
-    "24/7 Wall St.",
-    "AP",
-    "Benzinga",
-    "CNBC",
-    "Crypto Briefing",
-    "Cryptonews.net",
-    "GuruFocus",
-    "JournalArta",
-    "Moomoo",
-    "NBC Los Angeles",
-    "NBC News",
-    "Reuters",
-    "StockStory",
-    "TIKR.com",
-    "The Economic Times",
-    "TipRanks",
-    "TradingKey",
-    "Wccftech",
-    "Yahoo Finance",
-    "Yahoo Finance UK",
-    "fiscal.ai",
-    "scanx.trade"
-   ],
-   "assets": {
-    "TSLA": {
-     "direction": "down",
-     "confidence": 0.65,
-     "why": "Analyst downgrade to Sell highlighting valuation and profitability concerns."
-    },
-    "NVDA": {
-     "direction": "down",
-     "confidence": 0.85,
-     "why": "CEO exit and executive turmoil directly weigh on Nvidia stock."
-    },
-    "LOW": {
-     "direction": "down",
-     "confidence": 0.8,
-     "why": "Analyst downgrade to Underperform directly weighs on the stock."
-    },
-    "TJX": {
-     "direction": "down",
-     "confidence": 0.65,
-     "why": "Downgraded to Hold by Gordon Haskett."
-    },
-    "AVGO": {
-     "direction": "down",
-     "confidence": 0.8,
-     "why": "Downgraded by Rothschild & Co Redburn due to AI financing concerns."
-    },
-    "HD": {
-     "direction": "down",
-     "confidence": 0.6,
-     "why": "Peer home improvement retailer pressured by negative sector sentiment."
-    },
-    "META": {
-     "direction": "down",
-     "confidence": 0.85,
-     "why": "Massive regulatory fine of $887 million from Italy creates significant negative pressure."
-    },
-    "GOOGL": {
-     "direction": "down",
-     "confidence": 0.55,
-     "why": "Broader regulatory headwinds for big tech regarding user data in Europe."
-    },
-    "INTC": {
-     "direction": "down",
-     "confidence": 0.9,
-     "why": "Severe share price plunge and shareholder lawsuits highlight deep fundamental pressures for Intel."
-    },
-    "COST": {
-     "direction": "down",
-     "confidence": 0.6,
-     "why": "Regulatory fine and labor misclassification issue creates slight negative sentiment."
-    },
-    "MU": {
-     "direction": "down",
-     "confidence": 0.5,
-     "why": "Legal setbacks regarding price-fixing allegations create regulatory and financial uncertainty for the company."
-    },
-    "OXY": {
-     "direction": "down",
-     "confidence": 0.8,
-     "why": "Analyst downgrade creates downward selling pressure."
-    },
-    "FANG": {
-     "direction": "down",
-     "confidence": 0.65,
-     "why": "Large cash-and-stock acquisitions can dilute existing shareholders and create near-term capital allocation uncertainty."
-    },
-    "SMCI": {
-     "direction": "down",
-     "confidence": 0.75,
-     "why": "DOJ probe and leadership uncertainty create significant negative pressure"
-    },
-    "MSFT": {
-     "direction": "down",
-     "confidence": 0.6,
-     "why": "Patent infringement lawsuit from MIT introduces legal and financial headwinds"
-    },
-    "ADBE": {
-     "direction": "down",
-     "confidence": 0.5,
-     "why": "Legal disputes regarding branding can create uncertainty and potential rebranding costs."
-    },
-    "AAPL": {
-     "direction": "down",
-     "confidence": 0.7,
-     "why": "Widespread service outages and internal technical failures weigh on near-term sentiment."
-    },
-    "MDT": {
-     "direction": "up",
-     "confidence": 0.75,
-     "why": "FDA clearance for the Hugo robotic-assisted surgery system is a major regulatory and commercial milestone."
-    },
-    "CRM": {
-     "direction": "down",
-     "confidence": 0.85,
-     "why": "Significant drop and negative investor sentiment following layoff reports."
-    },
-    "NKE": {
-     "direction": "down",
-     "confidence": 0.8,
-     "why": "Continued investor selling after disappointing Investor Day guidance."
-    },
-    "ABBV": {
-     "direction": "up",
-     "confidence": 0.55,
-     "why": "Strategic collaboration with DISCO Pharmaceuticals expands oncology pipeline."
-    },
-    "MRK": {
-     "direction": "up",
-     "confidence": 0.6,
-     "why": "Strategic research collaboration with Isomorphic Labs for oncology."
-    },
-    "AMD": {
-     "direction": "down",
-     "confidence": 0.8,
-     "why": "Short-seller allegations and new U.S. export rules on China create immediate downside risk."
-    }
-   },
-   "sources": [
-    {
-     "id": "fb8045cbfe86a60f",
-     "publisher": "Benzinga",
-     "kind": "news",
-     "title": "YETI Sounds the Alarm on Consumer Spending As Shoppers Hunt for Deals",
-     "url": "https://www.benzinga.com/markets/earnings/26/11/63197694/yeti-sounds-the-alarm-on-consumer-spending-as-shoppers-hunt-for-deals",
-     "time": "2026-11-12T15:43:48Z"
-    },
-    {
-     "id": "eb1007b02a637a06",
-     "publisher": "StockStory",
-     "kind": "news",
-     "title": "Why YETI shares are trading lower today",
-     "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNdl83SV9zdFlzM2FENVRJLTJxckhKNjZUMTFTM0FXUUZVQ0NzRG54ZFRXeERERnZDSWFDcmMxNU1rRVhrWUlnV2UtWFdmY2VpWDAxNkxudGV4NmpjeUJ3Z1NQUm1FUm1lU3dNTmEwdmxkNjFTdU9aTEt2THpfQmYyV05vNzJwa3VDSjZqQjdfYjVwQWttVzlNX0ZrdTlydXJU?oc=5",
-     "time": "2026-11-12T15:53:44Z"
-    },
-    {
-     "id": "c394152546c931b0",
-     "publisher": "scanx.trade",
-     "kind": "news",
-     "title": "YETI Holdings Q3FY26 Results: Revenue up 4.4% but guidance cut",
-     "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOdlBmR3l6ZUFQY29CWHFTT1p4Z0JOdEpxb2hiYWNuV3FQTjVKcTd0bml3S3RPWVY1SDVSUVR3dGFSb1BvbXByNzc4RURDd1E0YXdTT05pVWYyOVpjQ2JTYXVkMFByR05iaThHeUJfRDJuaWVKYVp3UkxndGxfNm9WeGxtV1h0dUFEUWtVM0tQaURPVWNuSGFiZmZBanBCc2tGQ0FhNjEyUEVZVUYzT1lGSWFFeW05clYz?oc=5",
-     "time": "2026-11-12T16:39:48Z"
-    },
-    {
-     "id": "cc6a00bf5e9f8ced",
-     "publisher": "fiscal.ai",
-     "kind": "news",
-     "title": "Lawsuit Filed Against Tesla Over San Mateo Street-Racing Incident",
-     "url": "https://newsfilter.io/sources/businesswire",
-     "time": "2026-11-12T20:01:33Z"
-    },
-    {
-     "id": "fab361ae0414d4da",
-     "publisher": "CNBC",
-     "kind": "news",
-     "title": "Stock futures edge lower after markets slide amid Nvidia woes: Live updates",
-     "url": "https://www.cnbc.com/2026/11/12/stock-market-today-live-updates.html",
-     "time": "2026-11-13T08:20:13Z"
     }
    ]
   },
