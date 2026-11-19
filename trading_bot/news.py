@@ -3,7 +3,7 @@
 Every item is normalized to:
   {id, publisher, kind: "news"|"social", title, summary, url, time, symbols}
 """
-import hashlib, json, re, shutil, subprocess, time
+import hashlib, json, os, re, shutil, subprocess, time
 import xml.etree.ElementTree as ET_XML
 from datetime import datetime, timedelta, timezone
 from html import unescape
@@ -240,6 +240,40 @@ def social_news(since, state):
 
 
 # ------------------------------------------------------------------ collect
+def wsb_buzz(state, symbols):
+    """Tradestie: top 50 tickers on r/wallstreetbets (comments + bullish/bearish score, refreshed ~15 min).
+    Works with no key; TRADESTIE_API_KEY in ~/.trading-bot.env raises the limit. Only halal-list tickers, and only
+    when the buzz is new or jumps (a ticker entering the top 50, or comments up 50%+), so the same chatter isn't
+    re-read every cycle. Like all X/Reddit posts it is social: extra evidence, never the news source on its own."""
+    allowed = {x.upper() for x in symbols if "/" not in x}
+    key = os.environ.get("TRADESTIE_API_KEY")
+    try:
+        rows = http("GET", "https://tradestie.com/api/v1/apps/reddit", timeout=20, retries=1,
+                    headers={"X-Api-Key": key} if key else {})
+    except HttpError as e:
+        state.setdefault("socialStatus", {})["wsb"] = {"at": iso(), "error": str(e)[:100]}
+        return []
+    prev, now_counts, out = state.get("wsb") or {}, {}, []
+    for r in rows if isinstance(rows, list) else []:
+        t = str(r.get("ticker") or "").upper()
+        n = int(r.get("no_of_comments") or 0)
+        now_counts[t] = n
+        if t not in allowed or n < 10:
+            continue
+        before = prev.get(t)
+        if before is None or (n >= before * 1.5 and n - before >= 20):
+            sc = float(r.get("sentiment_score") or 0)
+            out.append(item("Reddit", "social",
+                            f"r/wallstreetbets buzz: {t} {n} comments today, {r.get('sentiment') or 'neutral'} ({sc:+.2f})",
+                            f"{t} is among the most discussed stocks on r/wallstreetbets" +
+                            (f" (comments up from {before})" if before else " (new in the top 50)"),
+                            "https://tradestie.com/apps/reddit/", now_utc(), symbols=[t]))
+    state["wsb"] = now_counts
+    state.setdefault("socialStatus", {})["wsb"] = {"at": iso(), "tickers": len(now_counts), "items": len(out),
+                                                     "key": bool(key)}
+    return out
+
+
 def collect(alpaca, state, include_social, symbols=()):
     """New, unseen items since the last cycle (max 3h back)."""
     last = parse_time(state.get("newsCursor")) or (now_utc() - timedelta(hours=2))
@@ -254,6 +288,8 @@ def collect(alpaca, state, include_social, symbols=()):
         items += yahoo_news(symbols, since)
     if include_social:
         items += social_news(since, state)
+        if symbols:
+            items += wsb_buzz(state, symbols)
     seen = set(state.get("seenNews") or [])
     fresh, ids = [], set()
     for i in items:

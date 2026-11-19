@@ -573,3 +573,21 @@ def test_ultra_mode_buys_without_tradingagents(monkeypatch, tmpdirs):
     monkeypatch.setattr(D, "run", lambda *a, **k: (_ for _ in ()).throw(AssertionError("TradingAgents should not run")))
     B.Bot().cycle()
     assert fake.placed
+
+
+def test_wsb_buzz_only_new_or_jumping_halal_tickers(monkeypatch):
+    import trading_bot.news as N
+    rows = [{"ticker": "TSLA", "no_of_comments": 120, "sentiment": "Bullish", "sentiment_score": 0.21},
+            {"ticker": "GME", "no_of_comments": 300, "sentiment": "Bullish", "sentiment_score": 0.4},   # not on halal list
+            {"ticker": "XOM", "no_of_comments": 5, "sentiment": "Bearish", "sentiment_score": -0.1}]   # too quiet
+    seen = {}
+    monkeypatch.setattr(N, "http", lambda *a, **k: (seen.update(k), rows)[1])
+    st = {}
+    got = N.wsb_buzz(st, ["TSLA", "XOM", "BTC/USD"])
+    assert [g["symbols"] for g in got] == [["TSLA"]] and got[0]["kind"] == "social" and got[0]["publisher"] == "Reddit"
+    assert N.wsb_buzz(st, ["TSLA"]) == []                                  # same buzz: not repeated
+    rows[0]["no_of_comments"] = 200
+    assert len(N.wsb_buzz(st, ["TSLA"])) == 1                              # jumped 120 -> 200
+    monkeypatch.setenv("TRADESTIE_API_KEY", "k")
+    N.wsb_buzz(st, ["TSLA"])
+    assert seen["headers"] == {"X-Api-Key": "k"}
