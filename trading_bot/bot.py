@@ -337,7 +337,7 @@ class Bot:
         from . import risk
         price = self.a.latest_price(sym) or chk["price"]
         pending = sum(t["cost"] for t in self.open_trades() if t["status"] == "pending")
-        budget, _ = risk.size_order(acct, price, pending)
+        budget, _ = risk.size_order(acct, price, pending, confidence=a.get("confidence"), n_sources=len(pubs))
         stop, target = risk.stop_and_target(price)
         tid = f"ahq-{sym.replace('/', '')}-{now_utc():%Y%m%d%H%M%S}"
         try:

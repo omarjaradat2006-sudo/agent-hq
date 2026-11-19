@@ -8,7 +8,8 @@
 #   tb backtest-log     follow the backtest
 #   tb replay           what the strict / loose / any entry rules would have traded this week (no orders)
 #   tb rules loose      switch entry rules: strict (2 sources, volume 1.5x) | loose (1 reputable, 1.2x) | any | aggressive
-#   tb size 50 [10]     invest up to 50% of the account (rest stays cash), 10% per trade (default 5). No limit on the number of trades
+#   tb size 50          invest up to 50% of the account (rest stays cash). Bot sizes each trade itself (auto). No limit on trades
+#   tb size 50 10       same, but fix every trade at 10% (tb size 50 auto = back to automatic sizing)
 #   tb tradestie       type your free Tradestie key (hidden) for r/wallstreetbets buzz (optional: works without)
 #   tb universe         re-run the halal screen now and show how many stocks + coins pass
 #   tb unlock           turn the kill switch off again (only after you've reviewed why it fired)
@@ -34,10 +35,10 @@ case "${1:-help}" in
                 touch ~/.trading-bot.env; chmod 600 ~/.trading-bot.env
                 sed -i '/^TRADING_RULES=/d' ~/.trading-bot.env && echo "TRADING_RULES=$M" >> ~/.trading-bot.env
                 sudo systemctl restart agenthq-trading && echo "Entry rules now: $M (stop-loss, day halt and kill switch unchanged). Bot restarted." ;;
-  size)         M="${2:-}"; P="${3:-}"; case "$M" in ''|*[!0-9]*) echo "Use: tb size <max % invested> [% per trade]   e.g. tb size 50 10"; grep -hE '^(INVEST|PER_TRADE)_PCT' ~/.trading-bot.env 2>/dev/null || echo "(now: 25% invested, 5% per trade)"; exit 1;; esac
+  size)         M="${2:-}"; P="${3:-}"; case "$M" in ''|*[!0-9]*) echo "Use: tb size <max % invested> [% per trade]   e.g. tb size 50 10"; echo "Now: max $(grep -h '^INVEST_PCT' ~/.trading-bot.env 2>/dev/null | cut -d= -f2 || true)% invested (25 if blank), per trade: $(grep -h '^PER_TRADE_PCT' ~/.trading-bot.env 2>/dev/null | cut -d= -f2 || true) (auto if blank)"; exit 1;; esac
                 sed -i '/^INVEST_PCT=/d' ~/.trading-bot.env && echo "INVEST_PCT=$M" >> ~/.trading-bot.env
                 if [ -n "$P" ]; then sed -i '/^PER_TRADE_PCT=/d' ~/.trading-bot.env && echo "PER_TRADE_PCT=$P" >> ~/.trading-bot.env; fi
-                sudo systemctl restart agenthq-trading && echo "Now: up to $M% invested, ${P:-$(grep -h '^PER_TRADE_PCT' ~/.trading-bot.env | cut -d= -f2 || echo 5)}% per trade, no limit on how many. Stop-loss, day halt, kill switch unchanged. Bot restarted." ;;
+                sudo systemctl restart agenthq-trading && echo "Now: up to $M% invested, per trade: $(grep -h '^PER_TRADE_PCT' ~/.trading-bot.env | cut -d= -f2 || true) (auto if blank), no limit on how many. Stop-loss, day halt, kill switch unchanged. Bot restarted." ;;
   tradestie)    read -rsp "Tradestie API key (hidden): " K && echo && sed -i '/^TRADESTIE_API_KEY=/d' ~/.trading-bot.env && echo "TRADESTIE_API_KEY=$K" >> ~/.trading-bot.env && unset K && sudo systemctl restart agenthq-trading && echo "Tradestie key saved. Bot restarted." ;;
   universe)     "$PY" -m trading_bot.bot universe ;;
   unlock)       "$PY" -m trading_bot.bot unlock ;;

@@ -121,6 +121,7 @@ def wire(monkeypatch, fake, assets, ta_rating="Buy", calls=None):
 
 
 def test_full_cycle_buys_with_bracket(monkeypatch):
+    monkeypatch.setenv("PER_TRADE_PCT", "5")                              # old fixed 5% sizing
     fake = FakeAlpaca()
     B = wire(monkeypatch, fake, [{"symbol": "XOM", "direction": "up", "confidence": 0.8, "why": "supply shock"}])
     b = B.Bot(); b.cycle()
@@ -176,17 +177,19 @@ def test_no_volume_spike(monkeypatch):
 
 
 def test_max_invested_budget_not_a_trade_count(monkeypatch):
+    monkeypatch.setenv("PER_TRADE_PCT", "5")                              # old fixed 5% sizing
     held = [{"symbol": s, "qty": "1"} for s in ["AAPL", "MSFT", "AMD", "LLY", "CAT", "COP", "DE"]]
     fake = FakeAlpaca(); fake.pos = held; fake.cash = 76000.0              # 24% invested, default max 25%
     B = wire(monkeypatch, fake, [{"symbol": "XOM", "direction": "up", "confidence": 0.8, "why": "x"}])
     b = B.Bot(); b.cycle()
     assert not fake.placed and "invested" in b.ledger["decisions"][0]["why"]
     monkeypatch.setenv("INVEST_PCT", "50")                                 # tb size 50: 7 holdings is fine
+    monkeypatch.delenv("PER_TRADE_PCT")
     fake2 = FakeAlpaca(); fake2.pos = held; fake2.cash = 76000.0
     B = wire(monkeypatch, fake2, [{"symbol": "XOM", "direction": "up", "confidence": 0.8, "why": "x"}])
     B.Bot().cycle()
     assert fake2.placed
-    assert C.sizing() == (0.05, 0.5)
+    assert C.sizing() == (None, 0.5)                                       # AUTO per-trade size
     monkeypatch.setenv("PER_TRADE_PCT", "10")
     assert C.sizing() == (0.10, 0.5)
 
@@ -208,6 +211,7 @@ def test_kill_switch(monkeypatch):
 
 
 def test_crypto_buy_then_server_side_stop(monkeypatch):
+    monkeypatch.setenv("PER_TRADE_PCT", "5")                              # old fixed 5% sizing
     fake = FakeAlpaca()
     B = wire(monkeypatch, fake, [{"symbol": "BTC/USD", "direction": "up", "confidence": 0.8, "why": "ETF inflows"}])
     b = B.Bot(); b.cycle()
@@ -387,6 +391,7 @@ def test_backtest_triage_budget_and_resume(monkeypatch, tmpdirs):
 
 
 def test_backtest_simulation_applies_risk_rules(monkeypatch):
+    monkeypatch.setenv("PER_TRADE_PCT", "5")                              # old fixed 5% sizing
     import trading_bot.backtest as BT
     news_at = (NOW - timedelta(days=4)).replace(hour=15, minute=0, second=0, microsecond=0)   # 10-11 AM New York
     while news_at.weekday() >= 5:
@@ -402,7 +407,7 @@ def test_backtest_simulation_applies_risk_rules(monkeypatch):
                            "items": [{"time": T(t)}, {"time": T(t)}], "assets": {s: {"direction": "up", "confidence": 0.9}}}
     trades, rules = BT.simulate(A(), events, NOW - timedelta(days=10), NOW)
     assert 0 < len(trades) <= C.RISK["max_open_positions"]
-    assert rules.get("max 5 positions", 0) + rules.get("already holding it", 0) >= 1
+    assert rules.get("max invested", 0) + rules.get("already holding it", 0) >= 1
     for t in trades:
         assert t["qty"] * t["entry"] <= 100000 * 0.05 + 1
 
@@ -591,3 +596,15 @@ def test_wsb_buzz_only_new_or_jumping_halal_tickers(monkeypatch):
     monkeypatch.setenv("TRADESTIE_API_KEY", "k")
     N.wsb_buzz(st, ["TSLA"])
     assert seen["headers"] == {"X-Api-Key": "k"}
+
+
+def test_auto_sizing_scales_with_confidence_inside_the_cap(monkeypatch):
+    from trading_bot import risk
+    monkeypatch.delenv("PER_TRADE_PCT", raising=False); monkeypatch.setenv("INVEST_PCT", "25")
+    acct = {"equity": "100000", "last_equity": "100000", "cash": "100000"}
+    weak, _ = risk.size_order(acct, 100, confidence=0.55)
+    strong, _ = risk.size_order(acct, 100, confidence=0.95)
+    assert 400 < weak < 3000 and 20000 < strong <= 25000                  # 25% cap = $25,000
+    acct2 = {"equity": "100000", "last_equity": "100000", "cash": "80000"}  # $20k already invested
+    left, _ = risk.size_order(acct2, 100, confidence=0.95)
+    assert left <= 5000.01                                                 # never past the 25% cap

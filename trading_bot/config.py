@@ -58,10 +58,25 @@ REPUTABLE = {
 }
 
 
+def trade_weight(confidence, n_sources=1):
+    """AUTO sizing: share of the max-invested budget one trade gets, from how strong the signal is.
+    confidence 0.55 -> 10%, 0.65 -> 30%, 0.75 -> 50%, 0.9+ -> 80-100% (more sources = a bit more). Min 2%."""
+    c = float(confidence or 0.6)
+    w = (c - 0.5) * 2 * (1 + 0.2 * min(max(int(n_sources or 1), 1) - 1, 3))
+    return max(0.02, min(1.0, w))
+
+
 def sizing():
-    """(per-trade fraction, max invested fraction). Set with `tb size <max %> [per-trade %]` (~/.trading-bot.env).
-    No limit on the NUMBER of trades: it opens as many as fit inside the max-invested budget, cash only."""
+    """(per-trade fraction or None for AUTO, max invested fraction). Set with `tb size <max %> [per-trade %|auto]`.
+    The ONLY hard limit is how much of the account is invested. No limit on the number of trades; in AUTO the bot
+    sizes each trade from its confidence (a tiny slice up to the whole remaining budget), cash only."""
     import os
+    if (os.environ.get("PER_TRADE_PCT") or "auto").strip().lower() in ("", "auto"):
+        try:
+            cap = float(os.environ.get("INVEST_PCT") or 25)
+        except ValueError:
+            cap = 25.0
+        return None, max(0.5, min(100.0, cap)) / 100
     def f(name, default):
         try:
             v = float(os.environ.get(name) or default)
