@@ -106,7 +106,7 @@ cd "$ENGINE/Upload Tool" && $PY verify.py ambient
 
 # 5) Mark Agent HQ, save history + report
 git -C "$HQ" fetch -q origin main && git -C "$HQ" reset -q --hard origin/main
-$PY "$ENGINE/ambient/mark.py" "$RENDER_OK" "$MINS" && save_hq "Ambient Escape batch made on the server (Gemini specs, no Claude)"
+$PY "$ENGINE/ambient/mark.py" "$RENDER_OK" "$MINS" && { $PY "$(dirname "$0")/mark_ideas.py" ambient; save_hq "Ambient Escape batch made on the server (Gemini specs, no Claude)"; }
 
 # 6) Temp files (clips, loop pieces, beds) only when nothing is left to upload
 if [ "$(cat "$OUTD/queue.json" 2>/dev/null)" = "[]" ]; then

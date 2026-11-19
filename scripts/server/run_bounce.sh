@@ -88,7 +88,7 @@ cd "$ENGINE/Upload Tool" && $PY verify.py bounce
 
 # 4) Mark Agent HQ, save history + report
 sync_repos >/dev/null 2>&1 || git -C "$HQ" pull -q --rebase origin main
-$PY "$ENGINE/templates/mark.py" "$RENDER_OK" && save_hq "Bounce Theory batch made on the server (templates, no Claude)"
+$PY "$ENGINE/templates/mark.py" "$RENDER_OK" && { $PY "$(dirname "$0")/mark_ideas.py" bounce; save_hq "Bounce Theory batch made on the server (templates, no Claude)"; }
 
 # 5) Temp files only when everything uploaded (anything still in queue.json is never deleted)
 if [ "$(cat "$BOUNCE_STUDIO/2 Bounce Theory - Upload Today/queue.json" 2>/dev/null)" = "[]" ]; then

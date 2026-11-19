@@ -291,7 +291,18 @@
     const k = tabForKind(t, a.kind); if (k !== "overview") { const b = el("button", "btn primary", { stats: "See the stats", research: "See what they found", review: "See the review", competitors: "See the competitors", swarm: "See the debate", positions: "See open positions", trades: "See every trade", news: "See the news desk", coins: "See coin watch", picks: "See today's slips", record: "See the record", books: "See odds and cost" }[k] || "See what they wrote"); b.onclick = () => { tab = k; renderPanel(); }; c.append(b); }
     return c;
   }
+  function ideaLine(t, body) {   // YouTube tab: how the board is being worked through
+    if (t.cfg.id !== "youtube") return;
+    const ideas = t.state.ideas || []; const L = t.state.lineup || {};
+    const today = new Date().toLocaleDateString("en-CA", { timeZone: "America/Toronto" });
+    const inLineup = new Set(L.date === today ? Object.values(L.channels || {}).flat().map(s => s && s.ideaId).filter(Boolean) : []);
+    const waiting = ideas.filter(i => effectiveStatus(i).status === "approved").length;
+    const week = Date.now() - 7 * 864e5;
+    const doneWk = ideas.filter(i => effectiveStatus(i).status === "done" && Date.parse(i.doneAt || "") >= week).length;
+    body.append(el("p", "small", `Ideas: ${waiting} waiting, ${inLineup.size} in today's lineup, ${doneWk} done this week`));
+  }
   function vOverview(t, body) {
+    ideaLine(t, body);
     if (t.cfg.id === "repos") requestCard(t, body);
     if (t.cfg.id === "trading") tradingTop(t, body);
     if (t.cfg.virtual && M.teams.trading && (M.teams.trading.state.brief || {}).headline) {
@@ -428,6 +439,7 @@
     return `Use the ${skill} skill. Include this Agent HQ idea in today's batch (id ${i.id}):\n\nTitle: ${i.title}\nHook: ${i.hook || ""}\nFormat: ${i.format || ""}\n\nProduction notes:\n${i.script || ""}`;
   }
   function vIdeas(t, body) {
+    ideaLine(t, body);
     const ideas = t.state.ideas || []; const S2 = [["pending", "To review"], ["approved", t.cfg.id === "youtube" ? "Up next" : "Waiting on you"], ["done", t.cfg.id === "lab" || t.cfg.id === "repos" ? "Installed" : "Done"], ["skipped", "Skipped"]];
     const sub = el("div", "subtabs"); S2.forEach(([k, l]) => { const b = el("button", null, `${l} ${ideas.filter(i => effectiveStatus(i).status === k).length}`); b.setAttribute("aria-pressed", String(ideaFilter === k)); b.onclick = () => { ideaFilter = k; renderPanel(); }; sub.append(b); });
     body.append(sub);
@@ -548,6 +560,7 @@
       body.append(c); });
   }
   function vLineup(t, body) {
+    ideaLine(t, body);
     const L = t.state.lineup; const sub0 = L && L.channels ? Object.keys(L.channels) : [];
     if (!sub0.length) { body.append(empty("No lineup yet", "Every morning the team plans the day: Bounce Theory 24 Shorts + longs, Ambient Escape 15 Shorts + 2 longs.")); return; }
     statSel = sub0.includes(statSel) ? statSel : sub0[0];

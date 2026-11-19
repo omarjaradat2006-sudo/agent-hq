@@ -26,7 +26,7 @@ TEAMS = {
   "youtube": dict(state="youtube", prefix="youtube", search=True, extra=["metrics:youtube", "lab:formatLeads", "bounce:templates"],
     formats=["youtube-lineup.md", "performance-review.md"], keys=["review", "research", "ideas", "footage", "lineup", "brief"],
     agents=["reviewer", "analyst", "strategist", "producer", "lead"], hour="15:13",
-    job="""YouTube team for Bounce Theory and Ambient Escape. Review both channels from the metrics (Shorts and longs separately; compare Ambient explainer Shorts vs the rest once they are 2+ days old), find what's winning on other channels now, write at most 1 new concept per channel (only with real evidence), today's footage list (Ambient only, 4-8 clips) and the FULL day's lineup exactly as youtube-lineup.md says: Bounce Theory 24 Shorts (S01-S24) + 2 longs, Ambient Escape 24 Shorts + 2 longs (Ambient: exactly 12 animated explainer Shorts with full specs in the note + 12 proven Shorts). NEVER reuse a title from the ALREADY UPLOADED lists or repeat a recent Bounce template+settings combo: every slot is a fresh variation (new colours, counts, shapes, hook). Every Bounce Theory item MUST have a `settings` object built only from the Bounce template menu (template + knob params; L2 uses settings.clips), as youtube-lineup.md says: the server renders Bounce Theory from those settings with no Claude. Channel separation is absolute. Mostly remixes of Omar's own winners; at most 2 tests per channel. Then a brief whose approvals start with "Today's lineup is ready: 52 videos." """,
+    job="""YouTube team for Bounce Theory and Ambient Escape. Review both channels from the metrics (Shorts and longs separately; compare Ambient explainer Shorts vs the rest once they are 2+ days old), find what's winning on other channels now, write at most 1 new concept per channel (only with real evidence), today's footage list (Ambient only, 4-8 clips) and the FULL day's lineup exactly as youtube-lineup.md says: Bounce Theory 24 Shorts (S01-S24) + 2 longs, Ambient Escape 24 Shorts + 2 longs (Ambient: exactly 12 animated explainer Shorts with full specs in the note + 12 proven Shorts). NEVER reuse a title from the ALREADY UPLOADED lists or repeat a recent Bounce template+settings combo: every slot is a fresh variation (new colours, counts, shapes, hook). Every Bounce Theory item MUST have a `settings` object built only from the Bounce template menu (template + knob params; L2 uses settings.clips), as youtube-lineup.md says: the server renders Bounce Theory from those settings with no Claude. Channel separation is absolute. IDEAS FIRST: fill slots from the APPROVED BOARD IDEAS list before inventing anything (oldest first, both channels, only ideas that fit an existing template/format; never the ones marked needsBuild). Every slot made from a board idea MUST carry "ideaId": "<that idea's id>" (one idea per slot, never two slots for one idea). Remaining slots: mostly remixes of Omar's own winners; at most 2 tests per channel. New ideas: never add one that repeats or rewords an idea already on the board. Then a brief whose approvals start with "Today's lineup is ready: 52 videos." """,
     research="what YouTube Shorts and long videos are winning right now in: satisfying physics simulation Shorts, marble races, battle royale sims, quiz Shorts; long sleep / rain / ambient / noise videos (titles, lengths); Islamic reminder and quiz Shorts; animated Islamic explainer Shorts (POV and 'N ways' lists). Real channels, titles and view numbers."),
   "linkedai": dict(state="linkedai", prefix="linkedai", search=True, formats=["competitor-intel.md", "promo-scripts.md", "tiktok-scripts.md"],
     keys=["competitors", "research", "ideas", "brief"], agents=["watch", "copywriter", "lead"], hour="Mon 15:17",
@@ -73,6 +73,14 @@ def context(cfg, state):
         keep["lastLineup"] = state.get("lineup")
         keep["footage"] = state.get("footage")
     parts = [json.dumps(keep, ensure_ascii=False)[:30000]]
+    if cfg["state"] == "youtube":
+        board = [{"id": i.get("id"), "channel": channel_of(i), "needsBuild": needs_build(i), "title": i.get("title"), "format": i.get("format"),
+                  "hook": i.get("hook"), "notes": str(i.get("script") or i.get("description") or "")[:400]}
+                 for i in sorted(approved_ideas(state), key=lambda i: str(i.get("createdAt", "")))]
+        parts.append("APPROVED BOARD IDEAS (use these FIRST in today's lineup, oldest first; set ideaId on the slot; skip needsBuild ones):\n"
+                     + json.dumps(board, ensure_ascii=False)[:20000])
+        parts.append("ALL IDEA TITLES ON THE BOARD (never add a new idea that repeats or rewords one of these):\n"
+                     + "\n".join(str(i.get("title", "")) for i in state.get("ideas", []))[:8000])
     for e in cfg.get("extra", []):
         if e.startswith("metrics:"):
             m = load(os.path.join(ROOT, "data", e[8:], "metrics.json"), {})
@@ -109,6 +117,57 @@ def context(cfg, state):
                         "pending": sum(1 for i in s.get("ideas", []) if i.get("status") == "pending")}
             parts.append("All teams: " + json.dumps(b, ensure_ascii=False)[:25000])
     return "\n\n".join(parts)
+
+
+def needs_build(i):
+    return bool(re.search(r"needs build|new (sim )?build|new template", f"{i.get('title', '')} {i.get('format', '')}", re.I))
+
+
+def channel_of(i):
+    t = f"{i.get('channel') or ''} {i.get('format', '')} {i.get('title', '')}".lower()
+    return "Ambient Escape" if "ambient" in t else "Bounce Theory"
+
+
+def approved_ideas(state):
+    return [i for i in state.get("ideas", []) if i.get("status") == "approved"]
+
+
+def _idea_key(t):
+    t = re.sub(r"(?i)bounce theory:|ambient escape:|needs build:|vol\.? ?\d+|#\S+", " ", str(t or ""))
+    return re.sub(r"[^a-z0-9]+", " ", t.lower()).strip()
+
+
+def drop_repeat_ideas(patch, state):
+    """No new idea that repeats or rewords one already on the board (any status) or another new one."""
+    import difflib
+    seen = [_idea_key(i.get("title")) for i in state.get("ideas", [])]
+    keep, dropped = [], 0
+    for i in patch.get("ideas", []) or []:
+        k = _idea_key(i.get("title"))
+        if not k or any(k == o or difflib.SequenceMatcher(None, k, o).ratio() >= 0.8 for o in seen if o):
+            dropped += 1; continue
+        seen.append(k); keep.append(i)
+    patch["ideas"] = keep
+    print(f"new ideas kept {len(keep)}, dropped as repeats {dropped}", flush=True)
+
+
+def check_idea_slots(patch, state):
+    """Keep ideaId only on slots that use a real, approved, buildable idea of the same channel, once each."""
+    L = patch.get("lineup")
+    if not isinstance(L, dict):
+        return
+    chans = L.get("channels") if isinstance(L.get("channels"), dict) else L
+    ok = {i["id"]: i for i in approved_ideas(state) if i.get("id") and not needs_build(i)}
+    used, n = set(), 0
+    for ch, slots in chans.items():
+        for sl in slots if isinstance(slots, list) else []:
+            if not isinstance(sl, dict) or not sl.get("ideaId"):
+                continue
+            iid = str(sl["ideaId"]); idea = ok.get(iid)
+            if not idea or iid in used or channel_of(idea) != ch:
+                sl.pop("ideaId", None); continue
+            used.add(iid); n += 1
+    print(f"lineup slots from board ideas: {n} (approved buildable on the board: {len(ok)})", flush=True)
 
 
 def _norm_title(t):
@@ -246,6 +305,9 @@ Include every key listed above."""
         patch["agents"][a] = {"status": "ok", "doing": str(raw.get("doing", "Done (Gemini)"))[:140], "lastRun": ISO}
     if job == "youtube":
         fix_repeats(patch, system)
+        check_idea_slots(patch, state)
+    if job == "youtube" and patch.get("ideas"):
+        drop_repeat_ideas(patch, state)
     os.makedirs(os.path.join(ROOT, "out"), exist_ok=True)
     json.dump(patch, open(os.path.join(ROOT, "out", f"{job}_patch.json"), "w", encoding="utf-8"), ensure_ascii=False, indent=1)
     print(f"{job}: wrote patch with keys {sorted(patch)} and {len(ideas)} ideas")
