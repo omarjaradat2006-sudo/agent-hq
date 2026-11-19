@@ -1,31 +1,25 @@
 {
  "team": "trading",
  "plain": {
-  "line": "Up $274.10 since start · 7 trades · holding: MSFT, INTC, AMAT, TSLA",
+  "line": "Up $667.66 since start · 7 trades · holding: MSFT, TSLA",
   "rulesMode": "ultra",
-  "top": "Up $274.10 since start (+0.27%) · just holding SPY would be -2.87%",
+  "top": "Up $667.66 since start (+0.67%) · just holding SPY would be -1.99%",
   "up": true,
   "holding": [
-   "MSFT: 9 shares worth $4,602.69, up $68.22 (sells at $533.87 or stops at $488.54)",
-   "INTC: 92 shares worth $5,116.12, up $147.20 (sells at $57.26 or stops at $52.39)",
-   "AMAT: 14 shares worth $5,033.00, up $209.44 (sells at $364.63 or stops at $333.67)",
-   "TSLA: 13 shares worth $5,014.75, up $57.05 (sells at $404.20 or stops at $369.88)"
+   "MSFT: 9 shares worth $4,714.74, up $180.27 (sells at $533.87 or stops at $488.54)",
+   "TSLA: 13 shares worth $5,009.88, up $52.18 (sells at $404.20 or stops at $369.88)"
   ],
   "today": [
-   "Bought MSFT after the news: Microsoft and Intel have expanded their long-term partnership to advance Azure infrastructure.",
-   "Bought INTC after the news: Microsoft and Intel have expanded their long-term partnership to advance Azure infrastructure.",
-   "Bought AMAT after the news: Bernstein has named Applied Materials as its top pick among U.S. semiconductor equipment stocks, setting an Outperform rating.",
-   "Sold CVX (stop-loss -3% hit): lost $140.77.",
-   "Sold SOL/USD (48h limit): made $106.71.",
-   "Scanned the news 144 times today: read 8271 headlines, found 315 that could move a stock or coin it's allowed to trade.",
-   "Passed on LLY: already 5 open positions (max 5).",
-   "Safety rules that stepped in: stop loss -3% (x1), max 5 positions (x28), stock entry window (x6), crypto 48h limit (x1)."
+   "Sold INTC (target +6% hit): made $354.20.",
+   "Sold AMAT (target +6% hit): made $289.11.",
+   "Scanned the news 40 times today: read 3969 headlines, found 129 that could move a stock or coin it's allowed to trade. None passed every check, so no trade (that's normal).",
+   "Safety rules that stepped in: take profit +6% (x2)."
   ],
   "watchlist": "Allowed to trade: 69 halal stocks, 5 Shariah ETFs, 9 coins.",
-  "lastScan": "2026-11-19T04:41:39Z"
+  "lastScan": "2026-11-19T14:54:49Z"
  },
  "hired": true,
- "updatedAt": "2026-11-19T04:41:44Z",
+ "updatedAt": "2026-11-19T14:54:56Z",
  "mode": "PAPER",
  "agents": [
   {
@@ -33,8 +27,8 @@
    "name": "News Scout",
    "role": "Reads X, Reddit and news feeds",
    "status": "working",
-   "doing": "Read 26 new headlines/posts, 0 market-moving stories",
-   "lastRun": "2026-11-19T04:41:43Z"
+   "doing": "Read 20 new headlines/posts, 1 market-moving stories",
+   "lastRun": "2026-11-19T14:54:55Z"
   },
   {
    "id": "analyst",
@@ -73,8 +67,8 @@
    "name": "Trader",
    "role": "Places paper orders on Alpaca",
    "status": "working",
-   "doing": "Paper-trading bot started (Alpaca PAPER account only). Close this window to stop it.",
-   "lastRun": "2026-11-19T04:41:38Z"
+   "doing": "Closed AMAT: target +6% hit, +5.99% ($+289.11)",
+   "lastRun": "2026-11-19T14:42:01Z"
   },
   {
    "id": "coins",
@@ -94,6 +88,431 @@
   }
  ],
  "log": [
+  {
+   "t": "2026-11-19T14:54:55Z",
+   "agent": "News Scout",
+   "msg": "Read 20 new headlines/posts, 1 market-moving stories"
+  },
+  {
+   "t": "2026-11-19T14:49:47Z",
+   "agent": "News Scout",
+   "msg": "Read 34 new headlines/posts, 0 market-moving stories"
+  },
+  {
+   "t": "2026-11-19T14:44:29Z",
+   "agent": "News Scout",
+   "msg": "Read 226 new headlines/posts, 8 market-moving stories"
+  },
+  {
+   "t": "2026-11-19T14:42:05Z",
+   "agent": "News Scout",
+   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
+  },
+  {
+   "t": "2026-11-19T14:42:01Z",
+   "agent": "Trader",
+   "msg": "Closed AMAT: target +6% hit, +5.99% ($+289.11)"
+  },
+  {
+   "t": "2026-11-19T14:42:01Z",
+   "agent": "Trader",
+   "msg": "Closed INTC: target +6% hit, +7.13% ($+354.20)"
+  },
+  {
+   "t": "2026-11-19T14:26:59Z",
+   "agent": "News Scout",
+   "msg": "Read 140 new headlines/posts, 3 market-moving stories"
+  },
+  {
+   "t": "2026-11-19T14:26:28Z",
+   "agent": "News Scout",
+   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
+  },
+  {
+   "t": "2026-11-19T14:11:22Z",
+   "agent": "News Scout",
+   "msg": "Read 257 new headlines/posts, 6 market-moving stories"
+  },
+  {
+   "t": "2026-11-19T14:07:45Z",
+   "agent": "News Scout",
+   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
+  },
+  {
+   "t": "2026-11-19T13:52:38Z",
+   "agent": "News Scout",
+   "msg": "Read 95 new headlines/posts, 4 market-moving stories"
+  },
+  {
+   "t": "2026-11-19T13:52:23Z",
+   "agent": "News Scout",
+   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
+  },
+  {
+   "t": "2026-11-19T13:36:30Z",
+   "agent": "News Scout",
+   "msg": "Read 62 new headlines/posts, 1 market-moving stories"
+  },
+  {
+   "t": "2026-11-19T13:36:12Z",
+   "agent": "News Scout",
+   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
+  },
+  {
+   "t": "2026-11-19T13:35:55Z",
+   "agent": "News Scout",
+   "msg": "Google News feed skipped: HTTP 429 https://news.google.com/rss/search: <html><head><meta http-equiv=\"content-type\" content=\"text/html; charset=utf-8\"/><title>Sorry...</title><style> body { font-family: verdana, arial, sans-serif; background-color: #fff; color: #000; }</s"
+  },
+  {
+   "t": "2026-11-19T13:20:14Z",
+   "agent": "News Scout",
+   "msg": "Read 106 new headlines/posts, 3 market-moving stories"
+  },
+  {
+   "t": "2026-11-19T13:19:57Z",
+   "agent": "News Scout",
+   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
+  },
+  {
+   "t": "2026-11-19T13:04:50Z",
+   "agent": "News Scout",
+   "msg": "Read 159 new headlines/posts, 4 market-moving stories"
+  },
+  {
+   "t": "2026-11-19T13:03:58Z",
+   "agent": "News Scout",
+   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
+  },
+  {
+   "t": "2026-11-19T12:48:51Z",
+   "agent": "News Scout",
+   "msg": "Read 129 new headlines/posts, 5 market-moving stories"
+  },
+  {
+   "t": "2026-11-19T12:48:41Z",
+   "agent": "News Scout",
+   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
+  },
+  {
+   "t": "2026-11-19T12:33:34Z",
+   "agent": "News Scout",
+   "msg": "Read 149 new headlines/posts, 4 market-moving stories"
+  },
+  {
+   "t": "2026-11-19T12:33:28Z",
+   "agent": "News Scout",
+   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
+  },
+  {
+   "t": "2026-11-19T12:18:22Z",
+   "agent": "News Scout",
+   "msg": "Read 104 new headlines/posts, 4 market-moving stories"
+  },
+  {
+   "t": "2026-11-19T12:18:03Z",
+   "agent": "News Scout",
+   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
+  },
+  {
+   "t": "2026-11-19T12:02:56Z",
+   "agent": "News Scout",
+   "msg": "Read 109 new headlines/posts, 5 market-moving stories"
+  },
+  {
+   "t": "2026-11-19T12:02:46Z",
+   "agent": "News Scout",
+   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
+  },
+  {
+   "t": "2026-11-19T11:47:40Z",
+   "agent": "News Scout",
+   "msg": "Read 85 new headlines/posts, 4 market-moving stories"
+  },
+  {
+   "t": "2026-11-19T11:47:36Z",
+   "agent": "News Scout",
+   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
+  },
+  {
+   "t": "2026-11-19T11:32:31Z",
+   "agent": "News Scout",
+   "msg": "Read 105 new headlines/posts, 4 market-moving stories"
+  },
+  {
+   "t": "2026-11-19T11:32:28Z",
+   "agent": "News Scout",
+   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
+  },
+  {
+   "t": "2026-11-19T11:17:22Z",
+   "agent": "News Scout",
+   "msg": "Read 135 new headlines/posts, 3 market-moving stories"
+  },
+  {
+   "t": "2026-11-19T11:17:19Z",
+   "agent": "News Scout",
+   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
+  },
+  {
+   "t": "2026-11-19T11:02:14Z",
+   "agent": "News Scout",
+   "msg": "Read 104 new headlines/posts, 3 market-moving stories"
+  },
+  {
+   "t": "2026-11-19T11:02:11Z",
+   "agent": "News Scout",
+   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
+  },
+  {
+   "t": "2026-11-19T10:47:05Z",
+   "agent": "News Scout",
+   "msg": "Read 87 new headlines/posts, 3 market-moving stories"
+  },
+  {
+   "t": "2026-11-19T10:47:00Z",
+   "agent": "News Scout",
+   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
+  },
+  {
+   "t": "2026-11-19T10:31:54Z",
+   "agent": "News Scout",
+   "msg": "Read 84 new headlines/posts, 2 market-moving stories"
+  },
+  {
+   "t": "2026-11-19T10:31:44Z",
+   "agent": "News Scout",
+   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
+  },
+  {
+   "t": "2026-11-19T10:16:38Z",
+   "agent": "News Scout",
+   "msg": "Read 116 new headlines/posts, 3 market-moving stories"
+  },
+  {
+   "t": "2026-11-19T10:16:30Z",
+   "agent": "News Scout",
+   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
+  },
+  {
+   "t": "2026-11-19T10:01:25Z",
+   "agent": "News Scout",
+   "msg": "Read 82 new headlines/posts, 2 market-moving stories"
+  },
+  {
+   "t": "2026-11-19T10:01:18Z",
+   "agent": "News Scout",
+   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
+  },
+  {
+   "t": "2026-11-19T10:01:17Z",
+   "agent": "News Scout",
+   "msg": "Google News feed skipped: HTTP 429 https://news.google.com/rss/search: <html><head><meta http-equiv=\"content-type\" content=\"text/html; charset=utf-8\"/><title>Sorry...</title><style> body { font-family: verdana, arial, sans-serif; background-color: #fff; color: #000; }</s"
+  },
+  {
+   "t": "2026-11-19T09:46:00Z",
+   "agent": "News Scout",
+   "msg": "Read 72 new headlines/posts, 2 market-moving stories"
+  },
+  {
+   "t": "2026-11-19T09:45:57Z",
+   "agent": "News Scout",
+   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
+  },
+  {
+   "t": "2026-11-19T09:30:52Z",
+   "agent": "News Scout",
+   "msg": "Read 75 new headlines/posts, 5 market-moving stories"
+  },
+  {
+   "t": "2026-11-19T09:30:47Z",
+   "agent": "News Scout",
+   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
+  },
+  {
+   "t": "2026-11-19T09:15:41Z",
+   "agent": "News Scout",
+   "msg": "Read 168 new headlines/posts, 5 market-moving stories"
+  },
+  {
+   "t": "2026-11-19T09:15:29Z",
+   "agent": "News Scout",
+   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
+  },
+  {
+   "t": "2026-11-19T09:00:21Z",
+   "agent": "News Scout",
+   "msg": "Read 74 new headlines/posts, 2 market-moving stories"
+  },
+  {
+   "t": "2026-11-19T09:00:18Z",
+   "agent": "News Scout",
+   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
+  },
+  {
+   "t": "2026-11-19T08:45:13Z",
+   "agent": "News Scout",
+   "msg": "Read 82 new headlines/posts, 1 market-moving stories"
+  },
+  {
+   "t": "2026-11-19T08:45:08Z",
+   "agent": "News Scout",
+   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
+  },
+  {
+   "t": "2026-11-19T08:30:02Z",
+   "agent": "News Scout",
+   "msg": "Read 87 new headlines/posts, 3 market-moving stories"
+  },
+  {
+   "t": "2026-11-19T08:29:55Z",
+   "agent": "News Scout",
+   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
+  },
+  {
+   "t": "2026-11-19T08:14:45Z",
+   "agent": "News Scout",
+   "msg": "Read 246 new headlines/posts, 5 market-moving stories"
+  },
+  {
+   "t": "2026-11-19T08:14:40Z",
+   "agent": "News Scout",
+   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
+  },
+  {
+   "t": "2026-11-19T07:59:34Z",
+   "agent": "News Scout",
+   "msg": "Read 49 new headlines/posts, 2 market-moving stories"
+  },
+  {
+   "t": "2026-11-19T07:59:33Z",
+   "agent": "News Scout",
+   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
+  },
+  {
+   "t": "2026-11-19T07:44:27Z",
+   "agent": "News Scout",
+   "msg": "Read 64 new headlines/posts, 2 market-moving stories"
+  },
+  {
+   "t": "2026-11-19T07:44:19Z",
+   "agent": "News Scout",
+   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
+  },
+  {
+   "t": "2026-11-19T07:29:13Z",
+   "agent": "News Scout",
+   "msg": "Read 56 new headlines/posts, 2 market-moving stories"
+  },
+  {
+   "t": "2026-11-19T07:29:09Z",
+   "agent": "News Scout",
+   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
+  },
+  {
+   "t": "2026-11-19T07:14:03Z",
+   "agent": "News Scout",
+   "msg": "Read 102 new headlines/posts, 6 market-moving stories"
+  },
+  {
+   "t": "2026-11-19T07:13:55Z",
+   "agent": "News Scout",
+   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
+  },
+  {
+   "t": "2026-11-19T06:58:49Z",
+   "agent": "News Scout",
+   "msg": "Read 59 new headlines/posts, 3 market-moving stories"
+  },
+  {
+   "t": "2026-11-19T06:58:44Z",
+   "agent": "News Scout",
+   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
+  },
+  {
+   "t": "2026-11-19T06:43:38Z",
+   "agent": "News Scout",
+   "msg": "Read 64 new headlines/posts, 1 market-moving stories"
+  },
+  {
+   "t": "2026-11-19T06:43:37Z",
+   "agent": "News Scout",
+   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
+  },
+  {
+   "t": "2026-11-19T06:28:31Z",
+   "agent": "News Scout",
+   "msg": "Read 49 new headlines/posts, 3 market-moving stories"
+  },
+  {
+   "t": "2026-11-19T06:28:20Z",
+   "agent": "News Scout",
+   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
+  },
+  {
+   "t": "2026-11-19T06:13:15Z",
+   "agent": "News Scout",
+   "msg": "Read 78 new headlines/posts, 2 market-moving stories"
+  },
+  {
+   "t": "2026-11-19T06:13:09Z",
+   "agent": "News Scout",
+   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
+  },
+  {
+   "t": "2026-11-19T05:58:00Z",
+   "agent": "News Scout",
+   "msg": "Read 35 new headlines/posts, 4 market-moving stories"
+  },
+  {
+   "t": "2026-11-19T05:57:41Z",
+   "agent": "News Scout",
+   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
+  },
+  {
+   "t": "2026-11-19T05:42:35Z",
+   "agent": "News Scout",
+   "msg": "Read 60 new headlines/posts, 2 market-moving stories"
+  },
+  {
+   "t": "2026-11-19T05:42:26Z",
+   "agent": "News Scout",
+   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
+  },
+  {
+   "t": "2026-11-19T05:27:20Z",
+   "agent": "News Scout",
+   "msg": "Read 62 new headlines/posts, 1 market-moving stories"
+  },
+  {
+   "t": "2026-11-19T05:27:11Z",
+   "agent": "News Scout",
+   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
+  },
+  {
+   "t": "2026-11-19T05:12:04Z",
+   "agent": "News Scout",
+   "msg": "Read 99 new headlines/posts, 6 market-moving stories"
+  },
+  {
+   "t": "2026-11-19T05:12:00Z",
+   "agent": "News Scout",
+   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
+  },
+  {
+   "t": "2026-11-19T04:56:54Z",
+   "agent": "News Scout",
+   "msg": "Read 59 new headlines/posts, 1 market-moving stories"
+  },
+  {
+   "t": "2026-11-19T04:56:50Z",
+   "agent": "News Scout",
+   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
+  },
+  {
+   "t": "2026-11-19T04:41:46Z",
+   "agent": "Trader",
+   "msg": "Saved results to the Agent HQ dashboard"
+  },
   {
    "t": "2026-11-19T04:41:43Z",
    "agent": "News Scout",
@@ -418,453 +837,28 @@
    "t": "2026-11-18T23:01:29Z",
    "agent": "News Scout",
    "msg": "Read 70 new headlines/posts, 3 market-moving stories"
-  },
-  {
-   "t": "2026-11-18T23:01:28Z",
-   "agent": "News Scout",
-   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
-  },
-  {
-   "t": "2026-11-18T22:46:15Z",
-   "agent": "News Scout",
-   "msg": "Read 165 new headlines/posts, 4 market-moving stories"
-  },
-  {
-   "t": "2026-11-18T22:46:10Z",
-   "agent": "News Scout",
-   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
-  },
-  {
-   "t": "2026-11-18T22:31:06Z",
-   "agent": "News Scout",
-   "msg": "Read 65 new headlines/posts, 1 market-moving stories"
-  },
-  {
-   "t": "2026-11-18T22:31:05Z",
-   "agent": "News Scout",
-   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
-  },
-  {
-   "t": "2026-11-18T22:30:59Z",
-   "agent": "News Scout",
-   "msg": "Google News feed skipped: HTTP 429 https://news.google.com/rss/search: <html><head><meta http-equiv=\"content-type\" content=\"text/html; charset=utf-8\"/><title>Sorry...</title><style> body { font-family: verdana, arial, sans-serif; background-color: #fff; color: #000; }</s"
-  },
-  {
-   "t": "2026-11-18T22:15:53Z",
-   "agent": "News Scout",
-   "msg": "Read 63 new headlines/posts, 3 market-moving stories"
-  },
-  {
-   "t": "2026-11-18T22:15:51Z",
-   "agent": "News Scout",
-   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
-  },
-  {
-   "t": "2026-11-18T22:00:46Z",
-   "agent": "News Scout",
-   "msg": "Read 70 new headlines/posts, 2 market-moving stories"
-  },
-  {
-   "t": "2026-11-18T22:00:44Z",
-   "agent": "News Scout",
-   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
-  },
-  {
-   "t": "2026-11-18T21:45:39Z",
-   "agent": "News Scout",
-   "msg": "Read 101 new headlines/posts, 4 market-moving stories"
-  },
-  {
-   "t": "2026-11-18T21:45:36Z",
-   "agent": "News Scout",
-   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
-  },
-  {
-   "t": "2026-11-18T21:30:31Z",
-   "agent": "News Scout",
-   "msg": "Read 73 new headlines/posts, 1 market-moving stories"
-  },
-  {
-   "t": "2026-11-18T21:30:21Z",
-   "agent": "News Scout",
-   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
-  },
-  {
-   "t": "2026-11-18T21:15:16Z",
-   "agent": "Trader",
-   "msg": "Saved results to the Agent HQ dashboard"
-  },
-  {
-   "t": "2026-11-18T21:15:14Z",
-   "agent": "News Scout",
-   "msg": "Read 73 new headlines/posts, 3 market-moving stories"
-  },
-  {
-   "t": "2026-11-18T21:15:11Z",
-   "agent": "News Scout",
-   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
-  },
-  {
-   "t": "2026-11-18T21:00:06Z",
-   "agent": "News Scout",
-   "msg": "Read 25 new headlines/posts, 1 market-moving stories"
-  },
-  {
-   "t": "2026-11-18T20:54:57Z",
-   "agent": "News Scout",
-   "msg": "Read 21 new headlines/posts, 1 market-moving stories"
-  },
-  {
-   "t": "2026-11-18T20:49:50Z",
-   "agent": "News Scout",
-   "msg": "Read 18 new headlines/posts, 2 market-moving stories"
-  },
-  {
-   "t": "2026-11-18T20:49:48Z",
-   "agent": "News Scout",
-   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
-  },
-  {
-   "t": "2026-11-18T20:44:43Z",
-   "agent": "News Scout",
-   "msg": "Read 16 new headlines/posts, 1 market-moving stories"
-  },
-  {
-   "t": "2026-11-18T20:39:37Z",
-   "agent": "News Scout",
-   "msg": "Read 22 new headlines/posts, 1 market-moving stories"
-  },
-  {
-   "t": "2026-11-18T20:34:28Z",
-   "agent": "News Scout",
-   "msg": "Read 18 new headlines/posts, 0 market-moving stories"
-  },
-  {
-   "t": "2026-11-18T20:34:27Z",
-   "agent": "News Scout",
-   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
-  },
-  {
-   "t": "2026-11-18T20:29:21Z",
-   "agent": "News Scout",
-   "msg": "Read 24 new headlines/posts, 2 market-moving stories"
-  },
-  {
-   "t": "2026-11-18T20:24:12Z",
-   "agent": "News Scout",
-   "msg": "Read 30 new headlines/posts, 2 market-moving stories"
-  },
-  {
-   "t": "2026-11-18T20:19:04Z",
-   "agent": "News Scout",
-   "msg": "Read 21 new headlines/posts, 1 market-moving stories"
-  },
-  {
-   "t": "2026-11-18T20:19:02Z",
-   "agent": "News Scout",
-   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
-  },
-  {
-   "t": "2026-11-18T20:13:56Z",
-   "agent": "News Scout",
-   "msg": "Read 30 new headlines/posts, 2 market-moving stories"
-  },
-  {
-   "t": "2026-11-18T20:08:50Z",
-   "agent": "News Scout",
-   "msg": "Read 27 new headlines/posts, 2 market-moving stories"
-  },
-  {
-   "t": "2026-11-18T20:03:42Z",
-   "agent": "News Scout",
-   "msg": "Read 36 new headlines/posts, 2 market-moving stories"
-  },
-  {
-   "t": "2026-11-18T20:03:37Z",
-   "agent": "News Scout",
-   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
-  },
-  {
-   "t": "2026-11-18T19:58:32Z",
-   "agent": "News Scout",
-   "msg": "Read 14 new headlines/posts, 2 market-moving stories"
-  },
-  {
-   "t": "2026-11-18T19:53:25Z",
-   "agent": "News Scout",
-   "msg": "Read 23 new headlines/posts, 0 market-moving stories"
-  },
-  {
-   "t": "2026-11-18T19:48:17Z",
-   "agent": "News Scout",
-   "msg": "Read 20 new headlines/posts, 2 market-moving stories"
-  },
-  {
-   "t": "2026-11-18T19:48:15Z",
-   "agent": "News Scout",
-   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
-  },
-  {
-   "t": "2026-11-18T19:43:09Z",
-   "agent": "News Scout",
-   "msg": "Read 19 new headlines/posts, 1 market-moving stories"
-  },
-  {
-   "t": "2026-11-18T19:38:03Z",
-   "agent": "News Scout",
-   "msg": "Read 23 new headlines/posts, 2 market-moving stories"
-  },
-  {
-   "t": "2026-11-18T19:32:50Z",
-   "agent": "News Scout",
-   "msg": "Read 26 new headlines/posts, 1 market-moving stories"
-  },
-  {
-   "t": "2026-11-18T19:32:48Z",
-   "agent": "News Scout",
-   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
-  },
-  {
-   "t": "2026-11-18T19:27:42Z",
-   "agent": "News Scout",
-   "msg": "Read 25 new headlines/posts, 1 market-moving stories"
-  },
-  {
-   "t": "2026-11-18T19:22:36Z",
-   "agent": "News Scout",
-   "msg": "Read 24 new headlines/posts, 1 market-moving stories"
-  },
-  {
-   "t": "2026-11-18T19:17:29Z",
-   "agent": "News Scout",
-   "msg": "Read 41 new headlines/posts, 1 market-moving stories"
-  },
-  {
-   "t": "2026-11-18T19:17:21Z",
-   "agent": "News Scout",
-   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
-  },
-  {
-   "t": "2026-11-18T19:12:16Z",
-   "agent": "News Scout",
-   "msg": "Read 40 new headlines/posts, 3 market-moving stories"
-  },
-  {
-   "t": "2026-11-18T19:06:55Z",
-   "agent": "News Scout",
-   "msg": "Read 178 new headlines/posts, 4 market-moving stories"
-  },
-  {
-   "t": "2026-11-18T19:01:41Z",
-   "agent": "Trader",
-   "msg": "Saved results to the Agent HQ dashboard"
-  },
-  {
-   "t": "2026-11-18T19:01:39Z",
-   "agent": "News Scout",
-   "msg": "Read 18 new headlines/posts, 1 market-moving stories"
-  },
-  {
-   "t": "2026-11-18T19:01:37Z",
-   "agent": "News Scout",
-   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
-  },
-  {
-   "t": "2026-11-18T19:01:32Z",
-   "agent": "News Scout",
-   "msg": "Google News feed skipped: HTTP 429 https://news.google.com/rss/search: <html><head><meta http-equiv=\"content-type\" content=\"text/html; charset=utf-8\"/><title>Sorry...</title><style> body { font-family: verdana, arial, sans-serif; background-color: #fff; color: #000; }</s"
-  },
-  {
-   "t": "2026-11-18T18:56:24Z",
-   "agent": "News Scout",
-   "msg": "Read 19 new headlines/posts, 2 market-moving stories"
-  },
-  {
-   "t": "2026-11-18T18:51:17Z",
-   "agent": "News Scout",
-   "msg": "Read 38 new headlines/posts, 2 market-moving stories"
-  },
-  {
-   "t": "2026-11-18T18:45:56Z",
-   "agent": "News Scout",
-   "msg": "Read 27 new headlines/posts, 4 market-moving stories"
-  },
-  {
-   "t": "2026-11-18T18:45:25Z",
-   "agent": "News Scout",
-   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
-  },
-  {
-   "t": "2026-11-18T18:40:19Z",
-   "agent": "News Scout",
-   "msg": "Read 23 new headlines/posts, 3 market-moving stories"
-  },
-  {
-   "t": "2026-11-18T18:34:58Z",
-   "agent": "News Scout",
-   "msg": "Read 24 new headlines/posts, 1 market-moving stories"
-  },
-  {
-   "t": "2026-11-18T18:29:40Z",
-   "agent": "News Scout",
-   "msg": "Read 24 new headlines/posts, 1 market-moving stories"
-  },
-  {
-   "t": "2026-11-18T18:29:39Z",
-   "agent": "News Scout",
-   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
-  },
-  {
-   "t": "2026-11-18T18:24:33Z",
-   "agent": "News Scout",
-   "msg": "Read 22 new headlines/posts, 2 market-moving stories"
-  },
-  {
-   "t": "2026-11-18T18:19:27Z",
-   "agent": "News Scout",
-   "msg": "Read 30 new headlines/posts, 2 market-moving stories"
-  },
-  {
-   "t": "2026-11-18T18:14:18Z",
-   "agent": "News Scout",
-   "msg": "Read 41 new headlines/posts, 2 market-moving stories"
-  },
-  {
-   "t": "2026-11-18T18:14:17Z",
-   "agent": "News Scout",
-   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
-  },
-  {
-   "t": "2026-11-18T18:09:11Z",
-   "agent": "News Scout",
-   "msg": "Read 33 new headlines/posts, 3 market-moving stories"
-  },
-  {
-   "t": "2026-11-18T18:03:45Z",
-   "agent": "News Scout",
-   "msg": "Read 54 new headlines/posts, 2 market-moving stories"
-  },
-  {
-   "t": "2026-11-18T17:58:30Z",
-   "agent": "News Scout",
-   "msg": "Read 28 new headlines/posts, 1 market-moving stories"
-  },
-  {
-   "t": "2026-11-18T17:58:10Z",
-   "agent": "News Scout",
-   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
-  },
-  {
-   "t": "2026-11-18T17:53:05Z",
-   "agent": "News Scout",
-   "msg": "Read 23 new headlines/posts, 1 market-moving stories"
-  },
-  {
-   "t": "2026-11-18T17:47:49Z",
-   "agent": "News Scout",
-   "msg": "Read 22 new headlines/posts, 1 market-moving stories"
-  },
-  {
-   "t": "2026-11-18T17:42:33Z",
-   "agent": "News Scout",
-   "msg": "Read 29 new headlines/posts, 1 market-moving stories"
-  },
-  {
-   "t": "2026-11-18T17:42:27Z",
-   "agent": "News Scout",
-   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
-  },
-  {
-   "t": "2026-11-18T17:37:22Z",
-   "agent": "News Scout",
-   "msg": "Read 56 new headlines/posts, 2 market-moving stories"
-  },
-  {
-   "t": "2026-11-18T17:32:01Z",
-   "agent": "News Scout",
-   "msg": "Read 19 new headlines/posts, 0 market-moving stories"
-  },
-  {
-   "t": "2026-11-18T17:26:44Z",
-   "agent": "News Scout",
-   "msg": "Read 30 new headlines/posts, 2 market-moving stories"
-  },
-  {
-   "t": "2026-11-18T17:26:36Z",
-   "agent": "News Scout",
-   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
-  },
-  {
-   "t": "2026-11-18T17:21:31Z",
-   "agent": "News Scout",
-   "msg": "Read 28 new headlines/posts, 0 market-moving stories"
-  },
-  {
-   "t": "2026-11-18T17:16:18Z",
-   "agent": "News Scout",
-   "msg": "Read 35 new headlines/posts, 3 market-moving stories"
-  },
-  {
-   "t": "2026-11-18T17:11:02Z",
-   "agent": "News Scout",
-   "msg": "Read 27 new headlines/posts, 1 market-moving stories"
-  },
-  {
-   "t": "2026-11-18T17:10:55Z",
-   "agent": "News Scout",
-   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
-  },
-  {
-   "t": "2026-11-18T17:05:49Z",
-   "agent": "News Scout",
-   "msg": "Read 90 new headlines/posts, 4 market-moving stories"
-  },
-  {
-   "t": "2026-11-18T17:05:34Z",
-   "agent": "Trader",
-   "msg": "Bought 92 INTC at $54.01 (stop $52.39, target $57.26)"
-  },
-  {
-   "t": "2026-11-18T17:05:34Z",
-   "agent": "Trader",
-   "msg": "Bought 9 MSFT at $503.83 (stop $488.54, target $533.87)"
-  },
-  {
-   "t": "2026-11-18T17:00:34Z",
-   "agent": "Trader",
-   "msg": "Saved results to the Agent HQ dashboard"
-  },
-  {
-   "t": "2026-11-18T17:00:31Z",
-   "agent": "Trader",
-   "msg": "BUY MSFT: Microsoft and Intel have expanded their long-term partnership to advance Azure infrastruct | volume 0.7x normal, price +0.25% since the news | TradingAgents not used (ultra mode)"
-  },
-  {
-   "t": "2026-11-18T17:00:31Z",
-   "agent": "Trader",
-   "msg": "BUY INTC: Microsoft and Intel have expanded their long-term partnership to advance Azure infrastruct | volume 0.9x normal, price +0.42% since the news | TradingAgents not used (ultra mode)"
   }
  ],
  "brief": {
-  "date": "Wed Nov 18",
-  "createdAt": "2026-11-19T04:41:44Z",
-  "headline": "Paper account +$354 today (+0.35%), +0.27% total vs SPY -2.87% · 4 open",
-  "summary": "2 trade(s) closed today, 1/3 winners overall. TradingAgents checks used today: 0/5.",
+  "date": "Thu Nov 19",
+  "createdAt": "2026-11-19T14:54:56Z",
+  "headline": "Paper account +$635 today (+0.64%), +0.67% total vs SPY -1.99% · 2 open",
+  "summary": "2 trade(s) closed today, 3/5 winners overall. TradingAgents checks used today: 0/5.",
   "notes": [
    "X/Reddit reader: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
   ]
  },
  "account": {
-  "equity": 100274.1,
-  "cash": 80507.54,
+  "equity": 100667.66,
+  "cash": 90943.22,
   "startEquity": 100000.0,
   "startedAt": "2026-11-10T01:51:53Z",
-  "dayPnl": 353.66,
-  "dayPct": 0.35,
-  "totalPnl": 274.1,
-  "totalPct": 0.27,
-  "spyPct": -2.87,
-  "vsSpyPct": 3.14
+  "dayPnl": 635.42,
+  "dayPct": 0.64,
+  "totalPnl": 667.66,
+  "totalPct": 0.67,
+  "spyPct": -1.99,
+  "vsSpyPct": 2.66
  },
  "status": {
   "killed": false,
@@ -872,14 +866,14 @@
   "deepUsed": 0,
   "deepMax": 5,
   "social": {
-   "at": "2026-11-19T04:41:42Z",
+   "at": "2026-11-19T14:42:05Z",
    "items": 0,
    "source": "Reddit public JSON (blocked on servers: add REDDIT_CLIENT_ID/SECRET); X needs Agent Reach",
    "problems": [
     "r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
    ],
    "wsb": {
-    "at": "2026-11-19T04:41:42Z",
+    "at": "2026-11-19T14:42:05Z",
     "tickers": 50,
     "items": 0,
     "key": false
@@ -928,86 +922,8 @@
     "tradingAgents": "not used (ultra mode)",
     "taSummary": ""
    },
-   "lastPrice": 511.41,
-   "unrealizedPct": 1.5
-  },
-  {
-   "id": "ahq-INTC-20261118170031",
-   "symbol": "INTC",
-   "asset": "stock",
-   "status": "open",
-   "entryOrderId": "b5d17708-22af-41cb-b77a-996d16a4f668",
-   "qty": 92.0,
-   "cost": 4969.38,
-   "estPrice": 54.015,
-   "entryPrice": 54.01,
-   "stop": 52.39,
-   "target": 57.26,
-   "openedAt": "2026-11-18T17:00:31Z",
-   "news": {
-    "summary": "Microsoft and Intel have expanded their long-term partnership to advance Azure infrastructure.",
-    "category": "contract",
-    "sources": [
-     {
-      "publisher": "Yahoo Finance",
-      "title": "Microsoft and Intel Deepen Collaboration to Deliver Differentiated Azure Infrastructure",
-      "url": "https://finance.yahoo.com/technology/ai/articles/microsoft-intel-deepen-collaboration-deliver-164700932.html?.tsrc=rss"
-     }
-    ]
-   },
-   "reason": {
-    "triage": "Deepened collaboration with Microsoft on Azure infrastructure provides a growth catalyst.",
-    "confidence": 0.6,
-    "confirmation": "volume 0.9x normal, price +0.42% since the news",
-    "rvol": 0.88,
-    "movePct": 0.42,
-    "publishers": [
-     "Yahoo Finance"
-    ],
-    "tradingAgents": "not used (ultra mode)",
-    "taSummary": ""
-   },
-   "lastPrice": 55.61,
-   "unrealizedPct": 2.96
-  },
-  {
-   "id": "ahq-AMAT-20261118144533",
-   "symbol": "AMAT",
-   "asset": "stock",
-   "status": "open",
-   "entryOrderId": "aba7349f-a93b-467d-9eca-91fc4872f894",
-   "qty": 14.0,
-   "cost": 4815.86,
-   "estPrice": 343.99,
-   "entryPrice": 344.54,
-   "stop": 333.67,
-   "target": 364.63,
-   "openedAt": "2026-11-18T14:45:33Z",
-   "news": {
-    "summary": "Bernstein has named Applied Materials as its top pick among U.S. semiconductor equipment stocks, setting an Outperform rating.",
-    "category": "contract",
-    "sources": [
-     {
-      "publisher": "fiscal.ai",
-      "title": "Bernstein Names Applied Materials a Top Pick in Semiconductor Equipment Sector",
-      "url": "https://www.moomoo.com/news/post/1005017267/the-chip-supercycle-continues-bernstein-raises-semiconductor-equipment-spending-forecasts"
-     }
-    ]
-   },
-   "reason": {
-    "triage": "Analyst top pick designation in semiconductor equipment boosts near-term sentiment.",
-    "confidence": 0.65,
-    "confirmation": "volume 0.4x normal, price -3.39% since the news",
-    "rvol": 0.42,
-    "movePct": -3.39,
-    "publishers": [
-     "fiscal.ai"
-    ],
-    "tradingAgents": "not used (ultra mode)",
-    "taSummary": ""
-   },
-   "lastPrice": 359.5,
-   "unrealizedPct": 4.34
+   "lastPrice": 523.93,
+   "unrealizedPct": 3.99
   },
   {
    "id": "ahq-TSLA-20261117144531",
@@ -1045,7 +961,7 @@
     "tradingAgents": "not used (ultra mode)",
     "taSummary": ""
    },
-   "lastPrice": 385.75,
+   "lastPrice": 385.74,
    "unrealizedPct": 1.15
   }
  ],
@@ -1053,1039 +969,291 @@
   "account": {
    "1D": [
     [
-     "2026-11-18T09:00:00Z",
-     99949.22
+     "2026-11-19T09:00:00Z",
+     100585.28
     ],
     [
-     "2026-11-18T09:05:00Z",
-     99959.27
+     "2026-11-19T09:05:00Z",
+     100585.28
     ],
     [
-     "2026-11-18T09:10:00Z",
-     99938.33
+     "2026-11-19T09:10:00Z",
+     100580.74
     ],
     [
-     "2026-11-18T09:15:00Z",
-     99926.83
+     "2026-11-19T09:15:00Z",
+     100560.4
     ],
     [
-     "2026-11-18T09:20:00Z",
-     99928.36
+     "2026-11-19T09:20:00Z",
+     100554.36
     ],
     [
-     "2026-11-18T09:25:00Z",
-     99929.81
+     "2026-11-19T09:25:00Z",
+     100544.45
     ],
     [
-     "2026-11-18T09:30:00Z",
-     99941.8
+     "2026-11-19T09:30:00Z",
+     100450.61
     ],
     [
-     "2026-11-18T09:35:00Z",
-     99946.3
+     "2026-11-19T09:35:00Z",
+     100508.47
     ],
     [
-     "2026-11-18T09:40:00Z",
-     99941.4
+     "2026-11-19T09:40:00Z",
+     100523.51
     ],
     [
-     "2026-11-18T09:45:00Z",
-     99942.14
+     "2026-11-19T09:45:00Z",
+     100534.44
     ],
     [
-     "2026-11-18T09:50:00Z",
-     99945.55
+     "2026-11-19T09:50:00Z",
+     100538.65
     ],
     [
-     "2026-11-18T09:55:00Z",
-     99947.53
+     "2026-11-19T09:55:00Z",
+     100545.94
     ],
     [
-     "2026-11-18T10:00:00Z",
-     99956.62
+     "2026-11-19T10:00:00Z",
+     100523.5
     ],
     [
-     "2026-11-18T10:05:00Z",
-     99945.49
+     "2026-11-19T10:05:00Z",
+     100537.15
     ],
     [
-     "2026-11-18T10:10:00Z",
-     99955.0
+     "2026-11-19T10:10:00Z",
+     100539.0
     ],
     [
-     "2026-11-18T10:15:00Z",
-     99936.31
+     "2026-11-19T10:15:00Z",
+     100535.69
     ],
     [
-     "2026-11-18T10:20:00Z",
-     99930.34
+     "2026-11-19T10:20:00Z",
+     100569.09
     ],
     [
-     "2026-11-18T10:25:00Z",
-     99928.48
+     "2026-11-19T10:25:00Z",
+     100585.43
     ],
     [
-     "2026-11-18T10:30:00Z",
-     99918.42
+     "2026-11-19T10:30:00Z",
+     100579.54
     ],
     [
-     "2026-11-18T10:35:00Z",
-     99904.25
+     "2026-11-19T10:35:00Z",
+     100587.9
     ],
     [
-     "2026-11-18T10:40:00Z",
-     99916.98
+     "2026-11-19T10:40:00Z",
+     100586.88
     ],
     [
-     "2026-11-18T10:45:00Z",
-     99926.2
+     "2026-11-19T10:45:00Z",
+     100581.98
     ],
     [
-     "2026-11-18T10:50:00Z",
-     99923.44
+     "2026-11-19T10:50:00Z",
+     100613.97
     ],
     [
-     "2026-11-18T10:55:00Z",
-     99931.28
+     "2026-11-19T10:55:00Z",
+     100609.44
     ],
     [
-     "2026-11-18T11:00:00Z",
-     99928.39
+     "2026-11-19T11:00:00Z",
+     100583.31
     ],
     [
-     "2026-11-18T11:05:00Z",
-     99907.09
+     "2026-11-19T11:05:00Z",
+     100598.27
     ],
     [
-     "2026-11-18T11:10:00Z",
-     99890.74
+     "2026-11-19T11:10:00Z",
+     100610.29
     ],
     [
-     "2026-11-18T11:15:00Z",
-     99892.44
+     "2026-11-19T11:15:00Z",
+     100610.33
     ],
     [
-     "2026-11-18T11:20:00Z",
-     99888.71
+     "2026-11-19T11:20:00Z",
+     100578.45
     ],
     [
-     "2026-11-18T11:25:00Z",
-     99893.15
+     "2026-11-19T11:25:00Z",
+     100589.32
     ],
     [
-     "2026-11-18T11:30:00Z",
-     99889.29
+     "2026-11-19T11:30:00Z",
+     100609.38
     ],
     [
-     "2026-11-18T11:35:00Z",
-     99900.88
+     "2026-11-19T11:35:00Z",
+     100653.76
     ],
     [
-     "2026-11-18T11:40:00Z",
-     99902.95
+     "2026-11-19T11:40:00Z",
+     100669.45
     ],
     [
-     "2026-11-18T11:45:00Z",
-     99893.37
+     "2026-11-19T11:45:00Z",
+     100652.54
     ],
     [
-     "2026-11-18T11:50:00Z",
-     99896.83
+     "2026-11-19T11:50:00Z",
+     100656.7
     ],
     [
-     "2026-11-18T11:55:00Z",
-     99899.41
+     "2026-11-19T11:55:00Z",
+     100663.47
     ],
     [
-     "2026-11-18T12:00:00Z",
-     99897.63
+     "2026-11-19T12:00:00Z",
+     100625.8
     ],
     [
-     "2026-11-18T12:05:00Z",
-     99890.66
+     "2026-11-19T12:05:00Z",
+     100619.78
     ],
     [
-     "2026-11-18T12:10:00Z",
-     99904.36
+     "2026-11-19T12:10:00Z",
+     100606.05
     ],
     [
-     "2026-11-18T12:15:00Z",
-     99895.47
+     "2026-11-19T12:15:00Z",
+     100588.23
     ],
     [
-     "2026-11-18T12:20:00Z",
-     99908.42
+     "2026-11-19T12:20:00Z",
+     100579.52
     ],
     [
-     "2026-11-18T12:25:00Z",
-     99903.83
+     "2026-11-19T12:25:00Z",
+     100571.72
     ],
     [
-     "2026-11-18T12:30:00Z",
-     99891.86
+     "2026-11-19T12:30:00Z",
+     100605.34
     ],
     [
-     "2026-11-18T12:35:00Z",
-     99892.48
+     "2026-11-19T12:35:00Z",
+     100577.11
     ],
     [
-     "2026-11-18T12:40:00Z",
-     99893.69
+     "2026-11-19T12:40:00Z",
+     100598.08
     ],
     [
-     "2026-11-18T12:45:00Z",
-     99874.73
+     "2026-11-19T12:45:00Z",
+     100589.91
     ],
     [
-     "2026-11-18T12:50:00Z",
-     99862.54
+     "2026-11-19T12:50:00Z",
+     100620.63
     ],
     [
-     "2026-11-18T12:55:00Z",
-     99879.06
+     "2026-11-19T12:55:00Z",
+     100634.16
     ],
     [
-     "2026-11-18T13:00:00Z",
-     99883.7
+     "2026-11-19T13:00:00Z",
+     100624.48
     ],
     [
-     "2026-11-18T13:05:00Z",
-     99877.92
+     "2026-11-19T13:05:00Z",
+     100617.65
     ],
     [
-     "2026-11-18T13:10:00Z",
-     99883.35
+     "2026-11-19T13:10:00Z",
+     100689.55
     ],
     [
-     "2026-11-18T13:15:00Z",
-     99894.39
+     "2026-11-19T13:15:00Z",
+     100674.76
     ],
     [
-     "2026-11-18T13:20:00Z",
-     99883.32
+     "2026-11-19T13:20:00Z",
+     100626.7
     ],
     [
-     "2026-11-18T13:25:00Z",
-     99875.9
+     "2026-11-19T13:25:00Z",
+     100609.95
     ],
     [
-     "2026-11-18T13:30:00Z",
-     99884.14
+     "2026-11-19T13:30:00Z",
+     100590.42
     ],
     [
-     "2026-11-18T13:35:00Z",
-     99902.43
+     "2026-11-19T13:35:00Z",
+     100564.57
     ],
     [
-     "2026-11-18T13:40:00Z",
-     99920.01
+     "2026-11-19T13:40:00Z",
+     100553.67
     ],
     [
-     "2026-11-18T13:45:00Z",
-     99911.63
+     "2026-11-19T13:45:00Z",
+     100559.87
     ],
     [
-     "2026-11-18T13:50:00Z",
-     99921.1
+     "2026-11-19T13:50:00Z",
+     100546.22
     ],
     [
-     "2026-11-18T13:55:00Z",
-     99914.44
+     "2026-11-19T13:55:00Z",
+     100587.41
     ],
     [
-     "2026-11-18T14:00:00Z",
-     99913.0
+     "2026-11-19T14:00:00Z",
+     100610.2
     ],
     [
-     "2026-11-18T14:05:00Z",
-     99897.88
+     "2026-11-19T14:05:00Z",
+     100623.22
     ],
     [
-     "2026-11-18T14:10:00Z",
-     99892.89
+     "2026-11-19T14:10:00Z",
+     100633.25
     ],
     [
-     "2026-11-18T14:15:00Z",
-     99887.31
+     "2026-11-19T14:15:00Z",
+     100666.77
     ],
     [
-     "2026-11-18T14:20:00Z",
-     99915.59
+     "2026-11-19T14:20:00Z",
+     100684.0
     ],
     [
-     "2026-11-18T14:25:00Z",
-     99904.95
+     "2026-11-19T14:25:00Z",
+     100655.57
     ],
     [
-     "2026-11-18T14:30:00Z",
-     99916.81
+     "2026-11-19T14:30:00Z",
+     100692.85
     ],
     [
-     "2026-11-18T14:35:00Z",
-     99840.12
+     "2026-11-19T14:35:00Z",
+     100725.67
     ],
     [
-     "2026-11-18T14:40:00Z",
-     99823.68
+     "2026-11-19T14:40:00Z",
+     100695.38
     ],
     [
-     "2026-11-18T14:45:00Z",
-     99813.28
+     "2026-11-19T14:45:00Z",
+     100733.28
     ],
     [
-     "2026-11-18T14:50:00Z",
-     99861.06
-    ],
-    [
-     "2026-11-18T14:55:00Z",
-     99927.3
-    ],
-    [
-     "2026-11-18T15:00:00Z",
-     100011.18
-    ],
-    [
-     "2026-11-18T15:05:00Z",
-     99961.6
-    ],
-    [
-     "2026-11-18T15:10:00Z",
-     99907.16
-    ],
-    [
-     "2026-11-18T15:15:00Z",
-     99979.45
-    ],
-    [
-     "2026-11-18T15:20:00Z",
-     99996.31
-    ],
-    [
-     "2026-11-18T15:25:00Z",
-     99944.98
-    ],
-    [
-     "2026-11-18T15:30:00Z",
-     99956.25
-    ],
-    [
-     "2026-11-18T15:35:00Z",
-     99940.89
-    ],
-    [
-     "2026-11-18T15:40:00Z",
-     99884.46
-    ],
-    [
-     "2026-11-18T15:45:00Z",
-     99863.01
-    ],
-    [
-     "2026-11-18T15:50:00Z",
-     99828.9
-    ],
-    [
-     "2026-11-18T15:55:00Z",
-     99873.5
-    ],
-    [
-     "2026-11-18T16:00:00Z",
-     99906.42
-    ],
-    [
-     "2026-11-18T16:05:00Z",
-     99860.73
-    ],
-    [
-     "2026-11-18T16:10:00Z",
-     99887.45
-    ],
-    [
-     "2026-11-18T16:15:00Z",
-     99830.16
-    ],
-    [
-     "2026-11-18T16:20:00Z",
-     99774.05
-    ],
-    [
-     "2026-11-18T16:25:00Z",
-     99819.01
-    ],
-    [
-     "2026-11-18T16:30:00Z",
-     99799.22
-    ],
-    [
-     "2026-11-18T16:35:00Z",
-     99802.05
-    ],
-    [
-     "2026-11-18T16:40:00Z",
-     99748.76
-    ],
-    [
-     "2026-11-18T16:45:00Z",
-     99766.3
-    ],
-    [
-     "2026-11-18T16:50:00Z",
-     99784.74
-    ],
-    [
-     "2026-11-18T16:55:00Z",
-     99755.26
-    ],
-    [
-     "2026-11-18T17:00:00Z",
-     99836.11
-    ],
-    [
-     "2026-11-18T17:05:00Z",
-     99892.21
-    ],
-    [
-     "2026-11-18T17:10:00Z",
-     99845.76
-    ],
-    [
-     "2026-11-18T17:15:00Z",
-     99813.13
-    ],
-    [
-     "2026-11-18T17:20:00Z",
-     99918.83
-    ],
-    [
-     "2026-11-18T17:25:00Z",
-     100041.64
-    ],
-    [
-     "2026-11-18T17:30:00Z",
-     100118.98
-    ],
-    [
-     "2026-11-18T17:35:00Z",
-     100148.43
-    ],
-    [
-     "2026-11-18T17:40:00Z",
-     100051.11
-    ],
-    [
-     "2026-11-18T17:45:00Z",
-     100014.94
-    ],
-    [
-     "2026-11-18T17:50:00Z",
-     99999.17
-    ],
-    [
-     "2026-11-18T17:55:00Z",
-     100013.14
-    ],
-    [
-     "2026-11-18T18:00:00Z",
-     99997.77
-    ],
-    [
-     "2026-11-18T18:05:00Z",
-     99962.35
-    ],
-    [
-     "2026-11-18T18:10:00Z",
-     99956.47
-    ],
-    [
-     "2026-11-18T18:15:00Z",
-     99930.06
-    ],
-    [
-     "2026-11-18T18:20:00Z",
-     99972.32
-    ],
-    [
-     "2026-11-18T18:25:00Z",
-     100015.95
-    ],
-    [
-     "2026-11-18T18:30:00Z",
-     99997.61
-    ],
-    [
-     "2026-11-18T18:35:00Z",
-     100051.61
-    ],
-    [
-     "2026-11-18T18:40:00Z",
-     100130.69
-    ],
-    [
-     "2026-11-18T18:45:00Z",
-     100138.11
-    ],
-    [
-     "2026-11-18T18:50:00Z",
-     100117.74
-    ],
-    [
-     "2026-11-18T18:55:00Z",
-     100083.61
-    ],
-    [
-     "2026-11-18T19:00:00Z",
-     100067.75
-    ],
-    [
-     "2026-11-18T19:05:00Z",
-     99975.98
-    ],
-    [
-     "2026-11-18T19:10:00Z",
-     99905.67
-    ],
-    [
-     "2026-11-18T19:15:00Z",
-     99948.78
-    ],
-    [
-     "2026-11-18T19:20:00Z",
-     99948.52
-    ],
-    [
-     "2026-11-18T19:25:00Z",
-     99981.1
-    ],
-    [
-     "2026-11-18T19:30:00Z",
-     100001.96
-    ],
-    [
-     "2026-11-18T19:35:00Z",
-     99951.99
-    ],
-    [
-     "2026-11-18T19:40:00Z",
-     99933.45
-    ],
-    [
-     "2026-11-18T19:45:00Z",
-     99968.65
-    ],
-    [
-     "2026-11-18T19:50:00Z",
-     99935.95
-    ],
-    [
-     "2026-11-18T19:55:00Z",
-     99970.95
-    ],
-    [
-     "2026-11-18T20:00:00Z",
-     99934.91
-    ],
-    [
-     "2026-11-18T20:05:00Z",
-     99955.14
-    ],
-    [
-     "2026-11-18T20:10:00Z",
-     99965.8
-    ],
-    [
-     "2026-11-18T20:15:00Z",
-     99969.22
-    ],
-    [
-     "2026-11-18T20:20:00Z",
-     99919.23
-    ],
-    [
-     "2026-11-18T20:25:00Z",
-     99899.51
-    ],
-    [
-     "2026-11-18T20:30:00Z",
-     99900.83
-    ],
-    [
-     "2026-11-18T20:35:00Z",
-     99944.33
-    ],
-    [
-     "2026-11-18T20:40:00Z",
-     100006.02
-    ],
-    [
-     "2026-11-18T20:45:00Z",
-     99963.03
-    ],
-    [
-     "2026-11-18T20:50:00Z",
-     99975.67
-    ],
-    [
-     "2026-11-18T20:55:00Z",
-     100007.82
-    ],
-    [
-     "2026-11-18T21:00:00Z",
-     100015.38
-    ],
-    [
-     "2026-11-18T21:05:00Z",
-     99965.28
-    ],
-    [
-     "2026-11-18T21:10:00Z",
-     99976.28
-    ],
-    [
-     "2026-11-18T21:15:00Z",
-     99975.86
-    ],
-    [
-     "2026-11-18T21:20:00Z",
-     100002.91
-    ],
-    [
-     "2026-11-18T21:25:00Z",
-     99996.76
-    ],
-    [
-     "2026-11-18T21:30:00Z",
-     99991.33
-    ],
-    [
-     "2026-11-18T21:35:00Z",
-     100008.27
-    ],
-    [
-     "2026-11-18T21:40:00Z",
-     99968.26
-    ],
-    [
-     "2026-11-18T21:45:00Z",
-     99950.81
-    ],
-    [
-     "2026-11-18T21:50:00Z",
-     99889.92
-    ],
-    [
-     "2026-11-18T21:55:00Z",
-     99904.89
-    ],
-    [
-     "2026-11-18T22:00:00Z",
-     99918.31
-    ],
-    [
-     "2026-11-18T22:05:00Z",
-     99936.85
-    ],
-    [
-     "2026-11-18T22:10:00Z",
-     99886.66
-    ],
-    [
-     "2026-11-18T22:15:00Z",
-     99903.95
-    ],
-    [
-     "2026-11-18T22:20:00Z",
-     99916.9
-    ],
-    [
-     "2026-11-18T22:25:00Z",
-     99899.01
-    ],
-    [
-     "2026-11-18T22:30:00Z",
-     99887.32
-    ],
-    [
-     "2026-11-18T22:35:00Z",
-     99880.9
-    ],
-    [
-     "2026-11-18T22:40:00Z",
-     99896.1
-    ],
-    [
-     "2026-11-18T22:45:00Z",
-     99894.84
-    ],
-    [
-     "2026-11-18T22:50:00Z",
-     99847.97
-    ],
-    [
-     "2026-11-18T22:55:00Z",
-     99874.83
-    ],
-    [
-     "2026-11-18T23:00:00Z",
-     99869.78
-    ],
-    [
-     "2026-11-18T23:05:00Z",
-     99942.41
-    ],
-    [
-     "2026-11-18T23:10:00Z",
-     100123.36
-    ],
-    [
-     "2026-11-18T23:15:00Z",
-     100118.31
-    ],
-    [
-     "2026-11-18T23:20:00Z",
-     100161.39
-    ],
-    [
-     "2026-11-18T23:25:00Z",
-     100209.22
-    ],
-    [
-     "2026-11-18T23:30:00Z",
-     100203.62
-    ],
-    [
-     "2026-11-18T23:35:00Z",
-     100234.29
-    ],
-    [
-     "2026-11-18T23:40:00Z",
-     100244.57
-    ],
-    [
-     "2026-11-18T23:45:00Z",
-     100304.06
-    ],
-    [
-     "2026-11-18T23:50:00Z",
-     100289.37
-    ],
-    [
-     "2026-11-18T23:55:00Z",
-     100234.1
-    ],
-    [
-     "2026-11-19T00:00:00Z",
-     100228.05
-    ],
-    [
-     "2026-11-19T00:05:00Z",
-     100229.08
-    ],
-    [
-     "2026-11-19T00:10:00Z",
-     100224.13
-    ],
-    [
-     "2026-11-19T00:15:00Z",
-     100236.21
-    ],
-    [
-     "2026-11-19T00:20:00Z",
-     100218.35
-    ],
-    [
-     "2026-11-19T00:25:00Z",
-     100198.43
-    ],
-    [
-     "2026-11-19T00:30:00Z",
-     100243.83
-    ],
-    [
-     "2026-11-19T00:35:00Z",
-     100324.01
-    ],
-    [
-     "2026-11-19T00:40:00Z",
-     100351.63
-    ],
-    [
-     "2026-11-19T00:45:00Z",
-     100375.03
-    ],
-    [
-     "2026-11-19T00:50:00Z",
-     100377.5
-    ],
-    [
-     "2026-11-19T00:55:00Z",
-     100397.2
-    ],
-    [
-     "2026-11-19T01:00:00Z",
-     100396.46
+     "2026-11-19T14:50:00Z",
+     100726.23
     ]
    ],
    "1W": [
-    [
-     "2026-11-12T09:00:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-12T09:15:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-12T09:30:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-12T09:45:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-12T10:00:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-12T10:15:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-12T10:30:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-12T10:45:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-12T11:00:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-12T11:15:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-12T11:30:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-12T11:45:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-12T12:00:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-12T12:15:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-12T12:30:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-12T12:45:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-12T13:00:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-12T13:15:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-12T13:30:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-12T13:45:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-12T14:00:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-12T14:15:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-12T14:30:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-12T14:45:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-12T15:00:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-12T15:15:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-12T15:30:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-12T15:45:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-12T16:00:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-12T16:15:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-12T16:30:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-12T16:45:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-12T17:00:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-12T17:15:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-12T17:30:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-12T17:45:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-12T18:00:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-12T18:15:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-12T18:30:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-12T18:45:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-12T19:00:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-12T19:15:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-12T19:30:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-12T19:45:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-12T20:00:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-12T20:15:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-12T20:30:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-12T20:45:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-12T21:00:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-12T21:15:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-12T21:30:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-12T21:45:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-12T22:00:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-12T22:15:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-12T22:30:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-12T22:45:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-12T23:00:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-12T23:15:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-12T23:30:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-12T23:45:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-13T00:00:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-13T00:15:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-13T00:30:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-13T00:45:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-13T01:00:00Z",
-     100000.0
-    ],
     [
      "2026-11-13T09:00:00Z",
      100000.0
@@ -3120,33 +2288,113 @@
     ],
     [
      "2026-11-19T00:45:00Z",
-     100375.03
+     100362.45
     ],
     [
      "2026-11-19T01:00:00Z",
-     100396.46
+     100383.88
+    ],
+    [
+     "2026-11-19T09:00:00Z",
+     100560.4
+    ],
+    [
+     "2026-11-19T09:15:00Z",
+     100560.4
+    ],
+    [
+     "2026-11-19T09:30:00Z",
+     100450.61
+    ],
+    [
+     "2026-11-19T09:45:00Z",
+     100535.7
+    ],
+    [
+     "2026-11-19T10:00:00Z",
+     100528.68
+    ],
+    [
+     "2026-11-19T10:15:00Z",
+     100535.69
+    ],
+    [
+     "2026-11-19T10:30:00Z",
+     100580.8
+    ],
+    [
+     "2026-11-19T10:45:00Z",
+     100581.98
+    ],
+    [
+     "2026-11-19T11:00:00Z",
+     100583.31
+    ],
+    [
+     "2026-11-19T11:15:00Z",
+     100610.33
+    ],
+    [
+     "2026-11-19T11:30:00Z",
+     100609.38
+    ],
+    [
+     "2026-11-19T11:45:00Z",
+     100652.54
+    ],
+    [
+     "2026-11-19T12:00:00Z",
+     100651.14
+    ],
+    [
+     "2026-11-19T12:15:00Z",
+     100588.23
+    ],
+    [
+     "2026-11-19T12:30:00Z",
+     100605.34
+    ],
+    [
+     "2026-11-19T12:45:00Z",
+     100589.91
+    ],
+    [
+     "2026-11-19T13:00:00Z",
+     100624.48
+    ],
+    [
+     "2026-11-19T13:15:00Z",
+     100674.76
+    ],
+    [
+     "2026-11-19T13:30:00Z",
+     100590.42
+    ],
+    [
+     "2026-11-19T13:45:00Z",
+     100556.09
+    ],
+    [
+     "2026-11-19T14:00:00Z",
+     100610.2
+    ],
+    [
+     "2026-11-19T14:15:00Z",
+     100666.77
+    ],
+    [
+     "2026-11-19T14:30:00Z",
+     100692.85
+    ],
+    [
+     "2026-11-19T14:45:00Z",
+     100733.28
     ]
    ]
   },
   "holdings": {
    "MSFT": {
     "bars": [
-     [
-      "2026-11-16T13:00:00Z",
-      524.78
-     ],
-     [
-      "2026-11-16T13:15:00Z",
-      525.0
-     ],
-     [
-      "2026-11-16T14:30:00Z",
-      521.525
-     ],
-     [
-      "2026-11-16T14:45:00Z",
-      521.1
-     ],
      [
       "2026-11-16T15:00:00Z",
       519.02
@@ -3478,6 +2726,18 @@
      [
       "2026-11-18T20:45:00Z",
       508.505
+     ],
+     [
+      "2026-11-19T14:15:00Z",
+      518.95
+     ],
+     [
+      "2026-11-19T14:30:00Z",
+      524.67
+     ],
+     [
+      "2026-11-19T14:45:00Z",
+      523.925
      ]
     ],
     "entry": 503.83,
@@ -3486,738 +2746,8 @@
     "openedAt": "2026-11-18T17:00:31Z",
     "qty": 9.0
    },
-   "INTC": {
-    "bars": [
-     [
-      "2026-11-16T13:00:00Z",
-      56.62
-     ],
-     [
-      "2026-11-16T13:15:00Z",
-      56.47
-     ],
-     [
-      "2026-11-16T13:30:00Z",
-      56.59
-     ],
-     [
-      "2026-11-16T13:45:00Z",
-      56.6
-     ],
-     [
-      "2026-11-16T14:15:00Z",
-      56.53
-     ],
-     [
-      "2026-11-16T14:30:00Z",
-      57.115
-     ],
-     [
-      "2026-11-16T14:45:00Z",
-      56.285
-     ],
-     [
-      "2026-11-16T15:00:00Z",
-      56.21
-     ],
-     [
-      "2026-11-16T15:15:00Z",
-      55.875
-     ],
-     [
-      "2026-11-16T15:30:00Z",
-      55.705
-     ],
-     [
-      "2026-11-16T15:45:00Z",
-      55.93
-     ],
-     [
-      "2026-11-16T16:00:00Z",
-      55.515
-     ],
-     [
-      "2026-11-16T16:15:00Z",
-      56.035
-     ],
-     [
-      "2026-11-16T16:30:00Z",
-      55.895
-     ],
-     [
-      "2026-11-16T16:45:00Z",
-      56.085
-     ],
-     [
-      "2026-11-16T17:00:00Z",
-      55.765
-     ],
-     [
-      "2026-11-16T17:15:00Z",
-      55.525
-     ],
-     [
-      "2026-11-16T17:30:00Z",
-      55.695
-     ],
-     [
-      "2026-11-16T17:45:00Z",
-      55.76
-     ],
-     [
-      "2026-11-16T18:00:00Z",
-      55.57
-     ],
-     [
-      "2026-11-16T18:15:00Z",
-      55.205
-     ],
-     [
-      "2026-11-16T18:30:00Z",
-      55.27
-     ],
-     [
-      "2026-11-16T18:45:00Z",
-      55.69
-     ],
-     [
-      "2026-11-16T19:00:00Z",
-      55.775
-     ],
-     [
-      "2026-11-16T19:15:00Z",
-      55.815
-     ],
-     [
-      "2026-11-16T19:30:00Z",
-      55.48
-     ],
-     [
-      "2026-11-16T19:45:00Z",
-      55.79
-     ],
-     [
-      "2026-11-16T20:00:00Z",
-      55.34
-     ],
-     [
-      "2026-11-16T20:15:00Z",
-      55.62
-     ],
-     [
-      "2026-11-16T20:30:00Z",
-      55.315
-     ],
-     [
-      "2026-11-16T20:45:00Z",
-      55.45
-     ],
-     [
-      "2026-11-16T21:15:00Z",
-      55.35
-     ],
-     [
-      "2026-11-16T21:30:00Z",
-      54.58
-     ],
-     [
-      "2026-11-16T21:45:00Z",
-      54.85
-     ],
-     [
-      "2026-11-17T13:45:00Z",
-      55.12
-     ],
-     [
-      "2026-11-17T14:30:00Z",
-      54.165
-     ],
-     [
-      "2026-11-17T14:45:00Z",
-      54.75
-     ],
-     [
-      "2026-11-17T15:00:00Z",
-      54.56
-     ],
-     [
-      "2026-11-17T15:15:00Z",
-      54.705
-     ],
-     [
-      "2026-11-17T15:30:00Z",
-      53.44
-     ],
-     [
-      "2026-11-17T15:45:00Z",
-      53.585
-     ],
-     [
-      "2026-11-17T16:00:00Z",
-      54.1
-     ],
-     [
-      "2026-11-17T16:15:00Z",
-      54.02
-     ],
-     [
-      "2026-11-17T16:30:00Z",
-      53.96
-     ],
-     [
-      "2026-11-17T16:45:00Z",
-      53.76
-     ],
-     [
-      "2026-11-17T17:00:00Z",
-      53.865
-     ],
-     [
-      "2026-11-17T17:15:00Z",
-      54.115
-     ],
-     [
-      "2026-11-17T17:30:00Z",
-      53.86
-     ],
-     [
-      "2026-11-17T17:45:00Z",
-      53.795
-     ],
-     [
-      "2026-11-17T18:00:00Z",
-      53.675
-     ],
-     [
-      "2026-11-17T18:15:00Z",
-      54.145
-     ],
-     [
-      "2026-11-17T18:30:00Z",
-      53.775
-     ],
-     [
-      "2026-11-17T18:45:00Z",
-      53.885
-     ],
-     [
-      "2026-11-17T19:00:00Z",
-      54.055
-     ],
-     [
-      "2026-11-17T19:15:00Z",
-      53.645
-     ],
-     [
-      "2026-11-17T19:30:00Z",
-      53.675
-     ],
-     [
-      "2026-11-17T19:45:00Z",
-      53.435
-     ],
-     [
-      "2026-11-17T20:00:00Z",
-      53.465
-     ],
-     [
-      "2026-11-17T20:15:00Z",
-      53.655
-     ],
-     [
-      "2026-11-17T20:30:00Z",
-      54.335
-     ],
-     [
-      "2026-11-17T20:45:00Z",
-      55.17
-     ],
-     [
-      "2026-11-17T21:00:00Z",
-      55.4
-     ],
-     [
-      "2026-11-18T13:15:00Z",
-      55.25
-     ],
-     [
-      "2026-11-18T13:45:00Z",
-      55.51
-     ],
-     [
-      "2026-11-18T14:30:00Z",
-      53.645
-     ],
-     [
-      "2026-11-18T14:45:00Z",
-      54.94
-     ],
-     [
-      "2026-11-18T15:00:00Z",
-      55.02
-     ],
-     [
-      "2026-11-18T15:15:00Z",
-      54.34
-     ],
-     [
-      "2026-11-18T15:30:00Z",
-      54.05
-     ],
-     [
-      "2026-11-18T15:45:00Z",
-      54.29
-     ],
-     [
-      "2026-11-18T16:00:00Z",
-      54.165
-     ],
-     [
-      "2026-11-18T16:15:00Z",
-      53.92
-     ],
-     [
-      "2026-11-18T16:30:00Z",
-      53.87
-     ],
-     [
-      "2026-11-18T16:45:00Z",
-      54.08
-     ],
-     [
-      "2026-11-18T17:00:00Z",
-      53.96
-     ],
-     [
-      "2026-11-18T17:15:00Z",
-      55.0
-     ],
-     [
-      "2026-11-18T17:30:00Z",
-      54.69
-     ],
-     [
-      "2026-11-18T17:45:00Z",
-      54.555
-     ],
-     [
-      "2026-11-18T18:00:00Z",
-      54.315
-     ],
-     [
-      "2026-11-18T18:15:00Z",
-      54.395
-     ],
-     [
-      "2026-11-18T18:30:00Z",
-      54.81
-     ],
-     [
-      "2026-11-18T18:45:00Z",
-      54.48
-     ],
-     [
-      "2026-11-18T19:00:00Z",
-      54.18
-     ],
-     [
-      "2026-11-18T19:15:00Z",
-      54.52
-     ],
-     [
-      "2026-11-18T19:30:00Z",
-      54.265
-     ],
-     [
-      "2026-11-18T19:45:00Z",
-      54.18
-     ],
-     [
-      "2026-11-18T20:00:00Z",
-      54.27
-     ],
-     [
-      "2026-11-18T20:15:00Z",
-      54.09
-     ],
-     [
-      "2026-11-18T20:30:00Z",
-      54.345
-     ],
-     [
-      "2026-11-18T20:45:00Z",
-      54.68
-     ],
-     [
-      "2026-11-18T21:45:00Z",
-      54.19
-     ]
-    ],
-    "entry": 54.01,
-    "stop": 52.39,
-    "target": 57.26,
-    "openedAt": "2026-11-18T17:00:31Z",
-    "qty": 92.0
-   },
-   "AMAT": {
-    "bars": [
-     [
-      "2026-11-16T14:30:00Z",
-      357.49
-     ],
-     [
-      "2026-11-16T14:45:00Z",
-      354.145
-     ],
-     [
-      "2026-11-16T15:00:00Z",
-      353.97
-     ],
-     [
-      "2026-11-16T15:15:00Z",
-      350.2
-     ],
-     [
-      "2026-11-16T15:30:00Z",
-      353.97
-     ],
-     [
-      "2026-11-16T15:45:00Z",
-      356.84
-     ],
-     [
-      "2026-11-16T16:00:00Z",
-      354.52
-     ],
-     [
-      "2026-11-16T16:15:00Z",
-      356.91
-     ],
-     [
-      "2026-11-16T16:30:00Z",
-      356.505
-     ],
-     [
-      "2026-11-16T16:45:00Z",
-      357.33
-     ],
-     [
-      "2026-11-16T17:00:00Z",
-      356.82
-     ],
-     [
-      "2026-11-16T17:15:00Z",
-      355.18
-     ],
-     [
-      "2026-11-16T17:30:00Z",
-      355.36
-     ],
-     [
-      "2026-11-16T17:45:00Z",
-      353.45
-     ],
-     [
-      "2026-11-16T18:00:00Z",
-      353.11
-     ],
-     [
-      "2026-11-16T18:15:00Z",
-      351.87
-     ],
-     [
-      "2026-11-16T18:30:00Z",
-      351.57
-     ],
-     [
-      "2026-11-16T18:45:00Z",
-      353.345
-     ],
-     [
-      "2026-11-16T19:00:00Z",
-      353.42
-     ],
-     [
-      "2026-11-16T19:15:00Z",
-      354.18
-     ],
-     [
-      "2026-11-16T19:30:00Z",
-      352.96
-     ],
-     [
-      "2026-11-16T19:45:00Z",
-      354.825
-     ],
-     [
-      "2026-11-16T20:00:00Z",
-      351.845
-     ],
-     [
-      "2026-11-16T20:15:00Z",
-      351.97
-     ],
-     [
-      "2026-11-16T20:30:00Z",
-      350.78
-     ],
-     [
-      "2026-11-16T20:45:00Z",
-      350.28
-     ],
-     [
-      "2026-11-16T21:00:00Z",
-      350.02
-     ],
-     [
-      "2026-11-17T14:30:00Z",
-      350.975
-     ],
-     [
-      "2026-11-17T14:45:00Z",
-      355.03
-     ],
-     [
-      "2026-11-17T15:00:00Z",
-      350.82
-     ],
-     [
-      "2026-11-17T15:15:00Z",
-      350.91
-     ],
-     [
-      "2026-11-17T15:30:00Z",
-      343.59
-     ],
-     [
-      "2026-11-17T15:45:00Z",
-      343.87
-     ],
-     [
-      "2026-11-17T16:00:00Z",
-      347.22
-     ],
-     [
-      "2026-11-17T16:15:00Z",
-      346.14
-     ],
-     [
-      "2026-11-17T16:30:00Z",
-      345.5
-     ],
-     [
-      "2026-11-17T16:45:00Z",
-      343.64
-     ],
-     [
-      "2026-11-17T17:00:00Z",
-      345.82
-     ],
-     [
-      "2026-11-17T17:15:00Z",
-      347.44
-     ],
-     [
-      "2026-11-17T17:30:00Z",
-      347.03
-     ],
-     [
-      "2026-11-17T17:45:00Z",
-      345.7
-     ],
-     [
-      "2026-11-17T18:00:00Z",
-      343.53
-     ],
-     [
-      "2026-11-17T18:15:00Z",
-      346.815
-     ],
-     [
-      "2026-11-17T18:30:00Z",
-      344.275
-     ],
-     [
-      "2026-11-17T18:45:00Z",
-      344.17
-     ],
-     [
-      "2026-11-17T19:00:00Z",
-      345.17
-     ],
-     [
-      "2026-11-17T19:15:00Z",
-      342.83
-     ],
-     [
-      "2026-11-17T19:30:00Z",
-      342.51
-     ],
-     [
-      "2026-11-17T19:45:00Z",
-      340.115
-     ],
-     [
-      "2026-11-17T20:00:00Z",
-      341.145
-     ],
-     [
-      "2026-11-17T20:15:00Z",
-      342.915
-     ],
-     [
-      "2026-11-17T20:30:00Z",
-      344.34
-     ],
-     [
-      "2026-11-17T20:45:00Z",
-      349.18
-     ],
-     [
-      "2026-11-17T21:15:00Z",
-      354.8
-     ],
-     [
-      "2026-11-18T13:15:00Z",
-      355.5
-     ],
-     [
-      "2026-11-18T14:00:00Z",
-      356.21
-     ],
-     [
-      "2026-11-18T14:30:00Z",
-      344.135
-     ],
-     [
-      "2026-11-18T14:45:00Z",
-      352.94
-     ],
-     [
-      "2026-11-18T15:00:00Z",
-      351.02
-     ],
-     [
-      "2026-11-18T15:15:00Z",
-      352.83
-     ],
-     [
-      "2026-11-18T15:30:00Z",
-      349.225
-     ],
-     [
-      "2026-11-18T15:45:00Z",
-      352.32
-     ],
-     [
-      "2026-11-18T16:00:00Z",
-      349.06
-     ],
-     [
-      "2026-11-18T16:15:00Z",
-      348.23
-     ],
-     [
-      "2026-11-18T16:30:00Z",
-      348.47
-     ],
-     [
-      "2026-11-18T16:45:00Z",
-      348.13
-     ],
-     [
-      "2026-11-18T17:00:00Z",
-      349.47
-     ],
-     [
-      "2026-11-18T17:15:00Z",
-      353.75
-     ],
-     [
-      "2026-11-18T17:30:00Z",
-      351.09
-     ],
-     [
-      "2026-11-18T17:45:00Z",
-      351.08
-     ],
-     [
-      "2026-11-18T18:00:00Z",
-      349.25
-     ],
-     [
-      "2026-11-18T18:15:00Z",
-      350.11
-     ],
-     [
-      "2026-11-18T18:30:00Z",
-      351.43
-     ],
-     [
-      "2026-11-18T18:45:00Z",
-      350.06
-     ],
-     [
-      "2026-11-18T19:00:00Z",
-      348.38
-     ],
-     [
-      "2026-11-18T19:15:00Z",
-      351.43
-     ],
-     [
-      "2026-11-18T19:30:00Z",
-      351.02
-     ],
-     [
-      "2026-11-18T19:45:00Z",
-      350.465
-     ],
-     [
-      "2026-11-18T20:00:00Z",
-      351.01
-     ],
-     [
-      "2026-11-18T20:15:00Z",
-      350.88
-     ],
-     [
-      "2026-11-18T20:30:00Z",
-      352.46
-     ],
-     [
-      "2026-11-18T20:45:00Z",
-      352.4
-     ]
-    ],
-    "entry": 344.54,
-    "stop": 333.67,
-    "target": 364.63,
-    "openedAt": "2026-11-18T14:45:33Z",
-    "qty": 14.0
-   },
    "TSLA": {
     "bars": [
-     [
-      "2026-11-16T13:15:00Z",
-      384.96
-     ],
-     [
-      "2026-11-16T13:45:00Z",
-      385.38
-     ],
-     [
-      "2026-11-16T14:15:00Z",
-      387.44
-     ],
-     [
-      "2026-11-16T14:30:00Z",
-      386.01
-     ],
-     [
-      "2026-11-16T14:45:00Z",
-      378.56
-     ],
      [
       "2026-11-16T15:00:00Z",
       376.905
@@ -4577,6 +3107,26 @@
      [
       "2026-11-18T21:00:00Z",
       382.53
+     ],
+     [
+      "2026-11-19T13:00:00Z",
+      392.64
+     ],
+     [
+      "2026-11-19T13:45:00Z",
+      392.14
+     ],
+     [
+      "2026-11-19T14:00:00Z",
+      391.92
+     ],
+     [
+      "2026-11-19T14:30:00Z",
+      389.915
+     ],
+     [
+      "2026-11-19T14:45:00Z",
+      386.36
      ]
     ],
     "entry": 381.361539,
@@ -4624,14 +3174,14 @@
     "tradingAgents": "not used (ultra mode)",
     "taSummary": ""
    },
-   "lastPrice": 511.41,
-   "unrealizedPct": 1.5
+   "lastPrice": 523.93,
+   "unrealizedPct": 3.99
   },
   {
    "id": "ahq-INTC-20261118170031",
    "symbol": "INTC",
    "asset": "stock",
-   "status": "open",
+   "status": "closed",
    "entryOrderId": "b5d17708-22af-41cb-b77a-996d16a4f668",
    "qty": 92.0,
    "cost": 4969.38,
@@ -4663,14 +3213,19 @@
     "tradingAgents": "not used (ultra mode)",
     "taSummary": ""
    },
-   "lastPrice": 55.61,
-   "unrealizedPct": 2.96
+   "lastPrice": 57.44,
+   "unrealizedPct": 6.35,
+   "closedAt": "2026-11-19T14:42:01Z",
+   "exitPrice": 57.86,
+   "exitReason": "target +6% hit",
+   "pnl": 354.2,
+   "pnlPct": 7.13
   },
   {
    "id": "ahq-AMAT-20261118144533",
    "symbol": "AMAT",
    "asset": "stock",
-   "status": "open",
+   "status": "closed",
    "entryOrderId": "aba7349f-a93b-467d-9eca-91fc4872f894",
    "qty": 14.0,
    "cost": 4815.86,
@@ -4702,8 +3257,13 @@
     "tradingAgents": "not used (ultra mode)",
     "taSummary": ""
    },
-   "lastPrice": 359.5,
-   "unrealizedPct": 4.34
+   "lastPrice": 365.1,
+   "unrealizedPct": 5.97,
+   "closedAt": "2026-11-19T14:42:01Z",
+   "exitPrice": 365.190714,
+   "exitReason": "target +6% hit",
+   "pnl": 289.11,
+   "pnlPct": 5.99
   },
   {
    "id": "ahq-TSLA-20261117144531",
@@ -4741,7 +3301,7 @@
     "tradingAgents": "not used (ultra mode)",
     "taSummary": ""
    },
-   "lastPrice": 385.75,
+   "lastPrice": 385.74,
    "unrealizedPct": 1.15
   },
   {
@@ -5348,101 +3908,6 @@
   }
  ],
  "equity": [
-  {
-   "t": "2026-11-10T14:33:51Z",
-   "equity": 100000.0,
-   "spy": 747.44
-  },
-  {
-   "t": "2026-11-10T15:04:52Z",
-   "equity": 100000.0,
-   "spy": 751.55
-  },
-  {
-   "t": "2026-11-10T15:37:19Z",
-   "equity": 100000.0,
-   "spy": 749.36
-  },
-  {
-   "t": "2026-11-10T16:08:17Z",
-   "equity": 100000.0,
-   "spy": 748.13
-  },
-  {
-   "t": "2026-11-10T16:39:12Z",
-   "equity": 100000.0,
-   "spy": 747.115
-  },
-  {
-   "t": "2026-11-10T17:10:11Z",
-   "equity": 100000.0,
-   "spy": 747.15
-  },
-  {
-   "t": "2026-11-10T17:41:18Z",
-   "equity": 100000.0,
-   "spy": 745.055
-  },
-  {
-   "t": "2026-11-10T18:12:06Z",
-   "equity": 100000.0,
-   "spy": 746.14
-  },
-  {
-   "t": "2026-11-10T18:43:57Z",
-   "equity": 100000.0,
-   "spy": 747.24
-  },
-  {
-   "t": "2026-11-10T19:14:39Z",
-   "equity": 100000.0,
-   "spy": 747.88
-  },
-  {
-   "t": "2026-11-10T19:45:22Z",
-   "equity": 100000.0,
-   "spy": 748.7
-  },
-  {
-   "t": "2026-11-10T20:19:42Z",
-   "equity": 100000.0,
-   "spy": 749.01
-  },
-  {
-   "t": "2026-11-10T20:51:44Z",
-   "equity": 100000.0,
-   "spy": 751.18
-  },
-  {
-   "t": "2026-11-10T21:33:43Z",
-   "equity": 100000.0,
-   "spy": 749.93
-  },
-  {
-   "t": "2026-11-10T22:04:06Z",
-   "equity": 100000.0,
-   "spy": 749.93
-  },
-  {
-   "t": "2026-11-10T22:34:23Z",
-   "equity": 100000.0,
-   "spy": 749.93
-  },
-  {
-   "t": "2026-11-10T23:04:47Z",
-   "equity": 100000.0,
-   "spy": 749.93
-  },
-  {
-   "t": "2026-11-10T23:35:00Z",
-   "equity": 100000.0,
-   "spy": 749.93
-  },
-  {
-   "t": "2026-11-11T00:05:24Z",
-   "equity": 100000.0,
-   "spy": 749.93
-  },
   {
    "t": "2026-11-11T00:35:50Z",
    "equity": 100000.0,
@@ -7347,6 +5812,101 @@
    "t": "2026-11-19T04:28:50Z",
    "equity": 100323.86,
    "spy": 731.12
+  },
+  {
+   "t": "2026-11-19T05:12:04Z",
+   "equity": 100279.32,
+   "spy": 731.12
+  },
+  {
+   "t": "2026-11-19T05:42:36Z",
+   "equity": 100288.61,
+   "spy": 731.12
+  },
+  {
+   "t": "2026-11-19T06:13:15Z",
+   "equity": 100319.14,
+   "spy": 731.12
+  },
+  {
+   "t": "2026-11-19T06:43:38Z",
+   "equity": 100415.63,
+   "spy": 731.12
+  },
+  {
+   "t": "2026-11-19T07:14:03Z",
+   "equity": 100469.87,
+   "spy": 731.12
+  },
+  {
+   "t": "2026-11-19T07:44:27Z",
+   "equity": 100482.33,
+   "spy": 731.12
+  },
+  {
+   "t": "2026-11-19T08:14:45Z",
+   "equity": 100524.52,
+   "spy": 731.12
+  },
+  {
+   "t": "2026-11-19T08:45:13Z",
+   "equity": 100547.84,
+   "spy": 731.12
+  },
+  {
+   "t": "2026-11-19T09:15:42Z",
+   "equity": 100564.08,
+   "spy": 731.12
+  },
+  {
+   "t": "2026-11-19T09:46:00Z",
+   "equity": 100549.01,
+   "spy": 731.12
+  },
+  {
+   "t": "2026-11-19T10:16:38Z",
+   "equity": 100558.35,
+   "spy": 731.12
+  },
+  {
+   "t": "2026-11-19T10:47:05Z",
+   "equity": 100580.92,
+   "spy": 731.12
+  },
+  {
+   "t": "2026-11-19T11:17:22Z",
+   "equity": 100600.57,
+   "spy": 731.12
+  },
+  {
+   "t": "2026-11-19T11:47:40Z",
+   "equity": 100666.41,
+   "spy": 731.12
+  },
+  {
+   "t": "2026-11-19T12:18:22Z",
+   "equity": 100576.72,
+   "spy": 731.12
+  },
+  {
+   "t": "2026-11-19T12:48:51Z",
+   "equity": 100619.19,
+   "spy": 731.12
+  },
+  {
+   "t": "2026-11-19T13:20:14Z",
+   "equity": 100627.09,
+   "spy": 738.96
+  },
+  {
+   "t": "2026-11-19T13:52:38Z",
+   "equity": 100558.01,
+   "spy": 738.89
+  },
+  {
+   "t": "2026-11-19T14:26:59Z",
+   "equity": 100639.35,
+   "spy": 737.72
   }
  ],
  "watch": [],
@@ -7358,7 +5918,7 @@
  },
  "events": [
   {
-   "summary": "Houthi missile threats causing damage in Riyadh heighten regional war risks and supply disruption concerns.",
+   "summary": "Geopolitical tensions and fears of renewed conflict involving Iran are driving oil prices higher.",
    "category": "war_escalation",
    "firstSeen": "2026-11-10T20:01:23Z",
    "publishers": [
@@ -7392,6 +5952,7 @@
     "Al-Bawaba",
     "Al-Monitor",
     "American Journal of Transportation",
+    "Ammon News",
     "Anadolu Ajansı",
     "Antiwar.com",
     "Apa.az",
@@ -7448,6 +6009,7 @@
     "CNN",
     "CP24",
     "CTV News",
+    "Caspian Post",
     "Central Oregon Daily",
     "Channels Television",
     "Charisma Magazine Online",
@@ -7486,6 +6048,7 @@
     "Deccan Herald",
     "Defense Express",
     "Democracy Now!",
+    "Demokratis.co.id",
     "Demócrata",
     "Dhaka Tribune",
     "Dubai Eye 103.8",
@@ -7496,6 +6059,7 @@
     "Egypt Today",
     "Egyptian Gazette",
     "Energy Intelligence",
+    "EnergyNow.com",
     "Enidnews.com",
     "Eurasia Review",
     "Euromaidan Press",
@@ -7528,6 +6092,8 @@
     "Global News",
     "Greater Kashmir",
     "Gujarat Samachar",
+    "Gulf Business",
+    "Gulf Daily News (Bahrain)",
     "Gulf News",
     "Gulf Today",
     "GuruFocus",
@@ -7558,6 +6124,8 @@
     "Inquirer.net",
     "Inquisitr",
     "Inshorts",
+    "Insurance Day",
+    "Insurance Journal",
     "IntelliNews",
     "Interfax-Ukraine",
     "International Business Times",
@@ -7574,6 +6142,7 @@
     "IranWire",
     "Irish Independent",
     "Islamabad Post",
+    "Israel Hayom",
     "Israel National News",
     "JC Post",
     "JFeed",
@@ -7600,12 +6169,14 @@
     "Kyiv Post",
     "L'Orient Today",
     "LBCI Lebanon",
+    "LEADERSHIP Newspapers",
     "LIGA.net",
     "La Voce di New York",
     "Laodong.vn",
     "Las Vegas Review-Journal",
     "Latest news from Azerbaijan",
     "Le Monde.fr",
+    "Limapagi",
     "Livemint",
     "Lloyd's List",
     "Local 3 News",
@@ -7685,6 +6256,7 @@
     "Operativ Məlumat Mərkəzi",
     "Orinoco Tribune",
     "Ottumwa Courier",
+    "Outlook India",
     "PBS",
     "Palestine Chronicle",
     "Pars Today",
@@ -7701,10 +6273,12 @@
     "Proshare",
     "Public TV English",
     "Punch Newspapers",
+    "Qatar news agency",
     "Quantum Commodity Intelligence",
     "Quartz",
     "RBC-Ukraine",
     "RNZ",
+    "RTE.ie",
     "RTHK News",
     "RTV News",
     "Radio Free Europe/Radio Liberty",
@@ -7721,6 +6295,7 @@
     "SBS",
     "SNJ Today",
     "SRN News",
+    "SSBCrack",
     "Sahara Reporters",
     "Sahi",
     "San Angelo LIVE!",
@@ -7776,10 +6351,12 @@
     "The Hans India",
     "The Hawk",
     "The Herald",
+    "The Herald Journal",
     "The Hill",
     "The Hindustan Gazette",
     "The Hip Hop Democrat",
     "The Independent",
+    "The Indian EYE",
     "The Indian Express",
     "The Irish Times",
     "The Japan Times",
@@ -7793,6 +6370,7 @@
     "The Kyiv Independent",
     "The Manila Times",
     "The Mary Sue",
+    "The Media Line",
     "The Mirror",
     "The Moscow Times",
     "The Nation (Pakistan )",
@@ -7805,6 +6383,7 @@
     "The Peninsula Qatar",
     "The SOFX Report",
     "The Seattle Times",
+    "The Sentinel - of this Land, for its People",
     "The Shillong Times",
     "The Siasat Daily",
     "The Standard (HK)",
@@ -7831,12 +6410,14 @@
     "TimesLIVE",
     "Today.Az",
     "TodayPress.tv",
+    "Toronto Star",
     "TradeWinds News",
     "Traders Union",
     "TradingNEWS",
     "TradingPedia",
     "TradingView",
     "Trak.in",
+    "Transport Topics",
     "Traverse City Record-Eagle",
     "Trend News Agency",
     "TribLIVE.com",
@@ -7889,9 +6470,11 @@
     "WZDM",
     "WaltonTribune.com",
     "Washington Examiner",
+    "Washington Times",
     "Washingtonian",
     "We Got This Covered",
     "World Israel News",
+    "World Socialist Web Site",
     "X",
     "XTB.com",
     "Xinhua",
@@ -7915,12 +6498,14 @@
     "couriernews.com",
     "crimefightersng.com",
     "crossroadstoday.com",
+    "cwibc.co.id",
     "en.bd-pratidin.com",
     "fox42kptm.com",
     "gCaptain",
     "houseofsaud.com",
     "https://aapnews.aap.com.au/",
     "https://defence.newsd.in/",
+    "https://economy.ac/",
     "https://houseofsaud.com/",
     "https://theins.press/en",
     "https://www.engine.online/",
@@ -7937,6 +6522,7 @@
     "oEnergetice.cz",
     "oodaloop.com",
     "qz.com",
+    "rdnewsnow.com",
     "samaa tv",
     "scanx.trade",
     "streamlinefeed.co.ke",
@@ -7955,6 +6541,7 @@
     "www.nktv.in",
     "www.proactiveinvestors.com.au",
     "www.stripes.com",
+    "www.thenationalnews.com",
     "www.tmgm.com",
     "www.tokenpost.com",
     "www.uaebarq.ae",
@@ -7966,6 +6553,7 @@
     "Українські Національні Новини (УНН)",
     "Цензор.НЕТ",
     "برق الإمارات",
+    "تسنیم",
     "جريدة القدس",
     "سانا",
     "شبكة تواصل الإخبارية",
@@ -7985,17 +6573,17 @@
     "XOM": {
      "direction": "up",
      "confidence": 0.85,
-     "why": "Middle East war escalation and attacks on Gulf targets threaten oil supply, driving oil stocks up."
+     "why": "Middle East attacks and Hormuz tanker disruptions threaten oil supply, driving energy stocks up."
     },
     "CVX": {
      "direction": "up",
      "confidence": 0.85,
-     "why": "Conflict escalation in the Middle East drives oil and gas majors higher."
+     "why": "Energy supply risks from regional conflict support oil majors."
     },
     "OXY": {
      "direction": "up",
      "confidence": 0.8,
-     "why": "Geopolitical risk in the Persian Gulf supports oil prices and energy stocks."
+     "why": "Crude supply threats lift domestic and international oil stock prices."
     },
     "PLTR": {
      "direction": "up",
@@ -8010,12 +6598,12 @@
     "NEM": {
      "direction": "up",
      "confidence": 0.75,
-     "why": "Geopolitical conflict escalation increases safe-haven demand for gold miners."
+     "why": "Middle East military strikes increase safe-haven demand, benefiting gold miners."
     },
     "COP": {
      "direction": "up",
      "confidence": 0.8,
-     "why": "Supply risks from Strait of Hormuz attacks drive up major oil producers."
+     "why": "Geopolitical oil supply risks benefit exploration and production stocks."
     },
     "SLB": {
      "direction": "up",
@@ -8127,7 +6715,689 @@
    ]
   },
   {
-   "summary": "Hawkish Fed signals and rate hike expectations weigh on gold, crypto, and broader regional equities.",
+   "summary": "Bitcoin ETF outflows accelerate and weigh on overall crypto sentiment.",
+   "category": "crypto_negative",
+   "firstSeen": "2026-11-12T08:32:42Z",
+   "publishers": [
+    "24/7 Wall St.",
+    "99Bitcoins",
+    "AMBCrypto",
+    "AOL.com",
+    "Action Forex",
+    "Aktualita.co",
+    "Altcoin Buzz",
+    "Anadolu Ajansı",
+    "Analytics Insight",
+    "Apa.az",
+    "Asianet Newsable",
+    "BeInCrypto",
+    "Benzinga",
+    "BigGo Finance",
+    "Bitbo",
+    "Bitcoin Foundation",
+    "Bitcoin Magazine",
+    "Bitcoin News",
+    "Bitcoin Sistemi",
+    "Bitcoinist.com",
+    "Blockchain News",
+    "Blockonomi",
+    "Brandsynario",
+    "Brave New Coin",
+    "Briefs Finance",
+    "Business Standard",
+    "Businesskorea",
+    "CCN.com",
+    "CNBC",
+    "CNBC TV18",
+    "CaptainAltcoin",
+    "Chosunbiz",
+    "Coin Edition",
+    "Coin Gabbar",
+    "CoinCodex",
+    "CoinDesk",
+    "CoinGape",
+    "CoinMarketCap",
+    "Coinfomania",
+    "Coinpaper",
+    "Coinpedia",
+    "Cointribune",
+    "Crypto Briefing",
+    "Crypto Economy",
+    "Crypto News",
+    "CryptoDaily",
+    "CryptoPotato",
+    "CryptoRank",
+    "CryptoSlate",
+    "CryptoTicker.io",
+    "Cryptonews",
+    "Cryptonews.net",
+    "Cryptopolitan",
+    "Daily Beirut",
+    "Daily Forex",
+    "DailyCoin",
+    "Decrypt",
+    "Dimsum Daily",
+    "FOREX.com",
+    "FXEmpire",
+    "FXLeaders",
+    "FXStreet",
+    "FinanceFeeds",
+    "Finbold",
+    "Free Malaysia Today",
+    "Gadgets 360",
+    "GuruFocus",
+    "HESPRESS English - Morocco News",
+    "Hindustan Times",
+    "Hokanews",
+    "Investing.com",
+    "Investing.com Canada",
+    "Investing.com India",
+    "Investing.com Nigeria",
+    "Investor's Business Daily",
+    "Invezz",
+    "JournalArta",
+    "Kalkine Media",
+    "Kriptofoni",
+    "KuCoin",
+    "Livemint",
+    "MEXC",
+    "MarketForces Africa",
+    "MarketWatch",
+    "Moneycontrol.com",
+    "Moomoo",
+    "NAI500",
+    "NDTV Profit",
+    "NFTevening",
+    "Nacionale",
+    "NameCoinNews",
+    "NewsBTC",
+    "NewsBytes",
+    "PYMNTS.com",
+    "Pluang",
+    "Proactive Investors Australia",
+    "Programming Insider",
+    "Quartz",
+    "RTTNews",
+    "Retail News Asia",
+    "SSBCrack",
+    "Serrari Group",
+    "Startup Fortune",
+    "Stocktwits",
+    "StreetInsider",
+    "SunCrypto",
+    "TOKENPOST",
+    "TechBullion",
+    "TechJuice",
+    "The Block",
+    "The Business Times",
+    "The Crypto Times",
+    "The Cryptonomist",
+    "The Defiant",
+    "The Economic Times",
+    "The Edge Malaysia",
+    "The Globe and Mail",
+    "The Market Periodical",
+    "The Straits Times",
+    "The Sunday Guardian",
+    "TipRanks",
+    "Traders Union",
+    "Trading News",
+    "TradingKey",
+    "TradingNEWS",
+    "TradingPedia",
+    "TradingView",
+    "TronWeekly",
+    "U.Today",
+    "UA.NEWS",
+    "UkrMedia News",
+    "Univest",
+    "Vocal",
+    "XTB.com",
+    "Yahoo Finance",
+    "ad-hoc-news.de",
+    "blockchain.news",
+    "bloomingbit",
+    "finance.biggo.com",
+    "grafa.com",
+    "openPR.com",
+    "www.blockhead.co",
+    "www.proactiveinvestors.com.au",
+    "www.tmgm.com",
+    "www.tokenpost.com",
+    "www.trendingtopics.eu",
+    "Українські Національні Новини (УНН)",
+    "صوت الإمارات",
+    "富途牛牛",
+    "머니투데이"
+   ],
+   "assets": {
+    "BTC/USD": {
+     "direction": "down",
+     "confidence": 0.88,
+     "why": "Heavy liquidations and persistent ETF outflows drive severe downside momentum."
+    },
+    "ETH/USD": {
+     "direction": "down",
+     "confidence": 0.9,
+     "why": "Ethereum price breaks key psychological support below $2,000 amid selling pressure from the Ethereum Foundation."
+    },
+    "SOL/USD": {
+     "direction": "down",
+     "confidence": 0.85,
+     "why": "Solana crashes to multi-month lows amid broader crypto market sell-offs and rate hike fears."
+    },
+    "XRP/USD": {
+     "direction": "down",
+     "confidence": 0.85,
+     "why": "Massive capital flight and ETF outflows crush XRP price action."
+    },
+    "LINK/USD": {
+     "direction": "down",
+     "confidence": 0.6,
+     "why": "Persistent bearish bias and ETF outflows weigh on Chainlink despite holding support."
+    }
+   },
+   "sources": [
+    {
+     "id": "f2c64de89a6bbd3c",
+     "publisher": "bloomingbit",
+     "kind": "news",
+     "title": "BlackRock’s Bitcoin ETF IBIT Extends Net Outflow Streak to 9 Sessions, Exceeding $2 Billion",
+     "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE9XY1BHRGVIT2hraXRmcGx1TGI3a2oybEJwMk9LWHNKdUM1R29nNEU1eWJIeXhtTC1pSXg0QUJDd18xNkJTTG4ySkRJTXd3cjN2NkxlZg?oc=5",
+     "time": "2026-11-12T08:32:42Z"
+    },
+    {
+     "id": "cc25c44ff767f291",
+     "publisher": "Crypto News",
+     "kind": "news",
+     "title": "BlackRock leads $300 million Bitcoin ETF outflows as BTC struggles near $73K",
+     "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNY3U0TE5Gcy0teVNsLWVBeGh1cmd4Z1dSaldmVmt2b3VYaVhFSTM0T29OUnhKUXpTNEZwLW1sVkwtZnQyUUdSVDFTUHpSYjYxVlU0SFZnYW5Xd0V0TzB4NjM4VGpGa1pPYnk4eEgzR2wxV0d1SkFPSDBwSG0tdFFTQTI3cXJiSWE1UHU0NzVCUjJ2VXNFa2pIZnd0VQ?oc=5",
+     "time": "2026-11-12T08:36:14Z"
+    },
+    {
+     "id": "fb7c71d0fe55957d",
+     "publisher": "bloomingbit",
+     "kind": "news",
+     "title": "Coinbase Bitcoin Premium Stays Negative for 50 Straight Days as U.S. Buying Weakens",
+     "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTFBfQTlkOUY1NnAyTlpoRnp0Qmc2NDZnUjdSVlRBYndfa2hHVXlZdjNmX0ZhRTdZMjMtV2xMMEdTWWJvdXpCbl9BREZ0TDR6cl9NcFJXNg?oc=5",
+     "time": "2026-11-12T08:59:27Z"
+    },
+    {
+     "id": "62235bb905723bf1",
+     "publisher": "Coinfomania",
+     "kind": "news",
+     "title": "U.S. Spot Bitcoin ETFs Experience $300 Million Net Outflows",
+     "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxORGNYaW5tLUhtT2tmVi1ETy1fRFV4QnFDQndvYkpDRkRTZTF6NEJRN2V6emkyV1MzeTZfTVlyX1NsRGNzaXJsRWk5OXpDajRfVTE5OGc1anBpNWVfSkJKTUg2QnFoTlFSNlRscFJUVlBuek04RkxsN2ZydUJUSjZBdjdURUtnOGhnb3c?oc=5",
+     "time": "2026-11-12T08:55:35Z"
+    },
+    {
+     "id": "44d885771c26dd4e",
+     "publisher": "Cryptonews",
+     "kind": "news",
+     "title": "Bitcoin ETF Outflow Says Crypto Walking Into a Bull Trap",
+     "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE1aa1RfZzhBaFRtOEctWFJSZDUyRzZ6bDV5LTVmSVNubFlfLTNvNkdHVGdGS1pNbmpfb3liS2V5djRKcHV6bWZLb1BQYVVYcTRBVE0wYXNyV3hSNkdhSm01YnFqZGUzelVCamxJeEFTZG83ZzA?oc=5",
+     "time": "2026-11-12T08:48:31Z"
+    }
+   ]
+  },
+  {
+   "summary": "NVIDIA receives analyst downgrades following the resignation of CEO Jensen Huang.",
+   "category": "company_bad_news",
+   "firstSeen": "2026-11-12T18:24:33Z",
+   "publishers": [
+    "AFR",
+    "AP",
+    "Anadolu Ajansı",
+    "Barchart.com",
+    "Benzinga",
+    "BigGo Finance",
+    "Bloomberg.com",
+    "Breitbart News",
+    "CNBC",
+    "Capital Brief",
+    "Chosunbiz",
+    "Coin Gabbar",
+    "CoinDesk",
+    "Coinpaper",
+    "Crypto Economy",
+    "Cryptonews.net",
+    "Deccan Herald",
+    "Decrypt",
+    "Dimsum Daily",
+    "Eurasia Business News",
+    "FXStreet",
+    "FinanceFeeds",
+    "Finimize",
+    "Finviz",
+    "Fortune",
+    "Geo News",
+    "Hokanews",
+    "Investing.com",
+    "Investing.com Canada",
+    "Investing.com South Africa",
+    "Investopedia",
+    "Investor's Business Daily",
+    "Invezz",
+    "JournalArta",
+    "KELO-AM",
+    "Kitco",
+    "Market Index",
+    "Moomoo",
+    "NDTV Profit",
+    "NST Online",
+    "Plataforma Media",
+    "Pluang",
+    "Proactive financial news",
+    "Profit by Pakistan Today",
+    "Quartz",
+    "RTHK",
+    "RTHK News",
+    "RealMoney Pro",
+    "Reuters",
+    "SSBCrack",
+    "Shacknews",
+    "Stocktwits",
+    "StreetInsider",
+    "The Boston Globe",
+    "The Economic Times",
+    "The Economist",
+    "The Edge Malaysia",
+    "The Guardian",
+    "The Hawk",
+    "The Lufkin Daily News",
+    "The New York Times",
+    "The Tech Buzz",
+    "The Times of India",
+    "TipRanks",
+    "Traders Union",
+    "TradingKey",
+    "TradingView",
+    "US News Money",
+    "VINnews",
+    "WSJ",
+    "Wccftech",
+    "X",
+    "Yahoo Finance",
+    "Zacks Investment Research",
+    "astig.ph",
+    "bdnews24.com",
+    "bloomingbit",
+    "finance.biggo.com",
+    "fiscal.ai",
+    "kaohoon international",
+    "marketscreener.com",
+    "news.sbs.co.kr",
+    "shattered.io",
+    "www.tokenpost.com",
+    "深潮TechFlow",
+    "아시아경제",
+    "조선일보"
+   ],
+   "assets": {
+    "NVDA": {
+     "direction": "down",
+     "confidence": 0.85,
+     "why": "Analyst downgrades following CEO resignation present major negative catalyst."
+    },
+    "BTC/USD": {
+     "direction": "down",
+     "confidence": 0.7,
+     "why": "Broader risk-off sentiment triggered by major tech leadership turmoil."
+    },
+    "QCOM": {
+     "direction": "up",
+     "confidence": 0.65,
+     "why": "Capital is rotating out of Nvidia into competing AI semiconductor stocks following the CEO exit."
+    },
+    "AMD": {
+     "direction": "up",
+     "confidence": 0.75,
+     "why": "Lifted by sector-wide enthusiasm from Nvidia's strong earnings beat."
+    },
+    "AVGO": {
+     "direction": "up",
+     "confidence": 0.75,
+     "why": "Lifted by broader AI infrastructure and semiconductor strength."
+    },
+    "MSFT": {
+     "direction": "down",
+     "confidence": 0.65,
+     "why": "Broader tech and AI infrastructure sentiment hits related large-cap names."
+    },
+    "AAPL": {
+     "direction": "down",
+     "confidence": 0.3,
+     "why": "Broad market selloff induced by tech bellwether crash."
+    },
+    "SMCI": {
+     "direction": "up",
+     "confidence": 0.75,
+     "why": "Riding positive sentiment from Nvidia earnings beat."
+    },
+    "MU": {
+     "direction": "down",
+     "confidence": 0.65,
+     "why": "Semiconductor peer dragged down by Nvidia leadership turmoil."
+    },
+    "PLTR": {
+     "direction": "down",
+     "confidence": 0.6,
+     "why": "Broader tech sector and AI stock sell-off spurred by Nvidia turmoil."
+    },
+    "INTC": {
+     "direction": "down",
+     "confidence": 0.8,
+     "why": "Nvidia significantly trimming its stake in Intel creates heavy selling pressure."
+    },
+    "TSLA": {
+     "direction": "down",
+     "confidence": 0.6,
+     "why": "Broader tech sector weakness and uncertainty surrounding Nvidia weigh on high-multiple tech growth stocks."
+    },
+    "AMAT": {
+     "direction": "up",
+     "confidence": 0.7,
+     "why": "Nvidia's beat lifts broader semiconductor equipment suppliers."
+    }
+   },
+   "sources": [
+    {
+     "id": "855265040ed1e43c",
+     "publisher": "Reuters",
+     "kind": "news",
+     "title": "Nvidia CEO Jensen Huang resigns, in blow to AI boom he helped foster",
+     "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOMEFwN0FWdjB6blNtR0RZaTBWZXZDaWVwYkhXREttY2FaYVNNVC1qNEFHYm9Yd1pDODBDN2tvNzhnMTY4cmxWYTg1WVFidzFlNVFEdlZNb3IyZG1nS2FKcHAzUERhQW9EdG9oOER6YmwydXZOd0t1VHRub1BCdFdoR1V4dktlUVUydjZWeU53aVdKMGwtOGFtZmd2T3VhODF3eXhPazVtbV81b0hpUi1vcw?oc=5",
+     "time": "2026-11-12T18:31:55Z"
+    },
+    {
+     "id": "6c526a44313f07e5",
+     "publisher": "Yahoo Finance",
+     "kind": "news",
+     "title": "Equities Rise Intraday Despite Nvidia Sell-Off Post CEO's Departure",
+     "url": "https://finance.yahoo.com/markets/stocks/articles/equities-rise-intraday-despite-nvidia-182433809.html?.tsrc=rss",
+     "time": "2026-11-12T18:24:33Z"
+    },
+    {
+     "id": "adfadefb8db21a4c",
+     "publisher": "AP",
+     "kind": "news",
+     "title": "What we know after Jensen Huang resigns as Nvidia’s CEO",
+     "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOMUxqUTE0WWZBT2xoV25SLUQ2dFgyWkhwZFZyRnk3d1Fibmtrb0d4T3otSXNpNmZiTVh0QUdkWTA4UmQ3cXQyVVM3ODc0V0g4YnVVbDJRYWF4VXlaXzMzZnJWNi1UR3YyZHJGbWNzaVFab2tiM3N2RjFIOUtWcnlJVWtMVnhQNmhJeTdPajNVUXZfU2NzWkw0aGJLVFMtaGY3?oc=5",
+     "time": "2026-11-12T18:38:00Z"
+    },
+    {
+     "id": "e45111d2af3013e1",
+     "publisher": "The Economic Times",
+     "kind": "news",
+     "title": "Bitcoin price today: BTC USD falls near $71,000 after Jensen Huang resigns as Nvidia CEO and ETF outflows",
+     "url": "https://news.google.com/rss/articles/CBMisgJBVV95cUxNNGkxSEhVaVRhRGl4UkxMZUoyeV9Bc25CTmNkY1Q3Z2JEbTB5S3JWbUt4clE4eEltNTFSbFZSOFJrM290QTFESGJiMHROMGRSNVhzV0tkRHRqU2hLTk5GYng1Mm9FaDVlTFNyNHdqWXNwNDhNazZJNmlqOXIxVjFvZ0hwSHRTSUcwSXRqWWU5Mi1BTVg3Zm12bml2STNnSFExQWlTaUlRdDNlVnNUZlh5dFJDN2pfQmhha2M1SVBYUm1fVDhiaThNTnBsRU0ySTJSR1o1QkMyVHJseHA4VHlkd2pYODRaZzFpUUQza2ZlT1JpU0ZodWVkR0pCb3ZZTnI3TTNGQTBxcnJ0VnVJZzV3NHltc3l0X19JbG03WjdwRXFEWEwxZE9uMmJMTTVQbFZVRmfSAbcCQVVfeXFMTXR1bEttcm9WdW1FU0VCR1dKbWkwVkpwVmpjOE9YY1ZDUTZOcE5HaWktRnU2UW55c2ZLWEpiRmFwQ3ZTd2otS0RqX2FSWFZwejRGbFZOcGFpa2oxdF8xYmxVWVp6UUl1QkRnYi1ZVVhNS0d4UDlxSGpwZjJFeG5KbDhZdUplRWh5QU9Lc2U1NWhMMm9EQVZISVVIdUxuWnQxaDRWNllMb1lFS2VJUXRxYTJKSVV1bjg1V2ROTnRLdTVIb3dvcllFbTgtTF9nZFhaVGVrSHpzM3lQOTM5bHp2LXBLZ0VldGppMm95dWZBeGlLNUFXdnE0VkdqbWUzNS1adjhCRVlIMGdEbHJ2djFZSm5GWHhJcmZEOTRLbTU0MGNEdm1MaGkxdlA1WEEyMFlyRm8wbEdmWnM?oc=5",
+     "time": "2026-11-12T18:34:50Z"
+    },
+    {
+     "id": "89cceff7950b3622",
+     "publisher": "Benzinga",
+     "kind": "news",
+     "title": "Jensen Huang Is Out At Nvidia: 4 Private Equity Giants with Big Bets on Its AI Infrastructure Future",
+     "url": "https://www.benzinga.com/markets/private-markets/26/11/63212619/jensen-huang-is-out-at-nvidia-4-private-equity-giants-with-big-bets-on-its-ai-infrastructure-future",
+     "time": "2026-11-12T18:45:12Z"
+    }
+   ]
+  },
+  {
+   "summary": "Nvidia faces new challenges as it halts AI chip shipments to China amidst changing export rules and commentary.",
+   "category": "tariffs",
+   "firstSeen": "2026-11-16T14:46:33Z",
+   "publishers": [
+    "24NewsHD",
+    "Bangkok Post",
+    "Benzinga",
+    "CNBC",
+    "Firstpost",
+    "Gulf Business",
+    "KTVN",
+    "Reuters",
+    "The Batesville Daily Guard",
+    "The Economic Times",
+    "The Killeen Daily Herald",
+    "Yahoo Finance",
+    "Yahoo News Singapore"
+   ],
+   "assets": {
+    "AMD": {
+     "direction": "down",
+     "confidence": 0.85,
+     "why": "New U.S. rules requiring licenses for AI chips in multiple countries negatively impact semiconductor growth."
+    },
+    "AVGO": {
+     "direction": "up",
+     "confidence": 0.6,
+     "why": "Domestic optical gear and alternative providers surge as U.S. restricts Chinese competitors."
+    },
+    "NVDA": {
+     "direction": "down",
+     "confidence": 0.85,
+     "why": "Halting shipments of US-approved AI chips to China creates a direct negative impact on revenue and regulatory compliance."
+    },
+    "INTC": {
+     "direction": "down",
+     "confidence": 0.7,
+     "why": "Tech and chip stocks pressured by new U.S. Bureau of Industry and Security rules."
+    },
+    "GOOGL": {
+     "direction": "down",
+     "confidence": 0.75,
+     "why": "Broader tech impact from stringent chip restrictions."
+    },
+    "AMZN": {
+     "direction": "down",
+     "confidence": 0.5,
+     "why": "Increased trade restrictions and regulatory pressure on tech giants negatively impact sentiment."
+    },
+    "META": {
+     "direction": "down",
+     "confidence": 0.5,
+     "why": "Increased trade restrictions and regulatory pressure on tech giants negatively impact sentiment."
+    }
+   },
+   "sources": [
+    {
+     "id": "3a19c43d9348d3f4",
+     "publisher": "Benzinga",
+     "kind": "news",
+     "title": "'US moves to tighten AI chip export rules' - Financial Times",
+     "url": "https://www.benzinga.com/news/26/11/63292997/us-moves-tighten-ai-chip-export-rules-financial-times",
+     "time": "2026-11-16T14:46:33Z"
+    },
+    {
+     "id": "813f81bbd1d42712",
+     "publisher": "Yahoo Finance",
+     "kind": "news",
+     "title": "Chip stocks fall on US semiconductor restrictions: AlphaCheck",
+     "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPX0NYQzlGd3NpY1NLcXNmMm84U1pmQ1dKelhJSkRNY09iTHJVbnZfTGprZFNQWXBteHNCbnhmYVJXaDJIUEd6RkxXVlNEYzlVMzBMWnRQc0NZblllQlY3REtxN0hoQ1h2QTBzS3Q1QTh2OWdXbHBubm1IcGhBSndxNkVXa3JIMVpXUG5XV2RHcndCa2UtR1Z6NDkxTDZERXlMNmxFVUJHV2tRTXdpb1FEVkh4RlZZaTBoaWQw?oc=5",
+     "time": "2026-11-16T15:00:19Z"
+    },
+    {
+     "id": "68a869398c13256e",
+     "publisher": "Benzinga",
+     "kind": "news",
+     "title": "Rocket Lab, Firefly, AST SpaceMobile Stocks Drop: What’s Going On With Space Stocks Monday?",
+     "url": "https://www.benzinga.com/trading-ideas/movers/26/11/63295932/rocket-lab-firefly-ast-spacemobile-stocks-drop-whats-going-on-with-space-stocks-monday",
+     "time": "2026-11-16T15:13:57Z"
+    },
+    {
+     "id": "8223b993a457a316",
+     "publisher": "CNBC",
+     "kind": "news",
+     "title": "Nvidia fallout: Commerce targets loophole for China's data center use",
+     "url": "https://www.cnbc.com/2026/11/16/nvidia-commerce-china-lutnick.html",
+     "time": "2026-11-16T15:27:31Z"
+    },
+    {
+     "id": "1bb4f31019eb9bd1",
+     "publisher": "Benzinga",
+     "kind": "news",
+     "title": "Reported Earlier, U.S. Department Of Commerce's Bureau of Industry and Security Interim Final Rule To Address Remote Access To Advanced Super Intelligence Chips And Servers",
+     "url": "https://www.benzinga.com/news/26/11/63297268/reported-earlier-u-s-department-commerce-s-bureau-industry-and-security-interim-final-rule-address-r",
+     "time": "2026-11-16T15:26:35Z"
+    }
+   ]
+  },
+  {
+   "summary": "Palo Alto Networks reported an earnings beat lifting the stock above resistance.",
+   "category": "earnings_beat",
+   "firstSeen": "2026-11-16T15:54:14Z",
+   "publishers": [
+    "24/7 Wall St.",
+    "Anadolu Ajansı",
+    "Asianet Newsable",
+    "AskTraders.com",
+    "Barron's",
+    "Benzinga",
+    "Blockonomi",
+    "Briefs Finance",
+    "BusinessToday Malaysia",
+    "CNBC",
+    "CTech",
+    "Chosunbiz",
+    "CoinDesk",
+    "Coinpaper",
+    "FXLeaders",
+    "Fox Business",
+    "GuruFocus",
+    "Investing.com",
+    "Investing.com Australia",
+    "Investing.com Canada",
+    "Investing.com India",
+    "Investing.com Nigeria",
+    "Investing.com South Africa",
+    "Investor's Business Daily",
+    "Invezz",
+    "JournalArta",
+    "KuCoin",
+    "MarketBeat",
+    "Moneycontrol.com",
+    "Moomoo",
+    "Nacionale",
+    "NeoTeo",
+    "Proactive financial news",
+    "Quartz",
+    "Reuters",
+    "Seeking Alpha",
+    "StockStory",
+    "Stocktwits",
+    "StreetInsider",
+    "The Coin Republic",
+    "The Globe and Mail",
+    "TheStreet",
+    "TipRanks",
+    "TradingKey",
+    "TradingPedia",
+    "WSJ",
+    "Yahoo Finance",
+    "blockchain.news",
+    "bloomingbit",
+    "finance.biggo.com",
+    "fiscal.ai",
+    "https://streamlinefeed.co.ke/",
+    "kaohoon international",
+    "livetube.tv",
+    "scanx.trade",
+    "shattered.io",
+    "thebull.com.au",
+    "深潮TechFlow"
+   ],
+   "assets": {
+    "NVDA": {
+     "direction": "up",
+     "confidence": 0.95,
+     "why": "Massive earnings beat and blowout revenue guidance."
+    },
+    "HD": {
+     "direction": "down",
+     "confidence": 0.75,
+     "why": "Lowered profit outlook and guidance concerns push shares down despite revenue beat."
+    },
+    "MSFT": {
+     "direction": "up",
+     "confidence": 0.65,
+     "why": "Spillover positive sentiment in big tech following Nvidia's strong beat."
+    },
+    "AVGO": {
+     "direction": "up",
+     "confidence": 0.85,
+     "why": "AI revenue guidance beats analyst estimates."
+    },
+    "AMD": {
+     "direction": "up",
+     "confidence": 0.7,
+     "why": "Lifted by sector-wide positive AI sentiment from Nvidia's print."
+    },
+    "LOW": {
+     "direction": "up",
+     "confidence": 0.85,
+     "why": "Earnings and revenue beat coupled with a raised annual sales forecast."
+    },
+    "TJX": {
+     "direction": "up",
+     "confidence": 0.85,
+     "why": "Reported a solid Q3 earnings beat causing a significant surge."
+    },
+    "PANW": {
+     "direction": "up",
+     "confidence": 0.9,
+     "why": "Strong earnings beat and raised guidance drive bullish momentum."
+    },
+    "CRWD": {
+     "direction": "up",
+     "confidence": 0.7,
+     "why": "Sector-wide enthusiasm from Palo Alto's cybersecurity earnings beat."
+    }
+   },
+   "sources": [
+    {
+     "id": "25325cb7a3a08a9b",
+     "publisher": "Yahoo Finance",
+     "kind": "news",
+     "title": "Nvidia Likely to Post Beat-and-Raise for Fiscal Q3, Maintain 2028 Sales Growth Outlook, BofA Says",
+     "url": "https://finance.yahoo.com/markets/stocks/articles/nvidia-likely-post-beat-raise-155414370.html?.tsrc=rss",
+     "time": "2026-11-16T15:54:14Z"
+    },
+    {
+     "id": "f95d80eb984554f7",
+     "publisher": "TheStreet",
+     "kind": "news",
+     "title": "Bank of America doubles down on Nvidia ahead of earnings",
+     "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPX0NOYlF3UHhqYmx3akJMamhMSnNhR1BsbU9lTnFvN21yV01RcFZ4UGpmUGpyTTlzaFBKSjctalNiY0VyUncxbHRpMzRTd2RuOXlKZTl5SWhOMFk2MEkwdHNtMzhiUGVXYVhDTmkybnl6RjYybmRzTF96Y3ZWem5ueFFtYlB5a2JWSzhqQ2drVnBHVXhDQVJqbnlaOVZyblNDZ0FtZEdBajE3Rmc?oc=5",
+     "time": "2026-11-17T10:03:00Z"
+    },
+    {
+     "id": "926741753fcceafa",
+     "publisher": "CNBC",
+     "kind": "news",
+     "title": "Home Depot names Richard McPhail as new CEO, beats earnings expectations",
+     "url": "https://www.cnbc.com/2026/11/17/home-depot-hd-q3-earnings-2026.html",
+     "time": "2026-11-17T11:08:26Z"
+    },
+    {
+     "id": "24583348650201f5",
+     "publisher": "StreetInsider",
+     "kind": "news",
+     "title": "Home Depot (HD) Tops Q3 EPS by 2c, Beats on Revenue; Offers Guidance",
+     "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxNb1h1endpcFp6OENDcEd6ZWhxRGZxWTBqbnBlbndkQmZrcVVwcHpPVFFHMlVDanotNENOYU43WkdiVlVKQ1ZZcmIwV1pKUG5oLVlfdFllLWlnaExPTDlmYXphMF9RdFJNNmVmNTV5TDdYUDI5ZmNpZlZ5Q3ZJeWhCU2YtWnpINHVtdmxmaTlTcFhoeHpfaWx1TlYxZngwNHlsa19iSU9ZUzd6YllvLUhISFdqUWh6eEw0bjBtd2NEX3AxSXB6MGFacw?oc=5",
+     "time": "2026-11-17T11:04:31Z"
+    },
+    {
+     "id": "f194c273df388df0",
+     "publisher": "Yahoo Finance",
+     "kind": "news",
+     "title": "The Home Depot Announces Third Quarter Fiscal 2026 Results; Updates Fiscal 2026 Guidance",
+     "url": "https://finance.yahoo.com/news/home-depot-announces-third-quarter-110000708.html?.tsrc=rss",
+     "time": "2026-11-17T11:00:00Z"
+    }
+   ]
+  },
+  {
+   "summary": "Hawkish Fed minutes and concerns over persistent inflation keep pressure on global markets and commodities.",
    "category": "central_bank_hawkish",
    "firstSeen": "2026-11-10T09:39:09Z",
    "publishers": [
@@ -8184,8 +7454,10 @@
     "Business Insider",
     "Business Recorder",
     "Business Standard",
+    "Business Today",
     "BusinessLine",
     "BusinessToday Malaysia",
+    "Businessamlive",
     "Businesskorea",
     "CFO Dive",
     "CNA",
@@ -8194,6 +7466,7 @@
     "Central Oregon Daily",
     "Chosunbiz",
     "Coin Gabbar",
+    "CoinCodex",
     "CoinDesk",
     "CoinGape",
     "CoinMarketCap",
@@ -8214,6 +7487,7 @@
     "Daily Voice Of Asia",
     "Dalal Street Investment Journal",
     "Decrypt",
+    "Demokratis.co.id",
     "Demócrata",
     "Economies.com",
     "Euronext Markets: Real-time Stock Market Data | live",
@@ -8226,6 +7500,7 @@
     "Finance & Commerce",
     "FinanceFeeds",
     "Finimize",
+    "Firstpost",
     "Forbes",
     "Forbes Middle East",
     "Foreign Policy Journal",
@@ -8241,6 +7516,7 @@
     "Hokanews",
     "Honolulu Star-Advertiser",
     "IDNFinancials",
+    "Incrypted",
     "IndexBox",
     "India's News.Net",
     "IndiaIPO",
@@ -8327,7 +7603,9 @@
     "Pluang",
     "Press of Atlantic City",
     "Profit by Pakistan Today",
+    "Public TV English",
     "Quartz",
+    "RTE.ie",
     "RTHK News",
     "RTL Today",
     "RealEstateNews.com",
@@ -8343,6 +7621,7 @@
     "Scotsman Guide",
     "Scripps News",
     "Seeking Alpha",
+    "Serrari Group",
     "Sharecafe",
     "South Florida Reporter",
     "Startup Fortune",
@@ -8372,6 +7651,7 @@
     "The National",
     "The Real Economy Blog",
     "The San Joaquin Valley Sun",
+    "The Seattle Times",
     "The Shillong Times",
     "The Standard (HK)",
     "The Star",
@@ -8384,9 +7664,11 @@
     "TheStreet",
     "Times Now",
     "TipRanks",
+    "TorFX News",
     "Traders Union",
     "TradingKey",
     "TradingNEWS",
+    "TradingPedia",
     "TradingView",
     "U.Today",
     "UA.NEWS",
@@ -8418,6 +7700,7 @@
     "blue News",
     "bsinews.id",
     "cbs19.tv",
+    "eNCA",
     "finance.biggo.com",
     "fiscal.ai",
     "https://streamlinefeed.co.ke/",
@@ -8450,7 +7733,7 @@
     "BTC/USD": {
      "direction": "down",
      "confidence": 0.85,
-     "why": "Rising rate hike odds create a macro headwind for crypto."
+     "why": "Hawkish Fed policy signals and ETF outflows weigh heavily on Bitcoin."
     },
     "ETH/USD": {
      "direction": "down",
@@ -8530,7 +7813,7 @@
     "INTC": {
      "direction": "down",
      "confidence": 0.65,
-     "why": "Hawkish Fed minutes pressure broader tech and semiconductor valuations."
+     "why": "Higher interest rate expectations put pressure on tech/growth stocks."
     }
    },
    "sources": [
@@ -8577,348 +7860,7 @@
    ]
   },
   {
-   "summary": "Bitcoin remains under pressure as spot ETFs experience heavy outflows and fear sentiment rises amid hawkish macro signals.",
-   "category": "crypto_negative",
-   "firstSeen": "2026-11-12T08:32:42Z",
-   "publishers": [
-    "24/7 Wall St.",
-    "99Bitcoins",
-    "AMBCrypto",
-    "AOL.com",
-    "Action Forex",
-    "Aktualita.co",
-    "Altcoin Buzz",
-    "Anadolu Ajansı",
-    "Analytics Insight",
-    "Asianet Newsable",
-    "BeInCrypto",
-    "Benzinga",
-    "BigGo Finance",
-    "Bitbo",
-    "Bitcoin Foundation",
-    "Bitcoin Magazine",
-    "Bitcoin News",
-    "Bitcoin Sistemi",
-    "Bitcoinist.com",
-    "Blockchain News",
-    "Blockonomi",
-    "Brandsynario",
-    "Brave New Coin",
-    "Briefs Finance",
-    "Business Standard",
-    "Businesskorea",
-    "CCN.com",
-    "CNBC",
-    "CNBC TV18",
-    "CaptainAltcoin",
-    "Chosunbiz",
-    "Coin Edition",
-    "Coin Gabbar",
-    "CoinCodex",
-    "CoinDesk",
-    "CoinGape",
-    "CoinMarketCap",
-    "Coinfomania",
-    "Coinpaper",
-    "Coinpedia",
-    "Cointribune",
-    "Crypto Briefing",
-    "Crypto Economy",
-    "Crypto News",
-    "CryptoDaily",
-    "CryptoPotato",
-    "CryptoRank",
-    "CryptoSlate",
-    "CryptoTicker.io",
-    "Cryptonews",
-    "Cryptonews.net",
-    "Cryptopolitan",
-    "Daily Beirut",
-    "Daily Forex",
-    "DailyCoin",
-    "Decrypt",
-    "Dimsum Daily",
-    "FOREX.com",
-    "FXEmpire",
-    "FXLeaders",
-    "FXStreet",
-    "FinanceFeeds",
-    "Finbold",
-    "Free Malaysia Today",
-    "Gadgets 360",
-    "GuruFocus",
-    "HESPRESS English - Morocco News",
-    "Hindustan Times",
-    "Hokanews",
-    "Investing.com",
-    "Investing.com Canada",
-    "Investing.com Nigeria",
-    "Investor's Business Daily",
-    "Invezz",
-    "JournalArta",
-    "Kalkine Media",
-    "Kriptofoni",
-    "KuCoin",
-    "Livemint",
-    "MEXC",
-    "MarketForces Africa",
-    "MarketWatch",
-    "Moneycontrol.com",
-    "Moomoo",
-    "NAI500",
-    "NDTV Profit",
-    "NFTevening",
-    "Nacionale",
-    "NameCoinNews",
-    "NewsBTC",
-    "NewsBytes",
-    "PYMNTS.com",
-    "Pluang",
-    "Proactive Investors Australia",
-    "Programming Insider",
-    "Quartz",
-    "RTTNews",
-    "Retail News Asia",
-    "SSBCrack",
-    "Serrari Group",
-    "Startup Fortune",
-    "Stocktwits",
-    "StreetInsider",
-    "SunCrypto",
-    "TOKENPOST",
-    "TechBullion",
-    "TechJuice",
-    "The Block",
-    "The Business Times",
-    "The Crypto Times",
-    "The Cryptonomist",
-    "The Defiant",
-    "The Economic Times",
-    "The Edge Malaysia",
-    "The Globe and Mail",
-    "The Market Periodical",
-    "The Straits Times",
-    "The Sunday Guardian",
-    "TipRanks",
-    "Traders Union",
-    "Trading News",
-    "TradingKey",
-    "TradingNEWS",
-    "TradingView",
-    "TronWeekly",
-    "U.Today",
-    "UA.NEWS",
-    "UkrMedia News",
-    "Univest",
-    "Vocal",
-    "XTB.com",
-    "Yahoo Finance",
-    "ad-hoc-news.de",
-    "bloomingbit",
-    "finance.biggo.com",
-    "grafa.com",
-    "openPR.com",
-    "www.blockhead.co",
-    "www.proactiveinvestors.com.au",
-    "www.tmgm.com",
-    "www.tokenpost.com",
-    "www.trendingtopics.eu",
-    "Українські Національні Новини (УНН)",
-    "صوت الإمارات",
-    "富途牛牛",
-    "머니투데이"
-   ],
-   "assets": {
-    "BTC/USD": {
-     "direction": "down",
-     "confidence": 0.88,
-     "why": "Heavy liquidations and persistent ETF outflows drive severe downside momentum."
-    },
-    "ETH/USD": {
-     "direction": "down",
-     "confidence": 0.9,
-     "why": "Ethereum price breaks key psychological support below $2,000 amid selling pressure from the Ethereum Foundation."
-    },
-    "SOL/USD": {
-     "direction": "down",
-     "confidence": 0.85,
-     "why": "Solana crashes to multi-month lows amid broader crypto market sell-offs and rate hike fears."
-    },
-    "XRP/USD": {
-     "direction": "down",
-     "confidence": 0.85,
-     "why": "Massive capital flight and ETF outflows crush XRP price action."
-    },
-    "LINK/USD": {
-     "direction": "down",
-     "confidence": 0.6,
-     "why": "Persistent bearish bias and ETF outflows weigh on Chainlink despite holding support."
-    }
-   },
-   "sources": [
-    {
-     "id": "f2c64de89a6bbd3c",
-     "publisher": "bloomingbit",
-     "kind": "news",
-     "title": "BlackRock’s Bitcoin ETF IBIT Extends Net Outflow Streak to 9 Sessions, Exceeding $2 Billion",
-     "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE9XY1BHRGVIT2hraXRmcGx1TGI3a2oybEJwMk9LWHNKdUM1R29nNEU1eWJIeXhtTC1pSXg0QUJDd18xNkJTTG4ySkRJTXd3cjN2NkxlZg?oc=5",
-     "time": "2026-11-12T08:32:42Z"
-    },
-    {
-     "id": "cc25c44ff767f291",
-     "publisher": "Crypto News",
-     "kind": "news",
-     "title": "BlackRock leads $300 million Bitcoin ETF outflows as BTC struggles near $73K",
-     "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNY3U0TE5Gcy0teVNsLWVBeGh1cmd4Z1dSaldmVmt2b3VYaVhFSTM0T29OUnhKUXpTNEZwLW1sVkwtZnQyUUdSVDFTUHpSYjYxVlU0SFZnYW5Xd0V0TzB4NjM4VGpGa1pPYnk4eEgzR2wxV0d1SkFPSDBwSG0tdFFTQTI3cXJiSWE1UHU0NzVCUjJ2VXNFa2pIZnd0VQ?oc=5",
-     "time": "2026-11-12T08:36:14Z"
-    },
-    {
-     "id": "fb7c71d0fe55957d",
-     "publisher": "bloomingbit",
-     "kind": "news",
-     "title": "Coinbase Bitcoin Premium Stays Negative for 50 Straight Days as U.S. Buying Weakens",
-     "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTFBfQTlkOUY1NnAyTlpoRnp0Qmc2NDZnUjdSVlRBYndfa2hHVXlZdjNmX0ZhRTdZMjMtV2xMMEdTWWJvdXpCbl9BREZ0TDR6cl9NcFJXNg?oc=5",
-     "time": "2026-11-12T08:59:27Z"
-    },
-    {
-     "id": "62235bb905723bf1",
-     "publisher": "Coinfomania",
-     "kind": "news",
-     "title": "U.S. Spot Bitcoin ETFs Experience $300 Million Net Outflows",
-     "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxORGNYaW5tLUhtT2tmVi1ETy1fRFV4QnFDQndvYkpDRkRTZTF6NEJRN2V6emkyV1MzeTZfTVlyX1NsRGNzaXJsRWk5OXpDajRfVTE5OGc1anBpNWVfSkJKTUg2QnFoTlFSNlRscFJUVlBuek04RkxsN2ZydUJUSjZBdjdURUtnOGhnb3c?oc=5",
-     "time": "2026-11-12T08:55:35Z"
-    },
-    {
-     "id": "44d885771c26dd4e",
-     "publisher": "Cryptonews",
-     "kind": "news",
-     "title": "Bitcoin ETF Outflow Says Crypto Walking Into a Bull Trap",
-     "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE1aa1RfZzhBaFRtOEctWFJSZDUyRzZ6bDV5LTVmSVNubFlfLTNvNkdHVGdGS1pNbmpfb3liS2V5djRKcHV6bWZLb1BQYVVYcTRBVE0wYXNyV3hSNkdhSm01YnFqZGUzelVCamxJeEFTZG83ZzA?oc=5",
-     "time": "2026-11-12T08:48:31Z"
-    }
-   ]
-  },
-  {
-   "summary": "AMD stock rises overnight following positive boosts from OpenAI and Rockstar Games leveraging its technology.",
-   "category": "contract",
-   "firstSeen": "2026-11-16T14:36:40Z",
-   "publishers": [
-    "CNBC",
-    "Hardware Retailing",
-    "Investing.com",
-    "Reuters",
-    "TradingView",
-    "Yahoo Finance",
-    "fiscal.ai",
-    "www.marketscreener.com"
-   ],
-   "assets": {
-    "TSLA": {
-     "direction": "up",
-     "confidence": 0.75,
-     "why": "Major factory expansion and new product capacity announcement."
-    },
-    "CVX": {
-     "direction": "up",
-     "confidence": 0.75,
-     "why": "Major acquisition to expand oil and gas production portfolio."
-    },
-    "LLY": {
-     "direction": "up",
-     "confidence": 0.8,
-     "why": "Acquiring Calytrix Bio for $1.5bn expands Eli Lilly's pipeline and market positioning."
-    },
-    "AAPL": {
-     "direction": "up",
-     "confidence": 0.6,
-     "why": "Securing long-term supply agreements for critical components is a positive operational development."
-    },
-    "NVDA": {
-     "direction": "up",
-     "confidence": 0.5,
-     "why": "New industrial AI partnership expands GPU deployment."
-    },
-    "NOW": {
-     "direction": "up",
-     "confidence": 0.75,
-     "why": "Raised guidance and strong AI product adoption."
-    },
-    "NKE": {
-     "direction": "up",
-     "confidence": 0.85,
-     "why": "Nike announced a major strategic turnaround plan targeting a significant $5 billion revenue boost by 2031, sending shares higher."
-    },
-    "AMD": {
-     "direction": "up",
-     "confidence": 0.75,
-     "why": "Positive endorsement from OpenAI and Rockstar Games for GPU efficiency and scaling."
-    },
-    "FANG": {
-     "direction": "up",
-     "confidence": 0.75,
-     "why": "Acquisition of remaining stake in Double Eagle allows Diamondback Energy to capture full revenue from planned drilling operations."
-    },
-    "LOW": {
-     "direction": "up",
-     "confidence": 0.85,
-     "why": "Guidance raise and strong online sales provide a positive catalyst for Lowe's."
-    },
-    "HD": {
-     "direction": "up",
-     "confidence": 0.65,
-     "why": "Positive sector momentum from Lowe's guidance raise."
-    },
-    "INTC": {
-     "direction": "up",
-     "confidence": 0.8,
-     "why": "Signing its first external customer for advanced 18A chips is a significant positive contract/foundry milestone."
-    }
-   },
-   "sources": [
-    {
-     "id": "6e8622025ba61a6d",
-     "publisher": "Reuters",
-     "kind": "news",
-     "title": "Tesla announces $3.3 billion expansion of Germany plant",
-     "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNaHd0RC1iZmQwWUtkTl9CYjJVMUhGYmtxNEZyQU92Rm5mZS1OZ0Z2bHl6TmJuLUFJYWpQUW5GQ1h2anVqSHR5TDF3aThnaWhDd3lDYl9oY3VqbTVLaUMwMGtSME5IckZnZE5PQVhURTNPQ1BaS2tBejl6OU15X1B1N3VOM0o3dktRbnpLSjc1eWI5WWs4bjZqNnFOOA?oc=5",
-     "time": "2026-11-16T14:36:40Z"
-    },
-    {
-     "id": "2acd79a8e57ffcb3",
-     "publisher": "Yahoo Finance",
-     "kind": "news",
-     "title": "Tesla to invest 3 bn euros to expand German factory",
-     "url": "https://finance.yahoo.com/technology/articles/tesla-invest-3-bn-euros-144451294.html?.tsrc=rss",
-     "time": "2026-11-16T14:44:51Z"
-    },
-    {
-     "id": "c80edc1bc344d0f3",
-     "publisher": "Yahoo Finance",
-     "kind": "news",
-     "title": "Tesla Targets 2029 Cybercab Production Start In Giga Berlin With $3.3B Investment: Report",
-     "url": "https://stocktwits.com/news-articles/markets/equity/tesla-targets-2029-cybercab-production-start-in-giga-berlin-with-3-3-b-investment-report/cNb7MV2R9gJ?.tsrc=rss",
-     "time": "2026-11-16T16:46:09Z"
-    },
-    {
-     "id": "5a3964d15125684f",
-     "publisher": "Yahoo Finance",
-     "kind": "news",
-     "title": "Tesla Wants to Build 1 Million Cybercabs Near Berlin",
-     "url": "https://finance.yahoo.com/markets/stocks/articles/tesla-wants-build-1-million-181721398.html?.tsrc=rss",
-     "time": "2026-11-16T18:17:21Z"
-    },
-    {
-     "id": "31d12945328b968b",
-     "publisher": "www.marketscreener.com",
-     "kind": "news",
-     "title": "Chevron to buy Blackstone-backed oil producer for $5 billion, FT reports",
-     "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxOM3oteG5ZbTdMY2NYYmpNblBHSk53eGZhbXNzak45c0JIVEd3WlRkVTlfUHBIQmtOX3dfQTZPaTBUeUFlQnNXUkVsdnp4OEhHazRJQ3h6NnBLVnhxTjFWRDdZbWNOZFZtc1U4YVJhdjdreERnY1QydExCOUVMTU5WNld4M3piZmttdlZxS3BtMWVsTERMZkp0SG9tLWg1NDc2MWs2MGJtVTRHd0U4RGJ4azBiNVZwQWZEVWpYOXN1Wnc?oc=5",
-     "time": "2026-11-16T20:31:12Z"
-    }
-   ]
-  },
-  {
-   "summary": "Oil falls as US crude stocks rise and traders weigh supply levels.",
+   "summary": "Superpowers reaching agreements on oil supply rises and world peace aims points to easing energy tensions.",
    "category": "deescalation",
    "firstSeen": "2026-11-10T01:57:53Z",
    "publishers": [
@@ -8985,6 +7927,7 @@
     "Club of Mozambique",
     "Coinpaper",
     "Coinpedia",
+    "Corsicana Daily Sun",
     "Crude Oil Prices Today | OilPrice.com",
     "Crypto Briefing",
     "DD News",
@@ -9077,9 +8020,11 @@
     "MarineLink",
     "MarketForces Africa",
     "Metrobank Wealth Insights",
+    "Michael West Media",
     "Mid-Day",
     "Middle East Eye",
     "Middle East Online",
+    "Midland Daily News",
     "Minute Mirror",
     "Modern Ghana",
     "Moneycontrol.com",
@@ -9113,6 +8058,7 @@
     "Oneindia",
     "Operativ Məlumat Mərkəzi",
     "Organiser",
+    "Outlook India",
     "Pakistan Connect",
     "Pakistan Observer",
     "Philstar.com",
@@ -9150,6 +8096,7 @@
     "Tehran Times",
     "Telangana Today",
     "The Arkansas Democrat-Gazette",
+    "The Border Mail",
     "The Business Standard",
     "The Business Times",
     "The Canberra Times",
@@ -9257,13 +8204,13 @@
    "assets": {
     "XOM": {
      "direction": "down",
-     "confidence": 0.8,
-     "why": "Oil prices fall on de-escalation news from the US and Middle East, hurting oil producers."
+     "confidence": 0.65,
+     "why": "Peace declaration and agreement on oil supply increases lower geopolitical risk premium for oil & gas."
     },
     "CVX": {
      "direction": "down",
-     "confidence": 0.8,
-     "why": "Lower oil prices driven by easing Middle East tensions weigh on major oil companies."
+     "confidence": 0.65,
+     "why": "De-escalation and expected oil supply rise negatively impact upstream crude producers."
     },
     "OXY": {
      "direction": "down",
@@ -9340,546 +8287,7 @@
    ]
   },
   {
-   "summary": "Palo Alto Networks reports a strong Q1 earnings beat with raised guidance and a major acquisition.",
-   "category": "earnings_beat",
-   "firstSeen": "2026-11-16T15:54:14Z",
-   "publishers": [
-    "24/7 Wall St.",
-    "Anadolu Ajansı",
-    "Barron's",
-    "Benzinga",
-    "Blockonomi",
-    "BusinessToday Malaysia",
-    "CNBC",
-    "CTech",
-    "Chosunbiz",
-    "CoinDesk",
-    "Coinpaper",
-    "FXLeaders",
-    "Fox Business",
-    "GuruFocus",
-    "Investing.com",
-    "Investing.com Australia",
-    "Investing.com Canada",
-    "Investing.com India",
-    "Investing.com Nigeria",
-    "Investing.com South Africa",
-    "Investor's Business Daily",
-    "Invezz",
-    "KuCoin",
-    "MarketBeat",
-    "Moneycontrol.com",
-    "Moomoo",
-    "Nacionale",
-    "NeoTeo",
-    "Proactive financial news",
-    "Quartz",
-    "Reuters",
-    "Seeking Alpha",
-    "Stocktwits",
-    "StreetInsider",
-    "The Coin Republic",
-    "TheStreet",
-    "TradingKey",
-    "WSJ",
-    "Yahoo Finance",
-    "bloomingbit",
-    "finance.biggo.com",
-    "fiscal.ai",
-    "https://streamlinefeed.co.ke/",
-    "kaohoon international",
-    "livetube.tv",
-    "scanx.trade",
-    "shattered.io",
-    "thebull.com.au",
-    "深潮TechFlow"
-   ],
-   "assets": {
-    "NVDA": {
-     "direction": "up",
-     "confidence": 0.95,
-     "why": "Massive earnings beat and blowout revenue guidance."
-    },
-    "HD": {
-     "direction": "down",
-     "confidence": 0.75,
-     "why": "Lowered profit outlook and guidance concerns push shares down despite revenue beat."
-    },
-    "MSFT": {
-     "direction": "up",
-     "confidence": 0.65,
-     "why": "Spillover positive sentiment in big tech following Nvidia's strong beat."
-    },
-    "AVGO": {
-     "direction": "up",
-     "confidence": 0.65,
-     "why": "Positive semiconductor sector tailwinds from Nvidia's strong results."
-    },
-    "AMD": {
-     "direction": "up",
-     "confidence": 0.7,
-     "why": "Lifted by sector-wide positive AI sentiment from Nvidia's print."
-    },
-    "LOW": {
-     "direction": "up",
-     "confidence": 0.85,
-     "why": "Earnings and revenue beat coupled with a raised annual sales forecast."
-    },
-    "TJX": {
-     "direction": "up",
-     "confidence": 0.85,
-     "why": "Reported a solid Q3 earnings beat causing a significant surge."
-    },
-    "PANW": {
-     "direction": "up",
-     "confidence": 0.9,
-     "why": "Earnings beat and raised guidance drive strong upside."
-    }
-   },
-   "sources": [
-    {
-     "id": "25325cb7a3a08a9b",
-     "publisher": "Yahoo Finance",
-     "kind": "news",
-     "title": "Nvidia Likely to Post Beat-and-Raise for Fiscal Q3, Maintain 2028 Sales Growth Outlook, BofA Says",
-     "url": "https://finance.yahoo.com/markets/stocks/articles/nvidia-likely-post-beat-raise-155414370.html?.tsrc=rss",
-     "time": "2026-11-16T15:54:14Z"
-    },
-    {
-     "id": "f95d80eb984554f7",
-     "publisher": "TheStreet",
-     "kind": "news",
-     "title": "Bank of America doubles down on Nvidia ahead of earnings",
-     "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPX0NOYlF3UHhqYmx3akJMamhMSnNhR1BsbU9lTnFvN21yV01RcFZ4UGpmUGpyTTlzaFBKSjctalNiY0VyUncxbHRpMzRTd2RuOXlKZTl5SWhOMFk2MEkwdHNtMzhiUGVXYVhDTmkybnl6RjYybmRzTF96Y3ZWem5ueFFtYlB5a2JWSzhqQ2drVnBHVXhDQVJqbnlaOVZyblNDZ0FtZEdBajE3Rmc?oc=5",
-     "time": "2026-11-17T10:03:00Z"
-    },
-    {
-     "id": "926741753fcceafa",
-     "publisher": "CNBC",
-     "kind": "news",
-     "title": "Home Depot names Richard McPhail as new CEO, beats earnings expectations",
-     "url": "https://www.cnbc.com/2026/11/17/home-depot-hd-q3-earnings-2026.html",
-     "time": "2026-11-17T11:08:26Z"
-    },
-    {
-     "id": "24583348650201f5",
-     "publisher": "StreetInsider",
-     "kind": "news",
-     "title": "Home Depot (HD) Tops Q3 EPS by 2c, Beats on Revenue; Offers Guidance",
-     "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxNb1h1endpcFp6OENDcEd6ZWhxRGZxWTBqbnBlbndkQmZrcVVwcHpPVFFHMlVDanotNENOYU43WkdiVlVKQ1ZZcmIwV1pKUG5oLVlfdFllLWlnaExPTDlmYXphMF9RdFJNNmVmNTV5TDdYUDI5ZmNpZlZ5Q3ZJeWhCU2YtWnpINHVtdmxmaTlTcFhoeHpfaWx1TlYxZngwNHlsa19iSU9ZUzd6YllvLUhISFdqUWh6eEw0bjBtd2NEX3AxSXB6MGFacw?oc=5",
-     "time": "2026-11-17T11:04:31Z"
-    },
-    {
-     "id": "f194c273df388df0",
-     "publisher": "Yahoo Finance",
-     "kind": "news",
-     "title": "The Home Depot Announces Third Quarter Fiscal 2026 Results; Updates Fiscal 2026 Guidance",
-     "url": "https://finance.yahoo.com/news/home-depot-announces-third-quarter-110000708.html?.tsrc=rss",
-     "time": "2026-11-17T11:00:00Z"
-    }
-   ]
-  },
-  {
-   "summary": "An appeals court in Louisiana has upheld a multimillion-dollar verdict against Johnson & Johnson in a mesothelioma talc case.",
-   "category": "contract",
-   "firstSeen": "2026-11-16T13:29:56Z",
-   "publishers": [
-    "Benzinga",
-    "CNBC",
-    "Yahoo Finance"
-   ],
-   "assets": {
-    "JNJ": {
-     "direction": "down",
-     "confidence": 0.85,
-     "why": "Appeals court upheld a multimillion-dollar verdict against Johnson & Johnson in a talc case."
-    }
-   },
-   "sources": [
-    {
-     "id": "edc3514ebed6506f",
-     "publisher": "CNBC",
-     "kind": "news",
-     "title": "J&J strikes $2.2 billion buyout deal for eye disease biotech Ollin Biosciences",
-     "url": "https://www.cnbc.com/2026/11/16/jj-strikes-deal-for-eye-disease-biotech-ollin-biosciences.html",
-     "time": "2026-11-16T13:29:56Z"
-    },
-    {
-     "id": "72a665894c50963e",
-     "publisher": "Benzinga",
-     "kind": "news",
-     "title": "Blackstone Life Sciences To Provide Johnson & Johnson With $750M In R&D Funding To Support Phase 3 Clinical Development Of OLN324, An Investigational Therapy For Serious Retinal Vascular Diseases",
-     "url": "https://www.benzinga.com/news/26/11/63289814/blackstone-life-sciences-provide-johnson-johnson-750m-r-d-funding-support-phase-3-clinical-developme",
-     "time": "2026-11-16T14:03:02Z"
-    },
-    {
-     "id": "b5d4d36451b67656",
-     "publisher": "Yahoo Finance",
-     "kind": "news",
-     "title": "Johnson & Johnson (JNJ) Eyes Ollin Biosciences, Is It 19% Overvalued?",
-     "url": "https://finance.yahoo.com/markets/stocks/articles/johnson-johnson-jnj-eyes-ollin-211255610.html?.tsrc=rss",
-     "time": "2026-11-16T21:12:55Z"
-    },
-    {
-     "id": "e7f0e85c9edb9ee7",
-     "publisher": "Yahoo Finance",
-     "kind": "news",
-     "title": "Louisiana Appeals Court Upholds Millions in Damages in Mesothelioma Case Against Johnson & Johnson",
-     "url": "https://finance.yahoo.com/healthcare/articles/louisiana-appeals-court-upholds-millions-171400032.html?.tsrc=rss",
-     "time": "2026-11-17T17:14:00Z"
-    }
-   ]
-  },
-  {
-   "summary": "Nvidia shares dropped post-earnings despite beating expectations due to lingering market uncertainty and volatility.",
-   "category": "company_bad_news",
-   "firstSeen": "2026-11-12T18:24:33Z",
-   "publishers": [
-    "AFR",
-    "AP",
-    "Anadolu Ajansı",
-    "Barchart.com",
-    "Benzinga",
-    "BigGo Finance",
-    "Bloomberg.com",
-    "Breitbart News",
-    "CNBC",
-    "Capital Brief",
-    "Chosunbiz",
-    "Coin Gabbar",
-    "CoinDesk",
-    "Coinpaper",
-    "Crypto Economy",
-    "Cryptonews.net",
-    "Deccan Herald",
-    "Decrypt",
-    "Dimsum Daily",
-    "Eurasia Business News",
-    "FXStreet",
-    "FinanceFeeds",
-    "Finimize",
-    "Finviz",
-    "Fortune",
-    "Geo News",
-    "Hokanews",
-    "Investing.com",
-    "Investing.com Canada",
-    "Investing.com South Africa",
-    "Investopedia",
-    "Investor's Business Daily",
-    "Invezz",
-    "JournalArta",
-    "KELO-AM",
-    "Kitco",
-    "Market Index",
-    "Moomoo",
-    "NDTV Profit",
-    "NST Online",
-    "Plataforma Media",
-    "Pluang",
-    "Proactive financial news",
-    "Profit by Pakistan Today",
-    "Quartz",
-    "RTHK",
-    "RTHK News",
-    "RealMoney Pro",
-    "Reuters",
-    "SSBCrack",
-    "Shacknews",
-    "Stocktwits",
-    "StreetInsider",
-    "The Boston Globe",
-    "The Economic Times",
-    "The Economist",
-    "The Edge Malaysia",
-    "The Guardian",
-    "The Hawk",
-    "The Lufkin Daily News",
-    "The New York Times",
-    "The Tech Buzz",
-    "The Times of India",
-    "TipRanks",
-    "Traders Union",
-    "TradingKey",
-    "TradingView",
-    "US News Money",
-    "VINnews",
-    "WSJ",
-    "Wccftech",
-    "X",
-    "Yahoo Finance",
-    "Zacks Investment Research",
-    "astig.ph",
-    "bdnews24.com",
-    "bloomingbit",
-    "finance.biggo.com",
-    "fiscal.ai",
-    "kaohoon international",
-    "marketscreener.com",
-    "news.sbs.co.kr",
-    "shattered.io",
-    "www.tokenpost.com",
-    "深潮TechFlow",
-    "아시아경제",
-    "조선일보"
-   ],
-   "assets": {
-    "NVDA": {
-     "direction": "down",
-     "confidence": 0.8,
-     "why": "SEC investigation and delayed filings are significant negative catalysts."
-    },
-    "BTC/USD": {
-     "direction": "down",
-     "confidence": 0.7,
-     "why": "Broader risk-off sentiment triggered by major tech leadership turmoil."
-    },
-    "QCOM": {
-     "direction": "up",
-     "confidence": 0.65,
-     "why": "Capital is rotating out of Nvidia into competing AI semiconductor stocks following the CEO exit."
-    },
-    "AMD": {
-     "direction": "up",
-     "confidence": 0.75,
-     "why": "Lifted by sector-wide enthusiasm from Nvidia's strong earnings beat."
-    },
-    "AVGO": {
-     "direction": "up",
-     "confidence": 0.75,
-     "why": "Lifted by broader AI infrastructure and semiconductor strength."
-    },
-    "MSFT": {
-     "direction": "down",
-     "confidence": 0.65,
-     "why": "Broader tech and AI infrastructure sentiment hits related large-cap names."
-    },
-    "AAPL": {
-     "direction": "down",
-     "confidence": 0.3,
-     "why": "Broad market selloff induced by tech bellwether crash."
-    },
-    "SMCI": {
-     "direction": "up",
-     "confidence": 0.75,
-     "why": "Riding positive sentiment from Nvidia earnings beat."
-    },
-    "MU": {
-     "direction": "down",
-     "confidence": 0.65,
-     "why": "Semiconductor peer dragged down by Nvidia leadership turmoil."
-    },
-    "PLTR": {
-     "direction": "down",
-     "confidence": 0.6,
-     "why": "Broader tech sector and AI stock sell-off spurred by Nvidia turmoil."
-    },
-    "INTC": {
-     "direction": "down",
-     "confidence": 0.8,
-     "why": "Nvidia significantly trimming its stake in Intel creates heavy selling pressure."
-    },
-    "TSLA": {
-     "direction": "down",
-     "confidence": 0.6,
-     "why": "Broader tech sector weakness and uncertainty surrounding Nvidia weigh on high-multiple tech growth stocks."
-    },
-    "AMAT": {
-     "direction": "up",
-     "confidence": 0.7,
-     "why": "Nvidia's beat lifts broader semiconductor equipment suppliers."
-    }
-   },
-   "sources": [
-    {
-     "id": "855265040ed1e43c",
-     "publisher": "Reuters",
-     "kind": "news",
-     "title": "Nvidia CEO Jensen Huang resigns, in blow to AI boom he helped foster",
-     "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOMEFwN0FWdjB6blNtR0RZaTBWZXZDaWVwYkhXREttY2FaYVNNVC1qNEFHYm9Yd1pDODBDN2tvNzhnMTY4cmxWYTg1WVFidzFlNVFEdlZNb3IyZG1nS2FKcHAzUERhQW9EdG9oOER6YmwydXZOd0t1VHRub1BCdFdoR1V4dktlUVUydjZWeU53aVdKMGwtOGFtZmd2T3VhODF3eXhPazVtbV81b0hpUi1vcw?oc=5",
-     "time": "2026-11-12T18:31:55Z"
-    },
-    {
-     "id": "6c526a44313f07e5",
-     "publisher": "Yahoo Finance",
-     "kind": "news",
-     "title": "Equities Rise Intraday Despite Nvidia Sell-Off Post CEO's Departure",
-     "url": "https://finance.yahoo.com/markets/stocks/articles/equities-rise-intraday-despite-nvidia-182433809.html?.tsrc=rss",
-     "time": "2026-11-12T18:24:33Z"
-    },
-    {
-     "id": "adfadefb8db21a4c",
-     "publisher": "AP",
-     "kind": "news",
-     "title": "What we know after Jensen Huang resigns as Nvidia’s CEO",
-     "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOMUxqUTE0WWZBT2xoV25SLUQ2dFgyWkhwZFZyRnk3d1Fibmtrb0d4T3otSXNpNmZiTVh0QUdkWTA4UmQ3cXQyVVM3ODc0V0g4YnVVbDJRYWF4VXlaXzMzZnJWNi1UR3YyZHJGbWNzaVFab2tiM3N2RjFIOUtWcnlJVWtMVnhQNmhJeTdPajNVUXZfU2NzWkw0aGJLVFMtaGY3?oc=5",
-     "time": "2026-11-12T18:38:00Z"
-    },
-    {
-     "id": "e45111d2af3013e1",
-     "publisher": "The Economic Times",
-     "kind": "news",
-     "title": "Bitcoin price today: BTC USD falls near $71,000 after Jensen Huang resigns as Nvidia CEO and ETF outflows",
-     "url": "https://news.google.com/rss/articles/CBMisgJBVV95cUxNNGkxSEhVaVRhRGl4UkxMZUoyeV9Bc25CTmNkY1Q3Z2JEbTB5S3JWbUt4clE4eEltNTFSbFZSOFJrM290QTFESGJiMHROMGRSNVhzV0tkRHRqU2hLTk5GYng1Mm9FaDVlTFNyNHdqWXNwNDhNazZJNmlqOXIxVjFvZ0hwSHRTSUcwSXRqWWU5Mi1BTVg3Zm12bml2STNnSFExQWlTaUlRdDNlVnNUZlh5dFJDN2pfQmhha2M1SVBYUm1fVDhiaThNTnBsRU0ySTJSR1o1QkMyVHJseHA4VHlkd2pYODRaZzFpUUQza2ZlT1JpU0ZodWVkR0pCb3ZZTnI3TTNGQTBxcnJ0VnVJZzV3NHltc3l0X19JbG03WjdwRXFEWEwxZE9uMmJMTTVQbFZVRmfSAbcCQVVfeXFMTXR1bEttcm9WdW1FU0VCR1dKbWkwVkpwVmpjOE9YY1ZDUTZOcE5HaWktRnU2UW55c2ZLWEpiRmFwQ3ZTd2otS0RqX2FSWFZwejRGbFZOcGFpa2oxdF8xYmxVWVp6UUl1QkRnYi1ZVVhNS0d4UDlxSGpwZjJFeG5KbDhZdUplRWh5QU9Lc2U1NWhMMm9EQVZISVVIdUxuWnQxaDRWNllMb1lFS2VJUXRxYTJKSVV1bjg1V2ROTnRLdTVIb3dvcllFbTgtTF9nZFhaVGVrSHpzM3lQOTM5bHp2LXBLZ0VldGppMm95dWZBeGlLNUFXdnE0VkdqbWUzNS1adjhCRVlIMGdEbHJ2djFZSm5GWHhJcmZEOTRLbTU0MGNEdm1MaGkxdlA1WEEyMFlyRm8wbEdmWnM?oc=5",
-     "time": "2026-11-12T18:34:50Z"
-    },
-    {
-     "id": "89cceff7950b3622",
-     "publisher": "Benzinga",
-     "kind": "news",
-     "title": "Jensen Huang Is Out At Nvidia: 4 Private Equity Giants with Big Bets on Its AI Infrastructure Future",
-     "url": "https://www.benzinga.com/markets/private-markets/26/11/63212619/jensen-huang-is-out-at-nvidia-4-private-equity-giants-with-big-bets-on-its-ai-infrastructure-future",
-     "time": "2026-11-12T18:45:12Z"
-    }
-   ]
-  },
-  {
-   "summary": "Solana ETF inflows have turned positive, drawing renewed attention to the SOL price outlook.",
-   "category": "crypto_positive",
-   "firstSeen": "2026-11-17T00:18:57Z",
-   "publishers": [
-    "Altcoin Buzz",
-    "BigGo Finance",
-    "Binance",
-    "Bitcoin Magazine",
-    "Bitcoin News",
-    "Briefs Finance",
-    "Coinfomania",
-    "Crypto Briefing",
-    "Crypto Economy",
-    "Crypto News",
-    "Cryptonews.net",
-    "FXStreet",
-    "FinanceFeeds",
-    "Invezz",
-    "KuCoin",
-    "Moomoo",
-    "NewsBytes",
-    "Pluang",
-    "TOKENPOST",
-    "The Cryptonomist",
-    "The Defiant",
-    "Times Tabloid",
-    "Traders Union",
-    "TronWeekly",
-    "Yahoo Finance",
-    "bloomingbit",
-    "www.tokenpost.com"
-   ],
-   "assets": {
-    "SOL/USD": {
-     "direction": "up",
-     "confidence": 0.75,
-     "why": "ETF inflows boosting Solana positive momentum."
-    },
-    "BTC/USD": {
-     "direction": "up",
-     "confidence": 0.85,
-     "why": "Goldman Sachs discloses over $1B in spot Bitcoin ETF holdings, indicating strong institutional demand."
-    },
-    "ETH/USD": {
-     "direction": "up",
-     "confidence": 0.8,
-     "why": "Goldman Sachs massively scaling up its Ethereum ETF holdings indicates strong institutional adoption."
-    },
-    "XRP/USD": {
-     "direction": "up",
-     "confidence": 0.65,
-     "why": "Major bank adoption and buying pressure is positive for XRP."
-    }
-   },
-   "sources": [
-    {
-     "id": "95bd69bca18d8b5a",
-     "publisher": "Crypto Economy",
-     "kind": "news",
-     "title": "Zelle Chooses Solana for New Stablecoin and Cross-Border Payments Push",
-     "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxONmw1ZFZrVGY0TWNWdGlUYUlJSWdjU0RMQ0F3ZkVNV1dmR3owVEtyVGlyMkpvblVpdUNQclN0ajRaRnNIb1RTMVZZckVvM1Z1eUpNOTIwUjRsdVdJQzUtUXJuY0hEVVVKaDc0QmRZSW1GVFJEVnZIaWMyNThqSnJtZDRsTzhUazgtdDB0WHFWZFVfdE5jRmxNWnJQb0V5c2s?oc=5",
-     "time": "2026-11-17T00:18:57Z"
-    },
-    {
-     "id": "fe324b038e054756",
-     "publisher": "bloomingbit",
-     "kind": "news",
-     "title": "Wells Fargo Doubles BlackRock Bitcoin ETF Holdings in 3 Months to $2.35 Billion",
-     "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE4yOThBRVU0bGxxM29QRzRQUkliVjV2TXhDZ3FzVXI4SnZGOHVTMXMxcU9WMktoQUpOaldtTTJxcXkwN2VUVkkwRXdWSXNLYlVlaWhIbw?oc=5",
-     "time": "2026-11-17T06:27:19Z"
-    },
-    {
-     "id": "2db9b9139aaa33ef",
-     "publisher": "Traders Union",
-     "kind": "news",
-     "title": "Wells Fargo doubles its investment in BlackRock's Bitcoin ETF",
-     "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxNa0htbkxWY1lQTHBiQXJJR2hmSGdVNE1zNFI2aDB2VlFJcUFBLVM1MkNiQkZJMFFlZm8xVUhCdFRfbDVvMjhNallLdC1zR0NDbU53TGYwZXZSTzRURzlxOGszR3VEdkZvSzNCWXFvakhIb3hrcWRqM0hKcFlVaXJ2OVFEdXc3Q0lYdFJKdGlpUVFFcGp6c0E3cnNR?oc=5",
-     "time": "2026-11-17T06:50:46Z"
-    },
-    {
-     "id": "0b7fb435b5b75036",
-     "publisher": "BigGo Finance",
-     "kind": "news",
-     "title": "Wells Fargo Doubles BlackRock Bitcoin ETF Holdings in Three Months to $2.35 Billion",
-     "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTFBZc21ndU5ESmQxYVhUd2lCdlpZeEVialVGZ25DMVR4S0lWRHlTYWQ1Ylk2dkJldzRubVI0MGk5TkZ6U1hPSjhjQVVINEo1SXpHcFdmM291dmZZSGl0YkN5UzJkWWdEMEpfdWR1RzlDNFJjZUN5OWc?oc=5",
-     "time": "2026-11-17T06:56:00Z"
-    },
-    {
-     "id": "5717f2397d1e47da",
-     "publisher": "Moomoo",
-     "kind": "news",
-     "title": "WELLS FARGO MORE THAN DOUBLES ITS BLACKROCK BITCOIN ETF $iShares Bitcoin Trust (IBIT.US)$ STAKE TO 49.58 MILLION SHARES WORTH $2.35 BILLION, BECOMING THE LARGEST REPORTED INSTITUTIONAL HOLDER",
-     "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQcW1FZC1NZVU2ZW04czI4XzQtN2lLSTdpR0ZlMWdqQTdXZDl3SVpTVnFPUEhyT2dQZFhNa2N1UV9hZ0MtZVZnWGlSQnc4cS1tWjdfWTBtQUxwY3FSSEVZQWYzUkxvM3Q2MHV5b2RXX1RSVW9YNFF0NmpFc2ZNUHMxYl92cGRudGFXY0pJZm0xQ3VYQWdlUjBCU0JRMWcyajhpQ1ptWjU1dXVhcjZlZTlEWWNVaU5DbzJt?oc=5",
-     "time": "2026-11-17T07:33:22Z"
-    }
-   ]
-  },
-  {
-   "summary": "Microsoft and Intel have expanded their collaboration to integrate Intel Xeon and CXL technologies into Azure.",
-   "category": "contract",
-   "firstSeen": "2026-11-18T16:47:00Z",
-   "publishers": [
-    "Yahoo Finance",
-    "fiscal.ai"
-   ],
-   "assets": {
-    "MSFT": {
-     "direction": "up",
-     "confidence": 0.65,
-     "why": "Expanded tech infrastructure partnership improves efficiency for Azure."
-    },
-    "INTC": {
-     "direction": "up",
-     "confidence": 0.7,
-     "why": "Major infrastructure collaboration with Microsoft validates Intel Xeon and CXL technologies."
-    }
-   },
-   "sources": [
-    {
-     "id": "d49cf019eb0b7e98",
-     "publisher": "Yahoo Finance",
-     "kind": "news",
-     "title": "Microsoft and Intel Deepen Collaboration to Deliver Differentiated Azure Infrastructure",
-     "url": "https://finance.yahoo.com/technology/ai/articles/microsoft-intel-deepen-collaboration-deliver-164700932.html?.tsrc=rss",
-     "time": "2026-11-18T16:47:00Z"
-    },
-    {
-     "id": "8258314e06f036df",
-     "publisher": "fiscal.ai",
-     "kind": "news",
-     "title": "Microsoft and Intel Announce Joint Infrastructure Investments",
-     "url": "https://stockhouse.com/news/newswire/2026/11/18/microsoft-and-intel-expand-azure-infrastructure-agreement",
-     "time": "2026-11-18T19:03:47Z"
-    },
-    {
-     "id": "554793b7bdcd397a",
-     "publisher": "fiscal.ai",
-     "kind": "news",
-     "title": "Microsoft and Intel Expand Collaboration on Xeon and CXL Technologies",
-     "url": "https://www.prnewswire.com/news-releases/microsoft-and-intel-deepen-collaboration-to-deliver-differentiated-azure-infrastructure-302944146.html",
-     "time": "2026-11-18T19:01:45Z"
-    }
-   ]
-  },
-  {
-   "summary": "Lowe's shares are falling due to concerns over margin pressure despite tariff-related noise.",
+   "summary": "Merck and Isomorphic Labs announced a new research collaboration to identify small molecule candidates for a strategic oncology target.",
    "category": "company_bad_news",
    "firstSeen": "2026-11-12T15:43:48Z",
    "publishers": [
@@ -10005,6 +8413,16 @@
      "direction": "down",
      "confidence": 0.8,
      "why": "Continued investor selling after disappointing Investor Day guidance."
+    },
+    "ABBV": {
+     "direction": "up",
+     "confidence": 0.55,
+     "why": "Strategic collaboration with DISCO Pharmaceuticals expands oncology pipeline."
+    },
+    "MRK": {
+     "direction": "up",
+     "confidence": 0.6,
+     "why": "Strategic research collaboration with Isomorphic Labs for oncology."
     }
    },
    "sources": [
@@ -10051,69 +8469,344 @@
    ]
   },
   {
-   "summary": "Intuit shares are declining ahead of earnings amid concerns over AI competition.",
-   "category": "earnings_miss",
-   "firstSeen": "2026-11-16T12:16:07Z",
+   "summary": "Intel announces it has secured its first external customer for its advanced 18A manufacturing process node, marking a major milestone for its foundry business.",
+   "category": "contract",
+   "firstSeen": "2026-11-16T13:29:56Z",
    "publishers": [
     "Benzinga",
     "CNBC",
-    "TradingView",
     "Yahoo Finance",
-    "fiscal.ai",
-    "scanx.trade"
+    "fiscal.ai"
    ],
    "assets": {
-    "HD": {
+    "JNJ": {
      "direction": "down",
-     "confidence": 0.8,
-     "why": "Discouraging sales guidance and CEO transition."
+     "confidence": 0.85,
+     "why": "Appeals court upheld a multimillion-dollar verdict against Johnson & Johnson in a talc case."
     },
-    "TJX": {
-     "direction": "down",
-     "confidence": 0.8,
-     "why": "Earnings guidance miss points to downside risk for the stock."
+    "AEM": {
+     "direction": "up",
+     "confidence": 0.75,
+     "why": "Substantial targeted gold production growth provides a positive catalyst for miners."
+    },
+    "INTC": {
+     "direction": "up",
+     "confidence": 0.75,
+     "why": "Securing the first external customer for 18A manufacturing is a significant positive development for Intel."
     }
    },
    "sources": [
     {
-     "id": "6545970b112d8030",
+     "id": "edc3514ebed6506f",
+     "publisher": "CNBC",
+     "kind": "news",
+     "title": "J&J strikes $2.2 billion buyout deal for eye disease biotech Ollin Biosciences",
+     "url": "https://www.cnbc.com/2026/11/16/jj-strikes-deal-for-eye-disease-biotech-ollin-biosciences.html",
+     "time": "2026-11-16T13:29:56Z"
+    },
+    {
+     "id": "72a665894c50963e",
      "publisher": "Benzinga",
      "kind": "news",
-     "title": "Summit Therapeutics Faces FDA Hurdle For Lead Lung Cancer Drug, Stock Tumbles",
-     "url": "https://www.benzinga.com/news/fda/26/11/63284061/summit-therapeutics-faces-fda-hurdle-for-lead-lung-cancer-drug-stock-tumbles",
-     "time": "2026-11-16T12:16:07Z"
+     "title": "Blackstone Life Sciences To Provide Johnson & Johnson With $750M In R&D Funding To Support Phase 3 Clinical Development Of OLN324, An Investigational Therapy For Serious Retinal Vascular Diseases",
+     "url": "https://www.benzinga.com/news/26/11/63289814/blackstone-life-sciences-provide-johnson-johnson-750m-r-d-funding-support-phase-3-clinical-developme",
+     "time": "2026-11-16T14:03:02Z"
     },
     {
-     "id": "311440315bf82f04",
-     "publisher": "fiscal.ai",
+     "id": "b5d4d36451b67656",
+     "publisher": "Yahoo Finance",
      "kind": "news",
-     "title": "Intermonte cuts MARR target price to 5.5 euros",
-     "url": "https://www.milanofinanza.it/newsmarketdriver/market-driver-marr-intermonte-taglia-stime-e-tp-202611161356024850",
-     "time": "2026-11-16T16:31:47Z"
+     "title": "Johnson & Johnson (JNJ) Eyes Ollin Biosciences, Is It 19% Overvalued?",
+     "url": "https://finance.yahoo.com/markets/stocks/articles/johnson-johnson-jnj-eyes-ollin-211255610.html?.tsrc=rss",
+     "time": "2026-11-16T21:12:55Z"
     },
     {
-     "id": "7061c3adf22fc820",
-     "publisher": "fiscal.ai",
+     "id": "e7f0e85c9edb9ee7",
+     "publisher": "Yahoo Finance",
      "kind": "news",
-     "title": "Equita cuts MARR target price to 5.60 euros",
-     "url": "https://www.milanofinanza.it/newsmarketdriver/market-driver-marr-equita-la-vede-a-5-60-euro-202611161500027953",
-     "time": "2026-11-16T16:31:47Z"
+     "title": "Louisiana Appeals Court Upholds Millions in Damages in Mesothelioma Case Against Johnson & Johnson",
+     "url": "https://finance.yahoo.com/healthcare/articles/louisiana-appeals-court-upholds-millions-171400032.html?.tsrc=rss",
+     "time": "2026-11-17T17:14:00Z"
     },
     {
-     "id": "70a2128e2b7c729a",
-     "publisher": "fiscal.ai",
+     "id": "2323616dac3bc8a3",
+     "publisher": "Yahoo Finance",
      "kind": "news",
-     "title": "Banca Akros lowers MARR target price to 6 euros",
-     "url": "https://www.milanofinanza.it/newsmarketdriver/market-driver-marr-b-akros-riduce-tp-202611161244016633",
-     "time": "2026-11-16T16:31:47Z"
+     "title": "Agnico Eagle Mines Targets Up to 30% Gold Production Growth as Spending Tops $3.5 Billion",
+     "url": "https://www.marketbeat.com/instant-alerts/event-agnico-eagle-mines-targets-up-to-30-gold-production-growth-as-spending-tops-35-billion-2026-11-19/?utm_source=yahoofinance&utm_medium=yahoofinance&.tsrc=rss",
+     "time": "2026-11-19T09:12:21Z"
+    }
+   ]
+  },
+  {
+   "summary": "Tesla plans to continue increasing production at its China factory according to reports.",
+   "category": "contract",
+   "firstSeen": "2026-11-16T14:36:40Z",
+   "publishers": [
+    "CNBC",
+    "Hardware Retailing",
+    "Investing.com",
+    "Reuters",
+    "TradingView",
+    "Yahoo Finance",
+    "fiscal.ai",
+    "www.marketscreener.com"
+   ],
+   "assets": {
+    "TSLA": {
+     "direction": "up",
+     "confidence": 0.75,
+     "why": "Major factory expansion and new product capacity announcement."
+    },
+    "CVX": {
+     "direction": "up",
+     "confidence": 0.75,
+     "why": "Major acquisition to expand oil and gas production portfolio."
+    },
+    "LLY": {
+     "direction": "up",
+     "confidence": 0.8,
+     "why": "Acquiring Calytrix Bio for $1.5bn expands Eli Lilly's pipeline and market positioning."
+    },
+    "AAPL": {
+     "direction": "up",
+     "confidence": 0.6,
+     "why": "Securing long-term supply agreements for critical components is a positive operational development."
+    },
+    "NVDA": {
+     "direction": "up",
+     "confidence": 0.5,
+     "why": "New industrial AI partnership expands GPU deployment."
+    },
+    "NOW": {
+     "direction": "up",
+     "confidence": 0.75,
+     "why": "Raised guidance and strong AI product adoption."
+    },
+    "NKE": {
+     "direction": "up",
+     "confidence": 0.85,
+     "why": "Nike announced a major strategic turnaround plan targeting a significant $5 billion revenue boost by 2031, sending shares higher."
+    },
+    "AMD": {
+     "direction": "up",
+     "confidence": 0.75,
+     "why": "Positive endorsement from OpenAI and Rockstar Games for GPU efficiency and scaling."
+    },
+    "FANG": {
+     "direction": "up",
+     "confidence": 0.75,
+     "why": "Acquisition of remaining stake in Double Eagle allows Diamondback Energy to capture full revenue from planned drilling operations."
+    },
+    "LOW": {
+     "direction": "up",
+     "confidence": 0.85,
+     "why": "Guidance raise and strong online sales provide a positive catalyst for Lowe's."
+    },
+    "HD": {
+     "direction": "up",
+     "confidence": 0.65,
+     "why": "Positive sector momentum from Lowe's guidance raise."
+    },
+    "INTC": {
+     "direction": "up",
+     "confidence": 0.8,
+     "why": "Signing its first external customer for advanced 18A chips is a significant positive contract/foundry milestone."
+    }
+   },
+   "sources": [
+    {
+     "id": "6e8622025ba61a6d",
+     "publisher": "Reuters",
+     "kind": "news",
+     "title": "Tesla announces $3.3 billion expansion of Germany plant",
+     "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNaHd0RC1iZmQwWUtkTl9CYjJVMUhGYmtxNEZyQU92Rm5mZS1OZ0Z2bHl6TmJuLUFJYWpQUW5GQ1h2anVqSHR5TDF3aThnaWhDd3lDYl9oY3VqbTVLaUMwMGtSME5IckZnZE5PQVhURTNPQ1BaS2tBejl6OU15X1B1N3VOM0o3dktRbnpLSjc1eWI5WWs4bjZqNnFOOA?oc=5",
+     "time": "2026-11-16T14:36:40Z"
     },
     {
-     "id": "07213db184daf82e",
+     "id": "2acd79a8e57ffcb3",
+     "publisher": "Yahoo Finance",
+     "kind": "news",
+     "title": "Tesla to invest 3 bn euros to expand German factory",
+     "url": "https://finance.yahoo.com/technology/articles/tesla-invest-3-bn-euros-144451294.html?.tsrc=rss",
+     "time": "2026-11-16T14:44:51Z"
+    },
+    {
+     "id": "c80edc1bc344d0f3",
+     "publisher": "Yahoo Finance",
+     "kind": "news",
+     "title": "Tesla Targets 2029 Cybercab Production Start In Giga Berlin With $3.3B Investment: Report",
+     "url": "https://stocktwits.com/news-articles/markets/equity/tesla-targets-2029-cybercab-production-start-in-giga-berlin-with-3-3-b-investment-report/cNb7MV2R9gJ?.tsrc=rss",
+     "time": "2026-11-16T16:46:09Z"
+    },
+    {
+     "id": "5a3964d15125684f",
+     "publisher": "Yahoo Finance",
+     "kind": "news",
+     "title": "Tesla Wants to Build 1 Million Cybercabs Near Berlin",
+     "url": "https://finance.yahoo.com/markets/stocks/articles/tesla-wants-build-1-million-181721398.html?.tsrc=rss",
+     "time": "2026-11-16T18:17:21Z"
+    },
+    {
+     "id": "31d12945328b968b",
+     "publisher": "www.marketscreener.com",
+     "kind": "news",
+     "title": "Chevron to buy Blackstone-backed oil producer for $5 billion, FT reports",
+     "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxOM3oteG5ZbTdMY2NYYmpNblBHSk53eGZhbXNzak45c0JIVEd3WlRkVTlfUHBIQmtOX3dfQTZPaTBUeUFlQnNXUkVsdnp4OEhHazRJQ3h6NnBLVnhxTjFWRDdZbWNOZFZtc1U4YVJhdjdreERnY1QydExCOUVMTU5WNld4M3piZmttdlZxS3BtMWVsTERMZkp0SG9tLWg1NDc2MWs2MGJtVTRHd0U4RGJ4azBiNVZwQWZEVWpYOXN1Wnc?oc=5",
+     "time": "2026-11-16T20:31:12Z"
+    }
+   ]
+  },
+  {
+   "summary": "Intel and Microsoft formalize an expanded long-term deal to integrate advanced packaging and Xeon chips into Azure cloud infrastructure.",
+   "category": "contract",
+   "firstSeen": "2026-11-18T16:47:00Z",
+   "publishers": [
+    "Yahoo Finance",
+    "fiscal.ai"
+   ],
+   "assets": {
+    "MSFT": {
+     "direction": "up",
+     "confidence": 0.65,
+     "why": "Expanded tech infrastructure partnership improves efficiency for Azure."
+    },
+    "INTC": {
+     "direction": "up",
+     "confidence": 0.75,
+     "why": "Major long-term partnership with Microsoft for Azure cloud hardware validates Intel's advanced packaging and chips."
+    }
+   },
+   "sources": [
+    {
+     "id": "d49cf019eb0b7e98",
+     "publisher": "Yahoo Finance",
+     "kind": "news",
+     "title": "Microsoft and Intel Deepen Collaboration to Deliver Differentiated Azure Infrastructure",
+     "url": "https://finance.yahoo.com/technology/ai/articles/microsoft-intel-deepen-collaboration-deliver-164700932.html?.tsrc=rss",
+     "time": "2026-11-18T16:47:00Z"
+    },
+    {
+     "id": "8258314e06f036df",
      "publisher": "fiscal.ai",
      "kind": "news",
-     "title": "Legal & General Reports Third-Quarter Pension-Buyout Volume Miss",
-     "url": "https://www.moomoo.com/hans/news/post/1004729443/legal-general-shares-fall-after-pension-buyouts-miss-views?futusource=news_newspage_recommend",
-     "time": "2026-11-16T18:02:12Z"
+     "title": "Microsoft and Intel Announce Joint Infrastructure Investments",
+     "url": "https://stockhouse.com/news/newswire/2026/11/18/microsoft-and-intel-expand-azure-infrastructure-agreement",
+     "time": "2026-11-18T19:03:47Z"
+    },
+    {
+     "id": "554793b7bdcd397a",
+     "publisher": "fiscal.ai",
+     "kind": "news",
+     "title": "Microsoft and Intel Expand Collaboration on Xeon and CXL Technologies",
+     "url": "https://www.prnewswire.com/news-releases/microsoft-and-intel-deepen-collaboration-to-deliver-differentiated-azure-infrastructure-302944146.html",
+     "time": "2026-11-18T19:01:45Z"
+    },
+    {
+     "id": "51fcd2e87ff09384",
+     "publisher": "Yahoo Finance",
+     "kind": "news",
+     "title": "Intel and Microsoft agree long-term deal on Azure cloud hardware",
+     "url": "https://www.verdict.co.uk/intel-microsoft-deal-azure-cloud/?.tsrc=rss",
+     "time": "2026-11-19T10:19:08Z"
+    }
+   ]
+  },
+  {
+   "summary": "Goldman Sachs significantly increased its Bitcoin ETF holdings in Q3, reflecting strong institutional adoption.",
+   "category": "crypto_positive",
+   "firstSeen": "2026-11-17T00:18:57Z",
+   "publishers": [
+    "Altcoin Buzz",
+    "BigGo Finance",
+    "Binance",
+    "Bitcoin Magazine",
+    "Bitcoin News",
+    "Briefs Finance",
+    "Coinfomania",
+    "Crypto Briefing",
+    "Crypto Economy",
+    "Crypto News",
+    "Cryptonews.net",
+    "FXStreet",
+    "FinanceFeeds",
+    "Invezz",
+    "KuCoin",
+    "Moomoo",
+    "NewsBytes",
+    "Pluang",
+    "TOKENPOST",
+    "The Cryptonomist",
+    "The Defiant",
+    "Times Tabloid",
+    "Traders Union",
+    "TronWeekly",
+    "Yahoo Finance",
+    "bloomingbit",
+    "www.tokenpost.com"
+   ],
+   "assets": {
+    "SOL/USD": {
+     "direction": "up",
+     "confidence": 0.75,
+     "why": "ETF inflows boosting Solana positive momentum."
+    },
+    "BTC/USD": {
+     "direction": "up",
+     "confidence": 0.85,
+     "why": "Goldman Sachs discloses over $1B in spot Bitcoin ETF holdings, indicating strong institutional demand."
+    },
+    "ETH/USD": {
+     "direction": "up",
+     "confidence": 0.8,
+     "why": "Goldman Sachs massively scaling up its Ethereum ETF holdings indicates strong institutional adoption."
+    },
+    "XRP/USD": {
+     "direction": "up",
+     "confidence": 0.65,
+     "why": "Major bank adoption and buying pressure is positive for XRP."
+    }
+   },
+   "sources": [
+    {
+     "id": "95bd69bca18d8b5a",
+     "publisher": "Crypto Economy",
+     "kind": "news",
+     "title": "Zelle Chooses Solana for New Stablecoin and Cross-Border Payments Push",
+     "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxONmw1ZFZrVGY0TWNWdGlUYUlJSWdjU0RMQ0F3ZkVNV1dmR3owVEtyVGlyMkpvblVpdUNQclN0ajRaRnNIb1RTMVZZckVvM1Z1eUpNOTIwUjRsdVdJQzUtUXJuY0hEVVVKaDc0QmRZSW1GVFJEVnZIaWMyNThqSnJtZDRsTzhUazgtdDB0WHFWZFVfdE5jRmxNWnJQb0V5c2s?oc=5",
+     "time": "2026-11-17T00:18:57Z"
+    },
+    {
+     "id": "fe324b038e054756",
+     "publisher": "bloomingbit",
+     "kind": "news",
+     "title": "Wells Fargo Doubles BlackRock Bitcoin ETF Holdings in 3 Months to $2.35 Billion",
+     "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE4yOThBRVU0bGxxM29QRzRQUkliVjV2TXhDZ3FzVXI4SnZGOHVTMXMxcU9WMktoQUpOaldtTTJxcXkwN2VUVkkwRXdWSXNLYlVlaWhIbw?oc=5",
+     "time": "2026-11-17T06:27:19Z"
+    },
+    {
+     "id": "2db9b9139aaa33ef",
+     "publisher": "Traders Union",
+     "kind": "news",
+     "title": "Wells Fargo doubles its investment in BlackRock's Bitcoin ETF",
+     "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxNa0htbkxWY1lQTHBiQXJJR2hmSGdVNE1zNFI2aDB2VlFJcUFBLVM1MkNiQkZJMFFlZm8xVUhCdFRfbDVvMjhNallLdC1zR0NDbU53TGYwZXZSTzRURzlxOGszR3VEdkZvSzNCWXFvakhIb3hrcWRqM0hKcFlVaXJ2OVFEdXc3Q0lYdFJKdGlpUVFFcGp6c0E3cnNR?oc=5",
+     "time": "2026-11-17T06:50:46Z"
+    },
+    {
+     "id": "0b7fb435b5b75036",
+     "publisher": "BigGo Finance",
+     "kind": "news",
+     "title": "Wells Fargo Doubles BlackRock Bitcoin ETF Holdings in Three Months to $2.35 Billion",
+     "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTFBZc21ndU5ESmQxYVhUd2lCdlpZeEVialVGZ25DMVR4S0lWRHlTYWQ1Ylk2dkJldzRubVI0MGk5TkZ6U1hPSjhjQVVINEo1SXpHcFdmM291dmZZSGl0YkN5UzJkWWdEMEpfdWR1RzlDNFJjZUN5OWc?oc=5",
+     "time": "2026-11-17T06:56:00Z"
+    },
+    {
+     "id": "5717f2397d1e47da",
+     "publisher": "Moomoo",
+     "kind": "news",
+     "title": "WELLS FARGO MORE THAN DOUBLES ITS BLACKROCK BITCOIN ETF $iShares Bitcoin Trust (IBIT.US)$ STAKE TO 49.58 MILLION SHARES WORTH $2.35 BILLION, BECOMING THE LARGEST REPORTED INSTITUTIONAL HOLDER",
+     "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQcW1FZC1NZVU2ZW04czI4XzQtN2lLSTdpR0ZlMWdqQTdXZDl3SVpTVnFPUEhyT2dQZFhNa2N1UV9hZ0MtZVZnWGlSQnc4cS1tWjdfWTBtQUxwY3FSSEVZQWYzUkxvM3Q2MHV5b2RXX1RSVW9YNFF0NmpFc2ZNUHMxYl92cGRudGFXY0pJZm0xQ3VYQWdlUjBCU0JRMWcyajhpQ1ptWjU1dXVhcjZlZTlEWWNVaU5DbzJt?oc=5",
+     "time": "2026-11-17T07:33:22Z"
     }
    ]
   }
