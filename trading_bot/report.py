@@ -170,7 +170,8 @@ def plain_words(bot, acct, eq, start, spy_pct, today, counters):
         watch = "Allowed to trade: NOTHING yet. The halal list is empty, so every story is skipped."
     n_tr = len([t for t in led["trades"] if t["status"] != "cancelled"])
     held = [t["symbol"] for t in led["trades"] if t["status"] in ("open", "pending")]
-    line = (("Even" if abs(diff) < 0.005 else ("Up " if diff > 0 else "Down ") + _money(diff)) + " since start · "
+    kept = f" · ${diff:,.2f} profit set aside" if diff > 0.005 else ""
+    line = (("Even" if abs(diff) < 0.005 else ("Up " if diff > 0 else "Down ") + _money(diff)) + " since start" + kept + " · "
             + _n(n_tr, "trade") + " · holding: " + (", ".join(held) if held else "nothing (all cash)"))
     return {"line": line, "rulesMode": C.rules_mode(), "top": top, "up": diff >= 0, "holding": holding or ["Nothing right now (all cash)."], "today": did,
             "watchlist": watch, "lastScan": counters.get("lastScan")}

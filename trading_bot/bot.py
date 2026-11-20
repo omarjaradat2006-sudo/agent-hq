@@ -301,7 +301,8 @@ class Bot:
             acct = self.a.account()
             positions = self.a.positions()
             ok, why = risk.can_open(sym, acct, positions, self.open_trades(),
-                                    {**self.s, "killed": self.ledger.get("killed")}, self.ledger["startEquity"])
+                                    {**self.s, "killed": self.ledger.get("killed")}, self.ledger["startEquity"],
+                                    confidence=a.get("confidence"))
             if not ok:
                 self.decide(key, sym, "waiting", why, e, final=False)
                 event("risk", risk.rule_name(why), why, sym)
@@ -337,7 +338,8 @@ class Bot:
         from . import risk
         price = self.a.latest_price(sym) or chk["price"]
         pending = sum(t["cost"] for t in self.open_trades() if t["status"] == "pending")
-        budget, _ = risk.size_order(acct, price, pending, confidence=a.get("confidence"), n_sources=len(pubs))
+        budget, _ = risk.size_order(acct, price, pending, confidence=a.get("confidence"), n_sources=len(pubs),
+                                    start_equity=self.ledger.get("startEquity"))
         stop, target = risk.stop_and_target(price)
         tid = f"ahq-{sym.replace('/', '')}-{now_utc():%Y%m%d%H%M%S}"
         try:

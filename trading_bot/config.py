@@ -58,6 +58,18 @@ REPUTABLE = {
 }
 
 
+MUST_TAKE_CONFIDENCE = 0.9    # "can't-miss" signals may also use the profits that were set aside
+
+
+def invest_base(equity, start_equity, confidence=None):
+    """Profit set-aside: the bot invests from the STARTING amount; anything above it is set aside as Omar's profit
+    (e.g. start $100, now $120 -> it keeps investing from $100, $20 set aside). Only a can't-miss signal
+    (confidence >= 0.9) may also use the set-aside profit. Below the start, it simply uses what's there."""
+    if not start_equity or equity <= start_equity:
+        return equity
+    return equity if (confidence or 0) >= MUST_TAKE_CONFIDENCE else start_equity
+
+
 def trade_weight(confidence, n_sources=1):
     """AUTO sizing: share of the max-invested budget one trade gets, from how strong the signal is.
     confidence 0.55 -> 10%, 0.65 -> 30%, 0.75 -> 50%, 0.9+ -> 80-100% (more sources = a bit more). Min 2%."""

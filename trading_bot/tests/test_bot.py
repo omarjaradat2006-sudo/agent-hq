@@ -547,13 +547,16 @@ def test_aggressive_carries_overnight_news_to_next_morning():
 
 def test_aggressive_ignores_volume_but_still_needs_price_move():
     from trading_bot import market as M
-    news_at = NOW - timedelta(hours=2)
-    flat = bars_spike(news_at=news_at, days=12)
+    news_at = (NOW - timedelta(days=4)).replace(hour=15, minute=0, second=0, microsecond=0)   # 10 AM New York
+    while news_at.weekday() >= 5:
+        news_at -= timedelta(days=1)
+    at = news_at + timedelta(hours=1)
+    flat = [b for b in bars_spike(news_at=news_at, days=12) if util.parse_time(b["t"]) <= at]
     for b in flat:
         b["v"] = 100                                                 # volume never above normal
     R = C.confirm_rules("aggressive")
-    assert M.confirm(None, "XOM", "up", T(news_at), now=NOW, bars=flat, rules=R)["passed"]
-    assert not M.confirm(None, "XOM", "up", T(news_at), now=NOW, bars=flat, rules=C.confirm_rules("any"))["passed"]
+    assert M.confirm(None, "XOM", "up", T(news_at), now=at, bars=flat, rules=R)["passed"]
+    assert not M.confirm(None, "XOM", "up", T(news_at), now=at, bars=flat, rules=C.confirm_rules("any"))["passed"]
 
 
 def test_ultra_buys_on_news_even_if_price_dips_but_keeps_risk_limits(monkeypatch):
@@ -608,3 +611,19 @@ def test_auto_sizing_scales_with_confidence_inside_the_cap(monkeypatch):
     acct2 = {"equity": "100000", "last_equity": "100000", "cash": "80000"}  # $20k already invested
     left, _ = risk.size_order(acct2, 100, confidence=0.95)
     assert left <= 5000.01                                                 # never past the 25% cap
+
+
+def test_profit_is_set_aside_unless_cant_miss(monkeypatch):
+    from trading_bot import risk
+    monkeypatch.delenv("PER_TRADE_PCT", raising=False); monkeypatch.setenv("INVEST_PCT", "100")
+    acct = {"equity": "120", "last_equity": "120", "cash": "120"}               # started at $100, now $120
+    normal, _ = risk.size_order(acct, 10, confidence=0.75, start_equity=100)
+    cant_miss, _ = risk.size_order(acct, 10, confidence=0.95, start_equity=100)
+    assert normal <= 50.01                                                  # 50% of the $100 base, not of $120
+    assert cant_miss > 100                                                  # can use the $20 set aside
+    full = {"equity": "120", "last_equity": "120", "cash": "1"}             # $119 already invested
+    ok, why = risk.can_open("XOM", full, [], [], {}, 100, confidence=0.7)
+    assert not ok and "set aside" in why
+    assert risk.can_open("XOM", full, [], [], {}, 100, confidence=0.95)[0]
+    down = {"equity": "90", "last_equity": "90", "cash": "90"}               # below the start: uses what's there
+    assert C.invest_base(90, 100, 0.6) == 90

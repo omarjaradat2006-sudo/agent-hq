@@ -49,12 +49,13 @@ def stock_entry_window_open(clock, now=None):
     return True, ""
 
 
-def size_order(acct, price, pending_cost=0.0, confidence=None, n_sources=1):
+def size_order(acct, price, pending_cost=0.0, confidence=None, n_sources=1, start_equity=None):
     """5% of equity, cash only (never margin). Returns (qty_or_notional, cost) or (0, 0)."""
     eq, _, cash = account_numbers(acct)
     per, cap = C.sizing()
-    budget = eq * (per if per is not None else cap * C.trade_weight(confidence, n_sources))
-    budget = min(budget, eq * cap - (eq - cash) - pending_cost)   # stay inside the max-invested budget
+    base = C.invest_base(eq, start_equity, confidence)     # profits above the start are set aside
+    budget = base * (per if per is not None else cap * C.trade_weight(confidence, n_sources))
+    budget = min(budget, base * cap - (eq - cash) - pending_cost)   # stay inside the max-invested budget
     free_cash = cash - pending_cost
     budget = min(budget, free_cash)          # no margin: only money we actually have
     if budget <= 0 or not price:
@@ -66,7 +67,7 @@ def stop_and_target(entry):
     return entry * (1 - R["stop_loss_pct"]), entry * (1 + R["take_profit_pct"])
 
 
-def can_open(symbol, acct, positions, open_trades, state, start_equity):
+def can_open(symbol, acct, positions, open_trades, state, start_equity, confidence=None):
     """Every check that must pass before ANY buy. Returns (ok, reason)."""
     if state.get("killed"):
         return False, "kill switch is on (down 10%)"
@@ -80,8 +81,10 @@ def can_open(symbol, acct, positions, open_trades, state, start_equity):
     per, cap = C.sizing()
     eq, _, cash = account_numbers(acct)
     invested = max(0.0, eq - cash)
-    if eq and invested + eq * (per * 0.5 if per is not None else 0.005) > eq * cap:   # no room left for a real trade
-        return False, f"already {invested / eq:.0%} of the account invested (max {cap:.0%})"
+    base = C.invest_base(eq, start_equity, confidence)
+    if eq and invested + base * (per * 0.5 if per is not None else 0.005) > base * cap:   # no room left for a real trade
+        kept = f", ${eq - base:,.2f} profit set aside" if eq > base else ""
+        return False, f"already ${invested:,.0f} invested (max {cap:.0%} of ${base:,.0f}{kept})"
     if acct.get("trading_blocked") or acct.get("account_blocked"):
         return False, "Alpaca account blocked"
     return True, ""
