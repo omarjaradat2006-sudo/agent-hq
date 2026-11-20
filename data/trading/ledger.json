@@ -1,10 +1,49 @@
 {
  "trades": [
   {
+   "id": "ahq-INTC-20261120193710",
+   "symbol": "INTC",
+   "asset": "stock",
+   "status": "open",
+   "entryOrderId": "87e8177a-2ddf-4b52-9c52-99c27f2d8bca",
+   "qty": 191.0,
+   "cost": 10088.62,
+   "estPrice": 52.82,
+   "entryPrice": 52.806231,
+   "stop": 51.24,
+   "target": 55.99,
+   "openedAt": "2026-11-20T19:37:10Z",
+   "news": {
+    "summary": "Wedbush notes that a potential Microsoft deal could provide Intel with a crucial AI chip foundry win.",
+    "category": "contract",
+    "sources": [
+     {
+      "publisher": "Yahoo Finance",
+      "title": "Wedbush: Microsoft May Give Intel a Crucial AI Chip Win",
+      "url": "https://finance.yahoo.com/technology/ai/articles/wedbush-microsoft-may-intel-crucial-180407908.html?.tsrc=rss"
+     }
+    ]
+   },
+   "reason": {
+    "triage": "Major prospective foundry contract with Microsoft is a game changer for Intel's manufacturing business.",
+    "confidence": 0.7,
+    "confirmation": "volume 5.7x normal, price +0.64% since the news",
+    "rvol": 5.75,
+    "movePct": 0.64,
+    "publishers": [
+     "Yahoo Finance"
+    ],
+    "tradingAgents": "not used (ultra mode)",
+    "taSummary": ""
+   },
+   "lastPrice": 52.64,
+   "unrealizedPct": -0.32
+  },
+  {
    "id": "ahq-AVAV-20261120165857",
    "symbol": "AVAV",
    "asset": "stock",
-   "status": "open",
+   "status": "closed",
    "entryOrderId": "8f454813-f274-4d16-90e4-e7c45b90ff6b",
    "qty": 110.0,
    "cost": 9925.3,
@@ -60,8 +99,13 @@
     "tradingAgents": "not used (ultra mode)",
     "taSummary": ""
    },
-   "lastPrice": 89.4326,
-   "unrealizedPct": -1.32
+   "lastPrice": 87.78,
+   "unrealizedPct": -3.15,
+   "closedAt": "2026-11-20T19:37:00Z",
+   "exitPrice": 87.52,
+   "exitReason": "stop-loss -3% hit",
+   "pnl": -342.1,
+   "pnlPct": -3.43
   },
   {
    "id": "ahq-NEM-20261120164834",
@@ -117,8 +161,8 @@
     "tradingAgents": "not used (ultra mode)",
     "taSummary": ""
    },
-   "lastPrice": 96.86,
-   "unrealizedPct": -0.1
+   "lastPrice": 95.75,
+   "unrealizedPct": -1.25
   },
   {
    "id": "ahq-BTCUSD-20261119203245",
@@ -3240,9 +3284,166 @@
    "t": "2026-11-20T18:35:16Z",
    "equity": 98801.28,
    "spy": 701.75
+  },
+  {
+   "t": "2026-11-20T19:06:10Z",
+   "equity": 98990.32,
+   "spy": 700.55
+  },
+  {
+   "t": "2026-11-20T19:37:10Z",
+   "equity": 98384.28,
+   "spy": 694.61
   }
  ],
  "decisions": [
+  {
+   "t": "2026-11-20T19:37:10Z",
+   "symbol": "MSFT",
+   "outcome": "error",
+   "why": "order failed: not enough cash for one share",
+   "event": "Wedbush notes that a potential Microsoft deal could provide Intel with a crucial AI chip foundry win."
+  },
+  {
+   "t": "2026-11-20T19:37:10Z",
+   "symbol": "PLTR",
+   "outcome": "error",
+   "why": "order failed: not enough cash for one share",
+   "event": "Trump stated there is a real good chance of a Ukraine deal following very good talks with Putin."
+  },
+  {
+   "t": "2026-11-20T19:37:10Z",
+   "symbol": "INTC",
+   "outcome": "bought",
+   "why": "volume 5.7x normal, price +0.64% since the news; TradingAgents: not used (ultra mode)",
+   "event": "Wedbush notes that a potential Microsoft deal could provide Intel with a crucial AI chip foundry win."
+  },
+  {
+   "t": "2026-11-20T19:31:59Z",
+   "symbol": "PLTR",
+   "outcome": "waiting",
+   "why": "already $48,713 invested (max 50% of $98,369)",
+   "event": "Trump stated there is a real good chance of a Ukraine deal following very good talks with Putin."
+  },
+  {
+   "t": "2026-11-20T19:31:59Z",
+   "symbol": "MSFT",
+   "outcome": "waiting",
+   "why": "already $48,712 invested (max 50% of $98,369)",
+   "event": "Wedbush notes that a potential Microsoft deal could provide Intel with a crucial AI chip foundry win."
+  },
+  {
+   "t": "2026-11-20T19:31:59Z",
+   "symbol": "INTC",
+   "outcome": "waiting",
+   "why": "already $48,712 invested (max 50% of $98,369)",
+   "event": "Wedbush notes that a potential Microsoft deal could provide Intel with a crucial AI chip foundry win."
+  },
+  {
+   "t": "2026-11-20T19:26:44Z",
+   "symbol": "PLTR",
+   "outcome": "waiting",
+   "why": "already $48,766 invested (max 50% of $98,422)",
+   "event": "Trump stated there is a real good chance of a Ukraine deal following very good talks with Putin."
+  },
+  {
+   "t": "2026-11-20T19:26:44Z",
+   "symbol": "MSFT",
+   "outcome": "waiting",
+   "why": "already $48,766 invested (max 50% of $98,422)",
+   "event": "Wedbush notes that a potential Microsoft deal could provide Intel with a crucial AI chip foundry win."
+  },
+  {
+   "t": "2026-11-20T19:26:44Z",
+   "symbol": "INTC",
+   "outcome": "waiting",
+   "why": "already $48,766 invested (max 50% of $98,422)",
+   "event": "Wedbush notes that a potential Microsoft deal could provide Intel with a crucial AI chip foundry win."
+  },
+  {
+   "t": "2026-11-20T19:21:37Z",
+   "symbol": "PLTR",
+   "outcome": "waiting",
+   "why": "already $49,010 invested (max 50% of $98,667)",
+   "event": "Trump stated there is a real good chance of a Ukraine deal following very good talks with Putin."
+  },
+  {
+   "t": "2026-11-20T19:21:37Z",
+   "symbol": "MSFT",
+   "outcome": "waiting",
+   "why": "already $49,010 invested (max 50% of $98,667)",
+   "event": "Wedbush notes that a potential Microsoft deal could provide Intel with a crucial AI chip foundry win."
+  },
+  {
+   "t": "2026-11-20T19:21:36Z",
+   "symbol": "INTC",
+   "outcome": "waiting",
+   "why": "already $49,010 invested (max 50% of $98,667)",
+   "event": "Wedbush notes that a potential Microsoft deal could provide Intel with a crucial AI chip foundry win."
+  },
+  {
+   "t": "2026-11-20T19:16:29Z",
+   "symbol": "PLTR",
+   "outcome": "waiting",
+   "why": "already $49,066 invested (max 50% of $98,723)",
+   "event": "Trump stated there is a real good chance of a Ukraine deal following very good talks with Putin."
+  },
+  {
+   "t": "2026-11-20T19:16:29Z",
+   "symbol": "MSFT",
+   "outcome": "waiting",
+   "why": "already $49,066 invested (max 50% of $98,723)",
+   "event": "Wedbush notes that a potential Microsoft deal could provide Intel with a crucial AI chip foundry win."
+  },
+  {
+   "t": "2026-11-20T19:16:29Z",
+   "symbol": "INTC",
+   "outcome": "waiting",
+   "why": "already $49,066 invested (max 50% of $98,723)",
+   "event": "Wedbush notes that a potential Microsoft deal could provide Intel with a crucial AI chip foundry win."
+  },
+  {
+   "t": "2026-11-20T19:11:17Z",
+   "symbol": "PLTR",
+   "outcome": "waiting",
+   "why": "already $49,160 invested (max 50% of $98,817)",
+   "event": "Donald Trump stated that he and Vladimir Putin had very good talks on Ukraine and that Putin expressed a desire to end the war."
+  },
+  {
+   "t": "2026-11-20T19:11:17Z",
+   "symbol": "MSFT",
+   "outcome": "waiting",
+   "why": "already $49,160 invested (max 50% of $98,817)",
+   "event": "Wedbush notes that a potential Microsoft deal could provide Intel with a crucial AI chip foundry win."
+  },
+  {
+   "t": "2026-11-20T19:11:17Z",
+   "symbol": "INTC",
+   "outcome": "waiting",
+   "why": "already $49,160 invested (max 50% of $98,817)",
+   "event": "Wedbush notes that a potential Microsoft deal could provide Intel with a crucial AI chip foundry win."
+  },
+  {
+   "t": "2026-11-20T19:06:10Z",
+   "symbol": "PLTR",
+   "outcome": "waiting",
+   "why": "already $49,321 invested (max 50% of $98,978)",
+   "event": "Donald Trump stated that he and Vladimir Putin had very good talks on Ukraine and that Putin expressed a desire to end the war."
+  },
+  {
+   "t": "2026-11-20T19:06:09Z",
+   "symbol": "MSFT",
+   "outcome": "waiting",
+   "why": "already $49,321 invested (max 50% of $98,978)",
+   "event": "Wedbush notes that a potential Microsoft deal could provide Intel with a crucial AI chip foundry win."
+  },
+  {
+   "t": "2026-11-20T19:06:09Z",
+   "symbol": "INTC",
+   "outcome": "waiting",
+   "why": "already $49,321 invested (max 50% of $98,978)",
+   "event": "Wedbush notes that a potential Microsoft deal could provide Intel with a crucial AI chip foundry win."
+  },
   {
    "t": "2026-11-20T19:00:59Z",
    "symbol": "MSFT",
@@ -4145,153 +4346,6 @@
    "outcome": "waiting",
    "why": "price hasn't moved the expected way yet (-0.35%)",
    "event": "Johnson & Johnson is acquiring Ollin Biosciences for $2.2 billion and partnering with Blackstone."
-  },
-  {
-   "t": "2026-11-16T19:03:09Z",
-   "symbol": "XOM",
-   "outcome": "waiting",
-   "why": "price hasn't moved the expected way yet (-0.30%)",
-   "event": "ExxonMobil's daily production in Guyana is set to reach 1.1 million barrels per day as Uaru production begins."
-  },
-  {
-   "t": "2026-11-16T19:03:09Z",
-   "symbol": "JNJ",
-   "outcome": "waiting",
-   "why": "price hasn't moved the expected way yet (-1.10%)",
-   "event": "Johnson & Johnson has agreed to acquire eye disease therapy developer Ollin Biosciences in a deal valued up to $3.33 billion."
-  },
-  {
-   "t": "2026-11-16T19:03:09Z",
-   "symbol": "LLY",
-   "outcome": "waiting",
-   "why": "price hasn't moved the expected way yet (-1.49%)",
-   "event": "Johnson & Johnson has agreed to acquire eye disease therapy developer Ollin Biosciences in a deal valued up to $3.33 billion."
-  },
-  {
-   "t": "2026-11-16T19:03:09Z",
-   "symbol": "TSLA",
-   "outcome": "waiting",
-   "why": "price hasn't moved the expected way yet (-2.71%)",
-   "event": "Tesla plans to build 1 million Cybercabs near Berlin, expanding its German gigafactory footprint."
-  },
-  {
-   "t": "2026-11-16T18:57:55Z",
-   "symbol": "JNJ",
-   "outcome": "waiting",
-   "why": "price hasn't moved the expected way yet (-0.21%)",
-   "event": "Johnson & Johnson is acquiring Ollin Biosciences for $2.2 billion and partnering with Blackstone."
-  },
-  {
-   "t": "2026-11-16T18:57:55Z",
-   "symbol": "XOM",
-   "outcome": "waiting",
-   "why": "price hasn't moved the expected way yet (-0.34%)",
-   "event": "ExxonMobil's daily production in Guyana is set to reach 1.1 million barrels per day as Uaru production begins."
-  },
-  {
-   "t": "2026-11-16T18:57:55Z",
-   "symbol": "JNJ",
-   "outcome": "waiting",
-   "why": "price hasn't moved the expected way yet (-0.96%)",
-   "event": "Johnson & Johnson has agreed to acquire eye disease therapy developer Ollin Biosciences in a deal valued up to $3.33 billion."
-  },
-  {
-   "t": "2026-11-16T18:57:55Z",
-   "symbol": "LLY",
-   "outcome": "waiting",
-   "why": "price hasn't moved the expected way yet (-1.38%)",
-   "event": "Johnson & Johnson has agreed to acquire eye disease therapy developer Ollin Biosciences in a deal valued up to $3.33 billion."
-  },
-  {
-   "t": "2026-11-16T18:57:54Z",
-   "symbol": "TSLA",
-   "outcome": "waiting",
-   "why": "price hasn't moved the expected way yet (-2.48%)",
-   "event": "Tesla plans to build 1 million Cybercabs near Berlin, expanding its German gigafactory footprint."
-  },
-  {
-   "t": "2026-11-16T18:52:44Z",
-   "symbol": "JNJ",
-   "outcome": "waiting",
-   "why": "price hasn't moved the expected way yet (-0.19%)",
-   "event": "Johnson & Johnson is acquiring Ollin Biosciences for $2.2 billion and partnering with Blackstone."
-  },
-  {
-   "t": "2026-11-16T18:52:43Z",
-   "symbol": "XOM",
-   "outcome": "waiting",
-   "why": "price hasn't moved the expected way yet (-0.25%)",
-   "event": "ExxonMobil's daily production in Guyana is set to reach 1.1 million barrels per day as Uaru production begins."
-  },
-  {
-   "t": "2026-11-16T18:52:43Z",
-   "symbol": "JNJ",
-   "outcome": "waiting",
-   "why": "price hasn't moved the expected way yet (-0.95%)",
-   "event": "Johnson & Johnson has agreed to acquire eye disease therapy developer Ollin Biosciences in a deal valued up to $3.33 billion."
-  },
-  {
-   "t": "2026-11-16T18:52:43Z",
-   "symbol": "LLY",
-   "outcome": "waiting",
-   "why": "price hasn't moved the expected way yet (-1.39%)",
-   "event": "Johnson & Johnson has agreed to acquire eye disease therapy developer Ollin Biosciences in a deal valued up to $3.33 billion."
-  },
-  {
-   "t": "2026-11-16T18:52:43Z",
-   "symbol": "TSLA",
-   "outcome": "waiting",
-   "why": "price hasn't moved the expected way yet (-2.44%)",
-   "event": "Tesla plans to build 1 million Cybercabs near Berlin, expanding its German gigafactory footprint."
-  },
-  {
-   "t": "2026-11-16T18:47:35Z",
-   "symbol": "JNJ",
-   "outcome": "waiting",
-   "why": "price hasn't moved the expected way yet (-0.29%)",
-   "event": "Johnson & Johnson is acquiring Ollin Biosciences for $2.2 billion and partnering with Blackstone."
-  },
-  {
-   "t": "2026-11-16T18:47:35Z",
-   "symbol": "XOM",
-   "outcome": "waiting",
-   "why": "price hasn't moved the expected way yet (-0.37%)",
-   "event": "ExxonMobil's daily production in Guyana is set to reach 1.1 million barrels per day as Uaru production begins."
-  },
-  {
-   "t": "2026-11-16T18:47:35Z",
-   "symbol": "JNJ",
-   "outcome": "waiting",
-   "why": "price hasn't moved the expected way yet (-1.04%)",
-   "event": "Johnson & Johnson has agreed to acquire eye disease therapy developer Ollin Biosciences in a deal valued up to $3.33 billion."
-  },
-  {
-   "t": "2026-11-16T18:47:35Z",
-   "symbol": "LLY",
-   "outcome": "waiting",
-   "why": "price hasn't moved the expected way yet (-1.54%)",
-   "event": "Johnson & Johnson has agreed to acquire eye disease therapy developer Ollin Biosciences in a deal valued up to $3.33 billion."
-  },
-  {
-   "t": "2026-11-16T18:47:35Z",
-   "symbol": "TSLA",
-   "outcome": "waiting",
-   "why": "price hasn't moved the expected way yet (-2.75%)",
-   "event": "Tesla plans to build 1 million Cybercabs near Berlin, expanding its German gigafactory footprint."
-  },
-  {
-   "t": "2026-11-16T18:42:27Z",
-   "symbol": "JNJ",
-   "outcome": "waiting",
-   "why": "price hasn't moved the expected way yet (-0.27%)",
-   "event": "Johnson & Johnson is acquiring Ollin Biosciences for $2.2 billion and partnering with Blackstone."
-  },
-  {
-   "t": "2026-11-16T18:42:27Z",
-   "symbol": "XOM",
-   "outcome": "waiting",
-   "why": "price hasn't moved the expected way yet (-0.28%)",
-   "event": "ExxonMobil's daily production in Guyana is set to reach 1.1 million barrels per day as Uaru production begins."
   }
  ],
  "startEquity": 100000.0,
