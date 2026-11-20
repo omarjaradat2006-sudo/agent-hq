@@ -1,26 +1,27 @@
 {
  "team": "trading",
  "plain": {
-  "line": "Down $717.38 since start · 12 trades · holding: nothing (all cash)",
+  "line": "Down $719.42 since start · 13 trades · holding: NEM",
   "rulesMode": "ultra",
-  "top": "Down $717.38 since start (-0.72%) · just holding SPY would be -5.95%",
+  "top": "Down $719.42 since start (-0.72%) · just holding SPY would be -6.27%",
   "up": false,
   "holding": [
-   "Nothing right now (all cash)."
+   "NEM: 409 shares worth $39,656.64, up $0.00 (sells at $102.68 or stops at $93.96)"
   ],
   "today": [
+   "Bought NEM after the news: European leaders condemn an intentional Russian missile provocation as it hits Poland, raising geopolitical tensions.",
    "Sold BTC/USD (stop-loss -3% hit): lost $358.21.",
    "Sold AVGO (stop-loss -3% hit): lost $15.41.",
    "Sold AMD (stop-loss -3% hit): lost $311.47.",
    "Sold NVDA (stop-loss -3% hit): lost $212.64.",
-   "Scanned the news 56 times today: read 3886 headlines, found 120 that could move a stock or coin it's allowed to trade. None passed every check, so no trade (that's normal).",
+   "Scanned the news 65 times today: read 4115 headlines, found 137 that could move a stock or coin it's allowed to trade.",
    "Safety rules that stepped in: stop loss -3% (x4)."
   ],
   "watchlist": "Allowed to trade: 69 halal stocks, 5 Shariah ETFs, 9 coins.",
-  "lastScan": "2026-11-20T16:05:53Z"
+  "lastScan": "2026-11-20T16:53:36Z"
  },
  "hired": true,
- "updatedAt": "2026-11-20T16:06:06Z",
+ "updatedAt": "2026-11-20T16:53:42Z",
  "mode": "PAPER",
  "agents": [
   {
@@ -28,8 +29,8 @@
    "name": "News Scout",
    "role": "Reads X, Reddit and news feeds",
    "status": "working",
-   "doing": "Read 14 new headlines/posts, 0 market-moving stories",
-   "lastRun": "2026-11-20T16:06:05Z"
+   "doing": "Read 11 new headlines/posts, 2 market-moving stories",
+   "lastRun": "2026-11-20T16:53:41Z"
   },
   {
    "id": "analyst",
@@ -68,8 +69,8 @@
    "name": "Trader",
    "role": "Places paper orders on Alpaca",
    "status": "working",
-   "doing": "Paper-trading bot started (Alpaca PAPER account only). Close this window to stop it.",
-   "lastRun": "2026-11-20T16:05:52Z"
+   "doing": "Bought 409 NEM at $96.96 (stop $93.96, target $102.68)",
+   "lastRun": "2026-11-20T16:53:36Z"
   },
   {
    "id": "coins",
@@ -89,6 +90,81 @@
   }
  ],
  "log": [
+  {
+   "t": "2026-11-20T16:53:41Z",
+   "agent": "News Scout",
+   "msg": "Read 11 new headlines/posts, 2 market-moving stories"
+  },
+  {
+   "t": "2026-11-20T16:53:39Z",
+   "agent": "News Scout",
+   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
+  },
+  {
+   "t": "2026-11-20T16:53:36Z",
+   "agent": "Trader",
+   "msg": "Bought 409 NEM at $96.96 (stop $93.96, target $102.68)"
+  },
+  {
+   "t": "2026-11-20T16:48:34Z",
+   "agent": "Trader",
+   "msg": "BUY NEM: European leaders condemn an intentional Russian missile provocation as it hits Poland, rai | volume 1.3x normal, price -0.52% since the news | TradingAgents not used (ultra mode)"
+  },
+  {
+   "t": "2026-11-20T16:48:34Z",
+   "agent": "News Scout",
+   "msg": "Read 21 new headlines/posts, 3 market-moving stories"
+  },
+  {
+   "t": "2026-11-20T16:43:18Z",
+   "agent": "News Scout",
+   "msg": "Read 23 new headlines/posts, 2 market-moving stories"
+  },
+  {
+   "t": "2026-11-20T16:37:39Z",
+   "agent": "News Scout",
+   "msg": "Read 44 new headlines/posts, 2 market-moving stories"
+  },
+  {
+   "t": "2026-11-20T16:37:28Z",
+   "agent": "News Scout",
+   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
+  },
+  {
+   "t": "2026-11-20T16:32:23Z",
+   "agent": "News Scout",
+   "msg": "Read 45 new headlines/posts, 0 market-moving stories"
+  },
+  {
+   "t": "2026-11-20T16:27:12Z",
+   "agent": "News Scout",
+   "msg": "Read 24 new headlines/posts, 2 market-moving stories"
+  },
+  {
+   "t": "2026-11-20T16:22:02Z",
+   "agent": "News Scout",
+   "msg": "Read 12 new headlines/posts, 1 market-moving stories"
+  },
+  {
+   "t": "2026-11-20T16:22:01Z",
+   "agent": "News Scout",
+   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
+  },
+  {
+   "t": "2026-11-20T16:16:56Z",
+   "agent": "News Scout",
+   "msg": "Read 23 new headlines/posts, 2 market-moving stories"
+  },
+  {
+   "t": "2026-11-20T16:11:41Z",
+   "agent": "News Scout",
+   "msg": "Read 26 new headlines/posts, 3 market-moving stories"
+  },
+  {
+   "t": "2026-11-20T16:06:08Z",
+   "agent": "Trader",
+   "msg": "Saved results to the Agent HQ dashboard"
+  },
   {
    "t": "2026-11-20T16:06:05Z",
    "agent": "News Scout",
@@ -763,103 +839,28 @@
    "t": "2026-11-20T01:36:29Z",
    "agent": "News Scout",
    "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
-  },
-  {
-   "t": "2026-11-20T01:21:23Z",
-   "agent": "News Scout",
-   "msg": "Read 43 new headlines/posts, 3 market-moving stories"
-  },
-  {
-   "t": "2026-11-20T01:21:21Z",
-   "agent": "News Scout",
-   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
-  },
-  {
-   "t": "2026-11-20T01:06:16Z",
-   "agent": "Trader",
-   "msg": "Saved results to the Agent HQ dashboard"
-  },
-  {
-   "t": "2026-11-20T01:06:13Z",
-   "agent": "News Scout",
-   "msg": "Read 80 new headlines/posts, 3 market-moving stories"
-  },
-  {
-   "t": "2026-11-20T01:06:05Z",
-   "agent": "News Scout",
-   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
-  },
-  {
-   "t": "2026-11-20T00:50:58Z",
-   "agent": "News Scout",
-   "msg": "Read 49 new headlines/posts, 1 market-moving stories"
-  },
-  {
-   "t": "2026-11-20T00:50:43Z",
-   "agent": "News Scout",
-   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
-  },
-  {
-   "t": "2026-11-20T00:35:37Z",
-   "agent": "News Scout",
-   "msg": "Read 39 new headlines/posts, 3 market-moving stories"
-  },
-  {
-   "t": "2026-11-20T00:35:35Z",
-   "agent": "News Scout",
-   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
-  },
-  {
-   "t": "2026-11-20T00:20:29Z",
-   "agent": "News Scout",
-   "msg": "Read 63 new headlines/posts, 2 market-moving stories"
-  },
-  {
-   "t": "2026-11-20T00:20:28Z",
-   "agent": "News Scout",
-   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
-  },
-  {
-   "t": "2026-11-20T00:05:22Z",
-   "agent": "News Scout",
-   "msg": "Read 76 new headlines/posts, 1 market-moving stories"
-  },
-  {
-   "t": "2026-11-20T00:05:18Z",
-   "agent": "News Scout",
-   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
-  },
-  {
-   "t": "2026-11-19T23:50:12Z",
-   "agent": "News Scout",
-   "msg": "Read 34 new headlines/posts, 1 market-moving stories"
-  },
-  {
-   "t": "2026-11-19T23:50:10Z",
-   "agent": "News Scout",
-   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
   }
  ],
  "brief": {
   "date": "Fri Nov 20",
-  "createdAt": "2026-11-20T16:06:06Z",
-  "headline": "Paper account -$905 today (-0.90%), -0.72% total vs SPY -5.95% · 0 open",
+  "createdAt": "2026-11-20T16:53:42Z",
+  "headline": "Paper account -$907 today (-0.91%), -0.72% total vs SPY -6.27% · 1 open",
   "summary": "4 trade(s) closed today, 3/12 winners overall. TradingAgents checks used today: 0/5.",
   "notes": [
    "X/Reddit reader: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
   ]
  },
  "account": {
-  "equity": 99282.62,
-  "cash": 99282.62,
+  "equity": 99280.58,
+  "cash": 59625.98,
   "startEquity": 100000.0,
   "startedAt": "2026-11-10T01:51:53Z",
-  "dayPnl": -905.2,
-  "dayPct": -0.9,
-  "totalPnl": -717.38,
+  "dayPnl": -907.24,
+  "dayPct": -0.91,
+  "totalPnl": -719.42,
   "totalPct": -0.72,
-  "spyPct": -5.95,
-  "vsSpyPct": 5.23
+  "spyPct": -6.27,
+  "vsSpyPct": 5.55
  },
  "status": {
   "killed": false,
@@ -867,16 +868,16 @@
   "deepUsed": 0,
   "deepMax": 5,
   "social": {
-   "at": "2026-11-20T16:05:55Z",
+   "at": "2026-11-20T16:53:39Z",
    "items": 0,
    "source": "Reddit public JSON (blocked on servers: add REDDIT_CLIENT_ID/SECRET); X needs Agent Reach",
    "problems": [
     "r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
    ],
    "wsb": {
-    "at": "2026-11-20T16:05:55Z",
+    "at": "2026-11-20T16:53:39Z",
     "tickers": 50,
-    "items": 3,
+    "items": 0,
     "key": false
    }
   },
@@ -886,7 +887,65 @@
   },
   "alert": null
  },
- "positions": [],
+ "positions": [
+  {
+   "id": "ahq-NEM-20261120164834",
+   "symbol": "NEM",
+   "asset": "stock",
+   "status": "open",
+   "entryOrderId": "dc75d184-e4df-439b-baa8-1e17526a2fef",
+   "qty": 409.0,
+   "cost": 39619.83,
+   "estPrice": 96.87,
+   "entryPrice": 96.96,
+   "stop": 93.96,
+   "target": 102.68,
+   "openedAt": "2026-11-20T16:48:34Z",
+   "news": {
+    "summary": "European leaders condemn an intentional Russian missile provocation as it hits Poland, raising geopolitical tensions.",
+    "category": "war_escalation",
+    "sources": [
+     {
+      "publisher": "WRAL",
+      "title": "Russian missile’s crash in Poland was likely an intentional provocation, Polish prime minister says",
+      "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxOd1UzdUlHaHdGaHBFRFhTLWExN1J5QlNVb0o3UkFuNldKcnhnTUc4UEs3XzFIbGdWdUIweDRzbDRTcEZtdmpENVl3dTNuZUlwaW1EcTB1dDFMRkh2a3ctRWw0Unp0S3pPQ0daTzJ6bENaMHl1YUgtVm1TN2ZWTHRFdUVLc0VucVAyWE84NkkycENHTi1GWjFaV0dnZk5zVzN0LUd3VTh1Q2ZaYzhHaWZJRXRjeGJkY0g1ZDB5UXdsZDNCcXc?oc=5"
+     },
+     {
+      "publisher": "RTE.ie",
+      "title": "Leaders offer support after Warsaw missile incident",
+      "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE92RlNhdTFMVHJrRU5MajZTQ1dwRE9FeUF1WkQzaDVKQnBtRlVZS0lUZE5XWF9KSDBZWG9WS1VYRE53bWV1M3BJUFF4aElwd3l6NVBtSEFOX1lCTVEyMzJSWm0tSlBOTk5Q?oc=5"
+     },
+     {
+      "publisher": "Vanguard News",
+      "title": "Poland and allies say Russian missile a ‘provocation’ from Moscow",
+      "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNSmU2bWptRDQwLVY0Ri1GUmZVcTktMC1oaHU2UDRTTDkwT3c1SDFCZmJmRjg3YzV1Qm9WZGVaREFhMWFaazEyQ0IwTkFneU01WWdOYTh5UkhKT1NGN3RIUDVzX2VvYUtIb2wzVlhkclpYYlZkS2ZDUXJITUhVM0hnXzNJWTlMemxtalhWa0JEMmU5dnYyWGEzcnlzcDhiRS1laVVYbjBBNNIBpwFBVV95cUxNSmU2bWptRDQwLVY0Ri1GUmZVcTktMC1oaHU2UDRTTDkwT3c1SDFCZmJmRjg3YzV1Qm9WZGVaREFhMWFaazEyQ0IwTkFneU01WWdOYTh5UkhKT1NGN3RIUDVzX2VvYUtIb2wzVlhkclpYYlZkS2ZDUXJITUhVM0hnXzNJWTlMemxtalhWa0JEMmU5dnYyWGEzcnlzcDhiRS1laVVYbjBBNA?oc=5"
+     },
+     {
+      "publisher": "The Independent",
+      "title": "European leaders condemn Russia’s ‘intentional provocation’ as missile hits Poland",
+      "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQVF9PQ1IzdXJpeFlKVGEyT3ZRTHRIMDBFbzZZWmYtYmpDdXVCWm9iSy1ULWFZRUFHdWlGaThRcUQ4WDhpcXdlRXJiOEZRWnFibHRSQ2tSN2tOSGxac2tvMmM5ZUVfaXhweFZCMXBPTmVhRFh2Q2Fad25lMXhXZkV2VlhsVlNvRjdtcnc5MmdKODVYSy1JYzY4UE1nVQ?oc=5"
+     }
+    ]
+   },
+   "reason": {
+    "triage": "Geopolitical escalation in Europe increases safe-haven demand for gold miners.",
+    "confidence": 0.75,
+    "confirmation": "volume 1.3x normal, price -0.52% since the news",
+    "rvol": 1.33,
+    "movePct": -0.52,
+    "publishers": [
+     "RTE.ie",
+     "The Independent",
+     "Vanguard News",
+     "WRAL"
+    ],
+    "tradingAgents": "not used (ultra mode)",
+    "taSummary": ""
+   },
+   "lastPrice": 96.93,
+   "unrealizedPct": -0.03
+  }
+ ],
  "charts": {
   "account": {
    "1D": [
@@ -1233,6 +1292,42 @@
     [
      "2026-11-20T16:05:00Z",
      99311.13
+    ],
+    [
+     "2026-11-20T16:10:00Z",
+     99311.13
+    ],
+    [
+     "2026-11-20T16:15:00Z",
+     99311.13
+    ],
+    [
+     "2026-11-20T16:20:00Z",
+     99311.13
+    ],
+    [
+     "2026-11-20T16:25:00Z",
+     99311.13
+    ],
+    [
+     "2026-11-20T16:30:00Z",
+     99311.13
+    ],
+    [
+     "2026-11-20T16:35:00Z",
+     99311.13
+    ],
+    [
+     "2026-11-20T16:40:00Z",
+     99311.13
+    ],
+    [
+     "2026-11-20T16:45:00Z",
+     99311.13
+    ],
+    [
+     "2026-11-20T16:50:00Z",
+     99305.0
     ]
    ],
    "1W": [
@@ -2651,12 +2746,407 @@
     [
      "2026-11-20T16:00:00Z",
      99311.13
+    ],
+    [
+     "2026-11-20T16:15:00Z",
+     99311.13
+    ],
+    [
+     "2026-11-20T16:30:00Z",
+     99311.13
+    ],
+    [
+     "2026-11-20T16:45:00Z",
+     99311.13
     ]
    ]
   },
-  "holdings": {}
+  "holdings": {
+   "NEM": {
+    "bars": [
+     [
+      "2026-11-17T17:00:00Z",
+      112.06
+     ],
+     [
+      "2026-11-17T17:15:00Z",
+      111.88
+     ],
+     [
+      "2026-11-17T17:30:00Z",
+      111.83
+     ],
+     [
+      "2026-11-17T17:45:00Z",
+      111.5
+     ],
+     [
+      "2026-11-17T18:00:00Z",
+      111.25
+     ],
+     [
+      "2026-11-17T18:15:00Z",
+      111.49
+     ],
+     [
+      "2026-11-17T18:30:00Z",
+      111.01
+     ],
+     [
+      "2026-11-17T18:45:00Z",
+      110.86
+     ],
+     [
+      "2026-11-17T19:00:00Z",
+      110.875
+     ],
+     [
+      "2026-11-17T19:15:00Z",
+      110.85
+     ],
+     [
+      "2026-11-17T19:30:00Z",
+      110.565
+     ],
+     [
+      "2026-11-17T19:45:00Z",
+      110.43
+     ],
+     [
+      "2026-11-17T20:00:00Z",
+      110.59
+     ],
+     [
+      "2026-11-17T20:15:00Z",
+      110.64
+     ],
+     [
+      "2026-11-17T20:30:00Z",
+      111.0
+     ],
+     [
+      "2026-11-17T20:45:00Z",
+      111.25
+     ],
+     [
+      "2026-11-18T13:45:00Z",
+      107.89
+     ],
+     [
+      "2026-11-18T14:30:00Z",
+      105.86
+     ],
+     [
+      "2026-11-18T14:45:00Z",
+      105.5
+     ],
+     [
+      "2026-11-18T15:00:00Z",
+      104.69
+     ],
+     [
+      "2026-11-18T15:15:00Z",
+      104.33
+     ],
+     [
+      "2026-11-18T15:30:00Z",
+      104.12
+     ],
+     [
+      "2026-11-18T15:45:00Z",
+      103.79
+     ],
+     [
+      "2026-11-18T16:00:00Z",
+      103.19
+     ],
+     [
+      "2026-11-18T16:15:00Z",
+      102.91
+     ],
+     [
+      "2026-11-18T16:30:00Z",
+      102.69
+     ],
+     [
+      "2026-11-18T16:45:00Z",
+      102.88
+     ],
+     [
+      "2026-11-18T17:00:00Z",
+      103.55
+     ],
+     [
+      "2026-11-18T17:15:00Z",
+      104.41
+     ],
+     [
+      "2026-11-18T17:30:00Z",
+      104.0
+     ],
+     [
+      "2026-11-18T17:45:00Z",
+      103.64
+     ],
+     [
+      "2026-11-18T18:00:00Z",
+      103.88
+     ],
+     [
+      "2026-11-18T18:15:00Z",
+      104.135
+     ],
+     [
+      "2026-11-18T18:30:00Z",
+      104.29
+     ],
+     [
+      "2026-11-18T18:45:00Z",
+      104.31
+     ],
+     [
+      "2026-11-18T19:00:00Z",
+      104.065
+     ],
+     [
+      "2026-11-18T19:15:00Z",
+      104.0
+     ],
+     [
+      "2026-11-18T19:30:00Z",
+      103.9
+     ],
+     [
+      "2026-11-18T19:45:00Z",
+      104.1
+     ],
+     [
+      "2026-11-18T20:00:00Z",
+      104.69
+     ],
+     [
+      "2026-11-18T20:15:00Z",
+      104.36
+     ],
+     [
+      "2026-11-18T20:30:00Z",
+      104.61
+     ],
+     [
+      "2026-11-18T20:45:00Z",
+      104.5
+     ],
+     [
+      "2026-11-19T14:30:00Z",
+      104.59
+     ],
+     [
+      "2026-11-19T14:45:00Z",
+      104.33
+     ],
+     [
+      "2026-11-19T15:00:00Z",
+      104.11
+     ],
+     [
+      "2026-11-19T15:15:00Z",
+      103.08
+     ],
+     [
+      "2026-11-19T15:30:00Z",
+      102.92
+     ],
+     [
+      "2026-11-19T15:45:00Z",
+      101.92
+     ],
+     [
+      "2026-11-19T16:00:00Z",
+      102.335
+     ],
+     [
+      "2026-11-19T16:15:00Z",
+      102.04
+     ],
+     [
+      "2026-11-19T16:30:00Z",
+      102.52
+     ],
+     [
+      "2026-11-19T16:45:00Z",
+      101.89
+     ],
+     [
+      "2026-11-19T17:00:00Z",
+      101.125
+     ],
+     [
+      "2026-11-19T17:15:00Z",
+      102.535
+     ],
+     [
+      "2026-11-19T17:30:00Z",
+      102.06
+     ],
+     [
+      "2026-11-19T17:45:00Z",
+      102.06
+     ],
+     [
+      "2026-11-19T18:00:00Z",
+      101.775
+     ],
+     [
+      "2026-11-19T18:15:00Z",
+      102.135
+     ],
+     [
+      "2026-11-19T18:30:00Z",
+      101.95
+     ],
+     [
+      "2026-11-19T18:45:00Z",
+      101.64
+     ],
+     [
+      "2026-11-19T19:00:00Z",
+      101.18
+     ],
+     [
+      "2026-11-19T19:15:00Z",
+      101.45
+     ],
+     [
+      "2026-11-19T19:30:00Z",
+      101.52
+     ],
+     [
+      "2026-11-19T19:45:00Z",
+      101.31
+     ],
+     [
+      "2026-11-19T20:00:00Z",
+      100.88
+     ],
+     [
+      "2026-11-19T20:15:00Z",
+      100.76
+     ],
+     [
+      "2026-11-19T20:30:00Z",
+      100.56
+     ],
+     [
+      "2026-11-19T20:45:00Z",
+      99.99
+     ],
+     [
+      "2026-11-20T14:30:00Z",
+      97.5
+     ],
+     [
+      "2026-11-20T14:45:00Z",
+      99.125
+     ],
+     [
+      "2026-11-20T15:00:00Z",
+      98.77
+     ],
+     [
+      "2026-11-20T15:15:00Z",
+      97.99
+     ],
+     [
+      "2026-11-20T15:30:00Z",
+      98.365
+     ],
+     [
+      "2026-11-20T15:45:00Z",
+      98.025
+     ],
+     [
+      "2026-11-20T16:00:00Z",
+      97.91
+     ],
+     [
+      "2026-11-20T16:15:00Z",
+      97.515
+     ],
+     [
+      "2026-11-20T16:30:00Z",
+      97.125
+     ],
+     [
+      "2026-11-20T16:45:00Z",
+      96.935
+     ]
+    ],
+    "entry": 96.96,
+    "stop": 93.96,
+    "target": 102.68,
+    "openedAt": "2026-11-20T16:48:34Z",
+    "qty": 409.0
+   }
+  }
  },
  "trades": [
+  {
+   "id": "ahq-NEM-20261120164834",
+   "symbol": "NEM",
+   "asset": "stock",
+   "status": "open",
+   "entryOrderId": "dc75d184-e4df-439b-baa8-1e17526a2fef",
+   "qty": 409.0,
+   "cost": 39619.83,
+   "estPrice": 96.87,
+   "entryPrice": 96.96,
+   "stop": 93.96,
+   "target": 102.68,
+   "openedAt": "2026-11-20T16:48:34Z",
+   "news": {
+    "summary": "European leaders condemn an intentional Russian missile provocation as it hits Poland, raising geopolitical tensions.",
+    "category": "war_escalation",
+    "sources": [
+     {
+      "publisher": "WRAL",
+      "title": "Russian missile’s crash in Poland was likely an intentional provocation, Polish prime minister says",
+      "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxOd1UzdUlHaHdGaHBFRFhTLWExN1J5QlNVb0o3UkFuNldKcnhnTUc4UEs3XzFIbGdWdUIweDRzbDRTcEZtdmpENVl3dTNuZUlwaW1EcTB1dDFMRkh2a3ctRWw0Unp0S3pPQ0daTzJ6bENaMHl1YUgtVm1TN2ZWTHRFdUVLc0VucVAyWE84NkkycENHTi1GWjFaV0dnZk5zVzN0LUd3VTh1Q2ZaYzhHaWZJRXRjeGJkY0g1ZDB5UXdsZDNCcXc?oc=5"
+     },
+     {
+      "publisher": "RTE.ie",
+      "title": "Leaders offer support after Warsaw missile incident",
+      "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE92RlNhdTFMVHJrRU5MajZTQ1dwRE9FeUF1WkQzaDVKQnBtRlVZS0lUZE5XWF9KSDBZWG9WS1VYRE53bWV1M3BJUFF4aElwd3l6NVBtSEFOX1lCTVEyMzJSWm0tSlBOTk5Q?oc=5"
+     },
+     {
+      "publisher": "Vanguard News",
+      "title": "Poland and allies say Russian missile a ‘provocation’ from Moscow",
+      "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNSmU2bWptRDQwLVY0Ri1GUmZVcTktMC1oaHU2UDRTTDkwT3c1SDFCZmJmRjg3YzV1Qm9WZGVaREFhMWFaazEyQ0IwTkFneU01WWdOYTh5UkhKT1NGN3RIUDVzX2VvYUtIb2wzVlhkclpYYlZkS2ZDUXJITUhVM0hnXzNJWTlMemxtalhWa0JEMmU5dnYyWGEzcnlzcDhiRS1laVVYbjBBNNIBpwFBVV95cUxNSmU2bWptRDQwLVY0Ri1GUmZVcTktMC1oaHU2UDRTTDkwT3c1SDFCZmJmRjg3YzV1Qm9WZGVaREFhMWFaazEyQ0IwTkFneU01WWdOYTh5UkhKT1NGN3RIUDVzX2VvYUtIb2wzVlhkclpYYlZkS2ZDUXJITUhVM0hnXzNJWTlMemxtalhWa0JEMmU5dnYyWGEzcnlzcDhiRS1laVVYbjBBNA?oc=5"
+     },
+     {
+      "publisher": "The Independent",
+      "title": "European leaders condemn Russia’s ‘intentional provocation’ as missile hits Poland",
+      "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQVF9PQ1IzdXJpeFlKVGEyT3ZRTHRIMDBFbzZZWmYtYmpDdXVCWm9iSy1ULWFZRUFHdWlGaThRcUQ4WDhpcXdlRXJiOEZRWnFibHRSQ2tSN2tOSGxac2tvMmM5ZUVfaXhweFZCMXBPTmVhRFh2Q2Fad25lMXhXZkV2VlhsVlNvRjdtcnc5MmdKODVYSy1JYzY4UE1nVQ?oc=5"
+     }
+    ]
+   },
+   "reason": {
+    "triage": "Geopolitical escalation in Europe increases safe-haven demand for gold miners.",
+    "confidence": 0.75,
+    "confirmation": "volume 1.3x normal, price -0.52% since the news",
+    "rvol": 1.33,
+    "movePct": -0.52,
+    "publishers": [
+     "RTE.ie",
+     "The Independent",
+     "Vanguard News",
+     "WRAL"
+    ],
+    "tradingAgents": "not used (ultra mode)",
+    "taSummary": ""
+   },
+   "lastPrice": 96.93,
+   "unrealizedPct": -0.03
+  },
   {
    "id": "ahq-BTCUSD-20261119203245",
    "symbol": "BTC/USD",
@@ -3289,6 +3779,13 @@
  ],
  "decisions": [
   {
+   "t": "2026-11-20T16:48:34Z",
+   "symbol": "NEM",
+   "outcome": "bought",
+   "why": "volume 1.3x normal, price -0.52% since the news; TradingAgents: not used (ultra mode)",
+   "event": "European leaders condemn an intentional Russian missile provocation as it hits Poland, raising geopolitical tensions."
+  },
+  {
    "t": "2026-11-19T20:32:45Z",
    "symbol": "BTC/USD",
    "outcome": "bought",
@@ -3700,21 +4197,9 @@
    "outcome": "waiting",
    "why": "price hasn't moved the expected way yet (-0.68%)",
    "event": "Johnson & Johnson is acquiring Ollin Biosciences for $2.2 billion and partnering with Blackstone."
-  },
-  {
-   "t": "2026-11-16T19:40:41Z",
-   "symbol": "XOM",
-   "outcome": "waiting",
-   "why": "price hasn't moved the expected way yet (-0.51%)",
-   "event": "ExxonMobil's daily production in Guyana is set to reach 1.1 million barrels per day as Uaru production begins."
   }
  ],
  "equity": [
-  {
-   "t": "2026-11-12T02:02:19Z",
-   "equity": 100000.0,
-   "spy": 760.13
-  },
   {
    "t": "2026-11-12T02:32:39Z",
    "equity": 100000.0,
@@ -5709,6 +6194,11 @@
    "t": "2026-11-20T15:53:11Z",
    "equity": 99282.62,
    "spy": 707.95
+  },
+  {
+   "t": "2026-11-20T16:27:12Z",
+   "equity": 99282.62,
+   "spy": 705.54
   }
  ],
  "watch": [],
@@ -5720,7 +6210,7 @@
  },
  "events": [
   {
-   "summary": "Oil prices are heading for a third consecutive weekly drop due to strong Middle East export flows and expectations of a 2027 supply glut.",
+   "summary": "The IEA projects the global oil market will witness a surplus supply before the end of 2026, weighing on oil prices.",
    "category": "deescalation",
    "firstSeen": "2026-11-10T01:57:53Z",
    "publishers": [
@@ -5868,6 +6358,7 @@
     "KuCoin",
     "L'Orient Today",
     "LBCI Lebanon",
+    "LEADERSHIP Newspapers",
     "Laodong.vn",
     "Latest news from Azerbaijan",
     "LinkedIn",
@@ -6075,12 +6566,12 @@
     "XOM": {
      "direction": "down",
      "confidence": 0.75,
-     "why": "Falling crude oil prices and oversupply fears negatively impact major oil producers."
+     "why": "IEA surplus supply forecast weighs on crude prices and oil majors."
     },
     "CVX": {
      "direction": "down",
      "confidence": 0.75,
-     "why": "Falling crude oil prices and oversupply fears negatively impact major oil producers."
+     "why": "IEA surplus supply forecast weighs on crude prices and oil majors."
     },
     "OXY": {
      "direction": "down",
@@ -6167,490 +6658,7 @@
    ]
   },
   {
-   "summary": "Markets continue to price in upcoming Federal Reserve rate hikes for December and January driven by energy shocks and hawkish expectations.",
-   "category": "central_bank_hawkish",
-   "firstSeen": "2026-11-10T09:39:09Z",
-   "publishers": [
-    "13WHAM-TV",
-    "1470 & 100.3 WMBD",
-    "24/7 Wall St.",
-    "93.3 The Drive",
-    "ABC News - Breaking News, Latest News and Videos",
-    "ABC7 New York",
-    "AFP.com",
-    "AL Circle",
-    "AMBCrypto",
-    "ANI News",
-    "AOL.com",
-    "AP",
-    "APAC Media",
-    "ARYnews.tv",
-    "ASHARQ AL-AWSAT English",
-    "Action Forex",
-    "AdvisorHub",
-    "Aktualita.co",
-    "Al Jazeera",
-    "Altcoin Buzz",
-    "American Banker",
-    "Anadolu Ajansı",
-    "Asia News Network",
-    "Asianet Newsable",
-    "Axios",
-    "AzerNews",
-    "BNN Bloomberg",
-    "Baltimore Sun",
-    "Bangladesh Post",
-    "Barchart.com",
-    "Barron's",
-    "BeInCrypto",
-    "Beinsure",
-    "Benzinga",
-    "Big News Network.com",
-    "BigGo Finance",
-    "Bilyonaryo Business",
-    "Binance",
-    "Bitbo",
-    "Bitcoin Foundation",
-    "Bitcoin Magazine",
-    "Bitcoin News",
-    "Bitcoin Sistemi",
-    "Bloomberg",
-    "Bloomberg.com",
-    "Bradenton Herald",
-    "Brave New Coin",
-    "Breakingthenews.net",
-    "Breitbart News",
-    "Briefs Finance",
-    "BullionVault",
-    "Business Day",
-    "Business Insider",
-    "Business Recorder",
-    "Business Standard",
-    "Business Today",
-    "Business Upturn",
-    "BusinessLine",
-    "BusinessToday Malaysia",
-    "Businessamlive",
-    "Businesskorea",
-    "CFO Dive",
-    "CNA",
-    "CNBC",
-    "CNBC TV18",
-    "CediRates",
-    "Central Oregon Daily",
-    "Chosunbiz",
-    "Coin Gabbar",
-    "CoinCodex",
-    "CoinDesk",
-    "CoinGape",
-    "CoinMarketCap",
-    "Coinpaper",
-    "Coinpedia",
-    "Cointribune",
-    "Crowdfund Insider",
-    "Crypto Briefing",
-    "Crypto News",
-    "CryptoDaily",
-    "CryptoPotato",
-    "CryptoRank",
-    "CryptoSlate",
-    "CryptoTicker.io",
-    "Cryptonews.net",
-    "CurrencyNews.co.uk",
-    "DD News",
-    "Daily Voice Of Asia",
-    "Dalal Street Investment Journal",
-    "Decrypt",
-    "Demokratis.co.id",
-    "Demócrata",
-    "ETV Bharat",
-    "Economies.com",
-    "Euronext Markets: Real-time Stock Market Data | live",
-    "Exchange Rates UK",
-    "FOX 17 West Michigan News",
-    "FOX 9 Minneapolis-St. Paul",
-    "FXEmpire",
-    "FXLeaders",
-    "FXStreet",
-    "Finance & Commerce",
-    "FinanceFeeds",
-    "Finimize",
-    "Firstpost",
-    "Forbes",
-    "Forbes Middle East",
-    "Foreign Policy Journal",
-    "Fox Business",
-    "Free Malaysia Today",
-    "Free Press Journal",
-    "Gadgets 360",
-    "Global Banking & Finance Review",
-    "Goldman Sachs",
-    "Gulf Business",
-    "Gulf Today",
-    "GuruFocus",
-    "Hindustan Times",
-    "Hiru News",
-    "Hokanews",
-    "Honolulu Star-Advertiser",
-    "IDNFinancials",
-    "Incrypted",
-    "IndexBox",
-    "India's News.Net",
-    "IndiaIPO",
-    "IndianEagle",
-    "Indianapolis Business Journal",
-    "Informat.ro",
-    "Insurance Business",
-    "InsuranceNewsNet",
-    "International Business Times",
-    "International Business Times Australia",
-    "Investing News Network",
-    "Investing.com",
-    "Investing.com Australia",
-    "Investing.com Canada",
-    "Investing.com India",
-    "Investing.com Nigeria",
-    "Investing.com UK",
-    "InvestmentNews",
-    "Investor Strategy News",
-    "Investor's Business Daily",
-    "Invezz",
-    "Jagran Josh",
-    "JournalArta",
-    "KABB",
-    "KATV",
-    "KDNL",
-    "KELO-AM",
-    "KLSE Screener",
-    "KQ2",
-    "KRDO",
-    "KSHB 41 Kansas City",
-    "KSL",
-    "KSL News",
-    "KTVN",
-    "KXLH News Helena",
-    "Kalshi News",
-    "Kathleen Hays Presents: Central Bank Central",
-    "Kiplinger",
-    "Kitco",
-    "KuCoin",
-    "Latest news from Azerbaijan",
-    "Latin Times",
-    "Limapagi",
-    "LinkedIn",
-    "Livemint",
-    "Livewire Markets",
-    "London South East",
-    "Loveland Reporter-Herald",
-    "MLQ.ai",
-    "Magnolia Tribune",
-    "Malay Mail",
-    "Manila Bulletin",
-    "MarketWatch",
-    "Metrobank Wealth Insights",
-    "Mezha.net",
-    "Mining.com",
-    "Mining.com.au",
-    "MiningMX",
-    "MishTalk",
-    "Mitrade",
-    "Moneycontrol.com",
-    "Moomoo",
-    "Morning Brew",
-    "Mortgage Professional America",
-    "NAI500",
-    "NBC26",
-    "NDTV Profit",
-    "Nacionale",
-    "Nation Thailand",
-    "New Hampshire Union Leader",
-    "New Jersey Business & Industry Association",
-    "New York Post",
-    "News Channel 5 Nashville",
-    "News24",
-    "NewsBytes",
-    "Newsday",
-    "Newsmax",
-    "Newsquawk",
-    "Newswav",
-    "Nikkei Asia",
-    "Norada Real Estate Investments",
-    "Northeast Mississippi Daily Journal",
-    "Northwest Arkansas Democrat-Gazette",
-    "Oz Arab Media",
-    "People's Daily Online",
-    "Pintu",
-    "Pluang",
-    "Press of Atlantic City",
-    "Profit by Pakistan Today",
-    "Public TV English",
-    "Quartz",
-    "RTE.ie",
-    "RTHK News",
-    "RTL Today",
-    "RVBusiness",
-    "RealEstateNews.com",
-    "Realtor.com",
-    "Rediff MoneyWiz",
-    "Reuters",
-    "Rock Hill Herald",
-    "Rolling Out",
-    "SBS 뉴스",
-    "SRN News",
-    "SSBCrack",
-    "SchiffGold.com",
-    "Scotsman Guide",
-    "Scripps News",
-    "Seeking Alpha",
-    "Serrari Group",
-    "Sharecafe",
-    "Simply Wall St",
-    "South Florida Reporter",
-    "Startup Fortune",
-    "Stock Titan",
-    "Stocktwits",
-    "StoneX",
-    "StreetInsider",
-    "TechJuice",
-    "The American Conservative",
-    "The Arkansas Democrat-Gazette",
-    "The Business Times",
-    "The Crypto Times",
-    "The Dark Side Of The Boom",
-    "The Economic Times",
-    "The Edge Malaysia",
-    "The Financial Express",
-    "The Globe and Mail",
-    "The Hill",
-    "The Hindu",
-    "The Independent",
-    "The Kashmir Monitor",
-    "The Korea Herald",
-    "The Korea Times",
-    "The Market Periodical",
-    "The Mighty 790 KFGO",
-    "The Mortgage Reports",
-    "The Motley Fool",
-    "The National",
-    "The Real Economy Blog",
-    "The San Joaquin Valley Sun",
-    "The Seattle Times",
-    "The Shillong Times",
-    "The Standard (HK)",
-    "The Star",
-    "The Straits Times",
-    "The Sunday Guardian",
-    "The Times",
-    "The Times of India",
-    "The Washington Post",
-    "TheBull.com.au",
-    "TheStreet",
-    "Times Now",
-    "TipRanks",
-    "TorFX News",
-    "Traders Union",
-    "TradingKey",
-    "TradingNEWS",
-    "TradingPedia",
-    "TradingView",
-    "Türkiye Today",
-    "U.Today",
-    "UA.NEWS",
-    "US News Money",
-    "USA Today",
-    "UrduPoint",
-    "VT Markets",
-    "ValueWalk",
-    "Vietnam.vn",
-    "Virginia Business",
-    "WBFF",
-    "WCTI",
-    "WHBL News",
-    "WKZO",
-    "WPBN",
-    "WSJ",
-    "WTOP News",
-    "WTVB",
-    "WXYZ Channel 7",
-    "Washington Examiner",
-    "XTB.com",
-    "Xinhua",
-    "Yahoo",
-    "Yahoo Finance",
-    "Yahoo Finance Australia",
-    "Yahoo Finance Singapore",
-    "Zawya",
-    "ad-hoc-news.de",
-    "bdnews24.com",
-    "blockchain.news",
-    "bloomingbit",
-    "blue News",
-    "bsinews.id",
-    "cbs19.tv",
-    "eNCA",
-    "finance.biggo.com",
-    "fiscal.ai",
-    "https://streamlinefeed.co.ke/",
-    "iHeart",
-    "kaohoon international",
-    "marketscreener.com",
-    "news.sbs.co.kr",
-    "newsalert.com.pk",
-    "qz.com",
-    "richtv.io",
-    "scanx.trade",
-    "streamlinefeed.co.ke",
-    "tippinsights",
-    "www.equiti.com",
-    "www.foreignpolicyjournal.com",
-    "www.jordannews.jo",
-    "www.thenationalnews.com",
-    "www.tmgm.com",
-    "www.tokenpost.com",
-    "تسنیم",
-    "سانا",
-    "شبكة تواصل الإخبارية",
-    "صحيفة مال",
-    "富途牛牛",
-    "巴士的報",
-    "联合早报",
-    "아시아경제",
-    "재경일보",
-    "조선일보",
-    "파이낸셜뉴스"
-   ],
-   "assets": {
-    "BTC/USD": {
-     "direction": "down",
-     "confidence": 0.85,
-     "why": "Hawkish Fed policy signals and ETF outflows weigh heavily on Bitcoin."
-    },
-    "ETH/USD": {
-     "direction": "down",
-     "confidence": 0.85,
-     "why": "Hot inflation and rate hike fears trigger heavy long liquidations and pressure crypto prices."
-    },
-    "SOL/USD": {
-     "direction": "down",
-     "confidence": 0.8,
-     "why": "Hawkish Fed rate hike expectations create a stronger dollar and pressure risk assets."
-    },
-    "NVDA": {
-     "direction": "down",
-     "confidence": 0.8,
-     "why": "Hawkish Fed commentary and rate hike expectations weigh on risk-on growth and tech stocks."
-    },
-    "MSFT": {
-     "direction": "down",
-     "confidence": 0.81,
-     "why": "Hawkish Fed rate hike expectations put downward pressure on major growth and tech stocks."
-    },
-    "AAPL": {
-     "direction": "down",
-     "confidence": 0.75,
-     "why": "Hawkish Fed rate hike outlook weighs heavily on broad tech and growth stocks"
-    },
-    "AMZN": {
-     "direction": "down",
-     "confidence": 0.75,
-     "why": "Broad tech and growth sell-off triggered by hawkish central bank outlook."
-    },
-    "AMAT": {
-     "direction": "down",
-     "confidence": 0.7,
-     "why": "Broader tech sell-off driven by hawkish Fed outlook."
-    },
-    "GOOGL": {
-     "direction": "down",
-     "confidence": 0.75,
-     "why": "Higher interest rate expectations and hot CPI weigh on growth tech stocks."
-    },
-    "META": {
-     "direction": "down",
-     "confidence": 0.75,
-     "why": "Higher interest rate expectations and hot CPI weigh on growth tech stocks."
-    },
-    "TSLA": {
-     "direction": "down",
-     "confidence": 0.8,
-     "why": "Hawkish Fed rate hike expectations put downward pressure on major growth and tech stocks."
-    },
-    "NEM": {
-     "direction": "down",
-     "confidence": 0.85,
-     "why": "Gold plunges to 52-week low following hawkish Fed minutes."
-    },
-    "SPWO": {
-     "direction": "down",
-     "confidence": 0.75,
-     "why": "Broad equities tumble due to rising yields and hawkish rate bets."
-    },
-    "AEM": {
-     "direction": "down",
-     "confidence": 0.85,
-     "why": "Hawkish Fed policy pushes gold prices down, hurting gold miners."
-    },
-    "AMD": {
-     "direction": "down",
-     "confidence": 0.85,
-     "why": "Hot PPI inflation reading and hawkish rate fears crush semiconductor sector, with AMD tumbling."
-    },
-    "CVX": {
-     "direction": "down",
-     "confidence": 0.6,
-     "why": "Broad macro pressure from hawkish Fed comments can negatively impact commodities."
-    },
-    "INTC": {
-     "direction": "down",
-     "confidence": 0.65,
-     "why": "Higher interest rate expectations put pressure on tech/growth stocks."
-    }
-   },
-   "sources": [
-    {
-     "id": "d9df815319391cbb",
-     "publisher": "The Edge Malaysia",
-     "kind": "news",
-     "title": "Fed’s Waller backs rate hike in December, says open to larger move",
-     "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE9aSnktcDlXbzBpMU1SQkZvRktGTnkyX1J4LU92VGxBZVVhcGQtRTVEaDBqLVRPS213cFpTMkFad1BkS0xpdmVVbGU2bVhsUTA2?oc=5",
-     "time": "2026-11-10T09:39:09Z"
-    },
-    {
-     "id": "252cbcbd6b6cd044",
-     "publisher": "Seeking Alpha",
-     "kind": "news",
-     "title": "Waller backs December rate hike, says 50-basis-point move may be on the table (TLT:NASDAQ)",
-     "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOc004NEQ1TjItUHFWanNEbWxpTlpFQ0tIaUcxZDJpTkQyZ3ppdHZtZ280ZlpnQ0NWU3g4Nms1M1dTVEdjZEpwbXcwUVBlRkRzTjNyWEctZEdNT2JwSFlSeGJIWFRTZXB2NEczeUtKY1dIQU9JbFFDaHQyOUxHZ05kU1h4QTQxQzlmSFFjRTQ0OTlaczl3NGhiMHNidko2SGVrWHZaTk8tZlN1OXR2S29HRWVMcXo?oc=5",
-     "time": "2026-11-10T10:10:00Z"
-    },
-    {
-     "id": "1816a3bd028bffbd",
-     "publisher": "MLQ.ai",
-     "kind": "news",
-     "title": "Fed's Waller backs a December rate hike and says a half-point move should be considered if core inflation runs hot",
-     "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxQMWRZU0pVdkJiU1J1MUdOX3Y5QVF1cHpRdG5zTndjOE4xaWhuVFVWSzFZem9zNHdFVjBhYk5TZFN1VEN2RnZfdF9UV21Za09HM2hZTGpMXzUzTG01ZzZ0QzFrNy1NZENQSEsyQjNCb1plSWtWX2lSQW9xSzZXbk5zelQ4S01mRmVqMU9NTzhHb3ZWbW9yUVdOMkhLemVTSmlUNGg5bFNXTjRiVmFYenVJekRkeXluZVNhVVZNYWdYMTc5MDM4NnV3RldkSW5hS2c?oc=5",
-     "time": "2026-11-10T10:44:05Z"
-    },
-    {
-     "id": "177d64cb4badd873",
-     "publisher": "FXStreet",
-     "kind": "news",
-     "title": "Fed's Waller signals risk of larger rate hikes as inflation stays high",
-     "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNbk83dS05U3dLMmRJelhNR2Q1dndmRTExMDI4ajVLNEM3bWNTZktYV1gydFhjOVhzR19wUm55NXFMQmF4ME56VUJDSlFKRkVHZXR4TmxSSUVwMmFZRWVsbnh3VnVaWTZlQ3JZeFdzSnNmR2RuSzJoeUEyZGprblZ5bHhBMzI4eG5iMGNPNjRuemduS1NvdTh0bzg3SVByc1ZCdm5uUnJITQ?oc=5",
-     "time": "2026-11-10T10:43:44Z"
-    },
-    {
-     "id": "a3ff32444bd7c9b3",
-     "publisher": "ANI News",
-     "kind": "news",
-     "title": "Fed Governor Christopher J. Waller favors 25 bps rate hike in December; 50 bps may be needed if inflation persists",
-     "url": "https://news.google.com/rss/articles/CBMi9gFBVV95cUxQZVUtaWxLdmtZVGV6bDBwaDRTRk9saVd1R1FlUXowOVV1eVp6Qks5LWZVN0ZzS0Q1U09yemlnTVZjaEVlempESldNVEo4RE5Fb0R5OTAtU2R2cW5zMnF1SllpTXJUR3BDeWZYUjQ2U1VkZ2kzZ3VkNjRDQzhobEpSaW45NWlTSTlvMmhhYXRqUFNFeWRKRWJlUDdaMmNfR0kxOEZSa1JoS0syVFUtNG84Q3B4akh0dWNQajZ1S05FSlN2RFZYSmFLcjY0dzdNNi1wYmRqLVVvQVBOZkRJeURwajN4TjlkZUZ0blJmdktvMEFuLTFnMmc?oc=5",
-     "time": "2026-11-10T10:41:00Z"
-    }
-   ]
-  },
-  {
-   "summary": "Bitcoin and Ethereum extend losses as market sentiment hits extreme fear with BTC testing key support levels.",
+   "summary": "Bitcoin falls below $60,000 for the first time since July, extending downside pressure on cryptocurrency markets.",
    "category": "crypto_negative",
    "firstSeen": "2026-11-12T08:32:42Z",
    "publishers": [
@@ -6883,241 +6891,7 @@
    ]
   },
   {
-   "summary": "A broad technology sector sell-off weighs heavily on markets following Anthropic's IPO.",
-   "category": "other",
-   "firstSeen": "2026-11-19T16:52:24Z",
-   "publishers": [
-    "AP",
-    "CNBC",
-    "CNBC TV18",
-    "Crypto Briefing",
-    "Cryptonews.net",
-    "Invezz",
-    "KELO-AM",
-    "KFGO",
-    "KONTAN",
-    "Reuters",
-    "Seoul Economic Daily",
-    "The Standard (HK)",
-    "The Straits Times",
-    "TipRanks",
-    "Yahoo Finance",
-    "blockchain.news",
-    "bloomingbit"
-   ],
-   "assets": {
-    "GOOGL": {
-     "direction": "down",
-     "confidence": 0.65,
-     "why": "Broad market profit-taking and tech sector pressure from Anthropic IPO debut weigh on mega-cap growth."
-    },
-    "NVDA": {
-     "direction": "down",
-     "confidence": 0.75,
-     "why": "Broad AI and semiconductor sell-off triggered by Anthropic IPO post-debut decline."
-    },
-    "AMD": {
-     "direction": "down",
-     "confidence": 0.75,
-     "why": "Global AI and tech weakness weighs on semiconductor names."
-    },
-    "MSFT": {
-     "direction": "down",
-     "confidence": 0.65,
-     "why": "Broad tech sell-off triggered by Anthropic post-IPO slump."
-    },
-    "AVGO": {
-     "direction": "down",
-     "confidence": 0.7,
-     "why": "Broad tech sell-off and pressure on major indices create downward pressure on growth stocks like Broadcom."
-    },
-    "TSLA": {
-     "direction": "down",
-     "confidence": 0.65,
-     "why": "Risk-off profit-taking in the broader market weighs on growth tech names."
-    },
-    "BTC/USD": {
-     "direction": "down",
-     "confidence": 0.6,
-     "why": "Broader risk-off market sentiment linked to tech sell-off."
-    },
-    "AMZN": {
-     "direction": "down",
-     "confidence": 0.6,
-     "why": "Weighed down by the ongoing tech and AI valuation contraction."
-    }
-   },
-   "sources": [
-    {
-     "id": "703ff16f03cc0338",
-     "publisher": "Yahoo Finance",
-     "kind": "news",
-     "title": "Anthropic Stock Jumps 38% In Nasdaq Debut After Record $107.3B IPO",
-     "url": "https://stocktwits.com/news-articles/markets/equity/anthropic-stock-jumps-38-in-nasdaq-debut-after-record-107-3-b-ipo/cNbihePR900?.tsrc=rss",
-     "time": "2026-11-19T16:52:24Z"
-    },
-    {
-     "id": "2b42afc727538046",
-     "publisher": "Yahoo Finance",
-     "kind": "news",
-     "title": "Broadcom Stocks Rise 4.21% as Chip Supplier Joins Anthropic's $26 Billion Placement",
-     "url": "https://finance.yahoo.com/markets/stocks/articles/broadcom-stocks-rise-4-21-173026533.html?.tsrc=rss",
-     "time": "2026-11-19T17:30:26Z"
-    },
-    {
-     "id": "17b0fde6eed57e88",
-     "publisher": "Yahoo Finance",
-     "kind": "news",
-     "title": "AMD Stocks Rise 3.77% as Anthropic Deal Points to $20 Billion-Plus of Helios Spending",
-     "url": "https://finance.yahoo.com/markets/stocks/articles/amd-stocks-rise-3-77-172606832.html?.tsrc=rss",
-     "time": "2026-11-19T17:26:06Z"
-    },
-    {
-     "id": "61f706c2128a2d31",
-     "publisher": "CNBC",
-     "kind": "news",
-     "title": "Dow dives 700 points as Anthropic IPO milestone causes investors to take profits: Live updates",
-     "url": "https://www.cnbc.com/2026/11/18/stock-market-today-live-updates.html",
-     "time": "2026-11-19T18:03:05Z"
-    },
-    {
-     "id": "c44cbb15f7ebf76c",
-     "publisher": "CNBC",
-     "kind": "news",
-     "title": "Anthropic IPO live updates: AI lab tops $2 trillion market cap, Ashton Kutcher celebrates debut",
-     "url": "https://www.cnbc.com/2026/11/19/anthropic-ipo-ant-live-updates.html",
-     "time": "2026-11-19T17:54:07Z"
-    }
-   ]
-  },
-  {
-   "summary": "Nvidia secures more supplier capacity to meet strong AI demand.",
-   "category": "contract",
-   "firstSeen": "2026-11-16T14:36:40Z",
-   "publishers": [
-    "CNBC",
-    "Hardware Retailing",
-    "Investing.com",
-    "Reuters",
-    "TradingView",
-    "Yahoo Finance",
-    "blockchain.news",
-    "fiscal.ai",
-    "richtv.io",
-    "www.marketscreener.com"
-   ],
-   "assets": {
-    "TSLA": {
-     "direction": "up",
-     "confidence": 0.75,
-     "why": "Higher production output and strong vehicle delivery numbers support positive stock momentum."
-    },
-    "CVX": {
-     "direction": "up",
-     "confidence": 0.75,
-     "why": "Major acquisition to expand oil and gas production portfolio."
-    },
-    "LLY": {
-     "direction": "up",
-     "confidence": 0.8,
-     "why": "Acquiring Calytrix Bio for $1.5bn expands Eli Lilly's pipeline and market positioning."
-    },
-    "AAPL": {
-     "direction": "up",
-     "confidence": 0.6,
-     "why": "Securing long-term supply agreements for critical components is a positive operational development."
-    },
-    "NVDA": {
-     "direction": "up",
-     "confidence": 0.7,
-     "why": "Securing additional supplier capacity supports AI chip production and growth"
-    },
-    "NOW": {
-     "direction": "up",
-     "confidence": 0.75,
-     "why": "Raised guidance and strong AI product adoption."
-    },
-    "NKE": {
-     "direction": "up",
-     "confidence": 0.85,
-     "why": "Nike announced a major strategic turnaround plan targeting a significant $5 billion revenue boost by 2031, sending shares higher."
-    },
-    "AMD": {
-     "direction": "up",
-     "confidence": 0.75,
-     "why": "Positive endorsement from OpenAI and Rockstar Games for GPU efficiency and scaling."
-    },
-    "FANG": {
-     "direction": "up",
-     "confidence": 0.75,
-     "why": "Acquisition of remaining stake in Double Eagle allows Diamondback Energy to capture full revenue from planned drilling operations."
-    },
-    "LOW": {
-     "direction": "up",
-     "confidence": 0.85,
-     "why": "Guidance raise and strong online sales provide a positive catalyst for Lowe's."
-    },
-    "HD": {
-     "direction": "up",
-     "confidence": 0.65,
-     "why": "Positive sector momentum from Lowe's guidance raise."
-    },
-    "INTC": {
-     "direction": "up",
-     "confidence": 0.8,
-     "why": "Signing its first external customer for advanced 18A chips is a significant positive contract/foundry milestone."
-    },
-    "PANW": {
-     "direction": "up",
-     "confidence": 0.85,
-     "why": "Strong earnings beat combined with a large $4.5 billion AI deal directly drives share price upward"
-    }
-   },
-   "sources": [
-    {
-     "id": "6e8622025ba61a6d",
-     "publisher": "Reuters",
-     "kind": "news",
-     "title": "Tesla announces $3.3 billion expansion of Germany plant",
-     "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNaHd0RC1iZmQwWUtkTl9CYjJVMUhGYmtxNEZyQU92Rm5mZS1OZ0Z2bHl6TmJuLUFJYWpQUW5GQ1h2anVqSHR5TDF3aThnaWhDd3lDYl9oY3VqbTVLaUMwMGtSME5IckZnZE5PQVhURTNPQ1BaS2tBejl6OU15X1B1N3VOM0o3dktRbnpLSjc1eWI5WWs4bjZqNnFOOA?oc=5",
-     "time": "2026-11-16T14:36:40Z"
-    },
-    {
-     "id": "2acd79a8e57ffcb3",
-     "publisher": "Yahoo Finance",
-     "kind": "news",
-     "title": "Tesla to invest 3 bn euros to expand German factory",
-     "url": "https://finance.yahoo.com/technology/articles/tesla-invest-3-bn-euros-144451294.html?.tsrc=rss",
-     "time": "2026-11-16T14:44:51Z"
-    },
-    {
-     "id": "c80edc1bc344d0f3",
-     "publisher": "Yahoo Finance",
-     "kind": "news",
-     "title": "Tesla Targets 2029 Cybercab Production Start In Giga Berlin With $3.3B Investment: Report",
-     "url": "https://stocktwits.com/news-articles/markets/equity/tesla-targets-2029-cybercab-production-start-in-giga-berlin-with-3-3-b-investment-report/cNb7MV2R9gJ?.tsrc=rss",
-     "time": "2026-11-16T16:46:09Z"
-    },
-    {
-     "id": "5a3964d15125684f",
-     "publisher": "Yahoo Finance",
-     "kind": "news",
-     "title": "Tesla Wants to Build 1 Million Cybercabs Near Berlin",
-     "url": "https://finance.yahoo.com/markets/stocks/articles/tesla-wants-build-1-million-181721398.html?.tsrc=rss",
-     "time": "2026-11-16T18:17:21Z"
-    },
-    {
-     "id": "31d12945328b968b",
-     "publisher": "www.marketscreener.com",
-     "kind": "news",
-     "title": "Chevron to buy Blackstone-backed oil producer for $5 billion, FT reports",
-     "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxOM3oteG5ZbTdMY2NYYmpNblBHSk53eGZhbXNzak45c0JIVEd3WlRkVTlfUHBIQmtOX3dfQTZPaTBUeUFlQnNXUkVsdnp4OEhHazRJQ3h6NnBLVnhxTjFWRDdZbWNOZFZtc1U4YVJhdjdreERnY1QydExCOUVMTU5WNld4M3piZmttdlZxS3BtMWVsTERMZkp0SG9tLWg1NDc2MWs2MGJtVTRHd0U4RGJ4azBiNVZwQWZEVWpYOXN1Wnc?oc=5",
-     "time": "2026-11-16T20:31:12Z"
-    }
-   ]
-  },
-  {
-   "summary": "Geopolitical tensions and military strikes continue in the Middle East, impacting oil supply security and raising regional defense considerations.",
+   "summary": "Escalating conflict in the Middle East, including a tanker hit in the Strait of Hormuz and missile strikes near Iran, increases oil supply disruption risks.",
    "category": "war_escalation",
    "firstSeen": "2026-11-10T20:01:23Z",
    "publishers": [
@@ -7136,6 +6910,7 @@
     "ABP Live English",
     "ABS-CBN",
     "ANI News",
+    "ANSA",
     "AOL.co.uk",
     "AOL.com",
     "AP",
@@ -7831,12 +7606,12 @@
     "XOM": {
      "direction": "up",
      "confidence": 0.85,
-     "why": "Middle East attacks and supply security fears push oil and gas stocks higher."
+     "why": "Strait of Hormuz tanker attack and missile strikes in Iran directly threaten oil supply."
     },
     "CVX": {
      "direction": "up",
      "confidence": 0.85,
-     "why": "Geopolitical escalation in the Middle East boosts oil majors."
+     "why": "Middle East military escalation drives oil and gas prices higher."
     },
     "OXY": {
      "direction": "up",
@@ -7846,12 +7621,12 @@
     "PLTR": {
      "direction": "up",
      "confidence": 0.8,
-     "why": "Defense tech rises amid escalating geopolitical conflicts."
+     "why": "Defense tech demand surges amid active Middle East kinetic conflict."
     },
     "AVAV": {
      "direction": "up",
      "confidence": 0.8,
-     "why": "Defense tech benefits from expanding military conflict."
+     "why": "Defense contractor benefits from direct military conflict escalation."
     },
     "NEM": {
      "direction": "up",
@@ -7969,6 +7744,980 @@
      "title": "Middle East latest: Ship attacked in UAE waters, says operator Adnoc",
      "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPdTMwLTRPRTZsZHJPR0lQTVNtNHdyWWxZNHMydXJzUjEySVZIZzJfUFlvbXZfQWJPc25aSm5kM3lzNmxFMFVMdFl3NTZLZWVjZnZPaTFyWjZtcl9peGd6ZlpDU2hnQmxDVFBLRlF1cVR3U2QwR2R4dWRRNEFDaDBzSTY2YUFWZEsyZ3dIOGQwX2tudV81a1pRRXQtVzl0TWYw?oc=5",
      "time": "2026-11-10T20:59:26Z"
+    }
+   ]
+  },
+  {
+   "summary": "European leaders condemn an intentional Russian missile provocation as it hits Poland, raising geopolitical tensions.",
+   "category": "war_escalation",
+   "firstSeen": "2026-11-20T16:27:30Z",
+   "publishers": [
+    "RTE.ie",
+    "The Independent",
+    "Vanguard News",
+    "WRAL"
+   ],
+   "assets": {
+    "PLTR": {
+     "direction": "up",
+     "confidence": 0.5,
+     "why": "Increased geopolitical tension typically benefits defense technology stocks."
+    },
+    "AVAV": {
+     "direction": "up",
+     "confidence": 0.5,
+     "why": "Increased geopolitical tension typically benefits defense technology stocks."
+    },
+    "NEM": {
+     "direction": "up",
+     "confidence": 0.75,
+     "why": "Geopolitical escalation in Europe increases safe-haven demand for gold miners."
+    }
+   },
+   "sources": [
+    {
+     "id": "9d96ce28e1d9d3b6",
+     "publisher": "WRAL",
+     "kind": "news",
+     "title": "Russian missile’s crash in Poland was likely an intentional provocation, Polish prime minister says",
+     "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxOd1UzdUlHaHdGaHBFRFhTLWExN1J5QlNVb0o3UkFuNldKcnhnTUc4UEs3XzFIbGdWdUIweDRzbDRTcEZtdmpENVl3dTNuZUlwaW1EcTB1dDFMRkh2a3ctRWw0Unp0S3pPQ0daTzJ6bENaMHl1YUgtVm1TN2ZWTHRFdUVLc0VucVAyWE84NkkycENHTi1GWjFaV0dnZk5zVzN0LUd3VTh1Q2ZaYzhHaWZJRXRjeGJkY0g1ZDB5UXdsZDNCcXc?oc=5",
+     "time": "2026-11-20T16:28:02Z"
+    },
+    {
+     "id": "07fe8cbba05be5cc",
+     "publisher": "RTE.ie",
+     "kind": "news",
+     "title": "Leaders offer support after Warsaw missile incident",
+     "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE92RlNhdTFMVHJrRU5MajZTQ1dwRE9FeUF1WkQzaDVKQnBtRlVZS0lUZE5XWF9KSDBZWG9WS1VYRE53bWV1M3BJUFF4aElwd3l6NVBtSEFOX1lCTVEyMzJSWm0tSlBOTk5Q?oc=5",
+     "time": "2026-11-20T16:27:30Z"
+    },
+    {
+     "id": "d2df3350bfeeca07",
+     "publisher": "Vanguard News",
+     "kind": "news",
+     "title": "Poland and allies say Russian missile a ‘provocation’ from Moscow",
+     "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNSmU2bWptRDQwLVY0Ri1GUmZVcTktMC1oaHU2UDRTTDkwT3c1SDFCZmJmRjg3YzV1Qm9WZGVaREFhMWFaazEyQ0IwTkFneU01WWdOYTh5UkhKT1NGN3RIUDVzX2VvYUtIb2wzVlhkclpYYlZkS2ZDUXJITUhVM0hnXzNJWTlMemxtalhWa0JEMmU5dnYyWGEzcnlzcDhiRS1laVVYbjBBNNIBpwFBVV95cUxNSmU2bWptRDQwLVY0Ri1GUmZVcTktMC1oaHU2UDRTTDkwT3c1SDFCZmJmRjg3YzV1Qm9WZGVaREFhMWFaazEyQ0IwTkFneU01WWdOYTh5UkhKT1NGN3RIUDVzX2VvYUtIb2wzVlhkclpYYlZkS2ZDUXJITUhVM0hnXzNJWTlMemxtalhWa0JEMmU5dnYyWGEzcnlzcDhiRS1laVVYbjBBNA?oc=5",
+     "time": "2026-11-20T16:39:47Z"
+    },
+    {
+     "id": "0297e8b0b240e97d",
+     "publisher": "The Independent",
+     "kind": "news",
+     "title": "European leaders condemn Russia’s ‘intentional provocation’ as missile hits Poland",
+     "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQVF9PQ1IzdXJpeFlKVGEyT3ZRTHRIMDBFbzZZWmYtYmpDdXVCWm9iSy1ULWFZRUFHdWlGaThRcUQ4WDhpcXdlRXJiOEZRWnFibHRSQ2tSN2tOSGxac2tvMmM5ZUVfaXhweFZCMXBPTmVhRFh2Q2Fad25lMXhXZkV2VlhsVlNvRjdtcnc5MmdKODVYSy1JYzY4UE1nVQ?oc=5",
+     "time": "2026-11-20T16:39:00Z"
+    }
+   ]
+  },
+  {
+   "summary": "Lowe's earnings beat was negatively impacted by the recognition of tariff refunds, complicating the financial outlook.",
+   "category": "company_bad_news",
+   "firstSeen": "2026-11-12T15:43:48Z",
+   "publishers": [
+    "24/7 Wall St.",
+    "AP",
+    "Benzinga",
+    "CNBC",
+    "Crypto Briefing",
+    "Cryptonews.net",
+    "GuruFocus",
+    "Investing.com",
+    "JournalArta",
+    "Moomoo",
+    "NBC Los Angeles",
+    "NBC News",
+    "Qualys",
+    "Reuters",
+    "StockStory",
+    "TIKR.com",
+    "The Economic Times",
+    "TipRanks",
+    "TradingKey",
+    "Wccftech",
+    "Yahoo Finance",
+    "Yahoo Finance UK",
+    "fiscal.ai",
+    "scanx.trade"
+   ],
+   "assets": {
+    "TSLA": {
+     "direction": "down",
+     "confidence": 0.65,
+     "why": "Analyst downgrade to Sell highlighting valuation and profitability concerns."
+    },
+    "NVDA": {
+     "direction": "down",
+     "confidence": 0.85,
+     "why": "CEO exit and executive turmoil directly weigh on Nvidia stock."
+    },
+    "LOW": {
+     "direction": "down",
+     "confidence": 0.8,
+     "why": "Analyst downgrade to Underperform directly weighs on the stock."
+    },
+    "TJX": {
+     "direction": "down",
+     "confidence": 0.65,
+     "why": "Downgraded to Hold by Gordon Haskett."
+    },
+    "AVGO": {
+     "direction": "down",
+     "confidence": 0.8,
+     "why": "Downgraded by Rothschild & Co Redburn due to AI financing concerns."
+    },
+    "HD": {
+     "direction": "down",
+     "confidence": 0.6,
+     "why": "Peer home improvement retailer pressured by negative sector sentiment."
+    },
+    "META": {
+     "direction": "down",
+     "confidence": 0.85,
+     "why": "Massive regulatory fine of $887 million from Italy creates significant negative pressure."
+    },
+    "GOOGL": {
+     "direction": "down",
+     "confidence": 0.55,
+     "why": "Broader regulatory headwinds for big tech regarding user data in Europe."
+    },
+    "INTC": {
+     "direction": "down",
+     "confidence": 0.9,
+     "why": "Severe share price plunge and shareholder lawsuits highlight deep fundamental pressures for Intel."
+    },
+    "COST": {
+     "direction": "down",
+     "confidence": 0.6,
+     "why": "Regulatory fine and labor misclassification issue creates slight negative sentiment."
+    },
+    "MU": {
+     "direction": "down",
+     "confidence": 0.5,
+     "why": "Legal setbacks regarding price-fixing allegations create regulatory and financial uncertainty for the company."
+    },
+    "OXY": {
+     "direction": "down",
+     "confidence": 0.8,
+     "why": "Analyst downgrade creates downward selling pressure."
+    },
+    "FANG": {
+     "direction": "down",
+     "confidence": 0.65,
+     "why": "Large cash-and-stock acquisitions can dilute existing shareholders and create near-term capital allocation uncertainty."
+    },
+    "SMCI": {
+     "direction": "down",
+     "confidence": 0.75,
+     "why": "DOJ probe and leadership uncertainty create significant negative pressure"
+    },
+    "MSFT": {
+     "direction": "down",
+     "confidence": 0.6,
+     "why": "Patent infringement lawsuit from MIT introduces legal and financial headwinds"
+    },
+    "ADBE": {
+     "direction": "down",
+     "confidence": 0.5,
+     "why": "Legal disputes regarding branding can create uncertainty and potential rebranding costs."
+    },
+    "AAPL": {
+     "direction": "down",
+     "confidence": 0.7,
+     "why": "Widespread service outages and internal technical failures weigh on near-term sentiment."
+    },
+    "MDT": {
+     "direction": "up",
+     "confidence": 0.75,
+     "why": "FDA clearance for the Hugo robotic-assisted surgery system is a major regulatory and commercial milestone."
+    },
+    "CRM": {
+     "direction": "down",
+     "confidence": 0.85,
+     "why": "Significant drop and negative investor sentiment following layoff reports."
+    },
+    "NKE": {
+     "direction": "down",
+     "confidence": 0.8,
+     "why": "Continued investor selling after disappointing Investor Day guidance."
+    },
+    "ABBV": {
+     "direction": "up",
+     "confidence": 0.55,
+     "why": "Strategic collaboration with DISCO Pharmaceuticals expands oncology pipeline."
+    },
+    "MRK": {
+     "direction": "up",
+     "confidence": 0.6,
+     "why": "Strategic research collaboration with Isomorphic Labs for oncology."
+    },
+    "AMD": {
+     "direction": "down",
+     "confidence": 0.85,
+     "why": "Short seller allegations and significant share price tumble pressure the stock."
+    },
+    "PANW": {
+     "direction": "down",
+     "confidence": 0.6,
+     "why": "Third-party supply-chain security flaws can impact cybersecurity stock sentiment."
+    }
+   },
+   "sources": [
+    {
+     "id": "fb8045cbfe86a60f",
+     "publisher": "Benzinga",
+     "kind": "news",
+     "title": "YETI Sounds the Alarm on Consumer Spending As Shoppers Hunt for Deals",
+     "url": "https://www.benzinga.com/markets/earnings/26/11/63197694/yeti-sounds-the-alarm-on-consumer-spending-as-shoppers-hunt-for-deals",
+     "time": "2026-11-12T15:43:48Z"
+    },
+    {
+     "id": "eb1007b02a637a06",
+     "publisher": "StockStory",
+     "kind": "news",
+     "title": "Why YETI shares are trading lower today",
+     "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNdl83SV9zdFlzM2FENVRJLTJxckhKNjZUMTFTM0FXUUZVQ0NzRG54ZFRXeERERnZDSWFDcmMxNU1rRVhrWUlnV2UtWFdmY2VpWDAxNkxudGV4NmpjeUJ3Z1NQUm1FUm1lU3dNTmEwdmxkNjFTdU9aTEt2THpfQmYyV05vNzJwa3VDSjZqQjdfYjVwQWttVzlNX0ZrdTlydXJU?oc=5",
+     "time": "2026-11-12T15:53:44Z"
+    },
+    {
+     "id": "c394152546c931b0",
+     "publisher": "scanx.trade",
+     "kind": "news",
+     "title": "YETI Holdings Q3FY26 Results: Revenue up 4.4% but guidance cut",
+     "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOdlBmR3l6ZUFQY29CWHFTT1p4Z0JOdEpxb2hiYWNuV3FQTjVKcTd0bml3S3RPWVY1SDVSUVR3dGFSb1BvbXByNzc4RURDd1E0YXdTT05pVWYyOVpjQ2JTYXVkMFByR05iaThHeUJfRDJuaWVKYVp3UkxndGxfNm9WeGxtV1h0dUFEUWtVM0tQaURPVWNuSGFiZmZBanBCc2tGQ0FhNjEyUEVZVUYzT1lGSWFFeW05clYz?oc=5",
+     "time": "2026-11-12T16:39:48Z"
+    },
+    {
+     "id": "cc6a00bf5e9f8ced",
+     "publisher": "fiscal.ai",
+     "kind": "news",
+     "title": "Lawsuit Filed Against Tesla Over San Mateo Street-Racing Incident",
+     "url": "https://newsfilter.io/sources/businesswire",
+     "time": "2026-11-12T20:01:33Z"
+    },
+    {
+     "id": "fab361ae0414d4da",
+     "publisher": "CNBC",
+     "kind": "news",
+     "title": "Stock futures edge lower after markets slide amid Nvidia woes: Live updates",
+     "url": "https://www.cnbc.com/2026/11/12/stock-market-today-live-updates.html",
+     "time": "2026-11-13T08:20:13Z"
+    }
+   ]
+  },
+  {
+   "summary": "Markets continue to price in upcoming Federal Reserve rate hikes for December and January driven by energy shocks and hawkish expectations.",
+   "category": "central_bank_hawkish",
+   "firstSeen": "2026-11-10T09:39:09Z",
+   "publishers": [
+    "13WHAM-TV",
+    "1470 & 100.3 WMBD",
+    "24/7 Wall St.",
+    "93.3 The Drive",
+    "ABC News - Breaking News, Latest News and Videos",
+    "ABC7 New York",
+    "AFP.com",
+    "AL Circle",
+    "AMBCrypto",
+    "ANI News",
+    "AOL.com",
+    "AP",
+    "APAC Media",
+    "ARYnews.tv",
+    "ASHARQ AL-AWSAT English",
+    "Action Forex",
+    "AdvisorHub",
+    "Aktualita.co",
+    "Al Jazeera",
+    "Altcoin Buzz",
+    "American Banker",
+    "Anadolu Ajansı",
+    "Asia News Network",
+    "Asianet Newsable",
+    "Axios",
+    "AzerNews",
+    "BNN Bloomberg",
+    "Baltimore Sun",
+    "Bangladesh Post",
+    "Barchart.com",
+    "Barron's",
+    "BeInCrypto",
+    "Beinsure",
+    "Benzinga",
+    "Big News Network.com",
+    "BigGo Finance",
+    "Bilyonaryo Business",
+    "Binance",
+    "Bitbo",
+    "Bitcoin Foundation",
+    "Bitcoin Magazine",
+    "Bitcoin News",
+    "Bitcoin Sistemi",
+    "Bloomberg",
+    "Bloomberg.com",
+    "Bradenton Herald",
+    "Brave New Coin",
+    "Breakingthenews.net",
+    "Breitbart News",
+    "Briefs Finance",
+    "BullionVault",
+    "Business Day",
+    "Business Insider",
+    "Business Recorder",
+    "Business Standard",
+    "Business Today",
+    "Business Upturn",
+    "BusinessLine",
+    "BusinessToday Malaysia",
+    "Businessamlive",
+    "Businesskorea",
+    "CFO Dive",
+    "CNA",
+    "CNBC",
+    "CNBC TV18",
+    "CediRates",
+    "Central Oregon Daily",
+    "Chosunbiz",
+    "Coin Gabbar",
+    "CoinCodex",
+    "CoinDesk",
+    "CoinGape",
+    "CoinMarketCap",
+    "Coinpaper",
+    "Coinpedia",
+    "Cointribune",
+    "Crowdfund Insider",
+    "Crypto Briefing",
+    "Crypto News",
+    "CryptoDaily",
+    "CryptoPotato",
+    "CryptoRank",
+    "CryptoSlate",
+    "CryptoTicker.io",
+    "Cryptonews.net",
+    "CurrencyNews.co.uk",
+    "DD News",
+    "Daily Voice Of Asia",
+    "Dalal Street Investment Journal",
+    "Decrypt",
+    "Demokratis.co.id",
+    "Demócrata",
+    "ETV Bharat",
+    "Economies.com",
+    "Euronext Markets: Real-time Stock Market Data | live",
+    "Exchange Rates UK",
+    "FOX 17 West Michigan News",
+    "FOX 9 Minneapolis-St. Paul",
+    "FXEmpire",
+    "FXLeaders",
+    "FXStreet",
+    "Finance & Commerce",
+    "FinanceFeeds",
+    "Finimize",
+    "Firstpost",
+    "Forbes",
+    "Forbes Middle East",
+    "Foreign Policy Journal",
+    "Fox Business",
+    "Free Malaysia Today",
+    "Free Press Journal",
+    "Gadgets 360",
+    "Global Banking & Finance Review",
+    "Goldman Sachs",
+    "Gulf Business",
+    "Gulf Today",
+    "GuruFocus",
+    "Hindustan Times",
+    "Hiru News",
+    "Hokanews",
+    "Honolulu Star-Advertiser",
+    "IDNFinancials",
+    "Incrypted",
+    "IndexBox",
+    "India's News.Net",
+    "IndiaIPO",
+    "IndianEagle",
+    "Indianapolis Business Journal",
+    "Informat.ro",
+    "Insurance Business",
+    "InsuranceNewsNet",
+    "International Business Times",
+    "International Business Times Australia",
+    "Investing News Network",
+    "Investing.com",
+    "Investing.com Australia",
+    "Investing.com Canada",
+    "Investing.com India",
+    "Investing.com Nigeria",
+    "Investing.com UK",
+    "InvestmentNews",
+    "Investor Strategy News",
+    "Investor's Business Daily",
+    "Invezz",
+    "Jagran Josh",
+    "JournalArta",
+    "KABB",
+    "KATV",
+    "KDNL",
+    "KELO-AM",
+    "KLSE Screener",
+    "KQ2",
+    "KRDO",
+    "KSHB 41 Kansas City",
+    "KSL",
+    "KSL News",
+    "KTVN",
+    "KXLH News Helena",
+    "Kalshi News",
+    "Kathleen Hays Presents: Central Bank Central",
+    "Kiplinger",
+    "Kitco",
+    "KuCoin",
+    "Latest news from Azerbaijan",
+    "Latin Times",
+    "Limapagi",
+    "LinkedIn",
+    "Livemint",
+    "Livewire Markets",
+    "London South East",
+    "Loveland Reporter-Herald",
+    "MLQ.ai",
+    "Magnolia Tribune",
+    "Malay Mail",
+    "Manila Bulletin",
+    "MarketWatch",
+    "Metrobank Wealth Insights",
+    "Mezha.net",
+    "Mining.com",
+    "Mining.com.au",
+    "MiningMX",
+    "MishTalk",
+    "Mitrade",
+    "Moneycontrol.com",
+    "Moomoo",
+    "Morning Brew",
+    "Mortgage Professional America",
+    "NAI500",
+    "NBC26",
+    "NDTV Profit",
+    "Nacionale",
+    "Nation Thailand",
+    "New Hampshire Union Leader",
+    "New Jersey Business & Industry Association",
+    "New York Post",
+    "News Channel 5 Nashville",
+    "News24",
+    "NewsBytes",
+    "Newsday",
+    "Newsmax",
+    "Newsquawk",
+    "Newswav",
+    "Nikkei Asia",
+    "Norada Real Estate Investments",
+    "Northeast Mississippi Daily Journal",
+    "Northwest Arkansas Democrat-Gazette",
+    "Oz Arab Media",
+    "People's Daily Online",
+    "Pintu",
+    "Pluang",
+    "Press of Atlantic City",
+    "Profit by Pakistan Today",
+    "Public TV English",
+    "Quartz",
+    "RTE.ie",
+    "RTHK News",
+    "RTL Today",
+    "RVBusiness",
+    "RealEstateNews.com",
+    "Realtor.com",
+    "Rediff MoneyWiz",
+    "Reuters",
+    "Rock Hill Herald",
+    "Rolling Out",
+    "SBS 뉴스",
+    "SRN News",
+    "SSBCrack",
+    "SchiffGold.com",
+    "Scotsman Guide",
+    "Scripps News",
+    "Seeking Alpha",
+    "Serrari Group",
+    "Sharecafe",
+    "Simply Wall St",
+    "South Florida Reporter",
+    "Startup Fortune",
+    "Stock Titan",
+    "Stocktwits",
+    "StoneX",
+    "StreetInsider",
+    "TechJuice",
+    "The American Conservative",
+    "The Arkansas Democrat-Gazette",
+    "The Business Times",
+    "The Crypto Times",
+    "The Dark Side Of The Boom",
+    "The Economic Times",
+    "The Edge Malaysia",
+    "The Financial Express",
+    "The Globe and Mail",
+    "The Hill",
+    "The Hindu",
+    "The Independent",
+    "The Kashmir Monitor",
+    "The Korea Herald",
+    "The Korea Times",
+    "The Market Periodical",
+    "The Mighty 790 KFGO",
+    "The Mortgage Reports",
+    "The Motley Fool",
+    "The National",
+    "The Real Economy Blog",
+    "The San Joaquin Valley Sun",
+    "The Seattle Times",
+    "The Shillong Times",
+    "The Standard (HK)",
+    "The Star",
+    "The Straits Times",
+    "The Sunday Guardian",
+    "The Times",
+    "The Times of India",
+    "The Washington Post",
+    "TheBull.com.au",
+    "TheStreet",
+    "Times Now",
+    "TipRanks",
+    "TorFX News",
+    "Traders Union",
+    "TradingKey",
+    "TradingNEWS",
+    "TradingPedia",
+    "TradingView",
+    "Türkiye Today",
+    "U.Today",
+    "UA.NEWS",
+    "US News Money",
+    "USA Today",
+    "UrduPoint",
+    "VT Markets",
+    "ValueWalk",
+    "Vietnam.vn",
+    "Virginia Business",
+    "WBFF",
+    "WCTI",
+    "WHBL News",
+    "WKZO",
+    "WPBN",
+    "WSJ",
+    "WTOP News",
+    "WTVB",
+    "WXYZ Channel 7",
+    "Washington Examiner",
+    "XTB.com",
+    "Xinhua",
+    "Yahoo",
+    "Yahoo Finance",
+    "Yahoo Finance Australia",
+    "Yahoo Finance Singapore",
+    "Zawya",
+    "ad-hoc-news.de",
+    "bdnews24.com",
+    "blockchain.news",
+    "bloomingbit",
+    "blue News",
+    "bsinews.id",
+    "cbs19.tv",
+    "eNCA",
+    "finance.biggo.com",
+    "fiscal.ai",
+    "https://streamlinefeed.co.ke/",
+    "iHeart",
+    "kaohoon international",
+    "marketscreener.com",
+    "news.sbs.co.kr",
+    "newsalert.com.pk",
+    "qz.com",
+    "richtv.io",
+    "scanx.trade",
+    "streamlinefeed.co.ke",
+    "tippinsights",
+    "www.equiti.com",
+    "www.foreignpolicyjournal.com",
+    "www.jordannews.jo",
+    "www.thenationalnews.com",
+    "www.tmgm.com",
+    "www.tokenpost.com",
+    "تسنیم",
+    "سانا",
+    "شبكة تواصل الإخبارية",
+    "صحيفة مال",
+    "富途牛牛",
+    "巴士的報",
+    "联合早报",
+    "아시아경제",
+    "재경일보",
+    "조선일보",
+    "파이낸셜뉴스"
+   ],
+   "assets": {
+    "BTC/USD": {
+     "direction": "down",
+     "confidence": 0.85,
+     "why": "Hawkish Fed policy signals and ETF outflows weigh heavily on Bitcoin."
+    },
+    "ETH/USD": {
+     "direction": "down",
+     "confidence": 0.85,
+     "why": "Hot inflation and rate hike fears trigger heavy long liquidations and pressure crypto prices."
+    },
+    "SOL/USD": {
+     "direction": "down",
+     "confidence": 0.8,
+     "why": "Hawkish Fed rate hike expectations create a stronger dollar and pressure risk assets."
+    },
+    "NVDA": {
+     "direction": "down",
+     "confidence": 0.8,
+     "why": "Hawkish Fed commentary and rate hike expectations weigh on risk-on growth and tech stocks."
+    },
+    "MSFT": {
+     "direction": "down",
+     "confidence": 0.81,
+     "why": "Hawkish Fed rate hike expectations put downward pressure on major growth and tech stocks."
+    },
+    "AAPL": {
+     "direction": "down",
+     "confidence": 0.75,
+     "why": "Hawkish Fed rate hike outlook weighs heavily on broad tech and growth stocks"
+    },
+    "AMZN": {
+     "direction": "down",
+     "confidence": 0.75,
+     "why": "Broad tech and growth sell-off triggered by hawkish central bank outlook."
+    },
+    "AMAT": {
+     "direction": "down",
+     "confidence": 0.7,
+     "why": "Broader tech sell-off driven by hawkish Fed outlook."
+    },
+    "GOOGL": {
+     "direction": "down",
+     "confidence": 0.75,
+     "why": "Higher interest rate expectations and hot CPI weigh on growth tech stocks."
+    },
+    "META": {
+     "direction": "down",
+     "confidence": 0.75,
+     "why": "Higher interest rate expectations and hot CPI weigh on growth tech stocks."
+    },
+    "TSLA": {
+     "direction": "down",
+     "confidence": 0.8,
+     "why": "Hawkish Fed rate hike expectations put downward pressure on major growth and tech stocks."
+    },
+    "NEM": {
+     "direction": "down",
+     "confidence": 0.85,
+     "why": "Gold plunges to 52-week low following hawkish Fed minutes."
+    },
+    "SPWO": {
+     "direction": "down",
+     "confidence": 0.75,
+     "why": "Broad equities tumble due to rising yields and hawkish rate bets."
+    },
+    "AEM": {
+     "direction": "down",
+     "confidence": 0.85,
+     "why": "Hawkish Fed policy pushes gold prices down, hurting gold miners."
+    },
+    "AMD": {
+     "direction": "down",
+     "confidence": 0.85,
+     "why": "Hot PPI inflation reading and hawkish rate fears crush semiconductor sector, with AMD tumbling."
+    },
+    "CVX": {
+     "direction": "down",
+     "confidence": 0.6,
+     "why": "Broad macro pressure from hawkish Fed comments can negatively impact commodities."
+    },
+    "INTC": {
+     "direction": "down",
+     "confidence": 0.65,
+     "why": "Higher interest rate expectations put pressure on tech/growth stocks."
+    }
+   },
+   "sources": [
+    {
+     "id": "d9df815319391cbb",
+     "publisher": "The Edge Malaysia",
+     "kind": "news",
+     "title": "Fed’s Waller backs rate hike in December, says open to larger move",
+     "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE9aSnktcDlXbzBpMU1SQkZvRktGTnkyX1J4LU92VGxBZVVhcGQtRTVEaDBqLVRPS213cFpTMkFad1BkS0xpdmVVbGU2bVhsUTA2?oc=5",
+     "time": "2026-11-10T09:39:09Z"
+    },
+    {
+     "id": "252cbcbd6b6cd044",
+     "publisher": "Seeking Alpha",
+     "kind": "news",
+     "title": "Waller backs December rate hike, says 50-basis-point move may be on the table (TLT:NASDAQ)",
+     "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOc004NEQ1TjItUHFWanNEbWxpTlpFQ0tIaUcxZDJpTkQyZ3ppdHZtZ280ZlpnQ0NWU3g4Nms1M1dTVEdjZEpwbXcwUVBlRkRzTjNyWEctZEdNT2JwSFlSeGJIWFRTZXB2NEczeUtKY1dIQU9JbFFDaHQyOUxHZ05kU1h4QTQxQzlmSFFjRTQ0OTlaczl3NGhiMHNidko2SGVrWHZaTk8tZlN1OXR2S29HRWVMcXo?oc=5",
+     "time": "2026-11-10T10:10:00Z"
+    },
+    {
+     "id": "1816a3bd028bffbd",
+     "publisher": "MLQ.ai",
+     "kind": "news",
+     "title": "Fed's Waller backs a December rate hike and says a half-point move should be considered if core inflation runs hot",
+     "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxQMWRZU0pVdkJiU1J1MUdOX3Y5QVF1cHpRdG5zTndjOE4xaWhuVFVWSzFZem9zNHdFVjBhYk5TZFN1VEN2RnZfdF9UV21Za09HM2hZTGpMXzUzTG01ZzZ0QzFrNy1NZENQSEsyQjNCb1plSWtWX2lSQW9xSzZXbk5zelQ4S01mRmVqMU9NTzhHb3ZWbW9yUVdOMkhLemVTSmlUNGg5bFNXTjRiVmFYenVJekRkeXluZVNhVVZNYWdYMTc5MDM4NnV3RldkSW5hS2c?oc=5",
+     "time": "2026-11-10T10:44:05Z"
+    },
+    {
+     "id": "177d64cb4badd873",
+     "publisher": "FXStreet",
+     "kind": "news",
+     "title": "Fed's Waller signals risk of larger rate hikes as inflation stays high",
+     "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNbk83dS05U3dLMmRJelhNR2Q1dndmRTExMDI4ajVLNEM3bWNTZktYV1gydFhjOVhzR19wUm55NXFMQmF4ME56VUJDSlFKRkVHZXR4TmxSSUVwMmFZRWVsbnh3VnVaWTZlQ3JZeFdzSnNmR2RuSzJoeUEyZGprblZ5bHhBMzI4eG5iMGNPNjRuemduS1NvdTh0bzg3SVByc1ZCdm5uUnJITQ?oc=5",
+     "time": "2026-11-10T10:43:44Z"
+    },
+    {
+     "id": "a3ff32444bd7c9b3",
+     "publisher": "ANI News",
+     "kind": "news",
+     "title": "Fed Governor Christopher J. Waller favors 25 bps rate hike in December; 50 bps may be needed if inflation persists",
+     "url": "https://news.google.com/rss/articles/CBMi9gFBVV95cUxQZVUtaWxLdmtZVGV6bDBwaDRTRk9saVd1R1FlUXowOVV1eVp6Qks5LWZVN0ZzS0Q1U09yemlnTVZjaEVlempESldNVEo4RE5Fb0R5OTAtU2R2cW5zMnF1SllpTXJUR3BDeWZYUjQ2U1VkZ2kzZ3VkNjRDQzhobEpSaW45NWlTSTlvMmhhYXRqUFNFeWRKRWJlUDdaMmNfR0kxOEZSa1JoS0syVFUtNG84Q3B4akh0dWNQajZ1S05FSlN2RFZYSmFLcjY0dzdNNi1wYmRqLVVvQVBOZkRJeURwajN4TjlkZUZ0blJmdktvMEFuLTFnMmc?oc=5",
+     "time": "2026-11-10T10:41:00Z"
+    }
+   ]
+  },
+  {
+   "summary": "A broad technology sector sell-off weighs heavily on markets following Anthropic's IPO.",
+   "category": "other",
+   "firstSeen": "2026-11-19T16:52:24Z",
+   "publishers": [
+    "AP",
+    "CNBC",
+    "CNBC TV18",
+    "Crypto Briefing",
+    "Cryptonews.net",
+    "Invezz",
+    "KELO-AM",
+    "KFGO",
+    "KONTAN",
+    "Reuters",
+    "Seoul Economic Daily",
+    "The Standard (HK)",
+    "The Straits Times",
+    "TipRanks",
+    "Yahoo Finance",
+    "blockchain.news",
+    "bloomingbit"
+   ],
+   "assets": {
+    "GOOGL": {
+     "direction": "down",
+     "confidence": 0.65,
+     "why": "Broad market profit-taking and tech sector pressure from Anthropic IPO debut weigh on mega-cap growth."
+    },
+    "NVDA": {
+     "direction": "down",
+     "confidence": 0.75,
+     "why": "Broad AI and semiconductor sell-off triggered by Anthropic IPO post-debut decline."
+    },
+    "AMD": {
+     "direction": "down",
+     "confidence": 0.75,
+     "why": "Global AI and tech weakness weighs on semiconductor names."
+    },
+    "MSFT": {
+     "direction": "down",
+     "confidence": 0.65,
+     "why": "Broad tech sell-off triggered by Anthropic post-IPO slump."
+    },
+    "AVGO": {
+     "direction": "down",
+     "confidence": 0.7,
+     "why": "Broad tech sell-off and pressure on major indices create downward pressure on growth stocks like Broadcom."
+    },
+    "TSLA": {
+     "direction": "down",
+     "confidence": 0.65,
+     "why": "Risk-off profit-taking in the broader market weighs on growth tech names."
+    },
+    "BTC/USD": {
+     "direction": "down",
+     "confidence": 0.6,
+     "why": "Broader risk-off market sentiment linked to tech sell-off."
+    },
+    "AMZN": {
+     "direction": "down",
+     "confidence": 0.6,
+     "why": "Weighed down by the ongoing tech and AI valuation contraction."
+    }
+   },
+   "sources": [
+    {
+     "id": "703ff16f03cc0338",
+     "publisher": "Yahoo Finance",
+     "kind": "news",
+     "title": "Anthropic Stock Jumps 38% In Nasdaq Debut After Record $107.3B IPO",
+     "url": "https://stocktwits.com/news-articles/markets/equity/anthropic-stock-jumps-38-in-nasdaq-debut-after-record-107-3-b-ipo/cNbihePR900?.tsrc=rss",
+     "time": "2026-11-19T16:52:24Z"
+    },
+    {
+     "id": "2b42afc727538046",
+     "publisher": "Yahoo Finance",
+     "kind": "news",
+     "title": "Broadcom Stocks Rise 4.21% as Chip Supplier Joins Anthropic's $26 Billion Placement",
+     "url": "https://finance.yahoo.com/markets/stocks/articles/broadcom-stocks-rise-4-21-173026533.html?.tsrc=rss",
+     "time": "2026-11-19T17:30:26Z"
+    },
+    {
+     "id": "17b0fde6eed57e88",
+     "publisher": "Yahoo Finance",
+     "kind": "news",
+     "title": "AMD Stocks Rise 3.77% as Anthropic Deal Points to $20 Billion-Plus of Helios Spending",
+     "url": "https://finance.yahoo.com/markets/stocks/articles/amd-stocks-rise-3-77-172606832.html?.tsrc=rss",
+     "time": "2026-11-19T17:26:06Z"
+    },
+    {
+     "id": "61f706c2128a2d31",
+     "publisher": "CNBC",
+     "kind": "news",
+     "title": "Dow dives 700 points as Anthropic IPO milestone causes investors to take profits: Live updates",
+     "url": "https://www.cnbc.com/2026/11/18/stock-market-today-live-updates.html",
+     "time": "2026-11-19T18:03:05Z"
+    },
+    {
+     "id": "c44cbb15f7ebf76c",
+     "publisher": "CNBC",
+     "kind": "news",
+     "title": "Anthropic IPO live updates: AI lab tops $2 trillion market cap, Ashton Kutcher celebrates debut",
+     "url": "https://www.cnbc.com/2026/11/19/anthropic-ipo-ant-live-updates.html",
+     "time": "2026-11-19T17:54:07Z"
+    }
+   ]
+  },
+  {
+   "summary": "Nvidia secures more supplier capacity to meet strong AI demand.",
+   "category": "contract",
+   "firstSeen": "2026-11-16T14:36:40Z",
+   "publishers": [
+    "CNBC",
+    "Hardware Retailing",
+    "Investing.com",
+    "Reuters",
+    "TradingView",
+    "Yahoo Finance",
+    "blockchain.news",
+    "fiscal.ai",
+    "richtv.io",
+    "www.marketscreener.com"
+   ],
+   "assets": {
+    "TSLA": {
+     "direction": "up",
+     "confidence": 0.75,
+     "why": "Higher production output and strong vehicle delivery numbers support positive stock momentum."
+    },
+    "CVX": {
+     "direction": "up",
+     "confidence": 0.75,
+     "why": "Major acquisition to expand oil and gas production portfolio."
+    },
+    "LLY": {
+     "direction": "up",
+     "confidence": 0.8,
+     "why": "Acquiring Calytrix Bio for $1.5bn expands Eli Lilly's pipeline and market positioning."
+    },
+    "AAPL": {
+     "direction": "up",
+     "confidence": 0.6,
+     "why": "Securing long-term supply agreements for critical components is a positive operational development."
+    },
+    "NVDA": {
+     "direction": "up",
+     "confidence": 0.7,
+     "why": "Securing additional supplier capacity supports AI chip production and growth"
+    },
+    "NOW": {
+     "direction": "up",
+     "confidence": 0.75,
+     "why": "Raised guidance and strong AI product adoption."
+    },
+    "NKE": {
+     "direction": "up",
+     "confidence": 0.85,
+     "why": "Nike announced a major strategic turnaround plan targeting a significant $5 billion revenue boost by 2031, sending shares higher."
+    },
+    "AMD": {
+     "direction": "up",
+     "confidence": 0.75,
+     "why": "Positive endorsement from OpenAI and Rockstar Games for GPU efficiency and scaling."
+    },
+    "FANG": {
+     "direction": "up",
+     "confidence": 0.75,
+     "why": "Acquisition of remaining stake in Double Eagle allows Diamondback Energy to capture full revenue from planned drilling operations."
+    },
+    "LOW": {
+     "direction": "up",
+     "confidence": 0.85,
+     "why": "Guidance raise and strong online sales provide a positive catalyst for Lowe's."
+    },
+    "HD": {
+     "direction": "up",
+     "confidence": 0.65,
+     "why": "Positive sector momentum from Lowe's guidance raise."
+    },
+    "INTC": {
+     "direction": "up",
+     "confidence": 0.8,
+     "why": "Signing its first external customer for advanced 18A chips is a significant positive contract/foundry milestone."
+    },
+    "PANW": {
+     "direction": "up",
+     "confidence": 0.85,
+     "why": "Strong earnings beat combined with a large $4.5 billion AI deal directly drives share price upward"
+    }
+   },
+   "sources": [
+    {
+     "id": "6e8622025ba61a6d",
+     "publisher": "Reuters",
+     "kind": "news",
+     "title": "Tesla announces $3.3 billion expansion of Germany plant",
+     "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNaHd0RC1iZmQwWUtkTl9CYjJVMUhGYmtxNEZyQU92Rm5mZS1OZ0Z2bHl6TmJuLUFJYWpQUW5GQ1h2anVqSHR5TDF3aThnaWhDd3lDYl9oY3VqbTVLaUMwMGtSME5IckZnZE5PQVhURTNPQ1BaS2tBejl6OU15X1B1N3VOM0o3dktRbnpLSjc1eWI5WWs4bjZqNnFOOA?oc=5",
+     "time": "2026-11-16T14:36:40Z"
+    },
+    {
+     "id": "2acd79a8e57ffcb3",
+     "publisher": "Yahoo Finance",
+     "kind": "news",
+     "title": "Tesla to invest 3 bn euros to expand German factory",
+     "url": "https://finance.yahoo.com/technology/articles/tesla-invest-3-bn-euros-144451294.html?.tsrc=rss",
+     "time": "2026-11-16T14:44:51Z"
+    },
+    {
+     "id": "c80edc1bc344d0f3",
+     "publisher": "Yahoo Finance",
+     "kind": "news",
+     "title": "Tesla Targets 2029 Cybercab Production Start In Giga Berlin With $3.3B Investment: Report",
+     "url": "https://stocktwits.com/news-articles/markets/equity/tesla-targets-2029-cybercab-production-start-in-giga-berlin-with-3-3-b-investment-report/cNb7MV2R9gJ?.tsrc=rss",
+     "time": "2026-11-16T16:46:09Z"
+    },
+    {
+     "id": "5a3964d15125684f",
+     "publisher": "Yahoo Finance",
+     "kind": "news",
+     "title": "Tesla Wants to Build 1 Million Cybercabs Near Berlin",
+     "url": "https://finance.yahoo.com/markets/stocks/articles/tesla-wants-build-1-million-181721398.html?.tsrc=rss",
+     "time": "2026-11-16T18:17:21Z"
+    },
+    {
+     "id": "31d12945328b968b",
+     "publisher": "www.marketscreener.com",
+     "kind": "news",
+     "title": "Chevron to buy Blackstone-backed oil producer for $5 billion, FT reports",
+     "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxOM3oteG5ZbTdMY2NYYmpNblBHSk53eGZhbXNzak45c0JIVEd3WlRkVTlfUHBIQmtOX3dfQTZPaTBUeUFlQnNXUkVsdnp4OEhHazRJQ3h6NnBLVnhxTjFWRDdZbWNOZFZtc1U4YVJhdjdreERnY1QydExCOUVMTU5WNld4M3piZmttdlZxS3BtMWVsTERMZkp0SG9tLWg1NDc2MWs2MGJtVTRHd0U4RGJ4azBiNVZwQWZEVWpYOXN1Wnc?oc=5",
+     "time": "2026-11-16T20:31:12Z"
     }
    ]
   },
@@ -8173,200 +8922,6 @@
      "title": "Jensen Huang Is Out At Nvidia: 4 Private Equity Giants with Big Bets on Its AI Infrastructure Future",
      "url": "https://www.benzinga.com/markets/private-markets/26/11/63212619/jensen-huang-is-out-at-nvidia-4-private-equity-giants-with-big-bets-on-its-ai-infrastructure-future",
      "time": "2026-11-12T18:45:12Z"
-    }
-   ]
-  },
-  {
-   "summary": "AMD shares extend losses following continued questions regarding its China business operations despite analyst pushback.",
-   "category": "company_bad_news",
-   "firstSeen": "2026-11-12T15:43:48Z",
-   "publishers": [
-    "24/7 Wall St.",
-    "AP",
-    "Benzinga",
-    "CNBC",
-    "Crypto Briefing",
-    "Cryptonews.net",
-    "GuruFocus",
-    "JournalArta",
-    "Moomoo",
-    "NBC Los Angeles",
-    "NBC News",
-    "Qualys",
-    "Reuters",
-    "StockStory",
-    "TIKR.com",
-    "The Economic Times",
-    "TipRanks",
-    "TradingKey",
-    "Wccftech",
-    "Yahoo Finance",
-    "Yahoo Finance UK",
-    "fiscal.ai",
-    "scanx.trade"
-   ],
-   "assets": {
-    "TSLA": {
-     "direction": "down",
-     "confidence": 0.65,
-     "why": "Analyst downgrade to Sell highlighting valuation and profitability concerns."
-    },
-    "NVDA": {
-     "direction": "down",
-     "confidence": 0.85,
-     "why": "CEO exit and executive turmoil directly weigh on Nvidia stock."
-    },
-    "LOW": {
-     "direction": "down",
-     "confidence": 0.8,
-     "why": "Analyst downgrade to Underperform directly weighs on the stock."
-    },
-    "TJX": {
-     "direction": "down",
-     "confidence": 0.65,
-     "why": "Downgraded to Hold by Gordon Haskett."
-    },
-    "AVGO": {
-     "direction": "down",
-     "confidence": 0.8,
-     "why": "Downgraded by Rothschild & Co Redburn due to AI financing concerns."
-    },
-    "HD": {
-     "direction": "down",
-     "confidence": 0.6,
-     "why": "Peer home improvement retailer pressured by negative sector sentiment."
-    },
-    "META": {
-     "direction": "down",
-     "confidence": 0.85,
-     "why": "Massive regulatory fine of $887 million from Italy creates significant negative pressure."
-    },
-    "GOOGL": {
-     "direction": "down",
-     "confidence": 0.55,
-     "why": "Broader regulatory headwinds for big tech regarding user data in Europe."
-    },
-    "INTC": {
-     "direction": "down",
-     "confidence": 0.9,
-     "why": "Severe share price plunge and shareholder lawsuits highlight deep fundamental pressures for Intel."
-    },
-    "COST": {
-     "direction": "down",
-     "confidence": 0.6,
-     "why": "Regulatory fine and labor misclassification issue creates slight negative sentiment."
-    },
-    "MU": {
-     "direction": "down",
-     "confidence": 0.5,
-     "why": "Legal setbacks regarding price-fixing allegations create regulatory and financial uncertainty for the company."
-    },
-    "OXY": {
-     "direction": "down",
-     "confidence": 0.8,
-     "why": "Analyst downgrade creates downward selling pressure."
-    },
-    "FANG": {
-     "direction": "down",
-     "confidence": 0.65,
-     "why": "Large cash-and-stock acquisitions can dilute existing shareholders and create near-term capital allocation uncertainty."
-    },
-    "SMCI": {
-     "direction": "down",
-     "confidence": 0.75,
-     "why": "DOJ probe and leadership uncertainty create significant negative pressure"
-    },
-    "MSFT": {
-     "direction": "down",
-     "confidence": 0.6,
-     "why": "Patent infringement lawsuit from MIT introduces legal and financial headwinds"
-    },
-    "ADBE": {
-     "direction": "down",
-     "confidence": 0.5,
-     "why": "Legal disputes regarding branding can create uncertainty and potential rebranding costs."
-    },
-    "AAPL": {
-     "direction": "down",
-     "confidence": 0.7,
-     "why": "Widespread service outages and internal technical failures weigh on near-term sentiment."
-    },
-    "MDT": {
-     "direction": "up",
-     "confidence": 0.75,
-     "why": "FDA clearance for the Hugo robotic-assisted surgery system is a major regulatory and commercial milestone."
-    },
-    "CRM": {
-     "direction": "down",
-     "confidence": 0.85,
-     "why": "Significant drop and negative investor sentiment following layoff reports."
-    },
-    "NKE": {
-     "direction": "down",
-     "confidence": 0.8,
-     "why": "Continued investor selling after disappointing Investor Day guidance."
-    },
-    "ABBV": {
-     "direction": "up",
-     "confidence": 0.55,
-     "why": "Strategic collaboration with DISCO Pharmaceuticals expands oncology pipeline."
-    },
-    "MRK": {
-     "direction": "up",
-     "confidence": 0.6,
-     "why": "Strategic research collaboration with Isomorphic Labs for oncology."
-    },
-    "AMD": {
-     "direction": "down",
-     "confidence": 0.85,
-     "why": "Short seller allegations and significant share price tumble pressure the stock."
-    },
-    "PANW": {
-     "direction": "down",
-     "confidence": 0.6,
-     "why": "Third-party supply-chain security flaws can impact cybersecurity stock sentiment."
-    }
-   },
-   "sources": [
-    {
-     "id": "fb8045cbfe86a60f",
-     "publisher": "Benzinga",
-     "kind": "news",
-     "title": "YETI Sounds the Alarm on Consumer Spending As Shoppers Hunt for Deals",
-     "url": "https://www.benzinga.com/markets/earnings/26/11/63197694/yeti-sounds-the-alarm-on-consumer-spending-as-shoppers-hunt-for-deals",
-     "time": "2026-11-12T15:43:48Z"
-    },
-    {
-     "id": "eb1007b02a637a06",
-     "publisher": "StockStory",
-     "kind": "news",
-     "title": "Why YETI shares are trading lower today",
-     "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNdl83SV9zdFlzM2FENVRJLTJxckhKNjZUMTFTM0FXUUZVQ0NzRG54ZFRXeERERnZDSWFDcmMxNU1rRVhrWUlnV2UtWFdmY2VpWDAxNkxudGV4NmpjeUJ3Z1NQUm1FUm1lU3dNTmEwdmxkNjFTdU9aTEt2THpfQmYyV05vNzJwa3VDSjZqQjdfYjVwQWttVzlNX0ZrdTlydXJU?oc=5",
-     "time": "2026-11-12T15:53:44Z"
-    },
-    {
-     "id": "c394152546c931b0",
-     "publisher": "scanx.trade",
-     "kind": "news",
-     "title": "YETI Holdings Q3FY26 Results: Revenue up 4.4% but guidance cut",
-     "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOdlBmR3l6ZUFQY29CWHFTT1p4Z0JOdEpxb2hiYWNuV3FQTjVKcTd0bml3S3RPWVY1SDVSUVR3dGFSb1BvbXByNzc4RURDd1E0YXdTT05pVWYyOVpjQ2JTYXVkMFByR05iaThHeUJfRDJuaWVKYVp3UkxndGxfNm9WeGxtV1h0dUFEUWtVM0tQaURPVWNuSGFiZmZBanBCc2tGQ0FhNjEyUEVZVUYzT1lGSWFFeW05clYz?oc=5",
-     "time": "2026-11-12T16:39:48Z"
-    },
-    {
-     "id": "cc6a00bf5e9f8ced",
-     "publisher": "fiscal.ai",
-     "kind": "news",
-     "title": "Lawsuit Filed Against Tesla Over San Mateo Street-Racing Incident",
-     "url": "https://newsfilter.io/sources/businesswire",
-     "time": "2026-11-12T20:01:33Z"
-    },
-    {
-     "id": "fab361ae0414d4da",
-     "publisher": "CNBC",
-     "kind": "news",
-     "title": "Stock futures edge lower after markets slide amid Nvidia woes: Live updates",
-     "url": "https://www.cnbc.com/2026/11/12/stock-market-today-live-updates.html",
-     "time": "2026-11-13T08:20:13Z"
     }
    ]
   },
