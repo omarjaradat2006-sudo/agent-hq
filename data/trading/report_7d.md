@@ -1,6 +1,6 @@
 # 7-day paper test: FINAL
 
-PAPER account only. 2026-11-10 01:51 UTC to 2026-11-17 01:51 UTC. Updated 2026-11-19 21:45 UTC.
+PAPER account only. 2026-11-10 01:51 UTC to 2026-11-17 01:51 UTC. Updated 2026-11-20 21:45 UTC.
 
 ## Results
 
