@@ -1,4 +1,5 @@
 """The daily NBA card and the Friday UFC card. Research and recommendations only; nothing here can place a bet."""
+import json
 import config as C
 import oddsmath as M
 import odds as O
@@ -45,6 +46,8 @@ def run_nba(force=False):
     cands = [c for e in raw for c in O.candidates(e, "nba")]
     games = [f"{e['away_team']} @ {e['home_team']}" for e in raw]
     notes, src, ranked = A.nba_research(today, games)
+    splits, ssrc = A.nba_splits(today, games)
+    all_main = list(cands)        # keep spreads here for the tracked fade list (never used on slips)
     # props for as many games as the credit budget allows, most promising games first
     budget = min(O.daily_prop_budget(), len(raw))
     order = sorted(raw, key=lambda e: next((i for i, g in enumerate(ranked) if W.short(e["home_team"]).lower() in g.lower()), 99))
@@ -74,10 +77,14 @@ def run_nba(force=False):
             c["prices"] = {b: d for b, d in c["prices"].items() if d <= C.ALT_SPREAD_MAX_DEC}
     cands = [c for c in cands if c["prices"]]
     text, idx = A.lines([c for c in cands if c["eventId"] in sgp_ids])
-    est = A.estimate("nba", text, notes, src + src2, today, extra=extra)
+    split_txt = "" if not splits else "Public betting splits today (% of bets / % of money):\n" + json.dumps(splits)[:3000]
+    est = A.estimate("nba", text, notes, src + src2, today, extra=extra + "\n" + split_txt)
     analyzed = A.apply_estimates(est, idx)
     parlays = B.build_sgp(cands, cid, today, sgp_ids)
     A.why_lines(parlays)
+    fades = fade_list(splits or [], all_main, cid, today)
+    card.update(splits=splits, splitsSource=(ssrc[0][1] if ssrc else None), fades=fades,
+                splitsMessage=None if splits else "Couldn't get today's betting splits.")
     card.update(games=len(raw), propGames=prop_games, propGameNames=prop_names, analyzedLines=analyzed, totalLines=len(idx), parlays=parlays,
                 propBudget=budget, sources=[{"title": t, "url": u} for t, u in (src + src2)[:20]])
     if not prop_ids:
@@ -85,7 +92,46 @@ def run_nba(force=False):
     elif len(parlays) < 3:
         card["message"] = f"Only {len(parlays)} slip(s) today: the {prop_games} game(s) with props didn't have enough allowed legs to reach every target."
     msg = f"NBA: {len(parlays)} same-game parlay(s); props for {prop_games} of {len(raw)} games ({', '.join(prop_names)}); {analyzed} lines analyzed"
-    return _finish(card, "court", msg, parlays)
+    return _finish(card, "court", msg, parlays + fades)
+
+
+def fade_list(splits, cands, cid, today):
+    """Opposite of the most-bet side (65%+ of tickets) on spreads and totals, at the real FD/DK price. Tracked, not a slip."""
+    out = []
+    def hit(c, g):
+        s = str(g.get("game", "")).lower()
+        return W.short(c["home"]).lower() in s and W.short(c["away"]).lower() in s
+    for g in splits:
+        sp, tt = g.get("spread") or {}, g.get("total") or {}
+        targets = []
+        try:
+            if sp.get("fav") and float(sp.get("favBets", 0)) >= C.FADE_MIN_BETS:
+                targets.append(("spreads", "dog", sp, f"{sp['favBets']:g}% of bets on {sp['fav']}"))
+            elif sp.get("fav") and 100 - float(sp.get("favBets", 50)) >= C.FADE_MIN_BETS:
+                targets.append(("spreads", "fav", sp, f"{100 - float(sp['favBets']):g}% of bets on the underdog"))
+            if tt and float(tt.get("overBets", 0)) >= C.FADE_MIN_BETS:
+                targets.append(("totals", "Under", tt, f"{tt['overBets']:g}% of bets on the Over"))
+            elif tt and 100 - float(tt.get("overBets", 50)) >= C.FADE_MIN_BETS:
+                targets.append(("totals", "Over", tt, f"{100 - float(tt['overBets']):g}% of bets on the Under"))
+        except (TypeError, ValueError):
+            continue
+        for mk, side, info, why in targets:
+            pool = [c for c in cands if c["market"] == mk and hit(c, g)]
+            if mk == "spreads":
+                fav = str(info.get("fav", "")).lower()
+                is_fav = lambda c: W.short(c["side"]).lower() in fav or fav in c["side"].lower()
+                pool = [c for c in pool if (is_fav(c) if side == "fav" else not is_fav(c))]
+            else:
+                pool = [c for c in pool if c["side"] == side]
+            if not pool:
+                continue
+            c = max(pool, key=lambda c: max(c["prices"].values()))
+            book = max(c["prices"], key=c["prices"].get)
+            leg = B.leg_row(c, book)
+            out.append({"id": f"{cid}-fade{len(out) + 1}", "cardId": cid, "date": today, "sport": "nba", "kind": "nba_fade",
+                        "book": book, "bookName": C.BOOKS[book], "dec": leg["dec"], "american": leg["american"], "betText": leg["text"],
+                        "why": f"Fading the crowd: {why}.", "commence": c["commence"], "legs": [leg], "status": "open"})
+    return out
 
 
 # ---------------- UFC ----------------

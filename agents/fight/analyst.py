@@ -152,6 +152,24 @@ def nba_research(today, games):
     return text, src, ranked
 
 
+def nba_splits(today, games):
+    """Public betting splits (% of bets, % of money) for each game's spread and total. Needs live search:
+    returns None rather than guess when search is unavailable."""
+    q = (f"Today is {today}. Find today's NBA public betting splits (VSiN's DraftKings betting splits or Action Network public money) for these games. "
+         "For each: the spread (favourite and line) with % of bets and % of money on the favourite, and the game total with % of bets and % of money on the Over. "
+         "Only numbers you actually found; omit a game if you didn't find it.\n" + "\n".join(games) +
+         '\nReply JSON only: {"games":[{"game":"Away @ Home","spread":{"fav":"Team","line":-5.5,"favBets":70,"favMoney":55},'
+         '"total":{"line":224.5,"overBets":61,"overMoney":70}}],"source":"site name"}')
+    try:
+        text, src = G.generate(q, SYSTEM, search=True, temperature=0, retries=1)
+    except Exception as e:
+        print("Betting splits unavailable:", e, flush=True)
+        return None, []
+    out = parse(text) or {}
+    rows = [g for g in (out.get("games") or []) if isinstance(g, dict) and g.get("game")]
+    return (rows if rows and src else None), src
+
+
 def nba_props_research(today, players_by_game):
     q = (f"Today is {today}. For these NBA players with prop lines tonight, find each one's last 5-10 games (points, rebounds, assists, made threes, minutes), "
          "season averages, tonight's role (starting? minutes limit? teammates out?) and the opponent's defense against their position. Be specific.\n"

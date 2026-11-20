@@ -69,6 +69,9 @@ class FakeGemini:
                 {"type": "method", "bet": "Islam Makhachev by Submission", "odds": "+200", "book": "FanDuel", "why": "Top control. Basically guaranteed."},
                 {"type": "takedowns", "bet": "Islam Makhachev 3+ Takedowns", "odds": None, "book": None, "why": "Chain wrestling."},
                 {"type": "rounds", "bet": "Over 2.5 Total Rounds", "odds": None, "book": None, "why": "Both durable."}]}]}), src
+        if "public betting splits" in prompt:
+            return json.dumps({"games": [{"game": "New York Knicks @ Boston Celtics", "spread": {"fav": "Boston Celtics", "line": -5.5, "favBets": 72, "favMoney": 50},
+                                          "total": {"line": 224.5, "overBets": 70, "overMoney": 40}}], "source": "VSiN"}), src
         if "Main event:" in prompt:
             return json.dumps({"legs": [{"bet": "Arman Tsarukyan 2+ Takedowns", "rating": "Strong", "why": "Wrestles first. Basically guaranteed."},
                                         {"bet": "Fight Goes the Distance", "rating": "Lean", "why": "Both durable."},
@@ -155,7 +158,7 @@ class T(unittest.TestCase):
                 self.assertNotIn(l["market"], ("h2h", "spreads"))                              # Omar's rule: no moneyline / regular spread
                 if l["market"] == "alternate_spreads":
                     self.assertLessEqual(l["dec"], C.ALT_SPREAD_MAX_DEC)
-        self.assertEqual(len(lg["bets"]), 3)
+        self.assertEqual(len([b for b in lg["bets"] if b["kind"] == "nba_parlay"]), 3)
 
     def test_ufc_card_unchecked_posts_nothing(self):
         A.espn_ufc_cards = lambda days=4: None
@@ -248,6 +251,24 @@ class T(unittest.TestCase):
         K.run_nba()
         self.assertEqual(len(S.state()["cards"]["nba"]["parlays"]), 3)
         self.assertFalse(A.SEARCH_OK)
+
+    def test_fade_most_bet_side(self):
+        K.run_nba()
+        n = S.state()["cards"]["nba"]
+        self.assertEqual(len(n["splits"]), 1)
+        self.assertEqual(sorted(f["betText"] for f in n["fades"]), ["Knicks vs Celtics: Knicks +5.5", "Knicks vs Celtics: Under 224.5 Total Points"])
+        self.assertTrue(all(p["legs"][0]["market"] not in ("h2h", "spreads") for p in n["parlays"]))   # fades never leak into slips
+        lg = S.ledger()
+        for b in lg["bets"]:
+            for l in b["legs"]:
+                l["commence"] = iso(-10)
+        S.save(S.LEDGER, lg)
+        Gr.espn_game = lambda leg: {"id": leg["eventId"], "completed": True, "postponed": False, "home": 110, "away": 100}
+        Gr.espn_box = lambda gid: {}
+        Gr.run()
+        f = {b["betText"]: b["status"] for b in S.ledger()["bets"] if b["kind"] == "nba_fade"}
+        self.assertEqual(f, {"Knicks vs Celtics: Knicks +5.5": "lost", "Knicks vs Celtics: Under 224.5 Total Points": "won"})
+        self.assertTrue(any(l.startswith("Fade the most-bet side (NBA, tracked only): 1 won, 1 lost") for l in S.state()["record"]["lines"]))
 
     def test_sanitize(self):
         self.assertEqual(S.sanitize("This is basically guaranteed, a lock."), "This is likely, a lean.")
