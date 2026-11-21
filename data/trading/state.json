@@ -19,7 +19,7 @@
    "Sold AVGO (stop-loss -3% hit): lost $15.41.",
    "Sold AMD (stop-loss -3% hit): lost $311.47.",
    "Sold NVDA (stop-loss -3% hit): lost $212.64.",
-   "Scanned the news 141 times today: read 6647 headlines, found 243 that could move a stock or coin it's allowed to trade.",
+   "Scanned the news 142 times today: read 6654 headlines, found 243 that could move a stock or coin it's allowed to trade.",
    "Passed on INTC, MSFT, PLTR: already $48,766 invested (max 50% of $98,422).",
    "Passed on INTC, MSFT, PLTR: already $49,010 invested (max 50% of $98,667).",
    "Passed on INTC, MSFT, PLTR: already $49,066 invested (max 50% of $98,723).",
@@ -27,10 +27,10 @@
    "Safety rules that stepped in: stop loss -3% (x7), max invested (x51), cash only no margin (x2)."
   ],
   "watchlist": "Allowed to trade: 69 halal stocks, 5 Shariah ETFs, 9 coins.",
-  "lastScan": "2026-11-21T04:07:27Z"
+  "lastScan": "2026-11-21T04:11:33Z"
  },
  "hired": true,
- "updatedAt": "2026-11-21T04:07:32Z",
+ "updatedAt": "2026-11-21T04:11:38Z",
  "mode": "PAPER",
  "agents": [
   {
@@ -38,8 +38,8 @@
    "name": "News Scout",
    "role": "Reads X, Reddit and news feeds",
    "status": "working",
-   "doing": "Read 43 new headlines/posts, 1 market-moving stories",
-   "lastRun": "2026-11-21T04:07:31Z"
+   "doing": "Read 7 new headlines/posts, 0 market-moving stories",
+   "lastRun": "2026-11-21T04:11:37Z"
   },
   {
    "id": "analyst",
@@ -77,9 +77,9 @@
    "id": "trader",
    "name": "Trader",
    "role": "Places paper orders on Alpaca",
-   "status": "ok",
-   "doing": "Saved results to the Agent HQ dashboard",
-   "lastRun": "2026-11-21T01:06:08Z"
+   "status": "working",
+   "doing": "Paper-trading bot started (Alpaca PAPER account only). Close this window to stop it.",
+   "lastRun": "2026-11-21T04:11:33Z"
   },
   {
    "id": "coins",
@@ -99,6 +99,31 @@
   }
  ],
  "log": [
+  {
+   "t": "2026-11-21T04:11:37Z",
+   "agent": "Coach",
+   "msg": "Coach: Last 15 trades averaged -1.46%: trading a bit smaller until it improves. | Yahoo Finance: 11 trades averaging -2.14%, trust 1.00 -> 0.57. | Checked 7 skipped stories: 5 would have lost or gone nowhere, 2 would have gained the next day."
+  },
+  {
+   "t": "2026-11-21T04:11:37Z",
+   "agent": "News Scout",
+   "msg": "Read 7 new headlines/posts, 0 market-moving stories"
+  },
+  {
+   "t": "2026-11-21T04:11:37Z",
+   "agent": "News Scout",
+   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
+  },
+  {
+   "t": "2026-11-21T04:11:33Z",
+   "agent": "News Scout",
+   "msg": "Agent Reach not found: news feeds + Yahoo Finance + Reddit direct (no X)"
+  },
+  {
+   "t": "2026-11-21T04:11:33Z",
+   "agent": "Trader",
+   "msg": "Paper-trading bot started (Alpaca PAPER account only). Close this window to stop it."
+  },
   {
    "t": "2026-11-21T04:07:31Z",
    "agent": "News Scout",
@@ -823,36 +848,11 @@
    "t": "2026-11-20T16:32:23Z",
    "agent": "News Scout",
    "msg": "Read 45 new headlines/posts, 0 market-moving stories"
-  },
-  {
-   "t": "2026-11-20T16:27:12Z",
-   "agent": "News Scout",
-   "msg": "Read 24 new headlines/posts, 2 market-moving stories"
-  },
-  {
-   "t": "2026-11-20T16:22:02Z",
-   "agent": "News Scout",
-   "msg": "Read 12 new headlines/posts, 1 market-moving stories"
-  },
-  {
-   "t": "2026-11-20T16:22:01Z",
-   "agent": "News Scout",
-   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
-  },
-  {
-   "t": "2026-11-20T16:16:56Z",
-   "agent": "News Scout",
-   "msg": "Read 23 new headlines/posts, 2 market-moving stories"
-  },
-  {
-   "t": "2026-11-20T16:11:41Z",
-   "agent": "News Scout",
-   "msg": "Read 26 new headlines/posts, 3 market-moving stories"
   }
  ],
  "brief": {
   "date": "Fri Nov 20",
-  "createdAt": "2026-11-21T04:07:32Z",
+  "createdAt": "2026-11-21T04:11:38Z",
   "headline": "Paper account -$2,784 today (-2.78%), -2.60% total vs SPY -7.82% · 0 open",
   "summary": "7 trade(s) closed today, 3/15 winners overall. TradingAgents checks used today: 0/5.",
   "notes": [
@@ -877,14 +877,14 @@
   "deepUsed": 0,
   "deepMax": 5,
   "social": {
-   "at": "2026-11-21T04:07:30Z",
+   "at": "2026-11-21T04:11:37Z",
    "items": 0,
    "source": "Reddit public JSON (blocked on servers: add REDDIT_CLIENT_ID/SECRET); X needs Agent Reach",
    "problems": [
     "r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
    ],
    "wsb": {
-    "at": "2026-11-21T04:07:30Z",
+    "at": "2026-11-21T04:11:37Z",
     "tickers": 50,
     "items": 0,
     "key": false
@@ -3237,6 +3237,75 @@
    ]
   },
   "holdings": {}
+ },
+ "coach": {
+  "updatedAt": "2026-11-21T04:11:37Z",
+  "knobs": {
+   "aggression": 0.9,
+   "min_confidence": 0.6,
+   "max_move_pct": 0.03
+  },
+  "lessons": [
+   "Last 15 trades averaged -1.46%: trading a bit smaller until it improves.",
+   "Yahoo Finance: 11 trades averaging -2.14%, trust 1.00 -> 0.57.",
+   "Checked 7 skipped stories: 5 would have lost or gone nowhere, 2 would have gained the next day."
+  ],
+  "missed": [],
+  "dodged": [
+   {
+    "symbol": "LLY",
+    "t": "2026-11-18T18:09:11Z",
+    "nextDayPct": -2.26,
+    "why": "already 5 open positions (max 5)"
+   },
+   {
+    "symbol": "JNJ",
+    "t": "2026-11-16T19:57:06Z",
+    "nextDayPct": -1.38,
+    "why": "price hasn't moved the expected way yet (-0.87%)"
+   },
+   {
+    "symbol": "JNJ",
+    "t": "2026-11-16T20:28:59Z",
+    "nextDayPct": -1.38,
+    "why": "price hasn't moved the expected way yet (-1.19%)"
+   },
+   {
+    "symbol": "JNJ",
+    "t": "2026-11-16T20:29:00Z",
+    "nextDayPct": -1.38,
+    "why": "price hasn't moved the expected way yet (-0.45%)"
+   },
+   {
+    "symbol": "LLY",
+    "t": "2026-11-16T20:28:59Z",
+    "nextDayPct": -1.28,
+    "why": "price hasn't moved the expected way yet (-1.73%)"
+   }
+  ],
+  "avoid": {},
+  "history": [
+   {
+    "t": "2026-11-21T04:11:37Z",
+    "setting": "aggression",
+    "from": 1.0,
+    "to": 0.9
+   }
+  ],
+  "limits": {
+   "aggression": [
+    0.5,
+    2.0
+   ],
+   "min_confidence": [
+    0.5,
+    0.8
+   ],
+   "max_move_pct": [
+    0.02,
+    0.06
+   ]
+  }
  },
  "trades": [
   {
