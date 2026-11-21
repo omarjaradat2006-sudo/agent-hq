@@ -1041,12 +1041,12 @@
     if (n.propGameNames && n.propGameNames.length) body.append(el("div", "small", `Player props checked today (free plan): ${n.propGameNames.join(", ")}.`));
     if (n.message) body.append(el("div", "card", n.message));
     (n.parlays || []).forEach(p => body.append(slip(p)));
-    const m = el("div", "card"); m.append(el("div", "label", "Where the money is tonight (ranked by % of money)"));
+    const m = el("div", "card"); m.append(el("div", "label", "The #1 most-money play tonight"));
     const mr = n.money || [];
     if (!mr.length) m.append(el("div", "small", n.splitsMessage || "No splits yet today."));
     if (mr.length) { const top = el("div", null, `Most money: ${mr[0].game}: ${mr[0].line} (${mr[0].money}% of the money)${mr[0].fade ? " · opposite: " + mr[0].fade : ""}`); top.style.fontWeight = "800"; top.style.margin = "4px 0 8px"; m.append(top); }
     if (n.splitsAt) m.append(el("div", "small", `Updated ${ago(n.splitsAt)}.`));
-    mr.forEach(r => m.append(legLine(`${r.game}: ${r.line}`, `${r.money}% money · ${r.bets}% bets`, null)));
+    if (mr.length > 1) { const d = el("details"); d.append(el("summary", null, "All lines by money")); mr.forEach(r => d.append(legLine(`${r.game}: ${r.line}`, `${r.money}% money · ${r.bets}% bets`, null))); m.append(d); }
     m.append(el("div", "small", "% of money = share of the dollars bet on that side (DraftKings splits via VSiN / Action Network). It shows where the money is, not who wins."));
     body.append(m);
     if ((n.fades || []).length) {
