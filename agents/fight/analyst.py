@@ -152,9 +152,44 @@ def nba_research(today, games):
     return text, src, ranked
 
 
+def dk_article(today):
+    """DraftKings Network's daily 'NBA Public Betting Trends' article, fetched directly (no search quota). Returns page text or ''."""
+    import datetime as _d, html as _h, urllib.request as _u
+    d = _d.date.fromisoformat(today)
+    url = f"https://dknetwork.draftkings.com/{d:%Y/%m/%d}/nba-public-betting-trends-{d:%A}-{d:%B}-{d.day}/".lower()
+    try:
+        with _u.urlopen(_u.Request(url, headers={"User-Agent": "Mozilla/5.0 agent-hq"}), timeout=30) as r:
+            raw = r.read().decode("utf-8", "ignore")
+    except Exception as e:
+        print("DK splits article unavailable:", url, e, flush=True)
+        return "", url
+    raw = re.sub(r"(?is)<(script|style).*?</\1>", " ", raw)
+    raw = re.sub(r"(?i)</(td|th)>", " | ", raw)
+    raw = re.sub(r"(?i)</(tr|p|h\d|li)>", "\n", raw)
+    text = _h.unescape(re.sub(r"<[^>]+>", " ", raw))
+    text = re.sub(r"[ \t]+", " ", text)
+    i = text.find("Betting Trends")
+    return (text[i:i + 20000] if i >= 0 else text[:20000]), url
+
+
 def nba_splits(today, games):
-    """Public betting splits (% of bets, % of money) for each game's spread and total. Needs live search:
-    returns None rather than guess when search is unavailable."""
+    """Public betting splits (% of bets, % of money) for each game's spread, total and moneyline.
+    1) DraftKings Network's daily article, read directly; 2) Gemini search. Never guesses."""
+    page, url = dk_article(today)
+    if len(page) > 500:
+        out = json_call(f"""Below is DraftKings Network's NBA Public Betting Trends article for {today}. Extract the DraftKings betting splits for every game.
+In the tables, each market row lists the two sides' odds, then "% of bets" (first side / second side), then "% of handle" (money) (first side / second side).
+The first side is the team whose odds come first. Use the article's sentences to confirm which team is which.
+Return JSON only: {{"games":[{{"game":"Away @ Home","spread":{{"fav":"Team","line":-5.5,"favBets":64,"favMoney":97}},
+"total":{{"line":230.5,"overBets":43,"overMoney":84}},"moneyline":{{"fav":"Team","favOdds":"-201","dogOdds":"+168","favBets":79,"favMoney":98}}}}]}}
+Only numbers that are in the article.
+
+ARTICLE:
+{page}""")
+        rows = [g for g in (out.get("games") or []) if isinstance(g, dict) and g.get("game")]
+        if rows:
+            return rows, [("DraftKings Network betting splits", url)]
+        print("DK splits article: couldn't read the numbers", flush=True)
     q = (f"Today is {today}. Find today's NBA public betting splits. Best source: DraftKings Network's daily article 'NBA Public Betting Trends' "
          "(dknetwork.draftkings.com), else VSiN's DraftKings betting splits, else Action Network public money. For each game: "
          "the spread (favourite and line) with % of bets and % of money (handle) on the favourite; the game total with % of bets and % of money on the Over; "
