@@ -49,12 +49,12 @@ def stock_entry_window_open(clock, now=None):
     return True, ""
 
 
-def size_order(acct, price, pending_cost=0.0, confidence=None, n_sources=1, start_equity=None):
+def size_order(acct, price, pending_cost=0.0, confidence=None, n_sources=1, start_equity=None, publishers=()):
     """5% of equity, cash only (never margin). Returns (qty_or_notional, cost) or (0, 0)."""
     eq, _, cash = account_numbers(acct)
     per, cap = C.sizing()
     base = C.invest_base(eq, start_equity, confidence)     # profits above the start are set aside
-    budget = base * (per if per is not None else cap * C.trade_weight(confidence, n_sources))
+    budget = base * (per if per is not None else cap * C.trade_weight(confidence, n_sources, publishers))
     budget = min(budget, base * cap - (eq - cash) - pending_cost)   # stay inside the max-invested budget
     free_cash = cash - pending_cost
     budget = min(budget, free_cash)          # no margin: only money we actually have

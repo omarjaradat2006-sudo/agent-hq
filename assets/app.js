@@ -771,6 +771,16 @@
       c.append(el("div", "small", (pw.watchlist || "") + (pw.lastScan ? " Last scan " + ago(pw.lastScan) + "." : "")));
       body.append(c);
     }
+    const co = st.coach;
+    if (co) {
+      const k = co.knobs || {}, c2 = el("div", "card");
+      c2.append(el("div", "label", "What the bot learned" + (co.updatedAt ? " · reviewed " + ago(co.updatedAt) : "")));
+      const ul = el("ul"); ul.style.margin = "4px 0 8px"; (co.lessons || []).forEach(x => ul.append(el("li", null, x))); c2.append(ul);
+      if ((co.missed || []).length) c2.append(el("div", "small", "Missed: " + co.missed.map(m => `${m.symbol} ${m.nextDayPct >= 0 ? "+" : ""}${m.nextDayPct}% (${m.why})`).join(" · ")));
+      const av = Object.keys(co.avoid || {}); if (av.length) c2.append(el("div", "small", "Avoiding for now: " + av.join(", ")));
+      c2.append(el("div", "small", `Its own settings: trade size x${(k.aggression || 1).toFixed(2)} · needs ${Math.round((k.min_confidence || 0.6) * 100)}% confidence · buys up to +${((k.max_move_pct || 0.03) * 100).toFixed(1)}% after the news. Your limits (budget, -3% day halt, -10% kill switch, halal) never change.`));
+      body.append(c2);
+    }
 
     const k = el("div", "kpis");
     k.append(tk(money(a.equity), "Account value", "started at " + money(a.startEquity)));

@@ -627,3 +627,71 @@ def test_profit_is_set_aside_unless_cant_miss(monkeypatch):
     assert risk.can_open("XOM", full, [], [], {}, 100, confidence=0.95)[0]
     down = {"equity": "90", "last_equity": "90", "cash": "90"}               # below the start: uses what's there
     assert C.invest_base(90, 100, 0.6) == 90
+
+
+# ---------------------------------------------------------------- Nov 20: Coach (learns from its own trades) + buy the dip
+def _closed(sym, pnl, conf=0.65, pubs=("Benzinga",), days_ago=2):
+    t = NOW - timedelta(days=days_ago)
+    return {"symbol": sym, "status": "closed", "openedAt": T(t - timedelta(hours=3)), "closedAt": T(t), "pnl": pnl,
+            "pnlPct": pnl / 50, "reason": {"confidence": conf, "publishers": list(pubs)}}
+
+
+def test_coach_learns_inside_safe_limits(monkeypatch, tmpdirs):
+    import trading_bot.coach as CO
+    class A(FakeAlpaca):
+        def stock_bars(self, syms, tf, start, end=None, limit=None): return {}
+    losers = [_closed("TSLA", -60, 0.62, days_ago=d) for d in (5, 4, 3)] + [_closed("XOM", -40, 0.6, ("24/7 Wall St.",), d) for d in (6, 2)]
+    r = CO.run(A(), {"trades": losers}, now=NOW)
+    k = r["knobs"]
+    assert k["aggression"] < 1.0 and k["min_confidence"] > 0.6                # losing -> smaller, pickier
+    assert "TSLA" in r["avoid"] and r["history"] and r["lessons"]
+    for _ in range(30):                                                       # never past the safe ranges
+        r = CO.run(A(), {"trades": losers}, now=NOW)
+    assert r["knobs"]["aggression"] >= 0.5 and r["knobs"]["min_confidence"] <= 0.8
+    assert C.confirm_rules("ultra")["min_confidence"] == r["knobs"]["min_confidence"]
+    assert C.RISK["stop_loss_pct"] == 0.03 and C.RISK["total_loss_kill_pct"] == 0.10   # Omar's limits untouched
+    CO.reset()
+    assert C.coach()["knobs"] == CO.DEFAULTS
+
+
+def test_coach_winning_trades_bigger_and_trust(monkeypatch, tmpdirs):
+    import trading_bot.coach as CO
+    class A(FakeAlpaca):
+        def stock_bars(self, syms, tf, start, end=None, limit=None): return {}
+    winners = [_closed(s, 80, 0.75, ("Reuters",), d) for s, d in zip(["XOM", "CVX", "AMD", "NVDA", "LLY"], range(1, 6))]
+    r = CO.run(A(), {"trades": winners}, now=NOW)
+    assert r["knobs"]["aggression"] > 1.0 and r["trust"]["Reuters"] > 1.0
+    assert C.trade_weight(0.75, 1, ["Reuters"]) > C.trade_weight(0.75, 1, ["Nobody"])
+
+
+def test_coach_checks_missed_opportunities(monkeypatch, tmpdirs):
+    import trading_bot.coach as CO
+    day0 = (NOW - timedelta(days=3)).replace(hour=16)
+    for i, s in enumerate(["AMD", "NVDA", "MU", "INTC", "AMAT"]):
+        CO.log_decision({"t": T(day0 + timedelta(minutes=i)), "symbol": s, "outcome": "skipped",
+                         "why": "moved +3.40% while being analysed, too late", "event": "chips rally"})
+    class A(FakeAlpaca):
+        def stock_bars(self, syms, tf, start, end=None, limit=None):
+            return {s: [{"t": T(day0.replace(hour=5)), "c": 100.0}, {"t": T((day0 + timedelta(days=1)).replace(hour=5)), "c": 103.0}] for s in syms}
+    r = CO.run(A(), {"trades": []}, now=NOW)
+    assert r["knobs"]["max_move_pct"] > 0.03 and r["missed"] and r["missed"][0]["nextDayPct"] == 3.0
+
+
+def test_dip_buy_when_market_falls(monkeypatch, tmpdirs):
+    fake = FakeAlpaca()
+    B = wire(monkeypatch, fake, [])
+    b = B.Bot()
+    b.universe = {"stocks": {"SPUS": {}, "HLAL": {}, "XOM": {}}, "crypto": {}}
+    today = util.now_et().date()
+    monkeypatch.setattr(fake, "stock_bars", lambda syms, tf, start, end=None, limit=None:
+                        {"SPY": [{"t": T(NOW - timedelta(days=1, hours=2)), "c": 500.0}]} if tf == "1Day" else {})
+    monkeypatch.setattr(fake, "latest_price", lambda s: 490.0 if s == "SPY" else 40.0)        # SPY -2% today
+    import trading_bot.risk as RK
+    monkeypatch.setattr(RK, "stock_entry_window_open", lambda clock, now=None: (True, ""))
+    b.dip_buys({"equity": "100000", "last_equity": "100000", "cash": "100000"}, {"is_open": True})
+    bought = sorted(p[1] for p in fake.placed)
+    assert bought == ["HLAL", "SPUS"]
+    t = [x for x in b.ledger["trades"] if x.get("strategy") == "dip"][0]
+    assert t["stop"] == pytest.approx(40 * 0.93, abs=0.01)
+    b.dip_buys({"equity": "100000", "last_equity": "100000", "cash": "100000"}, {"is_open": True})
+    assert len(fake.placed) == 2                                                               # once a day

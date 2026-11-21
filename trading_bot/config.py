@@ -70,11 +70,16 @@ def invest_base(equity, start_equity, confidence=None):
     return equity if (confidence or 0) >= MUST_TAKE_CONFIDENCE else start_equity
 
 
-def trade_weight(confidence, n_sources=1):
+def trade_weight(confidence, n_sources=1, publishers=()):
     """AUTO sizing: share of the max-invested budget one trade gets, from how strong the signal is.
     confidence 0.55 -> 10%, 0.65 -> 30%, 0.75 -> 50%, 0.9+ -> 80-100% (more sources = a bit more). Min 2%."""
     c = float(confidence or 0.6)
     w = (c - 0.5) * 2 * (1 + 0.2 * min(max(int(n_sources or 1), 1) - 1, 3))
+    co = coach()
+    w *= float((co.get("knobs") or {}).get("aggression", 1.0))          # Coach: bigger when winning
+    tr = [float((co.get("trust") or {}).get(p, 1.0)) for p in publishers or ()]
+    if tr:
+        w *= max(tr)                                                     # Coach: sources that paid off
     return max(0.02, min(1.0, w))
 
 
@@ -104,8 +109,27 @@ def rules_mode():
     return m if m in RULE_MODES else "strict"
 
 
+# Buy-the-dip: when the whole market (SPY) is down 1.5%+ today, buy the halal Shariah ETFs with part of the
+# budget and hold them for days, with a wider stop than news trades. Once per day.
+DIP = _frozen({"spy_drop_pct": 0.015, "budget_share": 0.5, "stop_pct": 0.07, "target_pct": 0.04, "max_hold_days": 10})
+
+
+def coach():
+    """The Coach's learned settings (data/trading/coach.json), or {} before its first review."""
+    import json
+    from . import util
+    try:
+        return json.loads((util.DATA / "coach.json").read_text("utf-8"))
+    except (OSError, ValueError):
+        return {}
+
+
 def confirm_rules(mode=None):
     r = dict(CONFIRM)
+    k = coach().get("knobs") or {}
+    for name in ("min_confidence", "max_move_pct"):        # learned by the Coach, inside fixed safe ranges
+        if name in k:
+            r[name] = k[name]
     r.update(RULE_MODES[mode or rules_mode()])
     r["mode"] = mode or rules_mode()
     return r

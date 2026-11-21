@@ -62,6 +62,7 @@ def write(bot):
     events = sorted(s.get("events", {}).values(), key=lambda e: e.get("lastSeen", ""), reverse=True)[:12]
 
     charts = chart_data(bot, open_t)
+    co = C.coach()
     plain = plain_words(bot, acct, eq, start, spy_pct, today, counters if counters.get("day") == today else {})
 
     state = {
@@ -82,6 +83,7 @@ def write(bot):
                                 "crypto": len((bot.universe or {}).get("crypto") or {})},
                    "alert": s.get("alert")},
         "positions": open_t, "charts": charts,
+        "coach": {k: co.get(k) for k in ("updatedAt", "knobs", "lessons", "missed", "dodged", "avoid", "history", "limits")} if co else None,
         "trades": led["trades"][:120],
         "decisions": led.get("decisions", [])[:60],
         "equity": led.get("equity", [])[-400:],

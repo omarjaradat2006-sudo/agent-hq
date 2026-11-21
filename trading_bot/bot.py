@@ -49,6 +49,8 @@ class Bot:
         if (last.get("symbol"), last.get("outcome"), last.get("why")) != (sym, outcome, why):
             self.ledger["decisions"].insert(0, d)
             del self.ledger["decisions"][150:]
+            from . import coach
+            coach.log_decision(d)
 
     def today_count(self, name):
         day = now_et().date().isoformat()
@@ -105,8 +107,77 @@ class Bot:
         # 6. new trades
         if not self.ledger.get("killed"):
             self.entries(acct, clock)
+            self.dip_buys(acct, clock)
+        self.coach_review()
         self.track_equity(acct)
         self.save()
+
+    def coach_review(self):
+        """Once every weekday evening after the close: learn from the trades and the skipped stories."""
+        now, today = now_et(), now_et().date().isoformat()
+        if now.weekday() >= 5 or (now.hour, now.minute) < (16, 30) or self.s.get("coachDate") == today:
+            return
+        self.s["coachDate"] = today
+        try:
+            from . import coach
+            coach.run(self.a, self.ledger)
+            self.s["publishNow"] = True
+        except Exception as ex:  # noqa: BLE001  never let the review stop trading
+            log(f"Coach review failed: {str(ex)[:150]}", "Coach")
+            event("error", "coach", ex)
+
+    def dip_buys(self, acct, clock):
+        """Market down 1.5%+ today -> buy the halal Shariah ETFs with part of the budget, hold for days."""
+        from . import risk
+        D, today = C.DIP, now_et().date().isoformat()
+        ok, _ = risk.stock_entry_window_open(clock)
+        if not ok or self.s.get("dipDate") == today or risk.daily_halt_hit(acct):
+            return
+        try:
+            bars = self.a.stock_bars([C.BENCHMARK], "1Day", iso(now_utc() - timedelta(days=8))).get(C.BENCHMARK) or []
+            prev = [b for b in bars if parse_time(b["t"]).astimezone(now_et().tzinfo).date().isoformat() < today]
+            spy = self.a.latest_price(C.BENCHMARK)
+            chg = (spy - float(prev[-1]["c"])) / float(prev[-1]["c"]) if prev and spy else 0.0
+        except (HttpError, KeyError, ValueError, TypeError):
+            return
+        if chg > -D["spy_drop_pct"]:
+            return
+        held = {t["symbol"] for t in self.open_trades()}
+        etfs = [s for s in sorted((self.universe or {}).get("stocks") or {}) if s in C.SHARIAH_ETFS and s not in held]
+        self.s["dipDate"] = today
+        if not etfs:
+            return
+        eq, cash = float(acct["equity"]), float(acct["cash"])
+        per, cap = C.sizing()
+        base = C.invest_base(eq, self.ledger.get("startEquity"))
+        pending = sum(t["cost"] for t in self.open_trades() if t["status"] == "pending")
+        room = min(base * cap - (eq - cash) - pending, base * cap * D["budget_share"], cash - pending)
+        if room < 50:
+            log(f"Market down {chg:.1%} today, but no room left in the budget for dip buys", "Trader")
+            return
+        log(f"Market down {chg:.1%} today: buying the dip in {', '.join(etfs)}", "Trader")
+        event("info", "dip_buy", f"SPY {chg:+.2%} today, buying {', '.join(etfs)}")
+        for sym in etfs:
+            price = self.a.latest_price(sym)
+            qty = int((room / len(etfs)) // price) if price else 0
+            if qty < 1:
+                continue
+            stop, target = price * (1 - D["stop_pct"]), price * (1 + D["target_pct"])
+            tid = f"ahq-dip-{sym}-{now_utc():%Y%m%d%H%M%S}"
+            try:
+                o = self.a.buy_stock_bracket(sym, qty, round(stop, 2), round(target, 2), tid)
+            except HttpError as err:
+                event("error", "order_failed", err, sym)
+                continue
+            self.ledger["trades"].insert(0, {
+                "id": tid, "symbol": sym, "asset": "stock", "status": "pending", "strategy": "dip",
+                "entryOrderId": o["id"], "qty": qty, "cost": round(qty * price, 2), "estPrice": price,
+                "entryPrice": price, "stop": round_price(stop), "target": round_price(target), "openedAt": iso(),
+                "news": {"summary": f"Buy the dip: the whole market (SPY) was {chg:+.2%} today", "category": "dip", "sources": []},
+                "reason": {"triage": "market-wide dip", "confidence": None, "confirmation": f"SPY {chg:+.2%}",
+                           "publishers": [], "tradingAgents": "not used (dip buy)"}})
+            self.decide(f"dip|{today}|{sym}", sym, "bought", f"buy the dip: SPY {chg:+.2%} today")
+        self.s["publishNow"] = True
 
     # ------------------------------------------------------------ book keeping
     def reconcile(self, positions):
@@ -210,8 +281,9 @@ class Bot:
             days = sum(1 for d in cal if d["date"] > start.isoformat() and d["date"] <= now.date().isoformat())
             close_t = parse_time(clock.get("next_close")).astimezone(now.tzinfo) if clock.get("next_close") else None
             near_close = close_t and close_t - now <= timedelta(minutes=15)
-            if days > C.RISK["stock_max_hold_trading_days"] or (days == C.RISK["stock_max_hold_trading_days"] and near_close):
-                self.close(t, "3 trading-day limit")
+            lim = C.DIP["max_hold_days"] if t.get("strategy") == "dip" else C.RISK["stock_max_hold_trading_days"]
+            if days > lim or (days == lim and near_close):
+                self.close(t, f"{lim} trading-day limit")
 
     def bad_news_exits(self):
         from .triage import publishers
@@ -276,7 +348,11 @@ class Bot:
                     self.decide(key, sym, "blocked", "fails the halal screen", e)
                     event("halal", "halal_screen", "fails the halal screen", sym)
                     continue
-                if a["confidence"] < C.CONFIRM["min_confidence"]:
+                if a["confidence"] < R["min_confidence"]:
+                    continue
+                av = (C.coach().get("avoid") or {}).get(sym)
+                if av and parse_time(av) > now_utc():
+                    self.decide(key, sym, "skipped", f"Coach: lost its last 3 trades, avoiding until {av[:10]}", e)
                     continue
                 src_ok, _ = C.sources_ok(pubs, news_pubs, R)
                 if not src_ok:
@@ -339,7 +415,7 @@ class Bot:
         price = self.a.latest_price(sym) or chk["price"]
         pending = sum(t["cost"] for t in self.open_trades() if t["status"] == "pending")
         budget, _ = risk.size_order(acct, price, pending, confidence=a.get("confidence"), n_sources=len(pubs),
-                                    start_equity=self.ledger.get("startEquity"))
+                                    start_equity=self.ledger.get("startEquity"), publishers=sorted(pubs))
         stop, target = risk.stop_and_target(price)
         tid = f"ahq-{sym.replace('/', '')}-{now_utc():%Y%m%d%H%M%S}"
         try:
