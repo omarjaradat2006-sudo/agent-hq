@@ -152,7 +152,10 @@ def run(alpaca, ledger, now=None):
             lessons.append(f"{s} lost its last 3 trades: skipping it for 14 days.")
 
     # 5. missed opportunities: what did the skipped stories do the next day?
-    skipped = [d for d in _decisions(since) if d.get("outcome") in ("waiting", "skipped")
+    seen = {(d["symbol"], d["t"]) for d in _decisions(since)}
+    older = [d for d in ledger.get("decisions", []) if (d.get("symbol"), d.get("t")) not in seen
+             and parse_time(d.get("t")) and parse_time(d["t"]) >= since]                # history from before the Coach
+    skipped = [d for d in _decisions(since) + older if d.get("outcome") in ("waiting", "skipped")
                and parse_time(d["t"]) <= now - timedelta(days=1)]
     uniq = {}
     for d in skipped:
