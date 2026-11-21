@@ -193,7 +193,7 @@ THEMES = {
     "gold_miners": ["NEM", "AEM", "B", "KGC", "AU", "FNV", "WPM", "RGLD"],
     "defense_tech": sorted(CONVENTIONAL_DEFENSE),
     "tech_growth": ["AAPL", "MSFT", "NVDA", "AMD", "AVGO", "GOOGL", "META", "AMZN", "TSLA", "CRM", "ADBE",
-                     "QCOM", "MU", "INTC", "AMAT", "LRCX", "KLAC", "NOW", "PANW", "CRWD", "SNOW", "SHOP", "ANET", "SMCI"],
+                     "QCOM", "MU", "INTC", "AMAT", "LRCX", "KLAC", "NOW", "PANW", "CRWD", "SNOW", "SHOP", "ANET", "SMCI", "ANT"],
     "healthcare": ["LLY", "JNJ", "ABBV", "MRK", "PFE", "TMO", "ISRG", "VRTX", "REGN", "ABT", "MDT"],
     "industrials": ["CAT", "DE", "GE", "ETN", "UNP", "FDX", "UPS"],
     "consumer": ["COST", "NKE", "HD", "LOW", "PG", "KO", "PEP", "SBUX", "TJX"],
