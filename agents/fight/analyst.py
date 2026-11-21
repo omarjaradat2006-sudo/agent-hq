@@ -155,17 +155,21 @@ def nba_research(today, games):
 def nba_splits(today, games):
     """Public betting splits (% of bets, % of money) for each game's spread and total. Needs live search:
     returns None rather than guess when search is unavailable."""
-    q = (f"Today is {today}. Find today's NBA public betting splits (VSiN's DraftKings betting splits or Action Network public money) for these games. "
-         "For each: the spread (favourite and line) with % of bets and % of money on the favourite, and the game total with % of bets and % of money on the Over. "
+    q = (f"Today is {today}. Find today's NBA public betting splits. Best source: DraftKings Network's daily article 'NBA Public Betting Trends' "
+         "(dknetwork.draftkings.com), else VSiN's DraftKings betting splits, else Action Network public money. For each game: "
+         "the spread (favourite and line) with % of bets and % of money (handle) on the favourite; the game total with % of bets and % of money on the Over; "
+         "and the moneyline (favourite, favourite odds, underdog odds) with % of bets and % of money on the favourite. "
          "Only numbers you actually found; omit a game if you didn't find it.\n" + "\n".join(games) +
          '\nReply JSON only: {"games":[{"game":"Away @ Home","spread":{"fav":"Team","line":-5.5,"favBets":70,"favMoney":55},'
-         '"total":{"line":224.5,"overBets":61,"overMoney":70}}],"source":"site name"}')
+         '"total":{"line":224.5,"overBets":61,"overMoney":70},"moneyline":{"fav":"Team","favOdds":"-200","dogOdds":"+168","favBets":79,"favMoney":98}}],"source":"site name"}')
     try:
         text, src = G.generate(q, SYSTEM, search=True, temperature=0, retries=1)
     except Exception as e:
         print("Betting splits unavailable:", e, flush=True)
-        return None, []
+        return None, [("error", str(e)[:120])]
     out = parse(text) or {}
+    if not src:
+        print("Betting splits: search returned no sources", flush=True)
     rows = [g for g in (out.get("games") or []) if isinstance(g, dict) and g.get("game")]
     return (rows if rows and src else None), src
 

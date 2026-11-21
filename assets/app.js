@@ -1044,7 +1044,8 @@
     const m = el("div", "card"); m.append(el("div", "label", "Where the money is tonight (ranked by % of money)"));
     const mr = n.money || [];
     if (!mr.length) m.append(el("div", "small", n.splitsMessage || "No splits yet today."));
-    if (mr.length) { const top = el("div", null, `Most money: ${mr[0].game}: ${mr[0].line} (${mr[0].money}% of the money)`); top.style.fontWeight = "800"; top.style.margin = "4px 0 8px"; m.append(top); }
+    if (mr.length) { const top = el("div", null, `Most money: ${mr[0].game}: ${mr[0].line} (${mr[0].money}% of the money)${mr[0].fade ? " · opposite: " + mr[0].fade : ""}`); top.style.fontWeight = "800"; top.style.margin = "4px 0 8px"; m.append(top); }
+    if (n.splitsAt) m.append(el("div", "small", `Updated ${ago(n.splitsAt)}.`));
     mr.forEach(r => m.append(legLine(`${r.game}: ${r.line}`, `${r.money}% money · ${r.bets}% bets`, null)));
     m.append(el("div", "small", "% of money = share of the dollars bet on that side (DraftKings splits via VSiN / Action Network). It shows where the money is, not who wins."));
     body.append(m);

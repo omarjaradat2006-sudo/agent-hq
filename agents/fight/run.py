@@ -25,6 +25,8 @@ def main(argv):
                 cards.run_nba(force="--force" in argv)
             else:
                 cards.run_ufc(force="--force" in argv, dwcs="--dwcs" in argv)
+        elif job == "splits":
+            import cards; cards.refresh_splits()
         elif job == "grade":
             import grade; grade.run()
         elif job == "check":

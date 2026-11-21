@@ -106,6 +106,13 @@ def money_ranking(splits):
                 fm = float(sp["favMoney"]); ln = float(sp.get("line") or 0)
                 side = (f"{sp['fav']} {ln:+g}", fm) if fm >= 50 else (f"{sp['fav']} opponent {-ln:+g}", 100 - fm)
                 rows.append({"game": g["game"], "line": side[0], "money": round(side[1]), "bets": round(float(sp.get("favBets", 50)) if fm >= 50 else 100 - float(sp.get("favBets", 50)))})
+            ml = g.get("moneyline") or {}
+            if ml.get("fav") and ml.get("favMoney") is not None:
+                mm = float(ml["favMoney"])
+                rows.append({"game": g["game"], "line": f"{ml['fav']} moneyline {ml.get('favOdds') or ''}".strip() if mm >= 50 else f"{ml['fav']} opponent moneyline {ml.get('dogOdds') or ''}".strip(),
+                             "money": round(mm if mm >= 50 else 100 - mm),
+                             "bets": round(float(ml.get("favBets", 50)) if mm >= 50 else 100 - float(ml.get("favBets", 50))),
+                             "fade": (f"Opponent moneyline {ml.get('dogOdds') or ''}" if mm >= 50 else f"{ml['fav']} moneyline {ml.get('favOdds') or ''}").strip()})
             if tt.get("line") is not None and tt.get("overMoney") is not None:
                 om = float(tt["overMoney"])
                 rows.append({"game": g["game"], "line": f"{'Over' if om >= 50 else 'Under'} {float(tt['line']):g}", "money": round(om if om >= 50 else 100 - om),
@@ -113,6 +120,35 @@ def money_ranking(splits):
         except (TypeError, ValueError):
             continue
     return sorted(rows, key=lambda r: -r["money"])
+
+
+def refresh_splits():
+    """6:15 PM: re-read the splits (fuller by then) and update tonight's money box + fade list. Costs 2 odds credits for prices."""
+    today = S.today()
+    st, lg = S.state(), S.ledger()
+    card = st.get("cards", {}).get("nba")
+    if not card or card.get("date") != today:
+        print("No NBA card today"); return
+    events = [e for e in O.fetch_events(C.NBA_KEY, 12)]
+    if not events:
+        print("No games left tonight"); return
+    games = [f"{e['away_team']} @ {e['home_team']}" for e in events]
+    splits, ssrc = A.nba_splits(today, games)
+    if not splits:
+        card["splitsMessage"] = "Couldn't get the betting splits (checked again at 6:15 PM)."
+        S.save(S.STATE, st); print(card["splitsMessage"]); return
+    raw = O.fetch_odds(C.NBA_KEY, ["spreads", "totals"], 12)
+    cands = [c for e in raw for c in O.candidates(e, "nba")]
+    have = {b["betText"] for b in lg["bets"] if b.get("kind") == "nba_fade" and b.get("cardId") == card["id"]}
+    new = [f for f in fade_list(splits, cands, card["id"] + "-late", today) if f["betText"] not in have]
+    card.update(splits=splits, money=money_ranking(splits), splitsMessage=None, splitsAt=S.now_iso(),
+                splitsSource=(ssrc[0][1] if ssrc else None), fades=(card.get("fades") or []) + new)
+    lg["bets"] += S.clean(new)
+    S.log(st, "Court Analyst", f"Money check 6:15 PM: most money on {card['money'][0]['line']} ({card['money'][0]['money']}%)" if card["money"] else "Money check done")
+    S.save(S.LEDGER, lg)
+    import report
+    report.refresh(st, lg)
+    print("splits refreshed:", len(splits), "games,", len(new), "new fades")
 
 
 def fade_list(splits, cands, cid, today):
