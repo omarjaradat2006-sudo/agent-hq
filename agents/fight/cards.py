@@ -83,7 +83,8 @@ def run_nba(force=False):
     parlays = B.build_sgp(cands, cid, today, sgp_ids)
     A.why_lines(parlays)
     fades = fade_list(splits or [], all_main, cid, today)
-    card.update(splits=splits, splitsSource=(ssrc[0][1] if ssrc else None), fades=fades,
+    money = money_ranking(splits or [])
+    card.update(money=money, splits=splits, splitsSource=(ssrc[0][1] if ssrc else None), fades=fades,
                 splitsMessage=None if splits else "Couldn't get today's betting splits.")
     card.update(games=len(raw), propGames=prop_games, propGameNames=prop_names, analyzedLines=analyzed, totalLines=len(idx), parlays=parlays,
                 propBudget=budget, sources=[{"title": t, "url": u} for t, u in (src + src2)[:20]])
@@ -95,8 +96,27 @@ def run_nba(force=False):
     return _finish(card, "court", msg, parlays + fades)
 
 
+def money_ranking(splits):
+    """Every spread/total side ranked by % of the money: the top line is where the most money is tonight."""
+    rows = []
+    for g in splits:
+        sp, tt = g.get("spread") or {}, g.get("total") or {}
+        try:
+            if sp.get("fav") is not None and sp.get("favMoney") is not None:
+                fm = float(sp["favMoney"]); ln = float(sp.get("line") or 0)
+                side = (f"{sp['fav']} {ln:+g}", fm) if fm >= 50 else (f"{sp['fav']} opponent {-ln:+g}", 100 - fm)
+                rows.append({"game": g["game"], "line": side[0], "money": round(side[1]), "bets": round(float(sp.get("favBets", 50)) if fm >= 50 else 100 - float(sp.get("favBets", 50)))})
+            if tt.get("line") is not None and tt.get("overMoney") is not None:
+                om = float(tt["overMoney"])
+                rows.append({"game": g["game"], "line": f"{'Over' if om >= 50 else 'Under'} {float(tt['line']):g}", "money": round(om if om >= 50 else 100 - om),
+                             "bets": round(float(tt.get("overBets", 50)) if om >= 50 else 100 - float(tt.get("overBets", 50)))})
+        except (TypeError, ValueError):
+            continue
+    return sorted(rows, key=lambda r: -r["money"])
+
+
 def fade_list(splits, cands, cid, today):
-    """Opposite of the most-bet side (65%+ of tickets) on spreads and totals, at the real FD/DK price. Tracked, not a slip."""
+    """Opposite of where the money is (65%+ of the money) on spreads and totals, at the real FD/DK price. Tracked, not a slip."""
     out = []
     def hit(c, g):
         s = str(g.get("game", "")).lower()
@@ -105,14 +125,14 @@ def fade_list(splits, cands, cid, today):
         sp, tt = g.get("spread") or {}, g.get("total") or {}
         targets = []
         try:
-            if sp.get("fav") and float(sp.get("favBets", 0)) >= C.FADE_MIN_BETS:
-                targets.append(("spreads", "dog", sp, f"{sp['favBets']:g}% of bets on {sp['fav']}"))
-            elif sp.get("fav") and 100 - float(sp.get("favBets", 50)) >= C.FADE_MIN_BETS:
-                targets.append(("spreads", "fav", sp, f"{100 - float(sp['favBets']):g}% of bets on the underdog"))
-            if tt and float(tt.get("overBets", 0)) >= C.FADE_MIN_BETS:
-                targets.append(("totals", "Under", tt, f"{tt['overBets']:g}% of bets on the Over"))
-            elif tt and 100 - float(tt.get("overBets", 50)) >= C.FADE_MIN_BETS:
-                targets.append(("totals", "Over", tt, f"{100 - float(tt['overBets']):g}% of bets on the Under"))
+            if sp.get("fav") and float(sp.get("favMoney", 0)) >= C.FADE_MIN_MONEY:
+                targets.append(("spreads", "dog", sp, f"{sp['favMoney']:g}% of the money on {sp['fav']}"))
+            elif sp.get("fav") and 100 - float(sp.get("favMoney", 50)) >= C.FADE_MIN_MONEY:
+                targets.append(("spreads", "fav", sp, f"{100 - float(sp['favMoney']):g}% of the money on the underdog"))
+            if tt and float(tt.get("overMoney", 0)) >= C.FADE_MIN_MONEY:
+                targets.append(("totals", "Under", tt, f"{tt['overMoney']:g}% of the money on the Over"))
+            elif tt and 100 - float(tt.get("overMoney", 50)) >= C.FADE_MIN_MONEY:
+                targets.append(("totals", "Over", tt, f"{100 - float(tt['overMoney']):g}% of the money on the Under"))
         except (TypeError, ValueError):
             continue
         for mk, side, info, why in targets:
@@ -190,6 +210,8 @@ def key_fight_picks(fights, cands, cid, today):
         a, b = (str(f.get("fight", "")).split(" vs ") + [""])[:2]
         picks = []
         for p in f.get("picks", [])[:6]:
+            if p.get("type") in ("strikes", "takedowns") and "under" in str(p.get("bet", "")).lower():
+                continue   # no Unders on strikes/takedowns: the apps don't allow them in a same-game parlay
             row = {"type": p.get("type"), "bet": S.sanitize(str(p.get("bet", ""))), "why": S.sanitize(str(p.get("why", "")))[:200],
                    "odds": p.get("odds") if p.get("odds") not in (None, "null", "") else None, "book": p.get("book") if p.get("book") in C.BOOKS.values() else None,
                    "checked": False}
@@ -217,10 +239,11 @@ def key_fight_picks(fights, cands, cid, today):
 def underdogs(cands, notes, sources, cid, today):
     """Analyze ALL underdogs; list only the 1-3 that look genuinely mispriced (our chance at least 4 points above the price)."""
     dogs = [c for c in cands if c["market"] == "h2h" and c["fair"] < 0.5]
-    if not dogs:
-        return []
     for c in dogs:
         c["_book"] = max(c["prices"], key=c["prices"].get)
+    dogs = [c for c in dogs if c["prices"][c["_book"]] >= C.UFC_DOG_MIN_DEC]   # serious underdogs only (+200 or longer)
+    if not dogs:
+        return []
     text = "\n".join(f"- {c['side']} (vs {c['home'] if c['side'] == c['away'] else c['away']}): {W.american(c['prices'][c['_book']])} on {C.BOOKS[c['_book']]}, fair chance {c['fair']*100:.0f}%" for c in dogs)
     res = []
     for d in (A.ufc_underdogs(today, text, notes, sources).get("underdogs") or [])[:3]:

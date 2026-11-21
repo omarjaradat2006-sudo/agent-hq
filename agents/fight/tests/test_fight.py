@@ -68,10 +68,11 @@ class FakeGemini:
                 {"type": "winner", "bet": "Islam Makhachev to Win", "odds": None, "book": None, "why": "Better grappler."},
                 {"type": "method", "bet": "Islam Makhachev by Submission", "odds": "+200", "book": "FanDuel", "why": "Top control. Basically guaranteed."},
                 {"type": "takedowns", "bet": "Islam Makhachev 3+ Takedowns", "odds": None, "book": None, "why": "Chain wrestling."},
+                {"type": "strikes", "bet": "Arman Tsarukyan Under 40.5 Significant Strikes", "odds": None, "book": None, "why": "Gets taken down."},
                 {"type": "rounds", "bet": "Over 2.5 Total Rounds", "odds": None, "book": None, "why": "Both durable."}]}]}), src
         if "public betting splits" in prompt:
-            return json.dumps({"games": [{"game": "New York Knicks @ Boston Celtics", "spread": {"fav": "Boston Celtics", "line": -5.5, "favBets": 72, "favMoney": 50},
-                                          "total": {"line": 224.5, "overBets": 70, "overMoney": 40}}], "source": "VSiN"}), src
+            return json.dumps({"games": [{"game": "New York Knicks @ Boston Celtics", "spread": {"fav": "Boston Celtics", "line": -5.5, "favBets": 55, "favMoney": 80},
+                                          "total": {"line": 224.5, "overBets": 70, "overMoney": 30}}], "source": "VSiN"}), src
         if "Main event:" in prompt:
             return json.dumps({"legs": [{"bet": "Arman Tsarukyan 2+ Takedowns", "rating": "Strong", "why": "Wrestles first. Basically guaranteed."},
                                         {"bet": "Fight Goes the Distance", "rating": "Lean", "why": "Both durable."},
@@ -198,6 +199,8 @@ class T(unittest.TestCase):
         w = next(p for p in k["picks"] if p["type"] == "winner")
         self.assertTrue(w["checked"] and w["odds"].startswith("-"))                          # winner odds from our feed
         self.assertNotIn("guaranteed", json.dumps(k).lower())
+        self.assertFalse(any("under" in p["bet"].lower() and p["type"] in ("strikes", "takedowns") for p in k["picks"]))  # Over only
+        self.assertGreaterEqual(d["dec"], C.UFC_DOG_MIN_DEC)                                    # serious underdog (+200 or longer)
         self.assertTrue(all(e["eventId"] != "u3" for b in S.ledger()["bets"] for e in b["legs"]))  # PFL bout never used
         self.assertGreaterEqual(len(c["parlays"]), 1)
         lg = S.ledger()
@@ -256,7 +259,9 @@ class T(unittest.TestCase):
         K.run_nba()
         n = S.state()["cards"]["nba"]
         self.assertEqual(len(n["splits"]), 1)
-        self.assertEqual(sorted(f["betText"] for f in n["fades"]), ["Knicks vs Celtics: Knicks +5.5", "Knicks vs Celtics: Under 224.5 Total Points"])
+        self.assertEqual(sorted(f["betText"] for f in n["fades"]), ["Knicks vs Celtics: Knicks +5.5", "Knicks vs Celtics: Over 224.5 Total Points"])
+        self.assertEqual((n["money"][0]["line"], n["money"][0]["money"]), ("Boston Celtics -5.5", 80))        # most money first
+        self.assertEqual(n["money"][1]["line"], "Under 224.5")
         self.assertTrue(all(p["legs"][0]["market"] not in ("h2h", "spreads") for p in n["parlays"]))   # fades never leak into slips
         lg = S.ledger()
         for b in lg["bets"]:
@@ -267,8 +272,8 @@ class T(unittest.TestCase):
         Gr.espn_box = lambda gid: {}
         Gr.run()
         f = {b["betText"]: b["status"] for b in S.ledger()["bets"] if b["kind"] == "nba_fade"}
-        self.assertEqual(f, {"Knicks vs Celtics: Knicks +5.5": "lost", "Knicks vs Celtics: Under 224.5 Total Points": "won"})
-        self.assertTrue(any(l.startswith("Fade the most-bet side (NBA, tracked only): 1 won, 1 lost") for l in S.state()["record"]["lines"]))
+        self.assertEqual(f, {"Knicks vs Celtics: Knicks +5.5": "lost", "Knicks vs Celtics: Over 224.5 Total Points": "lost"})
+        self.assertTrue(any(l.startswith("Fade where the money is (NBA, tracked only): 0 won, 2 lost") for l in S.state()["record"]["lines"]))
 
     def test_sanitize(self):
         self.assertEqual(S.sanitize("This is basically guaranteed, a lock."), "This is likely, a lean.")

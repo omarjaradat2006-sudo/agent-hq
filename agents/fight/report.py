@@ -12,7 +12,7 @@ AGENTS = [
     {"id": "grader", "name": "Results Grader", "role": "Grades every parlay and underdog pick"},
 ]
 KINDS = {"nba_parlay": "NBA same-game parlays (at estimated odds)", "ufc_parlay": "UFC parlays",
-         "nba_fade": "Fade the most-bet side (NBA, tracked only)", "ufc_main": "UFC main/co-main winner picks", "ufc_dog": "UFC underdog picks (straight win)"}
+         "nba_fade": "Fade where the money is (NBA, tracked only)", "ufc_main": "UFC main/co-main winner picks", "ufc_dog": "UFC underdog picks (straight win)"}
 
 
 def method_line(bets):

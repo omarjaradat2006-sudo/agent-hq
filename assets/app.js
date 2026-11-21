@@ -1031,17 +1031,15 @@
     if (n.propGameNames && n.propGameNames.length) body.append(el("div", "small", `Player props checked today (free plan): ${n.propGameNames.join(", ")}.`));
     if (n.message) body.append(el("div", "card", n.message));
     (n.parlays || []).forEach(p => body.append(slip(p)));
-    const m = el("div", "card"); m.append(el("div", "label", "Where the money is (public betting splits)"));
-    if (!(n.splits || []).length) m.append(el("div", "small", n.splitsMessage || "No splits yet today."));
-    (n.splits || []).forEach(g => {
-      const sp = g.spread || {}, tt = g.total || {};
-      if (sp.fav != null) { const gap = Math.abs((sp.favBets || 0) - (sp.favMoney || 0)); m.append(legLine(`${g.game}: ${sp.fav} ${sp.line > 0 ? "+" : ""}${sp.line ?? ""}`, `${sp.favBets ?? "?"}% bets · ${sp.favMoney ?? "?"}% money${gap >= 15 ? " · gap" : ""}`, null)); }
-      if (tt.line != null) { const gap = Math.abs((tt.overBets || 0) - (tt.overMoney || 0)); m.append(legLine(`${g.game}: Over ${tt.line}`, `${tt.overBets ?? "?"}% bets · ${tt.overMoney ?? "?"}% money${gap >= 15 ? " · gap" : ""}`, null)); }
-    });
-    m.append(el("div", "small", "A big gap between % of bets and % of money usually means large bettors disagree with the crowd. It shows where the money is, not who wins."));
+    const m = el("div", "card"); m.append(el("div", "label", "Where the money is tonight (ranked by % of money)"));
+    const mr = n.money || [];
+    if (!mr.length) m.append(el("div", "small", n.splitsMessage || "No splits yet today."));
+    if (mr.length) { const top = el("div", null, `Most money: ${mr[0].game}: ${mr[0].line} (${mr[0].money}% of the money)`); top.style.fontWeight = "800"; top.style.margin = "4px 0 8px"; m.append(top); }
+    mr.forEach(r => m.append(legLine(`${r.game}: ${r.line}`, `${r.money}% money · ${r.bets}% bets`, null)));
+    m.append(el("div", "small", "% of money = share of the dollars bet on that side (DraftKings splits via VSiN / Action Network). It shows where the money is, not who wins."));
     body.append(m);
     if ((n.fades || []).length) {
-      const f = el("div", "card"); f.append(el("div", "label", "Fade the most-bet side (tracked to test the theory, not a slip)"));
+      const f = el("div", "card"); f.append(el("div", "label", "Fade where the money is (tracked to test the theory, not a slip)"));
       n.fades.forEach(x => { f.append(legLine(x.betText.split(": ").pop() + ` · ${x.bookName}`, x.american, (x.legs || [{}])[0].status)); f.append(el("div", "small", `${x.betText.split(": ")[0]}. ${x.why}`)); });
       body.append(f);
     }

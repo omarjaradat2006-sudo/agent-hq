@@ -14,7 +14,8 @@ NBA_KEY, UFC_KEY = "basketball_nba", "mma_mixed_martial_arts"
 # Omar's rule (Nov 11): NO moneylines and NO regular spreads in NBA slips. Game totals, player props, milestones,
 # and alternate spreads only when they carry a big cushion (priced -300 or shorter).
 NBA_MAIN = ["totals", "spreads"]                          # one call for all games (2 credits); spreads only feed the tracked fade list
-FADE_MIN_BETS = 65                                        # "most-bet side": 65%+ of tickets
+FADE_MIN_MONEY = 65                                       # "where the money is": 65%+ of the money (handle) on one side
+UFC_DOG_MIN_DEC = 3.0                                     # serious underdogs only: +200 or longer
 NBA_PROPS = ["player_points", "player_rebounds", "player_assists", "player_threes", "player_points_alternate", "alternate_spreads"]  # per game
 NBA_BLOCKED_MARKETS = {"h2h", "spreads"}
 ALT_SPREAD_MAX_DEC = 1.334                                # -300 or shorter

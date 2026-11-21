@@ -272,7 +272,7 @@ Research notes:
 Sources:
 {src}
 
-Analyze every underdog. Then return ONLY the 1 to 3 whose line looks genuinely WRONG (mispriced) given style matchup, recent form,
+These are all serious underdogs (+200 or longer). Analyze every one. Then return ONLY the 1 to 3 whose line looks genuinely WRONG (mispriced) given style matchup, recent form,
 weigh-in, camp, injuries and activity. A big plus number alone is not a reason. If none are mispriced, return an empty list.
 For each: your honest win probability, the realistic winning path, and one line on why the odds are off.
 Return JSON only:
@@ -288,7 +288,8 @@ def key_fights(today, bouts, notes, sources):
     q = (f"Today is {today}. Official UFC card bouts:\n" + "\n".join(f"- {a} vs {b}" for a, b in bouts) +
          f"\n\nResearch notes:\n{notes[:14000]}\n\nIdentify the MAIN EVENT and the CO-MAIN. Include the co-main only if it's a big fight "
          "(title fight or two ranked top-15 fighters). For each fight give individual picks: winner, method (KO/TKO, submission or decision), "
-         "significant strikes, takedowns and rounds. Word each bet the way FanDuel/DraftKings show it. Give the American odds for each pick "
+         "significant strikes, takedowns and rounds. Significant strikes and takedowns must be OVER only (e.g. 'X 60+ Significant Strikes', 'X 2+ Takedowns'): "
+         "Omar's apps don't offer Unders on those in a same-game parlay. Under is allowed only for rounds. Word each bet the way FanDuel/DraftKings show it. Give the American odds for each pick "
          "ONLY if you found them on FanDuel or DraftKings in a source (else null). One plain line on why. Never call anything guaranteed or a lock.\n"
          'Reply JSON only: {"fights":[{"fight":"A vs B","role":"Main event|Co-main","picks":[{"type":"winner|method|strikes|takedowns|rounds",'
          '"bet":"...","odds":"+150 or null","book":"FanDuel|DraftKings|null","why":"..."}]}]}')
