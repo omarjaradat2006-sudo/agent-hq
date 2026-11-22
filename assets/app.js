@@ -29,7 +29,8 @@
     const hasY = CFG.teams.some(t => t.id === "youtube");
     const camp = hasY ? await getJSON("data/youtube/wanted_campaigns.json") : null;
     const dec = hasY ? await getJSON("data/youtube/wanted_decisions.json") : null;
-    const sig = JSON.stringify([res, bt && bt.ranAt, wk && wk.updatedAt, camp && camp.updatedAt, dec]); if (sig === raw) return false; raw = sig;
+    const inspo = hasY ? await getJSON("data/youtube/inspo.json") : null;
+    const sig = JSON.stringify([res, bt && bt.ranAt, wk && wk.updatedAt, camp && camp.updatedAt, dec, inspo]); if (sig === raw) return false; raw = sig;
     const teams = {};
     res.forEach(([id, st, mt]) => {
       const cfg = CFG.teams.find(t => t.id === id); const s = st || {}; const hired = !!s.hired;
@@ -44,7 +45,7 @@
       teams[id] = { cfg, hired, state: s, metrics: mt, agents, log };
     });
     if (teams.trading) { teams.trading.backtest = bt; teams.trading.week = wk; }
-    if (teams.youtube) { teams.youtube.camp = camp; teams.youtube.dec = dec || {}; }
+    if (teams.youtube) { teams.youtube.camp = camp; teams.youtube.dec = dec || {}; teams.youtube.inspo = inspo || { items: [] }; }
     M = { teams };
     return true;
   }
@@ -257,7 +258,7 @@
     const out = [["overview", "Overview"], ["ideas", t.cfg.ideaWord || "Ideas"]];
     if (t.metrics) out.push(["stats", "Stats"]);
     if (t.metrics && (t.metrics.trending || []).length) out.push(["trending", "Trending"]);
-    if (t.cfg.id === "youtube") out.splice(1, 0, ["lineup", "Today's lineup"]), out.splice(3, 0, ["shots", "Footage"]), out.splice(4, 0, ["clips", "Clip permissions"]);
+    if (t.cfg.id === "youtube") out.splice(1, 0, ["lineup", "Today's lineup"]), out.splice(3, 0, ["shots", "Footage"]), out.splice(4, 0, ["clips", "Clip permissions"]), out.splice(2, 0, ["inspo", "Inspo"]);
     if (t.cfg.id === "tiktok" || t.cfg.id === "youtube") out.splice(out.findIndex(x => x[0] === "ideas") + 1, 0, ["review", "Review"]);
     if (t.cfg.id === "linkedai" || t.cfg.id === "growth") out.splice(2, 0, ["competitors", "Competitors"]);
     if (t.cfg.id === "opps" || t.cfg.id === "growth") out.splice(out.findIndex(x => x[0] === "ideas") + 1, 0, ["swarm", "100-person test"]);
@@ -282,7 +283,7 @@
     ph.append(tabs); p.append(ph);
     const body = el("div", "pb"); p.append(body);
     if (t.cfg.paused) { vPaused(t, body); return; }
-    ({ overview: vOverview, ideas: vIdeas, upgrades: vUpgrades, review: vReview, competitors: vCompetitors, swarm: vSwarm, leads: vLeads, lineup: vLineup, picks: vFToday, ufc: vFUfc, record: vFRecord, books: vFBooks, positions: vTPositions, trades: vTTrades, pnl: vTPnl, news: vTNews, coins: vTCoins, backtest: vTBacktest, week: vTWeek, shots: vShots, clips: vClips, stats: vStats, trending: vTrending, research: vResearch, activity: vActivity, ...(t.cfg.id === "fight" && !agentSel ? { overview: vFToday } : {}) }[tab] || vOverview)(t, body);
+    ({ overview: vOverview, ideas: vIdeas, upgrades: vUpgrades, review: vReview, competitors: vCompetitors, swarm: vSwarm, leads: vLeads, lineup: vLineup, inspo: vInspo, picks: vFToday, ufc: vFUfc, record: vFRecord, books: vFBooks, positions: vTPositions, trades: vTTrades, pnl: vTPnl, news: vTNews, coins: vTCoins, backtest: vTBacktest, week: vTWeek, shots: vShots, clips: vClips, stats: vStats, trending: vTrending, research: vResearch, activity: vActivity, ...(t.cfg.id === "fight" && !agentSel ? { overview: vFToday } : {}) }[tab] || vOverview)(t, body);
   }
   function pill(s) { return el("span", "pill s-" + (s || "idle"), ST[s] || s || "Idle"); }
   function empty(title, text) { const e = el("div", "empty"); e.append(el("strong", null, title)); e.append(el("span", null, text)); return e; }
@@ -605,6 +606,92 @@
       const tt = el("span", "t", (v.slot || "") + "  " + (v.title || "")); tt.title = v.title || ""; r.append(tt, el("span", "n", v.kind || ""));
       r.append(el("span", "m", [v.format, v.note].filter(Boolean).join(" · ")), el("span", "m", v.basis ? "↳ " + v.basis : ""), el("span", "m", [v.newIdea ? "★ new" : "", v.footage ? "🎞 " + v.footage : ""].filter(Boolean).join("  "))); c.append(r); });
     body.append(c);
+  }
+  /* Inspo inbox: Omar drops a link or video; every 3 days the server builds a template + sample; he approves or rejects. */
+  async function commitInspo(mutate, msg) {
+    const path = "contents/data/youtube/inspo.json";
+    for (let attempt = 0; attempt < 3; attempt++) {
+      const r = await fetch(`https://api.github.com/repos/${CFG.repo}/${path}?ref=main&t=${Date.now()}`, { cache: "no-store", headers: { Authorization: "Bearer " + LS.get("hq.ghToken"), Accept: "application/vnd.github+json" } });
+      if (r.status === 401) throw new Error("token");
+      let box = { items: [] }, sha;
+      if (r.ok) { const f = await r.json(); sha = f.sha; try { box = JSON.parse(b64ToText(f.content)) || box; } catch {} } else if (r.status !== 404) throw new Error("http " + r.status);
+      box.items = box.items || []; mutate(box);
+      const put = await gh(path, { method: "PUT", body: JSON.stringify({ message: "Omar: " + msg, content: textToB64(JSON.stringify(box, null, 1) + "\n"), ...(sha ? { sha } : {}), branch: "main" }) });
+      if (put.ok) return box; if (put.status !== 409 && put.status !== 422) throw new Error("http " + put.status);
+    }
+    throw new Error("busy");
+  }
+  async function uploadInspoFile(file, id) {
+    if (file.size > 60e6) throw new Error("big");
+    const data = await new Promise((ok, no) => { const fr = new FileReader(); fr.onload = () => ok(String(fr.result).split(",")[1]); fr.onerror = no; fr.readAsDataURL(file); });
+    const ext = (file.name.split(".").pop() || "mp4").toLowerCase().replace(/[^a-z0-9]/g, "") || "mp4";
+    const path = `data/youtube/inspo_files/${id}.${ext}`;
+    const put = await gh("contents/" + path, { method: "PUT", body: JSON.stringify({ message: "Omar: inspo video " + id, content: data, branch: "main" }) });
+    if (!put.ok) throw new Error("http " + put.status); return path;
+  }
+  function inspoSave(t, mutate, msg, done) {
+    return async () => {
+      if (!LS.get("hq.ghToken")) { openSettings("Connect GitHub once so the Inspo inbox can save."); return; }
+      toast("Saving…");
+      try { t.inspo = await commitInspo(mutate, msg); toast(done); renderPanel(); }
+      catch (e) { toast(e.message === "token" ? "GitHub token expired: open settings" : e.message === "big" ? "Video is over 60 MB: trim it first" : "Couldn't save, try again"); }
+    };
+  }
+  function vInspo(t, body) {
+    const box = t.inspo || { items: [] }; const items = [...(box.items || [])].sort((a, b) => (b.addedAt || "").localeCompare(a.addedAt || ""));
+    const add = el("div", "card brief"); add.append(el("div", "label", "Inspo inbox"));
+    add.append(el("div", "why", "Drop a TikTok/Instagram link or the video itself. Every 3 days (2:47 PM) the server watches it, builds a template in the same style, test-renders it and puts a sample here for you to approve."));
+    const link = el("input"); link.placeholder = "Paste a TikTok / Instagram / YouTube link"; link.style.width = "100%";
+    const file = el("input"); file.type = "file"; file.accept = "video/*";
+    const ch = el("select"); ["Bounce Theory", "Ambient Escape"].forEach(c => { const o = el("option", null, c); o.value = c; ch.append(o); });
+    const note = el("input"); note.placeholder = "What you like about it (optional)"; note.style.width = "100%";
+    const go = el("button", "btn primary", "Add to inbox");
+    go.onclick = async () => {
+      if (!link.value.trim() && !file.files[0]) { toast("Paste a link or pick a video."); return; }
+      if (!LS.get("hq.ghToken")) { openSettings("Connect GitHub once so the Inspo inbox can save."); return; }
+      const id = "in-" + new Date().toISOString().slice(0, 10).replace(/-/g, "") + "-" + Math.random().toString(36).slice(2, 6);
+      go.disabled = true; toast(file.files[0] ? "Uploading the video…" : "Saving…");
+      try {
+        const path = file.files[0] ? await uploadInspoFile(file.files[0], id) : null;
+        t.inspo = await commitInspo(b => b.items.push({ id, channel: ch.value, link: link.value.trim() || null, file: path, note: note.value.trim() || null, addedAt: new Date().toISOString().replace(/\.\d+Z$/, "Z"), status: "new" }), "inspo " + id);
+        toast("Added. The server picks it up on its next 3-day run."); renderPanel();
+      } catch (e) { go.disabled = false; toast(e.message === "token" ? "GitHub token expired: open settings" : e.message === "big" ? "Video is over 60 MB: trim it first" : "Couldn't save, try again"); }
+    };
+    [link, file, ch, note, go].forEach(x => add.append(x));
+    body.append(add);
+    const LBL = { new: "Waiting for the next run", building: "Building…", needs_upload: "Upload the video", ready: "Ready: approve or reject", approved: "Approved: goes live in the next Bounce batch", live: "Live in the lineup", rejected: "Rejected: build it in Claude", failed: "Couldn't build: build it in Claude" };
+    if (!items.length) { body.append(empty("Inbox empty", "Add your first inspo video above.")); return; }
+    items.forEach(it => {
+      const c = el("article", "card"); const a = it.analysis || {};
+      c.append(el("h3", null, a.summary || it.note || it.link || it.id));
+      c.append(el("div", "small", [it.channel, LBL[it.status] || it.status, it.score ? `match ${it.score}/10` : null, it.addedAt ? "added " + ago(it.addedAt) : null].filter(Boolean).join(" · ")));
+      if (it.link) { const l = el("a", null, "Original link"); l.href = it.link; l.target = "_blank"; l.rel = "noopener"; c.append(l); }
+      if (it.sample) { const v = el("video"); v.src = ROOT + it.sample; v.controls = true; v.playsInline = true; v.preload = "metadata"; v.style.width = "100%"; v.style.maxWidth = "320px"; v.style.display = "block"; c.append(v); }
+      if (it.explain) c.append(el("div", "why", it.explain));
+      if ((it.graphics || []).length) c.append(el("div", "small", "Graphics: " + it.graphics.join(", ")));
+      if (a.physics || a.hook) { const d = el("details"); d.append(el("summary", null, "What the server saw")); d.append(el("div", "script", ["Idea: " + (a.physics || ""), "Hook: " + (a.hook || ""), "Pacing: " + (a.pacing || ""), "Colours: " + (a.colours || ""), "Sound: " + (a.sound || ""), "Length: " + (a.length_s || "") + " s"].join("\n"))); c.append(d); }
+      if (it.error && it.status !== "ready") c.append(el("div", "small", "Server: " + it.error));
+      const act = el("div", "row");
+      if (it.status === "ready") {
+        const why = el("input"); why.placeholder = "If rejecting: what's wrong (optional)"; why.style.width = "100%"; c.append(why);
+        const ok = el("button", "btn primary", "Approve"); ok.onclick = inspoSave(t, b => { const x = b.items.find(i => i.id === it.id); if (x) { x.status = "approved"; x.decidedAt = new Date().toISOString(); } }, "approve inspo " + it.id, "Approved: it joins the next Bounce batch.");
+        const no = el("button", "btn", "Reject"); no.onclick = inspoSave(t, b => { const x = b.items.find(i => i.id === it.id); if (x) { x.status = "rejected"; x.rejectNote = why.value.trim() || null; x.decidedAt = new Date().toISOString(); } }, "reject inspo " + it.id, "Rejected: copy the build prompt below into Claude.");
+        act.append(ok, no);
+      }
+      if (it.status === "needs_upload") {
+        const f2 = el("input"); f2.type = "file"; f2.accept = "video/*"; const up = el("button", "btn primary", "Upload video");
+        up.onclick = async () => { if (!f2.files[0]) { toast("Pick the video first."); return; } if (!LS.get("hq.ghToken")) { openSettings("Connect GitHub once."); return; }
+          up.disabled = true; toast("Uploading…"); try { const p2 = await uploadInspoFile(f2.files[0], it.id); t.inspo = await commitInspo(b => { const x = b.items.find(i => i.id === it.id); if (x) { x.file = p2; x.status = "new"; delete x.error; } }, "inspo video " + it.id); toast("Uploaded. Built on the next run."); renderPanel(); } catch (e) { up.disabled = false; toast("Upload failed, try again"); } };
+        act.append(f2, up);
+      }
+      if ((it.status === "rejected" || it.status === "failed") && it.buildPrompt) {
+        const txt = it.buildPrompt + (it.rejectNote ? `\n\nOmar's feedback on the server's try: ${it.rejectNote}` : "");
+        const b = el("button", "btn primary", "Copy build prompt"); b.onclick = async () => { try { await navigator.clipboard.writeText(txt); toast("Copied. Paste it into Claude Code on your laptop."); } catch { const ta = el("textarea"); ta.value = txt; ta.rows = 8; ta.style.width = "100%"; c.append(ta); ta.select(); toast("Select and copy the text below."); } };
+        act.append(b);
+      }
+      if (act.childNodes.length) c.append(act);
+      body.append(c);
+    });
   }
   /* WANTED LEVEL · Clip permissions: Omar joins each campaign himself, then clicks Done; the server only reads his clicks. */
   async function commitDecision(key, status, extra) {

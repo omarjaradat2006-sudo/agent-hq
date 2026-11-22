@@ -28,3 +28,6 @@
 
 # 3x a week (Tue/Thu/Sat 1:17 PM): best new Bounce idea -> Gemini-written template -> safety + test render -> menu. No Claude.
 17 13 * * 2,4,6   /home/ubuntu/agent-hq/scripts/server/run_autotemplate.sh
+
+# Every 3 days 2:47 PM: Inspo inbox -> Gemini watches each video -> Engine 2 template + sample for Omar to approve. No Claude.
+47 14 */3 * *  /home/ubuntu/agent-hq/scripts/server/run_inspo.sh

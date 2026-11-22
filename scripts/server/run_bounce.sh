@@ -47,6 +47,7 @@ sync_repos || { echo "!! git sync failed"; exit 1; }
 [ -f "$BOUNCE_LOGS/BounceTheory_uploaded_log.json" ] || cp "$ENGINE/Upload Tool/logs/"* "$BOUNCE_LOGS/"
 
 # New formats since the last run? Smoke-test just those (a few minutes)
+$PY "$(dirname "$0")/../../agents/gemini/inspo.py" promote          # Inspo items Omar approved go live
 $PY "$ENGINE/templates/smoke.py" --missing </dev/null
 
 # Publish the template menu for the YouTube team (only when it changed)

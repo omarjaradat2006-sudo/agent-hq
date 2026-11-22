@@ -57,7 +57,8 @@ def model():
 def generate(prompt, system=None, search=False, json_out=False, temperature=0.8, retries=2):
     """Returns (text, sources). sources = [(title, url)] from Google Search grounding.
     Tries each model in models(); on 429/503 moves to the next model."""
-    body = {"contents": [{"role": "user", "parts": [{"text": prompt}]}],
+    parts = prompt if isinstance(prompt, list) else [{"text": prompt}]   # a list = text + video/image parts
+    body = {"contents": [{"role": "user", "parts": parts}],
             "generationConfig": {"temperature": temperature}}
     if system:
         body["systemInstruction"] = {"parts": [{"text": system}]}
@@ -96,6 +97,33 @@ def generate(prompt, system=None, search=False, json_out=False, temperature=0.8,
             print("All models busy, waiting 60s", flush=True)
             time.sleep(60)
     raise RuntimeError("All Gemini models failed. Last error: " + str(last))
+
+
+def upload_file(path, mime="video/mp4", wait=300):
+    """Upload a video/image to the Gemini File API; returns a part {"file_data": ...} once it's ACTIVE."""
+    size = os.path.getsize(path)
+    start = urllib.request.Request(f"{BASE.replace('/v1beta', '/upload/v1beta')}/files", method="POST",
+                                   data=json.dumps({"file": {"display_name": os.path.basename(path)}}).encode(),
+                                   headers={"x-goog-api-key": KEY, "X-Goog-Upload-Protocol": "resumable", "X-Goog-Upload-Command": "start",
+                                            "X-Goog-Upload-Header-Content-Length": str(size), "X-Goog-Upload-Header-Content-Type": mime,
+                                            "Content-Type": "application/json"})
+    with urllib.request.urlopen(start, timeout=60) as r:
+        up = r.headers["X-Goog-Upload-URL"]
+    put = urllib.request.Request(up, method="POST", data=open(path, "rb").read(),
+                                 headers={"Content-Length": str(size), "X-Goog-Upload-Offset": "0", "X-Goog-Upload-Command": "upload, finalize"})
+    with urllib.request.urlopen(put, timeout=600) as r:
+        f = json.loads(r.read().decode())["file"]
+    t0 = time.time()
+    while f.get("state") == "PROCESSING" and time.time() - t0 < wait:
+        time.sleep(5); f = _req("GET", f["name"])
+    if f.get("state") != "ACTIVE":
+        raise RuntimeError(f"Gemini file not ready: {f.get('state')}")
+    return {"file_data": {"mime_type": mime, "file_uri": f["uri"]}}
+
+
+def image_part(path, mime="image/jpeg"):
+    import base64
+    return {"inline_data": {"mime_type": mime, "data": base64.b64encode(open(path, "rb").read()).decode()}}
 
 
 BAD_MODEL = re.compile(r"image|tts|live|audio|thinking|exp|preview|omni|embed|aqa|native|robotics|computer-use")
