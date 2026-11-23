@@ -8,7 +8,7 @@
    "role": "Posts the slips and the plain-words record",
    "status": "ok",
    "doing": "Next NBA slips at 1:27 PM",
-   "lastRun": "2026-11-23T14:50:42Z"
+   "lastRun": "2026-11-23T18:27:57Z"
   },
   {
    "id": "odds",
@@ -22,9 +22,9 @@
    "id": "court",
    "name": "Court Analyst",
    "role": "NBA: injuries, rest, matchups, form, player props",
-   "status": "ok",
-   "doing": "NBA: 3 same-game parlay(s); props for 3 of 7 games (Thunder vs Heat, Mavericks vs Jazz, Celtics vs Warriors); 15 lines analyzed",
-   "lastRun": "2026-11-22T18:34:34Z"
+   "status": "error",
+   "doing": "picks failed: All Gemini models failed. Last error: Gemini HTTP 503 on gemini-3.1-flash-lite: {\n  \"error\": {\n    \"code\": 503",
+   "lastRun": "2026-11-23T18:27:57Z"
   },
   {
    "id": "fight",
@@ -52,6 +52,11 @@
   }
  ],
  "log": [
+  {
+   "t": "2026-11-23T18:27:57Z",
+   "agent": "Court Analyst",
+   "msg": "picks nba failed: All Gemini models failed. Last error: Gemini HTTP 503 on gemini-3.1-flash-lite: {\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experiencing high demand. Sp"
+  },
   {
    "t": "2026-11-23T14:50:42Z",
    "agent": "Results Grader",
@@ -233,7 +238,7 @@
    "msg": "Fight & Court Intelligence built: UFC + NBA, Ontario-licensed books only. Waiting for the Odds API key."
   }
  ],
- "updatedAt": "2026-11-23T14:50:42Z",
+ "updatedAt": "2026-11-23T18:27:57Z",
  "record": {
   "all": {
    "bets": 62,
@@ -306,15 +311,15 @@
    "UFC +500 parlays: no results yet (1 waiting)",
    "UFC +1000 parlays: no results yet (1 waiting)"
   ],
-  "updatedAt": "2026-11-23T14:50:42Z"
+  "updatedAt": "2026-11-23T18:27:57Z"
  },
  "credits": {
-  "remaining": 216,
-  "used": 284,
+  "remaining": 214,
+  "used": 286,
   "last": {
-   "call": "basketball_nba spreads,totals (2 credits)",
+   "call": "basketball_nba totals,spreads (2 credits)",
    "cost": "2",
-   "at": "2026-11-22T23:18:26Z"
+   "at": "2026-11-23T18:27:02Z"
   },
   "planCredits": 500,
   "plan": "Free (500 credits a month)"
@@ -336,7 +341,7 @@
  ],
  "brief": {
   "date": "2026-11-23",
-  "createdAt": "2026-11-23T14:50:42Z",
+  "createdAt": "2026-11-23T18:27:57Z",
   "headline": "Next NBA slips at 1:27 PM",
   "summary": "NBA same-game parlays (at estimated odds): 10 won, 26 lost, up $25.05 per $100 · UFC parlays: no results yet (3 waiting) · Fade where the money is (NBA, tracked only): 13 won, 13 lost, down $3.54 per $100 · UFC main/co-main winner picks: no results yet · UFC underdog picks (straight win): no results yet (2 waiting)",
   "filmToday": [],
