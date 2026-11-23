@@ -522,11 +522,46 @@ def test_yahoo_and_reddit_sources(monkeypatch):
     got = N.yahoo_news(["XOM", "CVX", "BTC/USD"], NOW - timedelta(hours=1))
     assert got and got[0]["publisher"] == "Yahoo Finance"
     post = {"data": {"children": [{"data": {"title": "XOM to the moon", "created_utc": NOW.timestamp(), "permalink": "/r/x"}}]}}
-    monkeypatch.setattr(N, "http", lambda *a, **k: post)
+    monkeypatch.setattr(N, "_reddit_request", lambda *a, **k: post)
     monkeypatch.setattr(N.time, "sleep", lambda s: None)
     st = {}
     got = N.reddit_direct(NOW - timedelta(hours=1), st)
     assert got and got[0]["kind"] == "social" and st["socialStatus"]["items"] == len(got)
+
+
+def test_reddit_user_agent_and_backoff(monkeypatch):
+    import io, urllib.error, urllib.request
+    import trading_bot.news as N
+    monkeypatch.delenv("REDDIT_USER_AGENT", raising=False)
+    assert N.reddit_ua().startswith("linux:agent-hq-news-scout:") and "(by /u/" in N.reddit_ua()
+    monkeypatch.setenv("REDDIT_USER_AGENT", "linux:my-bot:2.0 (by /u/omar)")
+    assert N.reddit_ua() == "linux:my-bot:2.0 (by /u/omar)"
+    calls, waits = [], []
+
+    class Resp(io.BytesIO):
+        def __enter__(self): return self
+        def __exit__(self, *a): return False
+
+    def fake_open(req, timeout=None):
+        calls.append(req.get_header("User-agent"))
+        if len(calls) < 3:
+            raise urllib.error.HTTPError(req.full_url, 429 if len(calls) == 1 else 403, "x",
+                                         {"Retry-After": "5"} if len(calls) == 1 else {}, io.BytesIO(b""))
+        return Resp(b'{"ok": 1}')
+    monkeypatch.setattr(urllib.request, "urlopen", fake_open)
+    monkeypatch.setattr(N.time, "sleep", waits.append)
+    assert N._reddit_request("https://www.reddit.com/r/x/new.json") == {"ok": 1}
+    assert calls == ["linux:my-bot:2.0 (by /u/omar)"] * 3
+    assert waits[0] == 5.0 and 4 <= waits[1] <= 5                      # Retry-After honoured, then 2*2^1 + jitter
+
+    def always_403(req, timeout=None):
+        raise urllib.error.HTTPError(req.full_url, 403, "x", {}, io.BytesIO(b"blocked"))
+    monkeypatch.setattr(urllib.request, "urlopen", always_403)
+    try:
+        N._reddit_request("https://www.reddit.com/r/x/new.json")
+        assert False, "should raise"
+    except N.HttpError as e:
+        assert e.code == 403
 
 
 def test_aggressive_carries_overnight_news_to_next_morning():

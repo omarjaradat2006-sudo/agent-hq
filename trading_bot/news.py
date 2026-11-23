@@ -99,23 +99,81 @@ def yahoo_news(symbols, since):
 
 
 _REDDIT_TOKEN = {"v": None, "exp": 0}
-REDDIT_UA = "linux:agent-hq-paper-bot:1.0 (by /u/agenthq_research)"
+# Reddit 403s generic/blank User-Agents. Its API rules want "<platform>:<app id>:<version> (by /u/<username>)".
+# Override with REDDIT_USER_AGENT in ~/.trading-bot.env (put your own Reddit username in it).
+REDDIT_UA_DEFAULT = "linux:agent-hq-news-scout:1.1 (by /u/agenthq_research)"
+REDDIT_RETRY_CODES = (403, 408, 429, 500, 502, 503, 504)
+REDDIT_MAX_TRIES = 4          # 1 try + 3 retries
+REDDIT_BASE_DELAY = 2.0       # seconds; doubles each retry (2, 4, 8) plus jitter
+REDDIT_MAX_DELAY = 60.0
 
 
-def _reddit_token():
+def reddit_ua():
+    return os.environ.get("REDDIT_USER_AGENT", "").strip() or REDDIT_UA_DEFAULT
+
+
+def _reddit_headers(extra=None):
+    h = {"User-Agent": reddit_ua(), "Accept": "application/json", "Accept-Language": "en-US,en;q=0.8"}
+    h.update(extra or {})
+    return h
+
+
+def _retry_wait(attempt, hdrs=None):
+    """Exponential backoff with jitter; honours Reddit's Retry-After / x-ratelimit-reset when sent."""
+    import random
+    for key in ("Retry-After", "x-ratelimit-reset"):
+        v = (hdrs or {}).get(key) if hdrs is not None else None
+        try:
+            if v is not None:
+                return min(REDDIT_MAX_DELAY, max(1.0, float(v)))
+        except (TypeError, ValueError):
+            pass
+    return min(REDDIT_MAX_DELAY, REDDIT_BASE_DELAY * (2 ** attempt)) + random.uniform(0, 1)
+
+
+def _reddit_request(url, method="GET", data=None, headers=None, timeout=20, on_401=None):
+    """One Reddit call with backoff retries. Raises HttpError after the last try.
+    on_401: optional callback returning fresh headers (used to refresh an expired OAuth token once)."""
+    import urllib.error, urllib.request
+    hdrs, last, refreshed = _reddit_headers(headers), None, False
+    for attempt in range(REDDIT_MAX_TRIES):
+        req = urllib.request.Request(url, data=data, method=method, headers=hdrs)
+        try:
+            with urllib.request.urlopen(req, timeout=timeout) as r:
+                raw = r.read().decode("utf-8", "replace")
+                return json.loads(raw) if raw else None
+        except urllib.error.HTTPError as e:
+            last = HttpError(e.code, e.read().decode("utf-8", "replace")[:300], url)
+            if e.code == 401 and on_401 and not refreshed:
+                refreshed = True
+                hdrs = _reddit_headers(on_401())
+                continue
+            if e.code not in REDDIT_RETRY_CODES or attempt == REDDIT_MAX_TRIES - 1:
+                raise last
+            wait = _retry_wait(attempt, e.headers)
+        except (urllib.error.URLError, TimeoutError, ConnectionError, json.JSONDecodeError) as e:
+            last = HttpError(0, str(e), url)
+            if attempt == REDDIT_MAX_TRIES - 1:
+                raise last
+            wait = _retry_wait(attempt)
+        log(f"Reddit {str(last)[:70]}: retry {attempt + 1}/{REDDIT_MAX_TRIES - 1} in {wait:.0f}s", "News Scout")
+        time.sleep(wait)
+    raise last
+
+
+def _reddit_token(force=False):
     """Reddit's official API (free 'script' app: REDDIT_CLIENT_ID / REDDIT_CLIENT_SECRET in ~/.trading-bot.env).
     Reddit blocks logged-out requests from cloud servers (HTTP 403), so this is what makes Reddit work on the server."""
-    import base64, os, urllib.parse, urllib.request
+    import base64, urllib.parse
     cid, sec = os.environ.get("REDDIT_CLIENT_ID", "").strip(), os.environ.get("REDDIT_CLIENT_SECRET", "").strip()
     if not (cid and sec):
         return None
-    if _REDDIT_TOKEN["v"] and time.time() < _REDDIT_TOKEN["exp"]:
+    if not force and _REDDIT_TOKEN["v"] and time.time() < _REDDIT_TOKEN["exp"]:
         return _REDDIT_TOKEN["v"]
-    req = urllib.request.Request("https://www.reddit.com/api/v1/access_token",
-                                 data=urllib.parse.urlencode({"grant_type": "client_credentials"}).encode(), method="POST",
-                                 headers={"User-Agent": REDDIT_UA, "Authorization": "Basic " + base64.b64encode(f"{cid}:{sec}".encode()).decode()})
-    with urllib.request.urlopen(req, timeout=20) as r:
-        d = json.loads(r.read().decode())
+    d = _reddit_request("https://www.reddit.com/api/v1/access_token", method="POST",
+                        data=urllib.parse.urlencode({"grant_type": "client_credentials"}).encode(),
+                        headers={"Authorization": "Basic " + base64.b64encode(f"{cid}:{sec}".encode()).decode(),
+                                 "Content-Type": "application/x-www-form-urlencoded"})
     _REDDIT_TOKEN.update(v=d["access_token"], exp=time.time() + int(d.get("expires_in", 3600)) - 120)
     return _REDDIT_TOKEN["v"]
 
@@ -128,14 +186,18 @@ def reddit_direct(since, state):
     except Exception as e:  # noqa: BLE001
         tok = None
         problems.append(f"Reddit app login failed: {str(e)[:80]}")
+
+    def fresh_auth():
+        return {"Authorization": f"Bearer {_reddit_token(force=True)}"}
+
+    blocked = 0
     for sub in C.SUBREDDITS:
         try:
             if tok:
-                r = http("GET", f"https://oauth.reddit.com/r/{sub}/new?limit=25&raw_json=1", timeout=20, retries=0,
-                         headers={"User-Agent": REDDIT_UA, "Authorization": f"Bearer {tok}"})
+                r = _reddit_request(f"https://oauth.reddit.com/r/{sub}/new?limit=25&raw_json=1",
+                                    headers={"Authorization": f"Bearer {tok}"}, on_401=fresh_auth)
             else:
-                r = http("GET", f"https://www.reddit.com/r/{sub}/new.json?limit=25&raw_json=1", timeout=20, retries=0,
-                         headers={"User-Agent": REDDIT_UA})
+                r = _reddit_request(f"https://www.reddit.com/r/{sub}/new.json?limit=25&raw_json=1")
             for ch in ((r or {}).get("data") or {}).get("children", []) if isinstance(r, dict) else []:
                 d = ch.get("data") or {}
                 t = datetime.fromtimestamp(d.get("created_utc") or 0, tz=timezone.utc)
@@ -145,8 +207,10 @@ def reddit_direct(since, state):
                                 "https://www.reddit.com" + (d.get("permalink") or ""), t))
         except HttpError as e:
             problems.append(f"r/{sub}: {str(e)[:80]}")
-            if "403" in str(e) or "429" in str(e):
-                break
+            if e.code == 403:
+                blocked += 1
+                if blocked >= 2:      # still 403 after backoff on 2 subs = IP/UA block; stop hammering
+                    break
         time.sleep(2)
     state["socialStatus"] = {"at": iso(), "items": len(out), "source": ("Reddit API" if tok else "Reddit public JSON (blocked on servers: add REDDIT_CLIENT_ID/SECRET)") + "; X needs Agent Reach",
                              "problems": problems[:3]}
