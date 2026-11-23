@@ -26,6 +26,7 @@ def use_triage_model():
             names = [x["name"].split("/")[-1] for x in gemini._req("GET", "models?pageSize=200").get("models", [])
                      if "generateContent" in x.get("supportedGenerationMethods", [])]
             lites = sorted([n for n in names if "flash-lite" in n and gemini.text_model_ok(n)], reverse=True)[:3]
+            FLASH_BACKUP[:] = sorted([n for n in names if "flash" in n and "lite" not in n and gemini.text_model_ok(n)], reverse=True)[:2]
         except Exception:  # noqa: BLE001
             lites = []
     if lites:
@@ -54,6 +55,7 @@ SCHEMA = """{"events": [{
 }]}"""
 
 
+FLASH_BACKUP = []    # used only when Flash-Lite is overloaded (503), never when out of quota
 FAILED_IDS = []      # headlines Gemini couldn't read this cycle (overloaded): the bot re-reads them next cycle
 
 
@@ -81,7 +83,20 @@ def triage(items, events, universe, held, raise_on_fail=False):
                   f"HEADLINES:\n{json.dumps(heads, ensure_ascii=False)}\n\n"
                   f"Group headlines into stories. Return only stories that matter, as JSON in this shape:\n{SCHEMA}")
         try:
-            text, _ = gemini.generate(prompt, system=SYSTEM, json_out=True, temperature=0.2)
+            try:
+                text, _ = gemini.generate(prompt, system=SYSTEM, json_out=True, temperature=0.2)
+            except Exception as e1:  # noqa: BLE001
+                if "503" not in str(e1) and "overload" not in str(e1).lower() and "UNAVAILABLE" not in str(e1):
+                    raise
+                # Flash-Lite overloaded (not out of quota): wait, then retry with Flash allowed as a backup
+                import time as _t
+                _t.sleep(20)
+                saved = list(gemini._model or [])
+                try:
+                    gemini._model = saved + [m for m in FLASH_BACKUP if m not in saved]
+                    text, _ = gemini.generate(prompt, system=SYSTEM, json_out=True, temperature=0.2)
+                finally:
+                    gemini._model = saved
             data = gemini.parse_json(text)
         except Exception as e:  # noqa: BLE001  (network/quota) -> no events this cycle, no trades
             log(f"Gemini triage failed, skipping this batch: {str(e)[:160]}", "News Analyst")

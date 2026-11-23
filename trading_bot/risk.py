@@ -54,7 +54,7 @@ def size_order(acct, price, pending_cost=0.0, confidence=None, n_sources=1, star
     eq, _, cash = account_numbers(acct)
     per, cap = C.sizing()
     base = C.invest_base(eq, start_equity, confidence)     # profits above the start are set aside
-    budget = base * (per if per is not None else cap * C.trade_weight(confidence, n_sources, publishers))
+    budget = base * (per if per is not None else cap * min(C.trade_weight(confidence, n_sources, publishers), C.MAX_TRADE_SHARE))
     budget = min(budget, base * cap - (eq - cash) - pending_cost)   # stay inside the max-invested budget
     free_cash = cash - pending_cost
     budget = min(budget, free_cash)          # no margin: only money we actually have

@@ -48,7 +48,7 @@ RULE_MODES = {
     "aggressive": {"min_rvol": 0.0, "single_source": "any_news", "carry_overnight": True},
     # ultra: buy on the news itself. No volume rule, no "price must be rising" rule (only "not already up 3%+"),
     # no TradingAgents gate. Stop-loss -3%, target +6%, 5%/trade, 5 positions, -3% day halt, -10% kill switch stay.
-    "ultra": {"min_rvol": 0.0, "single_source": "any_news", "carry_overnight": True, "min_move_pct": -1.0,
+    "ultra": {"min_rvol": 0.0, "single_source": "any_news", "carry_overnight": True, "min_move_pct": -0.03,
               "skip_deep": True},
 }
 REPUTABLE = {
@@ -107,6 +107,21 @@ def rules_mode():
     import os
     m = (os.environ.get("TRADING_RULES") or "strict").strip().lower()
     return m if m in RULE_MODES else "strict"
+
+
+# Core holding: part of the invested budget always sits in the halal market ETFs so a green market day makes money
+# (news trades alone sit mostly in cash). `tb core <percent of the budget>` (CORE_PCT, default 50; 0 = off).
+CORE_ETFS = ("SPUS", "HLAL")
+MAX_TRADE_SHARE = 1 / 3    # AUTO sizing: one news trade gets at most a third of the invested budget
+
+
+def core_share():
+    import os
+    try:
+        v = float(os.environ.get("CORE_PCT") or 50)
+    except ValueError:
+        v = 50.0
+    return max(0.0, min(90.0, v)) / 100
 
 
 # Buy-the-dip: when the whole market (SPY) is down 1.5%+ today, buy the halal Shariah ETFs with part of the

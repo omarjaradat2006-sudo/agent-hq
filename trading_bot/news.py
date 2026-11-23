@@ -65,19 +65,30 @@ def parse_rss(xml_text, default_publisher):
     return out
 
 
+_GOOGLE = {"next": 0.0}
+
+
 def rss_news(since):
     out = []
     feeds = [(name, url) for name, url in C.CNBC_FEEDS.items()]
-    feeds += [("Google News", "https://news.google.com/rss/search?q=" + q.replace(" ", "+") + "&hl=en-US&gl=US&ceid=US:en")
-              for q in C.GOOGLE_NEWS_QUERIES]
+    if time.time() >= _GOOGLE["next"]:      # Google blocks (429) when asked every 5 min: every 15, and 1h pause after a block
+        _GOOGLE["next"] = time.time() + 15 * 60
+        feeds += [("Google News", "https://news.google.com/rss/search?q=" + q.replace(" ", "+") + "&hl=en-US&gl=US&ceid=US:en")
+                  for q in C.GOOGLE_NEWS_QUERIES]
     for name, url in feeds:
+        if name == "Google News" and time.time() < _GOOGLE.get("blockedUntil", 0):
+            continue
         try:
             xml = http("GET", url, timeout=20, retries=1)
             if isinstance(xml, str):
                 pub = "CNBC" if name.startswith("CNBC") else name
                 out.extend(i for i in parse_rss(xml, pub) if parse_time(i["time"]) >= since)
         except HttpError as e:
-            log(f"{name} feed skipped: {e}", "News Scout")
+            if name == "Google News" and "429" in str(e):
+                _GOOGLE["blockedUntil"] = time.time() + 3600
+                log("Google News is rate-limiting this server: pausing it for 1 hour", "News Scout")
+            else:
+                log(f"{name} feed skipped: {str(e)[:120]}", "News Scout")
     return out
 
 

@@ -110,6 +110,7 @@ class Bot:
         # 6. new trades
         if not self.ledger.get("killed"):
             self.entries(acct, clock)
+            self.core_buys(acct, clock)
             self.dip_buys(acct, clock)
         self.coach_review()
         self.track_equity(acct)
@@ -128,6 +129,54 @@ class Bot:
         except Exception as ex:  # noqa: BLE001  never let the review stop trading
             log(f"Coach review failed: {str(ex)[:150]}", "Coach")
             event("error", "coach", ex)
+
+    def core_buys(self, acct, clock):
+        """Keep CORE_PCT of the invested budget in the halal market ETFs (SPUS, HLAL). Tops up when below 80% of
+        target, at most once a day. No stop-loss or time limit: it rides the market; only the -10% kill switch sells it."""
+        from . import risk
+        share, today = C.core_share(), now_et().date().isoformat()
+        ok, _ = risk.stock_entry_window_open(clock)
+        if share <= 0 or not ok or self.s.get("coreDate") == today or risk.daily_halt_hit(acct):
+            return
+        etfs = [s for s in C.CORE_ETFS if s in ((self.universe or {}).get("stocks") or {})]
+        if not etfs:
+            return
+        eq, cash = float(acct["equity"]), float(acct["cash"])
+        _, cap = C.sizing()
+        target = C.invest_base(eq, self.ledger.get("startEquity")) * cap * share
+        have = sum((t.get("lastPrice") or t["entryPrice"]) * (t.get("qty") or 0)
+                   for t in self.open_trades() if t.get("strategy") == "core")
+        self.s["coreDate"] = today
+        if have >= target * 0.8:
+            return
+        pending = sum(t["cost"] for t in self.open_trades() if t["status"] == "pending")
+        need = min(target - have, cash - pending, base_room := C.invest_base(eq, self.ledger.get("startEquity")) * cap - (eq - cash) - pending)
+        if base_room < 50:
+            log("Core holding: no room left in the invested budget today", "Trader")
+            return
+        if need < 50:
+            return
+        log(f"Core holding: putting ${need:,.0f} into {', '.join(etfs)} (target ${target:,.0f} = {share:.0%} of the budget)", "Trader")
+        for sym in etfs:
+            price = self.a.latest_price(sym)
+            qty = int((need / len(etfs)) // price) if price else 0
+            if qty < 1:
+                continue
+            tid = f"ahq-core-{sym}-{now_utc():%Y%m%d%H%M%S}"
+            try:
+                o = self.a.buy_stock(sym, qty, tid)
+            except HttpError as err:
+                event("error", "order_failed", err, sym)
+                continue
+            self.ledger["trades"].insert(0, {
+                "id": tid, "symbol": sym, "asset": "stock", "status": "pending", "strategy": "core",
+                "entryOrderId": o["id"], "qty": qty, "cost": round(qty * price, 2), "estPrice": price, "entryPrice": price,
+                "stop": round_price(price * 0.9), "target": round_price(price * 1.5), "openedAt": iso(),
+                "news": {"summary": "Core holding: rides the whole (halal) market", "category": "core", "sources": []},
+                "reason": {"triage": "core holding", "confidence": None, "confirmation": f"{share:.0%} of the budget",
+                           "publishers": [], "tradingAgents": "not used (core)"}})
+            self.decide(f"core|{today}|{sym}", sym, "bought", "core holding: rides the market")
+        self.s["publishNow"] = True
 
     def dip_buys(self, acct, clock):
         """Market down 1.5%+ today -> buy the halal Shariah ETFs with part of the budget, hold for days."""
@@ -284,6 +333,8 @@ class Bot:
             days = sum(1 for d in cal if d["date"] > start.isoformat() and d["date"] <= now.date().isoformat())
             close_t = parse_time(clock.get("next_close")).astimezone(now.tzinfo) if clock.get("next_close") else None
             near_close = close_t and close_t - now <= timedelta(minutes=15)
+            if t.get("strategy") == "core":
+                continue                       # core holding: no time limit
             lim = C.DIP["max_hold_days"] if t.get("strategy") == "dip" else C.RISK["stock_max_hold_trading_days"]
             if days > lim or (days == lim and near_close):
                 self.close(t, f"{lim} trading-day limit")

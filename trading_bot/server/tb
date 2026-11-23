@@ -11,6 +11,7 @@
 #   tb size 50          invest up to 50% of the account (rest stays cash). Bot sizes each trade itself (auto). No limit on trades
 #   tb size 50 10       same, but fix every trade at 10% (tb size 50 auto = back to automatic sizing)
 #   tb tradestie       type your free Tradestie key (hidden) for r/wallstreetbets buzz (optional: works without)
+#   tb core 50          keep 50% of the invested budget in the halal market ETFs SPUS + HLAL (rides green days). 0 = off
 #   tb coach            run the Coach's review now (what it learned + its own settings); tb coach reset = undo all
 #   tb universe         re-run the halal screen now and show how many stocks + coins pass
 #   tb unlock           turn the kill switch off again (only after you've reviewed why it fired)
@@ -41,9 +42,12 @@ case "${1:-help}" in
                 if [ -n "$P" ]; then sed -i '/^PER_TRADE_PCT=/d' ~/.trading-bot.env && echo "PER_TRADE_PCT=$P" >> ~/.trading-bot.env; fi
                 sudo systemctl restart agenthq-trading && echo "Now: up to $M% invested, per trade: $(grep -h '^PER_TRADE_PCT' ~/.trading-bot.env | cut -d= -f2 || true) (auto if blank), no limit on how many. Stop-loss, day halt, kill switch unchanged. Bot restarted." ;;
   tradestie)    read -rsp "Tradestie API key (hidden): " K && echo && sed -i '/^TRADESTIE_API_KEY=/d' ~/.trading-bot.env && echo "TRADESTIE_API_KEY=$K" >> ~/.trading-bot.env && unset K && sudo systemctl restart agenthq-trading && echo "Tradestie key saved. Bot restarted." ;;
+  core)         M="${2:-}"; case "$M" in ''|*[!0-9]*) echo "Use: tb core <0-90>  (now: $(grep -h '^CORE_PCT' ~/.trading-bot.env 2>/dev/null | cut -d= -f2 || true) / 50 if blank)"; exit 1;; esac
+                sed -i '/^CORE_PCT=/d' ~/.trading-bot.env && echo "CORE_PCT=$M" >> ~/.trading-bot.env
+                sudo systemctl restart agenthq-trading && echo "Core holding now: $M% of the invested budget in SPUS + HLAL. Bot restarted." ;;
   coach)        "$PY" -m trading_bot.coach "${2:-}" ;;
   universe)     "$PY" -m trading_bot.bot universe ;;
   unlock)       "$PY" -m trading_bot.bot unlock ;;
   update)       git pull -q --rebase --autostash origin main && sudo systemctl restart agenthq-trading && echo "Updated + restarted." ;;
-  *)            sed -n '2,18p' "$0" ;;
+  *)            sed -n '2,19p' "$0" ;;
 esac

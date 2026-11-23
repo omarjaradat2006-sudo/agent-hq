@@ -642,7 +642,7 @@ def test_auto_sizing_scales_with_confidence_inside_the_cap(monkeypatch):
     acct = {"equity": "100000", "last_equity": "100000", "cash": "100000"}
     weak, _ = risk.size_order(acct, 100, confidence=0.55)
     strong, _ = risk.size_order(acct, 100, confidence=0.95)
-    assert 400 < weak < 3000 and 20000 < strong <= 25000                  # 25% cap = $25,000
+    assert 400 < weak < 3000 and 8000 < strong <= 25000 / 3 + 1           # 25% cap = $25,000, one trade max 1/3
     acct2 = {"equity": "100000", "last_equity": "100000", "cash": "80000"}  # $20k already invested
     left, _ = risk.size_order(acct2, 100, confidence=0.95)
     assert left <= 5000.01                                                 # never past the 25% cap
@@ -654,8 +654,8 @@ def test_profit_is_set_aside_unless_cant_miss(monkeypatch):
     acct = {"equity": "120", "last_equity": "120", "cash": "120"}               # started at $100, now $120
     normal, _ = risk.size_order(acct, 10, confidence=0.75, start_equity=100)
     cant_miss, _ = risk.size_order(acct, 10, confidence=0.95, start_equity=100)
-    assert normal <= 50.01                                                  # 50% of the $100 base, not of $120
-    assert cant_miss > 100                                                  # can use the $20 set aside
+    assert normal <= 100 / 3 + 0.01                                         # from the $100 base, not $120 (max 1/3 a trade)
+    assert cant_miss > 100 / 3 + 1                                          # can use the $20 set aside
     full = {"equity": "120", "last_equity": "120", "cash": "1"}             # $119 already invested
     ok, why = risk.can_open("XOM", full, [], [], {}, 100, confidence=0.7)
     assert not ok and "set aside" in why
@@ -785,3 +785,59 @@ def test_failed_triage_headlines_are_retried(monkeypatch, tmpdirs):
     monkeypatch.setattr(N, "collect", lambda a, s, include_social, symbols=(): (s.setdefault("seenNews", []).insert(0, "x1"), [{"id": "x1"}])[1])
     b = B.Bot(); b.cycle()
     assert "x1" not in b.s["seenNews"]
+
+
+def test_core_holding_rides_the_market(monkeypatch, tmpdirs):
+    fake = FakeAlpaca()
+    B = wire(monkeypatch, fake, [])
+    import trading_bot.risk as RK
+    monkeypatch.setattr(RK, "stock_entry_window_open", lambda clock, now=None: (True, ""))
+    monkeypatch.setattr(fake, "latest_price", lambda s: 50.0)
+    plain = []
+    fake.buy_stock = lambda sym, qty, cid: (plain.append((sym, qty)), {"id": "o-" + sym})[1]
+    monkeypatch.setenv("INVEST_PCT", "50"); monkeypatch.delenv("CORE_PCT", raising=False)
+    b = B.Bot(); b.universe = {"stocks": {"SPUS": {}, "HLAL": {}, "XOM": {}}, "crypto": {}}
+    acct = {"equity": "100000", "last_equity": "100000", "cash": "100000"}
+    b.core_buys(acct, {"is_open": True})
+    assert sorted(p[0] for p in plain) == ["HLAL", "SPUS"]
+    assert sum(q * 50 for _, q in plain) == pytest.approx(25000, abs=100)     # 50% of the 50% budget
+    assert all(t["strategy"] == "core" for t in b.ledger["trades"])
+    b.core_buys(acct, {"is_open": True})
+    assert len(plain) == 2                                                    # once a day
+    monkeypatch.setenv("CORE_PCT", "0")
+    b.s["coreDate"] = None; b.ledger["trades"] = []; plain.clear()
+    b.core_buys(acct, {"is_open": True})
+    assert plain == []                                                        # tb core 0 = off
+
+
+def test_ultra_skips_falling_knives():
+    from trading_bot import market as M
+    news_at = (NOW - timedelta(days=4)).replace(hour=15, minute=0, second=0, microsecond=0)
+    while news_at.weekday() >= 5:
+        news_at -= timedelta(days=1)
+    at = news_at + timedelta(hours=1)
+    bars = [b for b in bars_spike(news_at=news_at, days=12) if util.parse_time(b["t"]) <= at]
+    for b in bars:
+        if util.parse_time(b["t"]) > news_at:
+            for k in ("o", "h", "l", "c"):
+                b[k] = float(b[k]) * 0.95                                  # -5% after the news (like CRWD)
+    assert not M.confirm(None, "CRWD", "up", T(news_at), now=at, bars=bars, rules=C.confirm_rules("ultra"))["passed"]
+
+
+def test_triage_retries_when_gemini_overloaded(monkeypatch):
+    import trading_bot.triage as TR
+    calls = []
+    def gen(prompt, **k):
+        calls.append(list(TR.gemini._model or []))
+        if len(calls) == 1:
+            raise RuntimeError("All Gemini models failed. Last error: Gemini HTTP 503 UNAVAILABLE overloaded")
+        return '{"events": []}', None
+    monkeypatch.setattr(TR.gemini, "generate", gen)
+    monkeypatch.setattr(TR, "use_triage_model", lambda: None)
+    monkeypatch.setattr(TR.gemini, "_model", ["lite-x"])
+    monkeypatch.setattr(TR, "FLASH_BACKUP", ["flash-y"])
+    import time as _t
+    monkeypatch.setattr(_t, "sleep", lambda s: None)
+    TR.triage([{"id": "1", "publisher": "Reuters", "time": T(NOW), "title": "x", "summary": "", "symbols": []}], {}, UNIVERSE, [])
+    assert len(calls) == 2 and calls[1] == ["lite-x", "flash-y"] and TR.FAILED_IDS == []
+    assert TR.gemini._model == ["lite-x"]                                     # restored afterwards

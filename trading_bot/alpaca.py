@@ -84,6 +84,11 @@ class Alpaca:
             "stop_loss": {"stop_price": f"{stop:.2f}"},
         })
 
+    def buy_stock(self, sym, qty, client_id):
+        """Plain market buy (no bracket): used for the core ETF holding that rides the market."""
+        return self.post("/v2/orders", {"symbol": sym, "qty": str(int(qty)), "side": "buy", "type": "market",
+                                        "time_in_force": "day", "client_order_id": client_id})
+
     def buy_crypto(self, sym, notional, client_id):
         return self.post("/v2/orders", {"symbol": sym, "notional": f"{notional:.2f}", "side": "buy",
                                         "type": "market", "time_in_force": "gtc", "client_order_id": client_id})
