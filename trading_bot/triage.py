@@ -54,7 +54,11 @@ SCHEMA = """{"events": [{
 }]}"""
 
 
+FAILED_IDS = []      # headlines Gemini couldn't read this cycle (overloaded): the bot re-reads them next cycle
+
+
 def triage(items, events, universe, held, raise_on_fail=False):
+    FAILED_IDS.clear()
     if not items:
         return []
     use_triage_model()
@@ -82,6 +86,7 @@ def triage(items, events, universe, held, raise_on_fail=False):
         except Exception as e:  # noqa: BLE001  (network/quota) -> no events this cycle, no trades
             log(f"Gemini triage failed, skipping this batch: {str(e)[:160]}", "News Analyst")
             event("error", "gemini_triage", str(e)[:200])
+            FAILED_IDS.extend(x["id"] for x in batch)
             if raise_on_fail:
                 raise
             continue
@@ -106,9 +111,20 @@ def merge(events, triaged, items_by_id):
     for ev in triaged:
         if not ev.get("is_market_news", True) and not ev.get("meme_coins"):
             continue
-        e = events.setdefault(ev["key"], {"key": ev["key"], "category": ev.get("category", "other"),
-                                          "summary": ev.get("summary", ""), "firstSeen": now, "items": [],
-                                          "assets": {}, "memes": []})
+        # A story that keeps coming back (e.g. "Nvidia surges" on Nov 12 and again on Nov 23) must count as NEW news
+        # each time, not as the old story: otherwise it looks days old (too stale to trade) and is "already decided".
+        # New headlines more than event_fresh_hours after the current wave started open a new wave with its own key.
+        new_t = max([items_by_id[i]["time"] for i in ev.get("item_ids") or [] if i in items_by_id and items_by_id[i].get("time")]
+                    or [now])
+        waves = sorted([k for k in events if k == ev["key"] or k.startswith(ev["key"] + "@")],
+                       key=lambda k: events[k].get("firstSeen", ""))
+        key = waves[-1] if waves else ev["key"]
+        cur = events.get(key)
+        if cur and (parse_time(new_t) - parse_time(cur["firstSeen"])) > timedelta(hours=C.CONFIRM["event_fresh_hours"]):
+            key = f"{ev['key']}@{parse_time(new_t):%Y%m%d%H%M}"
+        e = events.setdefault(key, {"key": key, "category": ev.get("category", "other"),
+                                    "summary": ev.get("summary", ""), "firstSeen": new_t, "items": [],
+                                    "assets": {}, "memes": []})
         e["lastSeen"] = now
         if ev.get("summary"):
             e["summary"] = ev["summary"]
@@ -117,7 +133,8 @@ def merge(events, triaged, items_by_id):
             it = items_by_id.get(iid)
             if it and iid not in have:
                 e["items"].append({k: it.get(k) for k in ("id", "publisher", "kind", "title", "url", "time")})
-                if it.get("time") and it["time"] < e["firstSeen"]:
+                if it.get("time") and it["time"] < e["firstSeen"] and \
+                        parse_time(e["firstSeen"]) - parse_time(it["time"]) <= timedelta(hours=C.CONFIRM["event_fresh_hours"]):
                     e["firstSeen"] = it["time"]
         for a in ev.get("assets") or []:
             prev = e["assets"].get(a["symbol"])

@@ -93,6 +93,9 @@ class Bot:
         if items:
             held = [t["symbol"] for t in self.open_trades()]
             tri = triage.triage(items, self.s["events"], self.universe, held)
+            if triage.FAILED_IDS:       # Gemini was overloaded: un-see those headlines so the next scan reads them
+                bad = set(triage.FAILED_IDS)
+                self.s["seenNews"] = [i for i in self.s.get("seenNews") or [] if i not in bad]
             triage.merge(self.s["events"], tri, {i["id"]: i for i in items})
             n_real = sum(1 for e in tri if e.get("assets"))
             log(f"Read {len(items)} new headlines/posts, {n_real} market-moving stories", "News Scout")

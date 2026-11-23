@@ -753,3 +753,35 @@ def test_no_direct_reddit_without_keys(monkeypatch):
     monkeypatch.setattr(N, "reddit_direct", lambda *a: (_ for _ in ()).throw(AssertionError("should not call Reddit")))
     st = {}
     assert N.social_news(NOW, st) == [] and "ApeWisdom" in st["socialStatus"]["source"]
+
+
+# ---------------------------------------------------------------- Nov 23: returning stories are NEW news; retry failed triage
+def test_returning_story_is_a_new_wave(monkeypatch):
+    from trading_bot import triage as TR
+    old = T(NOW - timedelta(days=11))
+    events = {"nvda-surge": {"key": "nvda-surge", "category": "x", "summary": "old", "firstSeen": old, "lastSeen": T(NOW - timedelta(hours=1)),
+                             "items": [{"id": "a", "time": old}], "assets": {"NVDA": {"direction": "up", "confidence": 0.9, "why": ""}}, "memes": []}}
+    new = {"b": {"id": "b", "publisher": "Reuters", "kind": "news", "title": "Huang back as CEO", "url": "u", "time": T(NOW - timedelta(minutes=5))}}
+    TR.merge(events, [{"key": "nvda-surge", "summary": "Nvidia surges", "item_ids": ["b"],
+                       "assets": [{"symbol": "NVDA", "direction": "up", "confidence": 0.95}]}], new)
+    waves = [k for k in events if k.startswith("nvda-surge@")]
+    assert len(waves) == 1
+    w = events[waves[0]]
+    assert w["firstSeen"] == new["b"]["time"] and [i["id"] for i in w["items"]] == ["b"]     # fresh, own key
+    # more headlines an hour later join the same new wave
+    more = {"c": {"id": "c", "publisher": "CNBC", "kind": "news", "title": "Nvidia +25%", "url": "u", "time": T(NOW + timedelta(minutes=50))}}
+    TR.merge(events, [{"key": "nvda-surge", "item_ids": ["c"], "assets": []}], more)
+    assert [i["id"] for i in events[waves[0]]["items"]] == ["b", "c"]
+
+
+def test_failed_triage_headlines_are_retried(monkeypatch, tmpdirs):
+    fake = FakeAlpaca()
+    B = wire(monkeypatch, fake, [])
+    import trading_bot.triage as TR
+    def boom(items, *a, **k):
+        TR.FAILED_IDS.clear(); TR.FAILED_IDS.extend(i["id"] for i in items); return []
+    monkeypatch.setattr(TR, "triage", boom)
+    import trading_bot.news as N
+    monkeypatch.setattr(N, "collect", lambda a, s, include_social, symbols=(): (s.setdefault("seenNews", []).insert(0, "x1"), [{"id": "x1"}])[1])
+    b = B.Bot(); b.cycle()
+    assert "x1" not in b.s["seenNews"]
