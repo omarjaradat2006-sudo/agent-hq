@@ -4,12 +4,12 @@
    "id": "ahq-CRWD-20261123144115",
    "symbol": "CRWD",
    "asset": "stock",
-   "status": "pending",
+   "status": "open",
    "entryOrderId": "e5a3c1db-42cb-4e41-8954-e1cb1e317145",
-   "qty": 232,
+   "qty": 232.0,
    "cost": 48650.4,
    "estPrice": 209.7,
-   "entryPrice": 209.7,
+   "entryPrice": 208.94,
    "stop": 203.41,
    "target": 222.28,
    "openedAt": "2026-11-23T14:41:15Z",
@@ -67,7 +67,9 @@
     ],
     "tradingAgents": "not used (ultra mode)",
     "taSummary": ""
-   }
+   },
+   "lastPrice": 206.03,
+   "unrealizedPct": -1.39
   },
   {
    "id": "ahq-INTC-20261120193710",
@@ -4023,9 +4025,26 @@
    "t": "2026-11-23T14:16:10Z",
    "equity": 97402.6,
    "spy": 719.67
+  },
+  {
+   "t": "2026-11-23T14:46:35Z",
+   "equity": 97599.8,
+   "spy": 718.17
+  },
+  {
+   "t": "2026-11-23T15:19:56Z",
+   "equity": 96604.52,
+   "spy": 723.92
   }
  ],
  "decisions": [
+  {
+   "t": "2026-11-23T15:31:31Z",
+   "symbol": "LLY",
+   "outcome": "error",
+   "why": "order failed: not enough cash for one share",
+   "event": "Eli Lilly acquires Huntington's disease drug developer LoQus23 for up to $725 million, expanding its neuroscience pipeline."
+  },
   {
    "t": "2026-11-23T14:41:16Z",
    "symbol": "AVAV",
@@ -5068,13 +5087,6 @@
    "outcome": "waiting",
    "why": "price hasn't moved the expected way yet (-1.53%)",
    "event": "Johnson & Johnson has agreed to acquire eye disease therapy developer Ollin Biosciences in a deal valued up to $3.33 billion."
-  },
-  {
-   "t": "2026-11-16T19:13:30Z",
-   "symbol": "TSLA",
-   "outcome": "waiting",
-   "why": "price hasn't moved the expected way yet (-2.67%)",
-   "event": "Tesla plans to build 1 million Cybercabs near Berlin, expanding its German gigafactory footprint."
   }
  ],
  "startEquity": 100000.0,

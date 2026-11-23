@@ -1,24 +1,24 @@
 {
  "team": "trading",
  "plain": {
-  "line": "Down $2,597.40 since start · 16 trades · holding: CRWD",
+  "line": "Down $3,170.44 since start · 16 trades · holding: CRWD",
   "rulesMode": "ultra",
-  "top": "Down $2,597.40 since start (-2.60%) · just holding SPY would be -4.39%",
+  "top": "Down $3,170.44 since start (-3.17%) · just holding SPY would be -3.83%",
   "up": false,
   "holding": [
-   "CRWD: buy order sent, waiting to fill"
+   "CRWD: 232 shares worth $47,934.98, down $539.10 (sells at $222.28 or stops at $203.41)"
   ],
   "today": [
    "Bought CRWD after the news: CrowdStrike Holdings reports an earnings beat and revenue outperformance.",
-   "Scanned the news 38 times today: read 3166 headlines, found 60 that could move a stock or coin it's allowed to trade.",
-   "Passed on AMAT, AVAV, COP, PLTR: order failed: not enough cash for one share.",
-   "Safety rules that stepped in: stock entry window (x6), cash only no margin (x5)."
+   "Scanned the news 46 times today: read 3452 headlines, found 67 that could move a stock or coin it's allowed to trade.",
+   "Passed on AMAT, AVAV, COP, LLY, PLTR: order failed: not enough cash for one share.",
+   "Safety rules that stepped in: stock entry window (x6), cash only no margin (x6)."
   ],
   "watchlist": "Allowed to trade: 68 halal stocks, 5 Shariah ETFs, 9 coins.",
-  "lastScan": "2026-11-23T14:37:58Z"
+  "lastScan": "2026-11-23T15:30:06Z"
  },
  "hired": true,
- "updatedAt": "2026-11-23T14:41:17Z",
+ "updatedAt": "2026-11-23T15:31:32Z",
  "mode": "PAPER",
  "agents": [
   {
@@ -26,8 +26,8 @@
    "name": "News Scout",
    "role": "Reads X, Reddit and news feeds",
    "status": "working",
-   "doing": "Read 148 new headlines/posts, 3 market-moving stories",
-   "lastRun": "2026-11-23T14:41:14Z"
+   "doing": "Read 44 new headlines/posts, 3 market-moving stories",
+   "lastRun": "2026-11-23T15:31:31Z"
   },
   {
    "id": "analyst",
@@ -35,7 +35,7 @@
    "role": "Gemini: is it real, what moves, which way",
    "status": "working",
    "doing": "Gemini triage failed, skipping this batch: All Gemini models failed. Last error: Gemini HTTP 503 on gemini-3.1-flash-lite: {\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experien",
-   "lastRun": "2026-11-23T14:41:14Z"
+   "lastRun": "2026-11-23T15:19:56Z"
   },
   {
    "id": "confirm",
@@ -66,8 +66,8 @@
    "name": "Trader",
    "role": "Places paper orders on Alpaca",
    "status": "working",
-   "doing": "Order for AVAV failed: not enough cash for one share",
-   "lastRun": "2026-11-23T14:41:16Z"
+   "doing": "Order for LLY failed: not enough cash for one share",
+   "lastRun": "2026-11-23T15:31:31Z"
   },
   {
    "id": "coins",
@@ -87,6 +87,81 @@
   }
  ],
  "log": [
+  {
+   "t": "2026-11-23T15:31:31Z",
+   "agent": "Trader",
+   "msg": "Order for LLY failed: not enough cash for one share"
+  },
+  {
+   "t": "2026-11-23T15:31:31Z",
+   "agent": "News Scout",
+   "msg": "Read 44 new headlines/posts, 3 market-moving stories"
+  },
+  {
+   "t": "2026-11-23T15:25:03Z",
+   "agent": "News Scout",
+   "msg": "Read 35 new headlines/posts, 1 market-moving stories"
+  },
+  {
+   "t": "2026-11-23T15:19:56Z",
+   "agent": "News Scout",
+   "msg": "Read 42 new headlines/posts, 0 market-moving stories"
+  },
+  {
+   "t": "2026-11-23T15:19:56Z",
+   "agent": "News Analyst",
+   "msg": "Gemini triage failed, skipping this batch: All Gemini models failed. Last error: Gemini HTTP 503 on gemini-3.1-flash-lite: {\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experien"
+  },
+  {
+   "t": "2026-11-23T15:13:07Z",
+   "agent": "News Scout",
+   "msg": "Read 40 new headlines/posts, 0 market-moving stories"
+  },
+  {
+   "t": "2026-11-23T15:13:07Z",
+   "agent": "News Analyst",
+   "msg": "Gemini triage failed, skipping this batch: All Gemini models failed. Last error: Gemini HTTP 503 on gemini-3.1-flash-lite: {\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experien"
+  },
+  {
+   "t": "2026-11-23T15:05:47Z",
+   "agent": "News Scout",
+   "msg": "Read 37 new headlines/posts, 0 market-moving stories"
+  },
+  {
+   "t": "2026-11-23T15:05:47Z",
+   "agent": "News Analyst",
+   "msg": "Gemini triage failed, skipping this batch: All Gemini models failed. Last error: Gemini HTTP 503 on gemini-3.1-flash-lite: {\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experien"
+  },
+  {
+   "t": "2026-11-23T14:58:18Z",
+   "agent": "News Scout",
+   "msg": "Read 25 new headlines/posts, 1 market-moving stories"
+  },
+  {
+   "t": "2026-11-23T14:53:11Z",
+   "agent": "News Scout",
+   "msg": "Read 16 new headlines/posts, 0 market-moving stories"
+  },
+  {
+   "t": "2026-11-23T14:53:11Z",
+   "agent": "News Analyst",
+   "msg": "Gemini triage failed, skipping this batch: All Gemini models failed. Last error: Gemini HTTP 503 on gemini-3.1-flash-lite: {\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experien"
+  },
+  {
+   "t": "2026-11-23T14:46:35Z",
+   "agent": "News Scout",
+   "msg": "Read 47 new headlines/posts, 2 market-moving stories"
+  },
+  {
+   "t": "2026-11-23T14:46:20Z",
+   "agent": "Trader",
+   "msg": "Bought 232 CRWD at $208.94 (stop $203.41, target $222.28)"
+  },
+  {
+   "t": "2026-11-23T14:41:19Z",
+   "agent": "Trader",
+   "msg": "Saved results to the Agent HQ dashboard"
+  },
   {
    "t": "2026-11-23T14:41:16Z",
    "agent": "Trader",
@@ -761,103 +836,28 @@
    "t": "2026-11-22T19:25:00Z",
    "agent": "News Scout",
    "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
-  },
-  {
-   "t": "2026-11-22T19:09:57Z",
-   "agent": "Trader",
-   "msg": "Saved results to the Agent HQ dashboard"
-  },
-  {
-   "t": "2026-11-22T19:09:54Z",
-   "agent": "News Scout",
-   "msg": "Read 50 new headlines/posts, 1 market-moving stories"
-  },
-  {
-   "t": "2026-11-22T19:09:53Z",
-   "agent": "News Scout",
-   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
-  },
-  {
-   "t": "2026-11-22T18:54:47Z",
-   "agent": "News Scout",
-   "msg": "Read 22 new headlines/posts, 1 market-moving stories"
-  },
-  {
-   "t": "2026-11-22T18:54:41Z",
-   "agent": "News Scout",
-   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
-  },
-  {
-   "t": "2026-11-22T18:39:35Z",
-   "agent": "News Scout",
-   "msg": "Read 45 new headlines/posts, 1 market-moving stories"
-  },
-  {
-   "t": "2026-11-22T18:39:34Z",
-   "agent": "News Scout",
-   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
-  },
-  {
-   "t": "2026-11-22T18:24:28Z",
-   "agent": "News Scout",
-   "msg": "Read 52 new headlines/posts, 2 market-moving stories"
-  },
-  {
-   "t": "2026-11-22T18:24:22Z",
-   "agent": "News Scout",
-   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
-  },
-  {
-   "t": "2026-11-22T18:09:17Z",
-   "agent": "News Scout",
-   "msg": "Read 63 new headlines/posts, 1 market-moving stories"
-  },
-  {
-   "t": "2026-11-22T18:09:16Z",
-   "agent": "News Scout",
-   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
-  },
-  {
-   "t": "2026-11-22T17:54:11Z",
-   "agent": "News Scout",
-   "msg": "Read 27 new headlines/posts, 3 market-moving stories"
-  },
-  {
-   "t": "2026-11-22T17:51:57Z",
-   "agent": "News Scout",
-   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
-  },
-  {
-   "t": "2026-11-22T17:36:52Z",
-   "agent": "News Scout",
-   "msg": "Read 31 new headlines/posts, 1 market-moving stories"
-  },
-  {
-   "t": "2026-11-22T17:36:38Z",
-   "agent": "News Scout",
-   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
   }
  ],
  "brief": {
   "date": "Mon Nov 23",
-  "createdAt": "2026-11-23T14:41:17Z",
-  "headline": "Paper account +$0 today (+0.00%), -2.60% total vs SPY -4.39% · 1 open",
+  "createdAt": "2026-11-23T15:31:32Z",
+  "headline": "Paper account -$573 today (-0.59%), -3.17% total vs SPY -3.83% · 1 open",
   "summary": "0 trade(s) closed today, 3/15 winners overall. TradingAgents checks used today: 0/5.",
   "notes": [
    "X/Reddit reader: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
   ]
  },
  "account": {
-  "equity": 97402.6,
-  "cash": 97402.6,
+  "equity": 96829.56,
+  "cash": 48928.52,
   "startEquity": 100000.0,
   "startedAt": "2026-11-10T01:51:53Z",
-  "dayPnl": 0.0,
-  "dayPct": 0.0,
-  "totalPnl": -2597.4,
-  "totalPct": -2.6,
-  "spyPct": -4.39,
-  "vsSpyPct": 1.79
+  "dayPnl": -573.04,
+  "dayPct": -0.59,
+  "totalPnl": -3170.44,
+  "totalPct": -3.17,
+  "spyPct": -3.83,
+  "vsSpyPct": 0.66
  },
  "status": {
   "killed": false,
@@ -865,7 +865,7 @@
   "deepUsed": 0,
   "deepMax": 5,
   "social": {
-   "at": "2026-11-23T14:31:27Z",
+   "at": "2026-11-23T15:25:01Z",
    "items": 0,
    "source": "Reddit via Tradestie + ApeWisdom (direct Reddit blocks servers; X needs Agent Reach)",
    "problems": [
@@ -873,13 +873,13 @@
     "r/stocks: HTTP 403 https://www.reddit.com/r/stocks/new.json: <body class=theme-beta><div><"
    ],
    "wsb": {
-    "at": "2026-11-23T14:31:27Z",
-    "tickers": 50,
+    "at": "2026-11-23T15:25:02Z",
+    "tickers": 12,
     "items": 0,
     "key": false
    },
    "ape": {
-    "at": "2026-11-23T14:31:28Z",
+    "at": "2026-11-23T15:25:02Z",
     "tickers": 200,
     "items": 1,
     "problems": []
@@ -896,12 +896,12 @@
    "id": "ahq-CRWD-20261123144115",
    "symbol": "CRWD",
    "asset": "stock",
-   "status": "pending",
+   "status": "open",
    "entryOrderId": "e5a3c1db-42cb-4e41-8954-e1cb1e317145",
-   "qty": 232,
+   "qty": 232.0,
    "cost": 48650.4,
    "estPrice": 209.7,
-   "entryPrice": 209.7,
+   "entryPrice": 208.94,
    "stop": 203.41,
    "target": 222.28,
    "openedAt": "2026-11-23T14:41:15Z",
@@ -959,7 +959,9 @@
     ],
     "tradingAgents": "not used (ultra mode)",
     "taSummary": ""
-   }
+   },
+   "lastPrice": 206.03,
+   "unrealizedPct": -1.39
   }
  ],
  "charts": {
@@ -1240,6 +1242,46 @@
     [
      "2026-11-23T14:40:00Z",
      97402.6
+    ],
+    [
+     "2026-11-23T14:45:00Z",
+     97604.44
+    ],
+    [
+     "2026-11-23T14:50:00Z",
+     97824.84
+    ],
+    [
+     "2026-11-23T14:55:00Z",
+     96971.08
+    ],
+    [
+     "2026-11-23T15:00:00Z",
+     96908.44
+    ],
+    [
+     "2026-11-23T15:05:00Z",
+     97196.12
+    ],
+    [
+     "2026-11-23T15:10:00Z",
+     96504.76
+    ],
+    [
+     "2026-11-23T15:15:00Z",
+     96827.24
+    ],
+    [
+     "2026-11-23T15:20:00Z",
+     96650.92
+    ],
+    [
+     "2026-11-23T15:25:00Z",
+     97386.36
+    ],
+    [
+     "2026-11-23T15:30:00Z",
+     96749.52
     ]
    ],
    "1W": [
@@ -2374,28 +2416,28 @@
     [
      "2026-11-23T14:30:00Z",
      97402.6
+    ],
+    [
+     "2026-11-23T14:45:00Z",
+     97604.44
+    ],
+    [
+     "2026-11-23T15:00:00Z",
+     96908.44
+    ],
+    [
+     "2026-11-23T15:15:00Z",
+     96827.24
+    ],
+    [
+     "2026-11-23T15:30:00Z",
+     96749.52
     ]
    ]
   },
   "holdings": {
    "CRWD": {
     "bars": [
-     [
-      "2026-11-20T14:45:00Z",
-      232.87
-     ],
-     [
-      "2026-11-20T15:00:00Z",
-      233.87
-     ],
-     [
-      "2026-11-20T15:15:00Z",
-      232.775
-     ],
-     [
-      "2026-11-20T15:30:00Z",
-      231.84
-     ],
      [
       "2026-11-20T15:45:00Z",
       232.595
@@ -2498,14 +2540,30 @@
      ],
      [
       "2026-11-23T14:30:00Z",
-      209.145
+      209.75
+     ],
+     [
+      "2026-11-23T14:45:00Z",
+      206.76
+     ],
+     [
+      "2026-11-23T15:00:00Z",
+      206.45
+     ],
+     [
+      "2026-11-23T15:15:00Z",
+      206.06
+     ],
+     [
+      "2026-11-23T15:30:00Z",
+      206.77
      ]
     ],
-    "entry": 209.7,
+    "entry": 208.94,
     "stop": 203.41,
     "target": 222.28,
     "openedAt": "2026-11-23T14:41:15Z",
-    "qty": 232
+    "qty": 232.0
    }
   }
  },
@@ -2583,12 +2641,12 @@
    "id": "ahq-CRWD-20261123144115",
    "symbol": "CRWD",
    "asset": "stock",
-   "status": "pending",
+   "status": "open",
    "entryOrderId": "e5a3c1db-42cb-4e41-8954-e1cb1e317145",
-   "qty": 232,
+   "qty": 232.0,
    "cost": 48650.4,
    "estPrice": 209.7,
-   "entryPrice": 209.7,
+   "entryPrice": 208.94,
    "stop": 203.41,
    "target": 222.28,
    "openedAt": "2026-11-23T14:41:15Z",
@@ -2646,7 +2704,9 @@
     ],
     "tradingAgents": "not used (ultra mode)",
     "taSummary": ""
-   }
+   },
+   "lastPrice": 206.03,
+   "unrealizedPct": -1.39
   },
   {
    "id": "ahq-INTC-20261120193710",
@@ -3454,6 +3514,13 @@
  ],
  "decisions": [
   {
+   "t": "2026-11-23T15:31:31Z",
+   "symbol": "LLY",
+   "outcome": "error",
+   "why": "order failed: not enough cash for one share",
+   "event": "Eli Lilly acquires Huntington's disease drug developer LoQus23 for up to $725 million, expanding its neuroscience pipeline."
+  },
+  {
    "t": "2026-11-23T14:41:16Z",
    "symbol": "AVAV",
    "outcome": "error",
@@ -3865,26 +3932,9 @@
    "outcome": "waiting",
    "why": "already $49,086 invested (max 50% of $98,743)",
    "event": "Russian missiles landing on Polish territory escalate geopolitical tensions with NATO."
-  },
-  {
-   "t": "2026-11-20T17:58:32Z",
-   "symbol": "PLTR",
-   "outcome": "waiting",
-   "why": "already $49,191 invested (max 50% of $98,848)",
-   "event": "Russian missiles landing on Polish territory escalate geopolitical tensions with NATO."
   }
  ],
  "equity": [
-  {
-   "t": "2026-11-15T00:31:06Z",
-   "equity": 100000.0,
-   "spy": 752.09
-  },
-  {
-   "t": "2026-11-15T01:01:16Z",
-   "equity": 100000.0,
-   "spy": 752.09
-  },
   {
    "t": "2026-11-15T01:31:31Z",
    "equity": 100000.0,
@@ -5874,6 +5924,16 @@
    "t": "2026-11-23T14:16:10Z",
    "equity": 97402.6,
    "spy": 719.67
+  },
+  {
+   "t": "2026-11-23T14:46:35Z",
+   "equity": 97599.8,
+   "spy": 718.17
+  },
+  {
+   "t": "2026-11-23T15:19:56Z",
+   "equity": 96604.52,
+   "spy": 723.92
   }
  ],
  "watch": [],
@@ -5885,13 +5945,14 @@
  },
  "events": [
   {
-   "summary": "Nvidia's Board of Directors has unanimously reinstated Jensen Huang as President and CEO.",
+   "summary": "Nvidia reinstated Jensen Huang as CEO following discussions with the Trump administration, prompting a sharp rebound in the stock and broader tech shares.",
    "category": "company_bad_news",
    "firstSeen": "2026-11-12T18:24:33Z",
    "publishers": [
     "AFR",
     "AP",
     "Anadolu Ajansı",
+    "Around Prague",
     "Barchart.com",
     "Benzinga",
     "BigGo Finance",
@@ -5987,7 +6048,7 @@
     "NVDA": {
      "direction": "up",
      "confidence": 0.95,
-     "why": "Jensen Huang unanimously reinstated as CEO by the board, resolving uncertainty and causing shares to skyrocket."
+     "why": "Jensen Huang's official reinstatement as CEO reverses recent turmoil and sparks massive buying."
     },
     "BTC/USD": {
      "direction": "down",
@@ -6025,9 +6086,9 @@
      "why": "Riding positive sentiment from Nvidia earnings beat."
     },
     "MU": {
-     "direction": "down",
-     "confidence": 0.65,
-     "why": "Semiconductor peer dragged down by Nvidia leadership turmoil."
+     "direction": "up",
+     "confidence": 0.8,
+     "why": "Nvidia rebound reignites AI trade lifting memory and semiconductor stocks."
     },
     "PLTR": {
      "direction": "down",
@@ -6035,9 +6096,9 @@
      "why": "Broader tech sector and AI stock sell-off spurred by Nvidia turmoil."
     },
     "INTC": {
-     "direction": "down",
-     "confidence": 0.8,
-     "why": "Nvidia significantly trimming its stake in Intel creates heavy selling pressure."
+     "direction": "up",
+     "confidence": 0.75,
+     "why": "Nvidia rebound lifts broader semiconductor sector."
     },
     "TSLA": {
      "direction": "down",
@@ -6094,10 +6155,11 @@
    ]
   },
   {
-   "summary": "Bitcoin jumps 5.7% toward $64K as AI and crypto assets rebound.",
+   "summary": "Bitcoin surges above $64,000 alongside a broader tech share rally sparked by positive market catalysts.",
    "category": "crypto_positive",
    "firstSeen": "2026-11-21T20:36:04Z",
    "publishers": [
+    "Altcoin Buzz",
     "Around Prague",
     "BigGo Finance",
     "Binance",
@@ -6109,6 +6171,7 @@
     "Crypto Briefing",
     "Crypto News",
     "CryptoDaily",
+    "CryptoRank",
     "Cryptonews.net",
     "Demokratis.co.id",
     "Haberler.com",
@@ -6121,6 +6184,7 @@
     "Traders Union",
     "TradingView",
     "Wisevoter",
+    "Yahoo Finance",
     "bloomingbit",
     "fiscal.ai"
    ],
@@ -6128,7 +6192,7 @@
     "BTC/USD": {
      "direction": "up",
      "confidence": 0.8,
-     "why": "Bitcoin rebounds above $61,000 driving positive momentum across crypto markets."
+     "why": "Bitcoin surges above $64k following the broader market and tech sector rebound."
     },
     "SOL/USD": {
      "direction": "up",
@@ -6176,6 +6240,40 @@
      "title": "Bitcoin price rebounds from $55K after historic sell-off, is $72K next?",
      "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE1rZzVTU2xaTWZXcE5LOFI0RlBsZk84N0F5ekdWY0lONHljSWROaEVCS3BsYUd6QmlZR2RpSzBtZ2JSVVFKSVhydVBEd3lQSVVVekd5MGdPVmMwVU5PenJBcm1KZWtmT1M5Y1Z1cDkxaFdqREk?oc=5",
      "time": "2026-11-22T08:01:17Z"
+    }
+   ]
+  },
+  {
+   "summary": "Eli Lilly acquires Huntington's disease drug developer LoQus23 for up to $725 million, expanding its neuroscience pipeline.",
+   "category": "contract",
+   "firstSeen": "2026-11-23T13:03:45Z",
+   "publishers": [
+    "Reuters",
+    "Yahoo Finance"
+   ],
+   "assets": {
+    "LLY": {
+     "direction": "up",
+     "confidence": 0.85,
+     "why": "Strategic pipeline-expanding acquisition of LoQus23 for up to $725 million."
+    }
+   },
+   "sources": [
+    {
+     "id": "91fc75db9893852d",
+     "publisher": "Reuters",
+     "kind": "news",
+     "title": "Lilly to acquire Huntington's disease drug developer LoQus23 for up to $725 million",
+     "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPWGxpQ044NlRhaU9sUTNsdnJfTzVwUkxIVmJNZEZKUy1pUjREaFgyaG0tRE1EdTh6UFdLY1hrZTJRZ0dNcGNBWDF6TV9ZN2xJSC1WZnI0UmVLNlFUbXJMN0g0MXAxOGhJZ3pkX0tpbU43c3N2aHZkakNpbWVidGxPOTcyTHlGX2tCdUk3b3h3bWFLR1VEeGpqY3dTaExET3NoWWxFUEMwZ2o5TnJ0MDNUVVNub21oZlBNNTZURTZvQjlyUQ?oc=5",
+     "time": "2026-11-23T13:03:45Z"
+    },
+    {
+     "id": "f550bfb1c251d9cc",
+     "publisher": "Yahoo Finance",
+     "kind": "news",
+     "title": "Eli Lilly Makes $725 Million Huntington's Disease Bet as Drug Pipeline Expands",
+     "url": "https://finance.yahoo.com/healthcare/articles/eli-lilly-makes-725-million-151535787.html?.tsrc=rss",
+     "time": "2026-11-23T15:15:35Z"
     }
    ]
   },
@@ -7797,31 +7895,6 @@
      "title": "Middle East latest: Ship attacked in UAE waters, says operator Adnoc",
      "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPdTMwLTRPRTZsZHJPR0lQTVNtNHdyWWxZNHMydXJzUjEySVZIZzJfUFlvbXZfQWJPc25aSm5kM3lzNmxFMFVMdFl3NTZLZWVjZnZPaTFyWjZtcl9peGd6ZlpDU2hnQmxDVFBLRlF1cVR3U2QwR2R4dWRRNEFDaDBzSTY2YUFWZEsyZ3dIOGQwX2tudV81a1pRRXQtVzl0TWYw?oc=5",
      "time": "2026-11-10T20:59:26Z"
-    }
-   ]
-  },
-  {
-   "summary": "Eli Lilly to acquire Huntington's disease drug developer LoQus23 for up to $725 million.",
-   "category": "contract",
-   "firstSeen": "2026-11-23T13:03:45Z",
-   "publishers": [
-    "Reuters"
-   ],
-   "assets": {
-    "LLY": {
-     "direction": "up",
-     "confidence": 0.5,
-     "why": "Strategic acquisition to bolster pipeline in specialized therapeutic areas."
-    }
-   },
-   "sources": [
-    {
-     "id": "91fc75db9893852d",
-     "publisher": "Reuters",
-     "kind": "news",
-     "title": "Lilly to acquire Huntington's disease drug developer LoQus23 for up to $725 million",
-     "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPWGxpQ044NlRhaU9sUTNsdnJfTzVwUkxIVmJNZEZKUy1pUjREaFgyaG0tRE1EdTh6UFdLY1hrZTJRZ0dNcGNBWDF6TV9ZN2xJSC1WZnI0UmVLNlFUbXJMN0g0MXAxOGhJZ3pkX0tpbU43c3N2aHZkakNpbWVidGxPOTcyTHlGX2tCdUk3b3h3bWFLR1VEeGpqY3dTaExET3NoWWxFUEMwZ2o5TnJ0MDNUVVNub21oZlBNNTZURTZvQjlyUQ?oc=5",
-     "time": "2026-11-23T13:03:45Z"
     }
    ]
   },
