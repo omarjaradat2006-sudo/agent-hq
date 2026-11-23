@@ -180,7 +180,8 @@ def claw_flood(path, seed=1, text=True, dry=False, cap_balls=1100, r=10.0, R=430
                         add_ball(p, (v[0] * 0.8 + 300 * math.cos(ang), v[1] * 0.8 + 300 * math.sin(ang)), lv)
                         flashes.append([p[0], p[1], ts])
                         if ts - last_note > 0.045:
-                            A.note(ts, 60 + [0, 2, 4, 7, 9, 12, 14, 16, 19, 21, 24, 26][min(lv, 11)], 0.16, 0.35); last_note = ts
+                            A.note(ts, 60 + [0, 2, 4, 7, 9, 12, 14, 16, 19, 21, 24, 26][min(lv, 11)], 0.12, 0.35)
+                            A.impact(ts, math.hypot(*v), 880, "chime", 0.1, unit=60, d=0.4); last_note = ts
                         if lv > level:
                             level = lv; A.chord(ts, 60 + 2 * (lv % 6), 0.12)
                 if len(balls) >= cap_balls: broke = ts
@@ -306,7 +307,8 @@ def overflow_pendulum(path, seed=1, text=True, dry=False, r=9.0, bob=80.0, g=130
             p0, p1 = bob_at(ts), bob_at(ts + dt); bb_.position = tuple(p0); bb_.velocity = tuple((p1 - p0) / dt)
             hits.clear(); sp.step(dt)
             if broke is None and hits:
-                if ts - last_clack > 0.09: A.tone(ts, 900, 0.22, 0.12, "clack"); last_clack = ts
+                if ts - last_clack > 0.09:
+                    A.tone(ts, 900, 0.12, 0.10, "clack"); A.impact(ts, math.hypot(*bb_.velocity), 660, "chime", 0.2, unit=50); last_clack = ts
                 lookup = {id(b[1]): b for b in balls}
                 target = 2 ** (min(1.0, ts / pace) * math.log2(cap_balls)); room = min(cap_balls, int(target * 1.3) + 1) - len(balls)
                 for shp in hits:

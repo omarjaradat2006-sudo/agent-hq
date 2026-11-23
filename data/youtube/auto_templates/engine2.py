@@ -190,6 +190,12 @@ class Audio:
     def chord(self, t, root=60, v=0.25, kind="chime"):
         for k, iv in enumerate((0, 4, 7, 12)): self.note(t + k * 0.05, root + iv, v, 1.6, kind)
 
+    def impact(self, t, speed, base=660.0, kind="chime", v=0.22, vmin=1.0, vmax=20.0, spread=300.0, unit=1.0, d=0.6):
+        """Collision sound whose pitch follows impact speed: speed/unit clipped to vmin..vmax -> base +0..+spread Hz.
+        Harder hits are also a bit louder. Pass speed in px/s with unit=50 (so 50-1000 px/s maps onto 1-20)."""
+        u = min(max(speed / unit, vmin), vmax); k = (u - vmin) / (vmax - vmin)
+        self.tone(t, base + spread * k, v * (0.45 + 0.55 * k), d, kind)
+
     def clip(self, t, samples, sr, v=1.0):
         x = np.asarray(samples, np.float32)
         if sr != SR: x = np.interp(np.arange(int(len(x) * SR / sr)) * sr / SR, np.arange(len(x)), x).astype(np.float32)
@@ -232,7 +238,10 @@ class Audio:
         for t, x, v in self.clips:
             i0 = int(t * SR); m = min(len(x), n - i0)
             if m > 0: buf[i0:i0 + m] += x[:m] * v
-        buf = np.tanh(buf[:int(dur * SR)] * 1.05) * 0.9
+        buf = buf[:int(dur * SR)]
+        pk = float(np.percentile(np.abs(buf), 99.9)) if len(buf) else 0.0   # level the mix first, so the limiter never squashes it
+        if pk > 0.6: buf = buf * (0.6 / pk)
+        buf = np.tanh(buf * 1.2) * 0.92                                     # soft limiter: peaks stay under -0.7 dBFS, never clip
         st = (np.stack([buf, buf], 1) * 32767).astype(np.int16)
         with wave.open(path, "wb") as w:
             w.setnchannels(2); w.setsampwidth(2); w.setframerate(SR); w.writeframes(st.tobytes())
