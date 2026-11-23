@@ -1,21 +1,24 @@
 {
  "team": "trading",
  "plain": {
-  "line": "Down $2,597.40 since start · 15 trades · holding: nothing (all cash)",
+  "line": "Down $2,597.40 since start · 16 trades · holding: CRWD",
   "rulesMode": "ultra",
-  "top": "Down $2,597.40 since start (-2.60%) · just holding SPY would be -7.82%",
+  "top": "Down $2,597.40 since start (-2.60%) · just holding SPY would be -4.39%",
   "up": false,
   "holding": [
-   "Nothing right now (all cash)."
+   "CRWD: buy order sent, waiting to fill"
   ],
   "today": [
-   "Scanned the news 88 times today: read 3575 headlines, found 104 that could move a stock or coin it's allowed to trade. None passed every check, so no trade (that's normal)."
+   "Bought CRWD after the news: CrowdStrike Holdings reports an earnings beat and revenue outperformance.",
+   "Scanned the news 38 times today: read 3166 headlines, found 60 that could move a stock or coin it's allowed to trade.",
+   "Passed on AMAT, AVAV, COP, PLTR: order failed: not enough cash for one share.",
+   "Safety rules that stepped in: stock entry window (x6), cash only no margin (x5)."
   ],
   "watchlist": "Allowed to trade: 68 halal stocks, 5 Shariah ETFs, 9 coins.",
-  "lastScan": "2026-11-23T02:53:32Z"
+  "lastScan": "2026-11-23T14:37:58Z"
  },
  "hired": true,
- "updatedAt": "2026-11-23T02:53:39Z",
+ "updatedAt": "2026-11-23T14:41:17Z",
  "mode": "PAPER",
  "agents": [
   {
@@ -23,16 +26,16 @@
    "name": "News Scout",
    "role": "Reads X, Reddit and news feeds",
    "status": "working",
-   "doing": "Read 9 new headlines/posts, 2 market-moving stories",
-   "lastRun": "2026-11-23T02:53:38Z"
+   "doing": "Read 148 new headlines/posts, 3 market-moving stories",
+   "lastRun": "2026-11-23T14:41:14Z"
   },
   {
    "id": "analyst",
    "name": "News Analyst",
    "role": "Gemini: is it real, what moves, which way",
-   "status": "idle",
-   "doing": "",
-   "lastRun": null
+   "status": "working",
+   "doing": "Gemini triage failed, skipping this batch: All Gemini models failed. Last error: Gemini HTTP 503 on gemini-3.1-flash-lite: {\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experien",
+   "lastRun": "2026-11-23T14:41:14Z"
   },
   {
    "id": "confirm",
@@ -63,8 +66,8 @@
    "name": "Trader",
    "role": "Places paper orders on Alpaca",
    "status": "working",
-   "doing": "Paper-trading bot started (Alpaca PAPER account only). Close this window to stop it.",
-   "lastRun": "2026-11-23T02:53:32Z"
+   "doing": "Order for AVAV failed: not enough cash for one share",
+   "lastRun": "2026-11-23T14:41:16Z"
   },
   {
    "id": "coins",
@@ -84,6 +87,306 @@
   }
  ],
  "log": [
+  {
+   "t": "2026-11-23T14:41:16Z",
+   "agent": "Trader",
+   "msg": "Order for AVAV failed: not enough cash for one share"
+  },
+  {
+   "t": "2026-11-23T14:41:16Z",
+   "agent": "Trader",
+   "msg": "Order for AMAT failed: not enough cash for one share"
+  },
+  {
+   "t": "2026-11-23T14:41:16Z",
+   "agent": "Trader",
+   "msg": "Order for COP failed: not enough cash for one share"
+  },
+  {
+   "t": "2026-11-23T14:41:16Z",
+   "agent": "Trader",
+   "msg": "Order for PLTR failed: not enough cash for one share"
+  },
+  {
+   "t": "2026-11-23T14:41:15Z",
+   "agent": "Trader",
+   "msg": "Order for COP failed: not enough cash for one share"
+  },
+  {
+   "t": "2026-11-23T14:41:15Z",
+   "agent": "Trader",
+   "msg": "BUY CRWD: CrowdStrike Holdings reports an earnings beat and revenue outperformance. | volume 5.3x normal, price -3.41% since the news | TradingAgents not used (ultra mode)"
+  },
+  {
+   "t": "2026-11-23T14:41:14Z",
+   "agent": "News Scout",
+   "msg": "Read 148 new headlines/posts, 3 market-moving stories"
+  },
+  {
+   "t": "2026-11-23T14:41:14Z",
+   "agent": "News Analyst",
+   "msg": "Gemini triage failed, skipping this batch: All Gemini models failed. Last error: Gemini HTTP 503 on gemini-3.1-flash-lite: {\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experien"
+  },
+  {
+   "t": "2026-11-23T14:39:39Z",
+   "agent": "News Analyst",
+   "msg": "Gemini triage failed, skipping this batch: All Gemini models failed. Last error: Gemini HTTP 503 on gemini-3.1-flash-lite: {\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experien"
+  },
+  {
+   "t": "2026-11-23T14:38:06Z",
+   "agent": "News Scout",
+   "msg": "Yahoo Finance feed skipped: HTTP 500 https://feeds.finance.yahoo.com/rss/2.0/headline: failed"
+  },
+  {
+   "t": "2026-11-23T14:32:57Z",
+   "agent": "News Scout",
+   "msg": "Read 84 new headlines/posts, 3 market-moving stories"
+  },
+  {
+   "t": "2026-11-23T14:31:27Z",
+   "agent": "News Scout",
+   "msg": "Yahoo Finance feed skipped: HTTP 500 https://feeds.finance.yahoo.com/rss/2.0/headline: failed"
+  },
+  {
+   "t": "2026-11-23T14:16:10Z",
+   "agent": "News Scout",
+   "msg": "Read 229 new headlines/posts, 4 market-moving stories"
+  },
+  {
+   "t": "2026-11-23T14:14:36Z",
+   "agent": "News Analyst",
+   "msg": "Gemini triage failed, skipping this batch: All Gemini models failed. Last error: Gemini HTTP 503 on gemini-3.1-flash-lite: {\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experien"
+  },
+  {
+   "t": "2026-11-23T13:55:45Z",
+   "agent": "News Scout",
+   "msg": "Read 85 new headlines/posts, 2 market-moving stories"
+  },
+  {
+   "t": "2026-11-23T13:40:24Z",
+   "agent": "News Scout",
+   "msg": "Read 133 new headlines/posts, 2 market-moving stories"
+  },
+  {
+   "t": "2026-11-23T13:23:59Z",
+   "agent": "News Scout",
+   "msg": "Read 166 new headlines/posts, 4 market-moving stories"
+  },
+  {
+   "t": "2026-11-23T13:23:59Z",
+   "agent": "News Analyst",
+   "msg": "Gemini triage failed, skipping this batch: All Gemini models failed. Last error: gemini-3.1-flash-lite: The read operation timed out"
+  },
+  {
+   "t": "2026-11-23T12:59:37Z",
+   "agent": "News Scout",
+   "msg": "Read 61 new headlines/posts, 1 market-moving stories"
+  },
+  {
+   "t": "2026-11-23T12:44:30Z",
+   "agent": "News Scout",
+   "msg": "Read 136 new headlines/posts, 1 market-moving stories"
+  },
+  {
+   "t": "2026-11-23T12:29:22Z",
+   "agent": "News Scout",
+   "msg": "Read 66 new headlines/posts, 1 market-moving stories"
+  },
+  {
+   "t": "2026-11-23T12:14:15Z",
+   "agent": "News Scout",
+   "msg": "Read 103 new headlines/posts, 2 market-moving stories"
+  },
+  {
+   "t": "2026-11-23T11:58:47Z",
+   "agent": "News Scout",
+   "msg": "Read 69 new headlines/posts, 1 market-moving stories"
+  },
+  {
+   "t": "2026-11-23T11:43:31Z",
+   "agent": "News Scout",
+   "msg": "Read 105 new headlines/posts, 4 market-moving stories"
+  },
+  {
+   "t": "2026-11-23T11:28:17Z",
+   "agent": "News Scout",
+   "msg": "Read 83 new headlines/posts, 1 market-moving stories"
+  },
+  {
+   "t": "2026-11-23T11:13:09Z",
+   "agent": "News Scout",
+   "msg": "Read 121 new headlines/posts, 1 market-moving stories"
+  },
+  {
+   "t": "2026-11-23T10:58:01Z",
+   "agent": "News Scout",
+   "msg": "Read 59 new headlines/posts, 2 market-moving stories"
+  },
+  {
+   "t": "2026-11-23T10:42:52Z",
+   "agent": "News Scout",
+   "msg": "Read 67 new headlines/posts, 1 market-moving stories"
+  },
+  {
+   "t": "2026-11-23T10:27:45Z",
+   "agent": "News Scout",
+   "msg": "Read 78 new headlines/posts, 4 market-moving stories"
+  },
+  {
+   "t": "2026-11-23T10:12:04Z",
+   "agent": "News Scout",
+   "msg": "Read 93 new headlines/posts, 2 market-moving stories"
+  },
+  {
+   "t": "2026-11-23T09:56:52Z",
+   "agent": "News Scout",
+   "msg": "Read 53 new headlines/posts, 0 market-moving stories"
+  },
+  {
+   "t": "2026-11-23T09:41:46Z",
+   "agent": "News Scout",
+   "msg": "Read 65 new headlines/posts, 1 market-moving stories"
+  },
+  {
+   "t": "2026-11-23T09:26:40Z",
+   "agent": "News Scout",
+   "msg": "Read 70 new headlines/posts, 1 market-moving stories"
+  },
+  {
+   "t": "2026-11-23T09:11:34Z",
+   "agent": "News Scout",
+   "msg": "Read 94 new headlines/posts, 2 market-moving stories"
+  },
+  {
+   "t": "2026-11-23T08:56:27Z",
+   "agent": "News Scout",
+   "msg": "Read 55 new headlines/posts, 0 market-moving stories"
+  },
+  {
+   "t": "2026-11-23T08:41:21Z",
+   "agent": "News Scout",
+   "msg": "Read 72 new headlines/posts, 2 market-moving stories"
+  },
+  {
+   "t": "2026-11-23T08:26:14Z",
+   "agent": "News Scout",
+   "msg": "Read 51 new headlines/posts, 0 market-moving stories"
+  },
+  {
+   "t": "2026-11-23T08:26:10Z",
+   "agent": "News Scout",
+   "msg": "Google News feed skipped: HTTP 429 https://news.google.com/rss/search: <html><head><meta http-equiv=\"content-type\" content=\"text/html; charset=utf-8\"/><title>Sorry...</title><style> body { font-family: verdana, arial, sans-serif; background-color: #fff; color: #000; }</s"
+  },
+  {
+   "t": "2026-11-23T08:11:00Z",
+   "agent": "News Scout",
+   "msg": "Read 118 new headlines/posts, 4 market-moving stories"
+  },
+  {
+   "t": "2026-11-23T07:55:53Z",
+   "agent": "News Scout",
+   "msg": "Read 48 new headlines/posts, 1 market-moving stories"
+  },
+  {
+   "t": "2026-11-23T07:40:46Z",
+   "agent": "News Scout",
+   "msg": "Read 72 new headlines/posts, 2 market-moving stories"
+  },
+  {
+   "t": "2026-11-23T07:25:39Z",
+   "agent": "News Scout",
+   "msg": "Read 60 new headlines/posts, 1 market-moving stories"
+  },
+  {
+   "t": "2026-11-23T07:10:32Z",
+   "agent": "News Scout",
+   "msg": "Read 82 new headlines/posts, 1 market-moving stories"
+  },
+  {
+   "t": "2026-11-23T06:55:25Z",
+   "agent": "News Scout",
+   "msg": "Read 54 new headlines/posts, 1 market-moving stories"
+  },
+  {
+   "t": "2026-11-23T06:40:18Z",
+   "agent": "News Scout",
+   "msg": "Read 56 new headlines/posts, 0 market-moving stories"
+  },
+  {
+   "t": "2026-11-23T06:25:12Z",
+   "agent": "News Scout",
+   "msg": "Read 67 new headlines/posts, 1 market-moving stories"
+  },
+  {
+   "t": "2026-11-23T06:10:06Z",
+   "agent": "News Scout",
+   "msg": "Read 76 new headlines/posts, 1 market-moving stories"
+  },
+  {
+   "t": "2026-11-23T05:54:59Z",
+   "agent": "News Scout",
+   "msg": "Read 45 new headlines/posts, 0 market-moving stories"
+  },
+  {
+   "t": "2026-11-23T05:39:53Z",
+   "agent": "News Scout",
+   "msg": "Read 36 new headlines/posts, 1 market-moving stories"
+  },
+  {
+   "t": "2026-11-23T05:24:47Z",
+   "agent": "News Scout",
+   "msg": "Read 39 new headlines/posts, 1 market-moving stories"
+  },
+  {
+   "t": "2026-11-23T05:09:39Z",
+   "agent": "News Scout",
+   "msg": "Read 67 new headlines/posts, 1 market-moving stories"
+  },
+  {
+   "t": "2026-11-23T04:54:33Z",
+   "agent": "News Scout",
+   "msg": "Read 42 new headlines/posts, 0 market-moving stories"
+  },
+  {
+   "t": "2026-11-23T04:39:28Z",
+   "agent": "News Scout",
+   "msg": "Read 64 new headlines/posts, 1 market-moving stories"
+  },
+  {
+   "t": "2026-11-23T04:24:21Z",
+   "agent": "News Scout",
+   "msg": "Read 42 new headlines/posts, 0 market-moving stories"
+  },
+  {
+   "t": "2026-11-23T04:09:15Z",
+   "agent": "News Scout",
+   "msg": "Read 45 new headlines/posts, 2 market-moving stories"
+  },
+  {
+   "t": "2026-11-23T03:54:08Z",
+   "agent": "News Scout",
+   "msg": "Read 38 new headlines/posts, 2 market-moving stories"
+  },
+  {
+   "t": "2026-11-23T03:39:00Z",
+   "agent": "News Scout",
+   "msg": "Read 44 new headlines/posts, 1 market-moving stories"
+  },
+  {
+   "t": "2026-11-23T03:23:54Z",
+   "agent": "News Scout",
+   "msg": "Read 32 new headlines/posts, 0 market-moving stories"
+  },
+  {
+   "t": "2026-11-23T03:08:47Z",
+   "agent": "News Scout",
+   "msg": "Read 39 new headlines/posts, 1 market-moving stories"
+  },
+  {
+   "t": "2026-11-23T02:53:41Z",
+   "agent": "Trader",
+   "msg": "Saved results to the Agent HQ dashboard"
+  },
   {
    "t": "2026-11-23T02:53:38Z",
    "agent": "News Scout",
@@ -533,312 +836,12 @@
    "t": "2026-11-22T17:36:38Z",
    "agent": "News Scout",
    "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
-  },
-  {
-   "t": "2026-11-22T17:21:34Z",
-   "agent": "News Scout",
-   "msg": "Read 40 new headlines/posts, 1 market-moving stories"
-  },
-  {
-   "t": "2026-11-22T17:21:32Z",
-   "agent": "News Scout",
-   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
-  },
-  {
-   "t": "2026-11-22T17:06:28Z",
-   "agent": "Trader",
-   "msg": "Saved results to the Agent HQ dashboard"
-  },
-  {
-   "t": "2026-11-22T17:06:25Z",
-   "agent": "News Scout",
-   "msg": "Read 61 new headlines/posts, 2 market-moving stories"
-  },
-  {
-   "t": "2026-11-22T17:06:23Z",
-   "agent": "News Scout",
-   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
-  },
-  {
-   "t": "2026-11-22T16:51:18Z",
-   "agent": "News Scout",
-   "msg": "Read 37 new headlines/posts, 0 market-moving stories"
-  },
-  {
-   "t": "2026-11-22T16:51:17Z",
-   "agent": "News Scout",
-   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
-  },
-  {
-   "t": "2026-11-22T16:36:13Z",
-   "agent": "News Scout",
-   "msg": "Read 45 new headlines/posts, 1 market-moving stories"
-  },
-  {
-   "t": "2026-11-22T16:36:11Z",
-   "agent": "News Scout",
-   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
-  },
-  {
-   "t": "2026-11-22T16:21:06Z",
-   "agent": "News Scout",
-   "msg": "Read 48 new headlines/posts, 1 market-moving stories"
-  },
-  {
-   "t": "2026-11-22T16:20:54Z",
-   "agent": "News Scout",
-   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
-  },
-  {
-   "t": "2026-11-22T16:05:49Z",
-   "agent": "News Scout",
-   "msg": "Read 45 new headlines/posts, 1 market-moving stories"
-  },
-  {
-   "t": "2026-11-22T16:05:48Z",
-   "agent": "News Scout",
-   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
-  },
-  {
-   "t": "2026-11-22T15:50:43Z",
-   "agent": "News Scout",
-   "msg": "Read 30 new headlines/posts, 1 market-moving stories"
-  },
-  {
-   "t": "2026-11-22T15:50:41Z",
-   "agent": "News Scout",
-   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
-  },
-  {
-   "t": "2026-11-22T15:35:37Z",
-   "agent": "News Scout",
-   "msg": "Read 30 new headlines/posts, 0 market-moving stories"
-  },
-  {
-   "t": "2026-11-22T15:35:36Z",
-   "agent": "News Scout",
-   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
-  },
-  {
-   "t": "2026-11-22T15:20:31Z",
-   "agent": "News Scout",
-   "msg": "Read 29 new headlines/posts, 0 market-moving stories"
-  },
-  {
-   "t": "2026-11-22T15:20:21Z",
-   "agent": "News Scout",
-   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
-  },
-  {
-   "t": "2026-11-22T15:05:16Z",
-   "agent": "News Scout",
-   "msg": "Read 29 new headlines/posts, 1 market-moving stories"
-  },
-  {
-   "t": "2026-11-22T15:05:15Z",
-   "agent": "News Scout",
-   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
-  },
-  {
-   "t": "2026-11-22T14:50:11Z",
-   "agent": "Trader",
-   "msg": "Saved results to the Agent HQ dashboard"
-  },
-  {
-   "t": "2026-11-22T14:50:08Z",
-   "agent": "News Scout",
-   "msg": "Read 41 new headlines/posts, 0 market-moving stories"
-  },
-  {
-   "t": "2026-11-22T14:50:00Z",
-   "agent": "News Scout",
-   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
-  },
-  {
-   "t": "2026-11-22T14:34:54Z",
-   "agent": "News Scout",
-   "msg": "Read 44 new headlines/posts, 1 market-moving stories"
-  },
-  {
-   "t": "2026-11-22T14:34:45Z",
-   "agent": "News Scout",
-   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
-  },
-  {
-   "t": "2026-11-22T14:19:39Z",
-   "agent": "News Scout",
-   "msg": "Read 65 new headlines/posts, 1 market-moving stories"
-  },
-  {
-   "t": "2026-11-22T14:19:30Z",
-   "agent": "News Scout",
-   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
-  },
-  {
-   "t": "2026-11-22T14:04:24Z",
-   "agent": "News Scout",
-   "msg": "Read 85 new headlines/posts, 1 market-moving stories"
-  },
-  {
-   "t": "2026-11-22T14:03:08Z",
-   "agent": "News Scout",
-   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
-  },
-  {
-   "t": "2026-11-22T13:48:03Z",
-   "agent": "News Scout",
-   "msg": "Read 45 new headlines/posts, 1 market-moving stories"
-  },
-  {
-   "t": "2026-11-22T13:48:02Z",
-   "agent": "News Scout",
-   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
-  },
-  {
-   "t": "2026-11-22T13:32:57Z",
-   "agent": "News Scout",
-   "msg": "Read 33 new headlines/posts, 2 market-moving stories"
-  },
-  {
-   "t": "2026-11-22T13:32:52Z",
-   "agent": "News Scout",
-   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
-  },
-  {
-   "t": "2026-11-22T13:17:47Z",
-   "agent": "News Scout",
-   "msg": "Read 56 new headlines/posts, 1 market-moving stories"
-  },
-  {
-   "t": "2026-11-22T13:17:46Z",
-   "agent": "News Scout",
-   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
-  },
-  {
-   "t": "2026-11-22T13:02:42Z",
-   "agent": "News Scout",
-   "msg": "Read 54 new headlines/posts, 2 market-moving stories"
-  },
-  {
-   "t": "2026-11-22T13:02:40Z",
-   "agent": "News Scout",
-   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
-  },
-  {
-   "t": "2026-11-22T12:47:34Z",
-   "agent": "News Scout",
-   "msg": "Read 46 new headlines/posts, 3 market-moving stories"
-  },
-  {
-   "t": "2026-11-22T12:47:28Z",
-   "agent": "News Scout",
-   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
-  },
-  {
-   "t": "2026-11-22T12:32:23Z",
-   "agent": "News Scout",
-   "msg": "Read 46 new headlines/posts, 1 market-moving stories"
-  },
-  {
-   "t": "2026-11-22T12:32:14Z",
-   "agent": "News Scout",
-   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
-  },
-  {
-   "t": "2026-11-22T12:17:05Z",
-   "agent": "News Scout",
-   "msg": "Read 59 new headlines/posts, 2 market-moving stories"
-  },
-  {
-   "t": "2026-11-22T12:17:03Z",
-   "agent": "News Scout",
-   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
-  },
-  {
-   "t": "2026-11-22T12:01:58Z",
-   "agent": "News Scout",
-   "msg": "Read 56 new headlines/posts, 1 market-moving stories"
-  },
-  {
-   "t": "2026-11-22T12:01:52Z",
-   "agent": "News Scout",
-   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
-  },
-  {
-   "t": "2026-11-22T11:46:40Z",
-   "agent": "News Scout",
-   "msg": "Read 45 new headlines/posts, 1 market-moving stories"
-  },
-  {
-   "t": "2026-11-22T11:46:38Z",
-   "agent": "News Scout",
-   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
-  },
-  {
-   "t": "2026-11-22T11:31:34Z",
-   "agent": "News Scout",
-   "msg": "Read 57 new headlines/posts, 2 market-moving stories"
-  },
-  {
-   "t": "2026-11-22T11:31:32Z",
-   "agent": "News Scout",
-   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
-  },
-  {
-   "t": "2026-11-22T11:16:27Z",
-   "agent": "News Scout",
-   "msg": "Read 68 new headlines/posts, 2 market-moving stories"
-  },
-  {
-   "t": "2026-11-22T11:16:17Z",
-   "agent": "News Scout",
-   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
-  },
-  {
-   "t": "2026-11-22T11:01:11Z",
-   "agent": "News Scout",
-   "msg": "Read 48 new headlines/posts, 1 market-moving stories"
-  },
-  {
-   "t": "2026-11-22T11:01:07Z",
-   "agent": "News Scout",
-   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
-  },
-  {
-   "t": "2026-11-22T10:45:59Z",
-   "agent": "News Scout",
-   "msg": "Read 42 new headlines/posts, 1 market-moving stories"
-  },
-  {
-   "t": "2026-11-22T10:45:55Z",
-   "agent": "News Scout",
-   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
-  },
-  {
-   "t": "2026-11-22T10:30:51Z",
-   "agent": "News Scout",
-   "msg": "Read 38 new headlines/posts, 2 market-moving stories"
-  },
-  {
-   "t": "2026-11-22T10:30:49Z",
-   "agent": "News Scout",
-   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
-  },
-  {
-   "t": "2026-11-22T10:15:44Z",
-   "agent": "News Scout",
-   "msg": "Read 57 new headlines/posts, 3 market-moving stories"
-  },
-  {
-   "t": "2026-11-22T10:15:41Z",
-   "agent": "News Scout",
-   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
   }
  ],
  "brief": {
-  "date": "Sun Nov 22",
-  "createdAt": "2026-11-23T02:53:39Z",
-  "headline": "Paper account +$0 today (+0.00%), -2.60% total vs SPY -7.82% · 0 open",
+  "date": "Mon Nov 23",
+  "createdAt": "2026-11-23T14:41:17Z",
+  "headline": "Paper account +$0 today (+0.00%), -2.60% total vs SPY -4.39% · 1 open",
   "summary": "0 trade(s) closed today, 3/15 winners overall. TradingAgents checks used today: 0/5.",
   "notes": [
    "X/Reddit reader: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
@@ -853,8 +856,8 @@
   "dayPct": 0.0,
   "totalPnl": -2597.4,
   "totalPct": -2.6,
-  "spyPct": -7.82,
-  "vsSpyPct": 5.22
+  "spyPct": -4.39,
+  "vsSpyPct": 1.79
  },
  "status": {
   "killed": false,
@@ -862,7 +865,7 @@
   "deepUsed": 0,
   "deepMax": 5,
   "social": {
-   "at": "2026-11-23T02:53:36Z",
+   "at": "2026-11-23T14:31:27Z",
    "items": 0,
    "source": "Reddit via Tradestie + ApeWisdom (direct Reddit blocks servers; X needs Agent Reach)",
    "problems": [
@@ -870,15 +873,15 @@
     "r/stocks: HTTP 403 https://www.reddit.com/r/stocks/new.json: <body class=theme-beta><div><"
    ],
    "wsb": {
-    "at": "2026-11-23T02:53:36Z",
+    "at": "2026-11-23T14:31:27Z",
     "tickers": 50,
     "items": 0,
     "key": false
    },
    "ape": {
-    "at": "2026-11-23T02:53:37Z",
+    "at": "2026-11-23T14:31:28Z",
     "tickers": 200,
-    "items": 0,
+    "items": 1,
     "problems": []
    }
   },
@@ -888,1304 +891,358 @@
   },
   "alert": null
  },
- "positions": [],
+ "positions": [
+  {
+   "id": "ahq-CRWD-20261123144115",
+   "symbol": "CRWD",
+   "asset": "stock",
+   "status": "pending",
+   "entryOrderId": "e5a3c1db-42cb-4e41-8954-e1cb1e317145",
+   "qty": 232,
+   "cost": 48650.4,
+   "estPrice": 209.7,
+   "entryPrice": 209.7,
+   "stop": 203.41,
+   "target": 222.28,
+   "openedAt": "2026-11-23T14:41:15Z",
+   "news": {
+    "summary": "CrowdStrike Holdings reports an earnings beat and revenue outperformance.",
+    "category": "contract",
+    "sources": [
+     {
+      "publisher": "Yahoo Finance",
+      "title": "CrowdStrike Agrees To Buy Zscaler For $43.9 Billion. Shares Move In Opposite Directions.",
+      "url": "https://www.ibtimes.com/crowdstrike-acquire-zscaler-43-9-billion-deal-3810075?.tsrc=rss"
+     },
+     {
+      "publisher": "GuruFocus",
+      "title": "Zscaler (ZS) Q1 Earnings Beat Expectations, Shares Rise Amid Cro",
+      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNUllsd1h4c3dzQkFUZjhzUXF5WklQeUtCNUtjbGN1a3ppd214cVRsdlJRUklIdDZJQWRZeFlXUEN3MFdCZ3g5ZEIyZkpLTk84RW1YdUZHNHhTenJiemJpdHdISE1vQ1RoT2Z6M1Jvdi1CYTY3c3BPZWp6NVJtOGJzT3E2SnFlSU5qSlBYM3h3eDdCdU5leU00dHdvYXFOQnA2UjF3c0o5eUZwbHhQR3VCOUh5OXVIc01RSFE?oc=5"
+     },
+     {
+      "publisher": "Yahoo Finance",
+      "title": "CrowdStrike to Buy Zscaler in $44 Billion All-Stock Deal. Why They’re Better Off Together.",
+      "url": "https://finance.yahoo.com/m/c15198fc-46aa-317e-ad7d-cc5e670695f9/crowdstrike-to-buy-zscaler-in.html?.tsrc=rss"
+     },
+     {
+      "publisher": "TradingView",
+      "title": "Zscaler Q1 Revenue Rises 20% as CrowdStrike Acquisition Agreement Announced",
+      "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxPSm9PT2FYaFpza2lIemNhakYtSkhqUlRITmdwOVR5ejdpZkdyQU9HUDRFVGsxUkRWYnpDYVdNakZtUXA0Wm4xYnNpV2NNU1lXSHpxdVh6RUZXTmNJNm9xcnBoVE1qSFhmeVE5YlVCM2d6M3NBZVFYWW50N29EWGVGY3A1WHVhbF9hZTlHajBFZUYwV1owbU11X0swbnRTSzZfTHNvaVM0bGViOHZkZmE5QUNwOWE1VVRZYmRkdFNqbnd1TnVib0x4eDhWQW9Nd09NNXc?oc=5"
+     },
+     {
+      "publisher": "AP",
+      "title": "Crowdstrike to acquire Zscaler in a $44 billion deal that would create a cybersecurity giant",
+      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQekFodWNTV2dTaVZ6VDJScmUybjJ3QXRURFJjeVNtQVBmOEJkYUZTNnFlMnNKalRWdFdXOWVwTjg1TFU3THJIOU9hSXNtSXZCczVaT0xDYnNKUEJUYXFXbVpTUkhTNWRFb3VIa1RDcHdOMzB4ZVV4cTZ6STBQZ2RWLWNPT2U1RGRHYjIxNEZ1QlFXQXZJMDhJeHdDLUFUc2tSUjJoejc1dGhzTWtkUS1Hb3V1V1hKbXplV3J2Zw?oc=5"
+     },
+     {
+      "publisher": "Yahoo Finance",
+      "title": "CrowdStrike Holdings (CRWD) Agreed $44 Billion All Stock Cybersecurity Deal",
+      "url": "https://finance.yahoo.com/technology/ai/articles/crowdstrike-holdings-crwd-agreed-44-131349393.html?.tsrc=rss"
+     }
+    ]
+   },
+   "reason": {
+    "triage": "CrowdStrike beat earnings and revenue estimates, signalling strong financial health.",
+    "confidence": 0.85,
+    "confirmation": "volume 5.3x normal, price -3.41% since the news",
+    "rvol": 5.33,
+    "movePct": -3.41,
+    "publishers": [
+     "AP",
+     "GuruFocus",
+     "Investing.com",
+     "Investing.com India",
+     "Investing.com Nigeria",
+     "TradingView",
+     "Yahoo Finance",
+     "شبكة تواصل الإخبارية"
+    ],
+    "tradingAgents": "not used (ultra mode)",
+    "taSummary": ""
+   }
+  }
+ ],
  "charts": {
   "account": {
    "1D": [
     [
-     "2026-11-20T09:00:00Z",
-     99819.05
+     "2026-11-23T09:00:00Z",
+     97402.6
     ],
     [
-     "2026-11-20T09:05:00Z",
-     99812.63
+     "2026-11-23T09:05:00Z",
+     97402.6
     ],
     [
-     "2026-11-20T09:10:00Z",
-     99825.13
+     "2026-11-23T09:10:00Z",
+     97402.6
     ],
     [
-     "2026-11-20T09:15:00Z",
-     99778.22
+     "2026-11-23T09:15:00Z",
+     97402.6
     ],
     [
-     "2026-11-20T09:20:00Z",
-     99740.87
+     "2026-11-23T09:20:00Z",
+     97402.6
     ],
     [
-     "2026-11-20T09:25:00Z",
-     99775.77
+     "2026-11-23T09:25:00Z",
+     97402.6
     ],
     [
-     "2026-11-20T09:30:00Z",
-     99709.28
+     "2026-11-23T09:30:00Z",
+     97402.6
     ],
     [
-     "2026-11-20T09:35:00Z",
-     99669.33
+     "2026-11-23T09:35:00Z",
+     97402.6
     ],
     [
-     "2026-11-20T09:40:00Z",
-     99612.99
+     "2026-11-23T09:40:00Z",
+     97402.6
     ],
     [
-     "2026-11-20T09:45:00Z",
-     99640.4
+     "2026-11-23T09:45:00Z",
+     97402.6
     ],
     [
-     "2026-11-20T09:50:00Z",
-     99671.92
+     "2026-11-23T09:50:00Z",
+     97402.6
     ],
     [
-     "2026-11-20T09:55:00Z",
-     99630.64
+     "2026-11-23T09:55:00Z",
+     97402.6
     ],
     [
-     "2026-11-20T10:00:00Z",
-     99614.96
+     "2026-11-23T10:00:00Z",
+     97402.6
     ],
     [
-     "2026-11-20T10:05:00Z",
-     99690.94
+     "2026-11-23T10:05:00Z",
+     97402.6
     ],
     [
-     "2026-11-20T10:10:00Z",
-     99678.13
+     "2026-11-23T10:10:00Z",
+     97402.6
     ],
     [
-     "2026-11-20T10:15:00Z",
-     99665.7
+     "2026-11-23T10:15:00Z",
+     97402.6
     ],
     [
-     "2026-11-20T10:20:00Z",
-     99628.18
+     "2026-11-23T10:20:00Z",
+     97402.6
     ],
     [
-     "2026-11-20T10:25:00Z",
-     99710.53
+     "2026-11-23T10:25:00Z",
+     97402.6
     ],
     [
-     "2026-11-20T10:30:00Z",
-     99735.73
+     "2026-11-23T10:30:00Z",
+     97402.6
     ],
     [
-     "2026-11-20T10:35:00Z",
-     99791.01
+     "2026-11-23T10:35:00Z",
+     97402.6
     ],
     [
-     "2026-11-20T10:40:00Z",
-     99839.02
+     "2026-11-23T10:40:00Z",
+     97402.6
     ],
     [
-     "2026-11-20T10:45:00Z",
-     99838.53
+     "2026-11-23T10:45:00Z",
+     97402.6
     ],
     [
-     "2026-11-20T10:50:00Z",
-     99768.63
+     "2026-11-23T10:50:00Z",
+     97402.6
     ],
     [
-     "2026-11-20T10:55:00Z",
-     99755.94
+     "2026-11-23T10:55:00Z",
+     97402.6
     ],
     [
-     "2026-11-20T11:00:00Z",
-     99763.63
+     "2026-11-23T11:00:00Z",
+     97402.6
     ],
     [
-     "2026-11-20T11:05:00Z",
-     99716.49
+     "2026-11-23T11:05:00Z",
+     97402.6
     ],
     [
-     "2026-11-20T11:10:00Z",
-     99710.5
+     "2026-11-23T11:10:00Z",
+     97402.6
     ],
     [
-     "2026-11-20T11:15:00Z",
-     99663.95
+     "2026-11-23T11:15:00Z",
+     97402.6
     ],
     [
-     "2026-11-20T11:20:00Z",
-     99643.86
+     "2026-11-23T11:20:00Z",
+     97402.6
     ],
     [
-     "2026-11-20T11:25:00Z",
-     99631.18
+     "2026-11-23T11:25:00Z",
+     97402.6
     ],
     [
-     "2026-11-20T11:30:00Z",
-     99681.56
+     "2026-11-23T11:30:00Z",
+     97402.6
     ],
     [
-     "2026-11-20T11:35:00Z",
-     99627.12
+     "2026-11-23T11:35:00Z",
+     97402.6
     ],
     [
-     "2026-11-20T11:40:00Z",
-     99621.33
+     "2026-11-23T11:40:00Z",
+     97402.6
     ],
     [
-     "2026-11-20T11:45:00Z",
-     99612.12
+     "2026-11-23T11:45:00Z",
+     97402.6
     ],
     [
-     "2026-11-20T11:50:00Z",
-     99583.12
+     "2026-11-23T11:50:00Z",
+     97402.6
     ],
     [
-     "2026-11-20T11:55:00Z",
-     99601.5
+     "2026-11-23T11:55:00Z",
+     97402.6
     ],
     [
-     "2026-11-20T12:00:00Z",
-     99591.15
+     "2026-11-23T12:00:00Z",
+     97402.6
     ],
     [
-     "2026-11-20T12:05:00Z",
-     99549.61
+     "2026-11-23T12:05:00Z",
+     97402.6
     ],
     [
-     "2026-11-20T12:10:00Z",
-     99527.35
+     "2026-11-23T12:10:00Z",
+     97402.6
     ],
     [
-     "2026-11-20T12:15:00Z",
-     99560.02
+     "2026-11-23T12:15:00Z",
+     97402.6
     ],
     [
-     "2026-11-20T12:20:00Z",
-     99574.8
+     "2026-11-23T12:20:00Z",
+     97402.6
     ],
     [
-     "2026-11-20T12:25:00Z",
-     99568.89
+     "2026-11-23T12:25:00Z",
+     97402.6
     ],
     [
-     "2026-11-20T12:30:00Z",
-     99608.21
+     "2026-11-23T12:30:00Z",
+     97402.6
     ],
     [
-     "2026-11-20T12:35:00Z",
-     99590.74
+     "2026-11-23T12:35:00Z",
+     97402.6
     ],
     [
-     "2026-11-20T12:40:00Z",
-     99551.82
+     "2026-11-23T12:40:00Z",
+     97402.6
     ],
     [
-     "2026-11-20T12:45:00Z",
-     99526.44
+     "2026-11-23T12:45:00Z",
+     97402.6
     ],
     [
-     "2026-11-20T12:50:00Z",
-     99533.52
+     "2026-11-23T12:50:00Z",
+     97402.6
     ],
     [
-     "2026-11-20T12:55:00Z",
-     99587.21
+     "2026-11-23T12:55:00Z",
+     97402.6
     ],
     [
-     "2026-11-20T13:00:00Z",
-     99531.51
+     "2026-11-23T13:00:00Z",
+     97402.6
     ],
     [
-     "2026-11-20T13:05:00Z",
-     99509.56
+     "2026-11-23T13:05:00Z",
+     97402.6
     ],
     [
-     "2026-11-20T13:10:00Z",
-     99535.88
+     "2026-11-23T13:10:00Z",
+     97402.6
     ],
     [
-     "2026-11-20T13:15:00Z",
-     99507.87
+     "2026-11-23T13:15:00Z",
+     97402.6
     ],
     [
-     "2026-11-20T13:20:00Z",
-     99533.04
+     "2026-11-23T13:20:00Z",
+     97402.6
     ],
     [
-     "2026-11-20T13:25:00Z",
-     99490.43
+     "2026-11-23T13:25:00Z",
+     97402.6
     ],
     [
-     "2026-11-20T13:30:00Z",
-     99485.41
+     "2026-11-23T13:30:00Z",
+     97402.6
     ],
     [
-     "2026-11-20T13:35:00Z",
-     99421.28
+     "2026-11-23T13:35:00Z",
+     97402.6
     ],
     [
-     "2026-11-20T13:40:00Z",
-     99447.95
+     "2026-11-23T13:40:00Z",
+     97402.6
     ],
     [
-     "2026-11-20T13:45:00Z",
-     99499.72
+     "2026-11-23T13:45:00Z",
+     97402.6
     ],
     [
-     "2026-11-20T13:50:00Z",
-     99649.47
+     "2026-11-23T13:50:00Z",
+     97402.6
     ],
     [
-     "2026-11-20T13:55:00Z",
-     99671.92
+     "2026-11-23T13:55:00Z",
+     97402.6
     ],
     [
-     "2026-11-20T14:00:00Z",
-     99733.37
+     "2026-11-23T14:00:00Z",
+     97402.6
     ],
     [
-     "2026-11-20T14:05:00Z",
-     99735.69
+     "2026-11-23T14:05:00Z",
+     97402.6
     ],
     [
-     "2026-11-20T14:10:00Z",
-     99776.4
+     "2026-11-23T14:10:00Z",
+     97402.6
     ],
     [
-     "2026-11-20T14:15:00Z",
-     99775.7
+     "2026-11-23T14:15:00Z",
+     97402.6
     ],
     [
-     "2026-11-20T14:20:00Z",
-     99814.18
+     "2026-11-23T14:20:00Z",
+     97402.6
     ],
     [
-     "2026-11-20T14:25:00Z",
-     99856.86
+     "2026-11-23T14:25:00Z",
+     97402.6
     ],
     [
-     "2026-11-20T14:30:00Z",
-     99866.4
+     "2026-11-23T14:30:00Z",
+     97402.6
     ],
     [
-     "2026-11-20T14:35:00Z",
-     99626.62
+     "2026-11-23T14:35:00Z",
+     97402.6
     ],
     [
-     "2026-11-20T14:40:00Z",
-     99625.6
-    ],
-    [
-     "2026-11-20T14:45:00Z",
-     99562.39
-    ],
-    [
-     "2026-11-20T14:50:00Z",
-     99580.8
-    ],
-    [
-     "2026-11-20T14:55:00Z",
-     99604.04
-    ],
-    [
-     "2026-11-20T15:00:00Z",
-     99619.55
-    ],
-    [
-     "2026-11-20T15:05:00Z",
-     99586.88
-    ],
-    [
-     "2026-11-20T15:10:00Z",
-     99519.8
-    ],
-    [
-     "2026-11-20T15:15:00Z",
-     99460.18
-    ],
-    [
-     "2026-11-20T15:20:00Z",
-     99335.08
-    ],
-    [
-     "2026-11-20T15:25:00Z",
-     99282.62
-    ],
-    [
-     "2026-11-20T15:30:00Z",
-     99282.62
-    ],
-    [
-     "2026-11-20T15:35:00Z",
-     99282.62
-    ],
-    [
-     "2026-11-20T15:40:00Z",
-     99282.62
-    ],
-    [
-     "2026-11-20T15:45:00Z",
-     99282.62
-    ],
-    [
-     "2026-11-20T15:50:00Z",
-     99282.62
-    ],
-    [
-     "2026-11-20T15:55:00Z",
-     99282.62
-    ],
-    [
-     "2026-11-20T16:00:00Z",
-     99282.62
-    ],
-    [
-     "2026-11-20T16:05:00Z",
-     99282.62
-    ],
-    [
-     "2026-11-20T16:10:00Z",
-     99282.62
-    ],
-    [
-     "2026-11-20T16:15:00Z",
-     99282.62
-    ],
-    [
-     "2026-11-20T16:20:00Z",
-     99282.62
-    ],
-    [
-     "2026-11-20T16:25:00Z",
-     99282.62
-    ],
-    [
-     "2026-11-20T16:30:00Z",
-     99282.62
-    ],
-    [
-     "2026-11-20T16:35:00Z",
-     99282.62
-    ],
-    [
-     "2026-11-20T16:40:00Z",
-     99282.62
-    ],
-    [
-     "2026-11-20T16:45:00Z",
-     99282.62
-    ],
-    [
-     "2026-11-20T16:50:00Z",
-     99276.49
-    ],
-    [
-     "2026-11-20T16:55:00Z",
-     99272.4
-    ],
-    [
-     "2026-11-20T17:00:00Z",
-     99316.77
-    ],
-    [
-     "2026-11-20T17:05:00Z",
-     99001.63
-    ],
-    [
-     "2026-11-20T17:10:00Z",
-     99216.62
-    ],
-    [
-     "2026-11-20T17:15:00Z",
-     99192.59
-    ],
-    [
-     "2026-11-20T17:20:00Z",
-     99133.6
-    ],
-    [
-     "2026-11-20T17:25:00Z",
-     99130.59
-    ],
-    [
-     "2026-11-20T17:30:00Z",
-     98990.37
-    ],
-    [
-     "2026-11-20T17:35:00Z",
-     99060.16
-    ],
-    [
-     "2026-11-20T17:40:00Z",
-     98819.05
-    ],
-    [
-     "2026-11-20T17:45:00Z",
-     98856.41
-    ],
-    [
-     "2026-11-20T17:50:00Z",
-     98757.5
-    ],
-    [
-     "2026-11-20T17:55:00Z",
-     98810.39
-    ],
-    [
-     "2026-11-20T18:00:00Z",
-     98866.24
-    ],
-    [
-     "2026-11-20T18:05:00Z",
-     98775.07
-    ],
-    [
-     "2026-11-20T18:10:00Z",
-     98838.98
-    ],
-    [
-     "2026-11-20T18:15:00Z",
-     98737.96
-    ],
-    [
-     "2026-11-20T18:20:00Z",
-     98889.37
-    ],
-    [
-     "2026-11-20T18:25:00Z",
-     98946.56
-    ],
-    [
-     "2026-11-20T18:30:00Z",
-     98812.64
-    ],
-    [
-     "2026-11-20T18:35:00Z",
-     98883.08
-    ],
-    [
-     "2026-11-20T18:40:00Z",
-     98938.11
-    ],
-    [
-     "2026-11-20T18:45:00Z",
-     98820.59
-    ],
-    [
-     "2026-11-20T18:50:00Z",
-     98800.85
-    ],
-    [
-     "2026-11-20T18:55:00Z",
-     98986.76
-    ],
-    [
-     "2026-11-20T19:00:00Z",
-     99091.01
-    ],
-    [
-     "2026-11-20T19:05:00Z",
-     98944.98
-    ],
-    [
-     "2026-11-20T19:10:00Z",
-     98871.26
-    ],
-    [
-     "2026-11-20T19:15:00Z",
-     98696.68
-    ],
-    [
-     "2026-11-20T19:20:00Z",
-     98683.04
-    ],
-    [
-     "2026-11-20T19:25:00Z",
-     98618.58
-    ],
-    [
-     "2026-11-20T19:30:00Z",
-     98495.58
-    ],
-    [
-     "2026-11-20T19:35:00Z",
-     98331.11
-    ],
-    [
-     "2026-11-20T19:40:00Z",
-     98591.87
-    ],
-    [
-     "2026-11-20T19:45:00Z",
-     98570.17
-    ],
-    [
-     "2026-11-20T19:50:00Z",
-     98549.41
-    ],
-    [
-     "2026-11-20T19:55:00Z",
-     98418.69
-    ],
-    [
-     "2026-11-20T20:00:00Z",
-     98325.87
-    ],
-    [
-     "2026-11-20T20:05:00Z",
-     98167.58
-    ],
-    [
-     "2026-11-20T20:10:00Z",
-     98234.36
-    ],
-    [
-     "2026-11-20T20:15:00Z",
-     98182.69
-    ],
-    [
-     "2026-11-20T20:20:00Z",
-     98285.34
-    ],
-    [
-     "2026-11-20T20:25:00Z",
-     98147.74
-    ],
-    [
-     "2026-11-20T20:30:00Z",
-     98074.8
-    ],
-    [
-     "2026-11-20T20:35:00Z",
-     97890.43
-    ],
-    [
-     "2026-11-20T20:40:00Z",
-     97972.66
-    ],
-    [
-     "2026-11-20T20:45:00Z",
-     97711.24
-    ],
-    [
-     "2026-11-20T20:50:00Z",
-     98001.98
-    ],
-    [
-     "2026-11-20T20:55:00Z",
-     97724.08
-    ],
-    [
-     "2026-11-20T21:00:00Z",
-     97404.01
-    ],
-    [
-     "2026-11-20T21:05:00Z",
-     97404.01
-    ],
-    [
-     "2026-11-20T21:10:00Z",
-     97404.01
-    ],
-    [
-     "2026-11-20T21:15:00Z",
-     97404.01
-    ],
-    [
-     "2026-11-20T21:20:00Z",
-     97404.01
-    ],
-    [
-     "2026-11-20T21:25:00Z",
-     97404.01
-    ],
-    [
-     "2026-11-20T21:30:00Z",
-     97404.01
-    ],
-    [
-     "2026-11-20T21:35:00Z",
-     97404.01
-    ],
-    [
-     "2026-11-20T21:40:00Z",
-     97404.01
-    ],
-    [
-     "2026-11-20T21:45:00Z",
-     97404.01
-    ],
-    [
-     "2026-11-20T21:50:00Z",
-     97404.01
-    ],
-    [
-     "2026-11-20T21:55:00Z",
-     97404.01
-    ],
-    [
-     "2026-11-20T22:00:00Z",
-     97404.01
-    ],
-    [
-     "2026-11-20T22:05:00Z",
-     97404.01
-    ],
-    [
-     "2026-11-20T22:10:00Z",
-     97404.01
-    ],
-    [
-     "2026-11-20T22:15:00Z",
-     97404.01
-    ],
-    [
-     "2026-11-20T22:20:00Z",
-     97404.01
-    ],
-    [
-     "2026-11-20T22:25:00Z",
-     97404.01
-    ],
-    [
-     "2026-11-20T22:30:00Z",
-     97404.01
-    ],
-    [
-     "2026-11-20T22:35:00Z",
-     97404.01
-    ],
-    [
-     "2026-11-20T22:40:00Z",
-     97404.01
-    ],
-    [
-     "2026-11-20T22:45:00Z",
-     97404.01
-    ],
-    [
-     "2026-11-20T22:50:00Z",
-     97404.01
-    ],
-    [
-     "2026-11-20T22:55:00Z",
-     97404.01
-    ],
-    [
-     "2026-11-20T23:00:00Z",
-     97404.01
-    ],
-    [
-     "2026-11-20T23:05:00Z",
-     97404.01
-    ],
-    [
-     "2026-11-20T23:10:00Z",
-     97404.01
-    ],
-    [
-     "2026-11-20T23:15:00Z",
-     97404.01
-    ],
-    [
-     "2026-11-20T23:20:00Z",
-     97404.01
-    ],
-    [
-     "2026-11-20T23:25:00Z",
-     97404.01
-    ],
-    [
-     "2026-11-20T23:30:00Z",
-     97404.01
-    ],
-    [
-     "2026-11-20T23:35:00Z",
-     97404.01
-    ],
-    [
-     "2026-11-20T23:40:00Z",
-     97404.01
-    ],
-    [
-     "2026-11-20T23:45:00Z",
-     97404.01
-    ],
-    [
-     "2026-11-20T23:50:00Z",
-     97404.01
-    ],
-    [
-     "2026-11-20T23:55:00Z",
-     97404.01
-    ],
-    [
-     "2026-11-21T00:00:00Z",
-     97404.01
-    ],
-    [
-     "2026-11-21T00:05:00Z",
-     97404.01
-    ],
-    [
-     "2026-11-21T00:10:00Z",
-     97404.01
-    ],
-    [
-     "2026-11-21T00:15:00Z",
-     97404.01
-    ],
-    [
-     "2026-11-21T00:20:00Z",
-     97404.01
-    ],
-    [
-     "2026-11-21T00:25:00Z",
-     97404.01
-    ],
-    [
-     "2026-11-21T00:30:00Z",
-     97404.01
-    ],
-    [
-     "2026-11-21T00:35:00Z",
-     97404.01
-    ],
-    [
-     "2026-11-21T00:40:00Z",
-     97404.01
-    ],
-    [
-     "2026-11-21T00:45:00Z",
-     97404.01
-    ],
-    [
-     "2026-11-21T00:50:00Z",
-     97404.01
-    ],
-    [
-     "2026-11-21T00:55:00Z",
-     97404.01
-    ],
-    [
-     "2026-11-21T01:00:00Z",
-     97404.01
+     "2026-11-23T14:40:00Z",
+     97402.6
     ]
    ],
    "1W": [
-    [
-     "2026-11-13T09:00:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-13T09:15:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-13T09:30:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-13T09:45:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-13T10:00:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-13T10:15:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-13T10:30:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-13T10:45:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-13T11:00:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-13T11:15:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-13T11:30:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-13T11:45:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-13T12:00:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-13T12:15:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-13T12:30:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-13T12:45:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-13T13:00:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-13T13:15:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-13T13:30:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-13T13:45:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-13T14:00:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-13T14:15:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-13T14:30:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-13T14:45:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-13T15:00:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-13T15:15:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-13T15:30:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-13T15:45:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-13T16:00:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-13T16:15:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-13T16:30:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-13T16:45:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-13T17:00:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-13T17:15:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-13T17:30:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-13T17:45:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-13T18:00:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-13T18:15:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-13T18:30:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-13T18:45:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-13T19:00:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-13T19:15:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-13T19:30:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-13T19:45:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-13T20:00:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-13T20:15:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-13T20:30:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-13T20:45:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-13T21:00:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-13T21:15:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-13T21:30:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-13T21:45:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-13T22:00:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-13T22:15:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-13T22:30:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-13T22:45:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-13T23:00:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-13T23:15:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-13T23:30:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-13T23:45:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-14T00:00:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-14T00:15:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-14T00:30:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-14T00:45:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-14T01:00:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-16T09:00:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-16T09:15:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-16T09:30:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-16T09:45:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-16T10:00:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-16T10:15:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-16T10:30:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-16T10:45:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-16T11:00:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-16T11:15:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-16T11:30:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-16T11:45:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-16T12:00:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-16T12:15:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-16T12:30:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-16T12:45:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-16T13:00:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-16T13:15:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-16T13:30:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-16T13:45:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-16T14:00:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-16T14:15:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-16T14:30:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-16T14:45:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-16T15:00:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-16T15:15:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-16T15:30:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-16T15:45:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-16T16:00:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-16T16:15:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-16T16:30:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-16T16:45:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-16T17:00:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-16T17:15:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-16T17:30:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-16T17:45:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-16T18:00:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-16T18:15:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-16T18:30:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-16T18:45:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-16T19:00:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-16T19:15:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-16T19:30:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-16T19:45:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-16T20:00:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-16T20:15:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-16T20:30:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-16T20:45:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-16T21:00:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-16T21:15:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-16T21:30:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-16T21:45:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-16T22:00:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-16T22:15:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-16T22:30:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-16T22:45:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-16T23:00:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-16T23:15:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-16T23:30:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-16T23:45:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-17T00:00:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-17T00:15:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-17T00:30:00Z",
-     100000.0
-    ],
-    [
-     "2026-11-17T00:45:00Z",
-     99985.02
-    ],
-    [
-     "2026-11-17T01:00:00Z",
-     99982.65
-    ],
     [
      "2026-11-17T09:00:00Z",
      100045.87
@@ -3225,10 +2282,232 @@
     [
      "2026-11-21T01:00:00Z",
      97404.01
+    ],
+    [
+     "2026-11-23T09:00:00Z",
+     97402.6
+    ],
+    [
+     "2026-11-23T09:15:00Z",
+     97402.6
+    ],
+    [
+     "2026-11-23T09:30:00Z",
+     97402.6
+    ],
+    [
+     "2026-11-23T09:45:00Z",
+     97402.6
+    ],
+    [
+     "2026-11-23T10:00:00Z",
+     97402.6
+    ],
+    [
+     "2026-11-23T10:15:00Z",
+     97402.6
+    ],
+    [
+     "2026-11-23T10:30:00Z",
+     97402.6
+    ],
+    [
+     "2026-11-23T10:45:00Z",
+     97402.6
+    ],
+    [
+     "2026-11-23T11:00:00Z",
+     97402.6
+    ],
+    [
+     "2026-11-23T11:15:00Z",
+     97402.6
+    ],
+    [
+     "2026-11-23T11:30:00Z",
+     97402.6
+    ],
+    [
+     "2026-11-23T11:45:00Z",
+     97402.6
+    ],
+    [
+     "2026-11-23T12:00:00Z",
+     97402.6
+    ],
+    [
+     "2026-11-23T12:15:00Z",
+     97402.6
+    ],
+    [
+     "2026-11-23T12:30:00Z",
+     97402.6
+    ],
+    [
+     "2026-11-23T12:45:00Z",
+     97402.6
+    ],
+    [
+     "2026-11-23T13:00:00Z",
+     97402.6
+    ],
+    [
+     "2026-11-23T13:15:00Z",
+     97402.6
+    ],
+    [
+     "2026-11-23T13:30:00Z",
+     97402.6
+    ],
+    [
+     "2026-11-23T13:45:00Z",
+     97402.6
+    ],
+    [
+     "2026-11-23T14:00:00Z",
+     97402.6
+    ],
+    [
+     "2026-11-23T14:15:00Z",
+     97402.6
+    ],
+    [
+     "2026-11-23T14:30:00Z",
+     97402.6
     ]
    ]
   },
-  "holdings": {}
+  "holdings": {
+   "CRWD": {
+    "bars": [
+     [
+      "2026-11-20T14:45:00Z",
+      232.87
+     ],
+     [
+      "2026-11-20T15:00:00Z",
+      233.87
+     ],
+     [
+      "2026-11-20T15:15:00Z",
+      232.775
+     ],
+     [
+      "2026-11-20T15:30:00Z",
+      231.84
+     ],
+     [
+      "2026-11-20T15:45:00Z",
+      232.595
+     ],
+     [
+      "2026-11-20T16:00:00Z",
+      234.87
+     ],
+     [
+      "2026-11-20T16:15:00Z",
+      232.92
+     ],
+     [
+      "2026-11-20T16:30:00Z",
+      231.61
+     ],
+     [
+      "2026-11-20T16:45:00Z",
+      231.99
+     ],
+     [
+      "2026-11-20T17:00:00Z",
+      230.95
+     ],
+     [
+      "2026-11-20T17:15:00Z",
+      231.955
+     ],
+     [
+      "2026-11-20T17:30:00Z",
+      233.21
+     ],
+     [
+      "2026-11-20T17:45:00Z",
+      233.63
+     ],
+     [
+      "2026-11-20T18:00:00Z",
+      231.75
+     ],
+     [
+      "2026-11-20T18:15:00Z",
+      232.64
+     ],
+     [
+      "2026-11-20T18:30:00Z",
+      231.595
+     ],
+     [
+      "2026-11-20T18:45:00Z",
+      233.37
+     ],
+     [
+      "2026-11-20T19:00:00Z",
+      230.61
+     ],
+     [
+      "2026-11-20T19:15:00Z",
+      230.15
+     ],
+     [
+      "2026-11-20T19:30:00Z",
+      228.89
+     ],
+     [
+      "2026-11-20T19:45:00Z",
+      228.83
+     ],
+     [
+      "2026-11-20T20:00:00Z",
+      229.36
+     ],
+     [
+      "2026-11-20T20:15:00Z",
+      228.11
+     ],
+     [
+      "2026-11-20T20:30:00Z",
+      228.12
+     ],
+     [
+      "2026-11-20T20:45:00Z",
+      229.525
+     ],
+     [
+      "2026-11-20T21:00:00Z",
+      201.51
+     ],
+     [
+      "2026-11-20T21:30:00Z",
+      209.99
+     ],
+     [
+      "2026-11-20T21:45:00Z",
+      209.38
+     ],
+     [
+      "2026-11-23T14:00:00Z",
+      216.52
+     ],
+     [
+      "2026-11-23T14:30:00Z",
+      209.145
+     ]
+    ],
+    "entry": 209.7,
+    "stop": 203.41,
+    "target": 222.28,
+    "openedAt": "2026-11-23T14:41:15Z",
+    "qty": 232
+   }
+  }
  },
  "coach": {
   "updatedAt": "2026-11-21T04:11:37Z",
@@ -3300,6 +2579,75 @@
   }
  },
  "trades": [
+  {
+   "id": "ahq-CRWD-20261123144115",
+   "symbol": "CRWD",
+   "asset": "stock",
+   "status": "pending",
+   "entryOrderId": "e5a3c1db-42cb-4e41-8954-e1cb1e317145",
+   "qty": 232,
+   "cost": 48650.4,
+   "estPrice": 209.7,
+   "entryPrice": 209.7,
+   "stop": 203.41,
+   "target": 222.28,
+   "openedAt": "2026-11-23T14:41:15Z",
+   "news": {
+    "summary": "CrowdStrike Holdings reports an earnings beat and revenue outperformance.",
+    "category": "contract",
+    "sources": [
+     {
+      "publisher": "Yahoo Finance",
+      "title": "CrowdStrike Agrees To Buy Zscaler For $43.9 Billion. Shares Move In Opposite Directions.",
+      "url": "https://www.ibtimes.com/crowdstrike-acquire-zscaler-43-9-billion-deal-3810075?.tsrc=rss"
+     },
+     {
+      "publisher": "GuruFocus",
+      "title": "Zscaler (ZS) Q1 Earnings Beat Expectations, Shares Rise Amid Cro",
+      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNUllsd1h4c3dzQkFUZjhzUXF5WklQeUtCNUtjbGN1a3ppd214cVRsdlJRUklIdDZJQWRZeFlXUEN3MFdCZ3g5ZEIyZkpLTk84RW1YdUZHNHhTenJiemJpdHdISE1vQ1RoT2Z6M1Jvdi1CYTY3c3BPZWp6NVJtOGJzT3E2SnFlSU5qSlBYM3h3eDdCdU5leU00dHdvYXFOQnA2UjF3c0o5eUZwbHhQR3VCOUh5OXVIc01RSFE?oc=5"
+     },
+     {
+      "publisher": "Yahoo Finance",
+      "title": "CrowdStrike to Buy Zscaler in $44 Billion All-Stock Deal. Why They’re Better Off Together.",
+      "url": "https://finance.yahoo.com/m/c15198fc-46aa-317e-ad7d-cc5e670695f9/crowdstrike-to-buy-zscaler-in.html?.tsrc=rss"
+     },
+     {
+      "publisher": "TradingView",
+      "title": "Zscaler Q1 Revenue Rises 20% as CrowdStrike Acquisition Agreement Announced",
+      "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxPSm9PT2FYaFpza2lIemNhakYtSkhqUlRITmdwOVR5ejdpZkdyQU9HUDRFVGsxUkRWYnpDYVdNakZtUXA0Wm4xYnNpV2NNU1lXSHpxdVh6RUZXTmNJNm9xcnBoVE1qSFhmeVE5YlVCM2d6M3NBZVFYWW50N29EWGVGY3A1WHVhbF9hZTlHajBFZUYwV1owbU11X0swbnRTSzZfTHNvaVM0bGViOHZkZmE5QUNwOWE1VVRZYmRkdFNqbnd1TnVib0x4eDhWQW9Nd09NNXc?oc=5"
+     },
+     {
+      "publisher": "AP",
+      "title": "Crowdstrike to acquire Zscaler in a $44 billion deal that would create a cybersecurity giant",
+      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQekFodWNTV2dTaVZ6VDJScmUybjJ3QXRURFJjeVNtQVBmOEJkYUZTNnFlMnNKalRWdFdXOWVwTjg1TFU3THJIOU9hSXNtSXZCczVaT0xDYnNKUEJUYXFXbVpTUkhTNWRFb3VIa1RDcHdOMzB4ZVV4cTZ6STBQZ2RWLWNPT2U1RGRHYjIxNEZ1QlFXQXZJMDhJeHdDLUFUc2tSUjJoejc1dGhzTWtkUS1Hb3V1V1hKbXplV3J2Zw?oc=5"
+     },
+     {
+      "publisher": "Yahoo Finance",
+      "title": "CrowdStrike Holdings (CRWD) Agreed $44 Billion All Stock Cybersecurity Deal",
+      "url": "https://finance.yahoo.com/technology/ai/articles/crowdstrike-holdings-crwd-agreed-44-131349393.html?.tsrc=rss"
+     }
+    ]
+   },
+   "reason": {
+    "triage": "CrowdStrike beat earnings and revenue estimates, signalling strong financial health.",
+    "confidence": 0.85,
+    "confirmation": "volume 5.3x normal, price -3.41% since the news",
+    "rvol": 5.33,
+    "movePct": -3.41,
+    "publishers": [
+     "AP",
+     "GuruFocus",
+     "Investing.com",
+     "Investing.com India",
+     "Investing.com Nigeria",
+     "TradingView",
+     "Yahoo Finance",
+     "شبكة تواصل الإخبارية"
+    ],
+    "tradingAgents": "not used (ultra mode)",
+    "taSummary": ""
+   }
+  },
   {
    "id": "ahq-INTC-20261120193710",
    "symbol": "INTC",
@@ -4106,6 +3454,48 @@
  ],
  "decisions": [
   {
+   "t": "2026-11-23T14:41:16Z",
+   "symbol": "AVAV",
+   "outcome": "error",
+   "why": "order failed: not enough cash for one share",
+   "event": "Oil prices decline below $83 as a surplus outlook and broader equity selloffs outweigh ongoing Middle East supply tensions."
+  },
+  {
+   "t": "2026-11-23T14:41:16Z",
+   "symbol": "AMAT",
+   "outcome": "error",
+   "why": "order failed: not enough cash for one share",
+   "event": "Applied Materials reports an earnings beat and provides strong guidance, signaling positive momentum for the semiconductor equipment sector."
+  },
+  {
+   "t": "2026-11-23T14:41:16Z",
+   "symbol": "COP",
+   "outcome": "error",
+   "why": "order failed: not enough cash for one share",
+   "event": "ConocoPhillips sells its Norway and Teesside assets to Vår Energi for $4.4 billion to fund future buybacks."
+  },
+  {
+   "t": "2026-11-23T14:41:16Z",
+   "symbol": "PLTR",
+   "outcome": "error",
+   "why": "order failed: not enough cash for one share",
+   "event": "Oil prices decline below $83 as a surplus outlook and broader equity selloffs outweigh ongoing Middle East supply tensions."
+  },
+  {
+   "t": "2026-11-23T14:41:15Z",
+   "symbol": "COP",
+   "outcome": "error",
+   "why": "order failed: not enough cash for one share",
+   "event": "Oil prices decline below $83 as a surplus outlook and broader equity selloffs outweigh ongoing Middle East supply tensions."
+  },
+  {
+   "t": "2026-11-23T14:41:15Z",
+   "symbol": "CRWD",
+   "outcome": "bought",
+   "why": "volume 5.3x normal, price -3.41% since the news; TradingAgents: not used (ultra mode)",
+   "event": "CrowdStrike Holdings reports an earnings beat and revenue outperformance."
+  },
+  {
    "t": "2026-11-20T19:37:10Z",
    "symbol": "MSFT",
    "outcome": "error",
@@ -4482,161 +3872,9 @@
    "outcome": "waiting",
    "why": "already $49,191 invested (max 50% of $98,848)",
    "event": "Russian missiles landing on Polish territory escalate geopolitical tensions with NATO."
-  },
-  {
-   "t": "2026-11-20T16:58:57Z",
-   "symbol": "AVAV",
-   "outcome": "bought",
-   "why": "volume 1.1x normal, price -1.63% since the news; TradingAgents: not used (ultra mode)",
-   "event": "European leaders condemn Russian missiles landing in Poland as an intentional provocation, raising geopolitical tensions."
-  },
-  {
-   "t": "2026-11-20T16:48:34Z",
-   "symbol": "NEM",
-   "outcome": "bought",
-   "why": "volume 1.3x normal, price -0.52% since the news; TradingAgents: not used (ultra mode)",
-   "event": "European leaders condemn an intentional Russian missile provocation as it hits Poland, raising geopolitical tensions."
-  },
-  {
-   "t": "2026-11-19T20:32:45Z",
-   "symbol": "BTC/USD",
-   "outcome": "bought",
-   "why": "volume 2.0x normal, price -1.43% since the news; TradingAgents: not used (ultra mode)",
-   "event": "Anthropic's massive IPO debut tops a $2 trillion valuation, lifting broader crypto and tech sentiment."
-  },
-  {
-   "t": "2026-11-19T17:40:39Z",
-   "symbol": "AVGO",
-   "outcome": "bought",
-   "why": "volume 0.7x normal, price -1.26% since the news; TradingAgents: not used (ultra mode)",
-   "event": "Broadcom and AMD see shares rise following major supplier and investment deals tied to Anthropic's massive IPO."
-  },
-  {
-   "t": "2026-11-19T17:40:38Z",
-   "symbol": "AMD",
-   "outcome": "bought",
-   "why": "volume 2.3x normal, price -0.45% since the news; TradingAgents: not used (ultra mode)",
-   "event": "Broadcom and AMD see shares rise following major supplier and investment deals tied to Anthropic's massive IPO."
-  },
-  {
-   "t": "2026-11-19T17:06:32Z",
-   "symbol": "NVDA",
-   "outcome": "bought",
-   "why": "volume 0.6x normal, price -2.15% since the news; TradingAgents: not used (ultra mode)",
-   "event": "Anthropic's massive IPO and significant private placement investments from major tech firms signal strong capital allocation into AI infrastructure."
   }
  ],
  "equity": [
-  {
-   "t": "2026-11-14T13:26:26Z",
-   "equity": 100000.0,
-   "spy": 752.09
-  },
-  {
-   "t": "2026-11-14T13:56:38Z",
-   "equity": 100000.0,
-   "spy": 752.09
-  },
-  {
-   "t": "2026-11-14T14:26:59Z",
-   "equity": 100000.0,
-   "spy": 752.09
-  },
-  {
-   "t": "2026-11-14T14:57:21Z",
-   "equity": 100000.0,
-   "spy": 752.09
-  },
-  {
-   "t": "2026-11-14T15:27:35Z",
-   "equity": 100000.0,
-   "spy": 752.09
-  },
-  {
-   "t": "2026-11-14T15:57:47Z",
-   "equity": 100000.0,
-   "spy": 752.09
-  },
-  {
-   "t": "2026-11-14T16:27:58Z",
-   "equity": 100000.0,
-   "spy": 752.09
-  },
-  {
-   "t": "2026-11-14T16:58:09Z",
-   "equity": 100000.0,
-   "spy": 752.09
-  },
-  {
-   "t": "2026-11-14T17:28:22Z",
-   "equity": 100000.0,
-   "spy": 752.09
-  },
-  {
-   "t": "2026-11-14T17:58:35Z",
-   "equity": 100000.0,
-   "spy": 752.09
-  },
-  {
-   "t": "2026-11-14T18:28:46Z",
-   "equity": 100000.0,
-   "spy": 752.09
-  },
-  {
-   "t": "2026-11-14T18:59:01Z",
-   "equity": 100000.0,
-   "spy": 752.09
-  },
-  {
-   "t": "2026-11-14T19:29:13Z",
-   "equity": 100000.0,
-   "spy": 752.09
-  },
-  {
-   "t": "2026-11-14T19:59:24Z",
-   "equity": 100000.0,
-   "spy": 752.09
-  },
-  {
-   "t": "2026-11-14T20:29:36Z",
-   "equity": 100000.0,
-   "spy": 752.09
-  },
-  {
-   "t": "2026-11-14T20:59:46Z",
-   "equity": 100000.0,
-   "spy": 752.09
-  },
-  {
-   "t": "2026-11-14T21:29:59Z",
-   "equity": 100000.0,
-   "spy": 752.09
-  },
-  {
-   "t": "2026-11-14T22:00:10Z",
-   "equity": 100000.0,
-   "spy": 752.09
-  },
-  {
-   "t": "2026-11-14T22:30:23Z",
-   "equity": 100000.0,
-   "spy": 752.09
-  },
-  {
-   "t": "2026-11-14T23:00:34Z",
-   "equity": 100000.0,
-   "spy": 752.09
-  },
-  {
-   "t": "2026-11-14T23:30:44Z",
-   "equity": 100000.0,
-   "spy": 752.09
-  },
-  {
-   "t": "2026-11-15T00:00:56Z",
-   "equity": 100000.0,
-   "spy": 752.09
-  },
   {
    "t": "2026-11-15T00:31:06Z",
    "equity": 100000.0,
@@ -6526,6 +5764,116 @@
    "t": "2026-11-23T02:43:53Z",
    "equity": 97402.6,
    "spy": 693.89
+  },
+  {
+   "t": "2026-11-23T03:23:54Z",
+   "equity": 97402.6,
+   "spy": 693.89
+  },
+  {
+   "t": "2026-11-23T03:54:08Z",
+   "equity": 97402.6,
+   "spy": 693.89
+  },
+  {
+   "t": "2026-11-23T04:24:21Z",
+   "equity": 97402.6,
+   "spy": 693.89
+  },
+  {
+   "t": "2026-11-23T04:54:33Z",
+   "equity": 97402.6,
+   "spy": 693.89
+  },
+  {
+   "t": "2026-11-23T05:24:47Z",
+   "equity": 97402.6,
+   "spy": 693.89
+  },
+  {
+   "t": "2026-11-23T05:54:59Z",
+   "equity": 97402.6,
+   "spy": 693.89
+  },
+  {
+   "t": "2026-11-23T06:25:12Z",
+   "equity": 97402.6,
+   "spy": 693.89
+  },
+  {
+   "t": "2026-11-23T06:55:25Z",
+   "equity": 97402.6,
+   "spy": 693.89
+  },
+  {
+   "t": "2026-11-23T07:25:39Z",
+   "equity": 97402.6,
+   "spy": 693.89
+  },
+  {
+   "t": "2026-11-23T07:55:53Z",
+   "equity": 97402.6,
+   "spy": 693.89
+  },
+  {
+   "t": "2026-11-23T08:26:14Z",
+   "equity": 97402.6,
+   "spy": 693.89
+  },
+  {
+   "t": "2026-11-23T08:56:27Z",
+   "equity": 97402.6,
+   "spy": 693.89
+  },
+  {
+   "t": "2026-11-23T09:26:40Z",
+   "equity": 97402.6,
+   "spy": 693.89
+  },
+  {
+   "t": "2026-11-23T09:56:52Z",
+   "equity": 97402.6,
+   "spy": 693.89
+  },
+  {
+   "t": "2026-11-23T10:27:45Z",
+   "equity": 97402.6,
+   "spy": 693.89
+  },
+  {
+   "t": "2026-11-23T10:58:01Z",
+   "equity": 97402.6,
+   "spy": 693.89
+  },
+  {
+   "t": "2026-11-23T11:28:17Z",
+   "equity": 97402.6,
+   "spy": 693.89
+  },
+  {
+   "t": "2026-11-23T11:58:47Z",
+   "equity": 97402.6,
+   "spy": 693.89
+  },
+  {
+   "t": "2026-11-23T12:29:22Z",
+   "equity": 97402.6,
+   "spy": 693.89
+  },
+  {
+   "t": "2026-11-23T12:59:37Z",
+   "equity": 97402.6,
+   "spy": 693.89
+  },
+  {
+   "t": "2026-11-23T13:40:24Z",
+   "equity": 97402.6,
+   "spy": 707.52
+  },
+  {
+   "t": "2026-11-23T14:16:10Z",
+   "equity": 97402.6,
+   "spy": 719.67
   }
  ],
  "watch": [],
@@ -6537,1303 +5885,366 @@
  },
  "events": [
   {
-   "summary": "Yemen Houthis claim strikes on Saudi Arabia's Rabigh oil refinery and radar facility, escalating Middle East supply disruption risks.",
-   "category": "war_escalation",
-   "firstSeen": "2026-11-10T20:01:23Z",
+   "summary": "Nvidia's Board of Directors has unanimously reinstated Jensen Huang as President and CEO.",
+   "category": "company_bad_news",
+   "firstSeen": "2026-11-12T18:24:33Z",
    "publishers": [
-    "1470 & 100.3 WMBD",
-    "1News",
-    "24 News HD",
-    "24NewsHD",
-    "790 KABC",
-    "7NEWS",
-    "8AM Media",
-    "930 WFMD Free Talk",
-    "964media",
-    "A News",
-    "ABC Columbia",
-    "ABC News - Breaking News, Latest News and Videos",
-    "ABC7 WWSB",
-    "ABNA English",
-    "ABP Live English",
-    "ABS-CBN",
-    "ANI News",
-    "ANSA",
-    "AOL.co.uk",
-    "AOL.com",
+    "AFR",
     "AP",
-    "ARN News Centre",
-    "ARYnews.tv",
-    "ASHARQ AL-AWSAT English",
-    "AZ Family",
-    "Aaj English TV",
-    "Ada Derana",
-    "Admirals",
-    "AgroLatam",
-    "Ahram Online",
-    "Air Data News",
-    "Aktualita.co",
-    "Al Arabiya English",
-    "Al Jazeera",
-    "Al-Bawaba",
-    "Al-Monitor",
-    "Albanian Daily News",
-    "American Journal of Transportation",
-    "Ammon News",
     "Anadolu Ajansı",
-    "Anchorage Daily News",
-    "Antiwar.com",
-    "Apa.az",
-    "Arab News",
-    "Arab News PK",
-    "Arab Times Kuwait News",
-    "Arabian Business",
-    "Arabian Gulf Business Insight | AGBI",
-    "Arbiterz",
-    "Arise News",
-    "Armenpress",
-    "Army Recognition",
-    "Asia Insurance Post",
-    "AsiaOne.com",
-    "Atlanta News First",
-    "Audacy",
-    "Awaz The Voice",
-    "Axios",
-    "AzerNews",
-    "Azərtac",
-    "BBC",
-    "BGNES",
-    "Baird Maritime",
-    "Baku.ws",
-    "Baltic News Network",
-    "Bangladesh Sangbad Sangstha (BSS)",
-    "Bankingnews",
     "Barchart.com",
-    "Beaumont Enterprise",
-    "Belaaz",
-    "Benzinga",
-    "Bicester Advertiser",
-    "Big News Network.com",
-    "BigGo Finance",
-    "Bilyonaryo Business",
-    "BizPac Review",
-    "Blockonomi",
-    "Bloom Pakistan",
-    "Bloomberg.com",
-    "Bol News",
-    "Borneo Bulletin",
-    "Boston 25 News",
-    "Boston Herald",
-    "BreakingNews.ie",
-    "Breakingthenews.net",
-    "Breitbart News",
-    "Business Day",
-    "Business Post Nigeria",
-    "Business Recorder",
-    "Business Standard",
-    "Business Today",
-    "Business Upturn",
-    "BusinessGreen",
-    "BusinessLine",
-    "BusinessToday Malaysia",
-    "BusinessWorld Online",
-    "C-SPAN",
-    "CBC",
-    "CBN.com",
-    "CBS News",
-    "CGTN",
-    "CNA",
-    "CNBC",
-    "CNBC TV18",
-    "CNN",
-    "CP24",
-    "CTPost",
-    "CTV News",
-    "Caledonian Record",
-    "Caspian Post",
-    "Central Oregon Daily",
-    "Channels Television",
-    "Charisma Magazine Online",
-    "Chicago Tribune",
-    "China Daily Global Edition",
-    "Chosunbiz",
-    "Chronicle NG",
-    "Citizen Digital",
-    "City AM",
-    "CityNews Halifax",
-    "CityNews Winnipeg",
-    "Cityairnews",
-    "Clarion India",
-    "Click2Houston",
-    "ClickOnDetroit | WDIV Local 4",
-    "Coinpedia",
-    "Common Dreams",
-    "Connected to India",
-    "Construction Review",
-    "Construction World",
-    "Crude Oil Prices Today | OilPrice.com",
-    "Crypto Briefing",
-    "Cyprus Mail",
-    "DD India",
-    "DD News",
-    "DNA India",
-    "DRGNews",
-    "Daijiworld",
-    "Daily Beirut",
-    "Daily Excelsior",
-    "Daily Express",
-    "Daily Lead Pakistan",
-    "Daily Mail",
-    "Daily Mirror - Sri Lanka",
-    "Daily News-Record",
-    "Daily Observer",
-    "Daily Pakistan",
-    "Daily Pioneer",
-    "Daily Post Nigeria",
-    "Daily Sun",
-    "Daily Times",
-    "Daily Trust",
-    "Daily Voice Of Asia",
-    "Dainik Jagran MP CG",
-    "Dawn",
-    "Deccan Chronicle",
-    "Deccan Herald",
-    "Defense Express",
-    "Democracy Now!",
-    "Demokratis.co.id",
-    "Demócrata",
-    "Dhaka Tribune",
-    "Dimsum Daily",
-    "Drop Site News",
-    "Dubai Eye 103.8",
-    "Durango Herald",
-    "EA WorldView",
-    "ETV Bharat",
-    "Eagle-Tribune",
-    "Egypt Today",
-    "Egyptian Gazette",
-    "Energy Intelligence",
-    "EnergyNow.com",
-    "Enidnews.com",
-    "Eurasia Review",
-    "Euromaidan Press",
-    "Euronews",
-    "Euronews.com",
-    "Euronext Markets: Real-time Stock Market Data | live",
-    "FOX 5 DC",
-    "FOX Carolina News",
-    "FOX19 | Cincinnati",
-    "FT",
-    "FXDailyReport.Com",
-    "FXEmpire",
-    "FXStreet",
-    "Facebook",
-    "Fars News Agency",
-    "Fast Company",
-    "Female First",
-    "Fenland Citizen",
-    "FinanceFeeds",
-    "Firstpost",
-    "Foej Media",
-    "Forbes",
-    "Forbes Middle East",
-    "Foreign Policy Journal",
-    "Forth.News",
-    "Fortune",
-    "Fortune India",
-    "Fox News",
-    "France 24",
-    "Free Malaysia Today",
-    "Free Press Journal",
-    "GPblog",
-    "GV Wire",
-    "Global Banking & Finance Review",
-    "Global News",
-    "Goshen News",
-    "Greater Kashmir",
-    "Gujarat Samachar",
-    "Gulf Business",
-    "Gulf Daily News (Bahrain)",
-    "Gulf News",
-    "Gulf Today",
-    "GuruFocus",
-    "HDFC Sky",
-    "Haaretz",
-    "Haberler.com",
-    "Hagadone News Network",
-    "Hamariweb.com",
-    "Hamro Patro",
-    "Hart Energy",
-    "Hawaii News Now",
-    "Head Topics",
-    "Heartlander News",
-    "Henry Herald",
-    "Hilton Head Island Packet",
-    "Hindustan Times",
-    "Hiru News",
-    "Hokanews",
-    "Honolulu Star-Advertiser",
-    "Hoodline",
-    "HotAir",
-    "Howl.Link",
-    "Hum News English",
-    "Hunter Valley News",
-    "IANS LIVE",
-    "IBTimes India",
-    "IFCJ",
-    "ILoveQatar.net",
-    "INDIA New England News",
-    "ISNA News Agency",
-    "Il Sole 24 ORE",
-    "India TV News",
-    "India Today",
-    "India Tribune - Chicago",
-    "India.com",
-    "Indian PSU",
-    "Informat.ro",
-    "Inquirer.net",
-    "Inquisitr",
-    "Inshorts",
-    "Insurance Day",
-    "Insurance Journal",
-    "IntelliNews",
-    "Interesting Engineering",
-    "Interfax-Ukraine",
-    "International Business Times",
-    "Internazionale",
-    "Investify",
-    "Investing.com",
-    "Investing.com Australia",
-    "Investing.com Canada",
-    "Investing.com India",
-    "Investing.com Nigeria",
-    "Investing.com South Africa",
-    "Invezz",
-    "Iran International",
-    "IranWire",
-    "Irish Independent",
-    "Iron Mountain Daily News",
-    "Islamabad Post",
-    "Israel Hayom",
-    "Israel National News",
-    "JC Post",
-    "JFeed",
-    "JNS.org",
-    "Japan Today",
-    "Jewish Insider",
-    "Jordan News",
-    "JournalArta",
-    "Just The News",
-    "KBOI",
-    "KCTV",
-    "KELO-AM",
-    "KIMT",
-    "KLSE Screener",
-    "KMBC",
-    "KQ2",
-    "KRDO",
-    "KRMG",
-    "KTAR News 92.3 FM",
-    "KTVN",
-    "KYMA",
-    "Kashmir Life",
-    "KashmirPEN",
-    "Kerala Kaumudi",
-    "Khaama Press",
-    "Khaleej Times",
-    "Khmer Times",
-    "Kitco",
-    "Kurdistan24",
-    "Kuwait Times",
-    "Kyiv Post",
-    "L'Orient Today",
-    "LBCI Lebanon",
-    "LEADERSHIP Newspapers",
-    "LIGA.net",
-    "La Voce di New York",
-    "Laodong.vn",
-    "Las Vegas Review-Journal",
-    "Latest news from Azerbaijan",
-    "Latin Times",
-    "Le Monde.fr",
-    "Limapagi",
-    "Livemint",
-    "Lloyd's List",
-    "Local 3 News",
-    "Logistics Middle East",
-    "Lokmat Times",
-    "London South East",
-    "MKFM",
-    "MLQ.ai",
-    "MTV Lebanon",
-    "Macau Business",
-    "Madhyamam",
-    "Malay Mail",
-    "MalaysiaGazette",
-    "Manchester Evening News",
-    "Mangalore Today",
-    "Manila Bulletin",
-    "Marietta Daily Journal",
-    "Marine Log",
-    "Marine News Magazine",
-    "MarineLink",
-    "MarketForces Africa",
-    "Mashriq TV",
-    "Mathrubhumi English",
-    "Mediaite",
-    "Meduza",
-    "Mehr News Agency",
-    "Metro.co.uk",
-    "Mettis Global",
-    "Mezha.net",
-    "Mid-Day",
-    "Middle East Eye",
-    "Middle East Monitor",
-    "Middle East Online",
-    "Military.com",
-    "MillenniumPost",
-    "Minute Mirror",
-    "Mitrade",
-    "Modern Ghana",
-    "Moneycontrol.com",
-    "Moneyweb",
-    "Moomoo",
-    "MorungExpress",
-    "MundoNOW",
-    "Munsif News 24x7",
-    "Muslim Network TV",
-    "Mwanzo TV",
-    "MySA",
-    "NBC News",
-    "NDTV",
-    "NDTV Profit",
-    "NEWS.am",
-    "NKTV",
-    "NOTUS",
-    "NPR",
-    "NST Online",
-    "NTD News",
-    "NZ Herald",
-    "Nacionale",
-    "Naharnet",
-    "National Herald",
-    "National Security Journal",
-    "Natural Gas Intelligence",
-    "Nepalnews.com",
-    "New Haven Register",
-    "New York Post",
-    "News Karnataka",
-    "News On AIR",
-    "News of Bahrain",
-    "News-Press NOW",
-    "News18",
-    "News24",
-    "News4JAX",
-    "News9live",
-    "NewsBytes",
-    "NewsCord",
-    "NewsDrum",
-    "Newser",
-    "Newsmax",
-    "Newswav",
-    "NewzTodays",
-    "Nine.com.au",
-    "Northwich Guardian",
-    "Norwalk Hour",
-    "Novinite.com",
-    "Odessa Journal",
-    "Oil & Gas 360",
-    "Oil & Gas Middle East",
-    "Oklahoma Energy Today",
-    "Oman Observer",
-    "Ommcom News",
-    "Open Magazine",
-    "Operativ Məlumat Mərkəzi",
-    "Organiser",
-    "Orinoco Tribune",
-    "Ottumwa Courier",
-    "Outlook India",
-    "Oz Arab Media",
-    "PBS",
-    "Pakistan Observer",
-    "Pakistan Today",
-    "Palestine Chronicle",
-    "Pars Today",
-    "Peeblesshire News",
-    "People Daily",
-    "Peoples Gazette Nigeria",
-    "Philenews",
-    "PinalCentral.com",
-    "Pittsburgh Post-Gazette",
-    "Pluang",
-    "Politiko.com.ph",
-    "Pratidin Time",
-    "Proactive Investors Australia",
-    "Profit by Pakistan Today",
-    "Proshare",
-    "Prothom Alo English",
-    "Public TV English",
-    "Punch Newspapers",
-    "Qatar Tribune",
-    "Qatar news agency",
-    "Quantum Commodity Intelligence",
-    "Quartz",
-    "RBC-Ukraine",
-    "RNZ",
-    "RTE.ie",
-    "RTHK News",
-    "RTV English",
-    "RTV News",
-    "Radio Free Europe/Radio Liberty",
-    "Radio Royal",
-    "Ratopati",
-    "RealMoney Pro",
-    "Rebel News",
-    "Rediff",
-    "Rediff MoneyWiz",
-    "Report.az",
-    "Reuters",
-    "Rigzone",
-    "Rising Kashmir",
-    "Riviera Maritime Media",
-    "Roger Pielke Jr. | Substack",
-    "Rudaw",
-    "SBS",
-    "SNJ Today",
-    "SRN News",
-    "SSBCrack",
-    "Sahara Reporters",
-    "Sahi",
-    "Salina Post",
-    "San Angelo LIVE!",
-    "Saudi Gazette",
-    "Scripps News",
-    "Scroll.in",
-    "Seatrade Maritime News",
-    "Seattle Post-Intelligencer",
-    "Seeking Alpha",
-    "Senate Committee on Energy and Natural Resources (.gov)",
-    "Serbian News Media",
-    "Sharjah24",
-    "Ship & Bunker",
-    "Ships & Ports",
-    "Social News XYZ",
-    "Somerset County Gazette",
-    "South China Morning Post",
-    "Sowetan",
-    "Spectrum News",
-    "Splash247",
-    "Stars and Stripes",
-    "StreetInsider",
-    "Stuff.co.nz",
-    "SuaraGarut.ID",
-    "Swarajya",
-    "TABNAK",
-    "TMJ4 News",
-    "TRT Afrika",
-    "TRT World",
-    "TV ONE USA",
-    "TVC News",
-    "Tampa Free Press",
-    "TechBullion",
-    "Tehran Times",
-    "Telangana Today",
-    "Telegraph India",
-    "Temple Daily Telegram",
-    "Texarkana Gazette",
-    "Thailand Business News",
-    "The American Conservative",
-    "The Arab Weekly",
-    "The Arkansas Democrat-Gazette",
-    "The Assam Tribune",
-    "The Australian",
-    "The Avenue Mail",
-    "The Bakersfield Californian",
-    "The Batesville Daily Guard",
-    "The Business Standard",
-    "The Business Times",
-    "The Canberra Times",
-    "The Citizen",
-    "The Daily Caller",
-    "The Daily Jagran",
-    "The Daily Star",
-    "The Daily Star Lebanon",
-    "The Detroit News",
-    "The Diplomatic Insight",
-    "The Economic Times",
-    "The Edge Malaysia",
-    "The Edwardsville Intelligencer",
-    "The Express Tribune",
-    "The Filipino Times",
-    "The Financial Express",
-    "The Guardian",
-    "The Hans India",
-    "The Hawk",
-    "The Herald",
-    "The Herald Journal",
-    "The Hill",
-    "The Hindustan Gazette",
-    "The Hip Hop Democrat",
-    "The Independent",
-    "The Indian EYE",
-    "The Indian Express",
-    "The Irish Times",
-    "The Japan Times",
-    "The Jerusalem Post",
-    "The Jewish Chronicle",
-    "The Journal",
-    "The Journal Gazette",
-    "The Killeen Daily Herald",
-    "The Korea Herald",
-    "The Korea Times",
-    "The Kyiv Independent",
-    "The Lufkin Daily News",
-    "The Manila Times",
-    "The Mary Sue",
-    "The Media Line",
-    "The Mirror",
-    "The Moscow Times",
-    "The Nation (Pakistan )",
-    "The National",
-    "The New Arab",
-    "The New Indian Express",
-    "The New Region",
-    "The New Voice of Ukraine",
-    "The New York Times",
-    "The Peninsula Qatar",
-    "The SOFX Report",
-    "The Seattle Times",
-    "The Sentinel - of this Land, for its People",
-    "The Shillong Times",
-    "The Siasat Daily",
-    "The Standard (HK)",
-    "The Star",
-    "The Star, Kenya",
-    "The Statesman",
-    "The Straits Times",
-    "The Sun",
-    "The Sun Malaysia",
-    "The Sunday Guardian",
-    "The Telegraph",
-    "The Times",
-    "The Times of India",
-    "The Times of Israel",
-    "The Tribune",
-    "The Trumpet Newspaper",
-    "The Vibes",
-    "The Washington Post",
-    "The Week",
-    "TheReport.live",
-    "Time Magazine",
-    "TimelineDaily",
-    "Times Now",
-    "Times of Oman",
-    "Times of Suriname",
-    "TimesLIVE",
-    "TipRanks",
-    "Today.Az",
-    "TodayPress.tv",
-    "Toronto Star",
-    "TradeWinds News",
-    "Traders Union",
-    "TradingNEWS",
-    "TradingPedia",
-    "TradingView",
-    "Trak.in",
-    "Transport Topics",
-    "Traverse City Record-Eagle",
-    "Trend News Agency",
-    "TribLIVE.com",
-    "Tribune Online",
-    "Tripura Chronicle",
-    "TripuraTimes.com",
-    "Türkiye Today",
-    "UA.NEWS",
-    "UNITED24 Media",
-    "USA Today",
-    "Udayavani",
-    "UkrMedia News",
-    "Ukrainian News Agency",
-    "Union-Bulletin",
-    "United News of Bangladesh",
-    "Upper Michigan's Source",
-    "Upstream Online",
-    "UrduPoint",
-    "VOV World",
-    "Vanguard News",
-    "Vatican News",
-    "Vietnam.vn",
-    "Vision Times",
-    "WABI",
-    "WANA News Agency",
-    "WBAY",
-    "WBTV",
-    "WCAX",
-    "WCIV",
-    "WE News English",
-    "WHDH",
-    "WIBW",
-    "WION",
-    "WITN",
-    "WJCL",
-    "WJHG",
-    "WKOW",
-    "WKYT",
-    "WLFI",
-    "WMTV 15 NEWS",
-    "WPDE",
-    "WPTZ",
-    "WPXI",
-    "WQOW",
-    "WRAL",
-    "WRDW",
-    "WSAU",
-    "WSJ",
-    "WSLS",
-    "WTOP News",
-    "WTVA",
-    "WVLT",
-    "WWD",
-    "WWMT",
-    "WXII",
-    "WZDM",
-    "Wake Up Singapore",
-    "WaltonTribune.com",
-    "Washington Examiner",
-    "Washington Times",
-    "Washingtonian",
-    "We Got This Covered",
-    "Wisevoter",
-    "World Israel News",
-    "World Oil",
-    "World Socialist Web Site",
-    "X",
-    "XTB.com",
-    "Xinhua",
-    "Yahoo",
-    "Yahoo Finance",
-    "Yahoo Finance UK",
-    "Yahoo News Canada",
-    "Yahoo News Singapore",
-    "Yahoo News UK",
-    "Yemen Online",
-    "Yeni Safak English",
-    "Ynetnews",
-    "Zamin.uz",
-    "Zee Business",
-    "agc communication news",
-    "astig.ph",
-    "bdnews24.com",
-    "bloomingbit",
-    "blue News",
-    "bsinews.id",
-    "cbn.com",
-    "cedarnews.net",
-    "chinadailyhk",
-    "couriernews.com",
-    "crimefightersng.com",
-    "crossroadstoday.com",
-    "cwibc.co.id",
-    "en.bd-pratidin.com",
-    "fox42kptm.com",
-    "gCaptain",
-    "grafa.com",
-    "houseofsaud.com",
-    "https://aapnews.aap.com.au/",
-    "https://dailyasianage.com/",
-    "https://defence.newsd.in/",
-    "https://economy.ac/",
-    "https://houseofsaud.com/",
-    "https://theins.press/en",
-    "https://www.businesstimes-bd.com/",
-    "https://www.engine.online/",
-    "https://www.shipmanagementinternational.com/",
-    "https://www.thetraveler.org/",
-    "investingLive",
-    "jiji press",
-    "kens5.com",
-    "la Repubblica",
-    "marketscreener.com",
-    "megaproject.com",
-    "news.sbs.co.kr",
-    "newsalert.com.pk",
-    "newskarnataka.com",
-    "oEnergetice.cz",
-    "oodaloop.com",
-    "qz.com",
-    "rdnewsnow.com",
-    "richtv.io",
-    "samaa tv",
-    "scanx.trade",
-    "seMissourian",
-    "streamlinefeed.co.ke",
-    "teleSUR English",
-    "tennews.in",
-    "thecanadianpressnews.ca",
-    "thechronicle.com.ph",
-    "thedailystar.com",
-    "thefact.ng",
-    "thenationalnews.com",
-    "theopenpress.in",
-    "tippinsights",
-    "trend.az",
-    "wandtv.com",
-    "www.businesstimes-bd.com",
-    "www.daily-sun.com",
-    "www.engine.online",
-    "www.israelhayom.com",
-    "www.marketscreener.com",
-    "www.nktv.in",
-    "www.proactiveinvestors.com.au",
-    "www.stripes.com",
-    "www.thenationalnews.com",
-    "www.tmgm.com",
-    "www.tokenpost.com",
-    "www.uaebarq.ae",
-    "www.wwbl.com",
-    "İlke Haber Ajansı",
-    "ІА Король Данило",
-    "Мілітарний",
-    "Прямий",
-    "Українські Національні Новини (УНН)",
-    "Українські Новини",
-    "Цензор.НЕТ",
-    "الحرة",
-    "برق الإمارات",
-    "تسنیم",
-    "جريدة القدس",
-    "خبرگزاری بین المللی قدس",
-    "سانا",
-    "سبق",
-    "شبكة تواصل الإخبارية",
-    "شفق نيوز",
-    "صحيفة سبق الإلكترونية",
-    "صحيفة مال",
-    "صوت الإمارات",
-    "وكالة الأنباء السعودية",
-    "وكالة الانباء الاردنية",
-    "وكالة الانباء العراقية (واع)",
-    "وكالة سبأ",
-    "アラブニュース",
-    "巴士的報",
-    "毎日新聞",
-    "联合早报",
-    "재경일보",
-    "파이낸셜뉴스"
-   ],
-   "assets": {
-    "XOM": {
-     "direction": "up",
-     "confidence": 0.85,
-     "why": "Attacks on Middle East oil supply infrastructure push crude and oil majors higher."
-    },
-    "CVX": {
-     "direction": "up",
-     "confidence": 0.85,
-     "why": "Severe supply disruption risks in the Strait of Hormuz benefit major oil producers."
-    },
-    "OXY": {
-     "direction": "up",
-     "confidence": 0.8,
-     "why": "Higher oil prices driven by geopolitical conflict boost upstream producers."
-    },
-    "PLTR": {
-     "direction": "up",
-     "confidence": 0.8,
-     "why": "Defense technology demand rises during active geopolitical conflict."
-    },
-    "AVAV": {
-     "direction": "up",
-     "confidence": 0.8,
-     "why": "War escalation with Iran increases demand for defense tech."
-    },
-    "NEM": {
-     "direction": "up",
-     "confidence": 0.75,
-     "why": "War escalation increases safe-haven demand for gold miners."
-    },
-    "COP": {
-     "direction": "up",
-     "confidence": 0.8,
-     "why": "Oil supply disruption fears and tanker attacks push oil and gas stocks higher."
-    },
-    "SLB": {
-     "direction": "up",
-     "confidence": 0.8,
-     "why": "Oil supply disruption risk increases prices."
-    },
-    "AEM": {
-     "direction": "up",
-     "confidence": 0.75,
-     "why": "War escalation increases safe-haven demand for gold."
-    },
-    "NVDA": {
-     "direction": "down",
-     "confidence": 0.7,
-     "why": "Broad tech equities drop during major geopolitical war escalations."
-    },
-    "APA": {
-     "direction": "up",
-     "confidence": 0.8,
-     "why": "Oil supply disruption risk increases prices."
-    },
-    "DVN": {
-     "direction": "up",
-     "confidence": 0.8,
-     "why": "Oil supply disruption risk increases prices."
-    },
-    "EOG": {
-     "direction": "up",
-     "confidence": 0.8,
-     "why": "Oil supply disruption risk increases prices."
-    },
-    "FANG": {
-     "direction": "up",
-     "confidence": 0.8,
-     "why": "Oil supply disruption risk increases prices."
-    },
-    "HAL": {
-     "direction": "up",
-     "confidence": 0.8,
-     "why": "Oil supply disruption risk increases prices."
-    },
-    "AAPL": {
-     "direction": "down",
-     "confidence": 0.7,
-     "why": "Broad tech faces pressure amid escalating conflict."
-    },
-    "SPWO": {
-     "direction": "down",
-     "confidence": 0.65,
-     "why": "Broad equities often fall during major geopolitical war escalations."
-    },
-    "MPC": {
-     "direction": "up",
-     "confidence": 0.8,
-     "why": "Oil supply disruption risk increases prices."
-    },
-    "PSX": {
-     "direction": "up",
-     "confidence": 0.8,
-     "why": "Oil supply disruption risk increases prices."
-    },
-    "VLO": {
-     "direction": "up",
-     "confidence": 0.8,
-     "why": "Oil supply disruption risk increases prices."
-    },
-    "MSFT": {
-     "direction": "down",
-     "confidence": 0.7,
-     "why": "Risk-off sentiment in broad tech follows war escalation."
-    }
-   },
-   "sources": [
-    {
-     "id": "df336258cfae123d",
-     "publisher": "وكالة سبأ",
-     "kind": "news",
-     "title": "IRGC: Third oil tanker explodes in Hormuz Strait",
-     "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE1VclA4VmQtT2UzUkdKdW5SLUtkZXRIWXk2Z0Vnc25KU3pZWGNlcktBczNMV3lEVDNEc2hDblVhdVZQNlFGUnJRODVSaHJBYUE?oc=5",
-     "time": "2026-11-10T20:04:16Z"
-    },
-    {
-     "id": "f3a25bf802b51027",
-     "publisher": "شبكة تواصل الإخبارية",
-     "kind": "news",
-     "title": "Rubio predicts Iran will lose the ability to export oil",
-     "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE9HYWl1b25NdkltTTFLc0pwM3J2aU5qTVpoZ2Fla2kzaDRSakp6OHotV0J2NnJkNjJ1WXFySklmYThoNnhZOXo1YzZUOEtNOThNZVRr?oc=5",
-     "time": "2026-11-10T20:03:52Z"
-    },
-    {
-     "id": "53aab7bcd37b0b8c",
-     "publisher": "News18",
-     "kind": "news",
-     "title": "'Iran Started This War 47 Years Ago, We Didn't': Hegseth Defends US Military Campaign Against Tehran",
-     "url": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxNNGZkYnAxaTZYNFloTUZKT1hfVmtOOTRWSmZEMU1OMzA1d0pPY3RkWUZ3Wl9SM3ZHMFBpT2Mxa3FUV2JncDFNWjBrWm9RcXpuMy1xZnJRaW5vR0VTSkVUWWRFV2lCWktpRFY5REh3ZVBfSWxzZFJFRFR3eUdSRFZPcHhBOGNGR292TEJxNGg0emVMOERMeC1lRXE3eWlIaXVibzQ3Ul9TdWFXMlpOVWdOd0t4bGR2RjdQTkh0RDZJVUE1WlVMZENFbGYwblgtdWdsbHktbldxdTZNUmNVT2p3dVR5a3BILVREQVHSAe8BQVVfeXFMTU5qb0VLdS14U05sc1UtYkttRVRSSG9RLXE0dzN4TlIyT3M1c2xNalVyblNzdi0zekRqSnpfaU5VaVQyZkdEZnhwVHdyeUNHRkN3REcyRnVkWTdxUmNkdTR5dXYza0prNi1GNTIwZDVDdmZEalkyRkFRaFNvU2pLajVPLWhCNHNYa1dobzNsa3JwNm05c2xTaXNKeUJwR1BCVVdRT2hWQW81RTJJSmw2aVR2T0N1b3dRMlhuVWk2RU5ZbzlmSVFicktIUGpwbWV5Q1JSR2JVRG9hRFg1dzluZTZTeGR5VDQyYnZhSVdmcWM?oc=5",
-     "time": "2026-11-10T20:01:23Z"
-    },
-    {
-     "id": "a0f4fb7035efa43e",
-     "publisher": "Crude Oil Prices Today | OilPrice.com",
-     "kind": "news",
-     "title": "Houthis Launch Another Attack on Pumping Stations Along Crucial Saudi East-West",
-     "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxOMm5mWEtVVG5peGFmQTQ5SFVYd1NNR2QxV3VyTUtDNC1hT3hYUjVtR0hEblJHcTgzelBOOFBDdFE0NzMzLUYwMUp0X3dIZmZ2cy1QS1dtdjVWenc2OE5ESEd0elcyREpXZ1V0Z2xmb1FOMW05bHJ2NU56bldJamk5UEdoVVhSYklJWVBzRE9nckhMazhiYmZnYVdSY3ZKaVlhT0NmNExfcDhMMnBPdTBOT0dpTUt1eW5hOFRCX09KWVJQaXhkaUlsdGw4Y9IBywFBVV95cUxOMm5mWEtVVG5peGFmQTQ5SFVYd1NNR2QxV3VyTUtDNC1hT3hYUjVtR0hEblJHcTgzelBOOFBDdFE0NzMzLUYwMUp0X3dIZmZ2cy1QS1dtdjVWenc2OE5ESEd0elcyREpXZ1V0Z2xmb1FOMW05bHJ2NU56bldJamk5UEdoVVhSYklJWVBzRE9nckhMazhiYmZnYVdSY3ZKaVlhT0NmNExfcDhMMnBPdTBOT0dpTUt1eW5hOFRCX09KWVJQaXhkaUlsdGw4Yw?oc=5",
-     "time": "2026-11-10T21:00:00Z"
-    },
-    {
-     "id": "da93a25057608f46",
-     "publisher": "The National",
-     "kind": "news",
-     "title": "Middle East latest: Ship attacked in UAE waters, says operator Adnoc",
-     "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPdTMwLTRPRTZsZHJPR0lQTVNtNHdyWWxZNHMydXJzUjEySVZIZzJfUFlvbXZfQWJPc25aSm5kM3lzNmxFMFVMdFl3NTZLZWVjZnZPaTFyWjZtcl9peGd6ZlpDU2hnQmxDVFBLRlF1cVR3U2QwR2R4dWRRNEFDaDBzSTY2YUFWZEsyZ3dIOGQwX2tudV81a1pRRXQtVzl0TWYw?oc=5",
-     "time": "2026-11-10T20:59:26Z"
-    }
-   ]
-  },
-  {
-   "summary": "Oil prices extend losses as broader equity selloffs weigh on crude despite ongoing supply risks.",
-   "category": "war_escalation",
-   "firstSeen": "2026-11-22T17:30:27Z",
-   "publishers": [
-    "ABS-CBN",
-    "Daily Sun",
-    "Daily Tribune",
-    "Demokratis.co.id",
-    "FXStreet",
-    "Firstpost",
-    "Hindustan Times",
-    "Houston Chronicle",
-    "Il Sole 24 ORE",
-    "KVIA",
-    "Moneycontrol.com",
-    "NBC News",
-    "News On AIR",
-    "NewsBytes",
-    "Palestine Chronicle",
-    "The Business Times",
-    "The Hindu",
-    "The Vibes",
-    "Times Now",
-    "Traders Union",
-    "TribLIVE.com",
-    "Yeni Safak English",
-    "bloomingbit",
-    "cedarnews.net",
-    "houseofsaud.com",
-    "https://dailyasianage.com/",
-    "شبكة تواصل الإخبارية",
-    "صوت الإمارات",
-    "وكالة سبأ"
-   ],
-   "assets": {
-    "XOM": {
-     "direction": "down",
-     "confidence": 0.65,
-     "why": "Oil price rollbacks and oversupply weigh on oil and gas margins."
-    },
-    "CVX": {
-     "direction": "down",
-     "confidence": 0.65,
-     "why": "Crude oil slips on supply concerns."
-    },
-    "OXY": {
-     "direction": "down",
-     "confidence": 0.6,
-     "why": "Falling crude prices due to surplus concerns impact oil equities."
-    },
-    "PLTR": {
-     "direction": "up",
-     "confidence": 0.6,
-     "why": "Escalating international conflicts increase demand for defense technology solutions."
-    },
-    "COP": {
-     "direction": "up",
-     "confidence": 0.8,
-     "why": "Supply risks from regional conflict raise energy sector appeal."
-    },
-    "AVAV": {
-     "direction": "up",
-     "confidence": 0.6,
-     "why": "Escalating military tensions benefit defense tech."
-    }
-   },
-   "sources": [
-    {
-     "id": "14355042d8e69c6a",
-     "publisher": "Hindustan Times",
-     "kind": "news",
-     "title": "Russian navy vessel Merkury catches fire at Benghazi port after suspected drone attack | World News",
-     "url": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxQcUxKdGNULURHZzFSdHZHMnVScGQzcENrSDQweEJkM0ZtRjZNMVNXOUJBeGxnT21WZXJDdXhMOWZJaFJWanp4dG1idUplVGNIdFBwUWZZNHNUTHJNS0t0aV9odTVIc1RoSzlZWTJoUHJnaE5LM25wTndaQzhjbEp4X0hjWUZoRWlyUXpDRkZjZDVvLTA5bXR5WUlMeUFLYko5UWdkTm5kS3FOcHhyY1FvaUpqTHctNjhiU3hvVnZfZ3U2NmR5Y0FncmFEc0NPaktMVXpvU2tnRnh4TXpTUzlZ0gHkAUFVX3lxTFBiTy1XOXBsX3A2d2w4UXNmaUpZcGFRb1ZmUnRwbW9mN2F3OWlzWklvSFFTWHZSLTJVR0R1T2FSYTNNN3ZuX3JrYUFJTE55aXNXTllhcXRtbHhndWFfbXpwUTFVeEY3dDF6dkkwYzdNQWg1UU9IR3owSlhsbWZLcF9MVjNmeW5LMlItVFJRb1FlbVVQYnF6dnBtaExQemhRNVNzQ1plUXhIQW84ZnNzUlJMUnBpbGFqbDZTZlFMbFZXSFcwakExMHZDQWJIZEFSTDNRcGp3ci10SF9XbFBmbWNlVWpJRg?oc=5",
-     "time": "2026-11-22T17:44:01Z"
-    },
-    {
-     "id": "f1161ebb65c09b89",
-     "publisher": "Houston Chronicle",
-     "kind": "news",
-     "title": "Suspected Ukrainian sea drones hit Russian warship at Benghazi naval base, Libyan officials say",
-     "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNY3BYVWdzOVQxakVBT1FSYW9YUjcyQ2g2RjBLLWJhMlVlWmpvN0FmMVUtbDh3X1ZRajczdm5ydWFLQTJmR0dvQVc4dG5VbV8ySFdvNVV0bG1IX25vQWNDdDIyWGhucTFwS0l2bXplUFpvcllzWXRZMVA3dC1UcHd4eF9mYWtHdU9MN0VzVjdTMTBZcldLWmloemdzQ2N3SVVzaWJLVHVvUENVZmVZZlgtTlVNNC0?oc=5",
-     "time": "2026-11-22T17:42:10Z"
-    },
-    {
-     "id": "ad9d4c20d8c8bbc6",
-     "publisher": "KVIA",
-     "kind": "news",
-     "title": "Russian vessel docked in Libya hit in suspected drone attack, authorities say",
-     "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxOb2JpcFhVWkZsR2lRcGdiR2VNc2N6N0JQc2VleEh0YlVHUGFZcjBIQU9HT0xzb2Z3ckw5QTdFellrcmxsQWtGUk43LTFkYW1yYjloX0luSWR5bWNGT0dJWWdrTy1iTF9nT09wZ3NmMEs2NGpEV3ZqTTI1MlpGNUp2VVhISFQ0cy1fX28tN3dIQ3Z3U0JrZk5CRV9DRTZwc2VBUmlNUFF2emwtcFBYNGFVOG9neHh5bmtXemVYeThZZDZLSjhSbWtjUw?oc=5",
-     "time": "2026-11-22T17:36:56Z"
-    },
-    {
-     "id": "c5ed3b667c03fd91",
-     "publisher": "The Hindu",
-     "kind": "news",
-     "title": "Russian attack near Ukraine’s capital strikes apartment building, killing two and wounding four others",
-     "url": "https://news.google.com/rss/articles/CBMikAJBVV95cUxOcTZkc1c2clVWVVN0M1Z3d05NUEFENUFPcFE5cURsNDNDbFBRd3ZTTHdybFhSU3FGbzk1UmhybjZYX2Z6ZjdnT1pFVjhiandSekZkUEZNR1pNNTVneEhIcERkV2xtN21XQVJOdWQxb0s0czc2UlJ6VUl2OWxnSE53RFNXNHBKX0ZCeWtjeC12UkxKbG1lV2MtSWFGN3N3bTQzT2o2TDVSQUF0ekJxVzcxRmd1NGpmRlk4TTVmM0czMnQ5RUJuUFh3a3YwY0FTN2djcnN1Vk9kV1Z0YUktX1dISkdUamw4bnFrc3BVdzVsYmZ0OUwtX0hZTmtTcDA0UTgyNjF4amViNFAtWWo3anZ3S9IBlwJBVV95cUxOWmt0ZG5ZTGdFRWFVejB6LU9IbjUwZkp3c2k0NFNENk9LbEU4UUhRdDItbEFfMTBRck12WTZIX291Nml6ZXJETERGSEZvMnRGWkY3SGhQTjlkUkppRVlfblVkSWdNREljQmxzT0g2aG40NWx1dGtkM0Z6M3hrQ3lwVnRiS25xQ1Z2S25rbXk1QXA1NmRYZVZXSDlPUlgwWW5nakd1TU9LTzk2STFJOGZvU2VUa3lWTUtkOHI5UEVwZjhpSktTaXZrOFRYaTdBSDR5bEtTVGhON0tLNFEzTkJjc3NBa25lcFVNc2hmUFp4QV9tQ2dLSmliQy11UWx1TERzbWpQR3B4cGlqSU1NOVh0Q0RCczJvU2s?oc=5",
-     "time": "2026-11-22T17:30:27Z"
-    },
-    {
-     "id": "87a81e38ac053b46",
-     "publisher": "Il Sole 24 ORE",
-     "kind": "news",
-     "title": "War, latest news. Ukrainian drones strike a Russian military vessel in the port of Benghazi",
-     "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNdzgxQjUwV0pfTERWbFJKR2o3OUxtVTczSkRlNzc4Q3ZacmlrRkU4cmFsekhUb1pSVmxsYXJ0enlhZzB4RDl4QXd6dDZNYVA3Qk4xN0FNTmxaUXhpUlFOU2lhTVRjWnpVRnNDclpDcmI2c183cDR0RVBEcTdkMVBIdkJQaHNybmlVZGhYVEQ4OVEyRjRHMU13d0NLaXlWaUJ2dWctMlh6WFM3SFVPVlJybVgyS09PX3cya3ZpWE5R?oc=5",
-     "time": "2026-11-22T19:15:27Z"
-    }
-   ]
-  },
-  {
-   "summary": "Bitcoin spot ETFs record significant net outflows, extending downward pressure on crypto assets.",
-   "category": "crypto_negative",
-   "firstSeen": "2026-11-12T08:32:42Z",
-   "publishers": [
-    "24/7 Wall St.",
-    "99Bitcoins",
-    "AMBCrypto",
-    "AOL.com",
-    "Action Forex",
-    "Aktualita.co",
-    "Altcoin Buzz",
-    "Anadolu Ajansı",
-    "Analytics Insight",
-    "Apa.az",
-    "Around Prague",
-    "Asianet Newsable",
-    "BeInCrypto",
     "Benzinga",
     "BigGo Finance",
     "Binance",
-    "Bitbo",
-    "Bitcoin Foundation",
-    "Bitcoin Magazine",
-    "Bitcoin News",
-    "Bitcoin Sistemi",
-    "Bitcoinist.com",
-    "Blockchain News",
-    "Blockonomi",
     "Bloomberg.com",
-    "Brandsynario",
-    "Brave New Coin",
-    "Briefs Finance",
+    "Breitbart News",
     "Business Standard",
-    "Businesskorea",
-    "CCN.com",
     "CNBC",
-    "CNBC TV18",
-    "CaptainAltcoin",
+    "Capital Brief",
     "Chosunbiz",
-    "Coin Edition",
     "Coin Gabbar",
-    "CoinCodex",
     "CoinDesk",
-    "CoinGape",
-    "CoinMarketCap",
-    "Coindoo",
-    "Coinfomania",
     "Coinpaper",
-    "Coinpedia",
-    "Cointribune",
     "Crypto Briefing",
     "Crypto Economy",
-    "Crypto News",
-    "CryptoDaily",
-    "CryptoPotato",
-    "CryptoRank",
-    "CryptoSlate",
     "CryptoTicker.io",
-    "Cryptonews",
     "Cryptonews.net",
-    "Cryptopolitan",
-    "Daily Beirut",
-    "Daily Forex",
-    "DailyCoin",
+    "Deccan Herald",
     "Decrypt",
-    "Defence24.com",
-    "Digg",
     "Dimsum Daily",
-    "FOREX.com",
-    "FXEmpire",
-    "FXLeaders",
+    "Eurasia Business News",
     "FXStreet",
     "FinanceFeeds",
-    "Finbold",
-    "Firstpost",
-    "Free Malaysia Today",
-    "Gadgets 360",
-    "Global Banking & Finance Review",
-    "GuruFocus",
-    "HESPRESS English - Morocco News",
-    "Hindustan Times",
+    "Finimize",
+    "Finviz",
+    "Fortune",
+    "Geo News",
     "Hokanews",
     "Investing.com",
     "Investing.com Canada",
-    "Investing.com India",
-    "Investing.com Nigeria",
-    "Investing.com UK",
+    "Investing.com South Africa",
+    "Investopedia",
     "Investor's Business Daily",
     "Invezz",
     "JournalArta",
-    "Kalkine Media",
-    "Kriptofoni",
-    "KuCoin",
-    "Livemint",
-    "MEXC",
-    "MLQ.ai",
-    "MarketForces Africa",
-    "MarketWatch",
-    "Mitrade",
-    "Moneycontrol.com",
-    "Moneyweb",
+    "KELO-AM",
+    "Kitco",
+    "Market Index",
     "Moomoo",
-    "NAI500",
     "NDTV Profit",
-    "NFTevening",
-    "Nacionale",
-    "NameCoinNews",
-    "NewsBTC",
-    "NewsBytes",
-    "Open4business.com.ua.",
-    "PYMNTS.com",
-    "People Daily",
+    "NST Online",
+    "Plataforma Media",
     "Pluang",
     "Pragativadi",
-    "Proactive Investors Australia",
-    "Programming Insider",
+    "Proactive financial news",
+    "Profit by Pakistan Today",
     "Quartz",
-    "RTTNews",
-    "Retail News Asia",
+    "RTHK",
+    "RTHK News",
+    "RealMoney Pro",
     "Reuters",
     "SSBCrack",
-    "Serrari Group",
-    "Startup Fortune",
+    "Shacknews",
     "Stocktwits",
     "StreetInsider",
-    "SunCrypto",
-    "TOKENPOST",
-    "TechBullion",
-    "TechJuice",
-    "The Block",
-    "The Business Times",
-    "The Crypto Times",
-    "The Cryptonomist",
-    "The Defiant",
+    "The Boston Globe",
     "The Economic Times",
+    "The Economist",
     "The Edge Malaysia",
-    "The Globe and Mail",
-    "The Market Periodical",
-    "The Motley Fool",
-    "The Straits Times",
-    "The Sunday Guardian",
+    "The Guardian",
+    "The Hawk",
+    "The Lufkin Daily News",
+    "The New York Times",
+    "The Tech Buzz",
+    "The Times of India",
     "TipRanks",
     "Traders Union",
-    "Trading News",
     "TradingKey",
-    "TradingNEWS",
-    "TradingPedia",
     "TradingView",
-    "TronWeekly",
-    "U.Today",
-    "UA.NEWS",
-    "UkrMedia News",
-    "Univest",
-    "Vietnam.vn",
-    "Vocal",
-    "Wisevoter",
-    "XTB.com",
+    "US News Money",
+    "VINnews",
+    "WSJ",
+    "Wccftech",
+    "X",
     "Yahoo Finance",
-    "ad-hoc-news.de",
+    "Zacks Investment Research",
     "astig.ph",
-    "blockchain.news",
+    "bdnews24.com",
     "bloomingbit",
+    "cwibc.co.id",
     "finance.biggo.com",
-    "grafa.com",
-    "investingLive",
-    "openPR.com",
-    "theopenpress.in",
-    "www.blockhead.co",
-    "www.proactiveinvestors.com.au",
-    "www.tmgm.com",
+    "fiscal.ai",
+    "kaohoon international",
+    "marketscreener.com",
+    "news.sbs.co.kr",
+    "shattered.io",
     "www.tokenpost.com",
-    "www.trendingtopics.eu",
-    "Українські Національні Новини (УНН)",
-    "صوت الإمارات",
-    "富途牛牛",
-    "매일경제",
-    "머니투데이",
+    "深潮TechFlow",
     "아시아경제",
-    "재경일보"
+    "조선일보"
    ],
    "assets": {
+    "NVDA": {
+     "direction": "up",
+     "confidence": 0.95,
+     "why": "Jensen Huang unanimously reinstated as CEO by the board, resolving uncertainty and causing shares to skyrocket."
+    },
     "BTC/USD": {
      "direction": "down",
-     "confidence": 0.95,
-     "why": "Massive ETF outflows, liquidations, and Bitcoin breaking key support below $56,000."
+     "confidence": 0.7,
+     "why": "Broader risk-off sentiment triggered by major tech leadership turmoil."
     },
-    "ETH/USD": {
-     "direction": "down",
-     "confidence": 0.95,
-     "why": "Severe crypto market-wide liquidation and crash dragging Ethereum down to $1,500."
+    "QCOM": {
+     "direction": "up",
+     "confidence": 0.65,
+     "why": "Capital is rotating out of Nvidia into competing AI semiconductor stocks following the CEO exit."
     },
-    "SOL/USD": {
-     "direction": "down",
-     "confidence": 0.85,
-     "why": "Solana crashes to multi-month lows amid broader crypto market sell-offs and rate hike fears."
-    },
-    "XRP/USD": {
-     "direction": "down",
-     "confidence": 0.85,
-     "why": "Massive capital flight and ETF outflows crush XRP price action."
-    },
-    "LINK/USD": {
+    "AMD": {
      "direction": "down",
      "confidence": 0.6,
-     "why": "Persistent bearish bias and ETF outflows weigh on Chainlink despite holding support."
+     "why": "Broader AI chip sector drag from Nvidia's regulatory and accounting troubles."
+    },
+    "AVGO": {
+     "direction": "up",
+     "confidence": 0.75,
+     "why": "Lifted by broader AI infrastructure and semiconductor strength."
+    },
+    "MSFT": {
+     "direction": "down",
+     "confidence": 0.65,
+     "why": "Broader tech and AI infrastructure sentiment hits related large-cap names."
+    },
+    "AAPL": {
+     "direction": "down",
+     "confidence": 0.3,
+     "why": "Broad market selloff induced by tech bellwether crash."
+    },
+    "SMCI": {
+     "direction": "up",
+     "confidence": 0.75,
+     "why": "Riding positive sentiment from Nvidia earnings beat."
+    },
+    "MU": {
+     "direction": "down",
+     "confidence": 0.65,
+     "why": "Semiconductor peer dragged down by Nvidia leadership turmoil."
+    },
+    "PLTR": {
+     "direction": "down",
+     "confidence": 0.6,
+     "why": "Broader tech sector and AI stock sell-off spurred by Nvidia turmoil."
+    },
+    "INTC": {
+     "direction": "down",
+     "confidence": 0.8,
+     "why": "Nvidia significantly trimming its stake in Intel creates heavy selling pressure."
+    },
+    "TSLA": {
+     "direction": "down",
+     "confidence": 0.6,
+     "why": "Broader tech sector weakness and uncertainty surrounding Nvidia weigh on high-multiple tech growth stocks."
+    },
+    "AMAT": {
+     "direction": "up",
+     "confidence": 0.7,
+     "why": "Nvidia's beat lifts broader semiconductor equipment suppliers."
     }
    },
    "sources": [
     {
-     "id": "f2c64de89a6bbd3c",
-     "publisher": "bloomingbit",
+     "id": "855265040ed1e43c",
+     "publisher": "Reuters",
      "kind": "news",
-     "title": "BlackRock’s Bitcoin ETF IBIT Extends Net Outflow Streak to 9 Sessions, Exceeding $2 Billion",
-     "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE9XY1BHRGVIT2hraXRmcGx1TGI3a2oybEJwMk9LWHNKdUM1R29nNEU1eWJIeXhtTC1pSXg0QUJDd18xNkJTTG4ySkRJTXd3cjN2NkxlZg?oc=5",
-     "time": "2026-11-12T08:32:42Z"
+     "title": "Nvidia CEO Jensen Huang resigns, in blow to AI boom he helped foster",
+     "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOMEFwN0FWdjB6blNtR0RZaTBWZXZDaWVwYkhXREttY2FaYVNNVC1qNEFHYm9Yd1pDODBDN2tvNzhnMTY4cmxWYTg1WVFidzFlNVFEdlZNb3IyZG1nS2FKcHAzUERhQW9EdG9oOER6YmwydXZOd0t1VHRub1BCdFdoR1V4dktlUVUydjZWeU53aVdKMGwtOGFtZmd2T3VhODF3eXhPazVtbV81b0hpUi1vcw?oc=5",
+     "time": "2026-11-12T18:31:55Z"
     },
     {
-     "id": "cc25c44ff767f291",
-     "publisher": "Crypto News",
+     "id": "6c526a44313f07e5",
+     "publisher": "Yahoo Finance",
      "kind": "news",
-     "title": "BlackRock leads $300 million Bitcoin ETF outflows as BTC struggles near $73K",
-     "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNY3U0TE5Gcy0teVNsLWVBeGh1cmd4Z1dSaldmVmt2b3VYaVhFSTM0T29OUnhKUXpTNEZwLW1sVkwtZnQyUUdSVDFTUHpSYjYxVlU0SFZnYW5Xd0V0TzB4NjM4VGpGa1pPYnk4eEgzR2wxV0d1SkFPSDBwSG0tdFFTQTI3cXJiSWE1UHU0NzVCUjJ2VXNFa2pIZnd0VQ?oc=5",
-     "time": "2026-11-12T08:36:14Z"
+     "title": "Equities Rise Intraday Despite Nvidia Sell-Off Post CEO's Departure",
+     "url": "https://finance.yahoo.com/markets/stocks/articles/equities-rise-intraday-despite-nvidia-182433809.html?.tsrc=rss",
+     "time": "2026-11-12T18:24:33Z"
     },
     {
-     "id": "fb7c71d0fe55957d",
-     "publisher": "bloomingbit",
+     "id": "adfadefb8db21a4c",
+     "publisher": "AP",
      "kind": "news",
-     "title": "Coinbase Bitcoin Premium Stays Negative for 50 Straight Days as U.S. Buying Weakens",
-     "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTFBfQTlkOUY1NnAyTlpoRnp0Qmc2NDZnUjdSVlRBYndfa2hHVXlZdjNmX0ZhRTdZMjMtV2xMMEdTWWJvdXpCbl9BREZ0TDR6cl9NcFJXNg?oc=5",
-     "time": "2026-11-12T08:59:27Z"
+     "title": "What we know after Jensen Huang resigns as Nvidia’s CEO",
+     "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOMUxqUTE0WWZBT2xoV25SLUQ2dFgyWkhwZFZyRnk3d1Fibmtrb0d4T3otSXNpNmZiTVh0QUdkWTA4UmQ3cXQyVVM3ODc0V0g4YnVVbDJRYWF4VXlaXzMzZnJWNi1UR3YyZHJGbWNzaVFab2tiM3N2RjFIOUtWcnlJVWtMVnhQNmhJeTdPajNVUXZfU2NzWkw0aGJLVFMtaGY3?oc=5",
+     "time": "2026-11-12T18:38:00Z"
     },
     {
-     "id": "62235bb905723bf1",
-     "publisher": "Coinfomania",
+     "id": "e45111d2af3013e1",
+     "publisher": "The Economic Times",
      "kind": "news",
-     "title": "U.S. Spot Bitcoin ETFs Experience $300 Million Net Outflows",
-     "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxORGNYaW5tLUhtT2tmVi1ETy1fRFV4QnFDQndvYkpDRkRTZTF6NEJRN2V6emkyV1MzeTZfTVlyX1NsRGNzaXJsRWk5OXpDajRfVTE5OGc1anBpNWVfSkJKTUg2QnFoTlFSNlRscFJUVlBuek04RkxsN2ZydUJUSjZBdjdURUtnOGhnb3c?oc=5",
-     "time": "2026-11-12T08:55:35Z"
+     "title": "Bitcoin price today: BTC USD falls near $71,000 after Jensen Huang resigns as Nvidia CEO and ETF outflows",
+     "url": "https://news.google.com/rss/articles/CBMisgJBVV95cUxNNGkxSEhVaVRhRGl4UkxMZUoyeV9Bc25CTmNkY1Q3Z2JEbTB5S3JWbUt4clE4eEltNTFSbFZSOFJrM290QTFESGJiMHROMGRSNVhzV0tkRHRqU2hLTk5GYng1Mm9FaDVlTFNyNHdqWXNwNDhNazZJNmlqOXIxVjFvZ0hwSHRTSUcwSXRqWWU5Mi1BTVg3Zm12bml2STNnSFExQWlTaUlRdDNlVnNUZlh5dFJDN2pfQmhha2M1SVBYUm1fVDhiaThNTnBsRU0ySTJSR1o1QkMyVHJseHA4VHlkd2pYODRaZzFpUUQza2ZlT1JpU0ZodWVkR0pCb3ZZTnI3TTNGQTBxcnJ0VnVJZzV3NHltc3l0X19JbG03WjdwRXFEWEwxZE9uMmJMTTVQbFZVRmfSAbcCQVVfeXFMTXR1bEttcm9WdW1FU0VCR1dKbWkwVkpwVmpjOE9YY1ZDUTZOcE5HaWktRnU2UW55c2ZLWEpiRmFwQ3ZTd2otS0RqX2FSWFZwejRGbFZOcGFpa2oxdF8xYmxVWVp6UUl1QkRnYi1ZVVhNS0d4UDlxSGpwZjJFeG5KbDhZdUplRWh5QU9Lc2U1NWhMMm9EQVZISVVIdUxuWnQxaDRWNllMb1lFS2VJUXRxYTJKSVV1bjg1V2ROTnRLdTVIb3dvcllFbTgtTF9nZFhaVGVrSHpzM3lQOTM5bHp2LXBLZ0VldGppMm95dWZBeGlLNUFXdnE0VkdqbWUzNS1adjhCRVlIMGdEbHJ2djFZSm5GWHhJcmZEOTRLbTU0MGNEdm1MaGkxdlA1WEEyMFlyRm8wbEdmWnM?oc=5",
+     "time": "2026-11-12T18:34:50Z"
     },
     {
-     "id": "44d885771c26dd4e",
-     "publisher": "Cryptonews",
+     "id": "89cceff7950b3622",
+     "publisher": "Benzinga",
      "kind": "news",
-     "title": "Bitcoin ETF Outflow Says Crypto Walking Into a Bull Trap",
-     "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE1aa1RfZzhBaFRtOEctWFJSZDUyRzZ6bDV5LTVmSVNubFlfLTNvNkdHVGdGS1pNbmpfb3liS2V5djRKcHV6bWZLb1BQYVVYcTRBVE0wYXNyV3hSNkdhSm01YnFqZGUzelVCamxJeEFTZG83ZzA?oc=5",
-     "time": "2026-11-12T08:48:31Z"
+     "title": "Jensen Huang Is Out At Nvidia: 4 Private Equity Giants with Big Bets on Its AI Infrastructure Future",
+     "url": "https://www.benzinga.com/markets/private-markets/26/11/63212619/jensen-huang-is-out-at-nvidia-4-private-equity-giants-with-big-bets-on-its-ai-infrastructure-future",
+     "time": "2026-11-12T18:45:12Z"
     }
    ]
   },
   {
-   "summary": "Gold rebounds as traders pare back near-term Federal Reserve rate hike bets.",
+   "summary": "Bitcoin jumps 5.7% toward $64K as AI and crypto assets rebound.",
+   "category": "crypto_positive",
+   "firstSeen": "2026-11-21T20:36:04Z",
+   "publishers": [
+    "Around Prague",
+    "BigGo Finance",
+    "Binance",
+    "Bitcoin Foundation",
+    "Blockonomi",
+    "CoinGape",
+    "Coinpaper",
+    "Cointribune",
+    "Crypto Briefing",
+    "Crypto News",
+    "CryptoDaily",
+    "Cryptonews.net",
+    "Demokratis.co.id",
+    "Haberler.com",
+    "IDNFinancials",
+    "Inshorts",
+    "Invezz",
+    "KuCoin",
+    "Limapagi",
+    "Pluang",
+    "Traders Union",
+    "TradingView",
+    "Wisevoter",
+    "bloomingbit",
+    "fiscal.ai"
+   ],
+   "assets": {
+    "BTC/USD": {
+     "direction": "up",
+     "confidence": 0.8,
+     "why": "Bitcoin rebounds above $61,000 driving positive momentum across crypto markets."
+    },
+    "SOL/USD": {
+     "direction": "up",
+     "confidence": 0.75,
+     "why": "Solana breaking above $70 demonstrates strong bullish momentum during the crypto rebound."
+    }
+   },
+   "sources": [
+    {
+     "id": "387e642d1750c13a",
+     "publisher": "Cointribune",
+     "kind": "news",
+     "title": "Bitcoin: The buyers' return propels BTC above $60,000",
+     "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxNQlZTNkYxTFExRVd0QlVMWXRGWFYweTFWNXh6LTloclk5SkdMTVE0YUxhdG5Pbm45dGtaa2EtNjVyMWJ6U3M5b1BxM2VaY2lXelBCc0l5ZmJvZThwUzFhNnI0NkczZm5hanN5LWp0UjV3S2hBaHFoRUNROWRKVjFmd09jOFlwMkxjRTQzT2FpWVhfdkps?oc=5",
+     "time": "2026-11-21T20:36:04Z"
+    },
+    {
+     "id": "9e7c736eb8b3d8dc",
+     "publisher": "Haberler.com",
+     "kind": "news",
+     "title": "Sharp reversal after the liquidation wave in Bitcoin! It has surpassed $60,000 again.",
+     "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxQRjBHNF94ZVZfeEk4RXZsRFV2eVQ3Z2s0eEd3QUdrY1V5S1plaXJ6VGhOZE16NlZscUZfS1hvaE13MHBYSGdzSXE1dmNPU3Q0Qi1JR0diZzhLdGQyZkxVRkZ0NXYzMTgtYm1qVklta2pTcWJEbHJaTmh4dW92aGw2Q1dvZw?oc=5",
+     "time": "2026-11-21T22:23:15Z"
+    },
+    {
+     "id": "8dbebc1f3b0f2d4b",
+     "publisher": "Cryptonews.net",
+     "kind": "news",
+     "title": "Bitcoin Price Rebounds to $60K After Crash Near $55K, Leaving Billions in Liquidations",
+     "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE0yTXFhb3hnTVpzLUJLS0NWdjh6S1M0Ync5MlNLRGhjV3JxSU12dmRpZGduUG8zLVhzQ1ZBcnJpd3k5eDlKMU5PeHUza21aWUlLc19lMGszN20?oc=5",
+     "time": "2026-11-21T22:15:38Z"
+    },
+    {
+     "id": "8e046e564a2ac43d",
+     "publisher": "BigGo Finance",
+     "kind": "news",
+     "title": "Bitcoin Plunges to Two-Year Low Before Rebounding Over 8% to Reclaim $60,000 Level",
+     "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE9Gc0pod3AzdFBPblREbGNxM1p5TFJobV9ZZERBcW1jcEpxMnk5eno1UXpxcDJ1dzNpbi0xbjlUVktsdFpmMVVRR0tMWkxrbmxobzR0Z19yaXVaQV9ZRU1QT0FJUnlGdldZaDZqWGROSF9hRmc4a2c?oc=5",
+     "time": "2026-11-22T01:35:00Z"
+    },
+    {
+     "id": "64b5e5497a8fd44b",
+     "publisher": "Crypto News",
+     "kind": "news",
+     "title": "Bitcoin price rebounds from $55K after historic sell-off, is $72K next?",
+     "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE1rZzVTU2xaTWZXcE5LOFI0RlBsZk84N0F5ekdWY0lONHljSWROaEVCS3BsYUd6QmlZR2RpSzBtZ2JSVVFKSVhydVBEd3lQSVVVekd5MGdPVmMwVU5PenJBcm1KZWtmT1M5Y1Z1cDkxaFdqREk?oc=5",
+     "time": "2026-11-22T08:01:17Z"
+    }
+   ]
+  },
+  {
+   "summary": "CrowdStrike Holdings reports an earnings beat and revenue outperformance.",
+   "category": "contract",
+   "firstSeen": "2026-11-23T12:04:00Z",
+   "publishers": [
+    "AP",
+    "GuruFocus",
+    "Investing.com",
+    "Investing.com India",
+    "Investing.com Nigeria",
+    "TradingView",
+    "Yahoo Finance",
+    "شبكة تواصل الإخبارية"
+   ],
+   "assets": {
+    "CRWD": {
+     "direction": "up",
+     "confidence": 0.85,
+     "why": "CrowdStrike beat earnings and revenue estimates, signalling strong financial health."
+    }
+   },
+   "sources": [
+    {
+     "id": "4c651ec5fe732f69",
+     "publisher": "Yahoo Finance",
+     "kind": "news",
+     "title": "CrowdStrike Agrees To Buy Zscaler For $43.9 Billion. Shares Move In Opposite Directions.",
+     "url": "https://www.ibtimes.com/crowdstrike-acquire-zscaler-43-9-billion-deal-3810075?.tsrc=rss",
+     "time": "2026-11-23T12:09:36Z"
+    },
+    {
+     "id": "273b2b014c38cdc4",
+     "publisher": "GuruFocus",
+     "kind": "news",
+     "title": "Zscaler (ZS) Q1 Earnings Beat Expectations, Shares Rise Amid Cro",
+     "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNUllsd1h4c3dzQkFUZjhzUXF5WklQeUtCNUtjbGN1a3ppd214cVRsdlJRUklIdDZJQWRZeFlXUEN3MFdCZ3g5ZEIyZkpLTk84RW1YdUZHNHhTenJiemJpdHdISE1vQ1RoT2Z6M1Jvdi1CYTY3c3BPZWp6NVJtOGJzT3E2SnFlSU5qSlBYM3h3eDdCdU5leU00dHdvYXFOQnA2UjF3c0o5eUZwbHhQR3VCOUh5OXVIc01RSFE?oc=5",
+     "time": "2026-11-23T12:04:26Z"
+    },
+    {
+     "id": "f92c0f3abeb6a4df",
+     "publisher": "Yahoo Finance",
+     "kind": "news",
+     "title": "CrowdStrike to Buy Zscaler in $44 Billion All-Stock Deal. Why They’re Better Off Together.",
+     "url": "https://finance.yahoo.com/m/c15198fc-46aa-317e-ad7d-cc5e670695f9/crowdstrike-to-buy-zscaler-in.html?.tsrc=rss",
+     "time": "2026-11-23T12:04:00Z"
+    },
+    {
+     "id": "e2e18482c574af40",
+     "publisher": "TradingView",
+     "kind": "news",
+     "title": "Zscaler Q1 Revenue Rises 20% as CrowdStrike Acquisition Agreement Announced",
+     "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxPSm9PT2FYaFpza2lIemNhakYtSkhqUlRITmdwOVR5ejdpZkdyQU9HUDRFVGsxUkRWYnpDYVdNakZtUXA0Wm4xYnNpV2NNU1lXSHpxdVh6RUZXTmNJNm9xcnBoVE1qSFhmeVE5YlVCM2d6M3NBZVFYWW50N29EWGVGY3A1WHVhbF9hZTlHajBFZUYwV1owbU11X0swbnRTSzZfTHNvaVM0bGViOHZkZmE5QUNwOWE1VVRZYmRkdFNqbnd1TnVib0x4eDhWQW9Nd09NNXc?oc=5",
+     "time": "2026-11-23T12:43:00Z"
+    },
+    {
+     "id": "741778701d0991d8",
+     "publisher": "AP",
+     "kind": "news",
+     "title": "Crowdstrike to acquire Zscaler in a $44 billion deal that would create a cybersecurity giant",
+     "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQekFodWNTV2dTaVZ6VDJScmUybjJ3QXRURFJjeVNtQVBmOEJkYUZTNnFlMnNKalRWdFdXOWVwTjg1TFU3THJIOU9hSXNtSXZCczVaT0xDYnNKUEJUYXFXbVpTUkhTNWRFb3VIa1RDcHdOMzB4ZVV4cTZ6STBQZ2RWLWNPT2U1RGRHYjIxNEZ1QlFXQXZJMDhJeHdDLUFUc2tSUjJoejc1dGhzTWtkUS1Hb3V1V1hKbXplV3J2Zw?oc=5",
+     "time": "2026-11-23T13:05:00Z"
+    }
+   ]
+  },
+  {
+   "summary": "Traders price out expectations of a larger 50bp Fed rate hike, easing pressures across equities and risk assets.",
    "category": "central_bank_hawkish",
    "firstSeen": "2026-11-10T09:39:09Z",
    "publishers": [
@@ -8214,9 +6625,9 @@
      "why": "Hawkish Fed commentary and rate hike expectations weigh on risk-on growth and tech stocks."
     },
     "MSFT": {
-     "direction": "down",
-     "confidence": 0.81,
-     "why": "Hawkish Fed rate hike expectations put downward pressure on major growth and tech stocks."
+     "direction": "up",
+     "confidence": 0.75,
+     "why": "Priced-out hawkish Fed expectations relieve pressure on major tech and growth assets."
     },
     "AAPL": {
      "direction": "down",
@@ -8224,9 +6635,9 @@
      "why": "Hawkish Fed rate hike outlook weighs heavily on broad tech and growth stocks"
     },
     "AMZN": {
-     "direction": "down",
+     "direction": "up",
      "confidence": 0.75,
-     "why": "Broad tech and growth sell-off triggered by hawkish central bank outlook."
+     "why": "Dovish adjustment in rate hike bets supports broader large-cap tech growth."
     },
     "AMAT": {
      "direction": "down",
@@ -8323,12 +6734,18 @@
    ]
   },
   {
-   "summary": "Broadcom faces unconfirmed reports that Google may reduce its chip orders for the upcoming year.",
+   "summary": "CrowdStrike has agreed to acquire Zscaler in an all-stock transaction valued at approximately $44 billion.",
    "category": "company_bad_news",
    "firstSeen": "2026-11-22T19:17:00Z",
    "publishers": [
+    "CNBC",
+    "Investing.com",
+    "Minichart",
+    "Reuters",
+    "StreetInsider",
     "Yahoo Finance",
-    "fiscal.ai"
+    "fiscal.ai",
+    "marketscreener.com"
    ],
    "assets": {
     "INTC": {
@@ -8340,6 +6757,11 @@
      "direction": "down",
      "confidence": 0.7,
      "why": "Google shifting chip purchases away negatively impacts Broadcom revenue outlook."
+    },
+    "CRWD": {
+     "direction": "down",
+     "confidence": 0.75,
+     "why": "Massive all-stock acquisition and dilution concerns weigh on the acquirer's stock."
     }
    },
    "sources": [
@@ -8366,882 +6788,1459 @@
      "title": "Broadcom Faces Unconfirmed Reports of Google Chip Order Reductions",
      "url": "https://world.storm.mg/articles/1183977",
      "time": "2026-11-23T02:01:09Z"
+    },
+    {
+     "id": "8cae510268d8b7a7",
+     "publisher": "CNBC",
+     "kind": "news",
+     "title": "CrowdStrike bets on network security with $43.9 billion Zscaler deal",
+     "url": "https://www.cnbc.com/2026/11/23/crowdstrike-to-buy-zscaler.html",
+     "time": "2026-11-23T10:43:47Z"
+    },
+    {
+     "id": "c7162034ea63749c",
+     "publisher": "StreetInsider",
+     "kind": "news",
+     "title": "CrowdStrike Holdings Inc. (CRWD) Tops Q3 EPS by 3c; raises forecast",
+     "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxOeTRmMmROUzY2UFFIWXhZTTBfUnBmd3FLeEJuYV9vNXBfemhDaDBfMFpMbDRhODJjWTM3dGtnZUFRSnRNVUVUbVFHeW9fRXZHd1dXUUtra0pXWVdiSTdJQTJRM0lqSlNTZkhkYnRDN1VoRTBIQjdfME1LTHVnTkJFeHdQSUNDRjdDM1lfbG9fOHFhTC1OU2NXSG9HS0RBbWRualNrb0xoSDBBNEtHa2F0RXRxbmU0SUVjLU1sSU5RWUk3bjB5?oc=5",
+     "time": "2026-11-23T10:42:22Z"
     }
    ]
   },
   {
-   "summary": "Nvidia reports faster growth but confirms Jensen Huang will not return as CEO, creating severe executive leadership uncertainty.",
-   "category": "company_bad_news",
-   "firstSeen": "2026-11-12T18:24:33Z",
+   "summary": "ConocoPhillips sells its Norway and Teesside assets to Vår Energi for $4.4 billion to fund future buybacks.",
+   "category": "other",
+   "firstSeen": "2026-11-23T13:35:00Z",
    "publishers": [
-    "AFR",
-    "AP",
-    "Anadolu Ajansı",
-    "Barchart.com",
-    "Benzinga",
     "BigGo Finance",
-    "Bloomberg.com",
-    "Breitbart News",
-    "Business Standard",
-    "CNBC",
-    "Capital Brief",
-    "Chosunbiz",
-    "Coin Gabbar",
-    "CoinDesk",
-    "Coinpaper",
-    "Crypto Briefing",
-    "Crypto Economy",
-    "CryptoTicker.io",
-    "Cryptonews.net",
-    "Deccan Herald",
-    "Decrypt",
-    "Dimsum Daily",
-    "Eurasia Business News",
-    "FXStreet",
-    "FinanceFeeds",
-    "Finimize",
-    "Finviz",
-    "Fortune",
-    "Geo News",
-    "Hokanews",
-    "Investing.com",
-    "Investing.com Canada",
-    "Investing.com South Africa",
-    "Investopedia",
-    "Investor's Business Daily",
-    "Invezz",
-    "JournalArta",
-    "KELO-AM",
-    "Kitco",
-    "Market Index",
-    "Moomoo",
-    "NDTV Profit",
-    "NST Online",
-    "Plataforma Media",
-    "Pluang",
-    "Pragativadi",
-    "Proactive financial news",
-    "Profit by Pakistan Today",
-    "Quartz",
-    "RTHK",
-    "RTHK News",
-    "RealMoney Pro",
-    "Reuters",
-    "SSBCrack",
-    "Shacknews",
-    "Stocktwits",
-    "StreetInsider",
-    "The Boston Globe",
-    "The Economic Times",
-    "The Economist",
-    "The Edge Malaysia",
-    "The Guardian",
-    "The Hawk",
-    "The Lufkin Daily News",
-    "The New York Times",
-    "The Tech Buzz",
-    "The Times of India",
-    "TipRanks",
-    "Traders Union",
-    "TradingKey",
-    "TradingView",
-    "US News Money",
-    "VINnews",
-    "WSJ",
-    "Wccftech",
-    "X",
-    "Yahoo Finance",
-    "Zacks Investment Research",
-    "astig.ph",
-    "bdnews24.com",
-    "bloomingbit",
-    "cwibc.co.id",
-    "finance.biggo.com",
-    "fiscal.ai",
-    "kaohoon international",
-    "marketscreener.com",
-    "news.sbs.co.kr",
-    "shattered.io",
-    "www.tokenpost.com",
-    "深潮TechFlow",
-    "아시아경제",
-    "조선일보"
+    "ChemAnalyst",
+    "Quantum Commodity Intelligence"
    ],
    "assets": {
-    "NVDA": {
-     "direction": "down",
-     "confidence": 0.95,
-     "why": "Sudden CEO resignation combined with an SEC accounting probe is severe negative news for the company."
-    },
-    "BTC/USD": {
-     "direction": "down",
-     "confidence": 0.7,
-     "why": "Broader risk-off sentiment triggered by major tech leadership turmoil."
-    },
-    "QCOM": {
+    "COP": {
      "direction": "up",
      "confidence": 0.65,
-     "why": "Capital is rotating out of Nvidia into competing AI semiconductor stocks following the CEO exit."
-    },
-    "AMD": {
-     "direction": "down",
-     "confidence": 0.6,
-     "why": "Broader AI chip sector drag from Nvidia's regulatory and accounting troubles."
-    },
-    "AVGO": {
-     "direction": "up",
-     "confidence": 0.75,
-     "why": "Lifted by broader AI infrastructure and semiconductor strength."
-    },
-    "MSFT": {
-     "direction": "down",
-     "confidence": 0.65,
-     "why": "Broader tech and AI infrastructure sentiment hits related large-cap names."
-    },
-    "AAPL": {
-     "direction": "down",
-     "confidence": 0.3,
-     "why": "Broad market selloff induced by tech bellwether crash."
-    },
-    "SMCI": {
-     "direction": "up",
-     "confidence": 0.75,
-     "why": "Riding positive sentiment from Nvidia earnings beat."
-    },
-    "MU": {
-     "direction": "down",
-     "confidence": 0.65,
-     "why": "Semiconductor peer dragged down by Nvidia leadership turmoil."
-    },
-    "PLTR": {
-     "direction": "down",
-     "confidence": 0.6,
-     "why": "Broader tech sector and AI stock sell-off spurred by Nvidia turmoil."
-    },
-    "INTC": {
-     "direction": "down",
-     "confidence": 0.8,
-     "why": "Nvidia significantly trimming its stake in Intel creates heavy selling pressure."
-    },
-    "TSLA": {
-     "direction": "down",
-     "confidence": 0.6,
-     "why": "Broader tech sector weakness and uncertainty surrounding Nvidia weigh on high-multiple tech growth stocks."
-    },
-    "AMAT": {
-     "direction": "up",
-     "confidence": 0.7,
-     "why": "Nvidia's beat lifts broader semiconductor equipment suppliers."
+     "why": "Asset sale generates strong liquidity to fund upcoming share buybacks."
     }
    },
    "sources": [
     {
-     "id": "855265040ed1e43c",
-     "publisher": "Reuters",
+     "id": "6446b5858f4453ac",
+     "publisher": "ChemAnalyst",
      "kind": "news",
-     "title": "Nvidia CEO Jensen Huang resigns, in blow to AI boom he helped foster",
-     "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOMEFwN0FWdjB6blNtR0RZaTBWZXZDaWVwYkhXREttY2FaYVNNVC1qNEFHYm9Yd1pDODBDN2tvNzhnMTY4cmxWYTg1WVFidzFlNVFEdlZNb3IyZG1nS2FKcHAzUERhQW9EdG9oOER6YmwydXZOd0t1VHRub1BCdFdoR1V4dktlUVUydjZWeU53aVdKMGwtOGFtZmd2T3VhODF3eXhPazVtbV81b0hpUi1vcw?oc=5",
-     "time": "2026-11-12T18:31:55Z"
+     "title": "ConocoPhillips Sells Norway and Teesside Assets for $4.4 Billion",
+     "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQZHh1SzE1VmpDSXNmVHJPVF9kWWUyTlQ0ckphRzc3eThhQjVqWEs0MTg1NHFUUmY5d0FZSzVrOEltdEFtdmdKYVRMemRSQlZxYmU1NWkxYVRhX3c3M1NSSHdwb3d1TTA5VnF4bEpXX0IwVUllVnNXR1VYLXFzN2Vlb2htMDZzR0dXcWtiTEF0cnNpaC00REdPc2NRamhPdGhvQ2RYUnA0dDlEd01TUFVfS3BPUDI?oc=5",
+     "time": "2026-11-23T13:49:12Z"
     },
     {
-     "id": "6c526a44313f07e5",
-     "publisher": "Yahoo Finance",
+     "id": "d0172cfb415f4f82",
+     "publisher": "Quantum Commodity Intelligence",
      "kind": "news",
-     "title": "Equities Rise Intraday Despite Nvidia Sell-Off Post CEO's Departure",
-     "url": "https://finance.yahoo.com/markets/stocks/articles/equities-rise-intraday-despite-nvidia-182433809.html?.tsrc=rss",
-     "time": "2026-11-12T18:24:33Z"
+     "title": "Var Energi takes over Ekofisk in ConocoPhillips Norway oil deal",
+     "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNWXFJS0tnWEdOeHI4OXRwSXY0YUNUdUNIN0xvQ05aMzBZUTFWYjVHU29EYXFsV0ZDak1hWFlKTjA0M0lnalY5ZUZtY1BWbUFRQVhoVkFic3hEVUpMVFdZQ2p3eEtvSlJUNlZWem4yZU5oOHg5RFhPaEd3ZHVOZ2czc2FTTW9HdHA2eHVoUl8zcVpRMllGOU1hUXRZc2dSYmlIQkI1WjJpX0ZCUQ?oc=5",
+     "time": "2026-11-23T13:43:56Z"
     },
     {
-     "id": "adfadefb8db21a4c",
-     "publisher": "AP",
-     "kind": "news",
-     "title": "What we know after Jensen Huang resigns as Nvidia’s CEO",
-     "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOMUxqUTE0WWZBT2xoV25SLUQ2dFgyWkhwZFZyRnk3d1Fibmtrb0d4T3otSXNpNmZiTVh0QUdkWTA4UmQ3cXQyVVM3ODc0V0g4YnVVbDJRYWF4VXlaXzMzZnJWNi1UR3YyZHJGbWNzaVFab2tiM3N2RjFIOUtWcnlJVWtMVnhQNmhJeTdPajNVUXZfU2NzWkw0aGJLVFMtaGY3?oc=5",
-     "time": "2026-11-12T18:38:00Z"
-    },
-    {
-     "id": "e45111d2af3013e1",
-     "publisher": "The Economic Times",
-     "kind": "news",
-     "title": "Bitcoin price today: BTC USD falls near $71,000 after Jensen Huang resigns as Nvidia CEO and ETF outflows",
-     "url": "https://news.google.com/rss/articles/CBMisgJBVV95cUxNNGkxSEhVaVRhRGl4UkxMZUoyeV9Bc25CTmNkY1Q3Z2JEbTB5S3JWbUt4clE4eEltNTFSbFZSOFJrM290QTFESGJiMHROMGRSNVhzV0tkRHRqU2hLTk5GYng1Mm9FaDVlTFNyNHdqWXNwNDhNazZJNmlqOXIxVjFvZ0hwSHRTSUcwSXRqWWU5Mi1BTVg3Zm12bml2STNnSFExQWlTaUlRdDNlVnNUZlh5dFJDN2pfQmhha2M1SVBYUm1fVDhiaThNTnBsRU0ySTJSR1o1QkMyVHJseHA4VHlkd2pYODRaZzFpUUQza2ZlT1JpU0ZodWVkR0pCb3ZZTnI3TTNGQTBxcnJ0VnVJZzV3NHltc3l0X19JbG03WjdwRXFEWEwxZE9uMmJMTTVQbFZVRmfSAbcCQVVfeXFMTXR1bEttcm9WdW1FU0VCR1dKbWkwVkpwVmpjOE9YY1ZDUTZOcE5HaWktRnU2UW55c2ZLWEpiRmFwQ3ZTd2otS0RqX2FSWFZwejRGbFZOcGFpa2oxdF8xYmxVWVp6UUl1QkRnYi1ZVVhNS0d4UDlxSGpwZjJFeG5KbDhZdUplRWh5QU9Lc2U1NWhMMm9EQVZISVVIdUxuWnQxaDRWNllMb1lFS2VJUXRxYTJKSVV1bjg1V2ROTnRLdTVIb3dvcllFbTgtTF9nZFhaVGVrSHpzM3lQOTM5bHp2LXBLZ0VldGppMm95dWZBeGlLNUFXdnE0VkdqbWUzNS1adjhCRVlIMGdEbHJ2djFZSm5GWHhJcmZEOTRLbTU0MGNEdm1MaGkxdlA1WEEyMFlyRm8wbEdmWnM?oc=5",
-     "time": "2026-11-12T18:34:50Z"
-    },
-    {
-     "id": "89cceff7950b3622",
-     "publisher": "Benzinga",
-     "kind": "news",
-     "title": "Jensen Huang Is Out At Nvidia: 4 Private Equity Giants with Big Bets on Its AI Infrastructure Future",
-     "url": "https://www.benzinga.com/markets/private-markets/26/11/63212619/jensen-huang-is-out-at-nvidia-4-private-equity-giants-with-big-bets-on-its-ai-infrastructure-future",
-     "time": "2026-11-12T18:45:12Z"
-    }
-   ]
-  },
-  {
-   "summary": "Hedge fund scoops up $1B in Bitcoin following a recent price dip.",
-   "category": "crypto_positive",
-   "firstSeen": "2026-11-21T20:36:04Z",
-   "publishers": [
-    "Around Prague",
-    "BigGo Finance",
-    "CoinGape",
-    "Cointribune",
-    "Crypto News",
-    "CryptoDaily",
-    "Cryptonews.net",
-    "Demokratis.co.id",
-    "Haberler.com",
-    "IDNFinancials",
-    "Inshorts",
-    "Limapagi",
-    "Pluang",
-    "Traders Union",
-    "Wisevoter",
-    "bloomingbit"
-   ],
-   "assets": {
-    "BTC/USD": {
-     "direction": "up",
-     "confidence": 0.8,
-     "why": "Major institutional buying of $1 billion during a price dip provides strong positive momentum for Bitcoin."
-    },
-    "SOL/USD": {
-     "direction": "up",
-     "confidence": 0.75,
-     "why": "Solana breaking above $70 demonstrates strong bullish momentum during the crypto rebound."
-    }
-   },
-   "sources": [
-    {
-     "id": "387e642d1750c13a",
-     "publisher": "Cointribune",
-     "kind": "news",
-     "title": "Bitcoin: The buyers' return propels BTC above $60,000",
-     "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxNQlZTNkYxTFExRVd0QlVMWXRGWFYweTFWNXh6LTloclk5SkdMTVE0YUxhdG5Pbm45dGtaa2EtNjVyMWJ6U3M5b1BxM2VaY2lXelBCc0l5ZmJvZThwUzFhNnI0NkczZm5hanN5LWp0UjV3S2hBaHFoRUNROWRKVjFmd09jOFlwMkxjRTQzT2FpWVhfdkps?oc=5",
-     "time": "2026-11-21T20:36:04Z"
-    },
-    {
-     "id": "9e7c736eb8b3d8dc",
-     "publisher": "Haberler.com",
-     "kind": "news",
-     "title": "Sharp reversal after the liquidation wave in Bitcoin! It has surpassed $60,000 again.",
-     "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxQRjBHNF94ZVZfeEk4RXZsRFV2eVQ3Z2s0eEd3QUdrY1V5S1plaXJ6VGhOZE16NlZscUZfS1hvaE13MHBYSGdzSXE1dmNPU3Q0Qi1JR0diZzhLdGQyZkxVRkZ0NXYzMTgtYm1qVklta2pTcWJEbHJaTmh4dW92aGw2Q1dvZw?oc=5",
-     "time": "2026-11-21T22:23:15Z"
-    },
-    {
-     "id": "8dbebc1f3b0f2d4b",
-     "publisher": "Cryptonews.net",
-     "kind": "news",
-     "title": "Bitcoin Price Rebounds to $60K After Crash Near $55K, Leaving Billions in Liquidations",
-     "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE0yTXFhb3hnTVpzLUJLS0NWdjh6S1M0Ync5MlNLRGhjV3JxSU12dmRpZGduUG8zLVhzQ1ZBcnJpd3k5eDlKMU5PeHUza21aWUlLc19lMGszN20?oc=5",
-     "time": "2026-11-21T22:15:38Z"
-    },
-    {
-     "id": "8e046e564a2ac43d",
+     "id": "a8b1c14fe3965711",
      "publisher": "BigGo Finance",
      "kind": "news",
-     "title": "Bitcoin Plunges to Two-Year Low Before Rebounding Over 8% to Reclaim $60,000 Level",
-     "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE9Gc0pod3AzdFBPblREbGNxM1p5TFJobV9ZZERBcW1jcEpxMnk5eno1UXpxcDJ1dzNpbi0xbjlUVktsdFpmMVVRR0tMWkxrbmxobzR0Z19yaXVaQV9ZRU1QT0FJUnlGdldZaDZqWGROSF9hRmc4a2c?oc=5",
-     "time": "2026-11-22T01:35:00Z"
-    },
-    {
-     "id": "64b5e5497a8fd44b",
-     "publisher": "Crypto News",
-     "kind": "news",
-     "title": "Bitcoin price rebounds from $55K after historic sell-off, is $72K next?",
-     "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE1rZzVTU2xaTWZXcE5LOFI0RlBsZk84N0F5ekdWY0lONHljSWROaEVCS3BsYUd6QmlZR2RpSzBtZ2JSVVFKSVhydVBEd3lQSVVVekd5MGdPVmMwVU5PenJBcm1KZWtmT1M5Y1Z1cDkxaFdqREk?oc=5",
-     "time": "2026-11-22T08:01:17Z"
+     "title": "ConocoPhillips Sells Norway Unit to Vår Energi for $4.43 Billion, Funds 2027 Buybacks",
+     "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE9ld1NveUhlSGI3TFQxZW1Cc1NZeXFUSUtYLUR6dFNpbUNGMTVRU0YxUWt0RG1HNnFLeE1oWGRLVGZidFNQM1pfV200LUx5bF9yZkl0czNIdk5obmxWZlBxbjRmSm11N2NYT1BXbHRiSndleW83c2c?oc=5",
+     "time": "2026-11-23T13:35:00Z"
     }
    ]
   },
   {
-   "summary": "Geopolitical tensions remain elevated following reports of Russian missiles entering Polish airspace.",
+   "summary": "Geopolitical tensions in the Strait of Hormuz have reached the highest level since the conflict began, threatening oil supply.",
    "category": "war_escalation",
-   "firstSeen": "2026-11-20T16:27:30Z",
-   "publishers": [
-    "1News",
-    "AP",
-    "ASHARQ AL-AWSAT English",
-    "Apa.az",
-    "Arab News",
-    "Breitbart News",
-    "CBC",
-    "Daily Mail",
-    "Daily Sun",
-    "Defence24.com",
-    "Envanter Medya",
-    "Eyes Only with Wes O'Donnell",
-    "Firstpost",
-    "France 24",
-    "Free Press Journal",
-    "Informat.ro",
-    "Juno News",
-    "Kyiv Post",
-    "Latin Times",
-    "Macau Business",
-    "Modern Ghana",
-    "NBC News",
-    "Nacionale",
-    "National Security Journal",
-    "Punch Newspapers",
-    "RBC-Ukraine",
-    "RTE.ie",
-    "Reuters",
-    "SSBCrack",
-    "South China Morning Post",
-    "TVP World",
-    "The Business Standard",
-    "The Daily Caller",
-    "The Daily Wire",
-    "The Guardian",
-    "The Independent",
-    "The Manila Times",
-    "The New Voice of Ukraine",
-    "The SOFX Report",
-    "The South Shore Press",
-    "The Times of India",
-    "The Washington Post",
-    "TheWire.in",
-    "UA.NEWS",
-    "Ukranews",
-    "Ukrinform",
-    "Vanguard News",
-    "WRAL",
-    "Winnipeg Sun",
-    "Yahoo",
-    "insauga.com",
-    "Мілітарний"
-   ],
-   "assets": {
-    "PLTR": {
-     "direction": "up",
-     "confidence": 0.75,
-     "why": "NATO-Russia escalation increases demand for defense technologies."
-    },
-    "AVAV": {
-     "direction": "up",
-     "confidence": 0.8,
-     "why": "Defense tech benefits from escalation in European conflict."
-    },
-    "NEM": {
-     "direction": "up",
-     "confidence": 0.7,
-     "why": "Geopolitical friction and military escalation spur safe-haven demand for gold."
-    },
-    "AAPL": {
-     "direction": "down",
-     "confidence": 0.6,
-     "why": "Broad tech drops on war escalation fears."
-    },
-    "XOM": {
-     "direction": "up",
-     "confidence": 0.75,
-     "why": "War escalation and supply risk boost oil and gas stocks."
-    }
-   },
-   "sources": [
-    {
-     "id": "9d96ce28e1d9d3b6",
-     "publisher": "WRAL",
-     "kind": "news",
-     "title": "Russian missile’s crash in Poland was likely an intentional provocation, Polish prime minister says",
-     "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxOd1UzdUlHaHdGaHBFRFhTLWExN1J5QlNVb0o3UkFuNldKcnhnTUc4UEs3XzFIbGdWdUIweDRzbDRTcEZtdmpENVl3dTNuZUlwaW1EcTB1dDFMRkh2a3ctRWw0Unp0S3pPQ0daTzJ6bENaMHl1YUgtVm1TN2ZWTHRFdUVLc0VucVAyWE84NkkycENHTi1GWjFaV0dnZk5zVzN0LUd3VTh1Q2ZaYzhHaWZJRXRjeGJkY0g1ZDB5UXdsZDNCcXc?oc=5",
-     "time": "2026-11-20T16:28:02Z"
-    },
-    {
-     "id": "07fe8cbba05be5cc",
-     "publisher": "RTE.ie",
-     "kind": "news",
-     "title": "Leaders offer support after Warsaw missile incident",
-     "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE92RlNhdTFMVHJrRU5MajZTQ1dwRE9FeUF1WkQzaDVKQnBtRlVZS0lUZE5XWF9KSDBZWG9WS1VYRE53bWV1M3BJUFF4aElwd3l6NVBtSEFOX1lCTVEyMzJSWm0tSlBOTk5Q?oc=5",
-     "time": "2026-11-20T16:27:30Z"
-    },
-    {
-     "id": "d2df3350bfeeca07",
-     "publisher": "Vanguard News",
-     "kind": "news",
-     "title": "Poland and allies say Russian missile a ‘provocation’ from Moscow",
-     "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNSmU2bWptRDQwLVY0Ri1GUmZVcTktMC1oaHU2UDRTTDkwT3c1SDFCZmJmRjg3YzV1Qm9WZGVaREFhMWFaazEyQ0IwTkFneU01WWdOYTh5UkhKT1NGN3RIUDVzX2VvYUtIb2wzVlhkclpYYlZkS2ZDUXJITUhVM0hnXzNJWTlMemxtalhWa0JEMmU5dnYyWGEzcnlzcDhiRS1laVVYbjBBNNIBpwFBVV95cUxNSmU2bWptRDQwLVY0Ri1GUmZVcTktMC1oaHU2UDRTTDkwT3c1SDFCZmJmRjg3YzV1Qm9WZGVaREFhMWFaazEyQ0IwTkFneU01WWdOYTh5UkhKT1NGN3RIUDVzX2VvYUtIb2wzVlhkclpYYlZkS2ZDUXJITUhVM0hnXzNJWTlMemxtalhWa0JEMmU5dnYyWGEzcnlzcDhiRS1laVVYbjBBNA?oc=5",
-     "time": "2026-11-20T16:39:47Z"
-    },
-    {
-     "id": "0297e8b0b240e97d",
-     "publisher": "The Independent",
-     "kind": "news",
-     "title": "European leaders condemn Russia’s ‘intentional provocation’ as missile hits Poland",
-     "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQVF9PQ1IzdXJpeFlKVGEyT3ZRTHRIMDBFbzZZWmYtYmpDdXVCWm9iSy1ULWFZRUFHdWlGaThRcUQ4WDhpcXdlRXJiOEZRWnFibHRSQ2tSN2tOSGxac2tvMmM5ZUVfaXhweFZCMXBPTmVhRFh2Q2Fad25lMXhXZkV2VlhsVlNvRjdtcnc5MmdKODVYSy1JYzY4UE1nVQ?oc=5",
-     "time": "2026-11-20T16:39:00Z"
-    },
-    {
-     "id": "e8b69921297b44ef",
-     "publisher": "AP",
-     "kind": "news",
-     "title": "Russian missiles land in Poland, as Europe held military drills nearby. NATO calls it a violation",
-     "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQNXhFLWVHeVA2TTIyRTRBRklRM29NQlpLTkNSbkdUYlNWVTNLek1BNG52cDFJRjNNVGNxNW04V3RDTEJPNGtDZ1R6WXE5TVV3SDJhQkFDRVFEMXZaTF92aWhZdS1xS1A0QnR2dE9selFRNGJYclZkRmdKUlJrWjB3VGxzTFE3aVBjYWJCUXhsM0Q1Sk5qR1U3TFlIekxkUE43MUNNenk2bw?oc=5",
-     "time": "2026-11-20T16:52:30Z"
-    }
-   ]
-  },
-  {
-   "summary": "Oil prices fall as comments from Vance and Trump signal potential de-escalation and a diplomatic end to the conflict with Iran.",
-   "category": "deescalation",
-   "firstSeen": "2026-11-10T01:57:53Z",
+   "firstSeen": "2026-11-10T20:01:23Z",
    "publishers": [
     "1470 & 100.3 WMBD",
-    "21st CENTURY CHRONICLE",
+    "1News",
     "24 News HD",
-    "24/7 Wall St.",
-    "3News",
+    "24NewsHD",
+    "790 KABC",
+    "7NEWS",
+    "8AM Media",
+    "930 WFMD Free Talk",
+    "964media",
+    "A News",
+    "ABC Columbia",
+    "ABC News - Breaking News, Latest News and Videos",
+    "ABC7 WWSB",
+    "ABNA English",
     "ABP Live English",
+    "ABS-CBN",
     "ANI News",
+    "ANSA",
+    "AOL.co.uk",
     "AOL.com",
     "AP",
+    "ARN News Centre",
     "ARYnews.tv",
     "ASHARQ AL-AWSAT English",
+    "AZ Family",
     "Aaj English TV",
-    "Abb Takk News",
-    "Action Forex",
     "Ada Derana",
+    "Admirals",
+    "AgroLatam",
     "Ahram Online",
+    "Air Data News",
+    "Aktualita.co",
+    "Al Arabiya English",
     "Al Jazeera",
+    "Al-Bawaba",
     "Al-Monitor",
+    "Albanian Daily News",
     "American Journal of Transportation",
     "Ammon News",
     "Anadolu Ajansı",
+    "Anchorage Daily News",
+    "Antiwar.com",
     "Apa.az",
     "Arab News",
+    "Arab News PK",
+    "Arab Times Kuwait News",
+    "Arabian Business",
     "Arabian Gulf Business Insight | AGBI",
     "Arbiterz",
-    "Atalayar",
+    "Arise News",
+    "Armenpress",
+    "Army Recognition",
+    "Asia Insurance Post",
+    "AsiaOne.com",
+    "Atlanta News First",
+    "Audacy",
+    "Awaz The Voice",
+    "Axios",
+    "AzerNews",
     "Azərtac",
+    "BBC",
     "BGNES",
-    "BNN Bloomberg",
+    "Baird Maritime",
     "Baku.ws",
-    "Bangkok Post",
-    "Banglanews24",
+    "Baltic News Network",
+    "Bangladesh Sangbad Sangstha (BSS)",
+    "Bankingnews",
     "Barchart.com",
+    "Beaumont Enterprise",
+    "Belaaz",
     "Benzinga",
+    "Bicester Advertiser",
     "Big News Network.com",
     "BigGo Finance",
-    "BigMint",
+    "Bilyonaryo Business",
+    "BizPac Review",
+    "Blockonomi",
     "Bloom Pakistan",
     "Bloomberg.com",
+    "Bol News",
+    "Borneo Bulletin",
+    "Boston 25 News",
+    "Boston Herald",
     "BreakingNews.ie",
     "Breakingthenews.net",
-    "Briefs Finance",
-    "Bundaberg Today",
-    "Business Insider Africa",
-    "Business News This Week",
+    "Breitbart News",
+    "Business Day",
+    "Business Post Nigeria",
     "Business Recorder",
     "Business Standard",
     "Business Today",
     "Business Upturn",
+    "BusinessGreen",
     "BusinessLine",
     "BusinessToday Malaysia",
+    "BusinessWorld Online",
+    "C-SPAN",
     "CBC",
+    "CBN.com",
+    "CBS News",
+    "CGTN",
     "CNA",
     "CNBC",
-    "CPG Click Oil and Gas",
-    "CT Insider",
+    "CNBC Africa",
+    "CNBC TV18",
+    "CNN",
+    "CP24",
+    "CTPost",
     "CTV News",
+    "Caledonian Record",
+    "Caspian Post",
+    "Central Oregon Daily",
     "Channels Television",
-    "Chattanooga Times Free Press",
-    "China Daily",
+    "Charisma Magazine Online",
+    "Chicago Tribune",
+    "China Daily Global Edition",
+    "Chosunbiz",
     "Chronicle NG",
+    "Citizen Digital",
     "City AM",
-    "Club of Mozambique",
-    "Coinpaper",
+    "CityNews Halifax",
+    "CityNews Winnipeg",
+    "Cityairnews",
+    "Clarion India",
+    "Click2Houston",
+    "ClickOnDetroit | WDIV Local 4",
     "Coinpedia",
-    "Corsicana Daily Sun",
+    "Common Dreams",
+    "Connected to India",
+    "Construction Review",
+    "Construction World",
     "Crude Oil Prices Today | OilPrice.com",
     "Crypto Briefing",
+    "Cyprus Mail",
+    "DD India",
     "DD News",
-    "DW.com",
-    "DZRH",
+    "DNA India",
+    "DNE Africa",
+    "DRGNews",
+    "Daijiworld",
     "Daily Beirut",
+    "Daily Excelsior",
+    "Daily Express",
+    "Daily Lead Pakistan",
     "Daily Mail",
     "Daily Mirror - Sri Lanka",
-    "Daily Monitor",
+    "Daily News-Record",
     "Daily Observer",
+    "Daily Pakistan",
+    "Daily Pioneer",
+    "Daily Post Nigeria",
+    "Daily Sun",
     "Daily Times",
     "Daily Trust",
+    "Daily Voice Of Asia",
+    "Dailyhunt",
+    "Dainik Jagran MP CG",
+    "Dawn",
     "Deccan Chronicle",
-    "Diari ARA",
+    "Deccan Herald",
+    "Defense Express",
+    "Democracy Now!",
+    "Demokratis.co.id",
+    "Demócrata",
+    "Dhaka Tribune",
+    "Dimsum Daily",
+    "Drop Site News",
+    "Dubai Eye 103.8",
+    "Durango Herald",
+    "EA WorldView",
+    "ETV Bharat",
+    "Eagle-Tribune",
+    "Egypt Independent",
+    "Egypt Today",
+    "Egyptian Gazette",
     "Energy Connects",
     "Energy Intelligence",
-    "Energy Update",
-    "EnviroNews Nigeria",
-    "Equiti Global",
-    "Equitypandit",
+    "EnergyNow.com",
+    "Enidnews.com",
+    "Eurasia Review",
+    "Euromaidan Press",
+    "Euronews",
     "Euronews.com",
+    "Euronext Markets: Real-time Stock Market Data | live",
     "FOX 5 DC",
+    "FOX Carolina News",
+    "FOX19 | Cincinnati",
     "FT",
+    "FXDailyReport.Com",
     "FXEmpire",
     "FXStreet",
     "Facebook",
+    "Fars News Agency",
+    "Fast Company",
+    "Female First",
+    "Fenland Citizen",
     "FinanceFeeds",
-    "Finimize",
     "Firstpost",
+    "FlipItMoney",
+    "Foej Media",
     "Forbes",
     "Forbes Middle East",
-    "FourWeekMBA",
+    "Foreign Policy Journal",
+    "Forth.News",
+    "Fortune",
+    "Fortune India",
+    "Fox News",
+    "France 24",
     "Free Malaysia Today",
     "Free Press Journal",
-    "FreightWaves",
-    "GMA Network",
-    "Goldman Sachs",
-    "Gossip Lanka News",
-    "Greek City Times",
-    "Greeley Tribune",
+    "GPblog",
+    "GV Wire",
+    "Global Banking & Finance Review",
+    "Global News",
+    "Goshen News",
+    "Greater Kashmir",
+    "Gujarat Samachar",
+    "Gulf Business",
     "Gulf Daily News (Bahrain)",
     "Gulf News",
-    "Gulf Times",
+    "Gulf Today",
     "GuruFocus",
+    "HDFC Sky",
     "Haaretz",
     "Haberler.com",
+    "Hagadone News Network",
+    "Hamariweb.com",
+    "Hamro Patro",
+    "Hart Energy",
+    "Hawaii News Now",
     "Head Topics",
-    "Herts Advertiser",
+    "Heartlander News",
+    "Henry Herald",
+    "Hilton Head Island Packet",
     "Hindustan Times",
     "Hiru News",
     "Hokanews",
-    "IDNFinancials",
-    "ING Think",
-    "IOL",
+    "Honolulu Star-Advertiser",
+    "Hoodline",
+    "HotAir",
+    "Howl.Link",
+    "Hum News English",
+    "Hunter Valley News",
+    "IANS LIVE",
+    "IBTimes India",
+    "IFCJ",
+    "ILoveQatar.net",
+    "INDIA New England News",
+    "ISNA News Agency",
     "Il Sole 24 ORE",
-    "India's News.Net",
+    "India TV News",
+    "India Today",
+    "India Tribune - Chicago",
+    "India.com",
     "Indian PSU",
+    "Informat.ro",
     "Inquirer.net",
+    "Inquisitr",
     "Inshorts",
+    "Insurance Day",
+    "Insurance Journal",
+    "IntelliNews",
+    "Interesting Engineering",
+    "Interfax-Ukraine",
+    "International Business Times",
+    "Internazionale",
     "Investify",
     "Investing.com",
     "Investing.com Australia",
     "Investing.com Canada",
     "Investing.com India",
-    "Investment Guru India",
+    "Investing.com Nigeria",
+    "Investing.com South Africa",
     "Invezz",
-    "IraqiNews",
+    "Iran International",
+    "IranWire",
     "Irish Independent",
-    "Jagran Josh",
-    "Jakarta Globe",
+    "Iron Mountain Daily News",
+    "Islamabad Post",
+    "Israel Hayom",
+    "Israel National News",
+    "JC Post",
+    "JFeed",
+    "JNS.org",
+    "Japan Today",
+    "Jewish Insider",
+    "Jordan News",
     "JournalArta",
+    "Just The News",
+    "KBOI",
+    "KCTV",
     "KELO-AM",
-    "KIRO 7 News Seattle",
+    "KIMT",
     "KLSE Screener",
+    "KMBC",
+    "KQ2",
+    "KRDO",
+    "KRMG",
+    "KTAR News 92.3 FM",
     "KTVN",
-    "Kashmir Independent Media Service",
-    "KuCoin",
+    "KVNU News Talk",
+    "KYMA",
+    "Kashmir Life",
+    "KashmirPEN",
+    "Kerala Kaumudi",
+    "Khaama Press",
+    "Khaleej Times",
+    "Khmer Times",
+    "Kitco",
+    "Kurdistan24",
+    "Kuwait Times",
+    "Kyiv Post",
     "L'Orient Today",
     "LBCI Lebanon",
     "LEADERSHIP Newspapers",
+    "LIGA.net",
+    "La Voce di New York",
     "Laodong.vn",
+    "Las Vegas Review-Journal",
     "Latest news from Azerbaijan",
+    "Latin Times",
+    "Le Monde.fr",
+    "Limapagi",
     "LinkedIn",
     "Livemint",
+    "Lloyd's List",
+    "Local 3 News",
+    "Logistics Middle East",
+    "Lokmat Times",
     "London South East",
+    "MKFM",
+    "MLQ.ai",
     "MM News",
-    "MSN",
     "MTV Lebanon",
-    "MUFG Research",
+    "Macau Business",
     "Madhyamam",
+    "Malay Mail",
+    "MalaysiaGazette",
+    "Manchester Evening News",
+    "Mangalore Today",
     "Manila Bulletin",
-    "Manila Standard",
+    "Marietta Daily Journal",
+    "Marine Log",
     "Marine News Magazine",
     "MarineLink",
     "MarketForces Africa",
-    "Metrobank Wealth Insights",
+    "Mashriq TV",
+    "Mathrubhumi English",
+    "Mediaite",
+    "Meduza",
+    "Mehr News Agency",
+    "Metro.co.uk",
+    "Mettis Global",
     "Mezha.net",
-    "Michael West Media",
     "Mid-Day",
     "Middle East Eye",
+    "Middle East Monitor",
     "Middle East Online",
-    "Midland Daily News",
+    "Military.com",
+    "MillenniumPost",
     "Minute Mirror",
+    "Mitrade",
     "Modern Ghana",
     "Moneycontrol.com",
     "Moneyweb",
     "Moomoo",
+    "MorungExpress",
+    "MundoNOW",
     "Munsif News 24x7",
-    "MyJoyOnline",
+    "Muslim Network TV",
+    "Mwanzo TV",
+    "MySA",
+    "NBC News",
     "NDTV",
     "NDTV Profit",
-    "NHKニュース",
-    "NL Times",
+    "NEWS.am",
+    "NKTV",
+    "NOTUS",
     "NPR",
     "NST Online",
+    "NTD News",
+    "NZ Herald",
+    "Nacionale",
     "Naharnet",
-    "Nation Thailand",
-    "National Business Review",
+    "National Herald",
     "National Security Journal",
+    "Natural Gas Intelligence",
+    "Nepalnews.com",
+    "New Haven Register",
     "New York Post",
+    "News Karnataka",
+    "News On AIR",
     "News of Bahrain",
+    "News-Press NOW",
     "News18",
+    "News24",
+    "News4JAX",
     "News9live",
     "NewsBytes",
-    "Newsfirst",
+    "NewsCord",
+    "NewsDrum",
+    "Newser",
+    "Newsmax",
     "Newswav",
-    "Newswire",
-    "Nigerian NewsDirect",
-    "Observer Voice",
+    "NewzTodays",
+    "Nine.com.au",
+    "Northwich Guardian",
+    "Norwalk Hour",
+    "Novinite.com",
+    "Odessa Journal",
     "Oil & Gas 360",
     "Oil & Gas Middle East",
+    "Oklahoma Energy Today",
     "Oman Observer",
-    "Oneindia",
+    "Ommcom News",
+    "Open Magazine",
     "Operativ Məlumat Mərkəzi",
     "Organiser",
+    "Orinoco Tribune",
+    "Ottumwa Courier",
     "Outlook India",
-    "Pakistan Connect",
+    "Oz Arab Media",
+    "PBS",
     "Pakistan Observer",
+    "Pakistan Today",
+    "Palestine Chronicle",
+    "Pars Today",
+    "Peeblesshire News",
     "People Daily",
-    "Philstar.com",
+    "Peoples Gazette Nigeria",
+    "Philenews",
+    "PinalCentral.com",
     "Pittsburgh Post-Gazette",
-    "Plataforma Media",
     "Pluang",
-    "Polymerupdate",
-    "PravdaReport",
-    "Premium Times Nigeria",
+    "Politiko.com.ph",
+    "Pratidin Time",
+    "Proactive Investors Australia",
     "Profit by Pakistan Today",
-    "Punjab News Express",
+    "Proshare",
+    "Prothom Alo English",
+    "Public TV English",
+    "Punch Newspapers",
+    "Qatar Tribune",
     "Qatar news agency",
-    "Qazinform",
     "Quantum Commodity Intelligence",
     "Quartz",
     "RBC-Ukraine",
+    "RNZ",
+    "RTE.ie",
     "RTHK News",
+    "RTV English",
+    "RTV News",
+    "RadarOnline",
+    "Radio Free Europe/Radio Liberty",
     "Radio Royal",
     "Ratopati",
+    "RealMoney Pro",
+    "Rebel News",
     "Rediff",
     "Rediff MoneyWiz",
+    "Report.az",
     "Reuters",
+    "Rigzone",
+    "Rising Kashmir",
+    "Riviera Maritime Media",
+    "Roger Pielke Jr. | Substack",
     "Rudaw",
-    "SMH.com.au",
+    "SBS",
+    "SNJ Today",
     "SRN News",
+    "SSBCrack",
+    "Sahara Reporters",
     "Sahi",
+    "Salina Post",
+    "San Angelo LIVE!",
     "Saudi Gazette",
+    "Scripps News",
     "Scroll.in",
+    "Seatrade Maritime News",
+    "Seattle Post-Intelligencer",
     "Seeking Alpha",
-    "Semafor",
-    "Seoul Economic Daily",
+    "Senate Committee on Energy and Natural Resources (.gov)",
+    "Serbian News Media",
+    "Sharjah24",
     "Ship & Bunker",
-    "Sky News",
-    "Startup Fortune",
+    "Ships & Ports",
+    "Social News XYZ",
+    "Somerset County Gazette",
+    "South China Morning Post",
+    "Sowetan",
+    "Spectrum News",
+    "Splash247",
+    "Stars and Stripes",
     "StreetInsider",
-    "THISDAYLIVE",
-    "TIKR.com",
+    "Stuff.co.nz",
+    "SuaraGarut.ID",
+    "Swarajya",
+    "TABNAK",
+    "TMJ4 News",
+    "TRT Afrika",
+    "TRT World",
+    "TV ONE USA",
+    "TVC News",
+    "Tampa Free Press",
+    "TechBullion",
     "Tehran Times",
     "Telangana Today",
+    "Telegraph India",
+    "Temple Daily Telegram",
+    "Texarkana Gazette",
+    "Thailand Business News",
+    "The American Conservative",
+    "The Arab Weekly",
     "The Arkansas Democrat-Gazette",
-    "The Border Mail",
+    "The Assam Tribune",
+    "The Australian",
+    "The Avenue Mail",
+    "The Bakersfield Californian",
+    "The Batesville Daily Guard",
     "The Business Standard",
     "The Business Times",
     "The Canberra Times",
+    "The Citizen",
+    "The Daily Caller",
+    "The Daily Jagran",
+    "The Daily Star",
+    "The Daily Star Lebanon",
     "The Detroit News",
+    "The Diplomatic Insight",
     "The Economic Times",
     "The Edge Malaysia",
-    "The Globe and Mail",
+    "The Edwardsville Intelligencer",
+    "The Express Tribune",
+    "The Filipino Times",
+    "The Financial Express",
     "The Guardian",
-    "The Hindu",
-    "The Impartial Reporter",
+    "The Hans India",
+    "The Hawk",
+    "The Herald",
+    "The Herald Journal",
+    "The Hill",
+    "The Hindustan Gazette",
+    "The Hip Hop Democrat",
+    "The Independent",
+    "The Indian EYE",
+    "The Indian Express",
     "The Irish Times",
+    "The Japan Times",
+    "The Jerusalem Post",
+    "The Jewish Chronicle",
+    "The Journal",
+    "The Journal Gazette",
     "The Killeen Daily Herald",
+    "The Korea Herald",
     "The Korea Times",
+    "The Kyiv Independent",
+    "The Lufkin Daily News",
     "The Manila Times",
-    "The Morning",
+    "The Mary Sue",
+    "The Media Line",
+    "The Mirror",
+    "The Moscow Times",
+    "The Nation (Pakistan )",
     "The National",
+    "The New Arab",
     "The New Indian Express",
+    "The New Region",
+    "The New Voice of Ukraine",
     "The New York Times",
+    "The Peninsula Qatar",
+    "The SOFX Report",
+    "The Seattle Times",
+    "The Sentinel - of this Land, for its People",
+    "The Shillong Times",
     "The Siasat Daily",
-    "The Spokesman-Review",
+    "The Standard (HK)",
     "The Star",
+    "The Star, Kenya",
+    "The Statesman",
     "The Straits Times",
+    "The Sun",
+    "The Sun Malaysia",
     "The Sunday Guardian",
     "The Telegraph",
+    "The Times",
     "The Times of India",
     "The Times of Israel",
     "The Tribune",
+    "The Trumpet Newspaper",
     "The Vibes",
     "The Washington Post",
-    "The Washington Stand",
     "The Week",
-    "Times Kuwait",
+    "TheReport.live",
+    "Time Magazine",
+    "TimelineDaily",
     "Times Now",
+    "Times of Oman",
+    "Times of Suriname",
+    "TimesLIVE",
+    "TipRanks",
+    "Today.Az",
     "TodayPress.tv",
-    "Todayville",
+    "Toronto Star",
+    "TradeWinds News",
     "Traders Union",
-    "TradingKey",
+    "TradingNEWS",
     "TradingPedia",
     "TradingView",
+    "Trak.in",
+    "Transport Topics",
     "Traverse City Record-Eagle",
+    "Trend News Agency",
+    "TribLIVE.com",
+    "Tribune Online",
+    "Tripura Chronicle",
+    "TripuraTimes.com",
+    "Türkiye Today",
     "UA.NEWS",
+    "UNITED24 Media",
     "USA Today",
-    "UkrAgroConsult",
+    "Udayavani",
     "UkrMedia News",
+    "Ukrainian News Agency",
+    "Ukrinform",
+    "Union-Bulletin",
     "United News of Bangladesh",
-    "Univest",
-    "Upstox",
+    "Upper Michigan's Source",
+    "Upstream Online",
+    "UrduPoint",
+    "VOV World",
+    "Vanguard News",
+    "Vatican News",
     "Vietnam.vn",
-    "Virginia Business",
-    "WNWN-FM",
-    "WPLG Local 10",
+    "Vision Times",
+    "WABI",
+    "WANA News Agency",
+    "WBAY",
+    "WBTV",
+    "WCAX",
+    "WCIV",
+    "WE News English",
+    "WHDH",
+    "WIBW",
+    "WION",
+    "WITN",
+    "WJCL",
+    "WJHG",
+    "WKOW",
+    "WKYT",
+    "WLFI",
+    "WMTV 15 NEWS",
+    "WPDE",
+    "WPTZ",
+    "WPXI",
+    "WQOW",
     "WRAL",
+    "WRDW",
+    "WSAU",
     "WSJ",
-    "Weston Mercury",
+    "WSLS",
+    "WTOP News",
+    "WTVA",
+    "WVLT",
+    "WWD",
+    "WWMT",
+    "WXII",
+    "WZDM",
+    "Wake Up Singapore",
+    "WaltonTribune.com",
+    "Washington Examiner",
+    "Washington Times",
+    "Washingtonian",
+    "We Got This Covered",
     "Wisevoter",
+    "World Israel News",
+    "World Oil",
+    "World Socialist Web Site",
     "X",
     "XTB.com",
     "Xinhua",
     "Yahoo",
     "Yahoo Finance",
+    "Yahoo Finance UK",
+    "Yahoo News Canada",
     "Yahoo News Singapore",
     "Yahoo News UK",
+    "Yemen Online",
     "Yeni Safak English",
-    "Yonhap News Agency",
+    "Ynetnews",
+    "Zamin.uz",
     "Zawya",
     "Zee Business",
     "ad-hoc-news.de",
-    "azərtac",
+    "agc communication news",
+    "astig.ph",
     "bdnews24.com",
     "bloomingbit",
+    "blue News",
+    "bsinews.id",
+    "cbn.com",
+    "cedarnews.net",
+    "chinadailyhk",
+    "couriernews.com",
+    "crimefightersng.com",
+    "crossroadstoday.com",
+    "cwibc.co.id",
     "en.bd-pratidin.com",
+    "fox42kptm.com",
+    "gCaptain",
     "grafa.com",
     "houseofsaud.com",
-    "https://newsalert.com.pk/",
+    "https://aapnews.aap.com.au/",
+    "https://dailyasianage.com/",
+    "https://defence.newsd.in/",
+    "https://economy.ac/",
+    "https://houseofsaud.com/",
+    "https://streamlinefeed.co.ke/",
+    "https://theins.press/en",
     "https://www.businesstimes-bd.com/",
     "https://www.engine.online/",
-    "lockportjournal.com",
+    "https://www.shipmanagementinternational.com/",
+    "https://www.thetraveler.org/",
+    "investingLive",
+    "jiji press",
+    "kens5.com",
+    "la Repubblica",
     "marketscreener.com",
+    "megaproject.com",
     "news.sbs.co.kr",
     "newsalert.com.pk",
+    "newskarnataka.com",
+    "oEnergetice.cz",
+    "oodaloop.com",
+    "qz.com",
+    "rdnewsnow.com",
+    "richtv.io",
+    "samaa tv",
+    "scanx.trade",
+    "seMissourian",
     "streamlinefeed.co.ke",
+    "teleSUR English",
     "tennews.in",
-    "thecradle.co",
+    "thecanadianpressnews.ca",
+    "thechronicle.com.ph",
+    "thedailystar.com",
     "thefact.ng",
+    "thenationalnews.com",
     "theopenpress.in",
-    "upi",
-    "www.albawaba.com",
+    "tippinsights",
+    "trend.az",
+    "ukranews",
+    "wandtv.com",
     "www.businesstimes-bd.com",
     "www.daily-sun.com",
-    "www.jordannews.jo",
+    "www.engine.online",
+    "www.israelhayom.com",
     "www.marketscreener.com",
-    "www.thehawk.in",
+    "www.nktv.in",
+    "www.proactiveinvestors.com.au",
+    "www.stripes.com",
     "www.thenationalnews.com",
     "www.tmgm.com",
     "www.tokenpost.com",
+    "www.uaebarq.ae",
+    "www.wwbl.com",
+    "İlke Haber Ajansı",
+    "ІА Король Данило",
+    "Мілітарний",
+    "Прямий",
+    "Українські Національні Новини (УНН)",
+    "Українські Новини",
+    "Цензор.НЕТ",
+    "الحرة",
+    "برق الإمارات",
+    "تسنیم",
     "جريدة القدس",
+    "خبرگزاری بین المللی قدس",
     "سانا",
+    "سبق",
     "شبكة تواصل الإخبارية",
     "شفق نيوز",
+    "صحيفة سبق الإلكترونية",
+    "صحيفة مال",
     "صوت الإمارات",
-    "وكالة الأنباء العمانية (العمانية)",
+    "وكالة الأنباء السعودية",
     "وكالة الانباء الاردنية",
     "وكالة الانباء العراقية (واع)",
     "وكالة سبأ",
     "アラブニュース",
     "巴士的報",
     "毎日新聞",
+    "联合早报",
+    "재경일보",
     "파이낸셜뉴스"
    ],
    "assets": {
     "XOM": {
-     "direction": "down",
-     "confidence": 0.75,
-     "why": "Oil prices falling significantly weigh on major oil and gas producers."
+     "direction": "up",
+     "confidence": 0.85,
+     "why": "Attacks on Middle East oil supply infrastructure push crude and oil majors higher."
     },
     "CVX": {
-     "direction": "down",
-     "confidence": 0.75,
-     "why": "Falling crude oil prices reduce profit margins for integrated oil companies."
+     "direction": "up",
+     "confidence": 0.85,
+     "why": "Severe supply disruption risks in the Strait of Hormuz benefit major oil producers."
     },
     "OXY": {
-     "direction": "down",
-     "confidence": 0.75,
-     "why": "Easing tensions lower crude oil prices, negatively impacting upstream oil producers."
+     "direction": "up",
+     "confidence": 0.8,
+     "why": "Higher oil prices driven by geopolitical conflict boost upstream producers."
     },
     "PLTR": {
-     "direction": "down",
-     "confidence": 0.65,
-     "why": "De-escalation narrative typically lowers immediate demand premium for defense tech."
-    },
-    "COP": {
-     "direction": "down",
-     "confidence": 0.75,
-     "why": "Downgraded by Bernstein amid emerging de-escalation outlook."
-    },
-    "FANG": {
-     "direction": "down",
-     "confidence": 0.75,
-     "why": "Downgraded by Bernstein amid easing geopolitical tensions."
-    },
-    "DVN": {
-     "direction": "down",
-     "confidence": 0.75,
-     "why": "Downgraded by Bernstein amid anticipated oil price pressure."
-    },
-    "BTC/USD": {
-     "direction": "down",
-     "confidence": 0.7,
-     "why": "Risk-off sentiment and rising rate hike fears pressure crypto."
-    },
-    "NEM": {
-     "direction": "down",
-     "confidence": 0.6,
-     "why": "Peace talks reduce safe-haven demand for gold."
+     "direction": "up",
+     "confidence": 0.8,
+     "why": "Defense technology demand rises during active geopolitical conflict."
     },
     "AVAV": {
+     "direction": "up",
+     "confidence": 0.8,
+     "why": "War escalation with Iran increases demand for defense tech."
+    },
+    "NEM": {
+     "direction": "up",
+     "confidence": 0.75,
+     "why": "War escalation increases safe-haven demand for gold miners."
+    },
+    "COP": {
+     "direction": "up",
+     "confidence": 0.8,
+     "why": "Oil supply disruption fears and tanker attacks push oil and gas stocks higher."
+    },
+    "SLB": {
+     "direction": "up",
+     "confidence": 0.8,
+     "why": "Oil supply disruption risk increases prices."
+    },
+    "AEM": {
+     "direction": "up",
+     "confidence": 0.75,
+     "why": "War escalation increases safe-haven demand for gold."
+    },
+    "NVDA": {
      "direction": "down",
-     "confidence": 0.6,
-     "why": "Potential end to the Iran conflict is a negative catalyst for defense contractors."
+     "confidence": 0.7,
+     "why": "Broad tech equities drop during major geopolitical war escalations."
     },
     "APA": {
-     "direction": "down",
-     "confidence": 0.7,
-     "why": "Oil price decline negatively impacts upstream margins."
+     "direction": "up",
+     "confidence": 0.8,
+     "why": "Oil supply disruption risk increases prices."
+    },
+    "DVN": {
+     "direction": "up",
+     "confidence": 0.8,
+     "why": "Oil supply disruption risk increases prices."
     },
     "EOG": {
+     "direction": "up",
+     "confidence": 0.8,
+     "why": "Oil supply disruption risk increases prices."
+    },
+    "FANG": {
+     "direction": "up",
+     "confidence": 0.8,
+     "why": "Oil supply disruption risk increases prices."
+    },
+    "HAL": {
+     "direction": "up",
+     "confidence": 0.8,
+     "why": "Oil supply disruption risk increases prices."
+    },
+    "AAPL": {
      "direction": "down",
      "confidence": 0.7,
-     "why": "Oil price decline negatively impacts upstream margins."
+     "why": "Broad tech faces pressure amid escalating conflict."
+    },
+    "SPWO": {
+     "direction": "down",
+     "confidence": 0.65,
+     "why": "Broad equities often fall during major geopolitical war escalations."
+    },
+    "MPC": {
+     "direction": "up",
+     "confidence": 0.8,
+     "why": "Oil supply disruption risk increases prices."
+    },
+    "PSX": {
+     "direction": "up",
+     "confidence": 0.8,
+     "why": "Oil supply disruption risk increases prices."
+    },
+    "VLO": {
+     "direction": "up",
+     "confidence": 0.8,
+     "why": "Oil supply disruption risk increases prices."
+    },
+    "MSFT": {
+     "direction": "down",
+     "confidence": 0.7,
+     "why": "Risk-off sentiment in broad tech follows war escalation."
     }
    },
    "sources": [
     {
-     "id": "7f88a57000e80ecc",
-     "publisher": "TradingKey",
+     "id": "df336258cfae123d",
+     "publisher": "وكالة سبأ",
      "kind": "news",
-     "title": "Brent Crude Oil Price Forecast: Oil Plunges Nearly 6% Toward $90, Risks Drop Toward $80",
-     "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxQYTdtWVlET0J3M05KQ1o2NFVsNEdSWXJvaWNDMUVFbGFucVNSaTktNHZLXzg4X3E2ZnQ1WTAtQ2tuQjVVQ2s0ZUMtbjZ2M3VyVTIzc1M3cXFDOTd3VEI1a3RkU29KSGh4eFNEQ3NTOXg1WTl0dmwzTWpqeGNhSlRIU1IwVkVxRmJTWnFrQXlQd29qeTkzM3lUNHBIMTVTRlBQWHNTNWNBdlcxRGpwSVN5RFpYU2V1bDdhbC1BeUJUeG9rdw?oc=5",
-     "time": "2026-11-10T02:19:54Z"
+     "title": "IRGC: Third oil tanker explodes in Hormuz Strait",
+     "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE1VclA4VmQtT2UzUkdKdW5SLUtkZXRIWXk2Z0Vnc25KU3pZWGNlcktBczNMV3lEVDNEc2hDblVhdVZQNlFGUnJRODVSaHJBYUE?oc=5",
+     "time": "2026-11-10T20:04:16Z"
     },
     {
-     "id": "3bcc87f62d0b4751",
-     "publisher": "The Siasat Daily",
+     "id": "f3a25bf802b51027",
+     "publisher": "شبكة تواصل الإخبارية",
      "kind": "news",
-     "title": "Donald Trump says ‘positive momentum’ toward ending Iran war",
-     "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxOTkdmVWFEUXo2T2NTUFF6R195ZzNxREFHQjR0cC1XdkJKYWNmdnVPNExCRG1rMkN3UnhrTkpSbER0RVdvYlVQcnM0M2tmdjNXZk4zZnJmZkgyODI0QzhKREZKVmZOY3Q5OV91MGJybW1JV1JDbExjODI3TEZMRE16X1dVYkl2X1FpNk9pTFVyUFFVRjRh0gGaAUFVX3lxTFBsRk1MTVVMMk9jekowZkVYN3VFV2N6c3BySENfajc0dlp3NGRXYVJjY19xNVpranRyZVNWVzVEU0dnWVZpaTB4V1k0bkNtQ0FQekZtMk90RnMxS0VpdUppRkJEWHJCTEJ4Y1VrS1Z6LVAxSGJSWUI0YVdiWFRKc21ua2FFUEhTRDNvYU4xTC1TbmItS3VZck9YdGc?oc=5",
-     "time": "2026-11-10T02:14:39Z"
+     "title": "Rubio predicts Iran will lose the ability to export oil",
+     "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE9HYWl1b25NdkltTTFLc0pwM3J2aU5qTVpoZ2Fla2kzaDRSakp6OHotV0J2NnJkNjJ1WXFySklmYThoNnhZOXo1YzZUOEtNOThNZVRr?oc=5",
+     "time": "2026-11-10T20:03:52Z"
     },
     {
-     "id": "bf29d71588131728",
-     "publisher": "Pittsburgh Post-Gazette",
+     "id": "53aab7bcd37b0b8c",
+     "publisher": "News18",
      "kind": "news",
-     "title": "Stocks rally and recover more of last week's losses as oil prices swing lower - Pittsburgh Post-Gazette",
-     "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNM0pOdmNfT0lKSkFtRlJ0ZUJ2RFppVFhOTUlKdHltTmFUYWVISnExengxX090enZBS0VIM1hUVWVaLUFPTHg0OGQzSmNvY3ktdXJrcnZlSXp4ZTdEX0J4LU53NllNTnhLN3I1ME9zM016NUx4cGRKMUQyMVNJQmhTSWtQeTE4R0NSMWlmV3FPQUxuT1FTNk9EQV9RR0VGZUJzVG0wZGcwZjhQcW91eEdN?oc=5",
-     "time": "2026-11-10T02:14:32Z"
+     "title": "'Iran Started This War 47 Years Ago, We Didn't': Hegseth Defends US Military Campaign Against Tehran",
+     "url": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxNNGZkYnAxaTZYNFloTUZKT1hfVmtOOTRWSmZEMU1OMzA1d0pPY3RkWUZ3Wl9SM3ZHMFBpT2Mxa3FUV2JncDFNWjBrWm9RcXpuMy1xZnJRaW5vR0VTSkVUWWRFV2lCWktpRFY5REh3ZVBfSWxzZFJFRFR3eUdSRFZPcHhBOGNGR292TEJxNGg0emVMOERMeC1lRXE3eWlIaXVibzQ3Ul9TdWFXMlpOVWdOd0t4bGR2RjdQTkh0RDZJVUE1WlVMZENFbGYwblgtdWdsbHktbldxdTZNUmNVT2p3dVR5a3BILVREQVHSAe8BQVVfeXFMTU5qb0VLdS14U05sc1UtYkttRVRSSG9RLXE0dzN4TlIyT3M1c2xNalVyblNzdi0zekRqSnpfaU5VaVQyZkdEZnhwVHdyeUNHRkN3REcyRnVkWTdxUmNkdTR5dXYza0prNi1GNTIwZDVDdmZEalkyRkFRaFNvU2pLajVPLWhCNHNYa1dobzNsa3JwNm05c2xTaXNKeUJwR1BCVVdRT2hWQW81RTJJSmw2aVR2T0N1b3dRMlhuVWk2RU5ZbzlmSVFicktIUGpwbWV5Q1JSR2JVRG9hRFg1dzluZTZTeGR5VDQyYnZhSVdmcWM?oc=5",
+     "time": "2026-11-10T20:01:23Z"
     },
     {
-     "id": "74a084707c6a02ce",
-     "publisher": "KuCoin",
+     "id": "a0f4fb7035efa43e",
+     "publisher": "Crude Oil Prices Today | OilPrice.com",
      "kind": "news",
-     "title": "WTI Crude Falls to 8-Month Low Amid U.S.-Iran Diplomatic Optimism",
-     "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxPanFsQW9NZ3NqRkRrQ05FRzAzX0ZBOUluVWJnVXdvQVlFVjVxaVZkX3dxT2ZzejRYQmFfWTRUM2dDWXRXNDQwd2ltTUI1QzZtMk5ZTkd3SlVJUDc4OG5qeXlKem5OTUlhVjhCR1VjZkJBTVFZZk5WNXdtdFZ5eU5BN05hbVRaSk9wblJ3aHRFRkMxRG1ZRUVobkRLX3duUQ?oc=5",
-     "time": "2026-11-10T02:13:58Z"
+     "title": "Houthis Launch Another Attack on Pumping Stations Along Crucial Saudi East-West",
+     "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxOMm5mWEtVVG5peGFmQTQ5SFVYd1NNR2QxV3VyTUtDNC1hT3hYUjVtR0hEblJHcTgzelBOOFBDdFE0NzMzLUYwMUp0X3dIZmZ2cy1QS1dtdjVWenc2OE5ESEd0elcyREpXZ1V0Z2xmb1FOMW05bHJ2NU56bldJamk5UEdoVVhSYklJWVBzRE9nckhMazhiYmZnYVdSY3ZKaVlhT0NmNExfcDhMMnBPdTBOT0dpTUt1eW5hOFRCX09KWVJQaXhkaUlsdGw4Y9IBywFBVV95cUxOMm5mWEtVVG5peGFmQTQ5SFVYd1NNR2QxV3VyTUtDNC1hT3hYUjVtR0hEblJHcTgzelBOOFBDdFE0NzMzLUYwMUp0X3dIZmZ2cy1QS1dtdjVWenc2OE5ESEd0elcyREpXZ1V0Z2xmb1FOMW05bHJ2NU56bldJamk5UEdoVVhSYklJWVBzRE9nckhMazhiYmZnYVdSY3ZKaVlhT0NmNExfcDhMMnBPdTBOT0dpTUt1eW5hOFRCX09KWVJQaXhkaUlsdGw4Yw?oc=5",
+     "time": "2026-11-10T21:00:00Z"
     },
     {
-     "id": "03d446ae6ef4af7f",
-     "publisher": "JournalArta",
+     "id": "da93a25057608f46",
+     "publisher": "The National",
      "kind": "news",
-     "title": "ASX Jumps as Oil Prices Fall on Trump Iran Remarks",
-     "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxNNzRqNnJkRHVzZTEtaVJYaGxMNEFRYUtlRmtiR1RLeWVtU1UxeUx5NEdUeDl3VG5acXhKWFVpNkgzUTBsMzhrbm9uQWdGRWJ1S3psbjFrZ291dl9qc2pWRHdHVXEyTmZEQzBEdnluUi1RSFhjNmNadlF5N1FMRGc3aWlUUjhEdw?oc=5",
-     "time": "2026-11-10T02:07:12Z"
+     "title": "Middle East latest: Ship attacked in UAE waters, says operator Adnoc",
+     "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPdTMwLTRPRTZsZHJPR0lQTVNtNHdyWWxZNHMydXJzUjEySVZIZzJfUFlvbXZfQWJPc25aSm5kM3lzNmxFMFVMdFl3NTZLZWVjZnZPaTFyWjZtcl9peGd6ZlpDU2hnQmxDVFBLRlF1cVR3U2QwR2R4dWRRNEFDaDBzSTY2YUFWZEsyZ3dIOGQwX2tudV81a1pRRXQtVzl0TWYw?oc=5",
+     "time": "2026-11-10T20:59:26Z"
+    }
+   ]
+  },
+  {
+   "summary": "Eli Lilly to acquire Huntington's disease drug developer LoQus23 for up to $725 million.",
+   "category": "contract",
+   "firstSeen": "2026-11-23T13:03:45Z",
+   "publishers": [
+    "Reuters"
+   ],
+   "assets": {
+    "LLY": {
+     "direction": "up",
+     "confidence": 0.5,
+     "why": "Strategic acquisition to bolster pipeline in specialized therapeutic areas."
+    }
+   },
+   "sources": [
+    {
+     "id": "91fc75db9893852d",
+     "publisher": "Reuters",
+     "kind": "news",
+     "title": "Lilly to acquire Huntington's disease drug developer LoQus23 for up to $725 million",
+     "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPWGxpQ044NlRhaU9sUTNsdnJfTzVwUkxIVmJNZEZKUy1pUjREaFgyaG0tRE1EdTh6UFdLY1hrZTJRZ0dNcGNBWDF6TV9ZN2xJSC1WZnI0UmVLNlFUbXJMN0g0MXAxOGhJZ3pkX0tpbU43c3N2aHZkakNpbWVidGxPOTcyTHlGX2tCdUk3b3h3bWFLR1VEeGpqY3dTaExET3NoWWxFUEMwZ2o5TnJ0MDNUVVNub21oZlBNNTZURTZvQjlyUQ?oc=5",
+     "time": "2026-11-23T13:03:45Z"
+    }
+   ]
+  },
+  {
+   "summary": "Markets expect a quarter-point Fed rate hike while Bitcoin dips amid ongoing spot ETF outflows.",
+   "category": "crypto_negative",
+   "firstSeen": "2026-11-12T08:32:42Z",
+   "publishers": [
+    "24/7 Wall St.",
+    "99Bitcoins",
+    "AMBCrypto",
+    "AOL.com",
+    "Action Forex",
+    "Aktualita.co",
+    "Altcoin Buzz",
+    "Anadolu Ajansı",
+    "Analytics Insight",
+    "Apa.az",
+    "Around Prague",
+    "Asianet Newsable",
+    "BeInCrypto",
+    "Benzinga",
+    "BigGo Finance",
+    "Binance",
+    "Bitbo",
+    "Bitcoin Foundation",
+    "Bitcoin Magazine",
+    "Bitcoin News",
+    "Bitcoin Sistemi",
+    "Bitcoinist.com",
+    "Blockchain News",
+    "Blockonomi",
+    "Bloomberg.com",
+    "Brandsynario",
+    "Brave New Coin",
+    "Briefs Finance",
+    "Business Standard",
+    "BusinessLine",
+    "Businesskorea",
+    "CCN.com",
+    "CNBC",
+    "CNBC TV18",
+    "CaptainAltcoin",
+    "Chosunbiz",
+    "Coin Edition",
+    "Coin Gabbar",
+    "CoinCodex",
+    "CoinDesk",
+    "CoinGape",
+    "CoinMarketCap",
+    "Coindoo",
+    "Coinfomania",
+    "Coinpaper",
+    "Coinpedia",
+    "Cointribune",
+    "Crypto Briefing",
+    "Crypto Economy",
+    "Crypto News",
+    "CryptoDaily",
+    "CryptoPotato",
+    "CryptoRank",
+    "CryptoSlate",
+    "CryptoTicker.io",
+    "Cryptonews",
+    "Cryptonews.net",
+    "Cryptopolitan",
+    "Daily Beirut",
+    "Daily Forex",
+    "DailyCoin",
+    "Decrypt",
+    "Defence24.com",
+    "Digg",
+    "Dimsum Daily",
+    "FOREX.com",
+    "FXEmpire",
+    "FXLeaders",
+    "FXStreet",
+    "FinanceFeeds",
+    "Finbold",
+    "Firstpost",
+    "Free Malaysia Today",
+    "Gadgets 360",
+    "Global Banking & Finance Review",
+    "GuruFocus",
+    "HESPRESS English - Morocco News",
+    "Hindustan Times",
+    "Hokanews",
+    "Holder.io",
+    "Investing.com",
+    "Investing.com Canada",
+    "Investing.com India",
+    "Investing.com Nigeria",
+    "Investing.com UK",
+    "Investor's Business Daily",
+    "Invezz",
+    "JournalArta",
+    "Kalkine Media",
+    "Kriptofoni",
+    "KuCoin",
+    "Livemint",
+    "MEXC",
+    "MLQ.ai",
+    "MarketForces Africa",
+    "MarketWatch",
+    "Mitrade",
+    "Moneycontrol.com",
+    "Moneyweb",
+    "Moomoo",
+    "NAI500",
+    "NDTV Profit",
+    "NFTevening",
+    "Nacionale",
+    "NameCoinNews",
+    "NewsBTC",
+    "NewsBytes",
+    "Open4business.com.ua.",
+    "PYMNTS.com",
+    "People Daily",
+    "Pluang",
+    "Pragativadi",
+    "Proactive Investors Australia",
+    "Programming Insider",
+    "Quartz",
+    "RTTNews",
+    "Retail News Asia",
+    "Reuters",
+    "SSBCrack",
+    "Serrari Group",
+    "Startup Fortune",
+    "Stocktwits",
+    "StreetInsider",
+    "SunCrypto",
+    "TOKENPOST",
+    "TechBullion",
+    "TechJuice",
+    "The Block",
+    "The Business Times",
+    "The Crypto Times",
+    "The Cryptonomist",
+    "The Defiant",
+    "The Economic Times",
+    "The Edge Malaysia",
+    "The Globe and Mail",
+    "The Market Periodical",
+    "The Motley Fool",
+    "The Straits Times",
+    "The Sunday Guardian",
+    "TipRanks",
+    "Traders Union",
+    "Trading News",
+    "TradingKey",
+    "TradingNEWS",
+    "TradingPedia",
+    "TradingView",
+    "TronWeekly",
+    "U.Today",
+    "UA.NEWS",
+    "UkrMedia News",
+    "Univest",
+    "Vietnam.vn",
+    "Vocal",
+    "Wisevoter",
+    "XTB.com",
+    "Yahoo Finance",
+    "ad-hoc-news.de",
+    "astig.ph",
+    "blockchain.news",
+    "bloomingbit",
+    "finance.biggo.com",
+    "grafa.com",
+    "investingLive",
+    "openPR.com",
+    "theopenpress.in",
+    "www.blockhead.co",
+    "www.proactiveinvestors.com.au",
+    "www.tmgm.com",
+    "www.tokenpost.com",
+    "www.trendingtopics.eu",
+    "Українські Національні Новини (УНН)",
+    "صوت الإمارات",
+    "富途牛牛",
+    "매일경제",
+    "머니투데이",
+    "아시아경제",
+    "재경일보"
+   ],
+   "assets": {
+    "BTC/USD": {
+     "direction": "down",
+     "confidence": 0.95,
+     "why": "Massive ETF outflows, liquidations, and Bitcoin breaking key support below $56,000."
+    },
+    "ETH/USD": {
+     "direction": "down",
+     "confidence": 0.95,
+     "why": "Severe crypto market-wide liquidation and crash dragging Ethereum down to $1,500."
+    },
+    "SOL/USD": {
+     "direction": "down",
+     "confidence": 0.85,
+     "why": "Solana crashes to multi-month lows amid broader crypto market sell-offs and rate hike fears."
+    },
+    "XRP/USD": {
+     "direction": "down",
+     "confidence": 0.85,
+     "why": "Massive capital flight and ETF outflows crush XRP price action."
+    },
+    "LINK/USD": {
+     "direction": "down",
+     "confidence": 0.6,
+     "why": "Persistent bearish bias and ETF outflows weigh on Chainlink despite holding support."
+    }
+   },
+   "sources": [
+    {
+     "id": "f2c64de89a6bbd3c",
+     "publisher": "bloomingbit",
+     "kind": "news",
+     "title": "BlackRock’s Bitcoin ETF IBIT Extends Net Outflow Streak to 9 Sessions, Exceeding $2 Billion",
+     "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE9XY1BHRGVIT2hraXRmcGx1TGI3a2oybEJwMk9LWHNKdUM1R29nNEU1eWJIeXhtTC1pSXg0QUJDd18xNkJTTG4ySkRJTXd3cjN2NkxlZg?oc=5",
+     "time": "2026-11-12T08:32:42Z"
+    },
+    {
+     "id": "cc25c44ff767f291",
+     "publisher": "Crypto News",
+     "kind": "news",
+     "title": "BlackRock leads $300 million Bitcoin ETF outflows as BTC struggles near $73K",
+     "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNY3U0TE5Gcy0teVNsLWVBeGh1cmd4Z1dSaldmVmt2b3VYaVhFSTM0T29OUnhKUXpTNEZwLW1sVkwtZnQyUUdSVDFTUHpSYjYxVlU0SFZnYW5Xd0V0TzB4NjM4VGpGa1pPYnk4eEgzR2wxV0d1SkFPSDBwSG0tdFFTQTI3cXJiSWE1UHU0NzVCUjJ2VXNFa2pIZnd0VQ?oc=5",
+     "time": "2026-11-12T08:36:14Z"
+    },
+    {
+     "id": "fb7c71d0fe55957d",
+     "publisher": "bloomingbit",
+     "kind": "news",
+     "title": "Coinbase Bitcoin Premium Stays Negative for 50 Straight Days as U.S. Buying Weakens",
+     "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTFBfQTlkOUY1NnAyTlpoRnp0Qmc2NDZnUjdSVlRBYndfa2hHVXlZdjNmX0ZhRTdZMjMtV2xMMEdTWWJvdXpCbl9BREZ0TDR6cl9NcFJXNg?oc=5",
+     "time": "2026-11-12T08:59:27Z"
+    },
+    {
+     "id": "62235bb905723bf1",
+     "publisher": "Coinfomania",
+     "kind": "news",
+     "title": "U.S. Spot Bitcoin ETFs Experience $300 Million Net Outflows",
+     "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxORGNYaW5tLUhtT2tmVi1ETy1fRFV4QnFDQndvYkpDRkRTZTF6NEJRN2V6emkyV1MzeTZfTVlyX1NsRGNzaXJsRWk5OXpDajRfVTE5OGc1anBpNWVfSkJKTUg2QnFoTlFSNlRscFJUVlBuek04RkxsN2ZydUJUSjZBdjdURUtnOGhnb3c?oc=5",
+     "time": "2026-11-12T08:55:35Z"
+    },
+    {
+     "id": "44d885771c26dd4e",
+     "publisher": "Cryptonews",
+     "kind": "news",
+     "title": "Bitcoin ETF Outflow Says Crypto Walking Into a Bull Trap",
+     "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE1aa1RfZzhBaFRtOEctWFJSZDUyRzZ6bDV5LTVmSVNubFlfLTNvNkdHVGdGS1pNbmpfb3liS2V5djRKcHV6bWZLb1BQYVVYcTRBVE0wYXNyV3hSNkdhSm01YnFqZGUzelVCamxJeEFTZG83ZzA?oc=5",
+     "time": "2026-11-12T08:48:31Z"
+    }
+   ]
+  },
+  {
+   "summary": "Applied Materials reports an earnings beat and provides strong guidance, signaling positive momentum for the semiconductor equipment sector.",
+   "category": "earnings_beat",
+   "firstSeen": "2026-11-23T10:09:20Z",
+   "publishers": [
+    "Simply Wall St"
+   ],
+   "assets": {
+    "AMAT": {
+     "direction": "up",
+     "confidence": 0.8,
+     "why": "Earnings beat combined with strong guidance is a direct catalyst for stock price appreciation."
+    },
+    "LRCX": {
+     "direction": "up",
+     "confidence": 0.5,
+     "why": "Positive sentiment in semiconductor equipment often lifts peer stocks."
+    }
+   },
+   "sources": [
+    {
+     "id": "b35ea1658157fd31",
+     "publisher": "Simply Wall St",
+     "kind": "news",
+     "title": "Applied Materials Stock Gains Focus After Earnings Beat And Strong Guidance",
+     "url": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxPM0pORWpoN1Atb1hkS1V5M2pTY05OMkpJUzJuQXk4aXFEZ1lOZmZDYzN5bVp2Vnp3SzJUQTNQM3NCUnFpRkdLU0tHN3pGeXRkWnpOY1gyNFEzUWpEMjdSSTVPTkptMjhPYjNTYUZjR2FZV3ZLeUM1dC0tb1M1V2Nxa1gzckxaN3ZUak1sT0hBUlZaS1B1d0c0TGkzdU41WHliTlZ6RFp5WmFTT0FtS3lrOWY3MUNxREVQMmlxR1Jyb2RpdVRUSUV5SVB2b3czNV9rWjFiUXFMOTnSAd4BQVVfeXFMUE9xOHk3NXYyc1VHb1pSUU1NZVVUQ2NJZFZfalREQXhXQlA4TFJueWt2Z3pTTGRwX0E2dk4zTmltVjBmbXVtVGVMNThvVS01OXdoMkFMcXdnbktVUE9haDBIbjZxOTQxbG9oZktiYndhM0tIOHMtejNGSVBTX2xESnRhUnpQRm9yamkwTWZWS215X2hSNlU4RlM0ZUF0eUxiM3lhTzZHazNRVi1lUkFGcGJQMDBIYklDTlVRM3BwaFlLeldUeS0xT2pkWDU5TThsNGpPRThYRFNTYWV6VXFB?oc=5",
+     "time": "2026-11-23T10:09:20Z"
+    }
+   ]
+  },
+  {
+   "summary": "Lockheed Martin secures a $1.5 billion contract from the U.S. Navy for missile production and support.",
+   "category": "contract",
+   "firstSeen": "2026-11-23T10:13:59Z",
+   "publishers": [
+    "GovCon Wire"
+   ],
+   "assets": {
+    "PLTR": {
+     "direction": "up",
+     "confidence": 0.5,
+     "why": "Major defense contract wins generally improve sentiment across the defense tech sector."
+    }
+   },
+   "sources": [
+    {
+     "id": "8ed41c5a69eac9c8",
+     "publisher": "GovCon Wire",
+     "kind": "news",
+     "title": "Navy Awards Lockheed Martin Up to $1.5B for Trident II D5 Missile Production, Fleet Support",
+     "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxNYjlpNTJHb0RCU21Ed3Vwc25zWXctQnVqalZKR1BRMHdZclliUXhxYlBoT0dKU204cGdITnRzMEFNakpMZzNWMTBiUGJWdVRDLVNjSUw5TE5KVjVhLXJXWmtVdFR2WGxjXy03bDJaZWROVGhJLW5BNnJ6bjNGc1ZvNmZ5Rmd6Tk0yOVMwaDJSeVlUS21MTkRCaEtR?oc=5",
+     "time": "2026-11-23T10:13:59Z"
+    }
+   ]
+  },
+  {
+   "summary": "Oil prices decline below $83 as a surplus outlook and broader equity selloffs outweigh ongoing Middle East supply tensions.",
+   "category": "war_escalation",
+   "firstSeen": "2026-11-22T17:30:27Z",
+   "publishers": [
+    "ABS-CBN",
+    "Daily Sun",
+    "Daily Tribune",
+    "Demokratis.co.id",
+    "FXStreet",
+    "Firstpost",
+    "Hindustan Times",
+    "Houston Chronicle",
+    "Il Sole 24 ORE",
+    "KLSE Screener",
+    "KVIA",
+    "Moneycontrol.com",
+    "NBC News",
+    "News On AIR",
+    "NewsBytes",
+    "Palestine Chronicle",
+    "The Business Times",
+    "The Hindu",
+    "The Vibes",
+    "Times Now",
+    "Traders Union",
+    "TribLIVE.com",
+    "Yeni Safak English",
+    "bloomingbit",
+    "cedarnews.net",
+    "houseofsaud.com",
+    "https://dailyasianage.com/",
+    "شبكة تواصل الإخبارية",
+    "صوت الإمارات",
+    "وكالة سبأ"
+   ],
+   "assets": {
+    "XOM": {
+     "direction": "down",
+     "confidence": 0.65,
+     "why": "Oil price rollbacks and oversupply weigh on oil and gas margins."
+    },
+    "CVX": {
+     "direction": "down",
+     "confidence": 0.65,
+     "why": "Crude oil slips on supply concerns."
+    },
+    "OXY": {
+     "direction": "down",
+     "confidence": 0.6,
+     "why": "Falling crude prices due to surplus concerns impact oil equities."
+    },
+    "PLTR": {
+     "direction": "up",
+     "confidence": 0.6,
+     "why": "Escalating international conflicts increase demand for defense technology solutions."
+    },
+    "COP": {
+     "direction": "up",
+     "confidence": 0.8,
+     "why": "Supply risks from regional conflict raise energy sector appeal."
+    },
+    "AVAV": {
+     "direction": "up",
+     "confidence": 0.6,
+     "why": "Escalating military tensions benefit defense tech."
+    }
+   },
+   "sources": [
+    {
+     "id": "14355042d8e69c6a",
+     "publisher": "Hindustan Times",
+     "kind": "news",
+     "title": "Russian navy vessel Merkury catches fire at Benghazi port after suspected drone attack | World News",
+     "url": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxQcUxKdGNULURHZzFSdHZHMnVScGQzcENrSDQweEJkM0ZtRjZNMVNXOUJBeGxnT21WZXJDdXhMOWZJaFJWanp4dG1idUplVGNIdFBwUWZZNHNUTHJNS0t0aV9odTVIc1RoSzlZWTJoUHJnaE5LM25wTndaQzhjbEp4X0hjWUZoRWlyUXpDRkZjZDVvLTA5bXR5WUlMeUFLYko5UWdkTm5kS3FOcHhyY1FvaUpqTHctNjhiU3hvVnZfZ3U2NmR5Y0FncmFEc0NPaktMVXpvU2tnRnh4TXpTUzlZ0gHkAUFVX3lxTFBiTy1XOXBsX3A2d2w4UXNmaUpZcGFRb1ZmUnRwbW9mN2F3OWlzWklvSFFTWHZSLTJVR0R1T2FSYTNNN3ZuX3JrYUFJTE55aXNXTllhcXRtbHhndWFfbXpwUTFVeEY3dDF6dkkwYzdNQWg1UU9IR3owSlhsbWZLcF9MVjNmeW5LMlItVFJRb1FlbVVQYnF6dnBtaExQemhRNVNzQ1plUXhIQW84ZnNzUlJMUnBpbGFqbDZTZlFMbFZXSFcwakExMHZDQWJIZEFSTDNRcGp3ci10SF9XbFBmbWNlVWpJRg?oc=5",
+     "time": "2026-11-22T17:44:01Z"
+    },
+    {
+     "id": "f1161ebb65c09b89",
+     "publisher": "Houston Chronicle",
+     "kind": "news",
+     "title": "Suspected Ukrainian sea drones hit Russian warship at Benghazi naval base, Libyan officials say",
+     "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNY3BYVWdzOVQxakVBT1FSYW9YUjcyQ2g2RjBLLWJhMlVlWmpvN0FmMVUtbDh3X1ZRajczdm5ydWFLQTJmR0dvQVc4dG5VbV8ySFdvNVV0bG1IX25vQWNDdDIyWGhucTFwS0l2bXplUFpvcllzWXRZMVA3dC1UcHd4eF9mYWtHdU9MN0VzVjdTMTBZcldLWmloemdzQ2N3SVVzaWJLVHVvUENVZmVZZlgtTlVNNC0?oc=5",
+     "time": "2026-11-22T17:42:10Z"
+    },
+    {
+     "id": "ad9d4c20d8c8bbc6",
+     "publisher": "KVIA",
+     "kind": "news",
+     "title": "Russian vessel docked in Libya hit in suspected drone attack, authorities say",
+     "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxOb2JpcFhVWkZsR2lRcGdiR2VNc2N6N0JQc2VleEh0YlVHUGFZcjBIQU9HT0xzb2Z3ckw5QTdFellrcmxsQWtGUk43LTFkYW1yYjloX0luSWR5bWNGT0dJWWdrTy1iTF9nT09wZ3NmMEs2NGpEV3ZqTTI1MlpGNUp2VVhISFQ0cy1fX28tN3dIQ3Z3U0JrZk5CRV9DRTZwc2VBUmlNUFF2emwtcFBYNGFVOG9neHh5bmtXemVYeThZZDZLSjhSbWtjUw?oc=5",
+     "time": "2026-11-22T17:36:56Z"
+    },
+    {
+     "id": "c5ed3b667c03fd91",
+     "publisher": "The Hindu",
+     "kind": "news",
+     "title": "Russian attack near Ukraine’s capital strikes apartment building, killing two and wounding four others",
+     "url": "https://news.google.com/rss/articles/CBMikAJBVV95cUxOcTZkc1c2clVWVVN0M1Z3d05NUEFENUFPcFE5cURsNDNDbFBRd3ZTTHdybFhSU3FGbzk1UmhybjZYX2Z6ZjdnT1pFVjhiandSekZkUEZNR1pNNTVneEhIcERkV2xtN21XQVJOdWQxb0s0czc2UlJ6VUl2OWxnSE53RFNXNHBKX0ZCeWtjeC12UkxKbG1lV2MtSWFGN3N3bTQzT2o2TDVSQUF0ekJxVzcxRmd1NGpmRlk4TTVmM0czMnQ5RUJuUFh3a3YwY0FTN2djcnN1Vk9kV1Z0YUktX1dISkdUamw4bnFrc3BVdzVsYmZ0OUwtX0hZTmtTcDA0UTgyNjF4amViNFAtWWo3anZ3S9IBlwJBVV95cUxOWmt0ZG5ZTGdFRWFVejB6LU9IbjUwZkp3c2k0NFNENk9LbEU4UUhRdDItbEFfMTBRck12WTZIX291Nml6ZXJETERGSEZvMnRGWkY3SGhQTjlkUkppRVlfblVkSWdNREljQmxzT0g2aG40NWx1dGtkM0Z6M3hrQ3lwVnRiS25xQ1Z2S25rbXk1QXA1NmRYZVZXSDlPUlgwWW5nakd1TU9LTzk2STFJOGZvU2VUa3lWTUtkOHI5UEVwZjhpSktTaXZrOFRYaTdBSDR5bEtTVGhON0tLNFEzTkJjc3NBa25lcFVNc2hmUFp4QV9tQ2dLSmliQy11UWx1TERzbWpQR3B4cGlqSU1NOVh0Q0RCczJvU2s?oc=5",
+     "time": "2026-11-22T17:30:27Z"
+    },
+    {
+     "id": "87a81e38ac053b46",
+     "publisher": "Il Sole 24 ORE",
+     "kind": "news",
+     "title": "War, latest news. Ukrainian drones strike a Russian military vessel in the port of Benghazi",
+     "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNdzgxQjUwV0pfTERWbFJKR2o3OUxtVTczSkRlNzc4Q3ZacmlrRkU4cmFsekhUb1pSVmxsYXJ0enlhZzB4RDl4QXd6dDZNYVA3Qk4xN0FNTmxaUXhpUlFOU2lhTVRjWnpVRnNDclpDcmI2c183cDR0RVBEcTdkMVBIdkJQaHNybmlVZGhYVEQ4OVEyRjRHMU13d0NLaXlWaUJ2dWctMlh6WFM3SFVPVlJybVgyS09PX3cya3ZpWE5R?oc=5",
+     "time": "2026-11-22T19:15:27Z"
     }
    ]
   }
