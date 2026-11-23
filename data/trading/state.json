@@ -1,17 +1,17 @@
 {
  "team": "trading",
  "plain": {
-  "line": "Down $4,449.20 since start · 23 trades · holding: NOW, AMZN, TSLA, NVDA, AMAT, AMD",
+  "line": "Down $4,328.24 since start · 23 trades · holding: NOW, AMZN, TSLA, NVDA, AMAT, AMD",
   "rulesMode": "ultra",
-  "top": "Down $4,449.20 since start (-4.45%) · just holding SPY would be -4.03%",
+  "top": "Down $4,328.24 since start (-4.33%) · just holding SPY would be -3.89%",
   "up": false,
   "holding": [
-   "NOW: 169 shares worth $15,547.70, up $50.34 (sells at $97.20 or stops at $88.95)",
-   "AMZN: 75 shares worth $19,179.00, down $186.35 (sells at $273.70 or stops at $250.46)",
-   "TSLA: 33 shares worth $12,728.36, down $71.62 (sells at $411.08 or stops at $376.18)",
-   "NVDA: 59 shares worth $9,708.57, up $2.48 (sells at $174.18 or stops at $159.39)",
-   "AMAT: 21 shares worth $7,253.40, up $37.29 (sells at $363.66 or stops at $332.79)",
-   "AMD: 16 shares worth $7,148.48, down $96.02 (sells at $479.33 or stops at $438.63)"
+   "NOW: 169 shares worth $15,545.89, up $48.53 (sells at $97.20 or stops at $88.95)",
+   "AMZN: 75 shares worth $19,168.95, down $196.40 (sells at $273.70 or stops at $250.46)",
+   "TSLA: 33 shares worth $12,733.71, down $66.27 (sells at $411.08 or stops at $376.18)",
+   "NVDA: 59 shares worth $9,755.06, up $48.97 (sells at $174.18 or stops at $159.39)",
+   "AMAT: 21 shares worth $7,269.78, up $53.67 (sells at $363.66 or stops at $332.79)",
+   "AMD: 16 shares worth $7,206.40, down $38.10 (sells at $479.33 or stops at $438.63)"
   ],
   "today": [
    "Bought NOW after the news: Political intervention and the reinstatement of Jensen Huang as Nvidia CEO continue to drive a massive tech sector rally.",
@@ -24,15 +24,16 @@
    "Bought CRWD after the news: CrowdStrike Holdings reports an earnings beat and revenue outperformance.",
    "Sold CRWD (bad news: CrowdStrike's earnings beat is overshadowed by its massive $43.9 billion all-sto): lost $245.70.",
    "Sold CRWD (stop-loss -3% hit): lost $1,321.50.",
-   "Scanned the news 105 times today: read 5206 headlines, found 117 that could move a stock or coin it's allowed to trade.",
+   "Scanned the news 106 times today: read 5308 headlines, found 122 that could move a stock or coin it's allowed to trade.",
    "Passed on AMAT, AVAV, COP, KLAC, LLY: order failed: not enough cash for one share.",
-   "Safety rules that stepped in: stock entry window (x8), cash only no margin (x8), stop loss -3% (x1), bad news exit (x1)."
+   "Passed on BTC/USD, SOL/USD: already $71,680 invested (max 75% of $95,672).",
+   "Safety rules that stepped in: stock entry window (x8), cash only no margin (x8), stop loss -3% (x1), bad news exit (x1), max invested (x2)."
   ],
   "watchlist": "Allowed to trade: 68 halal stocks, 5 Shariah ETFs, 9 coins.",
-  "lastScan": "2026-11-23T21:17:27Z"
+  "lastScan": "2026-11-23T21:34:22Z"
  },
  "hired": true,
- "updatedAt": "2026-11-23T21:19:19Z",
+ "updatedAt": "2026-11-23T21:34:38Z",
  "mode": "PAPER",
  "agents": [
   {
@@ -40,8 +41,8 @@
    "name": "News Scout",
    "role": "Reads X, Reddit and news feeds",
    "status": "working",
-   "doing": "Read 116 new headlines/posts, 4 market-moving stories",
-   "lastRun": "2026-11-23T21:19:17Z"
+   "doing": "Read 102 new headlines/posts, 5 market-moving stories",
+   "lastRun": "2026-11-23T21:34:36Z"
   },
   {
    "id": "analyst",
@@ -79,9 +80,9 @@
    "id": "trader",
    "name": "Trader",
    "role": "Places paper orders on Alpaca",
-   "status": "ok",
-   "doing": "Bought 169 NOW at $91.70 (stop $88.95, target $97.20)",
-   "lastRun": "2026-11-23T20:25:41Z"
+   "status": "working",
+   "doing": "Saved results to the Agent HQ dashboard",
+   "lastRun": "2026-11-23T21:19:21Z"
   },
   {
    "id": "coins",
@@ -101,6 +102,21 @@
   }
  ],
  "log": [
+  {
+   "t": "2026-11-23T21:34:37Z",
+   "agent": "Coach",
+   "msg": "Coach: Last 17 trades averaged -1.48%: trading a bit smaller until it improves. | Stocks skipped as 'already moved too much' kept rising (+8.46% next day, 7 cases): allowing a bigger move before buying. | Checked 13 skipped stories: 5 would have lost or gone nowhere, 8 would have gained the next day."
+  },
+  {
+   "t": "2026-11-23T21:34:36Z",
+   "agent": "News Scout",
+   "msg": "Read 102 new headlines/posts, 5 market-moving stories"
+  },
+  {
+   "t": "2026-11-23T21:19:21Z",
+   "agent": "Trader",
+   "msg": "Saved results to the Agent HQ dashboard"
+  },
   {
    "t": "2026-11-23T21:19:17Z",
    "agent": "News Scout",
@@ -835,43 +851,28 @@
    "t": "2026-11-23T08:26:10Z",
    "agent": "News Scout",
    "msg": "Google News feed skipped: HTTP 429 https://news.google.com/rss/search: <html><head><meta http-equiv=\"content-type\" content=\"text/html; charset=utf-8\"/><title>Sorry...</title><style> body { font-family: verdana, arial, sans-serif; background-color: #fff; color: #000; }</s"
-  },
-  {
-   "t": "2026-11-23T08:11:00Z",
-   "agent": "News Scout",
-   "msg": "Read 118 new headlines/posts, 4 market-moving stories"
-  },
-  {
-   "t": "2026-11-23T07:55:53Z",
-   "agent": "News Scout",
-   "msg": "Read 48 new headlines/posts, 1 market-moving stories"
-  },
-  {
-   "t": "2026-11-23T07:40:46Z",
-   "agent": "News Scout",
-   "msg": "Read 72 new headlines/posts, 2 market-moving stories"
   }
  ],
  "brief": {
   "date": "Mon Nov 23",
-  "createdAt": "2026-11-23T21:19:19Z",
-  "headline": "Paper account -$1,852 today (-1.90%), -4.45% total vs SPY -4.03% · 6 open",
+  "createdAt": "2026-11-23T21:34:38Z",
+  "headline": "Paper account -$1,731 today (-1.78%), -4.33% total vs SPY -3.89% · 6 open",
   "summary": "2 trade(s) closed today, 3/17 winners overall. TradingAgents checks used today: 0/5.",
   "notes": [
    "X/Reddit reader: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
   ]
  },
  "account": {
-  "equity": 95550.8,
+  "equity": 95671.76,
   "cash": 23991.97,
   "startEquity": 100000.0,
   "startedAt": "2026-11-10T01:51:53Z",
-  "dayPnl": -1851.8,
-  "dayPct": -1.9,
-  "totalPnl": -4449.2,
-  "totalPct": -4.45,
-  "spyPct": -4.03,
-  "vsSpyPct": -0.42
+  "dayPnl": -1730.84,
+  "dayPct": -1.78,
+  "totalPnl": -4328.24,
+  "totalPct": -4.33,
+  "spyPct": -3.89,
+  "vsSpyPct": -0.44
  },
  "status": {
   "killed": false,
@@ -879,7 +880,7 @@
   "deepUsed": 0,
   "deepMax": 5,
   "social": {
-   "at": "2026-11-23T21:17:30Z",
+   "at": "2026-11-23T21:34:26Z",
    "items": 0,
    "source": "Reddit via Tradestie + ApeWisdom (direct Reddit blocks servers; X needs Agent Reach)",
    "problems": [
@@ -887,15 +888,15 @@
     "r/stocks: HTTP 403 https://www.reddit.com/r/stocks/new.json: <body class=theme-beta><div><"
    ],
    "wsb": {
-    "at": "2026-11-23T21:17:31Z",
+    "at": "2026-11-23T21:34:26Z",
     "tickers": 50,
     "items": 0,
     "key": false
    },
    "ape": {
-    "at": "2026-11-23T21:17:31Z",
+    "at": "2026-11-23T21:34:27Z",
     "tickers": 200,
-    "items": 0,
+    "items": 1,
     "problems": []
    }
   },
@@ -973,8 +974,8 @@
     "tradingAgents": "not used (ultra mode)",
     "taSummary": ""
    },
-   "lastPrice": 91.72,
-   "unrealizedPct": 0.02
+   "lastPrice": 91.9875,
+   "unrealizedPct": 0.31
   },
   {
    "id": "ahq-AMZN-20261123190538",
@@ -1012,8 +1013,8 @@
     "tradingAgents": "not used (ultra mode)",
     "taSummary": ""
    },
-   "lastPrice": 255.81,
-   "unrealizedPct": -0.93
+   "lastPrice": 255.75,
+   "unrealizedPct": -0.95
   },
   {
    "id": "ahq-TSLA-20261123190538",
@@ -1051,8 +1052,8 @@
     "tradingAgents": "not used (ultra mode)",
     "taSummary": ""
    },
-   "lastPrice": 385.5001,
-   "unrealizedPct": -0.61
+   "lastPrice": 385.87,
+   "unrealizedPct": -0.52
   },
   {
    "id": "ahq-NVDA-20261123184253",
@@ -1115,8 +1116,8 @@
     "tradingAgents": "not used (ultra mode)",
     "taSummary": ""
    },
-   "lastPrice": 164.7,
-   "unrealizedPct": 0.11
+   "lastPrice": 165.2639,
+   "unrealizedPct": 0.46
   },
   {
    "id": "ahq-AMAT-20261123184253",
@@ -1179,8 +1180,8 @@
     "tradingAgents": "not used (ultra mode)",
     "taSummary": ""
    },
-   "lastPrice": 345.57,
-   "unrealizedPct": 0.57
+   "lastPrice": 346.18,
+   "unrealizedPct": 0.74
   },
   {
    "id": "ahq-AMD-20261123184252",
@@ -1243,8 +1244,8 @@
     "tradingAgents": "not used (ultra mode)",
     "taSummary": ""
    },
-   "lastPrice": 450.09,
-   "unrealizedPct": -0.59
+   "lastPrice": 450.2,
+   "unrealizedPct": -0.57
   }
  ],
  "charts": {
@@ -1841,6 +1842,18 @@
     [
      "2026-11-23T21:15:00Z",
      95707.26
+    ],
+    [
+     "2026-11-23T21:20:00Z",
+     95525.38
+    ],
+    [
+     "2026-11-23T21:25:00Z",
+     95620.13
+    ],
+    [
+     "2026-11-23T21:30:00Z",
+     95672.18
     ]
    ],
    "1W": [
@@ -3083,16 +3096,16 @@
     [
      "2026-11-23T21:15:00Z",
      95683.9
+    ],
+    [
+     "2026-11-23T21:30:00Z",
+     95672.18
     ]
    ]
   },
   "holdings": {
    "NOW": {
     "bars": [
-     [
-      "2026-11-20T21:30:00Z",
-      88.76
-     ],
      [
       "2026-11-23T14:30:00Z",
       90.79
@@ -3206,10 +3219,6 @@
    },
    "AMZN": {
     "bars": [
-     [
-      "2026-11-20T21:30:00Z",
-      247.67
-     ],
      [
       "2026-11-23T13:00:00Z",
       255.29
@@ -3343,10 +3352,6 @@
    },
    "TSLA": {
     "bars": [
-     [
-      "2026-11-20T21:30:00Z",
-      349.32
-     ],
      [
       "2026-11-23T13:00:00Z",
       362.8
@@ -3614,7 +3619,11 @@
      ],
      [
       "2026-11-23T21:15:00Z",
-      164.69
+      165.14
+     ],
+     [
+      "2026-11-23T21:30:00Z",
+      165.09
      ]
     ],
     "entry": 164.51,
@@ -3750,10 +3759,6 @@
    },
    "AMD": {
     "bars": [
-     [
-      "2026-11-20T21:30:00Z",
-      431.46
-     ],
      [
       "2026-11-20T21:45:00Z",
       429.6
@@ -3892,18 +3897,55 @@
   }
  },
  "coach": {
-  "updatedAt": "2026-11-21T04:11:37Z",
+  "updatedAt": "2026-11-23T21:34:37Z",
   "knobs": {
-   "aggression": 0.9,
+   "aggression": 0.81,
    "min_confidence": 0.6,
-   "max_move_pct": 0.03
+   "max_move_pct": 0.035
   },
   "lessons": [
-   "Last 15 trades averaged -1.46%: trading a bit smaller until it improves.",
-   "Yahoo Finance: 11 trades averaging -2.14%, trust 1.00 -> 0.57.",
-   "Checked 7 skipped stories: 5 would have lost or gone nowhere, 2 would have gained the next day."
+   "Last 17 trades averaged -1.48%: trading a bit smaller until it improves.",
+   "Stocks skipped as 'already moved too much' kept rising (+8.46% next day, 7 cases): allowing a bigger move before buying.",
+   "Checked 13 skipped stories: 5 would have lost or gone nowhere, 8 would have gained the next day.",
+   "Biggest misses: INTC +16.1%, PLTR +11.0%, PLTR +11.0%."
   ],
-  "missed": [],
+  "missed": [
+   {
+    "symbol": "INTC",
+    "t": "2026-11-20T19:31:59Z",
+    "nextDayPct": 16.1,
+    "why": "already $48,712 invested (max 50% of $98,369)",
+    "event": "Wedbush notes that a potential Microsoft deal could provide Intel with a crucial AI chip f"
+   },
+   {
+    "symbol": "PLTR",
+    "t": "2026-11-20T19:31:59Z",
+    "nextDayPct": 10.96,
+    "why": "already $48,713 invested (max 50% of $98,369)",
+    "event": "Trump stated there is a real good chance of a Ukraine deal following very good talks with "
+   },
+   {
+    "symbol": "PLTR",
+    "t": "2026-11-20T19:11:17Z",
+    "nextDayPct": 10.96,
+    "why": "already $49,160 invested (max 50% of $98,817)",
+    "event": "Donald Trump stated that he and Vladimir Putin had very good talks on Ukraine and that Put"
+   },
+   {
+    "symbol": "PLTR",
+    "t": "2026-11-20T18:50:39Z",
+    "nextDayPct": 10.96,
+    "why": "already $49,151 invested (max 50% of $98,808)",
+    "event": "Trump states that Putin clearly expressed a desire to end the war in Ukraine through diplo"
+   },
+   {
+    "symbol": "PLTR",
+    "t": "2026-11-20T18:19:32Z",
+    "nextDayPct": 10.96,
+    "why": "already $49,263 invested (max 50% of $98,920)",
+    "event": "Russian missiles landing on Polish territory escalate geopolitical tensions with NATO."
+   }
+  ],
   "dodged": [
    {
     "symbol": "LLY",
@@ -3943,6 +3985,18 @@
     "setting": "aggression",
     "from": 1.0,
     "to": 0.9
+   },
+   {
+    "t": "2026-11-23T21:34:37Z",
+    "setting": "aggression",
+    "from": 0.9,
+    "to": 0.81
+   },
+   {
+    "t": "2026-11-23T21:34:37Z",
+    "setting": "max_move_pct",
+    "from": 0.03,
+    "to": 0.035
    }
   ],
   "limits": {
@@ -4028,8 +4082,8 @@
     "tradingAgents": "not used (ultra mode)",
     "taSummary": ""
    },
-   "lastPrice": 91.72,
-   "unrealizedPct": 0.02
+   "lastPrice": 91.9875,
+   "unrealizedPct": 0.31
   },
   {
    "id": "ahq-AMZN-20261123190538",
@@ -4067,8 +4121,8 @@
     "tradingAgents": "not used (ultra mode)",
     "taSummary": ""
    },
-   "lastPrice": 255.81,
-   "unrealizedPct": -0.93
+   "lastPrice": 255.75,
+   "unrealizedPct": -0.95
   },
   {
    "id": "ahq-TSLA-20261123190538",
@@ -4106,8 +4160,8 @@
     "tradingAgents": "not used (ultra mode)",
     "taSummary": ""
    },
-   "lastPrice": 385.5001,
-   "unrealizedPct": -0.61
+   "lastPrice": 385.87,
+   "unrealizedPct": -0.52
   },
   {
    "id": "ahq-NVDA-20261123184253",
@@ -4170,8 +4224,8 @@
     "tradingAgents": "not used (ultra mode)",
     "taSummary": ""
    },
-   "lastPrice": 164.7,
-   "unrealizedPct": 0.11
+   "lastPrice": 165.2639,
+   "unrealizedPct": 0.46
   },
   {
    "id": "ahq-AMAT-20261123184253",
@@ -4234,8 +4288,8 @@
     "tradingAgents": "not used (ultra mode)",
     "taSummary": ""
    },
-   "lastPrice": 345.57,
-   "unrealizedPct": 0.57
+   "lastPrice": 346.18,
+   "unrealizedPct": 0.74
   },
   {
    "id": "ahq-AMD-20261123184252",
@@ -4298,8 +4352,8 @@
     "tradingAgents": "not used (ultra mode)",
     "taSummary": ""
    },
-   "lastPrice": 450.09,
-   "unrealizedPct": -0.59
+   "lastPrice": 450.2,
+   "unrealizedPct": -0.57
   },
   {
    "id": "ahq-CRWD-20261123165236",
@@ -5261,6 +5315,20 @@
  ],
  "decisions": [
   {
+   "t": "2026-11-23T21:34:37Z",
+   "symbol": "SOL/USD",
+   "outcome": "waiting",
+   "why": "already $71,680 invested (max 75% of $95,672)",
+   "event": "Bitcoin surges past $64,000 and Solana targets higher levels amid positive market sentiment and improving ETF inflows."
+  },
+  {
+   "t": "2026-11-23T21:34:37Z",
+   "symbol": "BTC/USD",
+   "outcome": "waiting",
+   "why": "already $71,680 invested (max 75% of $95,672)",
+   "event": "Bitcoin surges past $64,000 and Solana targets higher levels amid positive market sentiment and improving ETF inflows."
+  },
+  {
    "t": "2026-11-23T20:20:37Z",
    "symbol": "PLTR",
    "outcome": "error",
@@ -5665,28 +5733,9 @@
    "outcome": "waiting",
    "why": "already $49,112 invested (max 50% of $98,768)",
    "event": "Wedbush notes that a potential Microsoft deal could provide Intel with a crucial AI chip foundry win."
-  },
-  {
-   "t": "2026-11-20T18:24:46Z",
-   "symbol": "MSFT",
-   "outcome": "waiting",
-   "why": "already $49,290 invested (max 50% of $98,947)",
-   "event": "Wedbush notes that a potential Microsoft deal could provide Intel with a crucial AI chip foundry win."
-  },
-  {
-   "t": "2026-11-20T18:24:46Z",
-   "symbol": "PLTR",
-   "outcome": "waiting",
-   "why": "already $49,290 invested (max 50% of $98,947)",
-   "event": "Trump states that Putin clearly expressed a desire to end the war in Ukraine through diplomacy."
   }
  ],
  "equity": [
-  {
-   "t": "2026-11-15T06:33:29Z",
-   "equity": 100000.0,
-   "spy": 752.09
-  },
   {
    "t": "2026-11-15T07:03:39Z",
    "equity": 100000.0,
@@ -7681,6 +7730,11 @@
    "t": "2026-11-23T20:54:08Z",
    "equity": 95631.53,
    "spy": 722.41
+  },
+  {
+   "t": "2026-11-23T21:34:37Z",
+   "equity": 95676.37,
+   "spy": 723.44
   }
  ],
  "watch": [],
@@ -7692,7 +7746,7 @@
  },
  "events": [
   {
-   "summary": "Nvidia shares continue to surge following the official reinstatement of Jensen Huang as CEO with political backing.",
+   "summary": "Nvidia shares continue to surge following the official reinstatement of Jensen Huang as CEO.",
    "category": "earnings_beat",
    "firstSeen": "2026-11-23T18:30:45Z",
    "publishers": [
@@ -7719,8 +7773,8 @@
     },
     "AMAT": {
      "direction": "up",
-     "confidence": 0.6,
-     "why": "Sympathy rally in semiconductor equipment sector."
+     "confidence": 0.7,
+     "why": "Riding the surging tech momentum."
     },
     "PLTR": {
      "direction": "up",
@@ -7777,7 +7831,7 @@
    ]
   },
   {
-   "summary": "Crude oil prices tumble to a three-month low below $80 on easing supply-demand outlook and reduced concerns over Middle East tensions.",
+   "summary": "Crude oil prices slide further as supply growth and surplus outlook outweigh attack risks and sanctions.",
    "category": "oil_supply",
    "firstSeen": "2026-11-23T19:02:38Z",
    "publishers": [
@@ -7787,8 +7841,10 @@
     "Interest.co.nz",
     "Oil & Gas 360",
     "Quantum Commodity Intelligence",
+    "Seeking Alpha",
     "The Libya Observer",
     "WSJ",
+    "Yahoo Finance",
     "investingLive",
     "marketscreener.com"
    ],
@@ -7853,50 +7909,26 @@
    ]
   },
   {
-   "summary": "AbbVie's RINVOQ receives FDA approval as the first systemic therapy for nonsegmental vitiligo in the US.",
-   "category": "earnings_beat",
-   "firstSeen": "2026-11-23T20:55:00Z",
-   "publishers": [
-    "Yahoo Finance"
-   ],
-   "assets": {
-    "ABBV": {
-     "direction": "up",
-     "confidence": 0.8,
-     "why": "FDA approval for a new patient indication expands addressable market and boosts pharmaceutical revenue prospects."
-    }
-   },
-   "sources": [
-    {
-     "id": "78692cc46cc51223",
-     "publisher": "Yahoo Finance",
-     "kind": "news",
-     "title": "AbbVie's RINVOQ® (upadacitinib) Approved as the First Systemic Therapy in the U.S. to Treat Adult and Pediatric Patients With Nonsegmental Vitiligo",
-     "url": "https://finance.yahoo.com/healthcare/articles/abbvies-rinvoq-upadacitinib-approved-first-205500618.html?.tsrc=rss",
-     "time": "2026-11-23T20:55:00Z"
-    }
-   ]
-  },
-  {
-   "summary": "Geopolitical tensions and fresh US treasury sanctions targeting Iran-linked networks elevate risks of oil supply disruption.",
+   "summary": "Oil tankers catching fire after hitting naval mines in the Strait of Hormuz elevates immediate risks of oil supply disruption.",
    "category": "war_escalation",
    "firstSeen": "2026-11-23T20:45:53Z",
    "publishers": [
     "Rudaw",
     "SRN News",
+    "The Times of Israel",
     "UA.NEWS",
     "وكالة سبأ"
    ],
    "assets": {
     "XOM": {
      "direction": "up",
-     "confidence": 0.65,
-     "why": "Sanctions and conflict escalation involving Iran increase oil supply disruption risks, benefiting major oil producers."
+     "confidence": 0.8,
+     "why": "Middle East shipping disruptions threaten oil supply and boost crude prices."
     },
     "CVX": {
      "direction": "up",
-     "confidence": 0.65,
-     "why": "Rising geopolitical tensions around Iran support oil prices and upstream energy stocks."
+     "confidence": 0.8,
+     "why": "Supply disruption risks in Hormuz drive oil majors higher."
     }
    },
    "sources": [
@@ -7931,6 +7963,78 @@
      "title": "US imposes sanctions on more than two dozen participants in Iran’s financial network — Jerusalem Post",
      "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxQS09FZzF3bW05dElRQkRueUU1VE9aSjVOdlBWdi1oNmxya2NoQmtjcFNvRTRMRkZLWGphbWtHU243eEw4YlRmakVobjVvZWZWV1cxMk4xQlUxYzBhblF4YTk2YXNJa3ZsZTd0VlRCSkRsLWNVbDVyOHFhMlBfTXVWQzRIYXItRF9GbkNYb2ptdExoX3lWSldmaXVvWkZRRHpMYkdWR19sWjdOazlUbXZ2NHlGTzJoOGpQZlVHczRHdUxRX3hHUV9BMDNn?oc=5",
      "time": "2026-11-23T20:45:53Z"
+    },
+    {
+     "id": "88b2834e8bad02d4",
+     "publisher": "The Times of Israel",
+     "kind": "news",
+     "title": "IRGC says 3 oil tankers caught fire after hitting naval mines in Hormuz — Iranian report",
+     "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxQcENIMkFmbi0zd0dHVW51dmc0aG5iSkt1TEdlVHhhQWdEWktjbUZYOEh3UEJ5MHpoZVJQWEJ5bkpVRWtCWUVQbi1QU21HVVFrUFItM0kyUHBfaDJ0Z195aTdjVkxvd0VfdkszMEVlMkEtYXpMeElRbTFMb0x1MnI5VjRpYkRFZHlBU3YyXzI4MTBucmRHWFV2WWVVWlNkLUZDbFpRQWs5X1oyNEFyZGVQNjJDMkxrdFFCalhvVms5T1F0MUlhOGxuRC1UcGQ?oc=5",
+     "time": "2026-11-23T21:19:41Z"
+    }
+   ]
+  },
+  {
+   "summary": "Bitcoin surges past $64,000 and Solana targets higher levels amid positive market sentiment and improving ETF inflows.",
+   "category": "crypto_positive",
+   "firstSeen": "2026-11-23T21:25:55Z",
+   "publishers": [
+    "The Economic Times",
+    "TradingNEWS"
+   ],
+   "assets": {
+    "BTC/USD": {
+     "direction": "up",
+     "confidence": 0.75,
+     "why": "Surging past key thresholds on improved macro and crypto sentiment."
+    },
+    "SOL/USD": {
+     "direction": "up",
+     "confidence": 0.7,
+     "why": "Benefiting from positive ETF inflow turns and network upgrades."
+    }
+   },
+   "sources": [
+    {
+     "id": "17c0ae4ff3f5226b",
+     "publisher": "TradingNEWS",
+     "kind": "news",
+     "title": "Solana Price Forecast — SOL-USD ($75.09) $85 Upside Target on ETF Inflow Turn and Alpenglow Upgrade",
+     "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNZ0VHUzctQ0psaXFjSzllWjBDYS1uV0tTRVA4QjgtSmJCYlRJaTgwNW45V0FIU0F5b243OGMwR085V2ZLZVFpV2JHNWl4VF8wUUdPYl9fY2xhUDhfYTM2dHJLcG1Sb2MxRGFYcEcydDhVbjdrUjBhdHhlMmFTNFRpVVQ1Uk1jVFNXOTJxdmRnVEpPMzNPcG04MTQ5eVZsQlNNV2FHWmllcG9HM2ZNSXdrVk9R?oc=5",
+     "time": "2026-11-23T21:25:56Z"
+    },
+    {
+     "id": "a5829d026f9334f1",
+     "publisher": "The Economic Times",
+     "kind": "news",
+     "title": "Bitcoin price today: BTC USD surges past $64,000 after Nvidia reinstates Jensen Huang as CEO, then falls b",
+     "url": "https://news.google.com/rss/articles/CBMiwAJBVV95cUxPTlFLTHZMSG91UEhSVTJqa3d2MWpOQ1ZfUjQ3LU9ERGFpb2NNOF9rcEZBVUF0ZW41Ym80dTBRU3o3WXVhTnhoOFZUUkF1Nl9SdVNQd1d5eHBDb3JVVEZ2SDNiU0d5dDdZS2RXeTlDX19UeTJ5RnZlc3RmeHlmQzVITGVyZ0prV0RQWXdsT054UUpfRXJrc3VVUm5xbW1NMzExODFyWV8xenRrVFlTRFRQSVF6bjhtRk1OUTZSd3R4MXk1bFZ2VTRrZW5wZ2xNeF9WSkkwMEtDS0tWdEU5VlhaWkE5ckVxVmIzX1k0SjFlUVZOXzc5djNnNTZ4cUcxQk9zdDVaNWh1STdOeEd0UW1vdkUtYm1oSUhuODZOSXBlSW1JcFVGaVpaZ0Frb2c3dFRlTGhLQ2prQnJBNkJISllWb9IBxgJBVV95cUxQUEM1aW44NUwtUFBBbFRBWS00a2M4QlFjS2x6YVR6UlV2SGNPVUFOVFdvMzllLUx1VlhjVWRrTTRPMnlxLU1UVzUxNW55UTZlakt1dUhTOUtCVndPaWxSUjc4YmpQclVwQ0F4bjVheGhiNTFqYzBPdTlzejljbU15cEJUVVRzOHMxYmtfR21leGZFbTYxb0tYZlRhRlN6T1pLamdsbXl3OWhrMzNHUndQTnhDbkFLdkJ4REJEaUZRWE5mM0UxWldHeXBQYk9ON2hBT09rdVlkRG1JUXRPNFVpZkNTaFp3RzBETzJNcUNXMllabnk0ck9fakpLTVhIQjRRblMzUnFhMEZhUDdqWm1SZ0doMkxtXy1UNl9rS09GbWh3YUVwMWlQV2VKZE5ia210TGhDNW1NMTlsaFZJWU1QSWx6UXk1Zw?oc=5",
+     "time": "2026-11-23T21:25:55Z"
+    }
+   ]
+  },
+  {
+   "summary": "AbbVie's RINVOQ receives FDA approval as the first systemic therapy for nonsegmental vitiligo in the US.",
+   "category": "earnings_beat",
+   "firstSeen": "2026-11-23T20:55:00Z",
+   "publishers": [
+    "Yahoo Finance"
+   ],
+   "assets": {
+    "ABBV": {
+     "direction": "up",
+     "confidence": 0.8,
+     "why": "FDA approval for a new patient indication expands addressable market and boosts pharmaceutical revenue prospects."
+    }
+   },
+   "sources": [
+    {
+     "id": "78692cc46cc51223",
+     "publisher": "Yahoo Finance",
+     "kind": "news",
+     "title": "AbbVie's RINVOQ® (upadacitinib) Approved as the First Systemic Therapy in the U.S. to Treat Adult and Pediatric Patients With Nonsegmental Vitiligo",
+     "url": "https://finance.yahoo.com/healthcare/articles/abbvies-rinvoq-upadacitinib-approved-first-205500618.html?.tsrc=rss",
+     "time": "2026-11-23T20:55:00Z"
     }
    ]
   },
@@ -9130,218 +9234,6 @@
      "time": "2026-11-23T10:42:22Z"
     }
    ]
-  },
-  {
-   "summary": "Nvidia shares continue to surge following the reinstatement of Jensen Huang as CEO and massive short-covering.",
-   "category": "company_bad_news",
-   "firstSeen": "2026-11-12T18:24:33Z",
-   "publishers": [
-    "AFR",
-    "AP",
-    "Anadolu Ajansı",
-    "Around Prague",
-    "Barchart.com",
-    "Benzinga",
-    "BigGo Finance",
-    "Binance",
-    "Bloomberg.com",
-    "Breitbart News",
-    "Business Standard",
-    "CNBC",
-    "Capital Brief",
-    "Chosunbiz",
-    "Coin Gabbar",
-    "CoinDesk",
-    "Coinpaper",
-    "Crypto Briefing",
-    "Crypto Economy",
-    "CryptoTicker.io",
-    "Cryptonews.net",
-    "Deccan Herald",
-    "Decrypt",
-    "Dimsum Daily",
-    "Eurasia Business News",
-    "FXStreet",
-    "FinanceFeeds",
-    "Finimize",
-    "Finviz",
-    "Fortune",
-    "Geo News",
-    "Hokanews",
-    "Investing.com",
-    "Investing.com Canada",
-    "Investing.com South Africa",
-    "Investopedia",
-    "Investor's Business Daily",
-    "Invezz",
-    "JournalArta",
-    "KELO-AM",
-    "Kitco",
-    "Market Index",
-    "Moomoo",
-    "NDTV Profit",
-    "NST Online",
-    "Plataforma Media",
-    "Pluang",
-    "Pragativadi",
-    "Proactive financial news",
-    "Profit by Pakistan Today",
-    "Quartz",
-    "RTHK",
-    "RTHK News",
-    "RealMoney Pro",
-    "Reuters",
-    "Robin J Brooks | Substack",
-    "SSBCrack",
-    "Shacknews",
-    "Stocktwits",
-    "StreetInsider",
-    "The Boston Globe",
-    "The Economic Times",
-    "The Economist",
-    "The Edge Malaysia",
-    "The Guardian",
-    "The Hawk",
-    "The Lufkin Daily News",
-    "The New York Times",
-    "The Tech Buzz",
-    "The Times of India",
-    "TipRanks",
-    "Traders Union",
-    "TradingKey",
-    "TradingNEWS",
-    "TradingView",
-    "US News Money",
-    "VINnews",
-    "WSJ",
-    "Wccftech",
-    "X",
-    "Yahoo Finance",
-    "Zacks Investment Research",
-    "astig.ph",
-    "bdnews24.com",
-    "bloomingbit",
-    "cwibc.co.id",
-    "finance.biggo.com",
-    "fiscal.ai",
-    "kaohoon international",
-    "marketscreener.com",
-    "news.sbs.co.kr",
-    "shattered.io",
-    "www.tokenpost.com",
-    "深潮TechFlow",
-    "아시아경제",
-    "조선일보"
-   ],
-   "assets": {
-    "NVDA": {
-     "direction": "up",
-     "confidence": 0.95,
-     "why": "Jensen Huang reinstated as CEO removes major leadership uncertainty and reassures investors."
-    },
-    "BTC/USD": {
-     "direction": "up",
-     "confidence": 0.6,
-     "why": "Broader risk-on market rebound accompanied by positive tech sentiment."
-    },
-    "QCOM": {
-     "direction": "up",
-     "confidence": 0.65,
-     "why": "Capital is rotating out of Nvidia into competing AI semiconductor stocks following the CEO exit."
-    },
-    "AMD": {
-     "direction": "up",
-     "confidence": 0.8,
-     "why": "Semiconductor sector rebound following Nvidia catalyst"
-    },
-    "AVGO": {
-     "direction": "up",
-     "confidence": 0.8,
-     "why": "Semiconductor sector rebound following Nvidia catalyst"
-    },
-    "MSFT": {
-     "direction": "down",
-     "confidence": 0.65,
-     "why": "Broader tech and AI infrastructure sentiment hits related large-cap names."
-    },
-    "AAPL": {
-     "direction": "down",
-     "confidence": 0.3,
-     "why": "Broad market selloff induced by tech bellwether crash."
-    },
-    "SMCI": {
-     "direction": "up",
-     "confidence": 0.8,
-     "why": "AI stock rebound following Nvidia catalyst"
-    },
-    "MU": {
-     "direction": "up",
-     "confidence": 0.8,
-     "why": "Nvidia rebound reignites AI trade lifting memory and semiconductor stocks."
-    },
-    "PLTR": {
-     "direction": "down",
-     "confidence": 0.6,
-     "why": "Broader tech sector and AI stock sell-off spurred by Nvidia turmoil."
-    },
-    "INTC": {
-     "direction": "up",
-     "confidence": 0.8,
-     "why": "Chip stock surge following Nvidia catalyst."
-    },
-    "TSLA": {
-     "direction": "down",
-     "confidence": 0.6,
-     "why": "Broader tech sector weakness and uncertainty surrounding Nvidia weigh on high-multiple tech growth stocks."
-    },
-    "AMAT": {
-     "direction": "up",
-     "confidence": 0.7,
-     "why": "Nvidia's beat lifts broader semiconductor equipment suppliers."
-    }
-   },
-   "sources": [
-    {
-     "id": "855265040ed1e43c",
-     "publisher": "Reuters",
-     "kind": "news",
-     "title": "Nvidia CEO Jensen Huang resigns, in blow to AI boom he helped foster",
-     "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOMEFwN0FWdjB6blNtR0RZaTBWZXZDaWVwYkhXREttY2FaYVNNVC1qNEFHYm9Yd1pDODBDN2tvNzhnMTY4cmxWYTg1WVFidzFlNVFEdlZNb3IyZG1nS2FKcHAzUERhQW9EdG9oOER6YmwydXZOd0t1VHRub1BCdFdoR1V4dktlUVUydjZWeU53aVdKMGwtOGFtZmd2T3VhODF3eXhPazVtbV81b0hpUi1vcw?oc=5",
-     "time": "2026-11-12T18:31:55Z"
-    },
-    {
-     "id": "6c526a44313f07e5",
-     "publisher": "Yahoo Finance",
-     "kind": "news",
-     "title": "Equities Rise Intraday Despite Nvidia Sell-Off Post CEO's Departure",
-     "url": "https://finance.yahoo.com/markets/stocks/articles/equities-rise-intraday-despite-nvidia-182433809.html?.tsrc=rss",
-     "time": "2026-11-12T18:24:33Z"
-    },
-    {
-     "id": "adfadefb8db21a4c",
-     "publisher": "AP",
-     "kind": "news",
-     "title": "What we know after Jensen Huang resigns as Nvidia’s CEO",
-     "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOMUxqUTE0WWZBT2xoV25SLUQ2dFgyWkhwZFZyRnk3d1Fibmtrb0d4T3otSXNpNmZiTVh0QUdkWTA4UmQ3cXQyVVM3ODc0V0g4YnVVbDJRYWF4VXlaXzMzZnJWNi1UR3YyZHJGbWNzaVFab2tiM3N2RjFIOUtWcnlJVWtMVnhQNmhJeTdPajNVUXZfU2NzWkw0aGJLVFMtaGY3?oc=5",
-     "time": "2026-11-12T18:38:00Z"
-    },
-    {
-     "id": "e45111d2af3013e1",
-     "publisher": "The Economic Times",
-     "kind": "news",
-     "title": "Bitcoin price today: BTC USD falls near $71,000 after Jensen Huang resigns as Nvidia CEO and ETF outflows",
-     "url": "https://news.google.com/rss/articles/CBMisgJBVV95cUxNNGkxSEhVaVRhRGl4UkxMZUoyeV9Bc25CTmNkY1Q3Z2JEbTB5S3JWbUt4clE4eEltNTFSbFZSOFJrM290QTFESGJiMHROMGRSNVhzV0tkRHRqU2hLTk5GYng1Mm9FaDVlTFNyNHdqWXNwNDhNazZJNmlqOXIxVjFvZ0hwSHRTSUcwSXRqWWU5Mi1BTVg3Zm12bml2STNnSFExQWlTaUlRdDNlVnNUZlh5dFJDN2pfQmhha2M1SVBYUm1fVDhiaThNTnBsRU0ySTJSR1o1QkMyVHJseHA4VHlkd2pYODRaZzFpUUQza2ZlT1JpU0ZodWVkR0pCb3ZZTnI3TTNGQTBxcnJ0VnVJZzV3NHltc3l0X19JbG03WjdwRXFEWEwxZE9uMmJMTTVQbFZVRmfSAbcCQVVfeXFMTXR1bEttcm9WdW1FU0VCR1dKbWkwVkpwVmpjOE9YY1ZDUTZOcE5HaWktRnU2UW55c2ZLWEpiRmFwQ3ZTd2otS0RqX2FSWFZwejRGbFZOcGFpa2oxdF8xYmxVWVp6UUl1QkRnYi1ZVVhNS0d4UDlxSGpwZjJFeG5KbDhZdUplRWh5QU9Lc2U1NWhMMm9EQVZISVVIdUxuWnQxaDRWNllMb1lFS2VJUXRxYTJKSVV1bjg1V2ROTnRLdTVIb3dvcllFbTgtTF9nZFhaVGVrSHpzM3lQOTM5bHp2LXBLZ0VldGppMm95dWZBeGlLNUFXdnE0VkdqbWUzNS1adjhCRVlIMGdEbHJ2djFZSm5GWHhJcmZEOTRLbTU0MGNEdm1MaGkxdlA1WEEyMFlyRm8wbEdmWnM?oc=5",
-     "time": "2026-11-12T18:34:50Z"
-    },
-    {
-     "id": "89cceff7950b3622",
-     "publisher": "Benzinga",
-     "kind": "news",
-     "title": "Jensen Huang Is Out At Nvidia: 4 Private Equity Giants with Big Bets on Its AI Infrastructure Future",
-     "url": "https://www.benzinga.com/markets/private-markets/26/11/63212619/jensen-huang-is-out-at-nvidia-4-private-equity-giants-with-big-bets-on-its-ai-infrastructure-future",
-     "time": "2026-11-12T18:45:12Z"
-    }
-   ]
   }
  ],
  "rules": {
@@ -9363,7 +9255,7 @@
    "min_confidence": 0.6,
    "min_rvol": 0.0,
    "min_move_pct": -0.03,
-   "max_move_pct": 0.03,
+   "max_move_pct": 0.035,
    "event_fresh_hours": 6,
    "sell_min_confidence": 0.6,
    "single_source": "any_news",

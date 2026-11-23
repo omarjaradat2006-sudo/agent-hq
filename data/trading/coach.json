@@ -1,20 +1,57 @@
 {
- "updatedAt": "2026-11-21T04:11:37Z",
+ "updatedAt": "2026-11-23T21:34:37Z",
  "knobs": {
-  "aggression": 0.9,
+  "aggression": 0.81,
   "min_confidence": 0.6,
-  "max_move_pct": 0.03
+  "max_move_pct": 0.035
  },
  "trust": {
-  "Yahoo Finance": 0.57
+  "Yahoo Finance": 0.59
  },
  "avoid": {},
  "lessons": [
-  "Last 15 trades averaged -1.46%: trading a bit smaller until it improves.",
-  "Yahoo Finance: 11 trades averaging -2.14%, trust 1.00 -> 0.57.",
-  "Checked 7 skipped stories: 5 would have lost or gone nowhere, 2 would have gained the next day."
+  "Last 17 trades averaged -1.48%: trading a bit smaller until it improves.",
+  "Stocks skipped as 'already moved too much' kept rising (+8.46% next day, 7 cases): allowing a bigger move before buying.",
+  "Checked 13 skipped stories: 5 would have lost or gone nowhere, 8 would have gained the next day.",
+  "Biggest misses: INTC +16.1%, PLTR +11.0%, PLTR +11.0%."
  ],
- "missed": [],
+ "missed": [
+  {
+   "symbol": "INTC",
+   "t": "2026-11-20T19:31:59Z",
+   "nextDayPct": 16.1,
+   "why": "already $48,712 invested (max 50% of $98,369)",
+   "event": "Wedbush notes that a potential Microsoft deal could provide Intel with a crucial AI chip f"
+  },
+  {
+   "symbol": "PLTR",
+   "t": "2026-11-20T19:31:59Z",
+   "nextDayPct": 10.96,
+   "why": "already $48,713 invested (max 50% of $98,369)",
+   "event": "Trump stated there is a real good chance of a Ukraine deal following very good talks with "
+  },
+  {
+   "symbol": "PLTR",
+   "t": "2026-11-20T19:11:17Z",
+   "nextDayPct": 10.96,
+   "why": "already $49,160 invested (max 50% of $98,817)",
+   "event": "Donald Trump stated that he and Vladimir Putin had very good talks on Ukraine and that Put"
+  },
+  {
+   "symbol": "PLTR",
+   "t": "2026-11-20T18:50:39Z",
+   "nextDayPct": 10.96,
+   "why": "already $49,151 invested (max 50% of $98,808)",
+   "event": "Trump states that Putin clearly expressed a desire to end the war in Ukraine through diplo"
+  },
+  {
+   "symbol": "PLTR",
+   "t": "2026-11-20T18:19:32Z",
+   "nextDayPct": 10.96,
+   "why": "already $49,263 invested (max 50% of $98,920)",
+   "event": "Russian missiles landing on Polish territory escalate geopolitical tensions with NATO."
+  }
+ ],
  "dodged": [
   {
    "symbol": "LLY",
@@ -48,8 +85,8 @@
   }
  ],
  "stats": {
-  "closedTrades30d": 15,
-  "skippedChecked": 7
+  "closedTrades30d": 17,
+  "skippedChecked": 13
  },
  "history": [
   {
@@ -57,6 +94,18 @@
    "setting": "aggression",
    "from": 1.0,
    "to": 0.9
+  },
+  {
+   "t": "2026-11-23T21:34:37Z",
+   "setting": "aggression",
+   "from": 0.9,
+   "to": 0.81
+  },
+  {
+   "t": "2026-11-23T21:34:37Z",
+   "setting": "max_move_pct",
+   "from": 0.03,
+   "to": 0.035
   }
  ],
  "limits": {
