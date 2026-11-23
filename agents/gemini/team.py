@@ -50,7 +50,7 @@ TEAMS = {
     research="ways to run an always-on AI agent + video automation system more efficiently on a free tier: Gemini API free-tier quota tips and new models, reliable cron/job monitoring and phone alerts (ntfy), faster video rendering on ARM CPUs, plus new short-form and YouTube formats winning right now (faceless, simulation, ambient, Islamic content) and LinkedIn job-search tool trends."),
   "repos": dict(state="repos", prefix="repo", search=True, formats=["github-scout.md"], keys=["research", "ideas", "brief", "requestAnswers"],
     agents=["scout", "tester", "lead"], hour="Sun 20:37",
-    job="""GitHub Scout. Answer Omar's open requests first (compare 3-5 repos, pick the best). Then find 1-3 free, open-source GitHub repos that make his work easier or cheaper, checked properly (alive, licence, safety, runs on his laptop CPU or needs a GPU), in the exact github-scout.md format with a buildPrompt. Only real repos, real stars, real licences. Then a brief.""",
+    job="""GitHub Scout. Answer Omar's open requests first: the research notes hold REAL live GitHub search results per request (stars, licence, last push, README). For each request compare the 3-5 best of those candidates and pick the best one, saying what it does, why it beats the others, licence, whether it runs on his laptop CPU or needs a GPU, and the first setup step. Key requestAnswers by the exact [key] shown for that request. Only answer "Nothing good enough yet" if the candidate list is empty or none of them does the job (say which ones you rejected and why). Then find 1-3 free, open-source GitHub repos that make his work easier or cheaper, checked properly (alive, licence, safety, runs on his laptop CPU or needs a GPU), in the exact github-scout.md format with a buildPrompt. Only real repos, real stars, real licences. Then a brief.""",
     research="useful free open-source GitHub repos released or popular recently for: AI voice/TTS that runs on CPU, video automation and rendering, YouTube/TikTok automation, Python simulation, MCP servers, AI agent frameworks."),
   "chief": dict(state="hq", prefix="hq", search=False, extra=["briefs", "metrics:youtube", "metrics:tiktok"], formats=[],
     keys=["brief"], agents=["chief"], hour="Mon 16:42",
@@ -269,6 +269,61 @@ def fix_lab(patch, state):
         patch["teamLeads"].pop("growth", None)
 
 
+def _gh(url):
+    import urllib.request
+    h = {"Accept": "application/vnd.github+json", "User-Agent": "agent-hq-scout"}
+    if os.environ.get("GITHUB_TOKEN"):
+        h["Authorization"] = "Bearer " + os.environ["GITHUB_TOKEN"]
+    return json.load(urllib.request.urlopen(urllib.request.Request(url, headers=h), timeout=20))
+
+
+def github_research(state, system):
+    """GitHub Scout: search GitHub itself (free, no Gemini search quota) for every open request.
+    Returns (notes, sources, found) where found[key] = number of real candidates for that request."""
+    import time, urllib.parse
+    reqs = [r for r in state.get("requests", []) if r.get("status") != "answered"]
+    asks = [{"key": r["text"][:40], "text": r["text"]} for r in reqs] or [{"key": "general", "text": "free open-source tools for AI video automation, CPU TTS, YouTube/TikTok automation, MCP servers"}]
+    try:
+        text, _ = G.generate("For each request, write 3 short GitHub repository search queries (2-4 plain keywords each, no quotes, no 'github', "
+                             "no qualifiers) that would find real open-source repos doing that job. Return JSON {\"<key>\": [\"q1\",\"q2\",\"q3\"]}.\n"
+                             + json.dumps(asks, ensure_ascii=False), system, json_out=True, temperature=0.2)
+        qs = G.parse_json(text) or {}
+    except Exception as e:
+        print("query writing failed:", e, flush=True); qs = {}
+    cutoff = (NOW - datetime.timedelta(days=540)).strftime("%Y-%m-%d")
+    notes, sources, found = [], [], {}
+    for a in asks:
+        seen = {}
+        for q in (qs.get(a["key"]) or [a["text"][:60]])[:3]:
+            try:
+                r = _gh("https://api.github.com/search/repositories?" + urllib.parse.urlencode(
+                    {"q": f"{q} stars:>20 pushed:>{cutoff}", "sort": "stars", "order": "desc", "per_page": 6}))
+            except Exception as e:
+                print("github search failed:", q, e, flush=True); time.sleep(7); continue
+            for it in r.get("items", []):
+                seen.setdefault(it["full_name"], it)
+            time.sleep(7)   # unauthenticated search limit: 10 a minute
+        top = sorted(seen.values(), key=lambda x: -x["stargazers_count"])[:8]
+        found[a["key"]] = len(top)
+        lines = []
+        for n, it in enumerate(top):
+            readme = ""
+            try:
+                if n >= 4:   # stay under GitHub's 60 calls an hour without a token
+                    raise ValueError
+                import base64
+                rd = _gh(f"https://api.github.com/repos/{it['full_name']}/readme")
+                readme = base64.b64decode(rd.get("content", "")).decode("utf-8", "ignore")
+                readme = re.sub(r"<[^>]+>|!\[[^\]]*\]\([^)]*\)|\s+", " ", readme)[:700]
+            except Exception:
+                pass
+            lines.append(f"- {it['full_name']} | {it['stargazers_count']} stars | licence: {(it.get('license') or {}).get('spdx_id') or 'none'} | "
+                         f"last push {it['pushed_at'][:10]} | {it.get('language') or ''} | {it['html_url']}\n  {it.get('description') or ''}\n  README: {readme}")
+            sources.append((it["full_name"], it["html_url"]))
+        notes.append(f"### Request [{a['key']}]: {a['text']}\nReal GitHub search results (live from the GitHub API today):\n" + ("\n".join(lines) or "(no results)"))
+    return "\n\n".join(notes), sources, found
+
+
 def main(job):
     if job in PAUSED:
         print(f"{job}: paused ({PAUSED[job]}). Not running.")
@@ -280,7 +335,10 @@ def main(job):
     sysmap = open(os.path.join(ROOT, "agents", "SYSTEM_MAP.md"), encoding="utf-8").read()[:14000]
     system = f"You are an Agent HQ team working for Omar.\n{OMAR}\n\n{RULES}"
     notes, sources = "", []
-    if cfg.get("search"):
+    found = {}
+    if job == "repos":
+        notes, sources, found = github_research(state, system)
+    elif cfg.get("search"):
         # Web-search calls have a much smaller free quota than normal calls. If search is out of quota or busy,
         # the team still does its job from the metrics and earlier research instead of failing the whole day.
         try:
@@ -351,6 +409,11 @@ Include every key listed above."""
         drop_repeat_ideas(patch, state)
     if job == "lab":
         fix_lab(patch, state)
+    if job == "repos" and isinstance(patch.get("requestAnswers"), dict):
+        # Never close a request with "nothing found" when GitHub returned real candidates for it: leave it open for the next run.
+        for k in list(patch["requestAnswers"]):
+            if str(patch["requestAnswers"][k]).lower().startswith("nothing good") and found.get(str(k)[:40], 0) > 0:
+                print("kept request open (candidates exist):", k, flush=True); patch["requestAnswers"].pop(k)
     os.makedirs(os.path.join(ROOT, "out"), exist_ok=True)
     json.dump(patch, open(os.path.join(ROOT, "out", f"{job}_patch.json"), "w", encoding="utf-8"), ensure_ascii=False, indent=1)
     print(f"{job}: wrote patch with keys {sorted(patch)} and {len(ideas)} ideas")
