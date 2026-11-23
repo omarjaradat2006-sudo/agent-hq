@@ -30,6 +30,7 @@ exec </dev/null                                         # never let keystrokes r
 [ "$MODE" = full ] && exec >>"$LOG" 2>&1               # test modes print to the screen
 set -a; . ~/.agent-hq.env; set +a                      # GEMINI_API_KEY
 [ -n "${GEMINI_API_KEY_VIDEO:-}" ] && export GEMINI_API_KEY="$GEMINI_API_KEY_VIDEO"   # videos use their own key (own Google project) if set
+[ -n "${GEMINI_API_KEY_AMBIENT:-}" ] && export GEMINI_API_KEY="$GEMINI_API_KEY_AMBIENT"   # Ambient's own key (own Google project): WANTED LEVEL's hourly runs share the video key and used it up
 export BOUNCE_WORKERS=${BOUNCE_WORKERS:-2}              # 2 at a time on the 2-OCPU server
 exec 8>/tmp/ambient.lock; flock -n 8 || { echo "another Ambient run is going; exiting"; exit 0; }
 echo "=== $(date '+%F %T') Ambient Escape batch ($MODE) ==="
