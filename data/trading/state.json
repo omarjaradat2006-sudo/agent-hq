@@ -1,26 +1,26 @@
 {
  "team": "trading",
  "plain": {
-  "line": "Down $3,765.63 since start · 17 trades · holding: CRWD",
+  "line": "Down $3,872.10 since start · 17 trades · holding: CRWD",
   "rulesMode": "ultra",
-  "top": "Down $3,765.63 since start (-3.77%) · just holding SPY would be -4.07%",
+  "top": "Down $3,872.10 since start (-3.87%) · just holding SPY would be -4.00%",
   "up": false,
   "holding": [
-   "CRWD: 234 shares worth $48,023.82, up $131.04 (sells at $216.78 or stops at $198.37)"
+   "CRWD: 234 shares worth $47,939.58, up $46.80 (sells at $216.78 or stops at $198.37)"
   ],
   "today": [
    "Bought CRWD after the news: CrowdStation reports record Q3 results and higher guidance alongside an all-stock Zscaler acquisition valued at approximately $44 billion.",
    "Bought CRWD after the news: CrowdStrike Holdings reports an earnings beat and revenue outperformance.",
    "Sold CRWD (stop-loss -3% hit): lost $1,321.50.",
-   "Scanned the news 68 times today: read 4259 headlines, found 85 that could move a stock or coin it's allowed to trade.",
+   "Scanned the news 79 times today: read 4581 headlines, found 91 that could move a stock or coin it's allowed to trade.",
    "Passed on AMAT, AVAV, COP, LLY, PLTR: order failed: not enough cash for one share.",
    "Safety rules that stepped in: stock entry window (x6), cash only no margin (x6), stop loss -3% (x1)."
   ],
   "watchlist": "Allowed to trade: 68 halal stocks, 5 Shariah ETFs, 9 coins.",
-  "lastScan": "2026-11-23T17:41:58Z"
+  "lastScan": "2026-11-23T18:40:24Z"
  },
  "hired": true,
- "updatedAt": "2026-11-23T17:42:06Z",
+ "updatedAt": "2026-11-23T18:40:28Z",
  "mode": "PAPER",
  "agents": [
   {
@@ -28,8 +28,8 @@
    "name": "News Scout",
    "role": "Reads X, Reddit and news feeds",
    "status": "working",
-   "doing": "Read 24 new headlines/posts, 2 market-moving stories",
-   "lastRun": "2026-11-23T17:42:05Z"
+   "doing": "Read 2 new headlines/posts, 0 market-moving stories",
+   "lastRun": "2026-11-23T18:40:27Z"
   },
   {
    "id": "analyst",
@@ -37,7 +37,7 @@
    "role": "Gemini: is it real, what moves, which way",
    "status": "ok",
    "doing": "Gemini triage failed, skipping this batch: All Gemini models failed. Last error: Gemini HTTP 503 on gemini-3.1-flash-lite: {\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experien",
-   "lastRun": "2026-11-23T16:37:05Z"
+   "lastRun": "2026-11-23T17:55:43Z"
   },
   {
    "id": "confirm",
@@ -67,9 +67,9 @@
    "id": "trader",
    "name": "Trader",
    "role": "Places paper orders on Alpaca",
-   "status": "ok",
-   "doing": "Bought 234 CRWD at $204.67 (stop $198.37, target $216.78)",
-   "lastRun": "2026-11-23T16:57:40Z"
+   "status": "working",
+   "doing": "Paper-trading bot started (Alpaca PAPER account only). Close this window to stop it.",
+   "lastRun": "2026-11-23T18:40:23Z"
   },
   {
    "id": "coins",
@@ -89,6 +89,86 @@
   }
  ],
  "log": [
+  {
+   "t": "2026-11-23T18:40:27Z",
+   "agent": "News Scout",
+   "msg": "Read 2 new headlines/posts, 0 market-moving stories"
+  },
+  {
+   "t": "2026-11-23T18:40:23Z",
+   "agent": "News Scout",
+   "msg": "Agent Reach not found: news feeds + Yahoo Finance + Reddit direct (no X)"
+  },
+  {
+   "t": "2026-11-23T18:40:23Z",
+   "agent": "Trader",
+   "msg": "Paper-trading bot started (Alpaca PAPER account only). Close this window to stop it."
+  },
+  {
+   "t": "2026-11-23T18:39:23Z",
+   "agent": "News Scout",
+   "msg": "Read 35 new headlines/posts, 0 market-moving stories"
+  },
+  {
+   "t": "2026-11-23T18:34:11Z",
+   "agent": "News Scout",
+   "msg": "Read 20 new headlines/posts, 1 market-moving stories"
+  },
+  {
+   "t": "2026-11-23T18:29:00Z",
+   "agent": "News Scout",
+   "msg": "Read 34 new headlines/posts, 1 market-moving stories"
+  },
+  {
+   "t": "2026-11-23T18:23:54Z",
+   "agent": "News Scout",
+   "msg": "Read 28 new headlines/posts, 1 market-moving stories"
+  },
+  {
+   "t": "2026-11-23T18:17:33Z",
+   "agent": "News Scout",
+   "msg": "Read 21 new headlines/posts, 0 market-moving stories"
+  },
+  {
+   "t": "2026-11-23T18:12:22Z",
+   "agent": "News Scout",
+   "msg": "Read 39 new headlines/posts, 1 market-moving stories"
+  },
+  {
+   "t": "2026-11-23T18:07:17Z",
+   "agent": "News Scout",
+   "msg": "Read 58 new headlines/posts, 1 market-moving stories"
+  },
+  {
+   "t": "2026-11-23T18:02:09Z",
+   "agent": "News Scout",
+   "msg": "Read 30 new headlines/posts, 1 market-moving stories"
+  },
+  {
+   "t": "2026-11-23T17:55:43Z",
+   "agent": "News Scout",
+   "msg": "Read 29 new headlines/posts, 0 market-moving stories"
+  },
+  {
+   "t": "2026-11-23T17:55:43Z",
+   "agent": "News Analyst",
+   "msg": "Gemini triage failed, skipping this batch: All Gemini models failed. Last error: Gemini HTTP 503 on gemini-3.1-flash-lite: {\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experien"
+  },
+  {
+   "t": "2026-11-23T17:48:58Z",
+   "agent": "News Scout",
+   "msg": "Read 26 new headlines/posts, 0 market-moving stories"
+  },
+  {
+   "t": "2026-11-23T17:48:58Z",
+   "agent": "News Analyst",
+   "msg": "Gemini triage failed, skipping this batch: All Gemini models failed. Last error: Gemini HTTP 503 on gemini-3.1-flash-lite: {\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experien"
+  },
+  {
+   "t": "2026-11-23T17:42:08Z",
+   "agent": "Trader",
+   "msg": "Saved results to the Agent HQ dashboard"
+  },
   {
    "t": "2026-11-23T17:42:05Z",
    "agent": "News Scout",
@@ -758,108 +838,28 @@
    "t": "2026-11-23T01:13:17Z",
    "agent": "Trader",
    "msg": "Saved results to the Agent HQ dashboard"
-  },
-  {
-   "t": "2026-11-23T01:13:14Z",
-   "agent": "News Scout",
-   "msg": "Read 47 new headlines/posts, 1 market-moving stories"
-  },
-  {
-   "t": "2026-11-23T01:13:13Z",
-   "agent": "News Scout",
-   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
-  },
-  {
-   "t": "2026-11-23T00:58:08Z",
-   "agent": "News Scout",
-   "msg": "Read 41 new headlines/posts, 1 market-moving stories"
-  },
-  {
-   "t": "2026-11-23T00:58:07Z",
-   "agent": "News Scout",
-   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
-  },
-  {
-   "t": "2026-11-23T00:43:02Z",
-   "agent": "News Scout",
-   "msg": "Read 39 new headlines/posts, 0 market-moving stories"
-  },
-  {
-   "t": "2026-11-23T00:43:02Z",
-   "agent": "News Scout",
-   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
-  },
-  {
-   "t": "2026-11-23T00:27:57Z",
-   "agent": "News Scout",
-   "msg": "Read 37 new headlines/posts, 2 market-moving stories"
-  },
-  {
-   "t": "2026-11-23T00:27:55Z",
-   "agent": "News Scout",
-   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
-  },
-  {
-   "t": "2026-11-23T00:12:50Z",
-   "agent": "News Scout",
-   "msg": "Read 40 new headlines/posts, 0 market-moving stories"
-  },
-  {
-   "t": "2026-11-23T00:12:42Z",
-   "agent": "News Scout",
-   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
-  },
-  {
-   "t": "2026-11-22T23:57:37Z",
-   "agent": "News Scout",
-   "msg": "Read 32 new headlines/posts, 1 market-moving stories"
-  },
-  {
-   "t": "2026-11-22T23:57:33Z",
-   "agent": "News Scout",
-   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
-  },
-  {
-   "t": "2026-11-22T23:42:29Z",
-   "agent": "News Scout",
-   "msg": "Read 22 new headlines/posts, 0 market-moving stories"
-  },
-  {
-   "t": "2026-11-22T23:42:25Z",
-   "agent": "News Scout",
-   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
-  },
-  {
-   "t": "2026-11-22T23:27:21Z",
-   "agent": "News Scout",
-   "msg": "Read 29 new headlines/posts, 0 market-moving stories"
-  },
-  {
-   "t": "2026-11-22T23:27:20Z",
-   "agent": "News Scout",
-   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
   }
  ],
  "brief": {
   "date": "Mon Nov 23",
-  "createdAt": "2026-11-23T17:42:06Z",
-  "headline": "Paper account -$1,168 today (-1.20%), -3.77% total vs SPY -4.07% · 1 open",
+  "createdAt": "2026-11-23T18:40:28Z",
+  "headline": "Paper account -$1,275 today (-1.31%), -3.87% total vs SPY -4.00% · 1 open",
   "summary": "1 trade(s) closed today, 3/16 winners overall. TradingAgents checks used today: 0/5.",
   "notes": [
    "X/Reddit reader: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
   ]
  },
  "account": {
-  "equity": 96234.37,
+  "equity": 96127.9,
   "cash": 48188.32,
   "startEquity": 100000.0,
   "startedAt": "2026-11-10T01:51:53Z",
-  "dayPnl": -1168.23,
-  "dayPct": -1.2,
-  "totalPnl": -3765.63,
-  "totalPct": -3.77,
-  "spyPct": -4.07,
-  "vsSpyPct": 0.31
+  "dayPnl": -1274.7,
+  "dayPct": -1.31,
+  "totalPnl": -3872.1,
+  "totalPct": -3.87,
+  "spyPct": -4.0,
+  "vsSpyPct": 0.13
  },
  "status": {
   "killed": false,
@@ -867,7 +867,7 @@
   "deepUsed": 0,
   "deepMax": 5,
   "social": {
-   "at": "2026-11-23T17:31:43Z",
+   "at": "2026-11-23T18:40:25Z",
    "items": 0,
    "source": "Reddit via Tradestie + ApeWisdom (direct Reddit blocks servers; X needs Agent Reach)",
    "problems": [
@@ -875,13 +875,13 @@
     "r/stocks: HTTP 403 https://www.reddit.com/r/stocks/new.json: <body class=theme-beta><div><"
    ],
    "wsb": {
-    "at": "2026-11-23T17:31:43Z",
+    "at": "2026-11-23T18:40:25Z",
     "tickers": 50,
     "items": 0,
     "key": false
    },
    "ape": {
-    "at": "2026-11-23T17:31:43Z",
+    "at": "2026-11-23T18:40:25Z",
     "tickers": 200,
     "items": 0,
     "problems": []
@@ -963,8 +963,8 @@
     "tradingAgents": "not used (ultra mode)",
     "taSummary": ""
    },
-   "lastPrice": 205.48,
-   "unrealizedPct": 0.4
+   "lastPrice": 205.0,
+   "unrealizedPct": 0.16
   }
  ],
  "charts": {
@@ -1389,6 +1389,54 @@
     [
      "2026-11-23T17:40:00Z",
      96487.09
+    ],
+    [
+     "2026-11-23T17:45:00Z",
+     96345.5
+    ],
+    [
+     "2026-11-23T17:50:00Z",
+     96118.54
+    ],
+    [
+     "2026-11-23T17:55:00Z",
+     96391.27
+    ],
+    [
+     "2026-11-23T18:00:00Z",
+     96590.42
+    ],
+    [
+     "2026-11-23T18:05:00Z",
+     96471.88
+    ],
+    [
+     "2026-11-23T18:10:00Z",
+     96422.74
+    ],
+    [
+     "2026-11-23T18:15:00Z",
+     96309.25
+    ],
+    [
+     "2026-11-23T18:20:00Z",
+     96299.89
+    ],
+    [
+     "2026-11-23T18:25:00Z",
+     96415.72
+    ],
+    [
+     "2026-11-23T18:30:00Z",
+     96408.7
+    ],
+    [
+     "2026-11-23T18:35:00Z",
+     96312.78
+    ],
+    [
+     "2026-11-23T18:40:00Z",
+     96125.56
     ]
    ],
    "1W": [
@@ -2571,28 +2619,28 @@
     [
      "2026-11-23T17:30:00Z",
      96528.04
+    ],
+    [
+     "2026-11-23T17:45:00Z",
+     96345.5
+    ],
+    [
+     "2026-11-23T18:00:00Z",
+     96590.42
+    ],
+    [
+     "2026-11-23T18:15:00Z",
+     96309.25
+    ],
+    [
+     "2026-11-23T18:30:00Z",
+     96408.7
     ]
    ]
   },
   "holdings": {
    "CRWD": {
     "bars": [
-     [
-      "2026-11-20T17:45:00Z",
-      233.63
-     ],
-     [
-      "2026-11-20T18:00:00Z",
-      231.75
-     ],
-     [
-      "2026-11-20T18:15:00Z",
-      232.64
-     ],
-     [
-      "2026-11-20T18:30:00Z",
-      231.595
-     ],
      [
       "2026-11-20T18:45:00Z",
       233.37
@@ -2695,7 +2743,23 @@
      ],
      [
       "2026-11-23T17:30:00Z",
-      205.48
+      205.835
+     ],
+     [
+      "2026-11-23T17:45:00Z",
+      206.81
+     ],
+     [
+      "2026-11-23T18:00:00Z",
+      205.66
+     ],
+     [
+      "2026-11-23T18:15:00Z",
+      206.07
+     ],
+     [
+      "2026-11-23T18:30:00Z",
+      204.81
      ]
     ],
     "entry": 204.67,
@@ -2845,8 +2909,8 @@
     "tradingAgents": "not used (ultra mode)",
     "taSummary": ""
    },
-   "lastPrice": 205.48,
-   "unrealizedPct": 0.4
+   "lastPrice": 205.0,
+   "unrealizedPct": 0.16
   },
   {
    "id": "ahq-CRWD-20261123144115",
@@ -4151,11 +4215,6 @@
   }
  ],
  "equity": [
-  {
-   "t": "2026-11-15T03:32:19Z",
-   "equity": 100000.0,
-   "spy": 752.09
-  },
   {
    "t": "2026-11-15T04:02:30Z",
    "equity": 100000.0,
@@ -6150,6 +6209,11 @@
    "t": "2026-11-23T17:42:05Z",
    "equity": 96271.81,
    "spy": 722.06
+  },
+  {
+   "t": "2026-11-23T18:12:23Z",
+   "equity": 96354.88,
+   "spy": 722.62
   }
  ],
  "watch": [],
@@ -6161,389 +6225,7 @@
  },
  "events": [
   {
-   "summary": "Nvidia shares continue to surge following the reinstatement of Jensen Huang as CEO and massive short-covering.",
-   "category": "company_bad_news",
-   "firstSeen": "2026-11-12T18:24:33Z",
-   "publishers": [
-    "AFR",
-    "AP",
-    "Anadolu Ajansı",
-    "Around Prague",
-    "Barchart.com",
-    "Benzinga",
-    "BigGo Finance",
-    "Binance",
-    "Bloomberg.com",
-    "Breitbart News",
-    "Business Standard",
-    "CNBC",
-    "Capital Brief",
-    "Chosunbiz",
-    "Coin Gabbar",
-    "CoinDesk",
-    "Coinpaper",
-    "Crypto Briefing",
-    "Crypto Economy",
-    "CryptoTicker.io",
-    "Cryptonews.net",
-    "Deccan Herald",
-    "Decrypt",
-    "Dimsum Daily",
-    "Eurasia Business News",
-    "FXStreet",
-    "FinanceFeeds",
-    "Finimize",
-    "Finviz",
-    "Fortune",
-    "Geo News",
-    "Hokanews",
-    "Investing.com",
-    "Investing.com Canada",
-    "Investing.com South Africa",
-    "Investopedia",
-    "Investor's Business Daily",
-    "Invezz",
-    "JournalArta",
-    "KELO-AM",
-    "Kitco",
-    "Market Index",
-    "Moomoo",
-    "NDTV Profit",
-    "NST Online",
-    "Plataforma Media",
-    "Pluang",
-    "Pragativadi",
-    "Proactive financial news",
-    "Profit by Pakistan Today",
-    "Quartz",
-    "RTHK",
-    "RTHK News",
-    "RealMoney Pro",
-    "Reuters",
-    "Robin J Brooks | Substack",
-    "SSBCrack",
-    "Shacknews",
-    "Stocktwits",
-    "StreetInsider",
-    "The Boston Globe",
-    "The Economic Times",
-    "The Economist",
-    "The Edge Malaysia",
-    "The Guardian",
-    "The Hawk",
-    "The Lufkin Daily News",
-    "The New York Times",
-    "The Tech Buzz",
-    "The Times of India",
-    "TipRanks",
-    "Traders Union",
-    "TradingKey",
-    "TradingNEWS",
-    "TradingView",
-    "US News Money",
-    "VINnews",
-    "WSJ",
-    "Wccftech",
-    "X",
-    "Yahoo Finance",
-    "Zacks Investment Research",
-    "astig.ph",
-    "bdnews24.com",
-    "bloomingbit",
-    "cwibc.co.id",
-    "finance.biggo.com",
-    "fiscal.ai",
-    "kaohoon international",
-    "marketscreener.com",
-    "news.sbs.co.kr",
-    "shattered.io",
-    "www.tokenpost.com",
-    "深潮TechFlow",
-    "아시아경제",
-    "조선일보"
-   ],
-   "assets": {
-    "NVDA": {
-     "direction": "up",
-     "confidence": 0.95,
-     "why": "Jensen Huang reinstated as CEO removes major leadership uncertainty and reassures investors."
-    },
-    "BTC/USD": {
-     "direction": "up",
-     "confidence": 0.6,
-     "why": "Broader risk-on market rebound accompanied by positive tech sentiment."
-    },
-    "QCOM": {
-     "direction": "up",
-     "confidence": 0.65,
-     "why": "Capital is rotating out of Nvidia into competing AI semiconductor stocks following the CEO exit."
-    },
-    "AMD": {
-     "direction": "up",
-     "confidence": 0.8,
-     "why": "Semiconductor sector rebound following Nvidia catalyst"
-    },
-    "AVGO": {
-     "direction": "up",
-     "confidence": 0.8,
-     "why": "Semiconductor sector rebound following Nvidia catalyst"
-    },
-    "MSFT": {
-     "direction": "down",
-     "confidence": 0.65,
-     "why": "Broader tech and AI infrastructure sentiment hits related large-cap names."
-    },
-    "AAPL": {
-     "direction": "down",
-     "confidence": 0.3,
-     "why": "Broad market selloff induced by tech bellwether crash."
-    },
-    "SMCI": {
-     "direction": "up",
-     "confidence": 0.8,
-     "why": "AI stock rebound following Nvidia catalyst"
-    },
-    "MU": {
-     "direction": "up",
-     "confidence": 0.8,
-     "why": "Nvidia rebound reignites AI trade lifting memory and semiconductor stocks."
-    },
-    "PLTR": {
-     "direction": "down",
-     "confidence": 0.6,
-     "why": "Broader tech sector and AI stock sell-off spurred by Nvidia turmoil."
-    },
-    "INTC": {
-     "direction": "up",
-     "confidence": 0.8,
-     "why": "Chip stock surge following Nvidia catalyst."
-    },
-    "TSLA": {
-     "direction": "down",
-     "confidence": 0.6,
-     "why": "Broader tech sector weakness and uncertainty surrounding Nvidia weigh on high-multiple tech growth stocks."
-    },
-    "AMAT": {
-     "direction": "up",
-     "confidence": 0.7,
-     "why": "Nvidia's beat lifts broader semiconductor equipment suppliers."
-    }
-   },
-   "sources": [
-    {
-     "id": "855265040ed1e43c",
-     "publisher": "Reuters",
-     "kind": "news",
-     "title": "Nvidia CEO Jensen Huang resigns, in blow to AI boom he helped foster",
-     "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOMEFwN0FWdjB6blNtR0RZaTBWZXZDaWVwYkhXREttY2FaYVNNVC1qNEFHYm9Yd1pDODBDN2tvNzhnMTY4cmxWYTg1WVFidzFlNVFEdlZNb3IyZG1nS2FKcHAzUERhQW9EdG9oOER6YmwydXZOd0t1VHRub1BCdFdoR1V4dktlUVUydjZWeU53aVdKMGwtOGFtZmd2T3VhODF3eXhPazVtbV81b0hpUi1vcw?oc=5",
-     "time": "2026-11-12T18:31:55Z"
-    },
-    {
-     "id": "6c526a44313f07e5",
-     "publisher": "Yahoo Finance",
-     "kind": "news",
-     "title": "Equities Rise Intraday Despite Nvidia Sell-Off Post CEO's Departure",
-     "url": "https://finance.yahoo.com/markets/stocks/articles/equities-rise-intraday-despite-nvidia-182433809.html?.tsrc=rss",
-     "time": "2026-11-12T18:24:33Z"
-    },
-    {
-     "id": "adfadefb8db21a4c",
-     "publisher": "AP",
-     "kind": "news",
-     "title": "What we know after Jensen Huang resigns as Nvidia’s CEO",
-     "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOMUxqUTE0WWZBT2xoV25SLUQ2dFgyWkhwZFZyRnk3d1Fibmtrb0d4T3otSXNpNmZiTVh0QUdkWTA4UmQ3cXQyVVM3ODc0V0g4YnVVbDJRYWF4VXlaXzMzZnJWNi1UR3YyZHJGbWNzaVFab2tiM3N2RjFIOUtWcnlJVWtMVnhQNmhJeTdPajNVUXZfU2NzWkw0aGJLVFMtaGY3?oc=5",
-     "time": "2026-11-12T18:38:00Z"
-    },
-    {
-     "id": "e45111d2af3013e1",
-     "publisher": "The Economic Times",
-     "kind": "news",
-     "title": "Bitcoin price today: BTC USD falls near $71,000 after Jensen Huang resigns as Nvidia CEO and ETF outflows",
-     "url": "https://news.google.com/rss/articles/CBMisgJBVV95cUxNNGkxSEhVaVRhRGl4UkxMZUoyeV9Bc25CTmNkY1Q3Z2JEbTB5S3JWbUt4clE4eEltNTFSbFZSOFJrM290QTFESGJiMHROMGRSNVhzV0tkRHRqU2hLTk5GYng1Mm9FaDVlTFNyNHdqWXNwNDhNazZJNmlqOXIxVjFvZ0hwSHRTSUcwSXRqWWU5Mi1BTVg3Zm12bml2STNnSFExQWlTaUlRdDNlVnNUZlh5dFJDN2pfQmhha2M1SVBYUm1fVDhiaThNTnBsRU0ySTJSR1o1QkMyVHJseHA4VHlkd2pYODRaZzFpUUQza2ZlT1JpU0ZodWVkR0pCb3ZZTnI3TTNGQTBxcnJ0VnVJZzV3NHltc3l0X19JbG03WjdwRXFEWEwxZE9uMmJMTTVQbFZVRmfSAbcCQVVfeXFMTXR1bEttcm9WdW1FU0VCR1dKbWkwVkpwVmpjOE9YY1ZDUTZOcE5HaWktRnU2UW55c2ZLWEpiRmFwQ3ZTd2otS0RqX2FSWFZwejRGbFZOcGFpa2oxdF8xYmxVWVp6UUl1QkRnYi1ZVVhNS0d4UDlxSGpwZjJFeG5KbDhZdUplRWh5QU9Lc2U1NWhMMm9EQVZISVVIdUxuWnQxaDRWNllMb1lFS2VJUXRxYTJKSVV1bjg1V2ROTnRLdTVIb3dvcllFbTgtTF9nZFhaVGVrSHpzM3lQOTM5bHp2LXBLZ0VldGppMm95dWZBeGlLNUFXdnE0VkdqbWUzNS1adjhCRVlIMGdEbHJ2djFZSm5GWHhJcmZEOTRLbTU0MGNEdm1MaGkxdlA1WEEyMFlyRm8wbEdmWnM?oc=5",
-     "time": "2026-11-12T18:34:50Z"
-    },
-    {
-     "id": "89cceff7950b3622",
-     "publisher": "Benzinga",
-     "kind": "news",
-     "title": "Jensen Huang Is Out At Nvidia: 4 Private Equity Giants with Big Bets on Its AI Infrastructure Future",
-     "url": "https://www.benzinga.com/markets/private-markets/26/11/63212619/jensen-huang-is-out-at-nvidia-4-private-equity-giants-with-big-bets-on-its-ai-infrastructure-future",
-     "time": "2026-11-12T18:45:12Z"
-    }
-   ]
-  },
-  {
-   "summary": "Abraxas Capital reportedly scoops up $1 billion in Bitcoin, boosting positive sentiment and inflows across major cryptocurrencies.",
-   "category": "crypto_positive",
-   "firstSeen": "2026-11-21T20:36:04Z",
-   "publishers": [
-    "Altcoin Buzz",
-    "Around Prague",
-    "BigGo Finance",
-    "Binance",
-    "Bitcoin Foundation",
-    "Blockonomi",
-    "CoinGape",
-    "Coinpaper",
-    "Cointribune",
-    "Crypto Briefing",
-    "Crypto News",
-    "CryptoDaily",
-    "CryptoRank",
-    "Cryptonews.net",
-    "Decrypt",
-    "Demokratis.co.id",
-    "Haberler.com",
-    "IDNFinancials",
-    "Inshorts",
-    "Invezz",
-    "KuCoin",
-    "Limapagi",
-    "Pluang",
-    "Traders Union",
-    "TradingView",
-    "Wisevoter",
-    "Yahoo Finance",
-    "bloomingbit",
-    "fiscal.ai"
-   ],
-   "assets": {
-    "BTC/USD": {
-     "direction": "up",
-     "confidence": 0.8,
-     "why": "Large institutional Bitcoin accumulation supports upward momentum."
-    },
-    "SOL/USD": {
-     "direction": "up",
-     "confidence": 0.75,
-     "why": "Solana breaking above $70 demonstrates strong bullish momentum during the crypto rebound."
-    },
-    "ETH/USD": {
-     "direction": "up",
-     "confidence": 0.75,
-     "why": "Ethereum rallies alongside the broader crypto market."
-    }
-   },
-   "sources": [
-    {
-     "id": "387e642d1750c13a",
-     "publisher": "Cointribune",
-     "kind": "news",
-     "title": "Bitcoin: The buyers' return propels BTC above $60,000",
-     "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxNQlZTNkYxTFExRVd0QlVMWXRGWFYweTFWNXh6LTloclk5SkdMTVE0YUxhdG5Pbm45dGtaa2EtNjVyMWJ6U3M5b1BxM2VaY2lXelBCc0l5ZmJvZThwUzFhNnI0NkczZm5hanN5LWp0UjV3S2hBaHFoRUNROWRKVjFmd09jOFlwMkxjRTQzT2FpWVhfdkps?oc=5",
-     "time": "2026-11-21T20:36:04Z"
-    },
-    {
-     "id": "9e7c736eb8b3d8dc",
-     "publisher": "Haberler.com",
-     "kind": "news",
-     "title": "Sharp reversal after the liquidation wave in Bitcoin! It has surpassed $60,000 again.",
-     "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxQRjBHNF94ZVZfeEk4RXZsRFV2eVQ3Z2s0eEd3QUdrY1V5S1plaXJ6VGhOZE16NlZscUZfS1hvaE13MHBYSGdzSXE1dmNPU3Q0Qi1JR0diZzhLdGQyZkxVRkZ0NXYzMTgtYm1qVklta2pTcWJEbHJaTmh4dW92aGw2Q1dvZw?oc=5",
-     "time": "2026-11-21T22:23:15Z"
-    },
-    {
-     "id": "8dbebc1f3b0f2d4b",
-     "publisher": "Cryptonews.net",
-     "kind": "news",
-     "title": "Bitcoin Price Rebounds to $60K After Crash Near $55K, Leaving Billions in Liquidations",
-     "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE0yTXFhb3hnTVpzLUJLS0NWdjh6S1M0Ync5MlNLRGhjV3JxSU12dmRpZGduUG8zLVhzQ1ZBcnJpd3k5eDlKMU5PeHUza21aWUlLc19lMGszN20?oc=5",
-     "time": "2026-11-21T22:15:38Z"
-    },
-    {
-     "id": "8e046e564a2ac43d",
-     "publisher": "BigGo Finance",
-     "kind": "news",
-     "title": "Bitcoin Plunges to Two-Year Low Before Rebounding Over 8% to Reclaim $60,000 Level",
-     "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE9Gc0pod3AzdFBPblREbGNxM1p5TFJobV9ZZERBcW1jcEpxMnk5eno1UXpxcDJ1dzNpbi0xbjlUVktsdFpmMVVRR0tMWkxrbmxobzR0Z19yaXVaQV9ZRU1QT0FJUnlGdldZaDZqWGROSF9hRmc4a2c?oc=5",
-     "time": "2026-11-22T01:35:00Z"
-    },
-    {
-     "id": "64b5e5497a8fd44b",
-     "publisher": "Crypto News",
-     "kind": "news",
-     "title": "Bitcoin price rebounds from $55K after historic sell-off, is $72K next?",
-     "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE1rZzVTU2xaTWZXcE5LOFI0RlBsZk84N0F5ekdWY0lONHljSWROaEVCS3BsYUd6QmlZR2RpSzBtZ2JSVVFKSVhydVBEd3lQSVVVekd5MGdPVmMwVU5PenJBcm1KZWtmT1M5Y1Z1cDkxaFdqREk?oc=5",
-     "time": "2026-11-22T08:01:17Z"
-    }
-   ]
-  },
-  {
-   "summary": "CrowdStrike shares fall sharply following its massive all-stock acquisition of Zscaler.",
-   "category": "company_bad_news",
-   "firstSeen": "2026-11-22T19:17:00Z",
-   "publishers": [
-    "CNBC",
-    "Investing.com",
-    "Minichart",
-    "Reuters",
-    "StreetInsider",
-    "TradingView",
-    "Yahoo Finance",
-    "fiscal.ai",
-    "marketscreener.com"
-   ],
-   "assets": {
-    "INTC": {
-     "direction": "down",
-     "confidence": 0.7,
-     "why": "Significant layoffs often signal operational challenges or cost-cutting measures that weigh on investor sentiment."
-    },
-    "AVGO": {
-     "direction": "down",
-     "confidence": 0.7,
-     "why": "Google shifting chip purchases away negatively impacts Broadcom revenue outlook."
-    },
-    "CRWD": {
-     "direction": "down",
-     "confidence": 0.85,
-     "why": "Massive all-stock acquisition and negative market reaction push the stock down."
-    }
-   },
-   "sources": [
-    {
-     "id": "efe4981238cef978",
-     "publisher": "Yahoo Finance",
-     "kind": "news",
-     "title": "Intel announces more layoffs as workforce shrinks by 7,300",
-     "url": "https://www.thestreet.com/technology/intel-announces-more-layoffs-as-workforce-shrinks-by-7300?.tsrc=rss",
-     "time": "2026-11-22T19:17:00Z"
-    },
-    {
-     "id": "0df5437cd320b689",
-     "publisher": "Yahoo Finance",
-     "kind": "news",
-     "title": "Google’s 2027 chip plan is bad news for Broadcom",
-     "url": "https://www.thestreet.com/technology/google-2027-chip-plan-broadcom?.tsrc=rss",
-     "time": "2026-11-22T19:47:00Z"
-    },
-    {
-     "id": "4d5f42a9f54088e6",
-     "publisher": "fiscal.ai",
-     "kind": "news",
-     "title": "Broadcom Faces Unconfirmed Reports of Google Chip Order Reductions",
-     "url": "https://world.storm.mg/articles/1183977",
-     "time": "2026-11-23T02:01:09Z"
-    },
-    {
-     "id": "8cae510268d8b7a7",
-     "publisher": "CNBC",
-     "kind": "news",
-     "title": "CrowdStrike bets on network security with $43.9 billion Zscaler deal",
-     "url": "https://www.cnbc.com/2026/11/23/crowdstrike-to-buy-zscaler.html",
-     "time": "2026-11-23T10:43:47Z"
-    },
-    {
-     "id": "c7162034ea63749c",
-     "publisher": "StreetInsider",
-     "kind": "news",
-     "title": "CrowdStrike Holdings Inc. (CRWD) Tops Q3 EPS by 3c; raises forecast",
-     "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxOeTRmMmROUzY2UFFIWXhZTTBfUnBmd3FLeEJuYV9vNXBfemhDaDBfMFpMbDRhODJjWTM3dGtnZUFRSnRNVUVUbVFHeW9fRXZHd1dXUUtra0pXWVdiSTdJQTJRM0lqSlNTZkhkYnRDN1VoRTBIQjdfME1LTHVnTkJFeHdQSUNDRjdDM1lfbG9fOHFhTC1OU2NXSG9HS0RBbWRualNrb0xoSDBBNEtHa2F0RXRxbmU0SUVjLU1sSU5RWUk3bjB5?oc=5",
-     "time": "2026-11-23T10:42:22Z"
-    }
-   ]
-  },
-  {
-   "summary": "Attacks on Russian and regional oil facilities keep supply disruption concerns active and support energy markets.",
+   "summary": "Ukrainian drone strikes shutting down Russian oil refineries and ongoing blockade tensions in Iran threaten global oil supply.",
    "category": "war_escalation",
    "firstSeen": "2026-11-10T20:01:23Z",
    "publishers": [
@@ -6994,6 +6676,7 @@
     "Quantum Commodity Intelligence",
     "Quartz",
     "RBC-Ukraine",
+    "REFORM.news",
     "RNZ",
     "RTE.ie",
     "RTHK News",
@@ -7050,6 +6733,7 @@
     "TRT World",
     "TV ONE USA",
     "TVC News",
+    "TVP World",
     "Tampa Free Press",
     "TechBullion",
     "Tehran Times",
@@ -7489,6 +7173,389 @@
      "title": "Middle East latest: Ship attacked in UAE waters, says operator Adnoc",
      "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPdTMwLTRPRTZsZHJPR0lQTVNtNHdyWWxZNHMydXJzUjEySVZIZzJfUFlvbXZfQWJPc25aSm5kM3lzNmxFMFVMdFl3NTZLZWVjZnZPaTFyWjZtcl9peGd6ZlpDU2hnQmxDVFBLRlF1cVR3U2QwR2R4dWRRNEFDaDBzSTY2YUFWZEsyZ3dIOGQwX2tudV81a1pRRXQtVzl0TWYw?oc=5",
      "time": "2026-11-10T20:59:26Z"
+    }
+   ]
+  },
+  {
+   "summary": "CrowdStrike's earnings beat is overshadowed by its massive $43.9 billion all-stock acquisition proposal of Zscaler.",
+   "category": "company_bad_news",
+   "firstSeen": "2026-11-22T19:17:00Z",
+   "publishers": [
+    "CNBC",
+    "Investing.com",
+    "Investing.com Canada",
+    "Minichart",
+    "Reuters",
+    "StreetInsider",
+    "TradingView",
+    "Yahoo Finance",
+    "fiscal.ai",
+    "marketscreener.com"
+   ],
+   "assets": {
+    "INTC": {
+     "direction": "down",
+     "confidence": 0.7,
+     "why": "Significant layoffs often signal operational challenges or cost-cutting measures that weigh on investor sentiment."
+    },
+    "AVGO": {
+     "direction": "down",
+     "confidence": 0.7,
+     "why": "Google shifting chip purchases away negatively impacts Broadcom revenue outlook."
+    },
+    "CRWD": {
+     "direction": "down",
+     "confidence": 0.85,
+     "why": "Massive dilution and expensive acquisition overshadow earnings beat, leading to heavy selling."
+    }
+   },
+   "sources": [
+    {
+     "id": "efe4981238cef978",
+     "publisher": "Yahoo Finance",
+     "kind": "news",
+     "title": "Intel announces more layoffs as workforce shrinks by 7,300",
+     "url": "https://www.thestreet.com/technology/intel-announces-more-layoffs-as-workforce-shrinks-by-7300?.tsrc=rss",
+     "time": "2026-11-22T19:17:00Z"
+    },
+    {
+     "id": "0df5437cd320b689",
+     "publisher": "Yahoo Finance",
+     "kind": "news",
+     "title": "Google’s 2027 chip plan is bad news for Broadcom",
+     "url": "https://www.thestreet.com/technology/google-2027-chip-plan-broadcom?.tsrc=rss",
+     "time": "2026-11-22T19:47:00Z"
+    },
+    {
+     "id": "4d5f42a9f54088e6",
+     "publisher": "fiscal.ai",
+     "kind": "news",
+     "title": "Broadcom Faces Unconfirmed Reports of Google Chip Order Reductions",
+     "url": "https://world.storm.mg/articles/1183977",
+     "time": "2026-11-23T02:01:09Z"
+    },
+    {
+     "id": "8cae510268d8b7a7",
+     "publisher": "CNBC",
+     "kind": "news",
+     "title": "CrowdStrike bets on network security with $43.9 billion Zscaler deal",
+     "url": "https://www.cnbc.com/2026/11/23/crowdstrike-to-buy-zscaler.html",
+     "time": "2026-11-23T10:43:47Z"
+    },
+    {
+     "id": "c7162034ea63749c",
+     "publisher": "StreetInsider",
+     "kind": "news",
+     "title": "CrowdStrike Holdings Inc. (CRWD) Tops Q3 EPS by 3c; raises forecast",
+     "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxOeTRmMmROUzY2UFFIWXhZTTBfUnBmd3FLeEJuYV9vNXBfemhDaDBfMFpMbDRhODJjWTM3dGtnZUFRSnRNVUVUbVFHeW9fRXZHd1dXUUtra0pXWVdiSTdJQTJRM0lqSlNTZkhkYnRDN1VoRTBIQjdfME1LTHVnTkJFeHdQSUNDRjdDM1lfbG9fOHFhTC1OU2NXSG9HS0RBbWRualNrb0xoSDBBNEtHa2F0RXRxbmU0SUVjLU1sSU5RWUk3bjB5?oc=5",
+     "time": "2026-11-23T10:42:22Z"
+    }
+   ]
+  },
+  {
+   "summary": "Nvidia shares continue to surge following the reinstatement of Jensen Huang as CEO and massive short-covering.",
+   "category": "company_bad_news",
+   "firstSeen": "2026-11-12T18:24:33Z",
+   "publishers": [
+    "AFR",
+    "AP",
+    "Anadolu Ajansı",
+    "Around Prague",
+    "Barchart.com",
+    "Benzinga",
+    "BigGo Finance",
+    "Binance",
+    "Bloomberg.com",
+    "Breitbart News",
+    "Business Standard",
+    "CNBC",
+    "Capital Brief",
+    "Chosunbiz",
+    "Coin Gabbar",
+    "CoinDesk",
+    "Coinpaper",
+    "Crypto Briefing",
+    "Crypto Economy",
+    "CryptoTicker.io",
+    "Cryptonews.net",
+    "Deccan Herald",
+    "Decrypt",
+    "Dimsum Daily",
+    "Eurasia Business News",
+    "FXStreet",
+    "FinanceFeeds",
+    "Finimize",
+    "Finviz",
+    "Fortune",
+    "Geo News",
+    "Hokanews",
+    "Investing.com",
+    "Investing.com Canada",
+    "Investing.com South Africa",
+    "Investopedia",
+    "Investor's Business Daily",
+    "Invezz",
+    "JournalArta",
+    "KELO-AM",
+    "Kitco",
+    "Market Index",
+    "Moomoo",
+    "NDTV Profit",
+    "NST Online",
+    "Plataforma Media",
+    "Pluang",
+    "Pragativadi",
+    "Proactive financial news",
+    "Profit by Pakistan Today",
+    "Quartz",
+    "RTHK",
+    "RTHK News",
+    "RealMoney Pro",
+    "Reuters",
+    "Robin J Brooks | Substack",
+    "SSBCrack",
+    "Shacknews",
+    "Stocktwits",
+    "StreetInsider",
+    "The Boston Globe",
+    "The Economic Times",
+    "The Economist",
+    "The Edge Malaysia",
+    "The Guardian",
+    "The Hawk",
+    "The Lufkin Daily News",
+    "The New York Times",
+    "The Tech Buzz",
+    "The Times of India",
+    "TipRanks",
+    "Traders Union",
+    "TradingKey",
+    "TradingNEWS",
+    "TradingView",
+    "US News Money",
+    "VINnews",
+    "WSJ",
+    "Wccftech",
+    "X",
+    "Yahoo Finance",
+    "Zacks Investment Research",
+    "astig.ph",
+    "bdnews24.com",
+    "bloomingbit",
+    "cwibc.co.id",
+    "finance.biggo.com",
+    "fiscal.ai",
+    "kaohoon international",
+    "marketscreener.com",
+    "news.sbs.co.kr",
+    "shattered.io",
+    "www.tokenpost.com",
+    "深潮TechFlow",
+    "아시아경제",
+    "조선일보"
+   ],
+   "assets": {
+    "NVDA": {
+     "direction": "up",
+     "confidence": 0.95,
+     "why": "Jensen Huang reinstated as CEO removes major leadership uncertainty and reassures investors."
+    },
+    "BTC/USD": {
+     "direction": "up",
+     "confidence": 0.6,
+     "why": "Broader risk-on market rebound accompanied by positive tech sentiment."
+    },
+    "QCOM": {
+     "direction": "up",
+     "confidence": 0.65,
+     "why": "Capital is rotating out of Nvidia into competing AI semiconductor stocks following the CEO exit."
+    },
+    "AMD": {
+     "direction": "up",
+     "confidence": 0.8,
+     "why": "Semiconductor sector rebound following Nvidia catalyst"
+    },
+    "AVGO": {
+     "direction": "up",
+     "confidence": 0.8,
+     "why": "Semiconductor sector rebound following Nvidia catalyst"
+    },
+    "MSFT": {
+     "direction": "down",
+     "confidence": 0.65,
+     "why": "Broader tech and AI infrastructure sentiment hits related large-cap names."
+    },
+    "AAPL": {
+     "direction": "down",
+     "confidence": 0.3,
+     "why": "Broad market selloff induced by tech bellwether crash."
+    },
+    "SMCI": {
+     "direction": "up",
+     "confidence": 0.8,
+     "why": "AI stock rebound following Nvidia catalyst"
+    },
+    "MU": {
+     "direction": "up",
+     "confidence": 0.8,
+     "why": "Nvidia rebound reignites AI trade lifting memory and semiconductor stocks."
+    },
+    "PLTR": {
+     "direction": "down",
+     "confidence": 0.6,
+     "why": "Broader tech sector and AI stock sell-off spurred by Nvidia turmoil."
+    },
+    "INTC": {
+     "direction": "up",
+     "confidence": 0.8,
+     "why": "Chip stock surge following Nvidia catalyst."
+    },
+    "TSLA": {
+     "direction": "down",
+     "confidence": 0.6,
+     "why": "Broader tech sector weakness and uncertainty surrounding Nvidia weigh on high-multiple tech growth stocks."
+    },
+    "AMAT": {
+     "direction": "up",
+     "confidence": 0.7,
+     "why": "Nvidia's beat lifts broader semiconductor equipment suppliers."
+    }
+   },
+   "sources": [
+    {
+     "id": "855265040ed1e43c",
+     "publisher": "Reuters",
+     "kind": "news",
+     "title": "Nvidia CEO Jensen Huang resigns, in blow to AI boom he helped foster",
+     "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOMEFwN0FWdjB6blNtR0RZaTBWZXZDaWVwYkhXREttY2FaYVNNVC1qNEFHYm9Yd1pDODBDN2tvNzhnMTY4cmxWYTg1WVFidzFlNVFEdlZNb3IyZG1nS2FKcHAzUERhQW9EdG9oOER6YmwydXZOd0t1VHRub1BCdFdoR1V4dktlUVUydjZWeU53aVdKMGwtOGFtZmd2T3VhODF3eXhPazVtbV81b0hpUi1vcw?oc=5",
+     "time": "2026-11-12T18:31:55Z"
+    },
+    {
+     "id": "6c526a44313f07e5",
+     "publisher": "Yahoo Finance",
+     "kind": "news",
+     "title": "Equities Rise Intraday Despite Nvidia Sell-Off Post CEO's Departure",
+     "url": "https://finance.yahoo.com/markets/stocks/articles/equities-rise-intraday-despite-nvidia-182433809.html?.tsrc=rss",
+     "time": "2026-11-12T18:24:33Z"
+    },
+    {
+     "id": "adfadefb8db21a4c",
+     "publisher": "AP",
+     "kind": "news",
+     "title": "What we know after Jensen Huang resigns as Nvidia’s CEO",
+     "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOMUxqUTE0WWZBT2xoV25SLUQ2dFgyWkhwZFZyRnk3d1Fibmtrb0d4T3otSXNpNmZiTVh0QUdkWTA4UmQ3cXQyVVM3ODc0V0g4YnVVbDJRYWF4VXlaXzMzZnJWNi1UR3YyZHJGbWNzaVFab2tiM3N2RjFIOUtWcnlJVWtMVnhQNmhJeTdPajNVUXZfU2NzWkw0aGJLVFMtaGY3?oc=5",
+     "time": "2026-11-12T18:38:00Z"
+    },
+    {
+     "id": "e45111d2af3013e1",
+     "publisher": "The Economic Times",
+     "kind": "news",
+     "title": "Bitcoin price today: BTC USD falls near $71,000 after Jensen Huang resigns as Nvidia CEO and ETF outflows",
+     "url": "https://news.google.com/rss/articles/CBMisgJBVV95cUxNNGkxSEhVaVRhRGl4UkxMZUoyeV9Bc25CTmNkY1Q3Z2JEbTB5S3JWbUt4clE4eEltNTFSbFZSOFJrM290QTFESGJiMHROMGRSNVhzV0tkRHRqU2hLTk5GYng1Mm9FaDVlTFNyNHdqWXNwNDhNazZJNmlqOXIxVjFvZ0hwSHRTSUcwSXRqWWU5Mi1BTVg3Zm12bml2STNnSFExQWlTaUlRdDNlVnNUZlh5dFJDN2pfQmhha2M1SVBYUm1fVDhiaThNTnBsRU0ySTJSR1o1QkMyVHJseHA4VHlkd2pYODRaZzFpUUQza2ZlT1JpU0ZodWVkR0pCb3ZZTnI3TTNGQTBxcnJ0VnVJZzV3NHltc3l0X19JbG03WjdwRXFEWEwxZE9uMmJMTTVQbFZVRmfSAbcCQVVfeXFMTXR1bEttcm9WdW1FU0VCR1dKbWkwVkpwVmpjOE9YY1ZDUTZOcE5HaWktRnU2UW55c2ZLWEpiRmFwQ3ZTd2otS0RqX2FSWFZwejRGbFZOcGFpa2oxdF8xYmxVWVp6UUl1QkRnYi1ZVVhNS0d4UDlxSGpwZjJFeG5KbDhZdUplRWh5QU9Lc2U1NWhMMm9EQVZISVVIdUxuWnQxaDRWNllMb1lFS2VJUXRxYTJKSVV1bjg1V2ROTnRLdTVIb3dvcllFbTgtTF9nZFhaVGVrSHpzM3lQOTM5bHp2LXBLZ0VldGppMm95dWZBeGlLNUFXdnE0VkdqbWUzNS1adjhCRVlIMGdEbHJ2djFZSm5GWHhJcmZEOTRLbTU0MGNEdm1MaGkxdlA1WEEyMFlyRm8wbEdmWnM?oc=5",
+     "time": "2026-11-12T18:34:50Z"
+    },
+    {
+     "id": "89cceff7950b3622",
+     "publisher": "Benzinga",
+     "kind": "news",
+     "title": "Jensen Huang Is Out At Nvidia: 4 Private Equity Giants with Big Bets on Its AI Infrastructure Future",
+     "url": "https://www.benzinga.com/markets/private-markets/26/11/63212619/jensen-huang-is-out-at-nvidia-4-private-equity-giants-with-big-bets-on-its-ai-infrastructure-future",
+     "time": "2026-11-12T18:45:12Z"
+    }
+   ]
+  },
+  {
+   "summary": "Abraxas Capital reportedly scoops up $1 billion in Bitcoin, boosting positive sentiment and inflows across major cryptocurrencies.",
+   "category": "crypto_positive",
+   "firstSeen": "2026-11-21T20:36:04Z",
+   "publishers": [
+    "Altcoin Buzz",
+    "Around Prague",
+    "BigGo Finance",
+    "Binance",
+    "Bitcoin Foundation",
+    "Blockonomi",
+    "CoinGape",
+    "Coinpaper",
+    "Cointribune",
+    "Crypto Briefing",
+    "Crypto News",
+    "CryptoDaily",
+    "CryptoRank",
+    "Cryptonews.net",
+    "Decrypt",
+    "Demokratis.co.id",
+    "Haberler.com",
+    "IDNFinancials",
+    "Inshorts",
+    "Invezz",
+    "KuCoin",
+    "Limapagi",
+    "Pluang",
+    "Traders Union",
+    "TradingView",
+    "Wisevoter",
+    "Yahoo Finance",
+    "bloomingbit",
+    "fiscal.ai"
+   ],
+   "assets": {
+    "BTC/USD": {
+     "direction": "up",
+     "confidence": 0.8,
+     "why": "Large institutional Bitcoin accumulation supports upward momentum."
+    },
+    "SOL/USD": {
+     "direction": "up",
+     "confidence": 0.75,
+     "why": "Solana breaking above $70 demonstrates strong bullish momentum during the crypto rebound."
+    },
+    "ETH/USD": {
+     "direction": "up",
+     "confidence": 0.75,
+     "why": "Ethereum rallies alongside the broader crypto market."
+    }
+   },
+   "sources": [
+    {
+     "id": "387e642d1750c13a",
+     "publisher": "Cointribune",
+     "kind": "news",
+     "title": "Bitcoin: The buyers' return propels BTC above $60,000",
+     "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxNQlZTNkYxTFExRVd0QlVMWXRGWFYweTFWNXh6LTloclk5SkdMTVE0YUxhdG5Pbm45dGtaa2EtNjVyMWJ6U3M5b1BxM2VaY2lXelBCc0l5ZmJvZThwUzFhNnI0NkczZm5hanN5LWp0UjV3S2hBaHFoRUNROWRKVjFmd09jOFlwMkxjRTQzT2FpWVhfdkps?oc=5",
+     "time": "2026-11-21T20:36:04Z"
+    },
+    {
+     "id": "9e7c736eb8b3d8dc",
+     "publisher": "Haberler.com",
+     "kind": "news",
+     "title": "Sharp reversal after the liquidation wave in Bitcoin! It has surpassed $60,000 again.",
+     "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxQRjBHNF94ZVZfeEk4RXZsRFV2eVQ3Z2s0eEd3QUdrY1V5S1plaXJ6VGhOZE16NlZscUZfS1hvaE13MHBYSGdzSXE1dmNPU3Q0Qi1JR0diZzhLdGQyZkxVRkZ0NXYzMTgtYm1qVklta2pTcWJEbHJaTmh4dW92aGw2Q1dvZw?oc=5",
+     "time": "2026-11-21T22:23:15Z"
+    },
+    {
+     "id": "8dbebc1f3b0f2d4b",
+     "publisher": "Cryptonews.net",
+     "kind": "news",
+     "title": "Bitcoin Price Rebounds to $60K After Crash Near $55K, Leaving Billions in Liquidations",
+     "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE0yTXFhb3hnTVpzLUJLS0NWdjh6S1M0Ync5MlNLRGhjV3JxSU12dmRpZGduUG8zLVhzQ1ZBcnJpd3k5eDlKMU5PeHUza21aWUlLc19lMGszN20?oc=5",
+     "time": "2026-11-21T22:15:38Z"
+    },
+    {
+     "id": "8e046e564a2ac43d",
+     "publisher": "BigGo Finance",
+     "kind": "news",
+     "title": "Bitcoin Plunges to Two-Year Low Before Rebounding Over 8% to Reclaim $60,000 Level",
+     "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE9Gc0pod3AzdFBPblREbGNxM1p5TFJobV9ZZERBcW1jcEpxMnk5eno1UXpxcDJ1dzNpbi0xbjlUVktsdFpmMVVRR0tMWkxrbmxobzR0Z19yaXVaQV9ZRU1QT0FJUnlGdldZaDZqWGROSF9hRmc4a2c?oc=5",
+     "time": "2026-11-22T01:35:00Z"
+    },
+    {
+     "id": "64b5e5497a8fd44b",
+     "publisher": "Crypto News",
+     "kind": "news",
+     "title": "Bitcoin price rebounds from $55K after historic sell-off, is $72K next?",
+     "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE1rZzVTU2xaTWZXcE5LOFI0RlBsZk84N0F5ekdWY0lONHljSWROaEVCS3BsYUd6QmlZR2RpSzBtZ2JSVVFKSVhydVBEd3lQSVVVekd5MGdPVmMwVU5PenJBcm1KZWtmT1M5Y1Z1cDkxaFdqREk?oc=5",
+     "time": "2026-11-22T08:01:17Z"
     }
    ]
   },
