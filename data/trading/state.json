@@ -1,17 +1,17 @@
 {
  "team": "trading",
  "plain": {
-  "line": "Down $4,328.24 since start · 23 trades · holding: NOW, AMZN, TSLA, NVDA, AMAT, AMD",
+  "line": "Down $4,303.60 since start · 23 trades · holding: NOW, AMZN, TSLA, NVDA, AMAT, AMD",
   "rulesMode": "ultra",
-  "top": "Down $4,328.24 since start (-4.33%) · just holding SPY would be -3.89%",
+  "top": "Down $4,303.60 since start (-4.30%) · just holding SPY would be -3.89%",
   "up": false,
   "holding": [
-   "NOW: 169 shares worth $15,545.89, up $48.53 (sells at $97.20 or stops at $88.95)",
-   "AMZN: 75 shares worth $19,168.95, down $196.40 (sells at $273.70 or stops at $250.46)",
-   "TSLA: 33 shares worth $12,733.71, down $66.27 (sells at $411.08 or stops at $376.18)",
-   "NVDA: 59 shares worth $9,755.06, up $48.97 (sells at $174.18 or stops at $159.39)",
-   "AMAT: 21 shares worth $7,269.78, up $53.67 (sells at $363.66 or stops at $332.79)",
-   "AMD: 16 shares worth $7,206.40, down $38.10 (sells at $479.33 or stops at $438.63)"
+   "NOW: 169 shares worth $15,541.24, up $43.88 (sells at $97.20 or stops at $88.95)",
+   "AMZN: 75 shares worth $19,223.92, down $141.43 (sells at $273.70 or stops at $250.46)",
+   "TSLA: 33 shares worth $12,724.80, down $75.18 (sells at $411.08 or stops at $376.18)",
+   "NVDA: 59 shares worth $9,732.90, up $26.81 (sells at $174.18 or stops at $159.39)",
+   "AMAT: 21 shares worth $7,266.63, up $50.52 (sells at $363.66 or stops at $332.79)",
+   "AMD: 16 shares worth $7,222.28, down $22.22 (sells at $479.33 or stops at $438.63)"
   ],
   "today": [
    "Bought NOW after the news: Political intervention and the reinstatement of Jensen Huang as Nvidia CEO continue to drive a massive tech sector rally.",
@@ -24,16 +24,18 @@
    "Bought CRWD after the news: CrowdStrike Holdings reports an earnings beat and revenue outperformance.",
    "Sold CRWD (bad news: CrowdStrike's earnings beat is overshadowed by its massive $43.9 billion all-sto): lost $245.70.",
    "Sold CRWD (stop-loss -3% hit): lost $1,321.50.",
-   "Scanned the news 106 times today: read 5308 headlines, found 122 that could move a stock or coin it's allowed to trade.",
+   "Scanned the news 108 times today: read 5504 headlines, found 127 that could move a stock or coin it's allowed to trade.",
    "Passed on AMAT, AVAV, COP, KLAC, LLY: order failed: not enough cash for one share.",
+   "Passed on BTC/USD, SOL/USD: already $71,704 invested (max 75% of $95,696).",
+   "Passed on BTC/USD, SOL/USD: already $71,657 invested (max 75% of $95,649).",
    "Passed on BTC/USD, SOL/USD: already $71,680 invested (max 75% of $95,672).",
-   "Safety rules that stepped in: stock entry window (x8), cash only no margin (x8), stop loss -3% (x1), bad news exit (x1), max invested (x2)."
+   "Safety rules that stepped in: stock entry window (x8), cash only no margin (x8), stop loss -3% (x1), bad news exit (x1), max invested (x6)."
   ],
   "watchlist": "Allowed to trade: 68 halal stocks, 5 Shariah ETFs, 9 coins.",
-  "lastScan": "2026-11-23T21:34:22Z"
+  "lastScan": "2026-11-23T22:12:11Z"
  },
  "hired": true,
- "updatedAt": "2026-11-23T21:34:38Z",
+ "updatedAt": "2026-11-23T22:13:49Z",
  "mode": "PAPER",
  "agents": [
   {
@@ -41,8 +43,8 @@
    "name": "News Scout",
    "role": "Reads X, Reddit and news feeds",
    "status": "working",
-   "doing": "Read 102 new headlines/posts, 5 market-moving stories",
-   "lastRun": "2026-11-23T21:34:36Z"
+   "doing": "Read 123 new headlines/posts, 4 market-moving stories",
+   "lastRun": "2026-11-23T22:13:46Z"
   },
   {
    "id": "analyst",
@@ -80,7 +82,7 @@
    "id": "trader",
    "name": "Trader",
    "role": "Places paper orders on Alpaca",
-   "status": "working",
+   "status": "ok",
    "doing": "Saved results to the Agent HQ dashboard",
    "lastRun": "2026-11-23T21:19:21Z"
   },
@@ -102,6 +104,16 @@
   }
  ],
  "log": [
+  {
+   "t": "2026-11-23T22:13:46Z",
+   "agent": "News Scout",
+   "msg": "Read 123 new headlines/posts, 4 market-moving stories"
+  },
+  {
+   "t": "2026-11-23T21:57:08Z",
+   "agent": "News Scout",
+   "msg": "Read 73 new headlines/posts, 1 market-moving stories"
+  },
   {
    "t": "2026-11-23T21:34:37Z",
    "agent": "Coach",
@@ -841,38 +853,28 @@
    "t": "2026-11-23T08:41:21Z",
    "agent": "News Scout",
    "msg": "Read 72 new headlines/posts, 2 market-moving stories"
-  },
-  {
-   "t": "2026-11-23T08:26:14Z",
-   "agent": "News Scout",
-   "msg": "Read 51 new headlines/posts, 0 market-moving stories"
-  },
-  {
-   "t": "2026-11-23T08:26:10Z",
-   "agent": "News Scout",
-   "msg": "Google News feed skipped: HTTP 429 https://news.google.com/rss/search: <html><head><meta http-equiv=\"content-type\" content=\"text/html; charset=utf-8\"/><title>Sorry...</title><style> body { font-family: verdana, arial, sans-serif; background-color: #fff; color: #000; }</s"
   }
  ],
  "brief": {
   "date": "Mon Nov 23",
-  "createdAt": "2026-11-23T21:34:38Z",
-  "headline": "Paper account -$1,731 today (-1.78%), -4.33% total vs SPY -3.89% · 6 open",
+  "createdAt": "2026-11-23T22:13:49Z",
+  "headline": "Paper account -$1,706 today (-1.75%), -4.30% total vs SPY -3.89% · 6 open",
   "summary": "2 trade(s) closed today, 3/17 winners overall. TradingAgents checks used today: 0/5.",
   "notes": [
    "X/Reddit reader: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
   ]
  },
  "account": {
-  "equity": 95671.76,
+  "equity": 95696.4,
   "cash": 23991.97,
   "startEquity": 100000.0,
   "startedAt": "2026-11-10T01:51:53Z",
-  "dayPnl": -1730.84,
-  "dayPct": -1.78,
-  "totalPnl": -4328.24,
-  "totalPct": -4.33,
+  "dayPnl": -1706.2,
+  "dayPct": -1.75,
+  "totalPnl": -4303.6,
+  "totalPct": -4.3,
   "spyPct": -3.89,
-  "vsSpyPct": -0.44
+  "vsSpyPct": -0.41
  },
  "status": {
   "killed": false,
@@ -880,7 +882,7 @@
   "deepUsed": 0,
   "deepMax": 5,
   "social": {
-   "at": "2026-11-23T21:34:26Z",
+   "at": "2026-11-23T22:12:16Z",
    "items": 0,
    "source": "Reddit via Tradestie + ApeWisdom (direct Reddit blocks servers; X needs Agent Reach)",
    "problems": [
@@ -888,15 +890,15 @@
     "r/stocks: HTTP 403 https://www.reddit.com/r/stocks/new.json: <body class=theme-beta><div><"
    ],
    "wsb": {
-    "at": "2026-11-23T21:34:26Z",
+    "at": "2026-11-23T22:12:16Z",
     "tickers": 50,
     "items": 0,
     "key": false
    },
    "ape": {
-    "at": "2026-11-23T21:34:27Z",
+    "at": "2026-11-23T22:12:17Z",
     "tickers": 200,
-    "items": 1,
+    "items": 0,
     "problems": []
    }
   },
@@ -974,8 +976,8 @@
     "tradingAgents": "not used (ultra mode)",
     "taSummary": ""
    },
-   "lastPrice": 91.9875,
-   "unrealizedPct": 0.31
+   "lastPrice": 92.0759,
+   "unrealizedPct": 0.41
   },
   {
    "id": "ahq-AMZN-20261123190538",
@@ -1013,8 +1015,8 @@
     "tradingAgents": "not used (ultra mode)",
     "taSummary": ""
    },
-   "lastPrice": 255.75,
-   "unrealizedPct": -0.95
+   "lastPrice": 256.0934,
+   "unrealizedPct": -0.82
   },
   {
    "id": "ahq-TSLA-20261123190538",
@@ -1052,8 +1054,8 @@
     "tradingAgents": "not used (ultra mode)",
     "taSummary": ""
    },
-   "lastPrice": 385.87,
-   "unrealizedPct": -0.52
+   "lastPrice": 385.6,
+   "unrealizedPct": -0.59
   },
   {
    "id": "ahq-NVDA-20261123184253",
@@ -1116,8 +1118,8 @@
     "tradingAgents": "not used (ultra mode)",
     "taSummary": ""
    },
-   "lastPrice": 165.2639,
-   "unrealizedPct": 0.46
+   "lastPrice": 165.02,
+   "unrealizedPct": 0.31
   },
   {
    "id": "ahq-AMAT-20261123184253",
@@ -1180,8 +1182,8 @@
     "tradingAgents": "not used (ultra mode)",
     "taSummary": ""
    },
-   "lastPrice": 346.18,
-   "unrealizedPct": 0.74
+   "lastPrice": 346.03,
+   "unrealizedPct": 0.7
   },
   {
    "id": "ahq-AMD-20261123184252",
@@ -1244,8 +1246,8 @@
     "tradingAgents": "not used (ultra mode)",
     "taSummary": ""
    },
-   "lastPrice": 450.2,
-   "unrealizedPct": -0.57
+   "lastPrice": 451.27,
+   "unrealizedPct": -0.33
   }
  ],
  "charts": {
@@ -1854,6 +1856,38 @@
     [
      "2026-11-23T21:30:00Z",
      95672.18
+    ],
+    [
+     "2026-11-23T21:35:00Z",
+     95663.72
+    ],
+    [
+     "2026-11-23T21:40:00Z",
+     95622.46
+    ],
+    [
+     "2026-11-23T21:45:00Z",
+     95582.95
+    ],
+    [
+     "2026-11-23T21:50:00Z",
+     95635.31
+    ],
+    [
+     "2026-11-23T21:55:00Z",
+     95692.22
+    ],
+    [
+     "2026-11-23T22:00:00Z",
+     95716.24
+    ],
+    [
+     "2026-11-23T22:05:00Z",
+     95774.31
+    ],
+    [
+     "2026-11-23T22:10:00Z",
+     95677.78
     ]
    ],
    "1W": [
@@ -3100,6 +3134,14 @@
     [
      "2026-11-23T21:30:00Z",
      95672.18
+    ],
+    [
+     "2026-11-23T21:45:00Z",
+     95580.31
+    ],
+    [
+     "2026-11-23T22:00:00Z",
+     95716.24
     ]
    ]
   },
@@ -3482,10 +3524,6 @@
    "NVDA": {
     "bars": [
      [
-      "2026-11-20T21:45:00Z",
-      129.17
-     ],
-     [
       "2026-11-23T13:00:00Z",
       136.41
      ],
@@ -3623,7 +3661,11 @@
      ],
      [
       "2026-11-23T21:30:00Z",
-      165.09
+      164.64
+     ],
+     [
+      "2026-11-23T21:45:00Z",
+      164.85
      ]
     ],
     "entry": 164.51,
@@ -3634,10 +3676,6 @@
    },
    "AMAT": {
     "bars": [
-     [
-      "2026-11-20T21:45:00Z",
-      309.81
-     ],
      [
       "2026-11-23T13:45:00Z",
       321.01
@@ -3759,10 +3797,6 @@
    },
    "AMD": {
     "bars": [
-     [
-      "2026-11-20T21:45:00Z",
-      429.6
-     ],
      [
       "2026-11-23T13:15:00Z",
       446.94
@@ -4082,8 +4116,8 @@
     "tradingAgents": "not used (ultra mode)",
     "taSummary": ""
    },
-   "lastPrice": 91.9875,
-   "unrealizedPct": 0.31
+   "lastPrice": 92.0759,
+   "unrealizedPct": 0.41
   },
   {
    "id": "ahq-AMZN-20261123190538",
@@ -4121,8 +4155,8 @@
     "tradingAgents": "not used (ultra mode)",
     "taSummary": ""
    },
-   "lastPrice": 255.75,
-   "unrealizedPct": -0.95
+   "lastPrice": 256.0934,
+   "unrealizedPct": -0.82
   },
   {
    "id": "ahq-TSLA-20261123190538",
@@ -4160,8 +4194,8 @@
     "tradingAgents": "not used (ultra mode)",
     "taSummary": ""
    },
-   "lastPrice": 385.87,
-   "unrealizedPct": -0.52
+   "lastPrice": 385.6,
+   "unrealizedPct": -0.59
   },
   {
    "id": "ahq-NVDA-20261123184253",
@@ -4224,8 +4258,8 @@
     "tradingAgents": "not used (ultra mode)",
     "taSummary": ""
    },
-   "lastPrice": 165.2639,
-   "unrealizedPct": 0.46
+   "lastPrice": 165.02,
+   "unrealizedPct": 0.31
   },
   {
    "id": "ahq-AMAT-20261123184253",
@@ -4288,8 +4322,8 @@
     "tradingAgents": "not used (ultra mode)",
     "taSummary": ""
    },
-   "lastPrice": 346.18,
-   "unrealizedPct": 0.74
+   "lastPrice": 346.03,
+   "unrealizedPct": 0.7
   },
   {
    "id": "ahq-AMD-20261123184252",
@@ -4352,8 +4386,8 @@
     "tradingAgents": "not used (ultra mode)",
     "taSummary": ""
    },
-   "lastPrice": 450.2,
-   "unrealizedPct": -0.57
+   "lastPrice": 451.27,
+   "unrealizedPct": -0.33
   },
   {
    "id": "ahq-CRWD-20261123165236",
@@ -5315,6 +5349,34 @@
  ],
  "decisions": [
   {
+   "t": "2026-11-23T22:13:47Z",
+   "symbol": "SOL/USD",
+   "outcome": "waiting",
+   "why": "already $71,704 invested (max 75% of $95,696)",
+   "event": "Bitcoin surges past $64,000 and Solana targets higher levels amid positive market sentiment and improving ETF inflows."
+  },
+  {
+   "t": "2026-11-23T22:13:47Z",
+   "symbol": "BTC/USD",
+   "outcome": "waiting",
+   "why": "already $71,704 invested (max 75% of $95,696)",
+   "event": "Bitcoin surges past $64,000 and Solana targets higher levels amid positive market sentiment and improving ETF inflows."
+  },
+  {
+   "t": "2026-11-23T21:57:09Z",
+   "symbol": "SOL/USD",
+   "outcome": "waiting",
+   "why": "already $71,657 invested (max 75% of $95,649)",
+   "event": "Bitcoin surges past $64,000 and Solana targets higher levels amid positive market sentiment and improving ETF inflows."
+  },
+  {
+   "t": "2026-11-23T21:57:09Z",
+   "symbol": "BTC/USD",
+   "outcome": "waiting",
+   "why": "already $71,657 invested (max 75% of $95,649)",
+   "event": "Bitcoin surges past $64,000 and Solana targets higher levels amid positive market sentiment and improving ETF inflows."
+  },
+  {
    "t": "2026-11-23T21:34:37Z",
    "symbol": "SOL/USD",
    "outcome": "waiting",
@@ -5705,42 +5767,9 @@
    "outcome": "waiting",
    "why": "already $49,210 invested (max 50% of $98,867)",
    "event": "Wedbush notes that a potential Microsoft deal could provide Intel with a crucial AI chip foundry win."
-  },
-  {
-   "t": "2026-11-20T18:35:15Z",
-   "symbol": "PLTR",
-   "outcome": "waiting",
-   "why": "already $49,210 invested (max 50% of $98,867)",
-   "event": "Trump states that Putin clearly expressed a desire to end the war in Ukraine through diplomacy."
-  },
-  {
-   "t": "2026-11-20T18:30:08Z",
-   "symbol": "MSFT",
-   "outcome": "waiting",
-   "why": "already $49,112 invested (max 50% of $98,768)",
-   "event": "Wedbush notes that a potential Microsoft deal could provide Intel with a crucial AI chip foundry win."
-  },
-  {
-   "t": "2026-11-20T18:30:07Z",
-   "symbol": "PLTR",
-   "outcome": "waiting",
-   "why": "already $49,112 invested (max 50% of $98,768)",
-   "event": "Trump states that Putin clearly expressed a desire to end the war in Ukraine through diplomacy."
-  },
-  {
-   "t": "2026-11-20T18:30:07Z",
-   "symbol": "INTC",
-   "outcome": "waiting",
-   "why": "already $49,112 invested (max 50% of $98,768)",
-   "event": "Wedbush notes that a potential Microsoft deal could provide Intel with a crucial AI chip foundry win."
   }
  ],
  "equity": [
-  {
-   "t": "2026-11-15T07:03:39Z",
-   "equity": 100000.0,
-   "spy": 752.09
-  },
   {
    "t": "2026-11-15T07:33:49Z",
    "equity": 100000.0,
@@ -7735,6 +7764,11 @@
    "t": "2026-11-23T21:34:37Z",
    "equity": 95676.37,
    "spy": 723.44
+  },
+  {
+   "t": "2026-11-23T22:13:47Z",
+   "equity": 95707.73,
+   "spy": 723.44
   }
  ],
  "watch": [],
@@ -7746,7 +7780,7 @@
  },
  "events": [
   {
-   "summary": "Nvidia shares continue to surge following the official reinstatement of Jensen Huang as CEO.",
+   "summary": "Nvidia shares surge following the reinstatement of Jensen Huang as CEO and massive short-covering, lifting broader tech markets.",
    "category": "earnings_beat",
    "firstSeen": "2026-11-23T18:30:45Z",
    "publishers": [
@@ -7755,6 +7789,7 @@
     "Bitcoin Magazine",
     "CNBC",
     "Investing.com",
+    "Kalshi News",
     "Reuters",
     "Seeking Alpha",
     "The Washington Post",
@@ -7764,7 +7799,7 @@
     "NVDA": {
      "direction": "up",
      "confidence": 0.95,
-     "why": "Jensen Huang's return as CEO sparks massive relief rally and short-covering in Nvidia."
+     "why": "Jensen Huang's official reinstatement as CEO and immense market surge drive strong bullish continuation."
     },
     "AMD": {
      "direction": "up",
@@ -7831,7 +7866,7 @@
    ]
   },
   {
-   "summary": "Crude oil prices slide further as supply growth and surplus outlook outweigh attack risks and sanctions.",
+   "summary": "Oil prices slide further as increased Middle East flows and surplus outlook outweigh supply concerns.",
    "category": "oil_supply",
    "firstSeen": "2026-11-23T19:02:38Z",
    "publishers": [
@@ -7839,9 +7874,12 @@
     "BigGo Finance",
     "FXEmpire",
     "Interest.co.nz",
+    "NTD News",
     "Oil & Gas 360",
+    "Qatar news agency",
     "Quantum Commodity Intelligence",
     "Seeking Alpha",
+    "The Business Times",
     "The Libya Observer",
     "WSJ",
     "Yahoo Finance",
@@ -7909,10 +7947,55 @@
    ]
   },
   {
-   "summary": "Oil tankers catching fire after hitting naval mines in the Strait of Hormuz elevates immediate risks of oil supply disruption.",
+   "summary": "Bitcoin sits out broader rallies amid massive ETF outflows and ongoing negative market pressures.",
+   "category": "crypto_negative",
+   "firstSeen": "2026-11-23T20:24:15Z",
+   "publishers": [
+    "Cryptonews.net",
+    "The Motley Fool",
+    "Yahoo Finance"
+   ],
+   "assets": {
+    "BTC/USD": {
+     "direction": "down",
+     "confidence": 0.85,
+     "why": "Heavy liquidations and price drop to $55K signal strong near-term bearish momentum."
+    }
+   },
+   "sources": [
+    {
+     "id": "fc6ed3a20828615d",
+     "publisher": "Cryptonews.net",
+     "kind": "news",
+     "title": "Bitcoin drops to $55K after $670M liquidations – What changes now?",
+     "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTFBFcGNUaFJNNjVsdkJHUl82ajF5bjZLNmxldzBtblk1a25NSWVDcjJNVHBlMXVwemFZS0IxMENNOFlnd1lZaTJvVks2bFRLNnVTdGdnN0JncWw?oc=5",
+     "time": "2026-11-23T20:24:15Z"
+    },
+    {
+     "id": "602d89a0a8e5896f",
+     "publisher": "The Motley Fool",
+     "kind": "news",
+     "title": "Crypto Market Today, Nov. 23: Bitcoin Sits Out Wall Street's Historic Rally as $1.8 Billion ETF Exodus Weighs on Prices",
+     "url": "https://news.google.com/rss/articles/CBMiiwJBVV95cUxPdWQ4bjBaRlh5OURIMmROZkljd0NiMlRZcU43MURTZlFqcFppdlhrUkJNWGdBc1lzZWFQU240N05abTN1ck5WV1pnZE9fQWZCYmZFZzd5YlFYaGppVm1vYWFBSXl6RGhWQWdvQlNBZ0RQMHl2R21hdlVlbHZtTzN1TnZidVFEX20wX18yWnNidEZnMWxuMU9WWEV6QjNtS0diM0RZWlNCVU91TktuNUoxQlR5Y1M5OGh4QldzXzZSaEplUnNqenJVWHZkbnVMbEpzNUQySUswSTVXeTk1UVZxcVNuX1FZRDlkVmhiLWxRZjQ3amgwYVgtbzlhRU5yQ3pZc0xKMU9tVnFuUE0?oc=5",
+     "time": "2026-11-23T21:55:02Z"
+    },
+    {
+     "id": "a880ed8956674d6b",
+     "publisher": "Yahoo Finance",
+     "kind": "news",
+     "title": "Is Bitcoin Heading for $50,000?",
+     "url": "https://www.fool.com/investing/2026/11/23/is-bitcoin-heading-for-50-000/?.tsrc=rss",
+     "time": "2026-11-23T21:49:02Z"
+    }
+   ]
+  },
+  {
+   "summary": "Attacks on oil tankers in the Strait of Hormuz and escalating shipping risks heighten immediate fears of global oil supply disruption.",
    "category": "war_escalation",
    "firstSeen": "2026-11-23T20:45:53Z",
    "publishers": [
+    "Anadolu Ajansı",
+    "Beinsure",
     "Rudaw",
     "SRN News",
     "The Times of Israel",
@@ -7923,12 +8006,12 @@
     "XOM": {
      "direction": "up",
      "confidence": 0.8,
-     "why": "Middle East shipping disruptions threaten oil supply and boost crude prices."
+     "why": "Strait of Hormuz tanker attacks and supply disruptions push oil and gas company stocks higher."
     },
     "CVX": {
      "direction": "up",
      "confidence": 0.8,
-     "why": "Supply disruption risks in Hormuz drive oil majors higher."
+     "why": "Immediate supply risks from tanker attacks in the Strait of Hormuz benefit major integrated oil producers."
     }
    },
    "sources": [
@@ -8095,31 +8178,6 @@
      "title": "CRWD Stock Risks $200 Breakdown as Zscaler Shares Surge Following CrowdStrike Acquisition Announcement",
      "url": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxNMWJ3QUhBTFltTThuMm9aXzdpNDhxZnRRcHYyQ2xqV0RORWllUnZBd21kV1Z4SXBoRlZvdkRabExseHIwTXhHYVh1Z3hDYWg1V0MxdEdNODhJTFM3WW50ZWhBT0dvNTIwNGxlOEQzeUM3NG9JNTg2VHNKczNmY0NseG9fOXlxYnFTUmFYc3JXZEdySVd2VVlxcGQ2czRqT0NJVXRTc2JNQ2p0Y2JFNFBCUFlVZlJUYS1VY3dJdEw2ME9yQ1pXdTVmbi1mRFBNakRudUFLUXJ4b3lBdE5i?oc=5",
      "time": "2026-11-23T20:17:01Z"
-    }
-   ]
-  },
-  {
-   "summary": "Bitcoin drops to $55K following substantial liquidations, compounding negative sentiment across major cryptocurrencies.",
-   "category": "crypto_negative",
-   "firstSeen": "2026-11-23T20:24:15Z",
-   "publishers": [
-    "Cryptonews.net"
-   ],
-   "assets": {
-    "BTC/USD": {
-     "direction": "down",
-     "confidence": 0.85,
-     "why": "Heavy liquidations and price drop to $55K signal strong near-term bearish momentum."
-    }
-   },
-   "sources": [
-    {
-     "id": "fc6ed3a20828615d",
-     "publisher": "Cryptonews.net",
-     "kind": "news",
-     "title": "Bitcoin drops to $55K after $670M liquidations – What changes now?",
-     "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTFBFcGNUaFJNNjVsdkJHUl82ajF5bjZLNmxldzBtblk1a25NSWVDcjJNVHBlMXVwemFZS0IxMENNOFlnd1lZaTJvVks2bFRLNnVTdGdnN0JncWw?oc=5",
-     "time": "2026-11-23T20:24:15Z"
     }
    ]
   },
