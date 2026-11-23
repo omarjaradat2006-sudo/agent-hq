@@ -269,7 +269,12 @@ def _find_items(obj):
 def social_news(since, state):
     """X accounts + subreddits through Agent Reach. Spaced out to stay polite (>=10s per platform)."""
     if not agent_reach_available():
-        return reddit_direct(since, state)
+        # Reddit blocks logged-out requests from cloud servers (403) and no longer gives out API keys, so only call
+        # it if Omar ever gets app keys. Otherwise the Reddit signal comes from Tradestie + ApeWisdom (see below).
+        if os.environ.get("REDDIT_CLIENT_ID") and os.environ.get("REDDIT_CLIENT_SECRET"):
+            return reddit_direct(since, state)
+        state.setdefault("socialStatus", {}).update({"at": iso(), "source": "Reddit via Tradestie + ApeWisdom (direct Reddit blocks servers; X needs Agent Reach)"})
+        return []
     out, problems = [], []
     for user in C.X_ACCOUNTS:
         items, err = _reach(["twitter", "tweets", user, "--limit", "5"])
@@ -304,6 +309,44 @@ def social_news(since, state):
 
 
 # ------------------------------------------------------------------ collect
+def ape_buzz(state, symbols, crypto=()):
+    """ApeWisdom: how often each ticker is mentioned across r/wallstreetbets, r/stocks, r/investing, r/CryptoCurrency
+    and more (no key). Flags a halal-list ticker when its mentions jump (2x+ vs 24h ago, 20+ mentions) or it climbs
+    10+ places into the top 30. Once per ticker per day. Social evidence only, never the news source on its own."""
+    allowed = {x.upper(): x for x in symbols if "/" not in x}
+    allowed.update({c.split("/")[0].upper(): c for c in crypto})
+    today = now_utc().date().isoformat()
+    flagged = {k: v for k, v in (state.get("apeFlagged") or {}).items() if v == today}
+    out, problems, n = [], [], 0
+    for flt in ("all-stocks", "all-crypto"):
+        try:
+            r = http("GET", f"https://apewisdom.io/api/v1.0/filter/{flt}", timeout=20, retries=1,
+                     headers={"User-Agent": "agent-hq-news-scout/1.2"})
+        except HttpError as e:
+            problems.append(f"{flt}: {str(e)[:80]}")
+            continue
+        for row in (r or {}).get("results", []) if isinstance(r, dict) else []:
+            n += 1
+            t = str(row.get("ticker") or "").upper()
+            if t not in allowed or t in flagged:
+                continue
+            try:
+                m, m0 = int(row.get("mentions") or 0), int(row.get("mentions_24h_ago") or 0)
+                rk, rk0 = int(row.get("rank") or 999), int(row.get("rank_24h_ago") or 999)
+            except (TypeError, ValueError):
+                continue
+            if m < 20 or not (m >= 2 * max(m0, 1) or (rk <= 30 and rk0 - rk >= 10)):
+                continue
+            flagged[t] = today
+            out.append(item("Reddit", "social",
+                            f"Reddit buzz: {t} {m} mentions in 24h (was {m0}), rank #{rk} (was #{rk0})",
+                            f"{row.get('name') or t} is suddenly being discussed much more across Reddit trading forums",
+                            "https://apewisdom.io/", now_utc(), symbols=[allowed[t]]))
+    state["apeFlagged"] = flagged
+    state.setdefault("socialStatus", {})["ape"] = {"at": iso(), "tickers": n, "items": len(out), "problems": problems[:2]}
+    return out
+
+
 def wsb_buzz(state, symbols):
     """Tradestie: top 50 tickers on r/wallstreetbets (comments + bullish/bearish score, refreshed ~15 min).
     Works with no key; TRADESTIE_API_KEY in ~/.trading-bot.env raises the limit. Only halal-list tickers, and only
@@ -354,6 +397,7 @@ def collect(alpaca, state, include_social, symbols=()):
         items += social_news(since, state)
         if symbols:
             items += wsb_buzz(state, symbols)
+            items += ape_buzz(state, symbols, crypto=list(C.CRYPTO_ALLOWED))
     seen = set(state.get("seenNews") or [])
     fresh, ids = [], set()
     for i in items:

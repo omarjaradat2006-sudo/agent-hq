@@ -730,3 +730,26 @@ def test_dip_buy_when_market_falls(monkeypatch, tmpdirs):
     assert t["stop"] == pytest.approx(40 * 0.93, abs=0.01)
     b.dip_buys({"equity": "100000", "last_equity": "100000", "cash": "100000"}, {"is_open": True})
     assert len(fake.placed) == 2                                                               # once a day
+
+
+def test_ape_buzz_flags_jumps_once_a_day(monkeypatch):
+    import trading_bot.news as N
+    data = {"all-stocks": {"results": [
+                {"rank": "5", "ticker": "TSLA", "name": "Tesla", "mentions": "300", "mentions_24h_ago": "100", "rank_24h_ago": "6"},
+                {"rank": "1", "ticker": "GME", "mentions": "900", "mentions_24h_ago": "100", "rank_24h_ago": "40"},   # not halal-listed
+                {"rank": "8", "ticker": "NVDA", "mentions": "200", "mentions_24h_ago": "180", "rank_24h_ago": "9"}]},  # no jump
+            "all-crypto": {"results": [{"rank": "12", "ticker": "SOL", "mentions": "60", "mentions_24h_ago": "50", "rank_24h_ago": "40"}]}}
+    monkeypatch.setattr(N, "http", lambda m, url, **k: data[url.rsplit("/", 1)[1]])
+    st = {}
+    got = N.ape_buzz(st, ["TSLA", "NVDA"], crypto=["SOL/USD", "BTC/USD"])
+    assert sorted(g["symbols"][0] for g in got) == ["SOL/USD", "TSLA"] and all(g["kind"] == "social" for g in got)
+    assert N.ape_buzz(st, ["TSLA", "NVDA"], crypto=["SOL/USD"]) == []          # once per ticker per day
+
+
+def test_no_direct_reddit_without_keys(monkeypatch):
+    import trading_bot.news as N
+    monkeypatch.delenv("REDDIT_CLIENT_ID", raising=False)
+    monkeypatch.setattr(N, "agent_reach_available", lambda: False)
+    monkeypatch.setattr(N, "reddit_direct", lambda *a: (_ for _ in ()).throw(AssertionError("should not call Reddit")))
+    st = {}
+    assert N.social_news(NOW, st) == [] and "ApeWisdom" in st["socialStatus"]["source"]
