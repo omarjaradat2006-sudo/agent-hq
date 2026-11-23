@@ -1,10 +1,80 @@
 {
  "trades": [
   {
+   "id": "ahq-CRWD-20261123165236",
+   "symbol": "CRWD",
+   "asset": "stock",
+   "status": "pending",
+   "entryOrderId": "f9e043f7-7934-460b-a08f-55e0133bfe2f",
+   "qty": 234,
+   "cost": 47855.34,
+   "estPrice": 204.51,
+   "entryPrice": 204.51,
+   "stop": 198.37,
+   "target": 216.78,
+   "openedAt": "2026-11-23T16:52:36Z",
+   "news": {
+    "summary": "CrowdStation reports record Q3 results and higher guidance alongside an all-stock Zscaler acquisition valued at approximately $44 billion.",
+    "category": "company_bad_news",
+    "sources": [
+     {
+      "publisher": "Yahoo Finance",
+      "title": "Intel announces more layoffs as workforce shrinks by 7,300",
+      "url": "https://www.thestreet.com/technology/intel-announces-more-layoffs-as-workforce-shrinks-by-7300?.tsrc=rss"
+     },
+     {
+      "publisher": "Yahoo Finance",
+      "title": "Google’s 2027 chip plan is bad news for Broadcom",
+      "url": "https://www.thestreet.com/technology/google-2027-chip-plan-broadcom?.tsrc=rss"
+     },
+     {
+      "publisher": "fiscal.ai",
+      "title": "Broadcom Faces Unconfirmed Reports of Google Chip Order Reductions",
+      "url": "https://world.storm.mg/articles/1183977"
+     },
+     {
+      "publisher": "CNBC",
+      "title": "CrowdStrike bets on network security with $43.9 billion Zscaler deal",
+      "url": "https://www.cnbc.com/2026/11/23/crowdstrike-to-buy-zscaler.html"
+     },
+     {
+      "publisher": "StreetInsider",
+      "title": "CrowdStrike Holdings Inc. (CRWD) Tops Q3 EPS by 3c; raises forecast",
+      "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxOeTRmMmROUzY2UFFIWXhZTTBfUnBmd3FLeEJuYV9vNXBfemhDaDBfMFpMbDRhODJjWTM3dGtnZUFRSnRNVUVUbVFHeW9fRXZHd1dXUUtra0pXWVdiSTdJQTJRM0lqSlNTZkhkYnRDN1VoRTBIQjdfME1LTHVnTkJFeHdQSUNDRjdDM1lfbG9fOHFhTC1OU2NXSG9HS0RBbWRualNrb0xoSDBBNEtHa2F0RXRxbmU0SUVjLU1sSU5RWUk3bjB5?oc=5"
+     },
+     {
+      "publisher": "fiscal.ai",
+      "title": "CrowdStrike to Acquire Zscaler in $43.9 Billion All-Stock Transaction",
+      "url": "https://www.morningstar.com/news/dow-jones/202611232973/crowdstrike-to-buy-zscaler-in-439-billion-stock-swap-update"
+     }
+    ]
+   },
+   "reason": {
+    "triage": "Record Q3 results and raised guidance significantly outweigh deal dilution concerns.",
+    "confidence": 0.85,
+    "confirmation": "volume 7.0x normal, price -5.61% since the news",
+    "rvol": 7.02,
+    "movePct": -5.61,
+    "publishers": [
+     "CNBC",
+     "Investing.com",
+     "Minichart",
+     "Reuters",
+     "StreetInsider",
+     "TradingView",
+     "Yahoo Finance",
+     "fiscal.ai",
+     "marketscreener.com"
+    ],
+    "tradingAgents": "not used (ultra mode)",
+    "taSummary": ""
+   }
+  },
+  {
    "id": "ahq-CRWD-20261123144115",
    "symbol": "CRWD",
    "asset": "stock",
-   "status": "open",
+   "status": "closed",
    "entryOrderId": "e5a3c1db-42cb-4e41-8954-e1cb1e317145",
    "qty": 232.0,
    "cost": 48650.4,
@@ -68,8 +138,13 @@
     "tradingAgents": "not used (ultra mode)",
     "taSummary": ""
    },
-   "lastPrice": 206.03,
-   "unrealizedPct": -1.39
+   "lastPrice": 204.43,
+   "unrealizedPct": -2.16,
+   "closedAt": "2026-11-23T15:54:45Z",
+   "exitPrice": 203.243879,
+   "exitReason": "stop-loss -3% hit",
+   "pnl": -1321.5,
+   "pnlPct": -2.73
   },
   {
    "id": "ahq-INTC-20261120193710",
@@ -4035,9 +4110,26 @@
    "t": "2026-11-23T15:19:56Z",
    "equity": 96604.52,
    "spy": 723.92
+  },
+  {
+   "t": "2026-11-23T15:58:57Z",
+   "equity": 96081.1,
+   "spy": 723.73
+  },
+  {
+   "t": "2026-11-23T16:37:05Z",
+   "equity": 96081.1,
+   "spy": 722.9
   }
  ],
  "decisions": [
+  {
+   "t": "2026-11-23T16:52:36Z",
+   "symbol": "CRWD",
+   "outcome": "bought",
+   "why": "volume 7.0x normal, price -5.61% since the news; TradingAgents: not used (ultra mode)",
+   "event": "CrowdStation reports record Q3 results and higher guidance alongside an all-stock Zscaler acquisition valued at approximately $44 billion."
+  },
   {
    "t": "2026-11-23T15:31:31Z",
    "symbol": "LLY",
@@ -5079,13 +5171,6 @@
    "symbol": "JNJ",
    "outcome": "waiting",
    "why": "price hasn't moved the expected way yet (-1.19%)",
-   "event": "Johnson & Johnson has agreed to acquire eye disease therapy developer Ollin Biosciences in a deal valued up to $3.33 billion."
-  },
-  {
-   "t": "2026-11-16T19:13:30Z",
-   "symbol": "LLY",
-   "outcome": "waiting",
-   "why": "price hasn't moved the expected way yet (-1.53%)",
    "event": "Johnson & Johnson has agreed to acquire eye disease therapy developer Ollin Biosciences in a deal valued up to $3.33 billion."
   }
  ],

@@ -1,24 +1,26 @@
 {
  "team": "trading",
  "plain": {
-  "line": "Down $3,170.44 since start · 16 trades · holding: CRWD",
+  "line": "Down $3,952.85 since start · 17 trades · holding: CRWD",
   "rulesMode": "ultra",
-  "top": "Down $3,170.44 since start (-3.17%) · just holding SPY would be -3.83%",
+  "top": "Down $3,952.85 since start (-3.95%) · just holding SPY would be -3.96%",
   "up": false,
   "holding": [
-   "CRWD: 232 shares worth $47,934.98, down $539.10 (sells at $222.28 or stops at $203.41)"
+   "CRWD: buy order sent, waiting to fill"
   ],
   "today": [
+   "Bought CRWD after the news: CrowdStation reports record Q3 results and higher guidance alongside an all-stock Zscaler acquisition valued at approximately $44 billion.",
    "Bought CRWD after the news: CrowdStrike Holdings reports an earnings beat and revenue outperformance.",
-   "Scanned the news 46 times today: read 3452 headlines, found 67 that could move a stock or coin it's allowed to trade.",
+   "Sold CRWD (stop-loss -3% hit): lost $1,321.50.",
+   "Scanned the news 59 times today: read 3939 headlines, found 78 that could move a stock or coin it's allowed to trade.",
    "Passed on AMAT, AVAV, COP, LLY, PLTR: order failed: not enough cash for one share.",
-   "Safety rules that stepped in: stock entry window (x6), cash only no margin (x6)."
+   "Safety rules that stepped in: stock entry window (x6), cash only no margin (x6), stop loss -3% (x1)."
   ],
   "watchlist": "Allowed to trade: 68 halal stocks, 5 Shariah ETFs, 9 coins.",
-  "lastScan": "2026-11-23T15:30:06Z"
+  "lastScan": "2026-11-23T16:52:32Z"
  },
  "hired": true,
- "updatedAt": "2026-11-23T15:31:32Z",
+ "updatedAt": "2026-11-23T16:52:37Z",
  "mode": "PAPER",
  "agents": [
   {
@@ -26,8 +28,8 @@
    "name": "News Scout",
    "role": "Reads X, Reddit and news feeds",
    "status": "working",
-   "doing": "Read 44 new headlines/posts, 3 market-moving stories",
-   "lastRun": "2026-11-23T15:31:31Z"
+   "doing": "Read 14 new headlines/posts, 1 market-moving stories",
+   "lastRun": "2026-11-23T16:52:36Z"
   },
   {
    "id": "analyst",
@@ -35,7 +37,7 @@
    "role": "Gemini: is it real, what moves, which way",
    "status": "working",
    "doing": "Gemini triage failed, skipping this batch: All Gemini models failed. Last error: Gemini HTTP 503 on gemini-3.1-flash-lite: {\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experien",
-   "lastRun": "2026-11-23T15:19:56Z"
+   "lastRun": "2026-11-23T16:37:05Z"
   },
   {
    "id": "confirm",
@@ -66,8 +68,8 @@
    "name": "Trader",
    "role": "Places paper orders on Alpaca",
    "status": "working",
-   "doing": "Order for LLY failed: not enough cash for one share",
-   "lastRun": "2026-11-23T15:31:31Z"
+   "doing": "BUY CRWD: CrowdStation reports record Q3 results and higher guidance alongside an all-stock Zscaler  | volume 7.0x normal, price -5.61% since the news | TradingAgents not used (ultra mode)",
+   "lastRun": "2026-11-23T16:52:36Z"
   },
   {
    "id": "coins",
@@ -87,6 +89,116 @@
   }
  ],
  "log": [
+  {
+   "t": "2026-11-23T16:52:36Z",
+   "agent": "Trader",
+   "msg": "BUY CRWD: CrowdStation reports record Q3 results and higher guidance alongside an all-stock Zscaler  | volume 7.0x normal, price -5.61% since the news | TradingAgents not used (ultra mode)"
+  },
+  {
+   "t": "2026-11-23T16:52:36Z",
+   "agent": "News Scout",
+   "msg": "Read 14 new headlines/posts, 1 market-moving stories"
+  },
+  {
+   "t": "2026-11-23T16:47:30Z",
+   "agent": "News Scout",
+   "msg": "Read 29 new headlines/posts, 2 market-moving stories"
+  },
+  {
+   "t": "2026-11-23T16:42:19Z",
+   "agent": "News Scout",
+   "msg": "Read 31 new headlines/posts, 3 market-moving stories"
+  },
+  {
+   "t": "2026-11-23T16:37:05Z",
+   "agent": "News Scout",
+   "msg": "Read 75 new headlines/posts, 0 market-moving stories"
+  },
+  {
+   "t": "2026-11-23T16:37:05Z",
+   "agent": "News Analyst",
+   "msg": "Gemini triage failed, skipping this batch: All Gemini models failed. Last error: Gemini HTTP 503 on gemini-3.1-flash-lite: {\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experien"
+  },
+  {
+   "t": "2026-11-23T16:35:12Z",
+   "agent": "News Analyst",
+   "msg": "Gemini triage failed, skipping this batch: All Gemini models failed. Last error: Gemini HTTP 503 on gemini-3.1-flash-lite: {\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experien"
+  },
+  {
+   "t": "2026-11-23T16:28:31Z",
+   "agent": "News Scout",
+   "msg": "Read 25 new headlines/posts, 2 market-moving stories"
+  },
+  {
+   "t": "2026-11-23T16:23:20Z",
+   "agent": "News Scout",
+   "msg": "Read 36 new headlines/posts, 0 market-moving stories"
+  },
+  {
+   "t": "2026-11-23T16:23:20Z",
+   "agent": "News Analyst",
+   "msg": "Gemini triage failed, skipping this batch: All Gemini models failed. Last error: Gemini HTTP 503 on gemini-3.1-flash-lite: {\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experien"
+  },
+  {
+   "t": "2026-11-23T16:16:36Z",
+   "agent": "News Scout",
+   "msg": "Read 43 new headlines/posts, 0 market-moving stories"
+  },
+  {
+   "t": "2026-11-23T16:11:20Z",
+   "agent": "News Scout",
+   "msg": "Read 37 new headlines/posts, 2 market-moving stories"
+  },
+  {
+   "t": "2026-11-23T16:05:50Z",
+   "agent": "News Scout",
+   "msg": "Read 62 new headlines/posts, 0 market-moving stories"
+  },
+  {
+   "t": "2026-11-23T16:05:50Z",
+   "agent": "News Analyst",
+   "msg": "Gemini triage failed, skipping this batch: All Gemini models failed. Last error: Gemini HTTP 503 on gemini-3.1-flash-lite: {\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experien"
+  },
+  {
+   "t": "2026-11-23T15:58:57Z",
+   "agent": "News Scout",
+   "msg": "Read 25 new headlines/posts, 0 market-moving stories"
+  },
+  {
+   "t": "2026-11-23T15:58:57Z",
+   "agent": "News Analyst",
+   "msg": "Gemini triage failed, skipping this batch: All Gemini models failed. Last error: Gemini HTTP 503 on gemini-3.1-flash-lite: {\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experien"
+  },
+  {
+   "t": "2026-11-23T15:54:45Z",
+   "agent": "Trader",
+   "msg": "Closed CRWD: stop-loss -3% hit, -2.73% ($-1,321.50)"
+  },
+  {
+   "t": "2026-11-23T15:49:43Z",
+   "agent": "News Scout",
+   "msg": "Read 25 new headlines/posts, 0 market-moving stories"
+  },
+  {
+   "t": "2026-11-23T15:44:33Z",
+   "agent": "News Scout",
+   "msg": "Read 35 new headlines/posts, 1 market-moving stories"
+  },
+  {
+   "t": "2026-11-23T15:38:11Z",
+   "agent": "News Scout",
+   "msg": "Read 50 new headlines/posts, 0 market-moving stories"
+  },
+  {
+   "t": "2026-11-23T15:38:11Z",
+   "agent": "News Analyst",
+   "msg": "Gemini triage failed, skipping this batch: All Gemini models failed. Last error: Gemini HTTP 503 on gemini-3.1-flash-lite: {\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experien"
+  },
+  {
+   "t": "2026-11-23T15:31:34Z",
+   "agent": "Trader",
+   "msg": "Saved results to the Agent HQ dashboard"
+  },
   {
    "t": "2026-11-23T15:31:31Z",
    "agent": "Trader",
@@ -726,138 +838,28 @@
    "t": "2026-11-22T21:56:39Z",
    "agent": "News Scout",
    "msg": "Read 34 new headlines/posts, 1 market-moving stories"
-  },
-  {
-   "t": "2026-11-22T21:56:31Z",
-   "agent": "News Scout",
-   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
-  },
-  {
-   "t": "2026-11-22T21:41:26Z",
-   "agent": "News Scout",
-   "msg": "Read 33 new headlines/posts, 0 market-moving stories"
-  },
-  {
-   "t": "2026-11-22T21:41:25Z",
-   "agent": "News Scout",
-   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
-  },
-  {
-   "t": "2026-11-22T21:26:20Z",
-   "agent": "News Scout",
-   "msg": "Read 27 new headlines/posts, 1 market-moving stories"
-  },
-  {
-   "t": "2026-11-22T21:26:18Z",
-   "agent": "News Scout",
-   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
-  },
-  {
-   "t": "2026-11-22T21:11:14Z",
-   "agent": "Trader",
-   "msg": "Saved results to the Agent HQ dashboard"
-  },
-  {
-   "t": "2026-11-22T21:11:11Z",
-   "agent": "News Scout",
-   "msg": "Read 54 new headlines/posts, 1 market-moving stories"
-  },
-  {
-   "t": "2026-11-22T21:11:10Z",
-   "agent": "News Scout",
-   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
-  },
-  {
-   "t": "2026-11-22T20:56:05Z",
-   "agent": "News Scout",
-   "msg": "Read 32 new headlines/posts, 1 market-moving stories"
-  },
-  {
-   "t": "2026-11-22T20:56:04Z",
-   "agent": "News Scout",
-   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
-  },
-  {
-   "t": "2026-11-22T20:40:59Z",
-   "agent": "News Scout",
-   "msg": "Read 31 new headlines/posts, 0 market-moving stories"
-  },
-  {
-   "t": "2026-11-22T20:40:53Z",
-   "agent": "News Scout",
-   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
-  },
-  {
-   "t": "2026-11-22T20:25:49Z",
-   "agent": "News Scout",
-   "msg": "Read 27 new headlines/posts, 1 market-moving stories"
-  },
-  {
-   "t": "2026-11-22T20:25:46Z",
-   "agent": "News Scout",
-   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
-  },
-  {
-   "t": "2026-11-22T20:10:40Z",
-   "agent": "News Scout",
-   "msg": "Read 51 new headlines/posts, 1 market-moving stories"
-  },
-  {
-   "t": "2026-11-22T20:10:36Z",
-   "agent": "News Scout",
-   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
-  },
-  {
-   "t": "2026-11-22T19:55:31Z",
-   "agent": "News Scout",
-   "msg": "Read 34 new headlines/posts, 2 market-moving stories"
-  },
-  {
-   "t": "2026-11-22T19:55:30Z",
-   "agent": "News Scout",
-   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
-  },
-  {
-   "t": "2026-11-22T19:40:24Z",
-   "agent": "News Scout",
-   "msg": "Read 26 new headlines/posts, 3 market-moving stories"
-  },
-  {
-   "t": "2026-11-22T19:40:10Z",
-   "agent": "News Scout",
-   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
-  },
-  {
-   "t": "2026-11-22T19:25:05Z",
-   "agent": "News Scout",
-   "msg": "Read 28 new headlines/posts, 1 market-moving stories"
-  },
-  {
-   "t": "2026-11-22T19:25:00Z",
-   "agent": "News Scout",
-   "msg": "Reddit: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
   }
  ],
  "brief": {
   "date": "Mon Nov 23",
-  "createdAt": "2026-11-23T15:31:32Z",
-  "headline": "Paper account -$573 today (-0.59%), -3.17% total vs SPY -3.83% · 1 open",
-  "summary": "0 trade(s) closed today, 3/15 winners overall. TradingAgents checks used today: 0/5.",
+  "createdAt": "2026-11-23T16:52:37Z",
+  "headline": "Paper account -$1,355 today (-1.39%), -3.95% total vs SPY -3.96% · 1 open",
+  "summary": "1 trade(s) closed today, 3/16 winners overall. TradingAgents checks used today: 0/5.",
   "notes": [
    "X/Reddit reader: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
   ]
  },
  "account": {
-  "equity": 96829.56,
-  "cash": 48928.52,
+  "equity": 96047.15,
+  "cash": 56375.12,
   "startEquity": 100000.0,
   "startedAt": "2026-11-10T01:51:53Z",
-  "dayPnl": -573.04,
-  "dayPct": -0.59,
-  "totalPnl": -3170.44,
-  "totalPct": -3.17,
-  "spyPct": -3.83,
-  "vsSpyPct": 0.66
+  "dayPnl": -1355.45,
+  "dayPct": -1.39,
+  "totalPnl": -3952.85,
+  "totalPct": -3.95,
+  "spyPct": -3.96,
+  "vsSpyPct": 0.01
  },
  "status": {
   "killed": false,
@@ -865,7 +867,7 @@
   "deepUsed": 0,
   "deepMax": 5,
   "social": {
-   "at": "2026-11-23T15:25:01Z",
+   "at": "2026-11-23T16:42:10Z",
    "items": 0,
    "source": "Reddit via Tradestie + ApeWisdom (direct Reddit blocks servers; X needs Agent Reach)",
    "problems": [
@@ -873,15 +875,15 @@
     "r/stocks: HTTP 403 https://www.reddit.com/r/stocks/new.json: <body class=theme-beta><div><"
    ],
    "wsb": {
-    "at": "2026-11-23T15:25:02Z",
-    "tickers": 12,
+    "at": "2026-11-23T16:42:10Z",
+    "tickers": 50,
     "items": 0,
     "key": false
    },
    "ape": {
-    "at": "2026-11-23T15:25:02Z",
+    "at": "2026-11-23T16:42:10Z",
     "tickers": 200,
-    "items": 1,
+    "items": 0,
     "problems": []
    }
   },
@@ -893,75 +895,74 @@
  },
  "positions": [
   {
-   "id": "ahq-CRWD-20261123144115",
+   "id": "ahq-CRWD-20261123165236",
    "symbol": "CRWD",
    "asset": "stock",
-   "status": "open",
-   "entryOrderId": "e5a3c1db-42cb-4e41-8954-e1cb1e317145",
-   "qty": 232.0,
-   "cost": 48650.4,
-   "estPrice": 209.7,
-   "entryPrice": 208.94,
-   "stop": 203.41,
-   "target": 222.28,
-   "openedAt": "2026-11-23T14:41:15Z",
+   "status": "pending",
+   "entryOrderId": "f9e043f7-7934-460b-a08f-55e0133bfe2f",
+   "qty": 234,
+   "cost": 47855.34,
+   "estPrice": 204.51,
+   "entryPrice": 204.51,
+   "stop": 198.37,
+   "target": 216.78,
+   "openedAt": "2026-11-23T16:52:36Z",
    "news": {
-    "summary": "CrowdStrike Holdings reports an earnings beat and revenue outperformance.",
-    "category": "contract",
+    "summary": "CrowdStation reports record Q3 results and higher guidance alongside an all-stock Zscaler acquisition valued at approximately $44 billion.",
+    "category": "company_bad_news",
     "sources": [
      {
       "publisher": "Yahoo Finance",
-      "title": "CrowdStrike Agrees To Buy Zscaler For $43.9 Billion. Shares Move In Opposite Directions.",
-      "url": "https://www.ibtimes.com/crowdstrike-acquire-zscaler-43-9-billion-deal-3810075?.tsrc=rss"
-     },
-     {
-      "publisher": "GuruFocus",
-      "title": "Zscaler (ZS) Q1 Earnings Beat Expectations, Shares Rise Amid Cro",
-      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNUllsd1h4c3dzQkFUZjhzUXF5WklQeUtCNUtjbGN1a3ppd214cVRsdlJRUklIdDZJQWRZeFlXUEN3MFdCZ3g5ZEIyZkpLTk84RW1YdUZHNHhTenJiemJpdHdISE1vQ1RoT2Z6M1Jvdi1CYTY3c3BPZWp6NVJtOGJzT3E2SnFlSU5qSlBYM3h3eDdCdU5leU00dHdvYXFOQnA2UjF3c0o5eUZwbHhQR3VCOUh5OXVIc01RSFE?oc=5"
+      "title": "Intel announces more layoffs as workforce shrinks by 7,300",
+      "url": "https://www.thestreet.com/technology/intel-announces-more-layoffs-as-workforce-shrinks-by-7300?.tsrc=rss"
      },
      {
       "publisher": "Yahoo Finance",
-      "title": "CrowdStrike to Buy Zscaler in $44 Billion All-Stock Deal. Why They’re Better Off Together.",
-      "url": "https://finance.yahoo.com/m/c15198fc-46aa-317e-ad7d-cc5e670695f9/crowdstrike-to-buy-zscaler-in.html?.tsrc=rss"
+      "title": "Google’s 2027 chip plan is bad news for Broadcom",
+      "url": "https://www.thestreet.com/technology/google-2027-chip-plan-broadcom?.tsrc=rss"
      },
      {
-      "publisher": "TradingView",
-      "title": "Zscaler Q1 Revenue Rises 20% as CrowdStrike Acquisition Agreement Announced",
-      "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxPSm9PT2FYaFpza2lIemNhakYtSkhqUlRITmdwOVR5ejdpZkdyQU9HUDRFVGsxUkRWYnpDYVdNakZtUXA0Wm4xYnNpV2NNU1lXSHpxdVh6RUZXTmNJNm9xcnBoVE1qSFhmeVE5YlVCM2d6M3NBZVFYWW50N29EWGVGY3A1WHVhbF9hZTlHajBFZUYwV1owbU11X0swbnRTSzZfTHNvaVM0bGViOHZkZmE5QUNwOWE1VVRZYmRkdFNqbnd1TnVib0x4eDhWQW9Nd09NNXc?oc=5"
+      "publisher": "fiscal.ai",
+      "title": "Broadcom Faces Unconfirmed Reports of Google Chip Order Reductions",
+      "url": "https://world.storm.mg/articles/1183977"
      },
      {
-      "publisher": "AP",
-      "title": "Crowdstrike to acquire Zscaler in a $44 billion deal that would create a cybersecurity giant",
-      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQekFodWNTV2dTaVZ6VDJScmUybjJ3QXRURFJjeVNtQVBmOEJkYUZTNnFlMnNKalRWdFdXOWVwTjg1TFU3THJIOU9hSXNtSXZCczVaT0xDYnNKUEJUYXFXbVpTUkhTNWRFb3VIa1RDcHdOMzB4ZVV4cTZ6STBQZ2RWLWNPT2U1RGRHYjIxNEZ1QlFXQXZJMDhJeHdDLUFUc2tSUjJoejc1dGhzTWtkUS1Hb3V1V1hKbXplV3J2Zw?oc=5"
+      "publisher": "CNBC",
+      "title": "CrowdStrike bets on network security with $43.9 billion Zscaler deal",
+      "url": "https://www.cnbc.com/2026/11/23/crowdstrike-to-buy-zscaler.html"
      },
      {
-      "publisher": "Yahoo Finance",
-      "title": "CrowdStrike Holdings (CRWD) Agreed $44 Billion All Stock Cybersecurity Deal",
-      "url": "https://finance.yahoo.com/technology/ai/articles/crowdstrike-holdings-crwd-agreed-44-131349393.html?.tsrc=rss"
+      "publisher": "StreetInsider",
+      "title": "CrowdStrike Holdings Inc. (CRWD) Tops Q3 EPS by 3c; raises forecast",
+      "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxOeTRmMmROUzY2UFFIWXhZTTBfUnBmd3FLeEJuYV9vNXBfemhDaDBfMFpMbDRhODJjWTM3dGtnZUFRSnRNVUVUbVFHeW9fRXZHd1dXUUtra0pXWVdiSTdJQTJRM0lqSlNTZkhkYnRDN1VoRTBIQjdfME1LTHVnTkJFeHdQSUNDRjdDM1lfbG9fOHFhTC1OU2NXSG9HS0RBbWRualNrb0xoSDBBNEtHa2F0RXRxbmU0SUVjLU1sSU5RWUk3bjB5?oc=5"
+     },
+     {
+      "publisher": "fiscal.ai",
+      "title": "CrowdStrike to Acquire Zscaler in $43.9 Billion All-Stock Transaction",
+      "url": "https://www.morningstar.com/news/dow-jones/202611232973/crowdstrike-to-buy-zscaler-in-439-billion-stock-swap-update"
      }
     ]
    },
    "reason": {
-    "triage": "CrowdStrike beat earnings and revenue estimates, signalling strong financial health.",
+    "triage": "Record Q3 results and raised guidance significantly outweigh deal dilution concerns.",
     "confidence": 0.85,
-    "confirmation": "volume 5.3x normal, price -3.41% since the news",
-    "rvol": 5.33,
-    "movePct": -3.41,
+    "confirmation": "volume 7.0x normal, price -5.61% since the news",
+    "rvol": 7.02,
+    "movePct": -5.61,
     "publishers": [
-     "AP",
-     "GuruFocus",
+     "CNBC",
      "Investing.com",
-     "Investing.com India",
-     "Investing.com Nigeria",
+     "Minichart",
+     "Reuters",
+     "StreetInsider",
      "TradingView",
      "Yahoo Finance",
-     "شبكة تواصل الإخبارية"
+     "fiscal.ai",
+     "marketscreener.com"
     ],
     "tradingAgents": "not used (ultra mode)",
     "taSummary": ""
-   },
-   "lastPrice": 206.03,
-   "unrealizedPct": -1.39
+   }
   }
  ],
  "charts": {
@@ -1282,6 +1283,70 @@
     [
      "2026-11-23T15:30:00Z",
      96749.52
+    ],
+    [
+     "2026-11-23T15:35:00Z",
+     96763.44
+    ],
+    [
+     "2026-11-23T15:40:00Z",
+     97534.84
+    ],
+    [
+     "2026-11-23T15:45:00Z",
+     97251.8
+    ],
+    [
+     "2026-11-23T15:50:00Z",
+     96280.88
+    ],
+    [
+     "2026-11-23T15:55:00Z",
+     96081.1
+    ],
+    [
+     "2026-11-23T16:00:00Z",
+     96081.1
+    ],
+    [
+     "2026-11-23T16:05:00Z",
+     96081.1
+    ],
+    [
+     "2026-11-23T16:10:00Z",
+     96081.1
+    ],
+    [
+     "2026-11-23T16:15:00Z",
+     96081.1
+    ],
+    [
+     "2026-11-23T16:20:00Z",
+     96081.1
+    ],
+    [
+     "2026-11-23T16:25:00Z",
+     96081.1
+    ],
+    [
+     "2026-11-23T16:30:00Z",
+     96081.1
+    ],
+    [
+     "2026-11-23T16:35:00Z",
+     96081.1
+    ],
+    [
+     "2026-11-23T16:40:00Z",
+     96081.1
+    ],
+    [
+     "2026-11-23T16:45:00Z",
+     96081.1
+    ],
+    [
+     "2026-11-23T16:50:00Z",
+     96081.1
     ]
    ],
    "1W": [
@@ -2432,32 +2497,32 @@
     [
      "2026-11-23T15:30:00Z",
      96749.52
+    ],
+    [
+     "2026-11-23T15:45:00Z",
+     97251.8
+    ],
+    [
+     "2026-11-23T16:00:00Z",
+     96081.1
+    ],
+    [
+     "2026-11-23T16:15:00Z",
+     96081.1
+    ],
+    [
+     "2026-11-23T16:30:00Z",
+     96081.1
+    ],
+    [
+     "2026-11-23T16:45:00Z",
+     96081.1
     ]
    ]
   },
   "holdings": {
    "CRWD": {
     "bars": [
-     [
-      "2026-11-20T15:45:00Z",
-      232.595
-     ],
-     [
-      "2026-11-20T16:00:00Z",
-      234.87
-     ],
-     [
-      "2026-11-20T16:15:00Z",
-      232.92
-     ],
-     [
-      "2026-11-20T16:30:00Z",
-      231.61
-     ],
-     [
-      "2026-11-20T16:45:00Z",
-      231.99
-     ],
      [
       "2026-11-20T17:00:00Z",
       230.95
@@ -2556,14 +2621,34 @@
      ],
      [
       "2026-11-23T15:30:00Z",
-      206.77
+      208.15
+     ],
+     [
+      "2026-11-23T15:45:00Z",
+      202.58
+     ],
+     [
+      "2026-11-23T16:00:00Z",
+      202.555
+     ],
+     [
+      "2026-11-23T16:15:00Z",
+      204.69
+     ],
+     [
+      "2026-11-23T16:30:00Z",
+      204.55
+     ],
+     [
+      "2026-11-23T16:45:00Z",
+      204.365
      ]
     ],
-    "entry": 208.94,
-    "stop": 203.41,
-    "target": 222.28,
-    "openedAt": "2026-11-23T14:41:15Z",
-    "qty": 232.0
+    "entry": 204.51,
+    "stop": 198.37,
+    "target": 216.78,
+    "openedAt": "2026-11-23T16:52:36Z",
+    "qty": 234
    }
   }
  },
@@ -2638,10 +2723,80 @@
  },
  "trades": [
   {
+   "id": "ahq-CRWD-20261123165236",
+   "symbol": "CRWD",
+   "asset": "stock",
+   "status": "pending",
+   "entryOrderId": "f9e043f7-7934-460b-a08f-55e0133bfe2f",
+   "qty": 234,
+   "cost": 47855.34,
+   "estPrice": 204.51,
+   "entryPrice": 204.51,
+   "stop": 198.37,
+   "target": 216.78,
+   "openedAt": "2026-11-23T16:52:36Z",
+   "news": {
+    "summary": "CrowdStation reports record Q3 results and higher guidance alongside an all-stock Zscaler acquisition valued at approximately $44 billion.",
+    "category": "company_bad_news",
+    "sources": [
+     {
+      "publisher": "Yahoo Finance",
+      "title": "Intel announces more layoffs as workforce shrinks by 7,300",
+      "url": "https://www.thestreet.com/technology/intel-announces-more-layoffs-as-workforce-shrinks-by-7300?.tsrc=rss"
+     },
+     {
+      "publisher": "Yahoo Finance",
+      "title": "Google’s 2027 chip plan is bad news for Broadcom",
+      "url": "https://www.thestreet.com/technology/google-2027-chip-plan-broadcom?.tsrc=rss"
+     },
+     {
+      "publisher": "fiscal.ai",
+      "title": "Broadcom Faces Unconfirmed Reports of Google Chip Order Reductions",
+      "url": "https://world.storm.mg/articles/1183977"
+     },
+     {
+      "publisher": "CNBC",
+      "title": "CrowdStrike bets on network security with $43.9 billion Zscaler deal",
+      "url": "https://www.cnbc.com/2026/11/23/crowdstrike-to-buy-zscaler.html"
+     },
+     {
+      "publisher": "StreetInsider",
+      "title": "CrowdStrike Holdings Inc. (CRWD) Tops Q3 EPS by 3c; raises forecast",
+      "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxOeTRmMmROUzY2UFFIWXhZTTBfUnBmd3FLeEJuYV9vNXBfemhDaDBfMFpMbDRhODJjWTM3dGtnZUFRSnRNVUVUbVFHeW9fRXZHd1dXUUtra0pXWVdiSTdJQTJRM0lqSlNTZkhkYnRDN1VoRTBIQjdfME1LTHVnTkJFeHdQSUNDRjdDM1lfbG9fOHFhTC1OU2NXSG9HS0RBbWRualNrb0xoSDBBNEtHa2F0RXRxbmU0SUVjLU1sSU5RWUk3bjB5?oc=5"
+     },
+     {
+      "publisher": "fiscal.ai",
+      "title": "CrowdStrike to Acquire Zscaler in $43.9 Billion All-Stock Transaction",
+      "url": "https://www.morningstar.com/news/dow-jones/202611232973/crowdstrike-to-buy-zscaler-in-439-billion-stock-swap-update"
+     }
+    ]
+   },
+   "reason": {
+    "triage": "Record Q3 results and raised guidance significantly outweigh deal dilution concerns.",
+    "confidence": 0.85,
+    "confirmation": "volume 7.0x normal, price -5.61% since the news",
+    "rvol": 7.02,
+    "movePct": -5.61,
+    "publishers": [
+     "CNBC",
+     "Investing.com",
+     "Minichart",
+     "Reuters",
+     "StreetInsider",
+     "TradingView",
+     "Yahoo Finance",
+     "fiscal.ai",
+     "marketscreener.com"
+    ],
+    "tradingAgents": "not used (ultra mode)",
+    "taSummary": ""
+   }
+  },
+  {
    "id": "ahq-CRWD-20261123144115",
    "symbol": "CRWD",
    "asset": "stock",
-   "status": "open",
+   "status": "closed",
    "entryOrderId": "e5a3c1db-42cb-4e41-8954-e1cb1e317145",
    "qty": 232.0,
    "cost": 48650.4,
@@ -2705,8 +2860,13 @@
     "tradingAgents": "not used (ultra mode)",
     "taSummary": ""
    },
-   "lastPrice": 206.03,
-   "unrealizedPct": -1.39
+   "lastPrice": 204.43,
+   "unrealizedPct": -2.16,
+   "closedAt": "2026-11-23T15:54:45Z",
+   "exitPrice": 203.243879,
+   "exitReason": "stop-loss -3% hit",
+   "pnl": -1321.5,
+   "pnlPct": -2.73
   },
   {
    "id": "ahq-INTC-20261120193710",
@@ -3514,6 +3674,13 @@
  ],
  "decisions": [
   {
+   "t": "2026-11-23T16:52:36Z",
+   "symbol": "CRWD",
+   "outcome": "bought",
+   "why": "volume 7.0x normal, price -5.61% since the news; TradingAgents: not used (ultra mode)",
+   "event": "CrowdStation reports record Q3 results and higher guidance alongside an all-stock Zscaler acquisition valued at approximately $44 billion."
+  },
+  {
    "t": "2026-11-23T15:31:31Z",
    "symbol": "LLY",
    "outcome": "error",
@@ -3925,26 +4092,9 @@
    "outcome": "waiting",
    "why": "already $49,193 invested (max 50% of $98,850)",
    "event": "Russian missiles landing on Polish territory escalate geopolitical tensions with NATO."
-  },
-  {
-   "t": "2026-11-20T18:03:40Z",
-   "symbol": "PLTR",
-   "outcome": "waiting",
-   "why": "already $49,086 invested (max 50% of $98,743)",
-   "event": "Russian missiles landing on Polish territory escalate geopolitical tensions with NATO."
   }
  ],
  "equity": [
-  {
-   "t": "2026-11-15T01:31:31Z",
-   "equity": 100000.0,
-   "spy": 752.09
-  },
-  {
-   "t": "2026-11-15T02:01:43Z",
-   "equity": 100000.0,
-   "spy": 752.09
-  },
   {
    "t": "2026-11-15T02:31:57Z",
    "equity": 100000.0,
@@ -5934,6 +6084,16 @@
    "t": "2026-11-23T15:19:56Z",
    "equity": 96604.52,
    "spy": 723.92
+  },
+  {
+   "t": "2026-11-23T15:58:57Z",
+   "equity": 96081.1,
+   "spy": 723.73
+  },
+  {
+   "t": "2026-11-23T16:37:05Z",
+   "equity": 96081.1,
+   "spy": 722.9
   }
  ],
  "watch": [],
@@ -5945,894 +6105,7 @@
  },
  "events": [
   {
-   "summary": "Nvidia reinstated Jensen Huang as CEO following discussions with the Trump administration, prompting a sharp rebound in the stock and broader tech shares.",
-   "category": "company_bad_news",
-   "firstSeen": "2026-11-12T18:24:33Z",
-   "publishers": [
-    "AFR",
-    "AP",
-    "Anadolu Ajansı",
-    "Around Prague",
-    "Barchart.com",
-    "Benzinga",
-    "BigGo Finance",
-    "Binance",
-    "Bloomberg.com",
-    "Breitbart News",
-    "Business Standard",
-    "CNBC",
-    "Capital Brief",
-    "Chosunbiz",
-    "Coin Gabbar",
-    "CoinDesk",
-    "Coinpaper",
-    "Crypto Briefing",
-    "Crypto Economy",
-    "CryptoTicker.io",
-    "Cryptonews.net",
-    "Deccan Herald",
-    "Decrypt",
-    "Dimsum Daily",
-    "Eurasia Business News",
-    "FXStreet",
-    "FinanceFeeds",
-    "Finimize",
-    "Finviz",
-    "Fortune",
-    "Geo News",
-    "Hokanews",
-    "Investing.com",
-    "Investing.com Canada",
-    "Investing.com South Africa",
-    "Investopedia",
-    "Investor's Business Daily",
-    "Invezz",
-    "JournalArta",
-    "KELO-AM",
-    "Kitco",
-    "Market Index",
-    "Moomoo",
-    "NDTV Profit",
-    "NST Online",
-    "Plataforma Media",
-    "Pluang",
-    "Pragativadi",
-    "Proactive financial news",
-    "Profit by Pakistan Today",
-    "Quartz",
-    "RTHK",
-    "RTHK News",
-    "RealMoney Pro",
-    "Reuters",
-    "SSBCrack",
-    "Shacknews",
-    "Stocktwits",
-    "StreetInsider",
-    "The Boston Globe",
-    "The Economic Times",
-    "The Economist",
-    "The Edge Malaysia",
-    "The Guardian",
-    "The Hawk",
-    "The Lufkin Daily News",
-    "The New York Times",
-    "The Tech Buzz",
-    "The Times of India",
-    "TipRanks",
-    "Traders Union",
-    "TradingKey",
-    "TradingView",
-    "US News Money",
-    "VINnews",
-    "WSJ",
-    "Wccftech",
-    "X",
-    "Yahoo Finance",
-    "Zacks Investment Research",
-    "astig.ph",
-    "bdnews24.com",
-    "bloomingbit",
-    "cwibc.co.id",
-    "finance.biggo.com",
-    "fiscal.ai",
-    "kaohoon international",
-    "marketscreener.com",
-    "news.sbs.co.kr",
-    "shattered.io",
-    "www.tokenpost.com",
-    "深潮TechFlow",
-    "아시아경제",
-    "조선일보"
-   ],
-   "assets": {
-    "NVDA": {
-     "direction": "up",
-     "confidence": 0.95,
-     "why": "Jensen Huang's official reinstatement as CEO reverses recent turmoil and sparks massive buying."
-    },
-    "BTC/USD": {
-     "direction": "down",
-     "confidence": 0.7,
-     "why": "Broader risk-off sentiment triggered by major tech leadership turmoil."
-    },
-    "QCOM": {
-     "direction": "up",
-     "confidence": 0.65,
-     "why": "Capital is rotating out of Nvidia into competing AI semiconductor stocks following the CEO exit."
-    },
-    "AMD": {
-     "direction": "down",
-     "confidence": 0.6,
-     "why": "Broader AI chip sector drag from Nvidia's regulatory and accounting troubles."
-    },
-    "AVGO": {
-     "direction": "up",
-     "confidence": 0.75,
-     "why": "Lifted by broader AI infrastructure and semiconductor strength."
-    },
-    "MSFT": {
-     "direction": "down",
-     "confidence": 0.65,
-     "why": "Broader tech and AI infrastructure sentiment hits related large-cap names."
-    },
-    "AAPL": {
-     "direction": "down",
-     "confidence": 0.3,
-     "why": "Broad market selloff induced by tech bellwether crash."
-    },
-    "SMCI": {
-     "direction": "up",
-     "confidence": 0.75,
-     "why": "Riding positive sentiment from Nvidia earnings beat."
-    },
-    "MU": {
-     "direction": "up",
-     "confidence": 0.8,
-     "why": "Nvidia rebound reignites AI trade lifting memory and semiconductor stocks."
-    },
-    "PLTR": {
-     "direction": "down",
-     "confidence": 0.6,
-     "why": "Broader tech sector and AI stock sell-off spurred by Nvidia turmoil."
-    },
-    "INTC": {
-     "direction": "up",
-     "confidence": 0.75,
-     "why": "Nvidia rebound lifts broader semiconductor sector."
-    },
-    "TSLA": {
-     "direction": "down",
-     "confidence": 0.6,
-     "why": "Broader tech sector weakness and uncertainty surrounding Nvidia weigh on high-multiple tech growth stocks."
-    },
-    "AMAT": {
-     "direction": "up",
-     "confidence": 0.7,
-     "why": "Nvidia's beat lifts broader semiconductor equipment suppliers."
-    }
-   },
-   "sources": [
-    {
-     "id": "855265040ed1e43c",
-     "publisher": "Reuters",
-     "kind": "news",
-     "title": "Nvidia CEO Jensen Huang resigns, in blow to AI boom he helped foster",
-     "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOMEFwN0FWdjB6blNtR0RZaTBWZXZDaWVwYkhXREttY2FaYVNNVC1qNEFHYm9Yd1pDODBDN2tvNzhnMTY4cmxWYTg1WVFidzFlNVFEdlZNb3IyZG1nS2FKcHAzUERhQW9EdG9oOER6YmwydXZOd0t1VHRub1BCdFdoR1V4dktlUVUydjZWeU53aVdKMGwtOGFtZmd2T3VhODF3eXhPazVtbV81b0hpUi1vcw?oc=5",
-     "time": "2026-11-12T18:31:55Z"
-    },
-    {
-     "id": "6c526a44313f07e5",
-     "publisher": "Yahoo Finance",
-     "kind": "news",
-     "title": "Equities Rise Intraday Despite Nvidia Sell-Off Post CEO's Departure",
-     "url": "https://finance.yahoo.com/markets/stocks/articles/equities-rise-intraday-despite-nvidia-182433809.html?.tsrc=rss",
-     "time": "2026-11-12T18:24:33Z"
-    },
-    {
-     "id": "adfadefb8db21a4c",
-     "publisher": "AP",
-     "kind": "news",
-     "title": "What we know after Jensen Huang resigns as Nvidia’s CEO",
-     "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOMUxqUTE0WWZBT2xoV25SLUQ2dFgyWkhwZFZyRnk3d1Fibmtrb0d4T3otSXNpNmZiTVh0QUdkWTA4UmQ3cXQyVVM3ODc0V0g4YnVVbDJRYWF4VXlaXzMzZnJWNi1UR3YyZHJGbWNzaVFab2tiM3N2RjFIOUtWcnlJVWtMVnhQNmhJeTdPajNVUXZfU2NzWkw0aGJLVFMtaGY3?oc=5",
-     "time": "2026-11-12T18:38:00Z"
-    },
-    {
-     "id": "e45111d2af3013e1",
-     "publisher": "The Economic Times",
-     "kind": "news",
-     "title": "Bitcoin price today: BTC USD falls near $71,000 after Jensen Huang resigns as Nvidia CEO and ETF outflows",
-     "url": "https://news.google.com/rss/articles/CBMisgJBVV95cUxNNGkxSEhVaVRhRGl4UkxMZUoyeV9Bc25CTmNkY1Q3Z2JEbTB5S3JWbUt4clE4eEltNTFSbFZSOFJrM290QTFESGJiMHROMGRSNVhzV0tkRHRqU2hLTk5GYng1Mm9FaDVlTFNyNHdqWXNwNDhNazZJNmlqOXIxVjFvZ0hwSHRTSUcwSXRqWWU5Mi1BTVg3Zm12bml2STNnSFExQWlTaUlRdDNlVnNUZlh5dFJDN2pfQmhha2M1SVBYUm1fVDhiaThNTnBsRU0ySTJSR1o1QkMyVHJseHA4VHlkd2pYODRaZzFpUUQza2ZlT1JpU0ZodWVkR0pCb3ZZTnI3TTNGQTBxcnJ0VnVJZzV3NHltc3l0X19JbG03WjdwRXFEWEwxZE9uMmJMTTVQbFZVRmfSAbcCQVVfeXFMTXR1bEttcm9WdW1FU0VCR1dKbWkwVkpwVmpjOE9YY1ZDUTZOcE5HaWktRnU2UW55c2ZLWEpiRmFwQ3ZTd2otS0RqX2FSWFZwejRGbFZOcGFpa2oxdF8xYmxVWVp6UUl1QkRnYi1ZVVhNS0d4UDlxSGpwZjJFeG5KbDhZdUplRWh5QU9Lc2U1NWhMMm9EQVZISVVIdUxuWnQxaDRWNllMb1lFS2VJUXRxYTJKSVV1bjg1V2ROTnRLdTVIb3dvcllFbTgtTF9nZFhaVGVrSHpzM3lQOTM5bHp2LXBLZ0VldGppMm95dWZBeGlLNUFXdnE0VkdqbWUzNS1adjhCRVlIMGdEbHJ2djFZSm5GWHhJcmZEOTRLbTU0MGNEdm1MaGkxdlA1WEEyMFlyRm8wbEdmWnM?oc=5",
-     "time": "2026-11-12T18:34:50Z"
-    },
-    {
-     "id": "89cceff7950b3622",
-     "publisher": "Benzinga",
-     "kind": "news",
-     "title": "Jensen Huang Is Out At Nvidia: 4 Private Equity Giants with Big Bets on Its AI Infrastructure Future",
-     "url": "https://www.benzinga.com/markets/private-markets/26/11/63212619/jensen-huang-is-out-at-nvidia-4-private-equity-giants-with-big-bets-on-its-ai-infrastructure-future",
-     "time": "2026-11-12T18:45:12Z"
-    }
-   ]
-  },
-  {
-   "summary": "Bitcoin surges above $64,000 alongside a broader tech share rally sparked by positive market catalysts.",
-   "category": "crypto_positive",
-   "firstSeen": "2026-11-21T20:36:04Z",
-   "publishers": [
-    "Altcoin Buzz",
-    "Around Prague",
-    "BigGo Finance",
-    "Binance",
-    "Bitcoin Foundation",
-    "Blockonomi",
-    "CoinGape",
-    "Coinpaper",
-    "Cointribune",
-    "Crypto Briefing",
-    "Crypto News",
-    "CryptoDaily",
-    "CryptoRank",
-    "Cryptonews.net",
-    "Demokratis.co.id",
-    "Haberler.com",
-    "IDNFinancials",
-    "Inshorts",
-    "Invezz",
-    "KuCoin",
-    "Limapagi",
-    "Pluang",
-    "Traders Union",
-    "TradingView",
-    "Wisevoter",
-    "Yahoo Finance",
-    "bloomingbit",
-    "fiscal.ai"
-   ],
-   "assets": {
-    "BTC/USD": {
-     "direction": "up",
-     "confidence": 0.8,
-     "why": "Bitcoin surges above $64k following the broader market and tech sector rebound."
-    },
-    "SOL/USD": {
-     "direction": "up",
-     "confidence": 0.75,
-     "why": "Solana breaking above $70 demonstrates strong bullish momentum during the crypto rebound."
-    }
-   },
-   "sources": [
-    {
-     "id": "387e642d1750c13a",
-     "publisher": "Cointribune",
-     "kind": "news",
-     "title": "Bitcoin: The buyers' return propels BTC above $60,000",
-     "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxNQlZTNkYxTFExRVd0QlVMWXRGWFYweTFWNXh6LTloclk5SkdMTVE0YUxhdG5Pbm45dGtaa2EtNjVyMWJ6U3M5b1BxM2VaY2lXelBCc0l5ZmJvZThwUzFhNnI0NkczZm5hanN5LWp0UjV3S2hBaHFoRUNROWRKVjFmd09jOFlwMkxjRTQzT2FpWVhfdkps?oc=5",
-     "time": "2026-11-21T20:36:04Z"
-    },
-    {
-     "id": "9e7c736eb8b3d8dc",
-     "publisher": "Haberler.com",
-     "kind": "news",
-     "title": "Sharp reversal after the liquidation wave in Bitcoin! It has surpassed $60,000 again.",
-     "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxQRjBHNF94ZVZfeEk4RXZsRFV2eVQ3Z2s0eEd3QUdrY1V5S1plaXJ6VGhOZE16NlZscUZfS1hvaE13MHBYSGdzSXE1dmNPU3Q0Qi1JR0diZzhLdGQyZkxVRkZ0NXYzMTgtYm1qVklta2pTcWJEbHJaTmh4dW92aGw2Q1dvZw?oc=5",
-     "time": "2026-11-21T22:23:15Z"
-    },
-    {
-     "id": "8dbebc1f3b0f2d4b",
-     "publisher": "Cryptonews.net",
-     "kind": "news",
-     "title": "Bitcoin Price Rebounds to $60K After Crash Near $55K, Leaving Billions in Liquidations",
-     "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE0yTXFhb3hnTVpzLUJLS0NWdjh6S1M0Ync5MlNLRGhjV3JxSU12dmRpZGduUG8zLVhzQ1ZBcnJpd3k5eDlKMU5PeHUza21aWUlLc19lMGszN20?oc=5",
-     "time": "2026-11-21T22:15:38Z"
-    },
-    {
-     "id": "8e046e564a2ac43d",
-     "publisher": "BigGo Finance",
-     "kind": "news",
-     "title": "Bitcoin Plunges to Two-Year Low Before Rebounding Over 8% to Reclaim $60,000 Level",
-     "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE9Gc0pod3AzdFBPblREbGNxM1p5TFJobV9ZZERBcW1jcEpxMnk5eno1UXpxcDJ1dzNpbi0xbjlUVktsdFpmMVVRR0tMWkxrbmxobzR0Z19yaXVaQV9ZRU1QT0FJUnlGdldZaDZqWGROSF9hRmc4a2c?oc=5",
-     "time": "2026-11-22T01:35:00Z"
-    },
-    {
-     "id": "64b5e5497a8fd44b",
-     "publisher": "Crypto News",
-     "kind": "news",
-     "title": "Bitcoin price rebounds from $55K after historic sell-off, is $72K next?",
-     "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE1rZzVTU2xaTWZXcE5LOFI0RlBsZk84N0F5ekdWY0lONHljSWROaEVCS3BsYUd6QmlZR2RpSzBtZ2JSVVFKSVhydVBEd3lQSVVVekd5MGdPVmMwVU5PenJBcm1KZWtmT1M5Y1Z1cDkxaFdqREk?oc=5",
-     "time": "2026-11-22T08:01:17Z"
-    }
-   ]
-  },
-  {
-   "summary": "Eli Lilly acquires Huntington's disease drug developer LoQus23 for up to $725 million, expanding its neuroscience pipeline.",
-   "category": "contract",
-   "firstSeen": "2026-11-23T13:03:45Z",
-   "publishers": [
-    "Reuters",
-    "Yahoo Finance"
-   ],
-   "assets": {
-    "LLY": {
-     "direction": "up",
-     "confidence": 0.85,
-     "why": "Strategic pipeline-expanding acquisition of LoQus23 for up to $725 million."
-    }
-   },
-   "sources": [
-    {
-     "id": "91fc75db9893852d",
-     "publisher": "Reuters",
-     "kind": "news",
-     "title": "Lilly to acquire Huntington's disease drug developer LoQus23 for up to $725 million",
-     "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPWGxpQ044NlRhaU9sUTNsdnJfTzVwUkxIVmJNZEZKUy1pUjREaFgyaG0tRE1EdTh6UFdLY1hrZTJRZ0dNcGNBWDF6TV9ZN2xJSC1WZnI0UmVLNlFUbXJMN0g0MXAxOGhJZ3pkX0tpbU43c3N2aHZkakNpbWVidGxPOTcyTHlGX2tCdUk3b3h3bWFLR1VEeGpqY3dTaExET3NoWWxFUEMwZ2o5TnJ0MDNUVVNub21oZlBNNTZURTZvQjlyUQ?oc=5",
-     "time": "2026-11-23T13:03:45Z"
-    },
-    {
-     "id": "f550bfb1c251d9cc",
-     "publisher": "Yahoo Finance",
-     "kind": "news",
-     "title": "Eli Lilly Makes $725 Million Huntington's Disease Bet as Drug Pipeline Expands",
-     "url": "https://finance.yahoo.com/healthcare/articles/eli-lilly-makes-725-million-151535787.html?.tsrc=rss",
-     "time": "2026-11-23T15:15:35Z"
-    }
-   ]
-  },
-  {
-   "summary": "CrowdStrike Holdings reports an earnings beat and revenue outperformance.",
-   "category": "contract",
-   "firstSeen": "2026-11-23T12:04:00Z",
-   "publishers": [
-    "AP",
-    "GuruFocus",
-    "Investing.com",
-    "Investing.com India",
-    "Investing.com Nigeria",
-    "TradingView",
-    "Yahoo Finance",
-    "شبكة تواصل الإخبارية"
-   ],
-   "assets": {
-    "CRWD": {
-     "direction": "up",
-     "confidence": 0.85,
-     "why": "CrowdStrike beat earnings and revenue estimates, signalling strong financial health."
-    }
-   },
-   "sources": [
-    {
-     "id": "4c651ec5fe732f69",
-     "publisher": "Yahoo Finance",
-     "kind": "news",
-     "title": "CrowdStrike Agrees To Buy Zscaler For $43.9 Billion. Shares Move In Opposite Directions.",
-     "url": "https://www.ibtimes.com/crowdstrike-acquire-zscaler-43-9-billion-deal-3810075?.tsrc=rss",
-     "time": "2026-11-23T12:09:36Z"
-    },
-    {
-     "id": "273b2b014c38cdc4",
-     "publisher": "GuruFocus",
-     "kind": "news",
-     "title": "Zscaler (ZS) Q1 Earnings Beat Expectations, Shares Rise Amid Cro",
-     "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNUllsd1h4c3dzQkFUZjhzUXF5WklQeUtCNUtjbGN1a3ppd214cVRsdlJRUklIdDZJQWRZeFlXUEN3MFdCZ3g5ZEIyZkpLTk84RW1YdUZHNHhTenJiemJpdHdISE1vQ1RoT2Z6M1Jvdi1CYTY3c3BPZWp6NVJtOGJzT3E2SnFlSU5qSlBYM3h3eDdCdU5leU00dHdvYXFOQnA2UjF3c0o5eUZwbHhQR3VCOUh5OXVIc01RSFE?oc=5",
-     "time": "2026-11-23T12:04:26Z"
-    },
-    {
-     "id": "f92c0f3abeb6a4df",
-     "publisher": "Yahoo Finance",
-     "kind": "news",
-     "title": "CrowdStrike to Buy Zscaler in $44 Billion All-Stock Deal. Why They’re Better Off Together.",
-     "url": "https://finance.yahoo.com/m/c15198fc-46aa-317e-ad7d-cc5e670695f9/crowdstrike-to-buy-zscaler-in.html?.tsrc=rss",
-     "time": "2026-11-23T12:04:00Z"
-    },
-    {
-     "id": "e2e18482c574af40",
-     "publisher": "TradingView",
-     "kind": "news",
-     "title": "Zscaler Q1 Revenue Rises 20% as CrowdStrike Acquisition Agreement Announced",
-     "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxPSm9PT2FYaFpza2lIemNhakYtSkhqUlRITmdwOVR5ejdpZkdyQU9HUDRFVGsxUkRWYnpDYVdNakZtUXA0Wm4xYnNpV2NNU1lXSHpxdVh6RUZXTmNJNm9xcnBoVE1qSFhmeVE5YlVCM2d6M3NBZVFYWW50N29EWGVGY3A1WHVhbF9hZTlHajBFZUYwV1owbU11X0swbnRTSzZfTHNvaVM0bGViOHZkZmE5QUNwOWE1VVRZYmRkdFNqbnd1TnVib0x4eDhWQW9Nd09NNXc?oc=5",
-     "time": "2026-11-23T12:43:00Z"
-    },
-    {
-     "id": "741778701d0991d8",
-     "publisher": "AP",
-     "kind": "news",
-     "title": "Crowdstrike to acquire Zscaler in a $44 billion deal that would create a cybersecurity giant",
-     "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQekFodWNTV2dTaVZ6VDJScmUybjJ3QXRURFJjeVNtQVBmOEJkYUZTNnFlMnNKalRWdFdXOWVwTjg1TFU3THJIOU9hSXNtSXZCczVaT0xDYnNKUEJUYXFXbVpTUkhTNWRFb3VIa1RDcHdOMzB4ZVV4cTZ6STBQZ2RWLWNPT2U1RGRHYjIxNEZ1QlFXQXZJMDhJeHdDLUFUc2tSUjJoejc1dGhzTWtkUS1Hb3V1V1hKbXplV3J2Zw?oc=5",
-     "time": "2026-11-23T13:05:00Z"
-    }
-   ]
-  },
-  {
-   "summary": "Traders price out expectations of a larger 50bp Fed rate hike, easing pressures across equities and risk assets.",
-   "category": "central_bank_hawkish",
-   "firstSeen": "2026-11-10T09:39:09Z",
-   "publishers": [
-    "13WHAM-TV",
-    "1470 & 100.3 WMBD",
-    "24/7 Wall St.",
-    "93.3 The Drive",
-    "ABC News - Breaking News, Latest News and Videos",
-    "ABC7 New York",
-    "AFP.com",
-    "AL Circle",
-    "AMBCrypto",
-    "ANI News",
-    "AOL.com",
-    "AP",
-    "APAC Media",
-    "ARYnews.tv",
-    "ASHARQ AL-AWSAT English",
-    "Action Forex",
-    "AdvisorHub",
-    "Aktualita.co",
-    "Al Jazeera",
-    "Altcoin Buzz",
-    "American Banker",
-    "Anadolu Ajansı",
-    "Asia News Network",
-    "Asianet Newsable",
-    "Axios",
-    "AzerNews",
-    "BNN Bloomberg",
-    "Baltimore Sun",
-    "Bangladesh Post",
-    "Barchart.com",
-    "Barron's",
-    "BeInCrypto",
-    "Beinsure",
-    "Benzinga",
-    "Big News Network.com",
-    "BigGo Finance",
-    "Bilyonaryo Business",
-    "Binance",
-    "Bitbo",
-    "Bitcoin Foundation",
-    "Bitcoin Magazine",
-    "Bitcoin News",
-    "Bitcoin Sistemi",
-    "Bloomberg",
-    "Bloomberg.com",
-    "Bradenton Herald",
-    "Brave New Coin",
-    "Breakingthenews.net",
-    "Breitbart News",
-    "Briefs Finance",
-    "BullionVault",
-    "Business Day",
-    "Business Insider",
-    "Business Recorder",
-    "Business Standard",
-    "Business Today",
-    "Business Upturn",
-    "BusinessLine",
-    "BusinessToday Malaysia",
-    "Businessamlive",
-    "Businesskorea",
-    "CFO Dive",
-    "CNA",
-    "CNBC",
-    "CNBC TV18",
-    "CediRates",
-    "Central Oregon Daily",
-    "Chosunbiz",
-    "Coin Gabbar",
-    "CoinCodex",
-    "CoinDesk",
-    "CoinGape",
-    "CoinMarketCap",
-    "Coinpaper",
-    "Coinpedia",
-    "Cointribune",
-    "Crowdfund Insider",
-    "Crypto Briefing",
-    "Crypto News",
-    "CryptoDaily",
-    "CryptoPotato",
-    "CryptoRank",
-    "CryptoSlate",
-    "CryptoTicker.io",
-    "Cryptonews.net",
-    "CurrencyNews.co.uk",
-    "DD News",
-    "DT Next",
-    "Daily Voice Of Asia",
-    "Dalal Street Investment Journal",
-    "Decrypt",
-    "Demokratis.co.id",
-    "Demócrata",
-    "ETV Bharat",
-    "Economies.com",
-    "Euronext Markets: Real-time Stock Market Data | live",
-    "Exchange Rates UK",
-    "FOX 17 West Michigan News",
-    "FOX 9 Minneapolis-St. Paul",
-    "FXEmpire",
-    "FXLeaders",
-    "FXStreet",
-    "Finance & Commerce",
-    "FinanceFeeds",
-    "Finimize",
-    "Firstpost",
-    "Forbes",
-    "Forbes Middle East",
-    "Foreign Policy Journal",
-    "Forex Factory",
-    "Fox Business",
-    "Free Malaysia Today",
-    "Free Press Journal",
-    "Gadgets 360",
-    "Global Banking & Finance Review",
-    "Goldman Sachs",
-    "Gulf Business",
-    "Gulf Today",
-    "GuruFocus",
-    "Hindustan Times",
-    "Hiru News",
-    "Hokanews",
-    "Honolulu Star-Advertiser",
-    "IBTimes India",
-    "IDNFinancials",
-    "Incrypted",
-    "IndexBox",
-    "India's News.Net",
-    "IndiaIPO",
-    "IndianEagle",
-    "Indianapolis Business Journal",
-    "Informat.ro",
-    "Insurance Business",
-    "InsuranceNewsNet",
-    "International Business Times",
-    "International Business Times Australia",
-    "Investing News Network",
-    "Investing.com",
-    "Investing.com Australia",
-    "Investing.com Canada",
-    "Investing.com India",
-    "Investing.com Nigeria",
-    "Investing.com UK",
-    "InvestmentNews",
-    "Investor Strategy News",
-    "Investor's Business Daily",
-    "Invezz",
-    "Jagran Josh",
-    "JournalArta",
-    "KABB",
-    "KATV",
-    "KDNL",
-    "KELO-AM",
-    "KLSE Screener",
-    "KQ2",
-    "KRDO",
-    "KSHB 41 Kansas City",
-    "KSL",
-    "KSL News",
-    "KTVN",
-    "KXLH News Helena",
-    "Kalshi News",
-    "Kathleen Hays Presents: Central Bank Central",
-    "Kiplinger",
-    "Kitco",
-    "KuCoin",
-    "Latest news from Azerbaijan",
-    "Latin Times",
-    "Limapagi",
-    "LinkedIn",
-    "Livemint",
-    "Livewire Markets",
-    "London South East",
-    "Loveland Reporter-Herald",
-    "MLQ.ai",
-    "Magnolia Tribune",
-    "Malay Mail",
-    "Malaya Business Insight",
-    "Manila Bulletin",
-    "MarketWatch",
-    "Metrobank Wealth Insights",
-    "Mezha.net",
-    "Mining.com",
-    "Mining.com.au",
-    "MiningMX",
-    "MishTalk",
-    "Mitrade",
-    "Moneycontrol.com",
-    "Moomoo",
-    "Morning Brew",
-    "Mortgage Professional America",
-    "NAI500",
-    "NBC26",
-    "NDTV Profit",
-    "Nacionale",
-    "Nation Thailand",
-    "New Hampshire Union Leader",
-    "New Jersey Business & Industry Association",
-    "New York Post",
-    "News Channel 5 Nashville",
-    "News24",
-    "NewsBytes",
-    "Newsday",
-    "Newsmax",
-    "Newsquawk",
-    "Newswav",
-    "Nikkei Asia",
-    "Norada Real Estate Investments",
-    "Northeast Mississippi Daily Journal",
-    "Northwest Arkansas Democrat-Gazette",
-    "Oz Arab Media",
-    "People's Daily Online",
-    "Pintu",
-    "Pluang",
-    "Press of Atlantic City",
-    "Profit by Pakistan Today",
-    "Public TV English",
-    "Quartz",
-    "RTE.ie",
-    "RTHK News",
-    "RTL Today",
-    "RVBusiness",
-    "RealEstateNews.com",
-    "Realtor.com",
-    "Rediff MoneyWiz",
-    "Reuters",
-    "Rock Hill Herald",
-    "Rolling Out",
-    "SBS 뉴스",
-    "SRN News",
-    "SSBCrack",
-    "SchiffGold.com",
-    "Scotsman Guide",
-    "Scripps News",
-    "Seeking Alpha",
-    "Serrari Group",
-    "Sharecafe",
-    "Simply Wall St",
-    "Social News XYZ",
-    "South Florida Reporter",
-    "Startup Fortune",
-    "Stock Titan",
-    "Stocktwits",
-    "StoneX",
-    "StreetInsider",
-    "TechJuice",
-    "The American Conservative",
-    "The Arkansas Democrat-Gazette",
-    "The Business Times",
-    "The Crypto Times",
-    "The Dark Side Of The Boom",
-    "The Economic Times",
-    "The Edge Malaysia",
-    "The Financial Express",
-    "The Globe and Mail",
-    "The Hill",
-    "The Hindu",
-    "The Independent",
-    "The Kashmir Monitor",
-    "The Korea Herald",
-    "The Korea Times",
-    "The Market Periodical",
-    "The Mighty 790 KFGO",
-    "The Mortgage Reports",
-    "The Motley Fool",
-    "The National",
-    "The Real Economy Blog",
-    "The San Joaquin Valley Sun",
-    "The Seattle Times",
-    "The Shillong Times",
-    "The South Shore Press",
-    "The Standard (HK)",
-    "The Star",
-    "The Straits Times",
-    "The Sunday Guardian",
-    "The Times",
-    "The Times of India",
-    "The Washington Post",
-    "TheBull.com.au",
-    "TheStreet",
-    "Times Now",
-    "TipRanks",
-    "TorFX News",
-    "Traders Union",
-    "TradingKey",
-    "TradingNEWS",
-    "TradingPedia",
-    "TradingView",
-    "Türkiye Today",
-    "U.Today",
-    "UA.NEWS",
-    "US News Money",
-    "USA Today",
-    "UrduPoint",
-    "VT Markets",
-    "ValueWalk",
-    "Vietnam.vn",
-    "Virginia Business",
-    "WBFF",
-    "WCTI",
-    "WHBL News",
-    "WKZO",
-    "WPBN",
-    "WSJ",
-    "WTOP News",
-    "WTVB",
-    "WXYZ Channel 7",
-    "Washington Examiner",
-    "Wisevoter",
-    "XTB.com",
-    "Xinhua",
-    "Yahoo",
-    "Yahoo Finance",
-    "Yahoo Finance Australia",
-    "Yahoo Finance Singapore",
-    "Zawya",
-    "ad-hoc-news.de",
-    "bdnews24.com",
-    "blockchain.news",
-    "bloomingbit",
-    "blue News",
-    "bsinews.id",
-    "cbs19.tv",
-    "eNCA",
-    "finance.biggo.com",
-    "fiscal.ai",
-    "https://streamlinefeed.co.ke/",
-    "iHeart",
-    "kaohoon international",
-    "marketscreener.com",
-    "news.sbs.co.kr",
-    "newsalert.com.pk",
-    "qz.com",
-    "richtv.io",
-    "scanx.trade",
-    "streamlinefeed.co.ke",
-    "tippinsights",
-    "www.equiti.com",
-    "www.foreignpolicyjournal.com",
-    "www.jordannews.jo",
-    "www.thenationalnews.com",
-    "www.tmgm.com",
-    "www.tokenpost.com",
-    "تسنیم",
-    "سانا",
-    "شبكة تواصل الإخبارية",
-    "صحيفة مال",
-    "富途牛牛",
-    "巴士的報",
-    "联合早报",
-    "아시아경제",
-    "재경일보",
-    "조선일보",
-    "파이낸셜뉴스"
-   ],
-   "assets": {
-    "BTC/USD": {
-     "direction": "down",
-     "confidence": 0.85,
-     "why": "Hawkish Fed policy signals and ETF outflows weigh heavily on Bitcoin."
-    },
-    "ETH/USD": {
-     "direction": "down",
-     "confidence": 0.85,
-     "why": "Hot inflation and rate hike fears trigger heavy long liquidations and pressure crypto prices."
-    },
-    "SOL/USD": {
-     "direction": "down",
-     "confidence": 0.8,
-     "why": "Hawkish Fed rate hike expectations create a stronger dollar and pressure risk assets."
-    },
-    "NVDA": {
-     "direction": "down",
-     "confidence": 0.8,
-     "why": "Hawkish Fed commentary and rate hike expectations weigh on risk-on growth and tech stocks."
-    },
-    "MSFT": {
-     "direction": "up",
-     "confidence": 0.75,
-     "why": "Priced-out hawkish Fed expectations relieve pressure on major tech and growth assets."
-    },
-    "AAPL": {
-     "direction": "down",
-     "confidence": 0.75,
-     "why": "Hawkish Fed rate hike outlook weighs heavily on broad tech and growth stocks"
-    },
-    "AMZN": {
-     "direction": "up",
-     "confidence": 0.75,
-     "why": "Dovish adjustment in rate hike bets supports broader large-cap tech growth."
-    },
-    "AMAT": {
-     "direction": "down",
-     "confidence": 0.7,
-     "why": "Broader tech sell-off driven by hawkish Fed outlook."
-    },
-    "GOOGL": {
-     "direction": "down",
-     "confidence": 0.75,
-     "why": "Hawkish Fed commentary and potential rate hikes pressure growth and tech stocks."
-    },
-    "META": {
-     "direction": "down",
-     "confidence": 0.75,
-     "why": "Higher interest rate expectations and hot CPI weigh on growth tech stocks."
-    },
-    "TSLA": {
-     "direction": "down",
-     "confidence": 0.8,
-     "why": "Hawkish Fed rate hike expectations put downward pressure on major growth and tech stocks."
-    },
-    "NEM": {
-     "direction": "up",
-     "confidence": 0.65,
-     "why": "Gold miners benefit as rate hike bets are pared back, supporting gold prices."
-    },
-    "SPWO": {
-     "direction": "down",
-     "confidence": 0.75,
-     "why": "Broad equities tumble due to rising yields and hawkish rate bets."
-    },
-    "AEM": {
-     "direction": "up",
-     "confidence": 0.65,
-     "why": "Gold miners benefit as rate hike bets are pared back, supporting gold prices."
-    },
-    "AMD": {
-     "direction": "down",
-     "confidence": 0.85,
-     "why": "Hot PPI inflation reading and hawkish rate fears crush semiconductor sector, with AMD tumbling."
-    },
-    "CVX": {
-     "direction": "down",
-     "confidence": 0.6,
-     "why": "Broad macro pressure from hawkish Fed comments can negatively impact commodities."
-    },
-    "INTC": {
-     "direction": "down",
-     "confidence": 0.65,
-     "why": "Higher interest rate expectations put pressure on tech/growth stocks."
-    }
-   },
-   "sources": [
-    {
-     "id": "d9df815319391cbb",
-     "publisher": "The Edge Malaysia",
-     "kind": "news",
-     "title": "Fed’s Waller backs rate hike in December, says open to larger move",
-     "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE9aSnktcDlXbzBpMU1SQkZvRktGTnkyX1J4LU92VGxBZVVhcGQtRTVEaDBqLVRPS213cFpTMkFad1BkS0xpdmVVbGU2bVhsUTA2?oc=5",
-     "time": "2026-11-10T09:39:09Z"
-    },
-    {
-     "id": "252cbcbd6b6cd044",
-     "publisher": "Seeking Alpha",
-     "kind": "news",
-     "title": "Waller backs December rate hike, says 50-basis-point move may be on the table (TLT:NASDAQ)",
-     "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOc004NEQ1TjItUHFWanNEbWxpTlpFQ0tIaUcxZDJpTkQyZ3ppdHZtZ280ZlpnQ0NWU3g4Nms1M1dTVEdjZEpwbXcwUVBlRkRzTjNyWEctZEdNT2JwSFlSeGJIWFRTZXB2NEczeUtKY1dIQU9JbFFDaHQyOUxHZ05kU1h4QTQxQzlmSFFjRTQ0OTlaczl3NGhiMHNidko2SGVrWHZaTk8tZlN1OXR2S29HRWVMcXo?oc=5",
-     "time": "2026-11-10T10:10:00Z"
-    },
-    {
-     "id": "1816a3bd028bffbd",
-     "publisher": "MLQ.ai",
-     "kind": "news",
-     "title": "Fed's Waller backs a December rate hike and says a half-point move should be considered if core inflation runs hot",
-     "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxQMWRZU0pVdkJiU1J1MUdOX3Y5QVF1cHpRdG5zTndjOE4xaWhuVFVWSzFZem9zNHdFVjBhYk5TZFN1VEN2RnZfdF9UV21Za09HM2hZTGpMXzUzTG01ZzZ0QzFrNy1NZENQSEsyQjNCb1plSWtWX2lSQW9xSzZXbk5zelQ4S01mRmVqMU9NTzhHb3ZWbW9yUVdOMkhLemVTSmlUNGg5bFNXTjRiVmFYenVJekRkeXluZVNhVVZNYWdYMTc5MDM4NnV3RldkSW5hS2c?oc=5",
-     "time": "2026-11-10T10:44:05Z"
-    },
-    {
-     "id": "177d64cb4badd873",
-     "publisher": "FXStreet",
-     "kind": "news",
-     "title": "Fed's Waller signals risk of larger rate hikes as inflation stays high",
-     "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNbk83dS05U3dLMmRJelhNR2Q1dndmRTExMDI4ajVLNEM3bWNTZktYV1gydFhjOVhzR19wUm55NXFMQmF4ME56VUJDSlFKRkVHZXR4TmxSSUVwMmFZRWVsbnh3VnVaWTZlQ3JZeFdzSnNmR2RuSzJoeUEyZGprblZ5bHhBMzI4eG5iMGNPNjRuemduS1NvdTh0bzg3SVByc1ZCdm5uUnJITQ?oc=5",
-     "time": "2026-11-10T10:43:44Z"
-    },
-    {
-     "id": "a3ff32444bd7c9b3",
-     "publisher": "ANI News",
-     "kind": "news",
-     "title": "Fed Governor Christopher J. Waller favors 25 bps rate hike in December; 50 bps may be needed if inflation persists",
-     "url": "https://news.google.com/rss/articles/CBMi9gFBVV95cUxQZVUtaWxLdmtZVGV6bDBwaDRTRk9saVd1R1FlUXowOVV1eVp6Qks5LWZVN0ZzS0Q1U09yemlnTVZjaEVlempESldNVEo4RE5Fb0R5OTAtU2R2cW5zMnF1SllpTXJUR3BDeWZYUjQ2U1VkZ2kzZ3VkNjRDQzhobEpSaW45NWlTSTlvMmhhYXRqUFNFeWRKRWJlUDdaMmNfR0kxOEZSa1JoS0syVFUtNG84Q3B4akh0dWNQajZ1S05FSlN2RFZYSmFLcjY0dzdNNi1wYmRqLVVvQVBOZkRJeURwajN4TjlkZUZ0blJmdktvMEFuLTFnMmc?oc=5",
-     "time": "2026-11-10T10:41:00Z"
-    }
-   ]
-  },
-  {
-   "summary": "CrowdStrike has agreed to acquire Zscaler in an all-stock transaction valued at approximately $44 billion.",
+   "summary": "CrowdStation reports record Q3 results and higher guidance alongside an all-stock Zscaler acquisition valued at approximately $44 billion.",
    "category": "company_bad_news",
    "firstSeen": "2026-11-22T19:17:00Z",
    "publishers": [
@@ -6841,6 +6114,7 @@
     "Minichart",
     "Reuters",
     "StreetInsider",
+    "TradingView",
     "Yahoo Finance",
     "fiscal.ai",
     "marketscreener.com"
@@ -6857,9 +6131,9 @@
      "why": "Google shifting chip purchases away negatively impacts Broadcom revenue outlook."
     },
     "CRWD": {
-     "direction": "down",
-     "confidence": 0.75,
-     "why": "Massive all-stock acquisition and dilution concerns weigh on the acquirer's stock."
+     "direction": "up",
+     "confidence": 0.85,
+     "why": "Record Q3 results and raised guidance significantly outweigh deal dilution concerns."
     }
    },
    "sources": [
@@ -6906,50 +6180,7 @@
    ]
   },
   {
-   "summary": "ConocoPhillips sells its Norway and Teesside assets to Vår Energi for $4.4 billion to fund future buybacks.",
-   "category": "other",
-   "firstSeen": "2026-11-23T13:35:00Z",
-   "publishers": [
-    "BigGo Finance",
-    "ChemAnalyst",
-    "Quantum Commodity Intelligence"
-   ],
-   "assets": {
-    "COP": {
-     "direction": "up",
-     "confidence": 0.65,
-     "why": "Asset sale generates strong liquidity to fund upcoming share buybacks."
-    }
-   },
-   "sources": [
-    {
-     "id": "6446b5858f4453ac",
-     "publisher": "ChemAnalyst",
-     "kind": "news",
-     "title": "ConocoPhillips Sells Norway and Teesside Assets for $4.4 Billion",
-     "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQZHh1SzE1VmpDSXNmVHJPVF9kWWUyTlQ0ckphRzc3eThhQjVqWEs0MTg1NHFUUmY5d0FZSzVrOEltdEFtdmdKYVRMemRSQlZxYmU1NWkxYVRhX3c3M1NSSHdwb3d1TTA5VnF4bEpXX0IwVUllVnNXR1VYLXFzN2Vlb2htMDZzR0dXcWtiTEF0cnNpaC00REdPc2NRamhPdGhvQ2RYUnA0dDlEd01TUFVfS3BPUDI?oc=5",
-     "time": "2026-11-23T13:49:12Z"
-    },
-    {
-     "id": "d0172cfb415f4f82",
-     "publisher": "Quantum Commodity Intelligence",
-     "kind": "news",
-     "title": "Var Energi takes over Ekofisk in ConocoPhillips Norway oil deal",
-     "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNWXFJS0tnWEdOeHI4OXRwSXY0YUNUdUNIN0xvQ05aMzBZUTFWYjVHU29EYXFsV0ZDak1hWFlKTjA0M0lnalY5ZUZtY1BWbUFRQVhoVkFic3hEVUpMVFdZQ2p3eEtvSlJUNlZWem4yZU5oOHg5RFhPaEd3ZHVOZ2czc2FTTW9HdHA2eHVoUl8zcVpRMllGOU1hUXRZc2dSYmlIQkI1WjJpX0ZCUQ?oc=5",
-     "time": "2026-11-23T13:43:56Z"
-    },
-    {
-     "id": "a8b1c14fe3965711",
-     "publisher": "BigGo Finance",
-     "kind": "news",
-     "title": "ConocoPhillips Sells Norway Unit to Vår Energi for $4.43 Billion, Funds 2027 Buybacks",
-     "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE9ld1NveUhlSGI3TFQxZW1Cc1NZeXFUSUtYLUR6dFNpbUNGMTVRU0YxUWt0RG1HNnFLeE1oWGRLVGZidFNQM1pfV200LUx5bF9yZkl0czNIdk5obmxWZlBxbjRmSm11N2NYT1BXbHRiSndleW83c2c?oc=5",
-     "time": "2026-11-23T13:35:00Z"
-    }
-   ]
-  },
-  {
-   "summary": "Geopolitical tensions in the Strait of Hormuz have reached the highest level since the conflict began, threatening oil supply.",
+   "summary": "Attacks on Russian and regional oil facilities keep supply disruption concerns active and support energy markets.",
    "category": "war_escalation",
    "firstSeen": "2026-11-10T20:01:23Z",
    "publishers": [
@@ -7895,6 +7126,945 @@
      "title": "Middle East latest: Ship attacked in UAE waters, says operator Adnoc",
      "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPdTMwLTRPRTZsZHJPR0lQTVNtNHdyWWxZNHMydXJzUjEySVZIZzJfUFlvbXZfQWJPc25aSm5kM3lzNmxFMFVMdFl3NTZLZWVjZnZPaTFyWjZtcl9peGd6ZlpDU2hnQmxDVFBLRlF1cVR3U2QwR2R4dWRRNEFDaDBzSTY2YUFWZEsyZ3dIOGQwX2tudV81a1pRRXQtVzl0TWYw?oc=5",
      "time": "2026-11-10T20:59:26Z"
+    }
+   ]
+  },
+  {
+   "summary": "Jensen Huang is restored as CEO of Nvidia, providing relief and a massive bounce for semiconductor stocks.",
+   "category": "company_bad_news",
+   "firstSeen": "2026-11-12T18:24:33Z",
+   "publishers": [
+    "AFR",
+    "AP",
+    "Anadolu Ajansı",
+    "Around Prague",
+    "Barchart.com",
+    "Benzinga",
+    "BigGo Finance",
+    "Binance",
+    "Bloomberg.com",
+    "Breitbart News",
+    "Business Standard",
+    "CNBC",
+    "Capital Brief",
+    "Chosunbiz",
+    "Coin Gabbar",
+    "CoinDesk",
+    "Coinpaper",
+    "Crypto Briefing",
+    "Crypto Economy",
+    "CryptoTicker.io",
+    "Cryptonews.net",
+    "Deccan Herald",
+    "Decrypt",
+    "Dimsum Daily",
+    "Eurasia Business News",
+    "FXStreet",
+    "FinanceFeeds",
+    "Finimize",
+    "Finviz",
+    "Fortune",
+    "Geo News",
+    "Hokanews",
+    "Investing.com",
+    "Investing.com Canada",
+    "Investing.com South Africa",
+    "Investopedia",
+    "Investor's Business Daily",
+    "Invezz",
+    "JournalArta",
+    "KELO-AM",
+    "Kitco",
+    "Market Index",
+    "Moomoo",
+    "NDTV Profit",
+    "NST Online",
+    "Plataforma Media",
+    "Pluang",
+    "Pragativadi",
+    "Proactive financial news",
+    "Profit by Pakistan Today",
+    "Quartz",
+    "RTHK",
+    "RTHK News",
+    "RealMoney Pro",
+    "Reuters",
+    "SSBCrack",
+    "Shacknews",
+    "Stocktwits",
+    "StreetInsider",
+    "The Boston Globe",
+    "The Economic Times",
+    "The Economist",
+    "The Edge Malaysia",
+    "The Guardian",
+    "The Hawk",
+    "The Lufkin Daily News",
+    "The New York Times",
+    "The Tech Buzz",
+    "The Times of India",
+    "TipRanks",
+    "Traders Union",
+    "TradingKey",
+    "TradingView",
+    "US News Money",
+    "VINnews",
+    "WSJ",
+    "Wccftech",
+    "X",
+    "Yahoo Finance",
+    "Zacks Investment Research",
+    "astig.ph",
+    "bdnews24.com",
+    "bloomingbit",
+    "cwibc.co.id",
+    "finance.biggo.com",
+    "fiscal.ai",
+    "kaohoon international",
+    "marketscreener.com",
+    "news.sbs.co.kr",
+    "shattered.io",
+    "www.tokenpost.com",
+    "深潮TechFlow",
+    "아시아경제",
+    "조선일보"
+   ],
+   "assets": {
+    "NVDA": {
+     "direction": "up",
+     "confidence": 0.95,
+     "why": "Jensen Huang reinstated as CEO and massive stock surge"
+    },
+    "BTC/USD": {
+     "direction": "down",
+     "confidence": 0.7,
+     "why": "Broader risk-off sentiment triggered by major tech leadership turmoil."
+    },
+    "QCOM": {
+     "direction": "up",
+     "confidence": 0.65,
+     "why": "Capital is rotating out of Nvidia into competing AI semiconductor stocks following the CEO exit."
+    },
+    "AMD": {
+     "direction": "up",
+     "confidence": 0.8,
+     "why": "Semiconductor sector rebound following Nvidia catalyst"
+    },
+    "AVGO": {
+     "direction": "up",
+     "confidence": 0.8,
+     "why": "Semiconductor sector rebound following Nvidia catalyst"
+    },
+    "MSFT": {
+     "direction": "down",
+     "confidence": 0.65,
+     "why": "Broader tech and AI infrastructure sentiment hits related large-cap names."
+    },
+    "AAPL": {
+     "direction": "down",
+     "confidence": 0.3,
+     "why": "Broad market selloff induced by tech bellwether crash."
+    },
+    "SMCI": {
+     "direction": "up",
+     "confidence": 0.8,
+     "why": "AI stock rebound following Nvidia catalyst"
+    },
+    "MU": {
+     "direction": "up",
+     "confidence": 0.8,
+     "why": "Nvidia rebound reignites AI trade lifting memory and semiconductor stocks."
+    },
+    "PLTR": {
+     "direction": "down",
+     "confidence": 0.6,
+     "why": "Broader tech sector and AI stock sell-off spurred by Nvidia turmoil."
+    },
+    "INTC": {
+     "direction": "up",
+     "confidence": 0.8,
+     "why": "Chip stock surge following Nvidia catalyst."
+    },
+    "TSLA": {
+     "direction": "down",
+     "confidence": 0.6,
+     "why": "Broader tech sector weakness and uncertainty surrounding Nvidia weigh on high-multiple tech growth stocks."
+    },
+    "AMAT": {
+     "direction": "up",
+     "confidence": 0.7,
+     "why": "Nvidia's beat lifts broader semiconductor equipment suppliers."
+    }
+   },
+   "sources": [
+    {
+     "id": "855265040ed1e43c",
+     "publisher": "Reuters",
+     "kind": "news",
+     "title": "Nvidia CEO Jensen Huang resigns, in blow to AI boom he helped foster",
+     "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOMEFwN0FWdjB6blNtR0RZaTBWZXZDaWVwYkhXREttY2FaYVNNVC1qNEFHYm9Yd1pDODBDN2tvNzhnMTY4cmxWYTg1WVFidzFlNVFEdlZNb3IyZG1nS2FKcHAzUERhQW9EdG9oOER6YmwydXZOd0t1VHRub1BCdFdoR1V4dktlUVUydjZWeU53aVdKMGwtOGFtZmd2T3VhODF3eXhPazVtbV81b0hpUi1vcw?oc=5",
+     "time": "2026-11-12T18:31:55Z"
+    },
+    {
+     "id": "6c526a44313f07e5",
+     "publisher": "Yahoo Finance",
+     "kind": "news",
+     "title": "Equities Rise Intraday Despite Nvidia Sell-Off Post CEO's Departure",
+     "url": "https://finance.yahoo.com/markets/stocks/articles/equities-rise-intraday-despite-nvidia-182433809.html?.tsrc=rss",
+     "time": "2026-11-12T18:24:33Z"
+    },
+    {
+     "id": "adfadefb8db21a4c",
+     "publisher": "AP",
+     "kind": "news",
+     "title": "What we know after Jensen Huang resigns as Nvidia’s CEO",
+     "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOMUxqUTE0WWZBT2xoV25SLUQ2dFgyWkhwZFZyRnk3d1Fibmtrb0d4T3otSXNpNmZiTVh0QUdkWTA4UmQ3cXQyVVM3ODc0V0g4YnVVbDJRYWF4VXlaXzMzZnJWNi1UR3YyZHJGbWNzaVFab2tiM3N2RjFIOUtWcnlJVWtMVnhQNmhJeTdPajNVUXZfU2NzWkw0aGJLVFMtaGY3?oc=5",
+     "time": "2026-11-12T18:38:00Z"
+    },
+    {
+     "id": "e45111d2af3013e1",
+     "publisher": "The Economic Times",
+     "kind": "news",
+     "title": "Bitcoin price today: BTC USD falls near $71,000 after Jensen Huang resigns as Nvidia CEO and ETF outflows",
+     "url": "https://news.google.com/rss/articles/CBMisgJBVV95cUxNNGkxSEhVaVRhRGl4UkxMZUoyeV9Bc25CTmNkY1Q3Z2JEbTB5S3JWbUt4clE4eEltNTFSbFZSOFJrM290QTFESGJiMHROMGRSNVhzV0tkRHRqU2hLTk5GYng1Mm9FaDVlTFNyNHdqWXNwNDhNazZJNmlqOXIxVjFvZ0hwSHRTSUcwSXRqWWU5Mi1BTVg3Zm12bml2STNnSFExQWlTaUlRdDNlVnNUZlh5dFJDN2pfQmhha2M1SVBYUm1fVDhiaThNTnBsRU0ySTJSR1o1QkMyVHJseHA4VHlkd2pYODRaZzFpUUQza2ZlT1JpU0ZodWVkR0pCb3ZZTnI3TTNGQTBxcnJ0VnVJZzV3NHltc3l0X19JbG03WjdwRXFEWEwxZE9uMmJMTTVQbFZVRmfSAbcCQVVfeXFMTXR1bEttcm9WdW1FU0VCR1dKbWkwVkpwVmpjOE9YY1ZDUTZOcE5HaWktRnU2UW55c2ZLWEpiRmFwQ3ZTd2otS0RqX2FSWFZwejRGbFZOcGFpa2oxdF8xYmxVWVp6UUl1QkRnYi1ZVVhNS0d4UDlxSGpwZjJFeG5KbDhZdUplRWh5QU9Lc2U1NWhMMm9EQVZISVVIdUxuWnQxaDRWNllMb1lFS2VJUXRxYTJKSVV1bjg1V2ROTnRLdTVIb3dvcllFbTgtTF9nZFhaVGVrSHpzM3lQOTM5bHp2LXBLZ0VldGppMm95dWZBeGlLNUFXdnE0VkdqbWUzNS1adjhCRVlIMGdEbHJ2djFZSm5GWHhJcmZEOTRLbTU0MGNEdm1MaGkxdlA1WEEyMFlyRm8wbEdmWnM?oc=5",
+     "time": "2026-11-12T18:34:50Z"
+    },
+    {
+     "id": "89cceff7950b3622",
+     "publisher": "Benzinga",
+     "kind": "news",
+     "title": "Jensen Huang Is Out At Nvidia: 4 Private Equity Giants with Big Bets on Its AI Infrastructure Future",
+     "url": "https://www.benzinga.com/markets/private-markets/26/11/63212619/jensen-huang-is-out-at-nvidia-4-private-equity-giants-with-big-bets-on-its-ai-infrastructure-future",
+     "time": "2026-11-12T18:45:12Z"
+    }
+   ]
+  },
+  {
+   "summary": "Bitcoin surges above previous levels alongside a broader tech and crypto market rally.",
+   "category": "crypto_positive",
+   "firstSeen": "2026-11-21T20:36:04Z",
+   "publishers": [
+    "Altcoin Buzz",
+    "Around Prague",
+    "BigGo Finance",
+    "Binance",
+    "Bitcoin Foundation",
+    "Blockonomi",
+    "CoinGape",
+    "Coinpaper",
+    "Cointribune",
+    "Crypto Briefing",
+    "Crypto News",
+    "CryptoDaily",
+    "CryptoRank",
+    "Cryptonews.net",
+    "Decrypt",
+    "Demokratis.co.id",
+    "Haberler.com",
+    "IDNFinancials",
+    "Inshorts",
+    "Invezz",
+    "KuCoin",
+    "Limapagi",
+    "Pluang",
+    "Traders Union",
+    "TradingView",
+    "Wisevoter",
+    "Yahoo Finance",
+    "bloomingbit",
+    "fiscal.ai"
+   ],
+   "assets": {
+    "BTC/USD": {
+     "direction": "up",
+     "confidence": 0.8,
+     "why": "Bitcoin surges above $64k following the broader market and tech sector rebound."
+    },
+    "SOL/USD": {
+     "direction": "up",
+     "confidence": 0.75,
+     "why": "Solana breaking above $70 demonstrates strong bullish momentum during the crypto rebound."
+    }
+   },
+   "sources": [
+    {
+     "id": "387e642d1750c13a",
+     "publisher": "Cointribune",
+     "kind": "news",
+     "title": "Bitcoin: The buyers' return propels BTC above $60,000",
+     "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxNQlZTNkYxTFExRVd0QlVMWXRGWFYweTFWNXh6LTloclk5SkdMTVE0YUxhdG5Pbm45dGtaa2EtNjVyMWJ6U3M5b1BxM2VaY2lXelBCc0l5ZmJvZThwUzFhNnI0NkczZm5hanN5LWp0UjV3S2hBaHFoRUNROWRKVjFmd09jOFlwMkxjRTQzT2FpWVhfdkps?oc=5",
+     "time": "2026-11-21T20:36:04Z"
+    },
+    {
+     "id": "9e7c736eb8b3d8dc",
+     "publisher": "Haberler.com",
+     "kind": "news",
+     "title": "Sharp reversal after the liquidation wave in Bitcoin! It has surpassed $60,000 again.",
+     "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxQRjBHNF94ZVZfeEk4RXZsRFV2eVQ3Z2s0eEd3QUdrY1V5S1plaXJ6VGhOZE16NlZscUZfS1hvaE13MHBYSGdzSXE1dmNPU3Q0Qi1JR0diZzhLdGQyZkxVRkZ0NXYzMTgtYm1qVklta2pTcWJEbHJaTmh4dW92aGw2Q1dvZw?oc=5",
+     "time": "2026-11-21T22:23:15Z"
+    },
+    {
+     "id": "8dbebc1f3b0f2d4b",
+     "publisher": "Cryptonews.net",
+     "kind": "news",
+     "title": "Bitcoin Price Rebounds to $60K After Crash Near $55K, Leaving Billions in Liquidations",
+     "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE0yTXFhb3hnTVpzLUJLS0NWdjh6S1M0Ync5MlNLRGhjV3JxSU12dmRpZGduUG8zLVhzQ1ZBcnJpd3k5eDlKMU5PeHUza21aWUlLc19lMGszN20?oc=5",
+     "time": "2026-11-21T22:15:38Z"
+    },
+    {
+     "id": "8e046e564a2ac43d",
+     "publisher": "BigGo Finance",
+     "kind": "news",
+     "title": "Bitcoin Plunges to Two-Year Low Before Rebounding Over 8% to Reclaim $60,000 Level",
+     "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE9Gc0pod3AzdFBPblREbGNxM1p5TFJobV9ZZERBcW1jcEpxMnk5eno1UXpxcDJ1dzNpbi0xbjlUVktsdFpmMVVRR0tMWkxrbmxobzR0Z19yaXVaQV9ZRU1QT0FJUnlGdldZaDZqWGROSF9hRmc4a2c?oc=5",
+     "time": "2026-11-22T01:35:00Z"
+    },
+    {
+     "id": "64b5e5497a8fd44b",
+     "publisher": "Crypto News",
+     "kind": "news",
+     "title": "Bitcoin price rebounds from $55K after historic sell-off, is $72K next?",
+     "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE1rZzVTU2xaTWZXcE5LOFI0RlBsZk84N0F5ekdWY0lONHljSWROaEVCS3BsYUd6QmlZR2RpSzBtZ2JSVVFKSVhydVBEd3lQSVVVekd5MGdPVmMwVU5PenJBcm1KZWtmT1M5Y1Z1cDkxaFdqREk?oc=5",
+     "time": "2026-11-22T08:01:17Z"
+    }
+   ]
+  },
+  {
+   "summary": "Eli Lilly acquires Huntington's disease drug developer LoQus23 for up to $725 million.",
+   "category": "contract",
+   "firstSeen": "2026-11-23T13:03:45Z",
+   "publishers": [
+    "Reuters",
+    "Yahoo Finance"
+   ],
+   "assets": {
+    "LLY": {
+     "direction": "up",
+     "confidence": 0.85,
+     "why": "Strategic pipeline-expanding acquisition of LoQus23 for up to $725 million."
+    }
+   },
+   "sources": [
+    {
+     "id": "91fc75db9893852d",
+     "publisher": "Reuters",
+     "kind": "news",
+     "title": "Lilly to acquire Huntington's disease drug developer LoQus23 for up to $725 million",
+     "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPWGxpQ044NlRhaU9sUTNsdnJfTzVwUkxIVmJNZEZKUy1pUjREaFgyaG0tRE1EdTh6UFdLY1hrZTJRZ0dNcGNBWDF6TV9ZN2xJSC1WZnI0UmVLNlFUbXJMN0g0MXAxOGhJZ3pkX0tpbU43c3N2aHZkakNpbWVidGxPOTcyTHlGX2tCdUk3b3h3bWFLR1VEeGpqY3dTaExET3NoWWxFUEMwZ2o5TnJ0MDNUVVNub21oZlBNNTZURTZvQjlyUQ?oc=5",
+     "time": "2026-11-23T13:03:45Z"
+    },
+    {
+     "id": "f550bfb1c251d9cc",
+     "publisher": "Yahoo Finance",
+     "kind": "news",
+     "title": "Eli Lilly Makes $725 Million Huntington's Disease Bet as Drug Pipeline Expands",
+     "url": "https://finance.yahoo.com/healthcare/articles/eli-lilly-makes-725-million-151535787.html?.tsrc=rss",
+     "time": "2026-11-23T15:15:35Z"
+    },
+    {
+     "id": "118c5ec03865623d",
+     "publisher": "Yahoo Finance",
+     "kind": "news",
+     "title": "Lilly buys Huntington’s drug developer LoQus23 in potentially $725M deal",
+     "url": "https://www.biopharmadive.com/news/lilly-loqus-huntingtons-drug-acquisition-deal/875448/?.tsrc=rss",
+     "time": "2026-11-23T16:17:09Z"
+    }
+   ]
+  },
+  {
+   "summary": "CrowdStrike Holdings reports an earnings beat and revenue outperformance.",
+   "category": "contract",
+   "firstSeen": "2026-11-23T12:04:00Z",
+   "publishers": [
+    "AP",
+    "GuruFocus",
+    "Investing.com",
+    "Investing.com India",
+    "Investing.com Nigeria",
+    "TradingView",
+    "Yahoo Finance",
+    "شبكة تواصل الإخبارية"
+   ],
+   "assets": {
+    "CRWD": {
+     "direction": "up",
+     "confidence": 0.85,
+     "why": "CrowdStrike beat earnings and revenue estimates, signalling strong financial health."
+    }
+   },
+   "sources": [
+    {
+     "id": "4c651ec5fe732f69",
+     "publisher": "Yahoo Finance",
+     "kind": "news",
+     "title": "CrowdStrike Agrees To Buy Zscaler For $43.9 Billion. Shares Move In Opposite Directions.",
+     "url": "https://www.ibtimes.com/crowdstrike-acquire-zscaler-43-9-billion-deal-3810075?.tsrc=rss",
+     "time": "2026-11-23T12:09:36Z"
+    },
+    {
+     "id": "273b2b014c38cdc4",
+     "publisher": "GuruFocus",
+     "kind": "news",
+     "title": "Zscaler (ZS) Q1 Earnings Beat Expectations, Shares Rise Amid Cro",
+     "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNUllsd1h4c3dzQkFUZjhzUXF5WklQeUtCNUtjbGN1a3ppd214cVRsdlJRUklIdDZJQWRZeFlXUEN3MFdCZ3g5ZEIyZkpLTk84RW1YdUZHNHhTenJiemJpdHdISE1vQ1RoT2Z6M1Jvdi1CYTY3c3BPZWp6NVJtOGJzT3E2SnFlSU5qSlBYM3h3eDdCdU5leU00dHdvYXFOQnA2UjF3c0o5eUZwbHhQR3VCOUh5OXVIc01RSFE?oc=5",
+     "time": "2026-11-23T12:04:26Z"
+    },
+    {
+     "id": "f92c0f3abeb6a4df",
+     "publisher": "Yahoo Finance",
+     "kind": "news",
+     "title": "CrowdStrike to Buy Zscaler in $44 Billion All-Stock Deal. Why They’re Better Off Together.",
+     "url": "https://finance.yahoo.com/m/c15198fc-46aa-317e-ad7d-cc5e670695f9/crowdstrike-to-buy-zscaler-in.html?.tsrc=rss",
+     "time": "2026-11-23T12:04:00Z"
+    },
+    {
+     "id": "e2e18482c574af40",
+     "publisher": "TradingView",
+     "kind": "news",
+     "title": "Zscaler Q1 Revenue Rises 20% as CrowdStrike Acquisition Agreement Announced",
+     "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxPSm9PT2FYaFpza2lIemNhakYtSkhqUlRITmdwOVR5ejdpZkdyQU9HUDRFVGsxUkRWYnpDYVdNakZtUXA0Wm4xYnNpV2NNU1lXSHpxdVh6RUZXTmNJNm9xcnBoVE1qSFhmeVE5YlVCM2d6M3NBZVFYWW50N29EWGVGY3A1WHVhbF9hZTlHajBFZUYwV1owbU11X0swbnRTSzZfTHNvaVM0bGViOHZkZmE5QUNwOWE1VVRZYmRkdFNqbnd1TnVib0x4eDhWQW9Nd09NNXc?oc=5",
+     "time": "2026-11-23T12:43:00Z"
+    },
+    {
+     "id": "741778701d0991d8",
+     "publisher": "AP",
+     "kind": "news",
+     "title": "Crowdstrike to acquire Zscaler in a $44 billion deal that would create a cybersecurity giant",
+     "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQekFodWNTV2dTaVZ6VDJScmUybjJ3QXRURFJjeVNtQVBmOEJkYUZTNnFlMnNKalRWdFdXOWVwTjg1TFU3THJIOU9hSXNtSXZCczVaT0xDYnNKUEJUYXFXbVpTUkhTNWRFb3VIa1RDcHdOMzB4ZVV4cTZ6STBQZ2RWLWNPT2U1RGRHYjIxNEZ1QlFXQXZJMDhJeHdDLUFUc2tSUjJoejc1dGhzTWtkUS1Hb3V1V1hKbXplV3J2Zw?oc=5",
+     "time": "2026-11-23T13:05:00Z"
+    }
+   ]
+  },
+  {
+   "summary": "Traders price out expectations of a larger 50bp Fed rate hike, easing pressures across equities and risk assets.",
+   "category": "central_bank_hawkish",
+   "firstSeen": "2026-11-10T09:39:09Z",
+   "publishers": [
+    "13WHAM-TV",
+    "1470 & 100.3 WMBD",
+    "24/7 Wall St.",
+    "93.3 The Drive",
+    "ABC News - Breaking News, Latest News and Videos",
+    "ABC7 New York",
+    "AFP.com",
+    "AL Circle",
+    "AMBCrypto",
+    "ANI News",
+    "AOL.com",
+    "AP",
+    "APAC Media",
+    "ARYnews.tv",
+    "ASHARQ AL-AWSAT English",
+    "Action Forex",
+    "AdvisorHub",
+    "Aktualita.co",
+    "Al Jazeera",
+    "Altcoin Buzz",
+    "American Banker",
+    "Anadolu Ajansı",
+    "Asia News Network",
+    "Asianet Newsable",
+    "Axios",
+    "AzerNews",
+    "BNN Bloomberg",
+    "Baltimore Sun",
+    "Bangladesh Post",
+    "Barchart.com",
+    "Barron's",
+    "BeInCrypto",
+    "Beinsure",
+    "Benzinga",
+    "Big News Network.com",
+    "BigGo Finance",
+    "Bilyonaryo Business",
+    "Binance",
+    "Bitbo",
+    "Bitcoin Foundation",
+    "Bitcoin Magazine",
+    "Bitcoin News",
+    "Bitcoin Sistemi",
+    "Bloomberg",
+    "Bloomberg.com",
+    "Bradenton Herald",
+    "Brave New Coin",
+    "Breakingthenews.net",
+    "Breitbart News",
+    "Briefs Finance",
+    "BullionVault",
+    "Business Day",
+    "Business Insider",
+    "Business Recorder",
+    "Business Standard",
+    "Business Today",
+    "Business Upturn",
+    "BusinessLine",
+    "BusinessToday Malaysia",
+    "Businessamlive",
+    "Businesskorea",
+    "CFO Dive",
+    "CNA",
+    "CNBC",
+    "CNBC TV18",
+    "CediRates",
+    "Central Oregon Daily",
+    "Chosunbiz",
+    "Coin Gabbar",
+    "CoinCodex",
+    "CoinDesk",
+    "CoinGape",
+    "CoinMarketCap",
+    "Coinpaper",
+    "Coinpedia",
+    "Cointribune",
+    "Crowdfund Insider",
+    "Crypto Briefing",
+    "Crypto News",
+    "CryptoDaily",
+    "CryptoPotato",
+    "CryptoRank",
+    "CryptoSlate",
+    "CryptoTicker.io",
+    "Cryptonews.net",
+    "CurrencyNews.co.uk",
+    "DD News",
+    "DT Next",
+    "Daily Voice Of Asia",
+    "Dalal Street Investment Journal",
+    "Decrypt",
+    "Demokratis.co.id",
+    "Demócrata",
+    "ETV Bharat",
+    "Economies.com",
+    "Euronext Markets: Real-time Stock Market Data | live",
+    "Exchange Rates UK",
+    "FOX 17 West Michigan News",
+    "FOX 9 Minneapolis-St. Paul",
+    "FXEmpire",
+    "FXLeaders",
+    "FXStreet",
+    "Finance & Commerce",
+    "FinanceFeeds",
+    "Finimize",
+    "Firstpost",
+    "Forbes",
+    "Forbes Middle East",
+    "Foreign Policy Journal",
+    "Forex Factory",
+    "Fox Business",
+    "Free Malaysia Today",
+    "Free Press Journal",
+    "Gadgets 360",
+    "Global Banking & Finance Review",
+    "Goldman Sachs",
+    "Gulf Business",
+    "Gulf Today",
+    "GuruFocus",
+    "Hindustan Times",
+    "Hiru News",
+    "Hokanews",
+    "Honolulu Star-Advertiser",
+    "IBTimes India",
+    "IDNFinancials",
+    "Incrypted",
+    "IndexBox",
+    "India's News.Net",
+    "IndiaIPO",
+    "IndianEagle",
+    "Indianapolis Business Journal",
+    "Informat.ro",
+    "Insurance Business",
+    "InsuranceNewsNet",
+    "International Business Times",
+    "International Business Times Australia",
+    "Investing News Network",
+    "Investing.com",
+    "Investing.com Australia",
+    "Investing.com Canada",
+    "Investing.com India",
+    "Investing.com Nigeria",
+    "Investing.com UK",
+    "InvestmentNews",
+    "Investor Strategy News",
+    "Investor's Business Daily",
+    "Invezz",
+    "Jagran Josh",
+    "JournalArta",
+    "KABB",
+    "KATV",
+    "KDNL",
+    "KELO-AM",
+    "KLSE Screener",
+    "KQ2",
+    "KRDO",
+    "KSHB 41 Kansas City",
+    "KSL",
+    "KSL News",
+    "KTVN",
+    "KXLH News Helena",
+    "Kalshi News",
+    "Kathleen Hays Presents: Central Bank Central",
+    "Kiplinger",
+    "Kitco",
+    "KuCoin",
+    "Latest news from Azerbaijan",
+    "Latin Times",
+    "Limapagi",
+    "LinkedIn",
+    "Livemint",
+    "Livewire Markets",
+    "London South East",
+    "Loveland Reporter-Herald",
+    "MLQ.ai",
+    "Magnolia Tribune",
+    "Malay Mail",
+    "Malaya Business Insight",
+    "Manila Bulletin",
+    "MarketWatch",
+    "Metrobank Wealth Insights",
+    "Mezha.net",
+    "Mining.com",
+    "Mining.com.au",
+    "MiningMX",
+    "MishTalk",
+    "Mitrade",
+    "Moneycontrol.com",
+    "Moomoo",
+    "Morning Brew",
+    "Mortgage Professional America",
+    "NAI500",
+    "NBC26",
+    "NDTV Profit",
+    "Nacionale",
+    "Nation Thailand",
+    "New Hampshire Union Leader",
+    "New Jersey Business & Industry Association",
+    "New York Post",
+    "News Channel 5 Nashville",
+    "News24",
+    "NewsBytes",
+    "Newsday",
+    "Newsmax",
+    "Newsquawk",
+    "Newswav",
+    "Nikkei Asia",
+    "Norada Real Estate Investments",
+    "Northeast Mississippi Daily Journal",
+    "Northwest Arkansas Democrat-Gazette",
+    "Oz Arab Media",
+    "People's Daily Online",
+    "Pintu",
+    "Pluang",
+    "Press of Atlantic City",
+    "Profit by Pakistan Today",
+    "Public TV English",
+    "Quartz",
+    "RTE.ie",
+    "RTHK News",
+    "RTL Today",
+    "RVBusiness",
+    "RealEstateNews.com",
+    "Realtor.com",
+    "Rediff MoneyWiz",
+    "Reuters",
+    "Rock Hill Herald",
+    "Rolling Out",
+    "SBS 뉴스",
+    "SRN News",
+    "SSBCrack",
+    "SchiffGold.com",
+    "Scotsman Guide",
+    "Scripps News",
+    "Seeking Alpha",
+    "Serrari Group",
+    "Sharecafe",
+    "Simply Wall St",
+    "Social News XYZ",
+    "South Florida Reporter",
+    "Startup Fortune",
+    "Stock Titan",
+    "Stocktwits",
+    "StoneX",
+    "StreetInsider",
+    "TechJuice",
+    "The American Conservative",
+    "The Arkansas Democrat-Gazette",
+    "The Business Times",
+    "The Crypto Times",
+    "The Dark Side Of The Boom",
+    "The Economic Times",
+    "The Edge Malaysia",
+    "The Financial Express",
+    "The Globe and Mail",
+    "The Hill",
+    "The Hindu",
+    "The Independent",
+    "The Kashmir Monitor",
+    "The Korea Herald",
+    "The Korea Times",
+    "The Market Periodical",
+    "The Mighty 790 KFGO",
+    "The Mortgage Reports",
+    "The Motley Fool",
+    "The National",
+    "The Real Economy Blog",
+    "The San Joaquin Valley Sun",
+    "The Seattle Times",
+    "The Shillong Times",
+    "The South Shore Press",
+    "The Standard (HK)",
+    "The Star",
+    "The Straits Times",
+    "The Sunday Guardian",
+    "The Times",
+    "The Times of India",
+    "The Washington Post",
+    "TheBull.com.au",
+    "TheStreet",
+    "Times Now",
+    "TipRanks",
+    "TorFX News",
+    "Traders Union",
+    "TradingKey",
+    "TradingNEWS",
+    "TradingPedia",
+    "TradingView",
+    "Türkiye Today",
+    "U.Today",
+    "UA.NEWS",
+    "US News Money",
+    "USA Today",
+    "UrduPoint",
+    "VT Markets",
+    "ValueWalk",
+    "Vietnam.vn",
+    "Virginia Business",
+    "WBFF",
+    "WCTI",
+    "WHBL News",
+    "WKZO",
+    "WPBN",
+    "WSJ",
+    "WTOP News",
+    "WTVB",
+    "WXYZ Channel 7",
+    "Washington Examiner",
+    "Wisevoter",
+    "XTB.com",
+    "Xinhua",
+    "Yahoo",
+    "Yahoo Finance",
+    "Yahoo Finance Australia",
+    "Yahoo Finance Singapore",
+    "Zawya",
+    "ad-hoc-news.de",
+    "bdnews24.com",
+    "blockchain.news",
+    "bloomingbit",
+    "blue News",
+    "bsinews.id",
+    "cbs19.tv",
+    "eNCA",
+    "finance.biggo.com",
+    "fiscal.ai",
+    "https://streamlinefeed.co.ke/",
+    "iHeart",
+    "kaohoon international",
+    "marketscreener.com",
+    "news.sbs.co.kr",
+    "newsalert.com.pk",
+    "qz.com",
+    "richtv.io",
+    "scanx.trade",
+    "streamlinefeed.co.ke",
+    "tippinsights",
+    "www.equiti.com",
+    "www.foreignpolicyjournal.com",
+    "www.jordannews.jo",
+    "www.thenationalnews.com",
+    "www.tmgm.com",
+    "www.tokenpost.com",
+    "تسنیم",
+    "سانا",
+    "شبكة تواصل الإخبارية",
+    "صحيفة مال",
+    "富途牛牛",
+    "巴士的報",
+    "联合早报",
+    "아시아경제",
+    "재경일보",
+    "조선일보",
+    "파이낸셜뉴스"
+   ],
+   "assets": {
+    "BTC/USD": {
+     "direction": "down",
+     "confidence": 0.85,
+     "why": "Hawkish Fed policy signals and ETF outflows weigh heavily on Bitcoin."
+    },
+    "ETH/USD": {
+     "direction": "down",
+     "confidence": 0.85,
+     "why": "Hot inflation and rate hike fears trigger heavy long liquidations and pressure crypto prices."
+    },
+    "SOL/USD": {
+     "direction": "down",
+     "confidence": 0.8,
+     "why": "Hawkish Fed rate hike expectations create a stronger dollar and pressure risk assets."
+    },
+    "NVDA": {
+     "direction": "down",
+     "confidence": 0.8,
+     "why": "Hawkish Fed commentary and rate hike expectations weigh on risk-on growth and tech stocks."
+    },
+    "MSFT": {
+     "direction": "up",
+     "confidence": 0.75,
+     "why": "Priced-out hawkish Fed expectations relieve pressure on major tech and growth assets."
+    },
+    "AAPL": {
+     "direction": "down",
+     "confidence": 0.75,
+     "why": "Hawkish Fed rate hike outlook weighs heavily on broad tech and growth stocks"
+    },
+    "AMZN": {
+     "direction": "up",
+     "confidence": 0.75,
+     "why": "Dovish adjustment in rate hike bets supports broader large-cap tech growth."
+    },
+    "AMAT": {
+     "direction": "down",
+     "confidence": 0.7,
+     "why": "Broader tech sell-off driven by hawkish Fed outlook."
+    },
+    "GOOGL": {
+     "direction": "down",
+     "confidence": 0.75,
+     "why": "Hawkish Fed commentary and potential rate hikes pressure growth and tech stocks."
+    },
+    "META": {
+     "direction": "down",
+     "confidence": 0.75,
+     "why": "Higher interest rate expectations and hot CPI weigh on growth tech stocks."
+    },
+    "TSLA": {
+     "direction": "down",
+     "confidence": 0.8,
+     "why": "Hawkish Fed rate hike expectations put downward pressure on major growth and tech stocks."
+    },
+    "NEM": {
+     "direction": "up",
+     "confidence": 0.65,
+     "why": "Gold miners benefit as rate hike bets are pared back, supporting gold prices."
+    },
+    "SPWO": {
+     "direction": "down",
+     "confidence": 0.75,
+     "why": "Broad equities tumble due to rising yields and hawkish rate bets."
+    },
+    "AEM": {
+     "direction": "up",
+     "confidence": 0.65,
+     "why": "Gold miners benefit as rate hike bets are pared back, supporting gold prices."
+    },
+    "AMD": {
+     "direction": "down",
+     "confidence": 0.85,
+     "why": "Hot PPI inflation reading and hawkish rate fears crush semiconductor sector, with AMD tumbling."
+    },
+    "CVX": {
+     "direction": "down",
+     "confidence": 0.6,
+     "why": "Broad macro pressure from hawkish Fed comments can negatively impact commodities."
+    },
+    "INTC": {
+     "direction": "down",
+     "confidence": 0.65,
+     "why": "Higher interest rate expectations put pressure on tech/growth stocks."
+    }
+   },
+   "sources": [
+    {
+     "id": "d9df815319391cbb",
+     "publisher": "The Edge Malaysia",
+     "kind": "news",
+     "title": "Fed’s Waller backs rate hike in December, says open to larger move",
+     "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE9aSnktcDlXbzBpMU1SQkZvRktGTnkyX1J4LU92VGxBZVVhcGQtRTVEaDBqLVRPS213cFpTMkFad1BkS0xpdmVVbGU2bVhsUTA2?oc=5",
+     "time": "2026-11-10T09:39:09Z"
+    },
+    {
+     "id": "252cbcbd6b6cd044",
+     "publisher": "Seeking Alpha",
+     "kind": "news",
+     "title": "Waller backs December rate hike, says 50-basis-point move may be on the table (TLT:NASDAQ)",
+     "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOc004NEQ1TjItUHFWanNEbWxpTlpFQ0tIaUcxZDJpTkQyZ3ppdHZtZ280ZlpnQ0NWU3g4Nms1M1dTVEdjZEpwbXcwUVBlRkRzTjNyWEctZEdNT2JwSFlSeGJIWFRTZXB2NEczeUtKY1dIQU9JbFFDaHQyOUxHZ05kU1h4QTQxQzlmSFFjRTQ0OTlaczl3NGhiMHNidko2SGVrWHZaTk8tZlN1OXR2S29HRWVMcXo?oc=5",
+     "time": "2026-11-10T10:10:00Z"
+    },
+    {
+     "id": "1816a3bd028bffbd",
+     "publisher": "MLQ.ai",
+     "kind": "news",
+     "title": "Fed's Waller backs a December rate hike and says a half-point move should be considered if core inflation runs hot",
+     "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxQMWRZU0pVdkJiU1J1MUdOX3Y5QVF1cHpRdG5zTndjOE4xaWhuVFVWSzFZem9zNHdFVjBhYk5TZFN1VEN2RnZfdF9UV21Za09HM2hZTGpMXzUzTG01ZzZ0QzFrNy1NZENQSEsyQjNCb1plSWtWX2lSQW9xSzZXbk5zelQ4S01mRmVqMU9NTzhHb3ZWbW9yUVdOMkhLemVTSmlUNGg5bFNXTjRiVmFYenVJekRkeXluZVNhVVZNYWdYMTc5MDM4NnV3RldkSW5hS2c?oc=5",
+     "time": "2026-11-10T10:44:05Z"
+    },
+    {
+     "id": "177d64cb4badd873",
+     "publisher": "FXStreet",
+     "kind": "news",
+     "title": "Fed's Waller signals risk of larger rate hikes as inflation stays high",
+     "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNbk83dS05U3dLMmRJelhNR2Q1dndmRTExMDI4ajVLNEM3bWNTZktYV1gydFhjOVhzR19wUm55NXFMQmF4ME56VUJDSlFKRkVHZXR4TmxSSUVwMmFZRWVsbnh3VnVaWTZlQ3JZeFdzSnNmR2RuSzJoeUEyZGprblZ5bHhBMzI4eG5iMGNPNjRuemduS1NvdTh0bzg3SVByc1ZCdm5uUnJITQ?oc=5",
+     "time": "2026-11-10T10:43:44Z"
+    },
+    {
+     "id": "a3ff32444bd7c9b3",
+     "publisher": "ANI News",
+     "kind": "news",
+     "title": "Fed Governor Christopher J. Waller favors 25 bps rate hike in December; 50 bps may be needed if inflation persists",
+     "url": "https://news.google.com/rss/articles/CBMi9gFBVV95cUxQZVUtaWxLdmtZVGV6bDBwaDRTRk9saVd1R1FlUXowOVV1eVp6Qks5LWZVN0ZzS0Q1U09yemlnTVZjaEVlempESldNVEo4RE5Fb0R5OTAtU2R2cW5zMnF1SllpTXJUR3BDeWZYUjQ2U1VkZ2kzZ3VkNjRDQzhobEpSaW45NWlTSTlvMmhhYXRqUFNFeWRKRWJlUDdaMmNfR0kxOEZSa1JoS0syVFUtNG84Q3B4akh0dWNQajZ1S05FSlN2RFZYSmFLcjY0dzdNNi1wYmRqLVVvQVBOZkRJeURwajN4TjlkZUZ0blJmdktvMEFuLTFnMmc?oc=5",
+     "time": "2026-11-10T10:41:00Z"
+    }
+   ]
+  },
+  {
+   "summary": "ConocoPhillips sells its Norway and Teesside assets to Vår Energi for $4.4 billion to fund future buybacks.",
+   "category": "other",
+   "firstSeen": "2026-11-23T13:35:00Z",
+   "publishers": [
+    "BigGo Finance",
+    "ChemAnalyst",
+    "Quantum Commodity Intelligence"
+   ],
+   "assets": {
+    "COP": {
+     "direction": "up",
+     "confidence": 0.65,
+     "why": "Asset sale generates strong liquidity to fund upcoming share buybacks."
+    }
+   },
+   "sources": [
+    {
+     "id": "6446b5858f4453ac",
+     "publisher": "ChemAnalyst",
+     "kind": "news",
+     "title": "ConocoPhillips Sells Norway and Teesside Assets for $4.4 Billion",
+     "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQZHh1SzE1VmpDSXNmVHJPVF9kWWUyTlQ0ckphRzc3eThhQjVqWEs0MTg1NHFUUmY5d0FZSzVrOEltdEFtdmdKYVRMemRSQlZxYmU1NWkxYVRhX3c3M1NSSHdwb3d1TTA5VnF4bEpXX0IwVUllVnNXR1VYLXFzN2Vlb2htMDZzR0dXcWtiTEF0cnNpaC00REdPc2NRamhPdGhvQ2RYUnA0dDlEd01TUFVfS3BPUDI?oc=5",
+     "time": "2026-11-23T13:49:12Z"
+    },
+    {
+     "id": "d0172cfb415f4f82",
+     "publisher": "Quantum Commodity Intelligence",
+     "kind": "news",
+     "title": "Var Energi takes over Ekofisk in ConocoPhillips Norway oil deal",
+     "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNWXFJS0tnWEdOeHI4OXRwSXY0YUNUdUNIN0xvQ05aMzBZUTFWYjVHU29EYXFsV0ZDak1hWFlKTjA0M0lnalY5ZUZtY1BWbUFRQVhoVkFic3hEVUpMVFdZQ2p3eEtvSlJUNlZWem4yZU5oOHg5RFhPaEd3ZHVOZ2czc2FTTW9HdHA2eHVoUl8zcVpRMllGOU1hUXRZc2dSYmlIQkI1WjJpX0ZCUQ?oc=5",
+     "time": "2026-11-23T13:43:56Z"
+    },
+    {
+     "id": "a8b1c14fe3965711",
+     "publisher": "BigGo Finance",
+     "kind": "news",
+     "title": "ConocoPhillips Sells Norway Unit to Vår Energi for $4.43 Billion, Funds 2027 Buybacks",
+     "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE9ld1NveUhlSGI3TFQxZW1Cc1NZeXFUSUtYLUR6dFNpbUNGMTVRU0YxUWt0RG1HNnFLeE1oWGRLVGZidFNQM1pfV200LUx5bF9yZkl0czNIdk5obmxWZlBxbjRmSm11N2NYT1BXbHRiSndleW83c2c?oc=5",
+     "time": "2026-11-23T13:35:00Z"
     }
    ]
   },
