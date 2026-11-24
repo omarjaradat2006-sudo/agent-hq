@@ -895,3 +895,17 @@ def test_crypto_trailing_raises_stop(monkeypatch, tmpdirs):
     assert t["stop"] == pytest.approx(116.4) and ("cancel", "s1") in calls
     b.trail_crypto(t, 119.0)                                                     # no new high: stop stays
     assert t["stop"] == pytest.approx(116.4)
+
+
+def test_dashboard_with_open_holdings_trailing_and_bracket(monkeypatch, tmpdirs):
+    fake = FakeAlpaca()
+    B = wire(monkeypatch, fake, [])
+    import trading_bot.report as R
+    b = B.Bot()
+    base = {"asset": "stock", "status": "open", "qty": 10, "entryPrice": 100.0, "openedAt": T(NOW), "stop": 97.0,
+            "news": {"summary": "x"}, "reason": {}}
+    b.ledger["trades"] = [{**base, "id": "a", "symbol": "NVDA", "trail": 3.0, "target": None},
+                          {**base, "id": "b", "symbol": "XOM", "target": 106.0}]
+    st = R.write(b)
+    h = " | ".join(st["plain"]["holding"])
+    assert "NVDA" in h and "trailing stop" in h and "sells at $106.00" in h
