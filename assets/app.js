@@ -637,10 +637,39 @@
       catch (e) { toast(e.message === "token" ? "GitHub token expired: open settings" : e.message === "big" ? "Video is over 60 MB: trim it first" : "Couldn't save, try again"); }
     };
   }
+  function inspoPrompt(items) {
+    const RAW = "https://raw.githubusercontent.com/omarjaradat2006-sudo/agent-hq/main/";
+    const head = `Inspo build for Bounce Theory / Ambient Escape (from Agent HQ, ${new Date().toLocaleDateString("en-CA")}).
+Use the inspo-builder skill. If it isn't installed, first read it from the repo: https://github.com/omarjaradat2006-sudo/agent-hq/blob/main/skills/inspo-builder/SKILL.md and follow it exactly.
+
+Build EVERY video below into a real template on the server's Engine 2 (Python: Skia drawing + pymunk physics + numpy + synth audio, Kokoro voice for narration) that looks and sounds like its inspiration: same idea, energy, pacing, colours and sound, not a copy. Study each video frame by frame (contact sheets), write the module in agent-hq/data/youtube/auto_templates/, render and compare side by side until it matches, then push to main so it joins the daily rotation, add a sample + set the card to "built" in data/youtube/inspo.json, and add an approved board idea so the lineup uses it first. Don't stop to ask me; finish with a short table of what you built.
+`;
+    const body = items.map((it, k) => { const a = it.analysis || {};
+      return `
+=== VIDEO ${k + 1}  (id ${it.id}, channel: ${it.channel || "Bounce Theory"}) ===
+Inspiration: ${it.link || (it.file ? RAW + it.file : "(no link)")}
+What I like about it: ${it.note || "-"}${it.rejectNote ? `\nLast build was wrong, fix this: ${it.rejectNote}` : ""}
+Make sure it looks like: ${a.summary || "(study the video)"}
+Server breakdown (Gemini watched it with sound):
+- Idea / physics: ${a.physics || "-"}
+- Hook (first 2 s): ${a.hook || "-"}
+- Pacing / ending: ${a.pacing || "-"}
+- Colours: ${a.colours || "-"}
+- Sound: ${a.sound || "-"}
+- Length: ${a.length_s || "?"} s
+- Graphics it needs: ${(a.graphics || []).join(", ") || "-"}
+- Build notes: ${a.spec || "-"}`; }).join("\n");
+    return head + body + "\n";
+  }
+  function copyText(txt, c, msg) {
+    return async () => { try { await navigator.clipboard.writeText(txt); toast(msg); } catch { const ta = el("textarea"); ta.value = txt; ta.rows = 8; ta.style.width = "100%"; c.append(ta); ta.select(); toast("Select and copy the text below."); } };
+  }
   function vInspo(t, body) {
-    const box = t.inspo || { items: [] }; const items = [...(box.items || [])].sort((a, b) => (b.addedAt || "").localeCompare(a.addedAt || ""));
+    const box = t.inspo || { items: [] }; const all = [...(box.items || [])].sort((a, b) => (b.addedAt || "").localeCompare(a.addedAt || ""));
+    const WAIT = ["new", "analyzed", "needs_upload", "failed", "rejected", "ready", "building"];
+    const waiting = all.filter(i => WAIT.includes(i.status) && (i.link || i.file));
     const add = el("div", "card brief"); add.append(el("div", "label", "Inspo inbox"));
-    add.append(el("div", "why", "Drop a TikTok/Instagram link or the video itself. Every 3 days (2:47 PM) the server watches it, builds a template in the same style, test-renders it and puts a sample here for you to approve."));
+    add.append(el("div", "why", "Drop a TikTok/Instagram link or the video. The server watches it and writes a breakdown (every 3 days, 2:47 PM). Then copy the build prompt into Claude Code on your laptop: it builds each video into a template, pushes it into the daily rotation and puts a sample here. You approve it and it leaves the inbox."));
     const link = el("input"); link.placeholder = "Paste a TikTok / Instagram / YouTube link"; link.style.width = "100%";
     const file = el("input"); file.type = "file"; file.accept = "video/*";
     const ch = el("select"); ["Bounce Theory", "Ambient Escape"].forEach(c => { const o = el("option", null, c); o.value = c; ch.append(o); });
@@ -654,41 +683,38 @@
       try {
         const path = file.files[0] ? await uploadInspoFile(file.files[0], id) : null;
         t.inspo = await commitInspo(b => b.items.push({ id, channel: ch.value, link: link.value.trim() || null, file: path, note: note.value.trim() || null, addedAt: new Date().toISOString().replace(/\.\d+Z$/, "Z"), status: "new" }), "inspo " + id);
-        toast("Added. The server picks it up on its next 3-day run."); renderPanel();
+        toast("Added to the inbox."); renderPanel();
       } catch (e) { go.disabled = false; toast(e.message === "token" ? "GitHub token expired: open settings" : e.message === "big" ? "Video is over 60 MB: trim it first" : "Couldn't save, try again"); }
     };
     [link, file, ch, note, go].forEach(x => add.append(x));
+    if (waiting.length) {
+      const row = el("div", "row"); const all1 = el("button", "btn primary", `Copy build prompt for all ${waiting.length} waiting`);
+      all1.onclick = copyText(inspoPrompt(waiting), add, "Copied. Paste it into Claude Code (opened in Downloads\\YOUTUBE HQ)."); row.append(all1); add.append(row);
+      const un = waiting.filter(i => !i.analysis).length;
+      if (un) add.append(el("div", "small", `${un} of them have no server breakdown yet: Claude studies those from scratch (fine), or wait for the server's next run.`));
+    }
     body.append(add);
-    const LBL = { new: "Waiting for the next run", building: "Building…", needs_upload: "Upload the video", ready: "Ready: approve or reject", approved: "Approved: goes live in the next Bounce batch", live: "Live in the lineup", rejected: "Rejected: build it in Claude", failed: "Couldn't build: build it in Claude" };
-    if (!items.length) { body.append(empty("Inbox empty", "Add your first inspo video above.")); return; }
-    items.forEach(it => {
+    const LBL = { new: "Waiting: copy the build prompt", analyzed: "Breakdown ready: copy the build prompt", building: "Server is reading it…", needs_upload: "Link blocked on the server: Claude can still download it, or upload the file", ready: "Waiting: copy the build prompt", failed: "Waiting: copy the build prompt", rejected: "Needs fixes: copy the build prompt", built: "Built and in rotation: approve it", done: "Approved", live: "Approved", approved: "Approved" };
+    const shown = all.filter(i => !["done", "live", "approved"].includes(i.status));
+    if (!shown.length) { body.append(empty("Inbox clear", all.length ? "Everything you added is built and approved." : "Add your first inspo video above.")); return; }
+    shown.forEach(it => {
       const c = el("article", "card"); const a = it.analysis || {};
       c.append(el("h3", null, a.summary || it.note || it.link || it.id));
-      c.append(el("div", "small", [it.channel, LBL[it.status] || it.status, it.score ? `match ${it.score}/10` : null, it.addedAt ? "added " + ago(it.addedAt) : null].filter(Boolean).join(" · ")));
+      c.append(el("div", "small", [it.channel, LBL[it.status] || it.status, it.template ? "template " + it.template : null, it.addedAt ? "added " + ago(it.addedAt) : null].filter(Boolean).join(" · ")));
       if (it.link) { const l = el("a", null, "Original link"); l.href = it.link; l.target = "_blank"; l.rel = "noopener"; c.append(l); }
-      if (it.sample) { const v = el("video"); v.src = ROOT + it.sample; v.controls = true; v.playsInline = true; v.preload = "metadata"; v.style.width = "100%"; v.style.maxWidth = "320px"; v.style.display = "block"; c.append(v); }
-      if (it.explain) c.append(el("div", "why", it.explain));
+      if (it.sample && it.status === "built") { const v = el("video"); v.src = ROOT + it.sample; v.controls = true; v.playsInline = true; v.preload = "metadata"; v.style.width = "100%"; v.style.maxWidth = "320px"; v.style.display = "block"; c.append(v); }
+      if (it.status === "built" && it.explain) c.append(el("div", "why", it.explain));
       if ((it.graphics || []).length) c.append(el("div", "small", "Graphics: " + it.graphics.join(", ")));
-      if (a.physics || a.hook) { const d = el("details"); d.append(el("summary", null, "What the server saw")); d.append(el("div", "script", ["Idea: " + (a.physics || ""), "Hook: " + (a.hook || ""), "Pacing: " + (a.pacing || ""), "Colours: " + (a.colours || ""), "Sound: " + (a.sound || ""), "Length: " + (a.length_s || "") + " s"].join("\n"))); c.append(d); }
-      if (it.error && it.status !== "ready") c.append(el("div", "small", "Server: " + it.error));
+      if (a.physics || a.hook) { const d = el("details"); d.append(el("summary", null, "Server breakdown")); d.append(el("div", "script", ["Idea: " + (a.physics || ""), "Hook: " + (a.hook || ""), "Pacing: " + (a.pacing || ""), "Colours: " + (a.colours || ""), "Sound: " + (a.sound || ""), "Length: " + (a.length_s || "") + " s"].join("\n"))); c.append(d); }
+      if (it.status === "failed" && it.error && it.builtBy) c.append(el("div", "small", "Claude: " + it.error));
       const act = el("div", "row");
-      if (it.status === "ready") {
-        const why = el("input"); why.placeholder = "If rejecting: what's wrong (optional)"; why.style.width = "100%"; c.append(why);
-        const ok = el("button", "btn primary", "Approve"); ok.onclick = inspoSave(t, b => { const x = b.items.find(i => i.id === it.id); if (x) { x.status = "approved"; x.decidedAt = new Date().toISOString(); } }, "approve inspo " + it.id, "Approved: it joins the next Bounce batch.");
-        const no = el("button", "btn", "Reject"); no.onclick = inspoSave(t, b => { const x = b.items.find(i => i.id === it.id); if (x) { x.status = "rejected"; x.rejectNote = why.value.trim() || null; x.decidedAt = new Date().toISOString(); } }, "reject inspo " + it.id, "Rejected: copy the build prompt below into Claude.");
+      if (it.status === "built") {
+        const why = el("input"); why.placeholder = "If it needs fixes: what's wrong"; why.style.width = "100%"; c.append(why);
+        const ok = el("button", "btn primary", "Approve"); ok.onclick = inspoSave(t, b => { const x = b.items.find(i => i.id === it.id); if (x) { x.status = "done"; x.decidedAt = new Date().toISOString(); } }, "approve inspo " + it.id, "Approved: it stays in the rotation.");
+        const no = el("button", "btn", "Needs fixes"); no.onclick = inspoSave(t, b => { const x = b.items.find(i => i.id === it.id); if (x) { x.status = "rejected"; x.rejectNote = why.value.trim() || "doesn't look enough like the inspiration"; x.decidedAt = new Date().toISOString(); } }, "fix inspo " + it.id, "Saved: it's back in the build prompt with your note.");
         act.append(ok, no);
-      }
-      if (it.status === "needs_upload") {
-        const f2 = el("input"); f2.type = "file"; f2.accept = "video/*"; const up = el("button", "btn primary", "Upload video");
-        up.onclick = async () => { if (!f2.files[0]) { toast("Pick the video first."); return; } if (!LS.get("hq.ghToken")) { openSettings("Connect GitHub once."); return; }
-          up.disabled = true; toast("Uploading…"); try { const p2 = await uploadInspoFile(f2.files[0], it.id); t.inspo = await commitInspo(b => { const x = b.items.find(i => i.id === it.id); if (x) { x.file = p2; x.status = "new"; delete x.error; } }, "inspo video " + it.id); toast("Uploaded. Built on the next run."); renderPanel(); } catch (e) { up.disabled = false; toast("Upload failed, try again"); } };
-        act.append(f2, up);
-      }
-      if (it.status === "failed") { const rt = el("button", "btn", "Retry on server"); rt.onclick = inspoSave(t, b => { const x = b.items.find(i => i.id === it.id); if (x) { x.status = "new"; delete x.error; } }, "retry inspo " + it.id, "Queued again for the next server run."); act.append(rt); }
-      if ((it.status === "rejected" || it.status === "failed") && it.buildPrompt) {
-        const txt = it.buildPrompt + (it.rejectNote ? `\n\nOmar's feedback on the server's try: ${it.rejectNote}` : "");
-        const b = el("button", "btn primary", "Copy build prompt"); b.onclick = async () => { try { await navigator.clipboard.writeText(txt); toast("Copied. Paste it into Claude Code on your laptop."); } catch { const ta = el("textarea"); ta.value = txt; ta.rows = 8; ta.style.width = "100%"; c.append(ta); ta.select(); toast("Select and copy the text below."); } };
-        act.append(b);
+      } else if (WAIT.includes(it.status) && (it.link || it.file)) {
+        const one = el("button", "btn", "Copy prompt for this one"); one.onclick = copyText(inspoPrompt([it]), c, "Copied. Paste it into Claude Code."); act.append(one);
       }
       if (act.childNodes.length) c.append(act);
       body.append(c);

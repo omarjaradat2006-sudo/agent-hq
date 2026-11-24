@@ -5,7 +5,7 @@ into a template he can approve. No Claude. Runs every 3 days (run_inspo.sh) and 
     python inspo.py promote    approved items go live (Bounce code -> auto_templates; fact/Ambient -> board idea)
 
 data/youtube/inspo.json  {"items": [{id, channel, link, file, note, addedAt, status, ...}]}
-status: new -> (needs_upload) -> ready (sample + explanation) -> approved -> live   |  rejected / failed (buildPrompt for Claude Code)
+status: new -> (needs_upload) -> analyzed (Gemini breakdown) -> built (Claude Code, inspo-builder skill: template live + sample) -> done (Omar approved)\n        Server-side building (old flow: ready/approved/live) only with INSPO_SERVER_BUILD=1.
 Kinds Gemini can recognise: physics (new Bounce code template on engine2), fact (narrated what-if: fact_what_if spec),
 ambient (Ambient Escape format: production notes become a board idea; the Ambient engine renders from footage).
 """
@@ -244,6 +244,8 @@ def run():
             a = analyze(v, it) or {}; it["analysis"] = a
             it["graphics"] = a.get("graphics") or []
             kind = a.get("kind")
+            if os.environ.get("INSPO_SERVER_BUILD") != "1":   # Omar's choice: Claude Code builds (inspo-builder skill); the server only watches + breaks down
+                it.update(status="analyzed", kind=kind, explain=a.get("summary")); continue
             if kind == "ambient" or it.get("channel") == "Ambient Escape":
                 it.update(status="ready", kind="ambient", explain="Ambient Escape format: the server will make it from free footage + audio layers using these production notes (no sample until the daily Ambient run).")
                 continue
