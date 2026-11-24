@@ -1,18 +1,18 @@
 {
  "team": "trading",
  "plain": {
-  "line": "Down $7,133.24 since start · 29 trades · holding: PLTR, AVAV, HLAL, SPUS, TMO, NOW, AMZN",
+  "line": "Down $6,852.33 since start · 29 trades · holding: PLTR, AVAV, HLAL, SPUS, TMO, NOW, AMZN",
   "rulesMode": "ultra",
-  "top": "Down $7,133.24 since start (-7.13%) · just holding SPY would be -4.76%",
+  "top": "Down $6,852.33 since start (-6.85%) · just holding SPY would be -4.69%",
   "up": false,
   "holding": [
-   "PLTR: 70 shares worth $11,172.39, down $120.71 (trailing stop: sells if it falls 3% from its high)",
-   "AVAV: 143 shares worth $12,731.29, up $24.31 (trailing stop: sells if it falls 3% from its high)",
-   "HLAL: 1 shares worth $65.83, down $0.44 (sells at $100.34 or stops at $60.20)",
-   "SPUS: 2 shares worth $107.84, down $0.53 (sells at $81.06 or stops at $48.64)",
-   "TMO: 16 shares worth $11,161.78, down $37.58 (trailing stop: sells if it falls 3% from its high)",
-   "NOW: 169 shares worth $15,424.61, down $72.75 (sells at $97.20 or stops at $88.95)",
-   "AMZN: 75 shares worth $18,832.50, down $532.85 (sells at $273.70 or stops at $250.46)"
+   "PLTR: 70 shares worth $11,274.90, down $18.20 (trailing stop: sells if it falls 3% from its high)",
+   "AVAV: 143 shares worth $12,791.35, up $84.37 (trailing stop: sells if it falls 3% from its high)",
+   "HLAL: 1 shares worth $66.12, down $0.15 (sells at $100.34 or stops at $60.20)",
+   "SPUS: 2 shares worth $108.25, down $0.12 (sells at $81.06 or stops at $48.64)",
+   "TMO: 16 shares worth $11,130.64, down $68.72 (trailing stop: sells if it falls 3% from its high)",
+   "NOW: 169 shares worth $15,513.35, up $16.00 (sells at $97.20 or stops at $88.95)",
+   "AMZN: 75 shares worth $18,906.75, down $458.60 (sells at $273.70 or stops at $250.46)"
   ],
   "today": [
    "Bought PLTR after the news: Reports of attacks on oil tankers in the Strait of Hormuz and a Houthi attack on a Riyadh financial center are escalating regional conflict and supply risks.",
@@ -25,18 +25,18 @@
    "Sold TSLA (stop-loss -3% hit): lost $391.96.",
    "Sold AMAT (bad news: US readies tariff hikes on China and EU goods as soon as Tuesday, sparking marke): made $69.42.",
    "Sold AMD (bad news: US readies tariff hikes on China and EU goods as soon as Tuesday, sparking marke): lost $348.50.",
-   "Scanned the news 99 times today: read 4857 headlines, found 102 that could move a stock or coin it's allowed to trade.",
+   "Scanned the news 102 times today: read 4890 headlines, found 104 that could move a stock or coin it's allowed to trade.",
    "Passed on AVAV, TSLA: already holding it.",
    "Passed on AEM, CVX, NEM, TSLA, XOM: order failed: not enough cash for one share.",
    "Passed on BTC/USD, ETH/USD: price hasn't moved the expected way yet (-3.08%).",
    "Passed on AVAV, BTC/USD, NEM: already $69,555 invested (max 75% of $93,048).",
-   "Safety rules that stepped in: bad news exit (x2), cash only no margin (x12), one position per asset (x49), max invested (x87), stop loss -3% (x1), trailing stop (x1), stock entry window (x7)."
+   "Safety rules that stepped in: bad news exit (x2), cash only no margin (x12), one position per asset (x49), max invested (x87), stop loss -3% (x1), trailing stop (x1), stock entry window (x16)."
   ],
   "watchlist": "Allowed to trade: 68 halal stocks, 5 Shariah ETFs, 9 coins.",
-  "lastScan": "2026-11-24T20:42:47Z"
+  "lastScan": "2026-11-24T20:57:58Z"
  },
  "hired": true,
- "updatedAt": "2026-11-24T20:43:07Z",
+ "updatedAt": "2026-11-24T20:58:23Z",
  "mode": "PAPER",
  "agents": [
   {
@@ -44,8 +44,8 @@
    "name": "News Scout",
    "role": "Reads X, Reddit and news feeds",
    "status": "working",
-   "doing": "Read 47 new headlines/posts, 2 market-moving stories",
-   "lastRun": "2026-11-24T20:43:06Z"
+   "doing": "Read 28 new headlines/posts, 2 market-moving stories",
+   "lastRun": "2026-11-24T20:58:20Z"
   },
   {
    "id": "analyst",
@@ -85,7 +85,7 @@
    "role": "Places paper orders on Alpaca",
    "status": "working",
    "doing": "Paper-trading bot started (Alpaca PAPER account only). Close this window to stop it.",
-   "lastRun": "2026-11-24T20:42:45Z"
+   "lastRun": "2026-11-24T20:57:57Z"
   },
   {
    "id": "coins",
@@ -105,6 +105,41 @@
   }
  ],
  "log": [
+  {
+   "t": "2026-11-24T20:58:22Z",
+   "agent": "Market Study",
+   "msg": "Market study: 14 of 82 names in uptrends; picks ABBV, COST, LLY, REGN, AAPL; Stock market is in a downtrend (SPY under its 200-day average): no new trend buys in stocks; coins in a downtrend, no new coin buys"
+  },
+  {
+   "t": "2026-11-24T20:58:20Z",
+   "agent": "News Scout",
+   "msg": "Read 28 new headlines/posts, 2 market-moving stories"
+  },
+  {
+   "t": "2026-11-24T20:57:57Z",
+   "agent": "News Scout",
+   "msg": "Agent Reach not found: news feeds + Yahoo Finance + Reddit direct (no X)"
+  },
+  {
+   "t": "2026-11-24T20:57:57Z",
+   "agent": "Trader",
+   "msg": "Paper-trading bot started (Alpaca PAPER account only). Close this window to stop it."
+  },
+  {
+   "t": "2026-11-24T20:53:26Z",
+   "agent": "News Scout",
+   "msg": "Read 2 new headlines/posts, 0 market-moving stories"
+  },
+  {
+   "t": "2026-11-24T20:48:13Z",
+   "agent": "News Scout",
+   "msg": "Read 3 new headlines/posts, 0 market-moving stories"
+  },
+  {
+   "t": "2026-11-24T20:43:09Z",
+   "agent": "Trader",
+   "msg": "Saved results to the Agent HQ dashboard"
+  },
   {
    "t": "2026-11-24T20:43:06Z",
    "agent": "News Scout",
@@ -819,63 +854,28 @@
    "t": "2026-11-23T14:41:16Z",
    "agent": "Trader",
    "msg": "Order for AVAV failed: not enough cash for one share"
-  },
-  {
-   "t": "2026-11-23T14:41:16Z",
-   "agent": "Trader",
-   "msg": "Order for AMAT failed: not enough cash for one share"
-  },
-  {
-   "t": "2026-11-23T14:41:16Z",
-   "agent": "Trader",
-   "msg": "Order for COP failed: not enough cash for one share"
-  },
-  {
-   "t": "2026-11-23T14:41:16Z",
-   "agent": "Trader",
-   "msg": "Order for PLTR failed: not enough cash for one share"
-  },
-  {
-   "t": "2026-11-23T14:41:15Z",
-   "agent": "Trader",
-   "msg": "Order for COP failed: not enough cash for one share"
-  },
-  {
-   "t": "2026-11-23T14:41:15Z",
-   "agent": "Trader",
-   "msg": "BUY CRWD: CrowdStrike Holdings reports an earnings beat and revenue outperformance. | volume 5.3x normal, price -3.41% since the news | TradingAgents not used (ultra mode)"
-  },
-  {
-   "t": "2026-11-23T14:41:14Z",
-   "agent": "News Scout",
-   "msg": "Read 148 new headlines/posts, 3 market-moving stories"
-  },
-  {
-   "t": "2026-11-23T14:41:14Z",
-   "agent": "News Analyst",
-   "msg": "Gemini triage failed, skipping this batch: All Gemini models failed. Last error: Gemini HTTP 503 on gemini-3.1-flash-lite: {\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experien"
   }
  ],
  "brief": {
   "date": "Tue Nov 24",
-  "createdAt": "2026-11-24T20:43:07Z",
-  "headline": "Paper account -$2,776 today (-2.90%), -7.13% total vs SPY -4.76% · 7 open",
+  "createdAt": "2026-11-24T20:58:23Z",
+  "headline": "Paper account -$2,495 today (-2.61%), -6.85% total vs SPY -4.69% · 7 open",
   "summary": "4 trade(s) closed today, 5/22 winners overall. TradingAgents checks used today: 0/5.",
   "notes": [
    "X/Reddit reader: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
   ]
  },
  "account": {
-  "equity": 92866.76,
+  "equity": 93147.67,
   "cash": 23353.86,
   "startEquity": 100000.0,
   "startedAt": "2026-11-10T01:51:53Z",
-  "dayPnl": -2775.93,
-  "dayPct": -2.9,
-  "totalPnl": -7133.24,
-  "totalPct": -7.13,
-  "spyPct": -4.76,
-  "vsSpyPct": -2.37
+  "dayPnl": -2495.02,
+  "dayPct": -2.61,
+  "totalPnl": -6852.33,
+  "totalPct": -6.85,
+  "spyPct": -4.69,
+  "vsSpyPct": -2.17
  },
  "status": {
   "killed": false,
@@ -883,7 +883,7 @@
   "deepUsed": 0,
   "deepMax": 5,
   "social": {
-   "at": "2026-11-24T20:42:50Z",
+   "at": "2026-11-24T20:58:01Z",
    "items": 0,
    "source": "Reddit via Tradestie + ApeWisdom (direct Reddit blocks servers; X needs Agent Reach)",
    "problems": [
@@ -891,13 +891,13 @@
     "r/stocks: HTTP 403 https://www.reddit.com/r/stocks/new.json: <body class=theme-beta><div><"
    ],
    "wsb": {
-    "at": "2026-11-24T20:42:50Z",
+    "at": "2026-11-24T20:58:02Z",
     "tickers": 50,
     "items": 0,
     "key": false
    },
    "ape": {
-    "at": "2026-11-24T20:42:51Z",
+    "at": "2026-11-24T20:58:02Z",
     "tickers": 198,
     "items": 0,
     "problems": []
@@ -966,8 +966,8 @@
     "taSummary": ""
    },
    "stopOrderId": "15707459-b20e-424f-8442-ec4330bd1527",
-   "lastPrice": 159.721,
-   "unrealizedPct": -1.0
+   "lastPrice": 161.13,
+   "unrealizedPct": -0.12
   },
   {
    "id": "ahq-AVAV-20261124162010",
@@ -1067,8 +1067,8 @@
     "taSummary": ""
    },
    "stopOrderId": "6612a194-4f8c-4bf6-8d0f-65306748718e",
-   "lastPrice": 89.2,
-   "unrealizedPct": 0.38
+   "lastPrice": 89.45,
+   "unrealizedPct": 0.66
   },
   {
    "id": "ahq-core-HLAL-20261124145913",
@@ -1096,8 +1096,8 @@
     "publishers": [],
     "tradingAgents": "not used (core)"
    },
-   "lastPrice": 65.83,
-   "unrealizedPct": -0.66
+   "lastPrice": 66.12,
+   "unrealizedPct": -0.23
   },
   {
    "id": "ahq-core-SPUS-20261124145913",
@@ -1125,8 +1125,8 @@
     "publishers": [],
     "tradingAgents": "not used (core)"
    },
-   "lastPrice": 53.93,
-   "unrealizedPct": -0.47
+   "lastPrice": 54.13,
+   "unrealizedPct": -0.1
   },
   {
    "id": "ahq-TMO-20261124145909",
@@ -1166,8 +1166,8 @@
     "taSummary": ""
    },
    "stopOrderId": "a2d5311a-a3d9-48a5-a771-640f9165b3c4",
-   "lastPrice": 697.26,
-   "unrealizedPct": -0.39
+   "lastPrice": 695.79,
+   "unrealizedPct": -0.6
   },
   {
    "id": "ahq-NOW-20261123202036",
@@ -1236,8 +1236,8 @@
     "tradingAgents": "not used (ultra mode)",
     "taSummary": ""
    },
-   "lastPrice": 91.32,
-   "unrealizedPct": -0.41
+   "lastPrice": 91.81,
+   "unrealizedPct": 0.12
   },
   {
    "id": "ahq-AMZN-20261123190538",
@@ -1275,8 +1275,8 @@
     "tradingAgents": "not used (ultra mode)",
     "taSummary": ""
    },
-   "lastPrice": 251.21,
-   "unrealizedPct": -2.71
+   "lastPrice": 252.05,
+   "unrealizedPct": -2.38
   }
  ],
  "charts": {
@@ -1844,7 +1844,19 @@
     ],
     [
      "2026-11-24T20:40:00Z",
-     92905.5
+     92905.62
+    ],
+    [
+     "2026-11-24T20:45:00Z",
+     92854.9
+    ],
+    [
+     "2026-11-24T20:50:00Z",
+     93076.43
+    ],
+    [
+     "2026-11-24T20:55:00Z",
+     93155.13
     ]
    ],
    "1W": [
@@ -3075,6 +3087,10 @@
     [
      "2026-11-24T20:30:00Z",
      92838.87
+    ],
+    [
+     "2026-11-24T20:45:00Z",
+     92854.78
     ]
    ]
   },
@@ -3296,6 +3312,10 @@
      [
       "2026-11-24T20:30:00Z",
       159.69
+     ],
+     [
+      "2026-11-24T20:45:00Z",
+      161.135
      ]
     ],
     "entry": 161.33,
@@ -3504,7 +3524,11 @@
      ],
      [
       "2026-11-24T20:30:00Z",
-      89.19
+      88.94
+     ],
+     [
+      "2026-11-24T20:45:00Z",
+      89.45
      ]
     ],
     "entry": 88.86,
@@ -3534,6 +3558,10 @@
      [
       "2026-11-24T16:00:00Z",
       65.4
+     ],
+     [
+      "2026-11-24T20:45:00Z",
+      65.95
      ]
     ],
     "entry": 66.27,
@@ -3683,6 +3711,10 @@
      [
       "2026-11-24T20:30:00Z",
       53.93
+     ],
+     [
+      "2026-11-24T20:45:00Z",
+      54.14
      ]
     ],
     "entry": 54.185,
@@ -3895,7 +3927,11 @@
      ],
      [
       "2026-11-24T20:30:00Z",
-      697.395
+      697.35
+     ],
+     [
+      "2026-11-24T20:45:00Z",
+      696.07
      ]
     ],
     "entry": 699.96,
@@ -4120,7 +4156,11 @@
      ],
      [
       "2026-11-24T20:30:00Z",
-      91.31
+      91.32
+     ],
+     [
+      "2026-11-24T20:45:00Z",
+      91.805
      ]
     ],
     "entry": 91.700355,
@@ -4373,7 +4413,11 @@
      ],
      [
       "2026-11-24T20:30:00Z",
-      251.155
+      251.07
+     ],
+     [
+      "2026-11-24T20:45:00Z",
+      252.04
      ]
     ],
     "entry": 258.204667,
@@ -4502,6 +4546,270 @@
    ]
   }
  },
+ "study": {
+  "date": "2026-11-24",
+  "regime": {
+   "stocks": false,
+   "coins": false,
+   "spy": 718.45,
+   "spy200": 730.6,
+   "btc": 59692.125,
+   "btc50": 75641.11
+  },
+  "plain": {
+   "regime": "Stock market is in a downtrend (SPY under its 200-day average): no new trend buys in stocks; coins in a downtrend, no new coin buys",
+   "picks": [
+    "ABBV: up +41% in 6 months, above its averages",
+    "COST: up +12% in 6 months, above its averages",
+    "LLY: up +30% in 6 months, above its averages",
+    "REGN: up +58% in 6 months, above its averages",
+    "AAPL: up +14% in 6 months, above its averages"
+   ]
+  },
+  "picks": {
+   "stocks": [
+    "ABBV",
+    "COST",
+    "LLY",
+    "REGN",
+    "AAPL"
+   ],
+   "coins": []
+  },
+  "ranked": [
+   {
+    "symbol": "ABBV",
+    "crypto": false,
+    "theme": "healthcare",
+    "price": 300.33,
+    "ma50": 279.5953,
+    "ma200": 240.7102,
+    "r3": 14.9,
+    "r6": 41.3,
+    "r12": 30.9,
+    "vol": 21.6,
+    "quality": 0.57,
+    "uptrend": true,
+    "score": 1.379
+   },
+   {
+    "symbol": "COST",
+    "crypto": false,
+    "theme": "consumer",
+    "price": 1091.62,
+    "ma50": 966.74,
+    "ma200": 950.7888,
+    "r3": 17.5,
+    "r6": 12.1,
+    "r12": 25.6,
+    "vol": 19.6,
+    "quality": 0.95,
+    "uptrend": true,
+    "score": 1.11
+   },
+   {
+    "symbol": "LLY",
+    "crypto": false,
+    "theme": "healthcare",
+    "price": 1411.18,
+    "ma50": 1276.2711,
+    "ma200": 1118.6523,
+    "r3": 18.8,
+    "r6": 30.5,
+    "r12": 34.0,
+    "vol": 29.2,
+    "quality": 0.88,
+    "uptrend": true,
+    "score": 1.097
+   },
+   {
+    "symbol": "CVX",
+    "crypto": false,
+    "theme": "oil_gas",
+    "price": 208.97,
+    "ma50": 213.5098,
+    "ma200": 193.6306,
+    "r3": 5.3,
+    "r6": 16.5,
+    "r12": 44.4,
+    "vol": 24.5,
+    "quality": 0.99,
+    "uptrend": false,
+    "score": 1.076
+   },
+   {
+    "symbol": "PSX",
+    "crypto": false,
+    "theme": "oil_gas",
+    "price": 237.25,
+    "ma50": 265.7523,
+    "ma200": 206.0226,
+    "r3": -1.6,
+    "r6": 37.3,
+    "r12": 82.1,
+    "vol": 35.2,
+    "quality": 0.4,
+    "uptrend": false,
+    "score": 1.07
+   },
+   {
+    "symbol": "REGN",
+    "crypto": false,
+    "theme": "healthcare",
+    "price": 987.285,
+    "ma50": 836.2453,
+    "ma200": 751.5024,
+    "r3": 21.3,
+    "r6": 57.7,
+    "r12": 31.3,
+    "vol": 41.3,
+    "quality": 0.93,
+    "uptrend": true,
+    "score": 1.043
+   },
+   {
+    "symbol": "AAPL",
+    "crypto": false,
+    "theme": "tech_growth",
+    "price": 353.825,
+    "ma50": 342.4178,
+    "ma200": 303.5372,
+    "r3": 13.0,
+    "r6": 14.0,
+    "r12": 30.8,
+    "vol": 22.4,
+    "quality": 0.95,
+    "uptrend": true,
+    "score": 1.014
+   },
+   {
+    "symbol": "VLO",
+    "crypto": false,
+    "theme": "oil_gas",
+    "price": 324.63,
+    "ma50": 392.6808,
+    "ma200": 298.0077,
+    "r3": -6.4,
+    "r6": 36.1,
+    "r12": 90.7,
+    "vol": 44.0,
+    "quality": 0.64,
+    "uptrend": false,
+    "score": 0.965
+   },
+   {
+    "symbol": "APA",
+    "crypto": false,
+    "theme": "oil_gas",
+    "price": 44.945,
+    "ma50": 46.1758,
+    "ma200": 39.0325,
+    "r3": 9.6,
+    "r6": 24.3,
+    "r12": 93.1,
+    "vol": 40.9,
+    "quality": 0.33,
+    "uptrend": false,
+    "score": 0.964
+   },
+   {
+    "symbol": "PG",
+    "crypto": false,
+    "theme": "consumer",
+    "price": 172.52,
+    "ma50": 157.3182,
+    "ma200": 148.6241,
+    "r3": 19.8,
+    "r6": 18.6,
+    "r12": 17.6,
+    "vol": 21.2,
+    "quality": 0.7,
+    "uptrend": true,
+    "score": 0.951
+   },
+   {
+    "symbol": "TMO",
+    "crypto": false,
+    "theme": "healthcare",
+    "price": 696.07,
+    "ma50": 681.181,
+    "ma200": 559.2764,
+    "r3": 9.9,
+    "r6": 52.8,
+    "r12": 18.9,
+    "vol": 28.5,
+    "quality": 0.49,
+    "uptrend": true,
+    "score": 0.948
+   },
+   {
+    "symbol": "JNJ",
+    "crypto": false,
+    "theme": "healthcare",
+    "price": 276.5,
+    "ma50": 266.4408,
+    "ma200": 248.5987,
+    "r3": 2.9,
+    "r6": 20.7,
+    "r12": 39.2,
+    "vol": 25.5,
+    "quality": 0.79,
+    "uptrend": true,
+    "score": 0.919
+   },
+   {
+    "symbol": "COP",
+    "crypto": false,
+    "theme": "oil_gas",
+    "price": 134.56,
+    "ma50": 136.4174,
+    "ma200": 122.8148,
+    "r3": 3.7,
+    "r6": 18.4,
+    "r12": 58.5,
+    "vol": 31.7,
+    "quality": 0.56,
+    "uptrend": false,
+    "score": 0.869
+   },
+   {
+    "symbol": "VRTX",
+    "crypto": false,
+    "theme": "healthcare",
+    "price": 563.8,
+    "ma50": 524.1443,
+    "ma200": 485.6423,
+    "r3": 3.0,
+    "r6": 29.0,
+    "r12": 32.2,
+    "vol": 28.9,
+    "quality": 0.9,
+    "uptrend": true,
+    "score": 0.858
+   },
+   {
+    "symbol": "PANW",
+    "crypto": false,
+    "theme": "tech_growth",
+    "price": 352.885,
+    "ma50": 366.5417,
+    "ma200": 283.2738,
+    "r3": 4.0,
+    "r6": 42.0,
+    "r12": 93.0,
+    "vol": 69.0,
+    "quality": 1.0,
+    "uptrend": false,
+    "score": 0.805
+   }
+  ],
+  "uptrends": 14,
+  "counted": 82,
+  "rules": "Trend: price over 50-day avg over 200-day avg (coins: over 50-day). Momentum: avg 3/6/12-month return / volatility. Quality: lower debt ranks higher. New stock buys only while SPY is over its 200-day avg; coins only while BTC is over its 50-day.",
+  "trendPct": 0,
+  "corePct": 50,
+  "backtest": null
+ },
  "trades": [
   {
    "id": "ahq-PLTR-20261124164652",
@@ -4559,8 +4867,8 @@
     "taSummary": ""
    },
    "stopOrderId": "15707459-b20e-424f-8442-ec4330bd1527",
-   "lastPrice": 159.721,
-   "unrealizedPct": -1.0
+   "lastPrice": 161.13,
+   "unrealizedPct": -0.12
   },
   {
    "id": "ahq-AVAV-20261124162010",
@@ -4660,8 +4968,8 @@
     "taSummary": ""
    },
    "stopOrderId": "6612a194-4f8c-4bf6-8d0f-65306748718e",
-   "lastPrice": 89.2,
-   "unrealizedPct": 0.38
+   "lastPrice": 89.45,
+   "unrealizedPct": 0.66
   },
   {
    "id": "ahq-core-HLAL-20261124145913",
@@ -4689,8 +4997,8 @@
     "publishers": [],
     "tradingAgents": "not used (core)"
    },
-   "lastPrice": 65.83,
-   "unrealizedPct": -0.66
+   "lastPrice": 66.12,
+   "unrealizedPct": -0.23
   },
   {
    "id": "ahq-core-SPUS-20261124145913",
@@ -4718,8 +5026,8 @@
     "publishers": [],
     "tradingAgents": "not used (core)"
    },
-   "lastPrice": 53.93,
-   "unrealizedPct": -0.47
+   "lastPrice": 54.13,
+   "unrealizedPct": -0.1
   },
   {
    "id": "ahq-NVDA-20261124145910",
@@ -4832,8 +5140,8 @@
     "taSummary": ""
    },
    "stopOrderId": "a2d5311a-a3d9-48a5-a771-640f9165b3c4",
-   "lastPrice": 697.26,
-   "unrealizedPct": -0.39
+   "lastPrice": 695.79,
+   "unrealizedPct": -0.6
   },
   {
    "id": "ahq-NOW-20261123202036",
@@ -4902,8 +5210,8 @@
     "tradingAgents": "not used (ultra mode)",
     "taSummary": ""
    },
-   "lastPrice": 91.32,
-   "unrealizedPct": -0.41
+   "lastPrice": 91.81,
+   "unrealizedPct": 0.12
   },
   {
    "id": "ahq-AMZN-20261123190538",
@@ -4941,8 +5249,8 @@
     "tradingAgents": "not used (ultra mode)",
     "taSummary": ""
    },
-   "lastPrice": 251.21,
-   "unrealizedPct": -2.71
+   "lastPrice": 252.05,
+   "unrealizedPct": -2.38
   },
   {
    "id": "ahq-TSLA-20261123190538",
@@ -6579,11 +6887,6 @@
   }
  ],
  "equity": [
-  {
-   "t": "2026-11-16T04:53:47Z",
-   "equity": 100000.0,
-   "spy": 752.09
-  },
   {
    "t": "2026-11-16T05:24:17Z",
    "equity": 100000.0,
@@ -8578,6 +8881,11 @@
    "t": "2026-11-24T20:18:03Z",
    "equity": 93016.64,
    "spy": 716.87
+  },
+  {
+   "t": "2026-11-24T20:48:13Z",
+   "equity": 93013.89,
+   "spy": 717.445
   }
  ],
  "watch": [],
@@ -8589,7 +8897,7 @@
  },
  "events": [
   {
-   "summary": "Houthi attacks on a Riyadh financial district tower and oil infrastructure escalate regional Middle East conflict risks.",
+   "summary": "Escalating threats to energy infrastructure in the Middle East and reports of oil tankers hitting mines in the Strait of Hormuz increase supply disruption risks.",
    "category": "oil_supply",
    "firstSeen": "2026-11-24T16:00:00Z",
    "publishers": [
@@ -8609,11 +8917,14 @@
     "DNE Africa",
     "Euronext Markets: Real-time Stock Market Data | live",
     "FXEmpire",
+    "Forbes Middle East",
     "Islamabad Post",
     "Israel Hayom",
+    "MEMRI | Middle East Media Research Institute",
     "Marine News Magazine",
     "Mid-Utah Radio",
     "NZ Herald",
+    "National Security Journal",
     "News of Bahrain",
     "Oman Observer",
     "Quantum Commodity Intelligence",
@@ -8653,7 +8964,7 @@
     "OXY": {
      "direction": "up",
      "confidence": 0.7,
-     "why": "Escalating conflict in the Middle East threatens oil supply infrastructure."
+     "why": "Increased geopolitical risk to oil supply typically boosts oil major valuations."
     }
    },
    "sources": [
@@ -8700,12 +9011,13 @@
    ]
   },
   {
-   "summary": "Bitcoin continues to face heavy selling pressure and remains below $60,000 amid record ETF outflows and bearish sentiment.",
+   "summary": "Bitcoin and crypto markets face continued selling pressure following record monthly ETF outflows.",
    "category": "crypto_negative",
    "firstSeen": "2026-11-24T16:30:48Z",
    "publishers": [
     "Bitcoin Sistemi",
     "Cryptonews.net",
+    "Cryptopolitan",
     "GuruFocus",
     "Hokanews",
     "Invezz",
