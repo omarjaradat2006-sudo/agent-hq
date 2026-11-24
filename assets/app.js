@@ -684,6 +684,7 @@
           up.disabled = true; toast("Uploading…"); try { const p2 = await uploadInspoFile(f2.files[0], it.id); t.inspo = await commitInspo(b => { const x = b.items.find(i => i.id === it.id); if (x) { x.file = p2; x.status = "new"; delete x.error; } }, "inspo video " + it.id); toast("Uploaded. Built on the next run."); renderPanel(); } catch (e) { up.disabled = false; toast("Upload failed, try again"); } };
         act.append(f2, up);
       }
+      if (it.status === "failed") { const rt = el("button", "btn", "Retry on server"); rt.onclick = inspoSave(t, b => { const x = b.items.find(i => i.id === it.id); if (x) { x.status = "new"; delete x.error; } }, "retry inspo " + it.id, "Queued again for the next server run."); act.append(rt); }
       if ((it.status === "rejected" || it.status === "failed") && it.buildPrompt) {
         const txt = it.buildPrompt + (it.rejectNote ? `\n\nOmar's feedback on the server's try: ${it.rejectNote}` : "");
         const b = el("button", "btn primary", "Copy build prompt"); b.onclick = async () => { try { await navigator.clipboard.writeText(txt); toast("Copied. Paste it into Claude Code on your laptop."); } catch { const ta = el("textarea"); ta.value = txt; ta.rows = 8; ta.style.width = "100%"; c.append(ta); ta.select(); toast("Select and copy the text below."); } };

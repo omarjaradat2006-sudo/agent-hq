@@ -24,10 +24,10 @@ WORK = os.path.expanduser("~/inspo-work")
 PY = os.environ.get("BOUNCE_PY") or sys.executable
 TZ = ZoneInfo("America/Toronto")
 NOW = datetime.datetime.now(TZ).isoformat(timespec="seconds")
-MAX_ITEMS, TRIES = 4, 3
+MAX_ITEMS, TRIES = 4, 4
 SITE = "https://omarjaradat2006-sudo.github.io/agent-hq/"
 RAW = "https://raw.githubusercontent.com/omarjaradat2006-sudo/agent-hq/main/"
-ALLOWED_IMPORTS = {"auto_bounce2", "math", "numpy", "random", "colorsys"}
+ALLOWED_IMPORTS = {"auto_bounce2", "engine2", "math", "numpy", "random", "colorsys", "skia", "pymunk", "scipy"}
 BANNED = {"open", "exec", "eval", "compile", "__import__", "globals", "locals", "vars", "getattr", "setattr", "delattr", "input",
           "breakpoint", "os", "sys", "subprocess", "shutil", "socket", "pathlib", "importlib", "builtins", "urllib", "requests"}
 
@@ -102,7 +102,7 @@ hsv(h, s, v) -> rgb; mix(a, b, t); rgb(col, alpha) -> skia.Color.   Colours are 
 pymunk: Space, Body (KINEMATIC for moving obstacles: set position + velocity every substep), Circle, Segment, PinJoint; space.on_collision(1, 2, begin=fn(arbiter, space, data))."""
 
 BUILD_RULES = """Write ONE complete Python module. Rules (code that breaks one is rejected automatically):
-- First line exactly: from auto_bounce2 import *      Other imports allowed: math, numpy, random, colorsys. No files, network, eval/exec, getattr/setattr, os/sys.
+- First line exactly: from auto_bounce2 import *   (np, math, skia, pymunk, E and every helper below are already imported by it). Extra imports allowed: math, numpy, random, colorsys, skia, pymunk, scipy. No files, network, eval/exec, getattr/setattr, os/sys.
 - Define exactly one public function  {name}(path, seed=1, text=True, dry=False, <knobs with defaults>)  that renders a 1080x1920 60 fps Short and returns its length in seconds (return V.close(A)). Helpers start with _.
 - dry=True: run the same physics/timing but don't draw (V.write(None)); must return the same length.
 - 18-38 s. Frame 1 already moving with the hook title on screen (title(c, l1, l2)). Keep text and action between y=120 and y=1450.
@@ -160,7 +160,8 @@ def test(code, name, it):
         return None, "render took over 15 minutes: make it much faster (fewer bodies, fewer substeps)"
     res = next((json.loads(l[7:]) for l in r.stdout.splitlines() if l.startswith("RESULT ")), None)
     if not res or not os.path.exists(out):
-        return None, "it crashed:\n" + (r.stderr or r.stdout)[-1500:]
+        tb = (r.stderr or r.stdout or "").strip().splitlines()
+        return None, "it crashed. End of the error:\n" + "\n".join(tb[-12:])[-1500:]
     dur, w, h, aud = probe(out)
     if (w, h) != (1080, 1920): return None, f"video is {w}x{h}, must be 1080x1920"
     if not aud: return None, "no audio"
