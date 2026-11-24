@@ -26,7 +26,7 @@ def _cave(rng, L, w0, w1, amp):
     return cy, hw
 
 
-def _fly(G, cy, hw, L, V, rng, steps, dt, look, acc, jitter, r, rec=None):
+def _fly(G, cy, hw, L, V, rng, steps, dt, look, acc, jitter, r, rec=None, until=None):
     """Run one generation (n agents, genomes G [n,4]). Returns distance reached and (optionally) per-step positions."""
     n = len(G)
     x = rng.uniform(0, 170, n); y = cy(x) + rng.uniform(-0.7, 0.7, n) * hw(x); vy = rng.uniform(-160, 160, n)
@@ -43,7 +43,7 @@ def _fly(G, cy, hw, L, V, rng, steps, dt, look, acc, jitter, r, rec=None):
         died[hit] = k; alive &= ~hit
         dist = np.where(alive, x, dist)
         if rec is not None: rec.append((x.copy(), y.copy(), alive.copy()))
-        if not alive.any() or x[alive].min() > L: break
+        if not alive.any() or x[alive].min() > (until or L): break
     return dist + 4.0 * np.clip(clear, 0, 200) * alive, died
 
 
@@ -54,13 +54,16 @@ def cave_swarm(path, seed=1, text=True, dry=False, n=100, gens=(1, 2, 4, 20), L=
     cy, hw = _cave(rng, L, w0, w1, amp)
     r = 9.0; look = 140.0; acc = 7600.0; sub = 2; dt = 1 / (FPS * sub)
     steps = int((L + 120) / V / dt) + 2
-    last = max(gens)
+    last = max(gens); card_t = 2.8
     # --- evolve (all generations really run; only the shown ones are recorded)
     G = rng.normal(0, 2.2, (n, 4))
     shown = {}
     for g in range(1, last + 1):
         rec = [] if g in gens else None
-        dist, died = _fly(G, cy, hw, L, V, np.random.default_rng(seed * 1000 + g), steps, dt, look, acc, jitter * (1 - 0.9 * (g / last) ** 2), r, rec)
+        # the last generation keeps flying (and steering) past the finish while the end card is up: the cave goes on
+        until = L + V * (card_t + 0.6) if g == last else None
+        st_ = int((until + 120) / V / dt) + 2 if until else steps
+        dist, died = _fly(G, cy, hw, L, V, np.random.default_rng(seed * 1000 + g), st_, dt, look, acc, jitter * (1 - 0.9 * (g / last) ** 2), r, rec, until)
         if rec is not None: shown[g] = (rec, died)
         order = np.argsort(-dist); elite = G[order[:max(1, elite_n)]]
         sig = sigma0 * (sigma1 / sigma0) ** ((g - 1) / max(1, last - 2))
@@ -76,8 +79,11 @@ def cave_swarm(path, seed=1, text=True, dry=False, n=100, gens=(1, 2, 4, 20), L=
             k_end = min(k_end, int(3.1 * FPS * sub), dead_all + int(0.5 * FPS * sub))
         slots.append((g, rec, died, max(k_end, int(1.2 * FPS * sub))))
         LOG.append((g, int(rec[min(slots[-1][3], len(rec) - 1)][2].sum())))
-    card_t = 2.8
-    total = sum(s[3] for s in slots) / (FPS * sub) + card_t
+    rec_l = slots[-1][1]
+    k_fin = next((k for k, (x_, _, a_) in enumerate(rec_l) if not a_.any() or x_[a_].min() >= L), len(rec_l) - 1)
+    made = int(rec_l[k_fin][2].sum())                       # how many got through the finish line
+    k_card = max(0, k_fin - int(0.9 * FPS * sub))
+    total = sum(s[3] for s in slots) / (FPS * sub)
     A = Audio(); V_ = Writer(path, dry); fr = Frame()
     # upbeat synth bed: 120 bpm arpeggio over a 4-chord loop + soft kick
     prog = [(57, 60, 64), (53, 57, 60), (48, 52, 55), (55, 59, 62)]
@@ -118,6 +124,9 @@ def cave_swarm(path, seed=1, text=True, dry=False, n=100, gens=(1, 2, 4, 20), L=
                         draw_sprite(c, glow_dot(RING, a=90), sx, rg[1], 22 + 30 * u)
                         c.drawCircle(sx, rg[1], 10 + 30 * u, stroke_paint(RING, 3, a)); c.drawCircle(sx, rg[1], 6 + 14 * u, stroke_paint(RING, 2, a // 2))
                         c.drawCircle(sx, rg[1], 5, fill_paint(RING, a))
+                if g == last and k >= k_card:
+                    _card(c, n, made, end2.format(last=last), end3, min(1, (k - k_card) / (0.6 * FPS * sub)))
+                # (card under the swarm, so the dots never disappear behind it)
                 k0 = max(0, k - trail * sub)
                 idx = np.where(al)[0]
                 if len(idx):
@@ -131,30 +140,13 @@ def cave_swarm(path, seed=1, text=True, dry=False, n=100, gens=(1, 2, 4, 20), L=
                     for i in idx: draw_sprite(c, glow_dot(AGENT, a=120), x[i] - cam, y[i], 26)
                     draw_balls(c, [(x[i] - cam, y[i]) for i in idx], [tuple(int(v) for v in cols[0])] * len(idx), r)
                 if text: _hud(c, l1, l2, g, alive_n, n)
-                if g == last and k > k_end - int(0.9 * FPS * sub):
-                    u = 1 - (k_end - k) / (0.9 * FPS * sub); _card(c, n, alive_n, end2.format(last=last), end3, min(1, u * 1.5))
+                if g == last and k > k_end - int(0.35 * FPS * sub):
+                    c.drawRect(skia.Rect(0, 0, W, H), fill_paint(BG, int(255 * (1 - (k_end - k) / (0.35 * FPS * sub)))))
                 V_.write(fr)
+            if g == last and k <= k_fin < k + sub:
+                A.chord(t + 0.1, 72, 0.22, "chime"); A.tone(t + 0.1, E.midi(84), 0.12, 1.5, "chime")
             f += 1; t = f / FPS; k += sub
         rings = [rg for rg in rings if t - rg[2] < 0.6]
-    # payoff
-    A.chord(t - 0.8, 72, 0.22, "chime"); A.tone(t - 0.8, E.midi(84), 0.12, 1.5, "chime")
-    x, y, al = slots[-1][1][-1]
-    vy = np.zeros(len(x)); rest = int(card_t * FPS)
-    for q in range(rest):
-        x = x + V / FPS
-        if dry: V_.write(None)
-        else:
-            c = fr.c; fr.clear(BG)
-            cam += (np.median(x[al]) - 330 - cam) * 0.05 if al.any() else 0
-            _draw_cave(c, cy, hw, cam, L)
-            idx = np.where(al)[0]
-            for i in idx: draw_sprite(c, glow_dot(AGENT, a=120), x[i] - cam, y[i], 26)
-            draw_balls(c, [(x[i] - cam, y[i]) for i in idx], [(200, 245, 255)] * len(idx), r)
-            if text: _hud(c, l1, l2, last, int(al.sum()), n); _card(c, n, int(al.sum()), end2.format(last=last), end3, 1.0)
-            fade = max(0.0, (q - rest + 0.35 * FPS) / (0.35 * FPS))
-            if fade > 0: c.drawRect(skia.Rect(0, 0, W, H), fill_paint(BG, int(255 * fade)))
-            V_.write(fr)
-        f += 1; t = f / FPS
     return V_.close(A)
 
 

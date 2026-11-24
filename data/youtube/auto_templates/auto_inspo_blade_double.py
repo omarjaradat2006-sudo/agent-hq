@@ -86,7 +86,7 @@ def blade_double(path, seed=1, text=True, dry=False, R=440.0, r=14.5, cap=820, p
     hits = []
     sp.on_collision(1, 2, begin=lambda arb, s_, d: hits.append(arb.shapes[0] if arb.shapes[0].collision_type == 1 else arb.shapes[1]))
     A = Audio(); V = Writer(path, dry); sub = 3; dt = 1 / (FPS * sub); fr = Frame()
-    A.tone(0, E.midi(40), 0.10, max_secs + 8, "pad"); A.tone(0, E.midi(47), 0.06, max_secs + 8, "pad")
+    # sound: ONLY the split sound (Omar, 2026-11-24: no bed, no swoosh, no crash)
     f = 0; broke = None; shards = []; last_snd = -1; last_sw = -1; flashes = []; reset_t = None
     while True:
         t = f / FPS
@@ -118,21 +118,18 @@ def blade_double(path, seed=1, text=True, dry=False, R=440.0, r=14.5, cap=820, p
                         A.note(ts, 62 + min(int(lv * 2.2), 30), 0.13, 0.22, "pluck"); A.tone(ts, 0, 0.10, 0.08, "pop"); last_snd = ts
             if broke is None and len(toms) >= cap: broke = ts
             if broke is not None and not shards:
-                sp.remove(*arena); A.tone(ts, 0, 0.8, 2.6, "crash"); A.chord(ts + 0.12, 60, 0.3)
+                sp.remove(*arena)
                 for a_ in np.linspace(0, TAU, 36, endpoint=False):
                     shards.append([cx + R * math.cos(a_), cy + R * math.sin(a_), math.cos(a_) * rng.uniform(300, 800), math.sin(a_) * rng.uniform(300, 800) - 250, a_, rng.uniform(-6, 6)])
                 for tm in toms:
                     p = np.array(tm[0].position) - (cx, cy); tm[0].velocity = tuple(np.array(tm[0].velocity) + p * 2.4 + rng.normal(0, 120, 2))
                 sp.gravity = (0, 1400)
-        # blade swoosh: once per half turn, louder when it is mowing through tomatoes
-        if (ang_at(t) // math.pi) != (ang_at(t + 1 / FPS) // math.pi) and t - last_sw > 0.3:
-            A.tone(t, 1400, 0.10 + 0.12 * min(1, len(toms) / 300), 0.35, "whoosh"); last_sw = t
         if broke is not None:
             for sh in shards: sh[0] += sh[2] / FPS; sh[1] += sh[3] / FPS; sh[3] += 1400 / FPS; sh[4] += sh[5] / FPS
             if reset_t is None and t - broke > 2.6:
                 reset_t = t
                 for tm in toms: sp.remove(tm[0], tm[1])
-                toms.clear(); A.tone(t, 500, 0.12, 0.6, "chime")
+                toms.clear()
         if f % FPS == 0: LOG.append((round(t), len(toms)))
         if dry: V.write(None)
         else:
