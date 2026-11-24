@@ -84,6 +84,7 @@ def write(bot):
                    "alert": s.get("alert")},
         "positions": open_t, "charts": charts,
         "coach": {k: co.get(k) for k in ("updatedAt", "knobs", "lessons", "missed", "dodged", "avoid", "history", "limits")} if co else None,
+        "study": study_block(),
         "trades": led["trades"][:120],
         "decisions": led.get("decisions", [])[:60],
         "equity": led.get("equity", [])[-400:],
@@ -204,3 +205,18 @@ def chart_data(bot, open_t):
         except Exception:  # noqa: BLE001
             pass
     return out
+
+
+def study_block():
+    """Market Study for the Trading tab: today's regime, top picks, the trend sleeve setting, last backtest."""
+    from . import study
+    st = study.load()
+    bt = read_json(study.BACKTEST_FILE, {}) or {}
+    if not st and not bt:
+        return None
+    return {"date": st.get("date"), "regime": st.get("regime"), "plain": st.get("plain"), "picks": st.get("picks"),
+            "ranked": (st.get("ranked") or [])[:15], "uptrends": st.get("uptrends"), "counted": st.get("counted"),
+            "rules": st.get("rules"), "trendPct": round(C.trend_share() * 100), "corePct": round(C.core_share() * 100),
+            "backtest": {k: bt.get(k) for k in ("builtAt", "from", "to", "months", "returnPct", "maxDrawdownPct",
+                                                 "spyReturnPct", "spyMaxDrawdownPct", "spusReturnPct", "trades",
+                                                 "winRatePct", "avgWinPct", "avgLossPct", "curve", "note")} if bt else None}

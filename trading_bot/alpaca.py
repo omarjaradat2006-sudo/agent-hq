@@ -123,11 +123,11 @@ class Alpaca:
         return self.delete("/v2/positions", {"cancel_orders": "true"})
 
     # ---- market data (free IEX feed for stocks)
-    def stock_bars(self, symbols, timeframe, start, end=None, limit=10000):
+    def stock_bars(self, symbols, timeframe, start, end=None, limit=10000, adjustment="raw"):
         out, token = {}, None
         while True:
             r = self.get("/v2/stocks/bars", {"symbols": ",".join(symbols), "timeframe": timeframe, "start": start,
-                                              "end": end, "limit": limit, "feed": "iex", "adjustment": "raw",
+                                              "end": end, "limit": limit, "feed": "iex", "adjustment": adjustment,
                                               "page_token": token}, data=True) or {}
             for s, bars in (r.get("bars") or {}).items():
                 out.setdefault(s, []).extend(bars)

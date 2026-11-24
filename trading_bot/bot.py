@@ -108,9 +108,11 @@ class Bot:
         # 5. meme coins: watch only
         watch.update(self.s, self.s["events"])
         # 6. new trades
+        self.market_study(clock)
         if not self.ledger.get("killed"):
+            self.core_buys(acct, clock)        # budget order: core first, then the trend sleeve, then news trades
+            self.trend_sleeve(acct, clock)
             self.entries(acct, clock)
-            self.core_buys(acct, clock)
             self.dip_buys(acct, clock)
         self.coach_review()
         self.track_equity(acct)
@@ -177,6 +179,113 @@ class Bot:
                            "publishers": [], "tradingAgents": "not used (core)"}})
             self.decide(f"core|{today}|{sym}", sym, "bought", "core holding: rides the market")
         self.s["publishNow"] = True
+
+    def market_study(self, clock):
+        """Once a day (after the open): rank every halal stock + coin on trend, momentum and quality (study.py)."""
+        from . import study
+        today = now_et().date().isoformat()
+        if self.s.get("studyDate") == today or now_et().hour < 9 or (now_et().hour == 9 and now_et().minute < 35):
+            return
+        self.s["studyDate"] = today
+        try:
+            self.study = study.build(self.a, self.universe or {})
+        except Exception as ex:                       # the study must never stop the bot
+            event("error", "market_study", ex)
+            log(f"Market study failed: {ex}", "Market Study")
+
+    def _sleeve(self, strategy):
+        return sum((t.get("lastPrice") or t["entryPrice"]) * (t.get("qty") or 0) if t.get("qty") else t["cost"]
+                   for t in self.open_trades() if t.get("strategy") == strategy)
+
+    def reserved(self, acct):
+        """Money news trades must leave alone: the unfilled part of the core holding + the trend picks."""
+        from . import study
+        eq = float(acct["equity"])
+        _, cap = C.sizing()
+        budget = C.invest_base(eq, self.ledger.get("startEquity")) * cap
+        core = max(0.0, budget * C.core_share() - self._sleeve("core"))
+        tr = 0.0
+        if C.trend_share() > 0:
+            st = study.load()
+            held = {t["symbol"] for t in self.open_trades()}
+            want = [x for x in (st.get("picks") or {}).get("stocks", []) if (st.get("regime") or {}).get("stocks")] + \
+                   [x for x in (st.get("picks") or {}).get("coins", []) if (st.get("regime") or {}).get("coins")]
+            slot = budget * C.trend_share() / (C.TREND["stocks"] + C.TREND["coins"])
+            tr = min(slot * len([x for x in want if x not in held]), max(0.0, budget * C.trend_share() - self._sleeve("trend")))
+        return core + tr
+
+    def trend_sleeve(self, acct, clock):
+        """Trend sleeve (TREND_PCT of the invested budget, off by default). Once a day in the stock window:
+        sell holdings whose trend broke or that fell out of the top list, then buy today's top picks.
+        Each stock gets a wide Alpaca trailing stop; coins get a stop the bot raises. No time limit."""
+        from . import risk, study, halal
+        share, today = C.trend_share(), now_et().date().isoformat()
+        ok, _ = risk.stock_entry_window_open(clock)
+        if share <= 0 or not ok or self.s.get("trendDate") == today:
+            return
+        st = study.load()
+        if st.get("date") != today:
+            return                                    # wait for today's study
+        self.s["trendDate"] = today
+        n = C.TREND["stocks"] + C.TREND["coins"]
+        ranked = st.get("ranked") or []
+        keep = set((st.get("picks") or {}).get("stocks", []) + (st.get("picks") or {}).get("coins", [])) | \
+            {c["symbol"] for c in ranked[:2 * n] if c.get("uptrend")}
+        by = {c["symbol"]: c for c in ranked}
+        for t in [t for t in self.open_trades() if t.get("strategy") == "trend" and t["status"] == "open"]:
+            c = by.get(t["symbol"])
+            if c and c["price"] < c["ma50"]:
+                self.close(t, "trend broke: closed under its 50-day average")
+            elif t["symbol"] not in keep:
+                self.close(t, "dropped out of the Market Study top list")
+        if risk.daily_halt_hit(acct):
+            return
+        reg = st.get("regime") or {}
+        want = ((st.get("picks") or {}).get("stocks", []) if reg.get("stocks") else []) + \
+               ((st.get("picks") or {}).get("coins", []) if reg.get("coins") else [])
+        eq, cash = float(acct["equity"]), float(acct["cash"])
+        _, cap = C.sizing()
+        budget = C.invest_base(eq, self.ledger.get("startEquity")) * cap
+        slot = budget * share / n
+        held = {t["symbol"].replace("/", "") for t in self.open_trades()} | {p["symbol"] for p in self.a.positions()}
+        trail = C.TREND["trail_pct"]
+        for sym in want:
+            if sym.replace("/", "") in held or not halal.allowed(sym, self.universe or {}):
+                continue
+            pending = sum(t["cost"] for t in self.open_trades() if t["status"] == "pending")
+            room = min(budget * share - self._sleeve("trend"), budget - (eq - cash) - pending, cash - pending)
+            spend = min(slot, room)
+            if spend < 50:
+                log("Trend sleeve: no room left in the budget today", "Market Study")
+                break
+            price = self.a.latest_price(sym)
+            if not price:
+                continue
+            tid = f"ahq-trend-{sym.replace('/', '')}-{now_utc():%Y%m%d%H%M%S}"
+            try:
+                if "/" in sym:
+                    o, qty, cost = self.a.buy_crypto(sym, round(spend, 2), tid), None, spend
+                else:
+                    qty = int(spend // price)
+                    if qty < 1:
+                        continue
+                    o, cost = self.a.buy_stock(sym, qty, tid), qty * price
+            except HttpError as err:
+                event("error", "order_failed", err, sym)
+                continue
+            c = by.get(sym) or {}
+            why = f"Market Study pick: score {c.get('score')}, 6-month {c.get('r6')}%, above its 50/200-day averages"
+            self.ledger["trades"].insert(0, {
+                "id": tid, "symbol": sym, "asset": "crypto" if "/" in sym else "stock", "status": "pending",
+                "strategy": "trend", "entryOrderId": o["id"], "qty": qty, "cost": round(cost, 2), "estPrice": price,
+                "entryPrice": price, "stop": round_price(price * (1 - trail / 100)), "target": round_price(price * 100),
+                "trail": trail, "openedAt": iso(),
+                "news": {"summary": why, "category": "trend", "sources": []},
+                "reason": {"triage": "market study (trend + momentum + quality)", "confidence": None,
+                           "confirmation": why, "publishers": [], "tradingAgents": "not used (trend)"}})
+            held.add(sym.replace("/", ""))
+            self.decide(f"trend|{today}|{sym}", sym, "bought", why)
+            log(f"Trend sleeve BUY {sym} ${cost:,.0f}: {why}", "Market Study")
 
     def dip_buys(self, acct, clock):
         """Market down 1.5%+ today -> buy the halal Shariah ETFs with part of the budget, hold for days."""
@@ -342,7 +451,7 @@ class Bot:
                     self.trail_crypto(t, price)
                 elif price and price >= t["target"]:
                     self.close(t, "target +6% hit")
-                elif now_utc() - opened >= timedelta(hours=C.RISK["crypto_max_hold_hours"]):
+                elif t.get("strategy") != "trend" and now_utc() - opened >= timedelta(hours=C.RISK["crypto_max_hold_hours"]):
                     self.close(t, "48h limit")
                 continue
             if not clock.get("is_open"):
@@ -352,8 +461,8 @@ class Bot:
             days = sum(1 for d in cal if d["date"] > start.isoformat() and d["date"] <= now.date().isoformat())
             close_t = parse_time(clock.get("next_close")).astimezone(now.tzinfo) if clock.get("next_close") else None
             near_close = close_t and close_t - now <= timedelta(minutes=15)
-            if t.get("strategy") == "core":
-                continue                       # core holding: no time limit
+            if t.get("strategy") in ("core", "trend"):
+                continue                       # core + trend holdings: no time limit (trend exits on the study)
             lim = C.DIP["max_hold_days"] if t.get("strategy") == "dip" else C.RISK["stock_max_hold_trading_days"]
             if t.get("trail") and (t.get("unrealizedPct") or 0) >= 2:
                 continue                       # a winner with a trailing stop rides; the stop decides when to sell
@@ -502,7 +611,7 @@ class Bot:
     def buy(self, key, sym, a, e, chk, verdict, pubs, acct):
         from . import risk
         price = self.a.latest_price(sym) or chk["price"]
-        pending = sum(t["cost"] for t in self.open_trades() if t["status"] == "pending")
+        pending = sum(t["cost"] for t in self.open_trades() if t["status"] == "pending") + self.reserved(acct)
         budget, _ = risk.size_order(acct, price, pending, confidence=a.get("confidence"), n_sources=len(pubs),
                                     start_equity=self.ledger.get("startEquity"), publishers=sorted(pubs))
         stop, target = risk.stop_and_target(price)

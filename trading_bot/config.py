@@ -128,6 +128,20 @@ def core_share():
 # sells once the stock falls TRAIL_PCT from its high. Starts as the same -3% stop. `tb trail <pct>` (0 = off,
 # back to the fixed -3% / +6% bracket). Stocks: Alpaca's own trailing-stop order (lives on Alpaca's servers).
 # Coins: the bot raises the stop itself. A news trade that is up 2%+ is not sold by the 3-day time limit.
+# Market Study trend sleeve (study.py). Off until `tb trend <pct>`. Budget order: core first, then trend, then news.
+TREND = {"stocks": 5, "coins": 2, "trail_pct": 10}
+
+
+def trend_share():
+    """Share of the invested budget for the trend sleeve (TREND_PCT, default 0 = off). Core + trend never exceed 95%."""
+    import os
+    try:
+        v = float(os.environ.get("TREND_PCT") or 0)
+    except ValueError:
+        v = 0.0
+    return max(0.0, min(95.0 - core_share() * 100, v)) / 100
+
+
 def trail_pct():
     import os
     try:

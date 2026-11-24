@@ -869,6 +869,23 @@
       c2.append(el("div", "small", `Its own settings: trade size x${(k.aggression || 1).toFixed(2)} · needs ${Math.round((k.min_confidence || 0.6) * 100)}% confidence · buys up to +${((k.max_move_pct || 0.03) * 100).toFixed(1)}% after the news. Your limits (budget, -3% day halt, -10% kill switch, halal) never change.`));
       body.append(c2);
     }
+    const sd = st.study;
+    if (sd) {
+      const c3 = el("div", "card");
+      c3.append(el("div", "label", "Market Study" + (sd.date ? " · " + sd.date : "") + (sd.trendPct ? ` · trend sleeve ON (${sd.trendPct}% of budget)` : " · trend sleeve off (watching only)")));
+      if (sd.plain) {
+        c3.append(el("div", null, sd.plain.regime));
+        if ((sd.plain.picks || []).length) { const ul = el("ul"); ul.style.margin = "4px 0 8px"; sd.plain.picks.forEach(x => ul.append(el("li", null, x))); c3.append(ul); }
+        else c3.append(el("div", "small", "No names pass the trend rules today, so the trend sleeve stays in cash."));
+        c3.append(el("div", "small", `${sd.uptrends || 0} of ${sd.counted || 0} halal names are in uptrends. ${sd.rules || ""}`));
+      }
+      const b = sd.backtest;
+      if (b && b.returnPct != null) {
+        c3.append(el("div", "small", `Test on past prices (${b.from} to ${b.to}): trend rules ${pct(b.returnPct)} (worst drop ${b.maxDrawdownPct}%), SPY ${pct(b.spyReturnPct)} (worst drop ${b.spyMaxDrawdownPct}%), ${b.trades} trades, ${b.winRatePct ?? 0}% winners. ${b.note || ""}`));
+        if ((b.curve || []).length > 2) c3.append(stockChart(b.curve.map(p => [p.date, p.value * 100])));
+      }
+      body.append(c3);
+    }
 
     const k = el("div", "kpis");
     k.append(tk(money(a.equity), "Account value", "started at " + money(a.startEquity)));

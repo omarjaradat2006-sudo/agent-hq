@@ -61,7 +61,7 @@ class FakeAlpaca:
     def calendar(self, a, b): return []
     def latest_price(self, s): return 101.0 if s != "SPY" else 500.0
 
-    def stock_bars(self, syms, tf, start, end=None, limit=None):
+    def stock_bars(self, syms, tf, start, end=None, limit=None, **kw):
         return {s: bars_spike(news_at=self.news_at) for s in syms}
 
     def crypto_bars(self, syms, tf, start, end=None, limit=None):
@@ -409,7 +409,7 @@ def test_backtest_simulation_applies_risk_rules(monkeypatch):
     while news_at.weekday() >= 5:
         news_at -= timedelta(days=1)
     class A(FakeAlpaca):
-        def stock_bars(self, syms, tf, start, end=None, limit=None):
+        def stock_bars(self, syms, tf, start, end=None, limit=None, **kw):
             return {s: bars_spike(news_at=news_at, days=12) for s in syms}
     syms = ["XOM", "CVX", "COP", "OXY", "EOG", "DVN", "XOM"]
     events = {}
@@ -686,7 +686,7 @@ def _closed(sym, pnl, conf=0.65, pubs=("Benzinga",), days_ago=2):
 def test_coach_learns_inside_safe_limits(monkeypatch, tmpdirs):
     import trading_bot.coach as CO
     class A(FakeAlpaca):
-        def stock_bars(self, syms, tf, start, end=None, limit=None): return {}
+        def stock_bars(self, syms, tf, start, end=None, limit=None, **kw): return {}
     losers = [_closed("TSLA", -60, 0.62, days_ago=d) for d in (5, 4, 3)] + [_closed("XOM", -40, 0.6, ("24/7 Wall St.",), d) for d in (6, 2)]
     r = CO.run(A(), {"trades": losers}, now=NOW)
     k = r["knobs"]
@@ -704,7 +704,7 @@ def test_coach_learns_inside_safe_limits(monkeypatch, tmpdirs):
 def test_coach_winning_trades_bigger_and_trust(monkeypatch, tmpdirs):
     import trading_bot.coach as CO
     class A(FakeAlpaca):
-        def stock_bars(self, syms, tf, start, end=None, limit=None): return {}
+        def stock_bars(self, syms, tf, start, end=None, limit=None, **kw): return {}
     winners = [_closed(s, 80, 0.75, ("Reuters",), d) for s, d in zip(["XOM", "CVX", "AMD", "NVDA", "LLY"], range(1, 6))]
     r = CO.run(A(), {"trades": winners}, now=NOW)
     assert r["knobs"]["aggression"] > 1.0 and r["trust"]["Reuters"] > 1.0
@@ -718,7 +718,7 @@ def test_coach_checks_missed_opportunities(monkeypatch, tmpdirs):
         CO.log_decision({"t": T(day0 + timedelta(minutes=i)), "symbol": s, "outcome": "skipped",
                          "why": "moved +3.40% while being analysed, too late", "event": "chips rally"})
     class A(FakeAlpaca):
-        def stock_bars(self, syms, tf, start, end=None, limit=None):
+        def stock_bars(self, syms, tf, start, end=None, limit=None, **kw):
             return {s: [{"t": T(day0.replace(hour=5)), "c": 100.0}, {"t": T((day0 + timedelta(days=1)).replace(hour=5)), "c": 103.0}] for s in syms}
     r = CO.run(A(), {"trades": []}, now=NOW)
     assert r["knobs"]["max_move_pct"] > 0.03 and r["missed"] and r["missed"][0]["nextDayPct"] == 3.0
@@ -909,3 +909,79 @@ def test_dashboard_with_open_holdings_trailing_and_bracket(monkeypatch, tmpdirs)
     st = R.write(b)
     h = " | ".join(st["plain"]["holding"])
     assert "NVDA" in h and "trailing stop" in h and "sells at $106.00" in h
+
+
+# ---------------------------------------------------------------- Market Study (trend + momentum + quality)
+def _daily(prices, start="2025-01-01"):
+    from datetime import date, timedelta as TD
+    d0, out, d = date.fromisoformat(start), [], 0
+    for p in prices:
+        day = d0 + TD(days=d)
+        while day.weekday() >= 5:
+            d += 1; day = d0 + TD(days=d)
+        out.append({"t": f"{day.isoformat()}T05:00:00Z", "o": p, "h": p, "l": p, "c": p, "v": 1000})
+        d += 1
+    return out
+
+
+def test_study_scores_uptrends_and_downtrends():
+    from trading_bot import study as S
+    up = [100 * (1.002 ** i) * (1 + 0.01 * ((-1) ** i)) for i in range(300)]
+    down = [100 * (0.998 ** i) * (1 + 0.01 * ((-1) ** i)) for i in range(300)]
+    cu, cd = S.score(up, debt=0.05), S.score(down, debt=0.05)
+    assert cu["uptrend"] and not cd["uptrend"]
+    assert cu["score"] > 0 > cd["score"]
+    assert S.score(up, debt=0.0)["score"] > S.score(up, debt=0.3)["score"]      # less debt ranks higher
+    assert S.score(up[:30]) is None                                              # not enough history
+    assert S.regime_on(up) and not S.regime_on(down)
+
+
+def test_study_backtest_follows_trend_and_goes_to_cash():
+    from trading_bot import study as S
+    n = 520
+    rise = [100 * (1.003 ** i) for i in range(n)]
+    crash = [100 * (1.003 ** i) if i < 380 else 100 * (1.003 ** 380) * (0.99 ** (i - 380)) for i in range(n)]
+    bars = {"SPY": _daily(rise), "SPUS": _daily(rise), "AAA": _daily(rise), "BBB": _daily(crash)}
+    r = S.simulate(bars, {"stocks": {"AAA": {"debtToMarketCap": 0.1}, "BBB": {"debtToMarketCap": 0.1}}}, 12, n_s=2, n_c=0)
+    assert r["returnPct"] > 0 and r["trades"] >= 1
+    assert "BBB" not in r["holdingNow"]                      # the crashing stock was sold when its trend broke
+    assert any(t["symbol"] == "BBB" for t in r["lastTrades"])
+    assert r["spyReturnPct"] > 0
+
+
+def test_trend_sleeve_buys_picks_with_wide_trailing_stop(monkeypatch, tmpdirs):
+    fake = FakeAlpaca()
+    B = wire(monkeypatch, fake, [])
+    import trading_bot.risk as RK
+    from trading_bot import study as S
+    monkeypatch.setattr(RK, "stock_entry_window_open", lambda clock, now=None: (True, ""))
+    monkeypatch.setattr(fake, "latest_price", lambda s: 50.0)
+    monkeypatch.setenv("INVEST_PCT", "50"); monkeypatch.setenv("CORE_PCT", "0")
+    today = util.now_et().date().isoformat()
+    card = lambda s, up=True, px=60: {"symbol": s, "crypto": False, "uptrend": up, "score": 1.0, "price": px, "ma50": 55, "r6": 20}
+    st = {"date": today, "regime": {"stocks": True, "coins": False},
+          "picks": {"stocks": ["NVDA", "AVGO"], "coins": ["BTC/USD"]}, "ranked": [card("NVDA"), card("AVGO")]}
+    util.write_json(S.STUDY_FILE, st)
+    b = B.Bot(); b.universe = {"stocks": {"NVDA": {}, "AVGO": {}}, "crypto": {"BTC/USD": {}}}
+    acct = {"equity": "100000", "last_equity": "100000", "cash": "100000"}
+    monkeypatch.setenv("TREND_PCT", "0")
+    b.trend_sleeve(acct, {"is_open": True})
+    assert fake.placed == []                                   # off by default
+    assert b.reserved(acct) == 0
+    monkeypatch.setenv("TREND_PCT", "35")
+    assert b.reserved(acct) == pytest.approx(2 * 50000 * 0.35 / 7)   # two unfilled stock picks held back from news trades
+    b.trend_sleeve(acct, {"is_open": True})
+    bought = sorted(p[1] for p in fake.placed if p[0] == "market")
+    assert bought == ["AVGO", "NVDA"]                          # coins skipped: BTC under its 50-day
+    tr = [t for t in b.ledger["trades"] if t["strategy"] == "trend"]
+    assert all(t["trail"] == C.TREND["trail_pct"] for t in tr)
+    assert sum(t["cost"] for t in tr) == pytest.approx(2 * 50000 * 0.35 / 7, abs=100)
+    # next day: NVDA's trend broke -> sold
+    for t in tr: t["status"] = "open"
+    st["date"] = today; st["ranked"] = [card("NVDA", up=False, px=50), card("AVGO")]
+    util.write_json(S.STUDY_FILE, st)
+    closed = []
+    monkeypatch.setattr(b, "close", lambda t, why: closed.append((t["symbol"], why)))
+    b.s["trendDate"] = None
+    b.trend_sleeve(acct, {"is_open": True})
+    assert closed and closed[0][0] == "NVDA" and "50-day" in closed[0][1]

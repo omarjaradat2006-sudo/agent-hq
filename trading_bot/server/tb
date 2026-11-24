@@ -13,6 +13,9 @@
 #   tb tradestie       type your free Tradestie key (hidden) for r/wallstreetbets buzz (optional: works without)
 #   tb core 50          keep 50% of the invested budget in the halal market ETFs SPUS + HLAL (rides green days). 0 = off
 #   tb trail 3          trailing stop: sell only after a 3% drop from the high (lets winners run). tb trail 0 = fixed -3%/+6%
+#   tb study            build today's Market Study now (trend + momentum + quality ranking of every halal name)
+#   tb study-backtest 12  test the trend rules on the last 12 months of daily prices (no orders, ~1 min)
+#   tb trend 30         put 30% of the invested budget in the Market Study picks (trend sleeve). tb trend 0 = off
 #   tb coach            run the Coach's review now (what it learned + its own settings); tb coach reset = undo all
 #   tb universe         re-run the halal screen now and show how many stocks + coins pass
 #   tb unlock           turn the kill switch off again (only after you've reviewed why it fired)
@@ -50,8 +53,13 @@ case "${1:-help}" in
                 sed -i '/^TRAIL_PCT=/d' ~/.trading-bot.env && echo "TRAIL_PCT=$M" >> ~/.trading-bot.env
                 sudo systemctl restart agenthq-trading && echo "Trailing stop now: $M% (new trades). Bot restarted." ;;
   coach)        "$PY" -m trading_bot.coach "${2:-}" ;;
+  study)        "$PY" -m trading_bot.study ;;
+  study-backtest) "$PY" -m trading_bot.study backtest "${2:-12}" ;;
+  trend)        M="${2:-}"; case "$M" in ''|*[!0-9]*) echo "Use: tb trend <0-90>  (now: $(grep -h '^TREND_PCT' ~/.trading-bot.env 2>/dev/null | cut -d= -f2 || true) / 0 = off if blank)"; exit 1;; esac
+                sed -i '/^TREND_PCT=/d' ~/.trading-bot.env && echo "TREND_PCT=$M" >> ~/.trading-bot.env
+                sudo systemctl restart agenthq-trading && echo "Trend sleeve now: $M% of the invested budget in the Market Study picks (core first, then trend, then news). Bot restarted." ;;
   universe)     "$PY" -m trading_bot.bot universe ;;
   unlock)       "$PY" -m trading_bot.bot unlock ;;
   update)       git pull -q --rebase --autostash origin main && sudo systemctl restart agenthq-trading && echo "Updated + restarted." ;;
-  *)            sed -n '2,20p' "$0" ;;
+  *)            sed -n '2,23p' "$0" ;;
 esac
