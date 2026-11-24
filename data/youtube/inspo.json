@@ -7,7 +7,37 @@
    "file": null,
    "note": "the blade",
    "addedAt": "2026-11-23T02:45:35Z",
-   "status": "new"
+   "status": "failed",
+   "startedAt": "2026-11-24T15:43:46-05:00",
+   "analysis": {
+    "kind": "physics",
+    "name": "blade_multiplies_objects",
+    "summary": "A spinning sword cuts bouncing tomatoes inside a circular boundary, doubling them on each cut until the container overflows.",
+    "physics": "Emoji tomatoes bounce inside a 2D circular boundary. A rotating sword blade cuts tomatoes on contact, doubling them. Count grows exponentially until the container bursts open.",
+    "hook": "Top text reads 'EVERY CUT DOUBLES A TOMATO' above a white circle containing 1 tomato and a spinning sword.",
+    "pacing": "Starts slowly with single cuts, exponentially accelerates as object density increases, culminating in a chaotic explosion of tomatoes.",
+    "colours": "Black background, white circular line, silver/gold sword, red and green tomato icons.",
+    "length_s": 36,
+    "sound": "Swoosh sound effects per slice, pitch-shifting repetition sound effect for each split, culminating in intense chaotic audio before resetting.",
+    "graphics": [
+     "2D circular boundary",
+     "Rotating sword blade sprite",
+     "Bouncing tomato sprites with face graphics",
+     "UI text header and counter"
+    ],
+    "buildable": true,
+    "why_not": null,
+    "spec": "Canvas: 1080x1920. Top title: 'EVERY CUT DOUBLES A TOMATO' (white text, red tomato emojis). Counter below title: '[COUNT] TOMATOES'. Circle arena radius: 400px centered at (540, 1050). Rotating sword length: 450px pivoting near center. Physics: circular collision boundary, gravity=500px/s², elastic bouncing. Blade collision triggers split into two smaller objects with impulse away from blade line. When count > 800 or circle is full, circle line dissolves and objects explode outwards."
+   },
+   "graphics": [
+    "2D circular boundary",
+    "Rotating sword blade sprite",
+    "Bouncing tomato sprites with face graphics",
+    "UI text header and counter"
+   ],
+   "error": "import not allowed: skia",
+   "buildPrompt": "Use the bounce-theory-videos skill. Build a NEW Bounce Theory template from an inspiration video, better than the server's try.\n\nInspiration: https://www.instagram.com/reel/DgBSCyrpJcL/?lqvp=MW1mNjk5bHRxN21raw%3D%3D\nOmar's note: the blade\nServer's breakdown (Gemini watched it): {\"kind\": \"physics\", \"name\": \"blade_multiplies_objects\", \"summary\": \"A spinning sword cuts bouncing tomatoes inside a circular boundary, doubling them on each cut until the container overflows.\", \"physics\": \"Emoji tomatoes bounce inside a 2D circular boundary. A rotating sword blade cuts tomatoes on contact, doubling them. Count grows exponentially until the container bursts open.\", \"hook\": \"Top text reads 'EVERY CUT DOUBLES A TOMATO' above a white circle containing 1 tomato and a spinning sword.\", \"pacing\": \"Starts slowly with single cuts, exponentially accelerates as object density increases, culminating in a chaotic explosion of tomatoes.\", \"colours\": \"Black background, white circular line, silver/gold sword, red and green tomato icons.\", \"length_s\": 36, \"sound\": \"Swoosh sound effects per slice, pitch-shifting repetition sound effect for each split, culminating in intense chaotic audio before resetting.\", \"graphics\": [\"2D circular boundary\", \"Rotating sword blade sprite\", \"Bouncing tomato sprites with face graphics\", \"UI text header and counter\"], \"buildable\": true, \"why_not\": null, \"spec\": \"Canvas: 1080x1920. Top title: 'EVERY CUT DOUBLES A TOMATO' (white text, red tomato emojis). Counter below title: '[COUNT] TOMATOES'. Circle arena radius: 400px centered at (540, 1050). Rotating sword length: 450px pivoting near center. Physics: circular collision boundary, gravity=500px/s², elastic bouncing. Blade collision triggers split into two smaller objects with impulse away from blade line. When count > 800 or circle is full, circle line dissolves and objects explode outwards.\"}\nServer's try: none  (import not allowed: skia)\n\nDo this:\n1. git clone https://github.com/omarjaradat2006-sudo/agent-hq and read data/youtube/auto_templates/engine2.py + auto_bounce2.py (Engine 2: Skia drawing, pymunk physics, Kokoro voice). Download the inspiration and look at it frame by frame (contact sheets).\n2. Write data/youtube/auto_templates/auto_inspo_new.py: first line `from auto_bounce2 import *`, one public function (path, seed=1, text=True, dry=False, **knobs) returning seconds, 18-38 s, 1080x1920 60 fps, hook title on frame 1, sound on every event, payoff + loop, 5-10 knobs. dry=True must give the same length.\n3. Render it, check it (ffprobe + contact sheet vs the inspiration), fix until it really matches the style.\n4. In data/youtube/inspo.json set item in-20261123-njem to \"status\": \"live\", \"template\": \"<function name>\". Commit and push to main.\nThe server's daily Bounce run smoke-tests it and adds it to the template menu.",
+   "updatedAt": "2026-11-24T15:43:46-05:00"
   },
   {
    "id": "in-20261123-gee5",
@@ -16,7 +46,41 @@
    "file": null,
    "note": "the lego and explanation would be perfect",
    "addedAt": "2026-11-23T02:46:00Z",
-   "status": "new"
+   "status": "ready",
+   "startedAt": "2026-11-24T15:43:46-05:00",
+   "analysis": {
+    "kind": "fact",
+    "name": "halal_rules_explainer",
+    "summary": "Blocky 3D characters explain the four ethical rules behind Halal meat preparation.",
+    "physics": "3D blocky/toy character animations illustrating sequential instructional steps in a farm environment.",
+    "hook": "Character shows a Halal logo: 'That halal sign on your chicken is a promise...'",
+    "pacing": "Starts with hook, sequentially presents 4 rules with matching visuals, finishes with summary and CTA.",
+    "colours": "Bright green grass, brown wood, yellow/red/blue blocky characters, white chickens, pastel blue sky.",
+    "length_s": 37,
+    "sound": "Clear narration voiceover, light background music, subtle farm sound effects (chicken clucks, knife sharpening).",
+    "graphics": [
+     "3D blocky characters",
+     "3D chicken models",
+     "Farm buildings and foliage",
+     "Halal symbol icon",
+     "Subtitles",
+     "Narration voiceover"
+    ],
+    "buildable": true,
+    "why_not": "",
+    "spec": "Format: 1080x1920 vertical 3D render. Topic: Explaining Halal slaughter rules visually using Roblox/Lego aesthetic. Scene 1 (0-3s): Character presents Halal icon. Scene 2 (4-11s): Rule 1 - Sharpen knife hidden from animals. Scene 3 (12-17s): Rule 2 - Keep animals out of sight during processing. Scene 4 (18-21s): Rule 3 - Provide water beforehand. Scene 5 (22-27s): Rule 4 - Recite blessing and make a swift, pain-free cut. Scene 6 (28-37s): Wrap up showing final package and 4 rule icons, closing with CTA."
+   },
+   "graphics": [
+    "3D blocky characters",
+    "3D chicken models",
+    "Farm buildings and foliage",
+    "Halal symbol icon",
+    "Subtitles",
+    "Narration voiceover"
+   ],
+   "kind": "ambient",
+   "explain": "Ambient Escape format: the server will make it from free footage + audio layers using these production notes (no sample until the daily Ambient run).",
+   "updatedAt": "2026-11-24T15:43:46-05:00"
   },
   {
    "id": "in-20261123-wdwa",
@@ -25,7 +89,39 @@
    "file": null,
    "note": "it admits its AI",
    "addedAt": "2026-11-23T02:46:40Z",
-   "status": "new"
+   "status": "failed",
+   "startedAt": "2026-11-24T15:43:46-05:00",
+   "analysis": {
+    "kind": "physics",
+    "name": "ai_cave_flight",
+    "summary": "100 AI agents evolve to navigate a narrowing cave over 20 generations.",
+    "physics": "100 steering agents fly through neon cave walls. Wall collisions eliminate agents. Each generation mutates surviving flight paths until all 100 reach the end.",
+    "hook": "Top text setting the challenge over Gen 1 agents crashing into glowing cave walls.",
+    "pacing": "Fast cuts through generations 1, 2, 4, and 20. Crashes decrease until a perfect swarm run at generation 20.",
+    "colours": "Dark violet background, neon purple walls, cyan agent dots, yellow impact rings.",
+    "length_s": 18,
+    "sound": "Upbeat synth melody with pop sounds on collisions and a completion chime at the end.",
+    "graphics": [
+     "2D glowing bezier cave walls",
+     "100 glowing cyan particles with motion trails",
+     "Expanding yellow impact circles",
+     "HUD text counters for Generation and Still Flying",
+     "End card text overlay"
+    ],
+    "buildable": true,
+    "why_not": "",
+    "spec": "Canvas: 1080x1920 portrait. Cave: Two parallel sine-wave bezier curves (purple glow, width 300px narrowing to 120px). Agents: 100 cyan dots (r=8px) spawned at left edge with steering vectors. Engine simulates generations 1, 2, 4, 20. Crashes spawn yellow expanding rings (r=20px). Text at top: '100 AIs learning to fly through a cave' and 'Generation X / Still Flying Y/100'. Duration: 18s total, ending with success text card."
+   },
+   "graphics": [
+    "2D glowing bezier cave walls",
+    "100 glowing cyan particles with motion trails",
+    "Expanding yellow impact circles",
+    "HUD text counters for Generation and Still Flying",
+    "End card text overlay"
+   ],
+   "error": "it crashed:\nTraceback (most recent call last):\n  File \"/home/ubuntu/inspo-work/in-20261123-wdwa/_run.py\", line 4, in <module>\n    t = time.time(); d = fn(sys.argv[5], 1); r = time.time() - t\n                         ^^^^^^^^^^^^^^^^^^\n  File \"/home/ubuntu/inspo-work/in-20261123-wdwa/auto_inspo_ai_cave_flight.py\", line 264, in ai_cave_flight\n    ix, iy, ir, stroke_paint(impact_rgb, 3, alpha=ia)\n                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nTypeError: stroke_paint() got an unexpected keyword argument 'alpha'\n",
+   "buildPrompt": "Use the bounce-theory-videos skill. Build a NEW Bounce Theory template from an inspiration video, better than the server's try.\n\nInspiration: https://www.instagram.com/reel/Df_N4kJjpFa/?evlk=MTdpa2ptMWVmYzd1bA%3D%3D\nOmar's note: it admits its AI\nServer's breakdown (Gemini watched it): {\"kind\": \"physics\", \"name\": \"ai_cave_flight\", \"summary\": \"100 AI agents evolve to navigate a narrowing cave over 20 generations.\", \"physics\": \"100 steering agents fly through neon cave walls. Wall collisions eliminate agents. Each generation mutates surviving flight paths until all 100 reach the end.\", \"hook\": \"Top text setting the challenge over Gen 1 agents crashing into glowing cave walls.\", \"pacing\": \"Fast cuts through generations 1, 2, 4, and 20. Crashes decrease until a perfect swarm run at generation 20.\", \"colours\": \"Dark violet background, neon purple walls, cyan agent dots, yellow impact rings.\", \"length_s\": 18, \"sound\": \"Upbeat synth melody with pop sounds on collisions and a completion chime at the end.\", \"graphics\": [\"2D glowing bezier cave walls\", \"100 glowing cyan particles with motion trails\", \"Expanding yellow impact circles\", \"HUD text counters for Generation and Still Flying\", \"End card text overlay\"], \"buildable\": true, \"why_not\": \"\", \"spec\": \"Canvas: 1080x1920 portrait. Cave: Two parallel sine-wave bezier curves (purple glow, width 300px narrowing to 120px). Agents: 100 cyan dots (r=8px) spawned at left edge with steering vectors. Engine simulates generations 1, 2, 4, 20. Crashes spawn yellow expanding rings (r=20px). Text at top: '100 AIs learning to fly through a cave' and 'Generation X / Still Flying Y/100'. Duration: 18s total, ending with success text card.\"}\nServer's try: none  (it crashed:\nTraceback (most recent call last):\n  File \"/home/ubuntu/inspo-work/in-20261123-wdwa/_run.py\", line 4, in <module>\n    t = time.time(); d = fn(sys.argv[5], 1); r = time.time() - t\n                         ^^^^^^^^^^^^^^^^^^\n  File \"/home/ubuntu/inspo-work/in-20261123-wdwa/auto_inspo_ai_cave_flight.py\", line 264, in ai_cave_flight\n    ix, iy, ir, stroke_paint(impact_rgb, 3, alpha=ia)\n                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nTypeError: stroke_paint() got an unexpected keyword argument 'alpha'\n)\n\nDo this:\n1. git clone https://github.com/omarjaradat2006-sudo/agent-hq and read data/youtube/auto_templates/engine2.py + auto_bounce2.py (Engine 2: Skia drawing, pymunk physics, Kokoro voice). Download the inspiration and look at it frame by frame (contact sheets).\n2. Write data/youtube/auto_templates/auto_inspo_new.py: first line `from auto_bounce2 import *`, one public function (path, seed=1, text=True, dry=False, **knobs) returning seconds, 18-38 s, 1080x1920 60 fps, hook title on frame 1, sound on every event, payoff + loop, 5-10 knobs. dry=True must give the same length.\n3. Render it, check it (ffprobe + contact sheet vs the inspiration), fix until it really matches the style.\n4. In data/youtube/inspo.json set item in-20261123-wdwa to \"status\": \"live\", \"template\": \"<function name>\". Commit and push to main.\nThe server's daily Bounce run smoke-tests it and adds it to the template menu.",
+   "updatedAt": "2026-11-24T15:43:46-05:00"
   }
  ]
 }
