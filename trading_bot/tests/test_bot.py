@@ -67,6 +67,18 @@ class FakeAlpaca:
     def crypto_bars(self, syms, tf, start, end=None, limit=None):
         return {s: bars_spike(days=7, tf_min=15, news_at=self.news_at) for s in syms}
 
+    def buy_stock(self, sym, qty, cid):
+        oid = f"o{len(self.placed)}"
+        self.placed.append(("market", sym, qty))
+        self.orders_[oid] = {"id": oid, "status": "filled", "filled_avg_price": "101", "filled_qty": str(qty), "legs": []}
+        return {"id": oid}
+
+    def trailing_stop(self, sym, qty, pct, cid):
+        oid = f"t{len(self.placed)}"
+        self.placed.append(("trailing", sym, qty, pct))
+        self.orders_[oid] = {"id": oid, "status": "new", "type": "trailing_stop"}
+        return {"id": oid}
+
     def buy_stock_bracket(self, sym, qty, stop, target, cid):
         oid = f"o{len(self.placed)}"
         self.placed.append(("bracket", sym, qty, stop, target))
@@ -841,3 +853,45 @@ def test_triage_retries_when_gemini_overloaded(monkeypatch):
     TR.triage([{"id": "1", "publisher": "Reuters", "time": T(NOW), "title": "x", "summary": "", "symbols": []}], {}, UNIVERSE, [])
     assert len(calls) == 2 and calls[1] == ["lite-x", "flash-y"] and TR.FAILED_IDS == []
     assert TR.gemini._model == ["lite-x"]                                     # restored afterwards
+
+
+
+@pytest.fixture(autouse=True)
+def _fixed_bracket_by_default(monkeypatch):
+    """Older tests check the fixed -3% / +6% bracket; trailing-stop tests turn it on themselves."""
+    monkeypatch.setenv("TRAIL_PCT", "0")
+
+
+def test_trailing_stop_lets_winners_run(monkeypatch, tmpdirs):
+    monkeypatch.setenv("TRAIL_PCT", "3")
+    fake = FakeAlpaca()
+    B = wire(monkeypatch, fake, [{"symbol": "XOM", "direction": "up", "confidence": 0.8, "why": "x"}])
+    b = B.Bot(); b.cycle()
+    assert fake.placed and fake.placed[0][0] == "market"                       # plain buy, no +6% take-profit
+    t = b.ledger["trades"][0]
+    assert t["trail"] == 3
+    fake.pos = [{"symbol": "XOM", "qty": str(t["qty"]), "qty_available": str(t["qty"]), "current_price": "101",
+                 "unrealized_plpc": "0"}]
+    b.reconcile(fake.pos)
+    assert ("trailing", "XOM", t["qty"], 3.0) in fake.placed and t["stopOrderId"] and t["target"] is None
+    # Alpaca's trailing stop fills after a big run-up
+    fake.orders_[t["stopOrderId"]].update({"status": "filled", "filled_avg_price": "128.0"})
+    fake.pos = []
+    b.reconcile([])
+    assert t["status"] == "closed" and t["exitReason"].startswith("trailing stop hit (+26.7%")
+
+
+def test_crypto_trailing_raises_stop(monkeypatch, tmpdirs):
+    monkeypatch.setenv("TRAIL_PCT", "3")
+    fake = FakeAlpaca()
+    B = wire(monkeypatch, fake, [])
+    b = B.Bot()
+    calls = []
+    fake.cancel = lambda oid: calls.append(("cancel", oid))
+    fake.crypto_stop = lambda sym, qty, stop, cid: (calls.append(("stop", stop)), {"id": "s2"})[1]
+    t = {"id": "c1", "symbol": "BTC/USD", "asset": "crypto", "entryPrice": 100.0, "stop": 97.0, "qty": 1.0, "trail": 3.0,
+         "stopOrderId": "s1", "target": 106.0}
+    b.trail_crypto(t, 120.0)
+    assert t["stop"] == pytest.approx(116.4) and ("cancel", "s1") in calls
+    b.trail_crypto(t, 119.0)                                                     # no new high: stop stays
+    assert t["stop"] == pytest.approx(116.4)

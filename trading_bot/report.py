@@ -133,7 +133,8 @@ def plain_words(bot, acct, eq, start, spy_pct, today, counters):
         q = t.get("qty") or 0
         qty = f"{q:g} shares" if t.get("asset") != "crypto" else f"{q:.6g} coins"
         holding.append(f"{t['symbol']}: {qty} worth {_money(val)}, {'up' if pl >= 0 else 'down'} {_money(pl)} "
-                       f"(sells at {_money(t.get('target') or 0)} or stops at {_money(t.get('stop') or 0)})")
+                       (f"(trailing stop: sells if it falls {t['trail']:g}% from its high)" if t.get("trail") and not t.get("target")
+                        else f"(sells at {_money(t.get('target') or 0)} or stops at {_money(t.get('stop') or 0)})"))
 
     did = []
     in_today = lambda ts: ts and parse_time(ts).astimezone(now_et().tzinfo).date().isoformat() == today

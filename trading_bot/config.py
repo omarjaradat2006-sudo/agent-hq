@@ -124,6 +124,19 @@ def core_share():
     return max(0.0, min(90.0, v)) / 100
 
 
+# Trailing stop (let winners run): instead of selling at a fixed +6%, the stop-loss follows the price up and only
+# sells once the stock falls TRAIL_PCT from its high. Starts as the same -3% stop. `tb trail <pct>` (0 = off,
+# back to the fixed -3% / +6% bracket). Stocks: Alpaca's own trailing-stop order (lives on Alpaca's servers).
+# Coins: the bot raises the stop itself. A news trade that is up 2%+ is not sold by the 3-day time limit.
+def trail_pct():
+    import os
+    try:
+        v = float(os.environ.get("TRAIL_PCT") or 3)
+    except ValueError:
+        v = 3.0
+    return max(0.0, min(15.0, v))
+
+
 # Buy-the-dip: when the whole market (SPY) is down 1.5%+ today, buy the halal Shariah ETFs with part of the
 # budget and hold them for days, with a wider stop than news trades. Once per day.
 DIP = _frozen({"spy_drop_pct": 0.015, "budget_share": 0.5, "stop_pct": 0.07, "target_pct": 0.04, "max_hold_days": 10})

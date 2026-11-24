@@ -263,6 +263,19 @@ class Bot:
                     continue
                 else:
                     continue
+            # stocks with a trailing stop: put it on Alpaca's side as soon as the shares are in the account
+            if t["asset"] == "stock" and t.get("trail") and not t.get("stopOrderId") and ps in held:
+                qty = int(float(held[ps].get("qty_available") or held[ps]["qty"]))
+                try:
+                    o = self.a.trailing_stop(t["symbol"], qty, t["trail"], f"{t['id']}-trail")
+                    t["stopOrderId"], t["qty"] = o["id"], qty
+                    t["target"] = None
+                    log(f"Trailing stop for {t['symbol']} placed on Alpaca: sells if it falls {t['trail']:g}% from its high", "Risk Officer")
+                except HttpError as ex:
+                    log(f"couldn't place {t['symbol']} trailing stop, selling to stay safe: {ex}", "Risk Officer")
+                    event("risk", "no_stop_loss_possible", f"couldn't place the trailing stop, sold: {ex}", t["symbol"])
+                    self.close(t, "no stop-loss possible")
+                    continue
             # crypto: put the stop-loss on Alpaca's side as soon as the coins are in the account
             if t["asset"] == "crypto" and not t.get("stopOrderId") and ps in held:
                 qty = float(held[ps].get("qty_available") or held[ps]["qty"])
@@ -291,7 +304,11 @@ class Bot:
             for leg in legs:
                 if leg.get("status") == "filled":
                     exit_price = float(leg["filled_avg_price"])
-                    reason = "target +6% hit" if leg.get("type") == "limit" else "stop-loss -3% hit"
+                    if leg.get("type") == "trailing_stop":
+                        px = float(leg["filled_avg_price"])
+                        reason = f"trailing stop hit ({(px - t['entryPrice']) / t['entryPrice'] * 100:+.1f}%)"
+                    else:
+                        reason = "target +6% hit" if leg.get("type") == "limit" else "stop-loss -3% hit"
             self.finish(t, exit_price or t.get("lastPrice") or t["entryPrice"], reason)
 
     def finish(self, t, price, reason):
@@ -321,7 +338,9 @@ class Bot:
             opened = parse_time(t["openedAt"])
             if t["asset"] == "crypto":
                 price = self.a.latest_price(t["symbol"])
-                if price and price >= t["target"]:
+                if price and t.get("trail"):
+                    self.trail_crypto(t, price)
+                elif price and price >= t["target"]:
                     self.close(t, "target +6% hit")
                 elif now_utc() - opened >= timedelta(hours=C.RISK["crypto_max_hold_hours"]):
                     self.close(t, "48h limit")
@@ -336,8 +355,24 @@ class Bot:
             if t.get("strategy") == "core":
                 continue                       # core holding: no time limit
             lim = C.DIP["max_hold_days"] if t.get("strategy") == "dip" else C.RISK["stock_max_hold_trading_days"]
+            if t.get("trail") and (t.get("unrealizedPct") or 0) >= 2:
+                continue                       # a winner with a trailing stop rides; the stop decides when to sell
             if days > lim or (days == lim and near_close):
                 self.close(t, f"{lim} trading-day limit")
+
+    def trail_crypto(self, t, price):
+        """Coins: raise the Alpaca stop as the price makes new highs (Alpaca has no trailing stop for crypto)."""
+        t["high"] = max(t.get("high") or t["entryPrice"], price)
+        new_stop = round_price(t["high"] * (1 - t["trail"] / 100))
+        if new_stop <= (t.get("stop") or 0) * 1.005 or not t.get("stopOrderId"):
+            return
+        try:
+            self.a.cancel(t["stopOrderId"])
+            o = self.a.crypto_stop(t["symbol"], t["qty"], new_stop, f"{t['id']}-stop-{int(time.time())}")
+            t["stopOrderId"], t["stop"] = o["id"], new_stop
+            log(f"{t['symbol']} new high ${t['high']:,.2f}: stop raised to ${new_stop:,.2f}", "Risk Officer")
+        except HttpError as ex:
+            event("error", "trail_update", ex, t["symbol"])
 
     def bad_news_exits(self):
         from .triage import publishers
@@ -482,7 +517,10 @@ class Bot:
                 qty = int(budget // price)
                 if qty < 1:
                     raise ValueError("not enough cash for one share")
-                o = self.a.buy_stock_bracket(sym, qty, round(stop, 2), round(target, 2), tid)
+                if C.trail_pct() > 0:
+                    o = self.a.buy_stock(sym, qty, tid)      # trailing stop goes on as soon as it fills (reconcile)
+                else:
+                    o = self.a.buy_stock_bracket(sym, qty, round(stop, 2), round(target, 2), tid)
                 cost = qty * price
         except (HttpError, ValueError) as err:
             self.decide(key, sym, "error", f"order failed: {str(err)[:120]}", e)
@@ -497,6 +535,7 @@ class Bot:
             "id": tid, "symbol": sym, "asset": "crypto" if "/" in sym else "stock", "status": "pending",
             "entryOrderId": o["id"], "qty": qty, "cost": round(cost, 2), "estPrice": price,
             "entryPrice": price, "stop": round_price(stop), "target": round_price(target), "openedAt": iso(),
+            "trail": C.trail_pct() if C.trail_pct() > 0 else None,
             "news": {"summary": e["summary"], "category": e["category"],
                      "sources": [{"publisher": x["publisher"], "title": x["title"], "url": x.get("url")} for x in e["items"][:6]]},
             "reason": {"triage": a["why"], "confidence": a["confidence"], "confirmation": chk["reason"],
@@ -510,7 +549,7 @@ class Bot:
 def exit_rule(reason):
     """Which risk rule closed a trade (None for exits that aren't a risk rule)."""
     r = reason.lower()
-    for key, rule in (("stop-loss", "stop_loss_-3%"), ("target", "take_profit_+6%"), ("3 trading-day", "stock_3_day_limit"),
+    for key, rule in (("trailing stop", "trailing_stop"), ("stop-loss", "stop_loss_-3%"), ("target", "take_profit_+6%"), ("3 trading-day", "stock_3_day_limit"),
                       ("48h", "crypto_48h_limit"), ("bad news", "bad_news_exit"), ("kill switch", "kill_switch_exit"),
                       ("no stop-loss", "no_stop_loss_possible"), ("outside the bot", "closed_outside_bot")):
         if key in r:

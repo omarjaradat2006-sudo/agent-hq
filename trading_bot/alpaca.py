@@ -100,6 +100,12 @@ class Alpaca:
                                         "stop_price": _p(stop), "limit_price": _p(limit),
                                         "time_in_force": "gtc", "client_order_id": client_id})
 
+    def trailing_stop(self, sym, qty, trail_pct, client_id):
+        """Sell when the price falls trail_pct % from its highest point since the order was placed (Alpaca-side)."""
+        return self.post("/v2/orders", {"symbol": sym, "qty": str(int(qty)), "side": "sell", "type": "trailing_stop",
+                                        "trail_percent": f"{trail_pct:g}", "time_in_force": "gtc",
+                                        "client_order_id": client_id})
+
     def sell_all(self, sym):
         """Market-sell a whole position (open orders for it are cancelled first)."""
         for o in self.orders("open", symbols=[sym]):
