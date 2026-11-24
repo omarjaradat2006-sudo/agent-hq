@@ -1,17 +1,16 @@
 {
  "team": "trading",
  "plain": {
-  "line": "Down $4,303.60 since start · 23 trades · holding: NOW, AMZN, TSLA, NVDA, AMAT, AMD",
+  "line": "Down $4,051.79 since start · 23 trades · holding: NOW, AMZN, TSLA, AMAT, AMD",
   "rulesMode": "ultra",
-  "top": "Down $4,303.60 since start (-4.30%) · just holding SPY would be -3.89%",
+  "top": "Down $4,051.79 since start (-4.05%) · just holding SPY would be -3.89%",
   "up": false,
   "holding": [
-   "NOW: 169 shares worth $15,541.24, up $43.88 (sells at $97.20 or stops at $88.95)",
-   "AMZN: 75 shares worth $19,223.92, down $141.43 (sells at $273.70 or stops at $250.46)",
-   "TSLA: 33 shares worth $12,724.80, down $75.18 (sells at $411.08 or stops at $376.18)",
-   "NVDA: 59 shares worth $9,732.90, up $26.81 (sells at $174.18 or stops at $159.39)",
-   "AMAT: 21 shares worth $7,266.63, up $50.52 (sells at $363.66 or stops at $332.79)",
-   "AMD: 16 shares worth $7,222.28, down $22.22 (sells at $479.33 or stops at $438.63)"
+   "NOW: 169 shares worth $15,488.85, down $8.51 (sells at $97.20 or stops at $88.95)",
+   "AMZN: 75 shares worth $19,275.00, down $90.35 (sells at $273.70 or stops at $250.46)",
+   "TSLA: 33 shares worth $12,816.54, up $16.56 (sells at $411.08 or stops at $376.18)",
+   "AMAT: 21 shares worth $7,245.42, up $29.31 (sells at $363.66 or stops at $332.79)",
+   "AMD: 16 shares worth $7,250.88, up $6.38 (sells at $479.33 or stops at $438.63)"
   ],
   "today": [
    "Bought NOW after the news: Political intervention and the reinstatement of Jensen Huang as Nvidia CEO continue to drive a massive tech sector rally.",
@@ -22,20 +21,21 @@
    "Bought AMD after the news: Nvidia shares and the broader semiconductor sector continue to rally following the reinstatement of Jensen Huang as CEO.",
    "Bought CRWD after the news: CrowdStation reports record Q3 results and higher guidance alongside an all-stock Zscaler acquisition valued at approximately $44 billion.",
    "Bought CRWD after the news: CrowdStrike Holdings reports an earnings beat and revenue outperformance.",
+   "Sold NVDA (bad news: Fed officials signaling that inflation remains too high and calling for potentia): made $20.06.",
    "Sold CRWD (bad news: CrowdStrike's earnings beat is overshadowed by its massive $43.9 billion all-sto): lost $245.70.",
    "Sold CRWD (stop-loss -3% hit): lost $1,321.50.",
-   "Scanned the news 108 times today: read 5504 headlines, found 127 that could move a stock or coin it's allowed to trade.",
+   "Scanned the news 119 times today: read 6260 headlines, found 145 that could move a stock or coin it's allowed to trade.",
    "Passed on AMAT, AVAV, COP, KLAC, LLY: order failed: not enough cash for one share.",
-   "Passed on BTC/USD, SOL/USD: already $71,704 invested (max 75% of $95,696).",
-   "Passed on BTC/USD, SOL/USD: already $71,657 invested (max 75% of $95,649).",
-   "Passed on BTC/USD, SOL/USD: already $71,680 invested (max 75% of $95,672).",
-   "Safety rules that stepped in: stock entry window (x8), cash only no margin (x8), stop loss -3% (x1), bad news exit (x1), max invested (x6)."
+   "Passed on BTC/USD, ETH/USD, SOL/USD: already $71,720 invested (max 75% of $95,712).",
+   "Passed on BTC/USD, ETH/USD, SOL/USD: already $71,563 invested (max 75% of $95,555).",
+   "Passed on BTC/USD, ETH/USD, SOL/USD: already $71,405 invested (max 75% of $95,396).",
+   "Safety rules that stepped in: stock entry window (x8), cash only no margin (x8), stop loss -3% (x1), bad news exit (x2), max invested (x35)."
   ],
   "watchlist": "Allowed to trade: 68 halal stocks, 5 Shariah ETFs, 9 coins.",
-  "lastScan": "2026-11-23T22:12:11Z"
+  "lastScan": "2026-11-24T01:01:59Z"
  },
  "hired": true,
- "updatedAt": "2026-11-23T22:13:49Z",
+ "updatedAt": "2026-11-24T01:02:14Z",
  "mode": "PAPER",
  "agents": [
   {
@@ -43,16 +43,16 @@
    "name": "News Scout",
    "role": "Reads X, Reddit and news feeds",
    "status": "working",
-   "doing": "Read 123 new headlines/posts, 4 market-moving stories",
-   "lastRun": "2026-11-23T22:13:46Z"
+   "doing": "Read 45 new headlines/posts, 1 market-moving stories",
+   "lastRun": "2026-11-24T01:02:11Z"
   },
   {
    "id": "analyst",
    "name": "News Analyst",
    "role": "Gemini: is it real, what moves, which way",
    "status": "ok",
-   "doing": "Bad news for CRWD: CrowdStrike's earnings beat is overshadowed by its massive $43.9 billion all-stock acquisition propo",
-   "lastRun": "2026-11-23T18:53:11Z"
+   "doing": "Bad news for NVDA: Fed officials signaling that inflation remains too high and calling for potential further rate hikes",
+   "lastRun": "2026-11-24T00:16:28Z"
   },
   {
    "id": "confirm",
@@ -83,8 +83,8 @@
    "name": "Trader",
    "role": "Places paper orders on Alpaca",
    "status": "ok",
-   "doing": "Saved results to the Agent HQ dashboard",
-   "lastRun": "2026-11-23T21:19:21Z"
+   "doing": "Closed NVDA: bad news: Fed officials signaling that inflation remains too high and calling for potentia, +0.21% ($+20.06)",
+   "lastRun": "2026-11-24T00:16:30Z"
   },
   {
    "id": "coins",
@@ -104,6 +104,76 @@
   }
  ],
  "log": [
+  {
+   "t": "2026-11-24T01:02:11Z",
+   "agent": "News Scout",
+   "msg": "Read 45 new headlines/posts, 1 market-moving stories"
+  },
+  {
+   "t": "2026-11-24T00:46:55Z",
+   "agent": "News Scout",
+   "msg": "Read 36 new headlines/posts, 1 market-moving stories"
+  },
+  {
+   "t": "2026-11-24T00:31:39Z",
+   "agent": "News Scout",
+   "msg": "Read 43 new headlines/posts, 1 market-moving stories"
+  },
+  {
+   "t": "2026-11-24T00:16:30Z",
+   "agent": "Trader",
+   "msg": "Closed NVDA: bad news: Fed officials signaling that inflation remains too high and calling for potentia, +0.21% ($+20.06)"
+  },
+  {
+   "t": "2026-11-24T00:16:28Z",
+   "agent": "News Analyst",
+   "msg": "Bad news for NVDA: Fed officials signaling that inflation remains too high and calling for potential further rate hikes"
+  },
+  {
+   "t": "2026-11-24T00:16:28Z",
+   "agent": "News Scout",
+   "msg": "Read 60 new headlines/posts, 1 market-moving stories"
+  },
+  {
+   "t": "2026-11-24T00:01:05Z",
+   "agent": "News Scout",
+   "msg": "Read 45 new headlines/posts, 2 market-moving stories"
+  },
+  {
+   "t": "2026-11-23T23:45:50Z",
+   "agent": "News Scout",
+   "msg": "Read 60 new headlines/posts, 0 market-moving stories"
+  },
+  {
+   "t": "2026-11-23T23:30:38Z",
+   "agent": "News Scout",
+   "msg": "Read 61 new headlines/posts, 4 market-moving stories"
+  },
+  {
+   "t": "2026-11-23T23:15:14Z",
+   "agent": "News Scout",
+   "msg": "Read 138 new headlines/posts, 3 market-moving stories"
+  },
+  {
+   "t": "2026-11-23T22:59:37Z",
+   "agent": "News Scout",
+   "msg": "Read 46 new headlines/posts, 1 market-moving stories"
+  },
+  {
+   "t": "2026-11-23T22:44:18Z",
+   "agent": "News Scout",
+   "msg": "Read 149 new headlines/posts, 2 market-moving stories"
+  },
+  {
+   "t": "2026-11-23T22:29:07Z",
+   "agent": "News Scout",
+   "msg": "Read 73 new headlines/posts, 2 market-moving stories"
+  },
+  {
+   "t": "2026-11-23T22:13:51Z",
+   "agent": "Trader",
+   "msg": "Saved results to the Agent HQ dashboard"
+  },
   {
    "t": "2026-11-23T22:13:46Z",
    "agent": "News Scout",
@@ -783,98 +853,28 @@
    "t": "2026-11-23T12:14:15Z",
    "agent": "News Scout",
    "msg": "Read 103 new headlines/posts, 2 market-moving stories"
-  },
-  {
-   "t": "2026-11-23T11:58:47Z",
-   "agent": "News Scout",
-   "msg": "Read 69 new headlines/posts, 1 market-moving stories"
-  },
-  {
-   "t": "2026-11-23T11:43:31Z",
-   "agent": "News Scout",
-   "msg": "Read 105 new headlines/posts, 4 market-moving stories"
-  },
-  {
-   "t": "2026-11-23T11:28:17Z",
-   "agent": "News Scout",
-   "msg": "Read 83 new headlines/posts, 1 market-moving stories"
-  },
-  {
-   "t": "2026-11-23T11:13:09Z",
-   "agent": "News Scout",
-   "msg": "Read 121 new headlines/posts, 1 market-moving stories"
-  },
-  {
-   "t": "2026-11-23T10:58:01Z",
-   "agent": "News Scout",
-   "msg": "Read 59 new headlines/posts, 2 market-moving stories"
-  },
-  {
-   "t": "2026-11-23T10:42:52Z",
-   "agent": "News Scout",
-   "msg": "Read 67 new headlines/posts, 1 market-moving stories"
-  },
-  {
-   "t": "2026-11-23T10:27:45Z",
-   "agent": "News Scout",
-   "msg": "Read 78 new headlines/posts, 4 market-moving stories"
-  },
-  {
-   "t": "2026-11-23T10:12:04Z",
-   "agent": "News Scout",
-   "msg": "Read 93 new headlines/posts, 2 market-moving stories"
-  },
-  {
-   "t": "2026-11-23T09:56:52Z",
-   "agent": "News Scout",
-   "msg": "Read 53 new headlines/posts, 0 market-moving stories"
-  },
-  {
-   "t": "2026-11-23T09:41:46Z",
-   "agent": "News Scout",
-   "msg": "Read 65 new headlines/posts, 1 market-moving stories"
-  },
-  {
-   "t": "2026-11-23T09:26:40Z",
-   "agent": "News Scout",
-   "msg": "Read 70 new headlines/posts, 1 market-moving stories"
-  },
-  {
-   "t": "2026-11-23T09:11:34Z",
-   "agent": "News Scout",
-   "msg": "Read 94 new headlines/posts, 2 market-moving stories"
-  },
-  {
-   "t": "2026-11-23T08:56:27Z",
-   "agent": "News Scout",
-   "msg": "Read 55 new headlines/posts, 0 market-moving stories"
-  },
-  {
-   "t": "2026-11-23T08:41:21Z",
-   "agent": "News Scout",
-   "msg": "Read 72 new headlines/posts, 2 market-moving stories"
   }
  ],
  "brief": {
   "date": "Mon Nov 23",
-  "createdAt": "2026-11-23T22:13:49Z",
-  "headline": "Paper account -$1,706 today (-1.75%), -4.30% total vs SPY -3.89% · 6 open",
-  "summary": "2 trade(s) closed today, 3/17 winners overall. TradingAgents checks used today: 0/5.",
+  "createdAt": "2026-11-24T01:02:14Z",
+  "headline": "Paper account -$1,454 today (-1.49%), -4.05% total vs SPY -3.89% · 5 open",
+  "summary": "3 trade(s) closed today, 4/18 winners overall. TradingAgents checks used today: 0/5.",
   "notes": [
    "X/Reddit reader: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
   ]
  },
  "account": {
-  "equity": 95696.4,
+  "equity": 95948.21,
   "cash": 23991.97,
   "startEquity": 100000.0,
   "startedAt": "2026-11-10T01:51:53Z",
-  "dayPnl": -1706.2,
-  "dayPct": -1.75,
-  "totalPnl": -4303.6,
-  "totalPct": -4.3,
+  "dayPnl": -1454.39,
+  "dayPct": -1.49,
+  "totalPnl": -4051.79,
+  "totalPct": -4.05,
   "spyPct": -3.89,
-  "vsSpyPct": -0.41
+  "vsSpyPct": -0.16
  },
  "status": {
   "killed": false,
@@ -882,7 +882,7 @@
   "deepUsed": 0,
   "deepMax": 5,
   "social": {
-   "at": "2026-11-23T22:12:16Z",
+   "at": "2026-11-24T01:02:09Z",
    "items": 0,
    "source": "Reddit via Tradestie + ApeWisdom (direct Reddit blocks servers; X needs Agent Reach)",
    "problems": [
@@ -890,13 +890,13 @@
     "r/stocks: HTTP 403 https://www.reddit.com/r/stocks/new.json: <body class=theme-beta><div><"
    ],
    "wsb": {
-    "at": "2026-11-23T22:12:16Z",
+    "at": "2026-11-24T01:02:10Z",
     "tickers": 50,
     "items": 0,
     "key": false
    },
    "ape": {
-    "at": "2026-11-23T22:12:17Z",
+    "at": "2026-11-24T01:02:10Z",
     "tickers": 200,
     "items": 0,
     "problems": []
@@ -976,8 +976,8 @@
     "tradingAgents": "not used (ultra mode)",
     "taSummary": ""
    },
-   "lastPrice": 92.0759,
-   "unrealizedPct": 0.41
+   "lastPrice": 91.65,
+   "unrealizedPct": -0.06
   },
   {
    "id": "ahq-AMZN-20261123190538",
@@ -1015,8 +1015,8 @@
     "tradingAgents": "not used (ultra mode)",
     "taSummary": ""
    },
-   "lastPrice": 256.0934,
-   "unrealizedPct": -0.82
+   "lastPrice": 257.0,
+   "unrealizedPct": -0.47
   },
   {
    "id": "ahq-TSLA-20261123190538",
@@ -1054,72 +1054,8 @@
     "tradingAgents": "not used (ultra mode)",
     "taSummary": ""
    },
-   "lastPrice": 385.6,
-   "unrealizedPct": -0.59
-  },
-  {
-   "id": "ahq-NVDA-20261123184253",
-   "symbol": "NVDA",
-   "asset": "stock",
-   "status": "open",
-   "entryOrderId": "b45ecd10-9c7a-4d83-8d32-ad0a6d887f3c",
-   "qty": 59.0,
-   "cost": 9694.88,
-   "estPrice": 164.32,
-   "entryPrice": 164.51,
-   "stop": 159.39,
-   "target": 174.18,
-   "openedAt": "2026-11-23T18:42:53Z",
-   "news": {
-    "summary": "Nvidia shares and the broader semiconductor sector continue to rally following the reinstatement of Jensen Huang as CEO.",
-    "category": "earnings_beat",
-    "sources": [
-     {
-      "publisher": "Yahoo Finance",
-      "title": "Update: Equities Jump Intraday as Nvidia Soars on Huang's Reinstatement",
-      "url": "https://finance.yahoo.com/markets/stocks/articles/equities-jump-intraday-nvidia-soars-183714017.html?.tsrc=rss"
-     },
-     {
-      "publisher": "Yahoo Finance",
-      "title": "Why iShares Semiconductor ETF (SOXX) Is Up Today",
-      "url": "https://www.fool.com/investing/2026/11/23/why-ishares-semiconductor-etf-soxx-is-up-today/?.tsrc=rss"
-     },
-     {
-      "publisher": "Yahoo Finance",
-      "title": "Why Is GlobalFoundries (GFS) Stock Up Today? Chip Rally on Nvidia CEO Return",
-      "url": "https://finance.yahoo.com/markets/stocks/articles/why-globalfoundries-gfs-stock-today-183102007.html?.tsrc=rss"
-     },
-     {
-      "publisher": "Yahoo Finance",
-      "title": "Why I'm Still Grumpy About Nvidia's 33% Victory Lap",
-      "url": "https://www.fool.com/investing/2026/11/23/why-i-m-still-grumpy-about-nvidia-s-33-victory-lap/?.tsrc=rss"
-     },
-     {
-      "publisher": "Yahoo Finance",
-      "title": "Why Is nVent (NVT) Stock Up Today? Peers Rally on Nvidia CEO News",
-      "url": "https://finance.yahoo.com/markets/stocks/articles/why-nvent-nvt-stock-today-183049742.html?.tsrc=rss"
-     },
-     {
-      "publisher": "Yahoo Finance",
-      "title": "Why TTM Technologies (TTMI) Stock Is Soaring Today: AI Hardware Rally on Nvidia News",
-      "url": "https://finance.yahoo.com/markets/stocks/articles/why-ttm-technologies-ttmi-stock-183047529.html?.tsrc=rss"
-     }
-    ]
-   },
-   "reason": {
-    "triage": "Market positive reaction to CEO reinstatement and sector-wide AI hardware rally.",
-    "confidence": 0.8,
-    "confirmation": "volume 0.7x normal, price -0.57% since the news",
-    "rvol": 0.74,
-    "movePct": -0.57,
-    "publishers": [
-     "Yahoo Finance"
-    ],
-    "tradingAgents": "not used (ultra mode)",
-    "taSummary": ""
-   },
-   "lastPrice": 165.02,
-   "unrealizedPct": 0.31
+   "lastPrice": 388.38,
+   "unrealizedPct": 0.13
   },
   {
    "id": "ahq-AMAT-20261123184253",
@@ -1182,8 +1118,8 @@
     "tradingAgents": "not used (ultra mode)",
     "taSummary": ""
    },
-   "lastPrice": 346.03,
-   "unrealizedPct": 0.7
+   "lastPrice": 345.02,
+   "unrealizedPct": 0.41
   },
   {
    "id": "ahq-AMD-20261123184252",
@@ -1246,8 +1182,8 @@
     "tradingAgents": "not used (ultra mode)",
     "taSummary": ""
    },
-   "lastPrice": 451.27,
-   "unrealizedPct": -0.33
+   "lastPrice": 453.55,
+   "unrealizedPct": 0.17
   }
  ],
  "charts": {
@@ -1888,6 +1824,142 @@
     [
      "2026-11-23T22:10:00Z",
      95677.78
+    ],
+    [
+     "2026-11-23T22:15:00Z",
+     95668.83
+    ],
+    [
+     "2026-11-23T22:20:00Z",
+     95667.89
+    ],
+    [
+     "2026-11-23T22:25:00Z",
+     95772.18
+    ],
+    [
+     "2026-11-23T22:30:00Z",
+     95759.99
+    ],
+    [
+     "2026-11-23T22:35:00Z",
+     95840.67
+    ],
+    [
+     "2026-11-23T22:40:00Z",
+     95866.5
+    ],
+    [
+     "2026-11-23T22:45:00Z",
+     95943.46
+    ],
+    [
+     "2026-11-23T22:50:00Z",
+     95862.01
+    ],
+    [
+     "2026-11-23T22:55:00Z",
+     95828.96
+    ],
+    [
+     "2026-11-23T23:00:00Z",
+     95821.06
+    ],
+    [
+     "2026-11-23T23:05:00Z",
+     95833.25
+    ],
+    [
+     "2026-11-23T23:10:00Z",
+     95734.8
+    ],
+    [
+     "2026-11-23T23:15:00Z",
+     95632.54
+    ],
+    [
+     "2026-11-23T23:20:00Z",
+     95606.25
+    ],
+    [
+     "2026-11-23T23:25:00Z",
+     95568.79
+    ],
+    [
+     "2026-11-23T23:30:00Z",
+     95475.65
+    ],
+    [
+     "2026-11-23T23:35:00Z",
+     95316.34
+    ],
+    [
+     "2026-11-23T23:40:00Z",
+     95368.97
+    ],
+    [
+     "2026-11-23T23:45:00Z",
+     95318.59
+    ],
+    [
+     "2026-11-23T23:50:00Z",
+     95346.18
+    ],
+    [
+     "2026-11-23T23:55:00Z",
+     95334.67
+    ],
+    [
+     "2026-11-24T00:00:00Z",
+     95415.5
+    ],
+    [
+     "2026-11-24T00:05:00Z",
+     95519.27
+    ],
+    [
+     "2026-11-24T00:10:00Z",
+     95605.57
+    ],
+    [
+     "2026-11-24T00:15:00Z",
+     95635.44
+    ],
+    [
+     "2026-11-24T00:20:00Z",
+     95669.46
+    ],
+    [
+     "2026-11-24T00:25:00Z",
+     95704.0
+    ],
+    [
+     "2026-11-24T00:30:00Z",
+     95775.65
+    ],
+    [
+     "2026-11-24T00:35:00Z",
+     95754.86
+    ],
+    [
+     "2026-11-24T00:40:00Z",
+     95662.92
+    ],
+    [
+     "2026-11-24T00:45:00Z",
+     95738.65
+    ],
+    [
+     "2026-11-24T00:50:00Z",
+     95739.48
+    ],
+    [
+     "2026-11-24T00:55:00Z",
+     95789.62
+    ],
+    [
+     "2026-11-24T01:00:00Z",
+     95909.17
     ]
    ],
    "1W": [
@@ -3142,6 +3214,54 @@
     [
      "2026-11-23T22:00:00Z",
      95716.24
+    ],
+    [
+     "2026-11-23T22:15:00Z",
+     95668.83
+    ],
+    [
+     "2026-11-23T22:30:00Z",
+     95759.99
+    ],
+    [
+     "2026-11-23T22:45:00Z",
+     95943.46
+    ],
+    [
+     "2026-11-23T23:00:00Z",
+     95821.06
+    ],
+    [
+     "2026-11-23T23:15:00Z",
+     95676.22
+    ],
+    [
+     "2026-11-23T23:30:00Z",
+     95511.14
+    ],
+    [
+     "2026-11-23T23:45:00Z",
+     95318.59
+    ],
+    [
+     "2026-11-24T00:00:00Z",
+     95415.5
+    ],
+    [
+     "2026-11-24T00:15:00Z",
+     95551.76
+    ],
+    [
+     "2026-11-24T00:30:00Z",
+     95791.71
+    ],
+    [
+     "2026-11-24T00:45:00Z",
+     95738.65
+    ],
+    [
+     "2026-11-24T01:00:00Z",
+     95870.32
     ]
    ]
   },
@@ -3520,159 +3640,6 @@
     "target": 411.08,
     "openedAt": "2026-11-23T19:05:38Z",
     "qty": 33.0
-   },
-   "NVDA": {
-    "bars": [
-     [
-      "2026-11-23T13:00:00Z",
-      136.41
-     ],
-     [
-      "2026-11-23T13:15:00Z",
-      136.01
-     ],
-     [
-      "2026-11-23T13:30:00Z",
-      136.46
-     ],
-     [
-      "2026-11-23T13:45:00Z",
-      159.98
-     ],
-     [
-      "2026-11-23T14:00:00Z",
-      162.19
-     ],
-     [
-      "2026-11-23T14:15:00Z",
-      167.21
-     ],
-     [
-      "2026-11-23T14:30:00Z",
-      161.46
-     ],
-     [
-      "2026-11-23T14:45:00Z",
-      168.555
-     ],
-     [
-      "2026-11-23T15:00:00Z",
-      166.53
-     ],
-     [
-      "2026-11-23T15:15:00Z",
-      169.99
-     ],
-     [
-      "2026-11-23T15:30:00Z",
-      168.58
-     ],
-     [
-      "2026-11-23T15:45:00Z",
-      168.43
-     ],
-     [
-      "2026-11-23T16:00:00Z",
-      167.415
-     ],
-     [
-      "2026-11-23T16:15:00Z",
-      166.66
-     ],
-     [
-      "2026-11-23T16:30:00Z",
-      164.5
-     ],
-     [
-      "2026-11-23T16:45:00Z",
-      166.655
-     ],
-     [
-      "2026-11-23T17:00:00Z",
-      166.78
-     ],
-     [
-      "2026-11-23T17:15:00Z",
-      166.08
-     ],
-     [
-      "2026-11-23T17:30:00Z",
-      164.385
-     ],
-     [
-      "2026-11-23T17:45:00Z",
-      164.24
-     ],
-     [
-      "2026-11-23T18:00:00Z",
-      164.63
-     ],
-     [
-      "2026-11-23T18:15:00Z",
-      165.14
-     ],
-     [
-      "2026-11-23T18:30:00Z",
-      164.38
-     ],
-     [
-      "2026-11-23T18:45:00Z",
-      163.94
-     ],
-     [
-      "2026-11-23T19:00:00Z",
-      164.41
-     ],
-     [
-      "2026-11-23T19:15:00Z",
-      165.16
-     ],
-     [
-      "2026-11-23T19:30:00Z",
-      164.28
-     ],
-     [
-      "2026-11-23T19:45:00Z",
-      165.65
-     ],
-     [
-      "2026-11-23T20:00:00Z",
-      165.665
-     ],
-     [
-      "2026-11-23T20:15:00Z",
-      166.405
-     ],
-     [
-      "2026-11-23T20:30:00Z",
-      165.715
-     ],
-     [
-      "2026-11-23T20:45:00Z",
-      165.25
-     ],
-     [
-      "2026-11-23T21:00:00Z",
-      164.7
-     ],
-     [
-      "2026-11-23T21:15:00Z",
-      165.14
-     ],
-     [
-      "2026-11-23T21:30:00Z",
-      164.64
-     ],
-     [
-      "2026-11-23T21:45:00Z",
-      164.85
-     ]
-    ],
-    "entry": 164.51,
-    "stop": 159.39,
-    "target": 174.18,
-    "openedAt": "2026-11-23T18:42:53Z",
-    "qty": 59.0
    },
    "AMAT": {
     "bars": [
@@ -4116,8 +4083,8 @@
     "tradingAgents": "not used (ultra mode)",
     "taSummary": ""
    },
-   "lastPrice": 92.0759,
-   "unrealizedPct": 0.41
+   "lastPrice": 91.65,
+   "unrealizedPct": -0.06
   },
   {
    "id": "ahq-AMZN-20261123190538",
@@ -4155,8 +4122,8 @@
     "tradingAgents": "not used (ultra mode)",
     "taSummary": ""
    },
-   "lastPrice": 256.0934,
-   "unrealizedPct": -0.82
+   "lastPrice": 257.0,
+   "unrealizedPct": -0.47
   },
   {
    "id": "ahq-TSLA-20261123190538",
@@ -4194,14 +4161,14 @@
     "tradingAgents": "not used (ultra mode)",
     "taSummary": ""
    },
-   "lastPrice": 385.6,
-   "unrealizedPct": -0.59
+   "lastPrice": 388.38,
+   "unrealizedPct": 0.13
   },
   {
    "id": "ahq-NVDA-20261123184253",
    "symbol": "NVDA",
    "asset": "stock",
-   "status": "open",
+   "status": "closed",
    "entryOrderId": "b45ecd10-9c7a-4d83-8d32-ad0a6d887f3c",
    "qty": 59.0,
    "cost": 9694.88,
@@ -4258,8 +4225,14 @@
     "tradingAgents": "not used (ultra mode)",
     "taSummary": ""
    },
-   "lastPrice": 165.02,
-   "unrealizedPct": 0.31
+   "lastPrice": 165.27,
+   "unrealizedPct": 0.46,
+   "closing": "bad news: Fed officials signaling that inflation remains too high and calling for potentia",
+   "closedAt": "2026-11-24T00:16:30Z",
+   "exitPrice": 164.85,
+   "exitReason": "bad news: Fed officials signaling that inflation remains too high and calling for potentia",
+   "pnl": 20.06,
+   "pnlPct": 0.21
   },
   {
    "id": "ahq-AMAT-20261123184253",
@@ -4322,8 +4295,8 @@
     "tradingAgents": "not used (ultra mode)",
     "taSummary": ""
    },
-   "lastPrice": 346.03,
-   "unrealizedPct": 0.7
+   "lastPrice": 345.02,
+   "unrealizedPct": 0.41
   },
   {
    "id": "ahq-AMD-20261123184252",
@@ -4386,8 +4359,8 @@
     "tradingAgents": "not used (ultra mode)",
     "taSummary": ""
    },
-   "lastPrice": 451.27,
-   "unrealizedPct": -0.33
+   "lastPrice": 453.55,
+   "unrealizedPct": 0.17
   },
   {
    "id": "ahq-CRWD-20261123165236",
@@ -5349,6 +5322,209 @@
  ],
  "decisions": [
   {
+   "t": "2026-11-24T01:02:13Z",
+   "symbol": "ETH/USD",
+   "outcome": "waiting",
+   "why": "already $71,956 invested (max 75% of $95,948)",
+   "event": "The CFTC has ruled that Bitcoin, Ether, and stablecoins can count toward financial resource requirements for derivatives venues, providing a regulatory boost."
+  },
+  {
+   "t": "2026-11-24T01:02:12Z",
+   "symbol": "SOL/USD",
+   "outcome": "waiting",
+   "why": "already $71,953 invested (max 75% of $95,945)",
+   "event": "The CFTC has ruled that Bitcoin, Ether, and stablecoins can count toward financial resource requirements for derivatives venues, providing a regulatory boost."
+  },
+  {
+   "t": "2026-11-24T01:02:12Z",
+   "symbol": "BTC/USD",
+   "outcome": "waiting",
+   "why": "already $71,953 invested (max 75% of $95,945)",
+   "event": "The CFTC has ruled that Bitcoin, Ether, and stablecoins can count toward financial resource requirements for derivatives venues, providing a regulatory boost."
+  },
+  {
+   "t": "2026-11-24T00:46:56Z",
+   "symbol": "ETH/USD",
+   "outcome": "waiting",
+   "why": "already $71,720 invested (max 75% of $95,712)",
+   "event": "The CFTC has ruled that Bitcoin, Ether, and stablecoins can count toward financial resource requirements for derivatives venues, providing a regulatory boost."
+  },
+  {
+   "t": "2026-11-24T00:46:56Z",
+   "symbol": "BTC/USD",
+   "outcome": "waiting",
+   "why": "already $71,720 invested (max 75% of $95,712)",
+   "event": "The CFTC has ruled that Bitcoin, Ether, and stablecoins can count toward financial resource requirements for derivatives venues, providing a regulatory boost."
+  },
+  {
+   "t": "2026-11-24T00:46:56Z",
+   "symbol": "SOL/USD",
+   "outcome": "waiting",
+   "why": "already $71,720 invested (max 75% of $95,712)",
+   "event": "The CFTC has ruled that Bitcoin, Ether, and stablecoins can count toward financial resource requirements for derivatives venues, providing a regulatory boost."
+  },
+  {
+   "t": "2026-11-24T00:31:40Z",
+   "symbol": "SOL/USD",
+   "outcome": "waiting",
+   "why": "already $71,842 invested (max 75% of $95,834)",
+   "event": "The CFTC has ruled that Bitcoin, Ether, and stablecoins can count toward financial resource requirements for derivatives venues, providing a regulatory boost."
+  },
+  {
+   "t": "2026-11-24T00:31:40Z",
+   "symbol": "BTC/USD",
+   "outcome": "waiting",
+   "why": "already $71,845 invested (max 75% of $95,837)",
+   "event": "The CFTC has ruled that Bitcoin, Ether, and stablecoins can count toward financial resource requirements for derivatives venues, providing a regulatory boost."
+  },
+  {
+   "t": "2026-11-24T00:31:40Z",
+   "symbol": "ETH/USD",
+   "outcome": "waiting",
+   "why": "already $71,845 invested (max 75% of $95,837)",
+   "event": "The CFTC has ruled that Bitcoin, Ether, and stablecoins can count toward financial resource requirements for derivatives venues, providing a regulatory boost."
+  },
+  {
+   "t": "2026-11-24T00:16:31Z",
+   "symbol": "BTC/USD",
+   "outcome": "waiting",
+   "why": "already $71,563 invested (max 75% of $95,555)",
+   "event": "The CFTC has ruled that Bitcoin, Ether, and stablecoins can count toward financial resource requirements for derivatives venues, providing a regulatory boost."
+  },
+  {
+   "t": "2026-11-24T00:16:31Z",
+   "symbol": "SOL/USD",
+   "outcome": "waiting",
+   "why": "already $71,563 invested (max 75% of $95,555)",
+   "event": "The CFTC has ruled that Bitcoin, Ether, and stablecoins can count toward financial resource requirements for derivatives venues, providing a regulatory boost."
+  },
+  {
+   "t": "2026-11-24T00:16:31Z",
+   "symbol": "ETH/USD",
+   "outcome": "waiting",
+   "why": "already $71,563 invested (max 75% of $95,555)",
+   "event": "The CFTC has ruled that Bitcoin, Ether, and stablecoins can count toward financial resource requirements for derivatives venues, providing a regulatory boost."
+  },
+  {
+   "t": "2026-11-24T00:01:06Z",
+   "symbol": "SOL/USD",
+   "outcome": "waiting",
+   "why": "already $71,405 invested (max 75% of $95,396)",
+   "event": "The CFTC has ruled that Bitcoin, Ether, and stablecoins can count toward financial resource requirements for derivatives venues, providing a regulatory boost."
+  },
+  {
+   "t": "2026-11-24T00:01:06Z",
+   "symbol": "BTC/USD",
+   "outcome": "waiting",
+   "why": "already $71,405 invested (max 75% of $95,396)",
+   "event": "The CFTC has ruled that Bitcoin, Ether, and stablecoins can count toward financial resource requirements for derivatives venues, providing a regulatory boost."
+  },
+  {
+   "t": "2026-11-24T00:01:06Z",
+   "symbol": "ETH/USD",
+   "outcome": "waiting",
+   "why": "already $71,405 invested (max 75% of $95,396)",
+   "event": "The CFTC has ruled that Bitcoin, Ether, and stablecoins can count toward financial resource requirements for derivatives venues, providing a regulatory boost."
+  },
+  {
+   "t": "2026-11-23T23:45:51Z",
+   "symbol": "SOL/USD",
+   "outcome": "waiting",
+   "why": "already $71,315 invested (max 75% of $95,307)",
+   "event": "The CFTC has ruled that Bitcoin, Ether, and stablecoins can count toward financial resource requirements for derivatives venues, providing a regulatory boost."
+  },
+  {
+   "t": "2026-11-23T23:45:51Z",
+   "symbol": "BTC/USD",
+   "outcome": "waiting",
+   "why": "already $71,315 invested (max 75% of $95,307)",
+   "event": "The CFTC has ruled that Bitcoin, Ether, and stablecoins can count toward financial resource requirements for derivatives venues, providing a regulatory boost."
+  },
+  {
+   "t": "2026-11-23T23:45:51Z",
+   "symbol": "ETH/USD",
+   "outcome": "waiting",
+   "why": "already $71,315 invested (max 75% of $95,307)",
+   "event": "The CFTC has ruled that Bitcoin, Ether, and stablecoins can count toward financial resource requirements for derivatives venues, providing a regulatory boost."
+  },
+  {
+   "t": "2026-11-23T23:30:39Z",
+   "symbol": "SOL/USD",
+   "outcome": "waiting",
+   "why": "already $71,521 invested (max 75% of $95,513)",
+   "event": "The CFTC has ruled that Bitcoin, Ether, and stablecoins can count toward financial resource requirements for derivatives venues, providing a regulatory boost."
+  },
+  {
+   "t": "2026-11-23T23:30:39Z",
+   "symbol": "ETH/USD",
+   "outcome": "waiting",
+   "why": "already $71,521 invested (max 75% of $95,513)",
+   "event": "The CFTC has ruled that Bitcoin, Ether, and stablecoins can count toward financial resource requirements for derivatives venues, providing a regulatory boost."
+  },
+  {
+   "t": "2026-11-23T23:30:39Z",
+   "symbol": "BTC/USD",
+   "outcome": "waiting",
+   "why": "already $71,520 invested (max 75% of $95,512)",
+   "event": "The CFTC has ruled that Bitcoin, Ether, and stablecoins can count toward financial resource requirements for derivatives venues, providing a regulatory boost."
+  },
+  {
+   "t": "2026-11-23T23:15:15Z",
+   "symbol": "SOL/USD",
+   "outcome": "waiting",
+   "why": "already $71,684 invested (max 75% of $95,676)",
+   "event": "Bitcoin surges past $64,000 and Solana targets higher levels amid positive market sentiment and improving ETF inflows."
+  },
+  {
+   "t": "2026-11-23T23:15:15Z",
+   "symbol": "BTC/USD",
+   "outcome": "waiting",
+   "why": "already $71,684 invested (max 75% of $95,676)",
+   "event": "Bitcoin surges past $64,000 and Solana targets higher levels amid positive market sentiment and improving ETF inflows."
+  },
+  {
+   "t": "2026-11-23T22:59:37Z",
+   "symbol": "SOL/USD",
+   "outcome": "waiting",
+   "why": "already $71,840 invested (max 75% of $95,832)",
+   "event": "Bitcoin surges past $64,000 and Solana targets higher levels amid positive market sentiment and improving ETF inflows."
+  },
+  {
+   "t": "2026-11-23T22:59:37Z",
+   "symbol": "BTC/USD",
+   "outcome": "waiting",
+   "why": "already $71,840 invested (max 75% of $95,832)",
+   "event": "Bitcoin surges past $64,000 and Solana targets higher levels amid positive market sentiment and improving ETF inflows."
+  },
+  {
+   "t": "2026-11-23T22:44:19Z",
+   "symbol": "SOL/USD",
+   "outcome": "waiting",
+   "why": "already $71,958 invested (max 75% of $95,950)",
+   "event": "Bitcoin surges past $64,000 and Solana targets higher levels amid positive market sentiment and improving ETF inflows."
+  },
+  {
+   "t": "2026-11-23T22:44:18Z",
+   "symbol": "BTC/USD",
+   "outcome": "waiting",
+   "why": "already $71,958 invested (max 75% of $95,950)",
+   "event": "Bitcoin surges past $64,000 and Solana targets higher levels amid positive market sentiment and improving ETF inflows."
+  },
+  {
+   "t": "2026-11-23T22:29:08Z",
+   "symbol": "SOL/USD",
+   "outcome": "waiting",
+   "why": "already $71,783 invested (max 75% of $95,775)",
+   "event": "Bitcoin surges past $64,000 and Solana targets higher levels amid positive market sentiment and improving ETF inflows."
+  },
+  {
+   "t": "2026-11-23T22:29:08Z",
+   "symbol": "BTC/USD",
+   "outcome": "waiting",
+   "why": "already $71,783 invested (max 75% of $95,775)",
+   "event": "Bitcoin surges past $64,000 and Solana targets higher levels amid positive market sentiment and improving ETF inflows."
+  },
+  {
    "t": "2026-11-23T22:13:47Z",
    "symbol": "SOL/USD",
    "outcome": "waiting",
@@ -5564,237 +5740,9 @@
    "outcome": "waiting",
    "why": "already $48,766 invested (max 50% of $98,422)",
    "event": "Wedbush notes that a potential Microsoft deal could provide Intel with a crucial AI chip foundry win."
-  },
-  {
-   "t": "2026-11-20T19:21:37Z",
-   "symbol": "PLTR",
-   "outcome": "waiting",
-   "why": "already $49,010 invested (max 50% of $98,667)",
-   "event": "Trump stated there is a real good chance of a Ukraine deal following very good talks with Putin."
-  },
-  {
-   "t": "2026-11-20T19:21:37Z",
-   "symbol": "MSFT",
-   "outcome": "waiting",
-   "why": "already $49,010 invested (max 50% of $98,667)",
-   "event": "Wedbush notes that a potential Microsoft deal could provide Intel with a crucial AI chip foundry win."
-  },
-  {
-   "t": "2026-11-20T19:21:36Z",
-   "symbol": "INTC",
-   "outcome": "waiting",
-   "why": "already $49,010 invested (max 50% of $98,667)",
-   "event": "Wedbush notes that a potential Microsoft deal could provide Intel with a crucial AI chip foundry win."
-  },
-  {
-   "t": "2026-11-20T19:16:29Z",
-   "symbol": "PLTR",
-   "outcome": "waiting",
-   "why": "already $49,066 invested (max 50% of $98,723)",
-   "event": "Trump stated there is a real good chance of a Ukraine deal following very good talks with Putin."
-  },
-  {
-   "t": "2026-11-20T19:16:29Z",
-   "symbol": "MSFT",
-   "outcome": "waiting",
-   "why": "already $49,066 invested (max 50% of $98,723)",
-   "event": "Wedbush notes that a potential Microsoft deal could provide Intel with a crucial AI chip foundry win."
-  },
-  {
-   "t": "2026-11-20T19:16:29Z",
-   "symbol": "INTC",
-   "outcome": "waiting",
-   "why": "already $49,066 invested (max 50% of $98,723)",
-   "event": "Wedbush notes that a potential Microsoft deal could provide Intel with a crucial AI chip foundry win."
-  },
-  {
-   "t": "2026-11-20T19:11:17Z",
-   "symbol": "PLTR",
-   "outcome": "waiting",
-   "why": "already $49,160 invested (max 50% of $98,817)",
-   "event": "Donald Trump stated that he and Vladimir Putin had very good talks on Ukraine and that Putin expressed a desire to end the war."
-  },
-  {
-   "t": "2026-11-20T19:11:17Z",
-   "symbol": "MSFT",
-   "outcome": "waiting",
-   "why": "already $49,160 invested (max 50% of $98,817)",
-   "event": "Wedbush notes that a potential Microsoft deal could provide Intel with a crucial AI chip foundry win."
-  },
-  {
-   "t": "2026-11-20T19:11:17Z",
-   "symbol": "INTC",
-   "outcome": "waiting",
-   "why": "already $49,160 invested (max 50% of $98,817)",
-   "event": "Wedbush notes that a potential Microsoft deal could provide Intel with a crucial AI chip foundry win."
-  },
-  {
-   "t": "2026-11-20T19:06:10Z",
-   "symbol": "PLTR",
-   "outcome": "waiting",
-   "why": "already $49,321 invested (max 50% of $98,978)",
-   "event": "Donald Trump stated that he and Vladimir Putin had very good talks on Ukraine and that Putin expressed a desire to end the war."
-  },
-  {
-   "t": "2026-11-20T19:06:09Z",
-   "symbol": "MSFT",
-   "outcome": "waiting",
-   "why": "already $49,321 invested (max 50% of $98,978)",
-   "event": "Wedbush notes that a potential Microsoft deal could provide Intel with a crucial AI chip foundry win."
-  },
-  {
-   "t": "2026-11-20T19:06:09Z",
-   "symbol": "INTC",
-   "outcome": "waiting",
-   "why": "already $49,321 invested (max 50% of $98,978)",
-   "event": "Wedbush notes that a potential Microsoft deal could provide Intel with a crucial AI chip foundry win."
-  },
-  {
-   "t": "2026-11-20T19:00:59Z",
-   "symbol": "MSFT",
-   "outcome": "waiting",
-   "why": "already $49,463 invested (max 50% of $99,120)",
-   "event": "Wedbush notes that a potential Microsoft deal could provide Intel with a crucial AI chip foundry win."
-  },
-  {
-   "t": "2026-11-20T19:00:59Z",
-   "symbol": "PLTR",
-   "outcome": "waiting",
-   "why": "already $49,463 invested (max 50% of $99,120)",
-   "event": "Donald Trump stated that he and Vladimir Putin had very good talks on Ukraine and that Putin expressed a desire to end the war."
-  },
-  {
-   "t": "2026-11-20T19:00:59Z",
-   "symbol": "INTC",
-   "outcome": "waiting",
-   "why": "already $49,463 invested (max 50% of $99,120)",
-   "event": "Wedbush notes that a potential Microsoft deal could provide Intel with a crucial AI chip foundry win."
-  },
-  {
-   "t": "2026-11-20T18:55:52Z",
-   "symbol": "MSFT",
-   "outcome": "waiting",
-   "why": "already $49,478 invested (max 50% of $99,134)",
-   "event": "Wedbush notes that a potential Microsoft deal could provide Intel with a crucial AI chip foundry win."
-  },
-  {
-   "t": "2026-11-20T18:55:52Z",
-   "symbol": "PLTR",
-   "outcome": "waiting",
-   "why": "already $49,484 invested (max 50% of $99,141)",
-   "event": "Donald Trump stated that he and Vladimir Putin had very good talks on Ukraine and that Putin expressed a desire to end the war."
-  },
-  {
-   "t": "2026-11-20T18:55:52Z",
-   "symbol": "INTC",
-   "outcome": "waiting",
-   "why": "already $49,484 invested (max 50% of $99,141)",
-   "event": "Wedbush notes that a potential Microsoft deal could provide Intel with a crucial AI chip foundry win."
-  },
-  {
-   "t": "2026-11-20T18:50:40Z",
-   "symbol": "MSFT",
-   "outcome": "waiting",
-   "why": "already $49,151 invested (max 50% of $98,808)",
-   "event": "Wedbush notes that a potential Microsoft deal could provide Intel with a crucial AI chip foundry win."
-  },
-  {
-   "t": "2026-11-20T18:50:39Z",
-   "symbol": "INTC",
-   "outcome": "waiting",
-   "why": "already $49,151 invested (max 50% of $98,808)",
-   "event": "Wedbush notes that a potential Microsoft deal could provide Intel with a crucial AI chip foundry win."
-  },
-  {
-   "t": "2026-11-20T18:50:39Z",
-   "symbol": "PLTR",
-   "outcome": "waiting",
-   "why": "already $49,151 invested (max 50% of $98,808)",
-   "event": "Trump states that Putin clearly expressed a desire to end the war in Ukraine through diplomacy."
-  },
-  {
-   "t": "2026-11-20T18:45:32Z",
-   "symbol": "MSFT",
-   "outcome": "waiting",
-   "why": "already $49,108 invested (max 50% of $98,765)",
-   "event": "Wedbush notes that a potential Microsoft deal could provide Intel with a crucial AI chip foundry win."
-  },
-  {
-   "t": "2026-11-20T18:45:32Z",
-   "symbol": "INTC",
-   "outcome": "waiting",
-   "why": "already $49,108 invested (max 50% of $98,765)",
-   "event": "Wedbush notes that a potential Microsoft deal could provide Intel with a crucial AI chip foundry win."
-  },
-  {
-   "t": "2026-11-20T18:45:32Z",
-   "symbol": "PLTR",
-   "outcome": "waiting",
-   "why": "already $49,108 invested (max 50% of $98,765)",
-   "event": "Trump states that Putin clearly expressed a desire to end the war in Ukraine through diplomacy."
-  },
-  {
-   "t": "2026-11-20T18:40:23Z",
-   "symbol": "MSFT",
-   "outcome": "waiting",
-   "why": "already $49,206 invested (max 50% of $98,863)",
-   "event": "Wedbush notes that a potential Microsoft deal could provide Intel with a crucial AI chip foundry win."
-  },
-  {
-   "t": "2026-11-20T18:40:23Z",
-   "symbol": "INTC",
-   "outcome": "waiting",
-   "why": "already $49,224 invested (max 50% of $98,881)",
-   "event": "Wedbush notes that a potential Microsoft deal could provide Intel with a crucial AI chip foundry win."
-  },
-  {
-   "t": "2026-11-20T18:40:23Z",
-   "symbol": "PLTR",
-   "outcome": "waiting",
-   "why": "already $49,224 invested (max 50% of $98,881)",
-   "event": "Trump states that Putin clearly expressed a desire to end the war in Ukraine through diplomacy."
-  },
-  {
-   "t": "2026-11-20T18:35:16Z",
-   "symbol": "MSFT",
-   "outcome": "waiting",
-   "why": "already $49,210 invested (max 50% of $98,867)",
-   "event": "Wedbush notes that a potential Microsoft deal could provide Intel with a crucial AI chip foundry win."
-  },
-  {
-   "t": "2026-11-20T18:35:16Z",
-   "symbol": "INTC",
-   "outcome": "waiting",
-   "why": "already $49,210 invested (max 50% of $98,867)",
-   "event": "Wedbush notes that a potential Microsoft deal could provide Intel with a crucial AI chip foundry win."
   }
  ],
  "equity": [
-  {
-   "t": "2026-11-15T07:33:49Z",
-   "equity": 100000.0,
-   "spy": 752.09
-  },
-  {
-   "t": "2026-11-15T08:04:00Z",
-   "equity": 100000.0,
-   "spy": 752.09
-  },
-  {
-   "t": "2026-11-15T08:34:12Z",
-   "equity": 100000.0,
-   "spy": 752.09
-  },
-  {
-   "t": "2026-11-15T09:04:34Z",
-   "equity": 100000.0,
-   "spy": 752.09
-  },
-  {
-   "t": "2026-11-15T09:34:57Z",
-   "equity": 100000.0,
-   "spy": 752.09
-  },
   {
    "t": "2026-11-15T10:06:44Z",
    "equity": 100000.0,
@@ -7769,6 +7717,31 @@
    "t": "2026-11-23T22:13:47Z",
    "equity": 95707.73,
    "spy": 723.44
+  },
+  {
+   "t": "2026-11-23T22:44:19Z",
+   "equity": 95937.47,
+   "spy": 723.44
+  },
+  {
+   "t": "2026-11-23T23:15:15Z",
+   "equity": 95677.42,
+   "spy": 723.44
+  },
+  {
+   "t": "2026-11-23T23:45:52Z",
+   "equity": 95321.36,
+   "spy": 723.44
+  },
+  {
+   "t": "2026-11-24T00:16:31Z",
+   "equity": 95565.62,
+   "spy": 723.44
+  },
+  {
+   "t": "2026-11-24T00:46:56Z",
+   "equity": 95687.8,
+   "spy": 723.44
   }
  ],
  "watch": [],
@@ -7780,98 +7753,13 @@
  },
  "events": [
   {
-   "summary": "Nvidia shares surge following the reinstatement of Jensen Huang as CEO and massive short-covering, lifting broader tech markets.",
-   "category": "earnings_beat",
-   "firstSeen": "2026-11-23T18:30:45Z",
-   "publishers": [
-    "AP",
-    "Binance",
-    "Bitcoin Magazine",
-    "CNBC",
-    "Investing.com",
-    "Kalshi News",
-    "Reuters",
-    "Seeking Alpha",
-    "The Washington Post",
-    "Yahoo Finance"
-   ],
-   "assets": {
-    "NVDA": {
-     "direction": "up",
-     "confidence": 0.95,
-     "why": "Jensen Huang's official reinstatement as CEO and immense market surge drive strong bullish continuation."
-    },
-    "AMD": {
-     "direction": "up",
-     "confidence": 0.8,
-     "why": "Riding positive momentum and supply linkages following Jensen Huang's return to Nvidia."
-    },
-    "AMAT": {
-     "direction": "up",
-     "confidence": 0.7,
-     "why": "Riding the surging tech momentum."
-    },
-    "PLTR": {
-     "direction": "up",
-     "confidence": 0.8,
-     "why": "Broad software and tech rally driven by positive sentiment around Nvidia's recovery."
-    },
-    "NOW": {
-     "direction": "up",
-     "confidence": 0.75,
-     "why": "ServiceNow joins the broader technology sector rally lifting software stocks."
-    }
-   },
-   "sources": [
-    {
-     "id": "7549f87291c6037d",
-     "publisher": "Yahoo Finance",
-     "kind": "news",
-     "title": "Update: Equities Jump Intraday as Nvidia Soars on Huang's Reinstatement",
-     "url": "https://finance.yahoo.com/markets/stocks/articles/equities-jump-intraday-nvidia-soars-183714017.html?.tsrc=rss",
-     "time": "2026-11-23T18:37:14Z"
-    },
-    {
-     "id": "e91170f5302ec6c8",
-     "publisher": "Yahoo Finance",
-     "kind": "news",
-     "title": "Why iShares Semiconductor ETF (SOXX) Is Up Today",
-     "url": "https://www.fool.com/investing/2026/11/23/why-ishares-semiconductor-etf-soxx-is-up-today/?.tsrc=rss",
-     "time": "2026-11-23T18:35:02Z"
-    },
-    {
-     "id": "7596f62789a12004",
-     "publisher": "Yahoo Finance",
-     "kind": "news",
-     "title": "Why Is GlobalFoundries (GFS) Stock Up Today? Chip Rally on Nvidia CEO Return",
-     "url": "https://finance.yahoo.com/markets/stocks/articles/why-globalfoundries-gfs-stock-today-183102007.html?.tsrc=rss",
-     "time": "2026-11-23T18:31:02Z"
-    },
-    {
-     "id": "1e7731ca19595709",
-     "publisher": "Yahoo Finance",
-     "kind": "news",
-     "title": "Why I'm Still Grumpy About Nvidia's 33% Victory Lap",
-     "url": "https://www.fool.com/investing/2026/11/23/why-i-m-still-grumpy-about-nvidia-s-33-victory-lap/?.tsrc=rss",
-     "time": "2026-11-23T18:31:01Z"
-    },
-    {
-     "id": "7c0be7268f9039bf",
-     "publisher": "Yahoo Finance",
-     "kind": "news",
-     "title": "Why Is nVent (NVT) Stock Up Today? Peers Rally on Nvidia CEO News",
-     "url": "https://finance.yahoo.com/markets/stocks/articles/why-nvent-nvt-stock-today-183049742.html?.tsrc=rss",
-     "time": "2026-11-23T18:30:49Z"
-    }
-   ]
-  },
-  {
-   "summary": "Oil prices slide further as increased Middle East flows and surplus outlook outweigh supply concerns.",
+   "summary": "Oil prices tumbled nearly 4% due to increased Middle East flows and a Libyan pipeline restart.",
    "category": "oil_supply",
    "firstSeen": "2026-11-23T19:02:38Z",
    "publishers": [
     "Barchart.com",
     "BigGo Finance",
+    "DZRH",
     "FXEmpire",
     "Interest.co.nz",
     "NTD News",
@@ -7881,10 +7769,13 @@
     "Seeking Alpha",
     "The Business Times",
     "The Libya Observer",
+    "Upstream Online",
+    "Vietnam.vn",
     "WSJ",
     "Yahoo Finance",
     "investingLive",
-    "marketscreener.com"
+    "marketscreener.com",
+    "شبكة تواصل الإخبارية"
    ],
    "assets": {
     "XOM": {
@@ -7947,59 +7838,143 @@
    ]
   },
   {
-   "summary": "Bitcoin sits out broader rallies amid massive ETF outflows and ongoing negative market pressures.",
-   "category": "crypto_negative",
-   "firstSeen": "2026-11-23T20:24:15Z",
+   "summary": "Fed officials signaling that inflation remains too high and calling for potential further rate hikes weighs on broader risk assets.",
+   "category": "central_bank_hawkish",
+   "firstSeen": "2026-11-23T23:38:27Z",
    "publishers": [
-    "Cryptonews.net",
-    "The Motley Fool",
-    "Yahoo Finance"
+    "KLSE Screener",
+    "Limapagi",
+    "Yahoo Finance",
+    "재경일보"
    ],
    "assets": {
+    "NVDA": {
+     "direction": "down",
+     "confidence": 0.6,
+     "why": "Hawkish Fed comments pressure high-valuation tech and growth stocks."
+    },
     "BTC/USD": {
      "direction": "down",
-     "confidence": 0.85,
-     "why": "Heavy liquidations and price drop to $55K signal strong near-term bearish momentum."
+     "confidence": 0.65,
+     "why": "Hawkish central bank comments increase pressure on risk assets and crypto."
+    },
+    "ETH/USD": {
+     "direction": "down",
+     "confidence": 0.65,
+     "why": "Hawkish central bank comments create headwinds for crypto markets."
     }
    },
    "sources": [
     {
-     "id": "fc6ed3a20828615d",
-     "publisher": "Cryptonews.net",
-     "kind": "news",
-     "title": "Bitcoin drops to $55K after $670M liquidations – What changes now?",
-     "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTFBFcGNUaFJNNjVsdkJHUl82ajF5bjZLNmxldzBtblk1a25NSWVDcjJNVHBlMXVwemFZS0IxMENNOFlnd1lZaTJvVks2bFRLNnVTdGdnN0JncWw?oc=5",
-     "time": "2026-11-23T20:24:15Z"
-    },
-    {
-     "id": "602d89a0a8e5896f",
-     "publisher": "The Motley Fool",
-     "kind": "news",
-     "title": "Crypto Market Today, Nov. 23: Bitcoin Sits Out Wall Street's Historic Rally as $1.8 Billion ETF Exodus Weighs on Prices",
-     "url": "https://news.google.com/rss/articles/CBMiiwJBVV95cUxPdWQ4bjBaRlh5OURIMmROZkljd0NiMlRZcU43MURTZlFqcFppdlhrUkJNWGdBc1lzZWFQU240N05abTN1ck5WV1pnZE9fQWZCYmZFZzd5YlFYaGppVm1vYWFBSXl6RGhWQWdvQlNBZ0RQMHl2R21hdlVlbHZtTzN1TnZidVFEX20wX18yWnNidEZnMWxuMU9WWEV6QjNtS0diM0RZWlNCVU91TktuNUoxQlR5Y1M5OGh4QldzXzZSaEplUnNqenJVWHZkbnVMbEpzNUQySUswSTVXeTk1UVZxcVNuX1FZRDlkVmhiLWxRZjQ3amgwYVgtbzlhRU5yQ3pZc0xKMU9tVnFuUE0?oc=5",
-     "time": "2026-11-23T21:55:02Z"
-    },
-    {
-     "id": "a880ed8956674d6b",
+     "id": "a023de904efca435",
      "publisher": "Yahoo Finance",
      "kind": "news",
-     "title": "Is Bitcoin Heading for $50,000?",
-     "url": "https://www.fool.com/investing/2026/11/23/is-bitcoin-heading-for-50-000/?.tsrc=rss",
-     "time": "2026-11-23T21:49:02Z"
+     "title": "Fed's Williams says inflation still too high, signals more rate hikes possible",
+     "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNMlNoV2xIeGVBZzdxYlFjbU9GQjFpZkZDOTdteUtCY3o0cHhWaEZqSnFweDc0MXVwWWR6azhtVGxLQk80dl9Ud29nY3lMS2hoeVZsMkFMLVlial90c3ZrQzVoYjN4N1NlMmU3dWpsSTBib193RjRNVTU3dnVSOXgzZHBmQmtJUWZoSjR4QVkwb0xZTXBIRWZZNlUycEU4M1U?oc=5",
+     "time": "2026-11-23T23:38:27Z"
+    },
+    {
+     "id": "427a1eaac9fb5c87",
+     "publisher": "Limapagi",
+     "kind": "news",
+     "title": "Williams Signals Further Fed Rate Increases to Curb Inflation",
+     "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE04QlRvdjgtSWVfWnJyUTd6QmFyU195WVI1OXlZdzFHdnpYeThMWDZtUWQ2d09ZV2xkR3d2NWhkdlU5MTh3OW9Yei0yS0l1VUNIcVBFS0JEUVdpc0hENEg3RHFsNi0tS0x0OF9Bd0FESlVnQQ?oc=5",
+     "time": "2026-11-23T23:59:00Z"
+    },
+    {
+     "id": "c99be2145e0714b0",
+     "publisher": "재경일보",
+     "kind": "news",
+     "title": "US benchmark interest rate at 3.75-4%... Fed official calls for \"further hikes\" : Global : JKN",
+     "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE9iNHp2QUE4aTg5ZHBEVW9Cb1VvQnh2MkdlaWhUb2U4aVlOS2pzSUpISmJHS1E4LUVLNndUVWUyZVQtcVlEaVJ6RU5jNFNGd1lvdklxbEdrQ3ZCVG9QMEtRNW1B?oc=5",
+     "time": "2026-11-23T23:55:00Z"
+    },
+    {
+     "id": "bc2942a4642bfe71",
+     "publisher": "KLSE Screener",
+     "kind": "news",
+     "title": "Fed's Williams says inflation still too high, signals more rate hikes possible",
+     "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxNSWw2anRhNl9vTmxWZ1BadE9la2NraGhNT3dKa2ZyaS1zQVpUUkgwcjluX0hVcTlPS3ZTREtxZWZoZVdRQXJwdEVDYVJPVkVhQUZnSmxLS25mUGJfbVcwT19Db01LU2ZyYk1oV29EUDI5emMzcGdORzRDODZ2WG1ZYUZnNEtkNl9DRGFCVmVSLTJjLXpfTExIbklnbGw4Y3NLTnZZX2puTlpvM2Q1a2dMN1dVOHpMUjNnZXlHTXBPMXVfT2JfUkE?oc=5",
+     "time": "2026-11-24T00:41:38Z"
     }
    ]
   },
   {
-   "summary": "Attacks on oil tankers in the Strait of Hormuz and escalating shipping risks heighten immediate fears of global oil supply disruption.",
+   "summary": "Nvidia stock and broader AI tech surge following the reinstatement of Jensen Huang as CEO.",
+   "category": "earnings_beat",
+   "firstSeen": "2026-11-24T00:07:00Z",
+   "publishers": [
+    "CNBC",
+    "Reuters",
+    "Yahoo Finance"
+   ],
+   "assets": {
+    "NVDA": {
+     "direction": "up",
+     "confidence": 0.95,
+     "why": "Jensen Huang's reinstatement as CEO triggers massive rally and short-covering."
+    }
+   },
+   "sources": [
+    {
+     "id": "2a4d835c7fe3b02f",
+     "publisher": "CNBC",
+     "kind": "news",
+     "title": "Stock futures inch higher as traders see whether Nvidia can extend rally from Jensen Huang’s return: Live updates",
+     "url": "https://www.cnbc.com/2026/11/23/stock-market-today-live-updates.html",
+     "time": "2026-11-24T00:31:16Z"
+    },
+    {
+     "id": "ec8e027df652b439",
+     "publisher": "CNBC",
+     "kind": "news",
+     "title": "Nvidia partner and supplier stocks in Asia jump after Jensen Huang's return",
+     "url": "https://www.cnbc.com/2026/11/24/nvidia-jensen-huang-asia-chip-stocks.html",
+     "time": "2026-11-24T00:24:51Z"
+    },
+    {
+     "id": "9783d8250575458b",
+     "publisher": "Reuters",
+     "kind": "news",
+     "title": "Wall Street rebounds as Jensen Huang returns as Nvidia CEO",
+     "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE96UkNoVzcxb3NRU040ZV9GNUJXYWlBdF9ha0tVOHFnNC1aTzg1bjVWX0F2QUZYOS11RUZZZlRXTmdRSEFsNC1idV9heUg0Ym9TbGZZTl9CbGpVUnFfVEpsTkN6M1kwdw?oc=5",
+     "time": "2026-11-24T00:22:03Z"
+    },
+    {
+     "id": "08cdb2f0dc0098c0",
+     "publisher": "Yahoo Finance",
+     "kind": "news",
+     "title": "Dow Jones Futures: Tech Stocks, Nvidia Snap Back On Jensen Huang's Return; Elon Musk-Led SpaceX, Tesla Rally",
+     "url": "https://finance.yahoo.com/m/be493228-4ecf-338d-9017-054d3d6efc36/dow-jones-futures%3A-tech.html?.tsrc=rss",
+     "time": "2026-11-24T00:20:07Z"
+    },
+    {
+     "id": "3e5aa88db317b2d8",
+     "publisher": "Yahoo Finance",
+     "kind": "news",
+     "title": "Cathie Wood Swapped Nvidia for SpaceX Over the Risk of “Losing Jensen.” Now Jensen’s Back",
+     "url": "https://247wallst.com/investing/2026/11/23/cathie-wood-swapped-nvidia-for-spacex-over-the-risk-of-losing-jensen-now-jensens-back/?.tsrc=rss",
+     "time": "2026-11-24T00:07:46Z"
+    }
+   ]
+  },
+  {
+   "summary": "Iran states it will use all tools to confront US naval blocks following fresh sanctions, elevating supply disruption risks in the Middle East.",
    "category": "war_escalation",
    "firstSeen": "2026-11-23T20:45:53Z",
    "publishers": [
     "Anadolu Ajansı",
     "Beinsure",
+    "Breitbart News",
     "Rudaw",
     "SRN News",
+    "TV5 Kapatid Network",
+    "The Jerusalem Post",
     "The Times of Israel",
+    "Ticker News",
     "UA.NEWS",
+    "WRAL",
+    "صحيفة سبق الإلكترونية",
     "وكالة سبأ"
    ],
    "assets": {
@@ -8012,6 +7987,11 @@
      "direction": "up",
      "confidence": 0.8,
      "why": "Immediate supply risks from tanker attacks in the Strait of Hormuz benefit major integrated oil producers."
+    },
+    "OXY": {
+     "direction": "up",
+     "confidence": 0.7,
+     "why": "Geopolitical conflict in the Strait of Hormuz threatens global oil supply, typically boosting energy stocks."
     }
    },
    "sources": [
@@ -8058,12 +8038,101 @@
    ]
   },
   {
-   "summary": "Bitcoin surges past $64,000 and Solana targets higher levels amid positive market sentiment and improving ETF inflows.",
+   "summary": "Market sentiment remains buoyed by Jensen Huang's reinstatement as Nvidia CEO, driving broader tech gains.",
+   "category": "earnings_beat",
+   "firstSeen": "2026-11-23T18:30:45Z",
+   "publishers": [
+    "AP",
+    "Binance",
+    "Bitcoin Magazine",
+    "CNBC",
+    "FT",
+    "Investing.com",
+    "Kalshi News",
+    "Reuters",
+    "Seeking Alpha",
+    "The Washington Post",
+    "Yahoo Finance",
+    "조선일보"
+   ],
+   "assets": {
+    "NVDA": {
+     "direction": "up",
+     "confidence": 0.95,
+     "why": "Jensen Huang's reinstatement as CEO has energized the AI trade and driven massive positive momentum for Nvidia."
+    },
+    "AMD": {
+     "direction": "up",
+     "confidence": 0.8,
+     "why": "Broader AI chip sector sentiment is lifting competing chip stocks like AMD following Nvidia's surge."
+    },
+    "AMAT": {
+     "direction": "up",
+     "confidence": 0.7,
+     "why": "Riding the surging tech momentum."
+    },
+    "PLTR": {
+     "direction": "up",
+     "confidence": 0.8,
+     "why": "Broad software and tech rally driven by positive sentiment around Nvidia's recovery."
+    },
+    "NOW": {
+     "direction": "up",
+     "confidence": 0.75,
+     "why": "ServiceNow joins the broader technology sector rally lifting software stocks."
+    }
+   },
+   "sources": [
+    {
+     "id": "7549f87291c6037d",
+     "publisher": "Yahoo Finance",
+     "kind": "news",
+     "title": "Update: Equities Jump Intraday as Nvidia Soars on Huang's Reinstatement",
+     "url": "https://finance.yahoo.com/markets/stocks/articles/equities-jump-intraday-nvidia-soars-183714017.html?.tsrc=rss",
+     "time": "2026-11-23T18:37:14Z"
+    },
+    {
+     "id": "e91170f5302ec6c8",
+     "publisher": "Yahoo Finance",
+     "kind": "news",
+     "title": "Why iShares Semiconductor ETF (SOXX) Is Up Today",
+     "url": "https://www.fool.com/investing/2026/11/23/why-ishares-semiconductor-etf-soxx-is-up-today/?.tsrc=rss",
+     "time": "2026-11-23T18:35:02Z"
+    },
+    {
+     "id": "7596f62789a12004",
+     "publisher": "Yahoo Finance",
+     "kind": "news",
+     "title": "Why Is GlobalFoundries (GFS) Stock Up Today? Chip Rally on Nvidia CEO Return",
+     "url": "https://finance.yahoo.com/markets/stocks/articles/why-globalfoundries-gfs-stock-today-183102007.html?.tsrc=rss",
+     "time": "2026-11-23T18:31:02Z"
+    },
+    {
+     "id": "1e7731ca19595709",
+     "publisher": "Yahoo Finance",
+     "kind": "news",
+     "title": "Why I'm Still Grumpy About Nvidia's 33% Victory Lap",
+     "url": "https://www.fool.com/investing/2026/11/23/why-i-m-still-grumpy-about-nvidia-s-33-victory-lap/?.tsrc=rss",
+     "time": "2026-11-23T18:31:01Z"
+    },
+    {
+     "id": "7c0be7268f9039bf",
+     "publisher": "Yahoo Finance",
+     "kind": "news",
+     "title": "Why Is nVent (NVT) Stock Up Today? Peers Rally on Nvidia CEO News",
+     "url": "https://finance.yahoo.com/markets/stocks/articles/why-nvent-nvt-stock-today-183049742.html?.tsrc=rss",
+     "time": "2026-11-23T18:30:49Z"
+    }
+   ]
+  },
+  {
+   "summary": "The CFTC has ruled that Bitcoin, Ether, and stablecoins can count toward financial resource requirements for derivatives venues, providing a regulatory boost.",
    "category": "crypto_positive",
    "firstSeen": "2026-11-23T21:25:55Z",
    "publishers": [
     "The Economic Times",
-    "TradingNEWS"
+    "TradingNEWS",
+    "bloomingbit"
    ],
    "assets": {
     "BTC/USD": {
@@ -8075,6 +8144,11 @@
      "direction": "up",
      "confidence": 0.7,
      "why": "Benefiting from positive ETF inflow turns and network upgrades."
+    },
+    "ETH/USD": {
+     "direction": "up",
+     "confidence": 0.6,
+     "why": "Increased institutional utility and regulatory clarity for crypto assets."
     }
    },
    "sources": [
@@ -8093,36 +8167,58 @@
      "title": "Bitcoin price today: BTC USD surges past $64,000 after Nvidia reinstates Jensen Huang as CEO, then falls b",
      "url": "https://news.google.com/rss/articles/CBMiwAJBVV95cUxPTlFLTHZMSG91UEhSVTJqa3d2MWpOQ1ZfUjQ3LU9ERGFpb2NNOF9rcEZBVUF0ZW41Ym80dTBRU3o3WXVhTnhoOFZUUkF1Nl9SdVNQd1d5eHBDb3JVVEZ2SDNiU0d5dDdZS2RXeTlDX19UeTJ5RnZlc3RmeHlmQzVITGVyZ0prV0RQWXdsT054UUpfRXJrc3VVUm5xbW1NMzExODFyWV8xenRrVFlTRFRQSVF6bjhtRk1OUTZSd3R4MXk1bFZ2VTRrZW5wZ2xNeF9WSkkwMEtDS0tWdEU5VlhaWkE5ckVxVmIzX1k0SjFlUVZOXzc5djNnNTZ4cUcxQk9zdDVaNWh1STdOeEd0UW1vdkUtYm1oSUhuODZOSXBlSW1JcFVGaVpaZ0Frb2c3dFRlTGhLQ2prQnJBNkJISllWb9IBxgJBVV95cUxQUEM1aW44NUwtUFBBbFRBWS00a2M4QlFjS2x6YVR6UlV2SGNPVUFOVFdvMzllLUx1VlhjVWRrTTRPMnlxLU1UVzUxNW55UTZlakt1dUhTOUtCVndPaWxSUjc4YmpQclVwQ0F4bjVheGhiNTFqYzBPdTlzejljbU15cEJUVVRzOHMxYmtfR21leGZFbTYxb0tYZlRhRlN6T1pLamdsbXl3OWhrMzNHUndQTnhDbkFLdkJ4REJEaUZRWE5mM0UxWldHeXBQYk9ON2hBT09rdVlkRG1JUXRPNFVpZkNTaFp3RzBETzJNcUNXMllabnk0ck9fakpLTVhIQjRRblMzUnFhMEZhUDdqWm1SZ0doMkxtXy1UNl9rS09GbWh3YUVwMWlQV2VKZE5ia210TGhDNW1NMTlsaFZJWU1QSWx6UXk1Zw?oc=5",
      "time": "2026-11-23T21:25:55Z"
+    },
+    {
+     "id": "5e7587e0f7b9efd5",
+     "publisher": "bloomingbit",
+     "kind": "news",
+     "title": "CFTC Says Bitcoin, Ether, Stablecoins Can Count Toward Financial Resource Requirements for Derivatives Venues",
+     "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTFA5Zm5HVFB3MlB2ckFKMnZDRU5iYklUcTdqblg4cXdNM2k0cjdKXzBKaXNlTS1PaUQ3UTV0N0g3UmFWQ2xLZHZMNy1uZENOalFOaDF3RQ?oc=5",
+     "time": "2026-11-23T23:24:20Z"
     }
    ]
   },
   {
-   "summary": "AbbVie's RINVOQ receives FDA approval as the first systemic therapy for nonsegmental vitiligo in the US.",
+   "summary": "Agilent Technologies reports a strong Q4 earnings beat and positive FY27 outlook.",
    "category": "earnings_beat",
-   "firstSeen": "2026-11-23T20:55:00Z",
+   "firstSeen": "2026-11-23T18:30:28Z",
    "publishers": [
+    "GuruFocus",
     "Yahoo Finance"
    ],
    "assets": {
-    "ABBV": {
+    "KLAC": {
      "direction": "up",
-     "confidence": 0.8,
-     "why": "FDA approval for a new patient indication expands addressable market and boosts pharmaceutical revenue prospects."
+     "confidence": 0.7,
+     "why": "Positive operational update and guidance confirmation."
+    },
+    "AMAT": {
+     "direction": "up",
+     "confidence": 0.6,
+     "why": "Strong sector-wide momentum from Agilent's beat supports semiconductor equipment peers."
     }
    },
    "sources": [
     {
-     "id": "78692cc46cc51223",
+     "id": "f192dbaa1b8112d9",
      "publisher": "Yahoo Finance",
      "kind": "news",
-     "title": "AbbVie's RINVOQ® (upadacitinib) Approved as the First Systemic Therapy in the U.S. to Treat Adult and Pediatric Patients With Nonsegmental Vitiligo",
-     "url": "https://finance.yahoo.com/healthcare/articles/abbvies-rinvoq-upadacitinib-approved-first-205500618.html?.tsrc=rss",
-     "time": "2026-11-23T20:55:00Z"
+     "title": "Why KLA (KLAC) Stock Is Up Today: New Singapore Plant Meets $4.7 Billion Guide",
+     "url": "https://finance.yahoo.com/markets/stocks/articles/why-kla-klac-stock-today-183028209.html?.tsrc=rss",
+     "time": "2026-11-23T18:30:28Z"
+    },
+    {
+     "id": "9e28048aa834cac7",
+     "publisher": "GuruFocus",
+     "kind": "news",
+     "title": "Agilent Technologies (A) Surges Nearly 7% After Q4 Earnings Beat and Strong FY27 Outlook",
+     "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxOekE2WFpsUV9SeTFleFZtN2Q2Z1hhUjVlSnFuMHhrc21NRjVYMXZpa2o2dE9QRlBVU3V5VWNQRjRsM0ZZUnBTY0R0NTV4dEFyZ2hDWmFDclVneEJlS0MzUFBCeVZub2dOQmZzTHJ1MV9MZ0s5SFpMWU85Nk15UVF0Y0F6b2pvVFI5cnpESFdTYWxLaXR6c015SjItd084YzFYYjhMUE9oaUo2czVIby1UZlN6RHdWWkxLcXkwWE54ejcxUQ?oc=5",
+     "time": "2026-11-23T23:05:33Z"
     }
    ]
   },
   {
-   "summary": "CrowdStrike faces continued downside pressure and breakdown risk following its controversial Zscaler acquisition announcement.",
+   "summary": "BILL Holdings faces a downgrade and legal investigations following a proposed acquisition by TPG Capital.",
    "category": "company_bad_news",
    "firstSeen": "2026-11-23T18:41:05Z",
    "publishers": [
@@ -8182,6 +8278,131 @@
    ]
   },
   {
+   "summary": "Bitcoin leverage on Binance drops significantly, signaling weak demand and challenging price recovery.",
+   "category": "crypto_negative",
+   "firstSeen": "2026-11-23T20:24:15Z",
+   "publishers": [
+    "Cryptonews.net",
+    "Pluang",
+    "The Motley Fool",
+    "Yahoo Finance"
+   ],
+   "assets": {
+    "BTC/USD": {
+     "direction": "down",
+     "confidence": 0.85,
+     "why": "Heavy liquidations and price drop to $55K signal strong near-term bearish momentum."
+    }
+   },
+   "sources": [
+    {
+     "id": "fc6ed3a20828615d",
+     "publisher": "Cryptonews.net",
+     "kind": "news",
+     "title": "Bitcoin drops to $55K after $670M liquidations – What changes now?",
+     "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTFBFcGNUaFJNNjVsdkJHUl82ajF5bjZLNmxldzBtblk1a25NSWVDcjJNVHBlMXVwemFZS0IxMENNOFlnd1lZaTJvVks2bFRLNnVTdGdnN0JncWw?oc=5",
+     "time": "2026-11-23T20:24:15Z"
+    },
+    {
+     "id": "602d89a0a8e5896f",
+     "publisher": "The Motley Fool",
+     "kind": "news",
+     "title": "Crypto Market Today, Nov. 23: Bitcoin Sits Out Wall Street's Historic Rally as $1.8 Billion ETF Exodus Weighs on Prices",
+     "url": "https://news.google.com/rss/articles/CBMiiwJBVV95cUxPdWQ4bjBaRlh5OURIMmROZkljd0NiMlRZcU43MURTZlFqcFppdlhrUkJNWGdBc1lzZWFQU240N05abTN1ck5WV1pnZE9fQWZCYmZFZzd5YlFYaGppVm1vYWFBSXl6RGhWQWdvQlNBZ0RQMHl2R21hdlVlbHZtTzN1TnZidVFEX20wX18yWnNidEZnMWxuMU9WWEV6QjNtS0diM0RZWlNCVU91TktuNUoxQlR5Y1M5OGh4QldzXzZSaEplUnNqenJVWHZkbnVMbEpzNUQySUswSTVXeTk1UVZxcVNuX1FZRDlkVmhiLWxRZjQ3amgwYVgtbzlhRU5yQ3pZc0xKMU9tVnFuUE0?oc=5",
+     "time": "2026-11-23T21:55:02Z"
+    },
+    {
+     "id": "a880ed8956674d6b",
+     "publisher": "Yahoo Finance",
+     "kind": "news",
+     "title": "Is Bitcoin Heading for $50,000?",
+     "url": "https://www.fool.com/investing/2026/11/23/is-bitcoin-heading-for-50-000/?.tsrc=rss",
+     "time": "2026-11-23T21:49:02Z"
+    },
+    {
+     "id": "a4c872c0fdaaacc4",
+     "publisher": "Pluang",
+     "kind": "news",
+     "title": "Bitcoin leverage on Binance drops $4.7B, signaling weak demand and challenging price recovery.",
+     "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxNSlpaTGZiRVRPcWZUQ0Z0OXFJeU9vQ1R0TU95dDJfbm9hdG9ZSFJyeG9NcEZQOG9oYmpWMTUyYk1Sb3JBdHlTdzBmVG5oTGpmU1BuMEFqMlA5c21ZZzdmblVZR3pBRXROclh0MzdGYjJSaW9RdHBNOXN3LVRjREZTU19nNjZXN1dfZmktcjBqLXU?oc=5",
+     "time": "2026-11-23T23:05:35Z"
+    }
+   ]
+  },
+  {
+   "summary": "Russia's threats of open war against Estonia heighten geopolitical conflict risks in Eastern Europe.",
+   "category": "war_escalation",
+   "firstSeen": "2026-11-23T22:23:37Z",
+   "publishers": [
+    "Limapagi",
+    "Sight Magazine",
+    "www.suaralandak.co.id"
+   ],
+   "assets": {
+    "AEM": {
+     "direction": "up",
+     "confidence": 0.65,
+     "why": "Escalating war threats boost safe-haven gold miner stocks."
+    },
+    "PLTR": {
+     "direction": "up",
+     "confidence": 0.65,
+     "why": "Heightened geopolitical conflict supports defense tech demand."
+    }
+   },
+   "sources": [
+    {
+     "id": "42bb2d1ea0244d0a",
+     "publisher": "www.suaralandak.co.id",
+     "kind": "news",
+     "title": "Russia Threatens Estonia With Open War Over Border Tensions",
+     "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTFBFLXkwZXlXZ25sTzg1RjhxSElSV3NreFVQb3FtV0JpWWlxa1kyUllLYUp0MHVWZnhRRXdIbUgwR1RnLWNDMUZ3X0lNT0FPYmctOGF4RVlCc0ZKWXltc2NWV3VmZ1FIV21DSTZ5U1pzdTlPWGF1?oc=5",
+     "time": "2026-11-23T22:25:00Z"
+    },
+    {
+     "id": "a568a368df41cd89",
+     "publisher": "Limapagi",
+     "kind": "news",
+     "title": "Russia Advances Sarmat Deployment as EU Proposes New Sanctions",
+     "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE5CQk1iRTJ0S1NtUmlSMXQ4U1pJTDM0WmZidnZfS25hTHZTVGNwUGpnNk1ISUpjdlZnc2NxZ3RZdHZDNG9oaHJhVWZabV9INGxrVXg5NzlKT09ib2FXVHhwVTJWdw?oc=5",
+     "time": "2026-11-23T22:25:00Z"
+    },
+    {
+     "id": "40dd4b79a1e00ecf",
+     "publisher": "Sight Magazine",
+     "kind": "news",
+     "title": "Moscow accuses Estonia of hostile actions on \"verge of triggering open war\"",
+     "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxOdWkxV2wyT3RJTzNCVENtTVJsaEN5b0p6S1pVSVFSQTJ5THJiS3RzekNYU2xIZXpfYzUwZmtVNzkzVVB4dXEweUpDdkVjanFwRDJtMm5OVnhxbkVxMGFoTkF6OTNoVm1pUmJaRkp4TlpxeDJET3NLYjV2THBPd3U0cnB3eVZLYW5HSW1BbDB5cjRsdU5LaGsyYnFfQm9jVm9VYlRoSXVJazBvcEF4?oc=5",
+     "time": "2026-11-23T22:23:37Z"
+    }
+   ]
+  },
+  {
+   "summary": "AbbVie's RINVOQ receives FDA approval as the first systemic therapy for nonsegmental vitiligo in the US.",
+   "category": "earnings_beat",
+   "firstSeen": "2026-11-23T20:55:00Z",
+   "publishers": [
+    "Yahoo Finance"
+   ],
+   "assets": {
+    "ABBV": {
+     "direction": "up",
+     "confidence": 0.8,
+     "why": "FDA approval for a new patient indication expands addressable market and boosts pharmaceutical revenue prospects."
+    }
+   },
+   "sources": [
+    {
+     "id": "78692cc46cc51223",
+     "publisher": "Yahoo Finance",
+     "kind": "news",
+     "title": "AbbVie's RINVOQ® (upadacitinib) Approved as the First Systemic Therapy in the U.S. to Treat Adult and Pediatric Patients With Nonsegmental Vitiligo",
+     "url": "https://finance.yahoo.com/healthcare/articles/abbvies-rinvoq-upadacitinib-approved-first-205500618.html?.tsrc=rss",
+     "time": "2026-11-23T20:55:00Z"
+    }
+   ]
+  },
+  {
    "summary": "Amazon has acquired AI startup Decart's chip software and hired its founders to bolster its AI infrastructure capabilities.",
    "category": "contract",
    "firstSeen": "2026-11-23T19:01:29Z",
@@ -8212,1084 +8433,6 @@
      "title": "Amazon to acquire AI startup Decart's chip software, hire founders",
      "url": "https://www.cnbc.com/2026/11/23/amazon-decarts-ai-acquisition.html",
      "time": "2026-11-23T19:34:38Z"
-    }
-   ]
-  },
-  {
-   "summary": "Tesla has begun the rollout of its new FSD v15 self-driving software with significant safety improvements.",
-   "category": "contract",
-   "firstSeen": "2026-11-23T19:01:29Z",
-   "publishers": [
-    "fiscal.ai"
-   ],
-   "assets": {
-    "TSLA": {
-     "direction": "up",
-     "confidence": 0.6,
-     "why": "Major software rollout and product advancement."
-    }
-   },
-   "sources": [
-    {
-     "id": "687f60daec6b48bf",
-     "publisher": "fiscal.ai",
-     "kind": "news",
-     "title": "Tesla Releases New FSD v15 Self-Driving Software",
-     "url": "https://www.morningstar.com/news/dow-jones/202611236261/tesla-shares-gain-on-new-self-driving-software-amid-broader-market-rally",
-     "time": "2026-11-23T19:01:29Z"
-    }
-   ]
-  },
-  {
-   "summary": "KLA Corporation shares rise following the opening of a new Singapore plant that aligns with their $4.7 billion guidance.",
-   "category": "earnings_beat",
-   "firstSeen": "2026-11-23T18:30:28Z",
-   "publishers": [
-    "Yahoo Finance"
-   ],
-   "assets": {
-    "KLAC": {
-     "direction": "up",
-     "confidence": 0.7,
-     "why": "Positive operational update and guidance confirmation."
-    }
-   },
-   "sources": [
-    {
-     "id": "f192dbaa1b8112d9",
-     "publisher": "Yahoo Finance",
-     "kind": "news",
-     "title": "Why KLA (KLAC) Stock Is Up Today: New Singapore Plant Meets $4.7 Billion Guide",
-     "url": "https://finance.yahoo.com/markets/stocks/articles/why-kla-klac-stock-today-183028209.html?.tsrc=rss",
-     "time": "2026-11-23T18:30:28Z"
-    }
-   ]
-  },
-  {
-   "summary": "Ukrainian drone strikes shutting down Russian oil refineries and ongoing blockade tensions in Iran threaten global oil supply.",
-   "category": "war_escalation",
-   "firstSeen": "2026-11-10T20:01:23Z",
-   "publishers": [
-    "1470 & 100.3 WMBD",
-    "1News",
-    "24 News HD",
-    "24NewsHD",
-    "790 KABC",
-    "7NEWS",
-    "8AM Media",
-    "930 WFMD Free Talk",
-    "964media",
-    "A News",
-    "ABC Columbia",
-    "ABC News - Breaking News, Latest News and Videos",
-    "ABC7 WWSB",
-    "ABNA English",
-    "ABP Live English",
-    "ABS-CBN",
-    "ANI News",
-    "ANSA",
-    "AOL.co.uk",
-    "AOL.com",
-    "AP",
-    "ARN News Centre",
-    "ARYnews.tv",
-    "ASHARQ AL-AWSAT English",
-    "AZ Family",
-    "Aaj English TV",
-    "Ada Derana",
-    "Admirals",
-    "AgroLatam",
-    "Ahram Online",
-    "Air Data News",
-    "Aktualita.co",
-    "Al Arabiya English",
-    "Al Jazeera",
-    "Al-Bawaba",
-    "Al-Monitor",
-    "Albanian Daily News",
-    "American Journal of Transportation",
-    "Ammon News",
-    "Anadolu Ajansı",
-    "Anchorage Daily News",
-    "Antiwar.com",
-    "Apa.az",
-    "Arab News",
-    "Arab News PK",
-    "Arab Times Kuwait News",
-    "Arabian Business",
-    "Arabian Gulf Business Insight | AGBI",
-    "Arbiterz",
-    "Arise News",
-    "Armenpress",
-    "Army Recognition",
-    "Asia Insurance Post",
-    "AsiaOne.com",
-    "Atlanta News First",
-    "Audacy",
-    "Awaz The Voice",
-    "Axios",
-    "AzerNews",
-    "Azərtac",
-    "BBC",
-    "BGNES",
-    "Baird Maritime",
-    "Baku.ws",
-    "Baltic News Network",
-    "Bangladesh Sangbad Sangstha (BSS)",
-    "Bankingnews",
-    "Barchart.com",
-    "Beaumont Enterprise",
-    "Belaaz",
-    "Benzinga",
-    "Bicester Advertiser",
-    "Big News Network.com",
-    "BigGo Finance",
-    "Bilyonaryo Business",
-    "BizPac Review",
-    "Blockonomi",
-    "Bloom Pakistan",
-    "Bloomberg.com",
-    "Bol News",
-    "Borneo Bulletin",
-    "Boston 25 News",
-    "Boston Herald",
-    "BreakingNews.ie",
-    "Breakingthenews.net",
-    "Breitbart News",
-    "Business Day",
-    "Business Post Nigeria",
-    "Business Recorder",
-    "Business Standard",
-    "Business Today",
-    "Business Upturn",
-    "BusinessGreen",
-    "BusinessLine",
-    "BusinessToday Malaysia",
-    "BusinessWorld Online",
-    "C-SPAN",
-    "CBC",
-    "CBN.com",
-    "CBS News",
-    "CGTN",
-    "CNA",
-    "CNBC",
-    "CNBC Africa",
-    "CNBC TV18",
-    "CNN",
-    "CP24",
-    "CTPost",
-    "CTV News",
-    "Caledonian Record",
-    "Caspian Post",
-    "Central Oregon Daily",
-    "Channels Television",
-    "Charisma Magazine Online",
-    "Chicago Tribune",
-    "China Daily Global Edition",
-    "Chosunbiz",
-    "Chronicle NG",
-    "Citizen Digital",
-    "City AM",
-    "CityNews Halifax",
-    "CityNews Winnipeg",
-    "Cityairnews",
-    "Clarion India",
-    "Click2Houston",
-    "ClickOnDetroit | WDIV Local 4",
-    "Coinpedia",
-    "Common Dreams",
-    "Connected to India",
-    "Construction Review",
-    "Construction World",
-    "Crude Oil Prices Today | OilPrice.com",
-    "Crypto Briefing",
-    "Cyprus Mail",
-    "DD India",
-    "DD News",
-    "DNA India",
-    "DNE Africa",
-    "DRGNews",
-    "Daijiworld",
-    "Daily Beirut",
-    "Daily Excelsior",
-    "Daily Express",
-    "Daily Lead Pakistan",
-    "Daily Mail",
-    "Daily Mirror - Sri Lanka",
-    "Daily News-Record",
-    "Daily Observer",
-    "Daily Pakistan",
-    "Daily Pioneer",
-    "Daily Post Nigeria",
-    "Daily Sun",
-    "Daily Times",
-    "Daily Trust",
-    "Daily Voice Of Asia",
-    "Dailyhunt",
-    "Dainik Jagran MP CG",
-    "Dawn",
-    "Deccan Chronicle",
-    "Deccan Herald",
-    "Defense Express",
-    "Democracy Now!",
-    "Demokratis.co.id",
-    "Demócrata",
-    "Dhaka Tribune",
-    "Dimsum Daily",
-    "Drop Site News",
-    "Dubai Eye 103.8",
-    "Durango Herald",
-    "EA WorldView",
-    "ETV Bharat",
-    "Eagle-Tribune",
-    "Egypt Independent",
-    "Egypt Today",
-    "Egyptian Gazette",
-    "Energy Connects",
-    "Energy Intelligence",
-    "EnergyNow.com",
-    "Enidnews.com",
-    "Eurasia Review",
-    "Euromaidan Press",
-    "Euronews",
-    "Euronews.com",
-    "Euronext Markets: Real-time Stock Market Data | live",
-    "FOX 5 DC",
-    "FOX Carolina News",
-    "FOX19 | Cincinnati",
-    "FT",
-    "FXDailyReport.Com",
-    "FXEmpire",
-    "FXStreet",
-    "Facebook",
-    "Fars News Agency",
-    "Fast Company",
-    "Female First",
-    "Fenland Citizen",
-    "FinanceFeeds",
-    "Firstpost",
-    "FlipItMoney",
-    "Foej Media",
-    "Forbes",
-    "Forbes Middle East",
-    "Foreign Policy Journal",
-    "Forth.News",
-    "Fortune",
-    "Fortune India",
-    "Fox News",
-    "France 24",
-    "Free Malaysia Today",
-    "Free Press Journal",
-    "GPblog",
-    "GV Wire",
-    "Global Banking & Finance Review",
-    "Global News",
-    "Goshen News",
-    "Greater Kashmir",
-    "Gujarat Samachar",
-    "Gulf Business",
-    "Gulf Daily News (Bahrain)",
-    "Gulf News",
-    "Gulf Today",
-    "GuruFocus",
-    "HDFC Sky",
-    "Haaretz",
-    "Haberler.com",
-    "Hagadone News Network",
-    "Hamariweb.com",
-    "Hamro Patro",
-    "Hart Energy",
-    "Hawaii News Now",
-    "Head Topics",
-    "Heartlander News",
-    "Henry Herald",
-    "Hilton Head Island Packet",
-    "Hindustan Times",
-    "Hiru News",
-    "Hokanews",
-    "Honolulu Star-Advertiser",
-    "Hoodline",
-    "HotAir",
-    "Howl.Link",
-    "Hum News English",
-    "Hunter Valley News",
-    "IANS LIVE",
-    "IBTimes India",
-    "IFCJ",
-    "ILoveQatar.net",
-    "INDIA New England News",
-    "ISNA News Agency",
-    "Il Sole 24 ORE",
-    "India TV News",
-    "India Today",
-    "India Tribune - Chicago",
-    "India.com",
-    "Indian PSU",
-    "Informat.ro",
-    "Inquirer.net",
-    "Inquisitr",
-    "Inshorts",
-    "Insurance Day",
-    "Insurance Journal",
-    "IntelliNews",
-    "Interesting Engineering",
-    "Interfax-Ukraine",
-    "International Business Times",
-    "Internazionale",
-    "Investify",
-    "Investing.com",
-    "Investing.com Australia",
-    "Investing.com Canada",
-    "Investing.com India",
-    "Investing.com Nigeria",
-    "Investing.com South Africa",
-    "Invezz",
-    "Iran International",
-    "IranWire",
-    "Irish Independent",
-    "Iron Mountain Daily News",
-    "Islamabad Post",
-    "Israel Hayom",
-    "Israel National News",
-    "JC Post",
-    "JFeed",
-    "JNS.org",
-    "Japan Today",
-    "Jewish Insider",
-    "Jordan News",
-    "JournalArta",
-    "Just The News",
-    "KBOI",
-    "KCTV",
-    "KELO-AM",
-    "KIMT",
-    "KLSE Screener",
-    "KMBC",
-    "KQ2",
-    "KRDO",
-    "KRMG",
-    "KTAR News 92.3 FM",
-    "KTVN",
-    "KVNU News Talk",
-    "KYMA",
-    "Kashmir Life",
-    "KashmirPEN",
-    "Kerala Kaumudi",
-    "Khaama Press",
-    "Khaleej Times",
-    "Khmer Times",
-    "Kitco",
-    "Kurdistan24",
-    "Kuwait Times",
-    "Kyiv Post",
-    "L'Orient Today",
-    "LBCI Lebanon",
-    "LEADERSHIP Newspapers",
-    "LIGA.net",
-    "La Voce di New York",
-    "Laodong.vn",
-    "Las Vegas Review-Journal",
-    "Latest news from Azerbaijan",
-    "Latin Times",
-    "Le Monde.fr",
-    "Limapagi",
-    "LinkedIn",
-    "Livemint",
-    "Lloyd's List",
-    "Local 3 News",
-    "Logistics Middle East",
-    "Lokmat Times",
-    "London South East",
-    "MKFM",
-    "MLQ.ai",
-    "MM News",
-    "MTV Lebanon",
-    "Macau Business",
-    "Madhyamam",
-    "Malay Mail",
-    "MalaysiaGazette",
-    "Manchester Evening News",
-    "Mangalore Today",
-    "Manila Bulletin",
-    "Marietta Daily Journal",
-    "Marine Log",
-    "Marine News Magazine",
-    "MarineLink",
-    "MarketForces Africa",
-    "Mashriq TV",
-    "Mathrubhumi English",
-    "Mediaite",
-    "Meduza",
-    "Mehr News Agency",
-    "Metro.co.uk",
-    "Mettis Global",
-    "Mezha.net",
-    "Mid-Day",
-    "Middle East Eye",
-    "Middle East Monitor",
-    "Middle East Online",
-    "Military.com",
-    "MillenniumPost",
-    "Minute Mirror",
-    "Mitrade",
-    "Modern Ghana",
-    "Moneycontrol.com",
-    "Moneyweb",
-    "Moomoo",
-    "MorungExpress",
-    "MundoNOW",
-    "Munsif News 24x7",
-    "Muslim Network TV",
-    "Mwanzo TV",
-    "MySA",
-    "NBC News",
-    "NDTV",
-    "NDTV Profit",
-    "NEWS.am",
-    "NKTV",
-    "NOTUS",
-    "NPR",
-    "NST Online",
-    "NTD News",
-    "NZ Herald",
-    "Nacionale",
-    "Naharnet",
-    "National Herald",
-    "National Security Journal",
-    "Natural Gas Intelligence",
-    "Nepalnews.com",
-    "New Haven Register",
-    "New York Post",
-    "News Karnataka",
-    "News On AIR",
-    "News of Bahrain",
-    "News-Press NOW",
-    "News18",
-    "News24",
-    "News4JAX",
-    "News9live",
-    "NewsBytes",
-    "NewsCord",
-    "NewsDrum",
-    "Newser",
-    "Newsmax",
-    "Newswav",
-    "NewzTodays",
-    "Nine.com.au",
-    "Northwich Guardian",
-    "Norwalk Hour",
-    "Novinite.com",
-    "Odessa Journal",
-    "Oil & Gas 360",
-    "Oil & Gas Middle East",
-    "Oklahoma Energy Today",
-    "Oman Observer",
-    "Ommcom News",
-    "Open Magazine",
-    "Operativ Məlumat Mərkəzi",
-    "Organiser",
-    "Orinoco Tribune",
-    "Ottumwa Courier",
-    "Outlook India",
-    "Oz Arab Media",
-    "PBS",
-    "Pakistan Observer",
-    "Pakistan Today",
-    "Palestine Chronicle",
-    "Pars Today",
-    "Peeblesshire News",
-    "People Daily",
-    "Peoples Gazette Nigeria",
-    "Philenews",
-    "PinalCentral.com",
-    "Pittsburgh Post-Gazette",
-    "Pluang",
-    "Politiko.com.ph",
-    "Pratidin Time",
-    "Proactive Investors Australia",
-    "Profit by Pakistan Today",
-    "Proshare",
-    "Prothom Alo English",
-    "Public TV English",
-    "Punch Newspapers",
-    "Qatar Tribune",
-    "Qatar news agency",
-    "Quantum Commodity Intelligence",
-    "Quartz",
-    "RBC-Ukraine",
-    "REFORM.news",
-    "RNZ",
-    "RTE.ie",
-    "RTHK News",
-    "RTV English",
-    "RTV News",
-    "RadarOnline",
-    "Radio Free Europe/Radio Liberty",
-    "Radio Royal",
-    "Ratopati",
-    "RealMoney Pro",
-    "Rebel News",
-    "Rediff",
-    "Rediff MoneyWiz",
-    "Report.az",
-    "Reuters",
-    "Rigzone",
-    "Rising Kashmir",
-    "Riviera Maritime Media",
-    "Roger Pielke Jr. | Substack",
-    "Rudaw",
-    "SBS",
-    "SNJ Today",
-    "SRN News",
-    "SSBCrack",
-    "Sahara Reporters",
-    "Sahi",
-    "Salina Post",
-    "San Angelo LIVE!",
-    "Saudi Gazette",
-    "Scripps News",
-    "Scroll.in",
-    "Seatrade Maritime News",
-    "Seattle Post-Intelligencer",
-    "Seeking Alpha",
-    "Senate Committee on Energy and Natural Resources (.gov)",
-    "Serbian News Media",
-    "Sharjah24",
-    "Ship & Bunker",
-    "Ships & Ports",
-    "Social News XYZ",
-    "Somerset County Gazette",
-    "South China Morning Post",
-    "Sowetan",
-    "Spectrum News",
-    "Splash247",
-    "Stars and Stripes",
-    "StreetInsider",
-    "Stuff.co.nz",
-    "SuaraGarut.ID",
-    "Swarajya",
-    "TABNAK",
-    "TMJ4 News",
-    "TRT Afrika",
-    "TRT World",
-    "TV ONE USA",
-    "TVC News",
-    "TVP World",
-    "Tampa Free Press",
-    "TechBullion",
-    "Tehran Times",
-    "Telangana Today",
-    "Telegraph India",
-    "Temple Daily Telegram",
-    "Texarkana Gazette",
-    "Thailand Business News",
-    "The American Conservative",
-    "The Arab Weekly",
-    "The Arkansas Democrat-Gazette",
-    "The Assam Tribune",
-    "The Australian",
-    "The Avenue Mail",
-    "The Bakersfield Californian",
-    "The Batesville Daily Guard",
-    "The Business Standard",
-    "The Business Times",
-    "The Canberra Times",
-    "The Citizen",
-    "The Daily Caller",
-    "The Daily Jagran",
-    "The Daily Star",
-    "The Daily Star Lebanon",
-    "The Detroit News",
-    "The Diplomatic Insight",
-    "The Economic Times",
-    "The Edge Malaysia",
-    "The Edwardsville Intelligencer",
-    "The Express Tribune",
-    "The Filipino Times",
-    "The Financial Express",
-    "The Guardian",
-    "The Hans India",
-    "The Hawk",
-    "The Herald",
-    "The Herald Journal",
-    "The Hill",
-    "The Hindustan Gazette",
-    "The Hip Hop Democrat",
-    "The Independent",
-    "The Indian EYE",
-    "The Indian Express",
-    "The Irish Times",
-    "The Japan Times",
-    "The Jerusalem Post",
-    "The Jewish Chronicle",
-    "The Journal",
-    "The Journal Gazette",
-    "The Killeen Daily Herald",
-    "The Korea Herald",
-    "The Korea Times",
-    "The Kyiv Independent",
-    "The Lufkin Daily News",
-    "The Manila Times",
-    "The Mary Sue",
-    "The Media Line",
-    "The Mirror",
-    "The Moscow Times",
-    "The Nation (Pakistan )",
-    "The National",
-    "The New Arab",
-    "The New Indian Express",
-    "The New Region",
-    "The New Voice of Ukraine",
-    "The New York Times",
-    "The Peninsula Qatar",
-    "The SOFX Report",
-    "The Seattle Times",
-    "The Sentinel - of this Land, for its People",
-    "The Shillong Times",
-    "The Siasat Daily",
-    "The Standard (HK)",
-    "The Star",
-    "The Star, Kenya",
-    "The Statesman",
-    "The Straits Times",
-    "The Sun",
-    "The Sun Malaysia",
-    "The Sunday Guardian",
-    "The Telegraph",
-    "The Times",
-    "The Times of India",
-    "The Times of Israel",
-    "The Tribune",
-    "The Trumpet Newspaper",
-    "The Vibes",
-    "The Washington Post",
-    "The Week",
-    "TheReport.live",
-    "Time Magazine",
-    "TimelineDaily",
-    "Times Now",
-    "Times of Oman",
-    "Times of Suriname",
-    "TimesLIVE",
-    "TipRanks",
-    "Today.Az",
-    "TodayPress.tv",
-    "Toronto Star",
-    "TradeWinds News",
-    "Traders Union",
-    "TradingNEWS",
-    "TradingPedia",
-    "TradingView",
-    "Trak.in",
-    "Transport Topics",
-    "Traverse City Record-Eagle",
-    "Trend News Agency",
-    "TribLIVE.com",
-    "Tribune Online",
-    "Tripura Chronicle",
-    "TripuraTimes.com",
-    "Türkiye Today",
-    "UA.NEWS",
-    "UNITED24 Media",
-    "USA Today",
-    "Udayavani",
-    "UkrMedia News",
-    "Ukrainian News Agency",
-    "Ukrinform",
-    "Union-Bulletin",
-    "United News of Bangladesh",
-    "Upper Michigan's Source",
-    "Upstream Online",
-    "UrduPoint",
-    "VOV World",
-    "Vanguard News",
-    "Vatican News",
-    "Vietnam.vn",
-    "Vision Times",
-    "WABI",
-    "WANA News Agency",
-    "WBAY",
-    "WBTV",
-    "WCAX",
-    "WCIV",
-    "WE News English",
-    "WHDH",
-    "WIBW",
-    "WION",
-    "WITN",
-    "WJCL",
-    "WJHG",
-    "WKOW",
-    "WKYT",
-    "WLFI",
-    "WMTV 15 NEWS",
-    "WPDE",
-    "WPTZ",
-    "WPXI",
-    "WQOW",
-    "WRAL",
-    "WRDW",
-    "WSAU",
-    "WSJ",
-    "WSLS",
-    "WTOP News",
-    "WTVA",
-    "WVLT",
-    "WWD",
-    "WWMT",
-    "WXII",
-    "WZDM",
-    "Wake Up Singapore",
-    "WaltonTribune.com",
-    "Washington Examiner",
-    "Washington Times",
-    "Washingtonian",
-    "We Got This Covered",
-    "Wisevoter",
-    "World Israel News",
-    "World Oil",
-    "World Socialist Web Site",
-    "X",
-    "XTB.com",
-    "Xinhua",
-    "Yahoo",
-    "Yahoo Finance",
-    "Yahoo Finance UK",
-    "Yahoo News Canada",
-    "Yahoo News Singapore",
-    "Yahoo News UK",
-    "Yemen Online",
-    "Yeni Safak English",
-    "Ynetnews",
-    "Zamin.uz",
-    "Zawya",
-    "Zee Business",
-    "ad-hoc-news.de",
-    "agc communication news",
-    "astig.ph",
-    "bdnews24.com",
-    "bloomingbit",
-    "blue News",
-    "bsinews.id",
-    "cbn.com",
-    "cedarnews.net",
-    "chinadailyhk",
-    "couriernews.com",
-    "crimefightersng.com",
-    "crossroadstoday.com",
-    "cwibc.co.id",
-    "en.bd-pratidin.com",
-    "fox42kptm.com",
-    "gCaptain",
-    "grafa.com",
-    "houseofsaud.com",
-    "https://aapnews.aap.com.au/",
-    "https://dailyasianage.com/",
-    "https://defence.newsd.in/",
-    "https://economy.ac/",
-    "https://houseofsaud.com/",
-    "https://streamlinefeed.co.ke/",
-    "https://theins.press/en",
-    "https://www.businesstimes-bd.com/",
-    "https://www.engine.online/",
-    "https://www.shipmanagementinternational.com/",
-    "https://www.thetraveler.org/",
-    "investingLive",
-    "jiji press",
-    "kens5.com",
-    "la Repubblica",
-    "marketscreener.com",
-    "megaproject.com",
-    "news.sbs.co.kr",
-    "newsalert.com.pk",
-    "newskarnataka.com",
-    "oEnergetice.cz",
-    "oodaloop.com",
-    "qz.com",
-    "rdnewsnow.com",
-    "richtv.io",
-    "samaa tv",
-    "scanx.trade",
-    "seMissourian",
-    "streamlinefeed.co.ke",
-    "teleSUR English",
-    "tennews.in",
-    "thecanadianpressnews.ca",
-    "thechronicle.com.ph",
-    "thedailystar.com",
-    "thefact.ng",
-    "thenationalnews.com",
-    "theopenpress.in",
-    "tippinsights",
-    "trend.az",
-    "ukranews",
-    "wandtv.com",
-    "www.businesstimes-bd.com",
-    "www.daily-sun.com",
-    "www.engine.online",
-    "www.israelhayom.com",
-    "www.marketscreener.com",
-    "www.nktv.in",
-    "www.proactiveinvestors.com.au",
-    "www.stripes.com",
-    "www.thenationalnews.com",
-    "www.tmgm.com",
-    "www.tokenpost.com",
-    "www.uaebarq.ae",
-    "www.wwbl.com",
-    "İlke Haber Ajansı",
-    "ІА Король Данило",
-    "Мілітарний",
-    "Прямий",
-    "Українські Національні Новини (УНН)",
-    "Українські Новини",
-    "Цензор.НЕТ",
-    "الحرة",
-    "برق الإمارات",
-    "تسنیم",
-    "جريدة القدس",
-    "خبرگزاری بین المللی قدس",
-    "سانا",
-    "سبق",
-    "شبكة تواصل الإخبارية",
-    "شفق نيوز",
-    "صحيفة سبق الإلكترونية",
-    "صحيفة مال",
-    "صوت الإمارات",
-    "وكالة الأنباء السعودية",
-    "وكالة الانباء الاردنية",
-    "وكالة الانباء العراقية (واع)",
-    "وكالة سبأ",
-    "アラブニュース",
-    "巴士的報",
-    "毎日新聞",
-    "联合早报",
-    "재경일보",
-    "파이낸셜뉴스"
-   ],
-   "assets": {
-    "XOM": {
-     "direction": "up",
-     "confidence": 0.85,
-     "why": "Attacks on Middle East oil supply infrastructure push crude and oil majors higher."
-    },
-    "CVX": {
-     "direction": "up",
-     "confidence": 0.85,
-     "why": "Severe supply disruption risks in the Strait of Hormuz benefit major oil producers."
-    },
-    "OXY": {
-     "direction": "up",
-     "confidence": 0.8,
-     "why": "Higher oil prices driven by geopolitical conflict boost upstream producers."
-    },
-    "PLTR": {
-     "direction": "up",
-     "confidence": 0.8,
-     "why": "Defense technology demand rises during active geopolitical conflict."
-    },
-    "AVAV": {
-     "direction": "up",
-     "confidence": 0.8,
-     "why": "War escalation with Iran increases demand for defense tech."
-    },
-    "NEM": {
-     "direction": "up",
-     "confidence": 0.75,
-     "why": "War escalation increases safe-haven demand for gold miners."
-    },
-    "COP": {
-     "direction": "up",
-     "confidence": 0.8,
-     "why": "Oil supply disruption fears and tanker attacks push oil and gas stocks higher."
-    },
-    "SLB": {
-     "direction": "up",
-     "confidence": 0.8,
-     "why": "Oil supply disruption risk increases prices."
-    },
-    "AEM": {
-     "direction": "up",
-     "confidence": 0.75,
-     "why": "War escalation increases safe-haven demand for gold."
-    },
-    "NVDA": {
-     "direction": "down",
-     "confidence": 0.7,
-     "why": "Broad tech equities drop during major geopolitical war escalations."
-    },
-    "APA": {
-     "direction": "up",
-     "confidence": 0.8,
-     "why": "Oil supply disruption risk increases prices."
-    },
-    "DVN": {
-     "direction": "up",
-     "confidence": 0.8,
-     "why": "Oil supply disruption risk increases prices."
-    },
-    "EOG": {
-     "direction": "up",
-     "confidence": 0.8,
-     "why": "Oil supply disruption risk increases prices."
-    },
-    "FANG": {
-     "direction": "up",
-     "confidence": 0.8,
-     "why": "Oil supply disruption risk increases prices."
-    },
-    "HAL": {
-     "direction": "up",
-     "confidence": 0.8,
-     "why": "Oil supply disruption risk increases prices."
-    },
-    "AAPL": {
-     "direction": "down",
-     "confidence": 0.7,
-     "why": "Broad tech faces pressure amid escalating conflict."
-    },
-    "SPWO": {
-     "direction": "down",
-     "confidence": 0.65,
-     "why": "Broad equities often fall during major geopolitical war escalations."
-    },
-    "MPC": {
-     "direction": "up",
-     "confidence": 0.8,
-     "why": "Oil supply disruption risk increases prices."
-    },
-    "PSX": {
-     "direction": "up",
-     "confidence": 0.8,
-     "why": "Oil supply disruption risk increases prices."
-    },
-    "VLO": {
-     "direction": "up",
-     "confidence": 0.8,
-     "why": "Oil supply disruption risk increases prices."
-    },
-    "MSFT": {
-     "direction": "down",
-     "confidence": 0.7,
-     "why": "Risk-off sentiment in broad tech follows war escalation."
-    }
-   },
-   "sources": [
-    {
-     "id": "df336258cfae123d",
-     "publisher": "وكالة سبأ",
-     "kind": "news",
-     "title": "IRGC: Third oil tanker explodes in Hormuz Strait",
-     "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE1VclA4VmQtT2UzUkdKdW5SLUtkZXRIWXk2Z0Vnc25KU3pZWGNlcktBczNMV3lEVDNEc2hDblVhdVZQNlFGUnJRODVSaHJBYUE?oc=5",
-     "time": "2026-11-10T20:04:16Z"
-    },
-    {
-     "id": "f3a25bf802b51027",
-     "publisher": "شبكة تواصل الإخبارية",
-     "kind": "news",
-     "title": "Rubio predicts Iran will lose the ability to export oil",
-     "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE9HYWl1b25NdkltTTFLc0pwM3J2aU5qTVpoZ2Fla2kzaDRSakp6OHotV0J2NnJkNjJ1WXFySklmYThoNnhZOXo1YzZUOEtNOThNZVRr?oc=5",
-     "time": "2026-11-10T20:03:52Z"
-    },
-    {
-     "id": "53aab7bcd37b0b8c",
-     "publisher": "News18",
-     "kind": "news",
-     "title": "'Iran Started This War 47 Years Ago, We Didn't': Hegseth Defends US Military Campaign Against Tehran",
-     "url": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxNNGZkYnAxaTZYNFloTUZKT1hfVmtOOTRWSmZEMU1OMzA1d0pPY3RkWUZ3Wl9SM3ZHMFBpT2Mxa3FUV2JncDFNWjBrWm9RcXpuMy1xZnJRaW5vR0VTSkVUWWRFV2lCWktpRFY5REh3ZVBfSWxzZFJFRFR3eUdSRFZPcHhBOGNGR292TEJxNGg0emVMOERMeC1lRXE3eWlIaXVibzQ3Ul9TdWFXMlpOVWdOd0t4bGR2RjdQTkh0RDZJVUE1WlVMZENFbGYwblgtdWdsbHktbldxdTZNUmNVT2p3dVR5a3BILVREQVHSAe8BQVVfeXFMTU5qb0VLdS14U05sc1UtYkttRVRSSG9RLXE0dzN4TlIyT3M1c2xNalVyblNzdi0zekRqSnpfaU5VaVQyZkdEZnhwVHdyeUNHRkN3REcyRnVkWTdxUmNkdTR5dXYza0prNi1GNTIwZDVDdmZEalkyRkFRaFNvU2pLajVPLWhCNHNYa1dobzNsa3JwNm05c2xTaXNKeUJwR1BCVVdRT2hWQW81RTJJSmw2aVR2T0N1b3dRMlhuVWk2RU5ZbzlmSVFicktIUGpwbWV5Q1JSR2JVRG9hRFg1dzluZTZTeGR5VDQyYnZhSVdmcWM?oc=5",
-     "time": "2026-11-10T20:01:23Z"
-    },
-    {
-     "id": "a0f4fb7035efa43e",
-     "publisher": "Crude Oil Prices Today | OilPrice.com",
-     "kind": "news",
-     "title": "Houthis Launch Another Attack on Pumping Stations Along Crucial Saudi East-West",
-     "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxOMm5mWEtVVG5peGFmQTQ5SFVYd1NNR2QxV3VyTUtDNC1hT3hYUjVtR0hEblJHcTgzelBOOFBDdFE0NzMzLUYwMUp0X3dIZmZ2cy1QS1dtdjVWenc2OE5ESEd0elcyREpXZ1V0Z2xmb1FOMW05bHJ2NU56bldJamk5UEdoVVhSYklJWVBzRE9nckhMazhiYmZnYVdSY3ZKaVlhT0NmNExfcDhMMnBPdTBOT0dpTUt1eW5hOFRCX09KWVJQaXhkaUlsdGw4Y9IBywFBVV95cUxOMm5mWEtVVG5peGFmQTQ5SFVYd1NNR2QxV3VyTUtDNC1hT3hYUjVtR0hEblJHcTgzelBOOFBDdFE0NzMzLUYwMUp0X3dIZmZ2cy1QS1dtdjVWenc2OE5ESEd0elcyREpXZ1V0Z2xmb1FOMW05bHJ2NU56bldJamk5UEdoVVhSYklJWVBzRE9nckhMazhiYmZnYVdSY3ZKaVlhT0NmNExfcDhMMnBPdTBOT0dpTUt1eW5hOFRCX09KWVJQaXhkaUlsdGw4Yw?oc=5",
-     "time": "2026-11-10T21:00:00Z"
-    },
-    {
-     "id": "da93a25057608f46",
-     "publisher": "The National",
-     "kind": "news",
-     "title": "Middle East latest: Ship attacked in UAE waters, says operator Adnoc",
-     "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPdTMwLTRPRTZsZHJPR0lQTVNtNHdyWWxZNHMydXJzUjEySVZIZzJfUFlvbXZfQWJPc25aSm5kM3lzNmxFMFVMdFl3NTZLZWVjZnZPaTFyWjZtcl9peGd6ZlpDU2hnQmxDVFBLRlF1cVR3U2QwR2R4dWRRNEFDaDBzSTY2YUFWZEsyZ3dIOGQwX2tudV81a1pRRXQtVzl0TWYw?oc=5",
-     "time": "2026-11-10T20:59:26Z"
-    }
-   ]
-  },
-  {
-   "summary": "CrowdStrike's earnings beat is overshadowed by its massive $43.9 billion all-stock acquisition proposal of Zscaler.",
-   "category": "company_bad_news",
-   "firstSeen": "2026-11-22T19:17:00Z",
-   "publishers": [
-    "CNBC",
-    "Investing.com",
-    "Investing.com Canada",
-    "Minichart",
-    "Reuters",
-    "StreetInsider",
-    "TradingView",
-    "Yahoo Finance",
-    "fiscal.ai",
-    "marketscreener.com"
-   ],
-   "assets": {
-    "INTC": {
-     "direction": "down",
-     "confidence": 0.7,
-     "why": "Significant layoffs often signal operational challenges or cost-cutting measures that weigh on investor sentiment."
-    },
-    "AVGO": {
-     "direction": "down",
-     "confidence": 0.7,
-     "why": "Google shifting chip purchases away negatively impacts Broadcom revenue outlook."
-    },
-    "CRWD": {
-     "direction": "down",
-     "confidence": 0.85,
-     "why": "Massive dilution and expensive acquisition overshadow earnings beat, leading to heavy selling."
-    }
-   },
-   "sources": [
-    {
-     "id": "efe4981238cef978",
-     "publisher": "Yahoo Finance",
-     "kind": "news",
-     "title": "Intel announces more layoffs as workforce shrinks by 7,300",
-     "url": "https://www.thestreet.com/technology/intel-announces-more-layoffs-as-workforce-shrinks-by-7300?.tsrc=rss",
-     "time": "2026-11-22T19:17:00Z"
-    },
-    {
-     "id": "0df5437cd320b689",
-     "publisher": "Yahoo Finance",
-     "kind": "news",
-     "title": "Google’s 2027 chip plan is bad news for Broadcom",
-     "url": "https://www.thestreet.com/technology/google-2027-chip-plan-broadcom?.tsrc=rss",
-     "time": "2026-11-22T19:47:00Z"
-    },
-    {
-     "id": "4d5f42a9f54088e6",
-     "publisher": "fiscal.ai",
-     "kind": "news",
-     "title": "Broadcom Faces Unconfirmed Reports of Google Chip Order Reductions",
-     "url": "https://world.storm.mg/articles/1183977",
-     "time": "2026-11-23T02:01:09Z"
-    },
-    {
-     "id": "8cae510268d8b7a7",
-     "publisher": "CNBC",
-     "kind": "news",
-     "title": "CrowdStrike bets on network security with $43.9 billion Zscaler deal",
-     "url": "https://www.cnbc.com/2026/11/23/crowdstrike-to-buy-zscaler.html",
-     "time": "2026-11-23T10:43:47Z"
-    },
-    {
-     "id": "c7162034ea63749c",
-     "publisher": "StreetInsider",
-     "kind": "news",
-     "title": "CrowdStrike Holdings Inc. (CRWD) Tops Q3 EPS by 3c; raises forecast",
-     "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxOeTRmMmROUzY2UFFIWXhZTTBfUnBmd3FLeEJuYV9vNXBfemhDaDBfMFpMbDRhODJjWTM3dGtnZUFRSnRNVUVUbVFHeW9fRXZHd1dXUUtra0pXWVdiSTdJQTJRM0lqSlNTZkhkYnRDN1VoRTBIQjdfME1LTHVnTkJFeHdQSUNDRjdDM1lfbG9fOHFhTC1OU2NXSG9HS0RBbWRualNrb0xoSDBBNEtHa2F0RXRxbmU0SUVjLU1sSU5RWUk3bjB5?oc=5",
-     "time": "2026-11-23T10:42:22Z"
     }
    ]
   }
