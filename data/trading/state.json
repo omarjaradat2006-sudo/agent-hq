@@ -1,16 +1,16 @@
 {
  "team": "trading",
  "plain": {
-  "line": "Down $9,338.97 since start · 33 trades · holding: UMMA, SPWO, HLAL, SPUS, SPUS",
+  "line": "Down $9,290.46 since start · 33 trades · holding: UMMA, SPWO, HLAL, SPUS, SPUS",
   "rulesMode": "ultra",
-  "top": "Down $9,338.97 since start (-9.34%) · just holding SPY would be -7.27%",
+  "top": "Down $9,290.46 since start (-9.29%) · just holding SPY would be -7.23%",
   "up": false,
   "holding": [
-   "UMMA: 366 shares worth $11,503.38, up $21.96 (sells at $32.09 or stops at $28.70)",
-   "SPWO: 421 shares worth $11,274.38, up $8.42 (sells at $27.96 or stops at $25.00)",
-   "HLAL: 256 shares worth $16,326.40, up $16.64 (sells at $98.93 or stops at $59.36)",
-   "SPUS: 324 shares worth $17,059.58, up $25.45 (sells at $78.24 or stops at $46.94)",
-   "SPUS: 2 shares worth $17,059.58, up $25.45 (sells at $81.06 or stops at $48.64)"
+   "UMMA: 366 shares worth $11,536.28, up $54.86 (sells at $32.09 or stops at $28.70)",
+   "SPWO: 421 shares worth $11,253.33, down $12.63 (sells at $27.96 or stops at $25.00)",
+   "HLAL: 256 shares worth $16,353.28, up $43.52 (sells at $98.93 or stops at $59.36)",
+   "SPUS: 324 shares worth $17,069.36, up $35.23 (sells at $78.24 or stops at $46.94)",
+   "SPUS: 2 shares worth $17,069.36, up $35.23 (sells at $81.06 or stops at $48.64)"
   ],
   "today": [
    "Bought UMMA after the news: Buy the dip: the whole market (SPY) was -2.93% today.",
@@ -22,18 +22,18 @@
    "Sold HLAL (bad news: Expectations grow that regional Fed banks and policy makers lean towards tighter): lost $0.32.",
    "Sold TMO (trailing stop hit (-3.4%)): lost $376.12.",
    "Sold NOW (stop-loss -3% hit): lost $473.26.",
-   "Scanned the news 41 times today: read 4568 headlines, found 126 that could move a stock or coin it's allowed to trade.",
+   "Scanned the news 51 times today: read 4830 headlines, found 138 that could move a stock or coin it's allowed to trade.",
    "Passed on APA, COP, CRM, CVX, DVN: down 3% today, no new trades until tomorrow.",
-   "Passed on AVAV: price hasn't moved the expected way yet (-3.53%).",
-   "Passed on AVAV: price hasn't moved the expected way yet (-3.71%).",
-   "Passed on AVAV: price hasn't moved the expected way yet (-3.43%).",
-   "Safety rules that stepped in: daily loss halt (x223), bad news exit (x1), trailing stop (x3), stop loss -3% (x1)."
+   "Passed on AVAV: price hasn't moved the expected way yet (-3.36%).",
+   "Passed on AVAV: price hasn't moved the expected way yet (-4.32%).",
+   "Passed on AVAV: price hasn't moved the expected way yet (-4.16%).",
+   "Safety rules that stepped in: daily loss halt (x530), bad news exit (x1), trailing stop (x3), stop loss -3% (x1)."
   ],
   "watchlist": "Allowed to trade: 68 halal stocks, 5 Shariah ETFs, 9 coins.",
-  "lastScan": "2026-11-25T15:53:14Z"
+  "lastScan": "2026-11-25T17:01:34Z"
  },
  "hired": true,
- "updatedAt": "2026-11-25T15:57:12Z",
+ "updatedAt": "2026-11-25T17:01:50Z",
  "mode": "PAPER",
  "agents": [
   {
@@ -41,16 +41,16 @@
    "name": "News Scout",
    "role": "Reads X, Reddit and news feeds",
    "status": "working",
-   "doing": "Read 54 new headlines/posts, 0 market-moving stories",
-   "lastRun": "2026-11-25T15:56:59Z"
+   "doing": "Read 4 new headlines/posts, 1 market-moving stories",
+   "lastRun": "2026-11-25T17:01:47Z"
   },
   {
    "id": "analyst",
    "name": "News Analyst",
    "role": "Gemini: is it real, what moves, which way",
-   "status": "working",
+   "status": "ok",
    "doing": "Gemini triage failed, skipping this batch: All Gemini models failed. Last error: Gemini HTTP 429 on gemini-3.8-flash: {\n  \"error\": {\n    \"code\": 429,\n    \"message\": \"You exceeded your current quota, plea",
-   "lastRun": "2026-11-25T15:56:59Z"
+   "lastRun": "2026-11-25T16:11:19Z"
   },
   {
    "id": "confirm",
@@ -80,9 +80,9 @@
    "id": "trader",
    "name": "Trader",
    "role": "Places paper orders on Alpaca",
-   "status": "working",
-   "doing": "Paper-trading bot started (Alpaca PAPER account only). Close this window to stop it.",
-   "lastRun": "2026-11-25T15:53:13Z"
+   "status": "ok",
+   "doing": "Saved results to the Agent HQ dashboard",
+   "lastRun": "2026-11-25T15:57:14Z"
   },
   {
    "id": "coins",
@@ -102,6 +102,56 @@
   }
  ],
  "log": [
+  {
+   "t": "2026-11-25T17:01:47Z",
+   "agent": "News Scout",
+   "msg": "Read 4 new headlines/posts, 1 market-moving stories"
+  },
+  {
+   "t": "2026-11-25T16:56:30Z",
+   "agent": "News Scout",
+   "msg": "Read 56 new headlines/posts, 5 market-moving stories"
+  },
+  {
+   "t": "2026-11-25T16:47:42Z",
+   "agent": "News Scout",
+   "msg": "Read 3 new headlines/posts, 0 market-moving stories"
+  },
+  {
+   "t": "2026-11-25T16:37:11Z",
+   "agent": "News Scout",
+   "msg": "Read 83 new headlines/posts, 1 market-moving stories"
+  },
+  {
+   "t": "2026-11-25T16:25:18Z",
+   "agent": "News Scout",
+   "msg": "Read 4 new headlines/posts, 0 market-moving stories"
+  },
+  {
+   "t": "2026-11-25T16:20:01Z",
+   "agent": "News Scout",
+   "msg": "Read 87 new headlines/posts, 4 market-moving stories"
+  },
+  {
+   "t": "2026-11-25T16:11:19Z",
+   "agent": "News Scout",
+   "msg": "Read 6 new headlines/posts, 0 market-moving stories"
+  },
+  {
+   "t": "2026-11-25T16:11:19Z",
+   "agent": "News Analyst",
+   "msg": "Gemini triage failed, skipping this batch: All Gemini models failed. Last error: Gemini HTTP 429 on gemini-3.8-flash: {\n  \"error\": {\n    \"code\": 429,\n    \"message\": \"You exceeded your current quota, plea"
+  },
+  {
+   "t": "2026-11-25T16:02:22Z",
+   "agent": "News Scout",
+   "msg": "Read 19 new headlines/posts, 1 market-moving stories"
+  },
+  {
+   "t": "2026-11-25T15:57:14Z",
+   "agent": "Trader",
+   "msg": "Saved results to the Agent HQ dashboard"
+  },
   {
    "t": "2026-11-25T15:56:59Z",
    "agent": "News Scout",
@@ -801,62 +851,12 @@
    "t": "2026-11-23T23:45:50Z",
    "agent": "News Scout",
    "msg": "Read 60 new headlines/posts, 0 market-moving stories"
-  },
-  {
-   "t": "2026-11-23T23:30:38Z",
-   "agent": "News Scout",
-   "msg": "Read 61 new headlines/posts, 4 market-moving stories"
-  },
-  {
-   "t": "2026-11-23T23:15:14Z",
-   "agent": "News Scout",
-   "msg": "Read 138 new headlines/posts, 3 market-moving stories"
-  },
-  {
-   "t": "2026-11-23T22:59:37Z",
-   "agent": "News Scout",
-   "msg": "Read 46 new headlines/posts, 1 market-moving stories"
-  },
-  {
-   "t": "2026-11-23T22:44:18Z",
-   "agent": "News Scout",
-   "msg": "Read 149 new headlines/posts, 2 market-moving stories"
-  },
-  {
-   "t": "2026-11-23T22:29:07Z",
-   "agent": "News Scout",
-   "msg": "Read 73 new headlines/posts, 2 market-moving stories"
-  },
-  {
-   "t": "2026-11-23T22:13:51Z",
-   "agent": "Trader",
-   "msg": "Saved results to the Agent HQ dashboard"
-  },
-  {
-   "t": "2026-11-23T22:13:46Z",
-   "agent": "News Scout",
-   "msg": "Read 123 new headlines/posts, 4 market-moving stories"
-  },
-  {
-   "t": "2026-11-23T21:57:08Z",
-   "agent": "News Scout",
-   "msg": "Read 73 new headlines/posts, 1 market-moving stories"
-  },
-  {
-   "t": "2026-11-23T21:34:37Z",
-   "agent": "Coach",
-   "msg": "Coach: Last 17 trades averaged -1.48%: trading a bit smaller until it improves. | Stocks skipped as 'already moved too much' kept rising (+8.46% next day, 7 cases): allowing a bigger move before buying. | Checked 13 skipped stories: 5 would have lost or gone nowhere, 8 would have gained the next day."
-  },
-  {
-   "t": "2026-11-23T21:34:36Z",
-   "agent": "News Scout",
-   "msg": "Read 102 new headlines/posts, 5 market-moving stories"
   }
  ],
  "brief": {
   "date": "Wed Nov 25",
-  "createdAt": "2026-11-25T15:57:12Z",
-  "headline": "Paper account -$2,489 today (-2.67%), -9.34% total vs SPY -7.27% · 5 open",
+  "createdAt": "2026-11-25T17:01:50Z",
+  "headline": "Paper account -$2,440 today (-2.62%), -9.29% total vs SPY -7.23% · 5 open",
   "summary": "5 trade(s) closed today, 5/28 winners overall. TradingAgents checks used today: 0/5.",
   "notes": [
    "Down 3% today: no new trades until tomorrow.",
@@ -864,16 +864,16 @@
   ]
  },
  "account": {
-  "equity": 90661.03,
+  "equity": 90709.54,
   "cash": 34497.29,
   "startEquity": 100000.0,
   "startedAt": "2026-11-10T01:51:53Z",
-  "dayPnl": -2488.83,
-  "dayPct": -2.67,
-  "totalPnl": -9338.97,
-  "totalPct": -9.34,
-  "spyPct": -7.27,
-  "vsSpyPct": -2.07
+  "dayPnl": -2440.32,
+  "dayPct": -2.62,
+  "totalPnl": -9290.46,
+  "totalPct": -9.29,
+  "spyPct": -7.23,
+  "vsSpyPct": -2.06
  },
  "status": {
   "killed": false,
@@ -881,7 +881,7 @@
   "deepUsed": 0,
   "deepMax": 5,
   "social": {
-   "at": "2026-11-25T15:53:16Z",
+   "at": "2026-11-25T16:53:00Z",
    "items": 0,
    "source": "Reddit via Tradestie + ApeWisdom (direct Reddit blocks servers; X needs Agent Reach)",
    "problems": [
@@ -889,13 +889,13 @@
     "r/stocks: HTTP 403 https://www.reddit.com/r/stocks/new.json: <body class=theme-beta><div><"
    ],
    "wsb": {
-    "at": "2026-11-25T15:53:16Z",
-    "tickers": 12,
+    "at": "2026-11-25T16:53:00Z",
+    "tickers": 50,
     "items": 0,
     "key": false
    },
    "ape": {
-    "at": "2026-11-25T15:53:16Z",
+    "at": "2026-11-25T16:53:01Z",
     "tickers": 200,
     "items": 0,
     "problems": []
@@ -934,8 +934,8 @@
     "publishers": [],
     "tradingAgents": "not used (dip buy)"
    },
-   "lastPrice": 31.3,
-   "unrealizedPct": -0.22
+   "lastPrice": 31.5199,
+   "unrealizedPct": 0.48
   },
   {
    "id": "ahq-dip-SPWO-20261125145159",
@@ -963,8 +963,8 @@
     "publishers": [],
     "tradingAgents": "not used (dip buy)"
    },
-   "lastPrice": 26.78,
-   "unrealizedPct": 0.07
+   "lastPrice": 26.73,
+   "unrealizedPct": -0.11
   },
   {
    "id": "ahq-core-HLAL-20261125145147",
@@ -992,8 +992,8 @@
     "publishers": [],
     "tradingAgents": "not used (core)"
    },
-   "lastPrice": 63.63,
-   "unrealizedPct": -0.13
+   "lastPrice": 63.88,
+   "unrealizedPct": 0.27
   },
   {
    "id": "ahq-core-SPUS-20261125145147",
@@ -1021,8 +1021,8 @@
     "publishers": [],
     "tradingAgents": "not used (core)"
    },
-   "lastPrice": 52.32,
-   "unrealizedPct": 0.13
+   "lastPrice": 52.36,
+   "unrealizedPct": 0.21
   },
   {
    "id": "ahq-core-SPUS-20261124145913",
@@ -1050,8 +1050,8 @@
     "publishers": [],
     "tradingAgents": "not used (core)"
    },
-   "lastPrice": 52.32,
-   "unrealizedPct": 0.13
+   "lastPrice": 52.36,
+   "unrealizedPct": 0.21
   }
  ],
  "charts": {
@@ -1391,7 +1391,59 @@
     ],
     [
      "2026-11-25T15:55:00Z",
-     90616.71
+     90589.78
+    ],
+    [
+     "2026-11-25T16:00:00Z",
+     90559.41
+    ],
+    [
+     "2026-11-25T16:05:00Z",
+     90510.96
+    ],
+    [
+     "2026-11-25T16:10:00Z",
+     90459.76
+    ],
+    [
+     "2026-11-25T16:15:00Z",
+     90452.45
+    ],
+    [
+     "2026-11-25T16:20:00Z",
+     90429.63
+    ],
+    [
+     "2026-11-25T16:25:00Z",
+     90579.88
+    ],
+    [
+     "2026-11-25T16:30:00Z",
+     90594.8
+    ],
+    [
+     "2026-11-25T16:35:00Z",
+     90479.93
+    ],
+    [
+     "2026-11-25T16:40:00Z",
+     90455.41
+    ],
+    [
+     "2026-11-25T16:45:00Z",
+     90461.98
+    ],
+    [
+     "2026-11-25T16:50:00Z",
+     90656.68
+    ],
+    [
+     "2026-11-25T16:55:00Z",
+     90679.5
+    ],
+    [
+     "2026-11-25T17:00:00Z",
+     90723.25
     ]
    ],
    "1W": [
@@ -2546,6 +2598,26 @@
     [
      "2026-11-25T15:45:00Z",
      90633.16
+    ],
+    [
+     "2026-11-25T16:00:00Z",
+     90559.41
+    ],
+    [
+     "2026-11-25T16:15:00Z",
+     90455.01
+    ],
+    [
+     "2026-11-25T16:30:00Z",
+     90594.8
+    ],
+    [
+     "2026-11-25T16:45:00Z",
+     90457.77
+    ],
+    [
+     "2026-11-25T17:00:00Z",
+     90723.25
     ]
    ]
   },
@@ -2599,6 +2671,10 @@
      [
       "2026-11-25T15:30:00Z",
       26.87
+     ],
+     [
+      "2026-11-25T15:45:00Z",
+      26.79
      ]
     ],
     "entry": 26.76,
@@ -2813,6 +2889,26 @@
      [
       "2026-11-25T15:45:00Z",
       52.32
+     ],
+     [
+      "2026-11-25T16:00:00Z",
+      52.19
+     ],
+     [
+      "2026-11-25T16:15:00Z",
+      52.35
+     ],
+     [
+      "2026-11-25T16:30:00Z",
+      52.18
+     ],
+     [
+      "2026-11-25T16:45:00Z",
+      52.38
+     ],
+     [
+      "2026-11-25T17:00:00Z",
+      52.38
      ]
     ],
     "entry": 54.185,
@@ -3169,8 +3265,8 @@
     "publishers": [],
     "tradingAgents": "not used (dip buy)"
    },
-   "lastPrice": 31.3,
-   "unrealizedPct": -0.22
+   "lastPrice": 31.5199,
+   "unrealizedPct": 0.48
   },
   {
    "id": "ahq-dip-SPWO-20261125145159",
@@ -3198,8 +3294,8 @@
     "publishers": [],
     "tradingAgents": "not used (dip buy)"
    },
-   "lastPrice": 26.78,
-   "unrealizedPct": 0.07
+   "lastPrice": 26.73,
+   "unrealizedPct": -0.11
   },
   {
    "id": "ahq-core-HLAL-20261125145147",
@@ -3227,8 +3323,8 @@
     "publishers": [],
     "tradingAgents": "not used (core)"
    },
-   "lastPrice": 63.63,
-   "unrealizedPct": -0.13
+   "lastPrice": 63.88,
+   "unrealizedPct": 0.27
   },
   {
    "id": "ahq-core-SPUS-20261125145147",
@@ -3256,8 +3352,8 @@
     "publishers": [],
     "tradingAgents": "not used (core)"
    },
-   "lastPrice": 52.32,
-   "unrealizedPct": 0.13
+   "lastPrice": 52.36,
+   "unrealizedPct": 0.21
   },
   {
    "id": "ahq-PLTR-20261124164652",
@@ -3490,8 +3586,8 @@
     "publishers": [],
     "tradingAgents": "not used (core)"
    },
-   "lastPrice": 52.32,
-   "unrealizedPct": 0.13
+   "lastPrice": 52.36,
+   "unrealizedPct": 0.21
   },
   {
    "id": "ahq-NVDA-20261124145910",
@@ -4946,437 +5042,427 @@
  ],
  "decisions": [
   {
-   "t": "2026-11-25T15:57:10Z",
-   "symbol": "SLB",
-   "outcome": "waiting",
-   "why": "down 3% today, no new trades until tomorrow",
-   "event": "Renewed drone attacks on refineries and shipping near the Strait of Hormuz escalate regional conflict and oil supply risks."
-  },
-  {
-   "t": "2026-11-25T15:57:10Z",
-   "symbol": "XOM",
-   "outcome": "waiting",
-   "why": "down 3% today, no new trades until tomorrow",
-   "event": "Ongoing Middle East conflict continues to escalate regional supply risks and drive up fuel costs."
-  },
-  {
-   "t": "2026-11-25T15:57:09Z",
-   "symbol": "PLTR",
-   "outcome": "waiting",
-   "why": "down 3% today, no new trades until tomorrow",
-   "event": "Renewed drone attacks on Saudi financial centers and Hodeidah port escalate Middle East conflict risks."
-  },
-  {
-   "t": "2026-11-25T15:57:09Z",
-   "symbol": "CVX",
-   "outcome": "waiting",
-   "why": "down 3% today, no new trades until tomorrow",
-   "event": "Renewed drone attacks on Saudi financial centers and Hodeidah port escalate Middle East conflict risks."
-  },
-  {
-   "t": "2026-11-25T15:57:09Z",
-   "symbol": "XOM",
-   "outcome": "waiting",
-   "why": "down 3% today, no new trades until tomorrow",
-   "event": "Renewed drone attacks on Saudi financial centers and naval mines hitting oil tankers near the Strait of Hormuz escalate regional conflict and oil supply disruption risks."
-  },
-  {
-   "t": "2026-11-25T15:57:09Z",
-   "symbol": "CVX",
-   "outcome": "waiting",
-   "why": "down 3% today, no new trades until tomorrow",
-   "event": "Ongoing Middle East conflict continues to escalate regional supply risks and drive up fuel costs."
-  },
-  {
-   "t": "2026-11-25T15:57:09Z",
-   "symbol": "XOM",
-   "outcome": "waiting",
-   "why": "down 3% today, no new trades until tomorrow",
-   "event": "Saudi Arabia affirms it can fund a prolonged war with unlimited military spending as ongoing Middle East conflicts continue to escalate regional supply risks."
-  },
-  {
-   "t": "2026-11-25T15:57:08Z",
-   "symbol": "CVX",
-   "outcome": "waiting",
-   "why": "down 3% today, no new trades until tomorrow",
-   "event": "Saudi Arabia affirms it can fund a prolonged war with unlimited military spending as ongoing Middle East conflicts continue to escalate regional supply risks."
-  },
-  {
-   "t": "2026-11-25T15:57:08Z",
-   "symbol": "VRTX",
-   "outcome": "waiting",
-   "why": "down 3% today, no new trades until tomorrow",
-   "event": "Vertex Pharmaceuticals extended its drug discovery and validation collaboration with Genomics Limited for four years."
-  },
-  {
-   "t": "2026-11-25T15:57:08Z",
-   "symbol": "DVN",
-   "outcome": "waiting",
-   "why": "down 3% today, no new trades until tomorrow",
-   "event": "Renewed drone attacks on refineries and shipping near the Strait of Hormuz escalate regional conflict and oil supply risks."
-  },
-  {
-   "t": "2026-11-25T15:57:08Z",
-   "symbol": "COP",
-   "outcome": "waiting",
-   "why": "down 3% today, no new trades until tomorrow",
-   "event": "Renewed drone attacks on Saudi financial centers and naval mines hitting oil tankers near the Strait of Hormuz escalate regional conflict and oil supply disruption risks."
-  },
-  {
-   "t": "2026-11-25T15:57:07Z",
-   "symbol": "CRM",
-   "outcome": "waiting",
-   "why": "down 3% today, no new trades until tomorrow",
-   "event": "Workday reported Q3 revenue growth and earnings that beat expectations."
-  },
-  {
-   "t": "2026-11-25T15:57:07Z",
-   "symbol": "COP",
-   "outcome": "waiting",
-   "why": "down 3% today, no new trades until tomorrow",
-   "event": "Renewed drone attacks on refineries and shipping near the Strait of Hormuz escalate regional conflict and oil supply risks."
-  },
-  {
-   "t": "2026-11-25T15:57:07Z",
-   "symbol": "HAL",
-   "outcome": "waiting",
-   "why": "down 3% today, no new trades until tomorrow",
-   "event": "Renewed drone attacks on refineries and shipping near the Strait of Hormuz escalate regional conflict and oil supply risks."
-  },
-  {
-   "t": "2026-11-25T15:57:07Z",
-   "symbol": "SMCI",
-   "outcome": "waiting",
-   "why": "down 3% today, no new trades until tomorrow",
-   "event": "Dell reported a significant Q3 earnings beat with strong AI server demand."
-  },
-  {
-   "t": "2026-11-25T15:57:07Z",
-   "symbol": "OXY",
-   "outcome": "waiting",
-   "why": "down 3% today, no new trades until tomorrow",
-   "event": "Renewed drone attacks on Saudi financial centers and Hodeidah port escalate Middle East conflict risks."
-  },
-  {
-   "t": "2026-11-25T15:57:07Z",
-   "symbol": "FANG",
-   "outcome": "waiting",
-   "why": "down 3% today, no new trades until tomorrow",
-   "event": "Renewed drone attacks on refineries and shipping near the Strait of Hormuz escalate regional conflict and oil supply risks."
-  },
-  {
-   "t": "2026-11-25T15:57:06Z",
-   "symbol": "OXY",
-   "outcome": "waiting",
-   "why": "down 3% today, no new trades until tomorrow",
-   "event": "Ongoing Middle East conflict continues to escalate regional supply risks and drive up fuel costs."
-  },
-  {
-   "t": "2026-11-25T15:57:06Z",
-   "symbol": "NVDA",
-   "outcome": "waiting",
-   "why": "down 3% today, no new trades until tomorrow",
-   "event": "Workday reported Q3 revenue growth and earnings that beat expectations."
-  },
-  {
-   "t": "2026-11-25T15:57:06Z",
-   "symbol": "OXY",
-   "outcome": "waiting",
-   "why": "down 3% today, no new trades until tomorrow",
-   "event": "Renewed drone attacks on refineries and shipping near the Strait of Hormuz escalate regional conflict and oil supply risks."
-  },
-  {
-   "t": "2026-11-25T15:57:06Z",
+   "t": "2026-11-25T17:01:49Z",
    "symbol": "GE",
    "outcome": "waiting",
    "why": "down 3% today, no new trades until tomorrow",
    "event": "General Electric's aerospace unit secured a significant order for GEnx engines from Malaysia Aviation Group."
   },
   {
-   "t": "2026-11-25T15:57:06Z",
+   "t": "2026-11-25T17:01:49Z",
    "symbol": "OXY",
    "outcome": "waiting",
    "why": "down 3% today, no new trades until tomorrow",
-   "event": "Saudi Arabia affirms it can fund a prolonged war with unlimited military spending as ongoing Middle East conflicts continue to escalate regional supply risks."
+   "event": "Ongoing Houthi attacks on Saudi oil infrastructure and financial centers continue to escalate regional supply risks."
   },
   {
-   "t": "2026-11-25T15:57:06Z",
-   "symbol": "PSX",
+   "t": "2026-11-25T17:01:49Z",
+   "symbol": "CVX",
    "outcome": "waiting",
    "why": "down 3% today, no new trades until tomorrow",
-   "event": "Renewed drone attacks on refineries and shipping near the Strait of Hormuz escalate regional conflict and oil supply risks."
+   "event": "Ongoing Houthi attacks on Saudi oil infrastructure and financial centers continue to escalate regional supply risks."
   },
   {
-   "t": "2026-11-25T15:57:05Z",
-   "symbol": "APA",
-   "outcome": "waiting",
-   "why": "down 3% today, no new trades until tomorrow",
-   "event": "Renewed drone attacks on refineries and shipping near the Strait of Hormuz escalate regional conflict and oil supply risks."
-  },
-  {
-   "t": "2026-11-25T15:57:05Z",
-   "symbol": "NVDA",
-   "outcome": "waiting",
-   "why": "down 3% today, no new trades until tomorrow",
-   "event": "Dell reported a significant Q3 earnings beat with strong AI server demand."
-  },
-  {
-   "t": "2026-11-25T15:57:05Z",
-   "symbol": "VLO",
-   "outcome": "waiting",
-   "why": "down 3% today, no new trades until tomorrow",
-   "event": "Renewed drone attacks on refineries and shipping near the Strait of Hormuz escalate regional conflict and oil supply risks."
-  },
-  {
-   "t": "2026-11-25T15:57:05Z",
-   "symbol": "EOG",
-   "outcome": "waiting",
-   "why": "down 3% today, no new trades until tomorrow",
-   "event": "Renewed drone attacks on refineries and shipping near the Strait of Hormuz escalate regional conflict and oil supply risks."
-  },
-  {
-   "t": "2026-11-25T15:57:02Z",
-   "symbol": "AVAV",
-   "outcome": "waiting",
-   "why": "price hasn't moved the expected way yet (-3.43%)",
-   "event": "Renewed drone attacks on Saudi financial centers and naval mines hitting oil tankers near the Strait of Hormuz escalate regional conflict and oil supply disruption risks."
-  },
-  {
-   "t": "2026-11-25T15:46:44Z",
-   "symbol": "SLB",
-   "outcome": "waiting",
-   "why": "down 3% today, no new trades until tomorrow",
-   "event": "Renewed drone attacks on refineries and shipping near the Strait of Hormuz escalate regional conflict and oil supply risks."
-  },
-  {
-   "t": "2026-11-25T15:46:44Z",
-   "symbol": "PLTR",
-   "outcome": "waiting",
-   "why": "down 3% today, no new trades until tomorrow",
-   "event": "Renewed drone attacks on Saudi financial centers and Hodeidah port escalate Middle East conflict risks."
-  },
-  {
-   "t": "2026-11-25T15:46:43Z",
-   "symbol": "VLO",
-   "outcome": "waiting",
-   "why": "down 3% today, no new trades until tomorrow",
-   "event": "Renewed drone attacks on refineries and shipping near the Strait of Hormuz escalate regional conflict and oil supply risks."
-  },
-  {
-   "t": "2026-11-25T15:46:43Z",
+   "t": "2026-11-25T17:01:48Z",
    "symbol": "XOM",
    "outcome": "waiting",
    "why": "down 3% today, no new trades until tomorrow",
-   "event": "Saudi Arabia affirms it can fund a prolonged war with unlimited military spending as ongoing Middle East conflicts continue to escalate regional supply risks."
+   "event": "Ongoing Houthi attacks on Saudi oil infrastructure and financial centers continue to escalate regional supply risks."
   },
   {
-   "t": "2026-11-25T15:46:42Z",
-   "symbol": "COP",
+   "t": "2026-11-25T16:56:31Z",
+   "symbol": "GE",
    "outcome": "waiting",
    "why": "down 3% today, no new trades until tomorrow",
-   "event": "Renewed drone attacks on Saudi financial centers and naval mines hitting oil tankers near the Strait of Hormuz escalate regional conflict and oil supply disruption risks."
+   "event": "General Electric's aerospace unit secured a significant order for GEnx engines from Malaysia Aviation Group."
   },
   {
-   "t": "2026-11-25T15:46:42Z",
-   "symbol": "APA",
-   "outcome": "waiting",
-   "why": "down 3% today, no new trades until tomorrow",
-   "event": "Renewed drone attacks on refineries and shipping near the Strait of Hormuz escalate regional conflict and oil supply risks."
-  },
-  {
-   "t": "2026-11-25T15:46:42Z",
-   "symbol": "COP",
-   "outcome": "waiting",
-   "why": "down 3% today, no new trades until tomorrow",
-   "event": "Renewed drone attacks on refineries and shipping near the Strait of Hormuz escalate regional conflict and oil supply risks."
-  },
-  {
-   "t": "2026-11-25T15:46:42Z",
-   "symbol": "DVN",
-   "outcome": "waiting",
-   "why": "down 3% today, no new trades until tomorrow",
-   "event": "Renewed drone attacks on refineries and shipping near the Strait of Hormuz escalate regional conflict and oil supply risks."
-  },
-  {
-   "t": "2026-11-25T15:46:42Z",
+   "t": "2026-11-25T16:56:31Z",
    "symbol": "CVX",
    "outcome": "waiting",
    "why": "down 3% today, no new trades until tomorrow",
    "event": "Geopolitical conflicts and supply issues continue to impact oil and aviation costs, withEasyJet reporting a massive profit collapse due to the Iran war fuel bill."
   },
   {
-   "t": "2026-11-25T15:46:41Z",
-   "symbol": "FANG",
+   "t": "2026-11-25T16:56:31Z",
+   "symbol": "OXY",
    "outcome": "waiting",
    "why": "down 3% today, no new trades until tomorrow",
-   "event": "Renewed drone attacks on refineries and shipping near the Strait of Hormuz escalate regional conflict and oil supply risks."
+   "event": "Ongoing Houthi attacks on Saudi oil infrastructure and financial centers continue to escalate regional supply risks."
   },
   {
-   "t": "2026-11-25T15:46:41Z",
+   "t": "2026-11-25T16:56:31Z",
    "symbol": "CVX",
    "outcome": "waiting",
    "why": "down 3% today, no new trades until tomorrow",
-   "event": "Renewed drone attacks on Saudi financial centers and Hodeidah port escalate Middle East conflict risks."
+   "event": "Ongoing Houthi attacks on Saudi oil infrastructure and financial centers continue to escalate regional supply risks."
   },
   {
-   "t": "2026-11-25T15:46:41Z",
-   "symbol": "GE",
+   "t": "2026-11-25T16:56:31Z",
+   "symbol": "XOM",
    "outcome": "waiting",
    "why": "down 3% today, no new trades until tomorrow",
-   "event": "General Electric's aerospace unit secured a significant order for GEnx engines from Malaysia Aviation Group."
+   "event": "Ongoing Houthi attacks on Saudi oil infrastructure and financial centers continue to escalate regional supply risks."
   },
   {
-   "t": "2026-11-25T15:46:41Z",
-   "symbol": "VRTX",
+   "t": "2026-11-25T16:47:54Z",
+   "symbol": "SLB",
    "outcome": "waiting",
    "why": "down 3% today, no new trades until tomorrow",
-   "event": "Vertex Pharmaceuticals extended its drug discovery and validation collaboration with Genomics Limited for four years."
+   "event": "Renewed drone attacks on Saudi financial centers and naval mines hitting oil tankers near the Strait of Hormuz escalate regional conflict and oil supply disruption risks."
   },
   {
-   "t": "2026-11-25T15:46:41Z",
-   "symbol": "CVX",
-   "outcome": "waiting",
-   "why": "down 3% today, no new trades until tomorrow",
-   "event": "Ongoing Middle East conflict continues to escalate regional supply risks and drive up fuel costs."
-  },
-  {
-   "t": "2026-11-25T15:46:40Z",
+   "t": "2026-11-25T16:47:54Z",
    "symbol": "CRM",
    "outcome": "waiting",
    "why": "down 3% today, no new trades until tomorrow",
    "event": "Workday reported Q3 revenue growth and earnings that beat expectations."
   },
   {
-   "t": "2026-11-25T15:46:40Z",
-   "symbol": "HAL",
-   "outcome": "waiting",
-   "why": "down 3% today, no new trades until tomorrow",
-   "event": "Renewed drone attacks on refineries and shipping near the Strait of Hormuz escalate regional conflict and oil supply risks."
-  },
-  {
-   "t": "2026-11-25T15:46:40Z",
-   "symbol": "CVX",
-   "outcome": "waiting",
-   "why": "down 3% today, no new trades until tomorrow",
-   "event": "Saudi Arabia affirms it can fund a prolonged war with unlimited military spending as ongoing Middle East conflicts continue to escalate regional supply risks."
-  },
-  {
-   "t": "2026-11-25T15:46:40Z",
-   "symbol": "SMCI",
-   "outcome": "waiting",
-   "why": "down 3% today, no new trades until tomorrow",
-   "event": "Dell reported a significant Q3 earnings beat with strong AI server demand."
-  },
-  {
-   "t": "2026-11-25T15:46:40Z",
-   "symbol": "OXY",
-   "outcome": "waiting",
-   "why": "down 3% today, no new trades until tomorrow",
-   "event": "Renewed drone attacks on Saudi financial centers and Hodeidah port escalate Middle East conflict risks."
-  },
-  {
-   "t": "2026-11-25T15:46:39Z",
-   "symbol": "PSX",
-   "outcome": "waiting",
-   "why": "down 3% today, no new trades until tomorrow",
-   "event": "Renewed drone attacks on refineries and shipping near the Strait of Hormuz escalate regional conflict and oil supply risks."
-  },
-  {
-   "t": "2026-11-25T15:46:39Z",
-   "symbol": "NVDA",
-   "outcome": "waiting",
-   "why": "down 3% today, no new trades until tomorrow",
-   "event": "Workday reported Q3 revenue growth and earnings that beat expectations."
-  },
-  {
-   "t": "2026-11-25T15:46:39Z",
-   "symbol": "OXY",
-   "outcome": "waiting",
-   "why": "down 3% today, no new trades until tomorrow",
-   "event": "Saudi Arabia affirms it can fund a prolonged war with unlimited military spending as ongoing Middle East conflicts continue to escalate regional supply risks."
-  },
-  {
-   "t": "2026-11-25T15:46:39Z",
-   "symbol": "NVDA",
-   "outcome": "waiting",
-   "why": "down 3% today, no new trades until tomorrow",
-   "event": "Dell reported a significant Q3 earnings beat with strong AI server demand."
-  },
-  {
-   "t": "2026-11-25T15:46:38Z",
-   "symbol": "EOG",
-   "outcome": "waiting",
-   "why": "down 3% today, no new trades until tomorrow",
-   "event": "Renewed drone attacks on refineries and shipping near the Strait of Hormuz escalate regional conflict and oil supply risks."
-  },
-  {
-   "t": "2026-11-25T15:46:36Z",
-   "symbol": "AVAV",
-   "outcome": "waiting",
-   "why": "price hasn't moved the expected way yet (-3.53%)",
-   "event": "Renewed drone attacks on Saudi financial centers and naval mines hitting oil tankers near the Strait of Hormuz escalate regional conflict and oil supply disruption risks."
-  },
-  {
-   "t": "2026-11-25T15:41:28Z",
+   "t": "2026-11-25T16:47:54Z",
    "symbol": "SLB",
    "outcome": "waiting",
    "why": "down 3% today, no new trades until tomorrow",
    "event": "Renewed drone attacks on refineries and shipping near the Strait of Hormuz escalate regional conflict and oil supply risks."
   },
   {
-   "t": "2026-11-25T15:41:27Z",
+   "t": "2026-11-25T16:47:53Z",
    "symbol": "PLTR",
    "outcome": "waiting",
    "why": "down 3% today, no new trades until tomorrow",
    "event": "Renewed drone attacks on Saudi financial centers and Hodeidah port escalate Middle East conflict risks."
   },
   {
-   "t": "2026-11-25T15:41:27Z",
-   "symbol": "APA",
+   "t": "2026-11-25T16:47:53Z",
+   "symbol": "GE",
+   "outcome": "waiting",
+   "why": "down 3% today, no new trades until tomorrow",
+   "event": "General Electric's aerospace unit secured a significant order for GEnx engines from Malaysia Aviation Group."
+  },
+  {
+   "t": "2026-11-25T16:47:53Z",
+   "symbol": "COP",
+   "outcome": "waiting",
+   "why": "down 3% today, no new trades until tomorrow",
+   "event": "Renewed drone attacks on Saudi financial centers and naval mines hitting oil tankers near the Strait of Hormuz escalate regional conflict and oil supply disruption risks."
+  },
+  {
+   "t": "2026-11-25T16:47:53Z",
+   "symbol": "EOG",
    "outcome": "waiting",
    "why": "down 3% today, no new trades until tomorrow",
    "event": "Renewed drone attacks on refineries and shipping near the Strait of Hormuz escalate regional conflict and oil supply risks."
   },
   {
-   "t": "2026-11-25T15:41:26Z",
+   "t": "2026-11-25T16:47:53Z",
+   "symbol": "COP",
+   "outcome": "waiting",
+   "why": "down 3% today, no new trades until tomorrow",
+   "event": "Renewed drone attacks on refineries and shipping near the Strait of Hormuz escalate regional conflict and oil supply risks."
+  },
+  {
+   "t": "2026-11-25T16:47:52Z",
+   "symbol": "DVN",
+   "outcome": "waiting",
+   "why": "down 3% today, no new trades until tomorrow",
+   "event": "Renewed drone attacks on refineries and shipping near the Strait of Hormuz escalate regional conflict and oil supply risks."
+  },
+  {
+   "t": "2026-11-25T16:47:52Z",
+   "symbol": "NVDA",
+   "outcome": "waiting",
+   "why": "down 3% today, no new trades until tomorrow",
+   "event": "Workday reported Q3 revenue growth and earnings that beat expectations."
+  },
+  {
+   "t": "2026-11-25T16:47:52Z",
+   "symbol": "FANG",
+   "outcome": "waiting",
+   "why": "down 3% today, no new trades until tomorrow",
+   "event": "Renewed drone attacks on refineries and shipping near the Strait of Hormuz escalate regional conflict and oil supply risks."
+  },
+  {
+   "t": "2026-11-25T16:47:52Z",
+   "symbol": "SMCI",
+   "outcome": "waiting",
+   "why": "down 3% today, no new trades until tomorrow",
+   "event": "Dell reported a significant Q3 earnings beat with strong AI server demand."
+  },
+  {
+   "t": "2026-11-25T16:47:51Z",
+   "symbol": "CVX",
+   "outcome": "waiting",
+   "why": "down 3% today, no new trades until tomorrow",
+   "event": "Renewed drone attacks on Saudi financial centers and Hodeidah port escalate Middle East conflict risks."
+  },
+  {
+   "t": "2026-11-25T16:47:51Z",
+   "symbol": "OXY",
+   "outcome": "waiting",
+   "why": "down 3% today, no new trades until tomorrow",
+   "event": "Renewed drone attacks on Saudi financial centers and Hodeidah port escalate Middle East conflict risks."
+  },
+  {
+   "t": "2026-11-25T16:47:51Z",
+   "symbol": "CVX",
+   "outcome": "waiting",
+   "why": "down 3% today, no new trades until tomorrow",
+   "event": "Ongoing Middle East conflict continues to escalate regional supply risks and drive up fuel costs."
+  },
+  {
+   "t": "2026-11-25T16:47:50Z",
+   "symbol": "XOM",
+   "outcome": "waiting",
+   "why": "down 3% today, no new trades until tomorrow",
+   "event": "Renewed drone attacks on Saudi financial centers and Hodeidah port escalate Middle East conflict risks."
+  },
+  {
+   "t": "2026-11-25T16:47:50Z",
+   "symbol": "CVX",
+   "outcome": "waiting",
+   "why": "down 3% today, no new trades until tomorrow",
+   "event": "Renewed drone attacks on Saudi financial centers and naval mines hitting oil tankers near the Strait of Hormuz escalate regional conflict and oil supply disruption risks."
+  },
+  {
+   "t": "2026-11-25T16:47:50Z",
    "symbol": "XOM",
    "outcome": "waiting",
    "why": "down 3% today, no new trades until tomorrow",
    "event": "Ongoing Middle East conflict continues to escalate regional supply risks and drive up fuel costs."
   },
   {
-   "t": "2026-11-25T15:41:26Z",
-   "symbol": "DVN",
+   "t": "2026-11-25T16:47:50Z",
+   "symbol": "HAL",
+   "outcome": "waiting",
+   "why": "down 3% today, no new trades until tomorrow",
+   "event": "Renewed drone attacks on refineries and shipping near the Strait of Hormuz escalate regional conflict and oil supply risks."
+  },
+  {
+   "t": "2026-11-25T16:47:50Z",
+   "symbol": "CVX",
    "outcome": "waiting",
    "why": "down 3% today, no new trades until tomorrow",
    "event": "Saudi Arabia affirms it can fund a prolonged war with unlimited military spending as ongoing Middle East conflicts continue to escalate regional supply risks."
   },
   {
-   "t": "2026-11-25T15:41:26Z",
+   "t": "2026-11-25T16:47:50Z",
+   "symbol": "APA",
+   "outcome": "waiting",
+   "why": "down 3% today, no new trades until tomorrow",
+   "event": "Renewed drone attacks on refineries and shipping near the Strait of Hormuz escalate regional conflict and oil supply risks."
+  },
+  {
+   "t": "2026-11-25T16:47:49Z",
+   "symbol": "OXY",
+   "outcome": "waiting",
+   "why": "down 3% today, no new trades until tomorrow",
+   "event": "Renewed drone attacks on refineries and shipping near the Strait of Hormuz escalate regional conflict and oil supply risks."
+  },
+  {
+   "t": "2026-11-25T16:47:49Z",
+   "symbol": "NVDA",
+   "outcome": "waiting",
+   "why": "down 3% today, no new trades until tomorrow",
+   "event": "Dell reported a significant Q3 earnings beat with strong AI server demand."
+  },
+  {
+   "t": "2026-11-25T16:47:49Z",
+   "symbol": "XOM",
+   "outcome": "waiting",
+   "why": "down 3% today, no new trades until tomorrow",
+   "event": "Saudi Arabia affirms it can fund a prolonged war with unlimited military spending as ongoing Middle East conflicts continue to escalate regional supply risks."
+  },
+  {
+   "t": "2026-11-25T16:47:49Z",
+   "symbol": "OXY",
+   "outcome": "waiting",
+   "why": "down 3% today, no new trades until tomorrow",
+   "event": "Saudi Arabia affirms it can fund a prolonged war with unlimited military spending as ongoing Middle East conflicts continue to escalate regional supply risks."
+  },
+  {
+   "t": "2026-11-25T16:47:48Z",
+   "symbol": "VRTX",
+   "outcome": "waiting",
+   "why": "down 3% today, no new trades until tomorrow",
+   "event": "Vertex Pharmaceuticals extended its drug discovery and validation collaboration with Genomics Limited for four years."
+  },
+  {
+   "t": "2026-11-25T16:47:48Z",
    "symbol": "VLO",
    "outcome": "waiting",
    "why": "down 3% today, no new trades until tomorrow",
    "event": "Renewed drone attacks on refineries and shipping near the Strait of Hormuz escalate regional conflict and oil supply risks."
   },
   {
-   "t": "2026-11-25T15:41:26Z",
+   "t": "2026-11-25T16:47:48Z",
+   "symbol": "PSX",
+   "outcome": "waiting",
+   "why": "down 3% today, no new trades until tomorrow",
+   "event": "Renewed drone attacks on refineries and shipping near the Strait of Hormuz escalate regional conflict and oil supply risks."
+  },
+  {
+   "t": "2026-11-25T16:47:45Z",
+   "symbol": "AVAV",
+   "outcome": "waiting",
+   "why": "price hasn't moved the expected way yet (-4.32%)",
+   "event": "Renewed drone attacks on Saudi financial centers and naval mines hitting oil tankers near the Strait of Hormuz escalate regional conflict and oil supply disruption risks."
+  },
+  {
+   "t": "2026-11-25T16:42:38Z",
+   "symbol": "SLB",
+   "outcome": "waiting",
+   "why": "down 3% today, no new trades until tomorrow",
+   "event": "Renewed drone attacks on Saudi financial centers and naval mines hitting oil tankers near the Strait of Hormuz escalate regional conflict and oil supply disruption risks."
+  },
+  {
+   "t": "2026-11-25T16:42:38Z",
+   "symbol": "PLTR",
+   "outcome": "waiting",
+   "why": "down 3% today, no new trades until tomorrow",
+   "event": "Renewed drone attacks on Saudi financial centers and Hodeidah port escalate Middle East conflict risks."
+  },
+  {
+   "t": "2026-11-25T16:42:38Z",
+   "symbol": "SLB",
+   "outcome": "waiting",
+   "why": "down 3% today, no new trades until tomorrow",
+   "event": "Renewed drone attacks on refineries and shipping near the Strait of Hormuz escalate regional conflict and oil supply risks."
+  },
+  {
+   "t": "2026-11-25T16:42:38Z",
+   "symbol": "CRM",
+   "outcome": "waiting",
+   "why": "down 3% today, no new trades until tomorrow",
+   "event": "Workday reported Q3 revenue growth and earnings that beat expectations."
+  },
+  {
+   "t": "2026-11-25T16:42:38Z",
+   "symbol": "GE",
+   "outcome": "waiting",
+   "why": "down 3% today, no new trades until tomorrow",
+   "event": "General Electric's aerospace unit secured a significant order for GEnx engines from Malaysia Aviation Group."
+  },
+  {
+   "t": "2026-11-25T16:42:37Z",
+   "symbol": "COP",
+   "outcome": "waiting",
+   "why": "down 3% today, no new trades until tomorrow",
+   "event": "Renewed drone attacks on Saudi financial centers and naval mines hitting oil tankers near the Strait of Hormuz escalate regional conflict and oil supply disruption risks."
+  },
+  {
+   "t": "2026-11-25T16:42:37Z",
+   "symbol": "EOG",
+   "outcome": "waiting",
+   "why": "down 3% today, no new trades until tomorrow",
+   "event": "Renewed drone attacks on refineries and shipping near the Strait of Hormuz escalate regional conflict and oil supply risks."
+  },
+  {
+   "t": "2026-11-25T16:42:37Z",
+   "symbol": "COP",
+   "outcome": "waiting",
+   "why": "down 3% today, no new trades until tomorrow",
+   "event": "Renewed drone attacks on refineries and shipping near the Strait of Hormuz escalate regional conflict and oil supply risks."
+  },
+  {
+   "t": "2026-11-25T16:42:37Z",
    "symbol": "DVN",
    "outcome": "waiting",
    "why": "down 3% today, no new trades until tomorrow",
    "event": "Renewed drone attacks on refineries and shipping near the Strait of Hormuz escalate regional conflict and oil supply risks."
+  },
+  {
+   "t": "2026-11-25T16:42:37Z",
+   "symbol": "NVDA",
+   "outcome": "waiting",
+   "why": "down 3% today, no new trades until tomorrow",
+   "event": "Workday reported Q3 revenue growth and earnings that beat expectations."
+  },
+  {
+   "t": "2026-11-25T16:42:36Z",
+   "symbol": "FANG",
+   "outcome": "waiting",
+   "why": "down 3% today, no new trades until tomorrow",
+   "event": "Renewed drone attacks on refineries and shipping near the Strait of Hormuz escalate regional conflict and oil supply risks."
+  },
+  {
+   "t": "2026-11-25T16:42:36Z",
+   "symbol": "SMCI",
+   "outcome": "waiting",
+   "why": "down 3% today, no new trades until tomorrow",
+   "event": "Dell reported a significant Q3 earnings beat with strong AI server demand."
+  },
+  {
+   "t": "2026-11-25T16:42:36Z",
+   "symbol": "XOM",
+   "outcome": "waiting",
+   "why": "down 3% today, no new trades until tomorrow",
+   "event": "Renewed drone attacks on Saudi financial centers and Hodeidah port escalate Middle East conflict risks."
+  },
+  {
+   "t": "2026-11-25T16:42:36Z",
+   "symbol": "HAL",
+   "outcome": "waiting",
+   "why": "down 3% today, no new trades until tomorrow",
+   "event": "Renewed drone attacks on refineries and shipping near the Strait of Hormuz escalate regional conflict and oil supply risks."
+  },
+  {
+   "t": "2026-11-25T16:42:36Z",
+   "symbol": "APA",
+   "outcome": "waiting",
+   "why": "down 3% today, no new trades until tomorrow",
+   "event": "Renewed drone attacks on refineries and shipping near the Strait of Hormuz escalate regional conflict and oil supply risks."
+  },
+  {
+   "t": "2026-11-25T16:42:35Z",
+   "symbol": "CVX",
+   "outcome": "waiting",
+   "why": "down 3% today, no new trades until tomorrow",
+   "event": "Renewed drone attacks on Saudi financial centers and Hodeidah port escalate Middle East conflict risks."
+  },
+  {
+   "t": "2026-11-25T16:42:35Z",
+   "symbol": "XOM",
+   "outcome": "waiting",
+   "why": "down 3% today, no new trades until tomorrow",
+   "event": "Ongoing Middle East conflict continues to escalate regional supply risks and drive up fuel costs."
+  },
+  {
+   "t": "2026-11-25T16:42:34Z",
+   "symbol": "OXY",
+   "outcome": "waiting",
+   "why": "down 3% today, no new trades until tomorrow",
+   "event": "Renewed drone attacks on Saudi financial centers and Hodeidah port escalate Middle East conflict risks."
+  },
+  {
+   "t": "2026-11-25T16:42:34Z",
+   "symbol": "XOM",
+   "outcome": "waiting",
+   "why": "down 3% today, no new trades until tomorrow",
+   "event": "Renewed drone attacks on Saudi financial centers and naval mines hitting oil tankers near the Strait of Hormuz escalate regional conflict and oil supply disruption risks."
+  },
+  {
+   "t": "2026-11-25T16:42:34Z",
+   "symbol": "CVX",
+   "outcome": "waiting",
+   "why": "down 3% today, no new trades until tomorrow",
+   "event": "Ongoing Middle East conflict continues to escalate regional supply risks and drive up fuel costs."
+  },
+  {
+   "t": "2026-11-25T16:42:34Z",
+   "symbol": "XOM",
+   "outcome": "waiting",
+   "why": "down 3% today, no new trades until tomorrow",
+   "event": "Saudi Arabia affirms it can fund a prolonged war with unlimited military spending as ongoing Middle East conflicts continue to escalate regional supply risks."
+  },
+  {
+   "t": "2026-11-25T16:42:34Z",
+   "symbol": "CVX",
+   "outcome": "waiting",
+   "why": "down 3% today, no new trades until tomorrow",
+   "event": "Saudi Arabia affirms it can fund a prolonged war with unlimited military spending as ongoing Middle East conflicts continue to escalate regional supply risks."
   }
  ],
  "equity": [
-  {
-   "t": "2026-11-16T23:39:05Z",
-   "equity": 100000.0,
-   "spy": 740.04
-  },
-  {
-   "t": "2026-11-17T00:09:40Z",
-   "equity": 100000.0,
-   "spy": 740.04
-  },
   {
    "t": "2026-11-17T00:40:13Z",
    "equity": 100000.0,
@@ -7366,6 +7452,16 @@
    "t": "2026-11-25T15:28:33Z",
    "equity": 90703.41,
    "spy": 697.98
+  },
+  {
+   "t": "2026-11-25T16:02:34Z",
+   "equity": 90543.32,
+   "spy": 698.84
+  },
+  {
+   "t": "2026-11-25T16:37:23Z",
+   "equity": 90579.45,
+   "spy": 698.305
   }
  ],
  "watch": [],
@@ -7377,26 +7473,237 @@
  },
  "events": [
   {
-   "summary": "Bitcoin funds head for their worst month on record as outflows near $5 billion.",
+   "summary": "US inflation gauge rising to 3.8% and surprise inflation data trigger a broad stock market sell-off and tech plunge.",
+   "category": "central_bank_hawkish",
+   "firstSeen": "2026-11-25T12:37:52Z",
+   "publishers": [
+    "CNBC",
+    "Curaçao Chronicle",
+    "Disruption Banking",
+    "Kitco",
+    "Limapagi",
+    "Livemint",
+    "MarketWatch",
+    "Peradaban.id",
+    "The Crypto Times",
+    "Yahoo Finance",
+    "bsinews.id",
+    "cwibc.co.id",
+    "scanx.trade"
+   ],
+   "assets": {
+    "NEM": {
+     "direction": "down",
+     "confidence": 0.65,
+     "why": "Gold prices falling below $3,500/oz negatively impacts gold miners."
+    },
+    "AEM": {
+     "direction": "down",
+     "confidence": 0.65,
+     "why": "Gold prices falling below $3,500/oz negatively impacts gold miners."
+    },
+    "AAPL": {
+     "direction": "down",
+     "confidence": 0.7,
+     "why": "Hawkish Fed signals and hot inflation weigh on growth-heavy tech stocks."
+    },
+    "NVDA": {
+     "direction": "down",
+     "confidence": 0.8,
+     "why": "Broad market sell-off and tech plunge driven by hot inflation data."
+    }
+   },
+   "sources": [
+    {
+     "id": "b78b512f1bdf1f76",
+     "publisher": "scanx.trade",
+     "kind": "news",
+     "title": "Gold drops below $3,500/oz to lowest since Sept 2025",
+     "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxOb0lWY0UtS2dsbWFxOVdwWDQ3UWRtRHQyZU8tc0Q0WXB4VWJmcnp3eHlEZGt2SVVhbGdrcWxNTjZOS29obHV3QVNqS2tWcVROU0hCM25ZdjF3VHVfSzNvMU9zc0E2N2tMUkVtbXFwQmg5WHluQWs1cFlYRnZpZWhqYWt2bjlOQXNVQWtHNnFSZ2pxOUhSMzZfRmhDbDl3Q3pCSXhEZ1p1a1dZdFZkS0Vfd1h1SWwwZEpyWFNfZk9oZElXdjF5ZXc?oc=5",
+     "time": "2026-11-25T12:37:52Z"
+    },
+    {
+     "id": "bd73f58b20056765",
+     "publisher": "CNBC",
+     "kind": "news",
+     "title": "The Fed is likely to raise rates in December. What it means for your holiday spending",
+     "url": "https://www.cnbc.com/2026/11/25/fed-december-rate-hike-consumer-impact.html",
+     "time": "2026-11-25T13:15:01Z"
+    },
+    {
+     "id": "111c19546b39a37f",
+     "publisher": "Yahoo Finance",
+     "kind": "news",
+     "title": "Stock Market Today: Dow Dives Ahead Of Fed Inflation Data; Nvidia, Anthropic Plunge (Live Coverage)",
+     "url": "https://finance.yahoo.com/m/90407e46-3b17-34e8-8c82-527bf00b63e4/stock-market-today%3A-dow-dives.html?.tsrc=rss",
+     "time": "2026-11-25T13:14:04Z"
+    },
+    {
+     "id": "029302c16172feda",
+     "publisher": "Disruption Banking",
+     "kind": "news",
+     "title": "Emerging Market Currencies Slide as Fed Rate Hike and Tariff Risks Mount",
+     "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxOME5KS1hoRDRocnBOZld4ek1MWHRWcG1OV0xBX2NPdnpJNThzbHoxWDQ4N3BRUUxXdjg3ZkVyTmdWNDhNRDJEdDFZMnE1by1hdVBaNHFVblo2cWtBQ0xjbUlMT2NvNzUwaWloRFJlaGVXQ3BtbE56RkVtVGVNRUFUVWxUN2ZuRW9KVFRRZk13Z3Bid0ZZRHdUWVBkMFNacmhlNFNHQ2w3Vnk?oc=5",
+     "time": "2026-11-25T13:13:57Z"
+    },
+    {
+     "id": "6079d4c1ab7e0972",
+     "publisher": "Curaçao Chronicle",
+     "kind": "news",
+     "title": "US Dollar Rebounds Near 20-Month High as Markets Anticipate December Fed Rate Hike",
+     "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxOcGZTZVRuM0JFYnhBbUtINGU3THl3c2p4Nk8ybV92dlFGZTk0a244cDFfOFB1NWpnNV9VRURZSXAwaENqSlpWdThJSkZDM2tTRkthb0ZGcmFtcHY1OEZIMkwyX296TEQyWmdBR0Q1ZkVTVGJNMWRXVDFEbUpHV0Vmc25WV0VEeGM5NWtZMmtoOWQ5cWhBZWpFbl9lcFpGdEhTTlBTekd4aDdNYmxiRkUzeWdPMFNZaHZDZzdSUzczOXBTN2JO?oc=5",
+     "time": "2026-11-25T13:11:40Z"
+    }
+   ]
+  },
+  {
+   "summary": "Nvidia continues to face executive uncertainty and regulatory scrutiny regarding potential government equity stakes.",
+   "category": "company_bad_news",
+   "firstSeen": "2026-11-25T12:24:47Z",
+   "publishers": [
+    "CNBC",
+    "Yahoo Finance"
+   ],
+   "assets": {
+    "NVDA": {
+     "direction": "down",
+     "confidence": 0.6,
+     "why": "Executive uncertainty and regulatory scrutiny are driving negative sentiment for the stock."
+    }
+   },
+   "sources": [
+    {
+     "id": "7e5383d5da85dc45",
+     "publisher": "Yahoo Finance",
+     "kind": "news",
+     "title": "Nvidia Loses Nearly $3 Trillion as Governance Crisis Deepens",
+     "url": "https://finance.yahoo.com/markets/stocks/articles/nvidia-loses-nearly-3-trillion-122447848.html?.tsrc=rss",
+     "time": "2026-11-25T12:24:47Z"
+    },
+    {
+     "id": "c100520660bf31b1",
+     "publisher": "CNBC",
+     "kind": "news",
+     "title": "Stock futures tumble as AI sell-off returns with Nvidia, Anthropic leading the way: Live updates",
+     "url": "https://www.cnbc.com/2026/11/24/stock-market-today-live-updates-.html",
+     "time": "2026-11-25T12:50:47Z"
+    },
+    {
+     "id": "55cf08314660b42e",
+     "publisher": "Yahoo Finance",
+     "kind": "news",
+     "title": "3 Warning Signs as the AI Selloff Gets Ugly Again",
+     "url": "https://finance.yahoo.com/m/7eb3329d-ae1e-315a-9f67-0f5f86d8408c/3-warning-signs-as-the-ai.html?.tsrc=rss",
+     "time": "2026-11-25T12:52:00Z"
+    }
+   ]
+  },
+  {
+   "summary": "Ongoing Houthi attacks on Saudi oil infrastructure and financial centers continue to escalate regional supply risks.",
+   "category": "oil_supply",
+   "firstSeen": "2026-11-25T12:47:57Z",
+   "publishers": [
+    "Anadolu Ajansı",
+    "Crude Oil Prices Today | OilPrice.com",
+    "Daily Pakistan",
+    "FXStreet",
+    "FinanceFeeds",
+    "Fox Business",
+    "Investigative Journalism Foundation",
+    "Quartz",
+    "RTE.ie",
+    "Ukranews",
+    "fiscal.ai"
+   ],
+   "assets": {
+    "XOM": {
+     "direction": "up",
+     "confidence": 0.75,
+     "why": "Middle East war escalations increase oil supply disruption risks and boost energy stock prices."
+    },
+    "CVX": {
+     "direction": "up",
+     "confidence": 0.75,
+     "why": "Oil supply pressures from regional conflict benefit integrated oil majors."
+    },
+    "OXY": {
+     "direction": "up",
+     "confidence": 0.7,
+     "why": "Escalating conflict in the Middle East threatens oil supply, supporting energy prices."
+    }
+   },
+   "sources": [
+    {
+     "id": "4c0559fffc31a5ec",
+     "publisher": "FXStreet",
+     "kind": "news",
+     "title": "Oil: Supply recovery offsets disruption risks – ING",
+     "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxOd1ZFMXlpSUg4UFRjaGl2LXdhSU5VSV9YU1lVdWRReVBTYVhwazAwZUhMaWRhdjlyeG1FbksyOUtCMTZHR0VHZDM5aVdDS2JRSG9Ub1o2Y2xGTHVUcVBZdXVxQWxENlA2b2FJYkh5OWhkaE50WkhHZ0NSTnJ4ZV9tMWJUY0V5c01MdEM3allRa29VM1VlOVE?oc=5",
+     "time": "2026-11-25T12:56:50Z"
+    },
+    {
+     "id": "a1d29c7520678524",
+     "publisher": "RTE.ie",
+     "kind": "news",
+     "title": "Oil dips as supply glut prospect offsets Middle East fear",
+     "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTFBoNGtlX2I5TU1sczFyNldkNGY3N1gwTVV5TVhPM0hRbGg3RjFaTVVjUkg0UU1nak53SnZocmZ6dm96SlYzMlJySzhoNHBwSzNEdEZwMzNTcV9uMmowdXZyWDRqWGdidmxOdkM4RXhERjd3LXZJNTZj?oc=5",
+     "time": "2026-11-25T12:56:44Z"
+    },
+    {
+     "id": "d2c142dc24b086d6",
+     "publisher": "Anadolu Ajansı",
+     "kind": "news",
+     "title": "Russia's fuel market remains tense due to Ukraine's attacks on oil refineries",
+     "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNalBTOXFCUzhMVndRV1VwZXJxVFlkTVZGN09MUDduU0swT1lMUUxXaTBySXpWMDM2SjBRZ2lEWmFsY1BFVHV4b1labVpVWFhNTFhiR1hyRDB0eWlJckNRV2wySDRYZkdUR0VzWlV0eERFeDUtNTVJOTJkVEd4YlZpSzczTEM5OGYwMGF1R1pidklQTDVWaHp4LUk0bEVFQjNaZXh2LUxvakt1N2J3blBLc0JoaXpaczA?oc=5",
+     "time": "2026-11-25T12:47:57Z"
+    },
+    {
+     "id": "dd2d7471856322c4",
+     "publisher": "fiscal.ai",
+     "kind": "news",
+     "title": "easyJet Reports Annual Results Ahead of Apollo Takeover",
+     "url": "https://www.finanzen.ch/nachrichten/aktien/easyjet-gewinn-mit-gewinneinbruch-1036798859",
+     "time": "2026-11-25T13:01:39Z"
+    },
+    {
+     "id": "fc5dbc3fce838b2e",
+     "publisher": "Crude Oil Prices Today | OilPrice.com",
+     "kind": "news",
+     "title": "Iran War Is Pushing Record Numbers of Fuel Tankers Into Crude Trade",
+     "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPd0xrRjNXRkJIMlI1MkRZdUZ3YmdwS2dhSHA1dVFfbE1DWHdzR09vV19qb2lObWp3eDRxTUlJSDhCMWttSHZVSjF5VGx3OXRXYXBwNVIyU1F3a28xRkFsRXFYWHpJbTVLZXhQbVQySS0wYklfSVNIaFV6S25DOVRUNjJWWHVIZTdaTjJ3UXc0N3ZRVjlwdU9EcjZ1WDYzVDlvQmNQc3FvYUF1OGc5d3lSZzZkalJGVFlJM0Nmd3lubHTSAcYBQVVfeXFMTnl6bTVmRzQ4TDRKOFpvMkZBYUpQUTR6QTZLdmU5S0xqejFnWjJxZW9ERUYyRVlLaEo4NEdKaS1IYU9hSk0xaEtTQnE5aGwwMXh6SkFFLU5nWng1V2s0SFczbUVmNmk4cEphX09fSnd1aUctUi1xa2hJN2tVd1ZfTnJJMkNKdEtxWENXZ3JtdHhSc0cxRTVHcHJTczdJZTJ2QjJYYlY2a1Mwak8tOTJReDV1Z3o5X2tRNzNpRHYwRFVvSXpoNGVn?oc=5",
+     "time": "2026-11-25T13:00:00Z"
+    }
+   ]
+  },
+  {
+   "summary": "Bitcoin and Ethereum face significant downward pressure due to massive ETF outflows and risk-off sentiment.",
    "category": "crypto_negative",
    "firstSeen": "2026-11-25T12:34:06Z",
    "publishers": [
     "99Bitcoins",
+    "Advisor Perspectives",
     "Binance",
     "Bloomberg",
     "Crypto Briefing",
+    "Cryptonews",
+    "Cryptonews.net",
     "Finbold",
+    "GuruFocus",
+    "Hokanews",
     "Pluang",
+    "Quartz",
     "TheStreet",
     "Traders Union",
+    "TradingView",
     "UA.NEWS",
+    "ad-hoc-news.de",
     "bloomingbit"
    ],
    "assets": {
     "ETH/USD": {
      "direction": "down",
-     "confidence": 0.7,
-     "why": "Ether falling twice as much as bitcoin shows acute weakness for Ethereum."
+     "confidence": 0.75,
+     "why": "Ethereum falls alongside broader crypto market declines."
     },
     "BTC/USD": {
      "direction": "down",
@@ -7448,7 +7755,7 @@
    ]
   },
   {
-   "summary": "The US administration announced a fresh tariff push targeting China, the EU, Japan, and India, intensifying global trade war risks and weighing heavily on tech and broad markets.",
+   "summary": "The US administration is expanding tariff threats to include India, China, and Europe, increasing global trade war risks.",
    "category": "tariffs",
    "firstSeen": "2026-11-25T13:09:35Z",
    "publishers": [
@@ -7456,18 +7763,28 @@
     "Banglanews24",
     "Business Standard",
     "Business Upturn",
+    "CNBC",
     "Daily Excelsior",
+    "FlipItMoney",
     "Forex Factory",
     "Gujarat Samachar",
+    "GuruFocus",
     "Hindustan Times",
     "INDIA New England News",
+    "India Today",
     "Moneycontrol.com",
+    "NDTV",
     "National Newswatch",
     "Prothom Alo English",
+    "Rediff MoneyWiz",
     "Reuters",
     "Stocktwits",
     "Tampa Free Press",
+    "Telangana Today",
+    "The Business Times",
+    "The Daily Caller",
     "The Daily Jagran",
+    "The Washington Post",
     "WKMG",
     "Yahoo",
     "Yahoo Finance",
@@ -7475,14 +7792,15 @@
     "Zee Business",
     "blue News",
     "news.sbs.co.kr",
+    "prameyanews.com",
     "tippinsights",
     "아시아경제"
    ],
    "assets": {
     "AMD": {
      "direction": "down",
-     "confidence": 0.8,
-     "why": "Escalating international tariffs and trade tensions weigh on semiconductor demand and valuations."
+     "confidence": 0.85,
+     "why": "Impacted by broad chip rout and new tariff threats."
     },
     "QCOM": {
      "direction": "down",
@@ -7503,6 +7821,11 @@
      "direction": "down",
      "confidence": 0.8,
      "why": "Fresh US tariff pushes against major economies increase trade war risks and pressure growth/chip stocks."
+    },
+    "MSFT": {
+     "direction": "down",
+     "confidence": 0.65,
+     "why": "Broader market risk-off sentiment hitting mega-cap tech."
     }
    },
    "sources": [
@@ -7549,15 +7872,22 @@
    ]
   },
   {
-   "summary": "Worsening inflation data leaves the market anticipating that the Fed will have no choice but to raise U.S. interest rates.",
+   "summary": "Stronger-than-expected US economic growth and inflation data keep December Fed rate hike bets in play, pressuring risk assets.",
    "category": "inflation",
    "firstSeen": "2026-11-25T13:39:01Z",
    "publishers": [
+    "FT",
     "FXEmpire",
+    "Free Malaysia Today",
+    "HI-99",
     "MarketWatch",
     "Nacionale",
     "Quartz",
+    "Stocktwits",
     "SuaraGarut.ID",
+    "The Independent",
+    "TradingView",
+    "WJRT ABC12",
     "WWLP",
     "Yahoo Finance",
     "bsinews.id",
@@ -7593,6 +7923,21 @@
      "direction": "down",
      "confidence": 0.75,
      "why": "Hawkish Fed rate hike expectations create a risk-off environment detrimental to crypto."
+    },
+    "MSFT": {
+     "direction": "down",
+     "confidence": 0.65,
+     "why": "Hot inflation reading raises rate hike concerns, weighing on growth stocks."
+    },
+    "AEM": {
+     "direction": "down",
+     "confidence": 0.6,
+     "why": "Hot inflation and hawkish rate concerns pressure precious metals."
+    },
+    "HLAL": {
+     "direction": "down",
+     "confidence": 0.7,
+     "why": "Broad market pressure from rate hike concerns and sticky inflation."
     }
    },
    "sources": [
@@ -7635,88 +7980,6 @@
      "title": "What did the PCE report show today? Core inflation hit 3.3% in October, above forecasts",
      "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxQdFJ2ZHFHQ3hHaWRjc3hzcURseWtiVGtHVTFIQmlaRFZKb2Z2czVYbDFlckY3bGY5MDdfdVozVGo3VXl1eFFPTGZ1eDh0cGczRlZMbUpxS2ZZSFlxdXI5VmZHcm9wZi1kbjFieTZzWkFCeVFXaF9Ca1hrekVQTDR4a2lGc0VWSGVPNThwVTJGeVNpQmNBSW10UVN0dXR0b0Y2ODU1c3E0NzJUNHA4endRSUNYR1ZnUDdiaUswRXdfM2tPV0Jq?oc=5",
      "time": "2026-11-25T13:40:40Z"
-    }
-   ]
-  },
-  {
-   "summary": "Hawkish Fed expectations and inflation concerns continue to weigh on risk assets and precious metals.",
-   "category": "central_bank_hawkish",
-   "firstSeen": "2026-11-25T12:37:52Z",
-   "publishers": [
-    "CNBC",
-    "Curaçao Chronicle",
-    "Disruption Banking",
-    "Kitco",
-    "Limapagi",
-    "MarketWatch",
-    "Peradaban.id",
-    "Yahoo Finance",
-    "bsinews.id",
-    "cwibc.co.id",
-    "scanx.trade"
-   ],
-   "assets": {
-    "NEM": {
-     "direction": "down",
-     "confidence": 0.65,
-     "why": "Gold prices falling below $3,500/oz negatively impacts gold miners."
-    },
-    "AEM": {
-     "direction": "down",
-     "confidence": 0.65,
-     "why": "Gold prices falling below $3,500/oz negatively impacts gold miners."
-    },
-    "AAPL": {
-     "direction": "down",
-     "confidence": 0.7,
-     "why": "Hawkish Fed signals and hot inflation weigh on growth-heavy tech stocks."
-    },
-    "NVDA": {
-     "direction": "down",
-     "confidence": 0.7,
-     "why": "Rising rate expectations pressure high-valuation tech and AI stocks."
-    }
-   },
-   "sources": [
-    {
-     "id": "b78b512f1bdf1f76",
-     "publisher": "scanx.trade",
-     "kind": "news",
-     "title": "Gold drops below $3,500/oz to lowest since Sept 2025",
-     "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxOb0lWY0UtS2dsbWFxOVdwWDQ3UWRtRHQyZU8tc0Q0WXB4VWJmcnp3eHlEZGt2SVVhbGdrcWxNTjZOS29obHV3QVNqS2tWcVROU0hCM25ZdjF3VHVfSzNvMU9zc0E2N2tMUkVtbXFwQmg5WHluQWs1cFlYRnZpZWhqYWt2bjlOQXNVQWtHNnFSZ2pxOUhSMzZfRmhDbDl3Q3pCSXhEZ1p1a1dZdFZkS0Vfd1h1SWwwZEpyWFNfZk9oZElXdjF5ZXc?oc=5",
-     "time": "2026-11-25T12:37:52Z"
-    },
-    {
-     "id": "bd73f58b20056765",
-     "publisher": "CNBC",
-     "kind": "news",
-     "title": "The Fed is likely to raise rates in December. What it means for your holiday spending",
-     "url": "https://www.cnbc.com/2026/11/25/fed-december-rate-hike-consumer-impact.html",
-     "time": "2026-11-25T13:15:01Z"
-    },
-    {
-     "id": "111c19546b39a37f",
-     "publisher": "Yahoo Finance",
-     "kind": "news",
-     "title": "Stock Market Today: Dow Dives Ahead Of Fed Inflation Data; Nvidia, Anthropic Plunge (Live Coverage)",
-     "url": "https://finance.yahoo.com/m/90407e46-3b17-34e8-8c82-527bf00b63e4/stock-market-today%3A-dow-dives.html?.tsrc=rss",
-     "time": "2026-11-25T13:14:04Z"
-    },
-    {
-     "id": "029302c16172feda",
-     "publisher": "Disruption Banking",
-     "kind": "news",
-     "title": "Emerging Market Currencies Slide as Fed Rate Hike and Tariff Risks Mount",
-     "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxOME5KS1hoRDRocnBOZld4ek1MWHRWcG1OV0xBX2NPdnpJNThzbHoxWDQ4N3BRUUxXdjg3ZkVyTmdWNDhNRDJEdDFZMnE1by1hdVBaNHFVblo2cWtBQ0xjbUlMT2NvNzUwaWloRFJlaGVXQ3BtbE56RkVtVGVNRUFUVWxUN2ZuRW9KVFRRZk13Z3Bid0ZZRHdUWVBkMFNacmhlNFNHQ2w3Vnk?oc=5",
-     "time": "2026-11-25T13:13:57Z"
-    },
-    {
-     "id": "6079d4c1ab7e0972",
-     "publisher": "Curaçao Chronicle",
-     "kind": "news",
-     "title": "US Dollar Rebounds Near 20-Month High as Markets Anticipate December Fed Rate Hike",
-     "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxOcGZTZVRuM0JFYnhBbUtINGU3THl3c2p4Nk8ybV92dlFGZTk0a244cDFfOFB1NWpnNV9VRURZSXAwaENqSlpWdThJSkZDM2tTRkthb0ZGcmFtcHY1OEZIMkwyX296TEQyWmdBR0Q1ZkVTVGJNMWRXVDFEbUpHV0Vmc25WV0VEeGM5NWtZMmtoOWQ5cWhBZWpFbl9lcFpGdEhTTlBTekd4aDdNYmxiRkUzeWdPMFNZaHZDZzdSUzczOXBTN2JO?oc=5",
-     "time": "2026-11-25T13:11:40Z"
     }
    ]
   },
@@ -7787,82 +8050,6 @@
      "title": "AMD, Micron and Sandisk Stocks Slide as AI Spending Fears Deepen",
      "url": "https://finance.yahoo.com/markets/stocks/articles/amd-micron-sandisk-stocks-slide-122728877.html?.tsrc=rss",
      "time": "2026-11-25T12:27:28Z"
-    }
-   ]
-  },
-  {
-   "summary": "Ongoing Middle East conflict continues to escalate regional supply risks and drive up fuel costs.",
-   "category": "oil_supply",
-   "firstSeen": "2026-11-25T12:47:57Z",
-   "publishers": [
-    "Anadolu Ajansı",
-    "Crude Oil Prices Today | OilPrice.com",
-    "FXStreet",
-    "FinanceFeeds",
-    "Fox Business",
-    "Investigative Journalism Foundation",
-    "Quartz",
-    "RTE.ie",
-    "Ukranews",
-    "fiscal.ai"
-   ],
-   "assets": {
-    "XOM": {
-     "direction": "up",
-     "confidence": 0.75,
-     "why": "Middle East war escalations increase oil supply disruption risks and boost energy stock prices."
-    },
-    "CVX": {
-     "direction": "up",
-     "confidence": 0.75,
-     "why": "Oil supply pressures from regional conflict benefit integrated oil majors."
-    },
-    "OXY": {
-     "direction": "up",
-     "confidence": 0.6,
-     "why": "Escalating conflict near the Strait of Hormuz supports oil and gas producers."
-    }
-   },
-   "sources": [
-    {
-     "id": "4c0559fffc31a5ec",
-     "publisher": "FXStreet",
-     "kind": "news",
-     "title": "Oil: Supply recovery offsets disruption risks – ING",
-     "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxOd1ZFMXlpSUg4UFRjaGl2LXdhSU5VSV9YU1lVdWRReVBTYVhwazAwZUhMaWRhdjlyeG1FbksyOUtCMTZHR0VHZDM5aVdDS2JRSG9Ub1o2Y2xGTHVUcVBZdXVxQWxENlA2b2FJYkh5OWhkaE50WkhHZ0NSTnJ4ZV9tMWJUY0V5c01MdEM3allRa29VM1VlOVE?oc=5",
-     "time": "2026-11-25T12:56:50Z"
-    },
-    {
-     "id": "a1d29c7520678524",
-     "publisher": "RTE.ie",
-     "kind": "news",
-     "title": "Oil dips as supply glut prospect offsets Middle East fear",
-     "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTFBoNGtlX2I5TU1sczFyNldkNGY3N1gwTVV5TVhPM0hRbGg3RjFaTVVjUkg0UU1nak53SnZocmZ6dm96SlYzMlJySzhoNHBwSzNEdEZwMzNTcV9uMmowdXZyWDRqWGdidmxOdkM4RXhERjd3LXZJNTZj?oc=5",
-     "time": "2026-11-25T12:56:44Z"
-    },
-    {
-     "id": "d2c142dc24b086d6",
-     "publisher": "Anadolu Ajansı",
-     "kind": "news",
-     "title": "Russia's fuel market remains tense due to Ukraine's attacks on oil refineries",
-     "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNalBTOXFCUzhMVndRV1VwZXJxVFlkTVZGN09MUDduU0swT1lMUUxXaTBySXpWMDM2SjBRZ2lEWmFsY1BFVHV4b1labVpVWFhNTFhiR1hyRDB0eWlJckNRV2wySDRYZkdUR0VzWlV0eERFeDUtNTVJOTJkVEd4YlZpSzczTEM5OGYwMGF1R1pidklQTDVWaHp4LUk0bEVFQjNaZXh2LUxvakt1N2J3blBLc0JoaXpaczA?oc=5",
-     "time": "2026-11-25T12:47:57Z"
-    },
-    {
-     "id": "dd2d7471856322c4",
-     "publisher": "fiscal.ai",
-     "kind": "news",
-     "title": "easyJet Reports Annual Results Ahead of Apollo Takeover",
-     "url": "https://www.finanzen.ch/nachrichten/aktien/easyjet-gewinn-mit-gewinneinbruch-1036798859",
-     "time": "2026-11-25T13:01:39Z"
-    },
-    {
-     "id": "fc5dbc3fce838b2e",
-     "publisher": "Crude Oil Prices Today | OilPrice.com",
-     "kind": "news",
-     "title": "Iran War Is Pushing Record Numbers of Fuel Tankers Into Crude Trade",
-     "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPd0xrRjNXRkJIMlI1MkRZdUZ3YmdwS2dhSHA1dVFfbE1DWHdzR09vV19qb2lObWp3eDRxTUlJSDhCMWttSHZVSjF5VGx3OXRXYXBwNVIyU1F3a28xRkFsRXFYWHpJbTVLZXhQbVQySS0wYklfSVNIaFV6S25DOVRUNjJWWHVIZTdaTjJ3UXc0N3ZRVjlwdU9EcjZ1WDYzVDlvQmNQc3FvYUF1OGc5d3lSZzZkalJGVFlJM0Nmd3lubHTSAcYBQVVfeXFMTnl6bTVmRzQ4TDRKOFpvMkZBYUpQUTR6QTZLdmU5S0xqejFnWjJxZW9ERUYyRVlLaEo4NEdKaS1IYU9hSk0xaEtTQnE5aGwwMXh6SkFFLU5nWng1V2s0SFczbUVmNmk4cEphX09fSnd1aUctUi1xa2hJN2tVd1ZfTnJJMkNKdEtxWENXZ3JtdHhSc0cxRTVHcHJTczdJZTJ2QjJYYlY2a1Mwak8tOTJReDV1Z3o5X2tRNzNpRHYwRFVvSXpoNGVn?oc=5",
-     "time": "2026-11-25T13:00:00Z"
     }
    ]
   },
@@ -7988,48 +8175,6 @@
      "title": "USTR to Announce Tariff Results for 16 Economies",
      "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxOMmhyUV84SVZyTnpsYW1LZThoM0Y2MDkxbjRKN3JEeVNRV2oxMmZMUmg3b3ZQSjRmVmNUdDd1VFloSlNWUFJZc1B4VkpZYVN3cU45eTNoa3JzWGNWQlpLWUd1OHVmWnlXYjZRVlZZbjU5TF9sS0ZaRU83UUpQbE5EN0hWS1ZMUHVqWFF5U2NWZ3dFdXdQQ0g4?oc=5",
      "time": "2026-11-25T07:33:24Z"
-    }
-   ]
-  },
-  {
-   "summary": "Nvidia faces ongoing governance crisis and executive turmoil as volatility remains elevated.",
-   "category": "company_bad_news",
-   "firstSeen": "2026-11-25T12:24:47Z",
-   "publishers": [
-    "CNBC",
-    "Yahoo Finance"
-   ],
-   "assets": {
-    "NVDA": {
-     "direction": "down",
-     "confidence": 0.6,
-     "why": "Executive uncertainty and regulatory scrutiny are driving negative sentiment for the stock."
-    }
-   },
-   "sources": [
-    {
-     "id": "7e5383d5da85dc45",
-     "publisher": "Yahoo Finance",
-     "kind": "news",
-     "title": "Nvidia Loses Nearly $3 Trillion as Governance Crisis Deepens",
-     "url": "https://finance.yahoo.com/markets/stocks/articles/nvidia-loses-nearly-3-trillion-122447848.html?.tsrc=rss",
-     "time": "2026-11-25T12:24:47Z"
-    },
-    {
-     "id": "c100520660bf31b1",
-     "publisher": "CNBC",
-     "kind": "news",
-     "title": "Stock futures tumble as AI sell-off returns with Nvidia, Anthropic leading the way: Live updates",
-     "url": "https://www.cnbc.com/2026/11/24/stock-market-today-live-updates-.html",
-     "time": "2026-11-25T12:50:47Z"
-    },
-    {
-     "id": "55cf08314660b42e",
-     "publisher": "Yahoo Finance",
-     "kind": "news",
-     "title": "3 Warning Signs as the AI Selloff Gets Ugly Again",
-     "url": "https://finance.yahoo.com/m/7eb3329d-ae1e-315a-9f67-0f5f86d8408c/3-warning-signs-as-the-ai.html?.tsrc=rss",
-     "time": "2026-11-25T12:52:00Z"
     }
    ]
   },
