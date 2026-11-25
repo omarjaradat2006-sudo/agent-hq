@@ -251,7 +251,7 @@
   function syncTeambar() { document.querySelectorAll(".teambar button").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.id === focused))); $("#back").hidden = !focused; }
 
   function tabsFor(t) {
-    if (t.cfg.virtual) return [["overview", "Brief"], ["activity", "Activity"]];
+    if (t.cfg.virtual) return [["schedule", "Schedule"], ["overview", "Brief"], ["activity", "Activity"]];
     if (t.cfg.paused) return [["overview", "Paused"]];
     if (t.cfg.id === "fight") return [["overview", "NBA"], ["ufc", "UFC"], ["record", "Record"], ["books", "Odds & cost"], ["activity", "Activity"]];
     if (t.cfg.id === "trading") return [["overview", "Overview"], ["positions", "Positions"], ["trades", "Trades"], ["pnl", "P&L vs SPY"], ["week", "7-day test"], ["news", "News desk"], ["coins", "Coin watch"], ["backtest", "Backtest"], ["activity", "Activity"]];
@@ -277,13 +277,14 @@
     tabsFor(t).forEach(([k, l]) => { const b = el("button", null, l); b.setAttribute("role", "tab"); b.setAttribute("aria-selected", String(tab === k));
       if (k === "picks") b.append(el("span", "n", String(Object.values(t.state.cards || {}).reduce((n, c) => n + (c.picks || []).length + (c.parlays || []).length, 0))));
       if (k === "positions") b.append(el("span", "n", String((t.state.positions || []).length)));
-      if (k === "ideas") b.append(el("span", "n", String((t.state.ideas || []).filter(i => t.cfg.id === "youtube" ? ["pending", "approved"].includes(effectiveStatus(i).status) : effectiveStatus(i).status === "pending").length)));
+      if (k === "upgrades") b.append(el("span", "n", String(labView(x => UPG[t.cfg.id].includes(x)).state.ideas.filter(i => effectiveStatus(i).status === "pending").length)));
+      if (k === "ideas") b.append(el("span", "n", String((t.cfg.id === "lab" ? labView(isSystem).state.ideas : (t.state.ideas || [])).filter(i => t.cfg.id === "youtube" ? ["pending", "approved"].includes(effectiveStatus(i).status) : effectiveStatus(i).status === "pending").length)));
       if (k === "shots") b.append(el("span", "n", String((t.state.footage || []).filter(f => f.status === "ready").length)));
       b.onclick = () => { tab = k; renderPanel(); }; tabs.append(b); });
     ph.append(tabs); p.append(ph);
     const body = el("div", "pb"); p.append(body);
     if (t.cfg.paused) { vPaused(t, body); return; }
-    ({ overview: vOverview, ideas: vIdeas, upgrades: vUpgrades, review: vReview, competitors: vCompetitors, swarm: vSwarm, leads: vLeads, lineup: vLineup, inspo: vInspo, picks: vFToday, ufc: vFUfc, record: vFRecord, books: vFBooks, positions: vTPositions, trades: vTTrades, pnl: vTPnl, news: vTNews, coins: vTCoins, backtest: vTBacktest, week: vTWeek, shots: vShots, clips: vClips, stats: vStats, trending: vTrending, research: vResearch, activity: vActivity, ...(t.cfg.id === "fight" && !agentSel ? { overview: vFToday } : {}) }[tab] || vOverview)(t, body);
+    ({ schedule: vSchedule, overview: vOverview, ideas: vIdeas, upgrades: vUpgrades, review: vReview, competitors: vCompetitors, swarm: vSwarm, leads: vLeads, lineup: vLineup, inspo: vInspo, picks: vFToday, ufc: vFUfc, record: vFRecord, books: vFBooks, positions: vTPositions, trades: vTTrades, pnl: vTPnl, news: vTNews, coins: vTCoins, backtest: vTBacktest, week: vTWeek, shots: vShots, clips: vClips, stats: vStats, trending: vTrending, research: vResearch, activity: vActivity, ...(t.cfg.id === "fight" && !agentSel ? { overview: vFToday } : {}) }[tab] || vOverview)(t, body);
   }
   function pill(s) { return el("span", "pill s-" + (s || "idle"), ST[s] || s || "Idle"); }
   function empty(title, text) { const e = el("div", "empty"); e.append(el("strong", null, title)); e.append(el("span", null, text)); return e; }
@@ -330,7 +331,7 @@
     body.append(ro);
     if (t.cfg.virtual) { body.append(el("div", "label", "Teams")); const ro2 = el("div", "roster");
       Object.values(M.teams).filter(x => !x.cfg.virtual).forEach(x => { const b3 = el("button", "mini-agent"); const av = el("span", "av"); av.style.background = x.cfg.color + "33"; av.append(el("span", null, ""));
-        const w = x.agents.filter(a => a.status === "working").length; const mid = el("span"); mid.append(el("div", "nm", x.cfg.name)); mid.append(el("div", "dg", x.hired ? ((x.state.ideas || []).filter(i => (i.status || "pending") === "pending").length + " to review · updated " + ago(x.state.updatedAt)) : "Not hired yet"));
+        const w = x.agents.filter(a => a.status === "working").length; const mid = el("span"); mid.append(el("div", "nm", x.cfg.name)); mid.append(el("div", "dg", x.hired ? ((x.cfg.id === "lab" ? labView(isSystem).state.ideas : (x.state.ideas || [])).filter(i => (i.status || "pending") === "pending").length + " to review · updated " + ago(x.state.updatedAt)) : "Not hired yet"));
         b3.append(av, mid, pill(!x.hired ? "off" : w ? "working" : "idle")); b3.onclick = () => focusTeam(x.cfg.id); ro2.append(b3); });
       body.append(ro2); }
   }
@@ -446,17 +447,64 @@
   // business ones show in that business's own "Upgrades" tab (buttons still save to the Lab's file).
   const UPG = { tiktok: ["TikTok"], youtube: ["Bounce Theory", "Ambient Escape", "WANTED LEVEL", "YouTube"], linkedai: ["LinkedAI"] };
   const BIZ_ALL = Object.values(UPG).flat();
+  const isSystem = b => ["System", "Agent HQ", "Site", "Server", "Automation", ""].includes(b);
   function labView(match) { const lab = M.teams.lab; return { ...lab, state: { ...lab.state, ideas: (lab.state.ideas || []).filter(i => match(String(i.business || ""))) } }; }
   function vUpgrades(t, body) {
     body.append(el("div", "why", "Upgrades the R&D Lab found for " + t.cfg.name + ". Approve the ones you want, then press I did it once it's built."));
     vIdeas(labView(b => UPG[t.cfg.id].includes(b)), body, true);
+  }
+  /* Schedule: read straight from the server's crontab in the repo (server clock = Toronto time). */
+  let CRON = null;
+  const JOBNAME = { "run_team.sh tiktok": "TikTok team: scripts + review", "run_team.sh youtube": "YouTube team: today's lineup (both channels)",
+    "run_team.sh linkedai": "LinkedAI team: competitor study + promos", "run_team.sh opps": "AI Opportunities", "run_team.sh lab": "R&D Lab: system upgrades",
+    "run_team.sh repos": "GitHub Scout: repo requests", "run_team.sh chief": "Chief of Staff: weekly brief", "run_team.sh growth": "Growth Architect team",
+    "run_team.sh upgrades": "Growth Architect upgrades", "run_bounce.sh": "Bounce Theory: make + upload the day's videos", "run_ambient.sh": "Ambient Escape: make + upload the day's videos",
+    "run_wanted.sh": "WANTED LEVEL: post a GTA 6 clip", "run_autotemplate.sh": "Bounce: turn board ideas into new templates", "run_inspo.sh": "Inspo builder: your inspo videos into templates",
+    "run_fight.sh picks nba": "Fight & Court: NBA parlays", "run_fight.sh picks ufc": "Fight & Court: UFC card picks", "run_fight.sh picks ufc --dwcs": "Fight & Court: Contender Series picks",
+    "run_fight.sh splits nba": "Fight & Court: NBA betting splits", "run_fight.sh grade": "Fight & Court: grade yesterday's picks" };
+  const DOW = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  function cronField(f, lo, hi) { if (f === "*") return null; const out = new Set();
+    f.split(",").forEach(part => { const [r, st] = part.split("/"); const step = +(st || 1); let a = lo, b = hi;
+      if (r !== "*") { const [x, y] = r.split("-"); a = +x; b = y !== undefined ? +y : (st ? hi : +x); }
+      for (let v = a; v <= b; v += step) out.add(v); }); return [...out].sort((a, b) => a - b); }
+  function parseCron(txt) { return txt.split("\n").map(l => l.trim()).filter(Boolean).map(l => { const paused = /^#\s*PAUSED/i.test(l);
+      if (l.startsWith("#") && !paused) return null; const raw = l.replace(/^#[^:]*:\s*/, ""); const p = raw.split(/\s+/); if (p.length < 6) return null;
+      const cmd = p.slice(5).join(" ").replace(/^.*scripts\/server\//, "").replace(/\s*>.*$/, "");
+      const key = Object.keys(JOBNAME).sort((a, b) => b.length - a.length).find(k => cmd.startsWith(k));
+      return { paused, f: p.slice(0, 5), name: key ? JOBNAME[key] : cmd, m: cronField(p[0], 0, 59), h: cronField(p[1], 0, 23), dom: cronField(p[2], 1, 31), mon: cronField(p[3], 1, 12), dow: cronField(p[4], 0, 6) }; }).filter(Boolean); }
+  function nextRun(j, from) { const now = from || new Date();
+    for (let d = 0; d < 45; d++) { const day = new Date(now.getFullYear(), now.getMonth(), now.getDate() + d);
+      if (j.dom && !j.dom.includes(day.getDate())) continue; if (j.mon && !j.mon.includes(day.getMonth() + 1)) continue; if (j.dow && !j.dow.includes(day.getDay())) continue;
+      for (const h of (j.h || [...Array(24).keys()])) for (const m of (j.m || [0])) { const t = new Date(day.getFullYear(), day.getMonth(), day.getDate(), h, m); if (t > now) return t; } }
+    return null; }
+  const hm = (h, m) => new Date(2000, 0, 1, h, m).toLocaleTimeString([], { hour: "numeric", minute: "2-digit" });
+  function howOften(j) { const t = j.h && j.h.length === 1 && j.m ? hm(j.h[0], j.m[0]) : null;
+    if (!j.h) return "Every hour at :" + String((j.m || [0])[0]).padStart(2, "0");
+    if (j.f[2].startsWith("*/")) return "Every " + j.f[2].slice(2) + " days at " + t;
+    if (j.dow) return j.dow.map(x => DOW[x]).join(", ") + " at " + t;
+    return "Every day at " + t; }
+  function whenLabel(d) { if (!d) return "-"; const now = new Date(); const day = Math.round((new Date(d.getFullYear(), d.getMonth(), d.getDate()) - new Date(now.getFullYear(), now.getMonth(), now.getDate())) / 864e5);
+    return (day === 0 ? "Today" : day === 1 ? "Tomorrow" : DOW[d.getDay()] + " " + d.toLocaleDateString([], { month: "short", day: "numeric" })) + " · " + d.toLocaleTimeString([], { hour: "numeric", minute: "2-digit" }); }
+  async function vSchedule(t, body) {
+    body.append(el("div", "why", "When every agent and video job runs on your server (Toronto time). Read live from the server's schedule file."));
+    if (!CRON) { try { const r = await fetch(ROOT + "scripts/server/crontab.txt?t=" + Date.now(), { cache: "no-store" }); CRON = r.ok ? parseCron(await r.text()) : []; } catch { CRON = []; } }
+    if (!CRON.length) { body.append(empty("Couldn't load the schedule", "scripts/server/crontab.txt wasn't found.")); return; }
+    const jobs = CRON.filter(j => !j.paused).map(j => ({ ...j, next: nextRun(j) })).sort((a, b) => (a.next || 9e15) - (b.next || 9e15));
+    const card = (title, list, paused) => { const c = el("div", "card"); c.append(el("div", "label", title));
+      list.forEach(j => { const r = el("div", "row between"); r.style.cssText = "padding:8px 0;border-top:1px solid rgba(255,255,255,.06);gap:12px";
+        const l = el("div"); l.append(el("strong", null, j.name)); l.append(el("div", "small muted", howOften(j))); r.append(l, el("span", paused ? "pill s-recharging" : "pill s-idle", paused ? "Paused" : whenLabel(j.next))); c.append(r); });
+      body.append(c); };
+    card("Next up", jobs.slice(0, 6));
+    card("Everything, in order of next run", jobs.slice(6));
+    const extra = el("div", "card"); extra.append(el("div", "label", "Always on")); extra.append(el("div", null, "Trading Desk: runs all day as a service on the server (checks news and the market every few minutes while it's open).")); body.append(extra);
+    const ps = CRON.filter(j => j.paused); if (ps.length) card("Paused", ps, true);
   }
   function vPaused(t, body) {
     const c = el("div", "card"); c.append(el("div", "label", "Paused")); c.append(el("h3", null, "Under construction"));
     c.append(el("div", "why", t.cfg.paused)); c.append(el("div", "small", "No runs, no ideas and no upgrades for this floor until you switch it back on.")); body.append(c);
   }
   function vIdeas(t, body, proxied) {
-    if (t.cfg.id === "lab" && !proxied) t = labView(b => !BIZ_ALL.includes(b) && !/growth architect/i.test(b));
+    if (t.cfg.id === "lab" && !proxied) t = labView(isSystem);
     ideaLine(t, body);
     const ideas = t.state.ideas || []; const S2 = [["pending", "To review"], ["approved", t.cfg.id === "youtube" ? "Up next" : "Waiting on you"], ["done", t.cfg.id === "lab" || t.cfg.id === "repos" ? "Installed" : "Done"], ["skipped", "Skipped"]];
     const sub = el("div", "subtabs"); S2.forEach(([k, l]) => { const b = el("button", null, `${l} ${ideas.filter(i => effectiveStatus(i).status === k).length}`); b.setAttribute("aria-pressed", String(ideaFilter === k)); b.onclick = () => { ideaFilter = k; renderPanel(); }; sub.append(b); });
@@ -1223,7 +1271,7 @@ Server breakdown (Gemini watched it with sound):
   /* ---------------- HUD ---------------- */
   function renderHUD() {
     const all = Object.values(M.teams); const working = all.reduce((n, t) => n + t.agents.filter(a => a.status === "working").length, 0);
-    const pending = all.filter(t => !t.cfg.paused).reduce((n, t) => n + (t.state.ideas || []).filter(i => (i.status || "pending") === "pending").length, 0);
+    const pending = all.filter(t => !t.cfg.paused).reduce((n, t) => n + (t.cfg.id === "lab" ? labView(b => isSystem(b) || BIZ_ALL.includes(b)).state.ideas : (t.state.ideas || [])).filter(i => (i.status || "pending") === "pending").length, 0);
     const tk = (M.teams.tiktok.metrics || {}).kpis || []; const fol = tk.find(k => k.label === "Followers");
     const yk = (M.teams.youtube.metrics || {}).kpis || []; const subs = yk.filter(k => /subscribers$/.test(k.label)).reduce((n, k) => n + (k.value || 0), 0);
     const chips = $("#chips"); chips.replaceChildren();
@@ -1239,6 +1287,7 @@ Server breakdown (Gemini watched it with sound):
     const bar = $("#teambar"); bar.replaceChildren();
     CFG.teams.forEach(c => { const t = M.teams[c.id]; const b = el("button"); b.dataset.id = c.id; const sw = el("span", "sw"); sw.style.background = c.color; b.append(sw, document.createTextNode(c.virtual ? "HQ" : c.name));
       if (t.agents.some(a => a.status === "working")) b.append(el("span", "live")); b.onclick = () => focusTeam(c.id); bar.append(b); });
+    { const b = el("button"); b.dataset.id = "schedule"; const sw = el("span", "sw"); sw.style.background = "#e8e3ff"; b.append(sw, document.createTextNode("Schedule")); b.onclick = () => focusTeam("hq", "schedule"); bar.append(b); }
     syncTeambar();
     const tr = $("#tickerTrack"); tr.replaceChildren();
     const items = all.flatMap(t => t.log.slice(0, 6).map(l => ({ ...l, team: t }))).sort((a, b) => (b.t || "").localeCompare(a.t || "")).slice(0, 24);

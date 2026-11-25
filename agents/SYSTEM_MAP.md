@@ -16,7 +16,8 @@ Last updated: 2026-11-19 (by Claude, from the real setup). Omar or Claude update
 | Fight & Court (NBA + UFC research) | LIVE on the server, research only |
 | Trading Desk | LIVE, PAPER money only (Alpaca paper), 1-week test |
 | Roblox sky obby | Built by Omar in Roblox Studio with Claude Code. Not run by agents. |
-| SATR, NFC tags, TikTok effects | Side projects, not active. Don't pitch upgrades for them. |
+| SATR (Shopify Quran covers) | SHUT DOWN: Omar doesn't run it anymore. Never mention it. |
+| NFC tags, TikTok effects | Side projects, not active. Don't pitch upgrades for them. |
 
 ## THE MACHINE (where everything runs)
 - **Oracle Cloud server "openclaw"** (Always Free A1: 2 CPU, 12 GB RAM, Ubuntu 24.04, Toronto). Runs everything below by cron (`scripts/server/crontab.txt`). Laptop can be off.

@@ -23,7 +23,7 @@ FAITH = re.compile(r"\b(allah|quran|qur'an|salah|salat|prayer|pray|islam|muslim|
 LETTERS = "ABC"
 
 SYSTEM = """You are the TikTok team (Performance Reviewer, Analyst, Strategist, Copywriter) for Omar Jaradat, a university student in Mississauga who makes sit-down talking-head TikToks: self-improvement for young guys (discipline, mindset, stoicism and philosophy, psychology, habits, money/career mindset, masculinity and relationships, living life right). He is Muslim and faith is one pillar, but most videos are NOT about Islam. He talks as a regular guy still figuring it out, never a guru, never rich.
-Never invent stats, studies, quotes, stories, creators, links or numbers. If a line needs Omar's own story, write [fill in: ...]. Quote philosophers accurately and name them. Any hadith/ayah: real reference plus [verify source]."""
+Never write job-search, LinkedIn, resume, cover-letter, interview or LinkedAI scripts for this page, and never treat a LinkedAI promo video as a "winner": those were paid ads, not his content. Never invent stats, studies, quotes, stories, creators, links or numbers. If a line needs Omar's own story, write [fill in: ...]. Quote philosophers accurately and name them. Any hadith/ayah: real reference plus [verify source]."""
 
 
 def load(p, default=None):
@@ -33,9 +33,13 @@ def load(p, default=None):
         return default
 
 
+# Paid promos (LinkedAI ads, job/resume videos) were boosted with money, so their views say nothing about what his audience likes.
+PROMO = re.compile(r"linkedai|linked ai|linkedin|resume|r[eé]sum[eé]|cover letter|job (search|hunt|interview|application)|recruiter|hiring|#ad\b|promo", re.I)
+
+
 def review_step(state, metrics):
     kpis = json.dumps(metrics.get("kpis", {}))[:2000]
-    top = json.dumps(metrics.get("topVideos", [])[:25])[:9000]
+    top = json.dumps([v for v in metrics.get("topVideos", []) if not PROMO.search(str(v.get("title", "")) + " " + str(v.get("desc", "")))][:25])[:9000]
     done = [{"title": i["title"], "hook": i.get("hook"), "doneAt": i.get("doneAt")} for i in state["ideas"] if i.get("status") == "done"][-15:]
     prompt = f"""Today is {TODAY}. Review how Omar's recent TikToks performed. Only judge posts older than 48 hours as final.
 KPIs: {kpis}
