@@ -1,16 +1,16 @@
 {
  "team": "trading",
  "plain": {
-  "line": "Down $9,438.23 since start · 33 trades · holding: UMMA, SPWO, HLAL, SPUS, SPUS",
+  "line": "Down $9,338.97 since start · 33 trades · holding: UMMA, SPWO, HLAL, SPUS, SPUS",
   "rulesMode": "ultra",
-  "top": "Down $9,438.23 since start (-9.44%) · just holding SPY would be -7.29%",
+  "top": "Down $9,338.97 since start (-9.34%) · just holding SPY would be -7.27%",
   "up": false,
   "holding": [
-   "UMMA: buy order sent, waiting to fill",
-   "SPWO: buy order sent, waiting to fill",
-   "HLAL: buy order sent, waiting to fill",
-   "SPUS: buy order sent, waiting to fill",
-   "SPUS: 2 shares worth $17,023.72, down $10.41 (sells at $81.06 or stops at $48.64)"
+   "UMMA: 366 shares worth $11,503.38, up $21.96 (sells at $32.09 or stops at $28.70)",
+   "SPWO: 421 shares worth $11,274.38, up $8.42 (sells at $27.96 or stops at $25.00)",
+   "HLAL: 256 shares worth $16,326.40, up $16.64 (sells at $98.93 or stops at $59.36)",
+   "SPUS: 324 shares worth $17,059.58, up $25.45 (sells at $78.24 or stops at $46.94)",
+   "SPUS: 2 shares worth $17,059.58, up $25.45 (sells at $81.06 or stops at $48.64)"
   ],
   "today": [
    "Bought UMMA after the news: Buy the dip: the whole market (SPY) was -2.93% today.",
@@ -22,16 +22,18 @@
    "Sold HLAL (bad news: Expectations grow that regional Fed banks and policy makers lean towards tighter): lost $0.32.",
    "Sold TMO (trailing stop hit (-3.4%)): lost $376.12.",
    "Sold NOW (stop-loss -3% hit): lost $473.26.",
-   "Scanned the news 36 times today: read 3903 headlines, found 122 that could move a stock or coin it's allowed to trade.",
+   "Scanned the news 41 times today: read 4568 headlines, found 126 that could move a stock or coin it's allowed to trade.",
    "Passed on APA, COP, CRM, CVX, DVN: down 3% today, no new trades until tomorrow.",
-   "Passed on AVAV: price hasn't moved the expected way yet (-3.47%).",
-   "Safety rules that stepped in: daily loss halt (x38), bad news exit (x1), trailing stop (x3), stop loss -3% (x1)."
+   "Passed on AVAV: price hasn't moved the expected way yet (-3.53%).",
+   "Passed on AVAV: price hasn't moved the expected way yet (-3.71%).",
+   "Passed on AVAV: price hasn't moved the expected way yet (-3.43%).",
+   "Safety rules that stepped in: daily loss halt (x223), bad news exit (x1), trailing stop (x3), stop loss -3% (x1)."
   ],
   "watchlist": "Allowed to trade: 68 halal stocks, 5 Shariah ETFs, 9 coins.",
-  "lastScan": "2026-11-25T14:36:45Z"
+  "lastScan": "2026-11-25T15:53:14Z"
  },
  "hired": true,
- "updatedAt": "2026-11-25T14:52:01Z",
+ "updatedAt": "2026-11-25T15:57:12Z",
  "mode": "PAPER",
  "agents": [
   {
@@ -39,8 +41,8 @@
    "name": "News Scout",
    "role": "Reads X, Reddit and news feeds",
    "status": "working",
-   "doing": "Read 300 new headlines/posts, 2 market-moving stories",
-   "lastRun": "2026-11-25T14:51:45Z"
+   "doing": "Read 54 new headlines/posts, 0 market-moving stories",
+   "lastRun": "2026-11-25T15:56:59Z"
   },
   {
    "id": "analyst",
@@ -48,7 +50,7 @@
    "role": "Gemini: is it real, what moves, which way",
    "status": "working",
    "doing": "Gemini triage failed, skipping this batch: All Gemini models failed. Last error: Gemini HTTP 429 on gemini-3.8-flash: {\n  \"error\": {\n    \"code\": 429,\n    \"message\": \"You exceeded your current quota, plea",
-   "lastRun": "2026-11-25T14:51:43Z"
+   "lastRun": "2026-11-25T15:56:59Z"
   },
   {
    "id": "confirm",
@@ -79,8 +81,8 @@
    "name": "Trader",
    "role": "Places paper orders on Alpaca",
    "status": "working",
-   "doing": "Market down -2.9% today: buying the dip in SPTE, SPWO, UMMA",
-   "lastRun": "2026-11-25T14:51:59Z"
+   "doing": "Paper-trading bot started (Alpaca PAPER account only). Close this window to stop it.",
+   "lastRun": "2026-11-25T15:53:13Z"
   },
   {
    "id": "coins",
@@ -100,6 +102,106 @@
   }
  ],
  "log": [
+  {
+   "t": "2026-11-25T15:56:59Z",
+   "agent": "News Scout",
+   "msg": "Read 54 new headlines/posts, 0 market-moving stories"
+  },
+  {
+   "t": "2026-11-25T15:56:59Z",
+   "agent": "News Analyst",
+   "msg": "Gemini triage failed, skipping this batch: All Gemini models failed. Last error: Gemini HTTP 429 on gemini-3.8-flash: {\n  \"error\": {\n    \"code\": 429,\n    \"message\": \"You exceeded your current quota, plea"
+  },
+  {
+   "t": "2026-11-25T15:53:13Z",
+   "agent": "News Scout",
+   "msg": "Agent Reach not found: news feeds + Yahoo Finance + Reddit direct (no X)"
+  },
+  {
+   "t": "2026-11-25T15:53:13Z",
+   "agent": "Trader",
+   "msg": "Paper-trading bot started (Alpaca PAPER account only). Close this window to stop it."
+  },
+  {
+   "t": "2026-11-25T15:46:32Z",
+   "agent": "News Scout",
+   "msg": "Read 24 new headlines/posts, 0 market-moving stories"
+  },
+  {
+   "t": "2026-11-25T15:41:16Z",
+   "agent": "News Scout",
+   "msg": "Read 157 new headlines/posts, 4 market-moving stories"
+  },
+  {
+   "t": "2026-11-25T15:37:17Z",
+   "agent": "News Analyst",
+   "msg": "Gemini triage failed, skipping this batch: All Gemini models failed. Last error: Gemini HTTP 429 on gemini-3.8-flash: {\n  \"error\": {\n    \"code\": 429,\n    \"message\": \"You exceeded your current quota, plea"
+  },
+  {
+   "t": "2026-11-25T15:28:21Z",
+   "agent": "News Scout",
+   "msg": "Read 169 new headlines/posts, 0 market-moving stories"
+  },
+  {
+   "t": "2026-11-25T15:28:21Z",
+   "agent": "News Analyst",
+   "msg": "Gemini triage failed, skipping this batch: All Gemini models failed. Last error: Gemini HTTP 429 on gemini-3.8-flash: {\n  \"error\": {\n    \"code\": 429,\n    \"message\": \"You exceeded your current quota, plea"
+  },
+  {
+   "t": "2026-11-25T15:24:45Z",
+   "agent": "News Analyst",
+   "msg": "Gemini triage failed, skipping this batch: All Gemini models failed. Last error: Gemini HTTP 429 on gemini-3.8-flash: {\n  \"error\": {\n    \"code\": 429,\n    \"message\": \"You exceeded your current quota, plea"
+  },
+  {
+   "t": "2026-11-25T15:21:00Z",
+   "agent": "News Analyst",
+   "msg": "Gemini triage failed, skipping this batch: All Gemini models failed. Last error: Gemini HTTP 429 on gemini-3.8-flash: {\n  \"error\": {\n    \"code\": 429,\n    \"message\": \"You exceeded your current quota, plea"
+  },
+  {
+   "t": "2026-11-25T15:11:48Z",
+   "agent": "News Scout",
+   "msg": "Read 261 new headlines/posts, 0 market-moving stories"
+  },
+  {
+   "t": "2026-11-25T15:11:48Z",
+   "agent": "News Analyst",
+   "msg": "Gemini triage failed, skipping this batch: All Gemini models failed. Last error: Gemini HTTP 429 on gemini-3.8-flash: {\n  \"error\": {\n    \"code\": 429,\n    \"message\": \"You exceeded your current quota, plea"
+  },
+  {
+   "t": "2026-11-25T15:08:11Z",
+   "agent": "News Analyst",
+   "msg": "Gemini triage failed, skipping this batch: All Gemini models failed. Last error: Gemini HTTP 429 on gemini-3.8-flash: {\n  \"error\": {\n    \"code\": 429,\n    \"message\": \"You exceeded your current quota, plea"
+  },
+  {
+   "t": "2026-11-25T15:02:04Z",
+   "agent": "News Analyst",
+   "msg": "Gemini triage failed, skipping this batch: All Gemini models failed. Last error: Gemini HTTP 429 on gemini-3.8-flash: {\n  \"error\": {\n    \"code\": 429,\n    \"message\": \"You exceeded your current quota, plea"
+  },
+  {
+   "t": "2026-11-25T14:57:04Z",
+   "agent": "Trader",
+   "msg": "Bought 324 SPUS at $52.24 (stop $46.94, target $78.24)"
+  },
+  {
+   "t": "2026-11-25T14:57:04Z",
+   "agent": "Trader",
+   "msg": "Bought 256 HLAL at $63.71 (stop $59.36, target $98.93)"
+  },
+  {
+   "t": "2026-11-25T14:57:04Z",
+   "agent": "Trader",
+   "msg": "Bought 421 SPWO at $26.76 (stop $25.00, target $27.96)"
+  },
+  {
+   "t": "2026-11-25T14:57:04Z",
+   "agent": "Trader",
+   "msg": "Bought 366 UMMA at $31.37 (stop $28.70, target $32.09)"
+  },
+  {
+   "t": "2026-11-25T14:52:03Z",
+   "agent": "Trader",
+   "msg": "Saved results to the Agent HQ dashboard"
+  },
   {
    "t": "2026-11-25T14:51:59Z",
    "agent": "Trader",
@@ -749,112 +851,12 @@
    "t": "2026-11-23T21:34:36Z",
    "agent": "News Scout",
    "msg": "Read 102 new headlines/posts, 5 market-moving stories"
-  },
-  {
-   "t": "2026-11-23T21:19:21Z",
-   "agent": "Trader",
-   "msg": "Saved results to the Agent HQ dashboard"
-  },
-  {
-   "t": "2026-11-23T21:19:17Z",
-   "agent": "News Scout",
-   "msg": "Read 116 new headlines/posts, 4 market-moving stories"
-  },
-  {
-   "t": "2026-11-23T21:02:24Z",
-   "agent": "News Scout",
-   "msg": "Read 32 new headlines/posts, 1 market-moving stories"
-  },
-  {
-   "t": "2026-11-23T20:44:00Z",
-   "agent": "News Scout",
-   "msg": "Read 29 new headlines/posts, 1 market-moving stories"
-  },
-  {
-   "t": "2026-11-23T20:32:12Z",
-   "agent": "News Scout",
-   "msg": "Read 2 new headlines/posts, 0 market-moving stories"
-  },
-  {
-   "t": "2026-11-23T20:27:08Z",
-   "agent": "News Scout",
-   "msg": "Read 46 new headlines/posts, 3 market-moving stories"
-  },
-  {
-   "t": "2026-11-23T20:25:41Z",
-   "agent": "Trader",
-   "msg": "Bought 169 NOW at $91.70 (stop $88.95, target $97.20)"
-  },
-  {
-   "t": "2026-11-23T20:20:40Z",
-   "agent": "Trader",
-   "msg": "Saved results to the Agent HQ dashboard"
-  },
-  {
-   "t": "2026-11-23T20:20:37Z",
-   "agent": "Trader",
-   "msg": "Order for PLTR failed: not enough cash for one share"
-  },
-  {
-   "t": "2026-11-23T20:20:36Z",
-   "agent": "Trader",
-   "msg": "BUY NOW: Political intervention and the reinstatement of Jensen Huang as Nvidia CEO continue to dri | volume 1.3x normal, price -0.55% since the news | TradingAgents not used (ultra mode)"
-  },
-  {
-   "t": "2026-11-23T20:20:36Z",
-   "agent": "News Scout",
-   "msg": "Read 2 new headlines/posts, 1 market-moving stories"
-  },
-  {
-   "t": "2026-11-23T20:15:26Z",
-   "agent": "News Scout",
-   "msg": "Read 1 new headlines/posts, 0 market-moving stories"
-  },
-  {
-   "t": "2026-11-23T20:10:15Z",
-   "agent": "News Scout",
-   "msg": "Read 56 new headlines/posts, 2 market-moving stories"
-  },
-  {
-   "t": "2026-11-23T20:01:26Z",
-   "agent": "News Scout",
-   "msg": "Read 3 new headlines/posts, 1 market-moving stories"
-  },
-  {
-   "t": "2026-11-23T19:56:22Z",
-   "agent": "News Scout",
-   "msg": "Read 2 new headlines/posts, 0 market-moving stories"
-  },
-  {
-   "t": "2026-11-23T19:51:17Z",
-   "agent": "News Scout",
-   "msg": "Read 55 new headlines/posts, 2 market-moving stories"
-  },
-  {
-   "t": "2026-11-23T19:46:05Z",
-   "agent": "News Scout",
-   "msg": "Read 2 new headlines/posts, 1 market-moving stories"
-  },
-  {
-   "t": "2026-11-23T19:39:36Z",
-   "agent": "News Scout",
-   "msg": "Read 1 new headlines/posts, 1 market-moving stories"
-  },
-  {
-   "t": "2026-11-23T19:34:27Z",
-   "agent": "News Scout",
-   "msg": "Read 60 new headlines/posts, 1 market-moving stories"
-  },
-  {
-   "t": "2026-11-23T19:29:21Z",
-   "agent": "Trader",
-   "msg": "Saved results to the Agent HQ dashboard"
   }
  ],
  "brief": {
   "date": "Wed Nov 25",
-  "createdAt": "2026-11-25T14:52:01Z",
-  "headline": "Paper account -$2,588 today (-2.78%), -9.44% total vs SPY -7.29% · 5 open",
+  "createdAt": "2026-11-25T15:57:12Z",
+  "headline": "Paper account -$2,489 today (-2.67%), -9.34% total vs SPY -7.27% · 5 open",
   "summary": "5 trade(s) closed today, 5/28 winners overall. TradingAgents checks used today: 0/5.",
   "notes": [
    "Down 3% today: no new trades until tomorrow.",
@@ -862,16 +864,16 @@
   ]
  },
  "account": {
-  "equity": 90561.77,
-  "cash": 57244.67,
+  "equity": 90661.03,
+  "cash": 34497.29,
   "startEquity": 100000.0,
   "startedAt": "2026-11-10T01:51:53Z",
-  "dayPnl": -2588.09,
-  "dayPct": -2.78,
-  "totalPnl": -9438.23,
-  "totalPct": -9.44,
-  "spyPct": -7.29,
-  "vsSpyPct": -2.15
+  "dayPnl": -2488.83,
+  "dayPct": -2.67,
+  "totalPnl": -9338.97,
+  "totalPct": -9.34,
+  "spyPct": -7.27,
+  "vsSpyPct": -2.07
  },
  "status": {
   "killed": false,
@@ -879,7 +881,7 @@
   "deepUsed": 0,
   "deepMax": 5,
   "social": {
-   "at": "2026-11-25T14:36:49Z",
+   "at": "2026-11-25T15:53:16Z",
    "items": 0,
    "source": "Reddit via Tradestie + ApeWisdom (direct Reddit blocks servers; X needs Agent Reach)",
    "problems": [
@@ -887,15 +889,15 @@
     "r/stocks: HTTP 403 https://www.reddit.com/r/stocks/new.json: <body class=theme-beta><div><"
    ],
    "wsb": {
-    "at": "2026-11-25T14:36:49Z",
-    "tickers": 50,
+    "at": "2026-11-25T15:53:16Z",
+    "tickers": 12,
     "items": 0,
     "key": false
    },
    "ape": {
-    "at": "2026-11-25T14:36:50Z",
+    "at": "2026-11-25T15:53:16Z",
     "tickers": 200,
-    "items": 1,
+    "items": 0,
     "problems": []
    }
   },
@@ -910,13 +912,13 @@
    "id": "ahq-dip-UMMA-20261125145200",
    "symbol": "UMMA",
    "asset": "stock",
-   "status": "pending",
+   "status": "open",
    "strategy": "dip",
    "entryOrderId": "b847d7db-d37f-483a-8ae8-efcc0b65aa9f",
-   "qty": 366,
+   "qty": 366.0,
    "cost": 11294.76,
    "estPrice": 30.86,
-   "entryPrice": 30.86,
+   "entryPrice": 31.37,
    "stop": 28.7,
    "target": 32.09,
    "openedAt": "2026-11-25T14:52:00Z",
@@ -931,19 +933,21 @@
     "confirmation": "SPY -2.93%",
     "publishers": [],
     "tradingAgents": "not used (dip buy)"
-   }
+   },
+   "lastPrice": 31.3,
+   "unrealizedPct": -0.22
   },
   {
    "id": "ahq-dip-SPWO-20261125145159",
    "symbol": "SPWO",
    "asset": "stock",
-   "status": "pending",
+   "status": "open",
    "strategy": "dip",
    "entryOrderId": "ee7ce778-725d-471f-878a-79616bd79f1a",
-   "qty": 421,
+   "qty": 421.0,
    "cost": 11316.48,
    "estPrice": 26.88,
-   "entryPrice": 26.88,
+   "entryPrice": 26.76,
    "stop": 25.0,
    "target": 27.96,
    "openedAt": "2026-11-25T14:52:00Z",
@@ -958,19 +962,21 @@
     "confirmation": "SPY -2.93%",
     "publishers": [],
     "tradingAgents": "not used (dip buy)"
-   }
+   },
+   "lastPrice": 26.78,
+   "unrealizedPct": 0.07
   },
   {
    "id": "ahq-core-HLAL-20261125145147",
    "symbol": "HLAL",
    "asset": "stock",
-   "status": "pending",
+   "status": "open",
    "strategy": "core",
    "entryOrderId": "71a91d9e-f5f3-4a22-a8f6-be5cf3200ffd",
-   "qty": 256,
+   "qty": 256.0,
    "cost": 16883.2,
    "estPrice": 65.95,
-   "entryPrice": 65.95,
+   "entryPrice": 63.71,
    "stop": 59.36,
    "target": 98.93,
    "openedAt": "2026-11-25T14:51:47Z",
@@ -985,19 +991,21 @@
     "confirmation": "50% of the budget",
     "publishers": [],
     "tradingAgents": "not used (core)"
-   }
+   },
+   "lastPrice": 63.63,
+   "unrealizedPct": -0.13
   },
   {
    "id": "ahq-core-SPUS-20261125145147",
    "symbol": "SPUS",
    "asset": "stock",
-   "status": "pending",
+   "status": "open",
    "strategy": "core",
    "entryOrderId": "574aafa3-b47d-491a-9bda-02ef6ba9af4c",
-   "qty": 324,
+   "qty": 324.0,
    "cost": 16899.84,
    "estPrice": 52.16,
-   "entryPrice": 52.16,
+   "entryPrice": 52.24,
    "stop": 46.94,
    "target": 78.24,
    "openedAt": "2026-11-25T14:51:47Z",
@@ -1012,7 +1020,9 @@
     "confirmation": "50% of the budget",
     "publishers": [],
     "tradingAgents": "not used (core)"
-   }
+   },
+   "lastPrice": 52.32,
+   "unrealizedPct": 0.13
   },
   {
    "id": "ahq-core-SPUS-20261124145913",
@@ -1040,8 +1050,8 @@
     "publishers": [],
     "tradingAgents": "not used (core)"
    },
-   "lastPrice": 52.266,
-   "unrealizedPct": -3.54
+   "lastPrice": 52.32,
+   "unrealizedPct": 0.13
   }
  ],
  "charts": {
@@ -1330,6 +1340,58 @@
     [
      "2026-11-25T14:50:00Z",
      90584.51
+    ],
+    [
+     "2026-11-25T14:55:00Z",
+     90753.85
+    ],
+    [
+     "2026-11-25T15:00:00Z",
+     91052.49
+    ],
+    [
+     "2026-11-25T15:05:00Z",
+     91105.41
+    ],
+    [
+     "2026-11-25T15:10:00Z",
+     90988.44
+    ],
+    [
+     "2026-11-25T15:15:00Z",
+     90858.28
+    ],
+    [
+     "2026-11-25T15:20:00Z",
+     90643.59
+    ],
+    [
+     "2026-11-25T15:25:00Z",
+     90570.59
+    ],
+    [
+     "2026-11-25T15:30:00Z",
+     90520.55
+    ],
+    [
+     "2026-11-25T15:35:00Z",
+     90692.52
+    ],
+    [
+     "2026-11-25T15:40:00Z",
+     90763.47
+    ],
+    [
+     "2026-11-25T15:45:00Z",
+     90633.16
+    ],
+    [
+     "2026-11-25T15:50:00Z",
+     90551.34
+    ],
+    [
+     "2026-11-25T15:55:00Z",
+     90616.71
     ]
    ],
    "1W": [
@@ -2468,17 +2530,33 @@
     [
      "2026-11-25T14:45:00Z",
      90584.29
+    ],
+    [
+     "2026-11-25T15:00:00Z",
+     91052.49
+    ],
+    [
+     "2026-11-25T15:15:00Z",
+     90858.28
+    ],
+    [
+     "2026-11-25T15:30:00Z",
+     90520.55
+    ],
+    [
+     "2026-11-25T15:45:00Z",
+     90633.16
     ]
    ]
   },
   "holdings": {
    "UMMA": {
     "bars": [],
-    "entry": 30.86,
+    "entry": 31.37,
     "stop": 28.7,
     "target": 32.09,
     "openedAt": "2026-11-25T14:52:00Z",
-    "qty": 366
+    "qty": 366.0
    },
    "SPWO": {
     "bars": [
@@ -2517,13 +2595,17 @@
      [
       "2026-11-25T14:30:00Z",
       26.88
+     ],
+     [
+      "2026-11-25T15:30:00Z",
+      26.87
      ]
     ],
-    "entry": 26.88,
+    "entry": 26.76,
     "stop": 25.0,
     "target": 27.96,
     "openedAt": "2026-11-25T14:52:00Z",
-    "qty": 421
+    "qty": 421.0
    },
    "HLAL": {
     "bars": [
@@ -2550,13 +2632,17 @@
      [
       "2026-11-24T20:45:00Z",
       65.95
+     ],
+     [
+      "2026-11-25T15:30:00Z",
+      63.79
      ]
     ],
-    "entry": 65.95,
+    "entry": 63.71,
     "stop": 59.36,
     "target": 98.93,
     "openedAt": "2026-11-25T14:51:47Z",
-    "qty": 256
+    "qty": 256.0
    },
    "SPUS": {
     "bars": [
@@ -2710,7 +2796,23 @@
      ],
      [
       "2026-11-25T14:45:00Z",
-      52.16
+      52.36
+     ],
+     [
+      "2026-11-25T15:00:00Z",
+      52.57
+     ],
+     [
+      "2026-11-25T15:15:00Z",
+      52.205
+     ],
+     [
+      "2026-11-25T15:30:00Z",
+      52.26
+     ],
+     [
+      "2026-11-25T15:45:00Z",
+      52.32
      ]
     ],
     "entry": 54.185,
@@ -3039,18 +3141,19 @@
   "corePct": 50,
   "backtest": null
  },
+ "lab": null,
  "trades": [
   {
    "id": "ahq-dip-UMMA-20261125145200",
    "symbol": "UMMA",
    "asset": "stock",
-   "status": "pending",
+   "status": "open",
    "strategy": "dip",
    "entryOrderId": "b847d7db-d37f-483a-8ae8-efcc0b65aa9f",
-   "qty": 366,
+   "qty": 366.0,
    "cost": 11294.76,
    "estPrice": 30.86,
-   "entryPrice": 30.86,
+   "entryPrice": 31.37,
    "stop": 28.7,
    "target": 32.09,
    "openedAt": "2026-11-25T14:52:00Z",
@@ -3065,19 +3168,21 @@
     "confirmation": "SPY -2.93%",
     "publishers": [],
     "tradingAgents": "not used (dip buy)"
-   }
+   },
+   "lastPrice": 31.3,
+   "unrealizedPct": -0.22
   },
   {
    "id": "ahq-dip-SPWO-20261125145159",
    "symbol": "SPWO",
    "asset": "stock",
-   "status": "pending",
+   "status": "open",
    "strategy": "dip",
    "entryOrderId": "ee7ce778-725d-471f-878a-79616bd79f1a",
-   "qty": 421,
+   "qty": 421.0,
    "cost": 11316.48,
    "estPrice": 26.88,
-   "entryPrice": 26.88,
+   "entryPrice": 26.76,
    "stop": 25.0,
    "target": 27.96,
    "openedAt": "2026-11-25T14:52:00Z",
@@ -3092,19 +3197,21 @@
     "confirmation": "SPY -2.93%",
     "publishers": [],
     "tradingAgents": "not used (dip buy)"
-   }
+   },
+   "lastPrice": 26.78,
+   "unrealizedPct": 0.07
   },
   {
    "id": "ahq-core-HLAL-20261125145147",
    "symbol": "HLAL",
    "asset": "stock",
-   "status": "pending",
+   "status": "open",
    "strategy": "core",
    "entryOrderId": "71a91d9e-f5f3-4a22-a8f6-be5cf3200ffd",
-   "qty": 256,
+   "qty": 256.0,
    "cost": 16883.2,
    "estPrice": 65.95,
-   "entryPrice": 65.95,
+   "entryPrice": 63.71,
    "stop": 59.36,
    "target": 98.93,
    "openedAt": "2026-11-25T14:51:47Z",
@@ -3119,19 +3226,21 @@
     "confirmation": "50% of the budget",
     "publishers": [],
     "tradingAgents": "not used (core)"
-   }
+   },
+   "lastPrice": 63.63,
+   "unrealizedPct": -0.13
   },
   {
    "id": "ahq-core-SPUS-20261125145147",
    "symbol": "SPUS",
    "asset": "stock",
-   "status": "pending",
+   "status": "open",
    "strategy": "core",
    "entryOrderId": "574aafa3-b47d-491a-9bda-02ef6ba9af4c",
-   "qty": 324,
+   "qty": 324.0,
    "cost": 16899.84,
    "estPrice": 52.16,
-   "entryPrice": 52.16,
+   "entryPrice": 52.24,
    "stop": 46.94,
    "target": 78.24,
    "openedAt": "2026-11-25T14:51:47Z",
@@ -3146,7 +3255,9 @@
     "confirmation": "50% of the budget",
     "publishers": [],
     "tradingAgents": "not used (core)"
-   }
+   },
+   "lastPrice": 52.32,
+   "unrealizedPct": 0.13
   },
   {
    "id": "ahq-PLTR-20261124164652",
@@ -3379,8 +3490,8 @@
     "publishers": [],
     "tradingAgents": "not used (core)"
    },
-   "lastPrice": 52.266,
-   "unrealizedPct": -3.54
+   "lastPrice": 52.32,
+   "unrealizedPct": 0.13
   },
   {
    "id": "ahq-NVDA-20261124145910",
@@ -4835,428 +4946,427 @@
  ],
  "decisions": [
   {
-   "t": "2026-11-25T14:52:00Z",
-   "symbol": "UMMA",
-   "outcome": "bought",
-   "why": "buy the dip: SPY -2.93% today"
-  },
-  {
-   "t": "2026-11-25T14:52:00Z",
-   "symbol": "SPWO",
-   "outcome": "bought",
-   "why": "buy the dip: SPY -2.93% today"
-  },
-  {
-   "t": "2026-11-25T14:51:59Z",
-   "symbol": "VLO",
-   "outcome": "waiting",
-   "why": "down 3% today, no new trades until tomorrow",
-   "event": "Renewed drone attacks on refineries and shipping near the Strait of Hormuz escalate regional conflict and oil supply risks."
-  },
-  {
-   "t": "2026-11-25T14:51:59Z",
+   "t": "2026-11-25T15:57:10Z",
    "symbol": "SLB",
    "outcome": "waiting",
    "why": "down 3% today, no new trades until tomorrow",
    "event": "Renewed drone attacks on refineries and shipping near the Strait of Hormuz escalate regional conflict and oil supply risks."
   },
   {
-   "t": "2026-11-25T14:51:59Z",
-   "symbol": "CRM",
-   "outcome": "waiting",
-   "why": "down 3% today, no new trades until tomorrow",
-   "event": "Workday reported Q3 revenue growth and earnings that beat expectations."
-  },
-  {
-   "t": "2026-11-25T14:51:58Z",
-   "symbol": "PSX",
-   "outcome": "waiting",
-   "why": "down 3% today, no new trades until tomorrow",
-   "event": "Renewed drone attacks on refineries and shipping near the Strait of Hormuz escalate regional conflict and oil supply risks."
-  },
-  {
-   "t": "2026-11-25T14:51:58Z",
-   "symbol": "GE",
-   "outcome": "waiting",
-   "why": "down 3% today, no new trades until tomorrow",
-   "event": "General Electric's aerospace unit secured a significant order for GEnx engines from Malaysia Aviation Group."
-  },
-  {
-   "t": "2026-11-25T14:51:58Z",
-   "symbol": "APA",
-   "outcome": "waiting",
-   "why": "down 3% today, no new trades until tomorrow",
-   "event": "Renewed drone attacks on refineries and shipping near the Strait of Hormuz escalate regional conflict and oil supply risks."
-  },
-  {
-   "t": "2026-11-25T14:51:58Z",
-   "symbol": "OXY",
-   "outcome": "waiting",
-   "why": "down 3% today, no new trades until tomorrow",
-   "event": "Renewed drone attacks on Saudi financial centers and Hodeidah port escalate Middle East conflict risks."
-  },
-  {
-   "t": "2026-11-25T14:51:58Z",
-   "symbol": "EOG",
-   "outcome": "waiting",
-   "why": "down 3% today, no new trades until tomorrow",
-   "event": "Renewed drone attacks on refineries and shipping near the Strait of Hormuz escalate regional conflict and oil supply risks."
-  },
-  {
-   "t": "2026-11-25T14:51:57Z",
-   "symbol": "COP",
-   "outcome": "waiting",
-   "why": "down 3% today, no new trades until tomorrow",
-   "event": "Renewed drone attacks on Saudi financial centers and naval mines hitting oil tankers near the Strait of Hormuz escalate regional conflict and oil supply disruption risks."
-  },
-  {
-   "t": "2026-11-25T14:51:57Z",
-   "symbol": "PLTR",
-   "outcome": "waiting",
-   "why": "down 3% today, no new trades until tomorrow",
-   "event": "Renewed drone attacks on Saudi financial centers and Hodeidah port escalate Middle East conflict risks."
-  },
-  {
-   "t": "2026-11-25T14:51:57Z",
-   "symbol": "OXY",
-   "outcome": "waiting",
-   "why": "down 3% today, no new trades until tomorrow",
-   "event": "Renewed drone attacks on refineries and shipping near the Strait of Hormuz escalate regional conflict and oil supply risks."
-  },
-  {
-   "t": "2026-11-25T14:51:57Z",
-   "symbol": "NVDA",
-   "outcome": "waiting",
-   "why": "down 3% today, no new trades until tomorrow",
-   "event": "Workday reported Q3 revenue growth and earnings that beat expectations."
-  },
-  {
-   "t": "2026-11-25T14:51:56Z",
-   "symbol": "XOM",
-   "outcome": "waiting",
-   "why": "down 3% today, no new trades until tomorrow",
-   "event": "Renewed drone attacks on Saudi financial centers and Hodeidah port escalate Middle East conflict risks."
-  },
-  {
-   "t": "2026-11-25T14:51:56Z",
-   "symbol": "COP",
-   "outcome": "waiting",
-   "why": "down 3% today, no new trades until tomorrow",
-   "event": "Renewed drone attacks on refineries and shipping near the Strait of Hormuz escalate regional conflict and oil supply risks."
-  },
-  {
-   "t": "2026-11-25T14:51:56Z",
-   "symbol": "FANG",
-   "outcome": "waiting",
-   "why": "down 3% today, no new trades until tomorrow",
-   "event": "Renewed drone attacks on refineries and shipping near the Strait of Hormuz escalate regional conflict and oil supply risks."
-  },
-  {
-   "t": "2026-11-25T14:51:56Z",
+   "t": "2026-11-25T15:57:10Z",
    "symbol": "XOM",
    "outcome": "waiting",
    "why": "down 3% today, no new trades until tomorrow",
    "event": "Ongoing Middle East conflict continues to escalate regional supply risks and drive up fuel costs."
   },
   {
-   "t": "2026-11-25T14:51:56Z",
-   "symbol": "OXY",
+   "t": "2026-11-25T15:57:09Z",
+   "symbol": "PLTR",
    "outcome": "waiting",
    "why": "down 3% today, no new trades until tomorrow",
-   "event": "Saudi Arabia affirms it can fund a prolonged war with unlimited military spending as ongoing Middle East conflicts continue to escalate regional supply risks."
+   "event": "Renewed drone attacks on Saudi financial centers and Hodeidah port escalate Middle East conflict risks."
   },
   {
-   "t": "2026-11-25T14:51:55Z",
-   "symbol": "DVN",
+   "t": "2026-11-25T15:57:09Z",
+   "symbol": "CVX",
    "outcome": "waiting",
    "why": "down 3% today, no new trades until tomorrow",
-   "event": "Renewed drone attacks on refineries and shipping near the Strait of Hormuz escalate regional conflict and oil supply risks."
+   "event": "Renewed drone attacks on Saudi financial centers and Hodeidah port escalate Middle East conflict risks."
   },
   {
-   "t": "2026-11-25T14:51:55Z",
+   "t": "2026-11-25T15:57:09Z",
+   "symbol": "XOM",
+   "outcome": "waiting",
+   "why": "down 3% today, no new trades until tomorrow",
+   "event": "Renewed drone attacks on Saudi financial centers and naval mines hitting oil tankers near the Strait of Hormuz escalate regional conflict and oil supply disruption risks."
+  },
+  {
+   "t": "2026-11-25T15:57:09Z",
+   "symbol": "CVX",
+   "outcome": "waiting",
+   "why": "down 3% today, no new trades until tomorrow",
+   "event": "Ongoing Middle East conflict continues to escalate regional supply risks and drive up fuel costs."
+  },
+  {
+   "t": "2026-11-25T15:57:09Z",
    "symbol": "XOM",
    "outcome": "waiting",
    "why": "down 3% today, no new trades until tomorrow",
    "event": "Saudi Arabia affirms it can fund a prolonged war with unlimited military spending as ongoing Middle East conflicts continue to escalate regional supply risks."
   },
   {
-   "t": "2026-11-25T14:51:55Z",
-   "symbol": "HAL",
-   "outcome": "waiting",
-   "why": "down 3% today, no new trades until tomorrow",
-   "event": "Renewed drone attacks on refineries and shipping near the Strait of Hormuz escalate regional conflict and oil supply risks."
-  },
-  {
-   "t": "2026-11-25T14:51:55Z",
-   "symbol": "NVDA",
-   "outcome": "waiting",
-   "why": "down 3% today, no new trades until tomorrow",
-   "event": "Dell reported a significant Q3 earnings beat with strong AI server demand."
-  },
-  {
-   "t": "2026-11-25T14:51:54Z",
-   "symbol": "VRTX",
-   "outcome": "waiting",
-   "why": "down 3% today, no new trades until tomorrow",
-   "event": "Vertex Pharmaceuticals extended its drug discovery and validation collaboration with Genomics Limited for four years."
-  },
-  {
-   "t": "2026-11-25T14:51:54Z",
-   "symbol": "SMCI",
-   "outcome": "waiting",
-   "why": "down 3% today, no new trades until tomorrow",
-   "event": "Dell reported a significant Q3 earnings beat with strong AI server demand."
-  },
-  {
-   "t": "2026-11-25T14:51:53Z",
+   "t": "2026-11-25T15:57:08Z",
    "symbol": "CVX",
    "outcome": "waiting",
    "why": "down 3% today, no new trades until tomorrow",
    "event": "Saudi Arabia affirms it can fund a prolonged war with unlimited military spending as ongoing Middle East conflicts continue to escalate regional supply risks."
   },
   {
-   "t": "2026-11-25T14:51:51Z",
-   "symbol": "AVAV",
+   "t": "2026-11-25T15:57:08Z",
+   "symbol": "VRTX",
    "outcome": "waiting",
-   "why": "price hasn't moved the expected way yet (-3.47%)",
+   "why": "down 3% today, no new trades until tomorrow",
+   "event": "Vertex Pharmaceuticals extended its drug discovery and validation collaboration with Genomics Limited for four years."
+  },
+  {
+   "t": "2026-11-25T15:57:08Z",
+   "symbol": "DVN",
+   "outcome": "waiting",
+   "why": "down 3% today, no new trades until tomorrow",
+   "event": "Renewed drone attacks on refineries and shipping near the Strait of Hormuz escalate regional conflict and oil supply risks."
+  },
+  {
+   "t": "2026-11-25T15:57:08Z",
+   "symbol": "COP",
+   "outcome": "waiting",
+   "why": "down 3% today, no new trades until tomorrow",
    "event": "Renewed drone attacks on Saudi financial centers and naval mines hitting oil tankers near the Strait of Hormuz escalate regional conflict and oil supply disruption risks."
   },
   {
-   "t": "2026-11-25T14:51:47Z",
-   "symbol": "HLAL",
-   "outcome": "bought",
-   "why": "core holding: rides the market"
-  },
-  {
-   "t": "2026-11-25T14:51:47Z",
-   "symbol": "SPUS",
-   "outcome": "bought",
-   "why": "core holding: rides the market"
-  },
-  {
-   "t": "2026-11-24T20:28:13Z",
-   "symbol": "TSLA",
+   "t": "2026-11-25T15:57:07Z",
+   "symbol": "CRM",
    "outcome": "waiting",
-   "why": "already $69,522 invested (max 75% of $92,876)",
-   "event": "Seaport Global initiates coverage of Tesla with a Buy rating and $475 price target, highlighting substantial robotaxi revenue potential."
+   "why": "down 3% today, no new trades until tomorrow",
+   "event": "Workday reported Q3 revenue growth and earnings that beat expectations."
   },
   {
-   "t": "2026-11-24T20:28:13Z",
+   "t": "2026-11-25T15:57:07Z",
+   "symbol": "COP",
+   "outcome": "waiting",
+   "why": "down 3% today, no new trades until tomorrow",
+   "event": "Renewed drone attacks on refineries and shipping near the Strait of Hormuz escalate regional conflict and oil supply risks."
+  },
+  {
+   "t": "2026-11-25T15:57:07Z",
+   "symbol": "HAL",
+   "outcome": "waiting",
+   "why": "down 3% today, no new trades until tomorrow",
+   "event": "Renewed drone attacks on refineries and shipping near the Strait of Hormuz escalate regional conflict and oil supply risks."
+  },
+  {
+   "t": "2026-11-25T15:57:07Z",
+   "symbol": "SMCI",
+   "outcome": "waiting",
+   "why": "down 3% today, no new trades until tomorrow",
+   "event": "Dell reported a significant Q3 earnings beat with strong AI server demand."
+  },
+  {
+   "t": "2026-11-25T15:57:07Z",
+   "symbol": "OXY",
+   "outcome": "waiting",
+   "why": "down 3% today, no new trades until tomorrow",
+   "event": "Renewed drone attacks on Saudi financial centers and Hodeidah port escalate Middle East conflict risks."
+  },
+  {
+   "t": "2026-11-25T15:57:07Z",
+   "symbol": "FANG",
+   "outcome": "waiting",
+   "why": "down 3% today, no new trades until tomorrow",
+   "event": "Renewed drone attacks on refineries and shipping near the Strait of Hormuz escalate regional conflict and oil supply risks."
+  },
+  {
+   "t": "2026-11-25T15:57:06Z",
+   "symbol": "OXY",
+   "outcome": "waiting",
+   "why": "down 3% today, no new trades until tomorrow",
+   "event": "Ongoing Middle East conflict continues to escalate regional supply risks and drive up fuel costs."
+  },
+  {
+   "t": "2026-11-25T15:57:06Z",
+   "symbol": "NVDA",
+   "outcome": "waiting",
+   "why": "down 3% today, no new trades until tomorrow",
+   "event": "Workday reported Q3 revenue growth and earnings that beat expectations."
+  },
+  {
+   "t": "2026-11-25T15:57:06Z",
+   "symbol": "OXY",
+   "outcome": "waiting",
+   "why": "down 3% today, no new trades until tomorrow",
+   "event": "Renewed drone attacks on refineries and shipping near the Strait of Hormuz escalate regional conflict and oil supply risks."
+  },
+  {
+   "t": "2026-11-25T15:57:06Z",
+   "symbol": "GE",
+   "outcome": "waiting",
+   "why": "down 3% today, no new trades until tomorrow",
+   "event": "General Electric's aerospace unit secured a significant order for GEnx engines from Malaysia Aviation Group."
+  },
+  {
+   "t": "2026-11-25T15:57:06Z",
+   "symbol": "OXY",
+   "outcome": "waiting",
+   "why": "down 3% today, no new trades until tomorrow",
+   "event": "Saudi Arabia affirms it can fund a prolonged war with unlimited military spending as ongoing Middle East conflicts continue to escalate regional supply risks."
+  },
+  {
+   "t": "2026-11-25T15:57:06Z",
+   "symbol": "PSX",
+   "outcome": "waiting",
+   "why": "down 3% today, no new trades until tomorrow",
+   "event": "Renewed drone attacks on refineries and shipping near the Strait of Hormuz escalate regional conflict and oil supply risks."
+  },
+  {
+   "t": "2026-11-25T15:57:05Z",
+   "symbol": "APA",
+   "outcome": "waiting",
+   "why": "down 3% today, no new trades until tomorrow",
+   "event": "Renewed drone attacks on refineries and shipping near the Strait of Hormuz escalate regional conflict and oil supply risks."
+  },
+  {
+   "t": "2026-11-25T15:57:05Z",
+   "symbol": "NVDA",
+   "outcome": "waiting",
+   "why": "down 3% today, no new trades until tomorrow",
+   "event": "Dell reported a significant Q3 earnings beat with strong AI server demand."
+  },
+  {
+   "t": "2026-11-25T15:57:05Z",
+   "symbol": "VLO",
+   "outcome": "waiting",
+   "why": "down 3% today, no new trades until tomorrow",
+   "event": "Renewed drone attacks on refineries and shipping near the Strait of Hormuz escalate regional conflict and oil supply risks."
+  },
+  {
+   "t": "2026-11-25T15:57:05Z",
+   "symbol": "EOG",
+   "outcome": "waiting",
+   "why": "down 3% today, no new trades until tomorrow",
+   "event": "Renewed drone attacks on refineries and shipping near the Strait of Hormuz escalate regional conflict and oil supply risks."
+  },
+  {
+   "t": "2026-11-25T15:57:02Z",
    "symbol": "AVAV",
    "outcome": "waiting",
-   "why": "already holding it",
-   "event": "Continued Houthi missile and drone strikes targeting financial and oil infrastructure in Saudi Arabia escalate regional Middle East conflict risks."
+   "why": "price hasn't moved the expected way yet (-3.43%)",
+   "event": "Renewed drone attacks on Saudi financial centers and naval mines hitting oil tankers near the Strait of Hormuz escalate regional conflict and oil supply disruption risks."
   },
   {
-   "t": "2026-11-24T20:23:09Z",
-   "symbol": "TSLA",
+   "t": "2026-11-25T15:46:44Z",
+   "symbol": "SLB",
    "outcome": "waiting",
-   "why": "already $69,559 invested (max 75% of $92,913)",
-   "event": "Seaport Global initiates coverage of Tesla with a Buy rating and $475 price target, highlighting substantial robotaxi revenue potential."
+   "why": "down 3% today, no new trades until tomorrow",
+   "event": "Renewed drone attacks on refineries and shipping near the Strait of Hormuz escalate regional conflict and oil supply risks."
   },
   {
-   "t": "2026-11-24T20:23:09Z",
+   "t": "2026-11-25T15:46:44Z",
+   "symbol": "PLTR",
+   "outcome": "waiting",
+   "why": "down 3% today, no new trades until tomorrow",
+   "event": "Renewed drone attacks on Saudi financial centers and Hodeidah port escalate Middle East conflict risks."
+  },
+  {
+   "t": "2026-11-25T15:46:43Z",
+   "symbol": "VLO",
+   "outcome": "waiting",
+   "why": "down 3% today, no new trades until tomorrow",
+   "event": "Renewed drone attacks on refineries and shipping near the Strait of Hormuz escalate regional conflict and oil supply risks."
+  },
+  {
+   "t": "2026-11-25T15:46:43Z",
+   "symbol": "XOM",
+   "outcome": "waiting",
+   "why": "down 3% today, no new trades until tomorrow",
+   "event": "Saudi Arabia affirms it can fund a prolonged war with unlimited military spending as ongoing Middle East conflicts continue to escalate regional supply risks."
+  },
+  {
+   "t": "2026-11-25T15:46:42Z",
+   "symbol": "COP",
+   "outcome": "waiting",
+   "why": "down 3% today, no new trades until tomorrow",
+   "event": "Renewed drone attacks on Saudi financial centers and naval mines hitting oil tankers near the Strait of Hormuz escalate regional conflict and oil supply disruption risks."
+  },
+  {
+   "t": "2026-11-25T15:46:42Z",
+   "symbol": "APA",
+   "outcome": "waiting",
+   "why": "down 3% today, no new trades until tomorrow",
+   "event": "Renewed drone attacks on refineries and shipping near the Strait of Hormuz escalate regional conflict and oil supply risks."
+  },
+  {
+   "t": "2026-11-25T15:46:42Z",
+   "symbol": "COP",
+   "outcome": "waiting",
+   "why": "down 3% today, no new trades until tomorrow",
+   "event": "Renewed drone attacks on refineries and shipping near the Strait of Hormuz escalate regional conflict and oil supply risks."
+  },
+  {
+   "t": "2026-11-25T15:46:42Z",
+   "symbol": "DVN",
+   "outcome": "waiting",
+   "why": "down 3% today, no new trades until tomorrow",
+   "event": "Renewed drone attacks on refineries and shipping near the Strait of Hormuz escalate regional conflict and oil supply risks."
+  },
+  {
+   "t": "2026-11-25T15:46:42Z",
+   "symbol": "CVX",
+   "outcome": "waiting",
+   "why": "down 3% today, no new trades until tomorrow",
+   "event": "Geopolitical conflicts and supply issues continue to impact oil and aviation costs, withEasyJet reporting a massive profit collapse due to the Iran war fuel bill."
+  },
+  {
+   "t": "2026-11-25T15:46:41Z",
+   "symbol": "FANG",
+   "outcome": "waiting",
+   "why": "down 3% today, no new trades until tomorrow",
+   "event": "Renewed drone attacks on refineries and shipping near the Strait of Hormuz escalate regional conflict and oil supply risks."
+  },
+  {
+   "t": "2026-11-25T15:46:41Z",
+   "symbol": "CVX",
+   "outcome": "waiting",
+   "why": "down 3% today, no new trades until tomorrow",
+   "event": "Renewed drone attacks on Saudi financial centers and Hodeidah port escalate Middle East conflict risks."
+  },
+  {
+   "t": "2026-11-25T15:46:41Z",
+   "symbol": "GE",
+   "outcome": "waiting",
+   "why": "down 3% today, no new trades until tomorrow",
+   "event": "General Electric's aerospace unit secured a significant order for GEnx engines from Malaysia Aviation Group."
+  },
+  {
+   "t": "2026-11-25T15:46:41Z",
+   "symbol": "VRTX",
+   "outcome": "waiting",
+   "why": "down 3% today, no new trades until tomorrow",
+   "event": "Vertex Pharmaceuticals extended its drug discovery and validation collaboration with Genomics Limited for four years."
+  },
+  {
+   "t": "2026-11-25T15:46:41Z",
+   "symbol": "CVX",
+   "outcome": "waiting",
+   "why": "down 3% today, no new trades until tomorrow",
+   "event": "Ongoing Middle East conflict continues to escalate regional supply risks and drive up fuel costs."
+  },
+  {
+   "t": "2026-11-25T15:46:40Z",
+   "symbol": "CRM",
+   "outcome": "waiting",
+   "why": "down 3% today, no new trades until tomorrow",
+   "event": "Workday reported Q3 revenue growth and earnings that beat expectations."
+  },
+  {
+   "t": "2026-11-25T15:46:40Z",
+   "symbol": "HAL",
+   "outcome": "waiting",
+   "why": "down 3% today, no new trades until tomorrow",
+   "event": "Renewed drone attacks on refineries and shipping near the Strait of Hormuz escalate regional conflict and oil supply risks."
+  },
+  {
+   "t": "2026-11-25T15:46:40Z",
+   "symbol": "CVX",
+   "outcome": "waiting",
+   "why": "down 3% today, no new trades until tomorrow",
+   "event": "Saudi Arabia affirms it can fund a prolonged war with unlimited military spending as ongoing Middle East conflicts continue to escalate regional supply risks."
+  },
+  {
+   "t": "2026-11-25T15:46:40Z",
+   "symbol": "SMCI",
+   "outcome": "waiting",
+   "why": "down 3% today, no new trades until tomorrow",
+   "event": "Dell reported a significant Q3 earnings beat with strong AI server demand."
+  },
+  {
+   "t": "2026-11-25T15:46:40Z",
+   "symbol": "OXY",
+   "outcome": "waiting",
+   "why": "down 3% today, no new trades until tomorrow",
+   "event": "Renewed drone attacks on Saudi financial centers and Hodeidah port escalate Middle East conflict risks."
+  },
+  {
+   "t": "2026-11-25T15:46:39Z",
+   "symbol": "PSX",
+   "outcome": "waiting",
+   "why": "down 3% today, no new trades until tomorrow",
+   "event": "Renewed drone attacks on refineries and shipping near the Strait of Hormuz escalate regional conflict and oil supply risks."
+  },
+  {
+   "t": "2026-11-25T15:46:39Z",
+   "symbol": "NVDA",
+   "outcome": "waiting",
+   "why": "down 3% today, no new trades until tomorrow",
+   "event": "Workday reported Q3 revenue growth and earnings that beat expectations."
+  },
+  {
+   "t": "2026-11-25T15:46:39Z",
+   "symbol": "OXY",
+   "outcome": "waiting",
+   "why": "down 3% today, no new trades until tomorrow",
+   "event": "Saudi Arabia affirms it can fund a prolonged war with unlimited military spending as ongoing Middle East conflicts continue to escalate regional supply risks."
+  },
+  {
+   "t": "2026-11-25T15:46:39Z",
+   "symbol": "NVDA",
+   "outcome": "waiting",
+   "why": "down 3% today, no new trades until tomorrow",
+   "event": "Dell reported a significant Q3 earnings beat with strong AI server demand."
+  },
+  {
+   "t": "2026-11-25T15:46:38Z",
+   "symbol": "EOG",
+   "outcome": "waiting",
+   "why": "down 3% today, no new trades until tomorrow",
+   "event": "Renewed drone attacks on refineries and shipping near the Strait of Hormuz escalate regional conflict and oil supply risks."
+  },
+  {
+   "t": "2026-11-25T15:46:36Z",
    "symbol": "AVAV",
    "outcome": "waiting",
-   "why": "already holding it",
-   "event": "Continued Houthi missile and drone strikes targeting financial and oil infrastructure in Saudi Arabia escalate regional Middle East conflict risks."
+   "why": "price hasn't moved the expected way yet (-3.53%)",
+   "event": "Renewed drone attacks on Saudi financial centers and naval mines hitting oil tankers near the Strait of Hormuz escalate regional conflict and oil supply disruption risks."
   },
   {
-   "t": "2026-11-24T20:18:03Z",
-   "symbol": "TSLA",
+   "t": "2026-11-25T15:41:28Z",
+   "symbol": "SLB",
    "outcome": "waiting",
-   "why": "already $69,662 invested (max 75% of $93,016)",
-   "event": "Seaport Global initiates coverage of Tesla with a Buy rating and $475 price target, highlighting substantial robotaxi revenue potential."
+   "why": "down 3% today, no new trades until tomorrow",
+   "event": "Renewed drone attacks on refineries and shipping near the Strait of Hormuz escalate regional conflict and oil supply risks."
   },
   {
-   "t": "2026-11-24T20:18:03Z",
-   "symbol": "AVAV",
+   "t": "2026-11-25T15:41:27Z",
+   "symbol": "PLTR",
    "outcome": "waiting",
-   "why": "already holding it",
-   "event": "Continued Houthi missile and drone strikes targeting financial and oil infrastructure in Saudi Arabia escalate regional Middle East conflict risks."
+   "why": "down 3% today, no new trades until tomorrow",
+   "event": "Renewed drone attacks on Saudi financial centers and Hodeidah port escalate Middle East conflict risks."
   },
   {
-   "t": "2026-11-24T20:12:57Z",
-   "symbol": "TSLA",
+   "t": "2026-11-25T15:41:27Z",
+   "symbol": "APA",
    "outcome": "waiting",
-   "why": "already $69,707 invested (max 75% of $93,060)",
-   "event": "Seaport Global initiates coverage of Tesla with a Buy rating and $475 price target, highlighting substantial robotaxi revenue potential."
+   "why": "down 3% today, no new trades until tomorrow",
+   "event": "Renewed drone attacks on refineries and shipping near the Strait of Hormuz escalate regional conflict and oil supply risks."
   },
   {
-   "t": "2026-11-24T20:12:56Z",
-   "symbol": "AVAV",
+   "t": "2026-11-25T15:41:26Z",
+   "symbol": "XOM",
    "outcome": "waiting",
-   "why": "already holding it",
-   "event": "Continued Houthi missile and drone strikes targeting financial and oil infrastructure in Saudi Arabia escalate regional Middle East conflict risks."
+   "why": "down 3% today, no new trades until tomorrow",
+   "event": "Ongoing Middle East conflict continues to escalate regional supply risks and drive up fuel costs."
   },
   {
-   "t": "2026-11-24T20:07:51Z",
-   "symbol": "TSLA",
+   "t": "2026-11-25T15:41:26Z",
+   "symbol": "DVN",
    "outcome": "waiting",
-   "why": "already $69,643 invested (max 75% of $92,997)",
-   "event": "Seaport Global initiates coverage of Tesla with a Buy rating and $475 price target, highlighting substantial robotaxi revenue potential."
+   "why": "down 3% today, no new trades until tomorrow",
+   "event": "Saudi Arabia affirms it can fund a prolonged war with unlimited military spending as ongoing Middle East conflicts continue to escalate regional supply risks."
   },
   {
-   "t": "2026-11-24T20:07:51Z",
-   "symbol": "AVAV",
+   "t": "2026-11-25T15:41:26Z",
+   "symbol": "VLO",
    "outcome": "waiting",
-   "why": "already holding it",
-   "event": "Continued Houthi missile and drone strikes targeting financial and oil infrastructure in Saudi Arabia escalate regional Middle East conflict risks."
+   "why": "down 3% today, no new trades until tomorrow",
+   "event": "Renewed drone attacks on refineries and shipping near the Strait of Hormuz escalate regional conflict and oil supply risks."
   },
   {
-   "t": "2026-11-24T20:01:26Z",
-   "symbol": "TSLA",
+   "t": "2026-11-25T15:41:26Z",
+   "symbol": "DVN",
    "outcome": "waiting",
-   "why": "already $69,691 invested (max 75% of $93,045)",
-   "event": "Seaport Global initiates coverage of Tesla with a Buy rating and $475 price target, highlighting substantial robotaxi revenue potential."
-  },
-  {
-   "t": "2026-11-24T20:01:26Z",
-   "symbol": "AVAV",
-   "outcome": "waiting",
-   "why": "already holding it",
-   "event": "Continued Houthi missile and drone strikes targeting financial and oil infrastructure in Saudi Arabia escalate regional Middle East conflict risks."
-  },
-  {
-   "t": "2026-11-24T19:56:13Z",
-   "symbol": "TSLA",
-   "outcome": "waiting",
-   "why": "already $69,738 invested (max 75% of $93,092)",
-   "event": "Seaport Global initiates coverage of Tesla with a Buy rating and $475 price target, highlighting substantial robotaxi revenue potential."
-  },
-  {
-   "t": "2026-11-24T19:51:07Z",
-   "symbol": "AVAV",
-   "outcome": "waiting",
-   "why": "already holding it",
-   "event": "Continued Houthi missile and drone strikes targeting financial and oil infrastructure in Saudi Arabia escalate regional Middle East conflict risks."
-  },
-  {
-   "t": "2026-11-24T19:51:07Z",
-   "symbol": "TSLA",
-   "outcome": "waiting",
-   "why": "already $69,816 invested (max 75% of $93,170)",
-   "event": "Seaport Global initiates coverage of Tesla with a Buy rating and $475 price target, highlighting substantial robotaxi revenue potential."
-  },
-  {
-   "t": "2026-11-24T19:46:01Z",
-   "symbol": "TSLA",
-   "outcome": "waiting",
-   "why": "already $69,955 invested (max 75% of $93,309)",
-   "event": "Seaport Global initiates coverage of Tesla with a Buy rating and $475 price target, highlighting substantial robotaxi revenue potential."
-  },
-  {
-   "t": "2026-11-24T19:46:01Z",
-   "symbol": "AVAV",
-   "outcome": "waiting",
-   "why": "already holding it",
-   "event": "Continued Houthi missile and drone strikes targeting financial and oil infrastructure in Saudi Arabia escalate regional Middle East conflict risks."
-  },
-  {
-   "t": "2026-11-24T19:40:46Z",
-   "symbol": "TSLA",
-   "outcome": "waiting",
-   "why": "already $69,916 invested (max 75% of $93,270)",
-   "event": "Seaport Global initiates coverage of Tesla with a Buy rating and $475 price target, highlighting substantial robotaxi revenue potential."
-  },
-  {
-   "t": "2026-11-24T19:40:45Z",
-   "symbol": "AVAV",
-   "outcome": "waiting",
-   "why": "already holding it",
-   "event": "Continued Houthi missile and drone strikes targeting financial and oil infrastructure in Saudi Arabia escalate regional Middle East conflict risks."
-  },
-  {
-   "t": "2026-11-24T19:35:27Z",
-   "symbol": "TSLA",
-   "outcome": "waiting",
-   "why": "already $69,992 invested (max 75% of $93,346)",
-   "event": "Seaport Global initiates coverage of Tesla with a Buy rating and $475 price target, highlighting substantial robotaxi revenue potential."
-  },
-  {
-   "t": "2026-11-24T19:35:27Z",
-   "symbol": "AVAV",
-   "outcome": "waiting",
-   "why": "already holding it",
-   "event": "Continued Houthi missile and drone strikes targeting financial and oil infrastructure in Saudi Arabia escalate regional Middle East conflict risks."
-  },
-  {
-   "t": "2026-11-24T19:30:12Z",
-   "symbol": "TSLA",
-   "outcome": "waiting",
-   "why": "already $70,131 invested (max 75% of $93,485)",
-   "event": "Seaport Global initiates coverage of Tesla with a Buy rating and $475 price target, highlighting substantial robotaxi revenue potential."
-  },
-  {
-   "t": "2026-11-24T19:30:11Z",
-   "symbol": "AVAV",
-   "outcome": "waiting",
-   "why": "already holding it",
-   "event": "Continued Houthi missile and drone strikes targeting financial and oil infrastructure in Saudi Arabia escalate regional Middle East conflict risks."
-  },
-  {
-   "t": "2026-11-24T19:24:57Z",
-   "symbol": "TSLA",
-   "outcome": "waiting",
-   "why": "already $70,140 invested (max 75% of $93,494)",
-   "event": "Seaport Global initiates coverage of Tesla with a Buy rating and $475 price target, highlighting substantial robotaxi revenue potential."
-  },
-  {
-   "t": "2026-11-24T19:24:57Z",
-   "symbol": "AVAV",
-   "outcome": "waiting",
-   "why": "already holding it",
-   "event": "Multiple tanker explosions and attacks near the Strait of Hormuz elevate oil supply disruption risks and push crude prices higher."
-  },
-  {
-   "t": "2026-11-24T19:19:50Z",
-   "symbol": "TSLA",
-   "outcome": "waiting",
-   "why": "already $70,206 invested (max 75% of $93,560)",
-   "event": "Seaport Global initiates coverage of Tesla with a Buy rating and $475 price target, highlighting substantial robotaxi revenue potential."
-  },
-  {
-   "t": "2026-11-24T19:19:50Z",
-   "symbol": "AVAV",
-   "outcome": "waiting",
-   "why": "already holding it",
-   "event": "Multiple tanker explosions and attacks near the Strait of Hormuz elevate oil supply disruption risks and push crude prices higher."
-  },
-  {
-   "t": "2026-11-24T19:14:23Z",
-   "symbol": "TSLA",
-   "outcome": "waiting",
-   "why": "already $70,095 invested (max 75% of $93,449)",
-   "event": "Seaport Global initiates coverage of Tesla with a Buy rating and $475 price target, highlighting substantial robotaxi revenue potential."
-  },
-  {
-   "t": "2026-11-24T19:14:23Z",
-   "symbol": "AVAV",
-   "outcome": "waiting",
-   "why": "already holding it",
-   "event": "Multiple tanker explosions and attacks near the Strait of Hormuz elevate oil supply disruption risks and push crude prices higher."
-  },
-  {
-   "t": "2026-11-24T19:09:15Z",
-   "symbol": "TSLA",
-   "outcome": "waiting",
-   "why": "already $70,104 invested (max 75% of $93,458)",
-   "event": "Seaport Global initiates coverage of Tesla with a Buy rating and $475 price target, highlighting substantial robotaxi revenue potential."
-  },
-  {
-   "t": "2026-11-24T19:09:15Z",
-   "symbol": "AVAV",
-   "outcome": "waiting",
-   "why": "already holding it",
-   "event": "Multiple tanker explosions and attacks near the Strait of Hormuz elevate oil supply disruption risks and push crude prices higher."
+   "why": "down 3% today, no new trades until tomorrow",
+   "event": "Renewed drone attacks on refineries and shipping near the Strait of Hormuz escalate regional conflict and oil supply risks."
   }
  ],
  "equity": [
-  {
-   "t": "2026-11-16T23:08:17Z",
-   "equity": 100000.0,
-   "spy": 740.04
-  },
   {
    "t": "2026-11-16T23:39:05Z",
    "equity": 100000.0,
@@ -7251,6 +7361,11 @@
    "t": "2026-11-25T14:52:00Z",
    "equity": 90584.72,
    "spy": 697.87
+  },
+  {
+   "t": "2026-11-25T15:28:33Z",
+   "equity": 90703.41,
+   "spy": 697.98
   }
  ],
  "watch": [],
@@ -7262,10 +7377,82 @@
  },
  "events": [
   {
-   "summary": "The US administration announced new tariffs of up to 20% on China, the EU, and 12 other nations, increasing global trade war risks.",
+   "summary": "Bitcoin funds head for their worst month on record as outflows near $5 billion.",
+   "category": "crypto_negative",
+   "firstSeen": "2026-11-25T12:34:06Z",
+   "publishers": [
+    "99Bitcoins",
+    "Binance",
+    "Bloomberg",
+    "Crypto Briefing",
+    "Finbold",
+    "Pluang",
+    "TheStreet",
+    "Traders Union",
+    "UA.NEWS",
+    "bloomingbit"
+   ],
+   "assets": {
+    "ETH/USD": {
+     "direction": "down",
+     "confidence": 0.7,
+     "why": "Ether falling twice as much as bitcoin shows acute weakness for Ethereum."
+    },
+    "BTC/USD": {
+     "direction": "down",
+     "confidence": 0.85,
+     "why": "Massive, prolonged ETF outflows and severe net negative fund flows drive sustained downward pressure on Bitcoin."
+    }
+   },
+   "sources": [
+    {
+     "id": "63f91d9ca5ef8745",
+     "publisher": "UA.NEWS",
+     "kind": "news",
+     "title": "Ether and decentralized finance tokens fell twice as much as bitcoin — CoinDesk",
+     "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOTnhLaDY5ZWV3MGRYMWlSVjJOdS03bkpRZUNPTEtSOG9EUDN0TTFmTkg4UWlkNlpiV0taZ0ppLThTSV9VNmw2bzFLVHhzZ01xRl9jeGx0OC1VY2RsX1JoeEVkeENuUm80X0R1MUJNRVdrM3daTVNHOVJadmw3LVJ0TWkyLWZ1WVZVNGlnbnVuQWRlVDhST3VJX01ycmJJS2F1b1Nra2tMODBOQml0OHFHbEV0UGM2cnl6VV9v?oc=5",
+     "time": "2026-11-25T12:34:06Z"
+    },
+    {
+     "id": "345da2244e2bec91",
+     "publisher": "Binance",
+     "kind": "news",
+     "title": "Bitcoin News | Bitcoin ETFs Post Record $4.94 Billion November Outflows, Topping June's High",
+     "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTFBsdG00aUtVNWdqRmtWdTBIZEQ4ekZidmV6UzI0NmRwWUdhSFZUZi0zMEVCX0JEUmVZeldwR2JXYTBnVVBFZGJSWU8yc1RrTmxqSEJuMG9ualBCUEJoMEYyY0RtaDU?oc=5",
+     "time": "2026-11-25T13:26:44Z"
+    },
+    {
+     "id": "e705cfd49a51a354",
+     "publisher": "bloomingbit",
+     "kind": "news",
+     "title": "Major Stablecoins See $12 Billion of Net Redemptions in Month, Echoing 2022 Bear Market",
+     "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE5CSS1LczFERFN6a0Z0M0puMDktTXFxVkNTVWdEaVNNdE9GZlRSOURCVkZiTEdYWmh6MUlRa211UXFwY2JXWXkwQ3V2SVk0R0wyQ3I0UA?oc=5",
+     "time": "2026-11-25T13:17:37Z"
+    },
+    {
+     "id": "c8fcd5e15b6c036f",
+     "publisher": "Crypto Briefing",
+     "kind": "news",
+     "title": "Bitcoin trades at $58,500 as on-chain indicators signal a market reset",
+     "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE1aTmJJQ0FvVzN1MzBOQ216a19mZC1LN2lPaVBQaEQ2bU9GQ0lDaTJySGxJTmFGRHBxOU05VFozS3hTY0Y5OEVVejYtWGNvQW1EUmUzckdRSWVOdXp5OWJlcFgxU19UaWxDV2FUb0s0RzRfRzFtYUE?oc=5",
+     "time": "2026-11-25T13:36:10Z"
+    },
+    {
+     "id": "1267e9e61d6bdf8d",
+     "publisher": "Pluang",
+     "kind": "news",
+     "title": "Bitcoin falls 2.22% amid record $4.94B outflows from US spot Bitcoin ETFs in November",
+     "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNcHJ1N0wwY1dNZzVuSFZyWVg2NVp4NnV3UUcwTmxaYk1MRXE2d2dlV1pxNE1JbkQ2VkM1ajZ2VWxpazZ2VmRVV1BJWkM2Q0RxUjZILVVTS1FUZ09hRWFiRjBBczhhNkRXamUtYVpDeUxfdVZHeGo5dV90c25kXy1GUWNQd2lMS1I1a2tKLW9ySEctYk85Q3BHZC1mR0s?oc=5",
+     "time": "2026-11-25T13:33:05Z"
+    }
+   ]
+  },
+  {
+   "summary": "The US administration announced a fresh tariff push targeting China, the EU, Japan, and India, intensifying global trade war risks and weighing heavily on tech and broad markets.",
    "category": "tariffs",
    "firstSeen": "2026-11-25T13:09:35Z",
    "publishers": [
+    "24/7 Wall St.",
     "Banglanews24",
     "Business Standard",
     "Business Upturn",
@@ -7273,10 +7460,12 @@
     "Forex Factory",
     "Gujarat Samachar",
     "Hindustan Times",
+    "INDIA New England News",
     "Moneycontrol.com",
     "National Newswatch",
     "Prothom Alo English",
     "Reuters",
+    "Stocktwits",
     "Tampa Free Press",
     "The Daily Jagran",
     "WKMG",
@@ -7286,13 +7475,14 @@
     "Zee Business",
     "blue News",
     "news.sbs.co.kr",
+    "tippinsights",
     "아시아경제"
    ],
    "assets": {
     "AMD": {
      "direction": "down",
-     "confidence": 0.7,
-     "why": "Chip stocks are highly sensitive to tariff-related supply chain and trade disruptions."
+     "confidence": 0.8,
+     "why": "Escalating international tariffs and trade tensions weigh on semiconductor demand and valuations."
     },
     "QCOM": {
      "direction": "down",
@@ -7301,13 +7491,18 @@
     },
     "AAPL": {
      "direction": "down",
-     "confidence": 0.7,
-     "why": "Broad tech stocks face headwinds from escalating global trade war and tariff risks."
+     "confidence": 0.75,
+     "why": "Broader trade war concerns and tariff hikes negatively impact multinational tech supply chains and sentiment."
     },
     "AMZN": {
      "direction": "down",
      "confidence": 0.7,
      "why": "Escalating trade tensions and import taxes threaten consumer spending and retail margins."
+    },
+    "NVDA": {
+     "direction": "down",
+     "confidence": 0.8,
+     "why": "Fresh US tariff pushes against major economies increase trade war risks and pressure growth/chip stocks."
     }
    },
    "sources": [
@@ -7354,11 +7549,12 @@
    ]
   },
   {
-   "summary": "US inflation hitting 3.8% reinforces expectations for a hawkish December Fed rate hike, weighing on risk assets.",
+   "summary": "Worsening inflation data leaves the market anticipating that the Fed will have no choice but to raise U.S. interest rates.",
    "category": "inflation",
    "firstSeen": "2026-11-25T13:39:01Z",
    "publishers": [
     "FXEmpire",
+    "MarketWatch",
     "Nacionale",
     "Quartz",
     "SuaraGarut.ID",
@@ -7385,13 +7581,18 @@
     },
     "NEM": {
      "direction": "down",
-     "confidence": 0.6,
-     "why": "Hawkish Fed expectations pressure gold miners."
+     "confidence": 0.7,
+     "why": "Rising interest rate expectations and hawkish central bank outlooks pressure gold miners."
     },
     "UMMA": {
      "direction": "down",
      "confidence": 0.6,
      "why": "Hawkish rate expectations pressure broader equity markets."
+    },
+    "BTC/USD": {
+     "direction": "down",
+     "confidence": 0.75,
+     "why": "Hawkish Fed rate hike expectations create a risk-off environment detrimental to crypto."
     }
    },
    "sources": [
@@ -7516,75 +7717,6 @@
      "title": "US Dollar Rebounds Near 20-Month High as Markets Anticipate December Fed Rate Hike",
      "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxOcGZTZVRuM0JFYnhBbUtINGU3THl3c2p4Nk8ybV92dlFGZTk0a244cDFfOFB1NWpnNV9VRURZSXAwaENqSlpWdThJSkZDM2tTRkthb0ZGcmFtcHY1OEZIMkwyX296TEQyWmdBR0Q1ZkVTVGJNMWRXVDFEbUpHV0Vmc25WV0VEeGM5NWtZMmtoOWQ5cWhBZWpFbl9lcFpGdEhTTlBTekd4aDdNYmxiRkUzeWdPMFNZaHZDZzdSUzczOXBTN2JO?oc=5",
      "time": "2026-11-25T13:11:40Z"
-    }
-   ]
-  },
-  {
-   "summary": "Bitcoin and Ethereum face downward pressure due to record ETF outflows and bearish market sentiment.",
-   "category": "crypto_negative",
-   "firstSeen": "2026-11-25T12:34:06Z",
-   "publishers": [
-    "Binance",
-    "Crypto Briefing",
-    "Finbold",
-    "Pluang",
-    "TheStreet",
-    "Traders Union",
-    "UA.NEWS",
-    "bloomingbit"
-   ],
-   "assets": {
-    "ETH/USD": {
-     "direction": "down",
-     "confidence": 0.7,
-     "why": "Ether falling twice as much as bitcoin shows acute weakness for Ethereum."
-    },
-    "BTC/USD": {
-     "direction": "down",
-     "confidence": 0.8,
-     "why": "Sustained net outflows from spot ETFs and negative sentiment are pressuring price."
-    }
-   },
-   "sources": [
-    {
-     "id": "63f91d9ca5ef8745",
-     "publisher": "UA.NEWS",
-     "kind": "news",
-     "title": "Ether and decentralized finance tokens fell twice as much as bitcoin — CoinDesk",
-     "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOTnhLaDY5ZWV3MGRYMWlSVjJOdS03bkpRZUNPTEtSOG9EUDN0TTFmTkg4UWlkNlpiV0taZ0ppLThTSV9VNmw2bzFLVHhzZ01xRl9jeGx0OC1VY2RsX1JoeEVkeENuUm80X0R1MUJNRVdrM3daTVNHOVJadmw3LVJ0TWkyLWZ1WVZVNGlnbnVuQWRlVDhST3VJX01ycmJJS2F1b1Nra2tMODBOQml0OHFHbEV0UGM2cnl6VV9v?oc=5",
-     "time": "2026-11-25T12:34:06Z"
-    },
-    {
-     "id": "345da2244e2bec91",
-     "publisher": "Binance",
-     "kind": "news",
-     "title": "Bitcoin News | Bitcoin ETFs Post Record $4.94 Billion November Outflows, Topping June's High",
-     "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTFBsdG00aUtVNWdqRmtWdTBIZEQ4ekZidmV6UzI0NmRwWUdhSFZUZi0zMEVCX0JEUmVZeldwR2JXYTBnVVBFZGJSWU8yc1RrTmxqSEJuMG9ualBCUEJoMEYyY0RtaDU?oc=5",
-     "time": "2026-11-25T13:26:44Z"
-    },
-    {
-     "id": "e705cfd49a51a354",
-     "publisher": "bloomingbit",
-     "kind": "news",
-     "title": "Major Stablecoins See $12 Billion of Net Redemptions in Month, Echoing 2022 Bear Market",
-     "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE5CSS1LczFERFN6a0Z0M0puMDktTXFxVkNTVWdEaVNNdE9GZlRSOURCVkZiTEdYWmh6MUlRa211UXFwY2JXWXkwQ3V2SVk0R0wyQ3I0UA?oc=5",
-     "time": "2026-11-25T13:17:37Z"
-    },
-    {
-     "id": "c8fcd5e15b6c036f",
-     "publisher": "Crypto Briefing",
-     "kind": "news",
-     "title": "Bitcoin trades at $58,500 as on-chain indicators signal a market reset",
-     "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE1aTmJJQ0FvVzN1MzBOQ216a19mZC1LN2lPaVBQaEQ2bU9GQ0lDaTJySGxJTmFGRHBxOU05VFozS3hTY0Y5OEVVejYtWGNvQW1EUmUzckdRSWVOdXp5OWJlcFgxU19UaWxDV2FUb0s0RzRfRzFtYUE?oc=5",
-     "time": "2026-11-25T13:36:10Z"
-    },
-    {
-     "id": "1267e9e61d6bdf8d",
-     "publisher": "Pluang",
-     "kind": "news",
-     "title": "Bitcoin falls 2.22% amid record $4.94B outflows from US spot Bitcoin ETFs in November",
-     "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNcHJ1N0wwY1dNZzVuSFZyWVg2NVp4NnV3UUcwTmxaYk1MRXE2d2dlV1pxNE1JbkQ2VkM1ajZ2VWxpazZ2VmRVV1BJWkM2Q0RxUjZILVVTS1FUZ09hRWFiRjBBczhhNkRXamUtYVpDeUxfdVZHeGo5dV90c25kXy1GUWNQd2lMS1I1a2tKLW9ySEctYk85Q3BHZC1mR0s?oc=5",
-     "time": "2026-11-25T13:33:05Z"
     }
    ]
   },
