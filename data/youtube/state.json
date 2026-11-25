@@ -68,6 +68,16 @@
   ],
   "log": [
     {
+      "t": "2026-11-25T09:17:00-05:00",
+      "agent": "Producer",
+      "msg": "Marked 2 board idea(s) done: uploaded and confirmed on Ambient Escape"
+    },
+    {
+      "t": "2026-11-25T09:17:00-05:00",
+      "agent": "Producer",
+      "msg": "Made and scheduled 22 Ambient Escape videos on the server from today's lineup (Gemini specs, no Claude)"
+    },
+    {
       "t": "2026-11-25T08:26:42-05:00",
       "agent": "Producer",
       "msg": "Marked 1 board idea(s) done: uploaded and confirmed on Bounce Theory"
@@ -561,16 +571,6 @@
       "t": "2026-11-13T11:13:02Z",
       "agent": "Gemini team",
       "msg": "Verified all Bounce settings against bounce_templates.json to prevent fallback errors and ensured zero title collisions."
-    },
-    {
-      "t": "2026-11-13T11:13:02Z",
-      "agent": "Gemini team",
-      "msg": "Generated fresh 52-video lineup (24 Shorts + 2 longs for Bounce; 12 animated explainers + 12 proven Shorts + 2 longs for Ambient)."
-    },
-    {
-      "t": "2026-11-13T11:13:02Z",
-      "agent": "Gemini team",
-      "msg": "Compared Ambient Escape explainers vs traditional short reminders: explainers draw high initial views (~1.4k) but retention sits at ~60-70% vs 95%+ on 10s reminders."
     }
   ],
   "ideas": [
@@ -1239,10 +1239,14 @@
       "notes": "Winning elsewhere: '@soulofbaraqah (TikTok, Omar's pick)'. Addresses youth mental health through authentic Hadith.",
       "needsBuild": false,
       "score": 8,
-      "status": "approved",
+      "status": "done",
       "id": "youtube-2026-11-24-2",
       "createdAt": "2026-11-24T11:13:02Z",
-      "madeBy": "gemini"
+      "madeBy": "gemini",
+      "doneAt": "2026-11-25T09:17:00-05:00",
+      "video": "https://youtu.be/qX_j5HzkBvE",
+      "doneBy": "server",
+      "doneNote": "Uploaded to Ambient Escape 2026-11-25 (lineup 2026-11-25 S01)"
     },
     {
       "id": "youtube-inspo-in-20261123-wdwa",
@@ -1278,13 +1282,17 @@
       "title": "What the halal sign on your chicken really means #shorts #halal",
       "format": "blocky_explainer",
       "hook": "That halal sign on your chicken is a promise",
-      "status": "approved",
+      "status": "done",
       "needsBuild": false,
       "score": 9,
       "createdAt": "2026-11-24T22:03:38Z",
       "madeBy": "inspo-builder",
       "notes": "blocky: halal_rules. Inspo build (Claude Code): fixed, source-checked script in ambient/blocky.py; plan.py renders it as kind 'blocky'.",
-      "script": "Use the blocky explainer, script halal_rules (Sahih Muslim 1955, Quran 6:118, Bukhari 5565)."
+      "script": "Use the blocky explainer, script halal_rules (Sahih Muslim 1955, Quran 6:118, Bukhari 5565).",
+      "doneAt": "2026-11-25T09:17:00-05:00",
+      "video": "https://youtu.be/tiPTjUY2_Hg",
+      "doneBy": "server",
+      "doneNote": "Uploaded to Ambient Escape 2026-11-25 (lineup 2026-11-25 S02)"
     },
     {
       "id": "youtube-2026-11-25-1",
@@ -2338,7 +2346,18 @@
           "title": "3 Sunnah habits *when* you are feeling lonely 🤍 #shorts #islam",
           "format": "explainer_list",
           "basis": "Approved Board Idea: '3 Sunnah habits *when* you are feeling lonely 🤍 #shorts #islam'",
-          "note": "hook: \"3 Sunnah habits *when* you are feeling lonely\" (living_room) | 1) \"Perform Tahajjud prayer\" — \"Your Lord descends to nearest heaven in last third of night\" — Sahih al-Bukhari 1145 [verify source] — sunset/rooftop ; 2) \"Remember Allah in solitude\" — \"I am with My servant when he remembers Me\" — Sahih al-Bukhari 7405 [verify source] — reveal/night sky ; 3) \"Visit pious companions\" — \"A good companion is like a seller of musk\" — Sahih al-Bukhari 5534 [verify source] — park/path | end: \"You are never truly alone.\" / \"Allah is closer than your jugular vein.\" | cta: \"Send this to a friend who feels lonely today.\""
+          "note": "hook: \"3 Sunnah habits *when* you are feeling lonely\" (living_room) | 1) \"Perform Tahajjud prayer\" — \"Your Lord descends to nearest heaven in last third of night\" — Sahih al-Bukhari 1145 [verify source] — sunset/rooftop ; 2) \"Remember Allah in solitude\" — \"I am with My servant when he remembers Me\" — Sahih al-Bukhari 7405 [verify source] — reveal/night sky ; 3) \"Visit pious companions\" — \"A good companion is like a seller of musk\" — Sahih al-Bukhari 5534 [verify source] — park/path | end: \"You are never truly alone.\" / \"Allah is closer than your jugular vein.\" | cta: \"Send this to a friend who feels lonely today.\"",
+          "made": true,
+          "madeWith": {
+            "as": "explainer",
+            "clip": null,
+            "refs": [
+              "Sahih al-Bukhari 1145",
+              "Sahih al-Bukhari 7405",
+              "Sahih al-Bukhari 5534"
+            ],
+            "videoId": "qX_j5HzkBvE"
+          }
         },
         {
           "slot": "S02",
@@ -2347,7 +2366,18 @@
           "title": "What the halal sign on your chicken really means 🤍 #shorts #halal",
           "format": "explainer_list",
           "basis": "Approved Board Idea: 'What the halal sign on your chicken really means #shorts #halal'",
-          "note": "hook: \"What the halal sign on your chicken *really* means\" (market) | 1) \"Mentioning Allah's name\" — \"Eat of that upon which the name of Allah has been mentioned\" — Quran 6:118 — market/stall ; 2) \"Humane and swift treatment\" — \"Verily Allah has prescribed proficiency in all things\" — Sahih Muslim 1955 [verify source] — sunset/rooftop ; 3) \"Pure and wholesome sustenance\" — \"Eat of the good things which We have provided for you\" — Quran 2:172 — living_room/sofa | end: \"Halal is purity and obedience.\" / \"Mind what enters your body.\" | cta: \"Share this with someone who shops halal.\""
+          "note": "hook: \"What the halal sign on your chicken *really* means\" (market) | 1) \"Mentioning Allah's name\" — \"Eat of that upon which the name of Allah has been mentioned\" — Quran 6:118 — market/stall ; 2) \"Humane and swift treatment\" — \"Verily Allah has prescribed proficiency in all things\" — Sahih Muslim 1955 [verify source] — sunset/rooftop ; 3) \"Pure and wholesome sustenance\" — \"Eat of the good things which We have provided for you\" — Quran 2:172 — living_room/sofa | end: \"Halal is purity and obedience.\" / \"Mind what enters your body.\" | cta: \"Share this with someone who shops halal.\"",
+          "made": true,
+          "madeWith": {
+            "as": "explainer",
+            "clip": null,
+            "refs": [
+              "Quran 6:118",
+              "Sahih Muslim 1955",
+              "Quran 2:172"
+            ],
+            "videoId": "tiPTjUY2_Hg"
+          }
         },
         {
           "slot": "S03",
@@ -2355,7 +2385,16 @@
           "title": "Remember Me and I will remember you 🤍 #shorts #quran #islam",
           "format": "reminder",
           "basis": "Your hit: 'The version of you that prays on time wins' · 1,458 views · 97% watched",
-          "note": "9s nature reminder over peaceful mountain forest, Quran 2:152 [verify source]."
+          "note": "9s nature reminder over peaceful mountain forest, Quran 2:152 [verify source].",
+          "made": true,
+          "madeWith": {
+            "as": "reminder",
+            "clip": "AE-forest-mist-01.mp4",
+            "refs": [
+              "Quran 2:152"
+            ],
+            "videoId": "AsNl6bItB7A"
+          }
         },
         {
           "slot": "S04",
@@ -2363,7 +2402,16 @@
           "title": "POV: when you hear someone speaking ill of your brother 🤍 #shorts #islam",
           "format": "explainer_pov",
           "basis": "Winning elsewhere: '@tanzil_quran (TikTok, Omar's pick)'",
-          "note": "pov: POV hook: \"POV: when you hear someone speaking ill of your brother\" | beats: \"Sitting in a group where someone starts gossiping about an absent friend\" ; \"Feeling uncomfortable as negative words spread around the room\" ; \"Defending a believer's honor in secret brings divine protection.\" | reveal: Sunan al-Tirmidhi 1931: \"Whoever defends his brother's honor in his absence, Allah will protect his face from the Fire on the Day of Resurrection.\" | source: Sunan al-Tirmidhi 1931 [verify source] | end: \"Protect your brother's honor.\" / \"Silence the gossip.\" | cta: \"Share this with someone who values true loyalty.\""
+          "note": "pov: POV hook: \"POV: when you hear someone speaking ill of your brother\" | beats: \"Sitting in a group where someone starts gossiping about an absent friend\" ; \"Feeling uncomfortable as negative words spread around the room\" ; \"Defending a believer's honor in secret brings divine protection.\" | reveal: Sunan al-Tirmidhi 1931: \"Whoever defends his brother's honor in his absence, Allah will protect his face from the Fire on the Day of Resurrection.\" | source: Sunan al-Tirmidhi 1931 [verify source] | end: \"Protect your brother's honor.\" / \"Silence the gossip.\" | cta: \"Share this with someone who values true loyalty.\"",
+          "made": true,
+          "madeWith": {
+            "as": "explainer",
+            "clip": null,
+            "refs": [
+              "Quran 49:12"
+            ],
+            "videoId": "FJjgvW-1nB4"
+          }
         },
         {
           "slot": "S05",
@@ -2371,7 +2419,16 @@
           "title": "POV: when you are tempted to lie to save face in a meeting 🤍 #shorts #islam",
           "format": "explainer_pov",
           "basis": "Winning elsewhere: '@tanzil_quran (TikTok, Omar's pick)'",
-          "note": "pov: POV hook: \"POV: when you are tempted to lie to save face in a meeting\" | beats: \"Making a small mistake at work or school that gets noticed\" ; \"Feeling the sudden pressure to make up a quick excuse\" ; \"Truthfulness leads to righteousness and peace of heart.\" | reveal: Sahih al-Bukhari 6094: \"Truthfulness leads to righteousness, and righteousness leads to Paradise.\" | source: Sahih al-Bukhari 6094 [verify source] | end: \"Speak the truth even if difficult.\" / \"Honesty builds real faith.\" | cta: \"Send this to someone striving for honesty.\""
+          "note": "pov: POV hook: \"POV: when you are tempted to lie to save face in a meeting\" | beats: \"Making a small mistake at work or school that gets noticed\" ; \"Feeling the sudden pressure to make up a quick excuse\" ; \"Truthfulness leads to righteousness and peace of heart.\" | reveal: Sahih al-Bukhari 6094: \"Truthfulness leads to righteousness, and righteousness leads to Paradise.\" | source: Sahih al-Bukhari 6094 [verify source] | end: \"Speak the truth even if difficult.\" / \"Honesty builds real faith.\" | cta: \"Send this to someone striving for honesty.\"",
+          "made": true,
+          "madeWith": {
+            "as": "explainer",
+            "clip": null,
+            "refs": [
+              "Sahih al-Bukhari 6094"
+            ],
+            "videoId": "DuXoqDw_OPU"
+          }
         },
         {
           "slot": "S06",
@@ -2379,7 +2436,16 @@
           "title": "4 Sunnah habits to *invite* barakah into your home 🤍 #shorts #islam",
           "format": "explainer_list",
           "basis": "Winning elsewhere: '@soulofbaraqah (TikTok, Omar's pick)'",
-          "note": "hook: \"4 Sunnah habits to *invite* barakah into your home\" (living_room/sofa) | 1) \"Say Bismillah when entering\" — \"Prevents shaytan from staying inside\" — Sahih Muslim 2018 [verify source] — living_room/sofa ; 2) \"Greet your family with Salam\" — \"Brings peace and blessings to the household\" — Sunan al-Tirmidhi 2698 [verify source] — door/hallway ; 3) \"Recite Surah Al-Baqarah\" — \"Protection for the home from harm\" — Sahih Muslim 804 [verify source] — living_room/sofa ; 4) \"Clean up before sleeping\" — \"Keeping the home tidy is part of discipline\" — Sunan Abi Dawud 5054 [verify source] — kitchen/table | end: \"Make your home a place of light.\" / \"Small habits bring big blessings.\" | cta: \"Send this to your family group.\""
+          "note": "hook: \"4 Sunnah habits to *invite* barakah into your home\" (living_room/sofa) | 1) \"Say Bismillah when entering\" — \"Prevents shaytan from staying inside\" — Sahih Muslim 2018 [verify source] — living_room/sofa ; 2) \"Greet your family with Salam\" — \"Brings peace and blessings to the household\" — Sunan al-Tirmidhi 2698 [verify source] — door/hallway ; 3) \"Recite Surah Al-Baqarah\" — \"Protection for the home from harm\" — Sahih Muslim 804 [verify source] — living_room/sofa ; 4) \"Clean up before sleeping\" — \"Keeping the home tidy is part of discipline\" — Sunan Abi Dawud 5054 [verify source] — kitchen/table | end: \"Make your home a place of light.\" / \"Small habits bring big blessings.\" | cta: \"Send this to your family group.\"",
+          "made": true,
+          "madeWith": {
+            "as": "reminder",
+            "clip": "AE-snowy-window-01.mp4",
+            "refs": [
+              "Quran 24:61"
+            ],
+            "videoId": "VSbeK-1a4Xo"
+          }
         },
         {
           "slot": "S07",
@@ -2387,7 +2453,16 @@
           "title": "Is the reward for goodness anything but goodness? 🤍 #shorts #quran #islam",
           "format": "reminder",
           "basis": "Your hit: 'Where hearts find rest | Quran 13:28' · 1,176 views · 98% watched",
-          "note": "11s nature reminder over peaceful sunset river, Quran 55:60 [verify source]."
+          "note": "11s nature reminder over peaceful sunset river, Quran 55:60 [verify source].",
+          "made": true,
+          "madeWith": {
+            "as": "reminder",
+            "clip": "AE-ocean-waves-01.mp4",
+            "refs": [
+              "Quran 55:60"
+            ],
+            "videoId": "9PFQHDl4vgg"
+          }
         },
         {
           "slot": "S08",
@@ -2395,7 +2470,16 @@
           "title": "POV: when you wake up late for work but haven't prayed Fajr 🤍 #shorts #islam",
           "format": "explainer_pov",
           "basis": "Winning elsewhere: '@tanzil_quran (TikTok, Omar's pick)'",
-          "note": "pov: POV hook: \"POV: when you wake up late for work but haven't prayed Fajr\" | beats: \"Rushing out of bed in panic after seeing your clock\" ; \"Realizing you have only 5 minutes before leaving the house\" ; \"Your prayer is your primary priority over worldly appointments.\" | reveal: Sahih al-Bukhari 528: \"Whoever forgets a prayer, let him pray it when he remembers it.\" | source: Sahih al-Bukhari 528 [verify source] | end: \"Never skip your foundation.\" / \"Put your creator first.\" | cta: \"Send this to someone who needs a reminder on prayer.\""
+          "note": "pov: POV hook: \"POV: when you wake up late for work but haven't prayed Fajr\" | beats: \"Rushing out of bed in panic after seeing your clock\" ; \"Realizing you have only 5 minutes before leaving the house\" ; \"Your prayer is your primary priority over worldly appointments.\" | reveal: Sahih al-Bukhari 528: \"Whoever forgets a prayer, let him pray it when he remembers it.\" | source: Sahih al-Bukhari 528 [verify source] | end: \"Never skip your foundation.\" / \"Put your creator first.\" | cta: \"Send this to someone who needs a reminder on prayer.\"",
+          "made": true,
+          "madeWith": {
+            "as": "explainer",
+            "clip": null,
+            "refs": [
+              "Sahih al-Bukhari 597"
+            ],
+            "videoId": "GghqOMaJnYI"
+          }
         },
         {
           "slot": "S09",
@@ -2403,7 +2487,16 @@
           "title": "SubhanAllah wa bihamdihi 100 times erases sins 🤍 #shorts #dhikr #islam",
           "format": "reminder",
           "basis": "Your hit: 'What Allah says about being grateful' · 952 views · 122% watched",
-          "note": "10s nature reminder over misty forest, Sahih al-Bukhari 6405 [verify source]."
+          "note": "10s nature reminder over misty forest, Sahih al-Bukhari 6405 [verify source].",
+          "made": true,
+          "madeWith": {
+            "as": "reminder",
+            "clip": "AE-forest-mist-01.mp4",
+            "refs": [
+              "Sahih al-Bukhari 6405"
+            ],
+            "videoId": "NhPo9-v9rkU"
+          }
         },
         {
           "slot": "S10",
@@ -2411,7 +2504,16 @@
           "title": "POV: when you give charity in secret and nobody knows 🤍 #shorts #islam",
           "format": "explainer_pov",
           "basis": "Winning elsewhere: '@tanzil_quran (TikTok, Omar's pick)'",
-          "note": "pov: POV hook: \"POV: when you give charity in secret and nobody knows\" | beats: \"Quietly helping someone in need without posting or telling anyone\" ; \"Feeling the urge for recognition fade into pure contentment\" ; \"Secret charity extinguishes the anger of the Lord.\" | reveal: Sunan al-Tirmidhi 664: \"Secret charity extinguishes the wrath of the Lord.\" | source: Sunan al-Tirmidhi 664 [verify source] | end: \"Keep your best deeds private.\" / \"Sincerity is hidden.\" | cta: \"Send this to someone who does good quietly.\""
+          "note": "pov: POV hook: \"POV: when you give charity in secret and nobody knows\" | beats: \"Quietly helping someone in need without posting or telling anyone\" ; \"Feeling the urge for recognition fade into pure contentment\" ; \"Secret charity extinguishes the anger of the Lord.\" | reveal: Sunan al-Tirmidhi 664: \"Secret charity extinguishes the wrath of the Lord.\" | source: Sunan al-Tirmidhi 664 [verify source] | end: \"Keep your best deeds private.\" / \"Sincerity is hidden.\" | cta: \"Send this to someone who does good quietly.\"",
+          "made": true,
+          "madeWith": {
+            "as": "reminder",
+            "clip": "AE-candle-glow-01.mp4",
+            "refs": [
+              "Quran 2:271"
+            ],
+            "videoId": "xOV1tSA8hGo"
+          }
         },
         {
           "slot": "S11",
@@ -2419,7 +2521,16 @@
           "title": "3 simple deeds that *guarantee* protection throughout your day 🤍 #shorts #islam",
           "format": "explainer_list",
           "basis": "Winning elsewhere: '@soulofbaraqah (TikTok, Omar's pick)'",
-          "note": "hook: \"3 simple deeds that *guarantee* protection throughout your day\" (sunrise/path) | 1) \"Recite Ayat al-Kursi after prayer\" — \"Protection until the next prayer\" — Sunan al-Nasa'i Al-Kubra 9848 [verify source] — living_room/sofa ; 2) \"Say Bismillah 3 times in morning\" — \"Nothing in heaven or earth can harm you\" — Sunan Abi Dawud 5088 [verify source] — park/path ; 3) \"Pray Fajr in congregation\" — \"Under the protection of Allah all day\" — Sahih Muslim 657 [verify source] — mosque/street | end: \"Start your day shielded.\" / \"Consistency brings peace.\" | cta: \"Send this to someone you care about.\""
+          "note": "hook: \"3 simple deeds that *guarantee* protection throughout your day\" (sunrise/path) | 1) \"Recite Ayat al-Kursi after prayer\" — \"Protection until the next prayer\" — Sunan al-Nasa'i Al-Kubra 9848 [verify source] — living_room/sofa ; 2) \"Say Bismillah 3 times in morning\" — \"Nothing in heaven or earth can harm you\" — Sunan Abi Dawud 5088 [verify source] — park/path ; 3) \"Pray Fajr in congregation\" — \"Under the protection of Allah all day\" — Sahih Muslim 657 [verify source] — mosque/street | end: \"Start your day shielded.\" / \"Consistency brings peace.\" | cta: \"Send this to someone you care about.\"",
+          "made": true,
+          "madeWith": {
+            "as": "reminder",
+            "clip": "AE-sunrise-clouds-01.mp4",
+            "refs": [
+              "Quran 2:255"
+            ],
+            "videoId": "O9GbmINOyws"
+          }
         },
         {
           "slot": "S12",
@@ -2427,7 +2538,16 @@
           "title": "Ask forgiveness of your Lord, He is Most Loving 🤍 #shorts #quran #islam",
           "format": "reminder",
           "basis": "Your hit: 'You hate it now, but it may be good for you' · 1,113 views · 97% watched",
-          "note": "12s nature reminder over dark rainy window, Quran 11:90 [verify source]."
+          "note": "12s nature reminder over dark rainy window, Quran 11:90 [verify source].",
+          "made": true,
+          "madeWith": {
+            "as": "reminder",
+            "clip": "AE-rain-window-01.mp4",
+            "refs": [
+              "Quran 11:90"
+            ],
+            "videoId": "aNm9ijylctc"
+          }
         },
         {
           "slot": "S13",
@@ -2435,7 +2555,16 @@
           "title": "POV: when you struggle to wake up for Tahajjud prayer 🤍 #shorts #islam",
           "format": "explainer_pov",
           "basis": "Winning elsewhere: '@tanzil_quran (TikTok, Omar's pick)'",
-          "note": "pov: POV hook: \"POV: when you struggle to wake up for Tahajjud prayer\" | beats: \"Setting an alarm for 4 AM with sincere intention to pray night prayer\" ; \"Feeling the weight of sleep making your body heavy when it goes off\" ; \"The closest a servant comes to his Lord is in the last part of the night.\" | reveal: Sunan al-Tirmidhi 3579: \"The closest the Lord is to a servant is in the middle of the latter part of the night.\" | source: Sunan al-Tirmidhi 3579 [verify source] | end: \"Stand up for 2 short rak'ahs.\" / \"Night prayer heals the soul.\" | cta: \"Send this to someone who wants to pray Tahajjud.\""
+          "note": "pov: POV hook: \"POV: when you struggle to wake up for Tahajjud prayer\" | beats: \"Setting an alarm for 4 AM with sincere intention to pray night prayer\" ; \"Feeling the weight of sleep making your body heavy when it goes off\" ; \"The closest a servant comes to his Lord is in the last part of the night.\" | reveal: Sunan al-Tirmidhi 3579: \"The closest the Lord is to a servant is in the middle of the latter part of the night.\" | source: Sunan al-Tirmidhi 3579 [verify source] | end: \"Stand up for 2 short rak'ahs.\" / \"Night prayer heals the soul.\" | cta: \"Send this to someone who wants to pray Tahajjud.\"",
+          "made": true,
+          "madeWith": {
+            "as": "reminder",
+            "clip": "AE-snowy-window-01.mp4",
+            "refs": [
+              "Quran 32:16"
+            ],
+            "videoId": "_WKUUVylFcM"
+          }
         },
         {
           "slot": "S14",
@@ -2443,7 +2572,16 @@
           "title": "Which prophet built the Ark by Allah's command? ⏱️ #shorts #quiz",
           "format": "quiz",
           "basis": "Your hit: 'Which surah equals a third of the Quran?' · 972 views · 100% watched",
-          "note": "13s quiz Short testing knowledge of Prophet Nuh (AS) [verify source]."
+          "note": "13s quiz Short testing knowledge of Prophet Nuh (AS) [verify source].",
+          "made": true,
+          "madeWith": {
+            "as": "quiz",
+            "clip": "AE-autumn-forest-01.mp4",
+            "refs": [
+              "Quran 11:37"
+            ],
+            "videoId": "Re7YsXiLHYc"
+          }
         },
         {
           "slot": "S15",
@@ -2451,7 +2589,16 @@
           "title": "POV: when a neighbor makes unnecessary noise during your sleep 🤍 #shorts #islam",
           "format": "explainer_pov",
           "basis": "Winning elsewhere: '@tanzil_quran (TikTok, Omar's pick)'",
-          "note": "pov: POV hook: \"POV: when a neighbor makes unnecessary noise during your sleep\" | beats: \"Trying to sleep early before an important exam or workday\" ; \"Hearing loud noises from next door disturbing your rest\" ; \"The Prophet emphasized treating neighbors with patience and kindness.\" | reveal: Sahih al-Bukhari 6018: \"He who believes in Allah and the Last Day should not harm his neighbor.\" | source: Sahih al-Bukhari 6018 [verify source] | end: \"Patience with neighbors brings reward.\" / \"Show gentle character.\" | cta: \"Send this to someone dealing with noisy neighbors.\""
+          "note": "pov: POV hook: \"POV: when a neighbor makes unnecessary noise during your sleep\" | beats: \"Trying to sleep early before an important exam or workday\" ; \"Hearing loud noises from next door disturbing your rest\" ; \"The Prophet emphasized treating neighbors with patience and kindness.\" | reveal: Sahih al-Bukhari 6018: \"He who believes in Allah and the Last Day should not harm his neighbor.\" | source: Sahih al-Bukhari 6018 [verify source] | end: \"Patience with neighbors brings reward.\" / \"Show gentle character.\" | cta: \"Send this to someone dealing with noisy neighbors.\"",
+          "made": true,
+          "madeWith": {
+            "as": "explainer",
+            "clip": null,
+            "refs": [
+              "Sahih al-Bukhari 6018"
+            ],
+            "videoId": "5zW2FAMgUo0"
+          }
         },
         {
           "slot": "S16",
@@ -2459,7 +2606,16 @@
           "title": "3 Sunnah habits to *practice* when starting your work day 🤍 #shorts #islam",
           "format": "explainer_list",
           "basis": "Winning elsewhere: '@soulofbaraqah (TikTok, Omar's pick)'",
-          "note": "hook: \"3 Sunnah habits to *practice* when starting your work day\" (office/desk) | 1) \"Start with Bismillah\" — \"Blesses your effort and time\" — Sunan Ibn Majah 1894 [verify source] — office/desk ; 2) \"Make honest intention\" — \"Transforms daily work into worship\" — Sahih al-Bukhari 1 [verify source] — office/desk ; 3) \"Take short breaks to make Dhikr\" — \"Keeps your heart attached to Allah\" — Sahih Muslim 2691 [verify source] — window/sky | end: \"Work with excellence and faith.\" / \"Turn your career into ibadah.\" | cta: \"Send this to a coworker or student.\""
+          "note": "hook: \"3 Sunnah habits to *practice* when starting your work day\" (office/desk) | 1) \"Start with Bismillah\" — \"Blesses your effort and time\" — Sunan Ibn Majah 1894 [verify source] — office/desk ; 2) \"Make honest intention\" — \"Transforms daily work into worship\" — Sahih al-Bukhari 1 [verify source] — office/desk ; 3) \"Take short breaks to make Dhikr\" — \"Keeps your heart attached to Allah\" — Sahih Muslim 2691 [verify source] — window/sky | end: \"Work with excellence and faith.\" / \"Turn your career into ibadah.\" | cta: \"Send this to a coworker or student.\"",
+          "made": true,
+          "madeWith": {
+            "as": "reminder",
+            "clip": "AE-forest-cabin-01.mp4",
+            "refs": [
+              "Quran 33:41"
+            ],
+            "videoId": "-OdcZO3RD6k"
+          }
         },
         {
           "slot": "S17",
@@ -2467,7 +2623,16 @@
           "title": "Say this dua when entering your home for barakah 🤲 #shorts #dua",
           "format": "reminder",
           "basis": "Your hit: 'Say this dua before every exam' · 738 views · 105% watched",
-          "note": "11s nature reminder over quiet morning lake, Sunan Abi Dawud 5096 [verify source]."
+          "note": "11s nature reminder over quiet morning lake, Sunan Abi Dawud 5096 [verify source].",
+          "made": true,
+          "madeWith": {
+            "as": "reminder",
+            "clip": "AE-forest-cabin-01.mp4",
+            "refs": [
+              "Sahih Muslim 2018"
+            ],
+            "videoId": "mcrXeAO5RAM"
+          }
         },
         {
           "slot": "S18",
@@ -2475,7 +2640,16 @@
           "title": "POV: when your friends start backbiting right after someone leaves 🤍 #shorts #islam",
           "format": "explainer_pov",
           "basis": "Winning elsewhere: '@tanzil_quran (TikTok, Omar's pick)'",
-          "note": "pov: POV hook: \"POV: when your friends start backbiting right after someone leaves\" | beats: \"A friend walks out of the room after hanging out\" ; \"Group chat immediately starts picking apart their outfit and words\" ; \"Defending your brother's honor protects your own face from Fire.\" | reveal: Sunan al-Tirmidhi 1931: \"Whoever defends his brother's honor, Allah will shield his face from the Fire.\" | source: Sunan al-Tirmidhi 1931 [verify source] | end: \"Speak good or remain silent.\" / \"Protect absent brothers.\" | cta: \"Send this to your friend group.\""
+          "note": "pov: POV hook: \"POV: when your friends start backbiting right after someone leaves\" | beats: \"A friend walks out of the room after hanging out\" ; \"Group chat immediately starts picking apart their outfit and words\" ; \"Defending your brother's honor protects your own face from Fire.\" | reveal: Sunan al-Tirmidhi 1931: \"Whoever defends his brother's honor, Allah will shield his face from the Fire.\" | source: Sunan al-Tirmidhi 1931 [verify source] | end: \"Speak good or remain silent.\" / \"Protect absent brothers.\" | cta: \"Send this to your friend group.\"",
+          "made": true,
+          "madeWith": {
+            "as": "explainer",
+            "clip": null,
+            "refs": [
+              "Sahih al-Bukhari 6018"
+            ],
+            "videoId": "xK-8N_btb2c"
+          }
         },
         {
           "slot": "S19",
@@ -2483,7 +2657,16 @@
           "title": "What the Prophet ﷺ said about speaking good words 🤍 #shorts #hadith",
           "format": "reminder",
           "basis": "Your hit: '4 free ways to give charity every day' · 1,097 views · 56% watched",
-          "note": "10s nature reminder over sunny blooming park, Sahih al-Bukhari 6018 [verify source]."
+          "note": "10s nature reminder over sunny blooming park, Sahih al-Bukhari 6018 [verify source].",
+          "made": true,
+          "madeWith": {
+            "as": "reminder",
+            "clip": "AE-waterfall-forest-01.mp4",
+            "refs": [
+              "Sahih al-Bukhari 2989"
+            ],
+            "videoId": "OoPcu0iIlls"
+          }
         },
         {
           "slot": "S20",
@@ -2491,7 +2674,16 @@
           "title": "POV: when you make dua for your friend behind their back 🤍 #shorts #islam",
           "format": "explainer_pov",
           "basis": "Winning elsewhere: '@tanzil_quran (TikTok, Omar's pick)'",
-          "note": "pov: POV hook: \"POV: when you make dua for your friend behind their back\" | beats: \"Remembering a friend's private struggle in your quiet prayers\" ; \"Asking Allah to ease their hardship without them ever knowing\" ; \"An angel responds by saying ameen and for you the same.\" | reveal: Sahih Muslim 2732: \"The supplication of a Muslim for his brother in his absence is answered. An angel says: Ameen, and for you the same.\" | source: Sahih Muslim 2732 [verify source] | end: \"Pray for others in secret.\" / \"Angels answer your silent duas.\" | cta: \"Send this to a friend you pray for.\""
+          "note": "pov: POV hook: \"POV: when you make dua for your friend behind their back\" | beats: \"Remembering a friend's private struggle in your quiet prayers\" ; \"Asking Allah to ease their hardship without them ever knowing\" ; \"An angel responds by saying ameen and for you the same.\" | reveal: Sahih Muslim 2732: \"The supplication of a Muslim for his brother in his absence is answered. An angel says: Ameen, and for you the same.\" | source: Sahih Muslim 2732 [verify source] | end: \"Pray for others in secret.\" / \"Angels answer your silent duas.\" | cta: \"Send this to a friend you pray for.\"",
+          "made": true,
+          "madeWith": {
+            "as": "explainer",
+            "clip": null,
+            "refs": [
+              "Sahih Muslim 2732"
+            ],
+            "videoId": "3aB2-Io8K14"
+          }
         },
         {
           "slot": "S21",
@@ -2507,7 +2699,16 @@
           "title": "Only in His remembrance do hearts find peace | Quran 13:28 #shorts",
           "format": "reminder",
           "basis": "Your hit: 'Where hearts find rest | Quran 13:28' · 1,176 views · 98% watched",
-          "note": "12s nature reminder over serene starry sky, Quran 13:28 [verify source]."
+          "note": "12s nature reminder over serene starry sky, Quran 13:28 [verify source].",
+          "made": true,
+          "madeWith": {
+            "as": "reminder",
+            "clip": "AE-starry-night-01.mp4",
+            "refs": [
+              "Quran 13:28"
+            ],
+            "videoId": "xol2cdXRTck"
+          }
         },
         {
           "slot": "S23",
@@ -2523,7 +2724,16 @@
           "title": "Allah does not waste the reward of the righteous 🤍 #shorts #quran #islam",
           "format": "reminder",
           "basis": "Your hit: '4 things that happen when you stay patient' · 946 views · 38% watched",
-          "note": "12s nature reminder over dark storm clearing to sun, Quran 11:115 [verify source]."
+          "note": "12s nature reminder over dark storm clearing to sun, Quran 11:115 [verify source].",
+          "made": true,
+          "madeWith": {
+            "as": "reminder",
+            "clip": "AE-sunrise-clouds-01.mp4",
+            "refs": [
+              "Quran 12:90"
+            ],
+            "videoId": "Vmg4PIaxT3s"
+          }
         },
         {
           "slot": "L1",
