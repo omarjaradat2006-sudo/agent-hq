@@ -1,0 +1,690 @@
+{
+ "updatedAt": "2026-11-25T22:35:27Z",
+ "startedAt": "2026-11-25T21:57:13Z",
+ "endsAt": "2026-12-02T21:57:13Z",
+ "done": false,
+ "counts": {
+  "videos": 0,
+  "papers": 0,
+  "written": 0,
+  "lessons": 0,
+  "rulesTested": 5,
+  "sourcesRead": 0,
+  "waiting": 47,
+  "rules": 5,
+  "passed": 0,
+  "promising": 4
+ },
+ "consensus": [],
+ "leaderboard": [
+  {
+   "name": "Minervini-style trend template + breakout",
+   "universe": "stocks",
+   "max_positions": 8,
+   "regime": "spy_above_50",
+   "entry": [
+    {
+     "f": "sma_above_sma",
+     "a": 50,
+     "b": 200
+    },
+    {
+     "f": "near_high",
+     "days": 252,
+     "within_pct": 25.0
+    },
+    {
+     "f": "breakout",
+     "days": 20
+    },
+    {
+     "f": "volume_surge",
+     "days": 50,
+     "mult": 1.3
+    }
+   ],
+   "rank": "momentum_126",
+   "exit": {
+    "stop_pct": 8.0,
+    "trail_pct": 15.0
+   },
+   "baseline": true,
+   "from": "baseline",
+   "id": "91517b8d82",
+   "status": "promising",
+   "why": "made money, but could still be luck or not better than holding SPY for the risk",
+   "score": 4.97,
+   "robustness": 0.92,
+   "full": {
+    "returnPct": 54.38,
+    "maxDrawdownPct": -11.9,
+    "trades": 69,
+    "winRatePct": 43.5,
+    "avgWinPct": 20.47,
+    "avgLossPct": -7.01,
+    "profitFactor": 2.25,
+    "tStat": 2.09,
+    "spyReturnPct": 48.5,
+    "spyMaxDrawdownPct": -18.74,
+    "mar": 4.57,
+    "spyMar": 2.59
+   },
+   "last60": {
+    "returnPct": -12.1,
+    "maxDrawdownPct": -16.0,
+    "trades": 16,
+    "winRatePct": 6.2,
+    "avgWinPct": 4.58,
+    "avgLossPct": -8.05,
+    "profitFactor": 0.04,
+    "tStat": -5.63,
+    "spyReturnPct": -6.09,
+    "spyMaxDrawdownPct": -11.35,
+    "mar": -0.76,
+    "spyMar": -0.54
+   }
+  },
+  {
+   "name": "Faber: hold SPY-like leaders over the 200-day",
+   "universe": "stocks",
+   "max_positions": 10,
+   "regime": "spy_above_200",
+   "entry": [
+    {
+     "f": "close_above_sma",
+     "n": 200
+    },
+    {
+     "f": "top_momentum",
+     "days": 126,
+     "top": 10
+    }
+   ],
+   "rank": "momentum_126",
+   "exit": {
+    "exit_below_sma": 200
+   },
+   "baseline": true,
+   "from": "baseline",
+   "id": "7c463ce6f2",
+   "status": "promising",
+   "why": "made money, but could still be luck or not better than holding SPY for the risk",
+   "score": 2.53,
+   "robustness": 0.12,
+   "full": {
+    "returnPct": 78.74,
+    "maxDrawdownPct": -40.78,
+    "trades": 45,
+    "winRatePct": 42.2,
+    "avgWinPct": 64.5,
+    "avgLossPct": -17.02,
+    "profitFactor": 2.77,
+    "tStat": 1.35,
+    "spyReturnPct": 48.5,
+    "spyMaxDrawdownPct": -18.74,
+    "mar": 1.93,
+    "spyMar": 2.59
+   },
+   "last60": {
+    "returnPct": -10.16,
+    "maxDrawdownPct": -23.35,
+    "trades": 4,
+    "winRatePct": 0.0,
+    "avgWinPct": null,
+    "avgLossPct": -15.58,
+    "profitFactor": 0.0,
+    "tStat": -2.13,
+    "spyReturnPct": -6.09,
+    "spyMaxDrawdownPct": -11.35,
+    "mar": -0.44,
+    "spyMar": -0.54
+   }
+  },
+  {
+   "name": "Connors RSI-2 pullback in uptrend",
+   "universe": "stocks",
+   "max_positions": 5,
+   "regime": "none",
+   "entry": [
+    {
+     "f": "close_above_sma",
+     "n": 200
+    },
+    {
+     "f": "rsi_below",
+     "n": 2,
+     "value": 10.0
+    }
+   ],
+   "rank": "rsi_low",
+   "exit": {
+    "stop_pct": 10.0,
+    "target_pct": 5.0,
+    "max_days": 7
+   },
+   "baseline": true,
+   "from": "baseline",
+   "id": "3bc3d3f0a7",
+   "status": "promising",
+   "why": "made money, but could still be luck or not better than holding SPY for the risk",
+   "score": 2.34,
+   "robustness": 0.08,
+   "full": {
+    "returnPct": 30.66,
+    "maxDrawdownPct": -17.63,
+    "trades": 494,
+    "winRatePct": 56.1,
+    "avgWinPct": 4.26,
+    "avgLossPct": -4.48,
+    "profitFactor": 1.21,
+    "tStat": 1.8,
+    "spyReturnPct": 48.5,
+    "spyMaxDrawdownPct": -18.74,
+    "mar": 1.74,
+    "spyMar": 2.59
+   },
+   "last60": {
+    "returnPct": -5.97,
+    "maxDrawdownPct": -14.04,
+    "trades": 46,
+    "winRatePct": 54.3,
+    "avgWinPct": 4.05,
+    "avgLossPct": -5.88,
+    "profitFactor": 0.82,
+    "tStat": -0.56,
+    "spyReturnPct": -6.09,
+    "spyMaxDrawdownPct": -11.35,
+    "mar": -0.43,
+    "spyMar": -0.54
+   }
+  },
+  {
+   "name": "What the bot did: buy, -3% stop / +6% target, 3 days",
+   "universe": "stocks",
+   "max_positions": 8,
+   "regime": "none",
+   "entry": [
+    {
+     "f": "return_above",
+     "days": 2,
+     "pct": 0.5
+    },
+    {
+     "f": "volume_surge",
+     "days": 20,
+     "mult": 1.2
+    }
+   ],
+   "rank": "volume_surge",
+   "exit": {
+    "stop_pct": 3.0,
+    "target_pct": 6.0,
+    "max_days": 3
+   },
+   "baseline": true,
+   "from": "baseline",
+   "id": "9fa6fbf934",
+   "status": "promising",
+   "why": "made money, but could still be luck or not better than holding SPY for the risk",
+   "score": 2.3,
+   "robustness": 0.25,
+   "full": {
+    "returnPct": 32.64,
+    "maxDrawdownPct": -17.14,
+    "trades": 1777,
+    "winRatePct": 44.7,
+    "avgWinPct": 3.94,
+    "avgLossPct": -2.74,
+    "profitFactor": 1.16,
+    "tStat": 2.04,
+    "spyReturnPct": 48.5,
+    "spyMaxDrawdownPct": -18.74,
+    "mar": 1.9,
+    "spyMar": 2.59
+   },
+   "last60": {
+    "returnPct": -6.04,
+    "maxDrawdownPct": -8.79,
+    "trades": 144,
+    "winRatePct": 38.9,
+    "avgWinPct": 3.86,
+    "avgLossPct": -2.93,
+    "profitFactor": 0.84,
+    "tStat": -0.95,
+    "spyReturnPct": -6.09,
+    "spyMaxDrawdownPct": -11.35,
+    "mar": -0.69,
+    "spyMar": -0.54
+   }
+  },
+  {
+   "name": "Crypto above 50-day",
+   "universe": "crypto",
+   "max_positions": 3,
+   "regime": "none",
+   "entry": [
+    {
+     "f": "close_above_sma",
+     "n": 50
+    },
+    {
+     "f": "return_above",
+     "days": 63,
+     "pct": 0.0
+    }
+   ],
+   "rank": "momentum_63",
+   "exit": {
+    "exit_below_sma": 50
+   },
+   "baseline": true,
+   "from": "baseline",
+   "id": "46f759dca6",
+   "status": "failed",
+   "why": "lost money or only worked in one period",
+   "score": 0.18,
+   "robustness": null,
+   "full": {
+    "returnPct": -1.06,
+    "maxDrawdownPct": -56.36,
+    "trades": 74,
+    "winRatePct": 29.7,
+    "avgWinPct": 21.14,
+    "avgLossPct": -7.72,
+    "profitFactor": 1.16,
+    "tStat": 0.41,
+    "spyReturnPct": 48.5,
+    "spyMaxDrawdownPct": -18.74,
+    "mar": -0.02,
+    "spyMar": 2.59
+   },
+   "last60": {
+    "returnPct": -0.44,
+    "maxDrawdownPct": -19.18,
+    "trades": 8,
+    "winRatePct": 37.5,
+    "avgWinPct": 6.81,
+    "avgLossPct": -4.06,
+    "profitFactor": 1.01,
+    "tStat": 0.01,
+    "spyReturnPct": -6.09,
+    "spyMaxDrawdownPct": -11.35,
+    "mar": -0.02,
+    "spyMar": -0.54
+   }
+  }
+ ],
+ "postMortem": {
+  "builtAt": "2026-11-25T22:35:19Z",
+  "trades": 28,
+  "alternatives": {
+   "actual": -7393,
+   "stop_8pct": -5172,
+   "atr_2x": -6022,
+   "hold_10_days": -3032,
+   "trend_filter_only": 0
+  },
+  "filters": {
+   "both: no": {
+    "trades": 28,
+    "pnl": -7393
+   },
+   "market (SPY) above its 50-day: no": {
+    "trades": 28,
+    "pnl": -7393
+   },
+   "stock above its 50-day: no": {
+    "trades": 24,
+    "pnl": -6818
+   },
+   "stock above its 50-day: yes": {
+    "trades": 4,
+    "pnl": -575
+   }
+  },
+  "rows": [
+   {
+    "symbol": "PLTR",
+    "date": "2026-11-24",
+    "pnl": -536,
+    "stop8": 158,
+    "atr2": 158,
+    "hold10": 158,
+    "stockUptrend": false,
+    "marketUptrend": false,
+    "moveBeforeBuyPct": 0.73,
+    "exit": "trailing stop hit (-4.7%)"
+   },
+   {
+    "symbol": "AVAV",
+    "date": "2026-11-24",
+    "pnl": -435,
+    "stop8": 344,
+    "atr2": 344,
+    "hold10": 344,
+    "stockUptrend": false,
+    "marketUptrend": false,
+    "moveBeforeBuyPct": -2.93,
+    "exit": "trailing stop hit (-3.4%)"
+   },
+   {
+    "symbol": "HLAL",
+    "date": "2026-11-24",
+    "pnl": 0,
+    "stop8": -3,
+    "atr2": -3,
+    "hold10": -3,
+    "stockUptrend": false,
+    "marketUptrend": false,
+    "moveBeforeBuyPct": null,
+    "exit": "bad news: Expectations grow that regional Fed banks and policy makers lean towards tighter"
+   },
+   {
+    "symbol": "NVDA",
+    "date": "2026-11-24",
+    "pnl": -392,
+    "stop8": -948,
+    "atr2": -496,
+    "hold10": -496,
+    "stockUptrend": false,
+    "marketUptrend": false,
+    "moveBeforeBuyPct": -0.7,
+    "exit": "trailing stop hit (-3.3%)"
+   },
+   {
+    "symbol": "TMO",
+    "date": "2026-11-24",
+    "pnl": -376,
+    "stop8": -231,
+    "atr2": -231,
+    "hold10": -231,
+    "stockUptrend": true,
+    "marketUptrend": false,
+    "moveBeforeBuyPct": 1.52,
+    "exit": "trailing stop hit (-3.4%)"
+   },
+   {
+    "symbol": "NOW",
+    "date": "2026-11-23",
+    "pnl": -473,
+    "stop8": 78,
+    "atr2": 78,
+    "hold10": 78,
+    "stockUptrend": false,
+    "marketUptrend": false,
+    "moveBeforeBuyPct": -0.55,
+    "exit": "stop-loss -3% hit"
+   },
+   {
+    "symbol": "AMZN",
+    "date": "2026-11-23",
+    "pnl": -447,
+    "stop8": -1549,
+    "atr2": -1041,
+    "hold10": -1041,
+    "stockUptrend": false,
+    "marketUptrend": false,
+    "moveBeforeBuyPct": 0.0,
+    "exit": "bad news: Fed officials continue to signal potential for further rate hikes, weighing on m"
+   },
+   {
+    "symbol": "TSLA",
+    "date": "2026-11-23",
+    "pnl": -392,
+    "stop8": -253,
+    "atr2": -253,
+    "hold10": -253,
+    "stockUptrend": false,
+    "marketUptrend": false,
+    "moveBeforeBuyPct": 0.0,
+    "exit": "stop-loss -3% hit"
+   },
+   {
+    "symbol": "NVDA",
+    "date": "2026-11-23",
+    "pnl": 20,
+    "stop8": -776,
+    "atr2": -895,
+    "hold10": -895,
+    "stockUptrend": false,
+    "marketUptrend": false,
+    "moveBeforeBuyPct": -0.57,
+    "exit": "bad news: Fed officials signaling that inflation remains too high and calling for potentia"
+   },
+   {
+    "symbol": "AMAT",
+    "date": "2026-11-23",
+    "pnl": 69,
+    "stop8": -576,
+    "atr2": -696,
+    "hold10": -696,
+    "stockUptrend": false,
+    "marketUptrend": false,
+    "moveBeforeBuyPct": -0.29,
+    "exit": "bad news: US readies tariff hikes on China and EU goods as soon as Tuesday, sparking marke"
+   },
+   {
+    "symbol": "AMD",
+    "date": "2026-11-23",
+    "pnl": -348,
+    "stop8": -579,
+    "atr2": -751,
+    "hold10": -751,
+    "stockUptrend": false,
+    "marketUptrend": false,
+    "moveBeforeBuyPct": -0.94,
+    "exit": "bad news: US readies tariff hikes on China and EU goods as soon as Tuesday, sparking marke"
+   },
+   {
+    "symbol": "CRWD",
+    "date": "2026-11-23",
+    "pnl": -246,
+    "stop8": 1100,
+    "atr2": 1100,
+    "hold10": 1100,
+    "stockUptrend": false,
+    "marketUptrend": false,
+    "moveBeforeBuyPct": -5.61,
+    "exit": "bad news: CrowdStrike's earnings beat is overshadowed by its massive $43.9 billion all-sto"
+   },
+   {
+    "symbol": "CRWD",
+    "date": "2026-11-23",
+    "pnl": -1322,
+    "stop8": 101,
+    "atr2": 101,
+    "hold10": 101,
+    "stockUptrend": false,
+    "marketUptrend": false,
+    "moveBeforeBuyPct": -3.41,
+    "exit": "stop-loss -3% hit"
+   },
+   {
+    "symbol": "INTC",
+    "date": "2026-11-20",
+    "pnl": -301,
+    "stop8": 316,
+    "atr2": 316,
+    "hold10": 316,
+    "stockUptrend": false,
+    "marketUptrend": false,
+    "moveBeforeBuyPct": 0.64,
+    "exit": "stop-loss -3% hit"
+   },
+   {
+    "symbol": "AVAV",
+    "date": "2026-11-20",
+    "pnl": -342,
+    "stop8": 72,
+    "atr2": 72,
+    "hold10": 72,
+    "stockUptrend": false,
+    "marketUptrend": false,
+    "moveBeforeBuyPct": -1.63,
+    "exit": "stop-loss -3% hit"
+   },
+   {
+    "symbol": "NEM",
+    "date": "2026-11-20",
+    "pnl": -1235,
+    "stop8": 1839,
+    "atr2": 1839,
+    "hold10": 1839,
+    "stockUptrend": false,
+    "marketUptrend": false,
+    "moveBeforeBuyPct": -0.52,
+    "exit": "stop-loss -3% hit"
+   },
+   {
+    "symbol": "BTC/USD",
+    "date": "2026-11-19",
+    "pnl": -358,
+    "stop8": -961,
+    "atr2": -1106,
+    "hold10": -362,
+    "stockUptrend": false,
+    "marketUptrend": false,
+    "moveBeforeBuyPct": -1.43,
+    "exit": "stop-loss -3% hit"
+   },
+   {
+    "symbol": "AVGO",
+    "date": "2026-11-19",
+    "pnl": -15,
+    "stop8": -28,
+    "atr2": -41,
+    "hold10": -52,
+    "stockUptrend": true,
+    "marketUptrend": false,
+    "moveBeforeBuyPct": -1.26,
+    "exit": "stop-loss -3% hit"
+   },
+   {
+    "symbol": "AMD",
+    "date": "2026-11-19",
+    "pnl": -311,
+    "stop8": -429,
+    "atr2": -1157,
+    "hold10": -908,
+    "stockUptrend": false,
+    "marketUptrend": false,
+    "moveBeforeBuyPct": -0.45,
+    "exit": "stop-loss -3% hit"
+   },
+   {
+    "symbol": "NVDA",
+    "date": "2026-11-19",
+    "pnl": -213,
+    "stop8": -392,
+    "atr2": -781,
+    "hold10": 29,
+    "stockUptrend": false,
+    "marketUptrend": false,
+    "moveBeforeBuyPct": -2.15,
+    "exit": "stop-loss -3% hit"
+   },
+   {
+    "symbol": "GOOGL",
+    "date": "2026-11-19",
+    "pnl": -146,
+    "stop8": -172,
+    "atr2": -321,
+    "hold10": -172,
+    "stockUptrend": false,
+    "marketUptrend": false,
+    "moveBeforeBuyPct": -1.17,
+    "exit": "stop-loss -3% hit"
+   },
+   {
+    "symbol": "MSFT",
+    "date": "2026-11-18",
+    "pnl": -9,
+    "stop8": -125,
+    "atr2": -125,
+    "hold10": -125,
+    "stockUptrend": false,
+    "marketUptrend": false,
+    "moveBeforeBuyPct": 0.25,
+    "exit": "bad news: Anthropic's massive upcoming IPO debut triggers broad market profit-taking and a"
+   },
+   {
+    "symbol": "INTC",
+    "date": "2026-11-18",
+    "pnl": 354,
+    "stop8": -398,
+    "atr2": 41,
+    "hold10": 41,
+    "stockUptrend": false,
+    "marketUptrend": false,
+    "moveBeforeBuyPct": 0.42,
+    "exit": "target +6% hit"
+   },
+   {
+    "symbol": "AMAT",
+    "date": "2026-11-18",
+    "pnl": 289,
+    "stop8": -385,
+    "atr2": -760,
+    "hold10": -476,
+    "stockUptrend": false,
+    "marketUptrend": false,
+    "moveBeforeBuyPct": -3.39,
+    "exit": "target +6% hit"
+   },
+   {
+    "symbol": "TSLA",
+    "date": "2026-11-17",
+    "pnl": -43,
+    "stop8": -397,
+    "atr2": -464,
+    "hold10": -15,
+    "stockUptrend": true,
+    "marketUptrend": false,
+    "moveBeforeBuyPct": -0.02,
+    "exit": "bad news: The Anthropic IPO debut triggers broad market profit-taking and weighs on equity"
+   },
+   {
+    "symbol": "CVX",
+    "date": "2026-11-17",
+    "pnl": -141,
+    "stop8": -178,
+    "atr2": -221,
+    "hold10": -178,
+    "stockUptrend": true,
+    "marketUptrend": false,
+    "moveBeforeBuyPct": 1.06,
+    "exit": "stop-loss -3% hit"
+   },
+   {
+    "symbol": "ETH/USD",
+    "date": "2026-11-17",
+    "pnl": -150,
+    "stop8": -401,
+    "atr2": -652,
+    "hold10": -379,
+    "stockUptrend": false,
+    "marketUptrend": false,
+    "moveBeforeBuyPct": 0.22,
+    "exit": "stop-loss -3% hit"
+   },
+   {
+    "symbol": "SOL/USD",
+    "date": "2026-11-16",
+    "pnl": 107,
+    "stop8": -400,
+    "atr2": -78,
+    "hold10": -78,
+    "stockUptrend": false,
+    "marketUptrend": false,
+    "moveBeforeBuyPct": -0.02,
+    "exit": "48h limit"
+   }
+  ],
+  "note": "Daily prices after the buy day; the buy day's own path is unknown, so this is an estimate."
+ },
+ "log": [
+  "11-25 22:35 Replayed the bot's 28 trades",
+  "11-25 22:35 Lab running with 6 Gemini key(s) until 2026-12-02T21:57 UTC"
+ ],
+ "reportUrl": null
+}
