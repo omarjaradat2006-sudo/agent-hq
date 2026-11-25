@@ -471,7 +471,7 @@
       if (l.startsWith("#") && !paused) return null; const raw = l.replace(/^#[^:]*:\s*/, ""); const p = raw.split(/\s+/); if (p.length < 6) return null;
       const cmd = p.slice(5).join(" ").replace(/^.*scripts\/server\//, "").replace(/\s*>.*$/, "");
       const key = Object.keys(JOBNAME).sort((a, b) => b.length - a.length).find(k => cmd.startsWith(k));
-      return { paused, f: p.slice(0, 5), name: key ? JOBNAME[key] : cmd, m: cronField(p[0], 0, 59), h: cronField(p[1], 0, 23), dom: cronField(p[2], 1, 31), mon: cronField(p[3], 1, 12), dow: cronField(p[4], 0, 6) }; }).filter(Boolean); }
+      return { paused, cmd, f: p.slice(0, 5), name: key ? JOBNAME[key] : cmd, m: cronField(p[0], 0, 59), h: cronField(p[1], 0, 23), dom: cronField(p[2], 1, 31), mon: cronField(p[3], 1, 12), dow: cronField(p[4], 0, 6) }; }).filter(Boolean); }
   function nextRun(j, from) { const now = from || new Date();
     for (let d = 0; d < 45; d++) { const day = new Date(now.getFullYear(), now.getMonth(), now.getDate() + d);
       if (j.dom && !j.dom.includes(day.getDate())) continue; if (j.mon && !j.mon.includes(day.getMonth() + 1)) continue; if (j.dow && !j.dow.includes(day.getDay())) continue;
@@ -485,9 +485,60 @@
     return "Every day at " + t; }
   function whenLabel(d) { if (!d) return "-"; const now = new Date(); const day = Math.round((new Date(d.getFullYear(), d.getMonth(), d.getDate()) - new Date(now.getFullYear(), now.getMonth(), now.getDate())) / 864e5);
     return (day === 0 ? "Today" : day === 1 ? "Tomorrow" : DOW[d.getDay()] + " " + d.toLocaleDateString([], { month: "short", day: "numeric" })) + " · " + d.toLocaleTimeString([], { hour: "numeric", minute: "2-digit" }); }
+  function jobTeam(j) { const c = j.cmd || ""; const m = c.match(/run_team\.sh (\w+)/);
+    if (m) return { chief: "hq" }[m[1]] || m[1]; if (/fight/.test(c)) return "fight"; if (/trading/.test(c)) return "trading"; return "youtube"; }
+  async function loadCron() { if (!CRON) { try { const r = await fetch(ROOT + "scripts/server/crontab.txt?t=" + Date.now(), { cache: "no-store" }); CRON = r.ok ? parseCron(await r.text()) : []; } catch { CRON = []; } } return CRON; }
+  let calWeek = 0;
+  async function openCalendar() {
+    let ov = document.getElementById("calov"); if (!ov) { ov = el("div", "calov"); ov.id = "calov"; document.body.append(ov); }
+    ov.hidden = false; ov.replaceChildren(el("div", "muted", "Loading schedule…")); await loadCron(); drawCalendar(ov);
+  }
+  function drawCalendar(ov) {
+    ov.replaceChildren();
+    const now = new Date(), mon = new Date(now.getFullYear(), now.getMonth(), now.getDate() - ((now.getDay() + 6) % 7) + 7 * calWeek);
+    const days = [...Array(7)].map((_, i) => new Date(mon.getFullYear(), mon.getMonth(), mon.getDate() + i));
+    const head = el("div", "cal-head"); const ttl = el("div"); ttl.append(el("h2", null, "Agent schedule"));
+    ttl.append(el("div", "muted", days[0].toLocaleDateString([], { month: "short", day: "numeric" }) + " – " + days[6].toLocaleDateString([], { month: "short", day: "numeric", year: "numeric" }) + " · Toronto time"));
+    const nav = el("div", "row"); const b = (txt, fn) => { const x = el("button", "btn", txt); x.onclick = fn; nav.append(x); };
+    b("‹ Prev week", () => { calWeek--; drawCalendar(ov); }); b("This week", () => { calWeek = 0; drawCalendar(ov); }); b("Next week ›", () => { calWeek++; drawCalendar(ov); });
+    b("Close ×", () => { ov.hidden = true; }); head.append(ttl, nav); ov.append(head);
+    const jobs = CRON.filter(j => !j.paused), hourly = jobs.filter(j => !j.h), timed = jobs.filter(j => j.h);
+    const strip = el("div", "cal-strip");
+    hourly.forEach(j => { const c = el("span", "cal-chip"); c.style.setProperty("--c", (CFG.teams.find(x => x.id === jobTeam(j)) || {}).color || "#888"); c.textContent = j.name + " · " + howOften(j).toLowerCase(); strip.append(c); });
+    const tr = el("span", "cal-chip"); tr.style.setProperty("--c", (CFG.teams.find(x => x.id === "trading") || {}).color || "#888"); tr.textContent = "Trading Desk · always on"; strip.append(tr);
+    CRON.filter(j => j.paused).forEach(j => strip.append(el("span", "cal-chip paused", j.name + " · paused")));
+    ov.append(strip);
+    const START = 5, END = 22, PX = 56;   // 5 AM to 10 PM, 56px an hour
+    const grid = el("div", "cal-grid"); grid.style.setProperty("--rows", END - START);
+    const times = el("div", "cal-times"); times.append(el("div", "cal-dayhead"));
+    const tbody = el("div", "cal-col-body"); for (let h = START; h < END; h++) tbody.append(el("div", "cal-hour", hm(h, 0).replace(":00", ""))); times.append(tbody); grid.append(times);
+    days.forEach(d => { const isToday = d.toDateString() === now.toDateString();
+      const col = el("div", "cal-col" + (isToday ? " today" : "")); const dh = el("div", "cal-dayhead"); dh.append(el("b", null, DOW[d.getDay()]), el("span", null, String(d.getDate()))); col.append(dh);
+      const body = el("div", "cal-col-body"); body.style.height = (END - START) * PX + "px";
+      for (let h = START; h < END; h++) body.append(el("div", "cal-line"));
+      const ev = [];
+      timed.forEach(j => { if (j.dom && !j.dom.includes(d.getDate())) return; if (j.mon && !j.mon.includes(d.getMonth() + 1)) return; if (j.dow && !j.dow.includes(d.getDay())) return;
+        j.h.forEach(h => (j.m || [0]).forEach(m => ev.push({ j, mins: h * 60 + m }))); });
+      ev.sort((a, b) => a.mins - b.mins);
+      const lanesEnd = []; ev.forEach(e => { let l = lanesEnd.findIndex(end => end <= e.mins); if (l < 0) { l = lanesEnd.length; lanesEnd.push(0); } lanesEnd[l] = e.mins + 45; e.lane = l; });
+      ev.forEach(e => { const top = (e.mins / 60 - START) * PX; if (top < 0 || top > (END - START) * PX) return;
+        const n = Math.max(...ev.filter(o => Math.abs(o.mins - e.mins) < 45).map(o => o.lane)) + 1;
+        const x = el("div", "cal-ev"); const cfg = CFG.teams.find(t => t.id === jobTeam(e.j)) || {}; x.style.setProperty("--c", cfg.color || "#888");
+        x.style.top = top + "px"; x.style.left = `calc(${(e.lane / n) * 100}% + 2px)`; x.style.width = `calc(${100 / n}% - 4px)`;
+        const t0 = new Date(d.getFullYear(), d.getMonth(), d.getDate(), Math.floor(e.mins / 60), e.mins % 60);
+        if (t0 < now) x.classList.add("past");
+        x.append(el("b", null, hm(Math.floor(e.mins / 60), e.mins % 60)), el("span", null, e.j.name)); x.title = e.j.name + " · " + howOften(e.j);
+        if (cfg.id && M.teams[cfg.id]) x.onclick = () => { ov.hidden = true; focusTeam(cfg.id); };
+        body.append(x); });
+      if (isToday) { const nl = el("div", "cal-now"); nl.style.top = ((now.getHours() * 60 + now.getMinutes()) / 60 - START) * PX + "px"; body.append(nl); }
+      col.append(body); grid.append(col); });
+    const wrap = el("div", "cal-wrap"); wrap.append(grid); ov.append(wrap);
+    const nowTop = ((now.getHours() + now.getMinutes() / 60) - START - 1.5) * PX; requestAnimationFrame(() => { wrap.scrollTop = Math.max(0, nowTop); });
+  }
   async function vSchedule(t, body) {
+    const ob = el("button", "btn", "Open weekly calendar"); ob.onclick = openCalendar; body.append(ob);
     body.append(el("div", "why", "When every agent and video job runs on your server (Toronto time). Read live from the server's schedule file."));
-    if (!CRON) { try { const r = await fetch(ROOT + "scripts/server/crontab.txt?t=" + Date.now(), { cache: "no-store" }); CRON = r.ok ? parseCron(await r.text()) : []; } catch { CRON = []; } }
+    await loadCron();
     if (!CRON.length) { body.append(empty("Couldn't load the schedule", "scripts/server/crontab.txt wasn't found.")); return; }
     const jobs = CRON.filter(j => !j.paused).map(j => ({ ...j, next: nextRun(j) })).sort((a, b) => (a.next || 9e15) - (b.next || 9e15));
     const card = (title, list, paused) => { const c = el("div", "card"); c.append(el("div", "label", title));
@@ -1314,7 +1365,7 @@ Server breakdown (Gemini watched it with sound):
     const bar = $("#teambar"); bar.replaceChildren();
     CFG.teams.forEach(c => { const t = M.teams[c.id]; const b = el("button"); b.dataset.id = c.id; const sw = el("span", "sw"); sw.style.background = c.color; b.append(sw, document.createTextNode(c.virtual ? "HQ" : c.name));
       if (t.agents.some(a => a.status === "working")) b.append(el("span", "live")); b.onclick = () => focusTeam(c.id); bar.append(b); });
-    { const b = el("button"); b.dataset.id = "schedule"; const sw = el("span", "sw"); sw.style.background = "#e8e3ff"; b.append(sw, document.createTextNode("Schedule")); b.onclick = () => focusTeam("hq", "schedule"); bar.append(b); }
+    { const b = el("button"); b.dataset.id = "schedule"; const sw = el("span", "sw"); sw.style.background = "#e8e3ff"; b.append(sw, document.createTextNode("Schedule")); b.onclick = openCalendar; bar.append(b); }
     syncTeambar();
     const tr = $("#tickerTrack"); tr.replaceChildren();
     const items = all.flatMap(t => t.log.slice(0, 6).map(l => ({ ...l, team: t }))).sort((a, b) => (b.t || "").localeCompare(a.t || "")).slice(0, 24);
