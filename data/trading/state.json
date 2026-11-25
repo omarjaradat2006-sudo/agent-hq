@@ -1,42 +1,37 @@
 {
  "team": "trading",
  "plain": {
-  "line": "Down $7,189.84 since start · 29 trades · holding: PLTR, AVAV, HLAL, SPUS, TMO, NOW",
+  "line": "Down $9,438.23 since start · 33 trades · holding: UMMA, SPWO, HLAL, SPUS, SPUS",
   "rulesMode": "ultra",
-  "top": "Down $7,189.84 since start (-7.19%) · just holding SPY would be -4.67%",
+  "top": "Down $9,438.23 since start (-9.44%) · just holding SPY would be -7.29%",
   "up": false,
   "holding": [
-   "PLTR: 70 shares worth $11,218.90, down $74.20 (trailing stop: sells if it falls 3% from its high)",
-   "AVAV: 143 shares worth $12,669.80, down $37.18 (trailing stop: sells if it falls 3% from its high)",
-   "HLAL: 1 shares worth $66.00, down $0.27 (sells at $100.34 or stops at $60.20)",
-   "SPUS: 2 shares worth $108.34, down $0.03 (sells at $81.06 or stops at $48.64)",
-   "TMO: 16 shares worth $11,129.92, down $69.44 (trailing stop: sells if it falls 3% from its high)",
-   "NOW: 169 shares worth $15,412.09, down $85.27 (sells at $97.20 or stops at $88.95)"
+   "UMMA: buy order sent, waiting to fill",
+   "SPWO: buy order sent, waiting to fill",
+   "HLAL: buy order sent, waiting to fill",
+   "SPUS: buy order sent, waiting to fill",
+   "SPUS: 2 shares worth $17,023.72, down $10.41 (sells at $81.06 or stops at $48.64)"
   ],
   "today": [
-   "Bought PLTR after the news: Reports of attacks on oil tankers in the Strait of Hormuz and a Houthi attack on a Riyadh financial center are escalating regional conflict and supply risks.",
-   "Bought AVAV after the news: Houthi terrorist attacks injuring individuals at a Riyadh financial district tower escalate regional Middle East conflict risks.",
+   "Bought UMMA after the news: Buy the dip: the whole market (SPY) was -2.93% today.",
+   "Bought SPWO after the news: Buy the dip: the whole market (SPY) was -2.93% today.",
    "Bought HLAL after the news: Core holding: rides the whole (halal) market.",
    "Bought SPUS after the news: Core holding: rides the whole (halal) market.",
-   "Bought NVDA after the news: Taiwanese markets surge over nine percent following Jensen Huang's return as CEO of Nvidia, driving broad tech and semiconductor enthusiasm.",
-   "Bought TMO after the news: Agilent Technologies reports a strong Q4 earnings beat with revenue exceeding $2 billion.",
-   "Sold NVDA (trailing stop hit (-3.3%)): lost $392.04.",
-   "Sold AMZN (bad news: Fed officials continue to signal potential for further rate hikes, weighing on m): lost $446.60.",
-   "Sold TSLA (stop-loss -3% hit): lost $391.96.",
-   "Sold AMAT (bad news: US readies tariff hikes on China and EU goods as soon as Tuesday, sparking marke): made $69.42.",
-   "Sold AMD (bad news: US readies tariff hikes on China and EU goods as soon as Tuesday, sparking marke): lost $348.50.",
-   "Scanned the news 119 times today: read 6119 headlines, found 163 that could move a stock or coin it's allowed to trade.",
-   "Passed on AVAV, TSLA: already holding it.",
-   "Passed on AEM, CVX, NEM, TSLA, XOM: order failed: not enough cash for one share.",
-   "Passed on BTC/USD, ETH/USD: price hasn't moved the expected way yet (-3.08%).",
-   "Passed on AVAV, BTC/USD, NEM: already $69,555 invested (max 75% of $93,048).",
-   "Safety rules that stepped in: bad news exit (x3), cash only no margin (x12), one position per asset (x49), max invested (x87), stop loss -3% (x1), trailing stop (x1), stock entry window (x16)."
+   "Sold PLTR (trailing stop hit (-4.7%)): lost $536.20.",
+   "Sold AVAV (trailing stop hit (-3.4%)): lost $435.16.",
+   "Sold HLAL (bad news: Expectations grow that regional Fed banks and policy makers lean towards tighter): lost $0.32.",
+   "Sold TMO (trailing stop hit (-3.4%)): lost $376.12.",
+   "Sold NOW (stop-loss -3% hit): lost $473.26.",
+   "Scanned the news 36 times today: read 3903 headlines, found 122 that could move a stock or coin it's allowed to trade.",
+   "Passed on APA, COP, CRM, CVX, DVN: down 3% today, no new trades until tomorrow.",
+   "Passed on AVAV: price hasn't moved the expected way yet (-3.47%).",
+   "Safety rules that stepped in: daily loss halt (x38), bad news exit (x1), trailing stop (x3), stop loss -3% (x1)."
   ],
   "watchlist": "Allowed to trade: 68 halal stocks, 5 Shariah ETFs, 9 coins.",
-  "lastScan": "2026-11-25T01:08:17Z"
+  "lastScan": "2026-11-25T14:36:45Z"
  },
  "hired": true,
- "updatedAt": "2026-11-25T01:08:27Z",
+ "updatedAt": "2026-11-25T14:52:01Z",
  "mode": "PAPER",
  "agents": [
   {
@@ -44,16 +39,16 @@
    "name": "News Scout",
    "role": "Reads X, Reddit and news feeds",
    "status": "working",
-   "doing": "Read 91 new headlines/posts, 6 market-moving stories",
-   "lastRun": "2026-11-25T01:08:26Z"
+   "doing": "Read 300 new headlines/posts, 2 market-moving stories",
+   "lastRun": "2026-11-25T14:51:45Z"
   },
   {
    "id": "analyst",
    "name": "News Analyst",
    "role": "Gemini: is it real, what moves, which way",
-   "status": "ok",
-   "doing": "Bad news for AMZN: Fed officials continue to signal potential for further rate hikes, weighing on market sentiment.",
-   "lastRun": "2026-11-24T23:52:17Z"
+   "status": "working",
+   "doing": "Gemini triage failed, skipping this batch: All Gemini models failed. Last error: Gemini HTTP 429 on gemini-3.8-flash: {\n  \"error\": {\n    \"code\": 429,\n    \"message\": \"You exceeded your current quota, plea",
+   "lastRun": "2026-11-25T14:51:43Z"
   },
   {
    "id": "confirm",
@@ -75,17 +70,17 @@
    "id": "risk",
    "name": "Risk Officer",
    "role": "Hard limits, stop-losses, kill switch",
-   "status": "idle",
-   "doing": "",
-   "lastRun": null
+   "status": "ok",
+   "doing": "Down -3.3% today: no new trades until tomorrow",
+   "lastRun": "2026-11-25T05:11:29Z"
   },
   {
    "id": "trader",
    "name": "Trader",
    "role": "Places paper orders on Alpaca",
-   "status": "ok",
-   "doing": "Closed AMZN: bad news: Fed officials continue to signal potential for further rate hikes, weighing on m, -2.31% ($-446.60)",
-   "lastRun": "2026-11-24T23:52:20Z"
+   "status": "working",
+   "doing": "Market down -2.9% today: buying the dip in SPTE, SPWO, UMMA",
+   "lastRun": "2026-11-25T14:51:59Z"
   },
   {
    "id": "coins",
@@ -105,6 +100,351 @@
   }
  ],
  "log": [
+  {
+   "t": "2026-11-25T14:51:59Z",
+   "agent": "Trader",
+   "msg": "Market down -2.9% today: buying the dip in SPTE, SPWO, UMMA"
+  },
+  {
+   "t": "2026-11-25T14:51:47Z",
+   "agent": "Trader",
+   "msg": "Core holding: putting $33,865 into SPUS, HLAL (target $33,969 = 50% of the budget)"
+  },
+  {
+   "t": "2026-11-25T14:51:47Z",
+   "agent": "Market Study",
+   "msg": "Market study: 12 of 82 names in uptrends; picks ABBV, COST, PG, REGN, LLY; Stock market is in a downtrend (SPY under its 200-day average): no new trend buys in stocks; coins in a downtrend, no new coin buys"
+  },
+  {
+   "t": "2026-11-25T14:51:45Z",
+   "agent": "News Scout",
+   "msg": "Read 300 new headlines/posts, 2 market-moving stories"
+  },
+  {
+   "t": "2026-11-25T14:51:43Z",
+   "agent": "News Analyst",
+   "msg": "Gemini triage failed, skipping this batch: All Gemini models failed. Last error: Gemini HTTP 429 on gemini-3.8-flash: {\n  \"error\": {\n    \"code\": 429,\n    \"message\": \"You exceeded your current quota, plea"
+  },
+  {
+   "t": "2026-11-25T14:47:51Z",
+   "agent": "News Analyst",
+   "msg": "Gemini triage failed, skipping this batch: All Gemini models failed. Last error: Gemini HTTP 429 on gemini-3.8-flash: {\n  \"error\": {\n    \"code\": 429,\n    \"message\": \"You exceeded your current quota, plea"
+  },
+  {
+   "t": "2026-11-25T14:44:14Z",
+   "agent": "News Analyst",
+   "msg": "Gemini triage failed, skipping this batch: All Gemini models failed. Last error: Gemini HTTP 429 on gemini-3.8-flash: {\n  \"error\": {\n    \"code\": 429,\n    \"message\": \"You exceeded your current quota, plea"
+  },
+  {
+   "t": "2026-11-25T14:40:29Z",
+   "agent": "News Analyst",
+   "msg": "Gemini triage failed, skipping this batch: All Gemini models failed. Last error: Gemini HTTP 429 on gemini-3.8-flash: {\n  \"error\": {\n    \"code\": 429,\n    \"message\": \"You exceeded your current quota, plea"
+  },
+  {
+   "t": "2026-11-25T14:36:45Z",
+   "agent": "Trader",
+   "msg": "Closed NOW: stop-loss -3% hit, -3.05% ($-473.26)"
+  },
+  {
+   "t": "2026-11-25T14:36:45Z",
+   "agent": "Trader",
+   "msg": "Closed TMO: trailing stop hit (-3.4%), -3.36% ($-376.12)"
+  },
+  {
+   "t": "2026-11-25T14:36:44Z",
+   "agent": "Trader",
+   "msg": "Closed AVAV: trailing stop hit (-3.4%), -3.42% ($-435.16)"
+  },
+  {
+   "t": "2026-11-25T14:36:44Z",
+   "agent": "Trader",
+   "msg": "Closed PLTR: trailing stop hit (-4.7%), -4.75% ($-536.20)"
+  },
+  {
+   "t": "2026-11-25T14:21:43Z",
+   "agent": "News Scout",
+   "msg": "Read 253 new headlines/posts, 1 market-moving stories"
+  },
+  {
+   "t": "2026-11-25T14:21:43Z",
+   "agent": "News Analyst",
+   "msg": "Gemini triage failed, skipping this batch: All Gemini models failed. Last error: Gemini HTTP 429 on gemini-3.8-flash: {\n  \"error\": {\n    \"code\": 429,\n    \"message\": \"You exceeded your current quota, plea"
+  },
+  {
+   "t": "2026-11-25T14:17:30Z",
+   "agent": "News Analyst",
+   "msg": "Gemini triage failed, skipping this batch: All Gemini models failed. Last error: Gemini HTTP 429 on gemini-3.8-flash: {\n  \"error\": {\n    \"code\": 429,\n    \"message\": \"You exceeded your current quota, plea"
+  },
+  {
+   "t": "2026-11-25T13:54:54Z",
+   "agent": "News Scout",
+   "msg": "Read 123 new headlines/posts, 5 market-moving stories"
+  },
+  {
+   "t": "2026-11-25T13:37:55Z",
+   "agent": "News Scout",
+   "msg": "Read 82 new headlines/posts, 8 market-moving stories"
+  },
+  {
+   "t": "2026-11-25T13:18:19Z",
+   "agent": "News Scout",
+   "msg": "Read 184 new headlines/posts, 3 market-moving stories"
+  },
+  {
+   "t": "2026-11-25T13:02:47Z",
+   "agent": "News Scout",
+   "msg": "Read 82 new headlines/posts, 5 market-moving stories"
+  },
+  {
+   "t": "2026-11-25T12:45:22Z",
+   "agent": "News Scout",
+   "msg": "Read 132 new headlines/posts, 4 market-moving stories"
+  },
+  {
+   "t": "2026-11-25T12:28:46Z",
+   "agent": "News Scout",
+   "msg": "Read 96 new headlines/posts, 2 market-moving stories"
+  },
+  {
+   "t": "2026-11-25T12:13:31Z",
+   "agent": "News Scout",
+   "msg": "Read 112 new headlines/posts, 3 market-moving stories"
+  },
+  {
+   "t": "2026-11-25T11:56:29Z",
+   "agent": "News Scout",
+   "msg": "Read 96 new headlines/posts, 5 market-moving stories"
+  },
+  {
+   "t": "2026-11-25T11:41:19Z",
+   "agent": "News Scout",
+   "msg": "Read 140 new headlines/posts, 1 market-moving stories"
+  },
+  {
+   "t": "2026-11-25T11:23:50Z",
+   "agent": "News Scout",
+   "msg": "Read 124 new headlines/posts, 5 market-moving stories"
+  },
+  {
+   "t": "2026-11-25T11:08:11Z",
+   "agent": "News Scout",
+   "msg": "Read 114 new headlines/posts, 2 market-moving stories"
+  },
+  {
+   "t": "2026-11-25T10:53:02Z",
+   "agent": "News Scout",
+   "msg": "Read 83 new headlines/posts, 0 market-moving stories"
+  },
+  {
+   "t": "2026-11-25T10:37:54Z",
+   "agent": "News Scout",
+   "msg": "Read 87 new headlines/posts, 1 market-moving stories"
+  },
+  {
+   "t": "2026-11-25T10:22:40Z",
+   "agent": "News Scout",
+   "msg": "Read 96 new headlines/posts, 3 market-moving stories"
+  },
+  {
+   "t": "2026-11-25T10:07:15Z",
+   "agent": "News Scout",
+   "msg": "Read 82 new headlines/posts, 2 market-moving stories"
+  },
+  {
+   "t": "2026-11-25T09:52:03Z",
+   "agent": "News Scout",
+   "msg": "Read 82 new headlines/posts, 3 market-moving stories"
+  },
+  {
+   "t": "2026-11-25T09:36:53Z",
+   "agent": "News Scout",
+   "msg": "Read 99 new headlines/posts, 4 market-moving stories"
+  },
+  {
+   "t": "2026-11-25T09:21:41Z",
+   "agent": "News Scout",
+   "msg": "Read 110 new headlines/posts, 2 market-moving stories"
+  },
+  {
+   "t": "2026-11-25T09:06:28Z",
+   "agent": "Trader",
+   "msg": "Closed HLAL: bad news: Expectations grow that regional Fed banks and policy makers lean towards tighter, -0.48% ($-0.32)"
+  },
+  {
+   "t": "2026-11-25T09:06:26Z",
+   "agent": "News Analyst",
+   "msg": "Bad news for HLAL: Expectations grow that regional Fed banks and policy makers lean towards tighter monetary policy fol"
+  },
+  {
+   "t": "2026-11-25T09:06:26Z",
+   "agent": "News Scout",
+   "msg": "Read 163 new headlines/posts, 5 market-moving stories"
+  },
+  {
+   "t": "2026-11-25T08:50:14Z",
+   "agent": "News Scout",
+   "msg": "Read 75 new headlines/posts, 3 market-moving stories"
+  },
+  {
+   "t": "2026-11-25T08:35:03Z",
+   "agent": "News Scout",
+   "msg": "Read 85 new headlines/posts, 2 market-moving stories"
+  },
+  {
+   "t": "2026-11-25T08:18:36Z",
+   "agent": "News Scout",
+   "msg": "Read 200 new headlines/posts, 7 market-moving stories"
+  },
+  {
+   "t": "2026-11-25T08:03:12Z",
+   "agent": "News Scout",
+   "msg": "Read 113 new headlines/posts, 5 market-moving stories"
+  },
+  {
+   "t": "2026-11-25T07:47:50Z",
+   "agent": "News Scout",
+   "msg": "Read 66 new headlines/posts, 3 market-moving stories"
+  },
+  {
+   "t": "2026-11-25T07:32:39Z",
+   "agent": "News Scout",
+   "msg": "Read 74 new headlines/posts, 5 market-moving stories"
+  },
+  {
+   "t": "2026-11-25T07:16:55Z",
+   "agent": "News Scout",
+   "msg": "Read 102 new headlines/posts, 4 market-moving stories"
+  },
+  {
+   "t": "2026-11-25T07:01:31Z",
+   "agent": "News Scout",
+   "msg": "Read 58 new headlines/posts, 3 market-moving stories"
+  },
+  {
+   "t": "2026-11-25T06:46:07Z",
+   "agent": "News Scout",
+   "msg": "Read 70 new headlines/posts, 4 market-moving stories"
+  },
+  {
+   "t": "2026-11-25T06:30:53Z",
+   "agent": "News Scout",
+   "msg": "Read 57 new headlines/posts, 2 market-moving stories"
+  },
+  {
+   "t": "2026-11-25T06:15:33Z",
+   "agent": "News Scout",
+   "msg": "Read 72 new headlines/posts, 5 market-moving stories"
+  },
+  {
+   "t": "2026-11-25T06:00:22Z",
+   "agent": "News Scout",
+   "msg": "Read 98 new headlines/posts, 5 market-moving stories"
+  },
+  {
+   "t": "2026-11-25T05:45:03Z",
+   "agent": "News Scout",
+   "msg": "Read 54 new headlines/posts, 2 market-moving stories"
+  },
+  {
+   "t": "2026-11-25T05:26:50Z",
+   "agent": "News Scout",
+   "msg": "Read 70 new headlines/posts, 4 market-moving stories"
+  },
+  {
+   "t": "2026-11-25T05:11:37Z",
+   "agent": "News Scout",
+   "msg": "Read 69 new headlines/posts, 2 market-moving stories"
+  },
+  {
+   "t": "2026-11-25T05:11:29Z",
+   "agent": "Risk Officer",
+   "msg": "Down -3.3% today: no new trades until tomorrow"
+  },
+  {
+   "t": "2026-11-25T04:56:27Z",
+   "agent": "News Scout",
+   "msg": "Read 51 new headlines/posts, 3 market-moving stories"
+  },
+  {
+   "t": "2026-11-25T04:41:04Z",
+   "agent": "News Scout",
+   "msg": "Read 51 new headlines/posts, 3 market-moving stories"
+  },
+  {
+   "t": "2026-11-25T04:25:51Z",
+   "agent": "News Scout",
+   "msg": "Read 52 new headlines/posts, 3 market-moving stories"
+  },
+  {
+   "t": "2026-11-25T04:10:42Z",
+   "agent": "News Scout",
+   "msg": "Read 54 new headlines/posts, 3 market-moving stories"
+  },
+  {
+   "t": "2026-11-25T03:55:33Z",
+   "agent": "News Scout",
+   "msg": "Read 37 new headlines/posts, 2 market-moving stories"
+  },
+  {
+   "t": "2026-11-25T03:40:16Z",
+   "agent": "News Scout",
+   "msg": "Read 42 new headlines/posts, 1 market-moving stories"
+  },
+  {
+   "t": "2026-11-25T03:25:08Z",
+   "agent": "News Scout",
+   "msg": "Read 44 new headlines/posts, 2 market-moving stories"
+  },
+  {
+   "t": "2026-11-25T03:09:59Z",
+   "agent": "News Scout",
+   "msg": "Read 63 new headlines/posts, 3 market-moving stories"
+  },
+  {
+   "t": "2026-11-25T02:54:48Z",
+   "agent": "News Scout",
+   "msg": "Read 43 new headlines/posts, 3 market-moving stories"
+  },
+  {
+   "t": "2026-11-25T02:39:38Z",
+   "agent": "News Scout",
+   "msg": "Read 49 new headlines/posts, 3 market-moving stories"
+  },
+  {
+   "t": "2026-11-25T02:24:29Z",
+   "agent": "News Scout",
+   "msg": "Read 50 new headlines/posts, 3 market-moving stories"
+  },
+  {
+   "t": "2026-11-25T02:09:10Z",
+   "agent": "News Scout",
+   "msg": "Read 46 new headlines/posts, 1 market-moving stories"
+  },
+  {
+   "t": "2026-11-25T01:53:59Z",
+   "agent": "News Scout",
+   "msg": "Read 35 new headlines/posts, 2 market-moving stories"
+  },
+  {
+   "t": "2026-11-25T01:53:52Z",
+   "agent": "Risk Officer",
+   "msg": "Down -3.0% today: no new trades until tomorrow"
+  },
+  {
+   "t": "2026-11-25T01:38:51Z",
+   "agent": "News Scout",
+   "msg": "Read 31 new headlines/posts, 2 market-moving stories"
+  },
+  {
+   "t": "2026-11-25T01:23:42Z",
+   "agent": "News Scout",
+   "msg": "Read 48 new headlines/posts, 2 market-moving stories"
+  },
+  {
+   "t": "2026-11-25T01:08:29Z",
+   "agent": "Trader",
+   "msg": "Saved results to the Agent HQ dashboard"
+  },
   {
    "t": "2026-11-25T01:08:26Z",
    "agent": "News Scout",
@@ -509,381 +849,37 @@
    "t": "2026-11-23T19:29:21Z",
    "agent": "Trader",
    "msg": "Saved results to the Agent HQ dashboard"
-  },
-  {
-   "t": "2026-11-23T19:29:17Z",
-   "agent": "News Scout",
-   "msg": "Read 3 new headlines/posts, 0 market-moving stories"
-  },
-  {
-   "t": "2026-11-23T19:21:09Z",
-   "agent": "News Scout",
-   "msg": "Read 3 new headlines/posts, 1 market-moving stories"
-  },
-  {
-   "t": "2026-11-23T19:15:59Z",
-   "agent": "News Scout",
-   "msg": "Read 48 new headlines/posts, 2 market-moving stories"
-  },
-  {
-   "t": "2026-11-23T19:10:44Z",
-   "agent": "News Scout",
-   "msg": "Read 19 new headlines/posts, 0 market-moving stories"
-  },
-  {
-   "t": "2026-11-23T19:10:41Z",
-   "agent": "Trader",
-   "msg": "Bought 33 TSLA at $387.88 (stop $376.18, target $411.08)"
-  },
-  {
-   "t": "2026-11-23T19:10:40Z",
-   "agent": "Trader",
-   "msg": "Bought 75 AMZN at $258.20 (stop $250.46, target $273.70)"
-  },
-  {
-   "t": "2026-11-23T19:05:38Z",
-   "agent": "Trader",
-   "msg": "BUY AMZN: Amazon has acquired AI startup Decart to bolster its custom silicon and AI inference capab | volume 0.7x normal, price +0.00% since the news | TradingAgents not used (ultra mode)"
-  },
-  {
-   "t": "2026-11-23T19:05:38Z",
-   "agent": "Trader",
-   "msg": "BUY TSLA: Tesla has begun the rollout of its new FSD v15 self-driving software with significant safe | volume 1.6x normal, price +0.00% since the news | TradingAgents not used (ultra mode)"
-  },
-  {
-   "t": "2026-11-23T19:05:37Z",
-   "agent": "News Scout",
-   "msg": "Read 89 new headlines/posts, 2 market-moving stories"
-  },
-  {
-   "t": "2026-11-23T18:58:23Z",
-   "agent": "News Scout",
-   "msg": "Read 31 new headlines/posts, 0 market-moving stories"
-  },
-  {
-   "t": "2026-11-23T18:53:13Z",
-   "agent": "Trader",
-   "msg": "Closed CRWD: bad news: CrowdStrike's earnings beat is overshadowed by its massive $43.9 billion all-sto, -0.51% ($-245.70)"
-  },
-  {
-   "t": "2026-11-23T18:53:11Z",
-   "agent": "News Analyst",
-   "msg": "Bad news for CRWD: CrowdStrike's earnings beat is overshadowed by its massive $43.9 billion all-stock acquisition propo"
-  },
-  {
-   "t": "2026-11-23T18:53:11Z",
-   "agent": "News Scout",
-   "msg": "Read 2 new headlines/posts, 1 market-moving stories"
-  },
-  {
-   "t": "2026-11-23T18:48:06Z",
-   "agent": "News Scout",
-   "msg": "Read 1 new headlines/posts, 0 market-moving stories"
-  },
-  {
-   "t": "2026-11-23T18:47:57Z",
-   "agent": "Trader",
-   "msg": "Bought 16 AMD at $452.78 (stop $438.63, target $479.33)"
-  },
-  {
-   "t": "2026-11-23T18:47:57Z",
-   "agent": "Trader",
-   "msg": "Bought 21 AMAT at $343.62 (stop $332.79, target $363.66)"
-  },
-  {
-   "t": "2026-11-23T18:47:57Z",
-   "agent": "Trader",
-   "msg": "Bought 59 NVDA at $164.51 (stop $159.39, target $174.18)"
-  },
-  {
-   "t": "2026-11-23T18:42:57Z",
-   "agent": "Trader",
-   "msg": "Saved results to the Agent HQ dashboard"
-  },
-  {
-   "t": "2026-11-23T18:42:53Z",
-   "agent": "Trader",
-   "msg": "Core holding: no room left in the invested budget today"
-  },
-  {
-   "t": "2026-11-23T18:42:53Z",
-   "agent": "Trader",
-   "msg": "Order for KLAC failed: not enough cash for one share"
-  },
-  {
-   "t": "2026-11-23T18:42:53Z",
-   "agent": "Trader",
-   "msg": "BUY NVDA: Nvidia shares and the broader semiconductor sector continue to rally following the reinsta | volume 0.7x normal, price -0.57% since the news | TradingAgents not used (ultra mode)"
-  },
-  {
-   "t": "2026-11-23T18:42:53Z",
-   "agent": "Trader",
-   "msg": "BUY AMAT: Nvidia shares and the broader semiconductor sector continue to rally following the reinsta | volume 1.0x normal, price -0.29% since the news | TradingAgents not used (ultra mode)"
-  },
-  {
-   "t": "2026-11-23T18:42:52Z",
-   "agent": "Trader",
-   "msg": "BUY AMD: Nvidia shares and the broader semiconductor sector continue to rally following the reinsta | volume 1.1x normal, price -0.94% since the news | TradingAgents not used (ultra mode)"
-  },
-  {
-   "t": "2026-11-23T18:42:52Z",
-   "agent": "News Scout",
-   "msg": "Read 22 new headlines/posts, 2 market-moving stories"
-  },
-  {
-   "t": "2026-11-23T18:42:37Z",
-   "agent": "News Scout",
-   "msg": "Agent Reach not found: news feeds + Yahoo Finance + Reddit direct (no X)"
-  },
-  {
-   "t": "2026-11-23T18:42:37Z",
-   "agent": "Trader",
-   "msg": "Paper-trading bot started (Alpaca PAPER account only). Close this window to stop it."
-  },
-  {
-   "t": "2026-11-23T18:40:27Z",
-   "agent": "News Scout",
-   "msg": "Read 2 new headlines/posts, 0 market-moving stories"
-  },
-  {
-   "t": "2026-11-23T18:40:23Z",
-   "agent": "News Scout",
-   "msg": "Agent Reach not found: news feeds + Yahoo Finance + Reddit direct (no X)"
-  },
-  {
-   "t": "2026-11-23T18:40:23Z",
-   "agent": "Trader",
-   "msg": "Paper-trading bot started (Alpaca PAPER account only). Close this window to stop it."
-  },
-  {
-   "t": "2026-11-23T18:39:23Z",
-   "agent": "News Scout",
-   "msg": "Read 35 new headlines/posts, 0 market-moving stories"
-  },
-  {
-   "t": "2026-11-23T18:34:11Z",
-   "agent": "News Scout",
-   "msg": "Read 20 new headlines/posts, 1 market-moving stories"
-  },
-  {
-   "t": "2026-11-23T18:29:00Z",
-   "agent": "News Scout",
-   "msg": "Read 34 new headlines/posts, 1 market-moving stories"
-  },
-  {
-   "t": "2026-11-23T18:23:54Z",
-   "agent": "News Scout",
-   "msg": "Read 28 new headlines/posts, 1 market-moving stories"
-  },
-  {
-   "t": "2026-11-23T18:17:33Z",
-   "agent": "News Scout",
-   "msg": "Read 21 new headlines/posts, 0 market-moving stories"
-  },
-  {
-   "t": "2026-11-23T18:12:22Z",
-   "agent": "News Scout",
-   "msg": "Read 39 new headlines/posts, 1 market-moving stories"
-  },
-  {
-   "t": "2026-11-23T18:07:17Z",
-   "agent": "News Scout",
-   "msg": "Read 58 new headlines/posts, 1 market-moving stories"
-  },
-  {
-   "t": "2026-11-23T18:02:09Z",
-   "agent": "News Scout",
-   "msg": "Read 30 new headlines/posts, 1 market-moving stories"
-  },
-  {
-   "t": "2026-11-23T17:55:43Z",
-   "agent": "News Scout",
-   "msg": "Read 29 new headlines/posts, 0 market-moving stories"
-  },
-  {
-   "t": "2026-11-23T17:55:43Z",
-   "agent": "News Analyst",
-   "msg": "Gemini triage failed, skipping this batch: All Gemini models failed. Last error: Gemini HTTP 503 on gemini-3.1-flash-lite: {\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experien"
-  },
-  {
-   "t": "2026-11-23T17:48:58Z",
-   "agent": "News Scout",
-   "msg": "Read 26 new headlines/posts, 0 market-moving stories"
-  },
-  {
-   "t": "2026-11-23T17:48:58Z",
-   "agent": "News Analyst",
-   "msg": "Gemini triage failed, skipping this batch: All Gemini models failed. Last error: Gemini HTTP 503 on gemini-3.1-flash-lite: {\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experien"
-  },
-  {
-   "t": "2026-11-23T17:42:08Z",
-   "agent": "Trader",
-   "msg": "Saved results to the Agent HQ dashboard"
-  },
-  {
-   "t": "2026-11-23T17:42:05Z",
-   "agent": "News Scout",
-   "msg": "Read 24 new headlines/posts, 2 market-moving stories"
-  },
-  {
-   "t": "2026-11-23T17:36:56Z",
-   "agent": "News Scout",
-   "msg": "Read 55 new headlines/posts, 0 market-moving stories"
-  },
-  {
-   "t": "2026-11-23T17:31:49Z",
-   "agent": "News Scout",
-   "msg": "Read 46 new headlines/posts, 0 market-moving stories"
-  },
-  {
-   "t": "2026-11-23T17:26:34Z",
-   "agent": "News Scout",
-   "msg": "Read 32 new headlines/posts, 1 market-moving stories"
-  },
-  {
-   "t": "2026-11-23T17:19:36Z",
-   "agent": "News Scout",
-   "msg": "Read 26 new headlines/posts, 2 market-moving stories"
-  },
-  {
-   "t": "2026-11-23T17:14:30Z",
-   "agent": "News Scout",
-   "msg": "Read 29 new headlines/posts, 1 market-moving stories"
-  },
-  {
-   "t": "2026-11-23T17:09:22Z",
-   "agent": "News Scout",
-   "msg": "Read 24 new headlines/posts, 0 market-moving stories"
-  },
-  {
-   "t": "2026-11-23T17:04:17Z",
-   "agent": "News Scout",
-   "msg": "Read 65 new headlines/posts, 1 market-moving stories"
-  },
-  {
-   "t": "2026-11-23T16:59:10Z",
-   "agent": "News Scout",
-   "msg": "Read 19 new headlines/posts, 0 market-moving stories"
-  },
-  {
-   "t": "2026-11-23T16:57:40Z",
-   "agent": "Trader",
-   "msg": "Bought 234 CRWD at $204.67 (stop $198.37, target $216.78)"
-  },
-  {
-   "t": "2026-11-23T16:52:39Z",
-   "agent": "Trader",
-   "msg": "Saved results to the Agent HQ dashboard"
-  },
-  {
-   "t": "2026-11-23T16:52:36Z",
-   "agent": "Trader",
-   "msg": "BUY CRWD: CrowdStation reports record Q3 results and higher guidance alongside an all-stock Zscaler  | volume 7.0x normal, price -5.61% since the news | TradingAgents not used (ultra mode)"
-  },
-  {
-   "t": "2026-11-23T16:52:36Z",
-   "agent": "News Scout",
-   "msg": "Read 14 new headlines/posts, 1 market-moving stories"
-  },
-  {
-   "t": "2026-11-23T16:47:30Z",
-   "agent": "News Scout",
-   "msg": "Read 29 new headlines/posts, 2 market-moving stories"
-  },
-  {
-   "t": "2026-11-23T16:42:19Z",
-   "agent": "News Scout",
-   "msg": "Read 31 new headlines/posts, 3 market-moving stories"
-  },
-  {
-   "t": "2026-11-23T16:37:05Z",
-   "agent": "News Scout",
-   "msg": "Read 75 new headlines/posts, 0 market-moving stories"
-  },
-  {
-   "t": "2026-11-23T16:37:05Z",
-   "agent": "News Analyst",
-   "msg": "Gemini triage failed, skipping this batch: All Gemini models failed. Last error: Gemini HTTP 503 on gemini-3.1-flash-lite: {\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experien"
-  },
-  {
-   "t": "2026-11-23T16:35:12Z",
-   "agent": "News Analyst",
-   "msg": "Gemini triage failed, skipping this batch: All Gemini models failed. Last error: Gemini HTTP 503 on gemini-3.1-flash-lite: {\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experien"
-  },
-  {
-   "t": "2026-11-23T16:28:31Z",
-   "agent": "News Scout",
-   "msg": "Read 25 new headlines/posts, 2 market-moving stories"
-  },
-  {
-   "t": "2026-11-23T16:23:20Z",
-   "agent": "News Scout",
-   "msg": "Read 36 new headlines/posts, 0 market-moving stories"
-  },
-  {
-   "t": "2026-11-23T16:23:20Z",
-   "agent": "News Analyst",
-   "msg": "Gemini triage failed, skipping this batch: All Gemini models failed. Last error: Gemini HTTP 503 on gemini-3.1-flash-lite: {\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experien"
-  },
-  {
-   "t": "2026-11-23T16:16:36Z",
-   "agent": "News Scout",
-   "msg": "Read 43 new headlines/posts, 0 market-moving stories"
-  },
-  {
-   "t": "2026-11-23T16:11:20Z",
-   "agent": "News Scout",
-   "msg": "Read 37 new headlines/posts, 2 market-moving stories"
-  },
-  {
-   "t": "2026-11-23T16:05:50Z",
-   "agent": "News Scout",
-   "msg": "Read 62 new headlines/posts, 0 market-moving stories"
-  },
-  {
-   "t": "2026-11-23T16:05:50Z",
-   "agent": "News Analyst",
-   "msg": "Gemini triage failed, skipping this batch: All Gemini models failed. Last error: Gemini HTTP 503 on gemini-3.1-flash-lite: {\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experien"
-  },
-  {
-   "t": "2026-11-23T15:58:57Z",
-   "agent": "News Scout",
-   "msg": "Read 25 new headlines/posts, 0 market-moving stories"
-  },
-  {
-   "t": "2026-11-23T15:58:57Z",
-   "agent": "News Analyst",
-   "msg": "Gemini triage failed, skipping this batch: All Gemini models failed. Last error: Gemini HTTP 503 on gemini-3.1-flash-lite: {\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experien"
   }
  ],
  "brief": {
-  "date": "Tue Nov 24",
-  "createdAt": "2026-11-25T01:08:27Z",
-  "headline": "Paper account -$2,833 today (-2.96%), -7.19% total vs SPY -4.67% · 6 open",
-  "summary": "5 trade(s) closed today, 5/23 winners overall. TradingAgents checks used today: 0/5.",
+  "date": "Wed Nov 25",
+  "createdAt": "2026-11-25T14:52:01Z",
+  "headline": "Paper account -$2,588 today (-2.78%), -9.44% total vs SPY -7.29% · 5 open",
+  "summary": "5 trade(s) closed today, 5/28 winners overall. TradingAgents checks used today: 0/5.",
   "notes": [
+   "Down 3% today: no new trades until tomorrow.",
    "X/Reddit reader: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
   ]
  },
  "account": {
-  "equity": 92810.16,
-  "cash": 23353.86,
+  "equity": 90561.77,
+  "cash": 57244.67,
   "startEquity": 100000.0,
   "startedAt": "2026-11-10T01:51:53Z",
-  "dayPnl": -2832.53,
-  "dayPct": -2.96,
-  "totalPnl": -7189.84,
-  "totalPct": -7.19,
-  "spyPct": -4.67,
-  "vsSpyPct": -2.52
+  "dayPnl": -2588.09,
+  "dayPct": -2.78,
+  "totalPnl": -9438.23,
+  "totalPct": -9.44,
+  "spyPct": -7.29,
+  "vsSpyPct": -2.15
  },
  "status": {
   "killed": false,
-  "haltedToday": false,
+  "haltedToday": true,
   "deepUsed": 0,
   "deepMax": 5,
   "social": {
-   "at": "2026-11-25T01:08:21Z",
+   "at": "2026-11-25T14:36:49Z",
    "items": 0,
    "source": "Reddit via Tradestie + ApeWisdom (direct Reddit blocks servers; X needs Agent Reach)",
    "problems": [
@@ -891,15 +887,15 @@
     "r/stocks: HTTP 403 https://www.reddit.com/r/stocks/new.json: <body class=theme-beta><div><"
    ],
    "wsb": {
-    "at": "2026-11-25T01:08:21Z",
+    "at": "2026-11-25T14:36:49Z",
     "tickers": 50,
     "items": 0,
     "key": false
    },
    "ape": {
-    "at": "2026-11-25T01:08:21Z",
+    "at": "2026-11-25T14:36:50Z",
     "tickers": 200,
-    "items": 0,
+    "items": 1,
     "problems": []
    }
   },
@@ -911,179 +907,73 @@
  },
  "positions": [
   {
-   "id": "ahq-PLTR-20261124164652",
-   "symbol": "PLTR",
+   "id": "ahq-dip-UMMA-20261125145200",
+   "symbol": "UMMA",
    "asset": "stock",
-   "status": "open",
-   "entryOrderId": "36f0c764-f1e2-4753-a954-2524a2d7e555",
-   "qty": 70,
-   "cost": 11294.5,
-   "estPrice": 161.35,
-   "entryPrice": 161.33,
-   "stop": 156.51,
-   "target": null,
-   "openedAt": "2026-11-24T16:46:52Z",
-   "trail": 3.0,
+   "status": "pending",
+   "strategy": "dip",
+   "entryOrderId": "b847d7db-d37f-483a-8ae8-efcc0b65aa9f",
+   "qty": 366,
+   "cost": 11294.76,
+   "estPrice": 30.86,
+   "entryPrice": 30.86,
+   "stop": 28.7,
+   "target": 32.09,
+   "openedAt": "2026-11-25T14:52:00Z",
    "news": {
-    "summary": "Reports of attacks on oil tankers in the Strait of Hormuz and a Houthi attack on a Riyadh financial center are escalating regional conflict and supply risks.",
-    "category": "oil_supply",
-    "sources": [
-     {
-      "publisher": "ANI News",
-      "title": "Houthi attack on Riyadh Financial Centre in Saudi injures 11 people, including two Indians",
-      "url": "https://news.google.com/rss/articles/CBMi4wFBVV95cUxPYm84WmFSbU5TZ0lza2tudXhtNzA5YkpISHl6cnU0dk05b3RuR2ZtYTZJZERLdmgyaHUtM0dQb1Q3dklsV0hxbDBlSGdXQ0lPMWQxOUdlSGw1dGMxeVNWRFVzWXFCblA3UmxYT1Y3SkNXeU1Vb1MweWV0dV9sU2N5WlVuWWZvLWltMjA5WTdBaGZZSG9kNkZOaUZCSDhvQjd0VzA2N3JLNzVQT042alFEMnJKZkM3UnkxNC1IUTNEMzdLRW1mV2tDWllsNzdkVlY4OFdDOTQzZDhTTENCV0o1SVlIMA?oc=5"
-     },
-     {
-      "publisher": "Barchart.com",
-      "title": "Crude Prices Rebound on Reports of Attacks on Tankers in the Strait of Hormuz",
-      "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPTzB5VWhCYS1HWFBDLWNRaWgtT1owYjY1NTJ3Y0VPc0ZyYVNpM2ZudHFmY1ZnSEU3MnRzUDhBcmRCRHhUWEItRWl0cllPbVludTZGUTg3M1F0Z1FQQjNqSnA4VHllSEtBdjd4WnB5Yll2UW1Ld3Q2SVM2SkJrakR1Wk02ME56a3BDejQ2RDhiTmFrM2VOR21Eak91Z0VfTkZrZjhaWW9CcHpIQ1RySDh3YjJLSnpzWUFiTFpqQWVn?oc=5"
-     },
-     {
-      "publisher": "The New Region",
-      "title": "Houthi attack on Riyadh financial center wounds 11",
-      "url": "https://news.google.com/rss/articles/CBMiS0FVX3lxTE1kNHJOd1VqX2lJVmpLTTV2ZWV5M1VLS1Z6dHEyanpaLXREVnhIWDM5U29SYXFlYWJVd3ZIUHNTVTlURVpTV05Pb09ISQ?oc=5"
-     },
-     {
-      "publisher": "The New Arab",
-      "title": "Saudi skyscraper hit again, coalition slams 'terrorist attack'",
-      "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxOTlhMcl9ILXlSWFFjeGFJVlNKaUxqQTVsLS01eGZoSklqNmZMSzZnVnZaTGMxcTVQMmZDNlJtX252UW9SdmZvd1VKQm9GcUNtbW5YbU5GNVNrS01pMDRNV0NQQ2Z6R280LTZNN055c09DejZiSU0zdTI4OVlXNUltMFdJZHA2VzhIMVl5Z0M0dDA4Z9IBlwFBVV95cUxQYlE2VUNrbTJxaEhjSDBNSDQxR0d1QjVRYXRXWWFMUFRvX1EzTlRycWlPWXZHMTlZa0NhakFoQWlic1pLZENCRWhNSTFtdVMtaWFmRUxWX3c1NHhVZmFYNXd6dHZsY2JiSWkxQ0NMOHVQOFVyQVpIN1Blb29Bc0MxUTYyVnRxbU9NYlFyQ2lLVWdOZlJydkdr?oc=5"
-     }
-    ]
+    "summary": "Buy the dip: the whole market (SPY) was -2.93% today",
+    "category": "dip",
+    "sources": []
    },
    "reason": {
-    "triage": "Defense tech stocks benefit from heightened geopolitical instability.",
-    "confidence": 0.6,
-    "confirmation": "volume 1.1x normal, price +0.73% since the news",
-    "rvol": 1.12,
-    "movePct": 0.73,
-    "publishers": [
-     "ANI News",
-     "Barchart.com",
-     "The New Arab",
-     "The New Region"
-    ],
-    "tradingAgents": "not used (ultra mode)",
-    "taSummary": ""
-   },
-   "stopOrderId": "15707459-b20e-424f-8442-ec4330bd1527",
-   "lastPrice": 160.27,
-   "unrealizedPct": -0.66
+    "triage": "market-wide dip",
+    "confidence": null,
+    "confirmation": "SPY -2.93%",
+    "publishers": [],
+    "tradingAgents": "not used (dip buy)"
+   }
   },
   {
-   "id": "ahq-AVAV-20261124162010",
-   "symbol": "AVAV",
+   "id": "ahq-dip-SPWO-20261125145159",
+   "symbol": "SPWO",
    "asset": "stock",
-   "status": "open",
-   "entryOrderId": "b5c30106-695d-46d4-8a9c-0a1890a4185e",
-   "qty": 143,
-   "cost": 12594.01,
-   "estPrice": 88.07,
-   "entryPrice": 88.86,
-   "stop": 85.43,
-   "target": null,
-   "openedAt": "2026-11-24T16:20:10Z",
-   "trail": 3.0,
+   "status": "pending",
+   "strategy": "dip",
+   "entryOrderId": "ee7ce778-725d-471f-878a-79616bd79f1a",
+   "qty": 421,
+   "cost": 11316.48,
+   "estPrice": 26.88,
+   "entryPrice": 26.88,
+   "stop": 25.0,
+   "target": 27.96,
+   "openedAt": "2026-11-25T14:52:00Z",
    "news": {
-    "summary": "Houthi terrorist attacks injuring individuals at a Riyadh financial district tower escalate regional Middle East conflict risks.",
-    "category": "oil_supply",
-    "sources": [
-     {
-      "publisher": "Global Trade Magazine",
-      "title": "U.S. Sanctions Target Financial Networks Supporting Iran’s Oil and Shipping Operations",
-      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQQjV0My1DaG4yR3M1Q3BXM3QxWEtBQU9mdlNZQXp4S2dLOFNrSV9pcmM1bkZocW9aSmFOT0lMZndzN3E1eV8tcDNPRE90VVhsaGR0Qm5kazRpOVRUSHRYMTJRVE1nb2JGYWZrU09qZzBfdEJrUlRqNjlDM1JmM0RsQ3RRVzZXQS1MNkN1My1TbVRpSnlLNmJOOXhsaVc3V2Iwc3ZNU2R6ZWQzSXJsT3JPdk9aaGxXTkE?oc=5"
-     },
-     {
-      "publisher": "Savage Minds | Substack",
-      "title": "Iran Vows to Break US Naval Blockade: Tensions Escalate in Strait of Hormuz",
-      "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE9LNl9nZE5jYUQ0TDJGcnV1ckEzbDE4M0h2Vnh2Rlh4WkE0ZHl5MHM3YlBjSVhFOW1xSEpOckkzM1JxUWt4Y0k3bE9FeU1iVjdKLU5MeHptRFNNZkh5dTJTM2ZXTU51cjNEdy1zRW9sRUFsd28?oc=5"
-     },
-     {
-      "publisher": "houseofsaud.com",
-      "title": "IRGC Claims 3 Oil Tankers Hit Mines in Hormuz Under US Escort",
-      "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE5RUUJSVzJ4Q3lDcVlvTmtGNVM3LXpzTjBwcmZHVFBEaHdWU0VDY0ozTHFXU1E4ajZVOG9mSlY1NEFXTzNfRzZTem5VQUlTLUo1UVdIdUJXMUowR0xIMGEyMGw2alZDMkJfMDFPd29MTGwyVVpHaTg0?oc=5"
-     },
-     {
-      "publisher": "Northwest Arkansas Democrat-Gazette",
-      "title": "US puts sanctions on Iran-linked firms - Northwest Arkansas Democrat-Gazette",
-      "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxPSGl2eUI0SXhnLWpPMXhDTXJMdk0yLXgyaUd4cFNYSGlDcllPb0VaMFdwSjBYSWl0QUVzVzR4amVFbkF1VnpwdjNJYTl5QWFtMGV3cVhseVJvQko0dDREMlBnanZDOEJTdk04RVBoNl9tNEo4TkxhV3h5MGFyM1hEczFwZEM1eXh5Ymc?oc=5"
-     },
-     {
-      "publisher": "Trend News Agency",
-      "title": "Iran reports two oil tankers catch fire after striking naval mine in Hormuz",
-      "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE9iVWs3UDRCVTVtbDctMkZmaEhUUXFQaWw1UE5jdURzSTlFSTU2LUJjQnJpOF9QcjlUN3lrVEZDUF9tZU02S1RqRHhkdWhZTlk?oc=5"
-     },
-     {
-      "publisher": "Haberler.com",
-      "title": "The Iranian Army announced: 2 oil tankers struck a mine and caught fire in the Strait of Hormuz! New condition for the Strait",
-      "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxNQmhxU1h5YVVlREdqMHd4QjN0blJnQnFKLXpRMkJkb0tLSU0zNk1mMWIzYWw0RXNSMThQY1pzSkNld2RNSGg4QndLY2pyZWxGZFZtTTFnZUVrZ1F3TWFDTU1NcmtyaG5xLW8wckNpNHhpRHRpMHVXbXM3SldFZGRGSG5iX3VKYlAwVkE?oc=5"
-     }
-    ]
+    "summary": "Buy the dip: the whole market (SPY) was -2.93% today",
+    "category": "dip",
+    "sources": []
    },
    "reason": {
-    "triage": "Regional conflict escalation benefits defense technology stocks.",
-    "confidence": 0.65,
-    "confirmation": "volume 1.2x normal, price -2.93% since the news",
-    "rvol": 1.23,
-    "movePct": -2.93,
-    "publishers": [
-     "ASHARQ AL-AWSAT English",
-     "Al Jazeera",
-     "Al-Monitor",
-     "Ammon News",
-     "Anadolu Ajansı",
-     "Apa.az",
-     "Benzinga",
-     "City AM",
-     "Egyptian Gazette",
-     "GV Wire",
-     "Global Trade Magazine",
-     "Gulf Daily News (Bahrain)",
-     "Haberler.com",
-     "Inside Politic",
-     "L'Orient Today",
-     "Latest news from Azerbaijan",
-     "Mathrubhumi English",
-     "Mehr News Agency",
-     "Modern Ghana",
-     "Northwest Arkansas Democrat-Gazette",
-     "Roya News",
-     "Saudi Gazette",
-     "Savage Minds | Substack",
-     "South China Morning Post",
-     "The Arkansas Democrat-Gazette",
-     "The Times of India",
-     "The Times of Israel",
-     "Trend News Agency",
-     "Turkish Minute",
-     "Türkiye Today",
-     "WSJ",
-     "houseofsaud.com",
-     "thenationalnews.com",
-     "УкрАгроКонсалт",
-     "وكالة سبأ",
-     "アラブニュース"
-    ],
-    "tradingAgents": "not used (ultra mode)",
-    "taSummary": ""
-   },
-   "stopOrderId": "6612a194-4f8c-4bf6-8d0f-65306748718e",
-   "lastPrice": 88.6,
-   "unrealizedPct": -0.29
+    "triage": "market-wide dip",
+    "confidence": null,
+    "confirmation": "SPY -2.93%",
+    "publishers": [],
+    "tradingAgents": "not used (dip buy)"
+   }
   },
   {
-   "id": "ahq-core-HLAL-20261124145913",
+   "id": "ahq-core-HLAL-20261125145147",
    "symbol": "HLAL",
    "asset": "stock",
-   "status": "open",
+   "status": "pending",
    "strategy": "core",
-   "entryOrderId": "810b527a-45f6-4c93-a623-35c417447788",
-   "qty": 1.0,
-   "cost": 66.89,
-   "estPrice": 66.89,
-   "entryPrice": 66.27,
-   "stop": 60.2,
-   "target": 100.34,
-   "openedAt": "2026-11-24T14:59:13Z",
+   "entryOrderId": "71a91d9e-f5f3-4a22-a8f6-be5cf3200ffd",
+   "qty": 256,
+   "cost": 16883.2,
+   "estPrice": 65.95,
+   "entryPrice": 65.95,
+   "stop": 59.36,
+   "target": 98.93,
+   "openedAt": "2026-11-25T14:51:47Z",
    "news": {
     "summary": "Core holding: rides the whole (halal) market",
     "category": "core",
@@ -1095,9 +985,34 @@
     "confirmation": "50% of the budget",
     "publishers": [],
     "tradingAgents": "not used (core)"
+   }
+  },
+  {
+   "id": "ahq-core-SPUS-20261125145147",
+   "symbol": "SPUS",
+   "asset": "stock",
+   "status": "pending",
+   "strategy": "core",
+   "entryOrderId": "574aafa3-b47d-491a-9bda-02ef6ba9af4c",
+   "qty": 324,
+   "cost": 16899.84,
+   "estPrice": 52.16,
+   "entryPrice": 52.16,
+   "stop": 46.94,
+   "target": 78.24,
+   "openedAt": "2026-11-25T14:51:47Z",
+   "news": {
+    "summary": "Core holding: rides the whole (halal) market",
+    "category": "core",
+    "sources": []
    },
-   "lastPrice": 66.0,
-   "unrealizedPct": -0.41
+   "reason": {
+    "triage": "core holding",
+    "confidence": null,
+    "confirmation": "50% of the budget",
+    "publishers": [],
+    "tradingAgents": "not used (core)"
+   }
   },
   {
    "id": "ahq-core-SPUS-20261124145913",
@@ -1125,1158 +1040,299 @@
     "publishers": [],
     "tradingAgents": "not used (core)"
    },
-   "lastPrice": 54.17,
-   "unrealizedPct": -0.03
-  },
-  {
-   "id": "ahq-TMO-20261124145909",
-   "symbol": "TMO",
-   "asset": "stock",
-   "status": "open",
-   "entryOrderId": "f83973a6-e4a8-4b71-84c4-b59c2942b3e4",
-   "qty": 16,
-   "cost": 11184.4,
-   "estPrice": 699.025,
-   "entryPrice": 699.96,
-   "stop": 678.05,
-   "target": null,
-   "openedAt": "2026-11-24T14:59:10Z",
-   "trail": 3.0,
-   "news": {
-    "summary": "Agilent Technologies reports a strong Q4 earnings beat with revenue exceeding $2 billion.",
-    "category": "earnings_beat",
-    "sources": [
-     {
-      "publisher": "Financial-News.co.uk",
-      "title": "Agilent tops Q4 estimates as revenue tops $2bn for first time - Financial-News.co.uk",
-      "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPS0NPcVRtY1I1VVJlUmtTaDZDM2ZUMHg3VElocThqWDA5ck5haEhIZWhxQTd0aW9aZHF6QXdYMlN0TzlZSHFZTDVOYkx5X3d0aldRdmhzUGI3N1M5a05RV2tGcDRvbGpTNUhXUXRxaUdNNFk3Tng1TFBOOExySUJnMENVcHJ3R1BXQlZ3Ym9WV2ttZC13R0V0bjdB?oc=5"
-     }
-    ]
-   },
-   "reason": {
-    "triage": "Positive read-through for the life sciences and diagnostics sector following Agilent's strong results.",
-    "confidence": 0.6,
-    "confirmation": "volume 1.6x normal, price +1.52% since the news",
-    "rvol": 1.59,
-    "movePct": 1.52,
-    "publishers": [
-     "Financial-News.co.uk"
-    ],
-    "tradingAgents": "not used (ultra mode)",
-    "taSummary": ""
-   },
-   "stopOrderId": "a2d5311a-a3d9-48a5-a771-640f9165b3c4",
-   "lastPrice": 695.62,
-   "unrealizedPct": -0.62
-  },
-  {
-   "id": "ahq-NOW-20261123202036",
-   "symbol": "NOW",
-   "asset": "stock",
-   "status": "open",
-   "entryOrderId": "c8dd03c3-1cd7-4804-be64-266e4efa35c7",
-   "qty": 169.0,
-   "cost": 15497.3,
-   "estPrice": 91.7,
-   "entryPrice": 91.700355,
-   "stop": 88.95,
-   "target": 97.2,
-   "openedAt": "2026-11-23T20:20:36Z",
-   "news": {
-    "summary": "Political intervention and the reinstatement of Jensen Huang as Nvidia CEO continue to drive a massive tech sector rally.",
-    "category": "earnings_beat",
-    "sources": [
-     {
-      "publisher": "Yahoo Finance",
-      "title": "Update: Equities Jump Intraday as Nvidia Soars on Huang's Reinstatement",
-      "url": "https://finance.yahoo.com/markets/stocks/articles/equities-jump-intraday-nvidia-soars-183714017.html?.tsrc=rss"
-     },
-     {
-      "publisher": "Yahoo Finance",
-      "title": "Why iShares Semiconductor ETF (SOXX) Is Up Today",
-      "url": "https://www.fool.com/investing/2026/11/23/why-ishares-semiconductor-etf-soxx-is-up-today/?.tsrc=rss"
-     },
-     {
-      "publisher": "Yahoo Finance",
-      "title": "Why Is GlobalFoundries (GFS) Stock Up Today? Chip Rally on Nvidia CEO Return",
-      "url": "https://finance.yahoo.com/markets/stocks/articles/why-globalfoundries-gfs-stock-today-183102007.html?.tsrc=rss"
-     },
-     {
-      "publisher": "Yahoo Finance",
-      "title": "Why I'm Still Grumpy About Nvidia's 33% Victory Lap",
-      "url": "https://www.fool.com/investing/2026/11/23/why-i-m-still-grumpy-about-nvidia-s-33-victory-lap/?.tsrc=rss"
-     },
-     {
-      "publisher": "Yahoo Finance",
-      "title": "Why Is nVent (NVT) Stock Up Today? Peers Rally on Nvidia CEO News",
-      "url": "https://finance.yahoo.com/markets/stocks/articles/why-nvent-nvt-stock-today-183049742.html?.tsrc=rss"
-     },
-     {
-      "publisher": "Yahoo Finance",
-      "title": "Why TTM Technologies (TTMI) Stock Is Soaring Today: AI Hardware Rally on Nvidia News",
-      "url": "https://finance.yahoo.com/markets/stocks/articles/why-ttm-technologies-ttmi-stock-183047529.html?.tsrc=rss"
-     }
-    ]
-   },
-   "reason": {
-    "triage": "ServiceNow joins the broader technology sector rally lifting software stocks.",
-    "confidence": 0.75,
-    "confirmation": "volume 1.3x normal, price -0.55% since the news",
-    "rvol": 1.29,
-    "movePct": -0.55,
-    "publishers": [
-     "Binance",
-     "CNBC",
-     "Investing.com",
-     "Reuters",
-     "Seeking Alpha",
-     "The Washington Post",
-     "Yahoo Finance"
-    ],
-    "tradingAgents": "not used (ultra mode)",
-    "taSummary": ""
-   },
-   "lastPrice": 91.1958,
-   "unrealizedPct": -0.55
+   "lastPrice": 52.266,
+   "unrealizedPct": -3.54
   }
  ],
  "charts": {
   "account": {
    "1D": [
     [
-     "2026-11-24T09:00:00Z",
-     94721.0
+     "2026-11-25T09:00:00Z",
+     92006.09
     ],
     [
-     "2026-11-24T09:05:00Z",
-     94721.0
+     "2026-11-25T09:05:00Z",
+     92006.09
     ],
     [
-     "2026-11-24T09:10:00Z",
-     94652.18
+     "2026-11-25T09:10:00Z",
+     91809.17
     ],
     [
-     "2026-11-24T09:15:00Z",
-     94633.75
+     "2026-11-25T09:15:00Z",
+     91723.75
     ],
     [
-     "2026-11-24T09:20:00Z",
-     94806.79
+     "2026-11-25T09:20:00Z",
+     91712.77
     ],
     [
-     "2026-11-24T09:25:00Z",
-     94720.53
+     "2026-11-25T09:25:00Z",
+     91568.8
     ],
     [
-     "2026-11-24T09:30:00Z",
-     94657.6
+     "2026-11-25T09:30:00Z",
+     91511.8
     ],
     [
-     "2026-11-24T09:35:00Z",
-     94805.85
+     "2026-11-25T09:35:00Z",
+     91519.65
     ],
     [
-     "2026-11-24T09:40:00Z",
-     94559.51
+     "2026-11-25T09:40:00Z",
+     91575.72
     ],
     [
-     "2026-11-24T09:45:00Z",
-     94725.05
+     "2026-11-25T09:45:00Z",
+     91384.32
     ],
     [
-     "2026-11-24T09:50:00Z",
-     94610.51
+     "2026-11-25T09:50:00Z",
+     91326.14
     ],
     [
-     "2026-11-24T09:55:00Z",
-     94411.56
+     "2026-11-25T09:55:00Z",
+     91457.72
     ],
     [
-     "2026-11-24T10:00:00Z",
-     94346.23
+     "2026-11-25T10:00:00Z",
+     91562.68
     ],
     [
-     "2026-11-24T10:05:00Z",
-     94174.85
+     "2026-11-25T10:05:00Z",
+     91540.1
     ],
     [
-     "2026-11-24T10:10:00Z",
-     94294.29
+     "2026-11-25T10:10:00Z",
+     91506.52
     ],
     [
-     "2026-11-24T10:15:00Z",
-     94438.76
+     "2026-11-25T10:15:00Z",
+     91469.7
     ],
     [
-     "2026-11-24T10:20:00Z",
-     94359.04
+     "2026-11-25T10:20:00Z",
+     91446.45
     ],
     [
-     "2026-11-24T10:25:00Z",
-     94327.99
+     "2026-11-25T10:25:00Z",
+     91530.5
     ],
     [
-     "2026-11-24T10:30:00Z",
-     94221.04
+     "2026-11-25T10:30:00Z",
+     91364.77
     ],
     [
-     "2026-11-24T10:35:00Z",
-     94134.34
+     "2026-11-25T10:35:00Z",
+     91320.17
     ],
     [
-     "2026-11-24T10:40:00Z",
-     94023.92
+     "2026-11-25T10:40:00Z",
+     91428.02
     ],
     [
-     "2026-11-24T10:45:00Z",
-     93879.45
+     "2026-11-25T10:45:00Z",
+     91443.08
     ],
     [
-     "2026-11-24T10:50:00Z",
-     93687.56
+     "2026-11-25T10:50:00Z",
+     91441.45
     ],
     [
-     "2026-11-24T10:55:00Z",
-     93709.34
+     "2026-11-25T10:55:00Z",
+     91415.8
     ],
     [
-     "2026-11-24T11:00:00Z",
-     93872.61
+     "2026-11-25T11:00:00Z",
+     91515.92
     ],
     [
-     "2026-11-24T11:05:00Z",
-     93875.39
+     "2026-11-25T11:05:00Z",
+     91525.11
     ],
     [
-     "2026-11-24T11:10:00Z",
-     93952.59
+     "2026-11-25T11:10:00Z",
+     91512.82
     ],
     [
-     "2026-11-24T11:15:00Z",
-     93777.47
+     "2026-11-25T11:15:00Z",
+     91455.68
     ],
     [
-     "2026-11-24T11:20:00Z",
-     93696.54
+     "2026-11-25T11:20:00Z",
+     91482.4
     ],
     [
-     "2026-11-24T11:25:00Z",
-     93696.41
+     "2026-11-25T11:25:00Z",
+     91421.28
     ],
     [
-     "2026-11-24T11:30:00Z",
-     93825.73
+     "2026-11-25T11:30:00Z",
+     91325.91
     ],
     [
-     "2026-11-24T11:35:00Z",
-     93860.69
+     "2026-11-25T11:35:00Z",
+     91444.98
     ],
     [
-     "2026-11-24T11:40:00Z",
-     93891.01
+     "2026-11-25T11:40:00Z",
+     91394.19
     ],
     [
-     "2026-11-24T11:45:00Z",
-     94135.58
+     "2026-11-25T11:45:00Z",
+     91411.37
     ],
     [
-     "2026-11-24T11:50:00Z",
-     94189.39
+     "2026-11-25T11:50:00Z",
+     91561.66
     ],
     [
-     "2026-11-24T11:55:00Z",
-     94287.86
+     "2026-11-25T11:55:00Z",
+     91491.3
     ],
     [
-     "2026-11-24T12:00:00Z",
-     94339.6
+     "2026-11-25T12:00:00Z",
+     91488.61
     ],
     [
-     "2026-11-24T12:05:00Z",
-     94036.99
+     "2026-11-25T12:05:00Z",
+     91372.23
     ],
     [
-     "2026-11-24T12:10:00Z",
-     94094.52
+     "2026-11-25T12:10:00Z",
+     91343.65
     ],
     [
-     "2026-11-24T12:15:00Z",
-     93946.42
+     "2026-11-25T12:15:00Z",
+     91348.68
     ],
     [
-     "2026-11-24T12:20:00Z",
-     93923.53
+     "2026-11-25T12:20:00Z",
+     91402.85
     ],
     [
-     "2026-11-24T12:25:00Z",
-     93834.37
+     "2026-11-25T12:25:00Z",
+     91327.56
     ],
     [
-     "2026-11-24T12:30:00Z",
-     93746.51
+     "2026-11-25T12:30:00Z",
+     91327.12
     ],
     [
-     "2026-11-24T12:35:00Z",
-     93768.75
+     "2026-11-25T12:35:00Z",
+     91307.42
     ],
     [
-     "2026-11-24T12:40:00Z",
-     93811.77
+     "2026-11-25T12:40:00Z",
+     91432.08
     ],
     [
-     "2026-11-24T12:45:00Z",
-     94123.44
+     "2026-11-25T12:45:00Z",
+     91382.23
     ],
     [
-     "2026-11-24T12:50:00Z",
-     94018.43
+     "2026-11-25T12:50:00Z",
+     91326.4
     ],
     [
-     "2026-11-24T12:55:00Z",
-     94061.03
+     "2026-11-25T12:55:00Z",
+     91343.58
     ],
     [
-     "2026-11-24T13:00:00Z",
-     93989.56
+     "2026-11-25T13:00:00Z",
+     91428.0
     ],
     [
-     "2026-11-24T13:05:00Z",
-     93902.14
+     "2026-11-25T13:05:00Z",
+     91230.18
     ],
     [
-     "2026-11-24T13:10:00Z",
-     93570.14
+     "2026-11-25T13:10:00Z",
+     91169.4
     ],
     [
-     "2026-11-24T13:15:00Z",
-     93333.42
+     "2026-11-25T13:15:00Z",
+     91226.1
     ],
     [
-     "2026-11-24T13:20:00Z",
-     93398.52
+     "2026-11-25T13:20:00Z",
+     91225.24
     ],
     [
-     "2026-11-24T13:25:00Z",
-     93377.25
+     "2026-11-25T13:25:00Z",
+     91226.41
     ],
     [
-     "2026-11-24T13:30:00Z",
-     93392.32
+     "2026-11-25T13:30:00Z",
+     91172.59
     ],
     [
-     "2026-11-24T13:35:00Z",
-     93332.2
+     "2026-11-25T13:35:00Z",
+     91045.9
     ],
     [
-     "2026-11-24T13:40:00Z",
-     93483.53
+     "2026-11-25T13:40:00Z",
+     91081.99
     ],
     [
-     "2026-11-24T13:45:00Z",
-     93519.89
+     "2026-11-25T13:45:00Z",
+     91012.83
     ],
     [
-     "2026-11-24T13:50:00Z",
-     93561.62
+     "2026-11-25T13:50:00Z",
+     90911.08
     ],
     [
-     "2026-11-24T13:55:00Z",
-     93603.13
+     "2026-11-25T13:55:00Z",
+     90943.96
     ],
     [
-     "2026-11-24T14:00:00Z",
-     93404.89
+     "2026-11-25T14:00:00Z",
+     91087.64
     ],
     [
-     "2026-11-24T14:05:00Z",
-     93578.79
+     "2026-11-25T14:05:00Z",
+     91027.69
     ],
     [
-     "2026-11-24T14:10:00Z",
-     93599.22
+     "2026-11-25T14:10:00Z",
+     90939.2
     ],
     [
-     "2026-11-24T14:15:00Z",
-     93740.0
+     "2026-11-25T14:15:00Z",
+     90823.19
     ],
     [
-     "2026-11-24T14:20:00Z",
-     93818.42
+     "2026-11-25T14:20:00Z",
+     90824.73
     ],
     [
-     "2026-11-24T14:25:00Z",
-     93775.84
+     "2026-11-25T14:25:00Z",
+     90943.76
     ],
     [
-     "2026-11-24T14:30:00Z",
-     93912.96
+     "2026-11-25T14:30:00Z",
+     90746.69
     ],
     [
-     "2026-11-24T14:35:00Z",
-     93699.18
+     "2026-11-25T14:35:00Z",
+     90585.01
     ],
     [
-     "2026-11-24T14:40:00Z",
-     93752.24
+     "2026-11-25T14:40:00Z",
+     90584.73
     ],
     [
-     "2026-11-24T14:45:00Z",
-     93947.62
+     "2026-11-25T14:45:00Z",
+     90584.29
     ],
     [
-     "2026-11-24T14:50:00Z",
-     94082.99
-    ],
-    [
-     "2026-11-24T14:55:00Z",
-     94127.91
-    ],
-    [
-     "2026-11-24T15:00:00Z",
-     94205.4
-    ],
-    [
-     "2026-11-24T15:05:00Z",
-     94173.21
-    ],
-    [
-     "2026-11-24T15:10:00Z",
-     93941.8
-    ],
-    [
-     "2026-11-24T15:15:00Z",
-     94128.97
-    ],
-    [
-     "2026-11-24T15:20:00Z",
-     93764.38
-    ],
-    [
-     "2026-11-24T15:25:00Z",
-     93629.13
-    ],
-    [
-     "2026-11-24T15:30:00Z",
-     93416.72
-    ],
-    [
-     "2026-11-24T15:35:00Z",
-     93722.79
-    ],
-    [
-     "2026-11-24T15:40:00Z",
-     93624.41
-    ],
-    [
-     "2026-11-24T15:45:00Z",
-     93281.8
-    ],
-    [
-     "2026-11-24T15:50:00Z",
-     93402.43
-    ],
-    [
-     "2026-11-24T15:55:00Z",
-     93538.35
-    ],
-    [
-     "2026-11-24T16:00:00Z",
-     93390.55
-    ],
-    [
-     "2026-11-24T16:05:00Z",
-     93108.56
-    ],
-    [
-     "2026-11-24T16:10:00Z",
-     93140.11
-    ],
-    [
-     "2026-11-24T16:15:00Z",
-     92864.33
-    ],
-    [
-     "2026-11-24T16:20:00Z",
-     92908.75
-    ],
-    [
-     "2026-11-24T16:25:00Z",
-     93250.62
-    ],
-    [
-     "2026-11-24T16:30:00Z",
-     93059.47
-    ],
-    [
-     "2026-11-24T16:35:00Z",
-     93288.48
-    ],
-    [
-     "2026-11-24T16:40:00Z",
-     93006.75
-    ],
-    [
-     "2026-11-24T16:45:00Z",
-     93148.9
-    ],
-    [
-     "2026-11-24T16:50:00Z",
-     93290.81
-    ],
-    [
-     "2026-11-24T16:55:00Z",
-     93174.6
-    ],
-    [
-     "2026-11-24T17:00:00Z",
-     92962.47
-    ],
-    [
-     "2026-11-24T17:05:00Z",
-     92967.91
-    ],
-    [
-     "2026-11-24T17:10:00Z",
-     93348.04
-    ],
-    [
-     "2026-11-24T17:15:00Z",
-     93410.48
-    ],
-    [
-     "2026-11-24T17:20:00Z",
-     93275.61
-    ],
-    [
-     "2026-11-24T17:25:00Z",
-     93343.14
-    ],
-    [
-     "2026-11-24T17:30:00Z",
-     93362.46
-    ],
-    [
-     "2026-11-24T17:35:00Z",
-     93507.66
-    ],
-    [
-     "2026-11-24T17:40:00Z",
-     93422.17
-    ],
-    [
-     "2026-11-24T17:45:00Z",
-     93587.38
-    ],
-    [
-     "2026-11-24T17:50:00Z",
-     93464.88
-    ],
-    [
-     "2026-11-24T17:55:00Z",
-     93415.79
-    ],
-    [
-     "2026-11-24T18:00:00Z",
-     93561.72
-    ],
-    [
-     "2026-11-24T18:05:00Z",
-     93532.56
-    ],
-    [
-     "2026-11-24T18:10:00Z",
-     93512.56
-    ],
-    [
-     "2026-11-24T18:15:00Z",
-     93535.69
-    ],
-    [
-     "2026-11-24T18:20:00Z",
-     93466.62
-    ],
-    [
-     "2026-11-24T18:25:00Z",
-     93475.38
-    ],
-    [
-     "2026-11-24T18:30:00Z",
-     93483.67
-    ],
-    [
-     "2026-11-24T18:35:00Z",
-     93636.07
-    ],
-    [
-     "2026-11-24T18:40:00Z",
-     93592.11
-    ],
-    [
-     "2026-11-24T18:45:00Z",
-     93510.63
-    ],
-    [
-     "2026-11-24T18:50:00Z",
-     93465.6
-    ],
-    [
-     "2026-11-24T18:55:00Z",
-     93438.37
-    ],
-    [
-     "2026-11-24T19:00:00Z",
-     93368.02
-    ],
-    [
-     "2026-11-24T19:05:00Z",
-     93355.3
-    ],
-    [
-     "2026-11-24T19:10:00Z",
-     93449.56
-    ],
-    [
-     "2026-11-24T19:15:00Z",
-     93445.75
-    ],
-    [
-     "2026-11-24T19:20:00Z",
-     93544.66
-    ],
-    [
-     "2026-11-24T19:25:00Z",
-     93490.19
-    ],
-    [
-     "2026-11-24T19:30:00Z",
-     93501.13
-    ],
-    [
-     "2026-11-24T19:35:00Z",
-     93343.85
-    ],
-    [
-     "2026-11-24T19:40:00Z",
-     93303.44
-    ],
-    [
-     "2026-11-24T19:45:00Z",
-     93324.0
-    ],
-    [
-     "2026-11-24T19:50:00Z",
-     93243.88
-    ],
-    [
-     "2026-11-24T19:55:00Z",
-     93150.19
-    ],
-    [
-     "2026-11-24T20:00:00Z",
-     93097.74
-    ],
-    [
-     "2026-11-24T20:05:00Z",
-     93017.72
-    ],
-    [
-     "2026-11-24T20:10:00Z",
-     92983.16
-    ],
-    [
-     "2026-11-24T20:15:00Z",
-     93092.62
-    ],
-    [
-     "2026-11-24T20:20:00Z",
-     92958.98
-    ],
-    [
-     "2026-11-24T20:25:00Z",
-     92938.43
-    ],
-    [
-     "2026-11-24T20:30:00Z",
-     92838.87
-    ],
-    [
-     "2026-11-24T20:35:00Z",
-     92811.76
-    ],
-    [
-     "2026-11-24T20:40:00Z",
-     92905.62
-    ],
-    [
-     "2026-11-24T20:45:00Z",
-     92854.9
-    ],
-    [
-     "2026-11-24T20:50:00Z",
-     93076.43
-    ],
-    [
-     "2026-11-24T20:55:00Z",
-     93155.13
-    ],
-    [
-     "2026-11-24T21:00:00Z",
-     93144.15
-    ],
-    [
-     "2026-11-24T21:05:00Z",
-     93185.48
-    ],
-    [
-     "2026-11-24T21:10:00Z",
-     93139.45
-    ],
-    [
-     "2026-11-24T21:15:00Z",
-     92986.41
-    ],
-    [
-     "2026-11-24T21:20:00Z",
-     93056.01
-    ],
-    [
-     "2026-11-24T21:25:00Z",
-     93119.42
-    ],
-    [
-     "2026-11-24T21:30:00Z",
-     93237.5
-    ],
-    [
-     "2026-11-24T21:35:00Z",
-     93193.78
-    ],
-    [
-     "2026-11-24T21:40:00Z",
-     93087.66
-    ],
-    [
-     "2026-11-24T21:45:00Z",
-     93109.61
-    ],
-    [
-     "2026-11-24T21:50:00Z",
-     93463.57
-    ],
-    [
-     "2026-11-24T21:55:00Z",
-     93437.92
-    ],
-    [
-     "2026-11-24T22:00:00Z",
-     93199.1
-    ],
-    [
-     "2026-11-24T22:05:00Z",
-     93170.98
-    ],
-    [
-     "2026-11-24T22:10:00Z",
-     93176.42
-    ],
-    [
-     "2026-11-24T22:15:00Z",
-     93196.68
-    ],
-    [
-     "2026-11-24T22:20:00Z",
-     93184.05
-    ],
-    [
-     "2026-11-24T22:25:00Z",
-     93182.79
-    ],
-    [
-     "2026-11-24T22:30:00Z",
-     93158.98
-    ],
-    [
-     "2026-11-24T22:35:00Z",
-     93153.73
-    ],
-    [
-     "2026-11-24T22:40:00Z",
-     93156.88
-    ],
-    [
-     "2026-11-24T22:45:00Z",
-     93146.93
-    ],
-    [
-     "2026-11-24T22:50:00Z",
-     93146.72
-    ],
-    [
-     "2026-11-24T22:55:00Z",
-     93121.51
-    ],
-    [
-     "2026-11-24T23:00:00Z",
-     93086.08
-    ],
-    [
-     "2026-11-24T23:05:00Z",
-     93183.25
-    ],
-    [
-     "2026-11-24T23:10:00Z",
-     93032.98
-    ],
-    [
-     "2026-11-24T23:15:00Z",
-     92994.81
-    ],
-    [
-     "2026-11-24T23:20:00Z",
-     92881.62
-    ],
-    [
-     "2026-11-24T23:25:00Z",
-     92887.65
-    ],
-    [
-     "2026-11-24T23:30:00Z",
-     92887.65
-    ],
-    [
-     "2026-11-24T23:35:00Z",
-     92844.23
-    ],
-    [
-     "2026-11-24T23:40:00Z",
-     92908.22
-    ],
-    [
-     "2026-11-24T23:45:00Z",
-     92866.49
-    ],
-    [
-     "2026-11-24T23:50:00Z",
-     92809.25
-    ],
-    [
-     "2026-11-24T23:55:00Z",
-     92808.42
-    ],
-    [
-     "2026-11-25T00:00:00Z",
-     92842.7
-    ],
-    [
-     "2026-11-25T00:05:00Z",
-     92828.81
-    ],
-    [
-     "2026-11-25T00:10:00Z",
-     92758.63
-    ],
-    [
-     "2026-11-25T00:15:00Z",
-     92758.55
-    ],
-    [
-     "2026-11-25T00:20:00Z",
-     92821.4
-    ],
-    [
-     "2026-11-25T00:25:00Z",
-     92798.63
-    ],
-    [
-     "2026-11-25T00:30:00Z",
-     92880.25
-    ],
-    [
-     "2026-11-25T00:35:00Z",
-     92939.4
-    ],
-    [
-     "2026-11-25T00:40:00Z",
-     92944.09
-    ],
-    [
-     "2026-11-25T00:45:00Z",
-     92937.15
-    ],
-    [
-     "2026-11-25T00:50:00Z",
-     92978.33
-    ],
-    [
-     "2026-11-25T00:55:00Z",
-     92967.51
-    ],
-    [
-     "2026-11-25T01:00:00Z",
-     92914.01
+     "2026-11-25T14:50:00Z",
+     90584.51
     ]
    ],
    "1W": [
-    [
-     "2026-11-18T09:00:00Z",
-     99937.0
-    ],
-    [
-     "2026-11-18T09:15:00Z",
-     99943.33
-    ],
-    [
-     "2026-11-18T09:30:00Z",
-     99941.8
-    ],
-    [
-     "2026-11-18T09:45:00Z",
-     99947.2
-    ],
-    [
-     "2026-11-18T10:00:00Z",
-     99956.62
-    ],
-    [
-     "2026-11-18T10:15:00Z",
-     99936.31
-    ],
-    [
-     "2026-11-18T10:30:00Z",
-     99909.62
-    ],
-    [
-     "2026-11-18T10:45:00Z",
-     99926.2
-    ],
-    [
-     "2026-11-18T11:00:00Z",
-     99928.39
-    ],
-    [
-     "2026-11-18T11:15:00Z",
-     99892.44
-    ],
-    [
-     "2026-11-18T11:30:00Z",
-     99889.29
-    ],
-    [
-     "2026-11-18T11:45:00Z",
-     99893.37
-    ],
-    [
-     "2026-11-18T12:00:00Z",
-     99897.63
-    ],
-    [
-     "2026-11-18T12:15:00Z",
-     99895.47
-    ],
-    [
-     "2026-11-18T12:30:00Z",
-     99891.86
-    ],
-    [
-     "2026-11-18T12:45:00Z",
-     99874.73
-    ],
-    [
-     "2026-11-18T13:00:00Z",
-     99883.7
-    ],
-    [
-     "2026-11-18T13:15:00Z",
-     99894.61
-    ],
-    [
-     "2026-11-18T13:30:00Z",
-     99884.14
-    ],
-    [
-     "2026-11-18T13:45:00Z",
-     99892.35
-    ],
-    [
-     "2026-11-18T14:00:00Z",
-     99913.0
-    ],
-    [
-     "2026-11-18T14:15:00Z",
-     99887.31
-    ],
-    [
-     "2026-11-18T14:30:00Z",
-     99916.81
-    ],
-    [
-     "2026-11-18T14:45:00Z",
-     99813.28
-    ],
-    [
-     "2026-11-18T15:00:00Z",
-     100011.18
-    ],
-    [
-     "2026-11-18T15:15:00Z",
-     99979.45
-    ],
-    [
-     "2026-11-18T15:30:00Z",
-     99956.25
-    ],
-    [
-     "2026-11-18T15:45:00Z",
-     99863.01
-    ],
-    [
-     "2026-11-18T16:00:00Z",
-     99906.42
-    ],
-    [
-     "2026-11-18T16:15:00Z",
-     99830.16
-    ],
-    [
-     "2026-11-18T16:30:00Z",
-     99799.22
-    ],
-    [
-     "2026-11-18T16:45:00Z",
-     99766.3
-    ],
-    [
-     "2026-11-18T17:00:00Z",
-     99836.11
-    ],
-    [
-     "2026-11-18T17:15:00Z",
-     99813.13
-    ],
-    [
-     "2026-11-18T17:30:00Z",
-     100118.98
-    ],
-    [
-     "2026-11-18T17:45:00Z",
-     100014.94
-    ],
-    [
-     "2026-11-18T18:00:00Z",
-     99997.77
-    ],
-    [
-     "2026-11-18T18:15:00Z",
-     99930.06
-    ],
-    [
-     "2026-11-18T18:30:00Z",
-     99997.61
-    ],
-    [
-     "2026-11-18T18:45:00Z",
-     100138.11
-    ],
-    [
-     "2026-11-18T19:00:00Z",
-     100067.75
-    ],
-    [
-     "2026-11-18T19:15:00Z",
-     99948.78
-    ],
-    [
-     "2026-11-18T19:30:00Z",
-     100001.96
-    ],
-    [
-     "2026-11-18T19:45:00Z",
-     99968.65
-    ],
-    [
-     "2026-11-18T20:00:00Z",
-     99934.91
-    ],
-    [
-     "2026-11-18T20:15:00Z",
-     99969.22
-    ],
-    [
-     "2026-11-18T20:30:00Z",
-     99900.83
-    ],
-    [
-     "2026-11-18T20:45:00Z",
-     99963.03
-    ],
-    [
-     "2026-11-18T21:00:00Z",
-     100015.38
-    ],
-    [
-     "2026-11-18T21:15:00Z",
-     99975.86
-    ],
-    [
-     "2026-11-18T21:30:00Z",
-     99991.33
-    ],
-    [
-     "2026-11-18T21:45:00Z",
-     99950.81
-    ],
-    [
-     "2026-11-18T22:00:00Z",
-     99883.31
-    ],
-    [
-     "2026-11-18T22:15:00Z",
-     99903.95
-    ],
-    [
-     "2026-11-18T22:30:00Z",
-     99887.32
-    ],
-    [
-     "2026-11-18T22:45:00Z",
-     99892.18
-    ],
-    [
-     "2026-11-18T23:00:00Z",
-     99869.78
-    ],
-    [
-     "2026-11-18T23:15:00Z",
-     100118.31
-    ],
-    [
-     "2026-11-18T23:30:00Z",
-     100203.62
-    ],
-    [
-     "2026-11-18T23:45:00Z",
-     100304.06
-    ],
-    [
-     "2026-11-19T00:00:00Z",
-     100261.54
-    ],
-    [
-     "2026-11-19T00:15:00Z",
-     100236.21
-    ],
-    [
-     "2026-11-19T00:30:00Z",
-     100243.83
-    ],
-    [
-     "2026-11-19T00:45:00Z",
-     100362.45
-    ],
-    [
-     "2026-11-19T01:00:00Z",
-     100383.88
-    ],
     [
      "2026-11-19T09:00:00Z",
      100560.4
@@ -3316,451 +2372,158 @@
     [
      "2026-11-25T01:00:00Z",
      92914.01
+    ],
+    [
+     "2026-11-25T09:00:00Z",
+     91910.15
+    ],
+    [
+     "2026-11-25T09:15:00Z",
+     91910.15
+    ],
+    [
+     "2026-11-25T09:30:00Z",
+     91582.44
+    ],
+    [
+     "2026-11-25T09:45:00Z",
+     91385.5
+    ],
+    [
+     "2026-11-25T10:00:00Z",
+     91562.68
+    ],
+    [
+     "2026-11-25T10:15:00Z",
+     91493.02
+    ],
+    [
+     "2026-11-25T10:30:00Z",
+     91384.27
+    ],
+    [
+     "2026-11-25T10:45:00Z",
+     91443.08
+    ],
+    [
+     "2026-11-25T11:00:00Z",
+     91515.92
+    ],
+    [
+     "2026-11-25T11:15:00Z",
+     91425.26
+    ],
+    [
+     "2026-11-25T11:30:00Z",
+     91325.89
+    ],
+    [
+     "2026-11-25T11:45:00Z",
+     91411.37
+    ],
+    [
+     "2026-11-25T12:00:00Z",
+     91488.61
+    ],
+    [
+     "2026-11-25T12:15:00Z",
+     91400.25
+    ],
+    [
+     "2026-11-25T12:30:00Z",
+     91377.6
+    ],
+    [
+     "2026-11-25T12:45:00Z",
+     91382.0
+    ],
+    [
+     "2026-11-25T13:00:00Z",
+     91453.51
+    ],
+    [
+     "2026-11-25T13:15:00Z",
+     91178.86
+    ],
+    [
+     "2026-11-25T13:30:00Z",
+     91172.5
+    ],
+    [
+     "2026-11-25T13:45:00Z",
+     91012.6
+    ],
+    [
+     "2026-11-25T14:00:00Z",
+     91087.25
+    ],
+    [
+     "2026-11-25T14:15:00Z",
+     90855.32
+    ],
+    [
+     "2026-11-25T14:30:00Z",
+     90746.46
+    ],
+    [
+     "2026-11-25T14:45:00Z",
+     90584.29
     ]
    ]
   },
   "holdings": {
-   "PLTR": {
-    "bars": [
-     [
-      "2026-11-23T13:45:00Z",
-      154.08
-     ],
-     [
-      "2026-11-23T14:00:00Z",
-      155.73
-     ],
-     [
-      "2026-11-23T14:30:00Z",
-      156.51
-     ],
-     [
-      "2026-11-23T14:45:00Z",
-      156.19
-     ],
-     [
-      "2026-11-23T15:00:00Z",
-      158.87
-     ],
-     [
-      "2026-11-23T15:15:00Z",
-      160.35
-     ],
-     [
-      "2026-11-23T15:30:00Z",
-      159.185
-     ],
-     [
-      "2026-11-23T15:45:00Z",
-      158.355
-     ],
-     [
-      "2026-11-23T16:00:00Z",
-      159.05
-     ],
-     [
-      "2026-11-23T16:15:00Z",
-      159.34
-     ],
-     [
-      "2026-11-23T16:30:00Z",
-      157.65
-     ],
-     [
-      "2026-11-23T16:45:00Z",
-      158.16
-     ],
-     [
-      "2026-11-23T17:00:00Z",
-      158.58
-     ],
-     [
-      "2026-11-23T17:15:00Z",
-      158.315
-     ],
-     [
-      "2026-11-23T17:30:00Z",
-      157.51
-     ],
-     [
-      "2026-11-23T17:45:00Z",
-      157.99
-     ],
-     [
-      "2026-11-23T18:00:00Z",
-      158.23
-     ],
-     [
-      "2026-11-23T18:15:00Z",
-      158.245
-     ],
-     [
-      "2026-11-23T18:30:00Z",
-      157.41
-     ],
-     [
-      "2026-11-23T18:45:00Z",
-      157.225
-     ],
-     [
-      "2026-11-23T19:00:00Z",
-      157.955
-     ],
-     [
-      "2026-11-23T19:15:00Z",
-      158.095
-     ],
-     [
-      "2026-11-23T19:30:00Z",
-      157.37
-     ],
-     [
-      "2026-11-23T19:45:00Z",
-      157.56
-     ],
-     [
-      "2026-11-23T20:00:00Z",
-      158.23
-     ],
-     [
-      "2026-11-23T20:15:00Z",
-      159.07
-     ],
-     [
-      "2026-11-23T20:30:00Z",
-      159.77
-     ],
-     [
-      "2026-11-23T20:45:00Z",
-      159.39
-     ],
-     [
-      "2026-11-24T13:15:00Z",
-      154.6
-     ],
-     [
-      "2026-11-24T14:30:00Z",
-      161.46
-     ],
-     [
-      "2026-11-24T14:45:00Z",
-      161.5
-     ],
-     [
-      "2026-11-24T15:00:00Z",
-      162.64
-     ],
-     [
-      "2026-11-24T15:15:00Z",
-      160.42
-     ],
-     [
-      "2026-11-24T15:30:00Z",
-      160.185
-     ],
-     [
-      "2026-11-24T15:45:00Z",
-      160.06
-     ],
-     [
-      "2026-11-24T16:00:00Z",
-      159.66
-     ],
-     [
-      "2026-11-24T16:15:00Z",
-      160.34
-     ],
-     [
-      "2026-11-24T16:30:00Z",
-      161.21
-     ],
-     [
-      "2026-11-24T16:45:00Z",
-      160.4
-     ],
-     [
-      "2026-11-24T17:00:00Z",
-      161.57
-     ],
-     [
-      "2026-11-24T17:15:00Z",
-      161.72
-     ],
-     [
-      "2026-11-24T17:30:00Z",
-      162.645
-     ],
-     [
-      "2026-11-24T17:45:00Z",
-      162.81
-     ],
-     [
-      "2026-11-24T18:00:00Z",
-      162.42
-     ],
-     [
-      "2026-11-24T18:15:00Z",
-      162.22
-     ],
-     [
-      "2026-11-24T18:30:00Z",
-      162.26
-     ],
-     [
-      "2026-11-24T18:45:00Z",
-      161.77
-     ],
-     [
-      "2026-11-24T19:00:00Z",
-      162.035
-     ],
-     [
-      "2026-11-24T19:15:00Z",
-      161.87
-     ],
-     [
-      "2026-11-24T19:30:00Z",
-      161.54
-     ],
-     [
-      "2026-11-24T19:45:00Z",
-      161.02
-     ],
-     [
-      "2026-11-24T20:00:00Z",
-      160.68
-     ],
-     [
-      "2026-11-24T20:15:00Z",
-      159.725
-     ],
-     [
-      "2026-11-24T20:30:00Z",
-      159.69
-     ],
-     [
-      "2026-11-24T20:45:00Z",
-      161.23
-     ]
-    ],
-    "entry": 161.33,
-    "stop": 156.51,
-    "target": null,
-    "openedAt": "2026-11-24T16:46:52Z",
-    "qty": 70
+   "UMMA": {
+    "bars": [],
+    "entry": 30.86,
+    "stop": 28.7,
+    "target": 32.09,
+    "openedAt": "2026-11-25T14:52:00Z",
+    "qty": 366
    },
-   "AVAV": {
+   "SPWO": {
     "bars": [
      [
-      "2026-11-23T14:45:00Z",
-      90.59
-     ],
-     [
       "2026-11-23T15:00:00Z",
-      91.245
-     ],
-     [
-      "2026-11-23T15:15:00Z",
-      91.52
-     ],
-     [
-      "2026-11-23T15:30:00Z",
-      91.61
-     ],
-     [
-      "2026-11-23T15:45:00Z",
-      91.23
-     ],
-     [
-      "2026-11-23T16:00:00Z",
-      91.22
-     ],
-     [
-      "2026-11-23T16:15:00Z",
-      91.54
-     ],
-     [
-      "2026-11-23T16:30:00Z",
-      90.85
-     ],
-     [
-      "2026-11-23T16:45:00Z",
-      90.96
+      28.65
      ],
      [
       "2026-11-23T17:00:00Z",
-      92.06
-     ],
-     [
-      "2026-11-23T17:15:00Z",
-      91.48
-     ],
-     [
-      "2026-11-23T17:30:00Z",
-      91.36
-     ],
-     [
-      "2026-11-23T17:45:00Z",
-      91.73
-     ],
-     [
-      "2026-11-23T18:00:00Z",
-      91.59
-     ],
-     [
-      "2026-11-23T18:15:00Z",
-      92.02
-     ],
-     [
-      "2026-11-23T18:30:00Z",
-      91.61
-     ],
-     [
-      "2026-11-23T18:45:00Z",
-      91.36
-     ],
-     [
-      "2026-11-23T19:00:00Z",
-      91.395
-     ],
-     [
-      "2026-11-23T19:15:00Z",
-      91.26
+      28.63
      ],
      [
       "2026-11-23T19:30:00Z",
-      90.78
-     ],
-     [
-      "2026-11-23T19:45:00Z",
-      91.02
-     ],
-     [
-      "2026-11-23T20:00:00Z",
-      91.28
-     ],
-     [
-      "2026-11-23T20:15:00Z",
-      91.255
-     ],
-     [
-      "2026-11-23T20:30:00Z",
-      91.385
-     ],
-     [
-      "2026-11-23T20:45:00Z",
-      90.73
+      28.48
      ],
      [
       "2026-11-24T14:30:00Z",
-      91.89
-     ],
-     [
-      "2026-11-24T14:45:00Z",
-      91.01
-     ],
-     [
-      "2026-11-24T15:00:00Z",
-      90.18
-     ],
-     [
-      "2026-11-24T15:15:00Z",
-      88.8
-     ],
-     [
-      "2026-11-24T15:30:00Z",
-      89.14
-     ],
-     [
-      "2026-11-24T15:45:00Z",
-      89.25
-     ],
-     [
-      "2026-11-24T16:00:00Z",
-      88.77
-     ],
-     [
-      "2026-11-24T16:15:00Z",
-      89.075
-     ],
-     [
-      "2026-11-24T16:30:00Z",
-      89.4
-     ],
-     [
-      "2026-11-24T16:45:00Z",
-      90.31
-     ],
-     [
-      "2026-11-24T17:00:00Z",
-      90.49
+      27.98
      ],
      [
       "2026-11-24T17:15:00Z",
-      89.86
-     ],
-     [
-      "2026-11-24T17:30:00Z",
-      90.57
-     ],
-     [
-      "2026-11-24T17:45:00Z",
-      90.48
-     ],
-     [
-      "2026-11-24T18:00:00Z",
-      90.64
-     ],
-     [
-      "2026-11-24T18:15:00Z",
-      90.79
-     ],
-     [
-      "2026-11-24T18:30:00Z",
-      91.13
-     ],
-     [
-      "2026-11-24T18:45:00Z",
-      90.6
-     ],
-     [
-      "2026-11-24T19:00:00Z",
-      91.02
-     ],
-     [
-      "2026-11-24T19:15:00Z",
-      91.21
-     ],
-     [
-      "2026-11-24T19:30:00Z",
-      90.69
+      27.81
      ],
      [
       "2026-11-24T19:45:00Z",
-      90.23
-     ],
-     [
-      "2026-11-24T20:00:00Z",
-      89.81
+      27.88
      ],
      [
       "2026-11-24T20:15:00Z",
-      89.23
-     ],
-     [
-      "2026-11-24T20:30:00Z",
-      88.94
+      27.85
      ],
      [
       "2026-11-24T20:45:00Z",
-      89.25
+      27.92
+     ],
+     [
+      "2026-11-25T14:30:00Z",
+      26.88
      ]
     ],
-    "entry": 88.86,
-    "stop": 85.43,
-    "target": null,
-    "openedAt": "2026-11-24T16:20:10Z",
-    "qty": 143
+    "entry": 26.88,
+    "stop": 25.0,
+    "target": 27.96,
+    "openedAt": "2026-11-25T14:52:00Z",
+    "qty": 421
    },
    "HLAL": {
     "bars": [
@@ -3789,11 +2552,11 @@
       65.95
      ]
     ],
-    "entry": 66.27,
-    "stop": 60.2,
-    "target": 100.34,
-    "openedAt": "2026-11-24T14:59:13Z",
-    "qty": 1.0
+    "entry": 65.95,
+    "stop": 59.36,
+    "target": 98.93,
+    "openedAt": "2026-11-25T14:51:47Z",
+    "qty": 256
    },
    "SPUS": {
     "bars": [
@@ -3940,6 +2703,14 @@
      [
       "2026-11-24T20:45:00Z",
       54.13
+     ],
+     [
+      "2026-11-25T14:30:00Z",
+      52.17
+     ],
+     [
+      "2026-11-25T14:45:00Z",
+      52.16
      ]
     ],
     "entry": 54.185,
@@ -3947,452 +2718,6 @@
     "target": 81.06,
     "openedAt": "2026-11-24T14:59:13Z",
     "qty": 2.0
-   },
-   "TMO": {
-    "bars": [
-     [
-      "2026-11-23T14:30:00Z",
-      686.345
-     ],
-     [
-      "2026-11-23T14:45:00Z",
-      688.11
-     ],
-     [
-      "2026-11-23T15:00:00Z",
-      686.225
-     ],
-     [
-      "2026-11-23T15:15:00Z",
-      691.17
-     ],
-     [
-      "2026-11-23T15:30:00Z",
-      692.57
-     ],
-     [
-      "2026-11-23T15:45:00Z",
-      692.3
-     ],
-     [
-      "2026-11-23T16:00:00Z",
-      692.62
-     ],
-     [
-      "2026-11-23T16:15:00Z",
-      692.65
-     ],
-     [
-      "2026-11-23T16:30:00Z",
-      689.1
-     ],
-     [
-      "2026-11-23T16:45:00Z",
-      690.325
-     ],
-     [
-      "2026-11-23T17:00:00Z",
-      688.53
-     ],
-     [
-      "2026-11-23T17:15:00Z",
-      688.49
-     ],
-     [
-      "2026-11-23T17:30:00Z",
-      686.87
-     ],
-     [
-      "2026-11-23T17:45:00Z",
-      687.36
-     ],
-     [
-      "2026-11-23T18:00:00Z",
-      687.42
-     ],
-     [
-      "2026-11-23T18:15:00Z",
-      687.92
-     ],
-     [
-      "2026-11-23T18:30:00Z",
-      687.075
-     ],
-     [
-      "2026-11-23T18:45:00Z",
-      686.27
-     ],
-     [
-      "2026-11-23T19:00:00Z",
-      689.12
-     ],
-     [
-      "2026-11-23T19:15:00Z",
-      690.75
-     ],
-     [
-      "2026-11-23T19:30:00Z",
-      688.82
-     ],
-     [
-      "2026-11-23T19:45:00Z",
-      688.63
-     ],
-     [
-      "2026-11-23T20:00:00Z",
-      688.4
-     ],
-     [
-      "2026-11-23T20:15:00Z",
-      690.0
-     ],
-     [
-      "2026-11-23T20:30:00Z",
-      689.7
-     ],
-     [
-      "2026-11-23T20:45:00Z",
-      688.54
-     ],
-     [
-      "2026-11-24T14:30:00Z",
-      703.17
-     ],
-     [
-      "2026-11-24T14:45:00Z",
-      696.64
-     ],
-     [
-      "2026-11-24T15:00:00Z",
-      698.27
-     ],
-     [
-      "2026-11-24T15:15:00Z",
-      696.28
-     ],
-     [
-      "2026-11-24T15:30:00Z",
-      694.99
-     ],
-     [
-      "2026-11-24T15:45:00Z",
-      693.855
-     ],
-     [
-      "2026-11-24T16:00:00Z",
-      689.965
-     ],
-     [
-      "2026-11-24T16:15:00Z",
-      688.88
-     ],
-     [
-      "2026-11-24T16:30:00Z",
-      690.4
-     ],
-     [
-      "2026-11-24T16:45:00Z",
-      689.77
-     ],
-     [
-      "2026-11-24T17:00:00Z",
-      693.605
-     ],
-     [
-      "2026-11-24T17:15:00Z",
-      693.64
-     ],
-     [
-      "2026-11-24T17:30:00Z",
-      695.84
-     ],
-     [
-      "2026-11-24T17:45:00Z",
-      695.23
-     ],
-     [
-      "2026-11-24T18:00:00Z",
-      696.045
-     ],
-     [
-      "2026-11-24T18:15:00Z",
-      696.66
-     ],
-     [
-      "2026-11-24T18:30:00Z",
-      698.04
-     ],
-     [
-      "2026-11-24T18:45:00Z",
-      697.94
-     ],
-     [
-      "2026-11-24T19:00:00Z",
-      698.39
-     ],
-     [
-      "2026-11-24T19:15:00Z",
-      698.33
-     ],
-     [
-      "2026-11-24T19:30:00Z",
-      698.38
-     ],
-     [
-      "2026-11-24T19:45:00Z",
-      696.71
-     ],
-     [
-      "2026-11-24T20:00:00Z",
-      696.13
-     ],
-     [
-      "2026-11-24T20:15:00Z",
-      695.945
-     ],
-     [
-      "2026-11-24T20:30:00Z",
-      697.35
-     ],
-     [
-      "2026-11-24T20:45:00Z",
-      695.82
-     ]
-    ],
-    "entry": 699.96,
-    "stop": 678.05,
-    "target": null,
-    "openedAt": "2026-11-24T14:59:10Z",
-    "qty": 16
-   },
-   "NOW": {
-    "bars": [
-     [
-      "2026-11-23T14:30:00Z",
-      90.79
-     ],
-     [
-      "2026-11-23T14:45:00Z",
-      91.46
-     ],
-     [
-      "2026-11-23T15:00:00Z",
-      92.34
-     ],
-     [
-      "2026-11-23T15:15:00Z",
-      92.97
-     ],
-     [
-      "2026-11-23T15:30:00Z",
-      92.39
-     ],
-     [
-      "2026-11-23T15:45:00Z",
-      91.98
-     ],
-     [
-      "2026-11-23T16:00:00Z",
-      92.115
-     ],
-     [
-      "2026-11-23T16:15:00Z",
-      92.185
-     ],
-     [
-      "2026-11-23T16:30:00Z",
-      91.655
-     ],
-     [
-      "2026-11-23T16:45:00Z",
-      92.27
-     ],
-     [
-      "2026-11-23T17:00:00Z",
-      92.53
-     ],
-     [
-      "2026-11-23T17:15:00Z",
-      91.98
-     ],
-     [
-      "2026-11-23T17:30:00Z",
-      91.89
-     ],
-     [
-      "2026-11-23T17:45:00Z",
-      92.21
-     ],
-     [
-      "2026-11-23T18:00:00Z",
-      92.215
-     ],
-     [
-      "2026-11-23T18:15:00Z",
-      92.245
-     ],
-     [
-      "2026-11-23T18:30:00Z",
-      91.9
-     ],
-     [
-      "2026-11-23T18:45:00Z",
-      91.675
-     ],
-     [
-      "2026-11-23T19:00:00Z",
-      91.83
-     ],
-     [
-      "2026-11-23T19:15:00Z",
-      92.1
-     ],
-     [
-      "2026-11-23T19:30:00Z",
-      91.54
-     ],
-     [
-      "2026-11-23T19:45:00Z",
-      91.66
-     ],
-     [
-      "2026-11-23T20:00:00Z",
-      91.86
-     ],
-     [
-      "2026-11-23T20:15:00Z",
-      91.79
-     ],
-     [
-      "2026-11-23T20:30:00Z",
-      91.97
-     ],
-     [
-      "2026-11-23T20:45:00Z",
-      91.71
-     ],
-     [
-      "2026-11-24T13:30:00Z",
-      89.0
-     ],
-     [
-      "2026-11-24T14:00:00Z",
-      89.25
-     ],
-     [
-      "2026-11-24T14:15:00Z",
-      89.07
-     ],
-     [
-      "2026-11-24T14:30:00Z",
-      91.42
-     ],
-     [
-      "2026-11-24T14:45:00Z",
-      92.535
-     ],
-     [
-      "2026-11-24T15:00:00Z",
-      92.82
-     ],
-     [
-      "2026-11-24T15:15:00Z",
-      92.01
-     ],
-     [
-      "2026-11-24T15:30:00Z",
-      91.92
-     ],
-     [
-      "2026-11-24T15:45:00Z",
-      92.175
-     ],
-     [
-      "2026-11-24T16:00:00Z",
-      91.105
-     ],
-     [
-      "2026-11-24T16:15:00Z",
-      91.71
-     ],
-     [
-      "2026-11-24T16:30:00Z",
-      91.975
-     ],
-     [
-      "2026-11-24T16:45:00Z",
-      91.53
-     ],
-     [
-      "2026-11-24T17:00:00Z",
-      91.995
-     ],
-     [
-      "2026-11-24T17:15:00Z",
-      91.95
-     ],
-     [
-      "2026-11-24T17:30:00Z",
-      92.135
-     ],
-     [
-      "2026-11-24T17:45:00Z",
-      92.37
-     ],
-     [
-      "2026-11-24T18:00:00Z",
-      92.165
-     ],
-     [
-      "2026-11-24T18:15:00Z",
-      91.92
-     ],
-     [
-      "2026-11-24T18:30:00Z",
-      92.17
-     ],
-     [
-      "2026-11-24T18:45:00Z",
-      91.94
-     ],
-     [
-      "2026-11-24T19:00:00Z",
-      91.575
-     ],
-     [
-      "2026-11-24T19:15:00Z",
-      91.66
-     ],
-     [
-      "2026-11-24T19:30:00Z",
-      91.47
-     ],
-     [
-      "2026-11-24T19:45:00Z",
-      91.215
-     ],
-     [
-      "2026-11-24T20:00:00Z",
-      91.355
-     ],
-     [
-      "2026-11-24T20:15:00Z",
-      91.265
-     ],
-     [
-      "2026-11-24T20:30:00Z",
-      91.32
-     ],
-     [
-      "2026-11-24T20:45:00Z",
-      91.72
-     ]
-    ],
-    "entry": 91.700355,
-    "stop": 88.95,
-    "target": 97.2,
-    "openedAt": "2026-11-23T20:20:36Z",
-    "qty": 169.0
    }
   }
  },
@@ -4451,32 +2776,32 @@
   }
  },
  "study": {
-  "date": "2026-11-24",
+  "date": "2026-11-25",
   "regime": {
    "stocks": false,
    "coins": false,
-   "spy": 718.45,
-   "spy200": 730.6,
-   "btc": 59692.125,
-   "btc50": 75641.11
+   "spy": 697.42,
+   "spy200": 730.65,
+   "btc": 57489.4875,
+   "btc50": 75080.95
   },
   "plain": {
    "regime": "Stock market is in a downtrend (SPY under its 200-day average): no new trend buys in stocks; coins in a downtrend, no new coin buys",
    "picks": [
-    "ABBV: up +41% in 6 months, above its averages",
-    "COST: up +12% in 6 months, above its averages",
-    "LLY: up +30% in 6 months, above its averages",
-    "REGN: up +58% in 6 months, above its averages",
-    "AAPL: up +14% in 6 months, above its averages"
+    "ABBV: up +38% in 6 months, above its averages",
+    "COST: up +13% in 6 months, above its averages",
+    "PG: up +20% in 6 months, above its averages",
+    "REGN: up +56% in 6 months, above its averages",
+    "LLY: up +23% in 6 months, above its averages"
    ]
   },
   "picks": {
    "stocks": [
     "ABBV",
     "COST",
-    "LLY",
+    "PG",
     "REGN",
-    "AAPL"
+    "LLY"
    ],
    "coins": []
   },
@@ -4485,229 +2810,229 @@
     "symbol": "ABBV",
     "crypto": false,
     "theme": "healthcare",
-    "price": 300.33,
-    "ma50": 279.5953,
-    "ma200": 240.7102,
-    "r3": 14.9,
-    "r6": 41.3,
-    "r12": 30.9,
-    "vol": 21.6,
+    "price": 298.355,
+    "ma50": 280.3436,
+    "ma200": 241.1133,
+    "r3": 16.3,
+    "r6": 38.3,
+    "r12": 33.9,
+    "vol": 21.3,
     "quality": 0.57,
     "uptrend": true,
-    "score": 1.379
+    "score": 1.421
    },
    {
     "symbol": "COST",
     "crypto": false,
     "theme": "consumer",
-    "price": 1091.62,
-    "ma50": 966.74,
-    "ma200": 950.7888,
-    "r3": 17.5,
-    "r6": 12.1,
-    "r12": 25.6,
-    "vol": 19.6,
+    "price": 1087.44,
+    "ma50": 971.1278,
+    "ma200": 951.5221,
+    "r3": 19.8,
+    "r6": 12.7,
+    "r12": 26.9,
+    "vol": 19.0,
     "quality": 0.95,
     "uptrend": true,
-    "score": 1.11
-   },
-   {
-    "symbol": "LLY",
-    "crypto": false,
-    "theme": "healthcare",
-    "price": 1411.18,
-    "ma50": 1276.2711,
-    "ma200": 1118.6523,
-    "r3": 18.8,
-    "r6": 30.5,
-    "r12": 34.0,
-    "vol": 29.2,
-    "quality": 0.88,
-    "uptrend": true,
-    "score": 1.097
+    "score": 1.234
    },
    {
     "symbol": "CVX",
     "crypto": false,
     "theme": "oil_gas",
-    "price": 208.97,
-    "ma50": 213.5098,
-    "ma200": 193.6306,
-    "r3": 5.3,
-    "r6": 16.5,
-    "r12": 44.4,
-    "vol": 24.5,
+    "price": 210.54,
+    "ma50": 213.5198,
+    "ma200": 193.8027,
+    "r3": 6.2,
+    "r6": 16.9,
+    "r12": 45.7,
+    "vol": 24.6,
     "quality": 0.99,
     "uptrend": false,
-    "score": 1.076
-   },
-   {
-    "symbol": "PSX",
-    "crypto": false,
-    "theme": "oil_gas",
-    "price": 237.25,
-    "ma50": 265.7523,
-    "ma200": 206.0226,
-    "r3": -1.6,
-    "r6": 37.3,
-    "r12": 82.1,
-    "vol": 35.2,
-    "quality": 0.4,
-    "uptrend": false,
-    "score": 1.07
-   },
-   {
-    "symbol": "REGN",
-    "crypto": false,
-    "theme": "healthcare",
-    "price": 987.285,
-    "ma50": 836.2453,
-    "ma200": 751.5024,
-    "r3": 21.3,
-    "r6": 57.7,
-    "r12": 31.3,
-    "vol": 41.3,
-    "quality": 0.93,
-    "uptrend": true,
-    "score": 1.043
-   },
-   {
-    "symbol": "AAPL",
-    "crypto": false,
-    "theme": "tech_growth",
-    "price": 353.825,
-    "ma50": 342.4178,
-    "ma200": 303.5372,
-    "r3": 13.0,
-    "r6": 14.0,
-    "r12": 30.8,
-    "vol": 22.4,
-    "quality": 0.95,
-    "uptrend": true,
-    "score": 1.014
-   },
-   {
-    "symbol": "VLO",
-    "crypto": false,
-    "theme": "oil_gas",
-    "price": 324.63,
-    "ma50": 392.6808,
-    "ma200": 298.0077,
-    "r3": -6.4,
-    "r6": 36.1,
-    "r12": 90.7,
-    "vol": 44.0,
-    "quality": 0.64,
-    "uptrend": false,
-    "score": 0.965
-   },
-   {
-    "symbol": "APA",
-    "crypto": false,
-    "theme": "oil_gas",
-    "price": 44.945,
-    "ma50": 46.1758,
-    "ma200": 39.0325,
-    "r3": 9.6,
-    "r6": 24.3,
-    "r12": 93.1,
-    "vol": 40.9,
-    "quality": 0.33,
-    "uptrend": false,
-    "score": 0.964
+    "score": 1.119
    },
    {
     "symbol": "PG",
     "crypto": false,
     "theme": "consumer",
-    "price": 172.52,
-    "ma50": 157.3182,
-    "ma200": 148.6241,
-    "r3": 19.8,
-    "r6": 18.6,
-    "r12": 17.6,
-    "vol": 21.2,
+    "price": 173.07,
+    "ma50": 157.8584,
+    "ma200": 148.7109,
+    "r3": 21.7,
+    "r6": 20.3,
+    "r12": 21.2,
+    "vol": 20.9,
     "quality": 0.7,
     "uptrend": true,
-    "score": 0.951
+    "score": 1.086
    },
    {
-    "symbol": "TMO",
+    "symbol": "PSX",
     "crypto": false,
-    "theme": "healthcare",
-    "price": 696.07,
-    "ma50": 681.181,
-    "ma200": 559.2764,
-    "r3": 9.9,
-    "r6": 52.8,
-    "r12": 18.9,
-    "vol": 28.5,
-    "quality": 0.49,
-    "uptrend": true,
-    "score": 0.948
+    "theme": "oil_gas",
+    "price": 233.49,
+    "ma50": 265.1517,
+    "ma200": 206.4222,
+    "r3": -2.1,
+    "r6": 33.5,
+    "r12": 79.9,
+    "vol": 35.3,
+    "quality": 0.4,
+    "uptrend": false,
+    "score": 1.009
    },
    {
-    "symbol": "JNJ",
+    "symbol": "REGN",
     "crypto": false,
     "theme": "healthcare",
-    "price": 276.5,
-    "ma50": 266.4408,
-    "ma200": 248.5987,
-    "r3": 2.9,
-    "r6": 20.7,
-    "r12": 39.2,
-    "vol": 25.5,
-    "quality": 0.79,
+    "price": 970.71,
+    "ma50": 840.1816,
+    "ma200": 752.6016,
+    "r3": 20.3,
+    "r6": 56.5,
+    "r12": 28.1,
+    "vol": 41.4,
+    "quality": 0.93,
     "uptrend": true,
-    "score": 0.919
+    "score": 0.989
+   },
+   {
+    "symbol": "APA",
+    "crypto": false,
+    "theme": "oil_gas",
+    "price": 45.66,
+    "ma50": 46.1973,
+    "ma200": 39.1259,
+    "r3": 8.3,
+    "r6": 26.6,
+    "r12": 92.4,
+    "vol": 40.7,
+    "quality": 0.33,
+    "uptrend": false,
+    "score": 0.973
+   },
+   {
+    "symbol": "LLY",
+    "crypto": false,
+    "theme": "healthcare",
+    "price": 1381.54,
+    "ma50": 1281.1333,
+    "ma200": 1120.4603,
+    "r3": 17.7,
+    "r6": 22.9,
+    "r12": 30.1,
+    "vol": 29.4,
+    "quality": 0.88,
+    "uptrend": true,
+    "score": 0.925
    },
    {
     "symbol": "COP",
     "crypto": false,
     "theme": "oil_gas",
-    "price": 134.56,
-    "ma50": 136.4174,
-    "ma200": 122.8148,
-    "r3": 3.7,
-    "r6": 18.4,
-    "r12": 58.5,
+    "price": 135.66,
+    "ma50": 136.4992,
+    "ma200": 122.9712,
+    "r3": 5.4,
+    "r6": 19.6,
+    "r12": 59.4,
     "vol": 31.7,
     "quality": 0.56,
     "uptrend": false,
-    "score": 0.869
+    "score": 0.91
+   },
+   {
+    "symbol": "JNJ",
+    "crypto": false,
+    "theme": "healthcare",
+    "price": 274.05,
+    "ma50": 266.6028,
+    "ma200": 248.8018,
+    "r3": 3.6,
+    "r6": 19.9,
+    "r12": 36.8,
+    "vol": 25.3,
+    "quality": 0.79,
+    "uptrend": true,
+    "score": 0.888
+   },
+   {
+    "symbol": "VLO",
+    "crypto": false,
+    "theme": "oil_gas",
+    "price": 319.0,
+    "ma50": 391.0224,
+    "ma200": 298.6175,
+    "r3": -7.6,
+    "r6": 31.2,
+    "r12": 86.4,
+    "vol": 44.1,
+    "quality": 0.64,
+    "uptrend": false,
+    "score": 0.879
+   },
+   {
+    "symbol": "AAPL",
+    "crypto": false,
+    "theme": "tech_growth",
+    "price": 349.4,
+    "ma50": 342.7693,
+    "ma200": 303.9218,
+    "r3": 11.2,
+    "r6": 12.0,
+    "r12": 27.1,
+    "vol": 22.6,
+    "quality": 0.95,
+    "uptrend": true,
+    "score": 0.874
+   },
+   {
+    "symbol": "LIN",
+    "crypto": false,
+    "theme": "materials",
+    "price": 516.53,
+    "ma50": 497.8939,
+    "ma200": 496.9231,
+    "r3": 6.8,
+    "r6": 3.6,
+    "r12": 28.4,
+    "vol": 16.4,
+    "quality": 0.61,
+    "uptrend": true,
+    "score": 0.821
+   },
+   {
+    "symbol": "XOM",
+    "crypto": false,
+    "theme": "oil_gas",
+    "price": 159.08,
+    "ma50": 167.9836,
+    "ma200": 155.0555,
+    "r3": 2.3,
+    "r6": 9.6,
+    "r12": 40.8,
+    "vol": 26.8,
+    "quality": 0.84,
+    "uptrend": false,
+    "score": 0.745
    },
    {
     "symbol": "VRTX",
     "crypto": false,
     "theme": "healthcare",
-    "price": 563.8,
-    "ma50": 524.1443,
-    "ma200": 485.6423,
-    "r3": 3.0,
-    "r6": 29.0,
-    "r12": 32.2,
-    "vol": 28.9,
+    "price": 554.21,
+    "ma50": 524.9725,
+    "ma200": 486.0969,
+    "r3": 1.2,
+    "r6": 23.7,
+    "r12": 30.7,
+    "vol": 29.1,
     "quality": 0.9,
     "uptrend": true,
-    "score": 0.858
-   },
-   {
-    "symbol": "PANW",
-    "crypto": false,
-    "theme": "tech_growth",
-    "price": 352.885,
-    "ma50": 366.5417,
-    "ma200": 283.2738,
-    "r3": 4.0,
-    "r6": 42.0,
-    "r12": 93.0,
-    "vol": 69.0,
-    "quality": 1.0,
-    "uptrend": false,
-    "score": 0.805
+    "score": 0.739
    }
   ],
-  "uptrends": 14,
+  "uptrends": 12,
   "counted": 82,
   "rules": "Trend: price over 50-day avg over 200-day avg (coins: over 50-day). Momentum: avg 3/6/12-month return / volatility. Quality: lower debt ranks higher. New stock buys only while SPY is over its 200-day avg; coins only while BTC is over its 50-day.",
   "trendPct": 0,
@@ -4716,10 +3041,118 @@
  },
  "trades": [
   {
+   "id": "ahq-dip-UMMA-20261125145200",
+   "symbol": "UMMA",
+   "asset": "stock",
+   "status": "pending",
+   "strategy": "dip",
+   "entryOrderId": "b847d7db-d37f-483a-8ae8-efcc0b65aa9f",
+   "qty": 366,
+   "cost": 11294.76,
+   "estPrice": 30.86,
+   "entryPrice": 30.86,
+   "stop": 28.7,
+   "target": 32.09,
+   "openedAt": "2026-11-25T14:52:00Z",
+   "news": {
+    "summary": "Buy the dip: the whole market (SPY) was -2.93% today",
+    "category": "dip",
+    "sources": []
+   },
+   "reason": {
+    "triage": "market-wide dip",
+    "confidence": null,
+    "confirmation": "SPY -2.93%",
+    "publishers": [],
+    "tradingAgents": "not used (dip buy)"
+   }
+  },
+  {
+   "id": "ahq-dip-SPWO-20261125145159",
+   "symbol": "SPWO",
+   "asset": "stock",
+   "status": "pending",
+   "strategy": "dip",
+   "entryOrderId": "ee7ce778-725d-471f-878a-79616bd79f1a",
+   "qty": 421,
+   "cost": 11316.48,
+   "estPrice": 26.88,
+   "entryPrice": 26.88,
+   "stop": 25.0,
+   "target": 27.96,
+   "openedAt": "2026-11-25T14:52:00Z",
+   "news": {
+    "summary": "Buy the dip: the whole market (SPY) was -2.93% today",
+    "category": "dip",
+    "sources": []
+   },
+   "reason": {
+    "triage": "market-wide dip",
+    "confidence": null,
+    "confirmation": "SPY -2.93%",
+    "publishers": [],
+    "tradingAgents": "not used (dip buy)"
+   }
+  },
+  {
+   "id": "ahq-core-HLAL-20261125145147",
+   "symbol": "HLAL",
+   "asset": "stock",
+   "status": "pending",
+   "strategy": "core",
+   "entryOrderId": "71a91d9e-f5f3-4a22-a8f6-be5cf3200ffd",
+   "qty": 256,
+   "cost": 16883.2,
+   "estPrice": 65.95,
+   "entryPrice": 65.95,
+   "stop": 59.36,
+   "target": 98.93,
+   "openedAt": "2026-11-25T14:51:47Z",
+   "news": {
+    "summary": "Core holding: rides the whole (halal) market",
+    "category": "core",
+    "sources": []
+   },
+   "reason": {
+    "triage": "core holding",
+    "confidence": null,
+    "confirmation": "50% of the budget",
+    "publishers": [],
+    "tradingAgents": "not used (core)"
+   }
+  },
+  {
+   "id": "ahq-core-SPUS-20261125145147",
+   "symbol": "SPUS",
+   "asset": "stock",
+   "status": "pending",
+   "strategy": "core",
+   "entryOrderId": "574aafa3-b47d-491a-9bda-02ef6ba9af4c",
+   "qty": 324,
+   "cost": 16899.84,
+   "estPrice": 52.16,
+   "entryPrice": 52.16,
+   "stop": 46.94,
+   "target": 78.24,
+   "openedAt": "2026-11-25T14:51:47Z",
+   "news": {
+    "summary": "Core holding: rides the whole (halal) market",
+    "category": "core",
+    "sources": []
+   },
+   "reason": {
+    "triage": "core holding",
+    "confidence": null,
+    "confirmation": "50% of the budget",
+    "publishers": [],
+    "tradingAgents": "not used (core)"
+   }
+  },
+  {
    "id": "ahq-PLTR-20261124164652",
    "symbol": "PLTR",
    "asset": "stock",
-   "status": "open",
+   "status": "closed",
    "entryOrderId": "36f0c764-f1e2-4753-a954-2524a2d7e555",
    "qty": 70,
    "cost": 11294.5,
@@ -4771,14 +3204,19 @@
     "taSummary": ""
    },
    "stopOrderId": "15707459-b20e-424f-8442-ec4330bd1527",
-   "lastPrice": 160.27,
-   "unrealizedPct": -0.66
+   "lastPrice": 153.79,
+   "unrealizedPct": -4.67,
+   "closedAt": "2026-11-25T14:36:44Z",
+   "exitPrice": 153.67,
+   "exitReason": "trailing stop hit (-4.7%)",
+   "pnl": -536.2,
+   "pnlPct": -4.75
   },
   {
    "id": "ahq-AVAV-20261124162010",
    "symbol": "AVAV",
    "asset": "stock",
-   "status": "open",
+   "status": "closed",
    "entryOrderId": "b5c30106-695d-46d4-8a9c-0a1890a4185e",
    "qty": 143,
    "cost": 12594.01,
@@ -4872,14 +3310,19 @@
     "taSummary": ""
    },
    "stopOrderId": "6612a194-4f8c-4bf6-8d0f-65306748718e",
-   "lastPrice": 88.6,
-   "unrealizedPct": -0.29
+   "lastPrice": 87.3582,
+   "unrealizedPct": -1.69,
+   "closedAt": "2026-11-25T14:36:44Z",
+   "exitPrice": 85.816923,
+   "exitReason": "trailing stop hit (-3.4%)",
+   "pnl": -435.16,
+   "pnlPct": -3.42
   },
   {
    "id": "ahq-core-HLAL-20261124145913",
    "symbol": "HLAL",
    "asset": "stock",
-   "status": "open",
+   "status": "closed",
    "strategy": "core",
    "entryOrderId": "810b527a-45f6-4c93-a623-35c417447788",
    "qty": 1.0,
@@ -4901,8 +3344,14 @@
     "publishers": [],
     "tradingAgents": "not used (core)"
    },
-   "lastPrice": 66.0,
-   "unrealizedPct": -0.41
+   "lastPrice": 65.0,
+   "unrealizedPct": -1.92,
+   "closing": "bad news: Expectations grow that regional Fed banks and policy makers lean towards tighter",
+   "closedAt": "2026-11-25T09:06:28Z",
+   "exitPrice": 65.95,
+   "exitReason": "bad news: Expectations grow that regional Fed banks and policy makers lean towards tighter",
+   "pnl": -0.32,
+   "pnlPct": -0.48
   },
   {
    "id": "ahq-core-SPUS-20261124145913",
@@ -4930,8 +3379,8 @@
     "publishers": [],
     "tradingAgents": "not used (core)"
    },
-   "lastPrice": 54.17,
-   "unrealizedPct": -0.03
+   "lastPrice": 52.266,
+   "unrealizedPct": -3.54
   },
   {
    "id": "ahq-NVDA-20261124145910",
@@ -5010,7 +3459,7 @@
    "id": "ahq-TMO-20261124145909",
    "symbol": "TMO",
    "asset": "stock",
-   "status": "open",
+   "status": "closed",
    "entryOrderId": "f83973a6-e4a8-4b71-84c4-b59c2942b3e4",
    "qty": 16,
    "cost": 11184.4,
@@ -5044,14 +3493,19 @@
     "taSummary": ""
    },
    "stopOrderId": "a2d5311a-a3d9-48a5-a771-640f9165b3c4",
-   "lastPrice": 695.62,
-   "unrealizedPct": -0.62
+   "lastPrice": 686.02,
+   "unrealizedPct": -1.99,
+   "closedAt": "2026-11-25T14:36:45Z",
+   "exitPrice": 676.4525,
+   "exitReason": "trailing stop hit (-3.4%)",
+   "pnl": -376.12,
+   "pnlPct": -3.36
   },
   {
    "id": "ahq-NOW-20261123202036",
    "symbol": "NOW",
    "asset": "stock",
-   "status": "open",
+   "status": "closed",
    "entryOrderId": "c8dd03c3-1cd7-4804-be64-266e4efa35c7",
    "qty": 169.0,
    "cost": 15497.3,
@@ -5114,8 +3568,13 @@
     "tradingAgents": "not used (ultra mode)",
     "taSummary": ""
    },
-   "lastPrice": 91.1958,
-   "unrealizedPct": -0.55
+   "lastPrice": 88.97,
+   "unrealizedPct": -2.98,
+   "closedAt": "2026-11-25T14:36:45Z",
+   "exitPrice": 88.9,
+   "exitReason": "stop-loss -3% hit",
+   "pnl": -473.26,
+   "pnlPct": -3.05
   },
   {
    "id": "ahq-AMZN-20261123190538",
@@ -6376,6 +4835,205 @@
  ],
  "decisions": [
   {
+   "t": "2026-11-25T14:52:00Z",
+   "symbol": "UMMA",
+   "outcome": "bought",
+   "why": "buy the dip: SPY -2.93% today"
+  },
+  {
+   "t": "2026-11-25T14:52:00Z",
+   "symbol": "SPWO",
+   "outcome": "bought",
+   "why": "buy the dip: SPY -2.93% today"
+  },
+  {
+   "t": "2026-11-25T14:51:59Z",
+   "symbol": "VLO",
+   "outcome": "waiting",
+   "why": "down 3% today, no new trades until tomorrow",
+   "event": "Renewed drone attacks on refineries and shipping near the Strait of Hormuz escalate regional conflict and oil supply risks."
+  },
+  {
+   "t": "2026-11-25T14:51:59Z",
+   "symbol": "SLB",
+   "outcome": "waiting",
+   "why": "down 3% today, no new trades until tomorrow",
+   "event": "Renewed drone attacks on refineries and shipping near the Strait of Hormuz escalate regional conflict and oil supply risks."
+  },
+  {
+   "t": "2026-11-25T14:51:59Z",
+   "symbol": "CRM",
+   "outcome": "waiting",
+   "why": "down 3% today, no new trades until tomorrow",
+   "event": "Workday reported Q3 revenue growth and earnings that beat expectations."
+  },
+  {
+   "t": "2026-11-25T14:51:58Z",
+   "symbol": "PSX",
+   "outcome": "waiting",
+   "why": "down 3% today, no new trades until tomorrow",
+   "event": "Renewed drone attacks on refineries and shipping near the Strait of Hormuz escalate regional conflict and oil supply risks."
+  },
+  {
+   "t": "2026-11-25T14:51:58Z",
+   "symbol": "GE",
+   "outcome": "waiting",
+   "why": "down 3% today, no new trades until tomorrow",
+   "event": "General Electric's aerospace unit secured a significant order for GEnx engines from Malaysia Aviation Group."
+  },
+  {
+   "t": "2026-11-25T14:51:58Z",
+   "symbol": "APA",
+   "outcome": "waiting",
+   "why": "down 3% today, no new trades until tomorrow",
+   "event": "Renewed drone attacks on refineries and shipping near the Strait of Hormuz escalate regional conflict and oil supply risks."
+  },
+  {
+   "t": "2026-11-25T14:51:58Z",
+   "symbol": "OXY",
+   "outcome": "waiting",
+   "why": "down 3% today, no new trades until tomorrow",
+   "event": "Renewed drone attacks on Saudi financial centers and Hodeidah port escalate Middle East conflict risks."
+  },
+  {
+   "t": "2026-11-25T14:51:58Z",
+   "symbol": "EOG",
+   "outcome": "waiting",
+   "why": "down 3% today, no new trades until tomorrow",
+   "event": "Renewed drone attacks on refineries and shipping near the Strait of Hormuz escalate regional conflict and oil supply risks."
+  },
+  {
+   "t": "2026-11-25T14:51:57Z",
+   "symbol": "COP",
+   "outcome": "waiting",
+   "why": "down 3% today, no new trades until tomorrow",
+   "event": "Renewed drone attacks on Saudi financial centers and naval mines hitting oil tankers near the Strait of Hormuz escalate regional conflict and oil supply disruption risks."
+  },
+  {
+   "t": "2026-11-25T14:51:57Z",
+   "symbol": "PLTR",
+   "outcome": "waiting",
+   "why": "down 3% today, no new trades until tomorrow",
+   "event": "Renewed drone attacks on Saudi financial centers and Hodeidah port escalate Middle East conflict risks."
+  },
+  {
+   "t": "2026-11-25T14:51:57Z",
+   "symbol": "OXY",
+   "outcome": "waiting",
+   "why": "down 3% today, no new trades until tomorrow",
+   "event": "Renewed drone attacks on refineries and shipping near the Strait of Hormuz escalate regional conflict and oil supply risks."
+  },
+  {
+   "t": "2026-11-25T14:51:57Z",
+   "symbol": "NVDA",
+   "outcome": "waiting",
+   "why": "down 3% today, no new trades until tomorrow",
+   "event": "Workday reported Q3 revenue growth and earnings that beat expectations."
+  },
+  {
+   "t": "2026-11-25T14:51:56Z",
+   "symbol": "XOM",
+   "outcome": "waiting",
+   "why": "down 3% today, no new trades until tomorrow",
+   "event": "Renewed drone attacks on Saudi financial centers and Hodeidah port escalate Middle East conflict risks."
+  },
+  {
+   "t": "2026-11-25T14:51:56Z",
+   "symbol": "COP",
+   "outcome": "waiting",
+   "why": "down 3% today, no new trades until tomorrow",
+   "event": "Renewed drone attacks on refineries and shipping near the Strait of Hormuz escalate regional conflict and oil supply risks."
+  },
+  {
+   "t": "2026-11-25T14:51:56Z",
+   "symbol": "FANG",
+   "outcome": "waiting",
+   "why": "down 3% today, no new trades until tomorrow",
+   "event": "Renewed drone attacks on refineries and shipping near the Strait of Hormuz escalate regional conflict and oil supply risks."
+  },
+  {
+   "t": "2026-11-25T14:51:56Z",
+   "symbol": "XOM",
+   "outcome": "waiting",
+   "why": "down 3% today, no new trades until tomorrow",
+   "event": "Ongoing Middle East conflict continues to escalate regional supply risks and drive up fuel costs."
+  },
+  {
+   "t": "2026-11-25T14:51:56Z",
+   "symbol": "OXY",
+   "outcome": "waiting",
+   "why": "down 3% today, no new trades until tomorrow",
+   "event": "Saudi Arabia affirms it can fund a prolonged war with unlimited military spending as ongoing Middle East conflicts continue to escalate regional supply risks."
+  },
+  {
+   "t": "2026-11-25T14:51:55Z",
+   "symbol": "DVN",
+   "outcome": "waiting",
+   "why": "down 3% today, no new trades until tomorrow",
+   "event": "Renewed drone attacks on refineries and shipping near the Strait of Hormuz escalate regional conflict and oil supply risks."
+  },
+  {
+   "t": "2026-11-25T14:51:55Z",
+   "symbol": "XOM",
+   "outcome": "waiting",
+   "why": "down 3% today, no new trades until tomorrow",
+   "event": "Saudi Arabia affirms it can fund a prolonged war with unlimited military spending as ongoing Middle East conflicts continue to escalate regional supply risks."
+  },
+  {
+   "t": "2026-11-25T14:51:55Z",
+   "symbol": "HAL",
+   "outcome": "waiting",
+   "why": "down 3% today, no new trades until tomorrow",
+   "event": "Renewed drone attacks on refineries and shipping near the Strait of Hormuz escalate regional conflict and oil supply risks."
+  },
+  {
+   "t": "2026-11-25T14:51:55Z",
+   "symbol": "NVDA",
+   "outcome": "waiting",
+   "why": "down 3% today, no new trades until tomorrow",
+   "event": "Dell reported a significant Q3 earnings beat with strong AI server demand."
+  },
+  {
+   "t": "2026-11-25T14:51:54Z",
+   "symbol": "VRTX",
+   "outcome": "waiting",
+   "why": "down 3% today, no new trades until tomorrow",
+   "event": "Vertex Pharmaceuticals extended its drug discovery and validation collaboration with Genomics Limited for four years."
+  },
+  {
+   "t": "2026-11-25T14:51:54Z",
+   "symbol": "SMCI",
+   "outcome": "waiting",
+   "why": "down 3% today, no new trades until tomorrow",
+   "event": "Dell reported a significant Q3 earnings beat with strong AI server demand."
+  },
+  {
+   "t": "2026-11-25T14:51:53Z",
+   "symbol": "CVX",
+   "outcome": "waiting",
+   "why": "down 3% today, no new trades until tomorrow",
+   "event": "Saudi Arabia affirms it can fund a prolonged war with unlimited military spending as ongoing Middle East conflicts continue to escalate regional supply risks."
+  },
+  {
+   "t": "2026-11-25T14:51:51Z",
+   "symbol": "AVAV",
+   "outcome": "waiting",
+   "why": "price hasn't moved the expected way yet (-3.47%)",
+   "event": "Renewed drone attacks on Saudi financial centers and naval mines hitting oil tankers near the Strait of Hormuz escalate regional conflict and oil supply disruption risks."
+  },
+  {
+   "t": "2026-11-25T14:51:47Z",
+   "symbol": "HLAL",
+   "outcome": "bought",
+   "why": "core holding: rides the market"
+  },
+  {
+   "t": "2026-11-25T14:51:47Z",
+   "symbol": "SPUS",
+   "outcome": "bought",
+   "why": "core holding: rides the market"
+  },
+  {
    "t": "2026-11-24T20:28:13Z",
    "symbol": "TSLA",
    "outcome": "waiting",
@@ -6591,342 +5249,9 @@
    "outcome": "waiting",
    "why": "already holding it",
    "event": "Multiple tanker explosions and attacks near the Strait of Hormuz elevate oil supply disruption risks and push crude prices higher."
-  },
-  {
-   "t": "2026-11-24T19:02:05Z",
-   "symbol": "TSLA",
-   "outcome": "waiting",
-   "why": "already $70,009 invested (max 75% of $93,363)",
-   "event": "Seaport Global initiates coverage of Tesla with a Buy rating and $475 price target, highlighting substantial robotaxi revenue potential."
-  },
-  {
-   "t": "2026-11-24T19:02:05Z",
-   "symbol": "AVAV",
-   "outcome": "waiting",
-   "why": "already holding it",
-   "event": "Multiple tanker explosions and attacks near the Strait of Hormuz elevate oil supply disruption risks and push crude prices higher."
-  },
-  {
-   "t": "2026-11-24T18:56:59Z",
-   "symbol": "TSLA",
-   "outcome": "waiting",
-   "why": "already $70,012 invested (max 75% of $93,366)",
-   "event": "Seaport Global initiates coverage of Tesla with a Buy rating and $475 price target, highlighting substantial robotaxi revenue potential."
-  },
-  {
-   "t": "2026-11-24T18:56:59Z",
-   "symbol": "AVAV",
-   "outcome": "waiting",
-   "why": "already holding it",
-   "event": "Multiple tanker explosions and attacks near the Strait of Hormuz elevate oil supply disruption risks and push crude prices higher."
-  },
-  {
-   "t": "2026-11-24T18:51:45Z",
-   "symbol": "TSLA",
-   "outcome": "waiting",
-   "why": "already $70,130 invested (max 75% of $93,484)",
-   "event": "Seaport Global initiates coverage of Tesla with a Buy rating and $475 price target, highlighting substantial robotaxi revenue potential."
-  },
-  {
-   "t": "2026-11-24T18:51:45Z",
-   "symbol": "AVAV",
-   "outcome": "waiting",
-   "why": "already holding it",
-   "event": "Houthi attacks on a Riyadh financial district tower and ongoing Middle East conflict risks elevate oil supply concerns."
-  },
-  {
-   "t": "2026-11-24T18:46:39Z",
-   "symbol": "TSLA",
-   "outcome": "waiting",
-   "why": "already $70,196 invested (max 75% of $93,550)",
-   "event": "Seaport Global initiates coverage of Tesla with a Buy rating and $475 price target, highlighting substantial robotaxi revenue potential."
-  },
-  {
-   "t": "2026-11-24T18:46:39Z",
-   "symbol": "AVAV",
-   "outcome": "waiting",
-   "why": "already holding it",
-   "event": "Houthi attacks on a Riyadh financial district tower and ongoing Middle East conflict risks elevate oil supply concerns."
-  },
-  {
-   "t": "2026-11-24T18:41:34Z",
-   "symbol": "TSLA",
-   "outcome": "waiting",
-   "why": "already $70,235 invested (max 75% of $93,589)",
-   "event": "Seaport Global initiates coverage of Tesla with a Buy rating and $475 price target, highlighting substantial robotaxi revenue potential."
-  },
-  {
-   "t": "2026-11-24T18:41:33Z",
-   "symbol": "AVAV",
-   "outcome": "waiting",
-   "why": "already holding it",
-   "event": "Houthi attacks on a Riyadh financial district tower and ongoing Middle East conflict risks elevate oil supply concerns."
-  },
-  {
-   "t": "2026-11-24T18:36:25Z",
-   "symbol": "TSLA",
-   "outcome": "waiting",
-   "why": "already $70,222 invested (max 75% of $93,576)",
-   "event": "Seaport Global initiates coverage of Tesla with a Buy rating and $475 price target, highlighting substantial robotaxi revenue potential."
-  },
-  {
-   "t": "2026-11-24T18:36:25Z",
-   "symbol": "AVAV",
-   "outcome": "waiting",
-   "why": "already holding it",
-   "event": "Houthi attacks on a Riyadh financial district tower and ongoing Middle East conflict risks elevate oil supply concerns."
-  },
-  {
-   "t": "2026-11-24T18:31:20Z",
-   "symbol": "TSLA",
-   "outcome": "waiting",
-   "why": "already $70,205 invested (max 75% of $93,559)",
-   "event": "Seaport Global initiates coverage of Tesla with a Buy rating and $475 price target, highlighting substantial robotaxi revenue potential."
-  },
-  {
-   "t": "2026-11-24T18:31:20Z",
-   "symbol": "AVAV",
-   "outcome": "waiting",
-   "why": "already holding it",
-   "event": "Houthi attacks on a Riyadh financial district tower and ongoing Middle East conflict risks elevate oil supply concerns."
-  },
-  {
-   "t": "2026-11-24T18:26:15Z",
-   "symbol": "TSLA",
-   "outcome": "waiting",
-   "why": "already $70,158 invested (max 75% of $93,512)",
-   "event": "Seaport Global initiates coverage of Tesla with a Buy rating and $475 price target, highlighting substantial robotaxi revenue potential."
-  },
-  {
-   "t": "2026-11-24T17:38:06Z",
-   "symbol": "AVAV",
-   "outcome": "waiting",
-   "why": "already holding it",
-   "event": "Escalating regional conflicts, including tanker incidents in the Strait of Hormuz and attacks in Riyadh, continue to heighten oil supply disruption risks."
-  },
-  {
-   "t": "2026-11-24T16:54:05Z",
-   "symbol": "ETH/USD",
-   "outcome": "waiting",
-   "why": "already $69,856 invested (max 75% of $93,210)",
-   "event": "The CFTC has ruled that Bitcoin, Ether, and stablecoins can count toward financial resource requirements for derivatives venues, providing a regulatory boost."
-  },
-  {
-   "t": "2026-11-24T16:54:05Z",
-   "symbol": "BTC/USD",
-   "outcome": "waiting",
-   "why": "already $69,856 invested (max 75% of $93,210)",
-   "event": "The CFTC has ruled that Bitcoin, Ether, and stablecoins can count toward financial resource requirements for derivatives venues, providing a regulatory boost."
-  },
-  {
-   "t": "2026-11-24T16:54:04Z",
-   "symbol": "AMAT",
-   "outcome": "waiting",
-   "why": "price hasn't moved the expected way yet (-7.90%)",
-   "event": "Taiwanese markets surge over nine percent following Jensen Huang's return as CEO of Nvidia, driving broad tech and semiconductor enthusiasm."
-  },
-  {
-   "t": "2026-11-24T16:54:04Z",
-   "symbol": "SOL/USD",
-   "outcome": "waiting",
-   "why": "price hasn't moved the expected way yet (-4.69%)",
-   "event": "The CFTC has ruled that Bitcoin, Ether, and stablecoins can count toward financial resource requirements for derivatives venues, providing a regulatory boost."
-  },
-  {
-   "t": "2026-11-24T16:46:52Z",
-   "symbol": "PLTR",
-   "outcome": "bought",
-   "why": "volume 1.1x normal, price +0.73% since the news; TradingAgents: not used (ultra mode)",
-   "event": "Reports of attacks on oil tankers in the Strait of Hormuz and a Houthi attack on a Riyadh financial center are escalating regional conflict and supply risks."
-  },
-  {
-   "t": "2026-11-24T16:46:52Z",
-   "symbol": "AMAT",
-   "outcome": "waiting",
-   "why": "price hasn't moved the expected way yet (-8.45%)",
-   "event": "Taiwanese markets surge over nine percent following Jensen Huang's return as CEO of Nvidia, driving broad tech and semiconductor enthusiasm."
-  },
-  {
-   "t": "2026-11-24T16:46:51Z",
-   "symbol": "ETH/USD",
-   "outcome": "waiting",
-   "why": "price hasn't moved the expected way yet (-3.08%)",
-   "event": "The CFTC has ruled that Bitcoin, Ether, and stablecoins can count toward financial resource requirements for derivatives venues, providing a regulatory boost."
-  },
-  {
-   "t": "2026-11-24T16:46:51Z",
-   "symbol": "SOL/USD",
-   "outcome": "waiting",
-   "why": "price hasn't moved the expected way yet (-4.84%)",
-   "event": "The CFTC has ruled that Bitcoin, Ether, and stablecoins can count toward financial resource requirements for derivatives venues, providing a regulatory boost."
-  },
-  {
-   "t": "2026-11-24T16:46:51Z",
-   "symbol": "BTC/USD",
-   "outcome": "waiting",
-   "why": "price hasn't moved the expected way yet (-3.10%)",
-   "event": "The CFTC has ruled that Bitcoin, Ether, and stablecoins can count toward financial resource requirements for derivatives venues, providing a regulatory boost."
-  },
-  {
-   "t": "2026-11-24T16:40:56Z",
-   "symbol": "AMAT",
-   "outcome": "waiting",
-   "why": "price hasn't moved the expected way yet (-9.08%)",
-   "event": "Taiwanese markets surge over nine percent following Jensen Huang's return as CEO of Nvidia, driving broad tech and semiconductor enthusiasm."
-  },
-  {
-   "t": "2026-11-24T16:40:56Z",
-   "symbol": "ETH/USD",
-   "outcome": "waiting",
-   "why": "price hasn't moved the expected way yet (-3.27%)",
-   "event": "The CFTC has ruled that Bitcoin, Ether, and stablecoins can count toward financial resource requirements for derivatives venues, providing a regulatory boost."
-  },
-  {
-   "t": "2026-11-24T16:40:56Z",
-   "symbol": "SOL/USD",
-   "outcome": "waiting",
-   "why": "price hasn't moved the expected way yet (-5.19%)",
-   "event": "The CFTC has ruled that Bitcoin, Ether, and stablecoins can count toward financial resource requirements for derivatives venues, providing a regulatory boost."
-  },
-  {
-   "t": "2026-11-24T16:40:55Z",
-   "symbol": "BTC/USD",
-   "outcome": "waiting",
-   "why": "price hasn't moved the expected way yet (-3.23%)",
-   "event": "The CFTC has ruled that Bitcoin, Ether, and stablecoins can count toward financial resource requirements for derivatives venues, providing a regulatory boost."
   }
  ],
  "equity": [
-  {
-   "t": "2026-11-16T09:27:49Z",
-   "equity": 100000.0,
-   "spy": 752.09
-  },
-  {
-   "t": "2026-11-16T09:58:24Z",
-   "equity": 100000.0,
-   "spy": 752.09
-  },
-  {
-   "t": "2026-11-16T10:28:38Z",
-   "equity": 100000.0,
-   "spy": 752.09
-  },
-  {
-   "t": "2026-11-16T10:58:56Z",
-   "equity": 100000.0,
-   "spy": 752.09
-  },
-  {
-   "t": "2026-11-16T11:29:11Z",
-   "equity": 100000.0,
-   "spy": 752.09
-  },
-  {
-   "t": "2026-11-16T11:59:26Z",
-   "equity": 100000.0,
-   "spy": 752.09
-  },
-  {
-   "t": "2026-11-16T12:29:49Z",
-   "equity": 100000.0,
-   "spy": 752.09
-  },
-  {
-   "t": "2026-11-16T13:00:17Z",
-   "equity": 100000.0,
-   "spy": 752.09
-  },
-  {
-   "t": "2026-11-16T13:30:51Z",
-   "equity": 100000.0,
-   "spy": 748.79
-  },
-  {
-   "t": "2026-11-16T14:01:32Z",
-   "equity": 100000.0,
-   "spy": 749.06
-  },
-  {
-   "t": "2026-11-16T14:32:31Z",
-   "equity": 100000.0,
-   "spy": 748.315
-  },
-  {
-   "t": "2026-11-16T15:04:01Z",
-   "equity": 100000.0,
-   "spy": 745.465
-  },
-  {
-   "t": "2026-11-16T15:35:24Z",
-   "equity": 100000.0,
-   "spy": 744.75
-  },
-  {
-   "t": "2026-11-16T16:08:18Z",
-   "equity": 100000.0,
-   "spy": 746.485
-  },
-  {
-   "t": "2026-11-16T16:39:49Z",
-   "equity": 100000.0,
-   "spy": 745.93
-  },
-  {
-   "t": "2026-11-16T17:10:50Z",
-   "equity": 100000.0,
-   "spy": 744.44
-  },
-  {
-   "t": "2026-11-16T17:42:22Z",
-   "equity": 100000.0,
-   "spy": 743.645
-  },
-  {
-   "t": "2026-11-16T18:16:28Z",
-   "equity": 100000.0,
-   "spy": 742.09
-  },
-  {
-   "t": "2026-11-16T18:47:36Z",
-   "equity": 100000.0,
-   "spy": 740.23
-  },
-  {
-   "t": "2026-11-16T19:18:48Z",
-   "equity": 100000.0,
-   "spy": 740.74
-  },
-  {
-   "t": "2026-11-16T19:51:46Z",
-   "equity": 100000.0,
-   "spy": 739.38
-  },
-  {
-   "t": "2026-11-16T20:23:41Z",
-   "equity": 100000.0,
-   "spy": 738.605
-  },
-  {
-   "t": "2026-11-16T20:53:44Z",
-   "equity": 100000.0,
-   "spy": 739.56
-  },
-  {
-   "t": "2026-11-16T21:35:05Z",
-   "equity": 100000.0,
-   "spy": 740.04
-  },
-  {
-   "t": "2026-11-16T22:06:22Z",
-   "equity": 100000.0,
-   "spy": 740.04
-  },
-  {
-   "t": "2026-11-16T22:37:41Z",
-   "equity": 100000.0,
-   "spy": 740.04
-  },
   {
    "t": "2026-11-16T23:08:17Z",
    "equity": 100000.0,
@@ -8796,6 +7121,136 @@
    "t": "2026-11-25T00:53:15Z",
    "equity": 92852.15,
    "spy": 717.59
+  },
+  {
+   "t": "2026-11-25T01:23:42Z",
+   "equity": 92835.76,
+   "spy": 717.59
+  },
+  {
+   "t": "2026-11-25T01:53:59Z",
+   "equity": 92740.81,
+   "spy": 717.59
+  },
+  {
+   "t": "2026-11-25T02:24:29Z",
+   "equity": 92601.62,
+   "spy": 717.59
+  },
+  {
+   "t": "2026-11-25T02:54:48Z",
+   "equity": 92545.88,
+   "spy": 717.59
+  },
+  {
+   "t": "2026-11-25T03:25:08Z",
+   "equity": 92592.08,
+   "spy": 717.59
+  },
+  {
+   "t": "2026-11-25T03:55:33Z",
+   "equity": 92607.65,
+   "spy": 717.59
+  },
+  {
+   "t": "2026-11-25T04:25:51Z",
+   "equity": 92568.15,
+   "spy": 717.59
+  },
+  {
+   "t": "2026-11-25T04:56:27Z",
+   "equity": 92452.8,
+   "spy": 717.59
+  },
+  {
+   "t": "2026-11-25T05:26:50Z",
+   "equity": 92327.82,
+   "spy": 717.59
+  },
+  {
+   "t": "2026-11-25T06:00:22Z",
+   "equity": 92208.28,
+   "spy": 717.59
+  },
+  {
+   "t": "2026-11-25T06:30:53Z",
+   "equity": 92287.28,
+   "spy": 717.59
+  },
+  {
+   "t": "2026-11-25T07:01:31Z",
+   "equity": 92159.22,
+   "spy": 717.59
+  },
+  {
+   "t": "2026-11-25T07:32:39Z",
+   "equity": 92062.47,
+   "spy": 717.59
+  },
+  {
+   "t": "2026-11-25T08:03:12Z",
+   "equity": 92129.22,
+   "spy": 717.59
+  },
+  {
+   "t": "2026-11-25T08:35:03Z",
+   "equity": 92267.57,
+   "spy": 717.59
+  },
+  {
+   "t": "2026-11-25T09:06:28Z",
+   "equity": 91949.52,
+   "spy": 717.59
+  },
+  {
+   "t": "2026-11-25T09:36:53Z",
+   "equity": 91536.3,
+   "spy": 717.59
+  },
+  {
+   "t": "2026-11-25T10:07:15Z",
+   "equity": 91557.04,
+   "spy": 717.59
+  },
+  {
+   "t": "2026-11-25T10:37:54Z",
+   "equity": 91361.17,
+   "spy": 717.59
+  },
+  {
+   "t": "2026-11-25T11:08:11Z",
+   "equity": 91411.98,
+   "spy": 717.59
+  },
+  {
+   "t": "2026-11-25T11:41:19Z",
+   "equity": 91337.99,
+   "spy": 717.59
+  },
+  {
+   "t": "2026-11-25T12:13:31Z",
+   "equity": 91322.36,
+   "spy": 717.59
+  },
+  {
+   "t": "2026-11-25T12:45:22Z",
+   "equity": 91465.2,
+   "spy": 717.59
+  },
+  {
+   "t": "2026-11-25T13:18:20Z",
+   "equity": 91363.99,
+   "spy": 704.96
+  },
+  {
+   "t": "2026-11-25T13:54:54Z",
+   "equity": 90931.03,
+   "spy": 703.61
+  },
+  {
+   "t": "2026-11-25T14:52:00Z",
+   "equity": 90584.72,
+   "spy": 697.87
   }
  ],
  "watch": [],
@@ -8807,782 +7262,956 @@
  },
  "events": [
   {
-   "summary": "Ongoing executive uncertainty and scrutiny surrounding Nvidia's CEO Jensen Huang continue to weigh on the stock and broader semiconductor sector.",
-   "category": "company_bad_news",
-   "firstSeen": "2026-11-24T21:00:45Z",
-   "publishers": [
-    "CNBC",
-    "FXLeaders",
-    "Livemint",
-    "Reuters",
-    "Yahoo Finance",
-    "ad-hoc-news.de",
-    "bloomingbit"
-   ],
-   "assets": {
-    "NVDA": {
-     "direction": "down",
-     "confidence": 0.85,
-     "why": "Admission of code of conduct violation by the CEO exacerbates existing executive turmoil and governance concerns."
-    }
-   },
-   "sources": [
-    {
-     "id": "4e4c9dc618106715",
-     "publisher": "CNBC",
-     "kind": "news",
-     "title": "Nasdaq slumps about 1.5% as Nvidia comeback reverses course and Anthropic breaks IPO price: Live updates",
-     "url": "https://www.cnbc.com/2026/11/23/stock-market-today-live-updates.html",
-     "time": "2026-11-24T21:03:13Z"
-    },
-    {
-     "id": "9b96fbfb5ee7ad6f",
-     "publisher": "CNBC",
-     "kind": "news",
-     "title": "Nvidia shares fall more than 5% as Huang comeback rally cools",
-     "url": "https://www.cnbc.com/2026/11/24/nvidia-stock-jensen-huang-return.html",
-     "time": "2026-11-24T21:15:23Z"
-    },
-    {
-     "id": "4d9e780ea8661a3d",
-     "publisher": "FXLeaders",
-     "kind": "news",
-     "title": "NVIDIA NVDA Stock Slips to $150 as China Tariff Threats, Political Backlash Rattle Wall Street",
-     "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxPdnpDRXlWdjJQTFpBTEFwMnZxSlFrcllYZ1JENmJmUEtLTEppUDJsbTVTTFpRSDN5NU4wV1ZjaHFmV3hfUUUtb0xHeW12SHVGTmlKUms4T3hWRVdtbXR0REI0RFRGOTd5MENTaU5GQ3hUUlZWVXNreWFrUndEcmprdi1vdGYtS2JFS184S1BNYm5KU25uaFl6WTFyajNocnlXdHJuWDZiQ1c3b2k1VERzVkM2VGhlNnY0QTlvUFpmdzBBQ0twX2c1YUEweS15VVFK?oc=5",
-     "time": "2026-11-24T21:00:45Z"
-    },
-    {
-     "id": "75087bfa600ddc28",
-     "publisher": "Yahoo Finance",
-     "kind": "news",
-     "title": "Nvidia's Huang says he is in therapy as comeback rally fades",
-     "url": "https://finance.yahoo.com/markets/stocks/articles/huangs-return-fails-dispel-doubts-164158462.html?.tsrc=rss",
-     "time": "2026-11-24T22:01:01Z"
-    },
-    {
-     "id": "1664582c63f37102",
-     "publisher": "Yahoo Finance",
-     "kind": "news",
-     "title": "Don’t chase this Nvidia rally — buy these 3 stocks instead",
-     "url": "https://www.thestreet.com/video/dont-chase-the-nvidia-rally-buy-these-3-stocks-instead?.tsrc=rss",
-     "time": "2026-11-24T21:54:22Z"
-    }
-   ]
-  },
-  {
-   "summary": "The Trump administration is preparing a new offensive of tariffs targeting China and the European Union, increasing global trade war risks.",
+   "summary": "The US administration announced new tariffs of up to 20% on China, the EU, and 12 other nations, increasing global trade war risks.",
    "category": "tariffs",
-   "firstSeen": "2026-11-24T21:06:09Z",
+   "firstSeen": "2026-11-25T13:09:35Z",
    "publishers": [
-    "Bloomberg.com",
-    "Business Post",
-    "Livemint",
-    "New York Post",
-    "Newsmax",
-    "Seeking Alpha",
-    "Sri Lanka Guardian",
-    "The Edge Malaysia",
-    "The Fiscal Times",
-    "TradingView",
+    "Banglanews24",
+    "Business Standard",
+    "Business Upturn",
+    "Daily Excelsior",
+    "Forex Factory",
+    "Gujarat Samachar",
+    "Hindustan Times",
+    "Moneycontrol.com",
+    "National Newswatch",
+    "Prothom Alo English",
+    "Reuters",
+    "Tampa Free Press",
+    "The Daily Jagran",
+    "WKMG",
     "Yahoo",
     "Yahoo Finance",
-    "marketscreener.com",
-    "theopenpress.in",
-    "www.marketscreener.com",
-    "매일경제",
-    "조선일보"
+    "Yahoo! Finance Canada",
+    "Zee Business",
+    "blue News",
+    "news.sbs.co.kr",
+    "아시아경제"
    ],
    "assets": {
     "AMD": {
      "direction": "down",
+     "confidence": 0.7,
+     "why": "Chip stocks are highly sensitive to tariff-related supply chain and trade disruptions."
+    },
+    "QCOM": {
+     "direction": "down",
      "confidence": 0.6,
-     "why": "Tariff escalation and trade war risks negatively impact chip stocks and global tech supply chains."
+     "why": "Broad trade war risks and tariff hikes weigh on semiconductor importers."
     },
     "AAPL": {
      "direction": "down",
-     "confidence": 0.6,
-     "why": "Tariff escalation on China and EU negatively impacts global supply chains and tech hardware margins."
-    },
-    "NVDA": {
-     "direction": "down",
      "confidence": 0.7,
-     "why": "Tariff escalation on China and EU goods negatively impacts semiconductor supply chains and tech growth."
-    }
-   },
-   "sources": [
-    {
-     "id": "cf1ed1102feed0e3",
-     "publisher": "Seeking Alpha",
-     "kind": "news",
-     "title": "U.S. equities finish mixed as tech stumbles on tariff talks",
-     "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNSkdDRHU3V1RFNDN2TXdiX2Q4cHc4ajI4eExvVkpkUW5FQUdRb3BuNTQ0VE1OWENMRTc1UnVVbEw1WTRFSjNSb3hXbE1ic01pdVRZajVDamFTdE1MOWZSNU03a0lRZnFRYmJoT0dDYW82ZTVLZ281LURzS2V5enV0TGw4RkpRRHU5OWgwLTV0QUV2WnJmTVlHMFZ1b00?oc=5",
-     "time": "2026-11-24T21:09:48Z"
-    },
-    {
-     "id": "63f37b6da20bc1c0",
-     "publisher": "Business Post",
-     "kind": "news",
-     "title": "US Markets Wrap: Nvidia pares gains as tech selloff meet renewed tariff fears",
-     "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPRGdoa2hRMHZiemxvQWhJZzFRQmdZS01PajJMQjA4WEE3NXhWaVZPTjNjR1BtNkdvRGNKdTJmNG9FVTB1d2JuY2dQaFQ3MURrN1VHdHdncmVxRmcxMW9qeTZyazdqLTEwX0V4dmVvZi1jZy10NE5YT0NPTUw5aVQ4UnRsVGhCd1kwRGMzMXlOV0lDNnQ3YTl6SzRZbWxfdEhRWjlOc1VHeXhWU01qWWNqWGlKQQ?oc=5",
-     "time": "2026-11-24T21:06:57Z"
-    },
-    {
-     "id": "1bc7059fa051c04e",
-     "publisher": "Newsmax",
-     "kind": "news",
-     "title": "Nasdaq, S&P 500 Drop After Nvidia-Fueled Rally",
-     "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQYXpSY1E3a3I3RnEtbzFrMGdCN241R21ZSktXQ0lObUN5ZUFQVURidzhqaEhwQW02QUxMUG4tekc4SURPTGI3TDRIZWJqSEJocG9hdFh1dnloOEd0eHZrR1FKVTNmMk91RlFzWlRqQlZiY3JUSklSWUhaTWtKbHZpUDFmMy1HNVBha3BqaDB5am8?oc=5",
-     "time": "2026-11-24T21:06:09Z"
-    },
-    {
-     "id": "a0a3c3f18fb3cd67",
-     "publisher": "Yahoo Finance",
-     "kind": "news",
-     "title": "Nvidia's Historic 31% Rally Unravels In Just One Day. AI Stocks Plunge As Nasdaq Sinks 2%.",
-     "url": "https://www.ibtimes.com/us-stocks-mixed-ai-selloff-consumer-confidence-3810150?.tsrc=rss",
-     "time": "2026-11-24T21:14:50Z"
-    },
-    {
-     "id": "0507a10a14106201",
-     "publisher": "TradingView",
-     "kind": "news",
-     "title": "U.S. equities finish mixed as tech stumbles on tariff talks",
-     "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQQ25lUVh0MGkxU3B0eHVQajZzR2NtWG5qcFlqN2VHM1BOc1oxN3h4MVJJS1M3anRqSGtrZ192RjI0SmdhNERYTE1md0J1UkZ6UmFsNjVNWW40VHFQTU1FZ190by1UTjdiY3BPUzdMOFRydDlJN2VfQ3p6V21BTWw1eFM4dUhGYTlIeC0wZHQwZlFrOFc0aGdDVjVONDF3M0RMcmFyLWxzeEtmX25OdXpTRnAzc1FyeVRER29JVVlB?oc=5",
-     "time": "2026-11-24T21:09:48Z"
-    }
-   ]
-  },
-  {
-   "summary": "Renewed drone attacks on refineries and shipping near the Strait of Hormuz escalate regional conflict and oil supply risks.",
-   "category": "war_escalation",
-   "firstSeen": "2026-11-24T23:43:05Z",
-   "publishers": [
-    "Anadolu Ajansı",
-    "Mezha.net",
-    "NDTV Profit",
-    "Nation Thailand",
-    "The Hawk",
-    "UA.NEWS",
-    "X",
-    "www.proactiveinvestors.com.au",
-    "www.thehawk.in",
-    "www.tmgm.com",
-    "شبكة تواصل الإخبارية",
-    "联合早报"
-   ],
-   "assets": {
-    "CVX": {
-     "direction": "up",
-     "confidence": 0.7,
-     "why": "Geopolitical conflict and attacks on oil infrastructure typically drive oil prices and energy stocks higher."
-    },
-    "XOM": {
-     "direction": "up",
-     "confidence": 0.7,
-     "why": "Geopolitical conflict and attacks on oil infrastructure typically drive oil prices and energy stocks higher."
-    },
-    "OXY": {
-     "direction": "up",
-     "confidence": 0.7,
-     "why": "Geopolitical conflict and attacks on oil infrastructure typically drive oil prices and energy stocks higher."
-    },
-    "APA": {
-     "direction": "up",
-     "confidence": 0.7,
-     "why": "Escalating Middle East conflict threatens oil supply."
-    },
-    "COP": {
-     "direction": "up",
-     "confidence": 0.7,
-     "why": "Escalating Middle East conflict threatens oil supply."
-    },
-    "DVN": {
-     "direction": "up",
-     "confidence": 0.7,
-     "why": "Escalating Middle East conflict threatens oil supply."
-    },
-    "EOG": {
-     "direction": "up",
-     "confidence": 0.7,
-     "why": "Escalating Middle East conflict threatens oil supply."
-    },
-    "FANG": {
-     "direction": "up",
-     "confidence": 0.7,
-     "why": "Escalating Middle East conflict threatens oil supply."
-    },
-    "HAL": {
-     "direction": "up",
-     "confidence": 0.7,
-     "why": "Escalating Middle East conflict threatens oil supply."
-    },
-    "PSX": {
-     "direction": "up",
-     "confidence": 0.7,
-     "why": "Escalating Middle East conflict threatens oil supply."
-    },
-    "SLB": {
-     "direction": "up",
-     "confidence": 0.7,
-     "why": "Escalating Middle East conflict threatens oil supply."
-    },
-    "VLO": {
-     "direction": "up",
-     "confidence": 0.7,
-     "why": "Escalating Middle East conflict threatens oil supply."
-    }
-   },
-   "sources": [
-    {
-     "id": "0b931047a7683bcb",
-     "publisher": "UA.NEWS",
-     "kind": "news",
-     "title": "Houthis threaten to attack Jeddah port — Jerusalem Post",
-     "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxOYTYxbDVzZEg4Mmc1cmNNQUc1UGZoUEU3Ulg2VWFaWS1YT1htRWlpN1ZKcUM1bkdqQlFfbnloWjBZNF9RTmU3RTJSSVc4QVFzcGxtajhfbV9PZzl2djJfcjhjX0ZKaGdrYnZHcF9TUHlEcW5ka3BKSkx1VVNwNlRtdEIxTU9BZFBITDQ4TTFXTXZsZw?oc=5",
-     "time": "2026-11-24T23:43:05Z"
-    },
-    {
-     "id": "25a75f213d8c8b2d",
-     "publisher": "www.proactiveinvestors.com.au",
-     "kind": "news",
-     "title": "Oil jumps more than 2% after ships attacked near Strait of Hormuz, reigniting Australian fuel concerns",
-     "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxOV3NtMzMwUExMbFgyZWZSbU5KT1g4Rk9MUnBsS0xlWjBiTUNzdXZlc202ZnZoR0ppRTI2RkJsVFVOcm1LYzlqdXdJdmlzdnZoZk1IbldjU1pweGdlekJ2NmRJdnZGd1RfMVRXcmVUTFB2NEFZb0M4MkZKbl9rWURPdUw4MnFxQ09ySnRJY0VLZUhNOHc2UVl1dWE4SXVaM2drMDU0azZfWVJXYWNZWVlQSTJJY2d1RkFMR09POFN3?oc=5",
-     "time": "2026-11-25T00:20:08Z"
-    },
-    {
-     "id": "43dafb85ef18f7a0",
-     "publisher": "X",
-     "kind": "news",
-     "title": "New Footage Shows Strike on Iran Air Plane at Bushehr Airport",
-     "url": "https://news.google.com/rss/articles/CBMiV0FVX3lxTFBuaGdWUmhyd05qVWNtMjNYTWZIZExlbmFwNDBEQjlWNjVfdWRYYlJjUk1JWnRnYWhlamlLMHRyWHZwTXVOU3JCdjB5Mkc0akJCN3NBSjd1OA?oc=5",
-     "time": "2026-11-25T00:14:31Z"
-    },
-    {
-     "id": "99d20f0827c8bc27",
-     "publisher": "联合早报",
-     "kind": "news",
-     "title": "Houthi attack on Riyadh financial district injures 11",
-     "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxOVFozRU9ISzBzbkxiNnBIQTFkY01ybjJ5U2JwM1lQNm5qREFJbmRtZE1CaGxPVFFFU0VwalJZVEs2SVd2UWJsVU1tamZpQjZFTUJOR2NiSG1oOEN2a3hoTDRERWd0RjNZMG1DbFA4OVFWMEtjTzA2bjd6Ymg2Q2Nrb3ZqMzRJcU5VUmhmZ2gyQnlYak04?oc=5",
-     "time": "2026-11-24T23:58:41Z"
-    },
-    {
-     "id": "c54a371e38538f7e",
-     "publisher": "www.thehawk.in",
-     "kind": "news",
-     "title": "Airstrikes rock Yemen's capital after Houthi drone attack on Riyadh financial district",
-     "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxPMzc0U0NiRDN5QUswcmVTdkg1TjJWVUdyN1pQeU1xaUs5aGpsaFZqc3MxaFJSWHpqMl9PemMxY09iX0F0QTJJWDViUlBHZEVsS1B3U0MxYUpCTUxXREpST0pmYXBfeU95d1NjVjFnd05yX2NEQlJZYm51MTV2U0lmRkhRb2MzY1pkWmR2RV9ZOVpkY1NuYzQwVEtXZEZKMkVWNXZkNTFueDRfSE1NUDdSSkVfUDFscUR0ZTlqODQwX2lxSHM3YVBkdXd4aw?oc=5",
-     "time": "2026-11-25T00:34:05Z"
-    }
-   ]
-  },
-  {
-   "summary": "Bitcoin faces continued downward pressure and bearish sentiment as it breaks below $60,000.",
-   "category": "crypto_negative",
-   "firstSeen": "2026-11-25T00:51:33Z",
-   "publishers": [
-    "Action Forex",
-    "Moomoo"
-   ],
-   "assets": {
-    "BTC/USD": {
-     "direction": "down",
-     "confidence": 0.7,
-     "why": "Technical breakdown below $60k and persistent bearish market sentiment."
-    }
-   },
-   "sources": [
-    {
-     "id": "a375e5b8c4f7ba0e",
-     "publisher": "Action Forex",
-     "kind": "news",
-     "title": "Bitcoin Turns Lower from $62,500 – Eyes $58,000",
-     "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNQmhIY2FYQUR3c2FVaGl3VDU5NUE2cEhrZTRkWmZMTTBiSG11d2pYbmhZOGIwVXFsNVRVbVdKYTdwY0d2cnpyTlFJNlI0czE1ZEFPRko0UlJKLThFVjgyWHJTaTFzXzdjSkV2WFlIaDhVTHVrcWhTWXJ3eGpEME9VYjh4VlFyRURVNkxoaUxCWWFaanFQOUJBMzdNNF9aRlctOXZoV2M1NkFwMGxIY1E?oc=5",
-     "time": "2026-11-25T00:55:21Z"
-    },
-    {
-     "id": "e3ca23ba929f6040",
-     "publisher": "Moomoo",
-     "kind": "news",
-     "title": "Bitcoin Shows Signs of Capitulation: U.S. Equities Under Pressure, Potential Break Below $60,000 to Test $53,000",
-     "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxOV1hnTl9pckQ2N0h6UURqOFdpRld1OG5qRlVFbTlWZlpodzR4V0sxblNUc3lOdEprYldLVVdKcTlIalFLMW9RWl9qM2dfaVlhcmppb1J4TnNuZVZ0U2NEZkU4ZXMxZmtETGVPcE9DN3htRWpPSjhPblpkZ0xDQnBISDdQS0ZFc2ItOXFTVl93V0V0eC1lTkRyN2ZGWC1zbWlvRVRKeXhjUDl1OWlpV3psdmY1VVRRTFk?oc=5",
-     "time": "2026-11-25T00:51:33Z"
-    }
-   ]
-  },
-  {
-   "summary": "The US administration is preparing new tariffs on China and the EU, increasing global trade war risks.",
-   "category": "tariffs",
-   "firstSeen": "2026-11-25T00:55:00Z",
-   "publishers": [
-    "AP"
-   ],
-   "assets": {
-    "AAPL": {
-     "direction": "down",
-     "confidence": 0.6,
-     "why": "High exposure to Chinese manufacturing and global supply chains."
-    },
-    "AMD": {
-     "direction": "down",
-     "confidence": 0.6,
-     "why": "Semiconductor sector is highly sensitive to trade war escalation and tariff costs."
-    }
-   },
-   "sources": [
-    {
-     "id": "c02eabdd38c919dc",
-     "publisher": "AP",
-     "kind": "news",
-     "title": "US ready to slap tariffs on China, EU and others over subsidized production, AP sources say",
-     "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPalJfNUMtVmVfb2RDeFlJeVEtNHVxc09sSjVrT1RfZmRMZ3dzZDMyLUhUSVVoalctTzJTNkU2b2F6VGVJNDZfZXZ3Rkp1WUZQLWY5UUxpOE9XcTJyUVJ4Ri1nZl9MU0xRbkY2MHVBZVg5NGcyX3JlMW1ZdVlrMXRodUlhSjZaSkkwR3pVQUtOUmJGY1JIelBuaGh3?oc=5",
-     "time": "2026-11-25T00:55:00Z"
-    }
-   ]
-  },
-  {
-   "summary": "Ongoing Houthi attacks near the Strait of Hormuz continue to heighten oil supply disruption fears.",
-   "category": "oil_supply",
-   "firstSeen": "2026-11-25T00:52:00Z",
-   "publishers": [
-    "The Vibes"
-   ],
-   "assets": {
-    "XOM": {
-     "direction": "up",
-     "confidence": 0.6,
-     "why": "Geopolitical instability in the Middle East supports higher oil prices."
-    },
-    "CVX": {
-     "direction": "up",
-     "confidence": 0.6,
-     "why": "Geopolitical instability in the Middle East supports higher oil prices."
-    }
-   },
-   "sources": [
-    {
-     "id": "8e1dcec99db1e053",
-     "publisher": "The Vibes",
-     "kind": "news",
-     "title": "Oil prices holds above US$80 as Hormuz attacks heighten supply concerns",
-     "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPZXE0TXd0dkRESlBnbEFVRWxTVVZvOUVLYUs0MGFfY3BOcS1IOWN3MzNlUzZVZ05XUjRuaVBHNUJ2QzZjNGd4RkJoT2RIVVNIR2Y0Z1BQb05pdUNtV0FzMzgzNUh6RmZFNUg2b3E5dV9oSjE1N3lhVDQzSGdQRVBlSFU2UVVlblR5RHY4eUNnQ25iZHdMUVBzUDJpblQ5UjN1cTY1enc3RjdNUVEzZWVnWTUtS29sUFZCVFltMQ?oc=5",
-     "time": "2026-11-25T00:52:00Z"
-    }
-   ]
-  },
-  {
-   "summary": "Bitcoin continues to face downward pressure amid record ETF outflows and bearish market sentiment.",
-   "category": "crypto_negative",
-   "firstSeen": "2026-11-24T23:55:00Z",
-   "publishers": [
-    "BigGo Finance",
-    "Businesskorea",
-    "WEEX"
-   ],
-   "assets": {
-    "BTC/USD": {
-     "direction": "down",
-     "confidence": 0.7,
-     "why": "Significant ETF outflows indicate a shift in institutional sentiment."
-    }
-   },
-   "sources": [
-    {
-     "id": "4a0efbdcea453311",
-     "publisher": "BigGo Finance",
-     "kind": "news",
-     "title": "US Spot Bitcoin ETFs Bleed $4.71 Billion in November, Topping June's Record",
-     "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE5MUmg1RzUwNXJUQ1VPS19FVGZEMzJSWUs1RVZNck92eXkxS283eXA0YUlJYWtJRWw1WTBNbTNwTFFLdElmRXI4c0tuVGl3UkZ6aFdzd0lzUGdsZGZnRkdTa1h1R0F2TjcyR2hIYi1rREl6QmRPZGc?oc=5",
-     "time": "2026-11-24T23:55:00Z"
-    },
-    {
-     "id": "b5f73f42b64cfd38",
-     "publisher": "WEEX",
-     "kind": "news",
-     "title": "Bitcoin Below $62K: Is $60,000 Next Before the Dec. 9 Fed Call?",
-     "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPdnVEbm9GSmpjbUlnU25uTUpEdHBNcElJSU1zaFYwMGp4N0ZnbXJudWgtd09ZVnhlUXh5YXoySkVzcjZUS1piT25iN0R3Zl9sdkk4dmJXOGloTGRBaE9YbEFXRzRnZmZGS2tJYmxJYTBmMHlhb3FBX3dLOHJUZ0Z5VC05VzVLcThReG5EemoycWxEQmdDTzFxWExvalU2d05UNjRnWF9TUVlUSFVtbHdWcTdETlJfMUVRVWc?oc=5",
-     "time": "2026-11-25T00:42:26Z"
-    },
-    {
-     "id": "c6e76add60fdf89c",
-     "publisher": "Businesskorea",
-     "kind": "news",
-     "title": "Bitcoin Breaks Below $60,000 as November ETF Outflows Top $4.7 Billion",
-     "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE5RMk5FYUNodGdNcmZKakFUNFc5cXNmZ1FvbGZUVWdOb1ZUcXB0Uk9yc3hjcThkQWQtaHZ3ZWltVG03YU01VXV3ZXFrM1V3RlI5QnJHOUxCSXYtZUh4WnBHVFRJTWFjc2ZFNVVheWZZcnduVkQ3?oc=5",
-     "time": "2026-11-25T00:33:40Z"
-    }
-   ]
-  },
-  {
-   "summary": "Workday reported Q3 revenue growth and earnings that beat expectations.",
-   "category": "earnings_beat",
-   "firstSeen": "2026-11-24T21:07:50Z",
-   "publishers": [
-    "01net",
-    "24/7 Wall St.",
-    "GuruFocus",
-    "Investing.com India",
-    "JournalArta",
-    "Reuters",
-    "Securities.io",
-    "StockStory",
-    "StreetInsider",
-    "Yahoo Finance",
-    "fiscal.ai",
-    "scanx.trade"
-   ],
-   "assets": {
-    "NVDA": {
-     "direction": "up",
-     "confidence": 0.6,
-     "why": "Strong AI server demand reported by Dell is a positive read-through for Nvidia."
-    },
-    "CRM": {
-     "direction": "up",
-     "confidence": 0.6,
-     "why": "Positive earnings momentum in the enterprise software sector."
-    }
-   },
-   "sources": [
-    {
-     "id": "fb0f2b5ef51416c9",
-     "publisher": "Reuters",
-     "kind": "news",
-     "title": "Dell lifts annual forecasts after record quarter on surging AI server demand",
-     "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOZG1EVmJTYUpyMnJPVzlHNE9xZFZpYmZHdkZBOTgtSllCbnRLQnNuUWtLNktuYXJqZms4Tl85T2I2dU41UmEzTWpPY0Z6TU5uaVJJZWZxLXhVcWxSa0h6cUh5bkpSdk9VdDN5QlIzb3hSLUhRV0FaM2FrVzlkUDJoN2FaeUxKOEhlN2RsZ1VoUUUwNHdTcWp6cV9BNE90ejFEVWRTcWtnbW9XV1A0VEhnSDRhMWVhbkFia1E?oc=5",
-     "time": "2026-11-24T21:11:41Z"
-    },
-    {
-     "id": "8aa2a373c76133b7",
-     "publisher": "StreetInsider",
-     "kind": "news",
-     "title": "Dell Technologies (DELL) Tops Q3 EPS by 289c; offers guidance",
-     "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxNY2tlU0VWRVB1c3lzdG5YWmUyVW82X0Z0TkpNTUJkV2RieWFKdk5DVmZSN2FraEFUSENPb1d0Q21aaWh3YUszYjVYMDZ4RkZJZFpjZjZLcUVVOE56S0xhOFE2VHJpcEJpeGVRR1B5aXdvRUUzXzI0WjRwRnJmUm5DZzMybjRRNjdaVzZ0UVcyVjcyUlhQakgzUks4MDExRzJQWEp6Yjc0WUlXa1YxLWhXRjZpUUo2c1FUcTAwcQ?oc=5",
-     "time": "2026-11-24T21:07:50Z"
-    },
-    {
-     "id": "8607f06ce7baff30",
-     "publisher": "fiscal.ai",
-     "kind": "news",
-     "title": "Dell Technologies Reports Record Quarterly Revenue and Raises Full-Year Outlook",
-     "url": "https://www.morningstar.com/news/marketwatch/2026112499/dells-stock-rises-as-the-ai-boom-helps-sales-more-than-double",
-     "time": "2026-11-24T21:31:51Z"
-    },
-    {
-     "id": "e63a25b59a7d52f2",
-     "publisher": "Investing.com India",
-     "kind": "news",
-     "title": "Dell Tech earnings beat by $2.89, revenue topped estimates",
-     "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOeENvTHBDVEMzd2dSRU1mUE9hOUZhLUdrbmM4RWFsa3VBcDBlUlFBRHRWUHRRWVpXV2YtcXAzZUFuMTdUOXZGTlhxVlZZSVhucTNoNzdjWlRRdXVNYUpsZDhaTXhBNXVhMzBQWUhUS1BJWElyNjIzMDhnMGt4bmV2Xzgwb1NqS2paV2NoN25CMlBvbUdYaFlyWjhSZmp1Ukl4cHFKUQ?oc=5",
-     "time": "2026-11-24T21:31:36Z"
-    },
-    {
-     "id": "ab17451708678492",
-     "publisher": "Yahoo Finance",
-     "kind": "news",
-     "title": "Dell handily tops estimates, lifts sales and profit guidance",
-     "url": "https://finance.yahoo.com/technology/ai/article/dell-handily-tops-estimates-lifts-sales-and-profit-guidance-212145887.html?.tsrc=rss",
-     "time": "2026-11-24T21:21:45Z"
-    }
-   ]
-  },
-  {
-   "summary": "Fed officials continue to signal hawkish tones ahead of PCE data, weighing on risk assets and gold.",
-   "category": "central_bank_hawkish",
-   "firstSeen": "2026-11-24T23:21:32Z",
-   "publishers": [
-    "Business Recorder",
-    "JournalArta",
-    "Livemint",
-    "MEXC",
-    "Nation Thailand",
-    "The Star",
-    "Yahoo Finance"
-   ],
-   "assets": {
-    "AAPL": {
-     "direction": "down",
-     "confidence": 0.6,
-     "why": "Higher interest rates and hawkish Fed rhetoric pressure growth-heavy tech stocks."
-    },
-    "MSFT": {
-     "direction": "down",
-     "confidence": 0.6,
-     "why": "Higher interest rates and hawkish Fed rhetoric pressure growth-heavy tech stocks."
-    },
-    "NVDA": {
-     "direction": "down",
-     "confidence": 0.6,
-     "why": "Hawkish Fed policy and higher yields pressure high-growth tech stocks."
+     "why": "Broad tech stocks face headwinds from escalating global trade war and tariff risks."
     },
     "AMZN": {
      "direction": "down",
-     "confidence": 0.6,
-     "why": "Hawkish Fed policy and higher yields pressure high-growth tech stocks."
+     "confidence": 0.7,
+     "why": "Escalating trade tensions and import taxes threaten consumer spending and retail margins."
+    }
+   },
+   "sources": [
+    {
+     "id": "efbcf5ccd40fcd7f",
+     "publisher": "National Newswatch",
+     "kind": "news",
+     "title": "Trump plans a 20% tariff on Chinese goods and new import taxes for the EU and a dozen other major trading partners",
+     "url": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxPdmZvWDVQbHFBYkpIWkpfa3NRVEYzSU5KMk96MFhHS1g0djF3eF85bXRKMjR4NktXZ0F6ejBnM3JFWDZTVXJHMGJRd29BMzFiQUxOMEVQTUtwUkxOSjJyZTV6SmM0NjgzcHkzR05RZTM3VC1SdjIyMU5RN1dmMnlOeG5JLTh3cHdrSlM3X2Nkb1EtVUF5dkVTc1V0MUEwMnpuYktVZkhxc2JMWDh0NE9WbmVXbUk0UVVreEVOTU15Z0g5XzVFZGVXSkFsYTZfQ21yNzltYUNfaFo4Ym5ZSW9vbl9uc0xZb0xzNFE?oc=5",
+     "time": "2026-11-25T13:26:32Z"
     },
-    "AEM": {
+    {
+     "id": "83e607c37b02425a",
+     "publisher": "Reuters",
+     "kind": "news",
+     "title": "US proposes new tariffs on 14 trading partners to fight excess factory capacity",
+     "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxOcjZ1MUw5RG5fdk0tUjNTRFNIRzl5amR0VklFSzdTOUlUS2hxNWk5aV9xcm5VWmQtZGRkdXVKMWZ3Um5qZHluSFp4MGNIdHNETlZPck1RcmJmUC1oZHFtWFdYT29PbkdjUU1IbjQyWE9GRFJZdXFwTVFRMEtDcl81bXpDS3RHSHNka3VSbGlHNmNFV09uMTE1aExBRVkxUldZUmpwX3hYdGduS1BJcW1QRlY4ZjdyYkZyWTI0dVBB?oc=5",
+     "time": "2026-11-25T13:25:09Z"
+    },
+    {
+     "id": "01ad054ae9ab6657",
+     "publisher": "Prothom Alo English",
+     "kind": "news",
+     "title": "US may impose new tariffs on 16 major trading partners, including Bangladesh",
+     "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE5oZzZ3YzNZVGhZZFZ0d3ZJTlliYWQxd2U4Q2tHaFhEQmVLb1ljQXM5c2RHQmowV2NVWXo4cjZjWGZkZzNudjJqYVA3c3NHaTJmNjU2cVJQTG95YlU1QUNlbtIBbkFVX3lxTFBQZXpKeWVMeFhBQmNmVXJwOWc4LTZUbTZRSW00bjBFMzdRVmVjam5MQ2t6SEx2N2lndWZBQjd1N2djenI3RW8teEdxUWl5eExlQUV0SXFJbXZXRGticHRIQW5mS0FScld1ZU1aUkdR?oc=5",
+     "time": "2026-11-25T13:19:22Z"
+    },
+    {
+     "id": "03084504266f3dae",
+     "publisher": "Hindustan Times",
+     "kind": "news",
+     "title": "US proposes up to 25% ‘excess capacity’ tariff on India, 17% if trade deal is signed",
+     "url": "https://news.google.com/rss/articles/CBMi7gFBVV95cUxPeGZBY2otTUJ4cWNNM2czdDVoLWN6WUMtblFoQi02SWNxZHYwN1ZjQmpYbTBpajJQOGJJNXpPNE5BWXFOUzFqM2RnWnhjcU5FTmI4alJyTEtNS0ZoaGc1c2tUWVpjZzVXZmJ2MlBzc0FfdDFpOXpuZXk0SzcwNGFBcXFhLTJEY0tROVJnbk1qdmwteWJyRzZSc0RWTllVd0VENGhHOU5pX19ITDE4TFlqSW1vZXlRa212UVp1eEZpdnNvS0VBckFqcXJQcHVYb3FzcnhPNEdhcm9ZbHRFdFV5TWEtWUVkYlBQMWdaS0l3?oc=5",
+     "time": "2026-11-25T13:18:39Z"
+    },
+    {
+     "id": "08f2cb44fe0c1abe",
+     "publisher": "Reuters",
+     "kind": "news",
+     "title": "US proposes higher tariffs on Brazil imports, including 10% duty on aircraft",
+     "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxNTGZ4TFg5REgyY0VnandHQjZIMFN1cnNBOEJVQTBDaU1IWDFLVUxmdHFTXzRLVnVKc3pHd3lTYk9lRHZBOWV1Skd5V0VzVU05ZDRjZXdZekl5cWFneWI2b3ptS09taEhjNzZIcGhuWVdydDk5cnpkcElkMUdTZkJjTjROT09sOG5adVUxNVpNeGp5UmxaaHl2bzh6TklXMlp2eVQyVW9idi1QV25LcnpIeFBjMEF4RzNNbkNIU3JOUlN6WWVqSjRtTlFZMA?oc=5",
+     "time": "2026-11-25T13:16:09Z"
+    }
+   ]
+  },
+  {
+   "summary": "US inflation hitting 3.8% reinforces expectations for a hawkish December Fed rate hike, weighing on risk assets.",
+   "category": "inflation",
+   "firstSeen": "2026-11-25T13:39:01Z",
+   "publishers": [
+    "FXEmpire",
+    "Nacionale",
+    "Quartz",
+    "SuaraGarut.ID",
+    "WWLP",
+    "Yahoo Finance",
+    "bsinews.id",
+    "파이낸셜뉴스"
+   ],
+   "assets": {
+    "NVDA": {
      "direction": "down",
-     "confidence": 0.6,
-     "why": "Hawkish Fed signals and rising rates are negative for gold miners."
+     "confidence": 0.8,
+     "why": "Hot inflation and hawkish Fed pressure growth tech stocks."
+    },
+    "AMD": {
+     "direction": "down",
+     "confidence": 0.75,
+     "why": "Higher rates and hot inflation weigh heavily on semiconductor valuations."
+    },
+    "SPTE": {
+     "direction": "down",
+     "confidence": 0.65,
+     "why": "Hot inflation and rate hike fears weigh on broader growth and tech."
     },
     "NEM": {
      "direction": "down",
      "confidence": 0.6,
-     "why": "Hawkish Fed signals and rising rates are negative for gold miners."
+     "why": "Hawkish Fed expectations pressure gold miners."
+    },
+    "UMMA": {
+     "direction": "down",
+     "confidence": 0.6,
+     "why": "Hawkish rate expectations pressure broader equity markets."
     }
    },
    "sources": [
     {
-     "id": "606e3c943949373f",
-     "publisher": "JournalArta",
-     "kind": "news",
-     "title": "Wall Street closes mixed as Treasury yields stay elevated",
-     "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNdXM5dEhnb2hKSFFSVzdwMmhaeWhMSzNiR2dhS210bTJrOWI3M205VUNtbmctU0Q3SVFqN1VTaV92WVVVZVpjeGJLQUt3bXJHS3RtdGFHSWQ2bFdRMVFSSEgyR0pXT1RWUFpoMzliX19CSkhhRFJkSDVGYi13V0tCbHJHakVIUXV6VGFEbVVVV3oxcnlPV05RRWN6XzlWVkpVRV9Xb3QxSGg?oc=5",
-     "time": "2026-11-24T23:26:14Z"
-    },
-    {
-     "id": "7a76fa66e795a110",
+     "id": "87998d599a85a7bc",
      "publisher": "Yahoo Finance",
      "kind": "news",
-     "title": "Dow Jones Futures Fall: Nvidia, Anthropic Lead AI Retreat But Many Sectors Strong; Fed Inflation Data Due",
-     "url": "https://finance.yahoo.com/m/d96603c1-fe7f-3bf3-8158-0728b464d469/dow-jones-futures-fall%3A.html?.tsrc=rss",
-     "time": "2026-11-24T23:21:32Z"
+     "title": "PCE Inflation Overshoots As Fed Fears Worsen AI-Stock Volatility (Live Coverage)",
+     "url": "https://finance.yahoo.com/m/b30124ad-742e-3a7a-9720-272c18c9df53/pce-inflation-overshoots-as.html?.tsrc=rss",
+     "time": "2026-11-25T13:46:26Z"
     },
     {
-     "id": "227c417a696074a8",
-     "publisher": "The Star",
+     "id": "5021bae377c79c44",
+     "publisher": "WWLP",
      "kind": "news",
-     "title": "Fed’s Williams signals more rate hikes possible",
-     "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxON1F0NGhoMVRIVmNEcXlhTGtUbUZfcm4yUWtKUmViZGJfZ3BrU0o3OHlJazU1dmdxRHpiczQzMFlVOHRSUU5oYjRDRzgtVVlBTUFMOW9QeFZUSmlGN1F2cXJFbGZ0cF91MWEwanBHLTlrbjBFV3ZqQ1hGZHdpNU1VbmtVeTloMWVidGZLN1N2ZU9VYUFSYllWQjA5dGRpLVI1bGY0X191YWFaams?oc=5",
-     "time": "2026-11-24T23:39:11Z"
+     "title": "Fed’s preferred inflation metric rose in October as final 2026 rate meeting nears",
+     "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPYzN6eElDamI2VmhOcF8xNFFnam12a2hhb1ZSeG83cTRrRnNIN21BdGRXV21YYU1KRnBTNDdJWkc4R3V6aUhnYmZ5QTMzY0RuZmYzRlR3Z2JZS2d4ZWo3RU9mSVRHcTllcktSbzc3T3lhT2M1b2diUTNqOFhrRTAxMlpYejJvT1JjZDVPYU5Xc2VEZzBtbU1CUHRSdGMtdUNPV01PTXhCNkp1UU12QWlqNWIwczZVdEXSAbwBQVVfeXFMT2RjbFNGYjBUR0d3XzNmcUlaTV81ZHFQamxmeG0tNG93WmFQZ2RlLWxwU21BTEY2TTVPVDRxWVZJeE9uekFmMmxYRWVkMXY1ME8wUzRjX0ZtOUpZYW5xZVRvWGt1WU5HcUVYNEE3SlR1OGpHc3dFNDFGbnBabGNqVXFMUmZQdkk2SFR2LXJpVEtaeXhOQkVVUkhZNUlKM1M0R0F3UjVNQmY3cXJIUXBsbTBhTnRWSjZNMlA4aUw?oc=5",
+     "time": "2026-11-25T13:43:28Z"
     },
     {
-     "id": "a0b061f23c16155b",
-     "publisher": "Livemint",
+     "id": "214c17996ef86934",
+     "publisher": "FXEmpire",
      "kind": "news",
-     "title": "Gold Slips as Investors Weigh Fed Outlook, US Tariff Plans",
-     "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPSXB2TURtS2hlam5CUGIyZkx4aXBXUVhTSmhIUnIzd0Z3SHZ2Rzd0SGhDSUlCa0tidXRvQTRVekJGa1ItdDE4cllNT0pGY0ZqU2JaV1hnaEM2WjZpQXprMHo3NWlnZDZrbnpwT3o5M19EMFo0QnYzaVo1R0VUVGNpWDNBaFc1Q1V2LURobGwxUUlTWldEZGpPdDdCSnZIU1JfNWdubEZXQWFZN05BNEHSAbMBQVVfeXFMTloxdm1haUQ0aWVHNk5wNS1EcVVHc3FIX3g3RUlZZFVXclNVYmdrUDBCNTBUZDBsWkJBTDYtd1NwbHdNaTN5clMwbmlKVWxsaWxIWTFzek50YjZLUEMyYWloYUFKaU5pekxaU3R6al9TeHVjZ2ZSdG1BRkcyS2xIN25ETFRwMjBubjFJclFuTWh1NUIyWWkyWXl1dHNLR19IU0E1aTZsUFl2TUw5QnNBVXkxNE0?oc=5",
-     "time": "2026-11-24T23:58:50Z"
+     "title": "PCE Inflation Rises to 3.8% as Stocks, Gold and Silver Weaken",
+     "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPdmlzQWFUTkt4SXk0RTNNSzdudnc0X0stelRZTVhSZ0Y0SFRpLVJDU1h4TUJuOHpDWVYySUx0ZzhxWi1ITHFEdXpfRjk5c09UaXpySXhDT3ljT2g1SXU2RGtsb2pFblVJOVpFNENHNUFiekFURFpic0RmRUJCREltcUsxM1Jtcmp6eWpTVzJQaDBxM1pReDdtUFZ4UnBvQ1ZYUXlhcTlBaHlxd3BfV2lZ?oc=5",
+     "time": "2026-11-25T13:41:22Z"
     },
     {
-     "id": "ae28e5d67b9c0728",
-     "publisher": "Business Recorder",
+     "id": "24f0b6a864104fb2",
+     "publisher": "Quartz",
      "kind": "news",
-     "title": "Gold ticks lower on hawkish Fed bets",
-     "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxOdURwTHVnTFVjSGt0bmU3aXl4eXZGZ0RDdmdpYlp5T3N5S0U4NzZaUWZHNVNlX3o4SFdIUF94bGZ5STF5VEo5Qkx6dHZlS0tkQlNJQWxQNERya0ZocXpKYTZRVnpoV2Q0aW5yR3BmZWtYQWswVnoybTJtTXRoY3M3RGpR0gFWQVVfeXFMT3BKbk5DaGVvM1dtYm81WnJCZnRwbkh0eXpNNlZna1V0QVkzQzFWTFYwNVVORk5mNGhKbjR1a25rNTBCNjVkUTVrRDZPNXJHSEgwQklOTFE?oc=5",
-     "time": "2026-11-24T23:45:58Z"
+     "title": "Core PCE inflation beat forecasts, reinforcing Fed hike expectations",
+     "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE9wODJweTFxVnV0ckpza09tSHZmZENhaVBZbmp3alBoQklYNTFwM3FYWTJqRGxBYVpYQ1NTRmRxSkZiaW1CYnNtQmRieDh6Y2hNOGpYY1ozUWZFd1dhZ0Y0X1hVUkxPc3IwUHlPdg?oc=5",
+     "time": "2026-11-25T13:41:05Z"
+    },
+    {
+     "id": "08b07f1185452b22",
+     "publisher": "Nacionale",
+     "kind": "news",
+     "title": "What did the PCE report show today? Core inflation hit 3.3% in October, above forecasts",
+     "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxQdFJ2ZHFHQ3hHaWRjc3hzcURseWtiVGtHVTFIQmlaRFZKb2Z2czVYbDFlckY3bGY5MDdfdVozVGo3VXl1eFFPTGZ1eDh0cGczRlZMbUpxS2ZZSFlxdXI5VmZHcm9wZi1kbjFieTZzWkFCeVFXaF9Ca1hrekVQTDR4a2lGc0VWSGVPNThwVTJGeVNpQmNBSW10UVN0dXR0b0Y2ODU1c3E0NzJUNHA4endRSUNYR1ZnUDdiaUswRXdfM2tPV0Jq?oc=5",
+     "time": "2026-11-25T13:40:40Z"
     }
    ]
   },
   {
-   "summary": "HP Inc. reported strong fiscal Q4 results with revenue growth and a dividend increase, fueled by AI-PC sales.",
-   "category": "earnings_beat",
-   "firstSeen": "2026-11-24T21:56:08Z",
+   "summary": "Hawkish Fed expectations and inflation concerns continue to weigh on risk assets and precious metals.",
+   "category": "central_bank_hawkish",
+   "firstSeen": "2026-11-25T12:37:52Z",
    "publishers": [
-    "AlphaStreet",
-    "GuruFocus",
-    "Investing.com",
-    "Investing.com India",
-    "Pluang",
-    "fiscal.ai"
-   ],
-   "assets": {},
-   "sources": [
-    {
-     "id": "d6692f8734f1769a",
-     "publisher": "GuruFocus",
-     "kind": "news",
-     "title": "HP Inc. (HPQ) Shares Surge 7% After Q4 Earnings Beat and Fiscal 2027 Guidance",
-     "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQcGZjQWdmSUZBT0c0STBOYmNTR3NwS3RkdFFiM2oxNFdabm43cFByZTBZWUpaU1AyeTViMm5QM2o1UGdqNU5qQVdWSDYwdGFRYzhRV0JGR3p2cXFTVHRZR0gxRVlJWlBtbHlPV2lwNDdwdjdXdGp5ZjQzY3JwWF9OTU1tMXdIakZFTTZzYURiNGUwNF91dG5LeEpUUF93OVZwdWdUYUhnWU5LMGVCMWwtZHl3?oc=5",
-     "time": "2026-11-24T22:05:36Z"
-    },
-    {
-     "id": "31aa58d1e2c5cb49",
-     "publisher": "Investing.com India",
-     "kind": "news",
-     "title": "HP Inc earnings beat by $0.08, revenue topped estimates",
-     "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOS250RUUxWlVkZThUTUk2WXRYSGJhY0xKSW9IT0daMFNVbmtMaE5mVlVMRHB0dXJfTnlEWng4M09ScFlWb1FMakNkbWJZZ29fd1VhSzRQbE5meUYzaGNWeVh0RFpGajNhdzBGMld2VFpSTURsczZldU5EVFJGYXlDYkJDS3F0RG9XV1AwaXk2Z2xyWUV5V2dpUWFuWlRMTkVt?oc=5",
-     "time": "2026-11-24T22:01:54Z"
-    },
-    {
-     "id": "c555d525c50325cd",
-     "publisher": "Investing.com",
-     "kind": "news",
-     "title": "HP Inc earnings beat by $0.08, revenue topped estimates",
-     "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxONVRkNmN4TGJQUVE3QVhJX1lTNjU0aDFnZC1uSTJ5T3R5elJlVUhhT2M4YXdKNVk4a09OQ3R5MWxzYTV1dEtoUTJmaUFUSzM2cDQ2UVEzM3J2ZHFHUWdBQXp4aXVwVWJnTGFSV1lSd09jMjFGdDNSeDJvRE55VFE1czBLLXpKbFRKQmhHd200dE5HaW91TEczUXQtYVhQTHpZYXc?oc=5",
-     "time": "2026-11-24T21:56:08Z"
-    },
-    {
-     "id": "637ed9360b9e6c88",
-     "publisher": "fiscal.ai",
-     "kind": "news",
-     "title": "HP Inc. Reports Fiscal 2026 Fourth Quarter and Full Year Results and Announces Dividend Increase",
-     "url": "https://www.globenewswire.com/news-release/2026/11/24/3409888/0/en/hp-inc-reports-fiscal-2026-full-year-and-fourth-quarter-results-announces-dividend-increase.html",
-     "time": "2026-11-24T23:01:50Z"
-    },
-    {
-     "id": "8f7992eb3ab6dce8",
-     "publisher": "Pluang",
-     "kind": "news",
-     "title": "HP Inc. beats Q4 estimates with AI PC shipments boosting revenue to $16B",
-     "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNMG1xZURIdW55cFA1eGh1Mzh4eTNMVFZVYjRkQVJ2c0ZjbjJ1WWYxdHRYR29qQ254NDRWMGd4UkhibXdWTjE5QzY1T3M1ZEpMY2RCdkFsaWt2RExpYVV3c19tZzA0WVZuV01YMEpOWlNJYmI0Tk1pUUt1VWk4cndUU1BhdnZWUFJjbmw3eFRQU2RlSVc0NDVoVDlJTG9VNVdPS09tcWRVZ0lQZw?oc=5",
-     "time": "2026-11-24T22:53:30Z"
-    }
-   ]
-  },
-  {
-   "summary": "Renewed drone attacks on Saudi financial centers and Hodeidah port escalate Middle East conflict risks.",
-   "category": "war_escalation",
-   "firstSeen": "2026-11-24T22:18:45Z",
-   "publishers": [
-    "Business Recorder",
-    "Daily Times",
-    "Demócrata",
-    "FXStreet",
-    "Gulf Daily News (Bahrain)",
-    "NST Online",
-    "NewsNation",
-    "RTHK News",
-    "X",
-    "theopenpress.in",
-    "صحيفة سبق الإلكترونية"
+    "CNBC",
+    "Curaçao Chronicle",
+    "Disruption Banking",
+    "Kitco",
+    "Limapagi",
+    "MarketWatch",
+    "Peradaban.id",
+    "Yahoo Finance",
+    "bsinews.id",
+    "cwibc.co.id",
+    "scanx.trade"
    ],
    "assets": {
-    "CVX": {
-     "direction": "up",
-     "confidence": 0.7,
-     "why": "Escalating regional conflict threatens oil supply infrastructure."
+    "NEM": {
+     "direction": "down",
+     "confidence": 0.65,
+     "why": "Gold prices falling below $3,500/oz negatively impacts gold miners."
     },
+    "AEM": {
+     "direction": "down",
+     "confidence": 0.65,
+     "why": "Gold prices falling below $3,500/oz negatively impacts gold miners."
+    },
+    "AAPL": {
+     "direction": "down",
+     "confidence": 0.7,
+     "why": "Hawkish Fed signals and hot inflation weigh on growth-heavy tech stocks."
+    },
+    "NVDA": {
+     "direction": "down",
+     "confidence": 0.7,
+     "why": "Rising rate expectations pressure high-valuation tech and AI stocks."
+    }
+   },
+   "sources": [
+    {
+     "id": "b78b512f1bdf1f76",
+     "publisher": "scanx.trade",
+     "kind": "news",
+     "title": "Gold drops below $3,500/oz to lowest since Sept 2025",
+     "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxOb0lWY0UtS2dsbWFxOVdwWDQ3UWRtRHQyZU8tc0Q0WXB4VWJmcnp3eHlEZGt2SVVhbGdrcWxNTjZOS29obHV3QVNqS2tWcVROU0hCM25ZdjF3VHVfSzNvMU9zc0E2N2tMUkVtbXFwQmg5WHluQWs1cFlYRnZpZWhqYWt2bjlOQXNVQWtHNnFSZ2pxOUhSMzZfRmhDbDl3Q3pCSXhEZ1p1a1dZdFZkS0Vfd1h1SWwwZEpyWFNfZk9oZElXdjF5ZXc?oc=5",
+     "time": "2026-11-25T12:37:52Z"
+    },
+    {
+     "id": "bd73f58b20056765",
+     "publisher": "CNBC",
+     "kind": "news",
+     "title": "The Fed is likely to raise rates in December. What it means for your holiday spending",
+     "url": "https://www.cnbc.com/2026/11/25/fed-december-rate-hike-consumer-impact.html",
+     "time": "2026-11-25T13:15:01Z"
+    },
+    {
+     "id": "111c19546b39a37f",
+     "publisher": "Yahoo Finance",
+     "kind": "news",
+     "title": "Stock Market Today: Dow Dives Ahead Of Fed Inflation Data; Nvidia, Anthropic Plunge (Live Coverage)",
+     "url": "https://finance.yahoo.com/m/90407e46-3b17-34e8-8c82-527bf00b63e4/stock-market-today%3A-dow-dives.html?.tsrc=rss",
+     "time": "2026-11-25T13:14:04Z"
+    },
+    {
+     "id": "029302c16172feda",
+     "publisher": "Disruption Banking",
+     "kind": "news",
+     "title": "Emerging Market Currencies Slide as Fed Rate Hike and Tariff Risks Mount",
+     "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxOME5KS1hoRDRocnBOZld4ek1MWHRWcG1OV0xBX2NPdnpJNThzbHoxWDQ4N3BRUUxXdjg3ZkVyTmdWNDhNRDJEdDFZMnE1by1hdVBaNHFVblo2cWtBQ0xjbUlMT2NvNzUwaWloRFJlaGVXQ3BtbE56RkVtVGVNRUFUVWxUN2ZuRW9KVFRRZk13Z3Bid0ZZRHdUWVBkMFNacmhlNFNHQ2w3Vnk?oc=5",
+     "time": "2026-11-25T13:13:57Z"
+    },
+    {
+     "id": "6079d4c1ab7e0972",
+     "publisher": "Curaçao Chronicle",
+     "kind": "news",
+     "title": "US Dollar Rebounds Near 20-Month High as Markets Anticipate December Fed Rate Hike",
+     "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxOcGZTZVRuM0JFYnhBbUtINGU3THl3c2p4Nk8ybV92dlFGZTk0a244cDFfOFB1NWpnNV9VRURZSXAwaENqSlpWdThJSkZDM2tTRkthb0ZGcmFtcHY1OEZIMkwyX296TEQyWmdBR0Q1ZkVTVGJNMWRXVDFEbUpHV0Vmc25WV0VEeGM5NWtZMmtoOWQ5cWhBZWpFbl9lcFpGdEhTTlBTekd4aDdNYmxiRkUzeWdPMFNZaHZDZzdSUzczOXBTN2JO?oc=5",
+     "time": "2026-11-25T13:11:40Z"
+    }
+   ]
+  },
+  {
+   "summary": "Bitcoin and Ethereum face downward pressure due to record ETF outflows and bearish market sentiment.",
+   "category": "crypto_negative",
+   "firstSeen": "2026-11-25T12:34:06Z",
+   "publishers": [
+    "Binance",
+    "Crypto Briefing",
+    "Finbold",
+    "Pluang",
+    "TheStreet",
+    "Traders Union",
+    "UA.NEWS",
+    "bloomingbit"
+   ],
+   "assets": {
+    "ETH/USD": {
+     "direction": "down",
+     "confidence": 0.7,
+     "why": "Ether falling twice as much as bitcoin shows acute weakness for Ethereum."
+    },
+    "BTC/USD": {
+     "direction": "down",
+     "confidence": 0.8,
+     "why": "Sustained net outflows from spot ETFs and negative sentiment are pressuring price."
+    }
+   },
+   "sources": [
+    {
+     "id": "63f91d9ca5ef8745",
+     "publisher": "UA.NEWS",
+     "kind": "news",
+     "title": "Ether and decentralized finance tokens fell twice as much as bitcoin — CoinDesk",
+     "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOTnhLaDY5ZWV3MGRYMWlSVjJOdS03bkpRZUNPTEtSOG9EUDN0TTFmTkg4UWlkNlpiV0taZ0ppLThTSV9VNmw2bzFLVHhzZ01xRl9jeGx0OC1VY2RsX1JoeEVkeENuUm80X0R1MUJNRVdrM3daTVNHOVJadmw3LVJ0TWkyLWZ1WVZVNGlnbnVuQWRlVDhST3VJX01ycmJJS2F1b1Nra2tMODBOQml0OHFHbEV0UGM2cnl6VV9v?oc=5",
+     "time": "2026-11-25T12:34:06Z"
+    },
+    {
+     "id": "345da2244e2bec91",
+     "publisher": "Binance",
+     "kind": "news",
+     "title": "Bitcoin News | Bitcoin ETFs Post Record $4.94 Billion November Outflows, Topping June's High",
+     "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTFBsdG00aUtVNWdqRmtWdTBIZEQ4ekZidmV6UzI0NmRwWUdhSFZUZi0zMEVCX0JEUmVZeldwR2JXYTBnVVBFZGJSWU8yc1RrTmxqSEJuMG9ualBCUEJoMEYyY0RtaDU?oc=5",
+     "time": "2026-11-25T13:26:44Z"
+    },
+    {
+     "id": "e705cfd49a51a354",
+     "publisher": "bloomingbit",
+     "kind": "news",
+     "title": "Major Stablecoins See $12 Billion of Net Redemptions in Month, Echoing 2022 Bear Market",
+     "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE5CSS1LczFERFN6a0Z0M0puMDktTXFxVkNTVWdEaVNNdE9GZlRSOURCVkZiTEdYWmh6MUlRa211UXFwY2JXWXkwQ3V2SVk0R0wyQ3I0UA?oc=5",
+     "time": "2026-11-25T13:17:37Z"
+    },
+    {
+     "id": "c8fcd5e15b6c036f",
+     "publisher": "Crypto Briefing",
+     "kind": "news",
+     "title": "Bitcoin trades at $58,500 as on-chain indicators signal a market reset",
+     "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE1aTmJJQ0FvVzN1MzBOQ216a19mZC1LN2lPaVBQaEQ2bU9GQ0lDaTJySGxJTmFGRHBxOU05VFozS3hTY0Y5OEVVejYtWGNvQW1EUmUzckdRSWVOdXp5OWJlcFgxU19UaWxDV2FUb0s0RzRfRzFtYUE?oc=5",
+     "time": "2026-11-25T13:36:10Z"
+    },
+    {
+     "id": "1267e9e61d6bdf8d",
+     "publisher": "Pluang",
+     "kind": "news",
+     "title": "Bitcoin falls 2.22% amid record $4.94B outflows from US spot Bitcoin ETFs in November",
+     "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNcHJ1N0wwY1dNZzVuSFZyWVg2NVp4NnV3UUcwTmxaYk1MRXE2d2dlV1pxNE1JbkQ2VkM1ajZ2VWxpazZ2VmRVV1BJWkM2Q0RxUjZILVVTS1FUZ09hRWFiRjBBczhhNkRXamUtYVpDeUxfdVZHeGo5dV90c25kXy1GUWNQd2lMS1I1a2tKLW9ySEctYk85Q3BHZC1mR0s?oc=5",
+     "time": "2026-11-25T13:33:05Z"
+    }
+   ]
+  },
+  {
+   "summary": "Semiconductor stocks face continued downward pressure and downgrades amid AI spending fears and weak memory chip forecasts.",
+   "category": "company_bad_news",
+   "firstSeen": "2026-11-25T08:42:59Z",
+   "publishers": [
+    "24/7 Wall St.",
+    "Reuters",
+    "Yahoo Finance",
+    "fiscal.ai"
+   ],
+   "assets": {
+    "MU": {
+     "direction": "down",
+     "confidence": 0.88,
+     "why": "A steep price target slash and downgrade from BNP Paribas weighs heavily on the stock."
+    },
+    "AMD": {
+     "direction": "down",
+     "confidence": 0.65,
+     "why": "Renewed selling pressure and AI spending fears weighing on semiconductor stocks."
+    },
+    "AMAT": {
+     "direction": "down",
+     "confidence": 0.5,
+     "why": "Weak memory chip demand and broader semiconductor sector skepticism."
+    }
+   },
+   "sources": [
+    {
+     "id": "a9162a5399dc196b",
+     "publisher": "Reuters",
+     "kind": "news",
+     "title": "Airline Norse Atlantic says it is in critical financial situation, shares plunge",
+     "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQUnBxTTlMWW9sR2p0cHd4OXk3enppYzRYOTFkOENpamtod1VHTExCQjRqZ1cxRWRjZ04wZlp4NzR1SVdQaGpPeWNTLVpmN09fc3R0WGxUMUFUQ0tOekxYV3ZSY2w2WTQtUDR6N2pETVotWWRlV1VrRVhXYTFYY19SRXRfZ3Z5bmFnb2xVVjNjRkJPdG9qRE4yRGxMMVNyMjlEdXBvSEw1SjMxYVFvNjVEckszYw?oc=5",
+     "time": "2026-11-25T08:42:59Z"
+    },
+    {
+     "id": "0ae9d14b3055ebd3",
+     "publisher": "Yahoo Finance",
+     "kind": "news",
+     "title": "Micron Stock Just Got a Brutal Downgrade -- BNP Paribas Slashes Price Target 54%",
+     "url": "https://finance.yahoo.com/markets/stocks/articles/micron-stock-just-got-brutal-114708173.html?.tsrc=rss",
+     "time": "2026-11-25T11:47:08Z"
+    },
+    {
+     "id": "21287c5b7c12b35c",
+     "publisher": "fiscal.ai",
+     "kind": "news",
+     "title": "Nutanix CEO Rajiv Ramaswami to Step Down",
+     "url": "https://www.streetinsider.com/Globe+Newswire?before_id=27001169",
+     "time": "2026-11-25T12:32:17Z"
+    },
+    {
+     "id": "8e1cd0484208aa60",
+     "publisher": "fiscal.ai",
+     "kind": "news",
+     "title": "BofA Securities Downgrades Nutanix to Neutral",
+     "url": "https://www.marketscreener.com/news/bofa-securities-downgrades-nutanix-to-neutral-price-target-is-62-ce7851d8d98af72c",
+     "time": "2026-11-25T12:32:17Z"
+    },
+    {
+     "id": "dc8cda811071ce71",
+     "publisher": "Yahoo Finance",
+     "kind": "news",
+     "title": "AMD, Micron and Sandisk Stocks Slide as AI Spending Fears Deepen",
+     "url": "https://finance.yahoo.com/markets/stocks/articles/amd-micron-sandisk-stocks-slide-122728877.html?.tsrc=rss",
+     "time": "2026-11-25T12:27:28Z"
+    }
+   ]
+  },
+  {
+   "summary": "Ongoing Middle East conflict continues to escalate regional supply risks and drive up fuel costs.",
+   "category": "oil_supply",
+   "firstSeen": "2026-11-25T12:47:57Z",
+   "publishers": [
+    "Anadolu Ajansı",
+    "Crude Oil Prices Today | OilPrice.com",
+    "FXStreet",
+    "FinanceFeeds",
+    "Fox Business",
+    "Investigative Journalism Foundation",
+    "Quartz",
+    "RTE.ie",
+    "Ukranews",
+    "fiscal.ai"
+   ],
+   "assets": {
     "XOM": {
      "direction": "up",
-     "confidence": 0.7,
-     "why": "Escalating regional conflict threatens oil supply infrastructure."
+     "confidence": 0.75,
+     "why": "Middle East war escalations increase oil supply disruption risks and boost energy stock prices."
+    },
+    "CVX": {
+     "direction": "up",
+     "confidence": 0.75,
+     "why": "Oil supply pressures from regional conflict benefit integrated oil majors."
     },
     "OXY": {
      "direction": "up",
      "confidence": 0.6,
-     "why": "Escalating Middle East conflict threatens oil supply infrastructure."
-    },
-    "PLTR": {
-     "direction": "up",
-     "confidence": 0.6,
-     "why": "Defense tech demand increases during geopolitical instability."
-    },
-    "AVAV": {
-     "direction": "up",
-     "confidence": 0.5,
-     "why": "Increased regional conflict typically boosts defense tech demand."
+     "why": "Escalating conflict near the Strait of Hormuz supports oil and gas producers."
     }
    },
    "sources": [
     {
-     "id": "2aa19739156345da",
-     "publisher": "NewsNation",
+     "id": "4c0559fffc31a5ec",
+     "publisher": "FXStreet",
      "kind": "news",
-     "title": "Houthis advance toward Aden; Saudis vow response for Riyadh attack",
-     "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE1ySDhyX3pwelBfby1XVlppcTc3UXNNY1V5bXZ0YlhPeDRxWVl0QzJBWkpGOFBVal9QM3VYalh4NzY4X2VvS0x2aTNpTkdPbVo4Snd2VHNMeXJqeFpYaTZuZmhQZDdrVV83WFlpTWNfSDRkcWJTSnA0TnZyMNIBgAFBVV95cUxNSVlWTTV1bEdNMmwwTHppTmgxTWh6VXlIWlNkVVE5REszT0tFT0FoYm5kVWx5a0Z4aWhKQ0g5YXVGM1lzWUthRDBjR2xLa3BoS2EtUVpjOWlxSExPVnhLSHB6V2NFUDlmeXhwYnRHM1lidUloWTJtLW92amQyVXdyeg?oc=5",
-     "time": "2026-11-24T22:18:45Z"
+     "title": "Oil: Supply recovery offsets disruption risks – ING",
+     "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxOd1ZFMXlpSUg4UFRjaGl2LXdhSU5VSV9YU1lVdWRReVBTYVhwazAwZUhMaWRhdjlyeG1FbksyOUtCMTZHR0VHZDM5aVdDS2JRSG9Ub1o2Y2xGTHVUcVBZdXVxQWxENlA2b2FJYkh5OWhkaE50WkhHZ0NSTnJ4ZV9tMWJUY0V5c01MdEM3allRa29VM1VlOVE?oc=5",
+     "time": "2026-11-25T12:56:50Z"
     },
     {
-     "id": "84977cf2ed49adc2",
-     "publisher": "Demócrata",
+     "id": "a1d29c7520678524",
+     "publisher": "RTE.ie",
      "kind": "news",
-     "title": "Expansion | Saudi Arabia orders the evacuation of the port of Hodeida ahead of imminent attacks against the Houthis",
-     "url": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxPeXF5MnA2YVFBcExGMnI4U2Y3WnJzeU54UkRzMlBnZDBVemxlbXBPODduNTZ6OVZzdk1ROUtBN2NFZTdCQ21xX3huaEMwcTBBTG1id2tsU01JOEd1SlJsOVU5a0NfZ2N1ZE1fVlRWck5YWTlNVm56LTg5LVJ6YmZqc2x5NDhNS2FTcXhrUHBnOTZLU3o2SHdHLUZfNW5QVW11TEhNUUJBRmh3RFNOMFpNVXpLNVI2eldtMXlpNkRsRFZlWDJFZWJlSnltempMaDJNYlBQVHEyVHRtX1gwQ1lfLVFYU1lsQjd4RXVNbNIB8gFBVV95cUxQUGRfZDZUZE8zQ25oOFl4MTBxakJ6ZGNmM0VPUG1sVGlZamktbldHUGw2R1BVTVBHT24tdnhBaFdyRmdQOEhXc2tNd2Y0SGVVSXRLTFF0OENEcUpYdEEzZU9Jblo3SDBmN1M1NWlqMVRWUFV2bGpOazNPQ0hraHNFM2otak5WaC1aQVZ1a295M3ZmS2J4VFJ1anp4OWFucWtWZktqdlM5VkFQSXBDZzRQOE5LQy0xMTNpZk1WZHJ4RlFiVU1QVklqUnZsOUQ4SnllSl9MbENnTjRjeE84SEhHZTQxQloweG13cDJ5MkhrdURWUQ?oc=5",
-     "time": "2026-11-24T23:02:49Z"
+     "title": "Oil dips as supply glut prospect offsets Middle East fear",
+     "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTFBoNGtlX2I5TU1sczFyNldkNGY3N1gwTVV5TVhPM0hRbGg3RjFaTVVjUkg0UU1nak53SnZocmZ6dm96SlYzMlJySzhoNHBwSzNEdEZwMzNTcV9uMmowdXZyWDRqWGdidmxOdkM4RXhERjd3LXZJNTZj?oc=5",
+     "time": "2026-11-25T12:56:44Z"
     },
     {
-     "id": "ebb44a5ed0be6edd",
-     "publisher": "X",
+     "id": "d2c142dc24b086d6",
+     "publisher": "Anadolu Ajansı",
      "kind": "news",
-     "title": "🇸🇦🇾🇪 Saudi Arabia's missile shield is running low: a Houthi strike just wounded 11 people at a Riyadh skyscraper It's the second hit on the Public Investment Fund's tower in less than a week, and Riyadh has reportedly asked the US, UK and France to sell or l",
-     "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTFBSdTBEWEltcGVtYmpzSTVqMUROM3EwVWFIRnZhVjJCOHl4WTlyUlFoRVJwTXhYR2IteUt1c3hURzIwcHRSakUya2FySXJLV3VGWWFNc3BEQjV2QktzVF9WSWEtWk1BLU0xQ3J5Zg?oc=5",
-     "time": "2026-11-24T22:58:44Z"
+     "title": "Russia's fuel market remains tense due to Ukraine's attacks on oil refineries",
+     "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNalBTOXFCUzhMVndRV1VwZXJxVFlkTVZGN09MUDduU0swT1lMUUxXaTBySXpWMDM2SjBRZ2lEWmFsY1BFVHV4b1labVpVWFhNTFhiR1hyRDB0eWlJckNRV2wySDRYZkdUR0VzWlV0eERFeDUtNTVJOTJkVEd4YlZpSzczTEM5OGYwMGF1R1pidklQTDVWaHp4LUk0bEVFQjNaZXh2LUxvakt1N2J3blBLc0JoaXpaczA?oc=5",
+     "time": "2026-11-25T12:47:57Z"
     },
     {
-     "id": "6bbe3b7e8b41d3e9",
-     "publisher": "Daily Times",
+     "id": "dd2d7471856322c4",
+     "publisher": "fiscal.ai",
      "kind": "news",
-     "title": "Tower in Riyadh’s business district hit in ‘terrorist’ attack",
-     "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOdHhhRTh6TWkySHh0OVZMZDJiSm9IS1ZuS2w2aGFxdUluaE9CU2J0WkMxbk5MTW41WHRLM3FQLWdJcEhqbWFMcjNWLW0wSDlGaW9rQUtabEpCMl94N2JFLXdaLUNMbjJPTEtROGFDUEFFVGVwRWtseU9tSW8zcnZwRUZWejFWS1k2NXpYaEJWc0FHQjBxY05VNg?oc=5",
-     "time": "2026-11-24T22:52:45Z"
+     "title": "easyJet Reports Annual Results Ahead of Apollo Takeover",
+     "url": "https://www.finanzen.ch/nachrichten/aktien/easyjet-gewinn-mit-gewinneinbruch-1036798859",
+     "time": "2026-11-25T13:01:39Z"
     },
     {
-     "id": "e7b28fae13d8ae00",
-     "publisher": "theopenpress.in",
+     "id": "fc5dbc3fce838b2e",
+     "publisher": "Crude Oil Prices Today | OilPrice.com",
      "kind": "news",
-     "title": "Houthi Attack Riyadh: 11 Injured, Including 2 Indians, as Financial Centre Tower Targeted",
-     "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxORU44SHc5cWZxTmE5bl8weGR0WHN1eGVuX2s3MWdIQnRGeTdEd042STlyQzFXT1AyVEZCc2cxdUdDYmhMc1NtZlhLZmtYWUQ4RmI5cHhURjVvbFJ0REk3Q29WOWEyZDhtODNyODRKYWQ5VG1WN2ttdzY3Sm5Yb3JqNUMyMEJqYU9ZYm1Yc3RrUUgzNDMt?oc=5",
-     "time": "2026-11-24T22:47:37Z"
+     "title": "Iran War Is Pushing Record Numbers of Fuel Tankers Into Crude Trade",
+     "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPd0xrRjNXRkJIMlI1MkRZdUZ3YmdwS2dhSHA1dVFfbE1DWHdzR09vV19qb2lObWp3eDRxTUlJSDhCMWttSHZVSjF5VGx3OXRXYXBwNVIyU1F3a28xRkFsRXFYWHpJbTVLZXhQbVQySS0wYklfSVNIaFV6S25DOVRUNjJWWHVIZTdaTjJ3UXc0N3ZRVjlwdU9EcjZ1WDYzVDlvQmNQc3FvYUF1OGc5d3lSZzZkalJGVFlJM0Nmd3lubHTSAcYBQVVfeXFMTnl6bTVmRzQ4TDRKOFpvMkZBYUpQUTR6QTZLdmU5S0xqejFnWjJxZW9ERUYyRVlLaEo4NEdKaS1IYU9hSk0xaEtTQnE5aGwwMXh6SkFFLU5nWng1V2s0SFczbUVmNmk4cEphX09fSnd1aUctUi1xa2hJN2tVd1ZfTnJJMkNKdEtxWENXZ3JtdHhSc0cxRTVHcHJTczdJZTJ2QjJYYlY2a1Mwak8tOTJReDV1Z3o5X2tRNzNpRHYwRFVvSXpoNGVn?oc=5",
+     "time": "2026-11-25T13:00:00Z"
     }
    ]
   },
   {
-   "summary": "Bitcoin faces downward pressure due to thin spot demand and broader risk-off sentiment.",
-   "category": "crypto_negative",
-   "firstSeen": "2026-11-24T22:21:03Z",
+   "summary": "General Electric's aerospace unit secured a significant order for GEnx engines from Malaysia Aviation Group.",
+   "category": "contract",
+   "firstSeen": "2026-11-25T13:10:08Z",
    "publishers": [
-    "24/7 Wall St.",
-    "Coin Edition",
-    "CryptoSlate",
-    "Investing.com India",
-    "The Motley Fool",
-    "Yahoo Finance",
-    "bloomingbit",
-    "investingLive",
-    "www.thestreet.com"
+    "Yahoo Finance"
    ],
    "assets": {
-    "BTC/USD": {
-     "direction": "down",
-     "confidence": 0.7,
-     "why": "Hawkish Fed policy and lack of spot demand are driving crypto lower."
-    },
-    "ETH/USD": {
-     "direction": "down",
+    "GE": {
+     "direction": "up",
      "confidence": 0.6,
-     "why": "Negative sentiment and treasury selling pressure."
+     "why": "New engine order represents a positive revenue catalyst for the aerospace segment."
     }
    },
    "sources": [
     {
-     "id": "35bd782c3928f3c1",
-     "publisher": "The Motley Fool",
+     "id": "398a423aea9a9622",
+     "publisher": "Yahoo Finance",
      "kind": "news",
-     "title": "Crypto Market Today, Nov. 24: Bitcoin Falls Below $60,000 as ETF Outflows Hit a Record $4.7 Billion",
-     "url": "https://news.google.com/rss/articles/CBMi8wFBVV95cUxPLTNtZEtTS2JrekFZdEt1TTVjWEJIMG5zOUVRdUpVYTFfblo4MkhMNlRxbzRINzVXU3doTi0yNkM5amZKQnpva3VObXBNdFVsWGR0T3lYNy02ZjlVWk41VEE5Wnh0MU5qeHh5MzlZVFJUUWg4cmNXcHFZVXE5dGtoR0VHRTlGTGtKWFNVVFB4OFdNdlA0TTVhc2JGTTBma2RXR0JlMEhLOS1pcFlOQldpcmVlRkNWLXF2Rmx1UDA0LVdLY19pdjhSTHNrX0U1bHNLTjhwQ2FiU05KZ2tVVXRUUVJhY3lGazEyTU01bXNOclg4d2s?oc=5",
-     "time": "2026-11-24T22:26:40Z"
+     "title": "General Electric (GE) Lands First GEnx Engine Order From Malaysia Aviation Group",
+     "url": "https://finance.yahoo.com/markets/stocks/articles/general-electric-ge-lands-first-131008130.html?.tsrc=rss",
+     "time": "2026-11-25T13:10:08Z"
+    }
+   ]
+  },
+  {
+   "summary": "Potential new US tariffs weighing on equity futures increase global trade war risks and pressure tech stocks.",
+   "category": "tariffs",
+   "firstSeen": "2026-11-25T07:17:18Z",
+   "publishers": [
+    "AP",
+    "Apparel Resources",
+    "BigGo Finance",
+    "Bloomberg.com",
+    "CNBC",
+    "Crave Online",
+    "Dagens.com",
+    "Dawn",
+    "FXStreet",
+    "FourWeekMBA",
+    "Gulte",
+    "Investing.com",
+    "Investing.com India",
+    "KELO-AM",
+    "Munsif News 24x7",
+    "Profit by Pakistan Today",
+    "Techi",
+    "The Economic Times",
+    "The Korea Times",
+    "Traders Union",
+    "Türkiye Today",
+    "Udaipur Kiran",
+    "WSLS",
+    "Wisevoter",
+    "Yahoo Finance",
+    "chinadailyhk",
+    "marketscreener.com",
+    "www.tmgm.com",
+    "شبكة تواصل الإخبارية"
+   ],
+   "assets": {
+    "NVDA": {
+     "direction": "down",
+     "confidence": 0.7,
+     "why": "Tech sector sentiment is heavily weighed down by expanding tariff concerns."
+    },
+    "AAPL": {
+     "direction": "down",
+     "confidence": 0.65,
+     "why": "Expanding tariff risks and trade tension weigh heavily on major tech hardware importers."
+    },
+    "AMD": {
+     "direction": "down",
+     "confidence": 0.7,
+     "why": "Broad tech and chip stocks are vulnerable to global trade war and tariff escalation."
+    },
+    "AMZN": {
+     "direction": "down",
+     "confidence": 0.6,
+     "why": "Trade friction and tariff fears weigh heavily on major consumer-exposed tech giants."
+    }
+   },
+   "sources": [
+    {
+     "id": "0cc7e9273214ac91",
+     "publisher": "Traders Union",
+     "kind": "news",
+     "title": "U.S. prepares tariff increases on goods from China and EU",
+     "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxQS3dhWGg0Um5nTjlObGU1NXMxM3ZTUmtpTEh0OW1ISTBEbjc5M0ctY3gwdTNYMWJvNFlvajdzclZqRGE1eWdCUWRUOXpqODVBM25Bc2ljaW04UWFqRFI0TVMxWnVIM0NWTmFKSVZUR2FudjlVd2M5SVhqZURWUzNUMWdYTQ?oc=5",
+     "time": "2026-11-25T07:23:20Z"
     },
     {
-     "id": "1af58a6f0247d33b",
-     "publisher": "Coin Edition",
+     "id": "9a83693d6e399c30",
+     "publisher": "FXStreet",
      "kind": "news",
-     "title": "Bitcoin Loss Ratio Hits FTX-Era High as ETF Outflows Reach $4.3B",
-     "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxOTEM0WllzMzJXdm11b19nRnBQTGswenJCM0ExS2VVWE1FbU5yQkpsSXVWdmxjSWU4Ri1wa25iRVpGU2liT01aeTBCbnV3TkhGMGlXbU01TlhpOGFOTW10SUdWbmxnSjRfcjRtWm5qRjZsLVQ2N0h1QnIzT2xVM2hZT05WdzVMTEpvZi10TEF3eHdaQQ?oc=5",
-     "time": "2026-11-24T22:21:03Z"
+     "title": "China Foreign Ministry: Tariff and trade wars serve no one’s interests",
+     "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQQUJEU3ZOQ181aF9JT2pUcXFFZG9vT2xKMDkzbGkyd3k4UEhnSjd0U0JZTmliOVdfRXNQMTZfUmQyVWtNZG1RV000b2d5Nl81Q2FzZ3UwaU5ycl9BREVObkxpREkxei1RR0ZxWkl3dE5TSHFNenJ0OVRnNVdPYm5oWWFyRElESkVZekVwZF9QMDBNNWxtRWc5a3pPcHAtYk5GVENUZzJQNWRDU2lidjJEYg?oc=5",
+     "time": "2026-11-25T07:20:33Z"
     },
     {
-     "id": "c43a463fce693285",
-     "publisher": "bloomingbit",
+     "id": "4c605c30e07c58bf",
+     "publisher": "Bloomberg.com",
      "kind": "news",
-     "title": "21Shares Says Bitcoin Plunge Was Driven More by Weakening Demand, Leverage Liquidations Than Binance Hack",
-     "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE1VVElKOFZPRHFVb0RVUDhJeHlGYnNVR19CbzQ4c0ZYeGFLajZoQncwNEpXVVVNSlAyaDNVcjctQzFqUGw3Q3pPTzhfWUh3NDVUVGtUMQ?oc=5",
-     "time": "2026-11-24T22:26:53Z"
+     "title": "Watch AI Rout Spills Over Into Asia, US Readies Tariff Hike",
+     "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxPR2FrdTlBRTFwS3A2ZGxzLTRZYUhwZHI2dGpvU2ZWLTJKQThOR2E5MTlNZ1JfV091bzUtZEhHZWwwLTgwUmN0N0toeHBiT0VkeUlnUUZ0Z1NNTzh0Ymd2ckpTSDdnek5qVXRiekZvM3Z4bW0taHhNNGlUYXpqczhTMnNuWEpDZms?oc=5",
+     "time": "2026-11-25T07:17:18Z"
     },
     {
-     "id": "03e71b1d5789a5e8",
-     "publisher": "CryptoSlate",
+     "id": "737021083ecf7d1a",
+     "publisher": "marketscreener.com",
      "kind": "news",
-     "title": "Bitcoin’s $60,000 bear market is testing miners harder than the 2022 crypto winter",
-     "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxOOW1sSUt3ZXItTUdZc0FxMGZNc1NvWEFLeFZEM0cyUGJmeUU3MXhQLTVqMnUwZzlZT3ZCUnZjVVIwdDNGQTN4ajVQVHBlRElMVUhoRnRZTU41Rm9aRjE3b3NEYVZaT1I3UkIxeDBuM2wyOUFaYzdYaTBwS2JnWFZPSnd0dkpkSWF5Q1REZ2JhRnFJNmRHQXpKcHFNb2p1ZEctQVpIM01BWQ?oc=5",
-     "time": "2026-11-24T22:40:42Z"
+     "title": "AI Concerns, US Tariff Fears Push Down China Shares",
+     "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQSURvSmtfQUJPZEdncVduNG1aSVFpOHE1bi01VzJhZTZNbGFsaVlabDNfV0JDakRrRG90MEl2T2NNcFpZOGU3MGNJOXVQRUtuWUZURm9JYlU4aTJqSkgzWGJ2QmtYRDRxVlA5SmlkekhBc0JjX0pQeFNNQ2JxUmtKdDUyN0hRMVFlZkNsNF9uZ1ZmVzd3TlRmamV2M3Rkb3NwSkdPc1pB?oc=5",
+     "time": "2026-11-25T07:37:29Z"
     },
     {
-     "id": "f18c66ab005a50a9",
-     "publisher": "bloomingbit",
+     "id": "2bedadf85c5e05ab",
+     "publisher": "Wisevoter",
      "kind": "news",
-     "title": "Bitcoin Reclaims $60,000",
-     "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTFByTHdZVS1SRmJvTnJ1YnlKQm5wMkx6TUJhcXJXQzdnc0VYaGVqUDlic3hOWC0yeG9BeVdmMnYzWmZiWUlsRjhqbU5qc253aVB5SzJKdQ?oc=5",
-     "time": "2026-11-24T22:37:01Z"
+     "title": "USTR to Announce Tariff Results for 16 Economies",
+     "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxOMmhyUV84SVZyTnpsYW1LZThoM0Y2MDkxbjRKN3JEeVNRV2oxMmZMUmg3b3ZQSjRmVmNUdDd1VFloSlNWUFJZc1B4VkpZYVN3cU45eTNoa3JzWGNWQlpLWUd1OHVmWnlXYjZRVlZZbjU5TF9sS0ZaRU83UUpQbE5EN0hWS1ZMUHVqWFF5U2NWZ3dFdXdQQ0g4?oc=5",
+     "time": "2026-11-25T07:33:24Z"
+    }
+   ]
+  },
+  {
+   "summary": "Nvidia faces ongoing governance crisis and executive turmoil as volatility remains elevated.",
+   "category": "company_bad_news",
+   "firstSeen": "2026-11-25T12:24:47Z",
+   "publishers": [
+    "CNBC",
+    "Yahoo Finance"
+   ],
+   "assets": {
+    "NVDA": {
+     "direction": "down",
+     "confidence": 0.6,
+     "why": "Executive uncertainty and regulatory scrutiny are driving negative sentiment for the stock."
+    }
+   },
+   "sources": [
+    {
+     "id": "7e5383d5da85dc45",
+     "publisher": "Yahoo Finance",
+     "kind": "news",
+     "title": "Nvidia Loses Nearly $3 Trillion as Governance Crisis Deepens",
+     "url": "https://finance.yahoo.com/markets/stocks/articles/nvidia-loses-nearly-3-trillion-122447848.html?.tsrc=rss",
+     "time": "2026-11-25T12:24:47Z"
+    },
+    {
+     "id": "c100520660bf31b1",
+     "publisher": "CNBC",
+     "kind": "news",
+     "title": "Stock futures tumble as AI sell-off returns with Nvidia, Anthropic leading the way: Live updates",
+     "url": "https://www.cnbc.com/2026/11/24/stock-market-today-live-updates-.html",
+     "time": "2026-11-25T12:50:47Z"
+    },
+    {
+     "id": "55cf08314660b42e",
+     "publisher": "Yahoo Finance",
+     "kind": "news",
+     "title": "3 Warning Signs as the AI Selloff Gets Ugly Again",
+     "url": "https://finance.yahoo.com/m/7eb3329d-ae1e-315a-9f67-0f5f86d8408c/3-warning-signs-as-the-ai.html?.tsrc=rss",
+     "time": "2026-11-25T12:52:00Z"
+    }
+   ]
+  },
+  {
+   "summary": "Saudi Arabia affirms it can fund a prolonged war with unlimited military spending as ongoing Middle East conflicts continue to escalate regional supply risks.",
+   "category": "war_escalation",
+   "firstSeen": "2026-11-25T06:52:00Z",
+   "publishers": [
+    "1470 & 100.3 WMBD",
+    "ABP Live English",
+    "ABS-CBN",
+    "AP",
+    "Ahram Online",
+    "Al Jazeera",
+    "Anadolu Ajansı",
+    "Azərtac",
+    "BigGo Finance",
+    "Bloomberg.com",
+    "CNBC TV18",
+    "Crude Oil Prices Today | OilPrice.com",
+    "Cyprus Mail",
+    "DD India",
+    "DD News",
+    "DNE Africa",
+    "Daily Beirut",
+    "Demócrata",
+    "EA WorldView",
+    "Facebook",
+    "Firstpost",
+    "Global Village Space",
+    "Gulf Today",
+    "Haberler.com",
+    "HuffPost UK",
+    "Interfax-Ukraine",
+    "Internazionale",
+    "Israel Hayom",
+    "Kurdistan24",
+    "LBCI Lebanon",
+    "London Business News",
+    "MLQ.ai",
+    "Menafn",
+    "Naharnet",
+    "News On AIR",
+    "News-Press NOW",
+    "News18",
+    "Odessa Journal",
+    "Operativ Məlumat Mərkəzi",
+    "Quantum Commodity Intelligence",
+    "Reuters",
+    "Rudaw",
+    "SRN News",
+    "Social News XYZ",
+    "Star Beacon",
+    "TRT World",
+    "The Astana Times",
+    "The Federal",
+    "The Independent",
+    "The Indian Awaaz",
+    "The Jerusalem Post",
+    "The Killeen Daily Herald",
+    "The Moscow Times",
+    "The National",
+    "The New Voice of Ukraine",
+    "The Northlines",
+    "The Pioneer",
+    "The Sunday Guardian",
+    "The Telegraph",
+    "The Washington Post",
+    "TradeWinds News",
+    "Traders Union",
+    "UNITED24 Media",
+    "United News of Bangladesh",
+    "Upstream Online",
+    "Vietnam.vn",
+    "X",
+    "Yahoo",
+    "blue News",
+    "https://houseofsaud.com/",
+    "marketscreener.com",
+    "newsalert.com.pk",
+    "thechronicle.com.ph",
+    "www.businesstimes-bd.com",
+    "www.engine.online",
+    "www.marketscreener.com",
+    "www.thenationalnews.com",
+    "صوت الإمارات",
+    "وكالة سبأ",
+    "联合早报"
+   ],
+   "assets": {
+    "XOM": {
+     "direction": "up",
+     "confidence": 0.82,
+     "why": "Middle East attacks and Hormuz tanker explosions threaten oil supply, driving up crude and oil stocks."
+    },
+    "CVX": {
+     "direction": "up",
+     "confidence": 0.82,
+     "why": "Supply disruption fears in the Middle East benefit major oil producers."
+    },
+    "OXY": {
+     "direction": "up",
+     "confidence": 0.8,
+     "why": "Geopolitical tensions around the Strait of Hormuz lift oil prices and upstream oil equities."
+    },
+    "SLB": {
+     "direction": "down",
+     "confidence": 0.5,
+     "why": "Market focus shifting to supply surplus concerns weighing on oil prices."
+    },
+    "PLTR": {
+     "direction": "up",
+     "confidence": 0.5,
+     "why": "Escalating NATO and Middle East tensions typically drive demand for defense technology."
+    },
+    "AVAV": {
+     "direction": "up",
+     "confidence": 0.75,
+     "why": "Escalating Middle East drone attacks and regional conflict benefit defense technology."
+    },
+    "APA": {
+     "direction": "down",
+     "confidence": 0.5,
+     "why": "Market focus shifting to supply surplus concerns weighing on oil prices."
+    },
+    "COP": {
+     "direction": "down",
+     "confidence": 0.5,
+     "why": "Market focus shifting to supply surplus concerns weighing on oil prices."
+    },
+    "DVN": {
+     "direction": "up",
+     "confidence": 0.7,
+     "why": "Escalating conflict in the Middle East and attacks on oil infrastructure increase supply risk premiums."
+    },
+    "EOG": {
+     "direction": "down",
+     "confidence": 0.5,
+     "why": "Market focus shifting to supply surplus concerns weighing on oil prices."
+    },
+    "FANG": {
+     "direction": "down",
+     "confidence": 0.5,
+     "why": "Market focus shifting to supply surplus concerns weighing on oil prices."
+    },
+    "HAL": {
+     "direction": "down",
+     "confidence": 0.5,
+     "why": "Market focus shifting to supply surplus concerns weighing on oil prices."
+    },
+    "PSX": {
+     "direction": "down",
+     "confidence": 0.5,
+     "why": "Market focus shifting to supply surplus concerns weighing on oil prices."
+    },
+    "VLO": {
+     "direction": "down",
+     "confidence": 0.5,
+     "why": "Market focus shifting to supply surplus concerns weighing on oil prices."
+    }
+   },
+   "sources": [
+    {
+     "id": "291d2bd54fe58372",
+     "publisher": "News On AIR",
+     "kind": "news",
+     "title": "India condemns Houthi attack on Riyadh Financial District Tower",
+     "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxPa3FTaXFEcFVrdU5ZUmlvWjhTcDZnNUdHOEVZa1BJdG1MVU11OEJMalBwOGJkazRXMGZEeHBzWDM5TWwycjhwTV9SWHdnYW0wNmJwQko4X0JSOGxiX2VDUXllV0NHWWx5X0RaSUZkQ01SekNfZFNqX2pWcldneTdQWHhOMzJ0UGNLS1M0Y1BBOHZNYjA?oc=5",
+     "time": "2026-11-25T06:56:00Z"
+    },
+    {
+     "id": "0662d3510b60b30c",
+     "publisher": "The Northlines",
+     "kind": "news",
+     "title": "India condemns Houthi attack on Riyadh tower; two Indians among 11 injured",
+     "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxQT0QzeE05RzN3MmhacUpvQ1Y0SExreG5zdDl5VjV4bTloSk5SNU9LUHRxMHh6bi1Vdy1md0J2OHJwRVZYZm45cWstUVA0ZVdwdXFUNmZVc1VBOFg1c18zaUhLMnctR2xLQWptMmhQRHV1c0h4aEE1TW95R0dfS1pWLV9kRC1WOHdkUEpYNWtDd1laNFViRlFGVmVuS1RCQzJiQ3c?oc=5",
+     "time": "2026-11-25T06:52:07Z"
+    },
+    {
+     "id": "6421ce712314460a",
+     "publisher": "TradeWinds News",
+     "kind": "news",
+     "title": "Houthis attack Ras Tanura oil terminal in new round of tit-for-tat strikes with Saudi forces",
+     "url": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxNWjNpNURWT0hsR1NOT3BlZU43Zm9Kdl9MRmsyTFJZdVBKU1FrcU1EaC11Z3NQV21fdUlaa3c3ZjQ2azNkLXc3bUpxV0RkLTZtSXdfaW1YVWVWa1FGeXd2dzhLODhSem1ZZ1YyUEdMV1dOTFlWYkpCam5jcVlkbmt2V0o5VC1EaEZLb21VRjIxR2t5VkI2MHE3bjU4SlQzNExrWkc4RWpwdUZib0JpU213UGpqN0Vfek9BMmVxWXpvSkJPWXdsTFE5Q2Y5VHRNZHZaV3JzNF9OOGhxbEtmR01n?oc=5",
+     "time": "2026-11-25T07:14:11Z"
+    },
+    {
+     "id": "ee539def9519beda",
+     "publisher": "www.marketscreener.com",
+     "kind": "news",
+     "title": "Yemen's Houthis say they attacked Saudi oil refinery and Riyadh financial district",
+     "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxQMFBJR1dmM3FuNlY0RjAyaW1vRlF2NVh1YlZjYXpZSjNyWEM0U3JtQmtXSUV2cFNRVnFUejE4Yi12VTVCM0V0dUt3THZTMmZwSUo0ejcyVlE1bU5SMDVwWTBLLWh4blZtVjlHcUpmU29NNnZ6WDZsaTNsX3VXbTEzNkRnX29MZkNDTkg5UEZjSlozOTdYcHVEaGJzRmpYZGM3SFV3RmJrRXVYemVaQUdiQ2NDdXkxM2FHUEZHUXhWRmRuaHBjdV9IZnF6VFhROG43?oc=5",
+     "time": "2026-11-25T07:11:22Z"
+    },
+    {
+     "id": "663e51978177a3a5",
+     "publisher": "CNBC TV18",
+     "kind": "news",
+     "title": "Two Indians among 11 injured in Houthi attack on Riyadh’s financial district, MEA condemns incident",
+     "url": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxNd29mWHY0NnE4QjEtalJKQXdfR19NZU1NRUg3aFdQUk1lSzIwRDROaENoaVd0ZGU0bXZGOHc2dXhTeXEydEZrT2MzMUpMMXlCNWhYS2FjVDRhSjFLQk1DdGtXSWxySHBVV1Z5RHBocWw0SWtOOUs1YW9pRGhjaTVGVXdBemRXcVJydGVFWjZVaGlvQnNRemZrRWpwMnVBTk9OTjNkdzZCVUpmbk15MHNEbU5TTndjWElHX1ZkcVBidUhReEhiZVNxQ3lETkl5elRzU1FEM25oY9IB3AFBVV95cUxQVkFuR0tZZUpFbXQtZFRVb2VwRlhOVEdjU3JhYlFzVHRuSVNDdmJfaGVid3hVZGFEZ2prRXZ5czQ5U1dWRFlKOGdsTjFvUzkydi1uckVVMzluMEpyeUYwWEtGcGtzRjZCUkhsdjQxNXhKdU5neEE0dlcyRHFIXzdHb0wxeDh3VnVJeE5pdUM2cUoxWXpFQ2ZJMENTVGNweFN5QVA2OS1UOHJyaWdyUXpSd3NNbXpoM05BdEFDWWFSTThtWDdvMWtSU2dKY01jR2tIcmxfR1hGY3daTTR3?oc=5",
+     "time": "2026-11-25T07:08:46Z"
+    }
+   ]
+  },
+  {
+   "summary": "Ethereum nears critical support levels while facing ongoing downside risks amid ETF outflows.",
+   "category": "crypto_negative",
+   "firstSeen": "2026-11-25T09:00:00Z",
+   "publishers": [
+    "Coinpedia",
+    "Cointribune",
+    "CryptoTicker.io",
+    "DailyCoin",
+    "KuCoin",
+    "Moneyweb",
+    "Pluang",
+    "StreetInsider"
+   ],
+   "assets": {
+    "BTC/USD": {
+     "direction": "down",
+     "confidence": 0.85,
+     "why": "Record spot Bitcoin ETF outflows signal sustained institutional selling and bearish market conditions."
+    },
+    "ETH/USD": {
+     "direction": "down",
+     "confidence": 0.75,
+     "why": "Broader crypto market weakness driven by massive Bitcoin ETF outflows pulls major altcoins down."
+    },
+    "XRP/USD": {
+     "direction": "down",
+     "confidence": 0.6,
+     "why": "Broader crypto market weakness is dragging down altcoins."
+    }
+   },
+   "sources": [
+    {
+     "id": "7ba688845c014601",
+     "publisher": "Pluang",
+     "kind": "news",
+     "title": "US spot Bitcoin ETFs see $2.6B outflows in 6 da...",
+     "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNMEVWYlpZUHNUX0xwd18xUlNxcVhuRU9pcnc3aDJBR1Rua1ZSN3lYNWxUUXhjS1FMMEpPRW5lb3ZpZzJUX2xCazZWakYxYWtOdjd6ZFpLWWkyUmlQTjJKM0JsdUVOaW94czd5cy05NGVOc2tTWFVGYnpEY3A1aldkU2RybWxfTXhpUzMyeGpreUFtRXJVcWF0WDV0ZmdodWk4QWJvN1hXUXktR0NONFE?oc=5",
+     "time": "2026-11-25T09:05:56Z"
+    },
+    {
+     "id": "cc854c59b0cf1773",
+     "publisher": "Moneyweb",
+     "kind": "news",
+     "title": "Bitcoin funds head for worst month as outflows near $5bn",
+     "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQTlFid09uR213UjN6UFV2eGhGR0dLbDlDWkI3eG1hV1F6MEc3T3BBdERxMlF5VFdsWS0yVkFYa0oxY0tlNnNjQkt4UnZQREwxNUY1Q3RCQ05uTHY1a0Rmc3NWSFJaWkVFX005YzhrZW9vLXhtbWdETTBjdHo0bWdzNHhxbVh3cThyV0ZJTUc4czJBc0tQbTlEVENuOWh2TXdyT3k5TUhVNWtFMG8?oc=5",
+     "time": "2026-11-25T09:00:07Z"
+    },
+    {
+     "id": "cbb3b310750b9358",
+     "publisher": "DailyCoin",
+     "kind": "news",
+     "title": "Bitcoin Risks Deeper Thanksgiving Drop Below $60K on PCE Data",
+     "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxPTFRQUkcxMHVEYmVtTlRMd25pelltUEJMcmV1aE9pOHA0TzdLQkFsaFNzVzRKT25zWGtLTmRWN3luZG9RUU84Y0Y5UW0wc3NITVhkWUdoclBjdVFZZDVzdEQ0VHRPSTU4blFUX0xJUzgyWGhJN1hEUlB5TzFXdVpIWVIzcGNzbUp5NWdv?oc=5",
+     "time": "2026-11-25T09:00:00Z"
+    },
+    {
+     "id": "86892c80ee7ac953",
+     "publisher": "CryptoTicker.io",
+     "kind": "news",
+     "title": "Bitcoin price ahead of PCE data: a sixth straight day of ETF outflows pushes BTC to $59,200",
+     "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTFBpQzB3cHd3bkZKaGpaTmpucERSX1RtMlRHSndzeUFnMmNhc3B4UWJBZG00Q1Y4dXNPeW1fSm5wdkRaSVdTbjRHOWhaNS14bEN3ZTREV3pxdHdzS2gyZkRRdnJMUURHcDBQcTVSRnk0N2lBVDBiTlE?oc=5",
+     "time": "2026-11-25T09:23:54Z"
+    },
+    {
+     "id": "1398a21a45bc76dc",
+     "publisher": "KuCoin",
+     "kind": "news",
+     "title": "Bitcoin ETF Outflows Hit Record $4.94B in November",
+     "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxOay1ncFAtamxIRGtZYU1DNndwN3l4WHd5UXdDZnFkcnRES0FfVlNzOTB6Y0FkWE1jWWRqVjJucUQ2b20zdDdNM0hCdVZzSmltbUR5eUlpTUFEYjI1MGlnckh1RXV6YnZGZDdQUDRaSHFSd1RzZ0RreEViNDhzbG5tU3JRU3BuRUNBdTYw?oc=5",
+     "time": "2026-11-25T09:14:01Z"
+    }
+   ]
+  },
+  {
+   "summary": "Expanding US tariff plans targeting major economies and tech trade concerns continue to weigh heavily on broader technology stocks and market futures.",
+   "category": "tariffs",
+   "firstSeen": "2026-11-25T12:11:15Z",
+   "publishers": [
+    "Investing.com India",
+    "Limapagi"
+   ],
+   "assets": {
+    "NVDA": {
+     "direction": "down",
+     "confidence": 0.72,
+     "why": "Broad tech sell-off driven by tariff fears and AI sentiment."
+    },
+    "MSFT": {
+     "direction": "down",
+     "confidence": 0.68,
+     "why": "Growth stocks impacted by escalating trade war and tariff concerns."
+    }
+   },
+   "sources": [
+    {
+     "id": "28f8206d389ec23e",
+     "publisher": "Limapagi",
+     "kind": "news",
+     "title": "Nasdaq Futures Slide as AI Selloff and Tariff Fears Hit Markets",
+     "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE1ybEVGZk9WdWpMUTNmeFdkNEVGV0RPVVNLblBwUTktcHZJVnl1M1VfQTl0Wl9sdUozRGRwRHc3blRyamhtclJBQkZGYzI4aWc2T3FDei1vbHZhaGN3OU9ndm9WOU53ZnJQ?oc=5",
+     "time": "2026-11-25T12:23:28Z"
+    },
+    {
+     "id": "e097d031dbc6cab3",
+     "publisher": "Investing.com India",
+     "kind": "news",
+     "title": "Nasdaq futures fall 3% amid tech selloff, U.S. tariff reports By Investing.com",
+     "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxPclVOZjdVc2JNTGZ3TF9pbGZtR3NEMjZJSHZnNlZzU3psYTEySThPbWhfeGQ3NmJKeWlpT1RzZ1FoRnhkWXYzM3hlSnl3OEh2MFNBU0dhUFpVR09FVmYwZU9PM0h0aEZZaDdZNW1rWElCbk80MmZCaWlmS3BBWG43WDNzaFl0eUx2RVJldnFQVHQ3UHhZZG1MRTdPbEVRQ3E5SVNTNlVvVUMxbzZjYjJCbHE3X2RnNElCN0REZm1LeVI1TWM2?oc=5",
+     "time": "2026-11-25T12:11:15Z"
     }
    ]
   }

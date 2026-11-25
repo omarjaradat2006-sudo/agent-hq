@@ -1,10 +1,118 @@
 {
  "trades": [
   {
+   "id": "ahq-dip-UMMA-20261125145200",
+   "symbol": "UMMA",
+   "asset": "stock",
+   "status": "pending",
+   "strategy": "dip",
+   "entryOrderId": "b847d7db-d37f-483a-8ae8-efcc0b65aa9f",
+   "qty": 366,
+   "cost": 11294.76,
+   "estPrice": 30.86,
+   "entryPrice": 30.86,
+   "stop": 28.7,
+   "target": 32.09,
+   "openedAt": "2026-11-25T14:52:00Z",
+   "news": {
+    "summary": "Buy the dip: the whole market (SPY) was -2.93% today",
+    "category": "dip",
+    "sources": []
+   },
+   "reason": {
+    "triage": "market-wide dip",
+    "confidence": null,
+    "confirmation": "SPY -2.93%",
+    "publishers": [],
+    "tradingAgents": "not used (dip buy)"
+   }
+  },
+  {
+   "id": "ahq-dip-SPWO-20261125145159",
+   "symbol": "SPWO",
+   "asset": "stock",
+   "status": "pending",
+   "strategy": "dip",
+   "entryOrderId": "ee7ce778-725d-471f-878a-79616bd79f1a",
+   "qty": 421,
+   "cost": 11316.48,
+   "estPrice": 26.88,
+   "entryPrice": 26.88,
+   "stop": 25.0,
+   "target": 27.96,
+   "openedAt": "2026-11-25T14:52:00Z",
+   "news": {
+    "summary": "Buy the dip: the whole market (SPY) was -2.93% today",
+    "category": "dip",
+    "sources": []
+   },
+   "reason": {
+    "triage": "market-wide dip",
+    "confidence": null,
+    "confirmation": "SPY -2.93%",
+    "publishers": [],
+    "tradingAgents": "not used (dip buy)"
+   }
+  },
+  {
+   "id": "ahq-core-HLAL-20261125145147",
+   "symbol": "HLAL",
+   "asset": "stock",
+   "status": "pending",
+   "strategy": "core",
+   "entryOrderId": "71a91d9e-f5f3-4a22-a8f6-be5cf3200ffd",
+   "qty": 256,
+   "cost": 16883.2,
+   "estPrice": 65.95,
+   "entryPrice": 65.95,
+   "stop": 59.36,
+   "target": 98.93,
+   "openedAt": "2026-11-25T14:51:47Z",
+   "news": {
+    "summary": "Core holding: rides the whole (halal) market",
+    "category": "core",
+    "sources": []
+   },
+   "reason": {
+    "triage": "core holding",
+    "confidence": null,
+    "confirmation": "50% of the budget",
+    "publishers": [],
+    "tradingAgents": "not used (core)"
+   }
+  },
+  {
+   "id": "ahq-core-SPUS-20261125145147",
+   "symbol": "SPUS",
+   "asset": "stock",
+   "status": "pending",
+   "strategy": "core",
+   "entryOrderId": "574aafa3-b47d-491a-9bda-02ef6ba9af4c",
+   "qty": 324,
+   "cost": 16899.84,
+   "estPrice": 52.16,
+   "entryPrice": 52.16,
+   "stop": 46.94,
+   "target": 78.24,
+   "openedAt": "2026-11-25T14:51:47Z",
+   "news": {
+    "summary": "Core holding: rides the whole (halal) market",
+    "category": "core",
+    "sources": []
+   },
+   "reason": {
+    "triage": "core holding",
+    "confidence": null,
+    "confirmation": "50% of the budget",
+    "publishers": [],
+    "tradingAgents": "not used (core)"
+   }
+  },
+  {
    "id": "ahq-PLTR-20261124164652",
    "symbol": "PLTR",
    "asset": "stock",
-   "status": "open",
+   "status": "closed",
    "entryOrderId": "36f0c764-f1e2-4753-a954-2524a2d7e555",
    "qty": 70,
    "cost": 11294.5,
@@ -56,14 +164,19 @@
     "taSummary": ""
    },
    "stopOrderId": "15707459-b20e-424f-8442-ec4330bd1527",
-   "lastPrice": 160.27,
-   "unrealizedPct": -0.66
+   "lastPrice": 153.79,
+   "unrealizedPct": -4.67,
+   "closedAt": "2026-11-25T14:36:44Z",
+   "exitPrice": 153.67,
+   "exitReason": "trailing stop hit (-4.7%)",
+   "pnl": -536.2,
+   "pnlPct": -4.75
   },
   {
    "id": "ahq-AVAV-20261124162010",
    "symbol": "AVAV",
    "asset": "stock",
-   "status": "open",
+   "status": "closed",
    "entryOrderId": "b5c30106-695d-46d4-8a9c-0a1890a4185e",
    "qty": 143,
    "cost": 12594.01,
@@ -157,14 +270,19 @@
     "taSummary": ""
    },
    "stopOrderId": "6612a194-4f8c-4bf6-8d0f-65306748718e",
-   "lastPrice": 88.6,
-   "unrealizedPct": -0.29
+   "lastPrice": 87.3582,
+   "unrealizedPct": -1.69,
+   "closedAt": "2026-11-25T14:36:44Z",
+   "exitPrice": 85.816923,
+   "exitReason": "trailing stop hit (-3.4%)",
+   "pnl": -435.16,
+   "pnlPct": -3.42
   },
   {
    "id": "ahq-core-HLAL-20261124145913",
    "symbol": "HLAL",
    "asset": "stock",
-   "status": "open",
+   "status": "closed",
    "strategy": "core",
    "entryOrderId": "810b527a-45f6-4c93-a623-35c417447788",
    "qty": 1.0,
@@ -186,8 +304,14 @@
     "publishers": [],
     "tradingAgents": "not used (core)"
    },
-   "lastPrice": 66.0,
-   "unrealizedPct": -0.41
+   "lastPrice": 65.0,
+   "unrealizedPct": -1.92,
+   "closing": "bad news: Expectations grow that regional Fed banks and policy makers lean towards tighter",
+   "closedAt": "2026-11-25T09:06:28Z",
+   "exitPrice": 65.95,
+   "exitReason": "bad news: Expectations grow that regional Fed banks and policy makers lean towards tighter",
+   "pnl": -0.32,
+   "pnlPct": -0.48
   },
   {
    "id": "ahq-core-SPUS-20261124145913",
@@ -215,8 +339,8 @@
     "publishers": [],
     "tradingAgents": "not used (core)"
    },
-   "lastPrice": 54.17,
-   "unrealizedPct": -0.03
+   "lastPrice": 52.266,
+   "unrealizedPct": -3.54
   },
   {
    "id": "ahq-NVDA-20261124145910",
@@ -295,7 +419,7 @@
    "id": "ahq-TMO-20261124145909",
    "symbol": "TMO",
    "asset": "stock",
-   "status": "open",
+   "status": "closed",
    "entryOrderId": "f83973a6-e4a8-4b71-84c4-b59c2942b3e4",
    "qty": 16,
    "cost": 11184.4,
@@ -329,14 +453,19 @@
     "taSummary": ""
    },
    "stopOrderId": "a2d5311a-a3d9-48a5-a771-640f9165b3c4",
-   "lastPrice": 695.62,
-   "unrealizedPct": -0.62
+   "lastPrice": 686.02,
+   "unrealizedPct": -1.99,
+   "closedAt": "2026-11-25T14:36:45Z",
+   "exitPrice": 676.4525,
+   "exitReason": "trailing stop hit (-3.4%)",
+   "pnl": -376.12,
+   "pnlPct": -3.36
   },
   {
    "id": "ahq-NOW-20261123202036",
    "symbol": "NOW",
    "asset": "stock",
-   "status": "open",
+   "status": "closed",
    "entryOrderId": "c8dd03c3-1cd7-4804-be64-266e4efa35c7",
    "qty": 169.0,
    "cost": 15497.3,
@@ -399,8 +528,13 @@
     "tradingAgents": "not used (ultra mode)",
     "taSummary": ""
    },
-   "lastPrice": 91.1958,
-   "unrealizedPct": -0.55
+   "lastPrice": 88.97,
+   "unrealizedPct": -2.98,
+   "closedAt": "2026-11-25T14:36:45Z",
+   "exitPrice": 88.9,
+   "exitReason": "stop-loss -3% hit",
+   "pnl": -473.26,
+   "pnlPct": -3.05
   },
   {
    "id": "ahq-AMZN-20261123190538",
@@ -5134,9 +5268,338 @@
    "t": "2026-11-25T00:53:15Z",
    "equity": 92852.15,
    "spy": 717.59
+  },
+  {
+   "t": "2026-11-25T01:23:42Z",
+   "equity": 92835.76,
+   "spy": 717.59
+  },
+  {
+   "t": "2026-11-25T01:53:59Z",
+   "equity": 92740.81,
+   "spy": 717.59
+  },
+  {
+   "t": "2026-11-25T02:24:29Z",
+   "equity": 92601.62,
+   "spy": 717.59
+  },
+  {
+   "t": "2026-11-25T02:54:48Z",
+   "equity": 92545.88,
+   "spy": 717.59
+  },
+  {
+   "t": "2026-11-25T03:25:08Z",
+   "equity": 92592.08,
+   "spy": 717.59
+  },
+  {
+   "t": "2026-11-25T03:55:33Z",
+   "equity": 92607.65,
+   "spy": 717.59
+  },
+  {
+   "t": "2026-11-25T04:25:51Z",
+   "equity": 92568.15,
+   "spy": 717.59
+  },
+  {
+   "t": "2026-11-25T04:56:27Z",
+   "equity": 92452.8,
+   "spy": 717.59
+  },
+  {
+   "t": "2026-11-25T05:26:50Z",
+   "equity": 92327.82,
+   "spy": 717.59
+  },
+  {
+   "t": "2026-11-25T06:00:22Z",
+   "equity": 92208.28,
+   "spy": 717.59
+  },
+  {
+   "t": "2026-11-25T06:30:53Z",
+   "equity": 92287.28,
+   "spy": 717.59
+  },
+  {
+   "t": "2026-11-25T07:01:31Z",
+   "equity": 92159.22,
+   "spy": 717.59
+  },
+  {
+   "t": "2026-11-25T07:32:39Z",
+   "equity": 92062.47,
+   "spy": 717.59
+  },
+  {
+   "t": "2026-11-25T08:03:12Z",
+   "equity": 92129.22,
+   "spy": 717.59
+  },
+  {
+   "t": "2026-11-25T08:35:03Z",
+   "equity": 92267.57,
+   "spy": 717.59
+  },
+  {
+   "t": "2026-11-25T09:06:28Z",
+   "equity": 91949.52,
+   "spy": 717.59
+  },
+  {
+   "t": "2026-11-25T09:36:53Z",
+   "equity": 91536.3,
+   "spy": 717.59
+  },
+  {
+   "t": "2026-11-25T10:07:15Z",
+   "equity": 91557.04,
+   "spy": 717.59
+  },
+  {
+   "t": "2026-11-25T10:37:54Z",
+   "equity": 91361.17,
+   "spy": 717.59
+  },
+  {
+   "t": "2026-11-25T11:08:11Z",
+   "equity": 91411.98,
+   "spy": 717.59
+  },
+  {
+   "t": "2026-11-25T11:41:19Z",
+   "equity": 91337.99,
+   "spy": 717.59
+  },
+  {
+   "t": "2026-11-25T12:13:31Z",
+   "equity": 91322.36,
+   "spy": 717.59
+  },
+  {
+   "t": "2026-11-25T12:45:22Z",
+   "equity": 91465.2,
+   "spy": 717.59
+  },
+  {
+   "t": "2026-11-25T13:18:20Z",
+   "equity": 91363.99,
+   "spy": 704.96
+  },
+  {
+   "t": "2026-11-25T13:54:54Z",
+   "equity": 90931.03,
+   "spy": 703.61
+  },
+  {
+   "t": "2026-11-25T14:52:00Z",
+   "equity": 90584.72,
+   "spy": 697.87
   }
  ],
  "decisions": [
+  {
+   "t": "2026-11-25T14:52:00Z",
+   "symbol": "UMMA",
+   "outcome": "bought",
+   "why": "buy the dip: SPY -2.93% today"
+  },
+  {
+   "t": "2026-11-25T14:52:00Z",
+   "symbol": "SPWO",
+   "outcome": "bought",
+   "why": "buy the dip: SPY -2.93% today"
+  },
+  {
+   "t": "2026-11-25T14:51:59Z",
+   "symbol": "VLO",
+   "outcome": "waiting",
+   "why": "down 3% today, no new trades until tomorrow",
+   "event": "Renewed drone attacks on refineries and shipping near the Strait of Hormuz escalate regional conflict and oil supply risks."
+  },
+  {
+   "t": "2026-11-25T14:51:59Z",
+   "symbol": "SLB",
+   "outcome": "waiting",
+   "why": "down 3% today, no new trades until tomorrow",
+   "event": "Renewed drone attacks on refineries and shipping near the Strait of Hormuz escalate regional conflict and oil supply risks."
+  },
+  {
+   "t": "2026-11-25T14:51:59Z",
+   "symbol": "CRM",
+   "outcome": "waiting",
+   "why": "down 3% today, no new trades until tomorrow",
+   "event": "Workday reported Q3 revenue growth and earnings that beat expectations."
+  },
+  {
+   "t": "2026-11-25T14:51:58Z",
+   "symbol": "PSX",
+   "outcome": "waiting",
+   "why": "down 3% today, no new trades until tomorrow",
+   "event": "Renewed drone attacks on refineries and shipping near the Strait of Hormuz escalate regional conflict and oil supply risks."
+  },
+  {
+   "t": "2026-11-25T14:51:58Z",
+   "symbol": "GE",
+   "outcome": "waiting",
+   "why": "down 3% today, no new trades until tomorrow",
+   "event": "General Electric's aerospace unit secured a significant order for GEnx engines from Malaysia Aviation Group."
+  },
+  {
+   "t": "2026-11-25T14:51:58Z",
+   "symbol": "APA",
+   "outcome": "waiting",
+   "why": "down 3% today, no new trades until tomorrow",
+   "event": "Renewed drone attacks on refineries and shipping near the Strait of Hormuz escalate regional conflict and oil supply risks."
+  },
+  {
+   "t": "2026-11-25T14:51:58Z",
+   "symbol": "OXY",
+   "outcome": "waiting",
+   "why": "down 3% today, no new trades until tomorrow",
+   "event": "Renewed drone attacks on Saudi financial centers and Hodeidah port escalate Middle East conflict risks."
+  },
+  {
+   "t": "2026-11-25T14:51:58Z",
+   "symbol": "EOG",
+   "outcome": "waiting",
+   "why": "down 3% today, no new trades until tomorrow",
+   "event": "Renewed drone attacks on refineries and shipping near the Strait of Hormuz escalate regional conflict and oil supply risks."
+  },
+  {
+   "t": "2026-11-25T14:51:57Z",
+   "symbol": "COP",
+   "outcome": "waiting",
+   "why": "down 3% today, no new trades until tomorrow",
+   "event": "Renewed drone attacks on Saudi financial centers and naval mines hitting oil tankers near the Strait of Hormuz escalate regional conflict and oil supply disruption risks."
+  },
+  {
+   "t": "2026-11-25T14:51:57Z",
+   "symbol": "PLTR",
+   "outcome": "waiting",
+   "why": "down 3% today, no new trades until tomorrow",
+   "event": "Renewed drone attacks on Saudi financial centers and Hodeidah port escalate Middle East conflict risks."
+  },
+  {
+   "t": "2026-11-25T14:51:57Z",
+   "symbol": "OXY",
+   "outcome": "waiting",
+   "why": "down 3% today, no new trades until tomorrow",
+   "event": "Renewed drone attacks on refineries and shipping near the Strait of Hormuz escalate regional conflict and oil supply risks."
+  },
+  {
+   "t": "2026-11-25T14:51:57Z",
+   "symbol": "NVDA",
+   "outcome": "waiting",
+   "why": "down 3% today, no new trades until tomorrow",
+   "event": "Workday reported Q3 revenue growth and earnings that beat expectations."
+  },
+  {
+   "t": "2026-11-25T14:51:56Z",
+   "symbol": "XOM",
+   "outcome": "waiting",
+   "why": "down 3% today, no new trades until tomorrow",
+   "event": "Renewed drone attacks on Saudi financial centers and Hodeidah port escalate Middle East conflict risks."
+  },
+  {
+   "t": "2026-11-25T14:51:56Z",
+   "symbol": "COP",
+   "outcome": "waiting",
+   "why": "down 3% today, no new trades until tomorrow",
+   "event": "Renewed drone attacks on refineries and shipping near the Strait of Hormuz escalate regional conflict and oil supply risks."
+  },
+  {
+   "t": "2026-11-25T14:51:56Z",
+   "symbol": "FANG",
+   "outcome": "waiting",
+   "why": "down 3% today, no new trades until tomorrow",
+   "event": "Renewed drone attacks on refineries and shipping near the Strait of Hormuz escalate regional conflict and oil supply risks."
+  },
+  {
+   "t": "2026-11-25T14:51:56Z",
+   "symbol": "XOM",
+   "outcome": "waiting",
+   "why": "down 3% today, no new trades until tomorrow",
+   "event": "Ongoing Middle East conflict continues to escalate regional supply risks and drive up fuel costs."
+  },
+  {
+   "t": "2026-11-25T14:51:56Z",
+   "symbol": "OXY",
+   "outcome": "waiting",
+   "why": "down 3% today, no new trades until tomorrow",
+   "event": "Saudi Arabia affirms it can fund a prolonged war with unlimited military spending as ongoing Middle East conflicts continue to escalate regional supply risks."
+  },
+  {
+   "t": "2026-11-25T14:51:55Z",
+   "symbol": "DVN",
+   "outcome": "waiting",
+   "why": "down 3% today, no new trades until tomorrow",
+   "event": "Renewed drone attacks on refineries and shipping near the Strait of Hormuz escalate regional conflict and oil supply risks."
+  },
+  {
+   "t": "2026-11-25T14:51:55Z",
+   "symbol": "XOM",
+   "outcome": "waiting",
+   "why": "down 3% today, no new trades until tomorrow",
+   "event": "Saudi Arabia affirms it can fund a prolonged war with unlimited military spending as ongoing Middle East conflicts continue to escalate regional supply risks."
+  },
+  {
+   "t": "2026-11-25T14:51:55Z",
+   "symbol": "HAL",
+   "outcome": "waiting",
+   "why": "down 3% today, no new trades until tomorrow",
+   "event": "Renewed drone attacks on refineries and shipping near the Strait of Hormuz escalate regional conflict and oil supply risks."
+  },
+  {
+   "t": "2026-11-25T14:51:55Z",
+   "symbol": "NVDA",
+   "outcome": "waiting",
+   "why": "down 3% today, no new trades until tomorrow",
+   "event": "Dell reported a significant Q3 earnings beat with strong AI server demand."
+  },
+  {
+   "t": "2026-11-25T14:51:54Z",
+   "symbol": "VRTX",
+   "outcome": "waiting",
+   "why": "down 3% today, no new trades until tomorrow",
+   "event": "Vertex Pharmaceuticals extended its drug discovery and validation collaboration with Genomics Limited for four years."
+  },
+  {
+   "t": "2026-11-25T14:51:54Z",
+   "symbol": "SMCI",
+   "outcome": "waiting",
+   "why": "down 3% today, no new trades until tomorrow",
+   "event": "Dell reported a significant Q3 earnings beat with strong AI server demand."
+  },
+  {
+   "t": "2026-11-25T14:51:53Z",
+   "symbol": "CVX",
+   "outcome": "waiting",
+   "why": "down 3% today, no new trades until tomorrow",
+   "event": "Saudi Arabia affirms it can fund a prolonged war with unlimited military spending as ongoing Middle East conflicts continue to escalate regional supply risks."
+  },
+  {
+   "t": "2026-11-25T14:51:51Z",
+   "symbol": "AVAV",
+   "outcome": "waiting",
+   "why": "price hasn't moved the expected way yet (-3.47%)",
+   "event": "Renewed drone attacks on Saudi financial centers and naval mines hitting oil tankers near the Strait of Hormuz escalate regional conflict and oil supply disruption risks."
+  },
+  {
+   "t": "2026-11-25T14:51:47Z",
+   "symbol": "HLAL",
+   "outcome": "bought",
+   "why": "core holding: rides the market"
+  },
+  {
+   "t": "2026-11-25T14:51:47Z",
+   "symbol": "SPUS",
+   "outcome": "bought",
+   "why": "core holding: rides the market"
+  },
   {
    "t": "2026-11-24T20:28:13Z",
    "symbol": "TSLA",
@@ -5983,209 +6446,6 @@
    "outcome": "waiting",
    "why": "already $70,013 invested (max 75% of $93,507)",
    "event": "The CFTC has ruled that Bitcoin, Ether, and stablecoins can count toward financial resource requirements for derivatives venues, providing a regulatory boost."
-  },
-  {
-   "t": "2026-11-24T15:53:03Z",
-   "symbol": "AVAV",
-   "outcome": "waiting",
-   "why": "already $70,014 invested (max 75% of $93,507)",
-   "event": "Houthi drone or missile attacks targeting Riyadh's financial district and tower infrastructure escalate regional Middle East conflict risks."
-  },
-  {
-   "t": "2026-11-24T15:53:03Z",
-   "symbol": "AMAT",
-   "outcome": "waiting",
-   "why": "price hasn't moved the expected way yet (-8.11%)",
-   "event": "Taiwanese markets surge over nine percent following Jensen Huang's return as CEO of Nvidia, driving broad tech and semiconductor enthusiasm."
-  },
-  {
-   "t": "2026-11-24T15:53:02Z",
-   "symbol": "SOL/USD",
-   "outcome": "waiting",
-   "why": "price hasn't moved the expected way yet (-4.57%)",
-   "event": "The CFTC has ruled that Bitcoin, Ether, and stablecoins can count toward financial resource requirements for derivatives venues, providing a regulatory boost."
-  },
-  {
-   "t": "2026-11-24T15:47:51Z",
-   "symbol": "ETH/USD",
-   "outcome": "waiting",
-   "why": "already $69,862 invested (max 75% of $93,355)",
-   "event": "The CFTC has ruled that Bitcoin, Ether, and stablecoins can count toward financial resource requirements for derivatives venues, providing a regulatory boost."
-  },
-  {
-   "t": "2026-11-24T15:47:50Z",
-   "symbol": "AEM",
-   "outcome": "waiting",
-   "why": "already $69,868 invested (max 75% of $93,361)",
-   "event": "Russia's threats of open war against Estonia heighten geopolitical conflict risks in Eastern Europe."
-  },
-  {
-   "t": "2026-11-24T15:47:50Z",
-   "symbol": "NEM",
-   "outcome": "waiting",
-   "why": "already $69,868 invested (max 75% of $93,361)",
-   "event": "Houthi drone or missile attacks targeting Riyadh's financial district and tower infrastructure escalate regional Middle East conflict risks."
-  },
-  {
-   "t": "2026-11-24T15:47:50Z",
-   "symbol": "BTC/USD",
-   "outcome": "waiting",
-   "why": "already $69,871 invested (max 75% of $93,365)",
-   "event": "The CFTC has ruled that Bitcoin, Ether, and stablecoins can count toward financial resource requirements for derivatives venues, providing a regulatory boost."
-  },
-  {
-   "t": "2026-11-24T15:47:50Z",
-   "symbol": "TSLA",
-   "outcome": "waiting",
-   "why": "already holding it",
-   "event": "Taiwanese markets surge over nine percent following Jensen Huang's return as CEO of Nvidia, driving broad tech and semiconductor enthusiasm."
-  },
-  {
-   "t": "2026-11-24T15:47:50Z",
-   "symbol": "AVAV",
-   "outcome": "waiting",
-   "why": "already $69,861 invested (max 75% of $93,354)",
-   "event": "Houthi drone or missile attacks targeting Riyadh's financial district and tower infrastructure escalate regional Middle East conflict risks."
-  },
-  {
-   "t": "2026-11-24T15:47:49Z",
-   "symbol": "AMAT",
-   "outcome": "waiting",
-   "why": "price hasn't moved the expected way yet (-8.21%)",
-   "event": "Taiwanese markets surge over nine percent following Jensen Huang's return as CEO of Nvidia, driving broad tech and semiconductor enthusiasm."
-  },
-  {
-   "t": "2026-11-24T15:47:48Z",
-   "symbol": "SOL/USD",
-   "outcome": "waiting",
-   "why": "price hasn't moved the expected way yet (-5.02%)",
-   "event": "The CFTC has ruled that Bitcoin, Ether, and stablecoins can count toward financial resource requirements for derivatives venues, providing a regulatory boost."
-  },
-  {
-   "t": "2026-11-24T15:42:43Z",
-   "symbol": "ETH/USD",
-   "outcome": "waiting",
-   "why": "already $70,066 invested (max 75% of $93,560)",
-   "event": "The CFTC has ruled that Bitcoin, Ether, and stablecoins can count toward financial resource requirements for derivatives venues, providing a regulatory boost."
-  },
-  {
-   "t": "2026-11-24T15:42:43Z",
-   "symbol": "AEM",
-   "outcome": "waiting",
-   "why": "already $70,066 invested (max 75% of $93,560)",
-   "event": "Russia's threats of open war against Estonia heighten geopolitical conflict risks in Eastern Europe."
-  },
-  {
-   "t": "2026-11-24T15:42:42Z",
-   "symbol": "NEM",
-   "outcome": "waiting",
-   "why": "already $70,068 invested (max 75% of $93,561)",
-   "event": "Houthi drone or missile attacks targeting Riyadh's financial district and tower infrastructure escalate regional Middle East conflict risks."
-  },
-  {
-   "t": "2026-11-24T15:42:42Z",
-   "symbol": "BTC/USD",
-   "outcome": "waiting",
-   "why": "already $70,068 invested (max 75% of $93,561)",
-   "event": "The CFTC has ruled that Bitcoin, Ether, and stablecoins can count toward financial resource requirements for derivatives venues, providing a regulatory boost."
-  },
-  {
-   "t": "2026-11-24T15:42:42Z",
-   "symbol": "TSLA",
-   "outcome": "waiting",
-   "why": "already holding it",
-   "event": "Taiwanese markets surge over nine percent following Jensen Huang's return as CEO of Nvidia, driving broad tech and semiconductor enthusiasm."
-  },
-  {
-   "t": "2026-11-24T15:42:42Z",
-   "symbol": "AVAV",
-   "outcome": "waiting",
-   "why": "already $70,065 invested (max 75% of $93,558)",
-   "event": "Houthi drone or missile attacks targeting Riyadh's financial district and tower infrastructure escalate regional Middle East conflict risks."
-  },
-  {
-   "t": "2026-11-24T15:42:41Z",
-   "symbol": "AMAT",
-   "outcome": "waiting",
-   "why": "price hasn't moved the expected way yet (-7.59%)",
-   "event": "Taiwanese markets surge over nine percent following Jensen Huang's return as CEO of Nvidia, driving broad tech and semiconductor enthusiasm."
-  },
-  {
-   "t": "2026-11-24T15:42:41Z",
-   "symbol": "SOL/USD",
-   "outcome": "waiting",
-   "why": "price hasn't moved the expected way yet (-4.92%)",
-   "event": "The CFTC has ruled that Bitcoin, Ether, and stablecoins can count toward financial resource requirements for derivatives venues, providing a regulatory boost."
-  },
-  {
-   "t": "2026-11-24T15:37:31Z",
-   "symbol": "ETH/USD",
-   "outcome": "waiting",
-   "why": "already $70,218 invested (max 75% of $93,711)",
-   "event": "The CFTC has ruled that Bitcoin, Ether, and stablecoins can count toward financial resource requirements for derivatives venues, providing a regulatory boost."
-  },
-  {
-   "t": "2026-11-24T15:37:31Z",
-   "symbol": "NEM",
-   "outcome": "waiting",
-   "why": "already $70,218 invested (max 75% of $93,711)",
-   "event": "Iraqi PM orders federal control of Kurdish border crossings and oil fields while Hormuz shipping and regional supply disruption risks persist."
-  },
-  {
-   "t": "2026-11-24T15:37:31Z",
-   "symbol": "AEM",
-   "outcome": "waiting",
-   "why": "already $70,214 invested (max 75% of $93,707)",
-   "event": "Russia's threats of open war against Estonia heighten geopolitical conflict risks in Eastern Europe."
-  },
-  {
-   "t": "2026-11-24T15:37:31Z",
-   "symbol": "BTC/USD",
-   "outcome": "waiting",
-   "why": "already $70,214 invested (max 75% of $93,707)",
-   "event": "The CFTC has ruled that Bitcoin, Ether, and stablecoins can count toward financial resource requirements for derivatives venues, providing a regulatory boost."
-  },
-  {
-   "t": "2026-11-24T15:37:31Z",
-   "symbol": "TSLA",
-   "outcome": "waiting",
-   "why": "already holding it",
-   "event": "Taiwanese markets surge over nine percent following Jensen Huang's return as CEO of Nvidia, driving broad tech and semiconductor enthusiasm."
-  },
-  {
-   "t": "2026-11-24T15:37:30Z",
-   "symbol": "AMAT",
-   "outcome": "waiting",
-   "why": "price hasn't moved the expected way yet (-6.87%)",
-   "event": "Taiwanese markets surge over nine percent following Jensen Huang's return as CEO of Nvidia, driving broad tech and semiconductor enthusiasm."
-  },
-  {
-   "t": "2026-11-24T15:37:29Z",
-   "symbol": "SOL/USD",
-   "outcome": "waiting",
-   "why": "price hasn't moved the expected way yet (-4.67%)",
-   "event": "The CFTC has ruled that Bitcoin, Ether, and stablecoins can count toward financial resource requirements for derivatives venues, providing a regulatory boost."
-  },
-  {
-   "t": "2026-11-24T15:32:18Z",
-   "symbol": "ETH/USD",
-   "outcome": "waiting",
-   "why": "already $70,179 invested (max 75% of $93,672)",
-   "event": "The CFTC has ruled that Bitcoin, Ether, and stablecoins can count toward financial resource requirements for derivatives venues, providing a regulatory boost."
-  },
-  {
-   "t": "2026-11-24T15:32:18Z",
-   "symbol": "NEM",
-   "outcome": "waiting",
-   "why": "already $70,179 invested (max 75% of $93,672)",
-   "event": "Iraqi PM orders federal control of Kurdish border crossings and oil fields while Hormuz shipping and regional supply disruption risks persist."
-  },
-  {
-   "t": "2026-11-24T15:32:18Z",
-   "symbol": "AEM",
-   "outcome": "waiting",
-   "why": "already $70,186 invested (max 75% of $93,679)",
-   "event": "Russia's threats of open war against Estonia heighten geopolitical conflict risks in Eastern Europe."
   }
  ],
  "startEquity": 100000.0,
