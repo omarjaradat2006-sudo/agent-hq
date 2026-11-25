@@ -116,6 +116,14 @@ class Busy(Exception):
     pass
 
 
+class NoVideo(Exception):
+    """Gemini can't watch videos on the lab keys right now (no quota for video). Videos wait for tomorrow."""
+
+
+class NoSearch(Exception):
+    """Google Search inside Gemini isn't available on these keys (free projects often have none)."""
+
+
 class Brain:
     """Spreads calls over LAB_GEMINI_KEYS (comma separated). Falls back to the shared key with a small daily cap so
     the agent teams and the trading bot never run dry. A key that hits its daily limit rests until midnight Pacific."""
@@ -171,7 +179,7 @@ class Brain:
             kh = hashlib.sha1(key.encode()).hexdigest()[:6]
             bad = s.setdefault("badModels", [])
             for name in self._model_list(key)["strong" if (strong or video or search) else "lite"]:
-                if name in bad:
+                if name in bad or (search and name in s.get("searchBad", [])) or (video and name in s.get("videoBad", [])):
                     continue
                 for attempt in range(2):
                     time.sleep(PAUSE)
@@ -190,6 +198,12 @@ class Brain:
                     except urllib.error.HTTPError as e:
                         full = e.read().decode(errors="ignore")
                         log(f"Gemini {e.code} on {name} (key #{kh}): {re.sub(r'\s+', ' ', full)[:140]}", "Research Lab")
+                        if e.code == 429 and video:
+                            s.setdefault("videoBad", []).append(name)
+                            break
+                        if e.code == 429 and search:
+                            s.setdefault("searchBad", []).append(name)   # Search has no quota here; plain calls may still work
+                            break
                         if e.code == 429 and ("limit: 0" in full or "PerDay" in full):
                             bad.append(name)            # no free quota for this model on this key today: skip it
                             break
@@ -208,11 +222,21 @@ class Brain:
                         log(f"Gemini error on {name} (key #{kh}): {str(e)[:120]}", "Research Lab")
                         break
             tier = self._model_list(key)["strong" if (strong or video or search) else "lite"]
+            if search and all(m in bad or m in s.get("searchBad", []) for m in tier):
+                continue
+            if video and all(m in bad or m in s.get("videoBad", []) for m in tier):
+                continue
             if all(m in bad for m in tier):              # every model on this key is out of quota today
                 if video:
                     s["videoDone"] = True
                 else:
                     s["done"] = True
+        if search and all(all(m in sl.get("searchBad", []) or m in sl.get("badModels", []) for m in self._model_list(k)["strong"])
+                          for k, sl in self.available(video)):
+            raise NoSearch("Google Search not available on the lab keys today")
+        if video and all(all(m in sl.get("videoBad", []) or m in sl.get("badModels", []) for m in self._model_list(k)["strong"])
+                         for k, sl in self.available(video)):
+            raise NoVideo("video not available on the lab keys today")
         if not list(self.available(video)):
             raise OutOfQuota("every lab key is out of quota for today")
         raise Busy("Gemini busy right now")
@@ -241,10 +265,23 @@ def video_info(vid):
         return None
 
 
+def youtube_search_page(query):
+    """YouTube's own public search page: no key, no quota. Video ids are in the page's data."""
+    try:
+        req = urllib.request.Request("https://www.youtube.com/results?" + urllib.parse.urlencode({"search_query": query, "hl": "en"}),
+                                     headers={"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
+                                              "(KHTML, like Gecko) Chrome/130.0 Safari/537.36", "Accept-Language": "en-US,en;q=0.9"})
+        html = urllib.request.urlopen(req, timeout=30).read().decode("utf-8", "ignore")
+    except Exception:  # noqa: BLE001
+        return []
+    ids = re.findall(r'"videoRenderer":\{"videoId":"([A-Za-z0-9_-]{11})"', html) or re.findall(r'"videoId":"([A-Za-z0-9_-]{11})"', html)
+    return list(dict.fromkeys(ids))
+
+
 def find_videos(brain, query, n=4):
     yk = os.environ.get("YOUTUBE_API_KEY")
-    ids = []
-    if yk:
+    ids = youtube_search_page(query)
+    if not ids and yk:
         try:
             q = urllib.parse.urlencode({"part": "snippet", "q": query, "type": "video", "maxResults": n + 2,
                                         "videoDuration": "medium", "relevanceLanguage": "en", "key": yk})
@@ -252,11 +289,14 @@ def find_videos(brain, query, n=4):
         except Exception:  # noqa: BLE001
             ids = []
     if not ids:
-        text, _ = brain.ask([{"text": f"Search YouTube and the web. List up to {n + 3} real, public YouTube videos (full "
+        try:
+            text, _ = brain.ask([{"text": f"Search YouTube and the web. List up to {n + 3} real, public YouTube videos (full "
                                       f"youtube.com/watch?v= links) where this is explained in depth, ideally by the person "
                                       f"themselves or a well-known interview: {query}. One link per line, then the title."}],
-                            search=True, json_out=False)
-        ids = youtube_ids(text)
+                                search=True, json_out=False)
+            ids = youtube_ids(text)
+        except NoSearch:
+            ids = []
     out = []
     for vid in ids:
         info = video_info(vid)
@@ -298,11 +338,17 @@ def read_source(brain, src, about):
                                    "Extract its findings as lessons (evidence: academic study). JSON only."}])
         return j, []
     # written: Google-grounded summary of a trader's or investor's documented method (books, interviews, articles)
-    text, srcs = brain.ask([{"text": f"{EXTRACT_SYSTEM}\n\nUse Google Search. Study what {about} actually teaches in their "
-                                     "books, interviews and documented trading: exact entries, exits, stops, position "
-                                     "sizing, market filters, psychology, and their real track record and the main "
-                                     "criticisms. Reply with ONLY the JSON object."}], search=True, json_out=False)
-    return gemini.parse_json(text), srcs
+    ask = (f"Study what {about} actually teaches in their books, interviews and documented trading: exact entries, "
+           "exits, stops, position sizing, market filters, psychology, and their real track record and the main criticisms.")
+    try:
+        text, srcs = brain.ask([{"text": f"{EXTRACT_SYSTEM}\n\nUse Google Search. {ask} Reply with ONLY the JSON object."}],
+                               search=True, json_out=False)
+        return gemini.parse_json(text), srcs
+    except NoSearch:
+        src["noSearch"] = True                     # written from the model's own knowledge of the books (no live search)
+        j, _ = brain.ask([{"text": f"{EXTRACT_SYSTEM}\n\n{ask} Only state what you are confident is documented; if unsure, "
+                                   "leave it out. Reply with ONLY the JSON object."}], strong=True)
+        return j, []
 
 
 # ---------------------------------------------------------------- the bot's own trades, replayed
@@ -377,6 +423,9 @@ def note(st, msg):
 
 
 def next_task(st):
+    today = now_utc().astimezone(PT).date().isoformat()
+    if st.get("videoLater") and st.get("videoLaterDay") != today:
+        st["pendingSources"] += st.pop("videoLater")      # new Gemini day: try the waiting videos again
     if st["pendingSources"]:
         # round-robin so one person doesn't take the whole day
         last = st.get("lastAbout")
@@ -540,9 +589,15 @@ def run(days=7):
                 if task["kind"] == "person" or task.get("tag") == "deep":
                     found.append({"kind": "written", "id": "w:" + task["about"], "about": task["about"]})
                     found += [{**v, "about": task["about"]} for v in find_videos(brain, task["about"] + " trading strategy explained")]
-                seen = set(st["doneSources"]) | set(st["failedSources"]) | {s["id"] for s in st["pendingSources"]}
+                seen = set(st["doneSources"]) | set(st["failedSources"]) | {x["id"] for x in st["pendingSources"] + st.get("videoLater", [])}
                 new = [f for f in found if f["id"] not in seen]
-                st["pendingSources"] += new
+                today = now_utc().astimezone(PT).date().isoformat()
+                if st.get("videoLaterDay") == today:
+                    st.setdefault("videoLater", []).extend(f for f in new if f["kind"] == "video")
+                    new_now = [f for f in new if f["kind"] != "video"]
+                else:
+                    new_now = new
+                st["pendingSources"] += new_now
                 note(st, f"Found {len(new)} sources on {task['about']}")
             elif kind == "read":
                 st["lastAbout"] = task["about"]
@@ -567,6 +622,13 @@ def run(days=7):
             publish(st); write_json(STATE, st)
             tomorrow = (now_utc().astimezone(PT) + timedelta(days=1)).replace(hour=0, minute=10, second=0, microsecond=0)
             time.sleep(max(600, min(6 * 3600, (tomorrow - now_utc().astimezone(PT)).total_seconds())))
+        except NoVideo:
+            st.setdefault("videoLater", []).append(task)
+            st["videoLaterDay"] = now_utc().astimezone(PT).date().isoformat()
+            # skip the other videos for today too, keep reading write-ups and papers
+            st.setdefault("videoLater", []).extend(x for x in st["pendingSources"] if x["kind"] == "video")
+            st["pendingSources"] = [x for x in st["pendingSources"] if x["kind"] != "video"]
+            note(st, "Video watching has no quota on the lab keys today: videos wait for tomorrow, reading the rest")
         except Busy:
             if kind == "read":
                 st["pendingSources"].insert(0, task)

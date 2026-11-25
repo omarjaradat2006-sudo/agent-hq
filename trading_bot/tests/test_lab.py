@@ -127,3 +127,23 @@ def test_brain_busy_is_not_out_of_quota(monkeypatch):
     with pytest.raises(L.Busy):
         b.ask([{"text": "hi"}])
     assert not b._slot("k1").get("done")                 # a busy moment doesn't bench the key for the day
+
+
+def test_search_and_video_without_quota_fall_back(monkeypatch):
+    import io, urllib.error
+    monkeypatch.setenv("LAB_GEMINI_KEYS", "k1,k2"); monkeypatch.delenv("GEMINI_API_KEY", raising=False)
+    monkeypatch.setattr(L, "PAUSE", 0); monkeypatch.setattr(L.time, "sleep", lambda s: None)
+    b = L.Brain({}); b.models = {"strong": ["flash"], "lite": ["lite"]}
+
+    def req(method, path, body=None, timeout=0):
+        if "tools" in body or any("file_data" in p for p in body["contents"][0]["parts"]):
+            raise urllib.error.HTTPError("u", 429, "q", {}, io.BytesIO(b"You exceeded your current quota"))
+        return {"candidates": [{"content": {"parts": [{"text": '{"person": "X", "lessons": []}'}]}}]}
+    monkeypatch.setattr(L.gemini, "_req", req)
+    with pytest.raises(L.NoSearch):
+        b.ask([{"text": "find"}], search=True, json_out=False)
+    j, _ = L.read_source(b, {"kind": "written", "about": "Jesse Livermore"}, "Jesse Livermore")
+    assert j["person"] == "X"                                    # plain call still works without Search
+    with pytest.raises(L.NoVideo):
+        b.ask([{"file_data": {"file_uri": "u"}}, {"text": "watch"}], video=True)
+    assert not b._slot("k1").get("done")                          # keys stay usable for text
