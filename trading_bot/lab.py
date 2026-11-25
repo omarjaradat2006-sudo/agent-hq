@@ -112,6 +112,10 @@ class OutOfQuota(Exception):
     pass
 
 
+class Busy(Exception):
+    pass
+
+
 class Brain:
     """Spreads calls over LAB_GEMINI_KEYS (comma separated). Falls back to the shared key with a small daily cap so
     the agent teams and the trading bot never run dry. A key that hits its daily limit rests until midnight Pacific."""
@@ -143,12 +147,14 @@ class Brain:
     def _model_list(self, key):
         if self.models is None:
             gemini.KEY = key
+            log("Checking which Gemini models the lab keys can use...", "Research Lab")
             names = [m["name"].split("/")[-1] for m in gemini._req("GET", "models?pageSize=200").get("models", [])
                      if "generateContent" in m.get("supportedGenerationMethods", []) and gemini.text_model_ok(m["name"].split("/")[-1])]
             ver = lambda n: float((re.search(r"gemini-(\d+(?:\.\d+)?)", n) or [0, 0])[1] or 0)
             flash = sorted([n for n in names if "flash" in n and "lite" not in n], key=ver, reverse=True)[:2]
             lite = sorted([n for n in names if "flash-lite" in n], key=ver, reverse=True)[:2]
             self.models = {"strong": flash + lite, "lite": lite + flash}
+            log(f"Lab models: {', '.join(flash + lite)}", "Research Lab")
         return self.models
 
     def ask(self, parts, video=False, search=False, json_out=True, strong=False, temperature=0.3):
@@ -162,12 +168,16 @@ class Brain:
             body["generationConfig"]["responseMimeType"] = "application/json"
         for key, s in list(self.available(video)):
             gemini.KEY = key
+            kh = hashlib.sha1(key.encode()).hexdigest()[:6]
+            bad = s.setdefault("badModels", [])
             for name in self._model_list(key)["strong" if (strong or video or search) else "lite"]:
+                if name in bad:
+                    continue
                 for attempt in range(2):
                     time.sleep(PAUSE)
                     try:
                         s["calls"] = s.get("calls", 0) + 1
-                        r = gemini._req("POST", f"models/{name}:generateContent", body, timeout=600)
+                        r = gemini._req("POST", f"models/{name}:generateContent", body, timeout=300)
                         cand = (r.get("candidates") or [{}])[0]
                         text = "".join(p.get("text", "") for p in cand.get("content", {}).get("parts", []))
                         if not text.strip():
@@ -179,24 +189,33 @@ class Brain:
                         return (gemini.parse_json(text) if json_out else text), srcs
                     except urllib.error.HTTPError as e:
                         full = e.read().decode(errors="ignore")
-                        if e.code == 429 and "PerDay" in full:
-                            break                      # this model's daily quota is gone on this key; try the next model
+                        log(f"Gemini {e.code} on {name} (key #{kh}): {re.sub(r'\s+', ' ', full)[:140]}", "Research Lab")
+                        if e.code == 429 and ("limit: 0" in full or "PerDay" in full):
+                            bad.append(name)            # no free quota for this model on this key today: skip it
+                            break
                         if e.code == 429:
-                            time.sleep(65); continue   # per-minute burst: wait and retry once
+                            time.sleep(30); break       # per-minute burst: rest briefly, then the next model
                         if e.code == 400 and video:
                             raise ValueError(f"video not readable: {full[:160]}")
-                        if e.code in (500, 503, 504):
-                            time.sleep(20); continue
+                        if e.code in (403, 404):
+                            bad.append(name); break
+                        if e.code in (500, 503, 504) and attempt == 0:
+                            time.sleep(15); continue
                         break
                     except (urllib.error.URLError, TimeoutError, RuntimeError, ValueError) as e:
                         if isinstance(e, ValueError) and "video" in str(e):
                             raise
-                        time.sleep(10)
-            if video:
-                s["videoDone"] = True                    # this key can't do more video today
-            else:
-                s["done"] = True
-        raise OutOfQuota("every lab key is out of quota for today")
+                        log(f"Gemini error on {name} (key #{kh}): {str(e)[:120]}", "Research Lab")
+                        break
+            tier = self._model_list(key)["strong" if (strong or video or search) else "lite"]
+            if all(m in bad for m in tier):              # every model on this key is out of quota today
+                if video:
+                    s["videoDone"] = True
+                else:
+                    s["done"] = True
+        if not list(self.available(video)):
+            raise OutOfQuota("every lab key is out of quota for today")
+        raise Busy("Gemini busy right now")
 
 
 # ---------------------------------------------------------------- finding sources
@@ -413,6 +432,7 @@ def test_rules(st, data, budget_s=600):
             continue
         if time.time() - t0 > budget_s:
             break
+        t1 = time.time()
         try:
             ev = E.evaluate(r["rule"], data)
             r.update({"status": ev["verdict"], "why": ev["why"], "score": ev.get("score"), "periods": ev["periods"]})
@@ -420,6 +440,7 @@ def test_rules(st, data, budget_s=600):
                 r["robustness"] = E.robustness(r["rule"], data)
                 if r["status"] == "passed" and (r["robustness"] or 0) < 0.6:
                     r.update({"status": "promising", "why": "worked, but small changes to its numbers break it (likely a lucky fit)"})
+            log(f"Tested '{r['rule']['name'][:50]}': {r['status']} ({time.time() - t1:.0f}s)", "Research Lab")
         except Exception as ex:  # noqa: BLE001  (one bad rule never stops the lab)
             r.update({"status": "error", "why": str(ex)[:150]})
         st["counts"]["rulesTested"] = sum(1 for x in st["rules"].values() if x["status"] != "untested")
@@ -454,7 +475,10 @@ def market_data(a, st):
     j = read_json(cache, {}) or {}
     if j.get("day") == now_utc().date().isoformat():
         return E.load_series(j["bars"])
+    log("Downloading ~3.5 years of daily prices...", "Research Lab")
+    t0 = time.time()
     uni = halal.build_universe(a)
+    log(f"Halal list ready ({len(uni.get('stocks') or {})} stocks, {len(uni.get('crypto') or {})} coins) in {time.time() - t0:.0f}s", "Research Lab")
     stocks = sorted(set((uni.get("stocks") or {})) | {"SPY"})
     coins = sorted((uni.get("crypto") or {}))
     start = iso(now_utc() - timedelta(days=int(3.6 * 365)))
@@ -465,6 +489,7 @@ def market_data(a, st):
         bars.update(a.crypto_bars(coins, "1Day", start))
     bars = {s: [{k: b[k] for k in ("t", "o", "h", "l", "c", "v")} for b in bs] for s, bs in bars.items()}
     write_json(cache, {"day": now_utc().date().isoformat(), "bars": bars})
+    log(f"Prices ready: {len(bars)} symbols in {time.time() - t0:.0f}s", "Research Lab")
     return E.load_series(bars)
 
 
@@ -497,13 +522,16 @@ def run(days=7):
             return
         if data_day != now_utc().date().isoformat():
             data = market_data(a, st); data_day = now_utc().date().isoformat()
+            log("Replaying the bot's own trades...", "Research Lab")
             try:
                 st["postMortem"] = post_mortem(a, read_json(DATA / "ledger.json", {}) or {})
+                note(st, f"Replayed the bot's {(st['postMortem'] or {}).get('trades', 0)} trades")
             except Exception as ex:  # noqa: BLE001
                 note(st, f"post-mortem failed: {ex}")
             test_rules(st, data)
             publish(st)
         kind, task = next_task(st)
+        log(f"Next: {kind} {(task or {}).get('title') or (task or {}).get('about') or ''}"[:120], "Research Lab")
         try:
             if kind == "find":
                 found = []
@@ -539,6 +567,13 @@ def run(days=7):
             publish(st); write_json(STATE, st)
             tomorrow = (now_utc().astimezone(PT) + timedelta(days=1)).replace(hour=0, minute=10, second=0, microsecond=0)
             time.sleep(max(600, min(6 * 3600, (tomorrow - now_utc().astimezone(PT)).total_seconds())))
+        except Busy:
+            if kind == "read":
+                st["pendingSources"].insert(0, task)
+            elif kind == "find":
+                st["queue"].insert(0, task)
+            note(st, "Gemini busy, trying again in 5 minutes")
+            time.sleep(300)
         except ValueError as ex:          # a video Gemini can't open: skip it
             st["failedSources"].append(task["id"])
             note(st, f"Skipped {task.get('title', task['about'])[:60]}: {str(ex)[:80]}")

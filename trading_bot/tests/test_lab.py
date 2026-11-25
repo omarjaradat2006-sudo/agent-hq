@@ -96,6 +96,7 @@ def test_brain_rotates_keys_and_rests_on_daily_quota(monkeypatch):
     assert out == {"ok": 1} and used == ["k1", "k2"]
     out, _ = b.ask([{"text": "hi"}])
     assert used[-1] == "k2"                                # k1 rests for the rest of the (Pacific) day
+    assert "lite" in b._slot("k1")["badModels"]
     for k in ("k2", "shared"):
         b._slot(k)["done"] = True
     with pytest.raises(L.OutOfQuota):
@@ -113,3 +114,16 @@ def test_next_task_round_robin_and_second_pass():
     st["lessons"] = [{"theme": "cut_losses_fast"}]
     kind, task = L.next_task(st)
     assert kind == "find" and st["pass"] == 2
+
+
+def test_brain_busy_is_not_out_of_quota(monkeypatch):
+    import io, urllib.error
+    monkeypatch.setenv("LAB_GEMINI_KEYS", "k1"); monkeypatch.delenv("GEMINI_API_KEY", raising=False)
+    monkeypatch.setattr(L, "PAUSE", 0); monkeypatch.setattr(L.time, "sleep", lambda s: None)
+    b = L.Brain({}); b.models = {"strong": ["flash"], "lite": ["lite"]}
+    def busy(method, path, body=None, timeout=0):
+        raise urllib.error.HTTPError("u", 503, "overloaded", {}, io.BytesIO(b"overloaded"))
+    monkeypatch.setattr(L.gemini, "_req", busy)
+    with pytest.raises(L.Busy):
+        b.ask([{"text": "hi"}])
+    assert not b._slot("k1").get("done")                 # a busy moment doesn't bench the key for the day
