@@ -1,0 +1,23 @@
+[Unit]
+Description=Agent HQ Research Lab (studies traders + tests their rules on past prices; never trades)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+User=__USER__
+WorkingDirectory=__REPO__
+Environment=PYTHONUNBUFFERED=1
+ExecStart=__REPO__/trading_bot/.venv/bin/python -m trading_bot.lab run
+# restart after a crash, but stay stopped once the lab has finished
+Restart=on-failure
+RestartSec=300
+# lowest priority on the shared 2-core server: the trading bot, agent teams and renders come first
+Nice=15
+CPUQuota=60%
+MemoryMax=1500M
+NoNewPrivileges=yes
+PrivateTmp=yes
+ProtectSystem=full
+
+[Install]
+WantedBy=multi-user.target

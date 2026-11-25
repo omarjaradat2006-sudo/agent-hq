@@ -960,6 +960,33 @@ Server breakdown (Gemini watched it with sound):
       }
       body.append(c3);
     }
+    const lb = st.lab;
+    if (lb) {
+      const c4 = el("div", "card"), n = lb.counts || {};
+      const left = lb.done ? "finished" : "ends " + new Date(lb.endsAt).toLocaleDateString([], { month: "short", day: "numeric" });
+      c4.append(el("div", "label", `Research Lab · ${left} · updated ${ago(lb.updatedAt)}`));
+      c4.append(el("div", null, `Studied ${n.videos || 0} videos, ${n.written || 0} trader methods and ${n.papers || 0} research papers: ${n.lessons || 0} lessons. Tested ${n.rulesTested || 0} of ${n.rules || 0} rules on 3 years of prices: ${n.passed || 0} passed, ${n.promising || 0} promising.`));
+      if ((lb.consensus || []).length) {
+        c4.append(el("div", "small", "What the most people agree on:"));
+        const ul = el("ul"); ul.style.margin = "4px 0 8px";
+        lb.consensus.slice(0, 6).forEach(t => ul.append(el("li", null, `${t.theme.replace(/_/g, " ")} (${t.people} people)`))); c4.append(ul);
+      }
+      const pm = lb.postMortem;
+      if (pm && pm.alternatives) {
+        const A = pm.alternatives;
+        c4.append(el("div", "small", `The bot's ${pm.trades} closed trades replayed: actual ${money(A.actual)} · with an 8% stop ${money(A.stop_8pct)} · with a 2x ATR stop ${money(A.atr_2x)} · held 10 days ${money(A.hold_10_days)} · only buying in uptrends ${money(A.trend_filter_only)}. ${pm.note || ""}`));
+      }
+      const top = (lb.leaderboard || []).slice(0, 6);
+      if (top.length) {
+        c4.append(el("div", "small", "Rules tested so far (best first):"));
+        const ul = el("ul"); ul.style.margin = "4px 0 8px";
+        top.forEach(r => { const f = r.full || {}; ul.append(el("li", null, `[${r.status}] ${r.name} (from ${r.from || "?"}): ${pct(f.returnPct)}, worst drop ${f.maxDrawdownPct}% vs SPY ${pct(f.spyReturnPct)} / ${f.spyMaxDrawdownPct}%${r.robustness != null ? `, holds up under changes ${Math.round(r.robustness * 100)}%` : ""}`)); });
+        c4.append(ul);
+      }
+      if (lb.reportUrl) { const a = el("a", null, "Read the full report"); a.href = "https://github.com/" + CFG.repo + "/blob/main/" + lb.reportUrl; a.target = "_blank"; c4.append(a); }
+      if ((lb.log || []).length) c4.append(el("div", "small", "Latest: " + lb.log[0]));
+      body.append(c4);
+    }
 
     const k = el("div", "kpis");
     k.append(tk(money(a.equity), "Account value", "started at " + money(a.startEquity)));

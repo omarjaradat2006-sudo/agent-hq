@@ -16,6 +16,9 @@
 #   tb study            build today's Market Study now (trend + momentum + quality ranking of every halal name)
 #   tb study-backtest 12  test the trend rules on the last 12 months of daily prices (no orders, ~1 min)
 #   tb trend 30         put 30% of the invested budget in the Market Study picks (trend sleeve). tb trend 0 = off
+#   tb lab keys         type extra Gemini keys for the Research Lab (hidden; one per Google project)
+#   tb lab start 7      start the Research Lab for 7 days (studies traders, tests their rules; never trades)
+#   tb lab status | stop | report | logs
 #   tb coach            run the Coach's review now (what it learned + its own settings); tb coach reset = undo all
 #   tb universe         re-run the halal screen now and show how many stocks + coins pass
 #   tb unlock           turn the kill switch off again (only after you've reviewed why it fired)
@@ -54,12 +57,31 @@ case "${1:-help}" in
                 sudo systemctl restart agenthq-trading && echo "Trailing stop now: $M% (new trades). Bot restarted." ;;
   coach)        "$PY" -m trading_bot.coach "${2:-}" ;;
   study)        "$PY" -m trading_bot.study ;;
+  lab)          case "${2:-status}" in
+                  keys)   K_ALL=""; i=1
+                          while true; do read -rsp "Lab Gemini key $i (hidden, just Enter when done): " K; echo
+                            [ -z "$K" ] && break; K_ALL="${K_ALL:+$K_ALL,}$K"; i=$((i+1)); done
+                          [ -z "$K_ALL" ] && { echo "No keys entered, nothing changed."; exit 0; }
+                          OLD=$(grep -h '^LAB_GEMINI_KEYS=' ~/.trading-bot.env 2>/dev/null | cut -d= -f2- || true)
+                          sed -i '/^LAB_GEMINI_KEYS=/d' ~/.trading-bot.env && echo "LAB_GEMINI_KEYS=${OLD:+$OLD,}$K_ALL" >> ~/.trading-bot.env
+                          chmod 600 ~/.trading-bot.env; unset K K_ALL OLD
+                          echo "Saved $((i-1)) key(s) for the lab."; systemctl is-active --quiet agenthq-lab && sudo systemctl restart agenthq-lab || true ;;
+                  start)  D="${3:-7}"; case "$D" in *[!0-9]*|'') echo "Use: tb lab start <days>"; exit 1;; esac
+                          sed "s#__REPO__#$REPO#g; s#__USER__#$(whoami)#g" trading_bot/server/agenthq-lab.service | sudo tee /etc/systemd/system/agenthq-lab.service >/dev/null
+                          sudo systemctl daemon-reload && "$PY" -m trading_bot.lab init "$D" && sudo systemctl restart agenthq-lab
+                          sleep 3 && systemctl --no-pager status agenthq-lab | head -4 ;;
+                  stop)   sudo systemctl stop agenthq-lab && echo "Lab paused (tb lab start continues where it left off)." ;;
+                  report) "$PY" -m trading_bot.lab report ;;
+                  logs)   journalctl -u agenthq-lab -f -n 40 ;;
+                  reset)  sudo systemctl stop agenthq-lab 2>/dev/null || true; "$PY" -m trading_bot.lab reset ;;
+                  *)      "$PY" -m trading_bot.lab status ;;
+                esac ;;
   study-backtest) "$PY" -m trading_bot.study backtest "${2:-12}" ;;
   trend)        M="${2:-}"; case "$M" in ''|*[!0-9]*) echo "Use: tb trend <0-90>  (now: $(grep -h '^TREND_PCT' ~/.trading-bot.env 2>/dev/null | cut -d= -f2 || true) / 0 = off if blank)"; exit 1;; esac
                 sed -i '/^TREND_PCT=/d' ~/.trading-bot.env && echo "TREND_PCT=$M" >> ~/.trading-bot.env
                 sudo systemctl restart agenthq-trading && echo "Trend sleeve now: $M% of the invested budget in the Market Study picks (core first, then trend, then news). Bot restarted." ;;
   universe)     "$PY" -m trading_bot.bot universe ;;
   unlock)       "$PY" -m trading_bot.bot unlock ;;
-  update)       git pull -q --rebase --autostash origin main && sudo systemctl restart agenthq-trading && echo "Updated + restarted." ;;
-  *)            sed -n '2,23p' "$0" ;;
+  update)       git pull -q --rebase --autostash origin main && sudo systemctl restart agenthq-trading && { systemctl is-active --quiet agenthq-lab && sudo systemctl restart agenthq-lab || true; } && echo "Updated + restarted." ;;
+  *)            sed -n '2,26p' "$0" ;;
 esac

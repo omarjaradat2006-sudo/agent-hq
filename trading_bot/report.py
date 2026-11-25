@@ -85,6 +85,7 @@ def write(bot):
         "positions": open_t, "charts": charts,
         "coach": {k: co.get(k) for k in ("updatedAt", "knobs", "lessons", "missed", "dodged", "avoid", "history", "limits")} if co else None,
         "study": study_block(),
+        "lab": read_json(DATA / "lab" / "lab.json", None),
         "trades": led["trades"][:120],
         "decisions": led.get("decisions", [])[:60],
         "equity": led.get("equity", [])[-400:],
