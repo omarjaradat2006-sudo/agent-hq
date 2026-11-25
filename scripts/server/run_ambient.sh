@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+export AGENT_JOB="${AGENT_JOB:-ambient}"
 # Daily Ambient Escape batch on the Oracle server, no Claude:
 #   lineup -> Gemini writes each video's spec -> refs checked against the Quran/hadith texts -> render -> upload (scheduled 5 PM-8 AM)
 #   -> YouTube confirms each upload -> only then the video file is deleted -> mark Agent HQ -> clean temp files.

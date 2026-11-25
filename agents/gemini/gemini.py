@@ -82,8 +82,20 @@ def generate(prompt, system=None, search=False, json_out=False, temperature=0.8,
                     print(f"(answered by {name})", flush=True)
                 return text, sources
             except urllib.error.HTTPError as e:
-                msg = e.read().decode()[:300]
+                full = e.read().decode()
+                msg = full[:300]
                 last = f"Gemini HTTP {e.code} on {name}: {msg}"
+                if e.code == 429:   # record WHICH limit was hit (per-minute burst vs daily cap) so the schedule can be tuned
+                    kind = ",".join(sorted(set(re.findall(r"(PerDay|PerMinute|PerHour)", full)))) or "unknown"
+                    import hashlib
+                    key = hashlib.sha1((os.environ.get("GEMINI_API_KEY") or "").encode()).hexdigest()[:6]
+                    line = f"{time.strftime('%F %T')} QUOTA {kind} model={name} key#{key} search={search} job={os.environ.get('AGENT_JOB', '?')}"
+                    print(line, flush=True)
+                    try:
+                        with open(os.path.expanduser("~/logs/quota.log"), "a") as f:
+                            f.write(line + "\n")
+                    except OSError:
+                        pass
                 print(f"Gemini {e.code} on {name}, trying next model", flush=True)
                 if e.code in (429, 503) and len(_model) > 1:  # out of quota / overloaded: stop trying it first this run
                     _model.remove(name); _model.append(name)

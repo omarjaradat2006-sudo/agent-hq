@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+export AGENT_JOB="${AGENT_JOB:-inspo}"
 # Every 3 days: Omar's Inspo inbox (Agent HQ -> YouTube -> Inspo) -> Gemini watches each video -> Engine 2 template
 # -> test render -> judged against the inspo -> sample video on Agent HQ for Omar to approve. No Claude.
 # Approved items go live in the next Bounce batch (run_bounce.sh runs inspo.py promote).

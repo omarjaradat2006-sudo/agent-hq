@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+export AGENT_JOB="${AGENT_JOB:-wanted}"
 # WANTED LEVEL (GTA 6 clips) on the Oracle server, no Claude. Cron runs it every hour at :07.
 #   before Nov 19: only grows the clip-permission allow-list (nothing is posted)
 #   from launch:   verify -> upload one Short (public) -> find CC BY / allowed Twitch clips -> make Shorts -> verify -> report

@@ -18,6 +18,7 @@ for TEAM in $LIST; do
   # Growth Architect is paused while Omar rebuilds it (agents show as recharging on the site).
   case "$TEAM" in growth|upgrades) echo "$TEAM is paused: skipped"; continue;; esac
   git fetch -q origin main && git reset -q --hard origin/main
+  export AGENT_JOB="$TEAM"
   if [ "$TEAM" = tiktok ]; then CMD="python3 agents/gemini/tiktok_team.py"; else CMD="python3 agents/gemini/team.py $TEAM"; fi
   # The YouTube team plans both channels' daily lineups: it uses its own key (own Google project) first, then the shared key.
   KEYS="$GEMINI_API_KEY"

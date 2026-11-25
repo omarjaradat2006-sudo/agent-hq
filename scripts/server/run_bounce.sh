@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+export AGENT_JOB="${AGENT_JOB:-bounce}"
 # Daily Bounce Theory batch on the Oracle server, no Claude: lineup -> templates -> render -> check -> upload -> verify (then delete) -> mark Agent HQ -> clean.
 # Cron runs it at 7:05 AM Toronto. If the YouTube team hasn't planned today yet, it waits and retries until noon.
 # Usage: run_bounce.sh            full run

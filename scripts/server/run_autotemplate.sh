@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+export AGENT_JOB="${AGENT_JOB:-autotemplate}"
 # Tue/Thu/Sat 1:17 PM: the best new Bounce Theory idea on the YouTube board becomes a real template, no Claude.
 # Gemini writes it -> safety check -> test render -> saved in agent-hq data/youtube/auto_templates -> smoke-tested -> menu.
 # Usage: run_autotemplate.sh            scheduled run (cron)
