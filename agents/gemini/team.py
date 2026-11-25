@@ -50,7 +50,7 @@ TEAMS = {
     research="ways to run an always-on AI agent + video automation system more efficiently on a free tier: Gemini API free-tier quota tips and new models, reliable cron/job monitoring and phone alerts (ntfy), faster video rendering on ARM CPUs, plus new short-form and YouTube formats winning right now (faceless, simulation, ambient, Islamic content) and LinkedIn job-search tool trends."),
   "repos": dict(state="repos", prefix="repo", search=True, formats=["github-scout.md"], keys=["research", "ideas", "brief", "requestAnswers"],
     agents=["scout", "tester", "lead"], hour="Sun 20:37",
-    job="""GitHub Scout. Answer Omar's open requests first: the research notes hold REAL live GitHub search results per request (stars, licence, last push, README). For each request compare the 3-5 best of those candidates and pick the best one, saying what it does, why it beats the others, licence, whether it runs on his laptop CPU or needs a GPU, and the first setup step. Key requestAnswers by the exact [key] shown for that request. Only answer "Nothing good enough yet" if the candidate list is empty or none of them does the job (say which ones you rejected and why). Then find 1-3 free, open-source GitHub repos that make his work easier or cheaper, checked properly (alive, licence, safety, runs on his laptop CPU or needs a GPU), in the exact github-scout.md format with a buildPrompt. Only real repos, real stars, real licences. Then a brief.""",
+    job="""GitHub Scout. Answer the ONE request named in the research notes (one request per run): the notes hold REAL live GitHub search results for it (stars, licence, last push, README). For each request compare the 3-5 best of those candidates and pick the best one, saying what it does, why it beats the others, licence, whether it runs on his laptop CPU or needs a GPU, and the first setup step. Key requestAnswers by the exact [key] shown for that request. Only answer "Nothing good enough yet" if the candidate list is empty or none of them does the job (say which ones you rejected and why). Then find 1-3 free, open-source GitHub repos that make his work easier or cheaper, checked properly (alive, licence, safety, runs on his laptop CPU or needs a GPU), in the exact github-scout.md format with a buildPrompt. Only real repos, real stars, real licences. Then a brief.""",
     research="useful free open-source GitHub repos released or popular recently for: AI voice/TTS that runs on CPU, video automation and rendering, YouTube/TikTok automation, Python simulation, MCP servers, AI agent frameworks."),
   "chief": dict(state="hq", prefix="hq", search=False, extra=["briefs", "metrics:youtube", "metrics:tiktok"], formats=[],
     keys=["brief"], agents=["chief"], hour="Mon 16:42",
@@ -277,52 +277,72 @@ def _gh(url):
     return json.load(urllib.request.urlopen(urllib.request.Request(url, headers=h), timeout=20))
 
 
+_STOPQ = set("a an and the i im i'm am is are to for of on in my me that this with it can need want looking please search those them repo repos github so just like who what which also use uses using be all and or but from proper perfectly absolutely free open source".split())
+
+
+def _kw(text, n=4):
+    words = [w for w in re.findall(r"[a-z0-9+#.]+", text.lower()) if w not in _STOPQ and len(w) > 2]
+    return " ".join(list(dict.fromkeys(words))[:n])
+
+
+def scout_target(state):
+    """The ONE request this run works on: the oldest open request (one per run keeps Gemini and GitHub quota tiny)."""
+    reqs = [r for r in state.get("requests", []) if r.get("status") != "answered"]
+    return reqs[0] if reqs else None
+
+
 def github_research(state, system):
-    """GitHub Scout: search GitHub itself (free, no Gemini search quota) for every open request.
+    """GitHub Scout: search GitHub itself (free, no Gemini search quota) for ONE open request.
     Returns (notes, sources, found) where found[key] = number of real candidates for that request."""
     import time, urllib.parse
-    reqs = [r for r in state.get("requests", []) if r.get("status") != "answered"]
-    asks = [{"key": r["text"][:40], "text": r["text"]} for r in reqs] or [{"key": "general", "text": "free open-source tools for AI video automation, CPU TTS, YouTube/TikTok automation, MCP servers"}]
+    r = scout_target(state)
+    a = {"key": r["text"][:40], "text": r["text"]} if r else {"key": "general", "text": "free open-source tools for AI video automation, CPU text to speech, YouTube TikTok automation, MCP servers"}
+    qs = []
     try:
-        text, _ = G.generate("For each request, write 3 short GitHub repository search queries (2-4 plain keywords each, no quotes, no 'github', "
-                             "no qualifiers) that would find real open-source repos doing that job. Return JSON {\"<key>\": [\"q1\",\"q2\",\"q3\"]}.\n"
-                             + json.dumps(asks, ensure_ascii=False), system, json_out=True, temperature=0.2)
-        qs = G.parse_json(text) or {}
+        text, _ = G.generate("Write 4 short GitHub repository search queries (2-3 plain keywords each, no quotes, no 'github', no qualifiers) "
+                             "that would find real open-source repos doing this job. Return JSON {\"queries\": [\"q1\",\"q2\",\"q3\",\"q4\"]}.\nJob: " + a["text"],
+                             system, json_out=True, temperature=0.2)
+        qs = (G.parse_json(text) or {}).get("queries") or []
     except Exception as e:
-        print("query writing failed:", e, flush=True); qs = {}
-    cutoff = (NOW - datetime.timedelta(days=540)).strftime("%Y-%m-%d")
-    notes, sources, found = [], [], {}
-    for a in asks:
-        seen = {}
-        for q in (qs.get(a["key"]) or [a["text"][:60]])[:3]:
+        print("query writing failed (using keywords instead):", e, flush=True)
+    qs = [q for q in qs if isinstance(q, str) and q.strip()][:4] + [_kw(a["text"], 4), _kw(a["text"], 2)]
+    cutoff = (NOW - datetime.timedelta(days=720)).strftime("%Y-%m-%d")
+    seen, errors = {}, []
+    for q in dict.fromkeys(qs):
+        # strict first, then looser if GitHub returns nothing
+        for qual in (f" stars:>20 pushed:>{cutoff}", " stars:>5", ""):
             try:
-                r = _gh("https://api.github.com/search/repositories?" + urllib.parse.urlencode(
-                    {"q": f"{q} stars:>20 pushed:>{cutoff}", "sort": "stars", "order": "desc", "per_page": 6}))
+                res = _gh("https://api.github.com/search/repositories?" + urllib.parse.urlencode({"q": q + qual, "sort": "stars", "order": "desc", "per_page": 8}))
+                items = res.get("items", [])
             except Exception as e:
-                print("github search failed:", q, e, flush=True); time.sleep(7); continue
-            for it in r.get("items", []):
-                seen.setdefault(it["full_name"], it)
+                errors.append(f"{q}: {e}"); items = []
             time.sleep(7)   # unauthenticated search limit: 10 a minute
-        top = sorted(seen.values(), key=lambda x: -x["stargazers_count"])[:8]
-        found[a["key"]] = len(top)
-        lines = []
-        for n, it in enumerate(top):
-            readme = ""
+            for it in items:
+                seen.setdefault(it["full_name"], it)
+            if items:
+                break
+        if len(seen) >= 12:
+            break
+    print(f"scout: request [{a['key']}] queries={list(dict.fromkeys(qs))} candidates={len(seen)} errors={errors[:3]}", flush=True)
+    top = sorted(seen.values(), key=lambda x: -x["stargazers_count"])[:10]
+    lines, sources = [], []
+    for n, it in enumerate(top):
+        readme = ""
+        if n < 5:
             try:
-                if n >= 4:   # stay under GitHub's 60 calls an hour without a token
-                    raise ValueError
                 import base64
                 rd = _gh(f"https://api.github.com/repos/{it['full_name']}/readme")
                 readme = base64.b64decode(rd.get("content", "")).decode("utf-8", "ignore")
-                readme = re.sub(r"<[^>]+>|!\[[^\]]*\]\([^)]*\)|\s+", " ", readme)[:700]
+                readme = re.sub(r"<[^>]+>|!\[[^\]]*\]\([^)]*\)|\s+", " ", readme)[:900]
             except Exception:
                 pass
-            lines.append(f"- {it['full_name']} | {it['stargazers_count']} stars | licence: {(it.get('license') or {}).get('spdx_id') or 'none'} | "
-                         f"last push {it['pushed_at'][:10]} | {it.get('language') or ''} | {it['html_url']}\n  {it.get('description') or ''}\n  README: {readme}")
-            sources.append((it["full_name"], it["html_url"]))
-        notes.append(f"### Request [{a['key']}]: {a['text']}\nReal GitHub search results (live from the GitHub API today):\n" + ("\n".join(lines) or "(no results)"))
-    return "\n\n".join(notes), sources, found
-
+        lines.append(f"- {it['full_name']} | {it['stargazers_count']} stars | licence: {(it.get('license') or {}).get('spdx_id') or 'none'} | "
+                     f"last push {it['pushed_at'][:10]} | {it.get('language') or ''} | {it['html_url']}\n  {it.get('description') or ''}\n  README: {readme}")
+        sources.append((it["full_name"], it["html_url"]))
+    note = (f"### THIS RUN'S REQUEST [{a['key']}]: {a['text']}\nReal GitHub search results (live from the GitHub API today, {len(top)} candidates):\n"
+            + ("\n".join(lines) or "(GitHub returned nothing" + (": " + "; ".join(errors[:3]) if errors else "") + ")")
+            + "\n\nAnswer ONLY this one request this run. Other open requests wait for later runs.")
+    return note, sources, {a["key"]: len(top)}, errors
 
 def main(job):
     if job in PAUSED:
@@ -337,7 +357,7 @@ def main(job):
     notes, sources = "", []
     found = {}
     if job == "repos":
-        notes, sources, found = github_research(state, system)
+        notes, sources, found, gh_errors = github_research(state, system)
     elif cfg.get("search"):
         # Web-search calls have a much smaller free quota than normal calls. If search is out of quota or busy,
         # the team still does its job from the metrics and earlier research instead of failing the whole day.
@@ -409,11 +429,25 @@ Include every key listed above."""
         drop_repeat_ideas(patch, state)
     if job == "lab":
         fix_lab(patch, state)
+    if job == "repos" and isinstance(patch.get("requestAnswers"), list):
+        lst = [x for x in patch["requestAnswers"] if x]
+        a0 = lst[0] if lst else None
+        tgt0 = scout_target(state)
+        patch["requestAnswers"] = {tgt0["text"][:40]: (a0.get("answer") or a0.get("text") or json.dumps(a0)) if isinstance(a0, dict) else str(a0)} if (a0 and tgt0) else {}
     if job == "repos" and isinstance(patch.get("requestAnswers"), dict):
-        # Never close a request with "nothing found" when GitHub returned real candidates for it: leave it open for the next run.
+        # One request per run. "Nothing good" only closes a request after 3 real tries; otherwise it stays open
+        # with a note, and the next run searches again with fresh queries.
+        tgt = scout_target(state)
         for k in list(patch["requestAnswers"]):
-            if str(patch["requestAnswers"][k]).lower().startswith("nothing good") and found.get(str(k)[:40], 0) > 0:
-                print("kept request open (candidates exist):", k, flush=True); patch["requestAnswers"].pop(k)
+            ans = str(patch["requestAnswers"][k])
+            if not tgt or str(k)[:40] != tgt["text"][:40]:
+                patch["requestAnswers"].pop(k); continue
+            if ans.lower().startswith("nothing good"):
+                tgt["tries"] = int(tgt.get("tries", 0)) + 1
+                if tgt["tries"] < 3:
+                    print(f"kept request open (try {tgt['tries']}/3):", k, flush=True)
+                    patch.setdefault("requestNotes", {})[tgt["text"][:40]] = f"Try {tgt['tries']} of 3: {ans[:300]}"
+                    patch["requestAnswers"].pop(k)
     os.makedirs(os.path.join(ROOT, "out"), exist_ok=True)
     json.dump(patch, open(os.path.join(ROOT, "out", f"{job}_patch.json"), "w", encoding="utf-8"), ensure_ascii=False, indent=1)
     print(f"{job}: wrote patch with keys {sorted(patch)} and {len(ideas)} ideas")

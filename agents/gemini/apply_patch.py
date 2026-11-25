@@ -42,6 +42,11 @@ for n, (rid, ans) in enumerate(ra.items()):
     for r in match:
         if r.get("status") != "answered":
             r.update(status="answered", answer=str(ans)[:600], answeredAt=patch["at"])
+for rid, note in (patch.get("requestNotes") or {}).items():   # GitHub Scout: "tried, keep searching"
+    for r in open_reqs:
+        if r.get("text", "")[:40] == str(rid)[:40]:
+            r["tries"] = int(r.get("tries", 0)) + 1
+            r["note"] = str(note)[:400]
 log = patch.get("log", [])
 s["log"] = ((log if isinstance(log, list) else [log])[::-1] + s.get("log", []))[:100]
 known = {a.get("id") for a in s.get("agents", [])}
