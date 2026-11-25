@@ -3,7 +3,7 @@
  "plain": {
   "line": "Down $7,716.62 since start · 33 trades · holding: SPWO, HLAL, SPUS, SPUS",
   "rulesMode": "ultra",
-  "top": "Down $7,716.62 since start (-7.72%) · just holding SPY would be -4.78%",
+  "top": "Down $7,716.62 since start (-7.72%) · just holding SPY would be -4.79%",
   "up": false,
   "holding": [
    "SPWO: 421 shares worth $11,682.75, up $416.79 (sells at $27.96 or stops at $25.00)",
@@ -22,15 +22,15 @@
    "Sold HLAL (bad news: Expectations grow that regional Fed banks and policy makers lean towards tighter): lost $0.32.",
    "Sold TMO (trailing stop hit (-3.4%)): lost $376.12.",
    "Sold NOW (stop-loss -3% hit): lost $473.26.",
-   "Scanned the news 96 times today: read 5765 headlines, found 178 that could move a stock or coin it's allowed to trade.",
+   "Scanned the news 97 times today: read 5793 headlines, found 180 that could move a stock or coin it's allowed to trade.",
    "Passed on CVX, GE, LINK/USD, OXY, XOM: down 3% today, no new trades until tomorrow.",
-   "Safety rules that stepped in: daily loss halt (x697), bad news exit (x1), trailing stop (x3), stop loss -3% (x1), take profit +6% (x1), stock entry window (x18)."
+   "Safety rules that stepped in: daily loss halt (x698), bad news exit (x1), trailing stop (x3), stop loss -3% (x1), take profit +6% (x1), stock entry window (x18)."
   ],
   "watchlist": "Allowed to trade: 68 halal stocks, 5 Shariah ETFs, 9 coins.",
-  "lastScan": "2026-11-25T21:15:58Z"
+  "lastScan": "2026-11-25T21:31:22Z"
  },
  "hired": true,
- "updatedAt": "2026-11-25T21:16:19Z",
+ "updatedAt": "2026-11-25T21:31:35Z",
  "mode": "PAPER",
  "agents": [
   {
@@ -38,8 +38,8 @@
    "name": "News Scout",
    "role": "Reads X, Reddit and news feeds",
    "status": "working",
-   "doing": "Read 81 new headlines/posts, 5 market-moving stories",
-   "lastRun": "2026-11-25T21:16:17Z"
+   "doing": "Read 28 new headlines/posts, 2 market-moving stories",
+   "lastRun": "2026-11-25T21:31:34Z"
   },
   {
    "id": "analyst",
@@ -77,9 +77,9 @@
    "id": "trader",
    "name": "Trader",
    "role": "Places paper orders on Alpaca",
-   "status": "ok",
+   "status": "working",
    "doing": "Saved results to the Agent HQ dashboard",
-   "lastRun": "2026-11-25T19:01:20Z"
+   "lastRun": "2026-11-25T21:16:21Z"
   },
   {
    "id": "coins",
@@ -99,6 +99,26 @@
   }
  ],
  "log": [
+  {
+   "t": "2026-11-25T21:31:34Z",
+   "agent": "Coach",
+   "msg": "Coach review failed: '<' not supported between instances of 'NoneType' and 'float'"
+  },
+  {
+   "t": "2026-11-25T21:31:34Z",
+   "agent": "News Scout",
+   "msg": "Read 28 new headlines/posts, 2 market-moving stories"
+  },
+  {
+   "t": "2026-11-25T21:31:30Z",
+   "agent": "News Scout",
+   "msg": "Google News is rate-limiting this server: pausing it for 1 hour"
+  },
+  {
+   "t": "2026-11-25T21:16:21Z",
+   "agent": "Trader",
+   "msg": "Saved results to the Agent HQ dashboard"
+  },
   {
    "t": "2026-11-25T21:16:17Z",
    "agent": "News Scout",
@@ -828,32 +848,12 @@
    "t": "2026-11-25T00:53:15Z",
    "agent": "News Scout",
    "msg": "Read 33 new headlines/posts, 3 market-moving stories"
-  },
-  {
-   "t": "2026-11-25T00:37:54Z",
-   "agent": "News Scout",
-   "msg": "Read 37 new headlines/posts, 3 market-moving stories"
-  },
-  {
-   "t": "2026-11-25T00:22:43Z",
-   "agent": "News Scout",
-   "msg": "Read 56 new headlines/posts, 2 market-moving stories"
-  },
-  {
-   "t": "2026-11-25T00:07:31Z",
-   "agent": "News Scout",
-   "msg": "Read 73 new headlines/posts, 5 market-moving stories"
-  },
-  {
-   "t": "2026-11-24T23:52:20Z",
-   "agent": "Trader",
-   "msg": "Closed AMZN: bad news: Fed officials continue to signal potential for further rate hikes, weighing on m, -2.31% ($-446.60)"
   }
  ],
  "brief": {
   "date": "Wed Nov 25",
-  "createdAt": "2026-11-25T21:16:19Z",
-  "headline": "Paper account -$866 today (-0.93%), -7.72% total vs SPY -4.78% · 4 open",
+  "createdAt": "2026-11-25T21:31:35Z",
+  "headline": "Paper account -$866 today (-0.93%), -7.72% total vs SPY -4.79% · 4 open",
   "summary": "6 trade(s) closed today, 6/29 winners overall. TradingAgents checks used today: 0/5.",
   "notes": [
    "Down 3% today: no new trades until tomorrow.",
@@ -869,8 +869,8 @@
   "dayPct": -0.93,
   "totalPnl": -7716.62,
   "totalPct": -7.72,
-  "spyPct": -4.78,
-  "vsSpyPct": -2.94
+  "spyPct": -4.79,
+  "vsSpyPct": -2.93
  },
  "status": {
   "killed": false,
@@ -878,7 +878,7 @@
   "deepUsed": 0,
   "deepMax": 5,
   "social": {
-   "at": "2026-11-25T21:16:05Z",
+   "at": "2026-11-25T21:31:31Z",
    "items": 0,
    "source": "Reddit via Tradestie + ApeWisdom (direct Reddit blocks servers; X needs Agent Reach)",
    "problems": [
@@ -886,13 +886,13 @@
     "r/stocks: HTTP 403 https://www.reddit.com/r/stocks/new.json: <body class=theme-beta><div><"
    ],
    "wsb": {
-    "at": "2026-11-25T21:16:05Z",
+    "at": "2026-11-25T21:31:31Z",
     "tickers": 50,
     "items": 0,
     "key": false
    },
    "ape": {
-    "at": "2026-11-25T21:16:06Z",
+    "at": "2026-11-25T21:31:32Z",
     "tickers": 200,
     "items": 0,
     "problems": []
@@ -1615,6 +1615,18 @@
     ],
     [
      "2026-11-25T21:15:00Z",
+     92283.38
+    ],
+    [
+     "2026-11-25T21:20:00Z",
+     92283.38
+    ],
+    [
+     "2026-11-25T21:25:00Z",
+     92283.38
+    ],
+    [
+     "2026-11-25T21:30:00Z",
      92283.38
     ]
    ],
@@ -2857,6 +2869,10 @@
     ],
     [
      "2026-11-25T21:15:00Z",
+     92283.38
+    ],
+    [
+     "2026-11-25T21:30:00Z",
      92283.38
     ]
    ]
@@ -5749,11 +5765,6 @@
  ],
  "equity": [
   {
-   "t": "2026-11-17T04:44:39Z",
-   "equity": 100087.24,
-   "spy": 740.04
-  },
-  {
    "t": "2026-11-17T05:15:08Z",
    "equity": 100064.35,
    "spy": 740.04
@@ -7747,6 +7758,11 @@
    "t": "2026-11-25T21:00:56Z",
    "equity": 92237.07,
    "spy": 716.735
+  },
+  {
+   "t": "2026-11-25T21:31:34Z",
+   "equity": 92283.38,
+   "spy": 716.67
   }
  ],
  "watch": [],
@@ -7757,6 +7773,168 @@
   "avgPct": null
  },
  "events": [
+  {
+   "summary": "Renewed Houthi attacks on Saudi Arabia's largest oil refinery and ongoing regional conflicts continue to drive up crude prices and supply disruption fears.",
+   "category": "oil_supply",
+   "firstSeen": "2026-11-25T18:49:43Z",
+   "publishers": [
+    "Anadolu Ajansı",
+    "Antiwar.com",
+    "Bloomberg",
+    "Reuters",
+    "Rigzone",
+    "Roya News English",
+    "Traders Union",
+    "www.marketscreener.com"
+   ],
+   "assets": {
+    "XOM": {
+     "direction": "up",
+     "confidence": 0.85,
+     "why": "Geopolitical conflict in the Middle East drives up oil supply concerns and crude prices."
+    },
+    "CVX": {
+     "direction": "up",
+     "confidence": 0.85,
+     "why": "Higher oil prices due to Saudi drone attacks boost oil producer valuations."
+    },
+    "OXY": {
+     "direction": "up",
+     "confidence": 0.7,
+     "why": "Geopolitical risk to oil supply supports energy prices."
+    }
+   },
+   "sources": [
+    {
+     "id": "3e2d98680b250be1",
+     "publisher": "Reuters",
+     "kind": "news",
+     "title": "South Africa still have batting questions before England tour begins",
+     "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxORlJMQ2QzWmFtQjVFN1hnS0xTSVVQWWFPd3c2dnFDR2lHZG5XRVZoN3JIalBHeW5iZ0h4RHZZaWdDVXF3SVQ3STREOVJ4UW5qWlZjaXl5WDdLc2ZqUTFfdTIyYzRPdV9iQXFvSks2LS0yYVY5dEJJenpjcExfWTdvMWptMnZWcXZ3X29pUWN1OHc2ajdiZ09sLTJ4Y1hYdWFOVnk1dkdKVUl4WExULWVCZVJ3dm1iMDNfTmJF?oc=5",
+     "time": "2026-11-25T18:49:43Z"
+    },
+    {
+     "id": "bcbe19e5be605119",
+     "publisher": "Bloomberg",
+     "kind": "news",
+     "title": "Watch Oil Flows in Hormuz Strait 'Forever Altered,' Says Tom Kloza",
+     "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxOWmRMZUF2VkFQQmkxVEpBYnJMcC0yd3FiMWJReDZOc0F5b0cyQVl1VjZWQmYzU3NnbzN6VXhCcXJqT2hnNlgzeTdZOTVLZnc2bk1SajFjbjZWal9VeUVEdEpnM0dBRzNkTzQzQ3JLNnBxNzhWOURjb0JnaURYN21TdnQzMGxaNG5xNmdjRHVycXM4SVNrUVNHc09tTktuQUlhODJIZXkzNVhGUlZ4?oc=5",
+     "time": "2026-11-25T19:37:27Z"
+    },
+    {
+     "id": "01b60981cb61592b",
+     "publisher": "www.marketscreener.com",
+     "kind": "news",
+     "title": "January WTI Crude Oil Contract Closes Up $1.63, or 2%; Settles at $83.68 per Barrel. January Brent Oil Was Last Seen Up $2.74, or 3%, to $94.14",
+     "url": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxOMGI1dS1qNXRKQXBjckQ0Wks3N1gxVkUwV2RIOTJRN0x5RmJCVXNzRTNzcWUxMDJrakM4MFNUenNIX1lSWjZxRlRIamxuMzZhWkplV3Fxck9HTmR6eTNoTkF4YmY2OFp6RDJTYnpRX3U4dlRyX1BBXzFiSVZ6bEpUeEs1U0JBYWhpbkdMWFNUV3BlbEpoMV9Ba3hySkxVWXR2aHRjc0UwRE42LVNranRkZXhfUUQ2aHVpQ1l2Wk91NVZkd0NJeUVvSEN4d2hRemRVN21pV3I4ZnZ5M0RXQnBJVw?oc=5",
+     "time": "2026-11-25T19:37:12Z"
+    },
+    {
+     "id": "c51e0af1837670f2",
+     "publisher": "Traders Union",
+     "kind": "news",
+     "title": "Brent crude oil price gains more than 5% after rebound following supply-driven declines",
+     "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQT21Tb2gtcjVGM1lxeC1pU2xIZm5TT2VtN0xzeFdvdUZ1UUdPeFAtSGhRX2s4bE5feER3VlMwRFFEX3VncGtuYksyQnVzRmN3a0U0M2Z1R3B6SnZQNU9WRFl4WmY3OGdWTkZGQ2xGZFRfVmU3Nk45MVBsM0JYbmpjSXlqRC1XR3BWNlRhR2FvQmI2SFc1QW1Z?oc=5",
+     "time": "2026-11-25T19:36:29Z"
+    },
+    {
+     "id": "8b88fa65536f0d6d",
+     "publisher": "Rigzone",
+     "kind": "news",
+     "title": "ADNOC Places Restrictions on Tankers After Attacks",
+     "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOQkRId0VyZTNkT2Q1cUUxaTlFZjZIUEhqa0xReldBMFRTNThMZ2Y3VTI4M0owSGhJSU9JZlNpemJacF9HYTNSZG5HWTltMmo2d0J5RFJKM0Z1SXRhcEtLaC1neEpoLUpTTWp2dGRwTzB6ZU5HQ3prUHdlMEx2Y3FjbW4wcV9xV2M1d3Y5X2pqWG9aTTZ3d09kRkNDRVpaa0hmUndSdjdob1RxQVhvUE5HcHln?oc=5",
+     "time": "2026-11-25T20:00:00Z"
+    }
+   ]
+  },
+  {
+   "summary": "The US administration's aggressive push to double down on tariffs covering 14 economies including China and Vietnam weighs heavily on import-heavy retailers and trade-sensitive stocks.",
+   "category": "tariffs",
+   "firstSeen": "2026-11-25T19:46:18Z",
+   "publishers": [
+    "AP",
+    "AVweb",
+    "BNamericas",
+    "FLYING Magazine",
+    "GuruFocus",
+    "Sandler, Travis & Rosenberg, P.A.",
+    "The Times of India",
+    "The Tribune",
+    "The Washington Post",
+    "TheWire.in",
+    "Yahoo Finance",
+    "marketscreener.com"
+   ],
+   "assets": {
+    "AAPL": {
+     "direction": "down",
+     "confidence": 0.72,
+     "why": "New proposed broad tariffs increase supply chain and trade war pressures on major technology importers."
+    },
+    "FCX": {
+     "direction": "down",
+     "confidence": 0.7,
+     "why": "New US tariffs on China threaten copper demand and earnings for producers like Freeport-McMoRan."
+    },
+    "NVDA": {
+     "direction": "down",
+     "confidence": 0.65,
+     "why": "Broad tariff mayhem and tech sector volatility pressure mega-cap tech stocks."
+    },
+    "AMZN": {
+     "direction": "down",
+     "confidence": 0.68,
+     "why": "Tariff escalation on key international trading partners weighs on broader market consumer tech sentiment."
+    },
+    "TJX": {
+     "direction": "down",
+     "confidence": 0.65,
+     "why": "Expanding tariff policies create margin pressures for retail importers."
+    }
+   },
+   "sources": [
+    {
+     "id": "61d00bc28aca886c",
+     "publisher": "Sandler, Travis & Rosenberg, P.A.",
+     "kind": "news",
+     "title": "Section 301 Tariffs of 15 to 40 Percent Proposed on 14 Trading Partners",
+     "url": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxOakdGSXJJZVdmUFBmbUZmWjI0VmtlQjhGMTlpY1d3eDhwZkdaV0dzdUdOQ3BJRWp4VEIyWG1PdHl2TTNhTDg5UkhJNW41Z3NzWkdYMWpVdkk2cmVFU1F6c3lvSFU4NnFwck1IX3Zmdkw5c0paUEkzelNXSGxaeWtsejhERjYwNlEybEZqVE4zQW1GNXVfOWRYWC1laC14eU1HRFBSUEtSYnI3bF95Y1JIYTdsWXRTcll0RXZ0MmljUjBwUXNJUzk5bUlkbEVvcW43eDJERzNrbVU2Q2c?oc=5",
+     "time": "2026-11-25T19:46:18Z"
+    },
+    {
+     "id": "3b2ba579b87a2c97",
+     "publisher": "GuruFocus",
+     "kind": "news",
+     "title": "European Markets Decline Amid U.S. Tariff Plans and Tech Sell-of",
+     "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNdExSMzZGX3pvd0FYV3JZa1czNGZnM1c2bnNObGM5bXAwTVFnTmtld1pCblhDakZKZWw0WUU2ODJpS3FqMGhnZl9ZX05zUk1xVzlDMWhxOXBnN0lPRlR4MFZUUWZ0cDN2U1ljVHFkdTA1MnA2MWZtR2ZlRFZNM3NHMnhuRE5Fb2psOFV4VHJYZ3ZnNlhhNkVxWUt2UEdUMWJlcVBR?oc=5",
+     "time": "2026-11-25T20:07:15Z"
+    },
+    {
+     "id": "4494296a11166a9f",
+     "publisher": "AVweb",
+     "kind": "news",
+     "title": "U.S. Proposes 10% Tariff on Brazilian Aircraft",
+     "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE5aYWYzOFRqbWhnUWZhQV9oQS1uNEUwTmpFUmZheDVONHFnTjVNclBfN1dXVjZEaFVyQ0djeXlyTGFRanNyQl9jd0cxbmt6ck9qNm15anVsa18tYTQzUDY4eHVQTENPLXFaRFI0U0NZMHZOdw?oc=5",
+     "time": "2026-11-25T20:02:54Z"
+    },
+    {
+     "id": "e80a184d284b8ac1",
+     "publisher": "The Tribune",
+     "kind": "news",
+     "title": "US mulls 25% ‘excess capacity’ tariff on Indian goods, 17% if deal signed",
+     "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxNTmpVYmszVU5XTWZDUXVHOWFuY2tDLURYbUloWGZuQWtxS0FtYUEyRm83WktiT01WcHdFenVuT0xnaUl0ZUhKUXhIU1RRRVlNMXpUVjVWNnFxSE9KMVc2QWQtQy1nM2hxUW9SWWRBYTJTdkpIQVJhalJuNDRGbldaRDRwZlZ1bXIwR0Rhbm4yWm5INy1ZdlQ4eEZtdDlDYkRmQmFyREJucEhMcS1iRElaZzhzWEdSYlJCWUVCM1NuTnYtZ3laaXB1QnUwWGFfUdIBzgFBVV95cUxNTmpVYmszVU5XTWZDUXVHOWFuY2tDLURYbUloWGZuQWtxS0FtYUEyRm83WktiT01WcHdFenVuT0xnaUl0ZUhKUXhIU1RRRVlNMXpUVjVWNnFxSE9KMVc2QWQtQy1nM2hxUW9SWWRBYTJTdkpIQVJhalJuNDRGbldaRDRwZlZ1bXIwR0Rhbm4yWm5INy1ZdlQ4eEZtdDlDYkRmQmFyREJucEhMcS1iRElaZzhzWEdSYlJCWUVCM1NuTnYtZ3laaXB1QnUwWGFfUQ?oc=5",
+     "time": "2026-11-25T20:02:38Z"
+    },
+    {
+     "id": "9e49ba8f83154cd6",
+     "publisher": "AP",
+     "kind": "news",
+     "title": "US to hike tariffs on China, EU, Brazil and others over subsidized factories",
+     "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPcWJ0MDE3ZEJzV2tVdThRbXdzcGxXN0phLUpNTHAyVWlEQV9JNzVUWlpsRXp6ZHFTNnY1dnpKMHJjNExkUnZxTlRXdzZNTUFOeXhkUTk5XzF0ZW55b1lZcnhJYTkyYUt5N1lvdm5TZ3QyZDh5UkNsVmtHMmhuNm5xcGc3VmVUcV9fellldEtWcTdaYWJpRUlBcm5R?oc=5",
+     "time": "2026-11-25T20:00:00Z"
+    }
+   ]
+  },
   {
    "summary": "Bitcoin reclaims $60,000 following a liquidation of leveraged shorts, though broader macro headwinds and ETF outflow concerns persist.",
    "category": "crypto_negative",
@@ -7868,88 +8046,6 @@
    ]
   },
   {
-   "summary": "The US administration proposed expanding trade tariffs to China, Europe, India, and other trading partners, heightening trade war risks and weighing on tech stocks.",
-   "category": "tariffs",
-   "firstSeen": "2026-11-25T19:46:18Z",
-   "publishers": [
-    "AP",
-    "AVweb",
-    "BNamericas",
-    "FLYING Magazine",
-    "GuruFocus",
-    "Sandler, Travis & Rosenberg, P.A.",
-    "The Times of India",
-    "The Tribune",
-    "The Washington Post",
-    "TheWire.in",
-    "marketscreener.com"
-   ],
-   "assets": {
-    "AAPL": {
-     "direction": "down",
-     "confidence": 0.72,
-     "why": "New proposed broad tariffs increase supply chain and trade war pressures on major technology importers."
-    },
-    "FCX": {
-     "direction": "down",
-     "confidence": 0.7,
-     "why": "New US tariffs on China threaten copper demand and earnings for producers like Freeport-McMoRan."
-    },
-    "NVDA": {
-     "direction": "down",
-     "confidence": 0.65,
-     "why": "Broad tariff mayhem and tech sector volatility pressure mega-cap tech stocks."
-    },
-    "AMZN": {
-     "direction": "down",
-     "confidence": 0.68,
-     "why": "Tariff escalation on key international trading partners weighs on broader market consumer tech sentiment."
-    }
-   },
-   "sources": [
-    {
-     "id": "61d00bc28aca886c",
-     "publisher": "Sandler, Travis & Rosenberg, P.A.",
-     "kind": "news",
-     "title": "Section 301 Tariffs of 15 to 40 Percent Proposed on 14 Trading Partners",
-     "url": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxOakdGSXJJZVdmUFBmbUZmWjI0VmtlQjhGMTlpY1d3eDhwZkdaV0dzdUdOQ3BJRWp4VEIyWG1PdHl2TTNhTDg5UkhJNW41Z3NzWkdYMWpVdkk2cmVFU1F6c3lvSFU4NnFwck1IX3Zmdkw5c0paUEkzelNXSGxaeWtsejhERjYwNlEybEZqVE4zQW1GNXVfOWRYWC1laC14eU1HRFBSUEtSYnI3bF95Y1JIYTdsWXRTcll0RXZ0MmljUjBwUXNJUzk5bUlkbEVvcW43eDJERzNrbVU2Q2c?oc=5",
-     "time": "2026-11-25T19:46:18Z"
-    },
-    {
-     "id": "3b2ba579b87a2c97",
-     "publisher": "GuruFocus",
-     "kind": "news",
-     "title": "European Markets Decline Amid U.S. Tariff Plans and Tech Sell-of",
-     "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNdExSMzZGX3pvd0FYV3JZa1czNGZnM1c2bnNObGM5bXAwTVFnTmtld1pCblhDakZKZWw0WUU2ODJpS3FqMGhnZl9ZX05zUk1xVzlDMWhxOXBnN0lPRlR4MFZUUWZ0cDN2U1ljVHFkdTA1MnA2MWZtR2ZlRFZNM3NHMnhuRE5Fb2psOFV4VHJYZ3ZnNlhhNkVxWUt2UEdUMWJlcVBR?oc=5",
-     "time": "2026-11-25T20:07:15Z"
-    },
-    {
-     "id": "4494296a11166a9f",
-     "publisher": "AVweb",
-     "kind": "news",
-     "title": "U.S. Proposes 10% Tariff on Brazilian Aircraft",
-     "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE5aYWYzOFRqbWhnUWZhQV9oQS1uNEUwTmpFUmZheDVONHFnTjVNclBfN1dXVjZEaFVyQ0djeXlyTGFRanNyQl9jd0cxbmt6ck9qNm15anVsa18tYTQzUDY4eHVQTENPLXFaRFI0U0NZMHZOdw?oc=5",
-     "time": "2026-11-25T20:02:54Z"
-    },
-    {
-     "id": "e80a184d284b8ac1",
-     "publisher": "The Tribune",
-     "kind": "news",
-     "title": "US mulls 25% ‘excess capacity’ tariff on Indian goods, 17% if deal signed",
-     "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxNTmpVYmszVU5XTWZDUXVHOWFuY2tDLURYbUloWGZuQWtxS0FtYUEyRm83WktiT01WcHdFenVuT0xnaUl0ZUhKUXhIU1RRRVlNMXpUVjVWNnFxSE9KMVc2QWQtQy1nM2hxUW9SWWRBYTJTdkpIQVJhalJuNDRGbldaRDRwZlZ1bXIwR0Rhbm4yWm5INy1ZdlQ4eEZtdDlDYkRmQmFyREJucEhMcS1iRElaZzhzWEdSYlJCWUVCM1NuTnYtZ3laaXB1QnUwWGFfUdIBzgFBVV95cUxNTmpVYmszVU5XTWZDUXVHOWFuY2tDLURYbUloWGZuQWtxS0FtYUEyRm83WktiT01WcHdFenVuT0xnaUl0ZUhKUXhIU1RRRVlNMXpUVjVWNnFxSE9KMVc2QWQtQy1nM2hxUW9SWWRBYTJTdkpIQVJhalJuNDRGbldaRDRwZlZ1bXIwR0Rhbm4yWm5INy1ZdlQ4eEZtdDlDYkRmQmFyREJucEhMcS1iRElaZzhzWEdSYlJCWUVCM1NuTnYtZ3laaXB1QnUwWGFfUQ?oc=5",
-     "time": "2026-11-25T20:02:38Z"
-    },
-    {
-     "id": "9e49ba8f83154cd6",
-     "publisher": "AP",
-     "kind": "news",
-     "title": "US to hike tariffs on China, EU, Brazil and others over subsidized factories",
-     "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPcWJ0MDE3ZEJzV2tVdThRbXdzcGxXN0phLUpNTHAyVWlEQV9JNzVUWlpsRXp6ZHFTNnY1dnpKMHJjNExkUnZxTlRXdzZNTUFOeXhkUTk5XzF0ZW55b1lZcnhJYTkyYUt5N1lvdm5TZ3QyZDh5UkNsVmtHMmhuNm5xcGc3VmVUcV9fellldEtWcTdaYWJpRUlBcm5R?oc=5",
-     "time": "2026-11-25T20:00:00Z"
-    }
-   ]
-  },
-  {
    "summary": "The Federal Reserve Beige Book flags rising wage pressures as firms expect costs and prices to keep climbing, reinforcing hawkish rate hike expectations.",
    "category": "central_bank_hawkish",
    "firstSeen": "2026-11-25T21:00:26Z",
@@ -8010,79 +8106,6 @@
      "title": "Brazil's 220,000-Bpd Bacalhau Oil Field Hit by Major Production Outage",
      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQSGRvN2JCdTVHZXNFeTY2bHpOcThfWXhsaUpaOW81TUZUYkZ0ME5XTmpNU0VIbEp5M1R5MW9ScHFWZ29wTWNQS2JCUXp4bzBHcWZNOU1DWXRqNzlUMXhTVHU4TVhtemY0ZEk1NWJPbjl3UmdFU3pKak9odDN0QkpsSWVQenE1V0ZLZ3N2QUdfaTZELTI4bU1kODluXzgzQktubHBwWU9veXFHSWvSAbABQVVfeXFMUC05eUF3akhnOXY1OVA2X0pTcWtVMWRjM3BsYzdtZjVQSGVPR2VVZEV2S0w5SGU2bDFNZkU5eWlWNVBxR1VScnNPYUdfN3BTOHljLVVaam0xeExKSHZIaUJBeU9tdTJFRjVjVmZ4VFEySHRKZG9FUi16b2hNYW5uUXVQQ3Z0MkFqQ3I3VzdGbGMyTGtSZnR4RHA5ZlEyZl93Q1NDVU1INHlzeVNvbHlMUEY?oc=5",
      "time": "2026-11-25T20:52:00Z"
-    }
-   ]
-  },
-  {
-   "summary": "Brent crude jumps over 3% to $94.3 following drone attacks on Saudi infrastructure and ongoing regional conflict.",
-   "category": "oil_supply",
-   "firstSeen": "2026-11-25T18:49:43Z",
-   "publishers": [
-    "Anadolu Ajansı",
-    "Bloomberg",
-    "Reuters",
-    "Rigzone",
-    "Roya News English",
-    "Traders Union",
-    "www.marketscreener.com"
-   ],
-   "assets": {
-    "XOM": {
-     "direction": "up",
-     "confidence": 0.85,
-     "why": "Geopolitical conflict in the Middle East drives up oil supply concerns and crude prices."
-    },
-    "CVX": {
-     "direction": "up",
-     "confidence": 0.85,
-     "why": "Higher oil prices due to Saudi drone attacks boost oil producer valuations."
-    },
-    "OXY": {
-     "direction": "up",
-     "confidence": 0.7,
-     "why": "Geopolitical risk to oil supply supports energy prices."
-    }
-   },
-   "sources": [
-    {
-     "id": "3e2d98680b250be1",
-     "publisher": "Reuters",
-     "kind": "news",
-     "title": "South Africa still have batting questions before England tour begins",
-     "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxORlJMQ2QzWmFtQjVFN1hnS0xTSVVQWWFPd3c2dnFDR2lHZG5XRVZoN3JIalBHeW5iZ0h4RHZZaWdDVXF3SVQ3STREOVJ4UW5qWlZjaXl5WDdLc2ZqUTFfdTIyYzRPdV9iQXFvSks2LS0yYVY5dEJJenpjcExfWTdvMWptMnZWcXZ3X29pUWN1OHc2ajdiZ09sLTJ4Y1hYdWFOVnk1dkdKVUl4WExULWVCZVJ3dm1iMDNfTmJF?oc=5",
-     "time": "2026-11-25T18:49:43Z"
-    },
-    {
-     "id": "bcbe19e5be605119",
-     "publisher": "Bloomberg",
-     "kind": "news",
-     "title": "Watch Oil Flows in Hormuz Strait 'Forever Altered,' Says Tom Kloza",
-     "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxOWmRMZUF2VkFQQmkxVEpBYnJMcC0yd3FiMWJReDZOc0F5b0cyQVl1VjZWQmYzU3NnbzN6VXhCcXJqT2hnNlgzeTdZOTVLZnc2bk1SajFjbjZWal9VeUVEdEpnM0dBRzNkTzQzQ3JLNnBxNzhWOURjb0JnaURYN21TdnQzMGxaNG5xNmdjRHVycXM4SVNrUVNHc09tTktuQUlhODJIZXkzNVhGUlZ4?oc=5",
-     "time": "2026-11-25T19:37:27Z"
-    },
-    {
-     "id": "01b60981cb61592b",
-     "publisher": "www.marketscreener.com",
-     "kind": "news",
-     "title": "January WTI Crude Oil Contract Closes Up $1.63, or 2%; Settles at $83.68 per Barrel. January Brent Oil Was Last Seen Up $2.74, or 3%, to $94.14",
-     "url": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxOMGI1dS1qNXRKQXBjckQ0Wks3N1gxVkUwV2RIOTJRN0x5RmJCVXNzRTNzcWUxMDJrakM4MFNUenNIX1lSWjZxRlRIamxuMzZhWkplV3Fxck9HTmR6eTNoTkF4YmY2OFp6RDJTYnpRX3U4dlRyX1BBXzFiSVZ6bEpUeEs1U0JBYWhpbkdMWFNUV3BlbEpoMV9Ba3hySkxVWXR2aHRjc0UwRE42LVNranRkZXhfUUQ2aHVpQ1l2Wk91NVZkd0NJeUVvSEN4d2hRemRVN21pV3I4ZnZ5M0RXQnBJVw?oc=5",
-     "time": "2026-11-25T19:37:12Z"
-    },
-    {
-     "id": "c51e0af1837670f2",
-     "publisher": "Traders Union",
-     "kind": "news",
-     "title": "Brent crude oil price gains more than 5% after rebound following supply-driven declines",
-     "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQT21Tb2gtcjVGM1lxeC1pU2xIZm5TT2VtN0xzeFdvdUZ1UUdPeFAtSGhRX2s4bE5feER3VlMwRFFEX3VncGtuYksyQnVzRmN3a0U0M2Z1R3B6SnZQNU9WRFl4WmY3OGdWTkZGQ2xGZFRfVmU3Nk45MVBsM0JYbmpjSXlqRC1XR3BWNlRhR2FvQmI2SFc1QW1Z?oc=5",
-     "time": "2026-11-25T19:36:29Z"
-    },
-    {
-     "id": "8b88fa65536f0d6d",
-     "publisher": "Rigzone",
-     "kind": "news",
-     "title": "ADNOC Places Restrictions on Tankers After Attacks",
-     "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOQkRId0VyZTNkT2Q1cUUxaTlFZjZIUEhqa0xReldBMFRTNThMZ2Y3VTI4M0owSGhJSU9JZlNpemJacF9HYTNSZG5HWTltMmo2d0J5RFJKM0Z1SXRhcEtLaC1neEpoLUpTTWp2dGRwTzB6ZU5HQ3prUHdlMEx2Y3FjbW4wcV9xV2M1d3Y5X2pqWG9aTTZ3d09kRkNDRVpaa0hmUndSdjdob1RxQVhvUE5HcHln?oc=5",
-     "time": "2026-11-25T20:00:00Z"
     }
    ]
   },
