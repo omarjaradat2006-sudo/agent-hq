@@ -1,15 +1,15 @@
 {
   "team": "opps",
   "hired": true,
-  "updatedAt": "2026-11-18T15:23:02Z",
+  "updatedAt": "2026-11-25T15:23:01Z",
   "agents": [
     {
       "id": "lead",
       "name": "Venture Lead",
       "role": "Picks the best bets",
       "status": "ok",
-      "doing": "Writing AI opportunities for Omar, running swarm test, and preparing brief",
-      "lastRun": "2026-11-18T15:23:02Z",
+      "doing": "AI Opportunities complete: generated 3 ideas and ran 100-person swarm simulation.",
+      "lastRun": "2026-11-25T15:23:01Z",
       "nextRun": "2026-11-11T15:23:00Z"
     },
     {
@@ -17,8 +17,8 @@
       "name": "Scout",
       "role": "Finds opportunities",
       "status": "ok",
-      "doing": "Writing AI opportunities for Omar, running swarm test, and preparing brief",
-      "lastRun": "2026-11-18T15:23:02Z",
+      "doing": "AI Opportunities complete: generated 3 ideas and ran 100-person swarm simulation.",
+      "lastRun": "2026-11-25T15:23:01Z",
       "nextRun": "2026-11-11T15:23:00Z"
     },
     {
@@ -26,16 +26,16 @@
       "name": "Planner",
       "role": "How-to, hours, cost",
       "status": "ok",
-      "doing": "Writing AI opportunities for Omar, running swarm test, and preparing brief",
-      "lastRun": "2026-11-18T15:23:02Z",
+      "doing": "AI Opportunities complete: generated 3 ideas and ran 100-person swarm simulation.",
+      "lastRun": "2026-11-25T15:23:01Z",
       "nextRun": "2026-11-11T15:23:00Z"
     },
     {
       "id": "swarm",
       "name": "Swarm Tester",
       "status": "ok",
-      "doing": "Writing AI opportunities for Omar, running swarm test, and preparing brief",
-      "lastRun": "2026-11-18T15:23:02Z",
+      "doing": "AI Opportunities complete: generated 3 ideas and ran 100-person swarm simulation.",
+      "lastRun": "2026-11-25T15:23:01Z",
       "nextRun": "2026-11-11T15:23:00Z"
     },
     {
@@ -49,6 +49,21 @@
     }
   ],
   "log": [
+    {
+      "t": "2026-11-25T15:23:01Z",
+      "agent": "Gemini team",
+      "msg": "Updated brief and research log for 2026-11-25."
+    },
+    {
+      "t": "2026-11-25T15:23:01Z",
+      "agent": "Gemini team",
+      "msg": "Ran 100-person swarm simulation on AI-Powered LinkedIn & Resume Audit Lead Magnet (Verdict: 76% approval)."
+    },
+    {
+      "t": "2026-11-25T15:23:01Z",
+      "agent": "Gemini team",
+      "msg": "Evaluated 3 AI business opportunities fitting Omar's stack and halal criteria."
+    },
     {
       "t": "2026-11-18T15:23:02Z",
       "agent": "Gemini team",
@@ -616,9 +631,136 @@
       "id": "opps-2026-11-18-3",
       "createdAt": "2026-11-18T15:23:02Z",
       "madeBy": "gemini"
+    },
+    {
+      "title": "AI-Powered LinkedIn & Resume Audit Lead Magnet for Co-op Students",
+      "hook": "Deploy a free single-page AI resume/LinkedIn auditor tool that drives student job seekers to install the LinkedAI Chrome extension.",
+      "why": "Omar is a university student in Mississauga surrounded by co-op applicants in Ontario. LinkedAI (his Chrome extension on Firebase linkedai-ff45f) already tailors resumes and outreach. A free 30-second resume review tool serves as a high-conversion top-of-funnel funnel.",
+      "format": "Hours: 5 to set up, 2/week · Cost: $0 · First $: ~1-2 weeks",
+      "script": "Rule check: Chrome Web Store policy allows free web tools directing users to extension listings; no paid subscription upsells inside ChatGPT apps required.",
+      "buildPrompt": "You are building an AI-powered LinkedIn & Resume Audit lead magnet page for Omar, a university student in Mississauga, Ontario (Canada). Omar owns the LinkedAI Chrome extension (Firebase project linkedai-ff45f, backend on Render, Stripe) which helps job seekers write tailored cover letters and outreach DMs. Your goal is to create a lightweight, single-page Web App hosted on Firebase hosting that accepts a user's resume PDF text or LinkedIn profile summary, runs an automated audit using the free Gemini API, and outputs a score with 3 actionable improvements plus a prominent CTA to install LinkedAI for 1-click tailored application generation. Build the full HTML/JS code in one file (index.html), including client-side PDF text extraction using pdf.js, Gemini API integration, and clean styling. Provide the complete code ready to deploy and a single PowerShell command to deploy it to Firebase hosting. Do not use any paid services. Verify that the output highlights LinkedAI's core features so users convert into extension installs. Test checklist: 1. User drops resume PDF onto page. 2. Gemini generates 3 specific formatting/content fixes. 3. CTA button 'Upgrade your application with LinkedAI' passes UTM tags to Chrome Web Store listing.",
+      "score": 8,
+      "sources": [
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHFP_cG0M1vM82q6IX_EnMEWDTnPdISclSl1bjBO0aSk0On6YbjocUBhj9G4DpEn1lGruTQri6STvTEMB1j9n16XDBcVc0Za0icIEX7M-BG5sgQNJhkLgUU4pEUTs0OZ0xXchNX4Otm0TTb5Ag15hIh-rTmrk9rME72Iz_zd9q3IqgZW2U="
+      ],
+      "status": "pending",
+      "createdAt": "2026-11-25T15:23:01Z",
+      "swarm": {
+        "date": "2026-11-25",
+        "createdAt": "2026-11-25T15:23:01Z",
+        "ideaId": "opps-2026-11-25-1",
+        "idea": "AI-Powered LinkedIn & Resume Audit Lead Magnet for Co-op Students",
+        "verdict": "Students heavily favor free-tier resume feedback that seamlessly upsells the LinkedAI Chrome extension.",
+        "score": 8,
+        "support": {
+          "for": 76,
+          "against": 14,
+          "undecided": 10
+        },
+        "groups": [
+          {
+            "name": "Investors",
+            "for": 70,
+            "quote": "@VC_Dave: Customer acquisition cost for students is usually high, but leveraging campus networks makes this CAC near zero.",
+            "username": "@VC_Dave"
+          },
+          {
+            "name": "Target customers",
+            "for": 85,
+            "quote": "@coop_sam: If this gives me immediate feedback on my resume before applying to 50 jobs on Portal, I will download LinkedAI today.",
+            "username": "@coop_sam"
+          },
+          {
+            "name": "Skeptics and critics",
+            "for": 40,
+            "quote": "@reddit_dev: Standard resume scanners exist everywhere; the extension integration is what saves it from being just another tool.",
+            "username": "@reddit_dev"
+          },
+          {
+            "name": "Marketers / growth people",
+            "for": 80,
+            "quote": "@growth_sarah: Campus Reddit subs and WhatsApp group chats will virally distribute a working free audit tool.",
+            "username": "@growth_sarah"
+          },
+          {
+            "name": "Everyday users and bystanders",
+            "for": 75,
+            "quote": "@student_maya: Super clean, saves time when writing cover letters.",
+            "username": "@student_maya"
+          }
+        ],
+        "topPraise": [
+          "Direct funnel into existing LinkedAI product",
+          "High relevance to Canadian co-op students seeking placements"
+        ],
+        "topObjections": [
+          "Free users might consume Gemini API quota without upgrading to Pro",
+          "Competitors offer generic ATS scanners"
+        ],
+        "changedMinds": "Adding 3 free LinkedAI credits upon resume audit completion converted skeptics who viewed it as a simple PDF checker.",
+        "fixes": [
+          "Limit free audits to 2 per day per IP to preserve free Gemini tier quota.",
+          "Include direct single-click export to LinkedAI extension after audit."
+        ],
+        "limits": "One model played all 100 agents; this is a rehearsal, not a forecast"
+      },
+      "id": "opps-2026-11-25-1",
+      "madeBy": "gemini"
+    },
+    {
+      "title": "Faceless Interactive Islamic Knowledge Quiz Shorts Pipeline",
+      "hook": "Automate 30-second interactive Islamic quiz Shorts to drive Ambient Escape growth and subscriber monetization.",
+      "why": "Interactive quiz Shorts achieve high retention and comment engagement. Uses existing Ambient Escape channel setup and Python video pipeline without camera recording.",
+      "format": "Hours: 4 to set up, 2-3/week · Cost: $0 · First $: ~3-4 weeks",
+      "script": "Rule check: YouTube monetization rules allow AI voiceovers and static/animated quiz templates when references are authentic and original.",
+      "buildPrompt": "You are working with Omar Jaradat, a university student in Mississauga, Canada. He runs the Ambient Escape YouTube channel (Islamic reminders, quizzes, and long ambience videos) using Python video rendering scripts on an Ubuntu server. Your goal is to build a Python script `islamic_quiz_generator.py` in Downloads\\quiz_builder that automatically generates 30-second 9:16 vertical Shorts featuring interactive Islamic knowledge quizzes (e.g., Quran verse completion, Authentic Hadith trivia). The script must use the Gemini free API to source authentic Hadith (with collection and reference number, e.g., Sahih al-Bukhari 1) or Quran verses (with Surah:Ayah, e.g., 2:255) [verify source], generate dynamic text overlays, synth text-to-speech audio using edge-tts (free), overlay royalty-free ambient background video clips from Pexels, and export a rendered MP4 file. Deliver the complete Python code, a requirements.txt file, and a single PowerShell command to test-render 1 sample quiz Short. Checklist: 1. Hadith/Ayah references are strictly verified with source citations. 2. Video renders in under 60 seconds. 3. Formatted for 1080x1920 vertical Shorts.",
+      "score": 7,
+      "sources": [
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHGi0RtPj6wvN8DV8E0pkpfwn9yfR6lnIQW-kd7q9fH7Rm1u14P81PR4Qoh__RzqO45rCoIfG5MNyBKCWT-UdUWofx5Nr6ou06m9a6wGdzPNMwwZnV2ikjxnq5ihvpvHhTu7ZxrQwsoZyGJ03bkE7EK9Bg="
+      ],
+      "status": "pending",
+      "createdAt": "2026-11-25T15:23:01Z",
+      "id": "opps-2026-11-25-2",
+      "madeBy": "gemini"
+    },
+    {
+      "title": "Mississauga Local Business AI Google Review & Auto-Reply Setup",
+      "hook": "Bundle physical NFC review cards with a Gemini-powered Google review auto-responder for Mississauga shops.",
+      "why": "Omar has physical NFC review tags and Python web app skills. Local Mississauga businesses (restaurants, mechanics, clinics) need Google Reviews and fast automated replies to boost local SEO.",
+      "format": "Hours: 6 to set up, 3/week · Cost: $0 (reusing NFC stock) · First $: ~1-2 weeks",
+      "script": "Rule check: Google Business Profile API permits automated review responses provided replies are personalized and authentic.",
+      "buildPrompt": "You are working with Omar Jaradat, a student in Mississauga, Canada, who has physical NFC review tags and Python scripting skills. Your goal is to create a complete lead proposal document and a Python automated script `google_review_responder.py` in Downloads\\gmb_responder for local Mississauga small businesses. The script processes review CSV exports (or hooks to Google Business Profile API) and uses the free Gemini API to generate professional, polite responses to customer reviews in seconds. Create a one-page service PDF pitch deck explaining how local Mississauga shops can boost their Google rating using NFC review cards + AI review auto-reply for a one-time setup fee. Deliver the full Python code for the responder tool, a Markdown pitch template, and cold outreach email templates tailored for local Peel Region business owners. Checklist: 1. Script handles both positive and negative review scenarios gracefully. 2. Pitch doc clearly breaks down the offer. 3. Outreach template requires no paid API keys.",
+      "score": 7,
+      "sources": [
+        "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHFP_cG0M1vM82q6IX_EnMEWDTnPdISclSl1bjBO0aSk0On6YbjocUBhj9G4DpEn1lGruTQri6STvTEMB1j9n16XDBcVc0Za0icIEX7M-BG5sgQNJhkLgUU4pEUTs0OZ0xXchNX4Otm0TTb5Ag15hIh-rTmrk9rME72Iz_zd9q3IqgZW2U="
+      ],
+      "status": "pending",
+      "createdAt": "2026-11-25T15:23:01Z",
+      "id": "opps-2026-11-25-3",
+      "madeBy": "gemini"
     }
   ],
   "research": [
+    {
+      "date": "2026-11-25",
+      "createdAt": "2026-11-25T15:23:01Z",
+      "items": [
+        {
+          "title": "AI Social Media Content Services for Local Canadian Businesses earnings and platform policies",
+          "creator": "Meta, TikTok, Google, sidehustleschool.com",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHFP_cG0M1vM82q6IX_EnMEWDTnPdISclSl1bjBO0aSk0On6YbjocUBhj9G4DpEn1lGruTQri6STvTEMB1j9n16XDBcVc0Za0icIEX7M-BG5sgQNJhkLgUU4pEUTs0OZ0xXchNX4Otm0TTb5Ag15hIh-rTmrk9rME72Iz_zd9q3IqgZW2U=",
+          "metric": "Social media management $500-$3,000/month per client. One freelancer scaled to $8,400 MRR with 4 clients. Platforms require AI disclosure.",
+          "whyItWorks": "Recurring revenue, leverages AI tools, local market focus, fits Growth Architect's target audience."
+        },
+        {
+          "title": "AI Faceless YouTube Shorts (Educational/Islamic Reminders) earnings and policy",
+          "creator": "YouTube, Reddit creators",
+          "url": "https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHGi0RtPj6wvN8DV8E0pkpfwn9yfR6lnIQW-kd7q9fH7Rm1u14P81PR4Qoh__RzqO45rCoIfG5MNyBKCWT-UdUWofx5Nr6ou06m9a6wGdzPNMwwZnV2ikjxnq5ihvpvHhTu7ZxrQwsoZyGJ03bkE7EK9Bg=",
+          "metric": "Beginners report $500-$1,000/month; one creator reported $3,200/month. YouTube allows AI content if it adds value and is disclosed.",
+          "whyItWorks": "Leverages existing channels, automates content creation, fits halal niche, scalable."
+        }
+      ]
+    },
     {
       "date": "2026-11-18",
       "createdAt": "2026-11-18T15:23:02Z",
@@ -757,20 +899,20 @@
     }
   ],
   "brief": {
-    "date": "2026-11-18",
-    "createdAt": "2026-11-18T15:23:02Z",
-    "headline": "Best Bet: Automated Halal & Productivity Quote Reels",
-    "summary": "Your best bet is automating short-form halal and productivity quote reels to drive top-of-funnel traffic with zero camera time. In a 100-person simulation, 74% supported it, contingent on maintaining high visual quality and verified source attribution. Pair this with Growth Architect lead generation for local businesses.",
+    "date": "2026-11-25",
+    "createdAt": "2026-11-25T15:23:01Z",
+    "headline": "Best Bet: AI LinkedIn & Resume Audit Funnel for LinkedAI",
+    "summary": "Your top opportunity is building a free AI LinkedIn & Resume Audit lead magnet that drives co-op students straight to installing your LinkedAI Chrome extension. A 100-person simulation yielded 76% approval, emphasizing high student demand during application cycles.",
     "filmToday": [
-      "Build Automated Halal & Productivity Quote Reels — tap Copy build prompt and paste it into a new Claude chat"
+      "Build AI-Powered LinkedIn & Resume Audit Lead Magnet — copy the build prompt and run it in a new Claude chat."
     ],
     "approvals": [
-      "6 ideas wait for your call",
-      "Waiting on Omar: Put LinkedAI inside ChatGPT as an app"
+      "Waiting on Omar: Put LinkedAI inside ChatGPT as an app",
+      "Waiting on Omar: Automated Halal & Productivity Quote Reels"
     ],
     "notes": [
-      "The swarm test for Automated Quote Reels highlights the importance of unique visual framing to stand out from generic competitors.",
-      "Ensure all quotes use verified authentic sources with collection and number notes."
+      "Ensure free tier usage stays within Gemini free API limits.",
+      "Target university subreddits and student groups in Mississauga/Toronto area."
     ]
   },
   "processedIssues": [],
@@ -785,6 +927,65 @@
     "request": "Find out whether Picsart Earn pays Canadian accounts and what a typical campaign rate is per 1,000 views."
   },
   "swarms": [
+    {
+      "date": "2026-11-25",
+      "createdAt": "2026-11-25T15:23:01Z",
+      "ideaId": "opps-2026-11-25-1",
+      "idea": "AI-Powered LinkedIn & Resume Audit Lead Magnet for Co-op Students",
+      "verdict": "Students heavily favor free-tier resume feedback that seamlessly upsells the LinkedAI Chrome extension.",
+      "score": 8,
+      "support": {
+        "for": 76,
+        "against": 14,
+        "undecided": 10
+      },
+      "groups": [
+        {
+          "name": "Investors",
+          "for": 70,
+          "quote": "@VC_Dave: Customer acquisition cost for students is usually high, but leveraging campus networks makes this CAC near zero.",
+          "username": "@VC_Dave"
+        },
+        {
+          "name": "Target customers",
+          "for": 85,
+          "quote": "@coop_sam: If this gives me immediate feedback on my resume before applying to 50 jobs on Portal, I will download LinkedAI today.",
+          "username": "@coop_sam"
+        },
+        {
+          "name": "Skeptics and critics",
+          "for": 40,
+          "quote": "@reddit_dev: Standard resume scanners exist everywhere; the extension integration is what saves it from being just another tool.",
+          "username": "@reddit_dev"
+        },
+        {
+          "name": "Marketers / growth people",
+          "for": 80,
+          "quote": "@growth_sarah: Campus Reddit subs and WhatsApp group chats will virally distribute a working free audit tool.",
+          "username": "@growth_sarah"
+        },
+        {
+          "name": "Everyday users and bystanders",
+          "for": 75,
+          "quote": "@student_maya: Super clean, saves time when writing cover letters.",
+          "username": "@student_maya"
+        }
+      ],
+      "topPraise": [
+        "Direct funnel into existing LinkedAI product",
+        "High relevance to Canadian co-op students seeking placements"
+      ],
+      "topObjections": [
+        "Free users might consume Gemini API quota without upgrading to Pro",
+        "Competitors offer generic ATS scanners"
+      ],
+      "changedMinds": "Adding 3 free LinkedAI credits upon resume audit completion converted skeptics who viewed it as a simple PDF checker.",
+      "fixes": [
+        "Limit free audits to 2 per day per IP to preserve free Gemini tier quota.",
+        "Include direct single-click export to LinkedAI extension after audit."
+      ],
+      "limits": "One model played all 100 agents; this is a rehearsal, not a forecast"
+    },
     {
       "date": "2026-11-18",
       "createdAt": "2026-11-18T15:23:02Z",
