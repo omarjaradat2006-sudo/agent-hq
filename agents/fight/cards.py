@@ -76,10 +76,13 @@ def run_nba(force=False):
         if c["market"] == "alternate_spreads":
             c["prices"] = {b: d for b, d in c["prices"].items() if d <= C.ALT_SPREAD_MAX_DEC}
     cands = [c for c in cands if c["prices"]]
-    text, idx = A.lines([c for c in cands if c["eventId"] in sgp_ids])
     split_txt = "" if not splits else "Public betting splits today (% of bets / % of money):\n" + json.dumps(splits)[:3000]
-    est = A.estimate("nba", text, notes, src + src2, today, extra=extra + "\n" + split_txt)
-    analyzed = A.apply_estimates(est, idx)
+    analyzed, idx_total = 0, 0
+    for gid in sgp_ids:   # one estimate call per prop game, so every game gets real coverage
+        text, idx = A.lines([c for c in cands if c["eventId"] == gid])
+        idx_total += len(idx)
+        analyzed += A.apply_estimates(A.estimate("nba", text, notes, src + src2, today, extra=extra + "\n" + split_txt), idx)
+    idx = range(idx_total)
     parlays = B.build_sgp(cands, cid, today, sgp_ids)
     A.why_lines(parlays)
     fades = fade_list(splits or [], all_main, cid, today)

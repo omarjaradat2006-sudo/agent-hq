@@ -275,6 +275,20 @@ class T(unittest.TestCase):
         self.assertEqual(f, {"Knicks vs Celtics: Knicks +5.5": "lost", "Knicks vs Celtics: Over 224.5 Total Points": "lost"})
         self.assertTrue(any(l.startswith("Fade where the money is (NBA, tracked only): 0 won, 2 lost") for l in S.state()["record"]["lines"]))
 
+    def test_thin_research_still_three_slips(self):
+        fake = FakeGemini()
+        def thin(prompt, system=None, search=False, json_out=False, **kw):
+            if json_out and "fair (no-vig) chance" in prompt:   # research picks only 2 lines
+                text, _ = fake(prompt, system, search=search, json_out=json_out, **kw)
+                return json.dumps({"picks": json.loads(text)["picks"][:2]}), []
+            return fake(prompt, system, search=search, json_out=json_out, **kw)
+        A.G.generate = thin
+        K.run_nba()
+        ps = S.state()["cards"]["nba"]["parlays"]
+        self.assertEqual([p["tier"] for p in ps], ["+100", "+500", "+1000"])
+        self.assertTrue(any("Market pick" in l["why"] for p in ps for l in p["legs"]))
+        self.assertTrue(all(p["strength"] != "Strong" for p in ps if any(not l["analyzed"] for l in p["legs"])))
+
     def test_sanitize(self):
         self.assertEqual(S.sanitize("This is basically guaranteed, a lock."), "This is likely, a lean.")
 

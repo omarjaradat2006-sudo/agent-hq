@@ -230,7 +230,7 @@ Sources:
 {src}
 
 {"These lines will be combined into SAME-GAME parlays (2-5 legs from one game), so prefer legs that fit one believable game script and avoid legs that contradict each other. There are NO moneylines or regular spreads (Omar's rule); alternate spreads shown are only big-cushion ones." if sport == "nba" else ""}
-Pick up to 45 lines where the research gives you a concrete, specific reason to disagree with or confirm the market, and estimate the TRUE chance of the side you'd choose.
+Pick {"at least 12 and up to 25" if sport == "nba" else "up to 45"} lines where the research gives you a concrete, specific reason to disagree with or confirm the market, and estimate the TRUE chance of the side you'd choose.
 - Start from the fair chance and move only for specific reasons (injury, role change, rest, matchup, recent form, weigh-in, style).
 - Moves above 10 points need a strong specific reason.
 - "why" must be one short plain sentence a casual fan understands, with the specific reason (e.g. "Davis is out, so Lakers lose their best rebounder").
