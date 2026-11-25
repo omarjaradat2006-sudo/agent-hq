@@ -1,18 +1,17 @@
 {
  "team": "trading",
  "plain": {
-  "line": "Down $6,539.59 since start · 29 trades · holding: PLTR, AVAV, HLAL, SPUS, TMO, NOW, AMZN",
+  "line": "Down $7,189.84 since start · 29 trades · holding: PLTR, AVAV, HLAL, SPUS, TMO, NOW",
   "rulesMode": "ultra",
-  "top": "Down $6,539.59 since start (-6.54%) · just holding SPY would be -4.67%",
+  "top": "Down $7,189.84 since start (-7.19%) · just holding SPY would be -4.67%",
   "up": false,
   "holding": [
-   "PLTR: 70 shares worth $11,326.70, up $33.60 (trailing stop: sells if it falls 3% from its high)",
-   "AVAV: 143 shares worth $13,018.72, up $311.74 (trailing stop: sells if it falls 3% from its high)",
-   "HLAL: 1 shares worth $66.10, down $0.17 (sells at $100.34 or stops at $60.20)",
+   "PLTR: 70 shares worth $11,218.90, down $74.20 (trailing stop: sells if it falls 3% from its high)",
+   "AVAV: 143 shares worth $12,669.80, down $37.18 (trailing stop: sells if it falls 3% from its high)",
+   "HLAL: 1 shares worth $66.00, down $0.27 (sells at $100.34 or stops at $60.20)",
    "SPUS: 2 shares worth $108.34, down $0.03 (sells at $81.06 or stops at $48.64)",
    "TMO: 16 shares worth $11,129.92, down $69.44 (trailing stop: sells if it falls 3% from its high)",
-   "NOW: 169 shares worth $15,519.27, up $21.91 (sells at $97.20 or stops at $88.95)",
-   "AMZN: 75 shares worth $18,937.50, down $427.85 (sells at $273.70 or stops at $250.46)"
+   "NOW: 169 shares worth $15,412.09, down $85.27 (sells at $97.20 or stops at $88.95)"
   ],
   "today": [
    "Bought PLTR after the news: Reports of attacks on oil tankers in the Strait of Hormuz and a Houthi attack on a Riyadh financial center are escalating regional conflict and supply risks.",
@@ -22,21 +21,22 @@
    "Bought NVDA after the news: Taiwanese markets surge over nine percent following Jensen Huang's return as CEO of Nvidia, driving broad tech and semiconductor enthusiasm.",
    "Bought TMO after the news: Agilent Technologies reports a strong Q4 earnings beat with revenue exceeding $2 billion.",
    "Sold NVDA (trailing stop hit (-3.3%)): lost $392.04.",
+   "Sold AMZN (bad news: Fed officials continue to signal potential for further rate hikes, weighing on m): lost $446.60.",
    "Sold TSLA (stop-loss -3% hit): lost $391.96.",
    "Sold AMAT (bad news: US readies tariff hikes on China and EU goods as soon as Tuesday, sparking marke): made $69.42.",
    "Sold AMD (bad news: US readies tariff hikes on China and EU goods as soon as Tuesday, sparking marke): lost $348.50.",
-   "Scanned the news 106 times today: read 5169 headlines, found 116 that could move a stock or coin it's allowed to trade.",
+   "Scanned the news 119 times today: read 6119 headlines, found 163 that could move a stock or coin it's allowed to trade.",
    "Passed on AVAV, TSLA: already holding it.",
    "Passed on AEM, CVX, NEM, TSLA, XOM: order failed: not enough cash for one share.",
    "Passed on BTC/USD, ETH/USD: price hasn't moved the expected way yet (-3.08%).",
    "Passed on AVAV, BTC/USD, NEM: already $69,555 invested (max 75% of $93,048).",
-   "Safety rules that stepped in: bad news exit (x2), cash only no margin (x12), one position per asset (x49), max invested (x87), stop loss -3% (x1), trailing stop (x1), stock entry window (x16)."
+   "Safety rules that stepped in: bad news exit (x3), cash only no margin (x12), one position per asset (x49), max invested (x87), stop loss -3% (x1), trailing stop (x1), stock entry window (x16)."
   ],
   "watchlist": "Allowed to trade: 68 halal stocks, 5 Shariah ETFs, 9 coins.",
-  "lastScan": "2026-11-24T21:50:19Z"
+  "lastScan": "2026-11-25T01:08:17Z"
  },
  "hired": true,
- "updatedAt": "2026-11-24T21:50:44Z",
+ "updatedAt": "2026-11-25T01:08:27Z",
  "mode": "PAPER",
  "agents": [
   {
@@ -44,16 +44,16 @@
    "name": "News Scout",
    "role": "Reads X, Reddit and news feeds",
    "status": "working",
-   "doing": "Read 75 new headlines/posts, 3 market-moving stories",
-   "lastRun": "2026-11-24T21:50:43Z"
+   "doing": "Read 91 new headlines/posts, 6 market-moving stories",
+   "lastRun": "2026-11-25T01:08:26Z"
   },
   {
    "id": "analyst",
    "name": "News Analyst",
    "role": "Gemini: is it real, what moves, which way",
    "status": "ok",
-   "doing": "Bad news for NVDA: Fed officials signaling that inflation remains too high and calling for potential further rate hikes",
-   "lastRun": "2026-11-24T00:16:28Z"
+   "doing": "Bad news for AMZN: Fed officials continue to signal potential for further rate hikes, weighing on market sentiment.",
+   "lastRun": "2026-11-24T23:52:17Z"
   },
   {
    "id": "confirm",
@@ -84,8 +84,8 @@
    "name": "Trader",
    "role": "Places paper orders on Alpaca",
    "status": "ok",
-   "doing": "Saved results to the Agent HQ dashboard",
-   "lastRun": "2026-11-24T20:58:25Z"
+   "doing": "Closed AMZN: bad news: Fed officials continue to signal potential for further rate hikes, weighing on m, -2.31% ($-446.60)",
+   "lastRun": "2026-11-24T23:52:20Z"
   },
   {
    "id": "coins",
@@ -105,6 +105,86 @@
   }
  ],
  "log": [
+  {
+   "t": "2026-11-25T01:08:26Z",
+   "agent": "News Scout",
+   "msg": "Read 91 new headlines/posts, 6 market-moving stories"
+  },
+  {
+   "t": "2026-11-25T00:53:15Z",
+   "agent": "News Scout",
+   "msg": "Read 33 new headlines/posts, 3 market-moving stories"
+  },
+  {
+   "t": "2026-11-25T00:37:54Z",
+   "agent": "News Scout",
+   "msg": "Read 37 new headlines/posts, 3 market-moving stories"
+  },
+  {
+   "t": "2026-11-25T00:22:43Z",
+   "agent": "News Scout",
+   "msg": "Read 56 new headlines/posts, 2 market-moving stories"
+  },
+  {
+   "t": "2026-11-25T00:07:31Z",
+   "agent": "News Scout",
+   "msg": "Read 73 new headlines/posts, 5 market-moving stories"
+  },
+  {
+   "t": "2026-11-24T23:52:20Z",
+   "agent": "Trader",
+   "msg": "Closed AMZN: bad news: Fed officials continue to signal potential for further rate hikes, weighing on m, -2.31% ($-446.60)"
+  },
+  {
+   "t": "2026-11-24T23:52:17Z",
+   "agent": "News Analyst",
+   "msg": "Bad news for AMZN: Fed officials continue to signal potential for further rate hikes, weighing on market sentiment."
+  },
+  {
+   "t": "2026-11-24T23:52:17Z",
+   "agent": "News Scout",
+   "msg": "Read 43 new headlines/posts, 4 market-moving stories"
+  },
+  {
+   "t": "2026-11-24T23:37:07Z",
+   "agent": "News Scout",
+   "msg": "Read 43 new headlines/posts, 3 market-moving stories"
+  },
+  {
+   "t": "2026-11-24T23:21:57Z",
+   "agent": "News Scout",
+   "msg": "Read 65 new headlines/posts, 3 market-moving stories"
+  },
+  {
+   "t": "2026-11-24T23:06:47Z",
+   "agent": "News Scout",
+   "msg": "Read 158 new headlines/posts, 5 market-moving stories"
+  },
+  {
+   "t": "2026-11-24T22:51:33Z",
+   "agent": "News Scout",
+   "msg": "Read 47 new headlines/posts, 3 market-moving stories"
+  },
+  {
+   "t": "2026-11-24T22:36:24Z",
+   "agent": "News Scout",
+   "msg": "Read 150 new headlines/posts, 5 market-moving stories"
+  },
+  {
+   "t": "2026-11-24T22:21:11Z",
+   "agent": "News Scout",
+   "msg": "Read 67 new headlines/posts, 1 market-moving stories"
+  },
+  {
+   "t": "2026-11-24T22:05:59Z",
+   "agent": "News Scout",
+   "msg": "Read 87 new headlines/posts, 4 market-moving stories"
+  },
+  {
+   "t": "2026-11-24T21:50:47Z",
+   "agent": "Trader",
+   "msg": "Saved results to the Agent HQ dashboard"
+  },
   {
    "t": "2026-11-24T21:50:43Z",
    "agent": "News Scout",
@@ -774,108 +854,28 @@
    "t": "2026-11-23T15:58:57Z",
    "agent": "News Analyst",
    "msg": "Gemini triage failed, skipping this batch: All Gemini models failed. Last error: Gemini HTTP 503 on gemini-3.1-flash-lite: {\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experien"
-  },
-  {
-   "t": "2026-11-23T15:54:45Z",
-   "agent": "Trader",
-   "msg": "Closed CRWD: stop-loss -3% hit, -2.73% ($-1,321.50)"
-  },
-  {
-   "t": "2026-11-23T15:49:43Z",
-   "agent": "News Scout",
-   "msg": "Read 25 new headlines/posts, 0 market-moving stories"
-  },
-  {
-   "t": "2026-11-23T15:44:33Z",
-   "agent": "News Scout",
-   "msg": "Read 35 new headlines/posts, 1 market-moving stories"
-  },
-  {
-   "t": "2026-11-23T15:38:11Z",
-   "agent": "News Scout",
-   "msg": "Read 50 new headlines/posts, 0 market-moving stories"
-  },
-  {
-   "t": "2026-11-23T15:38:11Z",
-   "agent": "News Analyst",
-   "msg": "Gemini triage failed, skipping this batch: All Gemini models failed. Last error: Gemini HTTP 503 on gemini-3.1-flash-lite: {\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experien"
-  },
-  {
-   "t": "2026-11-23T15:31:34Z",
-   "agent": "Trader",
-   "msg": "Saved results to the Agent HQ dashboard"
-  },
-  {
-   "t": "2026-11-23T15:31:31Z",
-   "agent": "Trader",
-   "msg": "Order for LLY failed: not enough cash for one share"
-  },
-  {
-   "t": "2026-11-23T15:31:31Z",
-   "agent": "News Scout",
-   "msg": "Read 44 new headlines/posts, 3 market-moving stories"
-  },
-  {
-   "t": "2026-11-23T15:25:03Z",
-   "agent": "News Scout",
-   "msg": "Read 35 new headlines/posts, 1 market-moving stories"
-  },
-  {
-   "t": "2026-11-23T15:19:56Z",
-   "agent": "News Scout",
-   "msg": "Read 42 new headlines/posts, 0 market-moving stories"
-  },
-  {
-   "t": "2026-11-23T15:19:56Z",
-   "agent": "News Analyst",
-   "msg": "Gemini triage failed, skipping this batch: All Gemini models failed. Last error: Gemini HTTP 503 on gemini-3.1-flash-lite: {\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experien"
-  },
-  {
-   "t": "2026-11-23T15:13:07Z",
-   "agent": "News Scout",
-   "msg": "Read 40 new headlines/posts, 0 market-moving stories"
-  },
-  {
-   "t": "2026-11-23T15:13:07Z",
-   "agent": "News Analyst",
-   "msg": "Gemini triage failed, skipping this batch: All Gemini models failed. Last error: Gemini HTTP 503 on gemini-3.1-flash-lite: {\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experien"
-  },
-  {
-   "t": "2026-11-23T15:05:47Z",
-   "agent": "News Scout",
-   "msg": "Read 37 new headlines/posts, 0 market-moving stories"
-  },
-  {
-   "t": "2026-11-23T15:05:47Z",
-   "agent": "News Analyst",
-   "msg": "Gemini triage failed, skipping this batch: All Gemini models failed. Last error: Gemini HTTP 503 on gemini-3.1-flash-lite: {\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experien"
-  },
-  {
-   "t": "2026-11-23T14:58:18Z",
-   "agent": "News Scout",
-   "msg": "Read 25 new headlines/posts, 1 market-moving stories"
   }
  ],
  "brief": {
   "date": "Tue Nov 24",
-  "createdAt": "2026-11-24T21:50:44Z",
-  "headline": "Paper account -$2,182 today (-2.28%), -6.54% total vs SPY -4.67% · 7 open",
-  "summary": "4 trade(s) closed today, 5/22 winners overall. TradingAgents checks used today: 0/5.",
+  "createdAt": "2026-11-25T01:08:27Z",
+  "headline": "Paper account -$2,833 today (-2.96%), -7.19% total vs SPY -4.67% · 6 open",
+  "summary": "5 trade(s) closed today, 5/23 winners overall. TradingAgents checks used today: 0/5.",
   "notes": [
    "X/Reddit reader: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
   ]
  },
  "account": {
-  "equity": 93460.41,
+  "equity": 92810.16,
   "cash": 23353.86,
   "startEquity": 100000.0,
   "startedAt": "2026-11-10T01:51:53Z",
-  "dayPnl": -2182.28,
-  "dayPct": -2.28,
-  "totalPnl": -6539.59,
-  "totalPct": -6.54,
+  "dayPnl": -2832.53,
+  "dayPct": -2.96,
+  "totalPnl": -7189.84,
+  "totalPct": -7.19,
   "spyPct": -4.67,
-  "vsSpyPct": -1.87
+  "vsSpyPct": -2.52
  },
  "status": {
   "killed": false,
@@ -883,7 +883,7 @@
   "deepUsed": 0,
   "deepMax": 5,
   "social": {
-   "at": "2026-11-24T21:50:23Z",
+   "at": "2026-11-25T01:08:21Z",
    "items": 0,
    "source": "Reddit via Tradestie + ApeWisdom (direct Reddit blocks servers; X needs Agent Reach)",
    "problems": [
@@ -891,13 +891,13 @@
     "r/stocks: HTTP 403 https://www.reddit.com/r/stocks/new.json: <body class=theme-beta><div><"
    ],
    "wsb": {
-    "at": "2026-11-24T21:50:23Z",
+    "at": "2026-11-25T01:08:21Z",
     "tickers": 50,
     "items": 0,
     "key": false
    },
    "ape": {
-    "at": "2026-11-24T21:50:24Z",
+    "at": "2026-11-25T01:08:21Z",
     "tickers": 200,
     "items": 0,
     "problems": []
@@ -966,8 +966,8 @@
     "taSummary": ""
    },
    "stopOrderId": "15707459-b20e-424f-8442-ec4330bd1527",
-   "lastPrice": 161.81,
-   "unrealizedPct": 0.3
+   "lastPrice": 160.27,
+   "unrealizedPct": -0.66
   },
   {
    "id": "ahq-AVAV-20261124162010",
@@ -1067,8 +1067,8 @@
     "taSummary": ""
    },
    "stopOrderId": "6612a194-4f8c-4bf6-8d0f-65306748718e",
-   "lastPrice": 88.7392,
-   "unrealizedPct": -0.14
+   "lastPrice": 88.6,
+   "unrealizedPct": -0.29
   },
   {
    "id": "ahq-core-HLAL-20261124145913",
@@ -1096,8 +1096,8 @@
     "publishers": [],
     "tradingAgents": "not used (core)"
    },
-   "lastPrice": 66.1,
-   "unrealizedPct": -0.26
+   "lastPrice": 66.0,
+   "unrealizedPct": -0.41
   },
   {
    "id": "ahq-core-SPUS-20261124145913",
@@ -1236,47 +1236,8 @@
     "tradingAgents": "not used (ultra mode)",
     "taSummary": ""
    },
-   "lastPrice": 91.83,
-   "unrealizedPct": 0.14
-  },
-  {
-   "id": "ahq-AMZN-20261123190538",
-   "symbol": "AMZN",
-   "asset": "stock",
-   "status": "open",
-   "entryOrderId": "a126a8b1-61e7-4e8a-a9d1-b956a4bd7812",
-   "qty": 75.0,
-   "cost": 19365.75,
-   "estPrice": 258.21,
-   "entryPrice": 258.204667,
-   "stop": 250.46,
-   "target": 273.7,
-   "openedAt": "2026-11-23T19:05:38Z",
-   "news": {
-    "summary": "Amazon has acquired AI startup Decart to bolster its custom silicon and AI inference capabilities.",
-    "category": "contract",
-    "sources": [
-     {
-      "publisher": "fiscal.ai",
-      "title": "Amazon Acquires AI Startup Decart",
-      "url": "https://www.pymnts.com/news/acquiring/2026/amazon-acquires-tech-and-staff-from-ai-startup-decart/"
-     }
-    ]
-   },
-   "reason": {
-    "triage": "Strategic AI startup acquisition bolsters custom silicon and AI capabilities.",
-    "confidence": 0.65,
-    "confirmation": "volume 0.7x normal, price +0.00% since the news",
-    "rvol": 0.71,
-    "movePct": 0.0,
-    "publishers": [
-     "fiscal.ai"
-    ],
-    "tradingAgents": "not used (ultra mode)",
-    "taSummary": ""
-   },
-   "lastPrice": 252.5,
-   "unrealizedPct": -2.21
+   "lastPrice": 91.1958,
+   "unrealizedPct": -0.55
   }
  ],
  "charts": {
@@ -1868,39 +1829,191 @@
     ],
     [
      "2026-11-24T21:10:00Z",
-     93139.79
+     93139.45
     ],
     [
      "2026-11-24T21:15:00Z",
-     92986.75
+     92986.41
     ],
     [
      "2026-11-24T21:20:00Z",
-     93056.35
+     93056.01
     ],
     [
      "2026-11-24T21:25:00Z",
-     93119.76
+     93119.42
     ],
     [
      "2026-11-24T21:30:00Z",
-     93237.84
+     93237.5
     ],
     [
      "2026-11-24T21:35:00Z",
-     93194.12
+     93193.78
     ],
     [
      "2026-11-24T21:40:00Z",
-     93088.0
+     93087.66
     ],
     [
      "2026-11-24T21:45:00Z",
-     93109.95
+     93109.61
     ],
     [
      "2026-11-24T21:50:00Z",
-     93229.39
+     93463.57
+    ],
+    [
+     "2026-11-24T21:55:00Z",
+     93437.92
+    ],
+    [
+     "2026-11-24T22:00:00Z",
+     93199.1
+    ],
+    [
+     "2026-11-24T22:05:00Z",
+     93170.98
+    ],
+    [
+     "2026-11-24T22:10:00Z",
+     93176.42
+    ],
+    [
+     "2026-11-24T22:15:00Z",
+     93196.68
+    ],
+    [
+     "2026-11-24T22:20:00Z",
+     93184.05
+    ],
+    [
+     "2026-11-24T22:25:00Z",
+     93182.79
+    ],
+    [
+     "2026-11-24T22:30:00Z",
+     93158.98
+    ],
+    [
+     "2026-11-24T22:35:00Z",
+     93153.73
+    ],
+    [
+     "2026-11-24T22:40:00Z",
+     93156.88
+    ],
+    [
+     "2026-11-24T22:45:00Z",
+     93146.93
+    ],
+    [
+     "2026-11-24T22:50:00Z",
+     93146.72
+    ],
+    [
+     "2026-11-24T22:55:00Z",
+     93121.51
+    ],
+    [
+     "2026-11-24T23:00:00Z",
+     93086.08
+    ],
+    [
+     "2026-11-24T23:05:00Z",
+     93183.25
+    ],
+    [
+     "2026-11-24T23:10:00Z",
+     93032.98
+    ],
+    [
+     "2026-11-24T23:15:00Z",
+     92994.81
+    ],
+    [
+     "2026-11-24T23:20:00Z",
+     92881.62
+    ],
+    [
+     "2026-11-24T23:25:00Z",
+     92887.65
+    ],
+    [
+     "2026-11-24T23:30:00Z",
+     92887.65
+    ],
+    [
+     "2026-11-24T23:35:00Z",
+     92844.23
+    ],
+    [
+     "2026-11-24T23:40:00Z",
+     92908.22
+    ],
+    [
+     "2026-11-24T23:45:00Z",
+     92866.49
+    ],
+    [
+     "2026-11-24T23:50:00Z",
+     92809.25
+    ],
+    [
+     "2026-11-24T23:55:00Z",
+     92808.42
+    ],
+    [
+     "2026-11-25T00:00:00Z",
+     92842.7
+    ],
+    [
+     "2026-11-25T00:05:00Z",
+     92828.81
+    ],
+    [
+     "2026-11-25T00:10:00Z",
+     92758.63
+    ],
+    [
+     "2026-11-25T00:15:00Z",
+     92758.55
+    ],
+    [
+     "2026-11-25T00:20:00Z",
+     92821.4
+    ],
+    [
+     "2026-11-25T00:25:00Z",
+     92798.63
+    ],
+    [
+     "2026-11-25T00:30:00Z",
+     92880.25
+    ],
+    [
+     "2026-11-25T00:35:00Z",
+     92939.4
+    ],
+    [
+     "2026-11-25T00:40:00Z",
+     92944.09
+    ],
+    [
+     "2026-11-25T00:45:00Z",
+     92937.15
+    ],
+    [
+     "2026-11-25T00:50:00Z",
+     92978.33
+    ],
+    [
+     "2026-11-25T00:55:00Z",
+     92967.51
+    ],
+    [
+     "2026-11-25T01:00:00Z",
+     92914.01
     ]
    ],
    "1W": [
@@ -3146,11 +3259,63 @@
     ],
     [
      "2026-11-24T21:30:00Z",
-     93163.48
+     93163.14
     ],
     [
      "2026-11-24T21:45:00Z",
-     93106.57
+     93106.23
+    ],
+    [
+     "2026-11-24T22:00:00Z",
+     93433.62
+    ],
+    [
+     "2026-11-24T22:15:00Z",
+     93196.68
+    ],
+    [
+     "2026-11-24T22:30:00Z",
+     93158.98
+    ],
+    [
+     "2026-11-24T22:45:00Z",
+     93146.93
+    ],
+    [
+     "2026-11-24T23:00:00Z",
+     93086.08
+    ],
+    [
+     "2026-11-24T23:15:00Z",
+     93109.21
+    ],
+    [
+     "2026-11-24T23:30:00Z",
+     92897.37
+    ],
+    [
+     "2026-11-24T23:45:00Z",
+     92866.39
+    ],
+    [
+     "2026-11-25T00:00:00Z",
+     92842.7
+    ],
+    [
+     "2026-11-25T00:15:00Z",
+     92766.14
+    ],
+    [
+     "2026-11-25T00:30:00Z",
+     92880.25
+    ],
+    [
+     "2026-11-25T00:45:00Z",
+     92937.15
+    ],
+    [
+     "2026-11-25T01:00:00Z",
+     92914.01
     ]
    ]
   },
@@ -4228,263 +4393,6 @@
     "target": 97.2,
     "openedAt": "2026-11-23T20:20:36Z",
     "qty": 169.0
-   },
-   "AMZN": {
-    "bars": [
-     [
-      "2026-11-23T13:00:00Z",
-      255.29
-     ],
-     [
-      "2026-11-23T13:30:00Z",
-      254.0
-     ],
-     [
-      "2026-11-23T13:45:00Z",
-      256.77
-     ],
-     [
-      "2026-11-23T14:00:00Z",
-      258.92
-     ],
-     [
-      "2026-11-23T14:15:00Z",
-      259.84
-     ],
-     [
-      "2026-11-23T14:30:00Z",
-      252.79
-     ],
-     [
-      "2026-11-23T14:45:00Z",
-      254.85
-     ],
-     [
-      "2026-11-23T15:00:00Z",
-      256.325
-     ],
-     [
-      "2026-11-23T15:15:00Z",
-      256.86
-     ],
-     [
-      "2026-11-23T15:30:00Z",
-      257.055
-     ],
-     [
-      "2026-11-23T15:45:00Z",
-      257.495
-     ],
-     [
-      "2026-11-23T16:00:00Z",
-      257.54
-     ],
-     [
-      "2026-11-23T16:15:00Z",
-      257.26
-     ],
-     [
-      "2026-11-23T16:30:00Z",
-      255.185
-     ],
-     [
-      "2026-11-23T16:45:00Z",
-      256.115
-     ],
-     [
-      "2026-11-23T17:00:00Z",
-      257.16
-     ],
-     [
-      "2026-11-23T17:15:00Z",
-      257.38
-     ],
-     [
-      "2026-11-23T17:30:00Z",
-      257.2
-     ],
-     [
-      "2026-11-23T17:45:00Z",
-      258.06
-     ],
-     [
-      "2026-11-23T18:00:00Z",
-      259.14
-     ],
-     [
-      "2026-11-23T18:15:00Z",
-      258.61
-     ],
-     [
-      "2026-11-23T18:30:00Z",
-      257.6
-     ],
-     [
-      "2026-11-23T18:45:00Z",
-      257.47
-     ],
-     [
-      "2026-11-23T19:00:00Z",
-      257.74
-     ],
-     [
-      "2026-11-23T19:15:00Z",
-      257.09
-     ],
-     [
-      "2026-11-23T19:30:00Z",
-      255.49
-     ],
-     [
-      "2026-11-23T19:45:00Z",
-      256.065
-     ],
-     [
-      "2026-11-23T20:00:00Z",
-      256.09
-     ],
-     [
-      "2026-11-23T20:15:00Z",
-      257.03
-     ],
-     [
-      "2026-11-23T20:30:00Z",
-      257.245
-     ],
-     [
-      "2026-11-23T20:45:00Z",
-      255.205
-     ],
-     [
-      "2026-11-24T13:00:00Z",
-      250.71
-     ],
-     [
-      "2026-11-24T13:15:00Z",
-      250.68
-     ],
-     [
-      "2026-11-24T13:30:00Z",
-      250.32
-     ],
-     [
-      "2026-11-24T13:45:00Z",
-      250.75
-     ],
-     [
-      "2026-11-24T14:00:00Z",
-      251.22
-     ],
-     [
-      "2026-11-24T14:30:00Z",
-      253.325
-     ],
-     [
-      "2026-11-24T14:45:00Z",
-      254.6
-     ],
-     [
-      "2026-11-24T15:00:00Z",
-      255.14
-     ],
-     [
-      "2026-11-24T15:15:00Z",
-      253.62
-     ],
-     [
-      "2026-11-24T15:30:00Z",
-      252.43
-     ],
-     [
-      "2026-11-24T15:45:00Z",
-      253.12
-     ],
-     [
-      "2026-11-24T16:00:00Z",
-      251.115
-     ],
-     [
-      "2026-11-24T16:15:00Z",
-      251.71
-     ],
-     [
-      "2026-11-24T16:30:00Z",
-      251.855
-     ],
-     [
-      "2026-11-24T16:45:00Z",
-      251.28
-     ],
-     [
-      "2026-11-24T17:00:00Z",
-      253.11
-     ],
-     [
-      "2026-11-24T17:15:00Z",
-      253.37
-     ],
-     [
-      "2026-11-24T17:30:00Z",
-      253.5
-     ],
-     [
-      "2026-11-24T17:45:00Z",
-      252.85
-     ],
-     [
-      "2026-11-24T18:00:00Z",
-      252.56
-     ],
-     [
-      "2026-11-24T18:15:00Z",
-      252.29
-     ],
-     [
-      "2026-11-24T18:30:00Z",
-      252.1
-     ],
-     [
-      "2026-11-24T18:45:00Z",
-      251.48
-     ],
-     [
-      "2026-11-24T19:00:00Z",
-      252.085
-     ],
-     [
-      "2026-11-24T19:15:00Z",
-      252.565
-     ],
-     [
-      "2026-11-24T19:30:00Z",
-      251.94
-     ],
-     [
-      "2026-11-24T19:45:00Z",
-      251.1
-     ],
-     [
-      "2026-11-24T20:00:00Z",
-      251.74
-     ],
-     [
-      "2026-11-24T20:15:00Z",
-      251.18
-     ],
-     [
-      "2026-11-24T20:30:00Z",
-      251.07
-     ],
-     [
-      "2026-11-24T20:45:00Z",
-      252.25
-     ]
-    ],
-    "entry": 258.204667,
-    "stop": 250.46,
-    "target": 273.7,
-    "openedAt": "2026-11-23T19:05:38Z",
-    "qty": 75.0
    }
   }
  },
@@ -4863,8 +4771,8 @@
     "taSummary": ""
    },
    "stopOrderId": "15707459-b20e-424f-8442-ec4330bd1527",
-   "lastPrice": 161.81,
-   "unrealizedPct": 0.3
+   "lastPrice": 160.27,
+   "unrealizedPct": -0.66
   },
   {
    "id": "ahq-AVAV-20261124162010",
@@ -4964,8 +4872,8 @@
     "taSummary": ""
    },
    "stopOrderId": "6612a194-4f8c-4bf6-8d0f-65306748718e",
-   "lastPrice": 88.7392,
-   "unrealizedPct": -0.14
+   "lastPrice": 88.6,
+   "unrealizedPct": -0.29
   },
   {
    "id": "ahq-core-HLAL-20261124145913",
@@ -4993,8 +4901,8 @@
     "publishers": [],
     "tradingAgents": "not used (core)"
    },
-   "lastPrice": 66.1,
-   "unrealizedPct": -0.26
+   "lastPrice": 66.0,
+   "unrealizedPct": -0.41
   },
   {
    "id": "ahq-core-SPUS-20261124145913",
@@ -5206,14 +5114,14 @@
     "tradingAgents": "not used (ultra mode)",
     "taSummary": ""
    },
-   "lastPrice": 91.83,
-   "unrealizedPct": 0.14
+   "lastPrice": 91.1958,
+   "unrealizedPct": -0.55
   },
   {
    "id": "ahq-AMZN-20261123190538",
    "symbol": "AMZN",
    "asset": "stock",
-   "status": "open",
+   "status": "closed",
    "entryOrderId": "a126a8b1-61e7-4e8a-a9d1-b956a4bd7812",
    "qty": 75.0,
    "cost": 19365.75,
@@ -5245,8 +5153,14 @@
     "tradingAgents": "not used (ultra mode)",
     "taSummary": ""
    },
-   "lastPrice": 252.5,
-   "unrealizedPct": -2.21
+   "lastPrice": 251.1973,
+   "unrealizedPct": -2.71,
+   "closing": "bad news: Fed officials continue to signal potential for further rate hikes, weighing on m",
+   "closedAt": "2026-11-24T23:52:20Z",
+   "exitPrice": 252.25,
+   "exitReason": "bad news: Fed officials continue to signal potential for further rate hikes, weighing on m",
+   "pnl": -446.6,
+   "pnlPct": -2.31
   },
   {
    "id": "ahq-TSLA-20261123190538",
@@ -6883,36 +6797,6 @@
   }
  ],
  "equity": [
-  {
-   "t": "2026-11-16T06:24:45Z",
-   "equity": 100000.0,
-   "spy": 752.09
-  },
-  {
-   "t": "2026-11-16T06:54:56Z",
-   "equity": 100000.0,
-   "spy": 752.09
-  },
-  {
-   "t": "2026-11-16T07:25:16Z",
-   "equity": 100000.0,
-   "spy": 752.09
-  },
-  {
-   "t": "2026-11-16T07:55:28Z",
-   "equity": 100000.0,
-   "spy": 752.09
-  },
-  {
-   "t": "2026-11-16T08:25:41Z",
-   "equity": 100000.0,
-   "spy": 752.09
-  },
-  {
-   "t": "2026-11-16T08:55:58Z",
-   "equity": 100000.0,
-   "spy": 752.09
-  },
   {
    "t": "2026-11-16T09:27:49Z",
    "equity": 100000.0,
@@ -8882,6 +8766,36 @@
    "t": "2026-11-24T21:50:43Z",
    "equity": 93131.4,
    "spy": 717.59
+  },
+  {
+   "t": "2026-11-24T22:21:11Z",
+   "equity": 93432.08,
+   "spy": 717.59
+  },
+  {
+   "t": "2026-11-24T22:51:33Z",
+   "equity": 93398.3,
+   "spy": 717.59
+  },
+  {
+   "t": "2026-11-24T23:21:57Z",
+   "equity": 93054.82,
+   "spy": 717.59
+  },
+  {
+   "t": "2026-11-24T23:52:20Z",
+   "equity": 92914.48,
+   "spy": 717.59
+  },
+  {
+   "t": "2026-11-25T00:22:43Z",
+   "equity": 92824.43,
+   "spy": 717.59
+  },
+  {
+   "t": "2026-11-25T00:53:15Z",
+   "equity": 92852.15,
+   "spy": 717.59
   }
  ],
  "watch": [],
@@ -8893,232 +8807,106 @@
  },
  "events": [
   {
-   "summary": "Oil prices rebounded as fresh drone attacks near the Strait of Hormuz and Saudi financial centers heightened Middle East supply disruption fears.",
-   "category": "oil_supply",
-   "firstSeen": "2026-11-24T16:00:00Z",
+   "summary": "Ongoing executive uncertainty and scrutiny surrounding Nvidia's CEO Jensen Huang continue to weigh on the stock and broader semiconductor sector.",
+   "category": "company_bad_news",
+   "firstSeen": "2026-11-24T21:00:45Z",
    "publishers": [
-    "ANI News",
-    "ARN News Centre",
-    "Ahram Online",
-    "Al Jazeera",
-    "Al-Monitor",
-    "Anadolu Ajansı",
-    "Arab News",
-    "Arab News PK",
-    "Arise News",
-    "Azərtac",
-    "Barchart.com",
-    "Big News Network.com",
-    "Bloomberg.com",
-    "Breitbart News",
-    "CNA",
-    "DNE Africa",
-    "Euronext Markets: Real-time Stock Market Data | live",
-    "FXEmpire",
-    "Forbes Middle East",
-    "Islamabad Post",
-    "Israel Hayom",
-    "MEMRI | Middle East Media Research Institute",
-    "Marine News Magazine",
-    "Mid-Utah Radio",
-    "Middle East Online",
-    "NZ Herald",
-    "National Security Journal",
-    "News of Bahrain",
-    "Oman Observer",
-    "Qatar news agency",
-    "Quantum Commodity Intelligence",
-    "Saudi Gazette",
-    "Seeking Alpha",
-    "Tehran Times",
-    "The Economic Times",
-    "The Insight International",
-    "The Jerusalem Post",
-    "The National",
-    "The New Arab",
-    "The New Region",
-    "The New York Times",
-    "The Peninsula Qatar",
-    "WION",
-    "Yemen Online",
-    "وكالة سبأ",
-    "파이낸셜뉴스"
-   ],
-   "assets": {
-    "XOM": {
-     "direction": "up",
-     "confidence": 0.82,
-     "why": "Strait of Hormuz tanker attacks and serious regional threats significantly escalate oil supply disruption fears, driving oil company stocks higher."
-    },
-    "CVX": {
-     "direction": "up",
-     "confidence": 0.82,
-     "why": "Escalating Middle East conflicts and tanker incidents support higher crude prices, benefitting integrated majors."
-    },
-    "PLTR": {
-     "direction": "up",
-     "confidence": 0.65,
-     "why": "Heightened geopolitical tensions increase reliance on defense technology."
-    },
-    "AVAV": {
-     "direction": "up",
-     "confidence": 0.7,
-     "why": "Defense tech demand benefits from intensifying regional conflict."
-    },
-    "OXY": {
-     "direction": "up",
-     "confidence": 0.7,
-     "why": "Geopolitical escalation in the Middle East threatens oil supply."
-    }
-   },
-   "sources": [
-    {
-     "id": "457627e6ccac6e29",
-     "publisher": "ANI News",
-     "kind": "news",
-     "title": "Houthi attack on Riyadh Financial Centre in Saudi injures 11 people, including two Indians",
-     "url": "https://news.google.com/rss/articles/CBMi4wFBVV95cUxPYm84WmFSbU5TZ0lza2tudXhtNzA5YkpISHl6cnU0dk05b3RuR2ZtYTZJZERLdmgyaHUtM0dQb1Q3dklsV0hxbDBlSGdXQ0lPMWQxOUdlSGw1dGMxeVNWRFVzWXFCblA3UmxYT1Y3SkNXeU1Vb1MweWV0dV9sU2N5WlVuWWZvLWltMjA5WTdBaGZZSG9kNkZOaUZCSDhvQjd0VzA2N3JLNzVQT042alFEMnJKZkM3UnkxNC1IUTNEMzdLRW1mV2tDWllsNzdkVlY4OFdDOTQzZDhTTENCV0o1SVlIMA?oc=5",
-     "time": "2026-11-24T16:00:00Z"
-    },
-    {
-     "id": "513bafbe9c8addd8",
-     "publisher": "Barchart.com",
-     "kind": "news",
-     "title": "Crude Prices Rebound on Reports of Attacks on Tankers in the Strait of Hormuz",
-     "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPTzB5VWhCYS1HWFBDLWNRaWgtT1owYjY1NTJ3Y0VPc0ZyYVNpM2ZudHFmY1ZnSEU3MnRzUDhBcmRCRHhUWEItRWl0cllPbVludTZGUTg3M1F0Z1FQQjNqSnA4VHllSEtBdjd4WnB5Yll2UW1Ld3Q2SVM2SkJrakR1Wk02ME56a3BDejQ2RDhiTmFrM2VOR21Eak91Z0VfTkZrZjhaWW9CcHpIQ1RySDh3YjJLSnpzWUFiTFpqQWVn?oc=5",
-     "time": "2026-11-24T16:38:25Z"
-    },
-    {
-     "id": "d03824553e49a3f6",
-     "publisher": "The New Region",
-     "kind": "news",
-     "title": "Houthi attack on Riyadh financial center wounds 11",
-     "url": "https://news.google.com/rss/articles/CBMiS0FVX3lxTE1kNHJOd1VqX2lJVmpLTTV2ZWV5M1VLS1Z6dHEyanpaLXREVnhIWDM5U29SYXFlYWJVd3ZIUHNTVTlURVpTV05Pb09ISQ?oc=5",
-     "time": "2026-11-24T16:33:24Z"
-    },
-    {
-     "id": "2dd2cc719e36fff5",
-     "publisher": "The New Arab",
-     "kind": "news",
-     "title": "Saudi skyscraper hit again, coalition slams 'terrorist attack'",
-     "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxOTlhMcl9ILXlSWFFjeGFJVlNKaUxqQTVsLS01eGZoSklqNmZMSzZnVnZaTGMxcTVQMmZDNlJtX252UW9SdmZvd1VKQm9GcUNtbW5YbU5GNVNrS01pMDRNV0NQQ2Z6R280LTZNN055c09DejZiSU0zdTI4OVlXNUltMFdJZHA2VzhIMVl5Z0M0dDA4Z9IBlwFBVV95cUxQYlE2VUNrbTJxaEhjSDBNSDQxR0d1QjVRYXRXWWFMUFRvX1EzTlRycWlPWXZHMTlZa0NhakFoQWlic1pLZENCRWhNSTFtdVMtaWFmRUxWX3c1NHhVZmFYNXd6dHZsY2JiSWkxQ0NMOHVQOFVyQVpIN1Blb29Bc0MxUTYyVnRxbU9NYlFyQ2lLVWdOZlJydkdr?oc=5",
-     "time": "2026-11-24T16:31:05Z"
-    },
-    {
-     "id": "451a0182e3adb888",
-     "publisher": "The Jerusalem Post",
-     "kind": "news",
-     "title": "Israel Katz urges preemptive strike on Iran over chemical weapons threat",
-     "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE4tQmJaZVg0UEd1T0VkTGU2RWxIcFpGM1Rod2IzVDZNR0g4SE4tSFdzWnVleGh0YUNEVkRybHUyVHVwRkNEYmwweG80YmxiRWplcENaSG1idURMSzEzTllXUXVac1J5a0trai16WmhB?oc=5",
-     "time": "2026-11-24T17:00:08Z"
-    }
-   ]
-  },
-  {
-   "summary": "Bitcoin faces severe downward pressure and realized-loss risks amid weak market demand and bearish sentiment.",
-   "category": "crypto_negative",
-   "firstSeen": "2026-11-24T16:30:48Z",
-   "publishers": [
-    "Bitcoin Sistemi",
-    "Cointribune",
-    "Cryptonews.net",
-    "Cryptopolitan",
-    "FXStreet",
-    "GuruFocus",
-    "Hokanews",
-    "Invezz",
+    "CNBC",
+    "FXLeaders",
     "Livemint",
-    "MLQ.ai",
-    "Pluang",
-    "StoneX",
-    "Traders Union",
-    "TradingNEWS",
+    "Reuters",
+    "Yahoo Finance",
     "ad-hoc-news.de",
     "bloomingbit"
    ],
    "assets": {
-    "BTC/USD": {
+    "NVDA": {
      "direction": "down",
      "confidence": 0.85,
-     "why": "Record ETF outflows and sustained bearish momentum weigh heavily on Bitcoin."
-    },
-    "ETH/USD": {
-     "direction": "down",
-     "confidence": 0.8,
-     "why": "Negative crypto sentiment and ETF outflows drive Ethereum prices down."
+     "why": "Admission of code of conduct violation by the CEO exacerbates existing executive turmoil and governance concerns."
     }
    },
    "sources": [
     {
-     "id": "cae5e863af258f16",
-     "publisher": "Bitcoin Sistemi",
+     "id": "4e4c9dc618106715",
+     "publisher": "CNBC",
      "kind": "news",
-     "title": "Bitcoin Drops Below $60,000: $472 Million in Liquidations in Cryptocurrencies",
-     "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNZjF2UGFxYWx5WG9zUlk3MmhpcEhhWDRPRE9HQm8teGVXZjI0Sk94T01iMHEzVXBRU3d0Z1pyaVFvQmE1YTIyRTRSVDdqZ3dJY3N6YS1EWldIRVFocUhnU2p5bTFYZzVEWmZMTFdHYXdoelZnbWNwNWRnUk13U0ZRNVlfblhaOHYwRVRTSEduRGQ4RmpxYnV5WXlfM2h3NF9sTEFEMWEzVmM?oc=5",
-     "time": "2026-11-24T16:30:48Z"
+     "title": "Nasdaq slumps about 1.5% as Nvidia comeback reverses course and Anthropic breaks IPO price: Live updates",
+     "url": "https://www.cnbc.com/2026/11/23/stock-market-today-live-updates.html",
+     "time": "2026-11-24T21:03:13Z"
     },
     {
-     "id": "2c21a9b2930e537e",
-     "publisher": "TradingNEWS",
+     "id": "9b96fbfb5ee7ad6f",
+     "publisher": "CNBC",
      "kind": "news",
-     "title": "Bitcoin Price Forecast — BTC-USD ($59,823) $66,000 Upside Target on Record ETF Exodus",
-     "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPQldTVE42QWg3WDN6LUU4MVBOcHZZdENpaHVTSlMyQWVORW9XWi1sc3BVbE9ENFdPNTA1akhrbEljYlpVUXlRa2x2WmdPajJzZVhaU09pUTdyTkRKdUFCZEtpZFliNGNrZDJHVGVHZkthS2RYSnkzc0F6cWtIRzNrQmtEQVhYZXRBUElFMmpCNk5pZjBscGo1dV9ET1k1WTBOVG1nWmNURWR6SFdVdlJOblFEYlZONXp6UENHTG53dVE?oc=5",
-     "time": "2026-11-24T17:15:27Z"
+     "title": "Nvidia shares fall more than 5% as Huang comeback rally cools",
+     "url": "https://www.cnbc.com/2026/11/24/nvidia-stock-jensen-huang-return.html",
+     "time": "2026-11-24T21:15:23Z"
     },
     {
-     "id": "7dbc6d8aa747b0a5",
-     "publisher": "StoneX",
+     "id": "4d9e780ea8661a3d",
+     "publisher": "FXLeaders",
      "kind": "news",
-     "title": "Bitcoin Liquidity Tightens and Hawkish Fed Bets Weigh on Crypto",
-     "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNUjMyQ1lvNmI5UDJDM3c3b0NObzNfVjVrbEh3SHUzYjJLS3FpOV9nckJtU25pbWQ0eWxMTEZwWTVhYkJyLUl5MmYydXp3TnRwQUZFbl9FRVpsV1dfbVE4b0l3Ukl4QlRhMkhPek9FQ0o4RkVUOHl5WXFERW9weUpzT1YtdFNuZFVKQWpidjNPMHRHdnd4b0tEdkxETDY1aHhy?oc=5",
-     "time": "2026-11-24T17:08:07Z"
+     "title": "NVIDIA NVDA Stock Slips to $150 as China Tariff Threats, Political Backlash Rattle Wall Street",
+     "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxPdnpDRXlWdjJQTFpBTEFwMnZxSlFrcllYZ1JENmJmUEtLTEppUDJsbTVTTFpRSDN5NU4wV1ZjaHFmV3hfUUUtb0xHeW12SHVGTmlKUms4T3hWRVdtbXR0REI0RFRGOTd5MENTaU5GQ3hUUlZWVXNreWFrUndEcmprdi1vdGYtS2JFS184S1BNYm5KU25uaFl6WTFyajNocnlXdHJuWDZiQ1c3b2k1VERzVkM2VGhlNnY0QTlvUFpmdzBBQ0twX2c1YUEweS15VVFK?oc=5",
+     "time": "2026-11-24T21:00:45Z"
     },
     {
-     "id": "d7717cd7055919fd",
-     "publisher": "Hokanews",
+     "id": "75087bfa600ddc28",
+     "publisher": "Yahoo Finance",
      "kind": "news",
-     "title": "Ethereum Price Falls Below $1,700 as ETF Outflows Offset BitMine's ETH Accumulation",
-     "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxNWXpCQjZuQXJvQUVId0cxM0phS0dQN2JONldCQkFlMC1aM2hlXzI3ZlQzRzFHMlRrUGkwamZ6SzFwejV6Y0VTVlM5ZElIUVhVaHlSbkV1WWtxWERnVWx2WWN4Uy1pRl8wN28tMnBlb202SnlyNE51Z1BQS0RLZ0hFSGlR?oc=5",
-     "time": "2026-11-24T17:08:00Z"
+     "title": "Nvidia's Huang says he is in therapy as comeback rally fades",
+     "url": "https://finance.yahoo.com/markets/stocks/articles/huangs-return-fails-dispel-doubts-164158462.html?.tsrc=rss",
+     "time": "2026-11-24T22:01:01Z"
     },
     {
-     "id": "47d50bfc546a7963",
-     "publisher": "Pluang",
+     "id": "1664582c63f37102",
+     "publisher": "Yahoo Finance",
      "kind": "news",
-     "title": "Bitcoin falls below $60K amid fading Nvidia CEO rally and record ETF outflows in November",
-     "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxPSlJZY2EtMThKZDlidk42bm80a3doQmE4RS1taUFhMWV5RmgtajBaSUZONTVEMlU3dnNKZW8yeU4tTDVDaUFvMDlIZlZ3R0ZWeG5odVRxYk1lRTE2SFZmME85MURvYm1SNGxhWk16ei1JZFpxRDlOYXJfNmtfbGxMRjhqRDBGTzFocENuc1ctR0E?oc=5",
-     "time": "2026-11-24T17:07:30Z"
+     "title": "Don’t chase this Nvidia rally — buy these 3 stocks instead",
+     "url": "https://www.thestreet.com/video/dont-chase-the-nvidia-rally-buy-these-3-stocks-instead?.tsrc=rss",
+     "time": "2026-11-24T21:54:22Z"
     }
    ]
   },
   {
-   "summary": "President-elect Trump is reportedly planning a broad tariff blitz targeting China, the EU, Mexico, and Japan, increasing trade war risks.",
+   "summary": "The Trump administration is preparing a new offensive of tariffs targeting China and the European Union, increasing global trade war risks.",
    "category": "tariffs",
    "firstSeen": "2026-11-24T21:06:09Z",
    "publishers": [
+    "Bloomberg.com",
     "Business Post",
+    "Livemint",
     "New York Post",
     "Newsmax",
     "Seeking Alpha",
+    "Sri Lanka Guardian",
+    "The Edge Malaysia",
+    "The Fiscal Times",
     "TradingView",
     "Yahoo",
-    "Yahoo Finance"
+    "Yahoo Finance",
+    "marketscreener.com",
+    "theopenpress.in",
+    "www.marketscreener.com",
+    "매일경제",
+    "조선일보"
    ],
    "assets": {
     "AMD": {
      "direction": "down",
      "confidence": 0.6,
-     "why": "Chip stocks are highly sensitive to global trade restrictions and supply chain disruption."
+     "why": "Tariff escalation and trade war risks negatively impact chip stocks and global tech supply chains."
     },
     "AAPL": {
      "direction": "down",
      "confidence": 0.6,
-     "why": "Broad tech and importers face significant headwinds from widespread tariff escalation."
+     "why": "Tariff escalation on China and EU negatively impacts global supply chains and tech hardware margins."
     },
     "NVDA": {
      "direction": "down",
-     "confidence": 0.6,
-     "why": "Semiconductor sector is a primary target for tariff-related market volatility."
+     "confidence": 0.7,
+     "why": "Tariff escalation on China and EU goods negatively impacts semiconductor supply chains and tech growth."
     }
    },
    "sources": [
@@ -9165,18 +8953,295 @@
    ]
   },
   {
-   "summary": "Dell Technologies reported record quarterly revenue and raised its full-year outlook, driven by strong AI server demand.",
+   "summary": "Renewed drone attacks on refineries and shipping near the Strait of Hormuz escalate regional conflict and oil supply risks.",
+   "category": "war_escalation",
+   "firstSeen": "2026-11-24T23:43:05Z",
+   "publishers": [
+    "Anadolu Ajansı",
+    "Mezha.net",
+    "NDTV Profit",
+    "Nation Thailand",
+    "The Hawk",
+    "UA.NEWS",
+    "X",
+    "www.proactiveinvestors.com.au",
+    "www.thehawk.in",
+    "www.tmgm.com",
+    "شبكة تواصل الإخبارية",
+    "联合早报"
+   ],
+   "assets": {
+    "CVX": {
+     "direction": "up",
+     "confidence": 0.7,
+     "why": "Geopolitical conflict and attacks on oil infrastructure typically drive oil prices and energy stocks higher."
+    },
+    "XOM": {
+     "direction": "up",
+     "confidence": 0.7,
+     "why": "Geopolitical conflict and attacks on oil infrastructure typically drive oil prices and energy stocks higher."
+    },
+    "OXY": {
+     "direction": "up",
+     "confidence": 0.7,
+     "why": "Geopolitical conflict and attacks on oil infrastructure typically drive oil prices and energy stocks higher."
+    },
+    "APA": {
+     "direction": "up",
+     "confidence": 0.7,
+     "why": "Escalating Middle East conflict threatens oil supply."
+    },
+    "COP": {
+     "direction": "up",
+     "confidence": 0.7,
+     "why": "Escalating Middle East conflict threatens oil supply."
+    },
+    "DVN": {
+     "direction": "up",
+     "confidence": 0.7,
+     "why": "Escalating Middle East conflict threatens oil supply."
+    },
+    "EOG": {
+     "direction": "up",
+     "confidence": 0.7,
+     "why": "Escalating Middle East conflict threatens oil supply."
+    },
+    "FANG": {
+     "direction": "up",
+     "confidence": 0.7,
+     "why": "Escalating Middle East conflict threatens oil supply."
+    },
+    "HAL": {
+     "direction": "up",
+     "confidence": 0.7,
+     "why": "Escalating Middle East conflict threatens oil supply."
+    },
+    "PSX": {
+     "direction": "up",
+     "confidence": 0.7,
+     "why": "Escalating Middle East conflict threatens oil supply."
+    },
+    "SLB": {
+     "direction": "up",
+     "confidence": 0.7,
+     "why": "Escalating Middle East conflict threatens oil supply."
+    },
+    "VLO": {
+     "direction": "up",
+     "confidence": 0.7,
+     "why": "Escalating Middle East conflict threatens oil supply."
+    }
+   },
+   "sources": [
+    {
+     "id": "0b931047a7683bcb",
+     "publisher": "UA.NEWS",
+     "kind": "news",
+     "title": "Houthis threaten to attack Jeddah port — Jerusalem Post",
+     "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxOYTYxbDVzZEg4Mmc1cmNNQUc1UGZoUEU3Ulg2VWFaWS1YT1htRWlpN1ZKcUM1bkdqQlFfbnloWjBZNF9RTmU3RTJSSVc4QVFzcGxtajhfbV9PZzl2djJfcjhjX0ZKaGdrYnZHcF9TUHlEcW5ka3BKSkx1VVNwNlRtdEIxTU9BZFBITDQ4TTFXTXZsZw?oc=5",
+     "time": "2026-11-24T23:43:05Z"
+    },
+    {
+     "id": "25a75f213d8c8b2d",
+     "publisher": "www.proactiveinvestors.com.au",
+     "kind": "news",
+     "title": "Oil jumps more than 2% after ships attacked near Strait of Hormuz, reigniting Australian fuel concerns",
+     "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxOV3NtMzMwUExMbFgyZWZSbU5KT1g4Rk9MUnBsS0xlWjBiTUNzdXZlc202ZnZoR0ppRTI2RkJsVFVOcm1LYzlqdXdJdmlzdnZoZk1IbldjU1pweGdlekJ2NmRJdnZGd1RfMVRXcmVUTFB2NEFZb0M4MkZKbl9rWURPdUw4MnFxQ09ySnRJY0VLZUhNOHc2UVl1dWE4SXVaM2drMDU0azZfWVJXYWNZWVlQSTJJY2d1RkFMR09POFN3?oc=5",
+     "time": "2026-11-25T00:20:08Z"
+    },
+    {
+     "id": "43dafb85ef18f7a0",
+     "publisher": "X",
+     "kind": "news",
+     "title": "New Footage Shows Strike on Iran Air Plane at Bushehr Airport",
+     "url": "https://news.google.com/rss/articles/CBMiV0FVX3lxTFBuaGdWUmhyd05qVWNtMjNYTWZIZExlbmFwNDBEQjlWNjVfdWRYYlJjUk1JWnRnYWhlamlLMHRyWHZwTXVOU3JCdjB5Mkc0akJCN3NBSjd1OA?oc=5",
+     "time": "2026-11-25T00:14:31Z"
+    },
+    {
+     "id": "99d20f0827c8bc27",
+     "publisher": "联合早报",
+     "kind": "news",
+     "title": "Houthi attack on Riyadh financial district injures 11",
+     "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxOVFozRU9ISzBzbkxiNnBIQTFkY01ybjJ5U2JwM1lQNm5qREFJbmRtZE1CaGxPVFFFU0VwalJZVEs2SVd2UWJsVU1tamZpQjZFTUJOR2NiSG1oOEN2a3hoTDRERWd0RjNZMG1DbFA4OVFWMEtjTzA2bjd6Ymg2Q2Nrb3ZqMzRJcU5VUmhmZ2gyQnlYak04?oc=5",
+     "time": "2026-11-24T23:58:41Z"
+    },
+    {
+     "id": "c54a371e38538f7e",
+     "publisher": "www.thehawk.in",
+     "kind": "news",
+     "title": "Airstrikes rock Yemen's capital after Houthi drone attack on Riyadh financial district",
+     "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxPMzc0U0NiRDN5QUswcmVTdkg1TjJWVUdyN1pQeU1xaUs5aGpsaFZqc3MxaFJSWHpqMl9PemMxY09iX0F0QTJJWDViUlBHZEVsS1B3U0MxYUpCTUxXREpST0pmYXBfeU95d1NjVjFnd05yX2NEQlJZYm51MTV2U0lmRkhRb2MzY1pkWmR2RV9ZOVpkY1NuYzQwVEtXZEZKMkVWNXZkNTFueDRfSE1NUDdSSkVfUDFscUR0ZTlqODQwX2lxSHM3YVBkdXd4aw?oc=5",
+     "time": "2026-11-25T00:34:05Z"
+    }
+   ]
+  },
+  {
+   "summary": "Bitcoin faces continued downward pressure and bearish sentiment as it breaks below $60,000.",
+   "category": "crypto_negative",
+   "firstSeen": "2026-11-25T00:51:33Z",
+   "publishers": [
+    "Action Forex",
+    "Moomoo"
+   ],
+   "assets": {
+    "BTC/USD": {
+     "direction": "down",
+     "confidence": 0.7,
+     "why": "Technical breakdown below $60k and persistent bearish market sentiment."
+    }
+   },
+   "sources": [
+    {
+     "id": "a375e5b8c4f7ba0e",
+     "publisher": "Action Forex",
+     "kind": "news",
+     "title": "Bitcoin Turns Lower from $62,500 – Eyes $58,000",
+     "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNQmhIY2FYQUR3c2FVaGl3VDU5NUE2cEhrZTRkWmZMTTBiSG11d2pYbmhZOGIwVXFsNVRVbVdKYTdwY0d2cnpyTlFJNlI0czE1ZEFPRko0UlJKLThFVjgyWHJTaTFzXzdjSkV2WFlIaDhVTHVrcWhTWXJ3eGpEME9VYjh4VlFyRURVNkxoaUxCWWFaanFQOUJBMzdNNF9aRlctOXZoV2M1NkFwMGxIY1E?oc=5",
+     "time": "2026-11-25T00:55:21Z"
+    },
+    {
+     "id": "e3ca23ba929f6040",
+     "publisher": "Moomoo",
+     "kind": "news",
+     "title": "Bitcoin Shows Signs of Capitulation: U.S. Equities Under Pressure, Potential Break Below $60,000 to Test $53,000",
+     "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxOV1hnTl9pckQ2N0h6UURqOFdpRld1OG5qRlVFbTlWZlpodzR4V0sxblNUc3lOdEprYldLVVdKcTlIalFLMW9RWl9qM2dfaVlhcmppb1J4TnNuZVZ0U2NEZkU4ZXMxZmtETGVPcE9DN3htRWpPSjhPblpkZ0xDQnBISDdQS0ZFc2ItOXFTVl93V0V0eC1lTkRyN2ZGWC1zbWlvRVRKeXhjUDl1OWlpV3psdmY1VVRRTFk?oc=5",
+     "time": "2026-11-25T00:51:33Z"
+    }
+   ]
+  },
+  {
+   "summary": "The US administration is preparing new tariffs on China and the EU, increasing global trade war risks.",
+   "category": "tariffs",
+   "firstSeen": "2026-11-25T00:55:00Z",
+   "publishers": [
+    "AP"
+   ],
+   "assets": {
+    "AAPL": {
+     "direction": "down",
+     "confidence": 0.6,
+     "why": "High exposure to Chinese manufacturing and global supply chains."
+    },
+    "AMD": {
+     "direction": "down",
+     "confidence": 0.6,
+     "why": "Semiconductor sector is highly sensitive to trade war escalation and tariff costs."
+    }
+   },
+   "sources": [
+    {
+     "id": "c02eabdd38c919dc",
+     "publisher": "AP",
+     "kind": "news",
+     "title": "US ready to slap tariffs on China, EU and others over subsidized production, AP sources say",
+     "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPalJfNUMtVmVfb2RDeFlJeVEtNHVxc09sSjVrT1RfZmRMZ3dzZDMyLUhUSVVoalctTzJTNkU2b2F6VGVJNDZfZXZ3Rkp1WUZQLWY5UUxpOE9XcTJyUVJ4Ri1nZl9MU0xRbkY2MHVBZVg5NGcyX3JlMW1ZdVlrMXRodUlhSjZaSkkwR3pVQUtOUmJGY1JIelBuaGh3?oc=5",
+     "time": "2026-11-25T00:55:00Z"
+    }
+   ]
+  },
+  {
+   "summary": "Ongoing Houthi attacks near the Strait of Hormuz continue to heighten oil supply disruption fears.",
+   "category": "oil_supply",
+   "firstSeen": "2026-11-25T00:52:00Z",
+   "publishers": [
+    "The Vibes"
+   ],
+   "assets": {
+    "XOM": {
+     "direction": "up",
+     "confidence": 0.6,
+     "why": "Geopolitical instability in the Middle East supports higher oil prices."
+    },
+    "CVX": {
+     "direction": "up",
+     "confidence": 0.6,
+     "why": "Geopolitical instability in the Middle East supports higher oil prices."
+    }
+   },
+   "sources": [
+    {
+     "id": "8e1dcec99db1e053",
+     "publisher": "The Vibes",
+     "kind": "news",
+     "title": "Oil prices holds above US$80 as Hormuz attacks heighten supply concerns",
+     "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPZXE0TXd0dkRESlBnbEFVRWxTVVZvOUVLYUs0MGFfY3BOcS1IOWN3MzNlUzZVZ05XUjRuaVBHNUJ2QzZjNGd4RkJoT2RIVVNIR2Y0Z1BQb05pdUNtV0FzMzgzNUh6RmZFNUg2b3E5dV9oSjE1N3lhVDQzSGdQRVBlSFU2UVVlblR5RHY4eUNnQ25iZHdMUVBzUDJpblQ5UjN1cTY1enc3RjdNUVEzZWVnWTUtS29sUFZCVFltMQ?oc=5",
+     "time": "2026-11-25T00:52:00Z"
+    }
+   ]
+  },
+  {
+   "summary": "Bitcoin continues to face downward pressure amid record ETF outflows and bearish market sentiment.",
+   "category": "crypto_negative",
+   "firstSeen": "2026-11-24T23:55:00Z",
+   "publishers": [
+    "BigGo Finance",
+    "Businesskorea",
+    "WEEX"
+   ],
+   "assets": {
+    "BTC/USD": {
+     "direction": "down",
+     "confidence": 0.7,
+     "why": "Significant ETF outflows indicate a shift in institutional sentiment."
+    }
+   },
+   "sources": [
+    {
+     "id": "4a0efbdcea453311",
+     "publisher": "BigGo Finance",
+     "kind": "news",
+     "title": "US Spot Bitcoin ETFs Bleed $4.71 Billion in November, Topping June's Record",
+     "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE5MUmg1RzUwNXJUQ1VPS19FVGZEMzJSWUs1RVZNck92eXkxS283eXA0YUlJYWtJRWw1WTBNbTNwTFFLdElmRXI4c0tuVGl3UkZ6aFdzd0lzUGdsZGZnRkdTa1h1R0F2TjcyR2hIYi1rREl6QmRPZGc?oc=5",
+     "time": "2026-11-24T23:55:00Z"
+    },
+    {
+     "id": "b5f73f42b64cfd38",
+     "publisher": "WEEX",
+     "kind": "news",
+     "title": "Bitcoin Below $62K: Is $60,000 Next Before the Dec. 9 Fed Call?",
+     "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPdnVEbm9GSmpjbUlnU25uTUpEdHBNcElJSU1zaFYwMGp4N0ZnbXJudWgtd09ZVnhlUXh5YXoySkVzcjZUS1piT25iN0R3Zl9sdkk4dmJXOGloTGRBaE9YbEFXRzRnZmZGS2tJYmxJYTBmMHlhb3FBX3dLOHJUZ0Z5VC05VzVLcThReG5EemoycWxEQmdDTzFxWExvalU2d05UNjRnWF9TUVlUSFVtbHdWcTdETlJfMUVRVWc?oc=5",
+     "time": "2026-11-25T00:42:26Z"
+    },
+    {
+     "id": "c6e76add60fdf89c",
+     "publisher": "Businesskorea",
+     "kind": "news",
+     "title": "Bitcoin Breaks Below $60,000 as November ETF Outflows Top $4.7 Billion",
+     "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE5RMk5FYUNodGdNcmZKakFUNFc5cXNmZ1FvbGZUVWdOb1ZUcXB0Uk9yc3hjcThkQWQtaHZ3ZWltVG03YU01VXV3ZXFrM1V3RlI5QnJHOUxCSXYtZUh4WnBHVFRJTWFjc2ZFNVVheWZZcnduVkQ3?oc=5",
+     "time": "2026-11-25T00:33:40Z"
+    }
+   ]
+  },
+  {
+   "summary": "Workday reported Q3 revenue growth and earnings that beat expectations.",
    "category": "earnings_beat",
    "firstSeen": "2026-11-24T21:07:50Z",
    "publishers": [
+    "01net",
     "24/7 Wall St.",
+    "GuruFocus",
     "Investing.com India",
+    "JournalArta",
     "Reuters",
+    "Securities.io",
+    "StockStory",
     "StreetInsider",
     "Yahoo Finance",
-    "fiscal.ai"
+    "fiscal.ai",
+    "scanx.trade"
    ],
-   "assets": {},
+   "assets": {
+    "NVDA": {
+     "direction": "up",
+     "confidence": 0.6,
+     "why": "Strong AI server demand reported by Dell is a positive read-through for Nvidia."
+    },
+    "CRM": {
+     "direction": "up",
+     "confidence": 0.6,
+     "why": "Positive earnings momentum in the enterprise software sector."
+    }
+   },
    "sources": [
     {
      "id": "fb0f2b5ef51416c9",
@@ -9221,312 +9286,303 @@
    ]
   },
   {
-   "summary": "Medtronic stock slumped following its quarterly report due to structural heart and guidance concerns.",
-   "category": "earnings_miss",
-   "firstSeen": "2026-11-24T21:13:26Z",
+   "summary": "Fed officials continue to signal hawkish tones ahead of PCE data, weighing on risk assets and gold.",
+   "category": "central_bank_hawkish",
+   "firstSeen": "2026-11-24T23:21:32Z",
    "publishers": [
+    "Business Recorder",
+    "JournalArta",
+    "Livemint",
+    "MEXC",
+    "Nation Thailand",
+    "The Star",
     "Yahoo Finance"
    ],
    "assets": {
-    "MDT": {
+    "AAPL": {
      "direction": "down",
-     "confidence": 0.7,
-     "why": "Earnings report raised concerns regarding structural heart business and forward guidance."
-    }
-   },
-   "sources": [
-    {
-     "id": "3709a9376bf75172",
-     "publisher": "Yahoo Finance",
-     "kind": "news",
-     "title": "Medtronic Slumps As Tricky Questions Weigh On Its Quarterly Report",
-     "url": "https://finance.yahoo.com/m/b28d0989-f47f-34b6-ac07-d3c3c8f50319/medtronic-slumps-as-tricky.html?.tsrc=rss",
-     "time": "2026-11-24T21:13:26Z"
-    }
-   ]
-  },
-  {
-   "summary": "Nvidia shares continue to decline as investor confidence remains shaken by the executive turmoil surrounding Jensen Huang's return.",
-   "category": "company_bad_news",
-   "firstSeen": "2026-11-24T21:00:45Z",
-   "publishers": [
-    "CNBC",
-    "FXLeaders"
-   ],
-   "assets": {
-    "NVDA": {
-     "direction": "down",
-     "confidence": 0.8,
-     "why": "Continued executive uncertainty and leadership turmoil weigh heavily on investor sentiment."
-    }
-   },
-   "sources": [
-    {
-     "id": "4e4c9dc618106715",
-     "publisher": "CNBC",
-     "kind": "news",
-     "title": "Nasdaq slumps about 1.5% as Nvidia comeback reverses course and Anthropic breaks IPO price: Live updates",
-     "url": "https://www.cnbc.com/2026/11/23/stock-market-today-live-updates.html",
-     "time": "2026-11-24T21:03:13Z"
-    },
-    {
-     "id": "9b96fbfb5ee7ad6f",
-     "publisher": "CNBC",
-     "kind": "news",
-     "title": "Nvidia shares fall more than 5% as Huang comeback rally cools",
-     "url": "https://www.cnbc.com/2026/11/24/nvidia-stock-jensen-huang-return.html",
-     "time": "2026-11-24T21:15:23Z"
-    },
-    {
-     "id": "4d9e780ea8661a3d",
-     "publisher": "FXLeaders",
-     "kind": "news",
-     "title": "NVIDIA NVDA Stock Slips to $150 as China Tariff Threats, Political Backlash Rattle Wall Street",
-     "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxPdnpDRXlWdjJQTFpBTEFwMnZxSlFrcllYZ1JENmJmUEtLTEppUDJsbTVTTFpRSDN5NU4wV1ZjaHFmV3hfUUUtb0xHeW12SHVGTmlKUms4T3hWRVdtbXR0REI0RFRGOTd5MENTaU5GQ3hUUlZWVXNreWFrUndEcmprdi1vdGYtS2JFS184S1BNYm5KU25uaFl6WTFyajNocnlXdHJuWDZiQ1c3b2k1VERzVkM2VGhlNnY0QTlvUFpmdzBBQ0twX2c1YUEweS15VVFK?oc=5",
-     "time": "2026-11-24T21:00:45Z"
-    }
-   ]
-  },
-  {
-   "summary": "Nvidia CEO Jensen Huang admits to personal turmoil and therapy after apologies regarding recent affairs, adding to executive uncertainty.",
-   "category": "company_bad_news",
-   "firstSeen": "2026-11-24T19:26:20Z",
-   "publishers": [
-    "CNBC",
-    "Yahoo Finance"
-   ],
-   "assets": {
-    "NVDA": {
-     "direction": "down",
-     "confidence": 0.95,
-     "why": "Resignation of iconic CEO Jensen Huang due to severe misconduct and espionage allegations is massive negative news for Nvidia."
+     "confidence": 0.6,
+     "why": "Higher interest rates and hawkish Fed rhetoric pressure growth-heavy tech stocks."
     },
     "MSFT": {
      "direction": "down",
      "confidence": 0.6,
-     "why": "Broad tech sector sentiment hit by turmoil at chip bellwether Nvidia."
+     "why": "Higher interest rates and hawkish Fed rhetoric pressure growth-heavy tech stocks."
     },
-    "AAPL": {
-     "direction": "down",
-     "confidence": 0.6,
-     "why": "Broad tech sector sentiment hit by turmoil at chip bellwether Nvidia."
-    },
-    "AMD": {
-     "direction": "down",
-     "confidence": 0.55,
-     "why": "Broader semiconductor sell-off triggered by Nvidia executive crisis."
-    }
-   },
-   "sources": [
-    {
-     "id": "6788613f77de168a",
-     "publisher": "CNBC",
-     "kind": "news",
-     "title": "Jensen Huang tells staff that Nvidia doesn't need a succession plan",
-     "url": "https://www.cnbc.com/2026/11/24/jensen-huang-nvidia-employee-meeting.html",
-     "time": "2026-11-24T19:26:20Z"
-    },
-    {
-     "id": "007d5526d1770b16",
-     "publisher": "Yahoo Finance",
-     "kind": "news",
-     "title": "Why the Jensen Huang rally faded so quickly",
-     "url": "https://finance.yahoo.com/video/why-the-jensen-huang-rally-faded-so-quickly-194511286.html?.tsrc=rss",
-     "time": "2026-11-24T19:45:11Z"
-    },
-    {
-     "id": "c9c0dd0e29054754",
-     "publisher": "Yahoo Finance",
-     "kind": "news",
-     "title": "Nvidia’s Jensen Huang in therapy after admitting ‘terrible mistakes’",
-     "url": "https://uk.finance.yahoo.com/news/nvidia-jensen-huang-therapy-admitting-200539221.html?.tsrc=rss",
-     "time": "2026-11-24T20:05:39Z"
-    }
-   ]
-  },
-  {
-   "summary": "Scrutiny surrounding Nvidia's board and reinstated CEO Jensen Huang continues to weigh on investor sentiment and broader semiconductor stocks.",
-   "category": "contract",
-   "firstSeen": "2026-11-24T14:06:32Z",
-   "publishers": [
-    "AP",
-    "CNBC",
-    "Deccan Herald",
-    "Reuters",
-    "Yahoo Finance"
-   ],
-   "assets": {
     "NVDA": {
      "direction": "down",
-     "confidence": 0.85,
-     "why": "Nvidia shares slide over 5% on continued profit-taking and post-comeback pullback."
+     "confidence": 0.6,
+     "why": "Hawkish Fed policy and higher yields pressure high-growth tech stocks."
     },
-    "AMD": {
-     "direction": "down",
-     "confidence": 0.7,
-     "why": "Broader chip sector sell-off dragging down competitors alongside Nvidia."
-    },
-    "MU": {
+    "AMZN": {
      "direction": "down",
      "confidence": 0.6,
-     "why": "Renewed AI chip selloff puts pressure on semiconductor stocks like Micron."
+     "why": "Hawkish Fed policy and higher yields pressure high-growth tech stocks."
+    },
+    "AEM": {
+     "direction": "down",
+     "confidence": 0.6,
+     "why": "Hawkish Fed signals and rising rates are negative for gold miners."
+    },
+    "NEM": {
+     "direction": "down",
+     "confidence": 0.6,
+     "why": "Hawkish Fed signals and rising rates are negative for gold miners."
     }
    },
    "sources": [
     {
-     "id": "903578df6f7c4d5a",
+     "id": "606e3c943949373f",
+     "publisher": "JournalArta",
+     "kind": "news",
+     "title": "Wall Street closes mixed as Treasury yields stay elevated",
+     "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNdXM5dEhnb2hKSFFSVzdwMmhaeWhMSzNiR2dhS210bTJrOWI3M205VUNtbmctU0Q3SVFqN1VTaV92WVVVZVpjeGJLQUt3bXJHS3RtdGFHSWQ2bFdRMVFSSEgyR0pXT1RWUFpoMzliX19CSkhhRFJkSDVGYi13V0tCbHJHakVIUXV6VGFEbVVVV3oxcnlPV05RRWN6XzlWVkpVRV9Xb3QxSGg?oc=5",
+     "time": "2026-11-24T23:26:14Z"
+    },
+    {
+     "id": "7a76fa66e795a110",
      "publisher": "Yahoo Finance",
      "kind": "news",
-     "title": "Jensen Huang’s return could reignite AI semiconductor rally, analyst says",
-     "url": "https://finance.yahoo.com/technology/ai/articles/jensen-huang-return-could-reignite-140632666.html?.tsrc=rss",
-     "time": "2026-11-24T14:06:32Z"
+     "title": "Dow Jones Futures Fall: Nvidia, Anthropic Lead AI Retreat But Many Sectors Strong; Fed Inflation Data Due",
+     "url": "https://finance.yahoo.com/m/d96603c1-fe7f-3bf3-8158-0728b464d469/dow-jones-futures-fall%3A.html?.tsrc=rss",
+     "time": "2026-11-24T23:21:32Z"
     },
     {
-     "id": "de6d1875b4c249a8",
-     "publisher": "CNBC",
+     "id": "227c417a696074a8",
+     "publisher": "The Star",
      "kind": "news",
-     "title": "What Jensen Huang’s return means for Nvidia’s Colette Kress",
-     "url": "https://www.cnbc.com/2026/11/23/nvidia-jensen-huang-returns-colette-kress-cfo.html",
-     "time": "2026-11-24T15:19:46Z"
+     "title": "Fed’s Williams signals more rate hikes possible",
+     "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxON1F0NGhoMVRIVmNEcXlhTGtUbUZfcm4yUWtKUmViZGJfZ3BrU0o3OHlJazU1dmdxRHpiczQzMFlVOHRSUU5oYjRDRzgtVVlBTUFMOW9QeFZUSmlGN1F2cXJFbGZ0cF91MWEwanBHLTlrbjBFV3ZqQ1hGZHdpNU1VbmtVeTloMWVidGZLN1N2ZU9VYUFSYllWQjA5dGRpLVI1bGY0X191YWFaams?oc=5",
+     "time": "2026-11-24T23:39:11Z"
     },
     {
-     "id": "1376fbebee12401b",
-     "publisher": "Yahoo Finance",
+     "id": "a0b061f23c16155b",
+     "publisher": "Livemint",
      "kind": "news",
-     "title": "Nvidia stock in focus: Why CEO comebacks are usually good for shares",
-     "url": "https://finance.yahoo.com/video/nvidia-stock-in-focus-why-ceo-comebacks-are-usually-good-for-shares-151307354.html?.tsrc=rss",
-     "time": "2026-11-24T15:13:07Z"
+     "title": "Gold Slips as Investors Weigh Fed Outlook, US Tariff Plans",
+     "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPSXB2TURtS2hlam5CUGIyZkx4aXBXUVhTSmhIUnIzd0Z3SHZ2Rzd0SGhDSUlCa0tidXRvQTRVekJGa1ItdDE4cllNT0pGY0ZqU2JaV1hnaEM2WjZpQXprMHo3NWlnZDZrbnpwT3o5M19EMFo0QnYzaVo1R0VUVGNpWDNBaFc1Q1V2LURobGwxUUlTWldEZGpPdDdCSnZIU1JfNWdubEZXQWFZN05BNEHSAbMBQVVfeXFMTloxdm1haUQ0aWVHNk5wNS1EcVVHc3FIX3g3RUlZZFVXclNVYmdrUDBCNTBUZDBsWkJBTDYtd1NwbHdNaTN5clMwbmlKVWxsaWxIWTFzek50YjZLUEMyYWloYUFKaU5pekxaU3R6al9TeHVjZ2ZSdG1BRkcyS2xIN25ETFRwMjBubjFJclFuTWh1NUIyWWkyWXl1dHNLR19IU0E1aTZsUFl2TUw5QnNBVXkxNE0?oc=5",
+     "time": "2026-11-24T23:58:50Z"
     },
     {
-     "id": "5572f950d6dade72",
-     "publisher": "Yahoo Finance",
+     "id": "ae28e5d67b9c0728",
+     "publisher": "Business Recorder",
      "kind": "news",
-     "title": "Nvidia shares fall by 6% following Huang return rally",
-     "url": "https://finance.yahoo.com/markets/stocks/articles/nvidia-shares-fall-6-following-150938903.html?.tsrc=rss",
-     "time": "2026-11-24T15:09:38Z"
-    },
-    {
-     "id": "ee33a38b041f7aa9",
-     "publisher": "CNBC",
-     "kind": "news",
-     "title": "Nvidia shares fall over 5% after Huang comeback rally",
-     "url": "https://www.cnbc.com/2026/11/24/nvidia-stock-jensen-huang-return.html",
-     "time": "2026-11-24T15:36:34Z"
+     "title": "Gold ticks lower on hawkish Fed bets",
+     "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxOdURwTHVnTFVjSGt0bmU3aXl4eXZGZ0RDdmdpYlp5T3N5S0U4NzZaUWZHNVNlX3o4SFdIUF94bGZ5STF5VEo5Qkx6dHZlS0tkQlNJQWxQNERya0ZocXpKYTZRVnpoV2Q0aW5yR3BmZWtYQWswVnoybTJtTXRoY3M3RGpR0gFWQVVfeXFMT3BKbk5DaGVvM1dtYm81WnJCZnRwbkh0eXpNNlZna1V0QVkzQzFWTFYwNVVORk5mNGhKbjR1a25rNTBCNjVkUTVrRDZPNXJHSEgwQklOTFE?oc=5",
+     "time": "2026-11-24T23:45:58Z"
     }
    ]
   },
   {
-   "summary": "Oil prices recovered slightly with WTI crude settling at $82.05 per barrel amid ongoing geopolitical tensions and supply plant strikes.",
-   "category": "oil_supply",
-   "firstSeen": "2026-11-24T19:38:25Z",
+   "summary": "HP Inc. reported strong fiscal Q4 results with revenue growth and a dividend increase, fueled by AI-PC sales.",
+   "category": "earnings_beat",
+   "firstSeen": "2026-11-24T21:56:08Z",
    "publishers": [
-    "marketscreener.com"
-   ],
-   "assets": {
-    "XOM": {
-     "direction": "up",
-     "confidence": 0.55,
-     "why": "Higher oil prices provide a tailwind for major oil producers."
-    },
-    "CVX": {
-     "direction": "up",
-     "confidence": 0.55,
-     "why": "Stronger crude pricing supports oil upstream equities."
-    }
-   },
-   "sources": [
-    {
-     "id": "5f93928f0acb00c5",
-     "publisher": "marketscreener.com",
-     "kind": "news",
-     "title": "January WTI Crude Oil Contract Closes Up $1.88, or 2.4%; Settles at $82.05 per Barrel. January Brent Oil Was Last Seen Up $1.71, or 1.9%, to $91.08",
-     "url": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxPNmJNYWc2NzgwaTk3NEpJVDdSRlRUdmRwNGQyOVN3UVBtSVVFZnh2dnpRalhBdDJzUTlVZF9qaVNYQ3hHVzYwSFpTcW54VGZHMWVNYlJ1eUxCNG1aRlJQNExfQXUxRGFKRUpveHJnLWdrRDBCTGNmT1NzeTRfSE0zcGlMLXBEdGxWT2ZOMFBjaDN4N2hlZXpSN2QwTFR6ZjdMVHZXcVVReXdWYmhxem8zcE9IQ2tEVDVXRTBtejQzTjdHS05EYlNRT3VtMThjUlQwZUczN29YRnZLdUZvcXFOQw?oc=5",
-     "time": "2026-11-24T19:38:25Z"
-    }
-   ]
-  },
-  {
-   "summary": "Symbotic Inc. has expanded its automation agreement with Walmart Inc. to include approximately $7 billion in additional work.",
-   "category": "contract",
-   "firstSeen": "2026-11-24T19:04:56Z",
-   "publishers": [
+    "AlphaStreet",
+    "GuruFocus",
+    "Investing.com",
+    "Investing.com India",
+    "Pluang",
     "fiscal.ai"
    ],
    "assets": {},
    "sources": [
     {
-     "id": "7a1a342689d411b7",
-     "publisher": "fiscal.ai",
-     "kind": "news",
-     "title": "Symbotic Announces $7 Billion Expansion of Walmart Automation Agreement",
-     "url": "https://www.moomoo.com/stock/WMT-US?chain_id=Name1K9-3FXPhg.1lgbgkg&global_content=%7B%22promote_id%22%3A13764%2C%22sub_promote_id%22%3A57%2C%22f%22%3A%22www.moomoo.com%2Fstock%2FBA-US%2Fcommunity%22%7D",
-     "time": "2026-11-24T19:04:56Z"
-    }
-   ]
-  },
-  {
-   "summary": "Dollar Tree stock jumps following strong Q3 sales growth and a raised profit outlook.",
-   "category": "earnings_beat",
-   "firstSeen": "2026-11-24T18:30:41Z",
-   "publishers": [
-    "GuruFocus",
-    "Invezz"
-   ],
-   "assets": {},
-   "sources": [
-    {
-     "id": "04be96a3c12c40e3",
+     "id": "d6692f8734f1769a",
      "publisher": "GuruFocus",
      "kind": "news",
-     "title": "Dollar Tree (DLTR) Reports Strong Q3 Sales Growth and Raises Ear",
-     "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPU0FHZzAybGJ0NEx5OFFJLWMwWUNhR2tMOVNRUlZtYVRTZEtnTWRrS3BvSEVPSkpxQXJ2SlgzVUJGVWZvX1d5QXR1R0hwN3NIb19oU0dVbjZSV3ZsSFF3cWkwNXM1MmpTM3hkNlFhS1RWQWZQWGVtZW5mY3hLMXJGNDFvdXZHT01xV3NxSWt4Z3VqQmZ0VG0wOGNFQUZrM2x0bXNoMG1mWjlhaHpPVzhXd0YwMnhydw?oc=5",
-     "time": "2026-11-24T18:30:41Z"
+     "title": "HP Inc. (HPQ) Shares Surge 7% After Q4 Earnings Beat and Fiscal 2027 Guidance",
+     "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQcGZjQWdmSUZBT0c0STBOYmNTR3NwS3RkdFFiM2oxNFdabm43cFByZTBZWUpaU1AyeTViMm5QM2o1UGdqNU5qQVdWSDYwdGFRYzhRV0JGR3p2cXFTVHRZR0gxRVlJWlBtbHlPV2lwNDdwdjdXdGp5ZjQzY3JwWF9OTU1tMXdIakZFTTZzYURiNGUwNF91dG5LeEpUUF93OVZwdWdUYUhnWU5LMGVCMWwtZHl3?oc=5",
+     "time": "2026-11-24T22:05:36Z"
     },
     {
-     "id": "db2c8afdf42d3619",
-     "publisher": "Invezz",
+     "id": "31aa58d1e2c5cb49",
+     "publisher": "Investing.com India",
      "kind": "news",
-     "title": "Dollar Tree stock jumps 12% as strong store traffic lifts profit outlook",
-     "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQeWthMFhmWC1RNnBXMGVuS1lHakJ2VENPcWZKYko1R05yVmpmVDVuRXlBSFJiTE1xMXdMR2V6SktmVGgweW9kaUVTWGktN3hLYmo5ak0zZnVUWlZ3R0RhdThMSTVPNW9COTZBVkM2THItc3RaQUlLNDZkRkFnODVDczJfOFBhcnlvOTc1S2N0U3NmczdGX3hod0RJb2xtZVozSzRMM2t2UmhRbEU?oc=5",
-     "time": "2026-11-24T18:58:39Z"
+     "title": "HP Inc earnings beat by $0.08, revenue topped estimates",
+     "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOS250RUUxWlVkZThUTUk2WXRYSGJhY0xKSW9IT0daMFNVbmtMaE5mVlVMRHB0dXJfTnlEWng4M09ScFlWb1FMakNkbWJZZ29fd1VhSzRQbE5meUYzaGNWeVh0RFpGajNhdzBGMld2VFpSTURsczZldU5EVFJGYXlDYkJDS3F0RG9XV1AwaXk2Z2xyWUV5V2dpUWFuWlRMTkVt?oc=5",
+     "time": "2026-11-24T22:01:54Z"
+    },
+    {
+     "id": "c555d525c50325cd",
+     "publisher": "Investing.com",
+     "kind": "news",
+     "title": "HP Inc earnings beat by $0.08, revenue topped estimates",
+     "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxONVRkNmN4TGJQUVE3QVhJX1lTNjU0aDFnZC1uSTJ5T3R5elJlVUhhT2M4YXdKNVk4a09OQ3R5MWxzYTV1dEtoUTJmaUFUSzM2cDQ2UVEzM3J2ZHFHUWdBQXp4aXVwVWJnTGFSV1lSd09jMjFGdDNSeDJvRE55VFE1czBLLXpKbFRKQmhHd200dE5HaW91TEczUXQtYVhQTHpZYXc?oc=5",
+     "time": "2026-11-24T21:56:08Z"
+    },
+    {
+     "id": "637ed9360b9e6c88",
+     "publisher": "fiscal.ai",
+     "kind": "news",
+     "title": "HP Inc. Reports Fiscal 2026 Fourth Quarter and Full Year Results and Announces Dividend Increase",
+     "url": "https://www.globenewswire.com/news-release/2026/11/24/3409888/0/en/hp-inc-reports-fiscal-2026-full-year-and-fourth-quarter-results-announces-dividend-increase.html",
+     "time": "2026-11-24T23:01:50Z"
+    },
+    {
+     "id": "8f7992eb3ab6dce8",
+     "publisher": "Pluang",
+     "kind": "news",
+     "title": "HP Inc. beats Q4 estimates with AI PC shipments boosting revenue to $16B",
+     "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNMG1xZURIdW55cFA1eGh1Mzh4eTNMVFZVYjRkQVJ2c0ZjbjJ1WWYxdHRYR29qQ254NDRWMGd4UkhibXdWTjE5QzY1T3M1ZEpMY2RCdkFsaWt2RExpYVV3c19tZzA0WVZuV01YMEpOWlNJYmI0Tk1pUUt1VWk4cndUU1BhdnZWUFJjbmw3eFRQU2RlSVc0NDVoVDlJTG9VNVdPS09tcWRVZ0lQZw?oc=5",
+     "time": "2026-11-24T22:53:30Z"
     }
    ]
   },
   {
-   "summary": "Micron shares dropped 10% following a Wall Street downgrade and rejection from a $700 price ceiling.",
-   "category": "company_bad_news",
-   "firstSeen": "2026-11-24T17:31:12Z",
+   "summary": "Renewed drone attacks on Saudi financial centers and Hodeidah port escalate Middle East conflict risks.",
+   "category": "war_escalation",
+   "firstSeen": "2026-11-24T22:18:45Z",
    "publishers": [
-    "Yahoo Finance"
+    "Business Recorder",
+    "Daily Times",
+    "Demócrata",
+    "FXStreet",
+    "Gulf Daily News (Bahrain)",
+    "NST Online",
+    "NewsNation",
+    "RTHK News",
+    "X",
+    "theopenpress.in",
+    "صحيفة سبق الإلكترونية"
    ],
    "assets": {
-    "AMD": {
-     "direction": "down",
-     "confidence": 0.85,
-     "why": "Hunterbrook short report and heavy semiconductor sector selloff pressuring AMD shares."
+    "CVX": {
+     "direction": "up",
+     "confidence": 0.7,
+     "why": "Escalating regional conflict threatens oil supply infrastructure."
     },
-    "MU": {
-     "direction": "down",
-     "confidence": 0.85,
-     "why": "Downgrade and significant sell-off breaking down from recent highs"
+    "XOM": {
+     "direction": "up",
+     "confidence": 0.7,
+     "why": "Escalating regional conflict threatens oil supply infrastructure."
+    },
+    "OXY": {
+     "direction": "up",
+     "confidence": 0.6,
+     "why": "Escalating Middle East conflict threatens oil supply infrastructure."
+    },
+    "PLTR": {
+     "direction": "up",
+     "confidence": 0.6,
+     "why": "Defense tech demand increases during geopolitical instability."
+    },
+    "AVAV": {
+     "direction": "up",
+     "confidence": 0.5,
+     "why": "Increased regional conflict typically boosts defense tech demand."
     }
    },
    "sources": [
     {
-     "id": "e1cc14819ca1f08c",
-     "publisher": "Yahoo Finance",
+     "id": "2aa19739156345da",
+     "publisher": "NewsNation",
      "kind": "news",
-     "title": "Why Is AMD (AMD) Stock Down Today? Hunterbrook Short Report Hits Shares",
-     "url": "https://finance.yahoo.com/markets/stocks/articles/why-amd-amd-stock-down-173112516.html?.tsrc=rss",
-     "time": "2026-11-24T17:31:12Z"
+     "title": "Houthis advance toward Aden; Saudis vow response for Riyadh attack",
+     "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE1ySDhyX3pwelBfby1XVlppcTc3UXNNY1V5bXZ0YlhPeDRxWVl0QzJBWkpGOFBVal9QM3VYalh4NzY4X2VvS0x2aTNpTkdPbVo4Snd2VHNMeXJqeFpYaTZuZmhQZDdrVV83WFlpTWNfSDRkcWJTSnA0TnZyMNIBgAFBVV95cUxNSVlWTTV1bEdNMmwwTHppTmgxTWh6VXlIWlNkVVE5REszT0tFT0FoYm5kVWx5a0Z4aWhKQ0g5YXVGM1lzWUthRDBjR2xLa3BoS2EtUVpjOWlxSExPVnhLSHB6V2NFUDlmeXhwYnRHM1lidUloWTJtLW92amQyVXdyeg?oc=5",
+     "time": "2026-11-24T22:18:45Z"
     },
     {
-     "id": "4170e778004df0b0",
-     "publisher": "Yahoo Finance",
+     "id": "84977cf2ed49adc2",
+     "publisher": "Demócrata",
      "kind": "news",
-     "title": "Micron Just Hit a $700 Ceiling, Caught a Downgrade, and Is Down 10% Today. Is MU a Toxic Stock or a Prime Bargain?",
-     "url": "https://247wallst.com/investing/2026/11/24/micron-just-hit-a-700-ceiling-caught-a-downgrade-and-is-down-10-today-is-mu-a-toxic-stock-or-a-prime-bargain/?.tsrc=rss",
-     "time": "2026-11-24T18:55:09Z"
+     "title": "Expansion | Saudi Arabia orders the evacuation of the port of Hodeida ahead of imminent attacks against the Houthis",
+     "url": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxPeXF5MnA2YVFBcExGMnI4U2Y3WnJzeU54UkRzMlBnZDBVemxlbXBPODduNTZ6OVZzdk1ROUtBN2NFZTdCQ21xX3huaEMwcTBBTG1id2tsU01JOEd1SlJsOVU5a0NfZ2N1ZE1fVlRWck5YWTlNVm56LTg5LVJ6YmZqc2x5NDhNS2FTcXhrUHBnOTZLU3o2SHdHLUZfNW5QVW11TEhNUUJBRmh3RFNOMFpNVXpLNVI2eldtMXlpNkRsRFZlWDJFZWJlSnltempMaDJNYlBQVHEyVHRtX1gwQ1lfLVFYU1lsQjd4RXVNbNIB8gFBVV95cUxQUGRfZDZUZE8zQ25oOFl4MTBxakJ6ZGNmM0VPUG1sVGlZamktbldHUGw2R1BVTVBHT24tdnhBaFdyRmdQOEhXc2tNd2Y0SGVVSXRLTFF0OENEcUpYdEEzZU9Jblo3SDBmN1M1NWlqMVRWUFV2bGpOazNPQ0hraHNFM2otak5WaC1aQVZ1a295M3ZmS2J4VFJ1anp4OWFucWtWZktqdlM5VkFQSXBDZzRQOE5LQy0xMTNpZk1WZHJ4RlFiVU1QVklqUnZsOUQ4SnllSl9MbENnTjRjeE84SEhHZTQxQloweG13cDJ5MkhrdURWUQ?oc=5",
+     "time": "2026-11-24T23:02:49Z"
+    },
+    {
+     "id": "ebb44a5ed0be6edd",
+     "publisher": "X",
+     "kind": "news",
+     "title": "🇸🇦🇾🇪 Saudi Arabia's missile shield is running low: a Houthi strike just wounded 11 people at a Riyadh skyscraper It's the second hit on the Public Investment Fund's tower in less than a week, and Riyadh has reportedly asked the US, UK and France to sell or l",
+     "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTFBSdTBEWEltcGVtYmpzSTVqMUROM3EwVWFIRnZhVjJCOHl4WTlyUlFoRVJwTXhYR2IteUt1c3hURzIwcHRSakUya2FySXJLV3VGWWFNc3BEQjV2QktzVF9WSWEtWk1BLU0xQ3J5Zg?oc=5",
+     "time": "2026-11-24T22:58:44Z"
+    },
+    {
+     "id": "6bbe3b7e8b41d3e9",
+     "publisher": "Daily Times",
+     "kind": "news",
+     "title": "Tower in Riyadh’s business district hit in ‘terrorist’ attack",
+     "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOdHhhRTh6TWkySHh0OVZMZDJiSm9IS1ZuS2w2aGFxdUluaE9CU2J0WkMxbk5MTW41WHRLM3FQLWdJcEhqbWFMcjNWLW0wSDlGaW9rQUtabEpCMl94N2JFLXdaLUNMbjJPTEtROGFDUEFFVGVwRWtseU9tSW8zcnZwRUZWejFWS1k2NXpYaEJWc0FHQjBxY05VNg?oc=5",
+     "time": "2026-11-24T22:52:45Z"
+    },
+    {
+     "id": "e7b28fae13d8ae00",
+     "publisher": "theopenpress.in",
+     "kind": "news",
+     "title": "Houthi Attack Riyadh: 11 Injured, Including 2 Indians, as Financial Centre Tower Targeted",
+     "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxORU44SHc5cWZxTmE5bl8weGR0WHN1eGVuX2s3MWdIQnRGeTdEd042STlyQzFXT1AyVEZCc2cxdUdDYmhMc1NtZlhLZmtYWUQ4RmI5cHhURjVvbFJ0REk3Q29WOWEyZDhtODNyODRKYWQ5VG1WN2ttdzY3Sm5Yb3JqNUMyMEJqYU9ZYm1Yc3RrUUgzNDMt?oc=5",
+     "time": "2026-11-24T22:47:37Z"
+    }
+   ]
+  },
+  {
+   "summary": "Bitcoin faces downward pressure due to thin spot demand and broader risk-off sentiment.",
+   "category": "crypto_negative",
+   "firstSeen": "2026-11-24T22:21:03Z",
+   "publishers": [
+    "24/7 Wall St.",
+    "Coin Edition",
+    "CryptoSlate",
+    "Investing.com India",
+    "The Motley Fool",
+    "Yahoo Finance",
+    "bloomingbit",
+    "investingLive",
+    "www.thestreet.com"
+   ],
+   "assets": {
+    "BTC/USD": {
+     "direction": "down",
+     "confidence": 0.7,
+     "why": "Hawkish Fed policy and lack of spot demand are driving crypto lower."
+    },
+    "ETH/USD": {
+     "direction": "down",
+     "confidence": 0.6,
+     "why": "Negative sentiment and treasury selling pressure."
+    }
+   },
+   "sources": [
+    {
+     "id": "35bd782c3928f3c1",
+     "publisher": "The Motley Fool",
+     "kind": "news",
+     "title": "Crypto Market Today, Nov. 24: Bitcoin Falls Below $60,000 as ETF Outflows Hit a Record $4.7 Billion",
+     "url": "https://news.google.com/rss/articles/CBMi8wFBVV95cUxPLTNtZEtTS2JrekFZdEt1TTVjWEJIMG5zOUVRdUpVYTFfblo4MkhMNlRxbzRINzVXU3doTi0yNkM5amZKQnpva3VObXBNdFVsWGR0T3lYNy02ZjlVWk41VEE5Wnh0MU5qeHh5MzlZVFJUUWg4cmNXcHFZVXE5dGtoR0VHRTlGTGtKWFNVVFB4OFdNdlA0TTVhc2JGTTBma2RXR0JlMEhLOS1pcFlOQldpcmVlRkNWLXF2Rmx1UDA0LVdLY19pdjhSTHNrX0U1bHNLTjhwQ2FiU05KZ2tVVXRUUVJhY3lGazEyTU01bXNOclg4d2s?oc=5",
+     "time": "2026-11-24T22:26:40Z"
+    },
+    {
+     "id": "1af58a6f0247d33b",
+     "publisher": "Coin Edition",
+     "kind": "news",
+     "title": "Bitcoin Loss Ratio Hits FTX-Era High as ETF Outflows Reach $4.3B",
+     "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxOTEM0WllzMzJXdm11b19nRnBQTGswenJCM0ExS2VVWE1FbU5yQkpsSXVWdmxjSWU4Ri1wa25iRVpGU2liT01aeTBCbnV3TkhGMGlXbU01TlhpOGFOTW10SUdWbmxnSjRfcjRtWm5qRjZsLVQ2N0h1QnIzT2xVM2hZT05WdzVMTEpvZi10TEF3eHdaQQ?oc=5",
+     "time": "2026-11-24T22:21:03Z"
+    },
+    {
+     "id": "c43a463fce693285",
+     "publisher": "bloomingbit",
+     "kind": "news",
+     "title": "21Shares Says Bitcoin Plunge Was Driven More by Weakening Demand, Leverage Liquidations Than Binance Hack",
+     "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE1VVElKOFZPRHFVb0RVUDhJeHlGYnNVR19CbzQ4c0ZYeGFLajZoQncwNEpXVVVNSlAyaDNVcjctQzFqUGw3Q3pPTzhfWUh3NDVUVGtUMQ?oc=5",
+     "time": "2026-11-24T22:26:53Z"
+    },
+    {
+     "id": "03e71b1d5789a5e8",
+     "publisher": "CryptoSlate",
+     "kind": "news",
+     "title": "Bitcoin’s $60,000 bear market is testing miners harder than the 2022 crypto winter",
+     "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxOOW1sSUt3ZXItTUdZc0FxMGZNc1NvWEFLeFZEM0cyUGJmeUU3MXhQLTVqMnUwZzlZT3ZCUnZjVVIwdDNGQTN4ajVQVHBlRElMVUhoRnRZTU41Rm9aRjE3b3NEYVZaT1I3UkIxeDBuM2wyOUFaYzdYaTBwS2JnWFZPSnd0dkpkSWF5Q1REZ2JhRnFJNmRHQXpKcHFNb2p1ZEctQVpIM01BWQ?oc=5",
+     "time": "2026-11-24T22:40:42Z"
+    },
+    {
+     "id": "f18c66ab005a50a9",
+     "publisher": "bloomingbit",
+     "kind": "news",
+     "title": "Bitcoin Reclaims $60,000",
+     "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTFByTHdZVS1SRmJvTnJ1YnlKQm5wMkx6TUJhcXJXQzdnc0VYaGVqUDlic3hOWC0yeG9BeVdmMnYzWmZiWUlsRjhqbU5qc253aVB5SzJKdQ?oc=5",
+     "time": "2026-11-24T22:37:01Z"
     }
    ]
   }
