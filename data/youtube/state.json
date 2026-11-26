@@ -68,6 +68,16 @@
   ],
   "log": [
     {
+      "t": "2026-11-26T08:25:33-05:00",
+      "agent": "Producer",
+      "msg": "Marked 3 board idea(s) done: uploaded and confirmed on Bounce Theory"
+    },
+    {
+      "t": "2026-11-26T08:25:33-05:00",
+      "agent": "Producer",
+      "msg": "Made and scheduled 26 Bounce Theory videos on the server from today's lineup (templates, no Claude)"
+    },
+    {
       "t": "2026-11-26T11:13:02Z",
       "agent": "Gemini team",
       "msg": "Enforced strict template variety in Bounce Theory to avoid recent overlaps."
@@ -561,11 +571,6 @@
       "t": "2026-11-14T11:13:01Z",
       "agent": "Gemini team",
       "msg": "Generated 24 Ambient Escape Shorts (12 animated explainers with full notes + 12 proven reminders) + 2 search-optimized sleep longs."
-    },
-    {
-      "t": "2026-11-14T11:13:01Z",
-      "agent": "Gemini team",
-      "msg": "Generated 24 fresh Bounce Theory Shorts + 2 longs with strict template menu parameters."
     }
   ],
   "ideas": [
@@ -1249,13 +1254,17 @@
       "title": "100 AIs learning to fly through a cave #shorts #ai",
       "format": "cave_swarm",
       "hook": "100 AIs learning to fly through a cave",
-      "status": "approved",
+      "status": "done",
       "needsBuild": false,
       "score": 9,
       "createdAt": "2026-11-24T22:03:38Z",
       "madeBy": "inspo-builder",
       "notes": "Inspo build (Claude Code). Use template cave_swarm.",
-      "script": "Use template cave_swarm: vary seed, n (50-200), gens (e.g. 1,3,6,25), w1 (narrower = harder), amp, l1/l2."
+      "script": "Use template cave_swarm: vary seed, n (50-200), gens (e.g. 1,3,6,25), w1 (narrower = harder), amp, l1/l2.",
+      "doneAt": "2026-11-26T08:25:33-05:00",
+      "video": "https://youtu.be/cr-Q_Vy0qB8",
+      "doneBy": "server",
+      "doneNote": "Uploaded to Bounce Theory 2026-11-26 (lineup 2026-11-26 S01)"
     },
     {
       "id": "youtube-inspo-in-20261123-njem",
@@ -1263,13 +1272,17 @@
       "title": "Every cut doubles a tomato… #shorts #satisfying",
       "format": "blade_double",
       "hook": "EVERY CUT DOUBLES A TOMATO",
-      "status": "approved",
+      "status": "done",
       "needsBuild": false,
       "score": 9,
       "createdAt": "2026-11-24T22:03:38Z",
       "madeBy": "inspo-builder",
       "notes": "Inspo build (Claude Code). Use template blade_double.",
-      "script": "Use template blade_double: vary seed, cap (600-900), pace, spin, r; l1/noun can swap the fruit."
+      "script": "Use template blade_double: vary seed, cap (600-900), pace, spin, r; l1/noun can swap the fruit.",
+      "doneAt": "2026-11-26T08:25:33-05:00",
+      "video": "https://youtu.be/reTRE7MlTU8",
+      "doneBy": "server",
+      "doneNote": "Uploaded to Bounce Theory 2026-11-26 (lineup 2026-11-26 S02)"
     },
     {
       "id": "youtube-inspo-in-20261123-gee5",
@@ -1295,11 +1308,15 @@
       "needsBuild": false,
       "title": "CHORD DROP: 9 balls synthesize a G MAJOR scale 🎵 #shorts #satisfying",
       "format": "chord_drop9",
-      "status": "approved",
+      "status": "done",
       "hook": "Can 9 balls build a G MAJOR scale together?",
       "notes": "Use template chord_drop9 with chord parameter G MAJOR, teal and gold tuned drop pads.",
       "createdAt": "2026-11-25T11:13:02Z",
-      "madeBy": "gemini"
+      "madeBy": "gemini",
+      "doneAt": "2026-11-26T08:25:33-05:00",
+      "video": "https://youtu.be/q4Y1VLDvEfs",
+      "doneBy": "server",
+      "doneNote": "Uploaded to Bounce Theory 2026-11-26 (lineup 2026-11-26 S03)"
     },
     {
       "id": "youtube-2026-11-25-2",
@@ -1727,6 +1744,12 @@
               "l1": "100 AIS FLYING",
               "l2": "THROUGH CAVE"
             }
+          },
+          "made": true,
+          "madeWith": {
+            "template": "cave_swarm",
+            "seed": 1126037,
+            "videoId": "cr-Q_Vy0qB8"
           }
         },
         {
@@ -1746,6 +1769,12 @@
               "l1": "EVERY CUT DOUBLES",
               "l2": "A TOMATO"
             }
+          },
+          "made": true,
+          "madeWith": {
+            "template": "blade_double",
+            "seed": 1126074,
+            "videoId": "reTRE7MlTU8"
           }
         },
         {
@@ -1763,6 +1792,12 @@
               "l1": "9 BALLS G MAJOR SCALE",
               "l2": "PHYSICAL SOUND SYNTHESIS"
             }
+          },
+          "made": true,
+          "madeWith": {
+            "template": "chord_drop9",
+            "seed": null,
+            "videoId": "q4Y1VLDvEfs"
           }
         },
         {
@@ -1779,6 +1814,12 @@
               "l1": "36 PENDULUMS",
               "l2": "TRIPLE HELIX MIRROR"
             }
+          },
+          "made": true,
+          "madeWith": {
+            "template": "pendulum_wave",
+            "seed": 1126148,
+            "videoId": "_vyP3vrxYC4"
           }
         },
         {
@@ -1796,6 +1837,12 @@
               "l1": "CHAIN REACTION",
               "l2": "1,200 BALL SPLIT"
             }
+          },
+          "made": true,
+          "madeWith": {
+            "template": "crystal_spiral",
+            "seed": 1126186,
+            "videoId": "srqWoIJtwIE"
           }
         },
         {
@@ -1814,6 +1861,12 @@
               "l1": "GEAR CLAW FLOOD",
               "l2": "1,500 BALL BURST"
             }
+          },
+          "made": true,
+          "madeWith": {
+            "template": "claw_flood",
+            "seed": 1126222,
+            "videoId": "_5fwOWWHy8A"
           }
         },
         {
@@ -1831,6 +1884,12 @@
               "l1": "OVERFLOW PENDULUM",
               "l2": "3,500 BALL CASCADE"
             }
+          },
+          "made": true,
+          "madeWith": {
+            "template": "overflow_pendulum",
+            "seed": 1126261,
+            "videoId": "0x0iNWoGdUg"
           }
         },
         {
@@ -1848,6 +1907,12 @@
               "l1": "1,600 BALLS TRAMPOLINE",
               "l2": "ROSE AND LIME RIPPLE"
             }
+          },
+          "made": true,
+          "madeWith": {
+            "template": "jelly_drop",
+            "seed": 1126296,
+            "videoId": "NFJNG-e_UY4"
           }
         },
         {
@@ -1868,6 +1933,12 @@
               ],
               "speed": 1850
             }
+          },
+          "made": true,
+          "madeWith": {
+            "template": "brick_towers",
+            "seed": 1126333,
+            "videoId": "LxMN5F1-O_s"
           }
         },
         {
@@ -1884,6 +1955,12 @@
               "c2": "RUBY",
               "petals": 28
             }
+          },
+          "made": true,
+          "madeWith": {
+            "template": "string_flower",
+            "seed": 1126370,
+            "videoId": "tB_x6HsmLRU"
           }
         },
         {
@@ -1902,6 +1979,12 @@
               ],
               "ringc": "GOLD"
             }
+          },
+          "made": true,
+          "madeWith": {
+            "template": "ring_shrink",
+            "seed": 1126407,
+            "videoId": "2ogQQlGLP44"
           }
         },
         {
@@ -1918,6 +2001,12 @@
               "c0": "RUBY",
               "c1": "GOLD"
             }
+          },
+          "made": true,
+          "madeWith": {
+            "template": "chaos_holes4",
+            "seed": 1126444,
+            "videoId": "NiryqoEhhVE"
           }
         },
         {
@@ -1940,6 +2029,12 @@
               ],
               "trackc": "RUBY"
             }
+          },
+          "made": true,
+          "madeWith": {
+            "template": "marble_helix",
+            "seed": 1126481,
+            "videoId": "iv4_DYIwi6U"
           }
         },
         {
@@ -1957,6 +2052,12 @@
               "col_a": "RUBY",
               "col_b": "GOLD"
             }
+          },
+          "made": true,
+          "madeWith": {
+            "template": "brick_wall",
+            "seed": 1126519,
+            "videoId": "i4e2YmYTMEM"
           }
         },
         {
@@ -1973,6 +2074,12 @@
               "c0": "GOLD",
               "c1": "RUBY"
             }
+          },
+          "made": true,
+          "madeWith": {
+            "template": "string_mandala",
+            "seed": 1126555,
+            "videoId": "ytHFeX9Ey3U"
           }
         },
         {
@@ -1996,6 +2103,12 @@
                 "GOLD"
               ]
             }
+          },
+          "made": true,
+          "madeWith": {
+            "template": "weapon_teams",
+            "seed": 1126592,
+            "videoId": "H97smPUxYmA"
           }
         },
         {
@@ -2015,6 +2128,12 @@
               "l1": "45 PENDULUMS DOUBLE HELIX",
               "l2": "RUBY AND GOLD ALIGN"
             }
+          },
+          "made": true,
+          "madeWith": {
+            "template": "pend_helix40",
+            "seed": null,
+            "videoId": "Lq8E74Fihgc"
           }
         },
         {
@@ -2033,6 +2152,12 @@
               "l1": "45 RING PENDULUMS",
               "l2": "CONCENTRIC RESONANCE"
             }
+          },
+          "made": true,
+          "madeWith": {
+            "template": "pend_ring36",
+            "seed": null,
+            "videoId": "8JbZySfFqKY"
           }
         },
         {
@@ -2049,6 +2174,12 @@
               "l1": "4 ELASTICITY LEVELS",
               "l2": "SOFT BODY ESCAPE RACE"
             }
+          },
+          "made": true,
+          "madeWith": {
+            "template": "softbody_three",
+            "seed": 1126708,
+            "videoId": "r5OJV7OKXZw"
           }
         },
         {
@@ -2065,6 +2196,12 @@
               "l1": "EVERY BOUNCE ADDS A BALL",
               "l2": "UNTIL 100 BALL EXPLOSION"
             }
+          },
+          "made": true,
+          "madeWith": {
+            "template": "adds_ball",
+            "seed": 1126740,
+            "videoId": "iVVZL-TGWXY"
           }
         },
         {
@@ -2085,6 +2222,12 @@
               "l1": "55 BRICK CAGE ESCAPE",
               "l2": "WILL IT BREAK OUT?"
             }
+          },
+          "made": true,
+          "madeWith": {
+            "template": "brick_cage",
+            "seed": 1126777,
+            "videoId": "kU7vctxMcfo"
           }
         },
         {
@@ -2102,6 +2245,12 @@
               "l1": "900 BALLS THROUGH CROSS",
               "l2": "SPINNING RAINBOW SPLIT"
             }
+          },
+          "made": true,
+          "madeWith": {
+            "template": "chaos_cross",
+            "seed": 1126814,
+            "videoId": "hCxJWYDUha0"
           }
         },
         {
@@ -2120,6 +2269,12 @@
               "l1": "8-POINT STAR GEOMETRY",
               "l2": "EVERY BOUNCE ADDS A STRING"
             }
+          },
+          "made": true,
+          "madeWith": {
+            "template": "string_star7",
+            "seed": 1126851,
+            "videoId": "LlzuH2JpZNM"
           }
         },
         {
@@ -2136,6 +2291,12 @@
               "l1": "9 BALLS G MAJOR CHORD",
               "l2": "PHYSICAL SOUND SYNTHESIS"
             }
+          },
+          "made": true,
+          "madeWith": {
+            "template": "chord_drop9",
+            "seed": null,
+            "videoId": "9beV3TMLZhs"
           }
         },
         {
@@ -2156,7 +2317,13 @@
             "Hypnotic Marble Race: Glowing Crystal Track for Sleep & Study | Vol. 17",
             "Infinite Marble Run: Glowing Crystal Labyrinth Course (No Text) | Vol. 17",
             "Satisfying Marble Journey: Crystal Labyrinth Course (No Text) | Vol. 17"
-          ]
+          ],
+          "made": true,
+          "madeWith": {
+            "template": "marble_run_glow",
+            "seed": 20261126,
+            "videoId": "x9MuRTD6srE"
+          }
         },
         {
           "slot": "L2",
@@ -2172,6 +2339,12 @@
               "spiral_chain"
             ],
             "minutes": 15
+          },
+          "made": true,
+          "madeWith": {
+            "template": "compilation",
+            "seed": null,
+            "videoId": "jk86LXGAtQM"
           }
         }
       ],
