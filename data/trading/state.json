@@ -18,16 +18,16 @@
    "Sold HLAL (bad news: Polymarket and market pricing continue to show a 94% probability of a December F): made $20.48.",
    "Sold SPUS (bad news: China rejected the new U.S. 20% tariff plan, further raising global trade war ri): made $487.62.",
    "Sold SPUS (bad news: China rejected the new U.S. 20% tariff plan, further raising global trade war ri): lost $0.88.",
-   "Scanned the news 56 times today: read 5162 headlines, found 194 that could move a stock or coin it's allowed to trade.",
+   "Scanned the news 64 times today: read 5495 headlines, found 207 that could move a stock or coin it's allowed to trade.",
    "Passed on BTC/USD, ETH/USD, LINK/USD, XRP/USD: order failed: not enough cash.",
    "Passed on BTC/USD: already holding it.",
-   "Safety rules that stepped in: one position per asset (x5), bad news exit (x6), cash only no margin (x4)."
+   "Safety rules that stepped in: one position per asset (x5), bad news exit (x6), cash only no margin (x6)."
   ],
   "watchlist": "Allowed to trade: 68 halal stocks, 5 Shariah ETFs, 9 coins.",
-  "lastScan": "2026-11-26T19:12:55Z"
+  "lastScan": "2026-11-26T21:14:16Z"
  },
  "hired": true,
- "updatedAt": "2026-11-26T19:13:09Z",
+ "updatedAt": "2026-11-26T21:14:22Z",
  "mode": "PAPER",
  "agents": [
   {
@@ -35,8 +35,8 @@
    "name": "News Scout",
    "role": "Reads X, Reddit and news feeds",
    "status": "working",
-   "doing": "Read 113 new headlines/posts, 4 market-moving stories",
-   "lastRun": "2026-11-26T19:13:07Z"
+   "doing": "Read 47 new headlines/posts, 1 market-moving stories",
+   "lastRun": "2026-11-26T21:14:21Z"
   },
   {
    "id": "analyst",
@@ -44,7 +44,7 @@
    "role": "Gemini: is it real, what moves, which way",
    "status": "working",
    "doing": "Bad news for SPWO: Expanding US tariff plans targeting major trading partners heighten global trade war risks and weigh",
-   "lastRun": "2026-11-26T19:13:07Z"
+   "lastRun": "2026-11-26T21:14:21Z"
   },
   {
    "id": "confirm",
@@ -66,17 +66,17 @@
    "id": "risk",
    "name": "Risk Officer",
    "role": "Hard limits, stop-losses, kill switch",
-   "status": "ok",
-   "doing": "Stop-loss for BTC/USD placed on Alpaca at $59,074.02",
-   "lastRun": "2026-11-26T09:29:29Z"
+   "status": "idle",
+   "doing": "",
+   "lastRun": null
   },
   {
    "id": "trader",
    "name": "Trader",
    "role": "Places paper orders on Alpaca",
    "status": "working",
-   "doing": "Order for LINK/USD failed: not enough cash",
-   "lastRun": "2026-11-26T19:13:08Z"
+   "doing": "sell SPWO failed: HTTP 403 https://paper-api.alpaca.markets/v2/positions/SPWO: {\"available\":\"0\",\"code\":40310000,\"existing_qty\":\"421\",\"held_for_orders\":\"421\",\"message\":\"insufficient qty available for order (requested: 421, available: 0)\",\"symbol\":\"SPWO\"}",
+   "lastRun": "2026-11-26T21:14:21Z"
   },
   {
    "id": "coins",
@@ -96,6 +96,141 @@
   }
  ],
  "log": [
+  {
+   "t": "2026-11-26T21:14:21Z",
+   "agent": "Trader",
+   "msg": "sell SPWO failed: HTTP 403 https://paper-api.alpaca.markets/v2/positions/SPWO: {\"available\":\"0\",\"code\":40310000,\"existing_qty\":\"421\",\"held_for_orders\":\"421\",\"message\":\"insufficient qty available for order (requested: 421, available: 0)\",\"symbol\":\"SPWO\"}"
+  },
+  {
+   "t": "2026-11-26T21:14:21Z",
+   "agent": "News Analyst",
+   "msg": "Bad news for SPWO: Expanding US tariff plans targeting major trading partners heighten global trade war risks and weigh"
+  },
+  {
+   "t": "2026-11-26T21:14:21Z",
+   "agent": "News Scout",
+   "msg": "Read 47 new headlines/posts, 1 market-moving stories"
+  },
+  {
+   "t": "2026-11-26T20:59:14Z",
+   "agent": "Trader",
+   "msg": "Order for BTC/USD failed: not enough cash"
+  },
+  {
+   "t": "2026-11-26T20:59:14Z",
+   "agent": "Trader",
+   "msg": "sell SPWO failed: HTTP 403 https://paper-api.alpaca.markets/v2/positions/SPWO: {\"available\":\"0\",\"code\":40310000,\"existing_qty\":\"421\",\"held_for_orders\":\"421\",\"message\":\"insufficient qty available for order (requested: 421, available: 0)\",\"symbol\":\"SPWO\"}"
+  },
+  {
+   "t": "2026-11-26T20:59:13Z",
+   "agent": "News Analyst",
+   "msg": "Bad news for SPWO: Expanding US tariff plans targeting major trading partners heighten global trade war risks and weigh"
+  },
+  {
+   "t": "2026-11-26T20:59:13Z",
+   "agent": "News Scout",
+   "msg": "Read 33 new headlines/posts, 2 market-moving stories"
+  },
+  {
+   "t": "2026-11-26T20:44:06Z",
+   "agent": "Trader",
+   "msg": "sell SPWO failed: HTTP 403 https://paper-api.alpaca.markets/v2/positions/SPWO: {\"available\":\"0\",\"code\":40310000,\"existing_qty\":\"421\",\"held_for_orders\":\"421\",\"message\":\"insufficient qty available for order (requested: 421, available: 0)\",\"symbol\":\"SPWO\"}"
+  },
+  {
+   "t": "2026-11-26T20:44:05Z",
+   "agent": "News Analyst",
+   "msg": "Bad news for SPWO: Expanding US tariff plans targeting major trading partners heighten global trade war risks and weigh"
+  },
+  {
+   "t": "2026-11-26T20:44:05Z",
+   "agent": "News Scout",
+   "msg": "Read 41 new headlines/posts, 1 market-moving stories"
+  },
+  {
+   "t": "2026-11-26T20:28:58Z",
+   "agent": "Trader",
+   "msg": "sell SPWO failed: HTTP 403 https://paper-api.alpaca.markets/v2/positions/SPWO: {\"available\":\"0\",\"code\":40310000,\"existing_qty\":\"421\",\"held_for_orders\":\"421\",\"message\":\"insufficient qty available for order (requested: 421, available: 0)\",\"symbol\":\"SPWO\"}"
+  },
+  {
+   "t": "2026-11-26T20:28:58Z",
+   "agent": "News Analyst",
+   "msg": "Bad news for SPWO: Expanding US tariff plans targeting major trading partners heighten global trade war risks and weigh"
+  },
+  {
+   "t": "2026-11-26T20:28:58Z",
+   "agent": "News Scout",
+   "msg": "Read 33 new headlines/posts, 1 market-moving stories"
+  },
+  {
+   "t": "2026-11-26T20:13:51Z",
+   "agent": "Trader",
+   "msg": "Order for LINK/USD failed: not enough cash"
+  },
+  {
+   "t": "2026-11-26T20:13:50Z",
+   "agent": "Trader",
+   "msg": "sell SPWO failed: HTTP 403 https://paper-api.alpaca.markets/v2/positions/SPWO: {\"available\":\"0\",\"code\":40310000,\"existing_qty\":\"421\",\"held_for_orders\":\"421\",\"message\":\"insufficient qty available for order (requested: 421, available: 0)\",\"symbol\":\"SPWO\"}"
+  },
+  {
+   "t": "2026-11-26T20:13:50Z",
+   "agent": "News Analyst",
+   "msg": "Bad news for SPWO: Expanding US tariff plans targeting major trading partners heighten global trade war risks and weigh"
+  },
+  {
+   "t": "2026-11-26T20:13:50Z",
+   "agent": "News Scout",
+   "msg": "Read 51 new headlines/posts, 3 market-moving stories"
+  },
+  {
+   "t": "2026-11-26T19:58:36Z",
+   "agent": "Trader",
+   "msg": "sell SPWO failed: HTTP 403 https://paper-api.alpaca.markets/v2/positions/SPWO: {\"available\":\"0\",\"code\":40310000,\"existing_qty\":\"421\",\"held_for_orders\":\"421\",\"message\":\"insufficient qty available for order (requested: 421, available: 0)\",\"symbol\":\"SPWO\"}"
+  },
+  {
+   "t": "2026-11-26T19:58:35Z",
+   "agent": "News Analyst",
+   "msg": "Bad news for SPWO: Expanding US tariff plans targeting major trading partners heighten global trade war risks and weigh"
+  },
+  {
+   "t": "2026-11-26T19:58:35Z",
+   "agent": "News Scout",
+   "msg": "Read 38 new headlines/posts, 1 market-moving stories"
+  },
+  {
+   "t": "2026-11-26T19:43:28Z",
+   "agent": "Trader",
+   "msg": "sell SPWO failed: HTTP 403 https://paper-api.alpaca.markets/v2/positions/SPWO: {\"available\":\"0\",\"code\":40310000,\"existing_qty\":\"421\",\"held_for_orders\":\"421\",\"message\":\"insufficient qty available for order (requested: 421, available: 0)\",\"symbol\":\"SPWO\"}"
+  },
+  {
+   "t": "2026-11-26T19:43:27Z",
+   "agent": "News Analyst",
+   "msg": "Bad news for SPWO: Expanding US tariff plans targeting major trading partners heighten global trade war risks and weigh"
+  },
+  {
+   "t": "2026-11-26T19:43:27Z",
+   "agent": "News Scout",
+   "msg": "Read 39 new headlines/posts, 2 market-moving stories"
+  },
+  {
+   "t": "2026-11-26T19:28:18Z",
+   "agent": "Trader",
+   "msg": "sell SPWO failed: HTTP 403 https://paper-api.alpaca.markets/v2/positions/SPWO: {\"available\":\"0\",\"code\":40310000,\"existing_qty\":\"421\",\"held_for_orders\":\"421\",\"message\":\"insufficient qty available for order (requested: 421, available: 0)\",\"symbol\":\"SPWO\"}"
+  },
+  {
+   "t": "2026-11-26T19:28:18Z",
+   "agent": "News Analyst",
+   "msg": "Bad news for SPWO: Expanding US tariff plans targeting major trading partners heighten global trade war risks and weigh"
+  },
+  {
+   "t": "2026-11-26T19:28:18Z",
+   "agent": "News Scout",
+   "msg": "Read 51 new headlines/posts, 2 market-moving stories"
+  },
+  {
+   "t": "2026-11-26T19:13:11Z",
+   "agent": "Trader",
+   "msg": "Saved results to the Agent HQ dashboard"
+  },
   {
    "t": "2026-11-26T19:13:08Z",
    "agent": "Trader",
@@ -710,146 +845,11 @@
    "t": "2026-11-26T10:30:44Z",
    "agent": "News Analyst",
    "msg": "Bad news for SPWO: Expanding US tariff plans targeting major trading partners heighten global trade war risks and weigh"
-  },
-  {
-   "t": "2026-11-26T10:30:44Z",
-   "agent": "News Scout",
-   "msg": "Read 66 new headlines/posts, 2 market-moving stories"
-  },
-  {
-   "t": "2026-11-26T10:15:34Z",
-   "agent": "Trader",
-   "msg": "sell SPWO failed: HTTP 403 https://paper-api.alpaca.markets/v2/positions/SPWO: {\"available\":\"0\",\"code\":40310000,\"existing_qty\":\"421\",\"held_for_orders\":\"421\",\"message\":\"insufficient qty available for order (requested: 421, available: 0)\",\"symbol\":\"SPWO\"}"
-  },
-  {
-   "t": "2026-11-26T10:15:34Z",
-   "agent": "News Analyst",
-   "msg": "Bad news for SPWO: Expanding US tariff plans targeting major trading partners heighten global trade war risks and weigh"
-  },
-  {
-   "t": "2026-11-26T10:15:34Z",
-   "agent": "News Scout",
-   "msg": "Read 113 new headlines/posts, 7 market-moving stories"
-  },
-  {
-   "t": "2026-11-26T10:00:16Z",
-   "agent": "Trader",
-   "msg": "sell SPWO failed: HTTP 403 https://paper-api.alpaca.markets/v2/positions/SPWO: {\"available\":\"0\",\"code\":40310000,\"existing_qty\":\"421\",\"held_for_orders\":\"421\",\"message\":\"insufficient qty available for order (requested: 421, available: 0)\",\"symbol\":\"SPWO\"}"
-  },
-  {
-   "t": "2026-11-26T10:00:16Z",
-   "agent": "News Analyst",
-   "msg": "Bad news for SPWO: Expanding US tariff plans targeting major trading partners heighten global trade war risks and weigh"
-  },
-  {
-   "t": "2026-11-26T10:00:16Z",
-   "agent": "Trader",
-   "msg": "Closed LINK/USD: bad news: Bitcoin and crypto markets face continued downward pressure from massive spot ET, -0.33% ($-39.32)"
-  },
-  {
-   "t": "2026-11-26T10:00:13Z",
-   "agent": "News Analyst",
-   "msg": "Bad news for LINK/USD: Bitcoin and crypto markets face continued downward pressure from massive spot ETF outflows."
-  },
-  {
-   "t": "2026-11-26T10:00:13Z",
-   "agent": "News Scout",
-   "msg": "Read 114 new headlines/posts, 6 market-moving stories"
-  },
-  {
-   "t": "2026-11-26T09:44:58Z",
-   "agent": "Trader",
-   "msg": "sell SPWO failed: HTTP 403 https://paper-api.alpaca.markets/v2/positions/SPWO: {\"available\":\"0\",\"code\":40310000,\"existing_qty\":\"421\",\"held_for_orders\":\"421\",\"message\":\"insufficient qty available for order (requested: 421, available: 0)\",\"symbol\":\"SPWO\"}"
-  },
-  {
-   "t": "2026-11-26T09:44:57Z",
-   "agent": "News Analyst",
-   "msg": "Bad news for SPWO: Expanding US tariff plans targeting major trading partners heighten global trade war risks and weigh"
-  },
-  {
-   "t": "2026-11-26T09:44:57Z",
-   "agent": "News Scout",
-   "msg": "Read 91 new headlines/posts, 4 market-moving stories"
-  },
-  {
-   "t": "2026-11-26T09:29:39Z",
-   "agent": "Trader",
-   "msg": "sell SPWO failed: HTTP 403 https://paper-api.alpaca.markets/v2/positions/SPWO: {\"available\":\"0\",\"code\":40310000,\"existing_qty\":\"421\",\"held_for_orders\":\"421\",\"message\":\"insufficient qty available for order (requested: 421, available: 0)\",\"symbol\":\"SPWO\"}"
-  },
-  {
-   "t": "2026-11-26T09:29:39Z",
-   "agent": "News Analyst",
-   "msg": "Bad news for SPWO: Expanding US tariff plans targeting major trading partners heighten global trade war risks and weigh"
-  },
-  {
-   "t": "2026-11-26T09:29:39Z",
-   "agent": "News Scout",
-   "msg": "Read 79 new headlines/posts, 5 market-moving stories"
-  },
-  {
-   "t": "2026-11-26T09:29:29Z",
-   "agent": "Risk Officer",
-   "msg": "Stop-loss for BTC/USD placed on Alpaca at $59,074.02"
-  },
-  {
-   "t": "2026-11-26T09:29:29Z",
-   "agent": "Trader",
-   "msg": "Bought 0.177612 BTC/USD at $60,901.05 (stop $59,074.02, target $64,555.12)"
-  },
-  {
-   "t": "2026-11-26T09:14:29Z",
-   "agent": "Trader",
-   "msg": "Saved results to the Agent HQ dashboard"
-  },
-  {
-   "t": "2026-11-26T09:14:25Z",
-   "agent": "Trader",
-   "msg": "BUY BTC/USD: Switzerland's first spot bitcoin ETF launches on SIX, bolstering institutional crypto adop | volume 1.7x normal, price +0.61% since the news | TradingAgents not used (ultra mode)"
-  },
-  {
-   "t": "2026-11-26T09:14:24Z",
-   "agent": "Trader",
-   "msg": "sell SPWO failed: HTTP 403 https://paper-api.alpaca.markets/v2/positions/SPWO: {\"available\":\"0\",\"code\":40310000,\"existing_qty\":\"421\",\"held_for_orders\":\"421\",\"message\":\"insufficient qty available for order (requested: 421, available: 0)\",\"symbol\":\"SPWO\"}"
-  },
-  {
-   "t": "2026-11-26T09:14:24Z",
-   "agent": "News Analyst",
-   "msg": "Bad news for SPWO: Expanding US tariff plans targeting major trading partners heighten global trade war risks and weigh"
-  },
-  {
-   "t": "2026-11-26T09:14:24Z",
-   "agent": "Trader",
-   "msg": "Closed BTC/USD: bad news: Bitcoin and broader crypto markets continue to face downward pressure from persi, +0.47% ($+50.49)"
-  },
-  {
-   "t": "2026-11-26T09:14:22Z",
-   "agent": "News Analyst",
-   "msg": "Bad news for BTC/USD: Bitcoin and broader crypto markets continue to face downward pressure from persistent institutional "
-  },
-  {
-   "t": "2026-11-26T09:14:22Z",
-   "agent": "News Scout",
-   "msg": "Read 166 new headlines/posts, 5 market-moving stories"
-  },
-  {
-   "t": "2026-11-26T08:59:03Z",
-   "agent": "Trader",
-   "msg": "sell SPWO failed: HTTP 403 https://paper-api.alpaca.markets/v2/positions/SPWO: {\"available\":\"0\",\"code\":40310000,\"existing_qty\":\"421\",\"held_for_orders\":\"421\",\"message\":\"insufficient qty available for order (requested: 421, available: 0)\",\"symbol\":\"SPWO\"}"
-  },
-  {
-   "t": "2026-11-26T08:59:03Z",
-   "agent": "News Analyst",
-   "msg": "Bad news for SPWO: Expanding US tariff plans targeting major trading partners heighten global trade war risks and weigh"
-  },
-  {
-   "t": "2026-11-26T08:59:03Z",
-   "agent": "News Scout",
-   "msg": "Read 129 new headlines/posts, 5 market-moving stories"
   }
  ],
  "brief": {
   "date": "Thu Nov 26",
-  "createdAt": "2026-11-26T19:13:09Z",
+  "createdAt": "2026-11-26T21:14:22Z",
   "headline": "Paper account -$355 today (-0.39%), -8.07% total vs SPY -4.79% · 1 open",
   "summary": "6 trade(s) closed today, 9/35 winners overall. TradingAgents checks used today: 0/5.",
   "notes": [
@@ -874,7 +874,7 @@
   "deepUsed": 0,
   "deepMax": 5,
   "social": {
-   "at": "2026-11-26T19:12:58Z",
+   "at": "2026-11-26T21:14:19Z",
    "items": 0,
    "source": "Reddit via Tradestie + ApeWisdom (direct Reddit blocks servers; X needs Agent Reach)",
    "problems": [
@@ -882,13 +882,13 @@
     "r/stocks: HTTP 403 https://www.reddit.com/r/stocks/new.json: <body class=theme-beta><div><"
    ],
    "wsb": {
-    "at": "2026-11-26T19:12:59Z",
+    "at": "2026-11-26T21:14:19Z",
     "tickers": 50,
     "items": 0,
     "key": false
    },
    "ape": {
-    "at": "2026-11-26T19:12:59Z",
+    "at": "2026-11-26T21:14:19Z",
     "tickers": 200,
     "items": 0,
     "problems": []
@@ -3014,10 +3014,6 @@
    "SPWO": {
     "bars": [
      [
-      "2026-11-23T19:30:00Z",
-      28.48
-     ],
-     [
       "2026-11-24T14:30:00Z",
       27.98
      ],
@@ -3385,7 +3381,7 @@
   "backtest": null
  },
  "lab": {
-  "updatedAt": "2026-11-26T18:55:10Z",
+  "updatedAt": "2026-11-26T20:55:10Z",
   "startedAt": "2026-11-25T21:57:13Z",
   "endsAt": "2026-12-02T21:57:13Z",
   "done": false,
@@ -6813,6 +6809,13 @@
  ],
  "decisions": [
   {
+   "t": "2026-11-26T20:59:14Z",
+   "symbol": "BTC/USD",
+   "outcome": "error",
+   "why": "order failed: not enough cash",
+   "event": "Chainlink jumps 10% and DeFi tokens outperform as institutional ambitions gain momentum."
+  },
+  {
    "t": "2026-11-26T19:13:08Z",
    "symbol": "LINK/USD",
    "outcome": "error",
@@ -7224,36 +7227,9 @@
    "outcome": "waiting",
    "why": "down 3% today, no new trades until tomorrow",
    "event": "Renewed Houthi attacks on Saudi oil infrastructure continue to escalate regional supply disruption risks."
-  },
-  {
-   "t": "2026-11-25T19:11:41Z",
-   "symbol": "OXY",
-   "outcome": "waiting",
-   "why": "down 3% today, no new trades until tomorrow",
-   "event": "Renewed Houthi attacks on Saudi oil infrastructure continue to escalate regional supply disruption risks."
   }
  ],
  "equity": [
-  {
-   "t": "2026-11-18T02:34:46Z",
-   "equity": 99966.71,
-   "spy": 733.26
-  },
-  {
-   "t": "2026-11-18T03:04:58Z",
-   "equity": 99918.62,
-   "spy": 733.26
-  },
-  {
-   "t": "2026-11-18T03:35:12Z",
-   "equity": 99934.02,
-   "spy": 733.26
-  },
-  {
-   "t": "2026-11-18T04:05:24Z",
-   "equity": 99984.63,
-   "spy": 733.26
-  },
   {
    "t": "2026-11-18T04:35:35Z",
    "equity": 99980.27,
@@ -9233,6 +9209,26 @@
    "t": "2026-11-26T18:57:53Z",
    "equity": 91926.4,
    "spy": 716.67
+  },
+  {
+   "t": "2026-11-26T19:28:18Z",
+   "equity": 91926.4,
+   "spy": 716.67
+  },
+  {
+   "t": "2026-11-26T19:58:36Z",
+   "equity": 91926.4,
+   "spy": 716.67
+  },
+  {
+   "t": "2026-11-26T20:28:59Z",
+   "equity": 91926.4,
+   "spy": 716.67
+  },
+  {
+   "t": "2026-11-26T20:59:14Z",
+   "equity": 91926.4,
+   "spy": 716.67
   }
  ],
  "watch": [],
@@ -9244,12 +9240,234 @@
  },
  "events": [
   {
-   "summary": "Switzerland's first spot Bitcoin ETF begins trading on the SIX Swiss Exchange, boosting institutional adoption.",
+   "summary": "An attack on Saudi Arabia's Jazan refinery resulting in a casualty and halted operations further escalates Middle East energy supply disruption risks.",
+   "category": "war_escalation",
+   "firstSeen": "2026-11-26T19:00:08Z",
+   "publishers": [
+    "Al Jazeera",
+    "Arise News",
+    "BBC",
+    "BigGo Finance",
+    "Bloomberg.com",
+    "CNA",
+    "Cyprus Mail",
+    "Daily Tribune",
+    "Global Arab Network",
+    "KWWL",
+    "Khaleej Times",
+    "Middle East Eye",
+    "NBC News",
+    "News18",
+    "Qatar news agency",
+    "Report.az",
+    "Reuters",
+    "SBS",
+    "TRT World",
+    "Telangana Today",
+    "The New Arab",
+    "The Peninsula Qatar",
+    "The Straits Times",
+    "UA.NEWS",
+    "Yahoo",
+    "Yahoo Finance",
+    "Yemen Online",
+    "houseofsaud.com",
+    "marketscreener.com",
+    "news.sbs.co.kr",
+    "سانا",
+    "شبكة تواصل الإخبارية"
+   ],
+   "assets": {
+    "XOM": {
+     "direction": "up",
+     "confidence": 0.85,
+     "why": "Attacks on Saudi oil refinery increase geopolitical risk premium and oil prices."
+    },
+    "CVX": {
+     "direction": "up",
+     "confidence": 0.85,
+     "why": "Refinery attacks and regional escalation boost oil and gas sector outlook."
+    },
+    "OXY": {
+     "direction": "up",
+     "confidence": 0.8,
+     "why": "Regional conflict escalation supports higher oil prices."
+    },
+    "SLB": {
+     "direction": "up",
+     "confidence": 0.78,
+     "why": "Middle East supply disruption elevates oil prices and oilfield services demand."
+    }
+   },
+   "sources": [
+    {
+     "id": "be86d0c138235f86",
+     "publisher": "Global Arab Network",
+     "kind": "news",
+     "title": "Two Italian Nationals Die Following Attack in Kuwait",
+     "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPVmltX0xveFRUX1d3VHZoNmJKbkZEdXVhWDRXdkgyaExHcDI3azM1Z25nUVFjLTFOWmYwQWxHUmo3Mk9ub0FoOHBnbHpjX3cxdEF0TnE0UXdveURjM2NsdTEyeGxWc0VXc2VxSUN3dWNjMmRfQTVSOUJkczlVVkdOeDh3MXAySml6WnBIenpORG1kX0huZXkxZTBwNGFsZ0tQcHJiZA?oc=5",
+     "time": "2026-11-26T19:10:59Z"
+    },
+    {
+     "id": "09fc65ed4396c1e7",
+     "publisher": "Khaleej Times",
+     "kind": "news",
+     "title": "1 killed, operations come to halt after attack on Saudi's Jazan Aramco refinery",
+     "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOa3RjYi1oQXZQR255NTBvRzZxR2dxSVpXZ0gyZS0ybVVIZ0NoQlFTUnhuVFRTUjgyeHNHNzFyR2hLa1I4ZW1oazdHcGhYcjFoM3VULTlwNXpnRjgyR0wyM29FbTlFU1hYOVowRHBrakNEMTI3MW9DWUdHZk9VeWVkeDZBUHFvanF0N1JqMWhFMGo5SE9KVTRGMEs3cXpmeVVUUzhfYjdn0gGuAUFVX3lxTFB2Y3VwbFplSXdGaFZ1bjJOZzVCMldycVowTXFGaXhjSHhicUlEeFJvbFVSbk1SemtUVXdYMnZpUFVrNFYwcFVYNlM3OXNvdXVOWklLVjBrMmhFVUs4U1R6WmxpZFhKYTFvVHNXMTJzU0duTzBXRzVNQzVDQ2hZZFZmbkJhV2U4RzVqZVVYS2stdmwxQUVCZjk0ZlRYNXZtdHk1T09HeVpydDlDR0dXZw?oc=5",
+     "time": "2026-11-26T19:05:26Z"
+    },
+    {
+     "id": "8ace0dacaa82d29e",
+     "publisher": "Yahoo Finance",
+     "kind": "news",
+     "title": "Exxon Mobil Stocks Edge Lower as Brent Jumps 3.5% on Refinery Attack",
+     "url": "https://finance.yahoo.com/markets/stocks/articles/exxon-mobil-stocks-edge-lower-190142696.html?.tsrc=rss",
+     "time": "2026-11-26T19:01:42Z"
+    },
+    {
+     "id": "91457e8b2478765d",
+     "publisher": "UA.NEWS",
+     "kind": "news",
+     "title": "Saudi coalition says Houthis attacked Aramco refinery in Jizan — Channel NewsAsia",
+     "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxPZ0VwUS12QnJKZHUxcVNXamsyLVktU2xwbGRZVFFDRG9aU09MMTVsV3FpeW85RXV1OTFmdEtVcDNUSjdTMzA4ZEhnTDJDeFRmc3dlZ0ZUYzNRRHZkY3dKN3hWcGZEc09OZ3dqRGhHWEhqNGFwT25QWFJZb01zTHo5N0tKeUpfR0ZvMWViZWhLQ29FOG9laUtxUERQZmR3UTVSUzhObHJhSFlHYktvVHNqa0JfcHoxY0VXWU1seGtzbWpiZDJCZFBxNEp1Z09kODhM?oc=5",
+     "time": "2026-11-26T19:00:08Z"
+    },
+    {
+     "id": "a35b10dc824a86c9",
+     "publisher": "Yemen Online",
+     "kind": "news",
+     "title": "1 dead , several injured in Jazan refinery attack; operations partially suspended",
+     "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE1OS2NmV056NGJnSXBtTG9UdEx4MVdvQlpNelo1ajJ1Ym9QQW9PalZqTWd1bXRRRVFBaWZ5WnhOemZMTE9pNjlmbGJiZV9sZzNDNmc?oc=5",
+     "time": "2026-11-26T19:26:37Z"
+    }
+   ]
+  },
+  {
+   "summary": "Chainlink jumps 10% and DeFi tokens outperform as institutional ambitions gain momentum.",
+   "category": "crypto_positive",
+   "firstSeen": "2026-11-26T20:02:59Z",
+   "publishers": [
+    "CryptoSlate",
+    "Wisevoter",
+    "www.tokenpost.com"
+   ],
+   "assets": {
+    "LINK/USD": {
+     "direction": "up",
+     "confidence": 0.8,
+     "why": "Chainlink gains 10% on strong institutional momentum and infrastructure demand."
+    },
+    "BTC/USD": {
+     "direction": "up",
+     "confidence": 0.75,
+     "why": "Bitcoin rebounds toward $60,600 alongside broader crypto market recovery."
+    }
+   },
+   "sources": [
+    {
+     "id": "50ca52d5b7c64bb0",
+     "publisher": "Wisevoter",
+     "kind": "news",
+     "title": "Fidelity Files for Spot Chainlink ETF",
+     "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQcExwY3Yyd2Y2WTQwUS1QbnU1eDZHdnZoQ0ZJa2NvSnVHcUFUdmNnRmFJS0pIdXNab21CNDJTXzdZRmFYVlhZaXpQY1lKNWhvY1pybXRBZHNhdXpwNVhnQ0hlQW1yTGpHRy1rYUI2UG5SVGdqUVFCbExWNF91Z3MyZw?oc=5",
+     "time": "2026-11-26T20:02:59Z"
+    },
+    {
+     "id": "4110f904ee8f626b",
+     "publisher": "CryptoSlate",
+     "kind": "news",
+     "title": "Chainlink jumps 10% as its Wall Street ambitions gain momentum on two fronts",
+     "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOcVhhMUcyOUNPVWdIdlZELUdTU0UyWjdmQmt4ZEYzYTVjWlVkaUpOeGs3dUpMdk8tQ0owWFBOTmQzNU1LTVF3dG00RGxMY1o4UmJsSTdWODRDRXFRNDdYckhCcW9uTUF5UXM5WEIzMDZuMGpVRlZHRU9TbGNZZC0xWDZnb0NsQXFyR1ZqSlM2Wk9hM2Z6U05lSmVKalN0aTFpREE?oc=5",
+     "time": "2026-11-26T20:40:01Z"
+    },
+    {
+     "id": "579ed071ae7c44c6",
+     "publisher": "www.tokenpost.com",
+     "kind": "news",
+     "title": "DeFi and Infrastructure Tokens Outpace Bitcoin in Market Rebound",
+     "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBCNE1IUVJFeDIyNzZLcGVQYm42YVdvNHR4d0p5MmNqek5IUm1uV2d1LVFsTXMwRDFxRVNvbk9uWUNmZlFhMjFaR05vLWN1ZVdNaUZPZlpqeFdiZw?oc=5",
+     "time": "2026-11-26T20:35:45Z"
+    }
+   ]
+  },
+  {
+   "summary": "Strong US GDP and hot economic data reinforce hawkish Federal Reserve rate hike expectations, weighing on crypto and risk assets.",
+   "category": "central_bank_hawkish",
+   "firstSeen": "2026-11-26T16:54:26Z",
+   "publishers": [
+    "Around Prague",
+    "Cryptonews.net",
+    "Invezz",
+    "www.tokenpost.com"
+   ],
+   "assets": {
+    "NVDA": {
+     "direction": "down",
+     "confidence": 0.75,
+     "why": "Extremely high rate hike expectations pressure high-multiple tech growth stocks."
+    },
+    "BTC/USD": {
+     "direction": "down",
+     "confidence": 0.72,
+     "why": "Strong GDP and firm rate hike bets create headwinds for crypto recovery"
+    },
+    "MSFT": {
+     "direction": "down",
+     "confidence": 0.75,
+     "why": "Hawkish rate hike odds create headwinds for broad mega-cap tech."
+    }
+   },
+   "sources": [
+    {
+     "id": "e9825e4791ca10eb",
+     "publisher": "www.tokenpost.com",
+     "kind": "news",
+     "title": "Markets Price 99.5% Chance of 25-Basis-Point Fed Hike in December",
+     "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE56NDU3c0liZjJJcm14MVJxMnlzYUlzeHFzMm9keU5lWDM5b3drRVpXRVMwQVdKOFdKZkNGRU5rVENsOFFNT192NWNuUlNqVUlZUlo0NTMzcUNFZw?oc=5",
+     "time": "2026-11-26T16:54:26Z"
+    },
+    {
+     "id": "3f988c6be7e2fa7a",
+     "publisher": "Invezz",
+     "kind": "news",
+     "title": "Fed rate hike odds rise to almost 100%: can AI selloff force a rethink?",
+     "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNaDFHaFlDS0VHdHl6N0lnZld0NFQ0MG1LLWZpb3RnZF8yYVdfeEVfWGIwdDhiTXdCN2o5Rk91UDFpMlFRQmVlV0k5M3ltWE9jT3NFNFZTZHpWRF9kZTBXTjhyNk9hbS1EczNzQW9GQzlvb2k5WVNET3Jpd3hyWjEyaE1DbzRDZ0ZlN1EyLTRDZ1piSjVjSXp1bmZibHhFd2MyUU1EZ292M2J4Yk83aVpQeGVLeDA?oc=5",
+     "time": "2026-11-26T18:18:08Z"
+    },
+    {
+     "id": "79eabeed0c75df91",
+     "publisher": "Around Prague",
+     "kind": "news",
+     "title": "Fed December Rate Hike Odds Climb After Hot Inflation and GDP Data",
+     "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNeE9Xb0JON2wzdzZSZ3ZjTEJpdk05T0xWbHQtTkxDMEFhREZhVUVtRWdBNFV2S3JIamdWbXZTaU8xbXZkN3dJVi1jZE83a1BCNDdpX0V0a3M0VXRWM2JfN0FydlZPX3Yyc0hxMzQ1QU9tVHlUTGhkWVNXbW9Nc1AtVUk2d0VmMVU5aVBqMWVYc0c4eXlkSFdibDZaSGtLb2ZwdHpN?oc=5",
+     "time": "2026-11-26T18:09:45Z"
+    },
+    {
+     "id": "033cbd9e68b4ef25",
+     "publisher": "Cryptonews.net",
+     "kind": "news",
+     "title": "Bitcoin Recovery at Risk as Strong GDP Fuels Fed Rate Hike Bets",
+     "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE5BaDZJVFBJNEZ0WThncVpKbnkyQjlqTTlUYTA3MFI5WHExUkJZY09SMlNFMTBWTHBqbFE1Q0tsUTVtN040ZjBzVmRlZkNmeXdpeUNGY21LWDI?oc=5",
+     "time": "2026-11-26T20:07:53Z"
+    },
+    {
+     "id": "19836c1ab3c6e7b7",
+     "publisher": "Cryptonews.net",
+     "kind": "news",
+     "title": "Bitcoin’s recovery above $60,000 faces a threat from Japan while Wall Street sleeps",
+     "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTFBjaTd0UjlQVFRCN0NVNGhqdDVDZE1mZEhXUnZnODdlcWJ6dXR4UENmQ01vRGJPSTcyRmRqRkltOFNwbzc3Ym5JN200TVJTYnhtdy1kN0RsVWs?oc=5",
+     "time": "2026-11-26T20:07:51Z"
+    }
+   ]
+  },
+  {
+   "summary": "Fidelity files for a spot Chainlink ETF on Nasdaq, bolstering institutional adoption sentiment.",
    "category": "crypto_positive",
    "firstSeen": "2026-11-26T13:55:40Z",
    "publishers": [
     "AMBCrypto",
     "Bitcoin News",
+    "CoinMarketCap",
     "Coinpaper",
     "Pluang",
     "ZyCrypto",
@@ -9312,63 +9530,6 @@
      "title": "Switzerland's First Spot Bitcoin ETF Hits SIX With 350 BTC",
      "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNa3V2WGtWekVNQ003ZGRCbEJyYmVuS0VmVXZmYVlhYXhyclVLdmpuUjA3aU1uNl9pQWwzcExraVJONnlDLUdqMzhXdlNLcEJteGhxQzU5a3d5NEVtb2FKdDRBLW1vbnJ2eWY4elNCZEFXZnVlb0YxT29BV2RYYXI3V3RwWFV5R1ZlRUxETFhKUzM0WkNHa05veFdRMA?oc=5",
      "time": "2026-11-26T18:08:46Z"
-    }
-   ]
-  },
-  {
-   "summary": "Attacks by Houthis on Saudi Arabia's Ras Tanura and Jizan refineries continue to escalate regional energy supply disruption risks.",
-   "category": "war_escalation",
-   "firstSeen": "2026-11-26T19:00:08Z",
-   "publishers": [
-    "Global Arab Network",
-    "Khaleej Times",
-    "UA.NEWS",
-    "Yahoo Finance"
-   ],
-   "assets": {
-    "XOM": {
-     "direction": "up",
-     "confidence": 0.8,
-     "why": "Attacks on Middle Eastern oil refineries heighten energy supply risks."
-    },
-    "CVX": {
-     "direction": "up",
-     "confidence": 0.8,
-     "why": "Geopolitical conflict escalation in oil-producing regions supports higher crude prices."
-    }
-   },
-   "sources": [
-    {
-     "id": "be86d0c138235f86",
-     "publisher": "Global Arab Network",
-     "kind": "news",
-     "title": "Two Italian Nationals Die Following Attack in Kuwait",
-     "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPVmltX0xveFRUX1d3VHZoNmJKbkZEdXVhWDRXdkgyaExHcDI3azM1Z25nUVFjLTFOWmYwQWxHUmo3Mk9ub0FoOHBnbHpjX3cxdEF0TnE0UXdveURjM2NsdTEyeGxWc0VXc2VxSUN3dWNjMmRfQTVSOUJkczlVVkdOeDh3MXAySml6WnBIenpORG1kX0huZXkxZTBwNGFsZ0tQcHJiZA?oc=5",
-     "time": "2026-11-26T19:10:59Z"
-    },
-    {
-     "id": "09fc65ed4396c1e7",
-     "publisher": "Khaleej Times",
-     "kind": "news",
-     "title": "1 killed, operations come to halt after attack on Saudi's Jazan Aramco refinery",
-     "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOa3RjYi1oQXZQR255NTBvRzZxR2dxSVpXZ0gyZS0ybVVIZ0NoQlFTUnhuVFRTUjgyeHNHNzFyR2hLa1I4ZW1oazdHcGhYcjFoM3VULTlwNXpnRjgyR0wyM29FbTlFU1hYOVowRHBrakNEMTI3MW9DWUdHZk9VeWVkeDZBUHFvanF0N1JqMWhFMGo5SE9KVTRGMEs3cXpmeVVUUzhfYjdn0gGuAUFVX3lxTFB2Y3VwbFplSXdGaFZ1bjJOZzVCMldycVowTXFGaXhjSHhicUlEeFJvbFVSbk1SemtUVXdYMnZpUFVrNFYwcFVYNlM3OXNvdXVOWklLVjBrMmhFVUs4U1R6WmxpZFhKYTFvVHNXMTJzU0duTzBXRzVNQzVDQ2hZZFZmbkJhV2U4RzVqZVVYS2stdmwxQUVCZjk0ZlRYNXZtdHk1T09HeVpydDlDR0dXZw?oc=5",
-     "time": "2026-11-26T19:05:26Z"
-    },
-    {
-     "id": "8ace0dacaa82d29e",
-     "publisher": "Yahoo Finance",
-     "kind": "news",
-     "title": "Exxon Mobil Stocks Edge Lower as Brent Jumps 3.5% on Refinery Attack",
-     "url": "https://finance.yahoo.com/markets/stocks/articles/exxon-mobil-stocks-edge-lower-190142696.html?.tsrc=rss",
-     "time": "2026-11-26T19:01:42Z"
-    },
-    {
-     "id": "91457e8b2478765d",
-     "publisher": "UA.NEWS",
-     "kind": "news",
-     "title": "Saudi coalition says Houthis attacked Aramco refinery in Jizan — Channel NewsAsia",
-     "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxPZ0VwUS12QnJKZHUxcVNXamsyLVktU2xwbGRZVFFDRG9aU09MMTVsV3FpeW85RXV1OTFmdEtVcDNUSjdTMzA4ZEhnTDJDeFRmc3dlZ0ZUYzNRRHZkY3dKN3hWcGZEc09OZ3dqRGhHWEhqNGFwT25QWFJZb01zTHo5N0tKeUpfR0ZvMWViZWhLQ29FOG9laUtxUERQZmR3UTVSUzhObHJhSFlHYktvVHNqa0JfcHoxY0VXWU1seGtzbWpiZDJCZFBxNEp1Z09kODhM?oc=5",
-     "time": "2026-11-26T19:00:08Z"
     }
    ]
   },
@@ -9446,59 +9607,6 @@
      "title": "Huge plume of black smoke seen from space after Houthis claim strike on Saudi’s biggest oil refinery",
      "url": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxOZE5lX3daR3BXZHF5LVh2TGJlNURqamNmWEtyR2pJLUJmcEpTOXRXNmJZOWwwZUl0c2Vwc1Uzdmw5R09hNURUbDh6amVYQlFWRzFfZjRaMkppcUZmMWNrYmdWb1d4RlpvVWk1RUNtMDVsNE9RbVJUbU1WYVdnN0FqZXY1S2doel9CUGdFa25IelVaV2dmUXdaOHV5TzNXTV9tcVJwamlQWkJvRzNza3BPUThPRlFrUlNvemFFbjBub0pQVDlfdkhkYkZ1MUxlN2Jock5OUU56TXRrWUE?oc=5",
      "time": "2026-11-26T18:19:43Z"
-    }
-   ]
-  },
-  {
-   "summary": "Fed December rate hike odds climb to nearly 100% following hot inflation and GDP data.",
-   "category": "central_bank_hawkish",
-   "firstSeen": "2026-11-26T16:54:26Z",
-   "publishers": [
-    "Around Prague",
-    "Invezz",
-    "www.tokenpost.com"
-   ],
-   "assets": {
-    "NVDA": {
-     "direction": "down",
-     "confidence": 0.75,
-     "why": "Extremely high rate hike expectations pressure high-multiple tech growth stocks."
-    },
-    "BTC/USD": {
-     "direction": "down",
-     "confidence": 0.6,
-     "why": "Hawkish Fed policy reduces liquidity for speculative assets."
-    },
-    "MSFT": {
-     "direction": "down",
-     "confidence": 0.75,
-     "why": "Hawkish rate hike odds create headwinds for broad mega-cap tech."
-    }
-   },
-   "sources": [
-    {
-     "id": "e9825e4791ca10eb",
-     "publisher": "www.tokenpost.com",
-     "kind": "news",
-     "title": "Markets Price 99.5% Chance of 25-Basis-Point Fed Hike in December",
-     "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE56NDU3c0liZjJJcm14MVJxMnlzYUlzeHFzMm9keU5lWDM5b3drRVpXRVMwQVdKOFdKZkNGRU5rVENsOFFNT192NWNuUlNqVUlZUlo0NTMzcUNFZw?oc=5",
-     "time": "2026-11-26T16:54:26Z"
-    },
-    {
-     "id": "3f988c6be7e2fa7a",
-     "publisher": "Invezz",
-     "kind": "news",
-     "title": "Fed rate hike odds rise to almost 100%: can AI selloff force a rethink?",
-     "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNaDFHaFlDS0VHdHl6N0lnZld0NFQ0MG1LLWZpb3RnZF8yYVdfeEVfWGIwdDhiTXdCN2o5Rk91UDFpMlFRQmVlV0k5M3ltWE9jT3NFNFZTZHpWRF9kZTBXTjhyNk9hbS1EczNzQW9GQzlvb2k5WVNET3Jpd3hyWjEyaE1DbzRDZ0ZlN1EyLTRDZ1piSjVjSXp1bmZibHhFd2MyUU1EZ292M2J4Yk83aVpQeGVLeDA?oc=5",
-     "time": "2026-11-26T18:18:08Z"
-    },
-    {
-     "id": "79eabeed0c75df91",
-     "publisher": "Around Prague",
-     "kind": "news",
-     "title": "Fed December Rate Hike Odds Climb After Hot Inflation and GDP Data",
-     "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNeE9Xb0JON2wzdzZSZ3ZjTEJpdk05T0xWbHQtTkxDMEFhREZhVUVtRWdBNFV2S3JIamdWbXZTaU8xbXZkN3dJVi1jZE83a1BCNDdpX0V0a3M0VXRWM2JfN0FydlZPX3Yyc0hxMzQ1QU9tVHlUTGhkWVNXbW9Nc1AtVUk2d0VmMVU5aVBqMWVYc0c4eXlkSFdibDZaSGtLb2ZwdHpN?oc=5",
-     "time": "2026-11-26T18:09:45Z"
     }
    ]
   },
@@ -10037,54 +10145,6 @@
      "title": "Fresh US tariff plan raises uncertainty over Indian exporters' prospects",
      "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxNb3NPd2FpbWNOdGNTbHdjR0tVSjhHYnB0aWhKLWtUMUJ4NUVWZGFNV2ctVWxEbko5b3hONVMzRFVTR3lIN09uSDJ1ZGNiRTVnQ0tWalBhUXFaNlpXeHZGZVU1ZFc3V29GWGZaSE5ERVV6ME1KMXpfTHVuOUFEMDI0QUhaWmhkS0FleFdid2J0bUdCR2poYnFqQXBOWlh2MDZnd3A2dDFuUGN6OHJGbDlCdHBpR3pIemplSFN5NUVlUHF6VnpLLWlIUXNfMU9KRjlTR1HSAdcBQVVfeXFMT2U4V2JPWF8ydkRCNGxFS2RBMUtUQ1haX0Zla1h6TXpnemJfSGlmWEFfbEpXbV82TmlMaG9fcGdDSkJpYmI3NE9rTnVBRnpMSGQ3Q3dLdkJ4cDlJRkZHcTFVdlVCaWxNSEVpd2JpeXFYcVA1aFdRTVlBblZsaENmYVlrZ0ExMlExV29LQXpVblczb2FTU1puY0xweTd1VVFtbEo3Mlg4ampGRmF2c2h3ZVVaOUZMcDRhdTRfTzVNYXA0TDYxczhMOE1lSnJtY0V5cEFPS2lyMlk?oc=5",
      "time": "2026-11-26T14:15:30Z"
-    }
-   ]
-  },
-  {
-   "summary": "Iraq has increased its oil export rates to 3.6 million barrels per day, adding to global supply.",
-   "category": "oil_supply",
-   "firstSeen": "2026-11-26T15:17:34Z",
-   "publishers": [
-    "Breakingthenews.net",
-    "شبكة تواصل الإخبارية",
-    "وكالة الانباء العراقية (واع)"
-   ],
-   "assets": {
-    "XOM": {
-     "direction": "down",
-     "confidence": 0.5,
-     "why": "Increased supply from Iraq puts downward pressure on oil prices."
-    },
-    "CVX": {
-     "direction": "down",
-     "confidence": 0.5,
-     "why": "Increased supply from Iraq puts downward pressure on oil prices."
-    }
-   },
-   "sources": [
-    {
-     "id": "e1a2ba57dc05e4ae",
-     "publisher": "وكالة الانباء العراقية (واع)",
-     "kind": "news",
-     "title": "Oil Minister: We Have Increased Oil Export Rates From 200,000 to 3.6 Million Barrels Per Day » Iraqi News Agency",
-     "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxObVNMOFdzMVliaFpTZ2s3TXg2MER2RXdIdUZGVTZ0U0w5V1dVb0pUd3JwaHlqZW9RVHV0cU5VSUFScGxxUHh1dG51N3R5d3Q2NzNhWFlST19fVGZKOG9kM3ZIcW5aWDZheVkxYVB6Y0t6ZDJzRzZYcjhDRjNBNDQ4aG5TWVVQanVTNjZtbk50UkxXWE11TlJKUHRmRzlYQWkwZVFFQkJjdTdrU2hENVpkM0hmQVhBeDlhSGVFa283bHR0YTRY?oc=5",
-     "time": "2026-11-26T15:17:34Z"
-    },
-    {
-     "id": "e24d210399d4e89f",
-     "publisher": "Breakingthenews.net",
-     "kind": "news",
-     "title": "Iraq hikes oil export rates to 3.6M barrels per day",
-     "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQMnY0TEQwUmsyTEp0YTVOUE1uZlU4OUhOcDZtZDJGNW1IQVMzWXVIdnhQb0lyM0JnSXJzWjRYODJQYTFxMGhRRl81d1VlWDA5NkJQS3dUdjV4MWFobVRLdFpadTgtcXkycVA5anI2QlA1OUNPTmd3RnFUaUpaTWRIWG9rNFpNbVpvdW5WX2ladGNmOFFFblprZS1xMlo?oc=5",
-     "time": "2026-11-26T15:48:00Z"
-    },
-    {
-     "id": "61ea4d14f208bcc7",
-     "publisher": "شبكة تواصل الإخبارية",
-     "kind": "news",
-     "title": "Iraq Raises Oil Exports to 3.6 Million Barrels per Day",
-     "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE1OZ29nSUR3bXpXWl9QVlVRTDFnSG1KMHJySjVDdlBsOGNwdk56LWFZeFNNR0R3RW1xRjk2ME9xMjBsRXFVOHZrcUpNT21pNU5yS1cw?oc=5",
-     "time": "2026-11-26T16:20:35Z"
     }
    ]
   }
