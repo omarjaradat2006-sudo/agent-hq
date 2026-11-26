@@ -1,17 +1,61 @@
 {
  "trades": [
   {
-   "id": "ahq-BTCUSD-20261126072741",
+   "id": "ahq-BTCUSD-20261126091425",
    "symbol": "BTC/USD",
    "asset": "crypto",
    "status": "pending",
-   "entryOrderId": "b3838f07-3f42-4243-8848-d61fd1ac66fd",
+   "entryOrderId": "e152ff30-ceb5-4f5c-b395-833a23bea907",
    "qty": null,
+   "cost": 11027.69,
+   "estPrice": 60806.37,
+   "entryPrice": 60806.37,
+   "stop": 58982.18,
+   "target": 64454.75,
+   "openedAt": "2026-11-26T09:14:25Z",
+   "trail": 3.0,
+   "news": {
+    "summary": "Switzerland's first spot bitcoin ETF launches on SIX, bolstering institutional crypto adoption sentiment.",
+    "category": "crypto_positive",
+    "sources": [
+     {
+      "publisher": "Funds Europe",
+      "title": "Switzerland’s First Spot Bitcoin ETF Begins Trading",
+      "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxOSlhHTW9ka1RlR1JBaE5NWXR3NnFEbFBBdXZrbjBvZm1CUkNROERTaGc5Z3ZVSzZLZGFRYldTWW1JTFV4ZDlQdUZwSlNRR3J1SW9QdG0tR3hHQnhoYjBwT0hfN2lIckVSNGhiTDdXVUFCYzhsZGQxNVhkRVMtU2hHVEpR?oc=5"
+     },
+     {
+      "publisher": "finews.com",
+      "title": "First Swiss spot bitcoin ETF launched on SIX",
+      "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxObnVzZEY2TVE0bTVMTjFsOE5uMlRIbXNaTlZJd1JvUl9JYk5GWi1ISTVMNTk1ak1HbkQ2Sk45bVR3MDQ4WlZzcUh3d0NuQXFVTlJNY3NwVURZVFlvdTl2Q2lRMnFIekJOQlYwLWpfU1FGejZtTUR4dHZESHh5ZUVYRkwwamljTlpHQmZ4V0tzQ1gwdjJFcWc?oc=5"
+     }
+    ]
+   },
+   "reason": {
+    "triage": "Launch of Switzerland's first spot bitcoin ETF expands institutional access and adoption sentiment.",
+    "confidence": 0.75,
+    "confirmation": "volume 1.7x normal, price +0.61% since the news",
+    "rvol": 1.7,
+    "movePct": 0.61,
+    "publishers": [
+     "Funds Europe",
+     "finews.com"
+    ],
+    "tradingAgents": "not used (ultra mode)",
+    "taSummary": ""
+   }
+  },
+  {
+   "id": "ahq-BTCUSD-20261126072741",
+   "symbol": "BTC/USD",
+   "asset": "crypto",
+   "status": "closed",
+   "entryOrderId": "b3838f07-3f42-4243-8848-d61fd1ac66fd",
+   "qty": 0.178439142,
    "cost": 11039.88,
    "estPrice": 60501.45,
-   "entryPrice": 60501.45,
-   "stop": 58686.41,
-   "target": 64131.54,
+   "entryPrice": 60523.431666524,
+   "stop": 59123.51,
+   "target": 64154.84,
    "openedAt": "2026-11-26T07:27:41Z",
    "trail": 3.0,
    "news": {
@@ -60,7 +104,17 @@
     ],
     "tradingAgents": "not used (ultra mode)",
     "taSummary": ""
-   }
+   },
+   "stopOrderId": "2990a707-89d3-4686-bbe2-c903461fc263",
+   "lastPrice": 60806.37,
+   "unrealizedPct": 0.47,
+   "high": 60952.07,
+   "closing": "bad news: Bitcoin and broader crypto markets continue to face downward pressure from persi",
+   "closedAt": "2026-11-26T09:14:24Z",
+   "exitPrice": 60806.37,
+   "exitReason": "bad news: Bitcoin and broader crypto markets continue to face downward pressure from persi",
+   "pnl": 50.49,
+   "pnlPct": 0.47
   },
   {
    "id": "ahq-LINKUSD-20261126050912",
@@ -106,8 +160,8 @@
     "taSummary": ""
    },
    "stopOrderId": "420c2f46-7f38-4ec3-aa34-eff81a432eb5",
-   "lastPrice": 9.235,
-   "unrealizedPct": -0.5,
+   "lastPrice": 9.25099,
+   "unrealizedPct": -0.33,
    "high": 9.281630162
   },
   {
@@ -5676,9 +5730,38 @@
    "t": "2026-11-26T07:27:41Z",
    "equity": 92193.7,
    "spy": 716.67
+  },
+  {
+   "t": "2026-11-26T07:58:09Z",
+   "equity": 92158.31,
+   "spy": 716.67
+  },
+  {
+   "t": "2026-11-26T08:28:32Z",
+   "equity": 92178.13,
+   "spy": 716.67
+  },
+  {
+   "t": "2026-11-26T08:59:04Z",
+   "equity": 92254.31,
+   "spy": 716.67
   }
  ],
  "decisions": [
+  {
+   "t": "2026-11-26T09:14:25Z",
+   "symbol": "BTC/USD",
+   "outcome": "bought",
+   "why": "volume 1.7x normal, price +0.61% since the news; TradingAgents: not used (ultra mode)",
+   "event": "Switzerland's first spot bitcoin ETF launches on SIX, bolstering institutional crypto adoption sentiment."
+  },
+  {
+   "t": "2026-11-26T07:58:09Z",
+   "symbol": "BTC/USD",
+   "outcome": "waiting",
+   "why": "already holding it",
+   "event": "Switzerland's first spot Bitcoin ETF begins trading, boosting institutional crypto adoption sentiment."
+  },
   {
    "t": "2026-11-26T07:27:41Z",
    "symbol": "BTC/USD",
@@ -6714,20 +6797,6 @@
    "outcome": "waiting",
    "why": "down 3% today, no new trades until tomorrow",
    "event": "Ongoing Houthi attacks on Saudi oil infrastructure and financial centers continue to escalate regional supply risks."
-  },
-  {
-   "t": "2026-11-25T16:56:31Z",
-   "symbol": "GE",
-   "outcome": "waiting",
-   "why": "down 3% today, no new trades until tomorrow",
-   "event": "General Electric's aerospace unit secured a significant order for GEnx engines from Malaysia Aviation Group."
-  },
-  {
-   "t": "2026-11-25T16:56:31Z",
-   "symbol": "CVX",
-   "outcome": "waiting",
-   "why": "down 3% today, no new trades until tomorrow",
-   "event": "Geopolitical conflicts and supply issues continue to impact oil and aviation costs, withEasyJet reporting a massive profit collapse due to the Iran war fuel bill."
   }
  ],
  "startEquity": 100000.0,

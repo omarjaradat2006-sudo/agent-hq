@@ -1,28 +1,32 @@
 {
  "team": "trading",
  "plain": {
-  "line": "Down $7,837.29 since start · 35 trades · holding: BTC/USD, LINK/USD, SPWO, HLAL, SPUS, SPUS",
+  "line": "Down $7,827.91 since start · 36 trades · holding: BTC/USD, LINK/USD, SPWO, HLAL, SPUS, SPUS",
   "rulesMode": "ultra",
-  "top": "Down $7,837.29 since start (-7.84%) · just holding SPY would be -4.79%",
+  "top": "Down $7,827.91 since start (-7.83%) · just holding SPY would be -4.79%",
   "up": false,
   "holding": [
    "BTC/USD: buy order sent, waiting to fill",
-   "LINK/USD: 1283.16 coins worth $11,850.01, down $59.83 (sells at $9.84 or stops at $9.00)",
+   "LINK/USD: 1283.16 coins worth $11,870.53, down $39.32 (sells at $9.84 or stops at $9.00)",
    "SPWO: 421 shares worth $11,682.75, up $416.79 (sells at $27.96 or stops at $25.00)",
    "HLAL: 256 shares worth $16,819.20, up $509.44 (sells at $98.93 or stops at $59.36)",
    "SPUS: 324 shares worth $17,535.54, up $501.41 (sells at $78.24 or stops at $46.94)",
    "SPUS: 2 shares worth $17,535.54, up $501.41 (sells at $81.06 or stops at $48.64)"
   ],
   "today": [
+   "Bought BTC/USD after the news: Switzerland's first spot bitcoin ETF launches on SIX, bolstering institutional crypto adoption sentiment.",
    "Bought BTC/USD after the news: Switzerland's first spot Bitcoin ETF begins trading, boosting institutional crypto adoption sentiment.",
    "Bought LINK/USD after the news: Franklin Templeton to add Hyperliquid to its crypto index ETF, signaling continued institutional product expansion.",
-   "Scanned the news 10 times today: read 732 headlines, found 33 that could move a stock or coin it's allowed to trade."
+   "Sold BTC/USD (bad news: Bitcoin and broader crypto markets continue to face downward pressure from persi): made $50.49.",
+   "Scanned the news 17 times today: read 1526 headlines, found 52 that could move a stock or coin it's allowed to trade.",
+   "Passed on BTC/USD: already holding it.",
+   "Safety rules that stepped in: one position per asset (x5), bad news exit (x1)."
   ],
   "watchlist": "Allowed to trade: 68 halal stocks, 5 Shariah ETFs, 9 coins.",
-  "lastScan": "2026-11-26T07:27:24Z"
+  "lastScan": "2026-11-26T09:14:06Z"
  },
  "hired": true,
- "updatedAt": "2026-11-26T07:27:42Z",
+ "updatedAt": "2026-11-26T09:14:26Z",
  "mode": "PAPER",
  "agents": [
   {
@@ -30,16 +34,16 @@
    "name": "News Scout",
    "role": "Reads X, Reddit and news feeds",
    "status": "working",
-   "doing": "Read 64 new headlines/posts, 4 market-moving stories",
-   "lastRun": "2026-11-26T07:27:40Z"
+   "doing": "Read 166 new headlines/posts, 5 market-moving stories",
+   "lastRun": "2026-11-26T09:14:22Z"
   },
   {
    "id": "analyst",
    "name": "News Analyst",
    "role": "Gemini: is it real, what moves, which way",
    "status": "working",
-   "doing": "Bad news for SPWO: Proposed US tariffs on multiple trading partners increase global trade war risks and weigh on market",
-   "lastRun": "2026-11-26T07:27:40Z"
+   "doing": "Bad news for SPWO: Expanding US tariff plans targeting major trading partners heighten global trade war risks and weigh",
+   "lastRun": "2026-11-26T09:14:24Z"
   },
   {
    "id": "confirm",
@@ -61,17 +65,17 @@
    "id": "risk",
    "name": "Risk Officer",
    "role": "Hard limits, stop-losses, kill switch",
-   "status": "ok",
-   "doing": "Stop-loss for LINK/USD placed on Alpaca at $9.00",
-   "lastRun": "2026-11-26T05:24:16Z"
+   "status": "working",
+   "doing": "BTC/USD new high $60,952.07: stop raised to $59,123.51",
+   "lastRun": "2026-11-26T08:58:48Z"
   },
   {
    "id": "trader",
    "name": "Trader",
    "role": "Places paper orders on Alpaca",
    "status": "working",
-   "doing": "BUY BTC/USD: Switzerland's first spot Bitcoin ETF begins trading, boosting institutional crypto adoptio | volume 0.1x normal, price -0.50% since the news | TradingAgents not used (ultra mode)",
-   "lastRun": "2026-11-26T07:27:41Z"
+   "doing": "BUY BTC/USD: Switzerland's first spot bitcoin ETF launches on SIX, bolstering institutional crypto adop | volume 1.7x normal, price +0.61% since the news | TradingAgents not used (ultra mode)",
+   "lastRun": "2026-11-26T09:14:25Z"
   },
   {
    "id": "coins",
@@ -91,6 +95,146 @@
   }
  ],
  "log": [
+  {
+   "t": "2026-11-26T09:14:25Z",
+   "agent": "Trader",
+   "msg": "BUY BTC/USD: Switzerland's first spot bitcoin ETF launches on SIX, bolstering institutional crypto adop | volume 1.7x normal, price +0.61% since the news | TradingAgents not used (ultra mode)"
+  },
+  {
+   "t": "2026-11-26T09:14:24Z",
+   "agent": "Trader",
+   "msg": "sell SPWO failed: HTTP 403 https://paper-api.alpaca.markets/v2/positions/SPWO: {\"available\":\"0\",\"code\":40310000,\"existing_qty\":\"421\",\"held_for_orders\":\"421\",\"message\":\"insufficient qty available for order (requested: 421, available: 0)\",\"symbol\":\"SPWO\"}"
+  },
+  {
+   "t": "2026-11-26T09:14:24Z",
+   "agent": "News Analyst",
+   "msg": "Bad news for SPWO: Expanding US tariff plans targeting major trading partners heighten global trade war risks and weigh"
+  },
+  {
+   "t": "2026-11-26T09:14:24Z",
+   "agent": "Trader",
+   "msg": "Closed BTC/USD: bad news: Bitcoin and broader crypto markets continue to face downward pressure from persi, +0.47% ($+50.49)"
+  },
+  {
+   "t": "2026-11-26T09:14:22Z",
+   "agent": "News Analyst",
+   "msg": "Bad news for BTC/USD: Bitcoin and broader crypto markets continue to face downward pressure from persistent institutional "
+  },
+  {
+   "t": "2026-11-26T09:14:22Z",
+   "agent": "News Scout",
+   "msg": "Read 166 new headlines/posts, 5 market-moving stories"
+  },
+  {
+   "t": "2026-11-26T08:59:03Z",
+   "agent": "Trader",
+   "msg": "sell SPWO failed: HTTP 403 https://paper-api.alpaca.markets/v2/positions/SPWO: {\"available\":\"0\",\"code\":40310000,\"existing_qty\":\"421\",\"held_for_orders\":\"421\",\"message\":\"insufficient qty available for order (requested: 421, available: 0)\",\"symbol\":\"SPWO\"}"
+  },
+  {
+   "t": "2026-11-26T08:59:03Z",
+   "agent": "News Analyst",
+   "msg": "Bad news for SPWO: Expanding US tariff plans targeting major trading partners heighten global trade war risks and weigh"
+  },
+  {
+   "t": "2026-11-26T08:59:03Z",
+   "agent": "News Scout",
+   "msg": "Read 129 new headlines/posts, 5 market-moving stories"
+  },
+  {
+   "t": "2026-11-26T08:58:48Z",
+   "agent": "Risk Officer",
+   "msg": "BTC/USD new high $60,952.07: stop raised to $59,123.51"
+  },
+  {
+   "t": "2026-11-26T08:43:45Z",
+   "agent": "Trader",
+   "msg": "sell SPWO failed: HTTP 403 https://paper-api.alpaca.markets/v2/positions/SPWO: {\"available\":\"0\",\"code\":40310000,\"existing_qty\":\"421\",\"held_for_orders\":\"421\",\"message\":\"insufficient qty available for order (requested: 421, available: 0)\",\"symbol\":\"SPWO\"}"
+  },
+  {
+   "t": "2026-11-26T08:43:45Z",
+   "agent": "News Analyst",
+   "msg": "Bad news for SPWO: Expanding US tariff plans targeting major trading partners heighten global trade war risks and weigh"
+  },
+  {
+   "t": "2026-11-26T08:43:45Z",
+   "agent": "News Scout",
+   "msg": "Read 95 new headlines/posts, 0 market-moving stories"
+  },
+  {
+   "t": "2026-11-26T08:28:31Z",
+   "agent": "Trader",
+   "msg": "sell SPWO failed: HTTP 403 https://paper-api.alpaca.markets/v2/positions/SPWO: {\"available\":\"0\",\"code\":40310000,\"existing_qty\":\"421\",\"held_for_orders\":\"421\",\"message\":\"insufficient qty available for order (requested: 421, available: 0)\",\"symbol\":\"SPWO\"}"
+  },
+  {
+   "t": "2026-11-26T08:28:31Z",
+   "agent": "News Analyst",
+   "msg": "Bad news for SPWO: Expanding US tariff plans targeting major trading partners heighten global trade war risks and weigh"
+  },
+  {
+   "t": "2026-11-26T08:28:31Z",
+   "agent": "News Scout",
+   "msg": "Read 84 new headlines/posts, 2 market-moving stories"
+  },
+  {
+   "t": "2026-11-26T08:13:20Z",
+   "agent": "Trader",
+   "msg": "sell SPWO failed: HTTP 403 https://paper-api.alpaca.markets/v2/positions/SPWO: {\"available\":\"0\",\"code\":40310000,\"existing_qty\":\"421\",\"held_for_orders\":\"421\",\"message\":\"insufficient qty available for order (requested: 421, available: 0)\",\"symbol\":\"SPWO\"}"
+  },
+  {
+   "t": "2026-11-26T08:13:20Z",
+   "agent": "News Analyst",
+   "msg": "Bad news for SPWO: Expanding US tariff plans targeting major trading partners heighten global trade war risks and weigh"
+  },
+  {
+   "t": "2026-11-26T08:13:20Z",
+   "agent": "News Scout",
+   "msg": "Read 179 new headlines/posts, 2 market-moving stories"
+  },
+  {
+   "t": "2026-11-26T07:58:08Z",
+   "agent": "Trader",
+   "msg": "sell SPWO failed: HTTP 403 https://paper-api.alpaca.markets/v2/positions/SPWO: {\"available\":\"0\",\"code\":40310000,\"existing_qty\":\"421\",\"held_for_orders\":\"421\",\"message\":\"insufficient qty available for order (requested: 421, available: 0)\",\"symbol\":\"SPWO\"}"
+  },
+  {
+   "t": "2026-11-26T07:58:08Z",
+   "agent": "News Analyst",
+   "msg": "Bad news for SPWO: Expanding US tariff plans targeting major trading partners heighten global trade war risks and weigh"
+  },
+  {
+   "t": "2026-11-26T07:58:08Z",
+   "agent": "News Scout",
+   "msg": "Read 72 new headlines/posts, 2 market-moving stories"
+  },
+  {
+   "t": "2026-11-26T07:42:53Z",
+   "agent": "Trader",
+   "msg": "sell SPWO failed: HTTP 403 https://paper-api.alpaca.markets/v2/positions/SPWO: {\"available\":\"0\",\"code\":40310000,\"existing_qty\":\"421\",\"held_for_orders\":\"421\",\"message\":\"insufficient qty available for order (requested: 421, available: 0)\",\"symbol\":\"SPWO\"}"
+  },
+  {
+   "t": "2026-11-26T07:42:53Z",
+   "agent": "News Analyst",
+   "msg": "Bad news for SPWO: Expanding US tariff plans targeting major trading partners heighten global trade war risks and weigh"
+  },
+  {
+   "t": "2026-11-26T07:42:53Z",
+   "agent": "News Scout",
+   "msg": "Read 69 new headlines/posts, 3 market-moving stories"
+  },
+  {
+   "t": "2026-11-26T07:42:45Z",
+   "agent": "Risk Officer",
+   "msg": "Stop-loss for BTC/USD placed on Alpaca at $58,707.73"
+  },
+  {
+   "t": "2026-11-26T07:42:45Z",
+   "agent": "Trader",
+   "msg": "Bought 0.178886 BTC/USD at $60,523.43 (stop $58,707.73, target $64,154.84)"
+  },
+  {
+   "t": "2026-11-26T07:27:44Z",
+   "agent": "Trader",
+   "msg": "Saved results to the Agent HQ dashboard"
+  },
   {
    "t": "2026-11-26T07:27:41Z",
    "agent": "Trader",
@@ -700,168 +844,28 @@
    "t": "2026-11-25T18:24:17Z",
    "agent": "News Scout",
    "msg": "Read 48 new headlines/posts, 2 market-moving stories"
-  },
-  {
-   "t": "2026-11-25T18:18:46Z",
-   "agent": "News Scout",
-   "msg": "Read 1 new headlines/posts, 0 market-moving stories"
-  },
-  {
-   "t": "2026-11-25T18:13:41Z",
-   "agent": "News Scout",
-   "msg": "Read 3 new headlines/posts, 0 market-moving stories"
-  },
-  {
-   "t": "2026-11-25T18:08:35Z",
-   "agent": "News Scout",
-   "msg": "Read 54 new headlines/posts, 1 market-moving stories"
-  },
-  {
-   "t": "2026-11-25T18:03:21Z",
-   "agent": "News Scout",
-   "msg": "Read 17 new headlines/posts, 0 market-moving stories"
-  },
-  {
-   "t": "2026-11-25T17:58:15Z",
-   "agent": "News Scout",
-   "msg": "Read 6 new headlines/posts, 1 market-moving stories"
-  },
-  {
-   "t": "2026-11-25T17:53:08Z",
-   "agent": "News Scout",
-   "msg": "Read 39 new headlines/posts, 0 market-moving stories"
-  },
-  {
-   "t": "2026-11-25T17:53:08Z",
-   "agent": "News Analyst",
-   "msg": "Gemini triage failed, skipping this batch: All Gemini models failed. Last error: Gemini HTTP 429 on gemini-3.8-flash: {\n  \"error\": {\n    \"code\": 429,\n    \"message\": \"You exceeded your current quota, plea"
-  },
-  {
-   "t": "2026-11-25T17:43:49Z",
-   "agent": "News Scout",
-   "msg": "Read 1 new headlines/posts, 0 market-moving stories"
-  },
-  {
-   "t": "2026-11-25T17:38:43Z",
-   "agent": "News Scout",
-   "msg": "Read 33 new headlines/posts, 0 market-moving stories"
-  },
-  {
-   "t": "2026-11-25T17:33:37Z",
-   "agent": "News Scout",
-   "msg": "Read 33 new headlines/posts, 3 market-moving stories"
-  },
-  {
-   "t": "2026-11-25T17:20:53Z",
-   "agent": "News Scout",
-   "msg": "Read 11 new headlines/posts, 1 market-moving stories"
-  },
-  {
-   "t": "2026-11-25T17:15:46Z",
-   "agent": "News Scout",
-   "msg": "Read 63 new headlines/posts, 0 market-moving stories"
-  },
-  {
-   "t": "2026-11-25T17:15:46Z",
-   "agent": "News Analyst",
-   "msg": "Gemini triage failed, skipping this batch: All Gemini models failed. Last error: Gemini HTTP 429 on gemini-3.8-flash: {\n  \"error\": {\n    \"code\": 429,\n    \"message\": \"You exceeded your current quota, plea"
-  },
-  {
-   "t": "2026-11-25T17:07:02Z",
-   "agent": "News Scout",
-   "msg": "Read 55 new headlines/posts, 0 market-moving stories"
-  },
-  {
-   "t": "2026-11-25T17:01:52Z",
-   "agent": "Trader",
-   "msg": "Saved results to the Agent HQ dashboard"
-  },
-  {
-   "t": "2026-11-25T17:01:47Z",
-   "agent": "News Scout",
-   "msg": "Read 4 new headlines/posts, 1 market-moving stories"
-  },
-  {
-   "t": "2026-11-25T16:56:30Z",
-   "agent": "News Scout",
-   "msg": "Read 56 new headlines/posts, 5 market-moving stories"
-  },
-  {
-   "t": "2026-11-25T16:47:42Z",
-   "agent": "News Scout",
-   "msg": "Read 3 new headlines/posts, 0 market-moving stories"
-  },
-  {
-   "t": "2026-11-25T16:37:11Z",
-   "agent": "News Scout",
-   "msg": "Read 83 new headlines/posts, 1 market-moving stories"
-  },
-  {
-   "t": "2026-11-25T16:25:18Z",
-   "agent": "News Scout",
-   "msg": "Read 4 new headlines/posts, 0 market-moving stories"
-  },
-  {
-   "t": "2026-11-25T16:20:01Z",
-   "agent": "News Scout",
-   "msg": "Read 87 new headlines/posts, 4 market-moving stories"
-  },
-  {
-   "t": "2026-11-25T16:11:19Z",
-   "agent": "News Scout",
-   "msg": "Read 6 new headlines/posts, 0 market-moving stories"
-  },
-  {
-   "t": "2026-11-25T16:11:19Z",
-   "agent": "News Analyst",
-   "msg": "Gemini triage failed, skipping this batch: All Gemini models failed. Last error: Gemini HTTP 429 on gemini-3.8-flash: {\n  \"error\": {\n    \"code\": 429,\n    \"message\": \"You exceeded your current quota, plea"
-  },
-  {
-   "t": "2026-11-25T16:02:22Z",
-   "agent": "News Scout",
-   "msg": "Read 19 new headlines/posts, 1 market-moving stories"
-  },
-  {
-   "t": "2026-11-25T15:57:14Z",
-   "agent": "Trader",
-   "msg": "Saved results to the Agent HQ dashboard"
-  },
-  {
-   "t": "2026-11-25T15:56:59Z",
-   "agent": "News Scout",
-   "msg": "Read 54 new headlines/posts, 0 market-moving stories"
-  },
-  {
-   "t": "2026-11-25T15:56:59Z",
-   "agent": "News Analyst",
-   "msg": "Gemini triage failed, skipping this batch: All Gemini models failed. Last error: Gemini HTTP 429 on gemini-3.8-flash: {\n  \"error\": {\n    \"code\": 429,\n    \"message\": \"You exceeded your current quota, plea"
-  },
-  {
-   "t": "2026-11-25T15:53:13Z",
-   "agent": "News Scout",
-   "msg": "Agent Reach not found: news feeds + Yahoo Finance + Reddit direct (no X)"
   }
  ],
  "brief": {
   "date": "Thu Nov 26",
-  "createdAt": "2026-11-26T07:27:42Z",
-  "headline": "Paper account -$987 today (-1.06%), -7.84% total vs SPY -4.79% · 6 open",
-  "summary": "0 trade(s) closed today, 6/29 winners overall. TradingAgents checks used today: 0/5.",
+  "createdAt": "2026-11-26T09:14:26Z",
+  "headline": "Paper account -$110 today (-0.12%), -7.83% total vs SPY -4.79% · 6 open",
+  "summary": "1 trade(s) closed today, 7/30 winners overall. TradingAgents checks used today: 0/5.",
   "notes": [
    "X/Reddit reader: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
   ]
  },
  "account": {
-  "equity": 92162.71,
-  "cash": 23479.38,
+  "equity": 92172.09,
+  "cash": 23491.14,
   "startEquity": 100000.0,
   "startedAt": "2026-11-10T01:51:53Z",
-  "dayPnl": -987.15,
-  "dayPct": -1.06,
-  "totalPnl": -7837.29,
-  "totalPct": -7.84,
+  "dayPnl": -109.65,
+  "dayPct": -0.12,
+  "totalPnl": -7827.91,
+  "totalPct": -7.83,
   "spyPct": -4.79,
-  "vsSpyPct": -3.05
+  "vsSpyPct": -3.04
  },
  "status": {
   "killed": false,
@@ -869,7 +873,7 @@
   "deepUsed": 0,
   "deepMax": 5,
   "social": {
-   "at": "2026-11-26T07:27:28Z",
+   "at": "2026-11-26T09:14:10Z",
    "items": 0,
    "source": "Reddit via Tradestie + ApeWisdom (direct Reddit blocks servers; X needs Agent Reach)",
    "problems": [
@@ -877,13 +881,13 @@
     "r/stocks: HTTP 403 https://www.reddit.com/r/stocks/new.json: <body class=theme-beta><div><"
    ],
    "wsb": {
-    "at": "2026-11-26T07:27:28Z",
-    "tickers": 50,
+    "at": "2026-11-26T09:14:10Z",
+    "tickers": 32,
     "items": 0,
     "key": false
    },
    "ape": {
-    "at": "2026-11-26T07:27:29Z",
+    "at": "2026-11-26T09:14:11Z",
     "tickers": 200,
     "items": 0,
     "problems": []
@@ -897,62 +901,44 @@
  },
  "positions": [
   {
-   "id": "ahq-BTCUSD-20261126072741",
+   "id": "ahq-BTCUSD-20261126091425",
    "symbol": "BTC/USD",
    "asset": "crypto",
    "status": "pending",
-   "entryOrderId": "b3838f07-3f42-4243-8848-d61fd1ac66fd",
+   "entryOrderId": "e152ff30-ceb5-4f5c-b395-833a23bea907",
    "qty": null,
-   "cost": 11039.88,
-   "estPrice": 60501.45,
-   "entryPrice": 60501.45,
-   "stop": 58686.41,
-   "target": 64131.54,
-   "openedAt": "2026-11-26T07:27:41Z",
+   "cost": 11027.69,
+   "estPrice": 60806.37,
+   "entryPrice": 60806.37,
+   "stop": 58982.18,
+   "target": 64454.75,
+   "openedAt": "2026-11-26T09:14:25Z",
    "trail": 3.0,
    "news": {
-    "summary": "Switzerland's first spot Bitcoin ETF begins trading, boosting institutional crypto adoption sentiment.",
+    "summary": "Switzerland's first spot bitcoin ETF launches on SIX, bolstering institutional crypto adoption sentiment.",
     "category": "crypto_positive",
     "sources": [
      {
-      "publisher": "grafa.com",
-      "title": "Fidelity files for Nasdaq Chainlink ETF listing",
-      "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxNLUNYdHlRZmgyYk81emg2UEd3bFhjOGI4QUxCMU1vdzBlaGlfajhhUGZya0dqR0trYld3cDF1aU42Y25DbldFUzdjSm1fMVIzMkFDQzJuT2o3c0hhRFN5LUVZQ3FTQ3JUMVhLWjlMdE9uUjdxaFlZTTN1TEt4Q3FCX0hySQ?oc=5"
-     },
-     {
-      "publisher": "Crypto Economy",
-      "title": "Franklin Templeton to Add Hyperliquid to Crypto Index ETF in December",
-      "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxQcU9NU0JJUEZaVlA2ZW9RV2d3b0lHaG40bUZMdUpGQ3FBNTRnZU9ldkdCYk9CXzBqODVhRm9oaHZuR1Q1VUpJRk1EdklqZW1VWHdqaW1SQXhyRzNlNDV6NHpNanB0ZVFOaGZVem5HN0xYZGV6aHotVVRqVjk5TVhlRFRkZWFtYkRFamdaUlNmM0EwMDFkeHBWYTR4OFdrUQ?oc=5"
-     },
-     {
-      "publisher": "Cryptonews.net",
-      "title": "Fidelity Files for Chainlink ETF. What Does It Mean for LINK?",
-      "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBoRm5fcmlBU1FQWi1MQTc0MDJqUTJCQ2FPSlNxLTdiQ2JoREJpVWdkZDR4aS1qcUQ5OThVUFl1OVFWZmg0YTEzUmQxdkpjRFA5dURzRXdiY2h1QQ?oc=5"
-     },
-     {
-      "publisher": "The Crypto Times",
-      "title": "Fidelity Seeks SEC Approval for Proposed Spot Chainlink ETF on Nasdaq",
-      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxObXpKOUFzUVNKcVkxNWdVd1pxZ2t5Sk1LLXpnNHdIQXdNb252Ni16QVA0cmZqbmY1dDZpX082UWtxZi1OOGw3aFR6M1RYQlg5YXVscmtoSm8tS0xoSnBTd1kwOWoyaWJpb084WUdlTXczOWtvYmVqVUdPNU9KY2VFdG1WME1JZjkzREwxTXJVd05HbEExT25LWEJwTGFkQUJzQy1LTVRNYmdtTzNl?oc=5"
-     },
-     {
-      "publisher": "StreetInsider",
+      "publisher": "Funds Europe",
       "title": "Switzerland’s First Spot Bitcoin ETF Begins Trading",
-      "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQVjRwbXlSSUZZc0VOZUp2d3I3a09veTZzVnJFYWlVbDVQM1BpS19OWmt0Z3luTlZoZnRYSHJxTmRXQTY4VzE0NG53ZV9zTnFhVFNiTWJJYzAxdTdfbFZVWThGNjZpRXdPdTBmZnN5QlFXUXNhRExZNDJNM3VudHBYd0gybU1ybHFNWTlvSl9YbjVUdkMxdUtUQ2dTRUlreEU4VmxNMkJsN1ZQbjByNzlpYkdnckxBTy15YWxR?oc=5"
+      "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxOSlhHTW9ka1RlR1JBaE5NWXR3NnFEbFBBdXZrbjBvZm1CUkNROERTaGc5Z3ZVSzZLZGFRYldTWW1JTFV4ZDlQdUZwSlNRR3J1SW9QdG0tR3hHQnhoYjBwT0hfN2lIckVSNGhiTDdXVUFCYzhsZGQxNVhkRVMtU2hHVEpR?oc=5"
+     },
+     {
+      "publisher": "finews.com",
+      "title": "First Swiss spot bitcoin ETF launched on SIX",
+      "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxObnVzZEY2TVE0bTVMTjFsOE5uMlRIbXNaTlZJd1JvUl9JYk5GWi1ISTVMNTk1ak1HbkQ2Sk45bVR3MDQ4WlZzcUh3d0NuQXFVTlJNY3NwVURZVFlvdTl2Q2lRMnFIekJOQlYwLWpfU1FGejZtTUR4dHZESHh5ZUVYRkwwamljTlpHQmZ4V0tzQ1gwdjJFcWc?oc=5"
      }
     ]
    },
    "reason": {
-    "triage": "Launch of spot Bitcoin ETF in Switzerland enhances institutional access.",
-    "confidence": 0.7,
-    "confirmation": "volume 0.1x normal, price -0.50% since the news",
-    "rvol": 0.06,
-    "movePct": -0.5,
+    "triage": "Launch of Switzerland's first spot bitcoin ETF expands institutional access and adoption sentiment.",
+    "confidence": 0.75,
+    "confirmation": "volume 1.7x normal, price +0.61% since the news",
+    "rvol": 1.7,
+    "movePct": 0.61,
     "publishers": [
-     "Crypto Economy",
-     "Cryptonews.net",
-     "StreetInsider",
-     "The Crypto Times",
-     "grafa.com"
+     "Funds Europe",
+     "finews.com"
     ],
     "tradingAgents": "not used (ultra mode)",
     "taSummary": ""
@@ -1002,8 +988,8 @@
     "taSummary": ""
    },
    "stopOrderId": "420c2f46-7f38-4ec3-aa34-eff81a432eb5",
-   "lastPrice": 9.235,
-   "unrealizedPct": -0.5,
+   "lastPrice": 9.25099,
+   "unrealizedPct": -0.33,
    "high": 9.281630162
   },
   {
@@ -3206,34 +3192,6 @@
    "BTC/USD": {
     "bars": [
      [
-      "2026-11-23T07:30:00Z",
-      61407.707
-     ],
-     [
-      "2026-11-23T07:45:00Z",
-      61374.489
-     ],
-     [
-      "2026-11-23T08:00:00Z",
-      61179.34
-     ],
-     [
-      "2026-11-23T08:15:00Z",
-      61214.975
-     ],
-     [
-      "2026-11-23T08:30:00Z",
-      61441.65
-     ],
-     [
-      "2026-11-23T08:45:00Z",
-      61434.98
-     ],
-     [
-      "2026-11-23T09:00:00Z",
-      61653.9965
-     ],
-     [
       "2026-11-23T09:15:00Z",
       61605.5825
      ],
@@ -4355,45 +4313,45 @@
      ],
      [
       "2026-11-26T07:15:00Z",
-      60490.8125
+      60497.35
+     ],
+     [
+      "2026-11-26T07:30:00Z",
+      60566.047
+     ],
+     [
+      "2026-11-26T07:45:00Z",
+      60454.234
+     ],
+     [
+      "2026-11-26T08:00:00Z",
+      60533.3025
+     ],
+     [
+      "2026-11-26T08:15:00Z",
+      60623.8425
+     ],
+     [
+      "2026-11-26T08:30:00Z",
+      60684.5875
+     ],
+     [
+      "2026-11-26T08:45:00Z",
+      60837.855
+     ],
+     [
+      "2026-11-26T09:00:00Z",
+      60824.175
      ]
     ],
-    "entry": 60501.45,
-    "stop": 58686.41,
-    "target": 64131.54,
-    "openedAt": "2026-11-26T07:27:41Z",
+    "entry": 60806.37,
+    "stop": 58982.18,
+    "target": 64454.75,
+    "openedAt": "2026-11-26T09:14:25Z",
     "qty": null
    },
    "LINK/USD": {
     "bars": [
-     [
-      "2026-11-23T07:30:00Z",
-      8.9174
-     ],
-     [
-      "2026-11-23T07:45:00Z",
-      8.9192
-     ],
-     [
-      "2026-11-23T08:00:00Z",
-      8.908
-     ],
-     [
-      "2026-11-23T08:15:00Z",
-      8.9291
-     ],
-     [
-      "2026-11-23T08:30:00Z",
-      8.9209
-     ],
-     [
-      "2026-11-23T08:45:00Z",
-      8.924
-     ],
-     [
-      "2026-11-23T09:00:00Z",
-      8.9455
-     ],
      [
       "2026-11-23T09:15:00Z",
       8.9477
@@ -5516,7 +5474,35 @@
      ],
      [
       "2026-11-26T07:15:00Z",
-      9.1411
+      9.1433
+     ],
+     [
+      "2026-11-26T07:30:00Z",
+      9.1707
+     ],
+     [
+      "2026-11-26T07:45:00Z",
+      9.1477
+     ],
+     [
+      "2026-11-26T08:00:00Z",
+      9.1538
+     ],
+     [
+      "2026-11-26T08:15:00Z",
+      9.1565
+     ],
+     [
+      "2026-11-26T08:30:00Z",
+      9.1992
+     ],
+     [
+      "2026-11-26T08:45:00Z",
+      9.2444
+     ],
+     [
+      "2026-11-26T09:00:00Z",
+      9.2384
      ]
     ],
     "entry": 9.281630162,
@@ -6181,21 +6167,21 @@
   "backtest": null
  },
  "lab": {
-  "updatedAt": "2026-11-26T07:20:47Z",
+  "updatedAt": "2026-11-26T09:08:17Z",
   "startedAt": "2026-11-25T21:57:13Z",
   "endsAt": "2026-12-02T21:57:13Z",
   "done": false,
   "counts": {
-   "videos": 61,
+   "videos": 95,
    "papers": 3,
    "written": 57,
-   "lessons": 396,
-   "rulesTested": 86,
-   "sourcesRead": 121,
-   "waiting": 0,
-   "rules": 86,
-   "passed": 2,
-   "promising": 41
+   "lessons": 514,
+   "rulesTested": 100,
+   "sourcesRead": 155,
+   "waiting": 119,
+   "rules": 100,
+   "passed": 4,
+   "promising": 49
   },
   "consensus": [
    {
@@ -6210,7 +6196,7 @@
    },
    {
     "theme": "discipline_follow_rules",
-    "people": 20,
+    "people": 23,
     "examples": [
      "Jesse Livermore: Treat trading as a serious business with strict rules rather than a gamble.",
      "Jesse Livermore: Strictly follow predefined trading rules and maintain meticulous execution without letting emotions interfere.",
@@ -6219,38 +6205,8 @@
     ]
    },
    {
-    "theme": "market_regime_filter",
-    "people": 20,
-    "examples": [
-     "William O'Neil: Raise cash and refrain from buying new stocks when the general market enters a confirmed downtrend or distribution phase.",
-     "William J. O'Neil: Determine whether you are in a bull or bear market and trade in alignment with the market direction, because swimming against the current is a losing game.",
-     "Ross Haber: Market direction is crucial; most stocks follow the general market trend, so avoid trading when the market is not in an uptrend.",
-     "William O'Neil: Determine market direction using indices and increase exposure in bull markets while holding cash in bear markets."
-    ]
-   },
-   {
-    "theme": "buy_strength_new_highs",
-    "people": 19,
-    "examples": [
-     "Jesse Livermore: Buy stocks that are making new highs or breaking out of sound consolidation bases rather than buying falling knives.",
-     "Jesse Livermore: Buy stocks making new highs with high volume and clear conviction rather than buying cheap stocks or trying to catch bottoms.",
-     "William O'Neil: Buy stocks as they emerge from proper consolidation bases and make new price highs rather than buying cheap or falling stocks.",
-     "William J. O'Neil: Buy stocks at new highs rather than buying cheap dips, as market winners break out to new price levels."
-    ]
-   },
-   {
-    "theme": "let_winners_run",
-    "people": 19,
-    "examples": [
-     "William O'Neil: Establish clear rules for realizing gains and selling into strength rather than hoping for former highs.",
-     "Mark Minervini: Use trailing stop losses and scale out into strength on extended moves to lock in profits without cutting winners short prematurely.",
-     "Mark Minervini: Scale out of winning positions into strength after multiple successful natural reactions once momentum accelerates.",
-     "Nicolas Darvas: Continuously move up the stop-loss as the stock price creates new, higher Darvas boxes."
-    ]
-   },
-   {
     "theme": "psychology_emotions",
-    "people": 17,
+    "people": 22,
     "examples": [
      "Jesse Livermore: Remove ego, hope, and outside opinions from trading to avoid disastrous psychological mistakes.",
      "Ross Haber: Avoid letting emotions rule your trading decisions; sell down to your sleeping point if you feel anxious.",
@@ -6259,8 +6215,48 @@
     ]
    },
    {
+    "theme": "market_regime_filter",
+    "people": 22,
+    "examples": [
+     "William O'Neil: Raise cash and refrain from buying new stocks when the general market enters a confirmed downtrend or distribution phase.",
+     "William J. O'Neil: Determine whether you are in a bull or bear market and trade in alignment with the market direction, because swimming against the current is a losing game.",
+     "Ross Haber: Market direction is crucial; most stocks follow the general market trend, so avoid trading when the market is not in an uptrend.",
+     "William O'Neil: Determine market direction using indices and increase exposure in bull markets while holding cash in bear markets."
+    ]
+   },
+   {
+    "theme": "let_winners_run",
+    "people": 21,
+    "examples": [
+     "William O'Neil: Establish clear rules for realizing gains and selling into strength rather than hoping for former highs.",
+     "Mark Minervini: Use trailing stop losses and scale out into strength on extended moves to lock in profits without cutting winners short prematurely.",
+     "Mark Minervini: Scale out of winning positions into strength after multiple successful natural reactions once momentum accelerates.",
+     "Nicolas Darvas: Continuously move up the stop-loss as the stock price creates new, higher Darvas boxes."
+    ]
+   },
+   {
+    "theme": "buy_strength_new_highs",
+    "people": 20,
+    "examples": [
+     "Jesse Livermore: Buy stocks that are making new highs or breaking out of sound consolidation bases rather than buying falling knives.",
+     "Jesse Livermore: Buy stocks making new highs with high volume and clear conviction rather than buying cheap stocks or trying to catch bottoms.",
+     "William O'Neil: Buy stocks as they emerge from proper consolidation bases and make new price highs rather than buying cheap or falling stocks.",
+     "William J. O'Neil: Buy stocks at new highs rather than buying cheap dips, as market winners break out to new price levels."
+    ]
+   },
+   {
+    "theme": "position_sizing",
+    "people": 18,
+    "examples": [
+     "Jesse Livermore: Scale into positions incrementally, only adding to a trade when the initial stake has proven profitable.",
+     "Jesse Livermore: Scale into positions gradually, adding to winning trades rather than doubling down on losers.",
+     "Mark Minervini: Never risk more than 1 to 2 percent of your total account on any single trade.",
+     "Ed Seykota: Pyramid into winning trades by adding smaller and smaller amounts as the price moves in your favor to protect open profits."
+    ]
+   },
+   {
     "theme": "trade_with_the_trend",
-    "people": 16,
+    "people": 17,
     "examples": [
      "Jesse Livermore: A trader must align their trades with the general market direction, only taking long positions when the overall trend is definitively upward.",
      "Jesse Livermore: Trade in the direction of the prevailing market trend because the market is never wrong.",
@@ -6269,13 +6265,33 @@
     ]
    },
    {
-    "theme": "position_sizing",
+    "theme": "patience_wait_for_setup",
     "people": 16,
     "examples": [
-     "Jesse Livermore: Scale into positions incrementally, only adding to a trade when the initial stake has proven profitable.",
-     "Jesse Livermore: Scale into positions gradually, adding to winning trades rather than doubling down on losers.",
-     "Mark Minervini: Never risk more than 1 to 2 percent of your total account on any single trade.",
-     "Ed Seykota: Pyramid into winning trades by adding smaller and smaller amounts as the price moves in your favor to protect open profits."
+     "Jesse Livermore: The biggest money is made by sitting quietly and waiting for the right market conditions and clear leading stocks to emerge.",
+     "Jesse Livermore: Wait for pivotal points and market confirmation before entering a trade rather than acting on premature opinions.",
+     "Jesse Livermore: Wait patiently for pivotal market confirmation points rather than forcing trades or acting out of boredom.",
+     "Kristjan Kullamagi (Qullamaggie): Spend hours scanning charts every night and wait patiently for the highest-probability setups rather than forcing trades in choppy markets."
+    ]
+   },
+   {
+    "theme": "risk_per_trade",
+    "people": 16,
+    "examples": [
+     "Mark Minervini: Stop-losses are placed at the low of the final contraction to maintain a favorable risk-to-reward ratio.",
+     "Kristjan Kullamagi: Place stop loss at the day's low, ensuring it is not wider than the average daily range (ADR) or true range (ATR) percentage.",
+     "Paul Tudor Jones: Limit total portfolio risk on any single trade to a small fraction, typically 1 percent or less, to survive inevitable errors.",
+     "Paul Tudor Jones: Seek a minimum risk-to-reward ratio of 5-to-1 so that you can be wrong often without losing capital."
+    ]
+   },
+   {
+    "theme": "concentration_vs_diversification",
+    "people": 15,
+    "examples": [
+     "William J. O'Neil: Concentrate on the best market leaders rather than diversifying widely across weaker stocks.",
+     "Dan Zanger: Concentrate capital into a few high-momentum leaders rather than diversifying across many mediocre stocks.",
+     "Paul Tudor Jones: Diversification across uncorrelated assets prevents total portfolio ruin when one sector or asset class experiences a major pullback.",
+     "Stanley Druckenmiller: Hold a concentrated portfolio of a few high-conviction positions rather than diversifying across dozens of mediocre ideas."
     ]
    },
    {
@@ -6289,38 +6305,8 @@
     ]
    },
    {
-    "theme": "patience_wait_for_setup",
-    "people": 12,
-    "examples": [
-     "Jesse Livermore: The biggest money is made by sitting quietly and waiting for the right market conditions and clear leading stocks to emerge.",
-     "Jesse Livermore: Wait for pivotal points and market confirmation before entering a trade rather than acting on premature opinions.",
-     "Jesse Livermore: Wait patiently for pivotal market confirmation points rather than forcing trades or acting out of boredom.",
-     "Kristjan Kullamagi (Qullamaggie): Spend hours scanning charts every night and wait patiently for the highest-probability setups rather than forcing trades in choppy markets."
-    ]
-   },
-   {
-    "theme": "concentration_vs_diversification",
-    "people": 12,
-    "examples": [
-     "William J. O'Neil: Concentrate on the best market leaders rather than diversifying widely across weaker stocks.",
-     "Dan Zanger: Concentrate capital into a few high-momentum leaders rather than diversifying across many mediocre stocks.",
-     "Paul Tudor Jones: Diversification across uncorrelated assets prevents total portfolio ruin when one sector or asset class experiences a major pullback.",
-     "Stanley Druckenmiller: Hold a concentrated portfolio of a few high-conviction positions rather than diversifying across dozens of mediocre ideas."
-    ]
-   },
-   {
-    "theme": "risk_per_trade",
-    "people": 11,
-    "examples": [
-     "Mark Minervini: Stop-losses are placed at the low of the final contraction to maintain a favorable risk-to-reward ratio.",
-     "Kristjan Kullamagi: Place stop loss at the day's low, ensuring it is not wider than the average daily range (ADR) or true range (ATR) percentage.",
-     "Paul Tudor Jones: Limit total portfolio risk on any single trade to a small fraction, typically 1 percent or less, to survive inevitable errors.",
-     "Paul Tudor Jones: Seek a minimum risk-to-reward ratio of 5-to-1 so that you can be wrong often without losing capital."
-    ]
-   },
-   {
     "theme": "volume_confirmation",
-    "people": 9,
+    "people": 12,
     "examples": [
      "Ross Haber: Look for stocks with increasing institutional sponsorship, which provides liquidity and support.",
      "Mark Minervini: Breakouts must be accompanied by high volume as demand outstrips supply.",
@@ -6330,7 +6316,7 @@
    },
    {
     "theme": "long_term_holding",
-    "people": 9,
+    "people": 10,
     "examples": [
      "Warren Buffett: Hold wonderful businesses indefinitely, ignoring short-term market fluctuations and macro noise.",
      "Peter Lynch: Let winners run for years as long as the fundamental thesis of the company remains intact.",
@@ -6340,7 +6326,7 @@
    },
    {
     "theme": "backtest_and_edge",
-    "people": 8,
+    "people": 9,
     "examples": [
      "Van Tharp: A trading system with positive expectancy combines a clear setup with sufficient opportunities to generate net profit.",
      "Larry Williams: Rigorous quantitative testing of historical data is mandatory to validate any pattern before deploying real capital.",
@@ -6404,6 +6390,109 @@
      "spyReturnPct": -6.09,
      "spyMaxDrawdownPct": -11.35,
      "mar": -0.52,
+     "spyMar": -0.54
+    }
+   },
+   {
+    "name": "5_day_ma_trend_filter",
+    "universe": "stocks",
+    "max_positions": 10,
+    "regime": "none",
+    "entry": [
+     {
+      "f": "close_above_sma",
+      "n": 5
+     }
+    ],
+    "rank": "momentum_63",
+    "exit": {
+     "stop_pct": 5.0,
+     "exit_below_sma": 5
+    },
+    "from": "Brian Shannon",
+    "lesson": "Do not buy stocks trading below a declining 5-day moving average, and do not short stocks trading above an advancing 5-day moving average.",
+    "id": "ce244459b4",
+    "status": "passed",
+    "why": "made money in most periods, beat holding SPY for the risk, and too consistent to be luck",
+    "score": 4.16,
+    "robustness": 1.0,
+    "full": {
+     "returnPct": 84.6,
+     "maxDrawdownPct": -24.48,
+     "trades": 1686,
+     "winRatePct": 42.4,
+     "avgWinPct": 4.96,
+     "avgLossPct": -2.74,
+     "profitFactor": 1.33,
+     "tStat": 3.08,
+     "spyReturnPct": 48.5,
+     "spyMaxDrawdownPct": -18.74,
+     "mar": 3.46,
+     "spyMar": 2.59
+    },
+    "last60": {
+     "returnPct": -15.07,
+     "maxDrawdownPct": -16.82,
+     "trades": 152,
+     "winRatePct": 34.9,
+     "avgWinPct": 3.43,
+     "avgLossPct": -3.53,
+     "profitFactor": 0.52,
+     "tStat": -3.12,
+     "spyReturnPct": -6.09,
+     "spyMaxDrawdownPct": -11.35,
+     "mar": -0.9,
+     "spyMar": -0.54
+    }
+   },
+   {
+    "name": "Market Regime Filter",
+    "universe": "stocks",
+    "max_positions": 10,
+    "regime": "none",
+    "entry": [
+     {
+      "f": "close_above_sma",
+      "n": 20
+     }
+    ],
+    "rank": "momentum_126",
+    "exit": {
+     "max_days": 20
+    },
+    "from": "Oliver Kell",
+    "lesson": "Only trade long when the market index is above its 20-day moving average, otherwise be cautious or stay in cash.",
+    "id": "c648476df5",
+    "status": "passed",
+    "why": "made money in most periods, beat holding SPY for the risk, and too consistent to be luck",
+    "score": 4.12,
+    "robustness": 1.0,
+    "full": {
+     "returnPct": 102.27,
+     "maxDrawdownPct": -29.92,
+     "trades": 330,
+     "winRatePct": 55.8,
+     "avgWinPct": 10.79,
+     "avgLossPct": -7.64,
+     "profitFactor": 1.78,
+     "tStat": 3.69,
+     "spyReturnPct": 48.5,
+     "spyMaxDrawdownPct": -18.74,
+     "mar": 3.42,
+     "spyMar": 2.59
+    },
+    "last60": {
+     "returnPct": -22.63,
+     "maxDrawdownPct": -27.26,
+     "trades": 20,
+     "winRatePct": 30.0,
+     "avgWinPct": 7.21,
+     "avgLossPct": -18.28,
+     "profitFactor": 0.17,
+     "tStat": -2.98,
+     "spyReturnPct": -6.09,
+     "spyMaxDrawdownPct": -11.35,
+     "mar": -0.83,
      "spyMar": -0.54
     }
    },
@@ -6738,6 +6827,57 @@
     }
    },
    {
+    "name": "Value Business Entry",
+    "universe": "stocks",
+    "max_positions": 10,
+    "regime": "none",
+    "entry": [
+     {
+      "f": "close_above_sma",
+      "n": 200
+     }
+    ],
+    "rank": "momentum_252",
+    "exit": {
+     "max_days": 20
+    },
+    "from": "Warren Buffett",
+    "lesson": "Treat stock purchases as owning a piece of a real business with strong fundamentals and enduring competitive advantages.",
+    "id": "92bc1d6722",
+    "status": "promising",
+    "why": "worked, but small changes to its numbers break it (likely a lucky fit)",
+    "score": 4.6,
+    "robustness": 0.5,
+    "full": {
+     "returnPct": 100.1,
+     "maxDrawdownPct": -27.08,
+     "trades": 330,
+     "winRatePct": 53.6,
+     "avgWinPct": 12.33,
+     "avgLossPct": -8.38,
+     "profitFactor": 1.7,
+     "tStat": 3.34,
+     "spyReturnPct": 48.5,
+     "spyMaxDrawdownPct": -18.74,
+     "mar": 3.7,
+     "spyMar": 2.59
+    },
+    "last60": {
+     "returnPct": 0.33,
+     "maxDrawdownPct": -16.57,
+     "trades": 20,
+     "winRatePct": 65.0,
+     "avgWinPct": 17.62,
+     "avgLossPct": -12.0,
+     "profitFactor": 2.73,
+     "tStat": 1.83,
+     "spyReturnPct": -6.09,
+     "spyMaxDrawdownPct": -11.35,
+     "mar": 0.02,
+     "spyMar": -0.54
+    }
+   },
+   {
     "name": "O'Neil 8% Stop",
     "universe": "stocks",
     "max_positions": 5,
@@ -7027,182 +7167,6 @@
      "spyReturnPct": -6.09,
      "spyMaxDrawdownPct": -11.35,
      "mar": -0.75,
-     "spyMar": -0.54
-    }
-   },
-   {
-    "name": "Asness Momentum Value Composite",
-    "universe": "stocks",
-    "max_positions": 20,
-    "regime": "spy_above_200",
-    "entry": [
-     {
-      "f": "close_above_sma",
-      "n": 200
-     },
-     {
-      "f": "top_momentum",
-      "days": 126,
-      "top": 10
-     }
-    ],
-    "rank": "momentum_126",
-    "exit": {
-     "stop_pct": 15.0,
-     "exit_below_sma": 200
-    },
-    "from": "Cliff Asness",
-    "lesson": "Value and momentum strategies must be evaluated through a macro lens, as extreme market dislocations can cause prolonged factor drawdowns.",
-    "id": "35ecb39444",
-    "status": "promising",
-    "why": "made money, but could still be luck or not better than holding SPY for the risk",
-    "score": 3.86,
-    "robustness": 0.8,
-    "full": {
-     "returnPct": 84.24,
-     "maxDrawdownPct": -25.86,
-     "trades": 100,
-     "winRatePct": 34.0,
-     "avgWinPct": 67.57,
-     "avgLossPct": -12.19,
-     "profitFactor": 2.86,
-     "tStat": 1.96,
-     "spyReturnPct": 48.5,
-     "spyMaxDrawdownPct": -18.74,
-     "mar": 3.26,
-     "spyMar": 2.59
-    },
-    "last60": {
-     "returnPct": -12.48,
-     "maxDrawdownPct": -19.39,
-     "trades": 17,
-     "winRatePct": 0.0,
-     "avgWinPct": null,
-     "avgLossPct": -13.49,
-     "profitFactor": 0.0,
-     "tStat": -10.39,
-     "spyReturnPct": -6.09,
-     "spyMaxDrawdownPct": -11.35,
-     "mar": -0.64,
-     "spyMar": -0.54
-    }
-   },
-   {
-    "name": "Tharp_ATR_Risk_Sizing",
-    "universe": "stocks",
-    "max_positions": 10,
-    "regime": "none",
-    "entry": [
-     {
-      "f": "close_above_sma",
-      "n": 200
-     },
-     {
-      "f": "near_high",
-      "days": 252,
-      "within_pct": 10.0
-     }
-    ],
-    "rank": "momentum_126",
-    "exit": {
-     "atr_stop": 3.0,
-     "exit_below_sma": 50
-    },
-    "from": "Van Tharp",
-    "lesson": "Position sizing must be calculated based on your account risk (percentage risk per trade) and the volatility of the asset using initial stops.",
-    "id": "2c059d23e9",
-    "status": "promising",
-    "why": "made money, but could still be luck or not better than holding SPY for the risk",
-    "score": 3.79,
-    "robustness": 1.0,
-    "full": {
-     "returnPct": 78.52,
-     "maxDrawdownPct": -24.6,
-     "trades": 335,
-     "winRatePct": 39.4,
-     "avgWinPct": 12.87,
-     "avgLossPct": -4.58,
-     "profitFactor": 1.83,
-     "tStat": 2.21,
-     "spyReturnPct": 48.5,
-     "spyMaxDrawdownPct": -18.74,
-     "mar": 3.19,
-     "spyMar": 2.59
-    },
-    "last60": {
-     "returnPct": -10.16,
-     "maxDrawdownPct": -17.08,
-     "trades": 36,
-     "winRatePct": 19.4,
-     "avgWinPct": 3.76,
-     "avgLossPct": -5.61,
-     "profitFactor": 0.16,
-     "tStat": -4.36,
-     "spyReturnPct": -6.09,
-     "spyMaxDrawdownPct": -11.35,
-     "mar": -0.6,
-     "spyMar": -0.54
-    }
-   },
-   {
-    "name": "Kell Base Breakout",
-    "universe": "stocks",
-    "max_positions": 5,
-    "regime": "spy_above_50",
-    "entry": [
-     {
-      "f": "close_above_sma",
-      "n": 50
-     },
-     {
-      "f": "near_high",
-      "days": 252,
-      "within_pct": 10.0
-     },
-     {
-      "f": "volume_surge",
-      "days": 50,
-      "mult": 1.5
-     }
-    ],
-    "rank": "momentum_126",
-    "exit": {
-     "stop_pct": 8.0,
-     "exit_below_sma": 10
-    },
-    "from": "Oliver Kell",
-    "lesson": "Buy stocks showing relative strength that are emerging from multi-week consolidation bases into new highs.",
-    "id": "35204b1f79",
-    "status": "promising",
-    "why": "made money, but could still be luck or not better than holding SPY for the risk",
-    "score": 3.49,
-    "robustness": 0.83,
-    "full": {
-     "returnPct": 49.52,
-     "maxDrawdownPct": -17.11,
-     "trades": 422,
-     "winRatePct": 43.8,
-     "avgWinPct": 5.06,
-     "avgLossPct": -2.73,
-     "profitFactor": 1.45,
-     "tStat": 1.88,
-     "spyReturnPct": 48.5,
-     "spyMaxDrawdownPct": -18.74,
-     "mar": 2.89,
-     "spyMar": 2.59
-    },
-    "last60": {
-     "returnPct": -4.27,
-     "maxDrawdownPct": -7.01,
-     "trades": 32,
-     "winRatePct": 40.6,
-     "avgWinPct": 3.49,
-     "avgLossPct": -3.3,
-     "profitFactor": 0.72,
-     "tStat": -0.64,
-     "spyReturnPct": -6.09,
-     "spyMaxDrawdownPct": -11.35,
-     "mar": -0.61,
      "spyMar": -0.54
     }
    }
@@ -7576,42 +7540,86 @@
    "note": "Daily prices after the buy day; the buy day's own path is unknown, so this is an estimate."
   },
   "log": [
-   "11-26 00:20 Replayed the bot's 28 trades",
-   "11-25 23:50 Read written: trade with the trend trading evidence, 3 lessons",
-   "11-25 23:50 Found 4 sources on trade with the trend trading evidence",
-   "11-25 23:50 Read written: position sizing trading evidence, 3 lessons",
-   "11-25 23:50 Found 3 sources on position sizing trading evidence",
-   "11-25 23:50 Read written: let winners run trading evidence, 4 lessons",
-   "11-25 23:50 Found 4 sources on let winners run trading evidence",
-   "11-25 23:49 Read written: buy strength new highs trading evidence, 4 lessons",
-   "11-25 23:49 Found 3 sources on buy strength new highs trading evidence",
-   "11-25 23:49 Read written: market regime filter trading evidence, 3 lessons",
-   "11-25 23:49 Found 5 sources on market regime filter trading evidence",
-   "11-25 23:49 Read written: cut losses fast trading evidence, 2 lessons",
-   "11-25 23:49 Found 5 sources on cut losses fast trading evidence",
-   "11-25 23:49 Read written: Definitive Guide to Position Sizing, 3 lessons",
-   "11-25 23:48 Found 3 sources on Definitive Guide to Position Sizing",
-   "11-25 23:48 Read written: Trade Your Way to Financial Freedom, 4 lessons",
-   "11-25 23:48 Found 4 sources on Trade Your Way to Financial Freedom",
-   "11-25 23:48 Read written: Market Wizards by Jack Schwager, 4 lessons",
-   "11-25 23:48 Found 4 sources on Market Wizards by Jack Schwager",
-   "11-25 23:48 Read written: Quantum Fund, 4 lessons"
+   "11-26 09:08 Read video: Soros Reflexivity Explained, 3 lessons",
+   "11-26 09:07 Read video: Why Dalio's Risk-Parity Trade No Longer Looks Attractive, 1 lessons",
+   "11-26 09:07 Read video: Jim Simons' Trading Strategy Explained, 3 lessons",
+   "11-26 09:07 Read video: 💰Advanced Investing: Risk Parity (Hedge Fund Investment Secrets Part 1, 0 lessons",
+   "11-26 09:07 Read video: How Jim Simons Turned $100 Into $400 Million | Renaissance Technologie, 3 lessons",
+   "11-26 09:06 Read video: 7 Peter Lynch Rules I’m Using in 2025 (One Up on Wall Street Review), 4 lessons",
+   "11-26 09:06 Read video: Warren Buffett & Charlie Munger On Jim Simons & Quant Investing, 3 lessons",
+   "11-26 09:06 Read video: Peter Lynch’s Secret Rules For Finding Winners 🔍 One Up On Wall Street, 8 lessons",
+   "11-26 09:05 Read video: Renaissance Technologies - Trading Strategies Revealed | A Documentary, 4 lessons",
+   "11-26 09:05 Read video: Peter Lynch: One Up On Wall Street Summary (10 Investing Rules), 9 lessons",
+   "11-26 09:04 Read video: W. Buffett: \"Forget Everything Except THIS\" - #investing #stockmarket, 2 lessons",
+   "11-26 09:04 Read video: ONE UP ON WALL STREET SUMMARY (BY PETER LYNCH), 5 lessons",
+   "11-26 09:03 Read video: Warren Buffett's Will: Why He Put 90% in the S&P 500, 1 lessons",
+   "11-26 09:03 Read video: The Charting Blueprint Behind Oliver Kell’s 941% Win, 4 lessons",
+   "11-26 09:03 Read video: Value Investing Explained: Warren Buffett's 5 Principles, 5 lessons",
+   "11-26 09:03 Read video: OLIVER KELL 941% Breakout Strategy FULL TUTORIAL | US Investing Champi, 5 lessons",
+   "11-26 09:01 Read video: WARREN BUFFETT STOCK MARKET STRATEGIES FOR BEGINNERS, 5 lessons",
+   "11-26 09:01 Read video: How to use Kell's Price Cycle to Improve Your Swing Trading, 3 lessons",
+   "11-26 09:00 Read video: Ken Griffin on the Anchored VWAP, 1 lessons",
+   "11-26 09:00 Read video: BEST Trading Strategy 2024? - US Champion Trader Oliver Kell discloses, 7 lessons"
   ],
   "reportUrl": null
  },
  "trades": [
   {
-   "id": "ahq-BTCUSD-20261126072741",
+   "id": "ahq-BTCUSD-20261126091425",
    "symbol": "BTC/USD",
    "asset": "crypto",
    "status": "pending",
-   "entryOrderId": "b3838f07-3f42-4243-8848-d61fd1ac66fd",
+   "entryOrderId": "e152ff30-ceb5-4f5c-b395-833a23bea907",
    "qty": null,
+   "cost": 11027.69,
+   "estPrice": 60806.37,
+   "entryPrice": 60806.37,
+   "stop": 58982.18,
+   "target": 64454.75,
+   "openedAt": "2026-11-26T09:14:25Z",
+   "trail": 3.0,
+   "news": {
+    "summary": "Switzerland's first spot bitcoin ETF launches on SIX, bolstering institutional crypto adoption sentiment.",
+    "category": "crypto_positive",
+    "sources": [
+     {
+      "publisher": "Funds Europe",
+      "title": "Switzerland’s First Spot Bitcoin ETF Begins Trading",
+      "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxOSlhHTW9ka1RlR1JBaE5NWXR3NnFEbFBBdXZrbjBvZm1CUkNROERTaGc5Z3ZVSzZLZGFRYldTWW1JTFV4ZDlQdUZwSlNRR3J1SW9QdG0tR3hHQnhoYjBwT0hfN2lIckVSNGhiTDdXVUFCYzhsZGQxNVhkRVMtU2hHVEpR?oc=5"
+     },
+     {
+      "publisher": "finews.com",
+      "title": "First Swiss spot bitcoin ETF launched on SIX",
+      "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxObnVzZEY2TVE0bTVMTjFsOE5uMlRIbXNaTlZJd1JvUl9JYk5GWi1ISTVMNTk1ak1HbkQ2Sk45bVR3MDQ4WlZzcUh3d0NuQXFVTlJNY3NwVURZVFlvdTl2Q2lRMnFIekJOQlYwLWpfU1FGejZtTUR4dHZESHh5ZUVYRkwwamljTlpHQmZ4V0tzQ1gwdjJFcWc?oc=5"
+     }
+    ]
+   },
+   "reason": {
+    "triage": "Launch of Switzerland's first spot bitcoin ETF expands institutional access and adoption sentiment.",
+    "confidence": 0.75,
+    "confirmation": "volume 1.7x normal, price +0.61% since the news",
+    "rvol": 1.7,
+    "movePct": 0.61,
+    "publishers": [
+     "Funds Europe",
+     "finews.com"
+    ],
+    "tradingAgents": "not used (ultra mode)",
+    "taSummary": ""
+   }
+  },
+  {
+   "id": "ahq-BTCUSD-20261126072741",
+   "symbol": "BTC/USD",
+   "asset": "crypto",
+   "status": "closed",
+   "entryOrderId": "b3838f07-3f42-4243-8848-d61fd1ac66fd",
+   "qty": 0.178439142,
    "cost": 11039.88,
    "estPrice": 60501.45,
-   "entryPrice": 60501.45,
-   "stop": 58686.41,
-   "target": 64131.54,
+   "entryPrice": 60523.431666524,
+   "stop": 59123.51,
+   "target": 64154.84,
    "openedAt": "2026-11-26T07:27:41Z",
    "trail": 3.0,
    "news": {
@@ -7660,7 +7668,17 @@
     ],
     "tradingAgents": "not used (ultra mode)",
     "taSummary": ""
-   }
+   },
+   "stopOrderId": "2990a707-89d3-4686-bbe2-c903461fc263",
+   "lastPrice": 60806.37,
+   "unrealizedPct": 0.47,
+   "high": 60952.07,
+   "closing": "bad news: Bitcoin and broader crypto markets continue to face downward pressure from persi",
+   "closedAt": "2026-11-26T09:14:24Z",
+   "exitPrice": 60806.37,
+   "exitReason": "bad news: Bitcoin and broader crypto markets continue to face downward pressure from persi",
+   "pnl": 50.49,
+   "pnlPct": 0.47
   },
   {
    "id": "ahq-LINKUSD-20261126050912",
@@ -7706,8 +7724,8 @@
     "taSummary": ""
    },
    "stopOrderId": "420c2f46-7f38-4ec3-aa34-eff81a432eb5",
-   "lastPrice": 9.235,
-   "unrealizedPct": -0.5,
+   "lastPrice": 9.25099,
+   "unrealizedPct": -0.33,
    "high": 9.281630162
   },
   {
@@ -9518,6 +9536,20 @@
  ],
  "decisions": [
   {
+   "t": "2026-11-26T09:14:25Z",
+   "symbol": "BTC/USD",
+   "outcome": "bought",
+   "why": "volume 1.7x normal, price +0.61% since the news; TradingAgents: not used (ultra mode)",
+   "event": "Switzerland's first spot bitcoin ETF launches on SIX, bolstering institutional crypto adoption sentiment."
+  },
+  {
+   "t": "2026-11-26T07:58:09Z",
+   "symbol": "BTC/USD",
+   "outcome": "waiting",
+   "why": "already holding it",
+   "event": "Switzerland's first spot Bitcoin ETF begins trading, boosting institutional crypto adoption sentiment."
+  },
+  {
    "t": "2026-11-26T07:27:41Z",
    "symbol": "BTC/USD",
    "outcome": "bought",
@@ -9922,38 +9954,9 @@
    "outcome": "waiting",
    "why": "down 3% today, no new trades until tomorrow",
    "event": "Renewed Houthi attacks on Saudi oil infrastructure continue to escalate regional supply disruption risks."
-  },
-  {
-   "t": "2026-11-25T19:06:25Z",
-   "symbol": "CVX",
-   "outcome": "waiting",
-   "why": "down 3% today, no new trades until tomorrow",
-   "event": "Renewed Houthi attacks on Saudi oil infrastructure continue to escalate regional supply disruption risks."
-  },
-  {
-   "t": "2026-11-25T19:06:25Z",
-   "symbol": "XOM",
-   "outcome": "waiting",
-   "why": "down 3% today, no new trades until tomorrow",
-   "event": "Renewed Houthi attacks on Saudi oil infrastructure continue to escalate regional supply disruption risks."
   }
  ],
  "equity": [
-  {
-   "t": "2026-11-17T15:01:32Z",
-   "equity": 100096.77,
-   "spy": 738.35
-  },
-  {
-   "t": "2026-11-17T15:34:26Z",
-   "equity": 100011.43,
-   "spy": 735.05
-  },
-  {
-   "t": "2026-11-17T16:06:56Z",
-   "equity": 99834.72,
-   "spy": 732.24
-  },
   {
    "t": "2026-11-17T16:39:52Z",
    "equity": 99770.06,
@@ -11938,6 +11941,21 @@
    "t": "2026-11-26T07:27:41Z",
    "equity": 92193.7,
    "spy": 716.67
+  },
+  {
+   "t": "2026-11-26T07:58:09Z",
+   "equity": 92158.31,
+   "spy": 716.67
+  },
+  {
+   "t": "2026-11-26T08:28:32Z",
+   "equity": 92178.13,
+   "spy": 716.67
+  },
+  {
+   "t": "2026-11-26T08:59:04Z",
+   "equity": 92254.31,
+   "spy": 716.67
   }
  ],
  "watch": [],
@@ -11949,73 +11967,413 @@
  },
  "events": [
   {
-   "summary": "Switzerland's first spot Bitcoin ETF begins trading, boosting institutional crypto adoption sentiment.",
-   "category": "crypto_positive",
-   "firstSeen": "2026-11-26T01:45:42Z",
+   "summary": "Escalating Middle East conflict, including tanker attacks and refinery explosions, continues to threaten global oil supply.",
+   "category": "oil_supply",
+   "firstSeen": "2026-11-26T06:33:36Z",
    "publishers": [
-    "Crypto Economy",
-    "Cryptonews.net",
-    "StreetInsider",
-    "The Crypto Times",
-    "grafa.com"
+    "Al Jazeera",
+    "AzerNews",
+    "Bhaskar English",
+    "CNA",
+    "Daily Mirror - Sri Lanka",
+    "Daily Times",
+    "Digg",
+    "Eastern Riverina Chronicle",
+    "Gulf Today",
+    "Investing.com",
+    "JournalArta",
+    "KLSE Screener",
+    "Kyiv Post",
+    "Laodong.vn",
+    "Latest news from Azerbaijan",
+    "MM News",
+    "MTV Lebanon",
+    "NDTV",
+    "NDTV Profit",
+    "News18",
+    "NewsBytes",
+    "Newsquawk",
+    "Operativ Məlumat Mərkəzi",
+    "Profit by Pakistan Today",
+    "Reuters",
+    "Splash247",
+    "Thaiger",
+    "The Canberra Times",
+    "The Daily Jagran",
+    "The Financial Express",
+    "The Singleton Argus",
+    "The Straits Times",
+    "The Times of India",
+    "The Washington Post",
+    "Times Now",
+    "WE News English",
+    "WSJ",
+    "Wisevoter",
+    "blue News",
+    "grafa.com",
+    "marketscreener.com",
+    "www.jordannews.jo",
+    "Мілітарний",
+    "Прямий",
+    "Цензор.НЕТ",
+    "صوت الإمارات"
    ],
    "assets": {
-    "LINK/USD": {
+    "XOM": {
      "direction": "up",
-     "confidence": 0.7,
-     "why": "Institutional ETF filing by a major firm like Fidelity is a significant bullish catalyst for Chainlink."
+     "confidence": 0.82,
+     "why": "Oil supply risks from refinery attacks and Middle East tensions push crude and oil majors higher."
     },
-    "BTC/USD": {
+    "CVX": {
+     "direction": "up",
+     "confidence": 0.8,
+     "why": "Middle East oil infrastructure threats elevate energy prices."
+    },
+    "OXY": {
+     "direction": "up",
+     "confidence": 0.75,
+     "why": "Higher crude prices driven by regional supply attacks."
+    },
+    "SLB": {
+     "direction": "up",
+     "confidence": 0.6,
+     "why": "Increased oil prices and regional instability typically boost demand for oilfield services."
+    },
+    "COP": {
      "direction": "up",
      "confidence": 0.7,
-     "why": "Launch of spot Bitcoin ETF in Switzerland enhances institutional access."
+     "why": "Supply disruption risks in oil-producing regions typically drive up oil and gas stock prices."
     }
    },
    "sources": [
     {
-     "id": "b8f7b36f5c211024",
-     "publisher": "grafa.com",
+     "id": "35d9b3a89685562a",
+     "publisher": "marketscreener.com",
      "kind": "news",
-     "title": "Fidelity files for Nasdaq Chainlink ETF listing",
-     "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxNLUNYdHlRZmgyYk81emg2UEd3bFhjOGI4QUxCMU1vdzBlaGlfajhhUGZya0dqR0trYld3cDF1aU42Y25DbldFUzdjSm1fMVIzMkFDQzJuT2o3c0hhRFN5LUVZQ3FTQ3JUMVhLWjlMdE9uUjdxaFlZTTN1TEt4Q3FCX0hySQ?oc=5",
-     "time": "2026-11-26T01:45:42Z"
+     "title": "Oil equipment supplier SBO's Q3 profit falls as Middle East disruptions continue",
+     "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxPZ1lRRlc2RzlWUXB1TnA2ejFPWV90akhUTF9TNVAzZXRZWmFJOUJPUFVhakZtVEpVM0Y4eTVRai04SXBGTFNSQkU2UkwwNFNkZFk3ckhYazkxbjZVUUtwY1ZoX1pHQVgxT2pra3hOZVlwRkdVY0h2d1BQTm0tdjVHdzRFc2xrVFg3UzRncEV6aHpiZVNRNFVqbVVhcmRDNkRVRTB4VXM0QWg4NHRZb0ZvY01iakM4UWN0WjVLSkNzMnRLNHA0Q3E4Y29JLWlyZw?oc=5",
+     "time": "2026-11-26T06:50:21Z"
     },
     {
-     "id": "36f9dcc7f1f3d583",
-     "publisher": "Crypto Economy",
+     "id": "bf9bba16ff1c551c",
+     "publisher": "MM News",
      "kind": "news",
-     "title": "Franklin Templeton to Add Hyperliquid to Crypto Index ETF in December",
-     "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxQcU9NU0JJUEZaVlA2ZW9RV2d3b0lHaG40bUZMdUpGQ3FBNTRnZU9ldkdCYk9CXzBqODVhRm9oaHZuR1Q1VUpJRk1EdklqZW1VWHdqaW1SQXhyRzNlNDV6NHpNanB0ZVFOaGZVem5HN0xYZGV6aHotVVRqVjk5TVhlRFRkZWFtYkRFamdaUlNmM0EwMDFkeHBWYTR4OFdrUQ?oc=5",
-     "time": "2026-11-26T02:01:57Z"
+     "title": "Global Oil Prices Rise as Brent Crude Reaches $94.71 per Barrel",
+     "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNMmVMSDliODdTY2lYYmpyZDV1TnRCelB1cmRxUE45ZUFDYmFqSThEOVhMNV9SaUlPcVZDRUNlVnJvdHZBTElQekUtWTBfWkczLS0xUGJkNHpDaDZRU0I3TmhzSHdVdVF3SC1rbHhNYzhxZEk0amZTN01aM2dXY1VKMWk5ZUNMakI2?oc=5",
+     "time": "2026-11-26T06:46:58Z"
     },
     {
-     "id": "8d6cfac1542a86b3",
-     "publisher": "Cryptonews.net",
+     "id": "41440b1a1a50e95c",
+     "publisher": "صوت الإمارات",
      "kind": "news",
-     "title": "Fidelity Files for Chainlink ETF. What Does It Mean for LINK?",
-     "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBoRm5fcmlBU1FQWi1MQTc0MDJqUTJCQ2FPSlNxLTdiQ2JoREJpVWdkZDR4aS1qcUQ5OThVUFl1OVFWZmg0YTEzUmQxdkpjRFA5dURzRXdiY2h1QQ?oc=5",
-     "time": "2026-11-26T05:20:47Z"
+     "title": "Oil prices rise amid supply concerns in the Strait of Hormuz and escalating regional tensions",
+     "url": "https://news.google.com/rss/articles/CBMi4wFBVV95cUxPMWhvMEZlVk8xb3ljWjg4bGo3bU1LSW1EQjhJcE9jc3lCWW1WZW9NajBZWlZJNzVvSVo2WVV5NW5oUmJ0SzdIbk1ZaUVIdmo1WGE5QXhKSE83TW1NcUNkdXE5MHBMYU10SXplMDlaYkRsRkJMTUFVdGRmM2FxWjBiMmpnN013N2RURVEya29NNU1LZ3I4OXhZU0R3SjBJdUNDbWtURWZ3RE1xZWt4MW83R0k2b1FqNFZuTXdmOV90QzVKbHFsNV9US3ppZWFSR2MweWFvaFhhRTNZUEJMVVVXenNUSQ?oc=5",
+     "time": "2026-11-26T06:41:12Z"
     },
     {
-     "id": "ce03f1b549b29bc4",
-     "publisher": "The Crypto Times",
+     "id": "8bc43e340d7d8603",
+     "publisher": "Gulf Today",
      "kind": "news",
-     "title": "Fidelity Seeks SEC Approval for Proposed Spot Chainlink ETF on Nasdaq",
-     "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxObXpKOUFzUVNKcVkxNWdVd1pxZ2t5Sk1LLXpnNHdIQXdNb252Ni16QVA0cmZqbmY1dDZpX082UWtxZi1OOGw3aFR6M1RYQlg5YXVscmtoSm8tS0xoSnBTd1kwOWoyaWJpb084WUdlTXczOWtvYmVqVUdPNU9KY2VFdG1WME1JZjkzREwxTXJVd05HbEExT25LWEJwTGFkQUJzQy1LTVRNYmdtTzNl?oc=5",
-     "time": "2026-11-26T05:23:41Z"
+     "title": "Oil prices rise on supply concerns",
+     "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxOU0k1Qm9CcjN3amVoLXdtOTFTX3M0NC1DSEllVmdWVEN5Y3dfaFVOaTlQY1R1dXpwX09TRkF5akxfa1VwX21tQXhqN3Jac3RPa0VJLTBqM1VWc2pIaFVfSjl6QzlCNDhSVnVQOTBGaEUyTnd1aWwtd3NiZU92S2dNQzBYX3h6UQ?oc=5",
+     "time": "2026-11-26T06:35:36Z"
     },
     {
-     "id": "cec3a2551c9c6625",
-     "publisher": "StreetInsider",
+     "id": "e44be2a2c6302782",
+     "publisher": "JournalArta",
      "kind": "news",
-     "title": "Switzerland’s First Spot Bitcoin ETF Begins Trading",
-     "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQVjRwbXlSSUZZc0VOZUp2d3I3a09veTZzVnJFYWlVbDVQM1BpS19OWmt0Z3luTlZoZnRYSHJxTmRXQTY4VzE0NG53ZV9zTnFhVFNiTWJJYzAxdTdfbFZVWThGNjZpRXdPdTBmZnN5QlFXUXNhRExZNDJNM3VudHBYd0gybU1ybHFNWTlvSl9YbjVUdkMxdUtUQ2dTRUlreEU4VmxNMkJsN1ZQbjByNzlpYkdnckxBTy15YWxR?oc=5",
-     "time": "2026-11-26T07:12:15Z"
+     "title": "Oil Holds Gains After Houthis Say They Attacked Saudi Refinery",
+     "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxQZkpPWE14VFp6c2VISTlHd044b2VSTzhwY0hCZkg2WDNBemhoNEJvZHU3d0JvT2pCTnVHekFxMVpvUVl6eXNPTDJXd0VDWWZ3WEFXU0c3ejlVM015d2l1UUsxSGF3YXZTZEFsNFE2MlpxZUdLd0VXSE1Iblh2QTJIeEI4cw?oc=5",
+     "time": "2026-11-26T06:35:10Z"
     }
    ]
   },
   {
-   "summary": "Proposed US tariffs on multiple trading partners increase global trade war risks and weigh on market sentiment.",
+   "summary": "Global trade tensions escalate as China warns of retaliation against new US tariff proposals.",
+   "category": "tariffs",
+   "firstSeen": "2026-11-26T07:58:04Z",
+   "publishers": [
+    "ABP Live English",
+    "ANTARA News",
+    "Bangladesh Post",
+    "BreakingNews.ie",
+    "BusinessToday Malaysia",
+    "CNBC",
+    "Central News South Africa",
+    "Dainik Jagran MP CG",
+    "FlipItMoney",
+    "NDTV",
+    "Novinite.com",
+    "Reuters",
+    "Telegraph India",
+    "The Economic Times",
+    "The Standard (HK)",
+    "Traders Union"
+   ],
+   "assets": {
+    "AMAT": {
+     "direction": "down",
+     "confidence": 0.7,
+     "why": "Trade war and tariff hikes pressure semiconductor equipment and broad tech."
+    },
+    "AAPL": {
+     "direction": "down",
+     "confidence": 0.7,
+     "why": "Escalating trade tensions and tariff threats between the US and China negatively impact multinational tech companies."
+    },
+    "SPWO": {
+     "direction": "down",
+     "confidence": 0.65,
+     "why": "Broad tariff escalation pressures global equities."
+    },
+    "NVDA": {
+     "direction": "down",
+     "confidence": 0.6,
+     "why": "Trade war escalation and export friction weigh on semiconductor sector sentiment."
+    },
+    "AMD": {
+     "direction": "down",
+     "confidence": 0.6,
+     "why": "Trade war escalation and export friction weigh on semiconductor sector sentiment."
+    }
+   },
+   "sources": [
+    {
+     "id": "7b91b6e36c255f46",
+     "publisher": "CNBC",
+     "kind": "news",
+     "title": "U.S. tariff-hike threats pile pressure on partners to sign trade deals",
+     "url": "https://www.cnbc.com/2026/11/26/us-tariffs-hike-trade-agreement.html",
+     "time": "2026-11-26T08:09:39Z"
+    },
+    {
+     "id": "8a159198a9ff9db0",
+     "publisher": "Central News South Africa",
+     "kind": "news",
+     "title": "Trump Fires Fresh Tariff Salvo at 14 Major Trading Partners, Including China and EU",
+     "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQTzVCVHJxR2NYR1N2ek5lOEVLQ1dlWnRXdEdUYi1IRlJ4bnFmWFRCRzgyRDR2aFdFanZSMC0zN1VqNmwtZHZ6YTV6cEVLNXg2SE1IVGRlZFNSLWJqUVMzZFVuUkpoeVY1V3ktTG5BeldVQjV2dWN6azg5MWxCNHEySDZpWVZWclc1THFicThpbzczTFp2d01GOVV2V284T2lyZG9McjhmTHJ5YTRxS2c?oc=5",
+     "time": "2026-11-26T08:08:41Z"
+    },
+    {
+     "id": "9f84aaa3b6dae228",
+     "publisher": "Novinite.com",
+     "kind": "news",
+     "title": "China, EU and Brazil Condemn Trump's New Tariff Proposals",
+     "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQekJXemhBLVBncHdYMkQ1WXhYZi1HNS1fREZvMEsxSldwVWZJT0hiYldHZ2pFanJTd1pzMGl4dDRwenJDN3otQmROTEtQc25nM1owZmhjYzFHLWhuMVJzNVRIX2xBUmpLeEVnT0hsWmpSZ0drTGNtVTQxaWQzOGVpOVRoRDliWHFyV0JBNVk0ZGhkcXRXNmgwV1hxSzhGakI4MDdqcA?oc=5",
+     "time": "2026-11-26T08:02:32Z"
+    },
+    {
+     "id": "4abc09f0e1c008c3",
+     "publisher": "BreakingNews.ie",
+     "kind": "news",
+     "title": "US tariff hikes threaten to reignite trade tensions with China",
+     "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxOLUdXZVhvTHVidXZERnFfckJPSno0cy14QjdEcTduQ09ZWmJSWjVPbzdJdF9aYmxGOHZ0ZnBlX2hSa0RXaGN3bE1KTFc5SXpRaHg4QW5hVFl0YjdtbC1XZ1l4RmFVMVRTRFNZWkxEd3lidzJlOHkwTm12OERCSVBWRmk2aWNvV1VHeGIwS1lZaDhaUWJBN1ZhYkUtNjV3eHRoUWhINXowV3hZN1pQR1E?oc=5",
+     "time": "2026-11-26T08:00:50Z"
+    },
+    {
+     "id": "9abbfee1ccbe26eb",
+     "publisher": "NDTV",
+     "kind": "news",
+     "title": "With 40% Tariff Threat, Trump Wants An Edge Over China Despite A Trade Deal",
+     "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQb1BEOVo1eXVNOG5UUEpTRjdCa2doZDcycEluYzM1XzZfalA2Znd6bWtVQk9SOWVBQ0xrMExhOEF3VHdJcVpIVkUtbkhoNElBS3QzYjNsSGl2YjJUUXRONDdRX0dUdnd3Y2xybDhmb2M3RWowT3o3UXNWTjRnUmJySWQ4R2FDUEhDb1NwZUlmSnBJalpSdDBVVGc3N3pJNGRROU03ZTJ3RjlKeGpVY2lpVG1vX0bSAbwBQVVfeXFMT2VDQWFIY1NxaElVVklwNkJFMkQzb2szbDhvYmpBeFRUNFJNeG1CUWhmSE5SWm1Gc1BHSGY0SDBvMV9FaG0wWlFlOHV1Y1h4cUJzQ25YZlY0RmZWdjVQTk1qelRWTmVBaFQ1Y0szY255OGRfZ2xzRFNZWlZ3WjRKaVh6UWtUR0pzNlNhbXl1RWRQQzRRQXRRenFWQ2lDRVBoc0Y3X2JCRklTOTNjZzNWLUN6MnRCZlFiSExuRzY?oc=5",
+     "time": "2026-11-26T08:00:46Z"
+    }
+   ]
+  },
+  {
+   "summary": "Bitcoin and broader crypto markets continue to face downward pressure from persistent institutional ETF outflows.",
+   "category": "crypto_negative",
+   "firstSeen": "2026-11-26T09:04:09Z",
+   "publishers": [
+    "Score Nigeria"
+   ],
+   "assets": {
+    "BTC/USD": {
+     "direction": "down",
+     "confidence": 0.6,
+     "why": "Continued institutional ETF outflows are negatively impacting sentiment and price."
+    }
+   },
+   "sources": [
+    {
+     "id": "f31b0cf62ac3fdbf",
+     "publisher": "Score Nigeria",
+     "kind": "news",
+     "title": "Crypto Market News: Nvidia Stock Falls, Bitcoin ETF Outflows",
+     "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQM2FIYS1DOWF6bm1FS3RMYUtrYjVpaTdDRHlJVGUyUm1WQ3E0SUNXanVMUElBR1lhSXFHY3lWblRFYm5rbWY5b3R1RmFrczNJNjN3aFc2UGFOT0lYSmZiMDh6c00tTDZVSGVJVVJfVjZwcElDbEdMYV91eDI2Q0l1RW5CaHpNbWxLcnZ1VF9qeU5WdHpObGJZWlRILTJEbWhVa01jVGRDbFc3Zw?oc=5",
+     "time": "2026-11-26T09:04:09Z"
+    }
+   ]
+  },
+  {
+   "summary": "Wall Street analysts upgraded Nvidia and CrowdStrike following leadership stability and strong AI fundamentals.",
+   "category": "company_bad_news",
+   "firstSeen": "2026-11-26T04:14:03Z",
+   "publishers": [
+    "Yahoo Finance"
+   ],
+   "assets": {
+    "NVDA": {
+     "direction": "up",
+     "confidence": 0.7,
+     "why": "Wall Street analyst upgrades and return of Jensen Huang provide strong positive momentum."
+    },
+    "CRWD": {
+     "direction": "up",
+     "confidence": 0.65,
+     "why": "Analyst upgrade supports near-term bullish sentiment."
+    }
+   },
+   "sources": [
+    {
+     "id": "9321182b3093b2a1",
+     "publisher": "Yahoo Finance",
+     "kind": "news",
+     "title": "‘I Don’t Think He Needs a Pardon at All’: JD Vance Defends Nvidia CEO Jensen Huang as Crypto Bettors Put Him Atop Trump’s List",
+     "url": "https://www.benzinga.com/markets/prediction-markets/26/11/63659548/jd-vance-jensen-huang-trump-pardon-nvidia?utm_source=yahooFinance&utm_campaign=partner_feed&utm_medium=referral&.tsrc=rss",
+     "time": "2026-11-26T04:14:03Z"
+    },
+    {
+     "id": "e1710cdcae315cb5",
+     "publisher": "Yahoo Finance",
+     "kind": "news",
+     "title": "Nvidia Wins Back Wall Street Backing As Jensen Huang Returns; CRWD, LI Stocks Score Upgrades While DKNG, AMBA Face Pressure",
+     "url": "https://stocktwits.com/news-articles/markets/equity/nvda-jensen-huang-return-stock-upgrades-crwd-li-amba-dkng/cNbxi4aR9ZF?.tsrc=rss",
+     "time": "2026-11-26T08:43:12Z"
+    }
+   ]
+  },
+  {
+   "summary": "Switzerland's first spot bitcoin ETF launches on SIX, bolstering institutional crypto adoption sentiment.",
+   "category": "crypto_positive",
+   "firstSeen": "2026-11-26T07:47:42Z",
+   "publishers": [
+    "Funds Europe",
+    "finews.com"
+   ],
+   "assets": {
+    "BTC/USD": {
+     "direction": "up",
+     "confidence": 0.75,
+     "why": "Launch of Switzerland's first spot bitcoin ETF expands institutional access and adoption sentiment."
+    }
+   },
+   "sources": [
+    {
+     "id": "fff88de333fbe072",
+     "publisher": "Funds Europe",
+     "kind": "news",
+     "title": "Switzerland’s First Spot Bitcoin ETF Begins Trading",
+     "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxOSlhHTW9ka1RlR1JBaE5NWXR3NnFEbFBBdXZrbjBvZm1CUkNROERTaGc5Z3ZVSzZLZGFRYldTWW1JTFV4ZDlQdUZwSlNRR3J1SW9QdG0tR3hHQnhoYjBwT0hfN2lIckVSNGhiTDdXVUFCYzhsZGQxNVhkRVMtU2hHVEpR?oc=5",
+     "time": "2026-11-26T07:47:42Z"
+    },
+    {
+     "id": "052b2fe791a416e1",
+     "publisher": "finews.com",
+     "kind": "news",
+     "title": "First Swiss spot bitcoin ETF launched on SIX",
+     "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxObnVzZEY2TVE0bTVMTjFsOE5uMlRIbXNaTlZJd1JvUl9JYk5GWi1ISTVMNTk1ak1HbkQ2Sk45bVR3MDQ4WlZzcUh3d0NuQXFVTlJNY3NwVURZVFlvdTl2Q2lRMnFIekJOQlYwLWpfU1FGejZtTUR4dHZESHh5ZUVYRkwwamljTlpHQmZ4V0tzQ1gwdjJFcWc?oc=5",
+     "time": "2026-11-26T08:56:34Z"
+    }
+   ]
+  },
+  {
+   "summary": "HP Inc. shares surged following a strong Q4 earnings beat and positive outlook on device refresh cycles.",
+   "category": "earnings_beat",
+   "firstSeen": "2026-11-26T02:15:00Z",
+   "publishers": [
+    "TIKR.com",
+    "TradingView"
+   ],
+   "assets": {},
+   "sources": [
+    {
+     "id": "713579b600cd38ab",
+     "publisher": "TIKR.com",
+     "kind": "news",
+     "title": "HP Soars 11% on Q4 Beat as Interim CEO Sees “Multiple Waves of Device Refresh”",
+     "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNVWpmdHVoTDEwUEpSb3Nnbm92MWR4ZUlTZEFfVHdXS3BSOGV6UlhiSXNIay05Q3lGU3JObHRFTDZMY1RLTEJfRGhRc1dIMHZmd0luWV8wc3NQdXBlVmFBQWJDanlWei1SNDU5dmhxVUE0U3FPMm1QczhRTXJneXdPMVJZSlE1ZTR2bkNGLUU3d3pBN1poRXc0TWt4RkpuNUctZDdj?oc=5",
+     "time": "2026-11-26T02:15:00Z"
+    },
+    {
+     "id": "445cf1f3a7f270fd",
+     "publisher": "TradingView",
+     "kind": "news",
+     "title": "HPQ: HP Jumps More Than 11% as Earnings Beat Cuts Through Tech Selloff",
+     "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxNbVpJcnBGeGxPMTdLYWNFZ0JNSk16dlFXbXZjLWZiWmgyUnk0QTZoZDNrR2hDTzBnZVREU3lma3RDVFh2N04yY1pINzRzbnJTWkNCNXNkWEVJRmFLT2dpVWluRUtDWFoxQzZQUTlQNF9FTmViQjlTM0tydEpyMC1GQnVXZUVYSC1kSjNmaWN6LWVhYTZNTEpJNjVPN3MxMThiMUxiSzBrNUtpMjRVUHlrS3FOX3I0bTFlWTM0aTVkRk90dWl1cDI1QmR3?oc=5",
+     "time": "2026-11-26T07:42:00Z"
+    }
+   ]
+  },
+  {
+   "summary": "Fed Chair Warsh keeps a tight grip on rates due to AI-driven price pressures, reinforcing hawkish expectations.",
+   "category": "central_bank_hawkish",
+   "firstSeen": "2026-11-26T05:48:06Z",
+   "publishers": [
+    "BigGo Finance",
+    "FXStreet",
+    "Investing.com India",
+    "Livemint"
+   ],
+   "assets": {
+    "NEM": {
+     "direction": "down",
+     "confidence": 0.7,
+     "why": "Higher interest rates increase the opportunity cost of holding non-yielding gold."
+    },
+    "AEM": {
+     "direction": "down",
+     "confidence": 0.7,
+     "why": "Higher interest rates increase the opportunity cost of holding non-yielding gold."
+    },
+    "BTC/USD": {
+     "direction": "down",
+     "confidence": 0.65,
+     "why": "Hawkish central bank rate expectations weigh on crypto risk assets"
+    },
+    "ETH/USD": {
+     "direction": "down",
+     "confidence": 0.65,
+     "why": "Hawkish central bank rate expectations weigh on crypto risk assets"
+    }
+   },
+   "sources": [
+    {
+     "id": "99d0ac1b7e75f599",
+     "publisher": "FXStreet",
+     "kind": "news",
+     "title": "Gold struggles to recover as inflation keeps rate hike risks alive",
+     "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNR3N0eFdXOVZRWXA0elVteDZkWFFJejdpUjBHdkIxMlMzaXNNRi11aXY2QzJzeHpuU0dseUtoZW5LN29MRDRsOXRMa3VVUUljNXcxU1hIMW9SUjM5UGxOeEFHYmFqT1dSTWowcjhNWHJHNWJUZW5HYXRoWTFfWTY0eVk2cWM3SGcxWExfSnh2anI1d0tDUzlCUnNaZDVfQzM5Zk5FNThuTDFjZ0dWd3BFRUtNNA?oc=5",
+     "time": "2026-11-26T05:53:40Z"
+    },
+    {
+     "id": "ce7298fa3171275d",
+     "publisher": "Investing.com India",
+     "kind": "news",
+     "title": "Gold eases as U.S. inflation data reinforces Fed rate-hike bets By Investing.com",
+     "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQd1hrUWItN0NONXdmWGNSUXFac1A3U0dnbmo5OExRTk9BdUpzLUdCOXRUMEJBbG5QTmM4OHpNM25ubTFIQ0x3a0hBdHdjNEdVSk1tel9vYlo0SDhYd2c2WGUySlU5QzJUbklwcUJMMGVxN3RuZ0xpQlhyZ1hWblJfQlBoczZDVDRBeURwNS1EMDZyQ05saVkxaW1idUs4Z0h1Mi03dVB0V2pGX3h3aU5oVEVTQkdJdw?oc=5",
+     "time": "2026-11-26T05:48:06Z"
+    },
+    {
+     "id": "3a16c18ed0fd863c",
+     "publisher": "Livemint",
+     "kind": "news",
+     "title": "Gold prices slipped 2% below support level before bouncing back — Here's why the precious metal remains under pressure",
+     "url": "https://news.google.com/rss/articles/CBMi_gFBVV95cUxOUWZPYkFBNTYxTUZELXRVZ3RvbkdFQVFWY0xrTTByVnFFb2JCM0xlMWVLSm0zYlhOd0h2OFZtdHVweTFTUmpSTFZMN2xGWEg5Qzk2eDhvbjc4Y0NrdUktdDgzSDZzVGcyMVFDRGU4MVJQcEw5LXowNE1YN1FwUG1vdmhwdUtUVVNoRWtRbnF5OHoteDl1bkFCYjQxNVdvU0tXRVdIaDZrWGRpNHhJbGkyUHAzVHhqS1VxdjNaa0RqcTNZbktQS1Z6dFlDUlM3a2xVR0xHOVBxZ0VrQnhkVGdQSUhiMk9LRGUzOWdrYWhVRDZxejdZalR3TzBzMG5pQdIBgwJBVV95cUxPLUVXeHR0aVdMUXQtTkJmTGdzRklWVXgxNUExSi04bXFCdHdobGNtUXM3S1VESEVyV3NsTWpaaWNNajRhWldBanBfVGNGNFd0Y29OaFV6clpKNzVUMDFRRFVWVTBxWjNGemZWdEd3aWtKWTNJRXhpdFZRajZ6bG9Za1ZjUmFoTGxEMmNVbWJzaXo5X05WUGJtcHgzZy05cGV6U1pkOXhMNDNiYTRiWWY4dWhEcmMzdUktM1JyRGJ6SnFZUDRLUDgzQk9uNzZBRnFwTU5oZ0oyMEo3c1RfTmRlT01xNkZha3dkM19tQ09GQWZBZXpBV0RoVER3R2EyYmdQWk9z?oc=5",
+     "time": "2026-11-26T05:49:43Z"
+    },
+    {
+     "id": "72345433fc02299e",
+     "publisher": "BigGo Finance",
+     "kind": "news",
+     "title": "Fed Chair Warsh Keeps Tight Grip on Rates Over AI-Driven Price Pressure, Clashing With Calls for a Slower Pace",
+     "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE55TVY4WXg2eVFTNmQyc2ZOYlFRU3BUWWpXNWwtY3BrSFYxcG44MmpETlloOXh2Yjhveno4YXBYMWNtUUZvYi1vNTNPbkNSN2M2Y21vdUZDOVNWeVkwMEhZLWF5WDZDR1hjZTZpQTdIMzMycUlzbWc?oc=5",
+     "time": "2026-11-26T07:36:00Z"
+    }
+   ]
+  },
+  {
+   "summary": "Expanding US tariff plans targeting major trading partners heighten global trade war risks and weigh on market sentiment.",
    "category": "tariffs",
    "firstSeen": "2026-11-26T01:43:07Z",
    "publishers": [
@@ -12035,6 +12393,7 @@
     "Business Standard",
     "Business Today",
     "BusinessLine",
+    "BusinessToday Malaysia",
     "CNA",
     "CNBC TV18",
     "Cyprus Mail",
@@ -12048,11 +12407,14 @@
     "FlipItMoney",
     "Free Malaysia Today",
     "Hindustan Times",
+    "Human Resources Director",
     "IBTimes India",
     "India Today",
     "India's News.Net",
     "IntelliNews",
+    "Irish Examiner",
     "Jakarta Globe",
+    "Japan Today",
     "Japan Wire by Kyodo News",
     "JournalArta",
     "KSLM Radio",
@@ -12185,116 +12547,7 @@
    ]
   },
   {
-   "summary": "Escalating Middle East conflicts and refinery attacks continue to drive oil prices higher amid supply disruption risks.",
-   "category": "oil_supply",
-   "firstSeen": "2026-11-26T06:33:36Z",
-   "publishers": [
-    "Gulf Today",
-    "Investing.com",
-    "JournalArta",
-    "MM News",
-    "Operativ Məlumat Mərkəzi",
-    "Wisevoter",
-    "grafa.com",
-    "marketscreener.com",
-    "www.jordannews.jo",
-    "Мілітарний",
-    "Прямий",
-    "Цензор.НЕТ",
-    "صوت الإمارات"
-   ],
-   "assets": {
-    "XOM": {
-     "direction": "up",
-     "confidence": 0.8,
-     "why": "Middle East and Russian supply attacks boost oil prices."
-    },
-    "CVX": {
-     "direction": "up",
-     "confidence": 0.8,
-     "why": "Geopolitical risk and supply disruption elevate energy stocks."
-    },
-    "OXY": {
-     "direction": "up",
-     "confidence": 0.75,
-     "why": "Higher crude prices driven by regional supply attacks."
-    },
-    "SLB": {
-     "direction": "up",
-     "confidence": 0.6,
-     "why": "Increased oil prices and regional instability typically boost demand for oilfield services."
-    }
-   },
-   "sources": [
-    {
-     "id": "35d9b3a89685562a",
-     "publisher": "marketscreener.com",
-     "kind": "news",
-     "title": "Oil equipment supplier SBO's Q3 profit falls as Middle East disruptions continue",
-     "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxPZ1lRRlc2RzlWUXB1TnA2ejFPWV90akhUTF9TNVAzZXRZWmFJOUJPUFVhakZtVEpVM0Y4eTVRai04SXBGTFNSQkU2UkwwNFNkZFk3ckhYazkxbjZVUUtwY1ZoX1pHQVgxT2pra3hOZVlwRkdVY0h2d1BQTm0tdjVHdzRFc2xrVFg3UzRncEV6aHpiZVNRNFVqbVVhcmRDNkRVRTB4VXM0QWg4NHRZb0ZvY01iakM4UWN0WjVLSkNzMnRLNHA0Q3E4Y29JLWlyZw?oc=5",
-     "time": "2026-11-26T06:50:21Z"
-    },
-    {
-     "id": "bf9bba16ff1c551c",
-     "publisher": "MM News",
-     "kind": "news",
-     "title": "Global Oil Prices Rise as Brent Crude Reaches $94.71 per Barrel",
-     "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNMmVMSDliODdTY2lYYmpyZDV1TnRCelB1cmRxUE45ZUFDYmFqSThEOVhMNV9SaUlPcVZDRUNlVnJvdHZBTElQekUtWTBfWkczLS0xUGJkNHpDaDZRU0I3TmhzSHdVdVF3SC1rbHhNYzhxZEk0amZTN01aM2dXY1VKMWk5ZUNMakI2?oc=5",
-     "time": "2026-11-26T06:46:58Z"
-    },
-    {
-     "id": "41440b1a1a50e95c",
-     "publisher": "صوت الإمارات",
-     "kind": "news",
-     "title": "Oil prices rise amid supply concerns in the Strait of Hormuz and escalating regional tensions",
-     "url": "https://news.google.com/rss/articles/CBMi4wFBVV95cUxPMWhvMEZlVk8xb3ljWjg4bGo3bU1LSW1EQjhJcE9jc3lCWW1WZW9NajBZWlZJNzVvSVo2WVV5NW5oUmJ0SzdIbk1ZaUVIdmo1WGE5QXhKSE83TW1NcUNkdXE5MHBMYU10SXplMDlaYkRsRkJMTUFVdGRmM2FxWjBiMmpnN013N2RURVEya29NNU1LZ3I4OXhZU0R3SjBJdUNDbWtURWZ3RE1xZWt4MW83R0k2b1FqNFZuTXdmOV90QzVKbHFsNV9US3ppZWFSR2MweWFvaFhhRTNZUEJMVVVXenNUSQ?oc=5",
-     "time": "2026-11-26T06:41:12Z"
-    },
-    {
-     "id": "8bc43e340d7d8603",
-     "publisher": "Gulf Today",
-     "kind": "news",
-     "title": "Oil prices rise on supply concerns",
-     "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxOU0k1Qm9CcjN3amVoLXdtOTFTX3M0NC1DSEllVmdWVEN5Y3dfaFVOaTlQY1R1dXpwX09TRkF5akxfa1VwX21tQXhqN3Jac3RPa0VJLTBqM1VWc2pIaFVfSjl6QzlCNDhSVnVQOTBGaEUyTnd1aWwtd3NiZU92S2dNQzBYX3h6UQ?oc=5",
-     "time": "2026-11-26T06:35:36Z"
-    },
-    {
-     "id": "e44be2a2c6302782",
-     "publisher": "JournalArta",
-     "kind": "news",
-     "title": "Oil Holds Gains After Houthis Say They Attacked Saudi Refinery",
-     "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxQZkpPWE14VFp6c2VISTlHd044b2VSTzhwY0hCZkg2WDNBemhoNEJvZHU3d0JvT2pCTnVHekFxMVpvUVl6eXNPTDJXd0VDWWZ3WEFXU0c3ejlVM015d2l1UUsxSGF3YXZTZEFsNFE2MlpxZUdLd0VXSE1Iblh2QTJIeEI4cw?oc=5",
-     "time": "2026-11-26T06:35:10Z"
-    }
-   ]
-  },
-  {
-   "summary": "Raytheon secured a US Navy missile deal, providing a positive boost for defense tech.",
-   "category": "contract",
-   "firstSeen": "2026-11-26T07:26:13Z",
-   "publishers": [
-    "Raksha Anirveda"
-   ],
-   "assets": {
-    "PLTR": {
-     "direction": "up",
-     "confidence": 0.65,
-     "why": "Defense sector momentum supported by major naval contracts."
-    }
-   },
-   "sources": [
-    {
-     "id": "89fb3a7ff7bfc9d0",
-     "publisher": "Raksha Anirveda",
-     "kind": "news",
-     "title": "Raytheon Wins US Navy Missile Deal",
-     "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE42MmpKeW9xWkJQTjZJZmVfUE0zREsyWko4MkdEbE0xOGd3b2g0WmNlZWs3OTJFZnFLa0tXc2tWeGhObGpVT19zYTVUOWZTZktSbDdaTzJXYTRvbV9VeWF0bWtQWDNPclVYdWR4bm82dUg?oc=5",
-     "time": "2026-11-26T07:26:13Z"
-    }
-   ]
-  },
-  {
-   "summary": "Bitcoin and crypto markets face continued downward pressure from institutional ETF outflows and macroeconomic headwinds.",
+   "summary": "Bitcoin and cryptocurrency markets face severe downward pressure from massive spot ETF outflows.",
    "category": "crypto_negative",
    "firstSeen": "2026-11-26T02:04:19Z",
    "publishers": [
@@ -12303,6 +12556,7 @@
     "Holder.io",
     "MEXC",
     "NAI500",
+    "Serrari Group",
     "Wisevoter",
     "bloomingbit",
     "newsbtc.com",
@@ -12311,8 +12565,8 @@
    "assets": {
     "BTC/USD": {
      "direction": "down",
-     "confidence": 0.7,
-     "why": "Massive institutional spot Bitcoin ETF outflows and persistent macroeconomic pressure create a negative feedback loop for crypto."
+     "confidence": 0.8,
+     "why": "Massive outflows near $5 billion from Bitcoin ETFs continue to weigh heavily on crypto prices."
     },
     "ETH/USD": {
      "direction": "down",
@@ -12360,6 +12614,97 @@
      "title": "UK Plans Tougher DeFi Rules Over Money-Laundering Fears After Binance Hack",
      "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTFBEd29vbE1WTTF1Zy1Kb2luaTN0NlVUcjNlV05qU3U1d1FManZPT3hmRzM2aFJrLVdFLXlKWFhRRExDOTdZZ2hrWFlQTzdxa1RNMklGRg?oc=5",
      "time": "2026-11-26T06:21:36Z"
+    }
+   ]
+  },
+  {
+   "summary": "Switzerland's first spot Bitcoin ETF begins trading, boosting institutional crypto adoption sentiment.",
+   "category": "crypto_positive",
+   "firstSeen": "2026-11-26T01:45:42Z",
+   "publishers": [
+    "Crypto Economy",
+    "Cryptonews.net",
+    "StreetInsider",
+    "The Crypto Times",
+    "grafa.com"
+   ],
+   "assets": {
+    "LINK/USD": {
+     "direction": "up",
+     "confidence": 0.7,
+     "why": "Institutional ETF filing by a major firm like Fidelity is a significant bullish catalyst for Chainlink."
+    },
+    "BTC/USD": {
+     "direction": "up",
+     "confidence": 0.7,
+     "why": "Launch of spot Bitcoin ETF in Switzerland enhances institutional access."
+    }
+   },
+   "sources": [
+    {
+     "id": "b8f7b36f5c211024",
+     "publisher": "grafa.com",
+     "kind": "news",
+     "title": "Fidelity files for Nasdaq Chainlink ETF listing",
+     "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxNLUNYdHlRZmgyYk81emg2UEd3bFhjOGI4QUxCMU1vdzBlaGlfajhhUGZya0dqR0trYld3cDF1aU42Y25DbldFUzdjSm1fMVIzMkFDQzJuT2o3c0hhRFN5LUVZQ3FTQ3JUMVhLWjlMdE9uUjdxaFlZTTN1TEt4Q3FCX0hySQ?oc=5",
+     "time": "2026-11-26T01:45:42Z"
+    },
+    {
+     "id": "36f9dcc7f1f3d583",
+     "publisher": "Crypto Economy",
+     "kind": "news",
+     "title": "Franklin Templeton to Add Hyperliquid to Crypto Index ETF in December",
+     "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxQcU9NU0JJUEZaVlA2ZW9RV2d3b0lHaG40bUZMdUpGQ3FBNTRnZU9ldkdCYk9CXzBqODVhRm9oaHZuR1Q1VUpJRk1EdklqZW1VWHdqaW1SQXhyRzNlNDV6NHpNanB0ZVFOaGZVem5HN0xYZGV6aHotVVRqVjk5TVhlRFRkZWFtYkRFamdaUlNmM0EwMDFkeHBWYTR4OFdrUQ?oc=5",
+     "time": "2026-11-26T02:01:57Z"
+    },
+    {
+     "id": "8d6cfac1542a86b3",
+     "publisher": "Cryptonews.net",
+     "kind": "news",
+     "title": "Fidelity Files for Chainlink ETF. What Does It Mean for LINK?",
+     "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBoRm5fcmlBU1FQWi1MQTc0MDJqUTJCQ2FPSlNxLTdiQ2JoREJpVWdkZDR4aS1qcUQ5OThVUFl1OVFWZmg0YTEzUmQxdkpjRFA5dURzRXdiY2h1QQ?oc=5",
+     "time": "2026-11-26T05:20:47Z"
+    },
+    {
+     "id": "ce03f1b549b29bc4",
+     "publisher": "The Crypto Times",
+     "kind": "news",
+     "title": "Fidelity Seeks SEC Approval for Proposed Spot Chainlink ETF on Nasdaq",
+     "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxObXpKOUFzUVNKcVkxNWdVd1pxZ2t5Sk1LLXpnNHdIQXdNb252Ni16QVA0cmZqbmY1dDZpX082UWtxZi1OOGw3aFR6M1RYQlg5YXVscmtoSm8tS0xoSnBTd1kwOWoyaWJpb084WUdlTXczOWtvYmVqVUdPNU9KY2VFdG1WME1JZjkzREwxTXJVd05HbEExT25LWEJwTGFkQUJzQy1LTVRNYmdtTzNl?oc=5",
+     "time": "2026-11-26T05:23:41Z"
+    },
+    {
+     "id": "cec3a2551c9c6625",
+     "publisher": "StreetInsider",
+     "kind": "news",
+     "title": "Switzerland’s First Spot Bitcoin ETF Begins Trading",
+     "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQVjRwbXlSSUZZc0VOZUp2d3I3a09veTZzVnJFYWlVbDVQM1BpS19OWmt0Z3luTlZoZnRYSHJxTmRXQTY4VzE0NG53ZV9zTnFhVFNiTWJJYzAxdTdfbFZVWThGNjZpRXdPdTBmZnN5QlFXUXNhRExZNDJNM3VudHBYd0gybU1ybHFNWTlvSl9YbjVUdkMxdUtUQ2dTRUlreEU4VmxNMkJsN1ZQbjByNzlpYkdnckxBTy15YWxR?oc=5",
+     "time": "2026-11-26T07:12:15Z"
+    }
+   ]
+  },
+  {
+   "summary": "Raytheon secured a US Navy missile deal, providing a positive boost for defense tech.",
+   "category": "contract",
+   "firstSeen": "2026-11-26T07:26:13Z",
+   "publishers": [
+    "Raksha Anirveda"
+   ],
+   "assets": {
+    "PLTR": {
+     "direction": "up",
+     "confidence": 0.65,
+     "why": "Defense sector momentum supported by major naval contracts."
+    }
+   },
+   "sources": [
+    {
+     "id": "89fb3a7ff7bfc9d0",
+     "publisher": "Raksha Anirveda",
+     "kind": "news",
+     "title": "Raytheon Wins US Navy Missile Deal",
+     "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE42MmpKeW9xWkJQTjZJZmVfUE0zREsyWko4MkdEbE0xOGd3b2g0WmNlZWs3OTJFZnFLa0tXc2tWeGhObGpVT19zYTVUOWZTZktSbDdaTzJXYTRvbV9VeWF0bWtQWDNPclVYdWR4bm82dUg?oc=5",
+     "time": "2026-11-26T07:26:13Z"
     }
    ]
   },
@@ -12522,262 +12867,6 @@
      "title": "Oil futures: Crude rebounds as Saudi Ras Taura refinery targeted",
      "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxQZTQ3Z2Vsc3I0X1BGYm54aHBqdHJ5aktnOFpnaEZ6Zm1xTEFqTzdhMVlqWHpqVms4MkxCVG5Rd1R4LVBIbkxha0FsWnNRNTYtd3p3Q1hhc3pienFDcmxwdXV5MndsRF9xUGtsMG9QWE94TjBVS09nSG0yckdaS2VDaVRTMUJOV0lTZlFZOGE0WDVHWmVVSDhyUU9yaTNQY1RqTEJOS3BIaloxclU3V3ZQOFZOWTRBTkxvNTdjU3RmZm81aDdSdWY0TWJn?oc=5",
      "time": "2026-11-26T01:06:57Z"
-    }
-   ]
-  },
-  {
-   "summary": "Accelerating US inflation rising to 3.8% pushes December Fed rate hike expectations to 94.4%, continuing to pressure gold and risk assets.",
-   "category": "central_bank_hawkish",
-   "firstSeen": "2026-11-26T05:48:06Z",
-   "publishers": [
-    "FXStreet",
-    "Investing.com India",
-    "Livemint"
-   ],
-   "assets": {
-    "NEM": {
-     "direction": "down",
-     "confidence": 0.7,
-     "why": "Higher interest rates increase the opportunity cost of holding non-yielding gold."
-    },
-    "AEM": {
-     "direction": "down",
-     "confidence": 0.7,
-     "why": "Higher interest rates increase the opportunity cost of holding non-yielding gold."
-    }
-   },
-   "sources": [
-    {
-     "id": "99d0ac1b7e75f599",
-     "publisher": "FXStreet",
-     "kind": "news",
-     "title": "Gold struggles to recover as inflation keeps rate hike risks alive",
-     "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNR3N0eFdXOVZRWXA0elVteDZkWFFJejdpUjBHdkIxMlMzaXNNRi11aXY2QzJzeHpuU0dseUtoZW5LN29MRDRsOXRMa3VVUUljNXcxU1hIMW9SUjM5UGxOeEFHYmFqT1dSTWowcjhNWHJHNWJUZW5HYXRoWTFfWTY0eVk2cWM3SGcxWExfSnh2anI1d0tDUzlCUnNaZDVfQzM5Zk5FNThuTDFjZ0dWd3BFRUtNNA?oc=5",
-     "time": "2026-11-26T05:53:40Z"
-    },
-    {
-     "id": "ce7298fa3171275d",
-     "publisher": "Investing.com India",
-     "kind": "news",
-     "title": "Gold eases as U.S. inflation data reinforces Fed rate-hike bets By Investing.com",
-     "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQd1hrUWItN0NONXdmWGNSUXFac1A3U0dnbmo5OExRTk9BdUpzLUdCOXRUMEJBbG5QTmM4OHpNM25ubTFIQ0x3a0hBdHdjNEdVSk1tel9vYlo0SDhYd2c2WGUySlU5QzJUbklwcUJMMGVxN3RuZ0xpQlhyZ1hWblJfQlBoczZDVDRBeURwNS1EMDZyQ05saVkxaW1idUs4Z0h1Mi03dVB0V2pGX3h3aU5oVEVTQkdJdw?oc=5",
-     "time": "2026-11-26T05:48:06Z"
-    },
-    {
-     "id": "3a16c18ed0fd863c",
-     "publisher": "Livemint",
-     "kind": "news",
-     "title": "Gold prices slipped 2% below support level before bouncing back — Here's why the precious metal remains under pressure",
-     "url": "https://news.google.com/rss/articles/CBMi_gFBVV95cUxOUWZPYkFBNTYxTUZELXRVZ3RvbkdFQVFWY0xrTTByVnFFb2JCM0xlMWVLSm0zYlhOd0h2OFZtdHVweTFTUmpSTFZMN2xGWEg5Qzk2eDhvbjc4Y0NrdUktdDgzSDZzVGcyMVFDRGU4MVJQcEw5LXowNE1YN1FwUG1vdmhwdUtUVVNoRWtRbnF5OHoteDl1bkFCYjQxNVdvU0tXRVdIaDZrWGRpNHhJbGkyUHAzVHhqS1VxdjNaa0RqcTNZbktQS1Z6dFlDUlM3a2xVR0xHOVBxZ0VrQnhkVGdQSUhiMk9LRGUzOWdrYWhVRDZxejdZalR3TzBzMG5pQdIBgwJBVV95cUxPLUVXeHR0aVdMUXQtTkJmTGdzRklWVXgxNUExSi04bXFCdHdobGNtUXM3S1VESEVyV3NsTWpaaWNNajRhWldBanBfVGNGNFd0Y29OaFV6clpKNzVUMDFRRFVWVTBxWjNGemZWdEd3aWtKWTNJRXhpdFZRajZ6bG9Za1ZjUmFoTGxEMmNVbWJzaXo5X05WUGJtcHgzZy05cGV6U1pkOXhMNDNiYTRiWWY4dWhEcmMzdUktM1JyRGJ6SnFZUDRLUDgzQk9uNzZBRnFwTU5oZ0oyMEo3c1RfTmRlT01xNkZha3dkM19tQ09GQWZBZXpBV0RoVER3R2EyYmdQWk9z?oc=5",
-     "time": "2026-11-26T05:49:43Z"
-    }
-   ]
-  },
-  {
-   "summary": "RTX Corporation secured a $2.53 billion U.S. Navy contract for F-35 propulsion systems.",
-   "category": "contract",
-   "firstSeen": "2026-11-26T00:01:36Z",
-   "publishers": [
-    "MLQ.ai",
-    "fiscal.ai"
-   ],
-   "assets": {
-    "PLTR": {
-     "direction": "up",
-     "confidence": 0.6,
-     "why": "Defense sector contract wins often lift broader defense tech sentiment."
-    }
-   },
-   "sources": [
-    {
-     "id": "ea96519548e83dbe",
-     "publisher": "fiscal.ai",
-     "kind": "news",
-     "title": "RTX's Pratt & Whitney Awarded $2.53 Billion U.S. Navy Contract",
-     "url": "https://www.marketscreener.com/news/rtx-unit-pratt-whitney-gets-2-53-billion-navy-contract-ce7851d8dd8cf02d",
-     "time": "2026-11-26T00:01:36Z"
-    },
-    {
-     "id": "db209bcc5cff99af",
-     "publisher": "MLQ.ai",
-     "kind": "news",
-     "title": "Raytheon wins Navy deal to develop SLCM-N nuclear cruise missile",
-     "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNTFFBbDRBbzBRUEZLSVFzb1NKX1p5Y0FRU1huTHVWR3gwT0VwQlNuaHRsVjdmSk5Pb0tFZTRhWi1xMFhZUWpQcDlZNFNLaDlueHV1TFZJb3hUZ05vYTJTa0Ffby04azd1c3gzeXFHNXU4MTZfd0ZYa0lNZUVPWEtVcHBJaURkQzlKOTQ2SDVn?oc=5",
-     "time": "2026-11-26T05:29:03Z"
-    }
-   ]
-  },
-  {
-   "summary": "Vice President JD Vance defended reinstated Nvidia CEO Jensen Huang as prediction markets and political commentary continue to focus on executive scrutiny.",
-   "category": "company_bad_news",
-   "firstSeen": "2026-11-26T04:14:03Z",
-   "publishers": [
-    "Yahoo Finance"
-   ],
-   "assets": {
-    "NVDA": {
-     "direction": "down",
-     "confidence": 0.55,
-     "why": "Executive turmoil and ongoing regulatory or political scrutiny continue to create governance risks."
-    }
-   },
-   "sources": [
-    {
-     "id": "9321182b3093b2a1",
-     "publisher": "Yahoo Finance",
-     "kind": "news",
-     "title": "‘I Don’t Think He Needs a Pardon at All’: JD Vance Defends Nvidia CEO Jensen Huang as Crypto Bettors Put Him Atop Trump’s List",
-     "url": "https://www.benzinga.com/markets/prediction-markets/26/11/63659548/jd-vance-jensen-huang-trump-pardon-nvidia?utm_source=yahooFinance&utm_campaign=partner_feed&utm_medium=referral&.tsrc=rss",
-     "time": "2026-11-26T04:14:03Z"
-    }
-   ]
-  },
-  {
-   "summary": "Accelerating US inflation rising to 3.8% pushes December Fed rate hike expectations to 94.4%, continuing to pressure gold and risk assets.",
-   "category": "central_bank_hawkish",
-   "firstSeen": "2026-11-26T03:37:00Z",
-   "publishers": [
-    "www.tokenpost.com",
-    "Українські Національні Новини (УНН)"
-   ],
-   "assets": {
-    "NEM": {
-     "direction": "down",
-     "confidence": 0.8,
-     "why": "Hawkish Fed rate hike expectations and surging inflation expectations weigh on gold."
-    }
-   },
-   "sources": [
-    {
-     "id": "785c2714be7583a3",
-     "publisher": "Українські Національні Новини (УНН)",
-     "kind": "news",
-     "title": "Gold falls again amid accelerating inflation in the United States and expectations of another Fed rate hike",
-     "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxOSldtOHdrZmd5M0VJdTRoZHY0bmNzMWhPVF80M2xWekU4WWJXelpGTEVXLVAtS1VzeWdEM1dBRnlUbUVxLVVTeC1hLXpjeWZIalQ3NFNVaGl3MlpPRENzdW5wdUZMSW1NbDItZ0RkOUFXMlBCZmN0aTF5Y1NqNmt6VGQ5MGFITGZSXzRvY2lweVFWdlV3REFkQUN1VXhNckQ0ckhWMElaU2ZSVFhJQV9zSmFBcTRTVmctQzNwT0Z3X2J4MTAyNjJ6MUpR0gHIAUFVX3lxTE5sYWJJeUV5eW45SFIzaVVJQ09UVkYwQzQ1QzVNTF9jN2plSmtlT0NLQ3RmWVgybzZDb09oNHVpX1ZfYVNVM3dxbVI3VDJYR2x5QVcyY3BoRFpYbEJkYk1HYmZ2NHpqeXJvekV2OVBIVVJlTWZBVXlkbHAwX2t2TmVnZ3NEZFh2dEdsX2tlNVR2TnhxMXo1RDZveTJmR1RxRUtwRFBsRWNJaDY4eFRYcG5jeWNXR1N3Qk1SdnhKRDhFcUtMSW1kZU5B?oc=5",
-     "time": "2026-11-26T03:37:29Z"
-    },
-    {
-     "id": "d835f9e3afb42acc",
-     "publisher": "www.tokenpost.com",
-     "kind": "news",
-     "title": "US Inflation Rises to 3.8% as December Fed Hike Odds Reach 94.4%",
-     "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1MWlY1X1dWU0FLekdVZ2ZyanJIYkJ1ejlmaGR4dmpJZmRTb2Fxejh1WFVxMGxBcVF1Ulkza3kyODE2X1dtWHRIX1BySkFqUThmQTQ5LUhESkJTQQ?oc=5",
-     "time": "2026-11-26T03:37:00Z"
-    }
-   ]
-  },
-  {
-   "summary": "Sticky US inflation at 3.8% and firm core PCE keep hawkish Federal Reserve rate hike expectations in play.",
-   "category": "inflation",
-   "firstSeen": "2026-11-25T23:03:45Z",
-   "publishers": [
-    "BigGo Finance",
-    "Businesskorea",
-    "Hoodline",
-    "KLSE Screener",
-    "The Edge Malaysia",
-    "The Korea Daily",
-    "Wolf Street",
-    "cwibc.co.id",
-    "londoninsider.co.uk",
-    "marketscreener.com",
-    "재경일보"
-   ],
-   "assets": {
-    "AEM": {
-     "direction": "down",
-     "confidence": 0.75,
-     "why": "Hot inflation and hawkish Fed rate hike expectations weigh on gold and precious metal miners."
-    },
-    "NEM": {
-     "direction": "down",
-     "confidence": 0.75,
-     "why": "Hot inflation and hawkish Fed rate hike expectations weigh on gold and precious metal miners."
-    }
-   },
-   "sources": [
-    {
-     "id": "8727611b6900c610",
-     "publisher": "Hoodline",
-     "kind": "news",
-     "title": "US Inflation Climbs to 3.8% in October, Fed Rate Hike Looms in December",
-     "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNVnYtNUtvRXFyRV9qSEpBY3V2WFF6YzdDQzJDdGlzdjBwTkhpS2VLUktBemJhZDFiWUdQcEcyTzB5R2l6a3dZZnI5TFdxVlptMjA4Vk5KcHBqSWxOMmxxMDZVSUtMczViYU40Y081bDl6YXV2M1VhV25YNHgxTzhOX1BmT1NvcTZUZFpHeTJCNFZPODNEbms2d3lBdHhQcDVh?oc=5",
-     "time": "2026-11-25T23:03:45Z"
-    },
-    {
-     "id": "641c8b5fe07f1db6",
-     "publisher": "marketscreener.com",
-     "kind": "news",
-     "title": "Materials Down as Inflation Data Seen Spurring Fed Rate Hike -- Materials Roundup",
-     "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxOYW9KbzNKWV9TZUhOSjJId0RsUUFaVWJPQnUtQzJkSjBWNVJWcEJwbVJ5bDRqYzdCXzhfdFZ4MktmUFJmdWwtejZWbUVvRVQ5TUstd00tOW5vLUUwMV9XV2xWVTlxR0VJU1daVUFDWHFXejNrU0FPV2hpZ2J2Tm5IM1BIUG5sd1hKTGJyelNFbE8tX2prVFpCaDYyUGxOLUVzcC0zNVc1QUlyS1RpT052dmkzLTFOR1ZweU56dERvSGNBbmctVWJSem1fMA?oc=5",
-     "time": "2026-11-25T23:20:29Z"
-    },
-    {
-     "id": "34fe0d187ce12f2d",
-     "publisher": "KLSE Screener",
-     "kind": "news",
-     "title": "Gold falls to more than one-year low after data shows US inflation rose further",
-     "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxQQ3BkVFYzVTREbVYweWZ1bGZ1N0dselF3SjN3MGlKb01DcFFxaXBCQVh0OV9kN1poQTh5WUJMODhhVENrNk1iaUxHbnZPcWhCcVBOR01rUkZHclVCTWFMTm42WFdEZXkwcjVWV0VjeWQ5cFlCY05xempwbFQ3TXpaZnIySHZVM3pTTDdaTFd3V3UyeU51NkViMjF0cnFqdWNOV20tbDlJVFpUaEpBSTB4LS1PeW94dE5JOFhaMkROakFpaVZIczJ2dw?oc=5",
-     "time": "2026-11-26T00:28:37Z"
-    },
-    {
-     "id": "2ab8da31e08d30d2",
-     "publisher": "재경일보",
-     "kind": "news",
-     "title": "U.S. October Core Inflation at 3.3%... iM Securities Forecasts Additional Hikes in January : Finance : JKN",
-     "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE9SUElLUnc3V0c2RzlXWW5oNDFkUWFkVUJwcFh1c2ozendKR3p2MnB4UTVVZjNhTno5UVd5emR1VlBLM1VPQjRyWGlkclcyQnRMNVJmSjRJS3h3cHJwZDVWMk9n?oc=5",
-     "time": "2026-11-26T00:35:04Z"
-    },
-    {
-     "id": "976aae2610c75646",
-     "publisher": "The Korea Daily",
-     "kind": "news",
-     "title": "US interest rates — December Hike Probability Hits 98%",
-     "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPSElaWjBNZFJiWDdGSERpQm8wRjFkUDJsN0JzOG1nZk9tSmowNzg2dUJReldFeEtZWktSd2JkWnZMLWFndXQ4SURyMGRpdTZiNmxrOEltVXRlV1cyMFVNb3BiZ2dPYUFhRndzNVlkenUyTXdCMW5CRDBfcndRMUlFX1NYbHpsNFR1?oc=5",
-     "time": "2026-11-26T01:14:34Z"
-    }
-   ]
-  },
-  {
-   "summary": "Nvidia experiences ongoing executive turmoil with CEO Jensen Huang's return following intervention, while facing credit downgrade warnings from S&P over governance risks.",
-   "category": "company_bad_news",
-   "firstSeen": "2026-11-26T02:57:19Z",
-   "publishers": [
-    "CNBC",
-    "Investing.com Nigeria",
-    "Reuters"
-   ],
-   "assets": {
-    "NVDA": {
-     "direction": "down",
-     "confidence": 0.65,
-     "why": "Executive turmoil and credit downgrade warning on governance risks pressure the stock."
-    }
-   },
-   "sources": [
-    {
-     "id": "489ac104937e5f8c",
-     "publisher": "Reuters",
-     "kind": "news",
-     "title": "Huang returns as Nvidia CEO after Trump intervention in abrupt board reversal",
-     "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOd19EYmc4X2wzaW5zXzZ5VXZ1cUFJbS1OYzJsZ2VSTVRnMkQteWdiN3Z0dTBlNmltdll6Vy1RWnpxVUthOF9XX3g0YmVvNWdXODJUMGpSeXdldVdYQWE3N2hCQXU3RExXSDViSWI3S2xHNVZFc0NUVmh5bGRhem5aUzdDa29xb1hH?oc=5",
-     "time": "2026-11-26T02:58:19Z"
-    },
-    {
-     "id": "8ffa77fc8f3bca0c",
-     "publisher": "CNBC",
-     "kind": "news",
-     "title": "S&P warns Nvidia credit rating could be cut over 'rising' management and governance risk",
-     "url": "https://www.cnbc.com/2026/11/26/nvidia-market-governance-risk.html",
-     "time": "2026-11-26T02:57:32Z"
-    },
-    {
-     "id": "17d509f091ff07b8",
-     "publisher": "Investing.com Nigeria",
-     "kind": "news",
-     "title": "Trump admin weighed using Cold War law to reinstate Nvidia CEO Huang, WaPo reports",
-     "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxOMXdkNktiMTV3blBkS3ZzOWdubi1jZkQyX0ZVSEVhTktNMEVpQUhUMkNZX0EwYmhLQ0ZNNmtiQlpwSlZBc3JZY2VMTERIR1ZJX1JzN0xJVzhTd2hpeUNsTDN2dFZRUlFTam5YWVlLY1oyTTBnRTl1Z0xLWmZ2WU51ZGg5T2EzX28zVHNGOUZnOF9hVE9ta0hnNzgxWGdfdGRrSzM2dDJ1cXpZdjJfdjFyV2xITEFUMnRpUW1XVGlrZDNyV1EwWDJIZWFyaEQ4dk1mbHBJ?oc=5",
-     "time": "2026-11-26T02:57:19Z"
     }
    ]
   }
