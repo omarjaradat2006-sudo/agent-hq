@@ -1,36 +1,26 @@
 {
  "team": "trading",
  "plain": {
-  "line": "Down $7,685.52 since start · 33 trades · holding: SPWO, HLAL, SPUS, SPUS",
+  "line": "Down $7,866.35 since start · 34 trades · holding: LINK/USD, SPWO, HLAL, SPUS, SPUS",
   "rulesMode": "ultra",
-  "top": "Down $7,685.52 since start (-7.69%) · just holding SPY would be -4.79%",
+  "top": "Down $7,866.35 since start (-7.87%) · just holding SPY would be -4.79%",
   "up": false,
   "holding": [
+   "LINK/USD: buy order sent, waiting to fill",
    "SPWO: 421 shares worth $11,682.75, up $416.79 (sells at $27.96 or stops at $25.00)",
-   "HLAL: 256 shares worth $16,850.30, up $540.54 (sells at $98.93 or stops at $59.36)",
+   "HLAL: 256 shares worth $16,819.20, up $509.44 (sells at $98.93 or stops at $59.36)",
    "SPUS: 324 shares worth $17,535.54, up $501.41 (sells at $78.24 or stops at $46.94)",
    "SPUS: 2 shares worth $17,535.54, up $501.41 (sells at $81.06 or stops at $48.64)"
   ],
   "today": [
-   "Bought UMMA after the news: Buy the dip: the whole market (SPY) was -2.93% today.",
-   "Bought SPWO after the news: Buy the dip: the whole market (SPY) was -2.93% today.",
-   "Bought HLAL after the news: Core holding: rides the whole (halal) market.",
-   "Bought SPUS after the news: Core holding: rides the whole (halal) market.",
-   "Sold UMMA (target +6% hit): made $267.18.",
-   "Sold PLTR (trailing stop hit (-4.7%)): lost $536.20.",
-   "Sold AVAV (trailing stop hit (-3.4%)): lost $435.16.",
-   "Sold HLAL (bad news: Expectations grow that regional Fed banks and policy makers lean towards tighter): lost $0.32.",
-   "Sold TMO (trailing stop hit (-3.4%)): lost $376.12.",
-   "Sold NOW (stop-loss -3% hit): lost $473.26.",
-   "Scanned the news 112 times today: read 6648 headlines, found 217 that could move a stock or coin it's allowed to trade.",
-   "Passed on CVX, GE, LINK/USD, OXY, XOM: down 3% today, no new trades until tomorrow.",
-   "Safety rules that stepped in: daily loss halt (x713), bad news exit (x1), trailing stop (x3), stop loss -3% (x1), take profit +6% (x1), stock entry window (x18)."
+   "Bought LINK/USD after the news: Franklin Templeton to add Hyperliquid to its crypto index ETF, signaling continued institutional product expansion.",
+   "Scanned the news 1 time today: read 85 headlines, found 3 that could move a stock or coin it's allowed to trade."
   ],
   "watchlist": "Allowed to trade: 68 halal stocks, 5 Shariah ETFs, 9 coins.",
-  "lastScan": "2026-11-26T01:05:41Z"
+  "lastScan": "2026-11-26T05:08:59Z"
  },
  "hired": true,
- "updatedAt": "2026-11-26T01:05:54Z",
+ "updatedAt": "2026-11-26T05:09:14Z",
  "mode": "PAPER",
  "agents": [
   {
@@ -38,16 +28,16 @@
    "name": "News Scout",
    "role": "Reads X, Reddit and news feeds",
    "status": "working",
-   "doing": "Read 66 new headlines/posts, 3 market-moving stories",
-   "lastRun": "2026-11-26T01:05:53Z"
+   "doing": "Read 85 new headlines/posts, 3 market-moving stories",
+   "lastRun": "2026-11-26T05:09:12Z"
   },
   {
    "id": "analyst",
    "name": "News Analyst",
    "role": "Gemini: is it real, what moves, which way",
-   "status": "ok",
-   "doing": "Gemini triage failed, skipping this batch: All Gemini models failed. Last error: Gemini HTTP 429 on gemini-3.8-flash: {\n  \"error\": {\n    \"code\": 429,\n    \"message\": \"You exceeded your current quota, plea",
-   "lastRun": "2026-11-25T17:53:08Z"
+   "status": "working",
+   "doing": "Bad news for SPWO: The US administration's proposed expansion of tariffs on autos, chips, steel, and drugs across 14 ec",
+   "lastRun": "2026-11-26T05:09:12Z"
   },
   {
    "id": "confirm",
@@ -77,9 +67,9 @@
    "id": "trader",
    "name": "Trader",
    "role": "Places paper orders on Alpaca",
-   "status": "ok",
-   "doing": "Saved results to the Agent HQ dashboard",
-   "lastRun": "2026-11-25T22:48:12Z"
+   "status": "working",
+   "doing": "BUY LINK/USD: Franklin Templeton to add Hyperliquid to its crypto index ETF, signaling continued institu | volume 0.0x normal, price +0.45% since the news | TradingAgents not used (ultra mode)",
+   "lastRun": "2026-11-26T05:09:12Z"
   },
   {
    "id": "coins",
@@ -99,6 +89,176 @@
   }
  ],
  "log": [
+  {
+   "t": "2026-11-26T05:09:12Z",
+   "agent": "Trader",
+   "msg": "BUY LINK/USD: Franklin Templeton to add Hyperliquid to its crypto index ETF, signaling continued institu | volume 0.0x normal, price +0.45% since the news | TradingAgents not used (ultra mode)"
+  },
+  {
+   "t": "2026-11-26T05:09:12Z",
+   "agent": "Trader",
+   "msg": "sell SPWO failed: HTTP 403 https://paper-api.alpaca.markets/v2/positions/SPWO: {\"available\":\"0\",\"code\":40310000,\"existing_qty\":\"421\",\"held_for_orders\":\"421\",\"message\":\"insufficient qty available for order (requested: 421, available: 0)\",\"symbol\":\"SPWO\"}"
+  },
+  {
+   "t": "2026-11-26T05:09:12Z",
+   "agent": "News Analyst",
+   "msg": "Bad news for SPWO: The US administration's proposed expansion of tariffs on autos, chips, steel, and drugs across 14 ec"
+  },
+  {
+   "t": "2026-11-26T05:09:12Z",
+   "agent": "News Scout",
+   "msg": "Read 85 new headlines/posts, 3 market-moving stories"
+  },
+  {
+   "t": "2026-11-26T04:53:57Z",
+   "agent": "Trader",
+   "msg": "sell SPWO failed: HTTP 403 https://paper-api.alpaca.markets/v2/positions/SPWO: {\"available\":\"0\",\"code\":40310000,\"existing_qty\":\"421\",\"held_for_orders\":\"421\",\"message\":\"insufficient qty available for order (requested: 421, available: 0)\",\"symbol\":\"SPWO\"}"
+  },
+  {
+   "t": "2026-11-26T04:53:56Z",
+   "agent": "News Analyst",
+   "msg": "Bad news for SPWO: New US tariff proposals targeting multiple global trading partners including India, China, and Europ"
+  },
+  {
+   "t": "2026-11-26T04:38:51Z",
+   "agent": "Trader",
+   "msg": "sell SPWO failed: HTTP 403 https://paper-api.alpaca.markets/v2/positions/SPWO: {\"available\":\"0\",\"code\":40310000,\"existing_qty\":\"421\",\"held_for_orders\":\"421\",\"message\":\"insufficient qty available for order (requested: 421, available: 0)\",\"symbol\":\"SPWO\"}"
+  },
+  {
+   "t": "2026-11-26T04:38:51Z",
+   "agent": "News Analyst",
+   "msg": "Bad news for SPWO: New US tariff proposals targeting multiple global trading partners including India, China, and Europ"
+  },
+  {
+   "t": "2026-11-26T04:38:51Z",
+   "agent": "News Scout",
+   "msg": "Read 4 new headlines/posts, 1 market-moving stories"
+  },
+  {
+   "t": "2026-11-26T04:23:26Z",
+   "agent": "Trader",
+   "msg": "sell SPWO failed: HTTP 403 https://paper-api.alpaca.markets/v2/positions/SPWO: {\"available\":\"0\",\"code\":40310000,\"existing_qty\":\"421\",\"held_for_orders\":\"421\",\"message\":\"insufficient qty available for order (requested: 421, available: 0)\",\"symbol\":\"SPWO\"}"
+  },
+  {
+   "t": "2026-11-26T04:23:26Z",
+   "agent": "News Analyst",
+   "msg": "Bad news for SPWO: New US tariff proposals targeting multiple global trading partners including India, China, and Europ"
+  },
+  {
+   "t": "2026-11-26T04:23:26Z",
+   "agent": "News Scout",
+   "msg": "Read 2 new headlines/posts, 0 market-moving stories"
+  },
+  {
+   "t": "2026-11-26T04:08:14Z",
+   "agent": "Trader",
+   "msg": "sell SPWO failed: HTTP 403 https://paper-api.alpaca.markets/v2/positions/SPWO: {\"available\":\"0\",\"code\":40310000,\"existing_qty\":\"421\",\"held_for_orders\":\"421\",\"message\":\"insufficient qty available for order (requested: 421, available: 0)\",\"symbol\":\"SPWO\"}"
+  },
+  {
+   "t": "2026-11-26T04:08:14Z",
+   "agent": "News Analyst",
+   "msg": "Bad news for SPWO: New US tariff proposals targeting multiple global trading partners including India, China, and Europ"
+  },
+  {
+   "t": "2026-11-26T04:08:14Z",
+   "agent": "News Scout",
+   "msg": "Read 2 new headlines/posts, 0 market-moving stories"
+  },
+  {
+   "t": "2026-11-26T04:08:09Z",
+   "agent": "News Scout",
+   "msg": "Google News is rate-limiting this server: pausing it for 1 hour"
+  },
+  {
+   "t": "2026-11-26T03:53:02Z",
+   "agent": "Trader",
+   "msg": "sell SPWO failed: HTTP 403 https://paper-api.alpaca.markets/v2/positions/SPWO: {\"available\":\"0\",\"code\":40310000,\"existing_qty\":\"421\",\"held_for_orders\":\"421\",\"message\":\"insufficient qty available for order (requested: 421, available: 0)\",\"symbol\":\"SPWO\"}"
+  },
+  {
+   "t": "2026-11-26T03:53:02Z",
+   "agent": "News Analyst",
+   "msg": "Bad news for SPWO: New US tariff proposals targeting multiple global trading partners including India, China, and Europ"
+  },
+  {
+   "t": "2026-11-26T03:53:02Z",
+   "agent": "News Scout",
+   "msg": "Read 53 new headlines/posts, 3 market-moving stories"
+  },
+  {
+   "t": "2026-11-26T03:37:52Z",
+   "agent": "Trader",
+   "msg": "sell SPWO failed: HTTP 403 https://paper-api.alpaca.markets/v2/positions/SPWO: {\"available\":\"0\",\"code\":40310000,\"existing_qty\":\"421\",\"held_for_orders\":\"421\",\"message\":\"insufficient qty available for order (requested: 421, available: 0)\",\"symbol\":\"SPWO\"}"
+  },
+  {
+   "t": "2026-11-26T03:37:52Z",
+   "agent": "News Analyst",
+   "msg": "Bad news for SPWO: New US tariff proposals targeting multiple global trading partners heighten trade war risks and weig"
+  },
+  {
+   "t": "2026-11-26T03:37:52Z",
+   "agent": "News Scout",
+   "msg": "Read 52 new headlines/posts, 2 market-moving stories"
+  },
+  {
+   "t": "2026-11-26T03:22:42Z",
+   "agent": "Trader",
+   "msg": "sell SPWO failed: HTTP 403 https://paper-api.alpaca.markets/v2/positions/SPWO: {\"available\":\"0\",\"code\":40310000,\"existing_qty\":\"421\",\"held_for_orders\":\"421\",\"message\":\"insufficient qty available for order (requested: 421, available: 0)\",\"symbol\":\"SPWO\"}"
+  },
+  {
+   "t": "2026-11-26T03:22:42Z",
+   "agent": "News Analyst",
+   "msg": "Bad news for SPWO: Ongoing US tariff proposals targeting multiple global trading partners continue to heighten trade wa"
+  },
+  {
+   "t": "2026-11-26T03:22:42Z",
+   "agent": "News Scout",
+   "msg": "Read 74 new headlines/posts, 2 market-moving stories"
+  },
+  {
+   "t": "2026-11-26T03:07:30Z",
+   "agent": "News Scout",
+   "msg": "Read 59 new headlines/posts, 3 market-moving stories"
+  },
+  {
+   "t": "2026-11-26T02:52:17Z",
+   "agent": "News Scout",
+   "msg": "Read 65 new headlines/posts, 1 market-moving stories"
+  },
+  {
+   "t": "2026-11-26T02:37:05Z",
+   "agent": "News Scout",
+   "msg": "Read 44 new headlines/posts, 0 market-moving stories"
+  },
+  {
+   "t": "2026-11-26T02:21:47Z",
+   "agent": "News Scout",
+   "msg": "Read 42 new headlines/posts, 2 market-moving stories"
+  },
+  {
+   "t": "2026-11-26T02:06:37Z",
+   "agent": "News Scout",
+   "msg": "Read 43 new headlines/posts, 3 market-moving stories"
+  },
+  {
+   "t": "2026-11-26T01:51:28Z",
+   "agent": "News Scout",
+   "msg": "Read 54 new headlines/posts, 3 market-moving stories"
+  },
+  {
+   "t": "2026-11-26T01:36:18Z",
+   "agent": "News Scout",
+   "msg": "Read 35 new headlines/posts, 2 market-moving stories"
+  },
+  {
+   "t": "2026-11-26T01:21:05Z",
+   "agent": "News Scout",
+   "msg": "Read 63 new headlines/posts, 3 market-moving stories"
+  },
+  {
+   "t": "2026-11-26T01:05:56Z",
+   "agent": "Trader",
+   "msg": "Saved results to the Agent HQ dashboard"
+  },
   {
    "t": "2026-11-26T01:05:53Z",
    "agent": "News Scout",
@@ -678,207 +838,36 @@
    "t": "2026-11-25T14:21:43Z",
    "agent": "News Analyst",
    "msg": "Gemini triage failed, skipping this batch: All Gemini models failed. Last error: Gemini HTTP 429 on gemini-3.8-flash: {\n  \"error\": {\n    \"code\": 429,\n    \"message\": \"You exceeded your current quota, plea"
-  },
-  {
-   "t": "2026-11-25T14:17:30Z",
-   "agent": "News Analyst",
-   "msg": "Gemini triage failed, skipping this batch: All Gemini models failed. Last error: Gemini HTTP 429 on gemini-3.8-flash: {\n  \"error\": {\n    \"code\": 429,\n    \"message\": \"You exceeded your current quota, plea"
-  },
-  {
-   "t": "2026-11-25T13:54:54Z",
-   "agent": "News Scout",
-   "msg": "Read 123 new headlines/posts, 5 market-moving stories"
-  },
-  {
-   "t": "2026-11-25T13:37:55Z",
-   "agent": "News Scout",
-   "msg": "Read 82 new headlines/posts, 8 market-moving stories"
-  },
-  {
-   "t": "2026-11-25T13:18:19Z",
-   "agent": "News Scout",
-   "msg": "Read 184 new headlines/posts, 3 market-moving stories"
-  },
-  {
-   "t": "2026-11-25T13:02:47Z",
-   "agent": "News Scout",
-   "msg": "Read 82 new headlines/posts, 5 market-moving stories"
-  },
-  {
-   "t": "2026-11-25T12:45:22Z",
-   "agent": "News Scout",
-   "msg": "Read 132 new headlines/posts, 4 market-moving stories"
-  },
-  {
-   "t": "2026-11-25T12:28:46Z",
-   "agent": "News Scout",
-   "msg": "Read 96 new headlines/posts, 2 market-moving stories"
-  },
-  {
-   "t": "2026-11-25T12:13:31Z",
-   "agent": "News Scout",
-   "msg": "Read 112 new headlines/posts, 3 market-moving stories"
-  },
-  {
-   "t": "2026-11-25T11:56:29Z",
-   "agent": "News Scout",
-   "msg": "Read 96 new headlines/posts, 5 market-moving stories"
-  },
-  {
-   "t": "2026-11-25T11:41:19Z",
-   "agent": "News Scout",
-   "msg": "Read 140 new headlines/posts, 1 market-moving stories"
-  },
-  {
-   "t": "2026-11-25T11:23:50Z",
-   "agent": "News Scout",
-   "msg": "Read 124 new headlines/posts, 5 market-moving stories"
-  },
-  {
-   "t": "2026-11-25T11:08:11Z",
-   "agent": "News Scout",
-   "msg": "Read 114 new headlines/posts, 2 market-moving stories"
-  },
-  {
-   "t": "2026-11-25T10:53:02Z",
-   "agent": "News Scout",
-   "msg": "Read 83 new headlines/posts, 0 market-moving stories"
-  },
-  {
-   "t": "2026-11-25T10:37:54Z",
-   "agent": "News Scout",
-   "msg": "Read 87 new headlines/posts, 1 market-moving stories"
-  },
-  {
-   "t": "2026-11-25T10:22:40Z",
-   "agent": "News Scout",
-   "msg": "Read 96 new headlines/posts, 3 market-moving stories"
-  },
-  {
-   "t": "2026-11-25T10:07:15Z",
-   "agent": "News Scout",
-   "msg": "Read 82 new headlines/posts, 2 market-moving stories"
-  },
-  {
-   "t": "2026-11-25T09:52:03Z",
-   "agent": "News Scout",
-   "msg": "Read 82 new headlines/posts, 3 market-moving stories"
-  },
-  {
-   "t": "2026-11-25T09:36:53Z",
-   "agent": "News Scout",
-   "msg": "Read 99 new headlines/posts, 4 market-moving stories"
-  },
-  {
-   "t": "2026-11-25T09:21:41Z",
-   "agent": "News Scout",
-   "msg": "Read 110 new headlines/posts, 2 market-moving stories"
-  },
-  {
-   "t": "2026-11-25T09:06:28Z",
-   "agent": "Trader",
-   "msg": "Closed HLAL: bad news: Expectations grow that regional Fed banks and policy makers lean towards tighter, -0.48% ($-0.32)"
-  },
-  {
-   "t": "2026-11-25T09:06:26Z",
-   "agent": "News Analyst",
-   "msg": "Bad news for HLAL: Expectations grow that regional Fed banks and policy makers lean towards tighter monetary policy fol"
-  },
-  {
-   "t": "2026-11-25T09:06:26Z",
-   "agent": "News Scout",
-   "msg": "Read 163 new headlines/posts, 5 market-moving stories"
-  },
-  {
-   "t": "2026-11-25T08:50:14Z",
-   "agent": "News Scout",
-   "msg": "Read 75 new headlines/posts, 3 market-moving stories"
-  },
-  {
-   "t": "2026-11-25T08:35:03Z",
-   "agent": "News Scout",
-   "msg": "Read 85 new headlines/posts, 2 market-moving stories"
-  },
-  {
-   "t": "2026-11-25T08:18:36Z",
-   "agent": "News Scout",
-   "msg": "Read 200 new headlines/posts, 7 market-moving stories"
-  },
-  {
-   "t": "2026-11-25T08:03:12Z",
-   "agent": "News Scout",
-   "msg": "Read 113 new headlines/posts, 5 market-moving stories"
-  },
-  {
-   "t": "2026-11-25T07:47:50Z",
-   "agent": "News Scout",
-   "msg": "Read 66 new headlines/posts, 3 market-moving stories"
-  },
-  {
-   "t": "2026-11-25T07:32:39Z",
-   "agent": "News Scout",
-   "msg": "Read 74 new headlines/posts, 5 market-moving stories"
-  },
-  {
-   "t": "2026-11-25T07:16:55Z",
-   "agent": "News Scout",
-   "msg": "Read 102 new headlines/posts, 4 market-moving stories"
-  },
-  {
-   "t": "2026-11-25T07:01:31Z",
-   "agent": "News Scout",
-   "msg": "Read 58 new headlines/posts, 3 market-moving stories"
-  },
-  {
-   "t": "2026-11-25T06:46:07Z",
-   "agent": "News Scout",
-   "msg": "Read 70 new headlines/posts, 4 market-moving stories"
-  },
-  {
-   "t": "2026-11-25T06:30:53Z",
-   "agent": "News Scout",
-   "msg": "Read 57 new headlines/posts, 2 market-moving stories"
-  },
-  {
-   "t": "2026-11-25T06:15:33Z",
-   "agent": "News Scout",
-   "msg": "Read 72 new headlines/posts, 5 market-moving stories"
-  },
-  {
-   "t": "2026-11-25T06:00:22Z",
-   "agent": "News Scout",
-   "msg": "Read 98 new headlines/posts, 5 market-moving stories"
   }
  ],
  "brief": {
-  "date": "Wed Nov 25",
-  "createdAt": "2026-11-26T01:05:54Z",
-  "headline": "Paper account -$835 today (-0.90%), -7.69% total vs SPY -4.79% · 4 open",
-  "summary": "6 trade(s) closed today, 6/29 winners overall. TradingAgents checks used today: 0/5.",
+  "date": "Thu Nov 26",
+  "createdAt": "2026-11-26T05:09:14Z",
+  "headline": "Paper account -$1,016 today (-1.09%), -7.87% total vs SPY -4.79% · 5 open",
+  "summary": "0 trade(s) closed today, 6/29 winners overall. TradingAgents checks used today: 0/5.",
   "notes": [
-   "Down 3% today: no new trades until tomorrow.",
    "X/Reddit reader: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
   ]
  },
  "account": {
-  "equity": 92314.48,
-  "cash": 46245.89,
+  "equity": 92133.65,
+  "cash": 34306.2,
   "startEquity": 100000.0,
   "startedAt": "2026-11-10T01:51:53Z",
-  "dayPnl": -835.38,
-  "dayPct": -0.9,
-  "totalPnl": -7685.52,
-  "totalPct": -7.69,
+  "dayPnl": -1016.21,
+  "dayPct": -1.09,
+  "totalPnl": -7866.35,
+  "totalPct": -7.87,
   "spyPct": -4.79,
-  "vsSpyPct": -2.9
+  "vsSpyPct": -3.08
  },
  "status": {
   "killed": false,
-  "haltedToday": true,
+  "haltedToday": false,
   "deepUsed": 0,
   "deepMax": 5,
   "social": {
-   "at": "2026-11-26T01:05:46Z",
+   "at": "2026-11-26T05:09:02Z",
    "items": 0,
    "source": "Reddit via Tradestie + ApeWisdom (direct Reddit blocks servers; X needs Agent Reach)",
    "problems": [
@@ -886,13 +875,13 @@
     "r/stocks: HTTP 403 https://www.reddit.com/r/stocks/new.json: <body class=theme-beta><div><"
    ],
    "wsb": {
-    "at": "2026-11-26T01:05:46Z",
+    "at": "2026-11-26T05:09:02Z",
     "tickers": 50,
     "items": 0,
     "key": false
    },
    "ape": {
-    "at": "2026-11-26T01:05:46Z",
+    "at": "2026-11-26T05:09:03Z",
     "tickers": 200,
     "items": 0,
     "problems": []
@@ -905,6 +894,50 @@
   "alert": null
  },
  "positions": [
+  {
+   "id": "ahq-LINKUSD-20261126050912",
+   "symbol": "LINK/USD",
+   "asset": "crypto",
+   "status": "pending",
+   "entryOrderId": "587a57ad-cb31-4dd3-9edc-b298b31db17e",
+   "qty": null,
+   "cost": 12109.43,
+   "estPrice": 9.1882,
+   "entryPrice": 9.1882,
+   "stop": 8.91,
+   "target": 9.74,
+   "openedAt": "2026-11-26T05:09:12Z",
+   "trail": 3.0,
+   "news": {
+    "summary": "Franklin Templeton to add Hyperliquid to its crypto index ETF, signaling continued institutional product expansion.",
+    "category": "crypto_positive",
+    "sources": [
+     {
+      "publisher": "grafa.com",
+      "title": "Fidelity files for Nasdaq Chainlink ETF listing",
+      "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxNLUNYdHlRZmgyYk81emg2UEd3bFhjOGI4QUxCMU1vdzBlaGlfajhhUGZya0dqR0trYld3cDF1aU42Y25DbldFUzdjSm1fMVIzMkFDQzJuT2o3c0hhRFN5LUVZQ3FTQ3JUMVhLWjlMdE9uUjdxaFlZTTN1TEt4Q3FCX0hySQ?oc=5"
+     },
+     {
+      "publisher": "Crypto Economy",
+      "title": "Franklin Templeton to Add Hyperliquid to Crypto Index ETF in December",
+      "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxQcU9NU0JJUEZaVlA2ZW9RV2d3b0lHaG40bUZMdUpGQ3FBNTRnZU9ldkdCYk9CXzBqODVhRm9oaHZuR1Q1VUpJRk1EdklqZW1VWHdqaW1SQXhyRzNlNDV6NHpNanB0ZVFOaGZVem5HN0xYZGV6aHotVVRqVjk5TVhlRFRkZWFtYkRFamdaUlNmM0EwMDFkeHBWYTR4OFdrUQ?oc=5"
+     }
+    ]
+   },
+   "reason": {
+    "triage": "Institutional ETF filing increases legitimacy and potential capital inflows for Chainlink.",
+    "confidence": 0.6,
+    "confirmation": "volume 0.0x normal, price +0.45% since the news",
+    "rvol": 0.0,
+    "movePct": 0.45,
+    "publishers": [
+     "Crypto Economy",
+     "grafa.com"
+    ],
+    "tradingAgents": "not used (ultra mode)",
+    "taSummary": ""
+   }
+  },
   {
    "id": "ahq-dip-SPWO-20261125145159",
    "symbol": "SPWO",
@@ -960,8 +993,8 @@
     "publishers": [],
     "tradingAgents": "not used (core)"
    },
-   "lastPrice": 65.8215,
-   "unrealizedPct": 3.31
+   "lastPrice": 65.7,
+   "unrealizedPct": 3.12
   },
   {
    "id": "ahq-core-SPUS-20261125145147",
@@ -3102,6 +3135,1167 @@
    ]
   },
   "holdings": {
+   "LINK/USD": {
+    "bars": [
+     [
+      "2026-11-23T05:15:00Z",
+      8.9316
+     ],
+     [
+      "2026-11-23T05:30:00Z",
+      8.9574
+     ],
+     [
+      "2026-11-23T05:45:00Z",
+      8.9331
+     ],
+     [
+      "2026-11-23T06:00:00Z",
+      8.9206
+     ],
+     [
+      "2026-11-23T06:15:00Z",
+      8.8762
+     ],
+     [
+      "2026-11-23T06:30:00Z",
+      8.8977
+     ],
+     [
+      "2026-11-23T06:45:00Z",
+      8.8854
+     ],
+     [
+      "2026-11-23T07:00:00Z",
+      8.9061
+     ],
+     [
+      "2026-11-23T07:15:00Z",
+      8.9126
+     ],
+     [
+      "2026-11-23T07:30:00Z",
+      8.9174
+     ],
+     [
+      "2026-11-23T07:45:00Z",
+      8.9192
+     ],
+     [
+      "2026-11-23T08:00:00Z",
+      8.908
+     ],
+     [
+      "2026-11-23T08:15:00Z",
+      8.9291
+     ],
+     [
+      "2026-11-23T08:30:00Z",
+      8.9209
+     ],
+     [
+      "2026-11-23T08:45:00Z",
+      8.924
+     ],
+     [
+      "2026-11-23T09:00:00Z",
+      8.9455
+     ],
+     [
+      "2026-11-23T09:15:00Z",
+      8.9477
+     ],
+     [
+      "2026-11-23T09:30:00Z",
+      8.9156
+     ],
+     [
+      "2026-11-23T09:45:00Z",
+      8.909
+     ],
+     [
+      "2026-11-23T10:00:00Z",
+      8.91
+     ],
+     [
+      "2026-11-23T10:15:00Z",
+      8.9064
+     ],
+     [
+      "2026-11-23T10:30:00Z",
+      8.9203
+     ],
+     [
+      "2026-11-23T10:45:00Z",
+      8.9194
+     ],
+     [
+      "2026-11-23T11:00:00Z",
+      8.919
+     ],
+     [
+      "2026-11-23T11:15:00Z",
+      8.9434
+     ],
+     [
+      "2026-11-23T11:30:00Z",
+      8.9666
+     ],
+     [
+      "2026-11-23T11:45:00Z",
+      8.944
+     ],
+     [
+      "2026-11-23T12:00:00Z",
+      8.9394
+     ],
+     [
+      "2026-11-23T12:15:00Z",
+      8.907
+     ],
+     [
+      "2026-11-23T12:30:00Z",
+      8.8809
+     ],
+     [
+      "2026-11-23T12:45:00Z",
+      8.8907
+     ],
+     [
+      "2026-11-23T13:00:00Z",
+      8.9153
+     ],
+     [
+      "2026-11-23T13:15:00Z",
+      8.9277
+     ],
+     [
+      "2026-11-23T13:30:00Z",
+      8.917
+     ],
+     [
+      "2026-11-23T13:45:00Z",
+      9.3248
+     ],
+     [
+      "2026-11-23T14:00:00Z",
+      9.373
+     ],
+     [
+      "2026-11-23T14:15:00Z",
+      9.5149
+     ],
+     [
+      "2026-11-23T14:30:00Z",
+      9.38
+     ],
+     [
+      "2026-11-23T14:45:00Z",
+      9.2906
+     ],
+     [
+      "2026-11-23T15:00:00Z",
+      9.315
+     ],
+     [
+      "2026-11-23T15:15:00Z",
+      9.3187
+     ],
+     [
+      "2026-11-23T15:30:00Z",
+      9.2647
+     ],
+     [
+      "2026-11-23T15:45:00Z",
+      9.256
+     ],
+     [
+      "2026-11-23T16:00:00Z",
+      9.2325
+     ],
+     [
+      "2026-11-23T16:15:00Z",
+      9.2488
+     ],
+     [
+      "2026-11-23T16:30:00Z",
+      9.1867
+     ],
+     [
+      "2026-11-23T16:45:00Z",
+      9.2454
+     ],
+     [
+      "2026-11-23T17:00:00Z",
+      9.2298
+     ],
+     [
+      "2026-11-23T17:15:00Z",
+      9.1491
+     ],
+     [
+      "2026-11-23T17:30:00Z",
+      9.0558
+     ],
+     [
+      "2026-11-23T17:45:00Z",
+      9.0816
+     ],
+     [
+      "2026-11-23T18:00:00Z",
+      9.0715
+     ],
+     [
+      "2026-11-23T18:15:00Z",
+      9.0667
+     ],
+     [
+      "2026-11-23T18:30:00Z",
+      9.0525
+     ],
+     [
+      "2026-11-23T18:45:00Z",
+      9.0524
+     ],
+     [
+      "2026-11-23T19:00:00Z",
+      9.0463
+     ],
+     [
+      "2026-11-23T19:15:00Z",
+      9.0213
+     ],
+     [
+      "2026-11-23T19:30:00Z",
+      8.9552
+     ],
+     [
+      "2026-11-23T19:45:00Z",
+      8.9987
+     ],
+     [
+      "2026-11-23T20:00:00Z",
+      9.0045
+     ],
+     [
+      "2026-11-23T20:15:00Z",
+      8.9786
+     ],
+     [
+      "2026-11-23T20:30:00Z",
+      8.9568
+     ],
+     [
+      "2026-11-23T20:45:00Z",
+      8.9812
+     ],
+     [
+      "2026-11-23T21:00:00Z",
+      8.9807
+     ],
+     [
+      "2026-11-23T21:15:00Z",
+      9.005
+     ],
+     [
+      "2026-11-23T21:30:00Z",
+      8.9921
+     ],
+     [
+      "2026-11-23T21:45:00Z",
+      9.0098
+     ],
+     [
+      "2026-11-23T22:00:00Z",
+      8.9809
+     ],
+     [
+      "2026-11-23T22:15:00Z",
+      8.9695
+     ],
+     [
+      "2026-11-23T22:30:00Z",
+      8.9442
+     ],
+     [
+      "2026-11-23T22:45:00Z",
+      8.9533
+     ],
+     [
+      "2026-11-23T23:00:00Z",
+      8.9804
+     ],
+     [
+      "2026-11-23T23:15:00Z",
+      9.0082
+     ],
+     [
+      "2026-11-23T23:30:00Z",
+      8.9605
+     ],
+     [
+      "2026-11-23T23:45:00Z",
+      9.0072
+     ],
+     [
+      "2026-11-24T00:00:00Z",
+      9.0062
+     ],
+     [
+      "2026-11-24T00:15:00Z",
+      9.0403
+     ],
+     [
+      "2026-11-24T00:30:00Z",
+      9.0606
+     ],
+     [
+      "2026-11-24T00:45:00Z",
+      9.0315
+     ],
+     [
+      "2026-11-24T01:00:00Z",
+      9.1106
+     ],
+     [
+      "2026-11-24T01:15:00Z",
+      9.1298
+     ],
+     [
+      "2026-11-24T01:30:00Z",
+      9.1209
+     ],
+     [
+      "2026-11-24T01:45:00Z",
+      9.0595
+     ],
+     [
+      "2026-11-24T02:00:00Z",
+      9.0734
+     ],
+     [
+      "2026-11-24T02:15:00Z",
+      9.0398
+     ],
+     [
+      "2026-11-24T02:30:00Z",
+      9.001
+     ],
+     [
+      "2026-11-24T02:45:00Z",
+      8.9695
+     ],
+     [
+      "2026-11-24T03:00:00Z",
+      8.9183
+     ],
+     [
+      "2026-11-24T03:15:00Z",
+      8.9908
+     ],
+     [
+      "2026-11-24T03:30:00Z",
+      8.9762
+     ],
+     [
+      "2026-11-24T03:45:00Z",
+      9.0322
+     ],
+     [
+      "2026-11-24T04:00:00Z",
+      9.0457
+     ],
+     [
+      "2026-11-24T04:15:00Z",
+      9.0858
+     ],
+     [
+      "2026-11-24T04:30:00Z",
+      9.0881
+     ],
+     [
+      "2026-11-24T04:45:00Z",
+      9.0545
+     ],
+     [
+      "2026-11-24T05:00:00Z",
+      9.074
+     ],
+     [
+      "2026-11-24T05:15:00Z",
+      9.0858
+     ],
+     [
+      "2026-11-24T05:30:00Z",
+      9.1292
+     ],
+     [
+      "2026-11-24T05:45:00Z",
+      9.1223
+     ],
+     [
+      "2026-11-24T06:00:00Z",
+      9.1005
+     ],
+     [
+      "2026-11-24T06:15:00Z",
+      9.083
+     ],
+     [
+      "2026-11-24T06:30:00Z",
+      9.0861
+     ],
+     [
+      "2026-11-24T06:45:00Z",
+      9.0924
+     ],
+     [
+      "2026-11-24T07:00:00Z",
+      9.0814
+     ],
+     [
+      "2026-11-24T07:15:00Z",
+      9.0583
+     ],
+     [
+      "2026-11-24T07:30:00Z",
+      9.0404
+     ],
+     [
+      "2026-11-24T07:45:00Z",
+      9.0431
+     ],
+     [
+      "2026-11-24T08:00:00Z",
+      9.0446
+     ],
+     [
+      "2026-11-24T08:15:00Z",
+      9.0283
+     ],
+     [
+      "2026-11-24T08:30:00Z",
+      9.0989
+     ],
+     [
+      "2026-11-24T08:45:00Z",
+      9.0529
+     ],
+     [
+      "2026-11-24T09:00:00Z",
+      9.005
+     ],
+     [
+      "2026-11-24T09:15:00Z",
+      9.0263
+     ],
+     [
+      "2026-11-24T09:30:00Z",
+      9.026
+     ],
+     [
+      "2026-11-24T09:45:00Z",
+      8.9862
+     ],
+     [
+      "2026-11-24T10:00:00Z",
+      8.9779
+     ],
+     [
+      "2026-11-24T10:15:00Z",
+      8.966
+     ],
+     [
+      "2026-11-24T10:30:00Z",
+      8.9341
+     ],
+     [
+      "2026-11-24T10:45:00Z",
+      8.9465
+     ],
+     [
+      "2026-11-24T11:00:00Z",
+      8.9135
+     ],
+     [
+      "2026-11-24T11:15:00Z",
+      8.9372
+     ],
+     [
+      "2026-11-24T11:30:00Z",
+      8.9499
+     ],
+     [
+      "2026-11-24T11:45:00Z",
+      9.0044
+     ],
+     [
+      "2026-11-24T12:00:00Z",
+      8.9554
+     ],
+     [
+      "2026-11-24T12:15:00Z",
+      8.9426
+     ],
+     [
+      "2026-11-24T12:30:00Z",
+      8.9679
+     ],
+     [
+      "2026-11-24T12:45:00Z",
+      8.9487
+     ],
+     [
+      "2026-11-24T13:00:00Z",
+      8.834
+     ],
+     [
+      "2026-11-24T13:15:00Z",
+      8.8478
+     ],
+     [
+      "2026-11-24T13:30:00Z",
+      8.872
+     ],
+     [
+      "2026-11-24T13:45:00Z",
+      8.8491
+     ],
+     [
+      "2026-11-24T14:00:00Z",
+      8.8913
+     ],
+     [
+      "2026-11-24T14:15:00Z",
+      8.9135
+     ],
+     [
+      "2026-11-24T14:30:00Z",
+      8.8832
+     ],
+     [
+      "2026-11-24T14:45:00Z",
+      8.9019
+     ],
+     [
+      "2026-11-24T15:00:00Z",
+      8.788
+     ],
+     [
+      "2026-11-24T15:15:00Z",
+      8.771
+     ],
+     [
+      "2026-11-24T15:30:00Z",
+      8.7568
+     ],
+     [
+      "2026-11-24T15:45:00Z",
+      8.7459
+     ],
+     [
+      "2026-11-24T16:00:00Z",
+      8.7403
+     ],
+     [
+      "2026-11-24T16:15:00Z",
+      8.7811
+     ],
+     [
+      "2026-11-24T16:30:00Z",
+      8.7966
+     ],
+     [
+      "2026-11-24T16:45:00Z",
+      8.7835
+     ],
+     [
+      "2026-11-24T17:00:00Z",
+      8.8576
+     ],
+     [
+      "2026-11-24T17:15:00Z",
+      8.8835
+     ],
+     [
+      "2026-11-24T17:30:00Z",
+      8.8922
+     ],
+     [
+      "2026-11-24T17:45:00Z",
+      8.8935
+     ],
+     [
+      "2026-11-24T18:00:00Z",
+      8.922
+     ],
+     [
+      "2026-11-24T18:15:00Z",
+      8.8882
+     ],
+     [
+      "2026-11-24T18:30:00Z",
+      8.8953
+     ],
+     [
+      "2026-11-24T18:45:00Z",
+      8.8769
+     ],
+     [
+      "2026-11-24T19:00:00Z",
+      8.8782
+     ],
+     [
+      "2026-11-24T19:15:00Z",
+      8.8696
+     ],
+     [
+      "2026-11-24T19:30:00Z",
+      8.839
+     ],
+     [
+      "2026-11-24T19:45:00Z",
+      8.8112
+     ],
+     [
+      "2026-11-24T20:00:00Z",
+      8.8359
+     ],
+     [
+      "2026-11-24T20:15:00Z",
+      8.7934
+     ],
+     [
+      "2026-11-24T20:30:00Z",
+      8.8118
+     ],
+     [
+      "2026-11-24T20:45:00Z",
+      8.8242
+     ],
+     [
+      "2026-11-24T21:00:00Z",
+      8.7929
+     ],
+     [
+      "2026-11-24T21:15:00Z",
+      8.8242
+     ],
+     [
+      "2026-11-24T21:30:00Z",
+      8.8057
+     ],
+     [
+      "2026-11-24T21:45:00Z",
+      8.8232
+     ],
+     [
+      "2026-11-24T22:00:00Z",
+      8.828
+     ],
+     [
+      "2026-11-24T22:15:00Z",
+      8.8576
+     ],
+     [
+      "2026-11-24T22:30:00Z",
+      8.8653
+     ],
+     [
+      "2026-11-24T22:45:00Z",
+      8.8536
+     ],
+     [
+      "2026-11-24T23:00:00Z",
+      8.8575
+     ],
+     [
+      "2026-11-24T23:15:00Z",
+      8.8639
+     ],
+     [
+      "2026-11-24T23:30:00Z",
+      8.8386
+     ],
+     [
+      "2026-11-24T23:45:00Z",
+      8.8406
+     ],
+     [
+      "2026-11-25T00:00:00Z",
+      8.7974
+     ],
+     [
+      "2026-11-25T00:15:00Z",
+      8.7957
+     ],
+     [
+      "2026-11-25T00:30:00Z",
+      8.8046
+     ],
+     [
+      "2026-11-25T00:45:00Z",
+      8.8028
+     ],
+     [
+      "2026-11-25T01:00:00Z",
+      8.7972
+     ],
+     [
+      "2026-11-25T01:15:00Z",
+      8.7771
+     ],
+     [
+      "2026-11-25T01:30:00Z",
+      8.7505
+     ],
+     [
+      "2026-11-25T01:45:00Z",
+      8.7388
+     ],
+     [
+      "2026-11-25T02:00:00Z",
+      8.7398
+     ],
+     [
+      "2026-11-25T02:15:00Z",
+      8.727
+     ],
+     [
+      "2026-11-25T02:30:00Z",
+      8.7286
+     ],
+     [
+      "2026-11-25T02:45:00Z",
+      8.7376
+     ],
+     [
+      "2026-11-25T03:00:00Z",
+      8.7811
+     ],
+     [
+      "2026-11-25T03:15:00Z",
+      8.781
+     ],
+     [
+      "2026-11-25T03:30:00Z",
+      8.7859
+     ],
+     [
+      "2026-11-25T03:45:00Z",
+      8.8028
+     ],
+     [
+      "2026-11-25T04:00:00Z",
+      8.7992
+     ],
+     [
+      "2026-11-25T04:15:00Z",
+      8.7982
+     ],
+     [
+      "2026-11-25T04:30:00Z",
+      8.7603
+     ],
+     [
+      "2026-11-25T04:45:00Z",
+      8.7694
+     ],
+     [
+      "2026-11-25T05:00:00Z",
+      8.7678
+     ],
+     [
+      "2026-11-25T05:15:00Z",
+      8.7569
+     ],
+     [
+      "2026-11-25T05:30:00Z",
+      8.7338
+     ],
+     [
+      "2026-11-25T05:45:00Z",
+      8.746
+     ],
+     [
+      "2026-11-25T06:00:00Z",
+      8.7542
+     ],
+     [
+      "2026-11-25T06:15:00Z",
+      8.7283
+     ],
+     [
+      "2026-11-25T06:30:00Z",
+      8.7619
+     ],
+     [
+      "2026-11-25T06:45:00Z",
+      8.7586
+     ],
+     [
+      "2026-11-25T07:00:00Z",
+      8.7653
+     ],
+     [
+      "2026-11-25T07:15:00Z",
+      8.7439
+     ],
+     [
+      "2026-11-25T07:30:00Z",
+      8.6924
+     ],
+     [
+      "2026-11-25T07:45:00Z",
+      8.7006
+     ],
+     [
+      "2026-11-25T08:00:00Z",
+      8.7172
+     ],
+     [
+      "2026-11-25T08:15:00Z",
+      8.7247
+     ],
+     [
+      "2026-11-25T08:30:00Z",
+      8.7466
+     ],
+     [
+      "2026-11-25T08:45:00Z",
+      8.7482
+     ],
+     [
+      "2026-11-25T09:00:00Z",
+      8.6651
+     ],
+     [
+      "2026-11-25T09:15:00Z",
+      8.638
+     ],
+     [
+      "2026-11-25T09:30:00Z",
+      8.6184
+     ],
+     [
+      "2026-11-25T09:45:00Z",
+      8.6538
+     ],
+     [
+      "2026-11-25T10:00:00Z",
+      8.6281
+     ],
+     [
+      "2026-11-25T10:15:00Z",
+      8.6347
+     ],
+     [
+      "2026-11-25T10:30:00Z",
+      8.6434
+     ],
+     [
+      "2026-11-25T10:45:00Z",
+      8.643
+     ],
+     [
+      "2026-11-25T11:00:00Z",
+      8.6459
+     ],
+     [
+      "2026-11-25T11:15:00Z",
+      8.6019
+     ],
+     [
+      "2026-11-25T11:30:00Z",
+      8.6081
+     ],
+     [
+      "2026-11-25T11:45:00Z",
+      8.5916
+     ],
+     [
+      "2026-11-25T12:00:00Z",
+      8.6108
+     ],
+     [
+      "2026-11-25T12:15:00Z",
+      8.6352
+     ],
+     [
+      "2026-11-25T12:30:00Z",
+      8.6096
+     ],
+     [
+      "2026-11-25T12:45:00Z",
+      8.6357
+     ],
+     [
+      "2026-11-25T13:00:00Z",
+      8.6157
+     ],
+     [
+      "2026-11-25T13:15:00Z",
+      8.6547
+     ],
+     [
+      "2026-11-25T13:30:00Z",
+      8.5612
+     ],
+     [
+      "2026-11-25T13:45:00Z",
+      8.5375
+     ],
+     [
+      "2026-11-25T14:00:00Z",
+      8.5792
+     ],
+     [
+      "2026-11-25T14:15:00Z",
+      8.5663
+     ],
+     [
+      "2026-11-25T14:30:00Z",
+      8.463
+     ],
+     [
+      "2026-11-25T14:45:00Z",
+      8.6423
+     ],
+     [
+      "2026-11-25T15:00:00Z",
+      8.6011
+     ],
+     [
+      "2026-11-25T15:15:00Z",
+      8.5788
+     ],
+     [
+      "2026-11-25T15:30:00Z",
+      8.6165
+     ],
+     [
+      "2026-11-25T15:45:00Z",
+      8.6364
+     ],
+     [
+      "2026-11-25T16:00:00Z",
+      8.6776
+     ],
+     [
+      "2026-11-25T16:15:00Z",
+      8.6544
+     ],
+     [
+      "2026-11-25T16:30:00Z",
+      8.602
+     ],
+     [
+      "2026-11-25T16:45:00Z",
+      8.6869
+     ],
+     [
+      "2026-11-25T17:00:00Z",
+      8.785
+     ],
+     [
+      "2026-11-25T17:15:00Z",
+      8.7845
+     ],
+     [
+      "2026-11-25T17:30:00Z",
+      8.8793
+     ],
+     [
+      "2026-11-25T17:45:00Z",
+      8.8635
+     ],
+     [
+      "2026-11-25T18:00:00Z",
+      8.8946
+     ],
+     [
+      "2026-11-25T18:15:00Z",
+      8.9193
+     ],
+     [
+      "2026-11-25T18:30:00Z",
+      8.9373
+     ],
+     [
+      "2026-11-25T18:45:00Z",
+      8.9686
+     ],
+     [
+      "2026-11-25T19:00:00Z",
+      9.0195
+     ],
+     [
+      "2026-11-25T19:15:00Z",
+      9.1075
+     ],
+     [
+      "2026-11-25T19:30:00Z",
+      9.0556
+     ],
+     [
+      "2026-11-25T19:45:00Z",
+      9.0715
+     ],
+     [
+      "2026-11-25T20:00:00Z",
+      9.0771
+     ],
+     [
+      "2026-11-25T20:15:00Z",
+      9.0973
+     ],
+     [
+      "2026-11-25T20:30:00Z",
+      9.0584
+     ],
+     [
+      "2026-11-25T20:45:00Z",
+      9.1052
+     ],
+     [
+      "2026-11-25T21:00:00Z",
+      9.0672
+     ],
+     [
+      "2026-11-25T21:15:00Z",
+      9.0675
+     ],
+     [
+      "2026-11-25T21:30:00Z",
+      9.0581
+     ],
+     [
+      "2026-11-25T21:45:00Z",
+      9.0536
+     ],
+     [
+      "2026-11-25T22:00:00Z",
+      9.0417
+     ],
+     [
+      "2026-11-25T22:15:00Z",
+      9.0395
+     ],
+     [
+      "2026-11-25T22:30:00Z",
+      9.0113
+     ],
+     [
+      "2026-11-25T22:45:00Z",
+      9.0247
+     ],
+     [
+      "2026-11-25T23:00:00Z",
+      9.033
+     ],
+     [
+      "2026-11-25T23:15:00Z",
+      9.0207
+     ],
+     [
+      "2026-11-25T23:30:00Z",
+      9.0414
+     ],
+     [
+      "2026-11-25T23:45:00Z",
+      9.0455
+     ],
+     [
+      "2026-11-26T00:00:00Z",
+      9.1385
+     ],
+     [
+      "2026-11-26T00:15:00Z",
+      9.1264
+     ],
+     [
+      "2026-11-26T00:30:00Z",
+      9.1066
+     ],
+     [
+      "2026-11-26T00:45:00Z",
+      9.0969
+     ],
+     [
+      "2026-11-26T01:00:00Z",
+      9.1253
+     ],
+     [
+      "2026-11-26T01:15:00Z",
+      9.1243
+     ],
+     [
+      "2026-11-26T01:30:00Z",
+      9.1573
+     ],
+     [
+      "2026-11-26T01:45:00Z",
+      9.1833
+     ],
+     [
+      "2026-11-26T02:00:00Z",
+      9.2091
+     ],
+     [
+      "2026-11-26T02:15:00Z",
+      9.1893
+     ],
+     [
+      "2026-11-26T02:30:00Z",
+      9.1764
+     ],
+     [
+      "2026-11-26T02:45:00Z",
+      9.1402
+     ],
+     [
+      "2026-11-26T03:00:00Z",
+      9.1741
+     ],
+     [
+      "2026-11-26T03:15:00Z",
+      9.173
+     ],
+     [
+      "2026-11-26T03:30:00Z",
+      9.194
+     ],
+     [
+      "2026-11-26T03:45:00Z",
+      9.186
+     ],
+     [
+      "2026-11-26T04:00:00Z",
+      9.2115
+     ],
+     [
+      "2026-11-26T04:15:00Z",
+      9.232
+     ],
+     [
+      "2026-11-26T04:30:00Z",
+      9.2327
+     ],
+     [
+      "2026-11-26T04:45:00Z",
+      9.2227
+     ],
+     [
+      "2026-11-26T05:00:00Z",
+      9.2248
+     ]
+    ],
+    "entry": 9.1882,
+    "stop": 8.91,
+    "target": 9.74,
+    "openedAt": "2026-11-26T05:09:12Z",
+    "qty": null
+   },
    "SPWO": {
     "bars": [
      [
@@ -3758,7 +4952,7 @@
   "backtest": null
  },
  "lab": {
-  "updatedAt": "2026-11-26T00:50:46Z",
+  "updatedAt": "2026-11-26T04:50:46Z",
   "startedAt": "2026-11-25T21:57:13Z",
   "endsAt": "2026-12-02T21:57:13Z",
   "done": false,
@@ -5178,6 +6372,50 @@
  },
  "trades": [
   {
+   "id": "ahq-LINKUSD-20261126050912",
+   "symbol": "LINK/USD",
+   "asset": "crypto",
+   "status": "pending",
+   "entryOrderId": "587a57ad-cb31-4dd3-9edc-b298b31db17e",
+   "qty": null,
+   "cost": 12109.43,
+   "estPrice": 9.1882,
+   "entryPrice": 9.1882,
+   "stop": 8.91,
+   "target": 9.74,
+   "openedAt": "2026-11-26T05:09:12Z",
+   "trail": 3.0,
+   "news": {
+    "summary": "Franklin Templeton to add Hyperliquid to its crypto index ETF, signaling continued institutional product expansion.",
+    "category": "crypto_positive",
+    "sources": [
+     {
+      "publisher": "grafa.com",
+      "title": "Fidelity files for Nasdaq Chainlink ETF listing",
+      "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxNLUNYdHlRZmgyYk81emg2UEd3bFhjOGI4QUxCMU1vdzBlaGlfajhhUGZya0dqR0trYld3cDF1aU42Y25DbldFUzdjSm1fMVIzMkFDQzJuT2o3c0hhRFN5LUVZQ3FTQ3JUMVhLWjlMdE9uUjdxaFlZTTN1TEt4Q3FCX0hySQ?oc=5"
+     },
+     {
+      "publisher": "Crypto Economy",
+      "title": "Franklin Templeton to Add Hyperliquid to Crypto Index ETF in December",
+      "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxQcU9NU0JJUEZaVlA2ZW9RV2d3b0lHaG40bUZMdUpGQ3FBNTRnZU9ldkdCYk9CXzBqODVhRm9oaHZuR1Q1VUpJRk1EdklqZW1VWHdqaW1SQXhyRzNlNDV6NHpNanB0ZVFOaGZVem5HN0xYZGV6aHotVVRqVjk5TVhlRFRkZWFtYkRFamdaUlNmM0EwMDFkeHBWYTR4OFdrUQ?oc=5"
+     }
+    ]
+   },
+   "reason": {
+    "triage": "Institutional ETF filing increases legitimacy and potential capital inflows for Chainlink.",
+    "confidence": 0.6,
+    "confirmation": "volume 0.0x normal, price +0.45% since the news",
+    "rvol": 0.0,
+    "movePct": 0.45,
+    "publishers": [
+     "Crypto Economy",
+     "grafa.com"
+    ],
+    "tradingAgents": "not used (ultra mode)",
+    "taSummary": ""
+   }
+  },
+  {
    "id": "ahq-dip-UMMA-20261125145200",
    "symbol": "UMMA",
    "asset": "stock",
@@ -5266,8 +6504,8 @@
     "publishers": [],
     "tradingAgents": "not used (core)"
    },
-   "lastPrice": 65.8215,
-   "unrealizedPct": 3.31
+   "lastPrice": 65.7,
+   "unrealizedPct": 3.12
   },
   {
    "id": "ahq-core-SPUS-20261125145147",
@@ -6985,6 +8223,13 @@
  ],
  "decisions": [
   {
+   "t": "2026-11-26T05:09:12Z",
+   "symbol": "LINK/USD",
+   "outcome": "bought",
+   "why": "volume 0.0x normal, price +0.45% since the news; TradingAgents: not used (ultra mode)",
+   "event": "Franklin Templeton to add Hyperliquid to its crypto index ETF, signaling continued institutional product expansion."
+  },
+  {
    "t": "2026-11-25T20:24:56Z",
    "symbol": "LINK/USD",
    "outcome": "waiting",
@@ -7396,56 +8641,9 @@
    "outcome": "waiting",
    "why": "down 3% today, no new trades until tomorrow",
    "event": "General Electric's aerospace unit secured a significant order for GEnx engines from Malaysia Aviation Group."
-  },
-  {
-   "t": "2026-11-25T19:01:17Z",
-   "symbol": "OXY",
-   "outcome": "waiting",
-   "why": "down 3% today, no new trades until tomorrow",
-   "event": "Renewed Houthi attacks on Saudi oil infrastructure continue to escalate regional supply disruption risks."
   }
  ],
  "equity": [
-  {
-   "t": "2026-11-17T08:19:44Z",
-   "equity": 100066.47,
-   "spy": 740.04
-  },
-  {
-   "t": "2026-11-17T08:50:03Z",
-   "equity": 100057.93,
-   "spy": 740.04
-  },
-  {
-   "t": "2026-11-17T09:20:32Z",
-   "equity": 100049.66,
-   "spy": 740.04
-  },
-  {
-   "t": "2026-11-17T09:51:49Z",
-   "equity": 100045.26,
-   "spy": 740.04
-  },
-  {
-   "t": "2026-11-17T10:22:35Z",
-   "equity": 100065.71,
-   "spy": 740.04
-  },
-  {
-   "t": "2026-11-17T10:53:32Z",
-   "equity": 100054.08,
-   "spy": 740.04
-  },
-  {
-   "t": "2026-11-17T11:24:07Z",
-   "equity": 100056.69,
-   "spy": 740.04
-  },
-  {
-   "t": "2026-11-17T11:54:39Z",
-   "equity": 100119.62,
-   "spy": 740.04
-  },
   {
    "t": "2026-11-17T12:25:30Z",
    "equity": 100097.99,
@@ -9405,6 +10603,46 @@
    "t": "2026-11-26T00:50:39Z",
    "equity": 92428.58,
    "spy": 716.67
+  },
+  {
+   "t": "2026-11-26T01:21:06Z",
+   "equity": 92314.48,
+   "spy": 716.67
+  },
+  {
+   "t": "2026-11-26T01:51:28Z",
+   "equity": 92314.48,
+   "spy": 716.67
+  },
+  {
+   "t": "2026-11-26T02:21:48Z",
+   "equity": 92314.48,
+   "spy": 716.67
+  },
+  {
+   "t": "2026-11-26T02:52:18Z",
+   "equity": 92314.48,
+   "spy": 716.67
+  },
+  {
+   "t": "2026-11-26T03:22:43Z",
+   "equity": 92283.38,
+   "spy": 716.67
+  },
+  {
+   "t": "2026-11-26T03:53:03Z",
+   "equity": 92283.38,
+   "spy": 716.67
+  },
+  {
+   "t": "2026-11-26T04:23:27Z",
+   "equity": 92283.38,
+   "spy": 716.67
+  },
+  {
+   "t": "2026-11-26T04:53:57Z",
+   "equity": 92283.38,
+   "spy": 716.67
   }
  ],
  "watch": [],
@@ -9416,7 +10654,512 @@
  },
  "events": [
   {
-   "summary": "Expanding US tariff plans targeting China, India, Europe, and other major economies increase global trade war risks and pressure tech stocks.",
+   "summary": "Oil prices continue to climb due to ongoing supply disruption fears following attacks on Saudi refineries.",
+   "category": "oil_supply",
+   "firstSeen": "2026-11-26T00:45:00Z",
+   "publishers": [
+    "Ada Derana",
+    "Asianet Newsable",
+    "Bangladesh Post",
+    "Bloomberg",
+    "CNBC TV18",
+    "Chosunbiz",
+    "Crypto Briefing",
+    "DNE Africa",
+    "DZRH",
+    "Dunya News",
+    "Free Malaysia Today",
+    "GuruFocus",
+    "Hiru News",
+    "Investify",
+    "Investing.com",
+    "KuCoin",
+    "Moneycontrol.com",
+    "NDTV Profit",
+    "Nation Thailand",
+    "NewsBytes",
+    "Polymerupdate",
+    "Reuters",
+    "Smartkarma",
+    "The Economic Times",
+    "The Edge Malaysia",
+    "The Express Tribune",
+    "The Sunday Guardian",
+    "The Times of India",
+    "The Vibes",
+    "Times Now",
+    "Wisevoter",
+    "X",
+    "marketscreener.com",
+    "thechronicle.com.ph",
+    "theopenpress.in",
+    "www.tokenpost.com",
+    "شبكة تواصل الإخبارية"
+   ],
+   "assets": {
+    "XOM": {
+     "direction": "up",
+     "confidence": 0.85,
+     "why": "Middle East oil supply disruption concerns drive oil and gas stocks higher."
+    },
+    "CVX": {
+     "direction": "up",
+     "confidence": 0.85,
+     "why": "Oil supply disruption from Houthi attacks supports major oil producers."
+    },
+    "OXY": {
+     "direction": "up",
+     "confidence": 0.7,
+     "why": "Rising oil prices due to supply disruption increase profitability for major oil producers."
+    },
+    "DVN": {
+     "direction": "up",
+     "confidence": 0.7,
+     "why": "Rising oil prices benefit upstream producers."
+    },
+    "NEM": {
+     "direction": "up",
+     "confidence": 0.75,
+     "why": "Geopolitical escalation boosts safe-haven gold miners."
+    },
+    "COP": {
+     "direction": "up",
+     "confidence": 0.8,
+     "why": "Higher oil prices boost oil and gas producer revenues."
+    }
+   },
+   "sources": [
+    {
+     "id": "bc5362518232f38f",
+     "publisher": "Dunya News",
+     "kind": "news",
+     "title": "Two oil tankers strike sea mines in strait of Hormuz",
+     "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxPZGN1X3R0Y0d5Y1ltQUdUa29mOUZtTFFkVUFIN01lTGM0NWlwSXNicjE4c2M5cXhJVmhhQWZLWndMQjJQeHNwRzNicGVVd2lUUmZHN1RERGJMNy1Fc3FFejhHR3pBYTBVdGdVQjl4d3hTX2lxQ3dtMTJ5RDZ3alVrekd0UkVWOTFxNEEyc1NWeTByUnPSAVZBVV95cUxNZ25UNzdEYXV1eXNKdXlNSVJZd09hMVdUZFl2Y2ZkVDVMUmNrbXpCSHFJVTJEZkotSmNaOWc1TkJvV2d6V05kOFJNYUZIQWFtSC1LemFCdw?oc=5",
+     "time": "2026-11-26T00:56:15Z"
+    },
+    {
+     "id": "fbe7c0d70ccfe954",
+     "publisher": "DZRH",
+     "kind": "news",
+     "title": "Yemen's Houthis claim attack on Saudi Arabia's largest refinery",
+     "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxOMkk1V1I4OTV4TGY3WXFHcFJ3Nm9keUozNWtzVTVOSlJidEtpcEFVbjZLZ2V3ZUk0UmcwOFowWGFMX25kMkZpTHV6aHdIampCeW5paFRPSDB4ZHFsUjBNWFhpNHdPaTkzSW8xd2ZrUk1EekNWTUdUMlFVSk9WelFsUXVPdHRLZW1tRkI1VkF3bWNMaEwy?oc=5",
+     "time": "2026-11-26T00:53:13Z"
+    },
+    {
+     "id": "d64a28151254abfe",
+     "publisher": "NDTV Profit",
+     "kind": "news",
+     "title": "Oil Prices Today: Brent Hovers Near $94 As Saudi Oil Attacks Raise Fresh Supply Fears",
+     "url": "https://news.google.com/rss/articles/CBMinwJBVV95cUxPaGZORTlwNEF0RVpyMWJEV01wXzBsNWRnMHVnc1ViNWo3RktWWWZQWVBDVGQ1N1B1cU0za3MzT1R3SnNOT3piWnNUb2U0NXpVMkkzd0FzLXdPMXpXcm9SMENKLVJodkpLczF6eWZEem9RRlFOQWtNT1JqOU9nVms1Y1QzcjYtckRYeUllUk12WU5hSmJsTW5Ub19kelk5LXJhRndMZ0hWVGpqcEpzcmp5MEVUZ0JiRnpyTjByZkNzNUtrRTN3ZFliWmRZQmlVSlgyRTkweDhFUGFTUHB3UXVJemZRNXBwUTRLQm5ZZTR1d05uS1ZFbERfWWZ4aGVyQUtBNnh4amdpSWRmVTE4LWtVRFY4OENudERaRUduYVFTQdIBpwJBVV95cUxPZVBuQjRXNms0SzR5NElMaG5MXzdCQkxPS3RWTndEMWtqc05rVXV5SnVoQl93U1RYSW9sUDI5SEQyWlEtWkg2TFYtVlpwWWFJV0QwU1p2OFhNWUx6cHNuZThNRGNtd2l4alpQTXhPd1NxNUNnTVIxalZuNmpKNGN0bnRDcmp4WXlYQzdDaS0tNF9KbFlMajJtR1lTeFpIZzMxdUhhNmFXbkNKdDJUVVAwaHZ3ZkRXODZOc1I5N0dRdG9jT2Fhc3dOTnU1UHl0b1BsWTZreC1iM1lURGxvM3JsMGtRczNUSTlfWFFlYjh4eHhKQVFuUkRrb01aNkVkSFRQekx0dlM0enB5NW54dFdEdEthQ0VQUk9jUW5aZWJmbHY5X29UUDRJ?oc=5",
+     "time": "2026-11-26T00:52:11Z"
+    },
+    {
+     "id": "930b1de901449b78",
+     "publisher": "Nation Thailand",
+     "kind": "news",
+     "title": "Brent up 3.5% on 25 Nov as Houthis claim Saudi refinery attack",
+     "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE9DY0M3S3NlWGw4TG5oR1M1d0pjc0w1cFZLLWhWN0Z3UFJfSG9qdkFGWVUzdUkzTVF5QVp6c0ptbDVfaGpLMU9YNGxmQ3ozWnNNYzYyNXh6NlhjYUc4aUhn?oc=5",
+     "time": "2026-11-26T00:45:00Z"
+    },
+    {
+     "id": "ad2721aef3043846",
+     "publisher": "Smartkarma",
+     "kind": "news",
+     "title": "Oil futures: Crude rebounds as Saudi Ras Taura refinery targeted",
+     "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxQZTQ3Z2Vsc3I0X1BGYm54aHBqdHJ5aktnOFpnaEZ6Zm1xTEFqTzdhMVlqWHpqVms4MkxCVG5Rd1R4LVBIbkxha0FsWnNRNTYtd3p3Q1hhc3pienFDcmxwdXV5MndsRF9xUGtsMG9QWE94TjBVS09nSG0yckdaS2VDaVRTMUJOV0lTZlFZOGE0WDVHWmVVSDhyUU9yaTNQY1RqTEJOS3BIaloxclU3V3ZQOFZOWTRBTkxvNTdjU3RmZm81aDdSdWY0TWJn?oc=5",
+     "time": "2026-11-26T01:06:57Z"
+    }
+   ]
+  },
+  {
+   "summary": "The US administration's proposed expansion of tariffs on autos, chips, steel, and drugs across 14 economies heightens global trade war risks.",
+   "category": "tariffs",
+   "firstSeen": "2026-11-26T01:43:07Z",
+   "publishers": [
+    "ANI News",
+    "ARYnews.tv",
+    "BW Businessworld",
+    "Big News Network.com",
+    "Bloomberg",
+    "Business Today",
+    "BusinessLine",
+    "CNA",
+    "CNBC TV18",
+    "Daijiworld",
+    "Digg",
+    "EU Today",
+    "Free Malaysia Today",
+    "Hindustan Times",
+    "India Today",
+    "India's News.Net",
+    "Jakarta Globe",
+    "Japan Wire by Kyodo News",
+    "JournalArta",
+    "KSLM Radio",
+    "Moneycontrol.com",
+    "NDTV Profit",
+    "News18",
+    "News9live",
+    "NewsDrum",
+    "Ommcom News",
+    "Profit by Pakistan Today",
+    "Reuters",
+    "Siliconindia",
+    "Social News XYZ",
+    "Taiwan News",
+    "The Business Times",
+    "The Federal",
+    "The Financial Express",
+    "The Malaysian Reserve",
+    "The Siasat Daily",
+    "The Statesman",
+    "The Straits Times",
+    "Times of Oman",
+    "TradingView",
+    "Vietnam.vn",
+    "Yonhap News Agency",
+    "marketscreener.com",
+    "news.sbs.co.kr",
+    "the deep dive",
+    "theopenpress.in",
+    "www.equiti.com",
+    "www.marketscreener.com",
+    "www.thehawk.in",
+    "한겨레"
+   ],
+   "assets": {
+    "NVDA": {
+     "direction": "down",
+     "confidence": 0.7,
+     "why": "Broad market pressure from trade war escalation and tariff concerns."
+    },
+    "AAPL": {
+     "direction": "down",
+     "confidence": 0.7,
+     "why": "Broad trade war and tariff escalation pressures major technology and import-reliant stocks."
+    },
+    "AMD": {
+     "direction": "down",
+     "confidence": 0.6,
+     "why": "Tariffs on chips and trade friction negatively impact semiconductor supply chains and margins."
+    },
+    "SPWO": {
+     "direction": "down",
+     "confidence": 0.6,
+     "why": "Global trade war risks and expanded US tariffs pressure international and broad equities."
+    },
+    "QCOM": {
+     "direction": "down",
+     "confidence": 0.6,
+     "why": "Tariffs on chips and trade friction negatively impact semiconductor supply chains and margins."
+    }
+   },
+   "sources": [
+    {
+     "id": "a4545ec4231f50b0",
+     "publisher": "Profit by Pakistan Today",
+     "kind": "news",
+     "title": "Trump proposes new tariffs on 14 major trading partners",
+     "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxQZ1hnQXhkR2JoZ0k0RmdxZ0dSNFVkT1lIS1Z0ZWJTS19RNjBrRl9BUWFLZkhRMjd4SC03REwyalFiREQwZk1sOWwzRDNrVU5EMUlVcG1wR3RfLTJ0TGpoaVZXWU1jcG1mN09OMWpwdVZhX3ZKNm9nc3c5Ry1RYldkRGQyYW1kN1R1dG1rVzE5Q1BGbzU5SVpYdkpFeXBxMkNFM3p3Y3lTUzRGNDJreFp5elF0YWNpejVRcS1wYmVhOXdPMTk3amtWcU02aWdZR00?oc=5",
+     "time": "2026-11-26T02:05:34Z"
+    },
+    {
+     "id": "b2860c3a29f70b21",
+     "publisher": "Business Today",
+     "kind": "news",
+     "title": "'No structural excess capacity in any sector': India pushes back against US tariff allegations",
+     "url": "https://news.google.com/rss/articles/CBMi8AFBVV95cUxOX1pfWURuM20xeVNKbmdwQlE4U2oxY1Vob1pxaGRnMDJfamdYcG9LSUpwY3Y2WVo1QnBIbzdOd1Z5Q3dQMm9KWDBId216SVNlX3F4WFlQc0tYdDlFaHoxeVhlbURmZnptOFVXaHA0N1pPY3pBVlB6b0xNSmlPT3VQN19zNlRLaG9yS0h3a3RjMkZhdnN3VmtPd2tpQVFSRy13NWVmNVMyVm83Tm1LRlNxbVZJMGs0TFpwWmt4bjB5OG9sX01ldmZkN1E2MXN2akJXVEZRbXREcUV3SXd6bjhFTUdnb1FFOXptMjZUMFNtQVnSAfYBQVVfeXFMTXlWS29ycVpsRnFtaTdJOG5fWVJMRURsYVFic05kTVFfT09naHZrT2ZTR2I3eUtqWExzdURmSWRyTnlvcHVIckpKbFBta0lVeFpZbVd6cVdtLVl6TkhadHVycFp6UW0yTldIS21vLVNPWmRzNlFfOTBRU2R0TTk0MnJDQ01KNGlXTWVVT1lJNktFSkl3N1c5M0dKVXo3Y09NSVM0TnNGak56cjVyZmh4Z1Z0enE5M1NpZkFKZ3R6RGRSUGRUeFpSRkhMYmg5cFViUUkwOFhDbXFvZ2xmMEtZN1FvSUJ3ZW9CYW9tcVFfNEltNE9KNU1n?oc=5",
+     "time": "2026-11-26T01:57:51Z"
+    },
+    {
+     "id": "17202fe80957cdb7",
+     "publisher": "JournalArta",
+     "kind": "news",
+     "title": "S&P 500 slips as AI jitters and tariff plans rattle Wall Street",
+     "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQM2tRcVBoekZ5V29GdF81Yl9YSUo1ZmFFbkdSLUszbWg4RE9pcnFpZmNBbEktaFMxSWdRbzFOanozSnoyMWhjMDFZcFBsZjFxVTlIMTU2azdHQTdYNzJ4c1lvQW53cVhybzVwSjdXdXJZSkdKa2x3cHF0OERVLW1TNEdBSkd4MXNBTlFRenllRFBHVXdJQjFEVkFiVDVqQUNHRURr?oc=5",
+     "time": "2026-11-26T01:55:45Z"
+    },
+    {
+     "id": "a70f2967ef802e36",
+     "publisher": "NDTV Profit",
+     "kind": "news",
+     "title": "Trump's New Tariff List: India Faces 25% Duty, Is Pakistan Included? Check Country-Wise Rates",
+     "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxPZnpCeFV4WExLMTA1SGNPaDQtby1iaWtGbkRTZG1fNlJOMVhfVktzaGlmQ3ZJcjdyT01UdjZWa1FHYXlxejU2dVdCYTRaYTVvTU5fUm1wQlhQUVk5M1RwUk9lTnF5NEZTcnI5Mmp4bDRVTEltdmRwYVE2YVd1RFVvMTc1WUtiYy15UkV0VmI3Wk0xX1lqclpNck0zOEhhWGVtekJURUtnWV9jdEVzeGcyeHBpaGpWU3ZTY2dkSFRNWFZjY3M4d296VzRR?oc=5",
+     "time": "2026-11-26T01:55:18Z"
+    },
+    {
+     "id": "093278bb9a179464",
+     "publisher": "Ommcom News",
+     "kind": "news",
+     "title": "No ‘Structural Excess Capacity’ In Any Sector, Trade Talks On: India On US Tariff Threats",
+     "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxOUk84NjMzbXVVSkotWms1RFRTU056cEhiUUJSaDI1bmlRT2pBZlFfZlRydHZUYlFVOHRCMHNlOVJ4TUJlMzZ1WDY1THV1dEU1VDRaemRvbUg1b0M3R09JWXVIdWQtM2l0Tld4WVljQjVBSEllNUxuaThPazdxLUlEYnpocnJveUJaS0dLQUFvNVVFaW9pdXQ0LWhhQWdSdDZqSlVXaXh4Znlic0hralR5VVRpbi05VXRkdWlBVw?oc=5",
+     "time": "2026-11-26T01:53:50Z"
+    }
+   ]
+  },
+  {
+   "summary": "Vice President JD Vance defended reinstated Nvidia CEO Jensen Huang as prediction markets and political commentary continue to focus on executive scrutiny.",
+   "category": "company_bad_news",
+   "firstSeen": "2026-11-26T04:14:03Z",
+   "publishers": [
+    "Yahoo Finance"
+   ],
+   "assets": {
+    "NVDA": {
+     "direction": "down",
+     "confidence": 0.55,
+     "why": "Executive turmoil and ongoing regulatory or political scrutiny continue to create governance risks."
+    }
+   },
+   "sources": [
+    {
+     "id": "9321182b3093b2a1",
+     "publisher": "Yahoo Finance",
+     "kind": "news",
+     "title": "‘I Don’t Think He Needs a Pardon at All’: JD Vance Defends Nvidia CEO Jensen Huang as Crypto Bettors Put Him Atop Trump’s List",
+     "url": "https://www.benzinga.com/markets/prediction-markets/26/11/63659548/jd-vance-jensen-huang-trump-pardon-nvidia?utm_source=yahooFinance&utm_campaign=partner_feed&utm_medium=referral&.tsrc=rss",
+     "time": "2026-11-26T04:14:03Z"
+    }
+   ]
+  },
+  {
+   "summary": "Accelerating US inflation rising to 3.8% pushes December Fed rate hike expectations to 94.4%, continuing to pressure gold and risk assets.",
+   "category": "central_bank_hawkish",
+   "firstSeen": "2026-11-26T03:37:00Z",
+   "publishers": [
+    "www.tokenpost.com",
+    "Українські Національні Новини (УНН)"
+   ],
+   "assets": {
+    "NEM": {
+     "direction": "down",
+     "confidence": 0.8,
+     "why": "Hawkish Fed rate hike expectations and surging inflation expectations weigh on gold."
+    }
+   },
+   "sources": [
+    {
+     "id": "785c2714be7583a3",
+     "publisher": "Українські Національні Новини (УНН)",
+     "kind": "news",
+     "title": "Gold falls again amid accelerating inflation in the United States and expectations of another Fed rate hike",
+     "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxOSldtOHdrZmd5M0VJdTRoZHY0bmNzMWhPVF80M2xWekU4WWJXelpGTEVXLVAtS1VzeWdEM1dBRnlUbUVxLVVTeC1hLXpjeWZIalQ3NFNVaGl3MlpPRENzdW5wdUZMSW1NbDItZ0RkOUFXMlBCZmN0aTF5Y1NqNmt6VGQ5MGFITGZSXzRvY2lweVFWdlV3REFkQUN1VXhNckQ0ckhWMElaU2ZSVFhJQV9zSmFBcTRTVmctQzNwT0Z3X2J4MTAyNjJ6MUpR0gHIAUFVX3lxTE5sYWJJeUV5eW45SFIzaVVJQ09UVkYwQzQ1QzVNTF9jN2plSmtlT0NLQ3RmWVgybzZDb09oNHVpX1ZfYVNVM3dxbVI3VDJYR2x5QVcyY3BoRFpYbEJkYk1HYmZ2NHpqeXJvekV2OVBIVVJlTWZBVXlkbHAwX2t2TmVnZ3NEZFh2dEdsX2tlNVR2TnhxMXo1RDZveTJmR1RxRUtwRFBsRWNJaDY4eFRYcG5jeWNXR1N3Qk1SdnhKRDhFcUtMSW1kZU5B?oc=5",
+     "time": "2026-11-26T03:37:29Z"
+    },
+    {
+     "id": "d835f9e3afb42acc",
+     "publisher": "www.tokenpost.com",
+     "kind": "news",
+     "title": "US Inflation Rises to 3.8% as December Fed Hike Odds Reach 94.4%",
+     "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1MWlY1X1dWU0FLekdVZ2ZyanJIYkJ1ejlmaGR4dmpJZmRTb2Fxejh1WFVxMGxBcVF1Ulkza3kyODE2X1dtWHRIX1BySkFqUThmQTQ5LUhESkJTQQ?oc=5",
+     "time": "2026-11-26T03:37:00Z"
+    }
+   ]
+  },
+  {
+   "summary": "Sticky US inflation at 3.8% and firm core PCE keep hawkish Federal Reserve rate hike expectations in play.",
+   "category": "inflation",
+   "firstSeen": "2026-11-25T23:03:45Z",
+   "publishers": [
+    "BigGo Finance",
+    "Businesskorea",
+    "Hoodline",
+    "KLSE Screener",
+    "The Edge Malaysia",
+    "The Korea Daily",
+    "Wolf Street",
+    "cwibc.co.id",
+    "londoninsider.co.uk",
+    "marketscreener.com",
+    "재경일보"
+   ],
+   "assets": {
+    "AEM": {
+     "direction": "down",
+     "confidence": 0.75,
+     "why": "Hot inflation and hawkish Fed rate hike expectations weigh on gold and precious metal miners."
+    },
+    "NEM": {
+     "direction": "down",
+     "confidence": 0.75,
+     "why": "Hot inflation and hawkish Fed rate hike expectations weigh on gold and precious metal miners."
+    }
+   },
+   "sources": [
+    {
+     "id": "8727611b6900c610",
+     "publisher": "Hoodline",
+     "kind": "news",
+     "title": "US Inflation Climbs to 3.8% in October, Fed Rate Hike Looms in December",
+     "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNVnYtNUtvRXFyRV9qSEpBY3V2WFF6YzdDQzJDdGlzdjBwTkhpS2VLUktBemJhZDFiWUdQcEcyTzB5R2l6a3dZZnI5TFdxVlptMjA4Vk5KcHBqSWxOMmxxMDZVSUtMczViYU40Y081bDl6YXV2M1VhV25YNHgxTzhOX1BmT1NvcTZUZFpHeTJCNFZPODNEbms2d3lBdHhQcDVh?oc=5",
+     "time": "2026-11-25T23:03:45Z"
+    },
+    {
+     "id": "641c8b5fe07f1db6",
+     "publisher": "marketscreener.com",
+     "kind": "news",
+     "title": "Materials Down as Inflation Data Seen Spurring Fed Rate Hike -- Materials Roundup",
+     "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxOYW9KbzNKWV9TZUhOSjJId0RsUUFaVWJPQnUtQzJkSjBWNVJWcEJwbVJ5bDRqYzdCXzhfdFZ4MktmUFJmdWwtejZWbUVvRVQ5TUstd00tOW5vLUUwMV9XV2xWVTlxR0VJU1daVUFDWHFXejNrU0FPV2hpZ2J2Tm5IM1BIUG5sd1hKTGJyelNFbE8tX2prVFpCaDYyUGxOLUVzcC0zNVc1QUlyS1RpT052dmkzLTFOR1ZweU56dERvSGNBbmctVWJSem1fMA?oc=5",
+     "time": "2026-11-25T23:20:29Z"
+    },
+    {
+     "id": "34fe0d187ce12f2d",
+     "publisher": "KLSE Screener",
+     "kind": "news",
+     "title": "Gold falls to more than one-year low after data shows US inflation rose further",
+     "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxQQ3BkVFYzVTREbVYweWZ1bGZ1N0dselF3SjN3MGlKb01DcFFxaXBCQVh0OV9kN1poQTh5WUJMODhhVENrNk1iaUxHbnZPcWhCcVBOR01rUkZHclVCTWFMTm42WFdEZXkwcjVWV0VjeWQ5cFlCY05xempwbFQ3TXpaZnIySHZVM3pTTDdaTFd3V3UyeU51NkViMjF0cnFqdWNOV20tbDlJVFpUaEpBSTB4LS1PeW94dE5JOFhaMkROakFpaVZIczJ2dw?oc=5",
+     "time": "2026-11-26T00:28:37Z"
+    },
+    {
+     "id": "2ab8da31e08d30d2",
+     "publisher": "재경일보",
+     "kind": "news",
+     "title": "U.S. October Core Inflation at 3.3%... iM Securities Forecasts Additional Hikes in January : Finance : JKN",
+     "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE9SUElLUnc3V0c2RzlXWW5oNDFkUWFkVUJwcFh1c2ozendKR3p2MnB4UTVVZjNhTno5UVd5emR1VlBLM1VPQjRyWGlkclcyQnRMNVJmSjRJS3h3cHJwZDVWMk9n?oc=5",
+     "time": "2026-11-26T00:35:04Z"
+    },
+    {
+     "id": "976aae2610c75646",
+     "publisher": "The Korea Daily",
+     "kind": "news",
+     "title": "US interest rates — December Hike Probability Hits 98%",
+     "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPSElaWjBNZFJiWDdGSERpQm8wRjFkUDJsN0JzOG1nZk9tSmowNzg2dUJReldFeEtZWktSd2JkWnZMLWFndXQ4SURyMGRpdTZiNmxrOEltVXRlV1cyMFVNb3BiZ2dPYUFhRndzNVlkenUyTXdCMW5CRDBfcndRMUlFX1NYbHpsNFR1?oc=5",
+     "time": "2026-11-26T01:14:34Z"
+    }
+   ]
+  },
+  {
+   "summary": "Nvidia experiences ongoing executive turmoil with CEO Jensen Huang's return following intervention, while facing credit downgrade warnings from S&P over governance risks.",
+   "category": "company_bad_news",
+   "firstSeen": "2026-11-26T02:57:19Z",
+   "publishers": [
+    "CNBC",
+    "Investing.com Nigeria",
+    "Reuters"
+   ],
+   "assets": {
+    "NVDA": {
+     "direction": "down",
+     "confidence": 0.65,
+     "why": "Executive turmoil and credit downgrade warning on governance risks pressure the stock."
+    }
+   },
+   "sources": [
+    {
+     "id": "489ac104937e5f8c",
+     "publisher": "Reuters",
+     "kind": "news",
+     "title": "Huang returns as Nvidia CEO after Trump intervention in abrupt board reversal",
+     "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOd19EYmc4X2wzaW5zXzZ5VXZ1cUFJbS1OYzJsZ2VSTVRnMkQteWdiN3Z0dTBlNmltdll6Vy1RWnpxVUthOF9XX3g0YmVvNWdXODJUMGpSeXdldVdYQWE3N2hCQXU3RExXSDViSWI3S2xHNVZFc0NUVmh5bGRhem5aUzdDa29xb1hH?oc=5",
+     "time": "2026-11-26T02:58:19Z"
+    },
+    {
+     "id": "8ffa77fc8f3bca0c",
+     "publisher": "CNBC",
+     "kind": "news",
+     "title": "S&P warns Nvidia credit rating could be cut over 'rising' management and governance risk",
+     "url": "https://www.cnbc.com/2026/11/26/nvidia-market-governance-risk.html",
+     "time": "2026-11-26T02:57:32Z"
+    },
+    {
+     "id": "17d509f091ff07b8",
+     "publisher": "Investing.com Nigeria",
+     "kind": "news",
+     "title": "Trump admin weighed using Cold War law to reinstate Nvidia CEO Huang, WaPo reports",
+     "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxOMXdkNktiMTV3blBkS3ZzOWdubi1jZkQyX0ZVSEVhTktNMEVpQUhUMkNZX0EwYmhLQ0ZNNmtiQlpwSlZBc3JZY2VMTERIR1ZJX1JzN0xJVzhTd2hpeUNsTDN2dFZRUlFTam5YWVlLY1oyTTBnRTl1Z0xLWmZ2WU51ZGg5T2EzX28zVHNGOUZnOF9hVE9ta0hnNzgxWGdfdGRrSzM2dDJ1cXpZdjJfdjFyV2xITEFUMnRpUW1XVGlrZDNyV1EwWDJIZWFyaEQ4dk1mbHBJ?oc=5",
+     "time": "2026-11-26T02:57:19Z"
+    }
+   ]
+  },
+  {
+   "summary": "HP Inc. shares surged following a strong Q4 earnings beat and positive outlook on device refresh cycles.",
+   "category": "earnings_beat",
+   "firstSeen": "2026-11-26T02:15:00Z",
+   "publishers": [
+    "TIKR.com"
+   ],
+   "assets": {},
+   "sources": [
+    {
+     "id": "713579b600cd38ab",
+     "publisher": "TIKR.com",
+     "kind": "news",
+     "title": "HP Soars 11% on Q4 Beat as Interim CEO Sees “Multiple Waves of Device Refresh”",
+     "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNVWpmdHVoTDEwUEpSb3Nnbm92MWR4ZUlTZEFfVHdXS3BSOGV6UlhiSXNIay05Q3lGU3JObHRFTDZMY1RLTEJfRGhRc1dIMHZmd0luWV8wc3NQdXBlVmFBQWJDanlWei1SNDU5dmhxVUE0U3FPMm1QczhRTXJneXdPMVJZSlE1ZTR2bkNGLUU3d3pBN1poRXc0TWt4RkpuNUctZDdj?oc=5",
+     "time": "2026-11-26T02:15:00Z"
+    }
+   ]
+  },
+  {
+   "summary": "Franklin Templeton to add Hyperliquid to its crypto index ETF, signaling continued institutional product expansion.",
+   "category": "crypto_positive",
+   "firstSeen": "2026-11-26T01:45:42Z",
+   "publishers": [
+    "Crypto Economy",
+    "grafa.com"
+   ],
+   "assets": {
+    "LINK/USD": {
+     "direction": "up",
+     "confidence": 0.6,
+     "why": "Institutional ETF filing increases legitimacy and potential capital inflows for Chainlink."
+    }
+   },
+   "sources": [
+    {
+     "id": "b8f7b36f5c211024",
+     "publisher": "grafa.com",
+     "kind": "news",
+     "title": "Fidelity files for Nasdaq Chainlink ETF listing",
+     "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxNLUNYdHlRZmgyYk81emg2UEd3bFhjOGI4QUxCMU1vdzBlaGlfajhhUGZya0dqR0trYld3cDF1aU42Y25DbldFUzdjSm1fMVIzMkFDQzJuT2o3c0hhRFN5LUVZQ3FTQ3JUMVhLWjlMdE9uUjdxaFlZTTN1TEt4Q3FCX0hySQ?oc=5",
+     "time": "2026-11-26T01:45:42Z"
+    },
+    {
+     "id": "36f9dcc7f1f3d583",
+     "publisher": "Crypto Economy",
+     "kind": "news",
+     "title": "Franklin Templeton to Add Hyperliquid to Crypto Index ETF in December",
+     "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxQcU9NU0JJUEZaVlA2ZW9RV2d3b0lHaG40bUZMdUpGQ3FBNTRnZU9ldkdCYk9CXzBqODVhRm9oaHZuR1Q1VUpJRk1EdklqZW1VWHdqaW1SQXhyRzNlNDV6NHpNanB0ZVFOaGZVem5HN0xYZGV6aHotVVRqVjk5TVhlRFRkZWFtYkRFamdaUlNmM0EwMDFkeHBWYTR4OFdrUQ?oc=5",
+     "time": "2026-11-26T02:01:57Z"
+    }
+   ]
+  },
+  {
+   "summary": "Bitcoin and crypto markets face downward pressure from institutional ETF outflows and negative sentiment.",
+   "category": "crypto_negative",
+   "firstSeen": "2026-11-26T02:04:19Z",
+   "publishers": [
+    "Cryptonews.net",
+    "NAI500"
+   ],
+   "assets": {
+    "BTC/USD": {
+     "direction": "down",
+     "confidence": 0.6,
+     "why": "Persistent ETF outflows and negative market sentiment."
+    }
+   },
+   "sources": [
+    {
+     "id": "962791c09561ebfc",
+     "publisher": "Cryptonews.net",
+     "kind": "news",
+     "title": "Bitcoin ETFs shed $4 billion — How did one fund hide the cracks before leading the exit?",
+     "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTFBKLWJEWXBqbzV4emlPNjlLaTQtbHoyQjVzTUpqSFZkQWJvNlJtVE0wY3NkTzZRNVpXTUFRbVR2YXlZMDNhMVF1QkhoMFRBeTMwN3paWDhOSHE?oc=5",
+     "time": "2026-11-26T02:05:44Z"
+    },
+    {
+     "id": "cb8668ee88c9b773",
+     "publisher": "NAI500",
+     "kind": "news",
+     "title": "Bitcoin Acts as a Market Bellwether, Jointly Signaling Downside With US Stocks",
+     "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQR1pzclhmSEViTEg4dlBDMERzbTdDQmdZTkl1UGxmcG1JY2ppYWpnQVIyNGkxMzc0b1V2aVpnbDMxTWxfaVlZNldqWVlQdl9XNHliOWtwXzdjSkNYdXRGaGwtQlM4SkJ6NlV5VzBONXhzYzczTlg4TFdQUkgyd3ZRc2Z3dDZZMkswUm5yQnI2alVoMkx2bXplWnVvU2hNRGc1cHAyUzJ0a29uSHFpTVd3?oc=5",
+     "time": "2026-11-26T02:04:19Z"
+    }
+   ]
+  },
+  {
+   "summary": "The US administration's expansion of broad-based tariffs on major trading partners heightens global trade war risks and pressures equity markets.",
    "category": "tariffs",
    "firstSeen": "2026-11-25T19:46:18Z",
    "publishers": [
@@ -9427,9 +11170,11 @@
     "Asia News Network",
     "Asianet Newsable",
     "Aviation Week",
+    "BBC",
     "BNamericas",
     "Big News Network.com",
     "Bloomberg",
+    "BusinessToday Malaysia",
     "CNA",
     "Diya TV",
     "FLYING Magazine",
@@ -9438,15 +11183,20 @@
     "Hoodline",
     "IndexBox",
     "Legal 500",
+    "Mezha.net",
     "Modern Ghana",
     "RTHK News",
+    "Republic World",
     "Reuters",
     "Sandler, Travis & Rosenberg, P.A.",
     "Social News XYZ",
     "SuaraGarut.ID",
     "Substack",
     "Telegraph India",
+    "The Economic Times",
+    "The Express Tribune",
     "The Financial Express",
+    "The Japan Times",
     "The Straits Times",
     "The Times of India",
     "The Tribune",
@@ -9459,6 +11209,7 @@
     "Yahoo Finance",
     "bsinews.id",
     "digitimes",
+    "dotdotnews",
     "marketscreener.com",
     "شبكة تواصل الإخبارية",
     "富途牛牛",
@@ -9502,8 +11253,8 @@
     },
     "AMD": {
      "direction": "down",
-     "confidence": 0.6,
-     "why": "Trade war escalation and tariff risks weigh on global tech supply chains."
+     "confidence": 0.7,
+     "why": "Tariff escalation and trade friction negatively impact semiconductor and tech hardware supply chains."
     }
    },
    "sources": [
@@ -9616,68 +11367,6 @@
    ]
   },
   {
-   "summary": "Renewed Houthi attacks on Saudi oil refineries and infrastructure continue to escalate regional supply disruption risks, pushing oil prices higher.",
-   "category": "oil_supply",
-   "firstSeen": "2026-11-26T00:45:00Z",
-   "publishers": [
-    "DZRH",
-    "Dunya News",
-    "NDTV Profit",
-    "Nation Thailand"
-   ],
-   "assets": {
-    "XOM": {
-     "direction": "up",
-     "confidence": 0.7,
-     "why": "Oil supply disruption risk increases energy stock valuations."
-    },
-    "CVX": {
-     "direction": "up",
-     "confidence": 0.7,
-     "why": "Oil supply disruption risk increases energy stock valuations."
-    },
-    "OXY": {
-     "direction": "up",
-     "confidence": 0.7,
-     "why": "Oil supply disruption risk increases energy stock valuations."
-    }
-   },
-   "sources": [
-    {
-     "id": "bc5362518232f38f",
-     "publisher": "Dunya News",
-     "kind": "news",
-     "title": "Two oil tankers strike sea mines in strait of Hormuz",
-     "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxPZGN1X3R0Y0d5Y1ltQUdUa29mOUZtTFFkVUFIN01lTGM0NWlwSXNicjE4c2M5cXhJVmhhQWZLWndMQjJQeHNwRzNicGVVd2lUUmZHN1RERGJMNy1Fc3FFejhHR3pBYTBVdGdVQjl4d3hTX2lxQ3dtMTJ5RDZ3alVrekd0UkVWOTFxNEEyc1NWeTByUnPSAVZBVV95cUxNZ25UNzdEYXV1eXNKdXlNSVJZd09hMVdUZFl2Y2ZkVDVMUmNrbXpCSHFJVTJEZkotSmNaOWc1TkJvV2d6V05kOFJNYUZIQWFtSC1LemFCdw?oc=5",
-     "time": "2026-11-26T00:56:15Z"
-    },
-    {
-     "id": "fbe7c0d70ccfe954",
-     "publisher": "DZRH",
-     "kind": "news",
-     "title": "Yemen's Houthis claim attack on Saudi Arabia's largest refinery",
-     "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxOMkk1V1I4OTV4TGY3WXFHcFJ3Nm9keUozNWtzVTVOSlJidEtpcEFVbjZLZ2V3ZUk0UmcwOFowWGFMX25kMkZpTHV6aHdIampCeW5paFRPSDB4ZHFsUjBNWFhpNHdPaTkzSW8xd2ZrUk1EekNWTUdUMlFVSk9WelFsUXVPdHRLZW1tRkI1VkF3bWNMaEwy?oc=5",
-     "time": "2026-11-26T00:53:13Z"
-    },
-    {
-     "id": "d64a28151254abfe",
-     "publisher": "NDTV Profit",
-     "kind": "news",
-     "title": "Oil Prices Today: Brent Hovers Near $94 As Saudi Oil Attacks Raise Fresh Supply Fears",
-     "url": "https://news.google.com/rss/articles/CBMinwJBVV95cUxPaGZORTlwNEF0RVpyMWJEV01wXzBsNWRnMHVnc1ViNWo3RktWWWZQWVBDVGQ1N1B1cU0za3MzT1R3SnNOT3piWnNUb2U0NXpVMkkzd0FzLXdPMXpXcm9SMENKLVJodkpLczF6eWZEem9RRlFOQWtNT1JqOU9nVms1Y1QzcjYtckRYeUllUk12WU5hSmJsTW5Ub19kelk5LXJhRndMZ0hWVGpqcEpzcmp5MEVUZ0JiRnpyTjByZkNzNUtrRTN3ZFliWmRZQmlVSlgyRTkweDhFUGFTUHB3UXVJemZRNXBwUTRLQm5ZZTR1d05uS1ZFbERfWWZ4aGVyQUtBNnh4amdpSWRmVTE4LWtVRFY4OENudERaRUduYVFTQdIBpwJBVV95cUxPZVBuQjRXNms0SzR5NElMaG5MXzdCQkxPS3RWTndEMWtqc05rVXV5SnVoQl93U1RYSW9sUDI5SEQyWlEtWkg2TFYtVlpwWWFJV0QwU1p2OFhNWUx6cHNuZThNRGNtd2l4alpQTXhPd1NxNUNnTVIxalZuNmpKNGN0bnRDcmp4WXlYQzdDaS0tNF9KbFlMajJtR1lTeFpIZzMxdUhhNmFXbkNKdDJUVVAwaHZ3ZkRXODZOc1I5N0dRdG9jT2Fhc3dOTnU1UHl0b1BsWTZreC1iM1lURGxvM3JsMGtRczNUSTlfWFFlYjh4eHhKQVFuUkRrb01aNkVkSFRQekx0dlM0enB5NW54dFdEdEthQ0VQUk9jUW5aZWJmbHY5X29UUDRJ?oc=5",
-     "time": "2026-11-26T00:52:11Z"
-    },
-    {
-     "id": "930b1de901449b78",
-     "publisher": "Nation Thailand",
-     "kind": "news",
-     "title": "Brent up 3.5% on 25 Nov as Houthis claim Saudi refinery attack",
-     "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE9DY0M3S3NlWGw4TG5oR1M1d0pjc0w1cFZLLWhWN0Z3UFJfSG9qdkFGWVUzdUkzTVF5QVp6c0ptbDVfaGpLMU9YNGxmQ3ozWnNNYzYyNXh6NlhjYUc4aUhn?oc=5",
-     "time": "2026-11-26T00:45:00Z"
-    }
-   ]
-  },
-  {
    "summary": "Renewed Houthi attacks on Saudi oil refineries and infrastructure continue to escalate regional supply disruption risks, pushing WTI prices higher.",
    "category": "oil_supply",
    "firstSeen": "2026-11-25T18:49:43Z",
@@ -9767,425 +11456,6 @@
      "title": "ADNOC Places Restrictions on Tankers After Attacks",
      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOQkRId0VyZTNkT2Q1cUUxaTlFZjZIUEhqa0xReldBMFRTNThMZ2Y3VTI4M0owSGhJSU9JZlNpemJacF9HYTNSZG5HWTltMmo2d0J5RFJKM0Z1SXRhcEtLaC1neEpoLUpTTWp2dGRwTzB6ZU5HQ3prUHdlMEx2Y3FjbW4wcV9xV2M1d3Y5X2pqWG9aTTZ3d09kRkNDRVpaa0hmUndSdjdob1RxQVhvUE5HcHln?oc=5",
      "time": "2026-11-25T20:00:00Z"
-    }
-   ]
-  },
-  {
-   "summary": "Bitcoin and crypto markets face continued downward pressure from institutional ETF outflows and macroeconomic headwinds.",
-   "category": "crypto_negative",
-   "firstSeen": "2026-11-25T18:50:44Z",
-   "publishers": [
-    "Altcoin Buzz",
-    "Benzinga",
-    "BigGo Finance",
-    "Businesskorea",
-    "Coinspeaker",
-    "Crypto Briefing",
-    "Forbes",
-    "MEXC",
-    "Pluang",
-    "TechBullion",
-    "TechJuice",
-    "openPR.com"
-   ],
-   "assets": {
-    "BTC/USD": {
-     "direction": "down",
-     "confidence": 0.75,
-     "why": "Extended spot Bitcoin ETF outflows and negative macro sentiment apply downward pressure."
-    },
-    "ETH/USD": {
-     "direction": "down",
-     "confidence": 0.7,
-     "why": "Broader crypto outflows and lower staking/price predictions weigh on Ethereum."
-    }
-   },
-   "sources": [
-    {
-     "id": "e64e0d76a462963f",
-     "publisher": "TechJuice",
-     "kind": "news",
-     "title": "Bitcoin Falls Toward $57,000 as US Inflation and Tariff Fears Hit Markets",
-     "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxPZl9ZWlktMmU0MnpLTGlxR2JLTnlwYVBUV2hEdmx4ZnBEdG9ERWppUWlCV3lEZDNXd3JudlJzbEVlT2JpdVdZeTA1X0RsRXZLRU83VVloaFg3SnlXWjdDRTVQRzEtSnAyd3I2anNHSXhkZmw5UXVUUHlfTEVFZ0p3WG00aUpnRGN6LTVPZnNSOTJWTGZNNjExVHhqME4yZw?oc=5",
-     "time": "2026-11-25T18:50:44Z"
-    },
-    {
-     "id": "22ceaaa961967747",
-     "publisher": "TechBullion",
-     "kind": "news",
-     "title": "Top Crypto to Buy Now: Pepeto, Ethereum and Solana as Bitcoin ETFs Lose $569M",
-     "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPODF5VkFGZGMzdUlRd25XTFNTMVkzQm5EOVBfMmVBbl9aRjQ4NTNwNkdmNTFxMU1OS2VEakl6STZ6c0tuSDdvOVNwcUgwZkQyR3VyODdySTlKN28td2FXTDRkUzVndE9OQlBKU05tS1gtZWY0ejdUb05mOXRiMW53eEVqUHhXNmxNMkR0dUVzTGFTV29zbHE2WmxiV2t5Rkcw?oc=5",
-     "time": "2026-11-25T19:00:57Z"
-    },
-    {
-     "id": "f7ce7838ed94aa73",
-     "publisher": "openPR.com",
-     "kind": "news",
-     "title": "Ethereum Price Prediction: BTCS Sells 27,300 ETH Near $1,600 as Pepeto Holders Stake 52.66 Trillion Tokens",
-     "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxPc2hYeFpfY2JZM0YtMWNqOTBkc3gxVi1Sc2dhTXozZlo3M3AxbEp0WW84Q0NLbGpXNGlPVklHaHZQZ2FfcVFSczFxVXNKRlhpZ1l3MkpuT0lwNExBa014NWEzM2h5aEJyUlpQV3ZXTThhb1VMcXZqNFhteG92NWpvZlJkMGV4cGpZbDFfclIwZThLeVRRWVE5RXczbDQ2UQ?oc=5",
-     "time": "2026-11-25T19:00:52Z"
-    },
-    {
-     "id": "11067017c6a196d3",
-     "publisher": "Benzinga",
-     "kind": "news",
-     "title": "Galaxy Told Investors to Buy Bitcoin, Now It Says: ‘We Withdraw Our Call’",
-     "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxNMmFrV19yaU9qUG5LQkxqSW9HaUpzUjB3OWpURUJpcXBnQ2U2bDQtR01wYVNDR3pHOE9uNEhQcG95ZV90cDFIaU5BbENoWW1UVV9jT09USjVkaHVRX3hzczVEZzVDbWpjUE9mVEstTjN0UERFa0ktTHZTX1l0R3Zlb3dOdXY4SmtWUFNYM0NQanFFQW9QTE5CbHdieGhkYzFxRjU4azdGYUYwVUwyNDFVMFFCaXRsUjVjdHJmLTVwS2EybUE1eEtlaEgtOA?oc=5",
-     "time": "2026-11-25T19:00:08Z"
-    },
-    {
-     "id": "99361285e6e68862",
-     "publisher": "Forbes",
-     "kind": "news",
-     "title": "Bitcoin ETF Outflows Near $5 Billion As Tariffs Hit, What To Do Now",
-     "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQeW9JNWgwclFQZi13MFhFaUFreWtidThycGsxc25OQXFhMk9SZHBEa1lEd1pWNkhZVEtRWE56bE05eWVQQmREWFFnX3hpWGwxUGhmSnVJdFhqQjhKYlN4V2ZRenlqMXhRal9Da2FzVHJjZnNHOHIwV3ZQOURnTTVjMnVaaVRPdVNoenhqeEJrMDJvdzZaSXVPSnViRlliMmVYZFdSWmNBSGFHU3RSd3p6LUZMN1UtMV9sR3pkVFQ0bnQ?oc=5",
-     "time": "2026-11-25T19:44:21Z"
-    }
-   ]
-  },
-  {
-   "summary": "Hot US inflation data and hawkish Fed expectations continue to pressure risk assets and precious metals.",
-   "category": "inflation",
-   "firstSeen": "2026-11-25T23:03:45Z",
-   "publishers": [
-    "Hoodline",
-    "KLSE Screener",
-    "marketscreener.com",
-    "재경일보"
-   ],
-   "assets": {
-    "AEM": {
-     "direction": "down",
-     "confidence": 0.75,
-     "why": "Hot inflation and hawkish Fed rate hike expectations weigh on gold and precious metal miners."
-    },
-    "NEM": {
-     "direction": "down",
-     "confidence": 0.75,
-     "why": "Hot inflation and hawkish Fed rate hike expectations weigh on gold and precious metal miners."
-    }
-   },
-   "sources": [
-    {
-     "id": "8727611b6900c610",
-     "publisher": "Hoodline",
-     "kind": "news",
-     "title": "US Inflation Climbs to 3.8% in October, Fed Rate Hike Looms in December",
-     "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNVnYtNUtvRXFyRV9qSEpBY3V2WFF6YzdDQzJDdGlzdjBwTkhpS2VLUktBemJhZDFiWUdQcEcyTzB5R2l6a3dZZnI5TFdxVlptMjA4Vk5KcHBqSWxOMmxxMDZVSUtMczViYU40Y081bDl6YXV2M1VhV25YNHgxTzhOX1BmT1NvcTZUZFpHeTJCNFZPODNEbms2d3lBdHhQcDVh?oc=5",
-     "time": "2026-11-25T23:03:45Z"
-    },
-    {
-     "id": "641c8b5fe07f1db6",
-     "publisher": "marketscreener.com",
-     "kind": "news",
-     "title": "Materials Down as Inflation Data Seen Spurring Fed Rate Hike -- Materials Roundup",
-     "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxOYW9KbzNKWV9TZUhOSjJId0RsUUFaVWJPQnUtQzJkSjBWNVJWcEJwbVJ5bDRqYzdCXzhfdFZ4MktmUFJmdWwtejZWbUVvRVQ5TUstd00tOW5vLUUwMV9XV2xWVTlxR0VJU1daVUFDWHFXejNrU0FPV2hpZ2J2Tm5IM1BIUG5sd1hKTGJyelNFbE8tX2prVFpCaDYyUGxOLUVzcC0zNVc1QUlyS1RpT052dmkzLTFOR1ZweU56dERvSGNBbmctVWJSem1fMA?oc=5",
-     "time": "2026-11-25T23:20:29Z"
-    },
-    {
-     "id": "34fe0d187ce12f2d",
-     "publisher": "KLSE Screener",
-     "kind": "news",
-     "title": "Gold falls to more than one-year low after data shows US inflation rose further",
-     "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxQQ3BkVFYzVTREbVYweWZ1bGZ1N0dselF3SjN3MGlKb01DcFFxaXBCQVh0OV9kN1poQTh5WUJMODhhVENrNk1iaUxHbnZPcWhCcVBOR01rUkZHclVCTWFMTm42WFdEZXkwcjVWV0VjeWQ5cFlCY05xempwbFQ3TXpaZnIySHZVM3pTTDdaTFd3V3UyeU51NkViMjF0cnFqdWNOV20tbDlJVFpUaEpBSTB4LS1PeW94dE5JOFhaMkROakFpaVZIczJ2dw?oc=5",
-     "time": "2026-11-26T00:28:37Z"
-    },
-    {
-     "id": "2ab8da31e08d30d2",
-     "publisher": "재경일보",
-     "kind": "news",
-     "title": "U.S. October Core Inflation at 3.3%... iM Securities Forecasts Additional Hikes in January : Finance : JKN",
-     "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE9SUElLUnc3V0c2RzlXWW5oNDFkUWFkVUJwcFh1c2ozendKR3p2MnB4UTVVZjNhTno5UVd5emR1VlBLM1VPQjRyWGlkclcyQnRMNVJmSjRJS3h3cHJwZDVWMk9n?oc=5",
-     "time": "2026-11-26T00:35:04Z"
-    }
-   ]
-  },
-  {
-   "summary": "Palo Alto Networks faces a lawsuit from a former executive alleging accounting fraud.",
-   "category": "company_bad_news",
-   "firstSeen": "2026-11-25T23:25:52Z",
-   "publishers": [
-    "ABC Money",
-    "ARNnet",
-    "Yahoo Finance"
-   ],
-   "assets": {
-    "PANW": {
-     "direction": "down",
-     "confidence": 0.8,
-     "why": "Accounting fraud allegations are significant negative catalysts for stock price."
-    }
-   },
-   "sources": [
-    {
-     "id": "da2163a78a4f8211",
-     "publisher": "Yahoo Finance",
-     "kind": "news",
-     "title": "PANW Stock Slips After-Hours On Former Executive’s Accounting Fraud Allegations: Firm Denies Claims",
-     "url": "https://stocktwits.com/news-articles/markets/equity/panw-stock-slips-after-hours-on-former-executive-s-accounting-fraud-allegations-firm-denies-claims/cNbHvN7R9mz?.tsrc=rss",
-     "time": "2026-11-25T23:25:52Z"
-    },
-    {
-     "id": "4691f08ed94621a0",
-     "publisher": "ARNnet",
-     "kind": "news",
-     "title": "Infotrust withdraws FY27 guidance following ‘disappointing start to the year’",
-     "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPcGtuWnBNX1J6WV9UZ0FuR1NabkxQQldfZnBJWmFQbDVCYkp4VzUtb0ZCaWExQ0MtMkRnY2IxQkNMbXV6YVZtWUxJaFRRZm53a2VlcmV4QUFGeXlGOEhiRzBGTGl6Y1QyMFNhUi1qSmVqMllYWGdJbXNUV0JMZFBJZENZcC1qTkZGSzYxSFc3QTV0NkpKNVpjUXRYZ2lzYW5FaXAwLWtMajVtdXV0Nks5NlJBZmllSEQ3SEd1ZnY2aw?oc=5",
-     "time": "2026-11-25T23:46:13Z"
-    },
-    {
-     "id": "cabf32d1c66623a3",
-     "publisher": "ABC Money",
-     "kind": "news",
-     "title": "Palo Alto Networks sued by ex-executive over accounting fraud claim",
-     "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQSm42cUxZcktseWFES1dabHEwVkh4ZHZxSVdLYndUbVZURXJpUUJIS1RSa0ItZzJ0ZXRvY1E1LUFUR2VhRGNrUXRnVWNaNVNDSmg1dzJEOGtaMlU3dHdicVVUZ0MwbWxoR0hDOFFRQ0M5U0RoUHJGVjlDOXN3Zzk1VFFvekZZaFVzRjAwOWxnNnE5RUxjZUxJWDlRRGd3bEtOMlJDaThR?oc=5",
-     "time": "2026-11-26T00:11:41Z"
-    }
-   ]
-  },
-  {
-   "summary": "RTX Corporation secured a $2.53 billion U.S. Navy contract for F-35 propulsion systems.",
-   "category": "contract",
-   "firstSeen": "2026-11-26T00:01:36Z",
-   "publishers": [
-    "fiscal.ai"
-   ],
-   "assets": {},
-   "sources": [
-    {
-     "id": "ea96519548e83dbe",
-     "publisher": "fiscal.ai",
-     "kind": "news",
-     "title": "RTX's Pratt & Whitney Awarded $2.53 Billion U.S. Navy Contract",
-     "url": "https://www.marketscreener.com/news/rtx-unit-pratt-whitney-gets-2-53-billion-navy-contract-ce7851d8dd8cf02d",
-     "time": "2026-11-26T00:01:36Z"
-    }
-   ]
-  },
-  {
-   "summary": "US crude production reached a record high for the fifth consecutive week while rising output and weaker demand continue to test OPEC+ unity.",
-   "category": "oil_supply",
-   "firstSeen": "2026-11-25T20:52:00Z",
-   "publishers": [
-    "Crude Oil Prices Today | OilPrice.com",
-    "EnergyNow.com",
-    "Qatar Tribune"
-   ],
-   "assets": {
-    "XOM": {
-     "direction": "up",
-     "confidence": 0.65,
-     "why": "Major oil field outage in Brazil reduces global supply, supporting crude and major oil producers."
-    },
-    "CVX": {
-     "direction": "up",
-     "confidence": 0.65,
-     "why": "Supply disruption at a major offshore field supports broader oil & gas prices."
-    }
-   },
-   "sources": [
-    {
-     "id": "fe4e3edfade9bef1",
-     "publisher": "Crude Oil Prices Today | OilPrice.com",
-     "kind": "news",
-     "title": "Brazil's 220,000-Bpd Bacalhau Oil Field Hit by Major Production Outage",
-     "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQSGRvN2JCdTVHZXNFeTY2bHpOcThfWXhsaUpaOW81TUZUYkZ0ME5XTmpNU0VIbEp5M1R5MW9ScHFWZ29wTWNQS2JCUXp4bzBHcWZNOU1DWXRqNzlUMXhTVHU4TVhtemY0ZEk1NWJPbjl3UmdFU3pKak9odDN0QkpsSWVQenE1V0ZLZ3N2QUdfaTZELTI4bU1kODluXzgzQktubHBwWU9veXFHSWvSAbABQVVfeXFMUC05eUF3akhnOXY1OVA2X0pTcWtVMWRjM3BsYzdtZjVQSGVPR2VVZEV2S0w5SGU2bDFNZkU5eWlWNVBxR1VScnNPYUdfN3BTOHljLVVaam0xeExKSHZIaUJBeU9tdTJFRjVjVmZ4VFEySHRKZG9FUi16b2hNYW5uUXVQQ3Z0MkFqQ3I3VzdGbGMyTGtSZnR4RHA5ZlEyZl93Q1NDVU1INHlzeVNvbHlMUEY?oc=5",
-     "time": "2026-11-25T20:52:00Z"
-    },
-    {
-     "id": "6ade5ceb66f934ff",
-     "publisher": "EnergyNow.com",
-     "kind": "news",
-     "title": "US Crude Production Rose to Record High for Fifth Week in a Row, EIA Says",
-     "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxOamtiS3YteGtDcmY3azVQLVFpcG56eUMyclBPSW1iWGtZUTIzNnFUZk43Ui1UREZXYWlaNHg5ckhSc0hORWdOVjVJS3d2TVVaTjVYci1rZUt1b19RZXpXZWUwRVdwS3MzUWVrdWw5c1ZjZTVJRHlXX0dkOW5zcmVYVVhuSXVjTmF4Wk51WXlEbFJpbUtrOXF6ZUIzZDdlRFQ0c1dRZGVNdm0?oc=5",
-     "time": "2026-11-25T22:56:11Z"
-    },
-    {
-     "id": "5d70351f342f5cbd",
-     "publisher": "Qatar Tribune",
-     "kind": "news",
-     "title": "Rising output and weaker demand test OPEC+ unity",
-     "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNdWZhTG9XOF9TRlZuckFpUlZZTmtSMUxiMGpGZS1BdzJQU0VPRTN4NFd6RklvLUZ4bURqeVFtRnZ6RWtRdDNobm41N1ZDenJFZzRBUjh3emJXU3BCVGRXNFFmRFBtazNZTV9PNlV5T1NKcjBZM0lQcnB3RHdRUk90STNWV2UzVllDTHlVUEpIZC1TVV82MTB5RlJPQXlJQTdWMmpZ?oc=5",
-     "time": "2026-11-25T22:57:01Z"
-    }
-   ]
-  },
-  {
-   "summary": "S&P warns that Nvidia's board may be compromised and places the chipmaker's rating on downgrade watch due to governance concerns.",
-   "category": "company_bad_news",
-   "firstSeen": "2026-11-25T18:57:20Z",
-   "publishers": [
-    "Reuters",
-    "Yahoo Finance"
-   ],
-   "assets": {
-    "NVDA": {
-     "direction": "down",
-     "confidence": 0.8,
-     "why": "S&P rating downgrade watch and board governance warnings are major negative signals."
-    }
-   },
-   "sources": [
-    {
-     "id": "45830176742ddbb8",
-     "publisher": "Reuters",
-     "kind": "news",
-     "title": "S&P Global places Nvidia rating on 'CreditWatch Negative' on rising management and governance risks",
-     "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQamtqRVI0MHhzRTB5Tk1wMDNXRGhEYi1zVzFJT3hBMFNzUmt1RWptQnpTNWR1QTllclluaW50Z0tmSWVIbW5DWXJoaVJlblRoN2puUGFjbEtkOTZ6VUk5ZGEtLU9vYnJOMm53Tm5Idzg0dzNJSlRXVEI1b2xIQ1BBaVVuQmthNFlremtLRnNFY2RWdjNGcHNPV3ZrQ2JOTGhNMTdKbWpfWGtRMjBEekpJS0lmejFMSUxUakFYS1FvUnVxckk?oc=5",
-     "time": "2026-11-25T18:57:20Z"
-    },
-    {
-     "id": "e705e281d90933f6",
-     "publisher": "Yahoo Finance",
-     "kind": "news",
-     "title": "S&P puts NVIDIA on CreditWatch over governance concerns",
-     "url": "https://finance.yahoo.com/markets/stocks/articles/p-puts-nvidia-creditwatch-over-192625970.html?.tsrc=rss",
-     "time": "2026-11-25T19:26:25Z"
-    },
-    {
-     "id": "333add73a7f5cbc8",
-     "publisher": "Yahoo Finance",
-     "kind": "news",
-     "title": "Nvidia Put on CreditWatch Negative by S&P Global Ratings Amid Governance Concerns",
-     "url": "https://finance.yahoo.com/markets/stocks/articles/nvidia-put-creditwatch-negative-p-210636240.html?.tsrc=rss",
-     "time": "2026-11-25T21:06:36Z"
-    },
-    {
-     "id": "baf6f88d969b58e0",
-     "publisher": "Reuters",
-     "kind": "news",
-     "title": "S&P warns Nvidia's board may be compromised, puts chipmaker's rating on downgrade watch",
-     "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNb1ZBby1iVDJnTmJwX3hDYWJpU2lxTUdLTHdlWHFqRHJUcmtTOWFuQkFRTlUyZTJBcGdNMWR3N3d1YlJIV05kWk1mU21JSDZmSVpZR1BlanpqRzFXSkg3NkxkeElWcHM0Q2Y4eFJKb3Fha29XakxYNFJ4cXExZHo4MFVDOHdDbENrQWs0d0lqQ3Z5cEVDRVBQR1hNNWZxSmhiUll4NFg1amZlU01oWm9fN2hkUFBBNkdKT21v?oc=5",
-     "time": "2026-11-25T22:32:45Z"
-    }
-   ]
-  },
-  {
-   "summary": "Fidelity files for a spot Chainlink ETF, providing a positive regulatory and institutional boost.",
-   "category": "crypto_positive",
-   "firstSeen": "2026-11-25T19:32:00Z",
-   "publishers": [
-    "Altcoin Buzz",
-    "Crypto News",
-    "Cryptonews.net",
-    "Pluang",
-    "The Block"
-   ],
-   "assets": {
-    "LINK/USD": {
-     "direction": "up",
-     "confidence": 0.8,
-     "why": "Fidelity filing for a spot Chainlink ETF creates positive adoption and institutional interest."
-    }
-   },
-   "sources": [
-    {
-     "id": "68e04cee5fdf8353",
-     "publisher": "Cryptonews.net",
-     "kind": "news",
-     "title": "Fidelity files for spot Chainlink ETF with proposed FLNK ticker",
-     "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE5TQTkwZDFiMmRpaWRlRTAyOUZuU180ajA5Tk10amdrai1iQmJYakdrQkNmaWNMYUVNdFF1RXBYU2J1QWJsMmx6czhKRzZuejh5dFIyRFE5QWhhZw?oc=5",
-     "time": "2026-11-25T19:33:06Z"
-    },
-    {
-     "id": "d39828856ce410e7",
-     "publisher": "The Block",
-     "kind": "news",
-     "title": "Fidelity files for spot Chainlink ETF with planned Nasdaq listing",
-     "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNQW13TS03NWRDWS1LUDU2dWlFMmNmR3F3cW9xMVNkZFhLNUhYQ2o2WmVMVjZNZVZISXVyNk9xQV9oTHVpa3Y0cWtrek9SOEhkVk1GcUtRdzdzQ3VkeGNfcExROFNHMWlvV0pRY3kxc1piNGMwNUM4RG8tRFlrUlBtR2NjOVMxeXlXMlplbGU2VTlNdmJSanlTdA?oc=5",
-     "time": "2026-11-25T19:32:00Z"
-    },
-    {
-     "id": "f8378d0147c3f9ed",
-     "publisher": "Crypto News",
-     "kind": "news",
-     "title": "Fidelity files for Chainlink ETF as LINK trades below $9",
-     "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE5ZWnBfaHRvMnA4RnZoNE9abUZmazgzZDg4LUdYRmtqSDc2U2N0bzZOcUx6cE82NVlVN1JEOWJoZ0IwN0V6ckxXMEIzOUt6Rjk1LVdKOUJua1dvdkZKYlBtQ0RwTnQxbHgxNlNueDJB?oc=5",
-     "time": "2026-11-25T20:06:39Z"
-    },
-    {
-     "id": "8db856f2cab06105",
-     "publisher": "Pluang",
-     "kind": "news",
-     "title": "Fidelity files for Chainlink ETF, LINK price ri...",
-     "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOM3pWclVqQ2ZSaEZ3aG9EbVBhSW14ZjhtZk04c2JMamc0SVg1TGVnbXU3Q3FyYk9zMS1ZSlJ3dGNzLTdHMTRqeWRVcC1MM0l4ZVp1MVhMYkMzZTJ1QTAyamdhNkdHZFZQQzQ4ZV9NUC1wZjdzVFYwYnhfVDZyWVJwMmc5aHA4cVBsOUZ4NE44TVUwMXRZd1VfUg?oc=5",
-     "time": "2026-11-25T20:28:25Z"
-    },
-    {
-     "id": "3d9107c15d4cdd57",
-     "publisher": "Pluang",
-     "kind": "news",
-     "title": "Fidelity files to launch Chainlink ETF, adding a new option for LINK investors in the U.S.",
-     "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxQb09kXzNEVFZ6TVVrZmtIWWpuWklHV3JnQ0RaaGh5blJmZldyeG9ORUN6RmstYWVvTmlMQWlKOE5mVHh3S1RzUmhINVhhY1QxYV9nbDVoVnUyY1FrOG85RHFKeThqNldkUEhEZXZRN0t1LXNHY1VHZDk3MW5ONDROeEllT1hvOWRmejlFbEZNLWdIdWNJaWFEN1htbWhxUQ?oc=5",
-     "time": "2026-11-25T20:32:24Z"
-    }
-   ]
-  },
-  {
-   "summary": "Palo Alto Networks faces a lawsuit from a former executive alleging accounting fraud.",
-   "category": "company_bad_news",
-   "firstSeen": "2026-11-25T17:02:36Z",
-   "publishers": [
-    "CNBC",
-    "Yahoo Finance"
-   ],
-   "assets": {
-    "NVDA": {
-     "direction": "down",
-     "confidence": 0.75,
-     "why": "Nvidia led a tech sell-off amid return of AI spending concerns and higher-rate worries."
-    },
-    "AMD": {
-     "direction": "down",
-     "confidence": 0.7,
-     "why": "Broader tech and AI stock pullback driven by valuation and rate concerns."
-    },
-    "PANW": {
-     "direction": "down",
-     "confidence": 0.7,
-     "why": "Lawsuit alleging accounting fraud and executive termination claims create severe governance and near-term downside risk."
-    }
-   },
-   "sources": [
-    {
-     "id": "e2f302566d76bb48",
-     "publisher": "CNBC",
-     "kind": "news",
-     "title": "Dow slides 300 points, Nasdaq loses 3% as Nvidia leads resumption of AI sell-off: Live updates",
-     "url": "https://www.cnbc.com/2026/11/24/stock-market-today-live-updates-.html",
-     "time": "2026-11-25T17:20:21Z"
-    },
-    {
-     "id": "0ce1fe8d60a8fcbe",
-     "publisher": "CNBC",
-     "kind": "news",
-     "title": "Nvidia leads tech sell-off as Huang comeback rally fizzles and AI concerns return",
-     "url": "https://www.cnbc.com/2026/11/25/nvidia-ai-stock-tech-selloff.html",
-     "time": "2026-11-25T17:10:17Z"
-    },
-    {
-     "id": "fec5d90c2c4c0572",
-     "publisher": "Yahoo Finance",
-     "kind": "news",
-     "title": "Tech stocks suffer sell-off on AI angst, US inflation",
-     "url": "https://finance.yahoo.com/markets/world-indices/articles/tech-firms-back-crosshairs-huang-024219799.html?.tsrc=rss",
-     "time": "2026-11-25T17:05:53Z"
-    },
-    {
-     "id": "76f3de4d972b6114",
-     "publisher": "Yahoo Finance",
-     "kind": "news",
-     "title": "AI Chip Stocks Extend Brutal Selloff as Nvidia, AMD and Broadcom Tumble Again",
-     "url": "https://finance.yahoo.com/technology/ai/articles/ai-chip-stocks-extend-brutal-170236621.html?.tsrc=rss",
-     "time": "2026-11-25T17:02:36Z"
-    },
-    {
-     "id": "eb9a33902a61cdd6",
-     "publisher": "Yahoo Finance",
-     "kind": "news",
-     "title": "Market Chatter: Palo Alto Networks Sued by Ex-Executive Over Alleged Accounting Fraud",
-     "url": "https://finance.yahoo.com/markets/stocks/articles/market-chatter-palo-alto-networks-215300884.html?.tsrc=rss",
-     "time": "2026-11-25T21:53:00Z"
     }
    ]
   }
