@@ -1,13 +1,12 @@
 {
  "team": "trading",
  "plain": {
-  "line": "Down $7,827.91 since start · 36 trades · holding: BTC/USD, LINK/USD, SPWO, HLAL, SPUS, SPUS",
+  "line": "Down $7,970.42 since start · 36 trades · holding: BTC/USD, SPWO, HLAL, SPUS, SPUS",
   "rulesMode": "ultra",
-  "top": "Down $7,827.91 since start (-7.83%) · just holding SPY would be -4.79%",
+  "top": "Down $7,970.42 since start (-7.97%) · just holding SPY would be -4.79%",
   "up": false,
   "holding": [
-   "BTC/USD: buy order sent, waiting to fill",
-   "LINK/USD: 1283.16 coins worth $11,870.53, down $39.32 (sells at $9.84 or stops at $9.00)",
+   "BTC/USD: 0.177168 coins worth $10,732.94, down $56.76 (sells at $64,555.12 or stops at $59,074.02)",
    "SPWO: 421 shares worth $11,682.75, up $416.79 (sells at $27.96 or stops at $25.00)",
    "HLAL: 256 shares worth $16,819.20, up $509.44 (sells at $98.93 or stops at $59.36)",
    "SPUS: 324 shares worth $17,535.54, up $501.41 (sells at $78.24 or stops at $46.94)",
@@ -18,15 +17,16 @@
    "Bought BTC/USD after the news: Switzerland's first spot Bitcoin ETF begins trading, boosting institutional crypto adoption sentiment.",
    "Bought LINK/USD after the news: Franklin Templeton to add Hyperliquid to its crypto index ETF, signaling continued institutional product expansion.",
    "Sold BTC/USD (bad news: Bitcoin and broader crypto markets continue to face downward pressure from persi): made $50.49.",
-   "Scanned the news 17 times today: read 1526 headlines, found 52 that could move a stock or coin it's allowed to trade.",
+   "Sold LINK/USD (bad news: Bitcoin and crypto markets face continued downward pressure from massive spot ET): lost $39.32.",
+   "Scanned the news 26 times today: read 2359 headlines, found 90 that could move a stock or coin it's allowed to trade.",
    "Passed on BTC/USD: already holding it.",
-   "Safety rules that stepped in: one position per asset (x5), bad news exit (x1)."
+   "Safety rules that stepped in: one position per asset (x5), bad news exit (x2)."
   ],
   "watchlist": "Allowed to trade: 68 halal stocks, 5 Shariah ETFs, 9 coins.",
-  "lastScan": "2026-11-26T09:14:06Z"
+  "lastScan": "2026-11-26T11:25:09Z"
  },
  "hired": true,
- "updatedAt": "2026-11-26T09:14:26Z",
+ "updatedAt": "2026-11-26T11:25:23Z",
  "mode": "PAPER",
  "agents": [
   {
@@ -34,8 +34,8 @@
    "name": "News Scout",
    "role": "Reads X, Reddit and news feeds",
    "status": "working",
-   "doing": "Read 166 new headlines/posts, 5 market-moving stories",
-   "lastRun": "2026-11-26T09:14:22Z"
+   "doing": "Read 45 new headlines/posts, 3 market-moving stories",
+   "lastRun": "2026-11-26T11:25:22Z"
   },
   {
    "id": "analyst",
@@ -43,7 +43,7 @@
    "role": "Gemini: is it real, what moves, which way",
    "status": "working",
    "doing": "Bad news for SPWO: Expanding US tariff plans targeting major trading partners heighten global trade war risks and weigh",
-   "lastRun": "2026-11-26T09:14:24Z"
+   "lastRun": "2026-11-26T11:25:22Z"
   },
   {
    "id": "confirm",
@@ -65,17 +65,17 @@
    "id": "risk",
    "name": "Risk Officer",
    "role": "Hard limits, stop-losses, kill switch",
-   "status": "working",
-   "doing": "BTC/USD new high $60,952.07: stop raised to $59,123.51",
-   "lastRun": "2026-11-26T08:58:48Z"
+   "status": "ok",
+   "doing": "Stop-loss for BTC/USD placed on Alpaca at $59,074.02",
+   "lastRun": "2026-11-26T09:29:29Z"
   },
   {
    "id": "trader",
    "name": "Trader",
    "role": "Places paper orders on Alpaca",
    "status": "working",
-   "doing": "BUY BTC/USD: Switzerland's first spot bitcoin ETF launches on SIX, bolstering institutional crypto adop | volume 1.7x normal, price +0.61% since the news | TradingAgents not used (ultra mode)",
-   "lastRun": "2026-11-26T09:14:25Z"
+   "doing": "sell SPWO failed: HTTP 403 https://paper-api.alpaca.markets/v2/positions/SPWO: {\"available\":\"0\",\"code\":40310000,\"existing_qty\":\"421\",\"held_for_orders\":\"421\",\"message\":\"insufficient qty available for order (requested: 421, available: 0)\",\"symbol\":\"SPWO\"}",
+   "lastRun": "2026-11-26T11:25:22Z"
   },
   {
    "id": "coins",
@@ -95,6 +95,176 @@
   }
  ],
  "log": [
+  {
+   "t": "2026-11-26T11:25:22Z",
+   "agent": "Trader",
+   "msg": "sell SPWO failed: HTTP 403 https://paper-api.alpaca.markets/v2/positions/SPWO: {\"available\":\"0\",\"code\":40310000,\"existing_qty\":\"421\",\"held_for_orders\":\"421\",\"message\":\"insufficient qty available for order (requested: 421, available: 0)\",\"symbol\":\"SPWO\"}"
+  },
+  {
+   "t": "2026-11-26T11:25:22Z",
+   "agent": "News Analyst",
+   "msg": "Bad news for SPWO: Expanding US tariff plans targeting major trading partners heighten global trade war risks and weigh"
+  },
+  {
+   "t": "2026-11-26T11:25:22Z",
+   "agent": "News Scout",
+   "msg": "Read 45 new headlines/posts, 3 market-moving stories"
+  },
+  {
+   "t": "2026-11-26T11:25:08Z",
+   "agent": "News Scout",
+   "msg": "Agent Reach not found: news feeds + Yahoo Finance + Reddit direct (no X)"
+  },
+  {
+   "t": "2026-11-26T11:25:08Z",
+   "agent": "Trader",
+   "msg": "Paper-trading bot started (Alpaca PAPER account only). Close this window to stop it."
+  },
+  {
+   "t": "2026-11-26T11:17:59Z",
+   "agent": "Trader",
+   "msg": "sell SPWO failed: HTTP 403 https://paper-api.alpaca.markets/v2/positions/SPWO: {\"available\":\"0\",\"code\":40310000,\"existing_qty\":\"421\",\"held_for_orders\":\"421\",\"message\":\"insufficient qty available for order (requested: 421, available: 0)\",\"symbol\":\"SPWO\"}"
+  },
+  {
+   "t": "2026-11-26T11:17:58Z",
+   "agent": "News Analyst",
+   "msg": "Bad news for SPWO: Expanding US tariff plans targeting major trading partners heighten global trade war risks and weigh"
+  },
+  {
+   "t": "2026-11-26T11:17:58Z",
+   "agent": "News Scout",
+   "msg": "Read 145 new headlines/posts, 5 market-moving stories"
+  },
+  {
+   "t": "2026-11-26T11:02:28Z",
+   "agent": "Trader",
+   "msg": "sell SPWO failed: HTTP 403 https://paper-api.alpaca.markets/v2/positions/SPWO: {\"available\":\"0\",\"code\":40310000,\"existing_qty\":\"421\",\"held_for_orders\":\"421\",\"message\":\"insufficient qty available for order (requested: 421, available: 0)\",\"symbol\":\"SPWO\"}"
+  },
+  {
+   "t": "2026-11-26T11:02:28Z",
+   "agent": "News Analyst",
+   "msg": "Bad news for SPWO: Expanding US tariff plans targeting major trading partners heighten global trade war risks and weigh"
+  },
+  {
+   "t": "2026-11-26T11:02:28Z",
+   "agent": "News Scout",
+   "msg": "Read 111 new headlines/posts, 3 market-moving stories"
+  },
+  {
+   "t": "2026-11-26T10:47:07Z",
+   "agent": "Trader",
+   "msg": "sell SPWO failed: HTTP 403 https://paper-api.alpaca.markets/v2/positions/SPWO: {\"available\":\"0\",\"code\":40310000,\"existing_qty\":\"421\",\"held_for_orders\":\"421\",\"message\":\"insufficient qty available for order (requested: 421, available: 0)\",\"symbol\":\"SPWO\"}"
+  },
+  {
+   "t": "2026-11-26T10:47:07Z",
+   "agent": "News Analyst",
+   "msg": "Bad news for SPWO: Expanding US tariff plans targeting major trading partners heighten global trade war risks and weigh"
+  },
+  {
+   "t": "2026-11-26T10:47:07Z",
+   "agent": "News Scout",
+   "msg": "Read 69 new headlines/posts, 3 market-moving stories"
+  },
+  {
+   "t": "2026-11-26T10:30:44Z",
+   "agent": "Trader",
+   "msg": "sell SPWO failed: HTTP 403 https://paper-api.alpaca.markets/v2/positions/SPWO: {\"available\":\"0\",\"code\":40310000,\"existing_qty\":\"421\",\"held_for_orders\":\"421\",\"message\":\"insufficient qty available for order (requested: 421, available: 0)\",\"symbol\":\"SPWO\"}"
+  },
+  {
+   "t": "2026-11-26T10:30:44Z",
+   "agent": "News Analyst",
+   "msg": "Bad news for SPWO: Expanding US tariff plans targeting major trading partners heighten global trade war risks and weigh"
+  },
+  {
+   "t": "2026-11-26T10:30:44Z",
+   "agent": "News Scout",
+   "msg": "Read 66 new headlines/posts, 2 market-moving stories"
+  },
+  {
+   "t": "2026-11-26T10:15:34Z",
+   "agent": "Trader",
+   "msg": "sell SPWO failed: HTTP 403 https://paper-api.alpaca.markets/v2/positions/SPWO: {\"available\":\"0\",\"code\":40310000,\"existing_qty\":\"421\",\"held_for_orders\":\"421\",\"message\":\"insufficient qty available for order (requested: 421, available: 0)\",\"symbol\":\"SPWO\"}"
+  },
+  {
+   "t": "2026-11-26T10:15:34Z",
+   "agent": "News Analyst",
+   "msg": "Bad news for SPWO: Expanding US tariff plans targeting major trading partners heighten global trade war risks and weigh"
+  },
+  {
+   "t": "2026-11-26T10:15:34Z",
+   "agent": "News Scout",
+   "msg": "Read 113 new headlines/posts, 7 market-moving stories"
+  },
+  {
+   "t": "2026-11-26T10:00:16Z",
+   "agent": "Trader",
+   "msg": "sell SPWO failed: HTTP 403 https://paper-api.alpaca.markets/v2/positions/SPWO: {\"available\":\"0\",\"code\":40310000,\"existing_qty\":\"421\",\"held_for_orders\":\"421\",\"message\":\"insufficient qty available for order (requested: 421, available: 0)\",\"symbol\":\"SPWO\"}"
+  },
+  {
+   "t": "2026-11-26T10:00:16Z",
+   "agent": "News Analyst",
+   "msg": "Bad news for SPWO: Expanding US tariff plans targeting major trading partners heighten global trade war risks and weigh"
+  },
+  {
+   "t": "2026-11-26T10:00:16Z",
+   "agent": "Trader",
+   "msg": "Closed LINK/USD: bad news: Bitcoin and crypto markets face continued downward pressure from massive spot ET, -0.33% ($-39.32)"
+  },
+  {
+   "t": "2026-11-26T10:00:13Z",
+   "agent": "News Analyst",
+   "msg": "Bad news for LINK/USD: Bitcoin and crypto markets face continued downward pressure from massive spot ETF outflows."
+  },
+  {
+   "t": "2026-11-26T10:00:13Z",
+   "agent": "News Scout",
+   "msg": "Read 114 new headlines/posts, 6 market-moving stories"
+  },
+  {
+   "t": "2026-11-26T09:44:58Z",
+   "agent": "Trader",
+   "msg": "sell SPWO failed: HTTP 403 https://paper-api.alpaca.markets/v2/positions/SPWO: {\"available\":\"0\",\"code\":40310000,\"existing_qty\":\"421\",\"held_for_orders\":\"421\",\"message\":\"insufficient qty available for order (requested: 421, available: 0)\",\"symbol\":\"SPWO\"}"
+  },
+  {
+   "t": "2026-11-26T09:44:57Z",
+   "agent": "News Analyst",
+   "msg": "Bad news for SPWO: Expanding US tariff plans targeting major trading partners heighten global trade war risks and weigh"
+  },
+  {
+   "t": "2026-11-26T09:44:57Z",
+   "agent": "News Scout",
+   "msg": "Read 91 new headlines/posts, 4 market-moving stories"
+  },
+  {
+   "t": "2026-11-26T09:29:39Z",
+   "agent": "Trader",
+   "msg": "sell SPWO failed: HTTP 403 https://paper-api.alpaca.markets/v2/positions/SPWO: {\"available\":\"0\",\"code\":40310000,\"existing_qty\":\"421\",\"held_for_orders\":\"421\",\"message\":\"insufficient qty available for order (requested: 421, available: 0)\",\"symbol\":\"SPWO\"}"
+  },
+  {
+   "t": "2026-11-26T09:29:39Z",
+   "agent": "News Analyst",
+   "msg": "Bad news for SPWO: Expanding US tariff plans targeting major trading partners heighten global trade war risks and weigh"
+  },
+  {
+   "t": "2026-11-26T09:29:39Z",
+   "agent": "News Scout",
+   "msg": "Read 79 new headlines/posts, 5 market-moving stories"
+  },
+  {
+   "t": "2026-11-26T09:29:29Z",
+   "agent": "Risk Officer",
+   "msg": "Stop-loss for BTC/USD placed on Alpaca at $59,074.02"
+  },
+  {
+   "t": "2026-11-26T09:29:29Z",
+   "agent": "Trader",
+   "msg": "Bought 0.177612 BTC/USD at $60,901.05 (stop $59,074.02, target $64,555.12)"
+  },
+  {
+   "t": "2026-11-26T09:14:29Z",
+   "agent": "Trader",
+   "msg": "Saved results to the Agent HQ dashboard"
+  },
   {
    "t": "2026-11-26T09:14:25Z",
    "agent": "Trader",
@@ -674,198 +844,28 @@
    "t": "2026-11-25T21:46:41Z",
    "agent": "News Scout",
    "msg": "Read 16 new headlines/posts, 0 market-moving stories"
-  },
-  {
-   "t": "2026-11-25T21:31:34Z",
-   "agent": "Coach",
-   "msg": "Coach review failed: '<' not supported between instances of 'NoneType' and 'float'"
-  },
-  {
-   "t": "2026-11-25T21:31:34Z",
-   "agent": "News Scout",
-   "msg": "Read 28 new headlines/posts, 2 market-moving stories"
-  },
-  {
-   "t": "2026-11-25T21:31:30Z",
-   "agent": "News Scout",
-   "msg": "Google News is rate-limiting this server: pausing it for 1 hour"
-  },
-  {
-   "t": "2026-11-25T21:16:21Z",
-   "agent": "Trader",
-   "msg": "Saved results to the Agent HQ dashboard"
-  },
-  {
-   "t": "2026-11-25T21:16:17Z",
-   "agent": "News Scout",
-   "msg": "Read 81 new headlines/posts, 5 market-moving stories"
-  },
-  {
-   "t": "2026-11-25T21:00:56Z",
-   "agent": "News Scout",
-   "msg": "Read 31 new headlines/posts, 4 market-moving stories"
-  },
-  {
-   "t": "2026-11-25T20:55:35Z",
-   "agent": "News Scout",
-   "msg": "Read 1 new headlines/posts, 0 market-moving stories"
-  },
-  {
-   "t": "2026-11-25T20:45:26Z",
-   "agent": "News Scout",
-   "msg": "Read 32 new headlines/posts, 1 market-moving stories"
-  },
-  {
-   "t": "2026-11-25T20:40:18Z",
-   "agent": "News Scout",
-   "msg": "Read 1 new headlines/posts, 0 market-moving stories"
-  },
-  {
-   "t": "2026-11-25T20:35:14Z",
-   "agent": "News Scout",
-   "msg": "Read 8 new headlines/posts, 0 market-moving stories"
-  },
-  {
-   "t": "2026-11-25T20:30:04Z",
-   "agent": "News Scout",
-   "msg": "Read 37 new headlines/posts, 1 market-moving stories"
-  },
-  {
-   "t": "2026-11-25T20:24:54Z",
-   "agent": "News Scout",
-   "msg": "Read 1 new headlines/posts, 0 market-moving stories"
-  },
-  {
-   "t": "2026-11-25T20:14:44Z",
-   "agent": "News Scout",
-   "msg": "Read 49 new headlines/posts, 3 market-moving stories"
-  },
-  {
-   "t": "2026-11-25T20:09:30Z",
-   "agent": "News Scout",
-   "msg": "Read 1 new headlines/posts, 0 market-moving stories"
-  },
-  {
-   "t": "2026-11-25T20:04:20Z",
-   "agent": "News Scout",
-   "msg": "Read 11 new headlines/posts, 0 market-moving stories"
-  },
-  {
-   "t": "2026-11-25T19:59:15Z",
-   "agent": "News Scout",
-   "msg": "Read 29 new headlines/posts, 2 market-moving stories"
-  },
-  {
-   "t": "2026-11-25T19:52:48Z",
-   "agent": "News Scout",
-   "msg": "Read 1 new headlines/posts, 0 market-moving stories"
-  },
-  {
-   "t": "2026-11-25T19:42:38Z",
-   "agent": "News Scout",
-   "msg": "Read 30 new headlines/posts, 2 market-moving stories"
-  },
-  {
-   "t": "2026-11-25T19:37:26Z",
-   "agent": "News Scout",
-   "msg": "Read 2 new headlines/posts, 1 market-moving stories"
-  },
-  {
-   "t": "2026-11-25T19:32:04Z",
-   "agent": "News Scout",
-   "msg": "Read 4 new headlines/posts, 1 market-moving stories"
-  },
-  {
-   "t": "2026-11-25T19:26:58Z",
-   "agent": "News Scout",
-   "msg": "Read 32 new headlines/posts, 0 market-moving stories"
-  },
-  {
-   "t": "2026-11-25T19:16:46Z",
-   "agent": "News Scout",
-   "msg": "Read 12 new headlines/posts, 1 market-moving stories"
-  },
-  {
-   "t": "2026-11-25T19:11:40Z",
-   "agent": "News Scout",
-   "msg": "Read 36 new headlines/posts, 4 market-moving stories"
-  },
-  {
-   "t": "2026-11-25T19:06:24Z",
-   "agent": "News Scout",
-   "msg": "Read 84 new headlines/posts, 1 market-moving stories"
-  },
-  {
-   "t": "2026-11-25T19:01:20Z",
-   "agent": "Trader",
-   "msg": "Saved results to the Agent HQ dashboard"
-  },
-  {
-   "t": "2026-11-25T19:01:16Z",
-   "agent": "News Scout",
-   "msg": "Read 6 new headlines/posts, 0 market-moving stories"
-  },
-  {
-   "t": "2026-11-25T18:56:05Z",
-   "agent": "News Scout",
-   "msg": "Read 35 new headlines/posts, 3 market-moving stories"
-  },
-  {
-   "t": "2026-11-25T18:50:10Z",
-   "agent": "News Scout",
-   "msg": "Read 3 new headlines/posts, 0 market-moving stories"
-  },
-  {
-   "t": "2026-11-25T18:50:08Z",
-   "agent": "Trader",
-   "msg": "Closed UMMA: target +6% hit, +2.33% ($+267.18)"
-  },
-  {
-   "t": "2026-11-25T18:45:04Z",
-   "agent": "News Scout",
-   "msg": "Read 5 new headlines/posts, 2 market-moving stories"
-  },
-  {
-   "t": "2026-11-25T18:39:56Z",
-   "agent": "News Scout",
-   "msg": "Read 29 new headlines/posts, 1 market-moving stories"
-  },
-  {
-   "t": "2026-11-25T18:34:37Z",
-   "agent": "News Scout",
-   "msg": "Read 7 new headlines/posts, 0 market-moving stories"
-  },
-  {
-   "t": "2026-11-25T18:29:32Z",
-   "agent": "News Scout",
-   "msg": "Read 3 new headlines/posts, 0 market-moving stories"
-  },
-  {
-   "t": "2026-11-25T18:24:17Z",
-   "agent": "News Scout",
-   "msg": "Read 48 new headlines/posts, 2 market-moving stories"
   }
  ],
  "brief": {
   "date": "Thu Nov 26",
-  "createdAt": "2026-11-26T09:14:26Z",
-  "headline": "Paper account -$110 today (-0.12%), -7.83% total vs SPY -4.79% · 6 open",
-  "summary": "1 trade(s) closed today, 7/30 winners overall. TradingAgents checks used today: 0/5.",
+  "createdAt": "2026-11-26T11:25:23Z",
+  "headline": "Paper account -$252 today (-0.27%), -7.97% total vs SPY -4.79% · 5 open",
+  "summary": "2 trade(s) closed today, 7/31 winners overall. TradingAgents checks used today: 0/5.",
   "notes": [
    "X/Reddit reader: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
   ]
  },
  "account": {
-  "equity": 92172.09,
-  "cash": 23491.14,
+  "equity": 92029.58,
+  "cash": 35259.15,
   "startEquity": 100000.0,
   "startedAt": "2026-11-10T01:51:53Z",
-  "dayPnl": -109.65,
-  "dayPct": -0.12,
-  "totalPnl": -7827.91,
-  "totalPct": -7.83,
+  "dayPnl": -252.16,
+  "dayPct": -0.27,
+  "totalPnl": -7970.42,
+  "totalPct": -7.97,
   "spyPct": -4.79,
-  "vsSpyPct": -3.04
+  "vsSpyPct": -3.18
  },
  "status": {
   "killed": false,
@@ -873,7 +873,7 @@
   "deepUsed": 0,
   "deepMax": 5,
   "social": {
-   "at": "2026-11-26T09:14:10Z",
+   "at": "2026-11-26T11:25:12Z",
    "items": 0,
    "source": "Reddit via Tradestie + ApeWisdom (direct Reddit blocks servers; X needs Agent Reach)",
    "problems": [
@@ -881,13 +881,13 @@
     "r/stocks: HTTP 403 https://www.reddit.com/r/stocks/new.json: <body class=theme-beta><div><"
    ],
    "wsb": {
-    "at": "2026-11-26T09:14:10Z",
-    "tickers": 32,
+    "at": "2026-11-26T11:25:13Z",
+    "tickers": 27,
     "items": 0,
     "key": false
    },
    "ape": {
-    "at": "2026-11-26T09:14:11Z",
+    "at": "2026-11-26T11:25:13Z",
     "tickers": 200,
     "items": 0,
     "problems": []
@@ -904,14 +904,14 @@
    "id": "ahq-BTCUSD-20261126091425",
    "symbol": "BTC/USD",
    "asset": "crypto",
-   "status": "pending",
+   "status": "open",
    "entryOrderId": "e152ff30-ceb5-4f5c-b395-833a23bea907",
-   "qty": null,
+   "qty": 0.177167798,
    "cost": 11027.69,
    "estPrice": 60806.37,
-   "entryPrice": 60806.37,
-   "stop": 58982.18,
-   "target": 64454.75,
+   "entryPrice": 60901.053775603,
+   "stop": 59074.02,
+   "target": 64555.12,
    "openedAt": "2026-11-26T09:14:25Z",
    "trail": 3.0,
    "news": {
@@ -942,55 +942,11 @@
     ],
     "tradingAgents": "not used (ultra mode)",
     "taSummary": ""
-   }
-  },
-  {
-   "id": "ahq-LINKUSD-20261126050912",
-   "symbol": "LINK/USD",
-   "asset": "crypto",
-   "status": "open",
-   "entryOrderId": "587a57ad-cb31-4dd3-9edc-b298b31db17e",
-   "qty": 1283.162880115,
-   "cost": 12109.43,
-   "estPrice": 9.1882,
-   "entryPrice": 9.281630162,
-   "stop": 9.0,
-   "target": 9.84,
-   "openedAt": "2026-11-26T05:09:12Z",
-   "trail": 3.0,
-   "news": {
-    "summary": "Franklin Templeton to add Hyperliquid to its crypto index ETF, signaling continued institutional product expansion.",
-    "category": "crypto_positive",
-    "sources": [
-     {
-      "publisher": "grafa.com",
-      "title": "Fidelity files for Nasdaq Chainlink ETF listing",
-      "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxNLUNYdHlRZmgyYk81emg2UEd3bFhjOGI4QUxCMU1vdzBlaGlfajhhUGZya0dqR0trYld3cDF1aU42Y25DbldFUzdjSm1fMVIzMkFDQzJuT2o3c0hhRFN5LUVZQ3FTQ3JUMVhLWjlMdE9uUjdxaFlZTTN1TEt4Q3FCX0hySQ?oc=5"
-     },
-     {
-      "publisher": "Crypto Economy",
-      "title": "Franklin Templeton to Add Hyperliquid to Crypto Index ETF in December",
-      "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxQcU9NU0JJUEZaVlA2ZW9RV2d3b0lHaG40bUZMdUpGQ3FBNTRnZU9ldkdCYk9CXzBqODVhRm9oaHZuR1Q1VUpJRk1EdklqZW1VWHdqaW1SQXhyRzNlNDV6NHpNanB0ZVFOaGZVem5HN0xYZGV6aHotVVRqVjk5TVhlRFRkZWFtYkRFamdaUlNmM0EwMDFkeHBWYTR4OFdrUQ?oc=5"
-     }
-    ]
    },
-   "reason": {
-    "triage": "Institutional ETF filing increases legitimacy and potential capital inflows for Chainlink.",
-    "confidence": 0.6,
-    "confirmation": "volume 0.0x normal, price +0.45% since the news",
-    "rvol": 0.0,
-    "movePct": 0.45,
-    "publishers": [
-     "Crypto Economy",
-     "grafa.com"
-    ],
-    "tradingAgents": "not used (ultra mode)",
-    "taSummary": ""
-   },
-   "stopOrderId": "420c2f46-7f38-4ec3-aa34-eff81a432eb5",
-   "lastPrice": 9.25099,
-   "unrealizedPct": -0.33,
-   "high": 9.281630162
+   "stopOrderId": "8549feb1-17bc-42ac-954d-24f7b1f206f5",
+   "lastPrice": 60580.66,
+   "unrealizedPct": -0.53,
+   "high": 60901.053775603
   },
   {
    "id": "ahq-dip-SPWO-20261125145159",
@@ -3192,42 +3148,6 @@
    "BTC/USD": {
     "bars": [
      [
-      "2026-11-23T09:15:00Z",
-      61605.5825
-     ],
-     [
-      "2026-11-23T09:30:00Z",
-      61413.51
-     ],
-     [
-      "2026-11-23T09:45:00Z",
-      61363.91
-     ],
-     [
-      "2026-11-23T10:00:00Z",
-      61314.0915
-     ],
-     [
-      "2026-11-23T10:15:00Z",
-      61327.13
-     ],
-     [
-      "2026-11-23T10:30:00Z",
-      61255.0
-     ],
-     [
-      "2026-11-23T10:45:00Z",
-      61351.3675
-     ],
-     [
-      "2026-11-23T11:00:00Z",
-      61236.01
-     ],
-     [
-      "2026-11-23T11:15:00Z",
-      61344.0355
-     ],
-     [
       "2026-11-23T11:30:00Z",
       61450.7725
      ],
@@ -4341,1175 +4261,50 @@
      ],
      [
       "2026-11-26T09:00:00Z",
-      60824.175
+      60870.4025
+     ],
+     [
+      "2026-11-26T09:15:00Z",
+      60683.335
+     ],
+     [
+      "2026-11-26T09:30:00Z",
+      60871.092
+     ],
+     [
+      "2026-11-26T09:45:00Z",
+      60857.125
+     ],
+     [
+      "2026-11-26T10:00:00Z",
+      60886.972
+     ],
+     [
+      "2026-11-26T10:15:00Z",
+      60747.7445
+     ],
+     [
+      "2026-11-26T10:30:00Z",
+      60463.355
+     ],
+     [
+      "2026-11-26T10:45:00Z",
+      60441.15
+     ],
+     [
+      "2026-11-26T11:00:00Z",
+      60532.95
+     ],
+     [
+      "2026-11-26T11:15:00Z",
+      60592.78
      ]
     ],
-    "entry": 60806.37,
-    "stop": 58982.18,
-    "target": 64454.75,
+    "entry": 60901.053775603,
+    "stop": 59074.02,
+    "target": 64555.12,
     "openedAt": "2026-11-26T09:14:25Z",
-    "qty": null
-   },
-   "LINK/USD": {
-    "bars": [
-     [
-      "2026-11-23T09:15:00Z",
-      8.9477
-     ],
-     [
-      "2026-11-23T09:30:00Z",
-      8.9156
-     ],
-     [
-      "2026-11-23T09:45:00Z",
-      8.909
-     ],
-     [
-      "2026-11-23T10:00:00Z",
-      8.91
-     ],
-     [
-      "2026-11-23T10:15:00Z",
-      8.9064
-     ],
-     [
-      "2026-11-23T10:30:00Z",
-      8.9203
-     ],
-     [
-      "2026-11-23T10:45:00Z",
-      8.9194
-     ],
-     [
-      "2026-11-23T11:00:00Z",
-      8.919
-     ],
-     [
-      "2026-11-23T11:15:00Z",
-      8.9434
-     ],
-     [
-      "2026-11-23T11:30:00Z",
-      8.9666
-     ],
-     [
-      "2026-11-23T11:45:00Z",
-      8.944
-     ],
-     [
-      "2026-11-23T12:00:00Z",
-      8.9394
-     ],
-     [
-      "2026-11-23T12:15:00Z",
-      8.907
-     ],
-     [
-      "2026-11-23T12:30:00Z",
-      8.8809
-     ],
-     [
-      "2026-11-23T12:45:00Z",
-      8.8907
-     ],
-     [
-      "2026-11-23T13:00:00Z",
-      8.9153
-     ],
-     [
-      "2026-11-23T13:15:00Z",
-      8.9277
-     ],
-     [
-      "2026-11-23T13:30:00Z",
-      8.917
-     ],
-     [
-      "2026-11-23T13:45:00Z",
-      9.3248
-     ],
-     [
-      "2026-11-23T14:00:00Z",
-      9.373
-     ],
-     [
-      "2026-11-23T14:15:00Z",
-      9.5149
-     ],
-     [
-      "2026-11-23T14:30:00Z",
-      9.38
-     ],
-     [
-      "2026-11-23T14:45:00Z",
-      9.2906
-     ],
-     [
-      "2026-11-23T15:00:00Z",
-      9.315
-     ],
-     [
-      "2026-11-23T15:15:00Z",
-      9.3187
-     ],
-     [
-      "2026-11-23T15:30:00Z",
-      9.2647
-     ],
-     [
-      "2026-11-23T15:45:00Z",
-      9.256
-     ],
-     [
-      "2026-11-23T16:00:00Z",
-      9.2325
-     ],
-     [
-      "2026-11-23T16:15:00Z",
-      9.2488
-     ],
-     [
-      "2026-11-23T16:30:00Z",
-      9.1867
-     ],
-     [
-      "2026-11-23T16:45:00Z",
-      9.2454
-     ],
-     [
-      "2026-11-23T17:00:00Z",
-      9.2298
-     ],
-     [
-      "2026-11-23T17:15:00Z",
-      9.1491
-     ],
-     [
-      "2026-11-23T17:30:00Z",
-      9.0558
-     ],
-     [
-      "2026-11-23T17:45:00Z",
-      9.0816
-     ],
-     [
-      "2026-11-23T18:00:00Z",
-      9.0715
-     ],
-     [
-      "2026-11-23T18:15:00Z",
-      9.0667
-     ],
-     [
-      "2026-11-23T18:30:00Z",
-      9.0525
-     ],
-     [
-      "2026-11-23T18:45:00Z",
-      9.0524
-     ],
-     [
-      "2026-11-23T19:00:00Z",
-      9.0463
-     ],
-     [
-      "2026-11-23T19:15:00Z",
-      9.0213
-     ],
-     [
-      "2026-11-23T19:30:00Z",
-      8.9552
-     ],
-     [
-      "2026-11-23T19:45:00Z",
-      8.9987
-     ],
-     [
-      "2026-11-23T20:00:00Z",
-      9.0045
-     ],
-     [
-      "2026-11-23T20:15:00Z",
-      8.9786
-     ],
-     [
-      "2026-11-23T20:30:00Z",
-      8.9568
-     ],
-     [
-      "2026-11-23T20:45:00Z",
-      8.9812
-     ],
-     [
-      "2026-11-23T21:00:00Z",
-      8.9807
-     ],
-     [
-      "2026-11-23T21:15:00Z",
-      9.005
-     ],
-     [
-      "2026-11-23T21:30:00Z",
-      8.9921
-     ],
-     [
-      "2026-11-23T21:45:00Z",
-      9.0098
-     ],
-     [
-      "2026-11-23T22:00:00Z",
-      8.9809
-     ],
-     [
-      "2026-11-23T22:15:00Z",
-      8.9695
-     ],
-     [
-      "2026-11-23T22:30:00Z",
-      8.9442
-     ],
-     [
-      "2026-11-23T22:45:00Z",
-      8.9533
-     ],
-     [
-      "2026-11-23T23:00:00Z",
-      8.9804
-     ],
-     [
-      "2026-11-23T23:15:00Z",
-      9.0082
-     ],
-     [
-      "2026-11-23T23:30:00Z",
-      8.9605
-     ],
-     [
-      "2026-11-23T23:45:00Z",
-      9.0072
-     ],
-     [
-      "2026-11-24T00:00:00Z",
-      9.0062
-     ],
-     [
-      "2026-11-24T00:15:00Z",
-      9.0403
-     ],
-     [
-      "2026-11-24T00:30:00Z",
-      9.0606
-     ],
-     [
-      "2026-11-24T00:45:00Z",
-      9.0315
-     ],
-     [
-      "2026-11-24T01:00:00Z",
-      9.1106
-     ],
-     [
-      "2026-11-24T01:15:00Z",
-      9.1298
-     ],
-     [
-      "2026-11-24T01:30:00Z",
-      9.1209
-     ],
-     [
-      "2026-11-24T01:45:00Z",
-      9.0595
-     ],
-     [
-      "2026-11-24T02:00:00Z",
-      9.0734
-     ],
-     [
-      "2026-11-24T02:15:00Z",
-      9.0398
-     ],
-     [
-      "2026-11-24T02:30:00Z",
-      9.001
-     ],
-     [
-      "2026-11-24T02:45:00Z",
-      8.9695
-     ],
-     [
-      "2026-11-24T03:00:00Z",
-      8.9183
-     ],
-     [
-      "2026-11-24T03:15:00Z",
-      8.9908
-     ],
-     [
-      "2026-11-24T03:30:00Z",
-      8.9762
-     ],
-     [
-      "2026-11-24T03:45:00Z",
-      9.0322
-     ],
-     [
-      "2026-11-24T04:00:00Z",
-      9.0457
-     ],
-     [
-      "2026-11-24T04:15:00Z",
-      9.0858
-     ],
-     [
-      "2026-11-24T04:30:00Z",
-      9.0881
-     ],
-     [
-      "2026-11-24T04:45:00Z",
-      9.0545
-     ],
-     [
-      "2026-11-24T05:00:00Z",
-      9.074
-     ],
-     [
-      "2026-11-24T05:15:00Z",
-      9.0858
-     ],
-     [
-      "2026-11-24T05:30:00Z",
-      9.1292
-     ],
-     [
-      "2026-11-24T05:45:00Z",
-      9.1223
-     ],
-     [
-      "2026-11-24T06:00:00Z",
-      9.1005
-     ],
-     [
-      "2026-11-24T06:15:00Z",
-      9.083
-     ],
-     [
-      "2026-11-24T06:30:00Z",
-      9.0861
-     ],
-     [
-      "2026-11-24T06:45:00Z",
-      9.0924
-     ],
-     [
-      "2026-11-24T07:00:00Z",
-      9.0814
-     ],
-     [
-      "2026-11-24T07:15:00Z",
-      9.0583
-     ],
-     [
-      "2026-11-24T07:30:00Z",
-      9.0404
-     ],
-     [
-      "2026-11-24T07:45:00Z",
-      9.0431
-     ],
-     [
-      "2026-11-24T08:00:00Z",
-      9.0446
-     ],
-     [
-      "2026-11-24T08:15:00Z",
-      9.0283
-     ],
-     [
-      "2026-11-24T08:30:00Z",
-      9.0989
-     ],
-     [
-      "2026-11-24T08:45:00Z",
-      9.0529
-     ],
-     [
-      "2026-11-24T09:00:00Z",
-      9.005
-     ],
-     [
-      "2026-11-24T09:15:00Z",
-      9.0263
-     ],
-     [
-      "2026-11-24T09:30:00Z",
-      9.026
-     ],
-     [
-      "2026-11-24T09:45:00Z",
-      8.9862
-     ],
-     [
-      "2026-11-24T10:00:00Z",
-      8.9779
-     ],
-     [
-      "2026-11-24T10:15:00Z",
-      8.966
-     ],
-     [
-      "2026-11-24T10:30:00Z",
-      8.9341
-     ],
-     [
-      "2026-11-24T10:45:00Z",
-      8.9465
-     ],
-     [
-      "2026-11-24T11:00:00Z",
-      8.9135
-     ],
-     [
-      "2026-11-24T11:15:00Z",
-      8.9372
-     ],
-     [
-      "2026-11-24T11:30:00Z",
-      8.9499
-     ],
-     [
-      "2026-11-24T11:45:00Z",
-      9.0044
-     ],
-     [
-      "2026-11-24T12:00:00Z",
-      8.9554
-     ],
-     [
-      "2026-11-24T12:15:00Z",
-      8.9426
-     ],
-     [
-      "2026-11-24T12:30:00Z",
-      8.9679
-     ],
-     [
-      "2026-11-24T12:45:00Z",
-      8.9487
-     ],
-     [
-      "2026-11-24T13:00:00Z",
-      8.834
-     ],
-     [
-      "2026-11-24T13:15:00Z",
-      8.8478
-     ],
-     [
-      "2026-11-24T13:30:00Z",
-      8.872
-     ],
-     [
-      "2026-11-24T13:45:00Z",
-      8.8491
-     ],
-     [
-      "2026-11-24T14:00:00Z",
-      8.8913
-     ],
-     [
-      "2026-11-24T14:15:00Z",
-      8.9135
-     ],
-     [
-      "2026-11-24T14:30:00Z",
-      8.8832
-     ],
-     [
-      "2026-11-24T14:45:00Z",
-      8.9019
-     ],
-     [
-      "2026-11-24T15:00:00Z",
-      8.788
-     ],
-     [
-      "2026-11-24T15:15:00Z",
-      8.771
-     ],
-     [
-      "2026-11-24T15:30:00Z",
-      8.7568
-     ],
-     [
-      "2026-11-24T15:45:00Z",
-      8.7459
-     ],
-     [
-      "2026-11-24T16:00:00Z",
-      8.7403
-     ],
-     [
-      "2026-11-24T16:15:00Z",
-      8.7811
-     ],
-     [
-      "2026-11-24T16:30:00Z",
-      8.7966
-     ],
-     [
-      "2026-11-24T16:45:00Z",
-      8.7835
-     ],
-     [
-      "2026-11-24T17:00:00Z",
-      8.8576
-     ],
-     [
-      "2026-11-24T17:15:00Z",
-      8.8835
-     ],
-     [
-      "2026-11-24T17:30:00Z",
-      8.8922
-     ],
-     [
-      "2026-11-24T17:45:00Z",
-      8.8935
-     ],
-     [
-      "2026-11-24T18:00:00Z",
-      8.922
-     ],
-     [
-      "2026-11-24T18:15:00Z",
-      8.8882
-     ],
-     [
-      "2026-11-24T18:30:00Z",
-      8.8953
-     ],
-     [
-      "2026-11-24T18:45:00Z",
-      8.8769
-     ],
-     [
-      "2026-11-24T19:00:00Z",
-      8.8782
-     ],
-     [
-      "2026-11-24T19:15:00Z",
-      8.8696
-     ],
-     [
-      "2026-11-24T19:30:00Z",
-      8.839
-     ],
-     [
-      "2026-11-24T19:45:00Z",
-      8.8112
-     ],
-     [
-      "2026-11-24T20:00:00Z",
-      8.8359
-     ],
-     [
-      "2026-11-24T20:15:00Z",
-      8.7934
-     ],
-     [
-      "2026-11-24T20:30:00Z",
-      8.8118
-     ],
-     [
-      "2026-11-24T20:45:00Z",
-      8.8242
-     ],
-     [
-      "2026-11-24T21:00:00Z",
-      8.7929
-     ],
-     [
-      "2026-11-24T21:15:00Z",
-      8.8242
-     ],
-     [
-      "2026-11-24T21:30:00Z",
-      8.8057
-     ],
-     [
-      "2026-11-24T21:45:00Z",
-      8.8232
-     ],
-     [
-      "2026-11-24T22:00:00Z",
-      8.828
-     ],
-     [
-      "2026-11-24T22:15:00Z",
-      8.8576
-     ],
-     [
-      "2026-11-24T22:30:00Z",
-      8.8653
-     ],
-     [
-      "2026-11-24T22:45:00Z",
-      8.8536
-     ],
-     [
-      "2026-11-24T23:00:00Z",
-      8.8575
-     ],
-     [
-      "2026-11-24T23:15:00Z",
-      8.8639
-     ],
-     [
-      "2026-11-24T23:30:00Z",
-      8.8386
-     ],
-     [
-      "2026-11-24T23:45:00Z",
-      8.8406
-     ],
-     [
-      "2026-11-25T00:00:00Z",
-      8.7974
-     ],
-     [
-      "2026-11-25T00:15:00Z",
-      8.7957
-     ],
-     [
-      "2026-11-25T00:30:00Z",
-      8.8046
-     ],
-     [
-      "2026-11-25T00:45:00Z",
-      8.8028
-     ],
-     [
-      "2026-11-25T01:00:00Z",
-      8.7972
-     ],
-     [
-      "2026-11-25T01:15:00Z",
-      8.7771
-     ],
-     [
-      "2026-11-25T01:30:00Z",
-      8.7505
-     ],
-     [
-      "2026-11-25T01:45:00Z",
-      8.7388
-     ],
-     [
-      "2026-11-25T02:00:00Z",
-      8.7398
-     ],
-     [
-      "2026-11-25T02:15:00Z",
-      8.727
-     ],
-     [
-      "2026-11-25T02:30:00Z",
-      8.7286
-     ],
-     [
-      "2026-11-25T02:45:00Z",
-      8.7376
-     ],
-     [
-      "2026-11-25T03:00:00Z",
-      8.7811
-     ],
-     [
-      "2026-11-25T03:15:00Z",
-      8.781
-     ],
-     [
-      "2026-11-25T03:30:00Z",
-      8.7859
-     ],
-     [
-      "2026-11-25T03:45:00Z",
-      8.8028
-     ],
-     [
-      "2026-11-25T04:00:00Z",
-      8.7992
-     ],
-     [
-      "2026-11-25T04:15:00Z",
-      8.7982
-     ],
-     [
-      "2026-11-25T04:30:00Z",
-      8.7603
-     ],
-     [
-      "2026-11-25T04:45:00Z",
-      8.7694
-     ],
-     [
-      "2026-11-25T05:00:00Z",
-      8.7678
-     ],
-     [
-      "2026-11-25T05:15:00Z",
-      8.7569
-     ],
-     [
-      "2026-11-25T05:30:00Z",
-      8.7338
-     ],
-     [
-      "2026-11-25T05:45:00Z",
-      8.746
-     ],
-     [
-      "2026-11-25T06:00:00Z",
-      8.7542
-     ],
-     [
-      "2026-11-25T06:15:00Z",
-      8.7283
-     ],
-     [
-      "2026-11-25T06:30:00Z",
-      8.7619
-     ],
-     [
-      "2026-11-25T06:45:00Z",
-      8.7586
-     ],
-     [
-      "2026-11-25T07:00:00Z",
-      8.7653
-     ],
-     [
-      "2026-11-25T07:15:00Z",
-      8.7439
-     ],
-     [
-      "2026-11-25T07:30:00Z",
-      8.6924
-     ],
-     [
-      "2026-11-25T07:45:00Z",
-      8.7006
-     ],
-     [
-      "2026-11-25T08:00:00Z",
-      8.7172
-     ],
-     [
-      "2026-11-25T08:15:00Z",
-      8.7247
-     ],
-     [
-      "2026-11-25T08:30:00Z",
-      8.7466
-     ],
-     [
-      "2026-11-25T08:45:00Z",
-      8.7482
-     ],
-     [
-      "2026-11-25T09:00:00Z",
-      8.6651
-     ],
-     [
-      "2026-11-25T09:15:00Z",
-      8.638
-     ],
-     [
-      "2026-11-25T09:30:00Z",
-      8.6184
-     ],
-     [
-      "2026-11-25T09:45:00Z",
-      8.6538
-     ],
-     [
-      "2026-11-25T10:00:00Z",
-      8.6281
-     ],
-     [
-      "2026-11-25T10:15:00Z",
-      8.6347
-     ],
-     [
-      "2026-11-25T10:30:00Z",
-      8.6434
-     ],
-     [
-      "2026-11-25T10:45:00Z",
-      8.643
-     ],
-     [
-      "2026-11-25T11:00:00Z",
-      8.6459
-     ],
-     [
-      "2026-11-25T11:15:00Z",
-      8.6019
-     ],
-     [
-      "2026-11-25T11:30:00Z",
-      8.6081
-     ],
-     [
-      "2026-11-25T11:45:00Z",
-      8.5916
-     ],
-     [
-      "2026-11-25T12:00:00Z",
-      8.6108
-     ],
-     [
-      "2026-11-25T12:15:00Z",
-      8.6352
-     ],
-     [
-      "2026-11-25T12:30:00Z",
-      8.6096
-     ],
-     [
-      "2026-11-25T12:45:00Z",
-      8.6357
-     ],
-     [
-      "2026-11-25T13:00:00Z",
-      8.6157
-     ],
-     [
-      "2026-11-25T13:15:00Z",
-      8.6547
-     ],
-     [
-      "2026-11-25T13:30:00Z",
-      8.5612
-     ],
-     [
-      "2026-11-25T13:45:00Z",
-      8.5375
-     ],
-     [
-      "2026-11-25T14:00:00Z",
-      8.5792
-     ],
-     [
-      "2026-11-25T14:15:00Z",
-      8.5663
-     ],
-     [
-      "2026-11-25T14:30:00Z",
-      8.463
-     ],
-     [
-      "2026-11-25T14:45:00Z",
-      8.6423
-     ],
-     [
-      "2026-11-25T15:00:00Z",
-      8.6011
-     ],
-     [
-      "2026-11-25T15:15:00Z",
-      8.5788
-     ],
-     [
-      "2026-11-25T15:30:00Z",
-      8.6165
-     ],
-     [
-      "2026-11-25T15:45:00Z",
-      8.6364
-     ],
-     [
-      "2026-11-25T16:00:00Z",
-      8.6776
-     ],
-     [
-      "2026-11-25T16:15:00Z",
-      8.6544
-     ],
-     [
-      "2026-11-25T16:30:00Z",
-      8.602
-     ],
-     [
-      "2026-11-25T16:45:00Z",
-      8.6869
-     ],
-     [
-      "2026-11-25T17:00:00Z",
-      8.785
-     ],
-     [
-      "2026-11-25T17:15:00Z",
-      8.7845
-     ],
-     [
-      "2026-11-25T17:30:00Z",
-      8.8793
-     ],
-     [
-      "2026-11-25T17:45:00Z",
-      8.8635
-     ],
-     [
-      "2026-11-25T18:00:00Z",
-      8.8946
-     ],
-     [
-      "2026-11-25T18:15:00Z",
-      8.9193
-     ],
-     [
-      "2026-11-25T18:30:00Z",
-      8.9373
-     ],
-     [
-      "2026-11-25T18:45:00Z",
-      8.9686
-     ],
-     [
-      "2026-11-25T19:00:00Z",
-      9.0195
-     ],
-     [
-      "2026-11-25T19:15:00Z",
-      9.1075
-     ],
-     [
-      "2026-11-25T19:30:00Z",
-      9.0556
-     ],
-     [
-      "2026-11-25T19:45:00Z",
-      9.0715
-     ],
-     [
-      "2026-11-25T20:00:00Z",
-      9.0771
-     ],
-     [
-      "2026-11-25T20:15:00Z",
-      9.0973
-     ],
-     [
-      "2026-11-25T20:30:00Z",
-      9.0584
-     ],
-     [
-      "2026-11-25T20:45:00Z",
-      9.1052
-     ],
-     [
-      "2026-11-25T21:00:00Z",
-      9.0672
-     ],
-     [
-      "2026-11-25T21:15:00Z",
-      9.0675
-     ],
-     [
-      "2026-11-25T21:30:00Z",
-      9.0581
-     ],
-     [
-      "2026-11-25T21:45:00Z",
-      9.0536
-     ],
-     [
-      "2026-11-25T22:00:00Z",
-      9.0417
-     ],
-     [
-      "2026-11-25T22:15:00Z",
-      9.0395
-     ],
-     [
-      "2026-11-25T22:30:00Z",
-      9.0113
-     ],
-     [
-      "2026-11-25T22:45:00Z",
-      9.0247
-     ],
-     [
-      "2026-11-25T23:00:00Z",
-      9.033
-     ],
-     [
-      "2026-11-25T23:15:00Z",
-      9.0207
-     ],
-     [
-      "2026-11-25T23:30:00Z",
-      9.0414
-     ],
-     [
-      "2026-11-25T23:45:00Z",
-      9.0455
-     ],
-     [
-      "2026-11-26T00:00:00Z",
-      9.1385
-     ],
-     [
-      "2026-11-26T00:15:00Z",
-      9.1264
-     ],
-     [
-      "2026-11-26T00:30:00Z",
-      9.1066
-     ],
-     [
-      "2026-11-26T00:45:00Z",
-      9.0969
-     ],
-     [
-      "2026-11-26T01:00:00Z",
-      9.1253
-     ],
-     [
-      "2026-11-26T01:15:00Z",
-      9.1243
-     ],
-     [
-      "2026-11-26T01:30:00Z",
-      9.1573
-     ],
-     [
-      "2026-11-26T01:45:00Z",
-      9.1833
-     ],
-     [
-      "2026-11-26T02:00:00Z",
-      9.2091
-     ],
-     [
-      "2026-11-26T02:15:00Z",
-      9.1893
-     ],
-     [
-      "2026-11-26T02:30:00Z",
-      9.1764
-     ],
-     [
-      "2026-11-26T02:45:00Z",
-      9.1402
-     ],
-     [
-      "2026-11-26T03:00:00Z",
-      9.1741
-     ],
-     [
-      "2026-11-26T03:15:00Z",
-      9.173
-     ],
-     [
-      "2026-11-26T03:30:00Z",
-      9.194
-     ],
-     [
-      "2026-11-26T03:45:00Z",
-      9.186
-     ],
-     [
-      "2026-11-26T04:00:00Z",
-      9.2115
-     ],
-     [
-      "2026-11-26T04:15:00Z",
-      9.232
-     ],
-     [
-      "2026-11-26T04:30:00Z",
-      9.2327
-     ],
-     [
-      "2026-11-26T04:45:00Z",
-      9.2227
-     ],
-     [
-      "2026-11-26T05:00:00Z",
-      9.2187
-     ],
-     [
-      "2026-11-26T05:15:00Z",
-      9.2379
-     ],
-     [
-      "2026-11-26T05:30:00Z",
-      9.2239
-     ],
-     [
-      "2026-11-26T05:45:00Z",
-      9.2128
-     ],
-     [
-      "2026-11-26T06:00:00Z",
-      9.1776
-     ],
-     [
-      "2026-11-26T06:15:00Z",
-      9.1767
-     ],
-     [
-      "2026-11-26T06:30:00Z",
-      9.1667
-     ],
-     [
-      "2026-11-26T06:45:00Z",
-      9.1464
-     ],
-     [
-      "2026-11-26T07:00:00Z",
-      9.1519
-     ],
-     [
-      "2026-11-26T07:15:00Z",
-      9.1433
-     ],
-     [
-      "2026-11-26T07:30:00Z",
-      9.1707
-     ],
-     [
-      "2026-11-26T07:45:00Z",
-      9.1477
-     ],
-     [
-      "2026-11-26T08:00:00Z",
-      9.1538
-     ],
-     [
-      "2026-11-26T08:15:00Z",
-      9.1565
-     ],
-     [
-      "2026-11-26T08:30:00Z",
-      9.1992
-     ],
-     [
-      "2026-11-26T08:45:00Z",
-      9.2444
-     ],
-     [
-      "2026-11-26T09:00:00Z",
-      9.2384
-     ]
-    ],
-    "entry": 9.281630162,
-    "stop": 9.0,
-    "target": 9.84,
-    "openedAt": "2026-11-26T05:09:12Z",
-    "qty": 1283.162880115
+    "qty": 0.177167798
    },
    "SPWO": {
     "bars": [
@@ -6167,21 +4962,21 @@
   "backtest": null
  },
  "lab": {
-  "updatedAt": "2026-11-26T09:08:17Z",
+  "updatedAt": "2026-11-26T11:25:09Z",
   "startedAt": "2026-11-25T21:57:13Z",
   "endsAt": "2026-12-02T21:57:13Z",
   "done": false,
   "counts": {
-   "videos": 95,
+   "videos": 121,
    "papers": 3,
    "written": 57,
-   "lessons": 514,
-   "rulesTested": 100,
-   "sourcesRead": 155,
-   "waiting": 119,
-   "rules": 100,
+   "lessons": 564,
+   "rulesTested": 104,
+   "sourcesRead": 181,
+   "waiting": 0,
+   "rules": 104,
    "passed": 4,
-   "promising": 49
+   "promising": 53
   },
   "consensus": [
    {
@@ -6196,7 +4991,7 @@
    },
    {
     "theme": "discipline_follow_rules",
-    "people": 23,
+    "people": 25,
     "examples": [
      "Jesse Livermore: Treat trading as a serious business with strict rules rather than a gamble.",
      "Jesse Livermore: Strictly follow predefined trading rules and maintain meticulous execution without letting emotions interfere.",
@@ -6206,7 +5001,7 @@
    },
    {
     "theme": "psychology_emotions",
-    "people": 22,
+    "people": 24,
     "examples": [
      "Jesse Livermore: Remove ego, hope, and outside opinions from trading to avoid disastrous psychological mistakes.",
      "Ross Haber: Avoid letting emotions rule your trading decisions; sell down to your sleeping point if you feel anxious.",
@@ -6216,12 +5011,22 @@
    },
    {
     "theme": "market_regime_filter",
-    "people": 22,
+    "people": 24,
     "examples": [
      "William O'Neil: Raise cash and refrain from buying new stocks when the general market enters a confirmed downtrend or distribution phase.",
      "William J. O'Neil: Determine whether you are in a bull or bear market and trade in alignment with the market direction, because swimming against the current is a losing game.",
      "Ross Haber: Market direction is crucial; most stocks follow the general market trend, so avoid trading when the market is not in an uptrend.",
      "William O'Neil: Determine market direction using indices and increase exposure in bull markets while holding cash in bear markets."
+    ]
+   },
+   {
+    "theme": "buy_strength_new_highs",
+    "people": 22,
+    "examples": [
+     "Jesse Livermore: Buy stocks that are making new highs or breaking out of sound consolidation bases rather than buying falling knives.",
+     "Jesse Livermore: Buy stocks making new highs with high volume and clear conviction rather than buying cheap stocks or trying to catch bottoms.",
+     "William O'Neil: Buy stocks as they emerge from proper consolidation bases and make new price highs rather than buying cheap or falling stocks.",
+     "William J. O'Neil: Buy stocks at new highs rather than buying cheap dips, as market winners break out to new price levels."
     ]
    },
    {
@@ -6235,18 +5040,8 @@
     ]
    },
    {
-    "theme": "buy_strength_new_highs",
-    "people": 20,
-    "examples": [
-     "Jesse Livermore: Buy stocks that are making new highs or breaking out of sound consolidation bases rather than buying falling knives.",
-     "Jesse Livermore: Buy stocks making new highs with high volume and clear conviction rather than buying cheap stocks or trying to catch bottoms.",
-     "William O'Neil: Buy stocks as they emerge from proper consolidation bases and make new price highs rather than buying cheap or falling stocks.",
-     "William J. O'Neil: Buy stocks at new highs rather than buying cheap dips, as market winners break out to new price levels."
-    ]
-   },
-   {
     "theme": "position_sizing",
-    "people": 18,
+    "people": 19,
     "examples": [
      "Jesse Livermore: Scale into positions incrementally, only adding to a trade when the initial stake has proven profitable.",
      "Jesse Livermore: Scale into positions gradually, adding to winning trades rather than doubling down on losers.",
@@ -6256,12 +5051,32 @@
    },
    {
     "theme": "trade_with_the_trend",
-    "people": 17,
+    "people": 18,
     "examples": [
      "Jesse Livermore: A trader must align their trades with the general market direction, only taking long positions when the overall trend is definitively upward.",
      "Jesse Livermore: Trade in the direction of the prevailing market trend because the market is never wrong.",
      "Jesse Livermore: Never fight the primary trend; the market is never wrong, and you must trade in the direction of prevailing momentum.",
      "Mark Minervini: VCP works best when applied as a continuation pattern within an established existing uptrend."
+    ]
+   },
+   {
+    "theme": "concentration_vs_diversification",
+    "people": 18,
+    "examples": [
+     "William J. O'Neil: Concentrate on the best market leaders rather than diversifying widely across weaker stocks.",
+     "Dan Zanger: Concentrate capital into a few high-momentum leaders rather than diversifying across many mediocre stocks.",
+     "Paul Tudor Jones: Diversification across uncorrelated assets prevents total portfolio ruin when one sector or asset class experiences a major pullback.",
+     "Stanley Druckenmiller: Hold a concentrated portfolio of a few high-conviction positions rather than diversifying across dozens of mediocre ideas."
+    ]
+   },
+   {
+    "theme": "risk_per_trade",
+    "people": 17,
+    "examples": [
+     "Mark Minervini: Stop-losses are placed at the low of the final contraction to maintain a favorable risk-to-reward ratio.",
+     "Kristjan Kullamagi: Place stop loss at the day's low, ensuring it is not wider than the average daily range (ADR) or true range (ATR) percentage.",
+     "Paul Tudor Jones: Limit total portfolio risk on any single trade to a small fraction, typically 1 percent or less, to survive inevitable errors.",
+     "Paul Tudor Jones: Seek a minimum risk-to-reward ratio of 5-to-1 so that you can be wrong often without losing capital."
     ]
    },
    {
@@ -6272,26 +5087,6 @@
      "Jesse Livermore: Wait for pivotal points and market confirmation before entering a trade rather than acting on premature opinions.",
      "Jesse Livermore: Wait patiently for pivotal market confirmation points rather than forcing trades or acting out of boredom.",
      "Kristjan Kullamagi (Qullamaggie): Spend hours scanning charts every night and wait patiently for the highest-probability setups rather than forcing trades in choppy markets."
-    ]
-   },
-   {
-    "theme": "risk_per_trade",
-    "people": 16,
-    "examples": [
-     "Mark Minervini: Stop-losses are placed at the low of the final contraction to maintain a favorable risk-to-reward ratio.",
-     "Kristjan Kullamagi: Place stop loss at the day's low, ensuring it is not wider than the average daily range (ADR) or true range (ATR) percentage.",
-     "Paul Tudor Jones: Limit total portfolio risk on any single trade to a small fraction, typically 1 percent or less, to survive inevitable errors.",
-     "Paul Tudor Jones: Seek a minimum risk-to-reward ratio of 5-to-1 so that you can be wrong often without losing capital."
-    ]
-   },
-   {
-    "theme": "concentration_vs_diversification",
-    "people": 15,
-    "examples": [
-     "William J. O'Neil: Concentrate on the best market leaders rather than diversifying widely across weaker stocks.",
-     "Dan Zanger: Concentrate capital into a few high-momentum leaders rather than diversifying across many mediocre stocks.",
-     "Paul Tudor Jones: Diversification across uncorrelated assets prevents total portfolio ruin when one sector or asset class experiences a major pullback.",
-     "Stanley Druckenmiller: Hold a concentrated portfolio of a few high-conviction positions rather than diversifying across dozens of mediocre ideas."
     ]
    },
    {
@@ -6315,23 +5110,23 @@
     ]
    },
    {
-    "theme": "long_term_holding",
-    "people": 10,
-    "examples": [
-     "Warren Buffett: Hold wonderful businesses indefinitely, ignoring short-term market fluctuations and macro noise.",
-     "Peter Lynch: Let winners run for years as long as the fundamental thesis of the company remains intact.",
-     "Meb Faber: Diversification across uncorrelated asset classes is the only free lunch in investing.",
-     "Benjamin Cowen: Investors should accumulate assets when the risk metric is low and hold through the volatility of the cycle rather than trying to time local tops and bottoms."
-    ]
-   },
-   {
     "theme": "backtest_and_edge",
-    "people": 9,
+    "people": 11,
     "examples": [
      "Van Tharp: A trading system with positive expectancy combines a clear setup with sufficient opportunities to generate net profit.",
      "Larry Williams: Rigorous quantitative testing of historical data is mandatory to validate any pattern before deploying real capital.",
      "Jim Simons: Renaissance builds predictive mathematical models by analyzing massive historical datasets to find statistically significant pricing anomalies, prioritizing small probability edges executed at high frequency.",
      "Cliff Asness: Academic backtests over long histories and multiple geographies confirm that buying past winners and cheap assets yields a persistent premium."
+    ]
+   },
+   {
+    "theme": "long_term_holding",
+    "people": 11,
+    "examples": [
+     "Warren Buffett: Hold wonderful businesses indefinitely, ignoring short-term market fluctuations and macro noise.",
+     "Peter Lynch: Let winners run for years as long as the fundamental thesis of the company remains intact.",
+     "Meb Faber: Diversification across uncorrelated asset classes is the only free lunch in investing.",
+     "Benjamin Cowen: Investors should accumulate assets when the risk metric is low and hold through the volatility of the cycle rather than trying to time local tops and bottoms."
     ]
    }
   ],
@@ -6595,6 +5390,109 @@
      "spyReturnPct": -6.09,
      "spyMaxDrawdownPct": -11.35,
      "mar": -0.24,
+     "spyMar": -0.54
+    }
+   },
+   {
+    "name": "Dual Momentum",
+    "universe": "stocks",
+    "max_positions": 1,
+    "regime": "none",
+    "entry": [
+     {
+      "f": "return_above",
+      "days": 252,
+      "pct": 0.0
+     }
+    ],
+    "rank": "momentum_252",
+    "exit": {
+     "max_days": 20
+    },
+    "from": "Gary Antonacci",
+    "lesson": "Combine relative momentum across asset classes with absolute momentum to capture strong trends and avoid severe market drawdowns.",
+    "id": "e3a053119d",
+    "status": "promising",
+    "why": "made money, but could still be luck or not better than holding SPY for the risk",
+    "score": 6.81,
+    "robustness": 1.0,
+    "full": {
+     "returnPct": 314.04,
+     "maxDrawdownPct": -50.54,
+     "trades": 30,
+     "winRatePct": 56.7,
+     "avgWinPct": 23.94,
+     "avgLossPct": -10.88,
+     "profitFactor": 2.88,
+     "tStat": 2.03,
+     "spyReturnPct": 48.5,
+     "spyMaxDrawdownPct": -18.74,
+     "mar": 6.21,
+     "spyMar": 2.59
+    },
+    "last60": {
+     "returnPct": -40.7,
+     "maxDrawdownPct": -48.9,
+     "trades": 2,
+     "winRatePct": 50.0,
+     "avgWinPct": 11.7,
+     "avgLossPct": -23.81,
+     "profitFactor": 0.49,
+     "tStat": 0.0,
+     "spyReturnPct": -6.09,
+     "spyMaxDrawdownPct": -11.35,
+     "mar": -0.83,
+     "spyMar": -0.54
+    }
+   },
+   {
+    "name": "10 Month Moving Average",
+    "universe": "stocks",
+    "max_positions": 1,
+    "regime": "none",
+    "entry": [
+     {
+      "f": "close_above_sma",
+      "n": 200
+     }
+    ],
+    "rank": "momentum_252",
+    "exit": {
+     "exit_below_sma": 200
+    },
+    "from": "Meb Faber",
+    "lesson": "Using a 10-month simple moving average filter helps avoid major market crashes like the 2000 .com bust and 2008 financial crisis.",
+    "id": "13843be293",
+    "status": "promising",
+    "why": "too few trades to trust yet",
+    "score": 6.74,
+    "robustness": 0.75,
+    "full": {
+     "returnPct": 295.89,
+     "maxDrawdownPct": -46.68,
+     "trades": 3,
+     "winRatePct": 100.0,
+     "avgWinPct": 73.48,
+     "avgLossPct": null,
+     "profitFactor": 99.0,
+     "tStat": 1.73,
+     "spyReturnPct": 48.5,
+     "spyMaxDrawdownPct": -18.74,
+     "mar": 6.34,
+     "spyMar": 2.59
+    },
+    "last60": {
+     "returnPct": -32.33,
+     "maxDrawdownPct": -41.0,
+     "trades": 1,
+     "winRatePct": 0.0,
+     "avgWinPct": null,
+     "avgLossPct": -25.98,
+     "profitFactor": 0.0,
+     "tStat": 0.0,
+     "spyReturnPct": -6.09,
+     "spyMaxDrawdownPct": -11.35,
+     "mar": -0.79,
      "spyMar": -0.54
     }
    },
@@ -7055,144 +5953,30 @@
      "mar": -0.79,
      "spyMar": -0.54
     }
-   },
-   {
-    "name": "VCP Base Breakout",
-    "universe": "stocks",
-    "max_positions": 10,
-    "regime": "spy_above_200",
-    "entry": [
-     {
-      "f": "volatility_contraction",
-      "short": 10,
-      "long": 50,
-      "ratio": 0.6
-     },
-     {
-      "f": "breakout",
-      "days": 20
-     },
-     {
-      "f": "volume_surge",
-      "days": 50,
-      "mult": 1.5
-     }
-    ],
-    "rank": "momentum_126",
-    "exit": {
-     "stop_pct": 7.0,
-     "exit_below_sma": 50
-    },
-    "from": "Mark Minervini",
-    "lesson": "Look for a tightening base where each pullback makes a higher low and volume dries up.",
-    "id": "bee8e68bc6",
-    "status": "promising",
-    "why": "made money, but could still be luck or not better than holding SPY for the risk",
-    "score": 4.13,
-    "robustness": 0.67,
-    "full": {
-     "returnPct": 26.38,
-     "maxDrawdownPct": -7.47,
-     "trades": 56,
-     "winRatePct": 50.0,
-     "avgWinPct": 14.15,
-     "avgLossPct": -5.1,
-     "profitFactor": 2.78,
-     "tStat": 1.82,
-     "spyReturnPct": 48.5,
-     "spyMaxDrawdownPct": -18.74,
-     "mar": 3.53,
-     "spyMar": 2.59
-    },
-    "last60": {
-     "returnPct": -1.12,
-     "maxDrawdownPct": -1.51,
-     "trades": 3,
-     "winRatePct": 33.3,
-     "avgWinPct": 4.16,
-     "avgLossPct": -7.57,
-     "profitFactor": 0.27,
-     "tStat": -0.93,
-     "spyReturnPct": -6.09,
-     "spyMaxDrawdownPct": -11.35,
-     "mar": -0.75,
-     "spyMar": -0.54
-    }
-   },
-   {
-    "name": "Breakout Buy",
-    "universe": "both",
-    "max_positions": 5,
-    "regime": "none",
-    "entry": [
-     {
-      "f": "breakout",
-      "days": 20
-     }
-    ],
-    "rank": "momentum_126",
-    "exit": {
-     "exit_below_sma": 50
-    },
-    "from": "Ed Seykota",
-    "lesson": "Buy breakouts above market highs to capture momentum and reduce risk.",
-    "id": "8e3ff0ea83",
-    "status": "promising",
-    "why": "made money, but could still be luck or not better than holding SPY for the risk",
-    "score": 3.94,
-    "robustness": 0.75,
-    "full": {
-     "returnPct": 107.38,
-     "maxDrawdownPct": -32.18,
-     "trades": 105,
-     "winRatePct": 41.9,
-     "avgWinPct": 21.82,
-     "avgLossPct": -7.43,
-     "profitFactor": 2.12,
-     "tStat": 1.69,
-     "spyReturnPct": 48.5,
-     "spyMaxDrawdownPct": -18.74,
-     "mar": 3.34,
-     "spyMar": 2.59
-    },
-    "last60": {
-     "returnPct": -12.5,
-     "maxDrawdownPct": -16.78,
-     "trades": 11,
-     "winRatePct": 27.3,
-     "avgWinPct": 3.87,
-     "avgLossPct": -9.17,
-     "profitFactor": 0.16,
-     "tStat": -2.25,
-     "spyReturnPct": -6.09,
-     "spyMaxDrawdownPct": -11.35,
-     "mar": -0.75,
-     "spyMar": -0.54
-    }
    }
   ],
   "postMortem": {
-   "builtAt": "2026-11-26T00:20:46Z",
-   "trades": 28,
+   "builtAt": "2026-11-26T11:25:09Z",
+   "trades": 31,
    "alternatives": {
-    "actual": -7393,
-    "stop_8pct": -5172,
-    "atr_2x": -5962,
-    "hold_10_days": -2716,
+    "actual": -7114,
+    "stop_8pct": -5423,
+    "atr_2x": -6253,
+    "hold_10_days": -3127,
     "trend_filter_only": 0
    },
    "filters": {
     "both: no": {
-     "trades": 28,
-     "pnl": -7393
+     "trades": 31,
+     "pnl": -7114
     },
     "market (SPY) above its 50-day: no": {
-     "trades": 28,
-     "pnl": -7393
+     "trades": 31,
+     "pnl": -7114
     },
     "stock above its 50-day: no": {
-     "trades": 24,
-     "pnl": -6818
+     "trades": 27,
+     "pnl": -6539
     },
     "stock above its 50-day: yes": {
      "trades": 4,
@@ -7200,6 +5984,42 @@
     }
    },
    "rows": [
+    {
+     "symbol": "BTC/USD",
+     "date": "2026-11-26",
+     "pnl": 50,
+     "stop8": 13,
+     "atr2": 13,
+     "hold10": 13,
+     "stockUptrend": false,
+     "marketUptrend": null,
+     "moveBeforeBuyPct": -0.5,
+     "exit": "bad news: Bitcoin and broader crypto markets continue to face downward pressure from persi"
+    },
+    {
+     "symbol": "LINK/USD",
+     "date": "2026-11-26",
+     "pnl": -39,
+     "stop8": -80,
+     "atr2": -80,
+     "hold10": -80,
+     "stockUptrend": false,
+     "marketUptrend": null,
+     "moveBeforeBuyPct": 0.45,
+     "exit": "bad news: Bitcoin and crypto markets face continued downward pressure from massive spot ET"
+    },
+    {
+     "symbol": "UMMA",
+     "date": "2026-11-25",
+     "pnl": 267,
+     "stop8": -184,
+     "atr2": -184,
+     "hold10": -184,
+     "stockUptrend": false,
+     "marketUptrend": false,
+     "moveBeforeBuyPct": null,
+     "exit": "target +6% hit"
+    },
     {
      "symbol": "PLTR",
      "date": "2026-11-24",
@@ -7398,7 +6218,7 @@
      "pnl": -358,
      "stop8": -961,
      "atr2": -1106,
-     "hold10": -177,
+     "hold10": -265,
      "stockUptrend": false,
      "marketUptrend": false,
      "moveBeforeBuyPct": -1.43,
@@ -7518,7 +6338,7 @@
      "pnl": -150,
      "stop8": -401,
      "atr2": -652,
-     "hold10": -307,
+     "hold10": -340,
      "stockUptrend": false,
      "marketUptrend": false,
      "moveBeforeBuyPct": 0.22,
@@ -7529,8 +6349,8 @@
      "date": "2026-11-16",
      "pnl": 107,
      "stop8": -400,
-     "atr2": -17,
-     "hold10": -17,
+     "atr2": -58,
+     "hold10": -58,
      "stockUptrend": false,
      "marketUptrend": false,
      "moveBeforeBuyPct": -0.02,
@@ -7540,26 +6360,26 @@
    "note": "Daily prices after the buy day; the buy day's own path is unknown, so this is an estimate."
   },
   "log": [
-   "11-26 09:08 Read video: Soros Reflexivity Explained, 3 lessons",
-   "11-26 09:07 Read video: Why Dalio's Risk-Parity Trade No Longer Looks Attractive, 1 lessons",
-   "11-26 09:07 Read video: Jim Simons' Trading Strategy Explained, 3 lessons",
-   "11-26 09:07 Read video: 💰Advanced Investing: Risk Parity (Hedge Fund Investment Secrets Part 1, 0 lessons",
-   "11-26 09:07 Read video: How Jim Simons Turned $100 Into $400 Million | Renaissance Technologie, 3 lessons",
-   "11-26 09:06 Read video: 7 Peter Lynch Rules I’m Using in 2025 (One Up on Wall Street Review), 4 lessons",
-   "11-26 09:06 Read video: Warren Buffett & Charlie Munger On Jim Simons & Quant Investing, 3 lessons",
-   "11-26 09:06 Read video: Peter Lynch’s Secret Rules For Finding Winners 🔍 One Up On Wall Street, 8 lessons",
-   "11-26 09:05 Read video: Renaissance Technologies - Trading Strategies Revealed | A Documentary, 4 lessons",
-   "11-26 09:05 Read video: Peter Lynch: One Up On Wall Street Summary (10 Investing Rules), 9 lessons",
-   "11-26 09:04 Read video: W. Buffett: \"Forget Everything Except THIS\" - #investing #stockmarket, 2 lessons",
-   "11-26 09:04 Read video: ONE UP ON WALL STREET SUMMARY (BY PETER LYNCH), 5 lessons",
-   "11-26 09:03 Read video: Warren Buffett's Will: Why He Put 90% in the S&P 500, 1 lessons",
-   "11-26 09:03 Read video: The Charting Blueprint Behind Oliver Kell’s 941% Win, 4 lessons",
-   "11-26 09:03 Read video: Value Investing Explained: Warren Buffett's 5 Principles, 5 lessons",
-   "11-26 09:03 Read video: OLIVER KELL 941% Breakout Strategy FULL TUTORIAL | US Investing Champi, 5 lessons",
-   "11-26 09:01 Read video: WARREN BUFFETT STOCK MARKET STRATEGIES FOR BEGINNERS, 5 lessons",
-   "11-26 09:01 Read video: How to use Kell's Price Cycle to Improve Your Swing Trading, 3 lessons",
-   "11-26 09:00 Read video: Ken Griffin on the Anchored VWAP, 1 lessons",
-   "11-26 09:00 Read video: BEST Trading Strategy 2024? - US Champion Trader Oliver Kell discloses, 7 lessons"
+   "11-26 11:25 Replayed the bot's 31 trades",
+   "11-26 11:25 Lab running with 6 Gemini key(s) until 2026-12-02T21:57 UTC",
+   "11-26 09:35 Video watching has no quota on the lab keys today: videos wait for tomorrow, reading the rest",
+   "11-26 09:35 Read video: 🔴  Drinks With Raoul Pal LIVE November 25, 2026 @5p ET, 0 lessons",
+   "11-26 09:34 Read video: Bitcoin Market Cycles, 3 lessons",
+   "11-26 09:32 Read video: Roaul Pal :\"A TSUNAMI Is Coming For Bitcoin & Ethereum” | 2026 Crypto , 0 lessons",
+   "11-26 09:31 Read video: Bitcoin and the Realized Price, 3 lessons",
+   "11-26 09:30 Read video: 017 - Gary Antonacci - Absolute & Relative Momentum: Trading ETFs & Me, 0 lessons",
+   "11-26 09:29 Read video: Bitcoin: Using On-Chain Metrics To Identify Market Cycle Bottoms, 2 lessons",
+   "11-26 09:29 Read video: Show Us Your Portfolio: Gary Antonacci | How the Creator of Dual Momen, 0 lessons",
+   "11-26 09:27 Read video: Buy and Hold or Follow the Trends? Meb Faber's Approach, 6 lessons",
+   "11-26 09:27 Read video: Gary Antonacci Reveals TOP Dual Momentum Investing Strategies, 0 lessons",
+   "11-26 09:25 Read video: Trend Following, Market Volatility, and Portfolio Strategy: Meb Faber’, 0 lessons",
+   "11-26 09:24 Read video: DUAL MOMENTUM | Momentum Trading Strategy by Gary Antonacci, 3 lessons",
+   "11-26 09:23 Read video: Trend Following Masterclass NOBODY Shares With You (Mike Melissinos Re, 0 lessons",
+   "11-26 09:22 Read video: Cliff Asness on Factor Investing and the History of Financial Economic, 0 lessons",
+   "11-26 09:20 Read video: Best Trading Indicator To Build A Strategy Upon (100 Year Back Test!), 4 lessons",
+   "11-26 09:19 Read video: How Cliff Asness Would Invest $100,000, 2 lessons",
+   "11-26 09:19 Read video: How to Improve Your Odds - Howard Marks on Market Cycles, 0 lessons",
+   "11-26 09:18 Read video: AQR's Cliff Asness on 60/40 Strategy, Market Risks, 0 lessons"
   ],
   "reportUrl": null
  },
@@ -7568,14 +6388,14 @@
    "id": "ahq-BTCUSD-20261126091425",
    "symbol": "BTC/USD",
    "asset": "crypto",
-   "status": "pending",
+   "status": "open",
    "entryOrderId": "e152ff30-ceb5-4f5c-b395-833a23bea907",
-   "qty": null,
+   "qty": 0.177167798,
    "cost": 11027.69,
    "estPrice": 60806.37,
-   "entryPrice": 60806.37,
-   "stop": 58982.18,
-   "target": 64454.75,
+   "entryPrice": 60901.053775603,
+   "stop": 59074.02,
+   "target": 64555.12,
    "openedAt": "2026-11-26T09:14:25Z",
    "trail": 3.0,
    "news": {
@@ -7606,7 +6426,11 @@
     ],
     "tradingAgents": "not used (ultra mode)",
     "taSummary": ""
-   }
+   },
+   "stopOrderId": "8549feb1-17bc-42ac-954d-24f7b1f206f5",
+   "lastPrice": 60580.66,
+   "unrealizedPct": -0.53,
+   "high": 60901.053775603
   },
   {
    "id": "ahq-BTCUSD-20261126072741",
@@ -7684,7 +6508,7 @@
    "id": "ahq-LINKUSD-20261126050912",
    "symbol": "LINK/USD",
    "asset": "crypto",
-   "status": "open",
+   "status": "closed",
    "entryOrderId": "587a57ad-cb31-4dd3-9edc-b298b31db17e",
    "qty": 1283.162880115,
    "cost": 12109.43,
@@ -7726,7 +6550,13 @@
    "stopOrderId": "420c2f46-7f38-4ec3-aa34-eff81a432eb5",
    "lastPrice": 9.25099,
    "unrealizedPct": -0.33,
-   "high": 9.281630162
+   "high": 9.281630162,
+   "closing": "bad news: Bitcoin and crypto markets face continued downward pressure from massive spot ET",
+   "closedAt": "2026-11-26T10:00:16Z",
+   "exitPrice": 9.25099,
+   "exitReason": "bad news: Bitcoin and crypto markets face continued downward pressure from massive spot ET",
+   "pnl": -39.32,
+   "pnlPct": -0.33
   },
   {
    "id": "ahq-dip-UMMA-20261125145200",
@@ -9958,26 +8788,6 @@
  ],
  "equity": [
   {
-   "t": "2026-11-17T16:39:52Z",
-   "equity": 99770.06,
-   "spy": 730.535
-  },
-  {
-   "t": "2026-11-17T17:12:13Z",
-   "equity": 99798.78,
-   "spy": 731.99
-  },
-  {
-   "t": "2026-11-17T17:43:41Z",
-   "equity": 99787.97,
-   "spy": 732.085
-  },
-  {
-   "t": "2026-11-17T18:14:50Z",
-   "equity": 99782.25,
-   "spy": 731.185
-  },
-  {
    "t": "2026-11-17T18:46:51Z",
    "equity": 99795.16,
    "spy": 731.15
@@ -11956,6 +10766,26 @@
    "t": "2026-11-26T08:59:04Z",
    "equity": 92254.31,
    "spy": 716.67
+  },
+  {
+   "t": "2026-11-26T09:29:39Z",
+   "equity": 92153.24,
+   "spy": 716.67
+  },
+  {
+   "t": "2026-11-26T10:00:16Z",
+   "equity": 92174.43,
+   "spy": 716.67
+  },
+  {
+   "t": "2026-11-26T10:30:44Z",
+   "equity": 92062.18,
+   "spy": 716.67
+  },
+  {
+   "t": "2026-11-26T11:02:28Z",
+   "equity": 92002.46,
+   "spy": 716.67
   }
  ],
  "watch": [],
@@ -11967,72 +10797,139 @@
  },
  "events": [
   {
-   "summary": "Escalating Middle East conflict, including tanker attacks and refinery explosions, continues to threaten global oil supply.",
+   "summary": "Renewed incidents including oil tankers hitting mines near Oman and an explosion at a Bangkok oil facility escalate regional supply disruption risks, pushing oil higher.",
    "category": "oil_supply",
    "firstSeen": "2026-11-26T06:33:36Z",
    "publishers": [
+    "24 News HD",
+    "AOL.co.uk",
     "Al Jazeera",
+    "Anadolu Ajansı",
+    "Arab News",
+    "Arbiterz",
     "AzerNews",
+    "BBC",
     "Bhaskar English",
+    "Breakingthenews.net",
+    "Business Upturn",
     "CNA",
+    "CP24",
+    "Chiang Rai Times",
+    "Computing UK",
+    "Corsicana Daily Sun",
+    "Daily Express",
     "Daily Mirror - Sri Lanka",
     "Daily Times",
+    "Deccan Herald",
     "Digg",
+    "Dimsum Daily",
+    "Durango Herald",
     "Eastern Riverina Chronicle",
+    "Firstpost",
+    "Gujarat Samachar",
+    "Gulf Daily News (Bahrain)",
     "Gulf Today",
+    "Herald Bulletin",
+    "India TV News",
     "Investing.com",
     "JournalArta",
     "KLSE Screener",
+    "KMVU FOX 26 Medford",
+    "KVNU News Talk",
     "Kyiv Post",
+    "LEADERSHIP Newspapers",
     "Laodong.vn",
     "Latest news from Azerbaijan",
+    "Lloyd's List",
+    "London South East",
     "MM News",
     "MTV Lebanon",
+    "Minute Mirror",
+    "Modern Ghana",
+    "Moneycontrol.com",
     "NDTV",
     "NDTV Profit",
+    "News Karnataka",
     "News18",
     "NewsBytes",
     "Newsquawk",
     "Operativ Məlumat Mərkəzi",
+    "Oskaloosa Herald",
     "Profit by Pakistan Today",
+    "RFI",
+    "RTL Today",
     "Reuters",
+    "Roya News English",
+    "SRN News",
     "Splash247",
+    "TRT World",
+    "TV5 Kapatid Network",
+    "Temple Daily Telegram",
+    "Texomashomepage.com",
     "Thaiger",
+    "The Annapurna Express",
+    "The Avenue Mail",
+    "The Batesville Daily Guard",
+    "The Border Mail",
     "The Canberra Times",
     "The Daily Jagran",
+    "The Diplomatic Insight",
+    "The Economic Times",
     "The Financial Express",
+    "The Globe and Mail",
+    "The Hindu",
+    "The Killeen Daily Herald",
+    "The Kyiv Independent",
+    "The Mirror",
+    "The National",
+    "The Peninsula Qatar",
     "The Singleton Argus",
+    "The Star",
     "The Straits Times",
+    "The Sun",
+    "The Sun Malaysia",
     "The Times of India",
     "The Washington Post",
+    "The Week",
     "Times Now",
+    "Trend News Agency",
+    "UA.NEWS",
     "WE News English",
+    "WRAL",
     "WSJ",
     "Wisevoter",
+    "X",
+    "Yahoo",
+    "Yeni Safak English",
     "blue News",
     "grafa.com",
+    "https://www.engine.online/",
+    "la Repubblica",
     "marketscreener.com",
+    "newstodaynet.com",
+    "seMissourian",
     "www.jordannews.jo",
     "Мілітарний",
     "Прямий",
     "Цензор.НЕТ",
-    "صوت الإمارات"
+    "صوت الإمارات",
+    "巴士的報"
    ],
    "assets": {
     "XOM": {
      "direction": "up",
-     "confidence": 0.82,
-     "why": "Oil supply risks from refinery attacks and Middle East tensions push crude and oil majors higher."
+     "confidence": 0.85,
+     "why": "Attacks on regional oil infrastructure and tankers threaten supply and boost oil prices."
     },
     "CVX": {
      "direction": "up",
-     "confidence": 0.8,
-     "why": "Middle East oil infrastructure threats elevate energy prices."
+     "confidence": 0.85,
+     "why": "Geopolitical conflict and tanker explosions provide strong tailwinds for oil majors."
     },
     "OXY": {
      "direction": "up",
      "confidence": 0.75,
-     "why": "Higher crude prices driven by regional supply attacks."
+     "why": "Refinery explosion and supply disruption fears push oil prices higher."
     },
     "SLB": {
      "direction": "up",
@@ -12041,8 +10938,8 @@
     },
     "COP": {
      "direction": "up",
-     "confidence": 0.7,
-     "why": "Supply disruption risks in oil-producing regions typically drive up oil and gas stock prices."
+     "confidence": 0.8,
+     "why": "Higher geopolitical risk premiums in energy markets support upstream producers."
     }
    },
    "sources": [
@@ -12089,26 +10986,71 @@
    ]
   },
   {
-   "summary": "Global trade tensions escalate as China warns of retaliation against new US tariff proposals.",
+   "summary": "New US tariff actions including a surprise 10% jet tariff and friction with international trading partners continue to weigh on market sentiment and affected sectors.",
    "category": "tariffs",
    "firstSeen": "2026-11-26T07:58:04Z",
    "publishers": [
+    "1News",
     "ABP Live English",
     "ANTARA News",
+    "AP",
+    "Asia Times",
+    "AsiaOne.com",
     "Bangladesh Post",
+    "Big News Network.com",
     "BreakingNews.ie",
+    "Business Today",
     "BusinessToday Malaysia",
+    "Businesskorea",
+    "Báo VietNamNet",
     "CNBC",
+    "CTV News",
     "Central News South Africa",
+    "Corsicana Daily Sun",
     "Dainik Jagran MP CG",
+    "ETV Bharat",
+    "Firstpost",
     "FlipItMoney",
+    "France 24",
+    "Free Press Journal",
+    "Heavy Lift & Project Forwarding International",
+    "Hiru News",
+    "India Weekly",
+    "India's News.Net",
+    "Inshorts",
+    "Kiripost",
+    "Laodong.vn",
+    "LinkedIn",
+    "Livemint",
+    "Moneycontrol.com",
     "NDTV",
     "Novinite.com",
+    "Outlook India",
+    "Oz Arab Media",
+    "Public TV English",
     "Reuters",
+    "Simple Flying",
     "Telegraph India",
+    "The Arkansas Democrat-Gazette",
+    "The Avenue Mail",
+    "The Business Times",
+    "The Copenhagen Post",
     "The Economic Times",
+    "The Independent",
     "The Standard (HK)",
-    "Traders Union"
+    "The Statesman",
+    "The Sun Malaysia",
+    "Traders Union",
+    "Udayavani",
+    "X",
+    "cwibc.co.id",
+    "fiscal.ai",
+    "morning-times.com",
+    "prameyanews.com",
+    "tennews.in",
+    "İlke Haber Ajansı",
+    "شبكة تواصل الإخبارية",
+    "재경일보"
    ],
    "assets": {
     "AMAT": {
@@ -12129,12 +11071,22 @@
     "NVDA": {
      "direction": "down",
      "confidence": 0.6,
-     "why": "Trade war escalation and export friction weigh on semiconductor sector sentiment."
+     "why": "Trade wars and tariff friction create broad headwinds for tech giants."
     },
     "AMD": {
      "direction": "down",
      "confidence": 0.6,
-     "why": "Trade war escalation and export friction weigh on semiconductor sector sentiment."
+     "why": "Broad trade war escalation and tariff threats negatively impact global tech supply chains."
+    },
+    "AMZN": {
+     "direction": "down",
+     "confidence": 0.65,
+     "why": "Escalating trade friction threatens global consumer goods supply chains."
+    },
+    "FDX": {
+     "direction": "down",
+     "confidence": 0.7,
+     "why": "Broader trade friction and newly proposed tariffs on aviation and transport weigh on global industrials and logistics."
     }
    },
    "sources": [
@@ -12181,17 +11133,40 @@
    ]
   },
   {
-   "summary": "Bitcoin and broader crypto markets continue to face downward pressure from persistent institutional ETF outflows.",
+   "summary": "Cryptocurrency markets face ongoing headwinds as record US spot Bitcoin ETF outflows persist alongside institutional caution.",
    "category": "crypto_negative",
    "firstSeen": "2026-11-26T09:04:09Z",
    "publishers": [
-    "Score Nigeria"
+    "BigGo Finance",
+    "Coin Edition",
+    "CoinJournal",
+    "Crypto Economy",
+    "Dosya Haber",
+    "FinanceFeeds",
+    "Holder.io",
+    "Investing.com",
+    "KuCoin",
+    "Reuters",
+    "Score Nigeria",
+    "The Crypto Times",
+    "TradingView",
+    "Wisevoter"
    ],
    "assets": {
     "BTC/USD": {
      "direction": "down",
+     "confidence": 0.8,
+     "why": "Heavy spot net sales, record ETF outflows, and custodial security concerns add severe downward pressure on Bitcoin."
+    },
+    "LINK/USD": {
+     "direction": "down",
      "confidence": 0.6,
-     "why": "Continued institutional ETF outflows are negatively impacting sentiment and price."
+     "why": "Broader crypto market weakness driven by ETF outflows outweighs specific asset news."
+    },
+    "ETH/USD": {
+     "direction": "down",
+     "confidence": 0.65,
+     "why": "Negative sentiment and institutional outflows impact broader crypto assets."
     }
    },
    "sources": [
@@ -12202,6 +11177,212 @@
      "title": "Crypto Market News: Nvidia Stock Falls, Bitcoin ETF Outflows",
      "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQM2FIYS1DOWF6bm1FS3RMYUtrYjVpaTdDRHlJVGUyUm1WQ3E0SUNXanVMUElBR1lhSXFHY3lWblRFYm5rbWY5b3R1RmFrczNJNjN3aFc2UGFOT0lYSmZiMDh6c00tTDZVSGVJVVJfVjZwcElDbEdMYV91eDI2Q0l1RW5CaHpNbWxLcnZ1VF9qeU5WdHpObGJZWlRILTJEbWhVa01jVGRDbFc3Zw?oc=5",
      "time": "2026-11-26T09:04:09Z"
+    },
+    {
+     "id": "5460429fc0e07bf8",
+     "publisher": "Investing.com",
+     "kind": "news",
+     "title": "Bitcoin’s Worst ETF Month Has a Suspect, and It Probably Isn’t Retail",
+     "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQNklBbXU1ZmF0REtfaDN5czhEb2JEYlVJdjVvN3JNenV3NnZHZC1hRjdTZF9JSFJRV0thaE40cHJpTUllQTJyQ2hxVVVxTzNlODJYNXNjV0pyOXdpcUZ6WEdkUW9HWkE4YVozeXRWUTdoTE9lZFFlSHROc1lQVG1HREZHQnB0SHR3WjJ2d0NDWnBrOUpUNDJDU1o2Z21meUgzaUl5aHBPYnRsejBPZlBFZg?oc=5",
+     "time": "2026-11-26T09:13:59Z"
+    },
+    {
+     "id": "e885ab0cbf457b3f",
+     "publisher": "FinanceFeeds",
+     "kind": "news",
+     "title": "US Crypto ETFs Lose $521.5 Million as Bitcoin and Ethereum Withdrawals Accelerate",
+     "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNWUY2dnBXeEZfTF9xemkxM05lVlMwSXhDYjhsT1NGRXFhSTV6NmxoTUotWTFydHR3dGZyYXlVQVBiTl9JZzcyazhTWlhOdjJqbDh1cy02Z185YWFwemNySlNwX095UlFKMmtxT0Q5QUhEaVE3Q3NFdTNoY1BVcEJvR19zYkppV3pJaGh6TFc1YzBhc18xSnRfY0tNV2s5WU54WWVVb0ZyNTRQUQ?oc=5",
+     "time": "2026-11-26T09:38:01Z"
+    },
+    {
+     "id": "a6cbe350ab4ef247",
+     "publisher": "Coin Edition",
+     "kind": "news",
+     "title": "Bitcoin Recovery at Risk as Strong GDP Fuels Fed Rate Hike Bets",
+     "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxNbGlUakg1OFpwelQzakhCZ1hQb0VUc05fdlVEdGhGemZDZDNRU01OSk8ydW91TWVDLVFuMFNtbHlJR3dCRzB0V29wNHFEUU9qNFlqSlNpaVpseFdVSlBNeG40YjBqQUNYWkFHeEZ5cXpERDRtLXZ6MndmZ1lUZTNFWDNPa0dVTTBnWUhjX0huNzY5QQ?oc=5",
+     "time": "2026-11-26T09:37:04Z"
+    },
+    {
+     "id": "98f08d595466feea",
+     "publisher": "TradingView",
+     "kind": "news",
+     "title": "Bitcoin ETF November outflows top $5B, Morgan Stanley bucks trend",
+     "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQSGlONVIxbWhTamF5VG1ydzJqVEhNaHF5R3lVelgzLVlfQUZKeTFlOTRuUHcwMVpzaU5MU0hWelZQZUNzaWxsazFXZ2ZCR3AwbjM4a1NBLU13TWJtTGJsQ0lZcVdvYXVWR21ycXMxdVltQkhDWGhfQkxPQ3pGbW9OdVJwNi1uWGVvVTRhcjU1eHpXZ0lMYU9sR0RZR0txcnBVNnRrOTlDbEJSVEQweUNtbFdjd2lmMFh5VkYyOVRHSi1VTWlVcmc?oc=5",
+     "time": "2026-11-26T09:42:34Z"
+    }
+   ]
+  },
+  {
+   "summary": "Switzerland's first spot Bitcoin ETF debuts, providing a positive boost for crypto adoption sentiment.",
+   "category": "crypto_positive",
+   "firstSeen": "2026-11-26T07:47:42Z",
+   "publishers": [
+    "Crypto News",
+    "Cryptonews.net",
+    "DailyCoin",
+    "FinanceFeeds",
+    "FintechNews CH",
+    "Funds Europe",
+    "Invezz",
+    "Pluang",
+    "The Cryptonomist",
+    "Wisevoter",
+    "finews.com"
+   ],
+   "assets": {
+    "BTC/USD": {
+     "direction": "up",
+     "confidence": 0.8,
+     "why": "Bitcoin breaking past $60,000 alongside new spot ETF launches boosts bullish momentum"
+    }
+   },
+   "sources": [
+    {
+     "id": "fff88de333fbe072",
+     "publisher": "Funds Europe",
+     "kind": "news",
+     "title": "Switzerland’s First Spot Bitcoin ETF Begins Trading",
+     "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxOSlhHTW9ka1RlR1JBaE5NWXR3NnFEbFBBdXZrbjBvZm1CUkNROERTaGc5Z3ZVSzZLZGFRYldTWW1JTFV4ZDlQdUZwSlNRR3J1SW9QdG0tR3hHQnhoYjBwT0hfN2lIckVSNGhiTDdXVUFCYzhsZGQxNVhkRVMtU2hHVEpR?oc=5",
+     "time": "2026-11-26T07:47:42Z"
+    },
+    {
+     "id": "052b2fe791a416e1",
+     "publisher": "finews.com",
+     "kind": "news",
+     "title": "First Swiss spot bitcoin ETF launched on SIX",
+     "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxObnVzZEY2TVE0bTVMTjFsOE5uMlRIbXNaTlZJd1JvUl9JYk5GWi1ISTVMNTk1ak1HbkQ2Sk45bVR3MDQ4WlZzcUh3d0NuQXFVTlJNY3NwVURZVFlvdTl2Q2lRMnFIekJOQlYwLWpfU1FGejZtTUR4dHZESHh5ZUVYRkwwamljTlpHQmZ4V0tzQ1gwdjJFcWc?oc=5",
+     "time": "2026-11-26T08:56:34Z"
+    },
+    {
+     "id": "ace344972fd85543",
+     "publisher": "FinanceFeeds",
+     "kind": "news",
+     "title": "Fidelity Files for Spot Chainlink ETF, Plans Nasdaq Listing Under FLNK Ticker",
+     "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOT3pFWTJteXh1dlFEZ0E5UXk0eDhGNC13V0lhaUdiM1lSZEx4NXl2YnAyTzhUNFpTTEpUMUJyMEtuS3VTSVhCQ0xveFJWVTdseWhqbE5oTTRBWnV3SDlteXFRVG45MDVNTjZNampmVlh1TDl1QXFnSFNseVdYRUhoZnNzMXJTSVAyRmFKTmZsbm80SE5sRFVFdEpDYlhXTURpTHhhNg?oc=5",
+     "time": "2026-11-26T09:54:00Z"
+    },
+    {
+     "id": "ac6529f73da09566",
+     "publisher": "Wisevoter",
+     "kind": "news",
+     "title": "Wells Fargo Becomes Largest Institutional Bitcoin ETF Holder",
+     "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxQZXJMWkQyODZJdzVVSEozLTdUX1ljMmhfX0hBZ2wzdlEwVzg4Y2pTRlRSVk5PQ1VGelMxYm55RUw0NnhTNTF2Qk9yTDdKQmhSYzZoWldwVGZTLW9fRkdwY0Iwckc5WVNXVmxjZ2FVX0MzbzJ5YkxMdUg4TGUzT21tU1cyRG5RSjR1aXpQSWl4UlhNaWJVa05oMk5R?oc=5",
+     "time": "2026-11-26T10:13:03Z"
+    },
+    {
+     "id": "c820657ebe80fe69",
+     "publisher": "Cryptonews.net",
+     "kind": "news",
+     "title": "Switzerland’s first spot Bitcoin ETF ticks up 0.6% in opening hour",
+     "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE5aeFZvZkRiMG1PM2tYbEtoR29uSkdhazJPRktiVUtFTHlHVGd2TFJaSlZQSl9pUG8wMkI3M2RJRDhwQWx6T2tJbTRTVUtPS2l4bER5ZUQzZlo?oc=5",
+     "time": "2026-11-26T10:06:05Z"
+    }
+   ]
+  },
+  {
+   "summary": "Nvidia instructed manufacturing partners to suspend advanced AI server shipments to four Southeast Asian countries due to tighter US export controls.",
+   "category": "company_bad_news",
+   "firstSeen": "2026-11-26T10:59:10Z",
+   "publishers": [
+    "Yahoo Finance"
+   ],
+   "assets": {
+    "NVDA": {
+     "direction": "down",
+     "confidence": 0.75,
+     "why": "New export curbs halting shipments to key Southeast Asian markets weigh on near-term hardware revenue."
+    }
+   },
+   "sources": [
+    {
+     "id": "2a9abaa8fa4bf075",
+     "publisher": "Yahoo Finance",
+     "kind": "news",
+     "title": "Nvidia Reportedly Halts AI Server Shipments to Four Southeast Asian Countries Amid Tighter US Export Controls",
+     "url": "https://investorshub.advfn.com/market-news/article/40759/nvidia-reportedly-halts-ai-server-shipments-to-four-southeast-asian-countries-amid-tighter-us-export-controls?.tsrc=rss",
+     "time": "2026-11-26T10:59:10Z"
+    }
+   ]
+  },
+  {
+   "summary": "US inflation rising to 3.8% reinforces hawkish Federal Reserve rate hike expectations.",
+   "category": "central_bank_hawkish",
+   "firstSeen": "2026-11-26T05:48:06Z",
+   "publishers": [
+    "BigGo Finance",
+    "Dosya Haber",
+    "FXStreet",
+    "Investing.com India",
+    "Livemint",
+    "www.tokenpost.com"
+   ],
+   "assets": {
+    "NEM": {
+     "direction": "down",
+     "confidence": 0.7,
+     "why": "Higher interest rates increase the opportunity cost of holding non-yielding gold."
+    },
+    "AEM": {
+     "direction": "down",
+     "confidence": 0.7,
+     "why": "Higher interest rates increase the opportunity cost of holding non-yielding gold."
+    },
+    "BTC/USD": {
+     "direction": "down",
+     "confidence": 0.7,
+     "why": "High interest rate expectations pressure risk assets and crypto."
+    },
+    "ETH/USD": {
+     "direction": "down",
+     "confidence": 0.65,
+     "why": "Hawkish central bank rate expectations weigh on crypto risk assets"
+    },
+    "NVDA": {
+     "direction": "down",
+     "confidence": 0.6,
+     "why": "Hawkish rate environment is negative for high-growth tech."
+    }
+   },
+   "sources": [
+    {
+     "id": "99d0ac1b7e75f599",
+     "publisher": "FXStreet",
+     "kind": "news",
+     "title": "Gold struggles to recover as inflation keeps rate hike risks alive",
+     "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNR3N0eFdXOVZRWXA0elVteDZkWFFJejdpUjBHdkIxMlMzaXNNRi11aXY2QzJzeHpuU0dseUtoZW5LN29MRDRsOXRMa3VVUUljNXcxU1hIMW9SUjM5UGxOeEFHYmFqT1dSTWowcjhNWHJHNWJUZW5HYXRoWTFfWTY0eVk2cWM3SGcxWExfSnh2anI1d0tDUzlCUnNaZDVfQzM5Zk5FNThuTDFjZ0dWd3BFRUtNNA?oc=5",
+     "time": "2026-11-26T05:53:40Z"
+    },
+    {
+     "id": "ce7298fa3171275d",
+     "publisher": "Investing.com India",
+     "kind": "news",
+     "title": "Gold eases as U.S. inflation data reinforces Fed rate-hike bets By Investing.com",
+     "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQd1hrUWItN0NONXdmWGNSUXFac1A3U0dnbmo5OExRTk9BdUpzLUdCOXRUMEJBbG5QTmM4OHpNM25ubTFIQ0x3a0hBdHdjNEdVSk1tel9vYlo0SDhYd2c2WGUySlU5QzJUbklwcUJMMGVxN3RuZ0xpQlhyZ1hWblJfQlBoczZDVDRBeURwNS1EMDZyQ05saVkxaW1idUs4Z0h1Mi03dVB0V2pGX3h3aU5oVEVTQkdJdw?oc=5",
+     "time": "2026-11-26T05:48:06Z"
+    },
+    {
+     "id": "3a16c18ed0fd863c",
+     "publisher": "Livemint",
+     "kind": "news",
+     "title": "Gold prices slipped 2% below support level before bouncing back — Here's why the precious metal remains under pressure",
+     "url": "https://news.google.com/rss/articles/CBMi_gFBVV95cUxOUWZPYkFBNTYxTUZELXRVZ3RvbkdFQVFWY0xrTTByVnFFb2JCM0xlMWVLSm0zYlhOd0h2OFZtdHVweTFTUmpSTFZMN2xGWEg5Qzk2eDhvbjc4Y0NrdUktdDgzSDZzVGcyMVFDRGU4MVJQcEw5LXowNE1YN1FwUG1vdmhwdUtUVVNoRWtRbnF5OHoteDl1bkFCYjQxNVdvU0tXRVdIaDZrWGRpNHhJbGkyUHAzVHhqS1VxdjNaa0RqcTNZbktQS1Z6dFlDUlM3a2xVR0xHOVBxZ0VrQnhkVGdQSUhiMk9LRGUzOWdrYWhVRDZxejdZalR3TzBzMG5pQdIBgwJBVV95cUxPLUVXeHR0aVdMUXQtTkJmTGdzRklWVXgxNUExSi04bXFCdHdobGNtUXM3S1VESEVyV3NsTWpaaWNNajRhWldBanBfVGNGNFd0Y29OaFV6clpKNzVUMDFRRFVWVTBxWjNGemZWdEd3aWtKWTNJRXhpdFZRajZ6bG9Za1ZjUmFoTGxEMmNVbWJzaXo5X05WUGJtcHgzZy05cGV6U1pkOXhMNDNiYTRiWWY4dWhEcmMzdUktM1JyRGJ6SnFZUDRLUDgzQk9uNzZBRnFwTU5oZ0oyMEo3c1RfTmRlT01xNkZha3dkM19tQ09GQWZBZXpBV0RoVER3R2EyYmdQWk9z?oc=5",
+     "time": "2026-11-26T05:49:43Z"
+    },
+    {
+     "id": "72345433fc02299e",
+     "publisher": "BigGo Finance",
+     "kind": "news",
+     "title": "Fed Chair Warsh Keeps Tight Grip on Rates Over AI-Driven Price Pressure, Clashing With Calls for a Slower Pace",
+     "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE55TVY4WXg2eVFTNmQyc2ZOYlFRU3BUWWpXNWwtY3BrSFYxcG44MmpETlloOXh2Yjhveno4YXBYMWNtUUZvYi1vNTNPbkNSN2M2Y21vdUZDOVNWeVkwMEhZLWF5WDZDR1hjZTZpQTdIMzMycUlzbWc?oc=5",
+     "time": "2026-11-26T07:36:00Z"
+    },
+    {
+     "id": "b360d25b4b7ed5bb",
+     "publisher": "www.tokenpost.com",
+     "kind": "news",
+     "title": "Fed Hike Odds Hold Near 94% After October Core PCE Tops Forecast",
+     "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBQSHNkdlJvMWpNaENoNkphVTRUb09lZnBjWmptaDlBNF8tQUhlenlLZ2xmMUEwOU1jOFduRjU2WTJRenA4Q3BlbFZqdS1IRXZlVm5fRHJTUE44Zw?oc=5",
+     "time": "2026-11-26T09:05:09Z"
     }
    ]
   },
@@ -12244,40 +11425,6 @@
    ]
   },
   {
-   "summary": "Switzerland's first spot bitcoin ETF launches on SIX, bolstering institutional crypto adoption sentiment.",
-   "category": "crypto_positive",
-   "firstSeen": "2026-11-26T07:47:42Z",
-   "publishers": [
-    "Funds Europe",
-    "finews.com"
-   ],
-   "assets": {
-    "BTC/USD": {
-     "direction": "up",
-     "confidence": 0.75,
-     "why": "Launch of Switzerland's first spot bitcoin ETF expands institutional access and adoption sentiment."
-    }
-   },
-   "sources": [
-    {
-     "id": "fff88de333fbe072",
-     "publisher": "Funds Europe",
-     "kind": "news",
-     "title": "Switzerland’s First Spot Bitcoin ETF Begins Trading",
-     "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxOSlhHTW9ka1RlR1JBaE5NWXR3NnFEbFBBdXZrbjBvZm1CUkNROERTaGc5Z3ZVSzZLZGFRYldTWW1JTFV4ZDlQdUZwSlNRR3J1SW9QdG0tR3hHQnhoYjBwT0hfN2lIckVSNGhiTDdXVUFCYzhsZGQxNVhkRVMtU2hHVEpR?oc=5",
-     "time": "2026-11-26T07:47:42Z"
-    },
-    {
-     "id": "052b2fe791a416e1",
-     "publisher": "finews.com",
-     "kind": "news",
-     "title": "First Swiss spot bitcoin ETF launched on SIX",
-     "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxObnVzZEY2TVE0bTVMTjFsOE5uMlRIbXNaTlZJd1JvUl9JYk5GWi1ISTVMNTk1ak1HbkQ2Sk45bVR3MDQ4WlZzcUh3d0NuQXFVTlJNY3NwVURZVFlvdTl2Q2lRMnFIekJOQlYwLWpfU1FGejZtTUR4dHZESHh5ZUVYRkwwamljTlpHQmZ4V0tzQ1gwdjJFcWc?oc=5",
-     "time": "2026-11-26T08:56:34Z"
-    }
-   ]
-  },
-  {
    "summary": "HP Inc. shares surged following a strong Q4 earnings beat and positive outlook on device refresh cycles.",
    "category": "earnings_beat",
    "firstSeen": "2026-11-26T02:15:00Z",
@@ -12302,73 +11449,6 @@
      "title": "HPQ: HP Jumps More Than 11% as Earnings Beat Cuts Through Tech Selloff",
      "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxNbVpJcnBGeGxPMTdLYWNFZ0JNSk16dlFXbXZjLWZiWmgyUnk0QTZoZDNrR2hDTzBnZVREU3lma3RDVFh2N04yY1pINzRzbnJTWkNCNXNkWEVJRmFLT2dpVWluRUtDWFoxQzZQUTlQNF9FTmViQjlTM0tydEpyMC1GQnVXZUVYSC1kSjNmaWN6LWVhYTZNTEpJNjVPN3MxMThiMUxiSzBrNUtpMjRVUHlrS3FOX3I0bTFlWTM0aTVkRk90dWl1cDI1QmR3?oc=5",
      "time": "2026-11-26T07:42:00Z"
-    }
-   ]
-  },
-  {
-   "summary": "Fed Chair Warsh keeps a tight grip on rates due to AI-driven price pressures, reinforcing hawkish expectations.",
-   "category": "central_bank_hawkish",
-   "firstSeen": "2026-11-26T05:48:06Z",
-   "publishers": [
-    "BigGo Finance",
-    "FXStreet",
-    "Investing.com India",
-    "Livemint"
-   ],
-   "assets": {
-    "NEM": {
-     "direction": "down",
-     "confidence": 0.7,
-     "why": "Higher interest rates increase the opportunity cost of holding non-yielding gold."
-    },
-    "AEM": {
-     "direction": "down",
-     "confidence": 0.7,
-     "why": "Higher interest rates increase the opportunity cost of holding non-yielding gold."
-    },
-    "BTC/USD": {
-     "direction": "down",
-     "confidence": 0.65,
-     "why": "Hawkish central bank rate expectations weigh on crypto risk assets"
-    },
-    "ETH/USD": {
-     "direction": "down",
-     "confidence": 0.65,
-     "why": "Hawkish central bank rate expectations weigh on crypto risk assets"
-    }
-   },
-   "sources": [
-    {
-     "id": "99d0ac1b7e75f599",
-     "publisher": "FXStreet",
-     "kind": "news",
-     "title": "Gold struggles to recover as inflation keeps rate hike risks alive",
-     "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNR3N0eFdXOVZRWXA0elVteDZkWFFJejdpUjBHdkIxMlMzaXNNRi11aXY2QzJzeHpuU0dseUtoZW5LN29MRDRsOXRMa3VVUUljNXcxU1hIMW9SUjM5UGxOeEFHYmFqT1dSTWowcjhNWHJHNWJUZW5HYXRoWTFfWTY0eVk2cWM3SGcxWExfSnh2anI1d0tDUzlCUnNaZDVfQzM5Zk5FNThuTDFjZ0dWd3BFRUtNNA?oc=5",
-     "time": "2026-11-26T05:53:40Z"
-    },
-    {
-     "id": "ce7298fa3171275d",
-     "publisher": "Investing.com India",
-     "kind": "news",
-     "title": "Gold eases as U.S. inflation data reinforces Fed rate-hike bets By Investing.com",
-     "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQd1hrUWItN0NONXdmWGNSUXFac1A3U0dnbmo5OExRTk9BdUpzLUdCOXRUMEJBbG5QTmM4OHpNM25ubTFIQ0x3a0hBdHdjNEdVSk1tel9vYlo0SDhYd2c2WGUySlU5QzJUbklwcUJMMGVxN3RuZ0xpQlhyZ1hWblJfQlBoczZDVDRBeURwNS1EMDZyQ05saVkxaW1idUs4Z0h1Mi03dVB0V2pGX3h3aU5oVEVTQkdJdw?oc=5",
-     "time": "2026-11-26T05:48:06Z"
-    },
-    {
-     "id": "3a16c18ed0fd863c",
-     "publisher": "Livemint",
-     "kind": "news",
-     "title": "Gold prices slipped 2% below support level before bouncing back — Here's why the precious metal remains under pressure",
-     "url": "https://news.google.com/rss/articles/CBMi_gFBVV95cUxOUWZPYkFBNTYxTUZELXRVZ3RvbkdFQVFWY0xrTTByVnFFb2JCM0xlMWVLSm0zYlhOd0h2OFZtdHVweTFTUmpSTFZMN2xGWEg5Qzk2eDhvbjc4Y0NrdUktdDgzSDZzVGcyMVFDRGU4MVJQcEw5LXowNE1YN1FwUG1vdmhwdUtUVVNoRWtRbnF5OHoteDl1bkFCYjQxNVdvU0tXRVdIaDZrWGRpNHhJbGkyUHAzVHhqS1VxdjNaa0RqcTNZbktQS1Z6dFlDUlM3a2xVR0xHOVBxZ0VrQnhkVGdQSUhiMk9LRGUzOWdrYWhVRDZxejdZalR3TzBzMG5pQdIBgwJBVV95cUxPLUVXeHR0aVdMUXQtTkJmTGdzRklWVXgxNUExSi04bXFCdHdobGNtUXM3S1VESEVyV3NsTWpaaWNNajRhWldBanBfVGNGNFd0Y29OaFV6clpKNzVUMDFRRFVWVTBxWjNGemZWdEd3aWtKWTNJRXhpdFZRajZ6bG9Za1ZjUmFoTGxEMmNVbWJzaXo5X05WUGJtcHgzZy05cGV6U1pkOXhMNDNiYTRiWWY4dWhEcmMzdUktM1JyRGJ6SnFZUDRLUDgzQk9uNzZBRnFwTU5oZ0oyMEo3c1RfTmRlT01xNkZha3dkM19tQ09GQWZBZXpBV0RoVER3R2EyYmdQWk9z?oc=5",
-     "time": "2026-11-26T05:49:43Z"
-    },
-    {
-     "id": "72345433fc02299e",
-     "publisher": "BigGo Finance",
-     "kind": "news",
-     "title": "Fed Chair Warsh Keeps Tight Grip on Rates Over AI-Driven Price Pressure, Clashing With Calls for a Slower Pace",
-     "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE55TVY4WXg2eVFTNmQyc2ZOYlFRU3BUWWpXNWwtY3BrSFYxcG44MmpETlloOXh2Yjhveno4YXBYMWNtUUZvYi1vNTNPbkNSN2M2Y21vdUZDOVNWeVkwMEhZLWF5WDZDR1hjZTZpQTdIMzMycUlzbWc?oc=5",
-     "time": "2026-11-26T07:36:00Z"
     }
    ]
   },
@@ -12705,168 +11785,6 @@
      "title": "Raytheon Wins US Navy Missile Deal",
      "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE42MmpKeW9xWkJQTjZJZmVfUE0zREsyWko4MkdEbE0xOGd3b2g0WmNlZWs3OTJFZnFLa0tXc2tWeGhObGpVT19zYTVUOWZTZktSbDdaTzJXYTRvbV9VeWF0bWtQWDNPclVYdWR4bm82dUg?oc=5",
      "time": "2026-11-26T07:26:13Z"
-    }
-   ]
-  },
-  {
-   "summary": "Renewed Houthi attacks on Saudi oil infrastructure and reports of tanker strikes in the Gulf continue to escalate regional supply disruption risks.",
-   "category": "oil_supply",
-   "firstSeen": "2026-11-26T00:45:00Z",
-   "publishers": [
-    "24 Канал",
-    "ANI News",
-    "Ada Derana",
-    "Arabian Gulf Business Insight | AGBI",
-    "Arise News",
-    "Asianet Newsable",
-    "Azərtac",
-    "Baku.ws",
-    "Bangladesh Post",
-    "Big News Network.com",
-    "Bloomberg",
-    "Business Post Nigeria",
-    "CNBC TV18",
-    "Chosunbiz",
-    "Crude Oil Prices Today | OilPrice.com",
-    "Crypto Briefing",
-    "DNE Africa",
-    "DZRH",
-    "Daily Times",
-    "Dunya News",
-    "Energy Connects",
-    "FXEmpire",
-    "FXStreet",
-    "Firstpost",
-    "Free Malaysia Today",
-    "Free Press Journal",
-    "GuruFocus",
-    "Hiru News",
-    "Investify",
-    "Investing.com",
-    "Investing.com India",
-    "JFeed",
-    "KuCoin",
-    "Latest news from Azerbaijan",
-    "Lokmarg",
-    "Mettis Global",
-    "Moneycontrol.com",
-    "MyJoyOnline",
-    "NDTV Profit",
-    "Nation Thailand",
-    "NewsBytes",
-    "Polymerupdate",
-    "Qatar news agency",
-    "Reuters",
-    "SSBCrack",
-    "Smartkarma",
-    "The Economic Times",
-    "The Edge Malaysia",
-    "The Express Tribune",
-    "The Sunday Guardian",
-    "The Times of India",
-    "The Tribune",
-    "The Vibes",
-    "Times Now",
-    "WE News English",
-    "Wisevoter",
-    "X",
-    "dotdotnews",
-    "marketscreener.com",
-    "thechronicle.com.ph",
-    "theopenpress.in",
-    "www.tokenpost.com",
-    "تسنیم",
-    "شبكة تواصل الإخبارية",
-    "شفق نيوز",
-    "صوت الإمارات"
-   ],
-   "assets": {
-    "XOM": {
-     "direction": "up",
-     "confidence": 0.85,
-     "why": "Middle East oil supply disruption concerns drive oil and gas stocks higher."
-    },
-    "CVX": {
-     "direction": "up",
-     "confidence": 0.85,
-     "why": "Oil supply disruption from Houthi attacks supports major oil producers."
-    },
-    "OXY": {
-     "direction": "up",
-     "confidence": 0.8,
-     "why": "Supply disruption in the Strait of Hormuz increases oil prices."
-    },
-    "DVN": {
-     "direction": "up",
-     "confidence": 0.7,
-     "why": "Rising oil prices benefit upstream producers."
-    },
-    "NEM": {
-     "direction": "up",
-     "confidence": 0.75,
-     "why": "Geopolitical escalation boosts safe-haven gold miners."
-    },
-    "COP": {
-     "direction": "up",
-     "confidence": 0.8,
-     "why": "Rising oil prices directly benefit oil exploration and production companies."
-    },
-    "APA": {
-     "direction": "up",
-     "confidence": 0.6,
-     "why": "Escalating conflict with Iran increases risk to regional oil supply."
-    },
-    "EOG": {
-     "direction": "up",
-     "confidence": 0.6,
-     "why": "Escalating conflict with Iran increases risk to regional oil supply."
-    },
-    "FANG": {
-     "direction": "up",
-     "confidence": 0.6,
-     "why": "Escalating conflict with Iran increases risk to regional oil supply."
-    }
-   },
-   "sources": [
-    {
-     "id": "bc5362518232f38f",
-     "publisher": "Dunya News",
-     "kind": "news",
-     "title": "Two oil tankers strike sea mines in strait of Hormuz",
-     "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxPZGN1X3R0Y0d5Y1ltQUdUa29mOUZtTFFkVUFIN01lTGM0NWlwSXNicjE4c2M5cXhJVmhhQWZLWndMQjJQeHNwRzNicGVVd2lUUmZHN1RERGJMNy1Fc3FFejhHR3pBYTBVdGdVQjl4d3hTX2lxQ3dtMTJ5RDZ3alVrekd0UkVWOTFxNEEyc1NWeTByUnPSAVZBVV95cUxNZ25UNzdEYXV1eXNKdXlNSVJZd09hMVdUZFl2Y2ZkVDVMUmNrbXpCSHFJVTJEZkotSmNaOWc1TkJvV2d6V05kOFJNYUZIQWFtSC1LemFCdw?oc=5",
-     "time": "2026-11-26T00:56:15Z"
-    },
-    {
-     "id": "fbe7c0d70ccfe954",
-     "publisher": "DZRH",
-     "kind": "news",
-     "title": "Yemen's Houthis claim attack on Saudi Arabia's largest refinery",
-     "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxOMkk1V1I4OTV4TGY3WXFHcFJ3Nm9keUozNWtzVTVOSlJidEtpcEFVbjZLZ2V3ZUk0UmcwOFowWGFMX25kMkZpTHV6aHdIampCeW5paFRPSDB4ZHFsUjBNWFhpNHdPaTkzSW8xd2ZrUk1EekNWTUdUMlFVSk9WelFsUXVPdHRLZW1tRkI1VkF3bWNMaEwy?oc=5",
-     "time": "2026-11-26T00:53:13Z"
-    },
-    {
-     "id": "d64a28151254abfe",
-     "publisher": "NDTV Profit",
-     "kind": "news",
-     "title": "Oil Prices Today: Brent Hovers Near $94 As Saudi Oil Attacks Raise Fresh Supply Fears",
-     "url": "https://news.google.com/rss/articles/CBMinwJBVV95cUxPaGZORTlwNEF0RVpyMWJEV01wXzBsNWRnMHVnc1ViNWo3RktWWWZQWVBDVGQ1N1B1cU0za3MzT1R3SnNOT3piWnNUb2U0NXpVMkkzd0FzLXdPMXpXcm9SMENKLVJodkpLczF6eWZEem9RRlFOQWtNT1JqOU9nVms1Y1QzcjYtckRYeUllUk12WU5hSmJsTW5Ub19kelk5LXJhRndMZ0hWVGpqcEpzcmp5MEVUZ0JiRnpyTjByZkNzNUtrRTN3ZFliWmRZQmlVSlgyRTkweDhFUGFTUHB3UXVJemZRNXBwUTRLQm5ZZTR1d05uS1ZFbERfWWZ4aGVyQUtBNnh4amdpSWRmVTE4LWtVRFY4OENudERaRUduYVFTQdIBpwJBVV95cUxPZVBuQjRXNms0SzR5NElMaG5MXzdCQkxPS3RWTndEMWtqc05rVXV5SnVoQl93U1RYSW9sUDI5SEQyWlEtWkg2TFYtVlpwWWFJV0QwU1p2OFhNWUx6cHNuZThNRGNtd2l4alpQTXhPd1NxNUNnTVIxalZuNmpKNGN0bnRDcmp4WXlYQzdDaS0tNF9KbFlMajJtR1lTeFpIZzMxdUhhNmFXbkNKdDJUVVAwaHZ3ZkRXODZOc1I5N0dRdG9jT2Fhc3dOTnU1UHl0b1BsWTZreC1iM1lURGxvM3JsMGtRczNUSTlfWFFlYjh4eHhKQVFuUkRrb01aNkVkSFRQekx0dlM0enB5NW54dFdEdEthQ0VQUk9jUW5aZWJmbHY5X29UUDRJ?oc=5",
-     "time": "2026-11-26T00:52:11Z"
-    },
-    {
-     "id": "930b1de901449b78",
-     "publisher": "Nation Thailand",
-     "kind": "news",
-     "title": "Brent up 3.5% on 25 Nov as Houthis claim Saudi refinery attack",
-     "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE9DY0M3S3NlWGw4TG5oR1M1d0pjc0w1cFZLLWhWN0Z3UFJfSG9qdkFGWVUzdUkzTVF5QVp6c0ptbDVfaGpLMU9YNGxmQ3ozWnNNYzYyNXh6NlhjYUc4aUhn?oc=5",
-     "time": "2026-11-26T00:45:00Z"
-    },
-    {
-     "id": "ad2721aef3043846",
-     "publisher": "Smartkarma",
-     "kind": "news",
-     "title": "Oil futures: Crude rebounds as Saudi Ras Taura refinery targeted",
-     "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxQZTQ3Z2Vsc3I0X1BGYm54aHBqdHJ5aktnOFpnaEZ6Zm1xTEFqTzdhMVlqWHpqVms4MkxCVG5Rd1R4LVBIbkxha0FsWnNRNTYtd3p3Q1hhc3pienFDcmxwdXV5MndsRF9xUGtsMG9QWE94TjBVS09nSG0yckdaS2VDaVRTMUJOV0lTZlFZOGE0WDVHWmVVSDhyUU9yaTNQY1RqTEJOS3BIaloxclU3V3ZQOFZOWTRBTkxvNTdjU3RmZm81aDdSdWY0TWJn?oc=5",
-     "time": "2026-11-26T01:06:57Z"
     }
    ]
   }
