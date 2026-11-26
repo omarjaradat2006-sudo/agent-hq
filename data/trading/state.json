@@ -1,16 +1,13 @@
 {
  "team": "trading",
  "plain": {
-  "line": "Down $7,970.42 since start · 36 trades · holding: BTC/USD, SPWO, HLAL, SPUS, SPUS",
+  "line": "Down $7,949.27 since start · 36 trades · holding: BTC/USD, SPWO",
   "rulesMode": "ultra",
-  "top": "Down $7,970.42 since start (-7.97%) · just holding SPY would be -4.79%",
+  "top": "Down $7,949.27 since start (-7.95%) · just holding SPY would be -4.79%",
   "up": false,
   "holding": [
-   "BTC/USD: 0.177168 coins worth $10,732.94, down $56.76 (sells at $64,555.12 or stops at $59,074.02)",
-   "SPWO: 421 shares worth $11,682.75, up $416.79 (sells at $27.96 or stops at $25.00)",
-   "HLAL: 256 shares worth $16,819.20, up $509.44 (sells at $98.93 or stops at $59.36)",
-   "SPUS: 324 shares worth $17,535.54, up $501.41 (sells at $78.24 or stops at $46.94)",
-   "SPUS: 2 shares worth $17,535.54, up $501.41 (sells at $81.06 or stops at $48.64)"
+   "BTC/USD: 0.177168 coins worth $10,754.09, down $35.62 (sells at $64,555.12 or stops at $59,074.02)",
+   "SPWO: 421 shares worth $11,682.75, up $416.79 (sells at $27.96 or stops at $25.00)"
   ],
   "today": [
    "Bought BTC/USD after the news: Switzerland's first spot bitcoin ETF launches on SIX, bolstering institutional crypto adoption sentiment.",
@@ -18,15 +15,19 @@
    "Bought LINK/USD after the news: Franklin Templeton to add Hyperliquid to its crypto index ETF, signaling continued institutional product expansion.",
    "Sold BTC/USD (bad news: Bitcoin and broader crypto markets continue to face downward pressure from persi): made $50.49.",
    "Sold LINK/USD (bad news: Bitcoin and crypto markets face continued downward pressure from massive spot ET): lost $39.32.",
-   "Scanned the news 26 times today: read 2359 headlines, found 90 that could move a stock or coin it's allowed to trade.",
+   "Sold HLAL (bad news: Polymarket and market pricing continue to show a 94% probability of a December F): made $20.48.",
+   "Sold SPUS (bad news: China rejected the new U.S. 20% tariff plan, further raising global trade war ri): made $487.62.",
+   "Sold SPUS (bad news: China rejected the new U.S. 20% tariff plan, further raising global trade war ri): lost $0.88.",
+   "Scanned the news 39 times today: read 3746 headlines, found 133 that could move a stock or coin it's allowed to trade.",
+   "Passed on ETH/USD, XRP/USD: order failed: not enough cash.",
    "Passed on BTC/USD: already holding it.",
-   "Safety rules that stepped in: one position per asset (x5), bad news exit (x2)."
+   "Safety rules that stepped in: one position per asset (x5), bad news exit (x5), cash only no margin (x2)."
   ],
   "watchlist": "Allowed to trade: 68 halal stocks, 5 Shariah ETFs, 9 coins.",
-  "lastScan": "2026-11-26T11:25:09Z"
+  "lastScan": "2026-11-26T14:51:48Z"
  },
  "hired": true,
- "updatedAt": "2026-11-26T11:25:23Z",
+ "updatedAt": "2026-11-26T14:52:12Z",
  "mode": "PAPER",
  "agents": [
   {
@@ -34,8 +35,8 @@
    "name": "News Scout",
    "role": "Reads X, Reddit and news feeds",
    "status": "working",
-   "doing": "Read 45 new headlines/posts, 3 market-moving stories",
-   "lastRun": "2026-11-26T11:25:22Z"
+   "doing": "Read 110 new headlines/posts, 5 market-moving stories",
+   "lastRun": "2026-11-26T14:52:10Z"
   },
   {
    "id": "analyst",
@@ -43,7 +44,7 @@
    "role": "Gemini: is it real, what moves, which way",
    "status": "working",
    "doing": "Bad news for SPWO: Expanding US tariff plans targeting major trading partners heighten global trade war risks and weigh",
-   "lastRun": "2026-11-26T11:25:22Z"
+   "lastRun": "2026-11-26T14:52:10Z"
   },
   {
    "id": "confirm",
@@ -75,7 +76,7 @@
    "role": "Places paper orders on Alpaca",
    "status": "working",
    "doing": "sell SPWO failed: HTTP 403 https://paper-api.alpaca.markets/v2/positions/SPWO: {\"available\":\"0\",\"code\":40310000,\"existing_qty\":\"421\",\"held_for_orders\":\"421\",\"message\":\"insufficient qty available for order (requested: 421, available: 0)\",\"symbol\":\"SPWO\"}",
-   "lastRun": "2026-11-26T11:25:22Z"
+   "lastRun": "2026-11-26T14:52:11Z"
   },
   {
    "id": "coins",
@@ -95,6 +96,256 @@
   }
  ],
  "log": [
+  {
+   "t": "2026-11-26T14:52:11Z",
+   "agent": "Trader",
+   "msg": "sell SPWO failed: HTTP 403 https://paper-api.alpaca.markets/v2/positions/SPWO: {\"available\":\"0\",\"code\":40310000,\"existing_qty\":\"421\",\"held_for_orders\":\"421\",\"message\":\"insufficient qty available for order (requested: 421, available: 0)\",\"symbol\":\"SPWO\"}"
+  },
+  {
+   "t": "2026-11-26T14:52:10Z",
+   "agent": "News Analyst",
+   "msg": "Bad news for SPWO: Expanding US tariff plans targeting major trading partners heighten global trade war risks and weigh"
+  },
+  {
+   "t": "2026-11-26T14:52:10Z",
+   "agent": "News Scout",
+   "msg": "Read 110 new headlines/posts, 5 market-moving stories"
+  },
+  {
+   "t": "2026-11-26T14:36:46Z",
+   "agent": "Market Study",
+   "msg": "Market study: 14 of 82 names in uptrends; picks ABBV, COST, PG, REGN, AAPL; Stock market is in a downtrend (SPY under its 200-day average): no new trend buys in stocks; coins in a downtrend, no new coin buys"
+  },
+  {
+   "t": "2026-11-26T14:36:44Z",
+   "agent": "Trader",
+   "msg": "sell SPWO failed: HTTP 403 https://paper-api.alpaca.markets/v2/positions/SPWO: {\"available\":\"0\",\"code\":40310000,\"existing_qty\":\"421\",\"held_for_orders\":\"421\",\"message\":\"insufficient qty available for order (requested: 421, available: 0)\",\"symbol\":\"SPWO\"}"
+  },
+  {
+   "t": "2026-11-26T14:36:44Z",
+   "agent": "News Analyst",
+   "msg": "Bad news for SPWO: Expanding US tariff plans targeting major trading partners heighten global trade war risks and weigh"
+  },
+  {
+   "t": "2026-11-26T14:36:44Z",
+   "agent": "News Scout",
+   "msg": "Read 110 new headlines/posts, 5 market-moving stories"
+  },
+  {
+   "t": "2026-11-26T14:17:11Z",
+   "agent": "Trader",
+   "msg": "Order for XRP/USD failed: not enough cash"
+  },
+  {
+   "t": "2026-11-26T14:17:11Z",
+   "agent": "Trader",
+   "msg": "sell SPWO failed: HTTP 403 https://paper-api.alpaca.markets/v2/positions/SPWO: {\"available\":\"0\",\"code\":40310000,\"existing_qty\":\"421\",\"held_for_orders\":\"421\",\"message\":\"insufficient qty available for order (requested: 421, available: 0)\",\"symbol\":\"SPWO\"}"
+  },
+  {
+   "t": "2026-11-26T14:17:10Z",
+   "agent": "News Analyst",
+   "msg": "Bad news for SPWO: Expanding US tariff plans targeting major trading partners heighten global trade war risks and weigh"
+  },
+  {
+   "t": "2026-11-26T14:17:10Z",
+   "agent": "News Scout",
+   "msg": "Read 243 new headlines/posts, 5 market-moving stories"
+  },
+  {
+   "t": "2026-11-26T14:01:03Z",
+   "agent": "Trader",
+   "msg": "Closed HLAL: bad news: Polymarket and market pricing continue to show a 94% probability of a December F, +0.13% ($+20.48)"
+  },
+  {
+   "t": "2026-11-26T14:01:00Z",
+   "agent": "News Analyst",
+   "msg": "Bad news for HLAL: Polymarket and market pricing continue to show a 94% probability of a December Fed rate hike, weighi"
+  },
+  {
+   "t": "2026-11-26T14:01:00Z",
+   "agent": "Trader",
+   "msg": "sell SPWO failed: HTTP 403 https://paper-api.alpaca.markets/v2/positions/SPWO: {\"available\":\"0\",\"code\":40310000,\"existing_qty\":\"421\",\"held_for_orders\":\"421\",\"message\":\"insufficient qty available for order (requested: 421, available: 0)\",\"symbol\":\"SPWO\"}"
+  },
+  {
+   "t": "2026-11-26T14:01:00Z",
+   "agent": "News Analyst",
+   "msg": "Bad news for SPWO: Expanding US tariff plans targeting major trading partners heighten global trade war risks and weigh"
+  },
+  {
+   "t": "2026-11-26T14:01:00Z",
+   "agent": "News Scout",
+   "msg": "Read 81 new headlines/posts, 4 market-moving stories"
+  },
+  {
+   "t": "2026-11-26T13:43:05Z",
+   "agent": "Trader",
+   "msg": "sell SPWO failed: HTTP 403 https://paper-api.alpaca.markets/v2/positions/SPWO: {\"available\":\"0\",\"code\":40310000,\"existing_qty\":\"421\",\"held_for_orders\":\"421\",\"message\":\"insufficient qty available for order (requested: 421, available: 0)\",\"symbol\":\"SPWO\"}"
+  },
+  {
+   "t": "2026-11-26T13:43:04Z",
+   "agent": "News Analyst",
+   "msg": "Bad news for SPWO: Expanding US tariff plans targeting major trading partners heighten global trade war risks and weigh"
+  },
+  {
+   "t": "2026-11-26T13:43:04Z",
+   "agent": "News Scout",
+   "msg": "Read 67 new headlines/posts, 2 market-moving stories"
+  },
+  {
+   "t": "2026-11-26T13:27:52Z",
+   "agent": "Trader",
+   "msg": "sell SPWO failed: HTTP 403 https://paper-api.alpaca.markets/v2/positions/SPWO: {\"available\":\"0\",\"code\":40310000,\"existing_qty\":\"421\",\"held_for_orders\":\"421\",\"message\":\"insufficient qty available for order (requested: 421, available: 0)\",\"symbol\":\"SPWO\"}"
+  },
+  {
+   "t": "2026-11-26T13:27:52Z",
+   "agent": "News Analyst",
+   "msg": "Bad news for SPWO: Expanding US tariff plans targeting major trading partners heighten global trade war risks and weigh"
+  },
+  {
+   "t": "2026-11-26T13:27:52Z",
+   "agent": "News Scout",
+   "msg": "Read 87 new headlines/posts, 2 market-moving stories"
+  },
+  {
+   "t": "2026-11-26T13:27:52Z",
+   "agent": "News Analyst",
+   "msg": "Gemini triage failed, skipping this batch: Expecting property name enclosed in double quotes: line 13 column 9 (char 514)"
+  },
+  {
+   "t": "2026-11-26T13:12:39Z",
+   "agent": "Trader",
+   "msg": "sell SPWO failed: HTTP 403 https://paper-api.alpaca.markets/v2/positions/SPWO: {\"available\":\"0\",\"code\":40310000,\"existing_qty\":\"421\",\"held_for_orders\":\"421\",\"message\":\"insufficient qty available for order (requested: 421, available: 0)\",\"symbol\":\"SPWO\"}"
+  },
+  {
+   "t": "2026-11-26T13:12:39Z",
+   "agent": "News Analyst",
+   "msg": "Bad news for SPWO: Expanding US tariff plans targeting major trading partners heighten global trade war risks and weigh"
+  },
+  {
+   "t": "2026-11-26T13:12:39Z",
+   "agent": "News Scout",
+   "msg": "Read 163 new headlines/posts, 2 market-moving stories"
+  },
+  {
+   "t": "2026-11-26T12:57:20Z",
+   "agent": "Trader",
+   "msg": "sell SPWO failed: HTTP 403 https://paper-api.alpaca.markets/v2/positions/SPWO: {\"available\":\"0\",\"code\":40310000,\"existing_qty\":\"421\",\"held_for_orders\":\"421\",\"message\":\"insufficient qty available for order (requested: 421, available: 0)\",\"symbol\":\"SPWO\"}"
+  },
+  {
+   "t": "2026-11-26T12:57:19Z",
+   "agent": "News Analyst",
+   "msg": "Bad news for SPWO: Expanding US tariff plans targeting major trading partners heighten global trade war risks and weigh"
+  },
+  {
+   "t": "2026-11-26T12:57:19Z",
+   "agent": "News Scout",
+   "msg": "Read 56 new headlines/posts, 2 market-moving stories"
+  },
+  {
+   "t": "2026-11-26T12:42:05Z",
+   "agent": "Trader",
+   "msg": "Order for ETH/USD failed: not enough cash"
+  },
+  {
+   "t": "2026-11-26T12:42:05Z",
+   "agent": "Trader",
+   "msg": "sell SPWO failed: HTTP 403 https://paper-api.alpaca.markets/v2/positions/SPWO: {\"available\":\"0\",\"code\":40310000,\"existing_qty\":\"421\",\"held_for_orders\":\"421\",\"message\":\"insufficient qty available for order (requested: 421, available: 0)\",\"symbol\":\"SPWO\"}"
+  },
+  {
+   "t": "2026-11-26T12:42:04Z",
+   "agent": "News Analyst",
+   "msg": "Bad news for SPWO: Expanding US tariff plans targeting major trading partners heighten global trade war risks and weigh"
+  },
+  {
+   "t": "2026-11-26T12:42:04Z",
+   "agent": "News Scout",
+   "msg": "Read 109 new headlines/posts, 4 market-moving stories"
+  },
+  {
+   "t": "2026-11-26T12:26:46Z",
+   "agent": "Trader",
+   "msg": "sell SPWO failed: HTTP 403 https://paper-api.alpaca.markets/v2/positions/SPWO: {\"available\":\"0\",\"code\":40310000,\"existing_qty\":\"421\",\"held_for_orders\":\"421\",\"message\":\"insufficient qty available for order (requested: 421, available: 0)\",\"symbol\":\"SPWO\"}"
+  },
+  {
+   "t": "2026-11-26T12:26:46Z",
+   "agent": "News Analyst",
+   "msg": "Bad news for SPWO: Expanding US tariff plans targeting major trading partners heighten global trade war risks and weigh"
+  },
+  {
+   "t": "2026-11-26T12:26:46Z",
+   "agent": "News Scout",
+   "msg": "Read 89 new headlines/posts, 2 market-moving stories"
+  },
+  {
+   "t": "2026-11-26T12:11:29Z",
+   "agent": "Trader",
+   "msg": "sell SPWO failed: HTTP 403 https://paper-api.alpaca.markets/v2/positions/SPWO: {\"available\":\"0\",\"code\":40310000,\"existing_qty\":\"421\",\"held_for_orders\":\"421\",\"message\":\"insufficient qty available for order (requested: 421, available: 0)\",\"symbol\":\"SPWO\"}"
+  },
+  {
+   "t": "2026-11-26T12:11:29Z",
+   "agent": "News Analyst",
+   "msg": "Bad news for SPWO: Expanding US tariff plans targeting major trading partners heighten global trade war risks and weigh"
+  },
+  {
+   "t": "2026-11-26T12:11:29Z",
+   "agent": "News Scout",
+   "msg": "Read 90 new headlines/posts, 1 market-moving stories"
+  },
+  {
+   "t": "2026-11-26T11:55:58Z",
+   "agent": "Trader",
+   "msg": "sell SPWO failed: HTTP 403 https://paper-api.alpaca.markets/v2/positions/SPWO: {\"available\":\"0\",\"code\":40310000,\"existing_qty\":\"421\",\"held_for_orders\":\"421\",\"message\":\"insufficient qty available for order (requested: 421, available: 0)\",\"symbol\":\"SPWO\"}"
+  },
+  {
+   "t": "2026-11-26T11:55:58Z",
+   "agent": "News Analyst",
+   "msg": "Bad news for SPWO: Expanding US tariff plans targeting major trading partners heighten global trade war risks and weigh"
+  },
+  {
+   "t": "2026-11-26T11:55:58Z",
+   "agent": "News Scout",
+   "msg": "Read 99 new headlines/posts, 6 market-moving stories"
+  },
+  {
+   "t": "2026-11-26T11:40:38Z",
+   "agent": "Trader",
+   "msg": "Closed SPUS: bad news: China rejected the new U.S. 20% tariff plan, further raising global trade war ri, -0.81% ($-0.88)"
+  },
+  {
+   "t": "2026-11-26T11:40:36Z",
+   "agent": "News Analyst",
+   "msg": "Bad news for SPUS: China rejected the new U.S. 20% tariff plan, further raising global trade war risks."
+  },
+  {
+   "t": "2026-11-26T11:40:36Z",
+   "agent": "Trader",
+   "msg": "Closed SPUS: bad news: China rejected the new U.S. 20% tariff plan, further raising global trade war ri, +2.88% ($+487.62)"
+  },
+  {
+   "t": "2026-11-26T11:40:34Z",
+   "agent": "News Analyst",
+   "msg": "Bad news for SPUS: China rejected the new U.S. 20% tariff plan, further raising global trade war risks."
+  },
+  {
+   "t": "2026-11-26T11:40:34Z",
+   "agent": "Trader",
+   "msg": "sell SPWO failed: HTTP 403 https://paper-api.alpaca.markets/v2/positions/SPWO: {\"available\":\"0\",\"code\":40310000,\"existing_qty\":\"421\",\"held_for_orders\":\"421\",\"message\":\"insufficient qty available for order (requested: 421, available: 0)\",\"symbol\":\"SPWO\"}"
+  },
+  {
+   "t": "2026-11-26T11:40:34Z",
+   "agent": "News Analyst",
+   "msg": "Bad news for SPWO: Expanding US tariff plans targeting major trading partners heighten global trade war risks and weigh"
+  },
+  {
+   "t": "2026-11-26T11:40:34Z",
+   "agent": "News Scout",
+   "msg": "Read 83 new headlines/posts, 3 market-moving stories"
+  },
+  {
+   "t": "2026-11-26T11:25:25Z",
+   "agent": "Trader",
+   "msg": "Saved results to the Agent HQ dashboard"
+  },
   {
    "t": "2026-11-26T11:25:22Z",
    "agent": "Trader",
@@ -594,278 +845,28 @@
    "t": "2026-11-26T04:38:51Z",
    "agent": "Trader",
    "msg": "sell SPWO failed: HTTP 403 https://paper-api.alpaca.markets/v2/positions/SPWO: {\"available\":\"0\",\"code\":40310000,\"existing_qty\":\"421\",\"held_for_orders\":\"421\",\"message\":\"insufficient qty available for order (requested: 421, available: 0)\",\"symbol\":\"SPWO\"}"
-  },
-  {
-   "t": "2026-11-26T04:38:51Z",
-   "agent": "News Analyst",
-   "msg": "Bad news for SPWO: New US tariff proposals targeting multiple global trading partners including India, China, and Europ"
-  },
-  {
-   "t": "2026-11-26T04:38:51Z",
-   "agent": "News Scout",
-   "msg": "Read 4 new headlines/posts, 1 market-moving stories"
-  },
-  {
-   "t": "2026-11-26T04:23:26Z",
-   "agent": "Trader",
-   "msg": "sell SPWO failed: HTTP 403 https://paper-api.alpaca.markets/v2/positions/SPWO: {\"available\":\"0\",\"code\":40310000,\"existing_qty\":\"421\",\"held_for_orders\":\"421\",\"message\":\"insufficient qty available for order (requested: 421, available: 0)\",\"symbol\":\"SPWO\"}"
-  },
-  {
-   "t": "2026-11-26T04:23:26Z",
-   "agent": "News Analyst",
-   "msg": "Bad news for SPWO: New US tariff proposals targeting multiple global trading partners including India, China, and Europ"
-  },
-  {
-   "t": "2026-11-26T04:23:26Z",
-   "agent": "News Scout",
-   "msg": "Read 2 new headlines/posts, 0 market-moving stories"
-  },
-  {
-   "t": "2026-11-26T04:08:14Z",
-   "agent": "Trader",
-   "msg": "sell SPWO failed: HTTP 403 https://paper-api.alpaca.markets/v2/positions/SPWO: {\"available\":\"0\",\"code\":40310000,\"existing_qty\":\"421\",\"held_for_orders\":\"421\",\"message\":\"insufficient qty available for order (requested: 421, available: 0)\",\"symbol\":\"SPWO\"}"
-  },
-  {
-   "t": "2026-11-26T04:08:14Z",
-   "agent": "News Analyst",
-   "msg": "Bad news for SPWO: New US tariff proposals targeting multiple global trading partners including India, China, and Europ"
-  },
-  {
-   "t": "2026-11-26T04:08:14Z",
-   "agent": "News Scout",
-   "msg": "Read 2 new headlines/posts, 0 market-moving stories"
-  },
-  {
-   "t": "2026-11-26T04:08:09Z",
-   "agent": "News Scout",
-   "msg": "Google News is rate-limiting this server: pausing it for 1 hour"
-  },
-  {
-   "t": "2026-11-26T03:53:02Z",
-   "agent": "Trader",
-   "msg": "sell SPWO failed: HTTP 403 https://paper-api.alpaca.markets/v2/positions/SPWO: {\"available\":\"0\",\"code\":40310000,\"existing_qty\":\"421\",\"held_for_orders\":\"421\",\"message\":\"insufficient qty available for order (requested: 421, available: 0)\",\"symbol\":\"SPWO\"}"
-  },
-  {
-   "t": "2026-11-26T03:53:02Z",
-   "agent": "News Analyst",
-   "msg": "Bad news for SPWO: New US tariff proposals targeting multiple global trading partners including India, China, and Europ"
-  },
-  {
-   "t": "2026-11-26T03:53:02Z",
-   "agent": "News Scout",
-   "msg": "Read 53 new headlines/posts, 3 market-moving stories"
-  },
-  {
-   "t": "2026-11-26T03:37:52Z",
-   "agent": "Trader",
-   "msg": "sell SPWO failed: HTTP 403 https://paper-api.alpaca.markets/v2/positions/SPWO: {\"available\":\"0\",\"code\":40310000,\"existing_qty\":\"421\",\"held_for_orders\":\"421\",\"message\":\"insufficient qty available for order (requested: 421, available: 0)\",\"symbol\":\"SPWO\"}"
-  },
-  {
-   "t": "2026-11-26T03:37:52Z",
-   "agent": "News Analyst",
-   "msg": "Bad news for SPWO: New US tariff proposals targeting multiple global trading partners heighten trade war risks and weig"
-  },
-  {
-   "t": "2026-11-26T03:37:52Z",
-   "agent": "News Scout",
-   "msg": "Read 52 new headlines/posts, 2 market-moving stories"
-  },
-  {
-   "t": "2026-11-26T03:22:42Z",
-   "agent": "Trader",
-   "msg": "sell SPWO failed: HTTP 403 https://paper-api.alpaca.markets/v2/positions/SPWO: {\"available\":\"0\",\"code\":40310000,\"existing_qty\":\"421\",\"held_for_orders\":\"421\",\"message\":\"insufficient qty available for order (requested: 421, available: 0)\",\"symbol\":\"SPWO\"}"
-  },
-  {
-   "t": "2026-11-26T03:22:42Z",
-   "agent": "News Analyst",
-   "msg": "Bad news for SPWO: Ongoing US tariff proposals targeting multiple global trading partners continue to heighten trade wa"
-  },
-  {
-   "t": "2026-11-26T03:22:42Z",
-   "agent": "News Scout",
-   "msg": "Read 74 new headlines/posts, 2 market-moving stories"
-  },
-  {
-   "t": "2026-11-26T03:07:30Z",
-   "agent": "News Scout",
-   "msg": "Read 59 new headlines/posts, 3 market-moving stories"
-  },
-  {
-   "t": "2026-11-26T02:52:17Z",
-   "agent": "News Scout",
-   "msg": "Read 65 new headlines/posts, 1 market-moving stories"
-  },
-  {
-   "t": "2026-11-26T02:37:05Z",
-   "agent": "News Scout",
-   "msg": "Read 44 new headlines/posts, 0 market-moving stories"
-  },
-  {
-   "t": "2026-11-26T02:21:47Z",
-   "agent": "News Scout",
-   "msg": "Read 42 new headlines/posts, 2 market-moving stories"
-  },
-  {
-   "t": "2026-11-26T02:06:37Z",
-   "agent": "News Scout",
-   "msg": "Read 43 new headlines/posts, 3 market-moving stories"
-  },
-  {
-   "t": "2026-11-26T01:51:28Z",
-   "agent": "News Scout",
-   "msg": "Read 54 new headlines/posts, 3 market-moving stories"
-  },
-  {
-   "t": "2026-11-26T01:36:18Z",
-   "agent": "News Scout",
-   "msg": "Read 35 new headlines/posts, 2 market-moving stories"
-  },
-  {
-   "t": "2026-11-26T01:21:05Z",
-   "agent": "News Scout",
-   "msg": "Read 63 new headlines/posts, 3 market-moving stories"
-  },
-  {
-   "t": "2026-11-26T01:05:56Z",
-   "agent": "Trader",
-   "msg": "Saved results to the Agent HQ dashboard"
-  },
-  {
-   "t": "2026-11-26T01:05:53Z",
-   "agent": "News Scout",
-   "msg": "Read 66 new headlines/posts, 3 market-moving stories"
-  },
-  {
-   "t": "2026-11-26T00:50:39Z",
-   "agent": "News Scout",
-   "msg": "Read 48 new headlines/posts, 4 market-moving stories"
-  },
-  {
-   "t": "2026-11-26T00:35:27Z",
-   "agent": "News Scout",
-   "msg": "Read 58 new headlines/posts, 4 market-moving stories"
-  },
-  {
-   "t": "2026-11-26T00:19:36Z",
-   "agent": "News Scout",
-   "msg": "Read 50 new headlines/posts, 3 market-moving stories"
-  },
-  {
-   "t": "2026-11-26T00:04:21Z",
-   "agent": "News Scout",
-   "msg": "Read 58 new headlines/posts, 3 market-moving stories"
-  },
-  {
-   "t": "2026-11-25T23:49:07Z",
-   "agent": "News Scout",
-   "msg": "Read 50 new headlines/posts, 3 market-moving stories"
-  },
-  {
-   "t": "2026-11-25T23:33:57Z",
-   "agent": "News Scout",
-   "msg": "Read 50 new headlines/posts, 4 market-moving stories"
-  },
-  {
-   "t": "2026-11-25T23:18:41Z",
-   "agent": "News Scout",
-   "msg": "Read 53 new headlines/posts, 2 market-moving stories"
-  },
-  {
-   "t": "2026-11-25T23:03:21Z",
-   "agent": "News Scout",
-   "msg": "Read 91 new headlines/posts, 3 market-moving stories"
-  },
-  {
-   "t": "2026-11-25T22:48:12Z",
-   "agent": "Trader",
-   "msg": "Saved results to the Agent HQ dashboard"
-  },
-  {
-   "t": "2026-11-25T22:48:08Z",
-   "agent": "News Scout",
-   "msg": "Read 31 new headlines/posts, 0 market-moving stories"
-  },
-  {
-   "t": "2026-11-25T22:48:02Z",
-   "agent": "News Scout",
-   "msg": "Agent Reach not found: news feeds + Yahoo Finance + Reddit direct (no X)"
-  },
-  {
-   "t": "2026-11-25T22:48:02Z",
-   "agent": "Trader",
-   "msg": "Paper-trading bot started (Alpaca PAPER account only). Close this window to stop it."
-  },
-  {
-   "t": "2026-11-25T22:35:31Z",
-   "agent": "News Scout",
-   "msg": "Read 110 new headlines/posts, 3 market-moving stories"
-  },
-  {
-   "t": "2026-11-25T22:35:18Z",
-   "agent": "News Scout",
-   "msg": "Agent Reach not found: news feeds + Yahoo Finance + Reddit direct (no X)"
-  },
-  {
-   "t": "2026-11-25T22:35:18Z",
-   "agent": "Trader",
-   "msg": "Paper-trading bot started (Alpaca PAPER account only). Close this window to stop it."
-  },
-  {
-   "t": "2026-11-25T22:25:57Z",
-   "agent": "News Scout",
-   "msg": "Read 69 new headlines/posts, 0 market-moving stories"
-  },
-  {
-   "t": "2026-11-25T22:10:45Z",
-   "agent": "News Scout",
-   "msg": "Read 65 new headlines/posts, 3 market-moving stories"
-  },
-  {
-   "t": "2026-11-25T21:55:33Z",
-   "agent": "Trader",
-   "msg": "Saved results to the Agent HQ dashboard"
-  },
-  {
-   "t": "2026-11-25T21:55:29Z",
-   "agent": "News Scout",
-   "msg": "Read 40 new headlines/posts, 2 market-moving stories"
-  },
-  {
-   "t": "2026-11-25T21:55:22Z",
-   "agent": "News Scout",
-   "msg": "Agent Reach not found: news feeds + Yahoo Finance + Reddit direct (no X)"
-  },
-  {
-   "t": "2026-11-25T21:55:22Z",
-   "agent": "Trader",
-   "msg": "Paper-trading bot started (Alpaca PAPER account only). Close this window to stop it."
-  },
-  {
-   "t": "2026-11-25T21:46:41Z",
-   "agent": "News Scout",
-   "msg": "Read 16 new headlines/posts, 0 market-moving stories"
   }
  ],
  "brief": {
   "date": "Thu Nov 26",
-  "createdAt": "2026-11-26T11:25:23Z",
-  "headline": "Paper account -$252 today (-0.27%), -7.97% total vs SPY -4.79% · 5 open",
-  "summary": "2 trade(s) closed today, 7/31 winners overall. TradingAgents checks used today: 0/5.",
+  "createdAt": "2026-11-26T14:52:12Z",
+  "headline": "Paper account -$231 today (-0.25%), -7.95% total vs SPY -4.79% · 2 open",
+  "summary": "5 trade(s) closed today, 9/34 winners overall. TradingAgents checks used today: 0/5.",
   "notes": [
    "X/Reddit reader: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
   ]
  },
  "account": {
-  "equity": 92029.58,
+  "equity": 92050.73,
   "cash": 35259.15,
   "startEquity": 100000.0,
   "startedAt": "2026-11-10T01:51:53Z",
-  "dayPnl": -252.16,
-  "dayPct": -0.27,
-  "totalPnl": -7970.42,
-  "totalPct": -7.97,
+  "dayPnl": -231.01,
+  "dayPct": -0.25,
+  "totalPnl": -7949.27,
+  "totalPct": -7.95,
   "spyPct": -4.79,
-  "vsSpyPct": -3.18
+  "vsSpyPct": -3.16
  },
  "status": {
   "killed": false,
@@ -873,7 +874,7 @@
   "deepUsed": 0,
   "deepMax": 5,
   "social": {
-   "at": "2026-11-26T11:25:12Z",
+   "at": "2026-11-26T14:51:52Z",
    "items": 0,
    "source": "Reddit via Tradestie + ApeWisdom (direct Reddit blocks servers; X needs Agent Reach)",
    "problems": [
@@ -881,13 +882,13 @@
     "r/stocks: HTTP 403 https://www.reddit.com/r/stocks/new.json: <body class=theme-beta><div><"
    ],
    "wsb": {
-    "at": "2026-11-26T11:25:13Z",
-    "tickers": 27,
+    "at": "2026-11-26T14:51:52Z",
+    "tickers": 41,
     "items": 0,
     "key": false
    },
    "ape": {
-    "at": "2026-11-26T11:25:13Z",
+    "at": "2026-11-26T14:51:52Z",
     "tickers": 200,
     "items": 0,
     "problems": []
@@ -944,8 +945,8 @@
     "taSummary": ""
    },
    "stopOrderId": "8549feb1-17bc-42ac-954d-24f7b1f206f5",
-   "lastPrice": 60580.66,
-   "unrealizedPct": -0.53,
+   "lastPrice": 60672.28,
+   "unrealizedPct": -0.38,
    "high": 60901.053775603
   },
   {
@@ -976,93 +977,6 @@
    },
    "lastPrice": 27.75,
    "unrealizedPct": 3.7
-  },
-  {
-   "id": "ahq-core-HLAL-20261125145147",
-   "symbol": "HLAL",
-   "asset": "stock",
-   "status": "open",
-   "strategy": "core",
-   "entryOrderId": "71a91d9e-f5f3-4a22-a8f6-be5cf3200ffd",
-   "qty": 256.0,
-   "cost": 16883.2,
-   "estPrice": 65.95,
-   "entryPrice": 63.71,
-   "stop": 59.36,
-   "target": 98.93,
-   "openedAt": "2026-11-25T14:51:47Z",
-   "news": {
-    "summary": "Core holding: rides the whole (halal) market",
-    "category": "core",
-    "sources": []
-   },
-   "reason": {
-    "triage": "core holding",
-    "confidence": null,
-    "confirmation": "50% of the budget",
-    "publishers": [],
-    "tradingAgents": "not used (core)"
-   },
-   "lastPrice": 65.7,
-   "unrealizedPct": 3.12
-  },
-  {
-   "id": "ahq-core-SPUS-20261125145147",
-   "symbol": "SPUS",
-   "asset": "stock",
-   "status": "open",
-   "strategy": "core",
-   "entryOrderId": "574aafa3-b47d-491a-9bda-02ef6ba9af4c",
-   "qty": 324.0,
-   "cost": 16899.84,
-   "estPrice": 52.16,
-   "entryPrice": 52.24,
-   "stop": 46.94,
-   "target": 78.24,
-   "openedAt": "2026-11-25T14:51:47Z",
-   "news": {
-    "summary": "Core holding: rides the whole (halal) market",
-    "category": "core",
-    "sources": []
-   },
-   "reason": {
-    "triage": "core holding",
-    "confidence": null,
-    "confirmation": "50% of the budget",
-    "publishers": [],
-    "tradingAgents": "not used (core)"
-   },
-   "lastPrice": 53.79,
-   "unrealizedPct": 2.94
-  },
-  {
-   "id": "ahq-core-SPUS-20261124145913",
-   "symbol": "SPUS",
-   "asset": "stock",
-   "status": "open",
-   "strategy": "core",
-   "entryOrderId": "f61023ba-9547-4ca2-85ec-3200ace7369c",
-   "qty": 2.0,
-   "cost": 108.08,
-   "estPrice": 54.04,
-   "entryPrice": 54.185,
-   "stop": 48.64,
-   "target": 81.06,
-   "openedAt": "2026-11-24T14:59:13Z",
-   "news": {
-    "summary": "Core holding: rides the whole (halal) market",
-    "category": "core",
-    "sources": []
-   },
-   "reason": {
-    "triage": "core holding",
-    "confidence": null,
-    "confirmation": "50% of the budget",
-    "publishers": [],
-    "tradingAgents": "not used (core)"
-   },
-   "lastPrice": 53.79,
-   "unrealizedPct": 2.94
   }
  ],
  "charts": {
@@ -3148,62 +3062,6 @@
    "BTC/USD": {
     "bars": [
      [
-      "2026-11-23T11:30:00Z",
-      61450.7725
-     ],
-     [
-      "2026-11-23T11:45:00Z",
-      61351.0805
-     ],
-     [
-      "2026-11-23T12:00:00Z",
-      61272.582
-     ],
-     [
-      "2026-11-23T12:15:00Z",
-      61285.765
-     ],
-     [
-      "2026-11-23T12:30:00Z",
-      61172.584
-     ],
-     [
-      "2026-11-23T12:45:00Z",
-      61251.53
-     ],
-     [
-      "2026-11-23T13:00:00Z",
-      61219.8675
-     ],
-     [
-      "2026-11-23T13:15:00Z",
-      61262.575
-     ],
-     [
-      "2026-11-23T13:30:00Z",
-      61230.8955
-     ],
-     [
-      "2026-11-23T13:45:00Z",
-      63784.415
-     ],
-     [
-      "2026-11-23T14:00:00Z",
-      63439.345
-     ],
-     [
-      "2026-11-23T14:15:00Z",
-      64212.7
-     ],
-     [
-      "2026-11-23T14:30:00Z",
-      63258.697
-     ],
-     [
-      "2026-11-23T14:45:00Z",
-      62825.1225
-     ],
-     [
       "2026-11-23T15:00:00Z",
       62997.8
      ],
@@ -4297,7 +4155,63 @@
      ],
      [
       "2026-11-26T11:15:00Z",
-      60592.78
+      60576.005
+     ],
+     [
+      "2026-11-26T11:30:00Z",
+      60663.4275
+     ],
+     [
+      "2026-11-26T11:45:00Z",
+      60633.719
+     ],
+     [
+      "2026-11-26T12:00:00Z",
+      60598.994
+     ],
+     [
+      "2026-11-26T12:15:00Z",
+      60566.016
+     ],
+     [
+      "2026-11-26T12:30:00Z",
+      60854.28
+     ],
+     [
+      "2026-11-26T12:45:00Z",
+      60765.181
+     ],
+     [
+      "2026-11-26T13:00:00Z",
+      60748.24
+     ],
+     [
+      "2026-11-26T13:15:00Z",
+      60792.038
+     ],
+     [
+      "2026-11-26T13:30:00Z",
+      60827.692
+     ],
+     [
+      "2026-11-26T13:45:00Z",
+      60798.805
+     ],
+     [
+      "2026-11-26T14:00:00Z",
+      60780.94
+     ],
+     [
+      "2026-11-26T14:15:00Z",
+      60675.37
+     ],
+     [
+      "2026-11-26T14:30:00Z",
+      60683.604
+     ],
+     [
+      "2026-11-26T14:45:00Z",
+      60704.9
      ]
     ],
     "entry": 60901.053775603,
@@ -4366,280 +4280,6 @@
     "target": 27.96,
     "openedAt": "2026-11-25T14:52:00Z",
     "qty": 421.0
-   },
-   "HLAL": {
-    "bars": [
-     [
-      "2026-11-23T14:45:00Z",
-      66.57
-     ],
-     [
-      "2026-11-23T15:45:00Z",
-      67.32
-     ],
-     [
-      "2026-11-23T18:00:00Z",
-      67.05
-     ],
-     [
-      "2026-11-23T19:00:00Z",
-      66.89
-     ],
-     [
-      "2026-11-24T16:00:00Z",
-      65.4
-     ],
-     [
-      "2026-11-24T20:45:00Z",
-      65.95
-     ],
-     [
-      "2026-11-25T15:30:00Z",
-      63.79
-     ]
-    ],
-    "entry": 63.71,
-    "stop": 59.36,
-    "target": 98.93,
-    "openedAt": "2026-11-25T14:51:47Z",
-    "qty": 256.0
-   },
-   "SPUS": {
-    "bars": [
-     [
-      "2026-11-23T14:00:00Z",
-      54.64
-     ],
-     [
-      "2026-11-23T14:30:00Z",
-      54.19
-     ],
-     [
-      "2026-11-23T14:45:00Z",
-      54.78
-     ],
-     [
-      "2026-11-23T15:00:00Z",
-      54.935
-     ],
-     [
-      "2026-11-23T15:15:00Z",
-      55.23
-     ],
-     [
-      "2026-11-23T15:30:00Z",
-      55.22
-     ],
-     [
-      "2026-11-23T15:45:00Z",
-      54.98
-     ],
-     [
-      "2026-11-23T16:00:00Z",
-      55.05
-     ],
-     [
-      "2026-11-23T16:15:00Z",
-      55.0
-     ],
-     [
-      "2026-11-23T17:15:00Z",
-      54.855
-     ],
-     [
-      "2026-11-23T17:30:00Z",
-      54.715
-     ],
-     [
-      "2026-11-23T18:00:00Z",
-      54.78
-     ],
-     [
-      "2026-11-23T18:45:00Z",
-      54.695
-     ],
-     [
-      "2026-11-23T19:00:00Z",
-      54.78
-     ],
-     [
-      "2026-11-23T19:30:00Z",
-      54.655
-     ],
-     [
-      "2026-11-23T20:00:00Z",
-      54.69
-     ],
-     [
-      "2026-11-23T20:30:00Z",
-      54.99
-     ],
-     [
-      "2026-11-23T20:45:00Z",
-      54.76
-     ],
-     [
-      "2026-11-24T14:30:00Z",
-      54.04
-     ],
-     [
-      "2026-11-24T15:00:00Z",
-      54.195
-     ],
-     [
-      "2026-11-24T15:15:00Z",
-      53.7
-     ],
-     [
-      "2026-11-24T15:45:00Z",
-      53.62
-     ],
-     [
-      "2026-11-24T16:15:00Z",
-      53.74
-     ],
-     [
-      "2026-11-24T16:30:00Z",
-      53.63
-     ],
-     [
-      "2026-11-24T16:45:00Z",
-      53.725
-     ],
-     [
-      "2026-11-24T17:30:00Z",
-      54.19
-     ],
-     [
-      "2026-11-24T17:45:00Z",
-      54.07
-     ],
-     [
-      "2026-11-24T18:00:00Z",
-      54.06
-     ],
-     [
-      "2026-11-24T18:15:00Z",
-      54.11
-     ],
-     [
-      "2026-11-24T18:30:00Z",
-      54.17
-     ],
-     [
-      "2026-11-24T18:45:00Z",
-      54.03
-     ],
-     [
-      "2026-11-24T19:45:00Z",
-      53.89
-     ],
-     [
-      "2026-11-24T20:00:00Z",
-      53.96
-     ],
-     [
-      "2026-11-24T20:15:00Z",
-      53.91
-     ],
-     [
-      "2026-11-24T20:30:00Z",
-      53.93
-     ],
-     [
-      "2026-11-24T20:45:00Z",
-      54.13
-     ],
-     [
-      "2026-11-25T14:30:00Z",
-      52.17
-     ],
-     [
-      "2026-11-25T14:45:00Z",
-      52.36
-     ],
-     [
-      "2026-11-25T15:00:00Z",
-      52.57
-     ],
-     [
-      "2026-11-25T15:15:00Z",
-      52.205
-     ],
-     [
-      "2026-11-25T15:30:00Z",
-      52.26
-     ],
-     [
-      "2026-11-25T15:45:00Z",
-      52.32
-     ],
-     [
-      "2026-11-25T16:00:00Z",
-      52.19
-     ],
-     [
-      "2026-11-25T16:15:00Z",
-      52.35
-     ],
-     [
-      "2026-11-25T16:30:00Z",
-      52.18
-     ],
-     [
-      "2026-11-25T16:45:00Z",
-      52.38
-     ],
-     [
-      "2026-11-25T17:00:00Z",
-      52.795
-     ],
-     [
-      "2026-11-25T17:15:00Z",
-      52.87
-     ],
-     [
-      "2026-11-25T17:45:00Z",
-      53.08
-     ],
-     [
-      "2026-11-25T18:00:00Z",
-      53.22
-     ],
-     [
-      "2026-11-25T18:30:00Z",
-      53.51
-     ],
-     [
-      "2026-11-25T18:45:00Z",
-      53.69
-     ],
-     [
-      "2026-11-25T19:15:00Z",
-      53.74
-     ],
-     [
-      "2026-11-25T19:30:00Z",
-      53.8
-     ],
-     [
-      "2026-11-25T20:15:00Z",
-      53.65
-     ],
-     [
-      "2026-11-25T20:30:00Z",
-      53.55
-     ],
-     [
-      "2026-11-25T20:45:00Z",
-      53.745
-     ]
-    ],
-    "entry": 54.185,
-    "stop": 48.64,
-    "target": 81.06,
-    "openedAt": "2026-11-24T14:59:13Z",
-    "qty": 2.0
    }
   }
  },
@@ -4698,23 +4338,23 @@
   }
  },
  "study": {
-  "date": "2026-11-25",
+  "date": "2026-11-26",
   "regime": {
    "stocks": false,
    "coins": false,
-   "spy": 697.42,
-   "spy200": 730.65,
-   "btc": 57489.4875,
-   "btc50": 75080.95
+   "spy": 716.735,
+   "spy200": 730.75,
+   "btc": 60781.415,
+   "btc50": 74688.78
   },
   "plain": {
    "regime": "Stock market is in a downtrend (SPY under its 200-day average): no new trend buys in stocks; coins in a downtrend, no new coin buys",
    "picks": [
-    "ABBV: up +38% in 6 months, above its averages",
+    "ABBV: up +36% in 6 months, above its averages",
     "COST: up +13% in 6 months, above its averages",
     "PG: up +20% in 6 months, above its averages",
-    "REGN: up +56% in 6 months, above its averages",
-    "LLY: up +23% in 6 months, above its averages"
+    "REGN: up +58% in 6 months, above its averages",
+    "AAPL: up +14% in 6 months, above its averages"
    ]
   },
   "picks": {
@@ -4723,7 +4363,7 @@
     "COST",
     "PG",
     "REGN",
-    "LLY"
+    "AAPL"
    ],
    "coins": []
   },
@@ -4732,229 +4372,229 @@
     "symbol": "ABBV",
     "crypto": false,
     "theme": "healthcare",
-    "price": 298.355,
-    "ma50": 280.3436,
-    "ma200": 241.1133,
-    "r3": 16.3,
-    "r6": 38.3,
-    "r12": 33.9,
-    "vol": 21.3,
+    "price": 294.49,
+    "ma50": 280.2663,
+    "ma200": 241.094,
+    "r3": 14.8,
+    "r6": 36.5,
+    "r12": 32.2,
+    "vol": 21.7,
     "quality": 0.57,
     "uptrend": true,
-    "score": 1.421
+    "score": 1.317
    },
    {
     "symbol": "COST",
     "crypto": false,
     "theme": "consumer",
-    "price": 1087.44,
-    "ma50": 971.1278,
-    "ma200": 951.5221,
-    "r3": 19.8,
-    "r6": 12.7,
-    "r12": 26.9,
+    "price": 1086.625,
+    "ma50": 971.1115,
+    "ma200": 951.518,
+    "r3": 19.7,
+    "r6": 12.6,
+    "r12": 26.8,
     "vol": 19.0,
     "quality": 0.95,
     "uptrend": true,
-    "score": 1.234
+    "score": 1.228
    },
    {
     "symbol": "CVX",
     "crypto": false,
     "theme": "oil_gas",
-    "price": 210.54,
-    "ma50": 213.5198,
-    "ma200": 193.8027,
-    "r3": 6.2,
-    "r6": 16.9,
-    "r12": 45.7,
+    "price": 210.99,
+    "ma50": 213.5288,
+    "ma200": 193.8049,
+    "r3": 6.5,
+    "r6": 17.2,
+    "r12": 46.0,
     "vol": 24.6,
     "quality": 0.99,
     "uptrend": false,
-    "score": 1.119
+    "score": 1.131
    },
    {
     "symbol": "PG",
     "crypto": false,
     "theme": "consumer",
-    "price": 173.07,
-    "ma50": 157.8584,
-    "ma200": 148.7109,
-    "r3": 21.7,
-    "r6": 20.3,
-    "r12": 21.2,
+    "price": 173.22,
+    "ma50": 157.8614,
+    "ma200": 148.7117,
+    "r3": 21.8,
+    "r6": 20.4,
+    "r12": 21.3,
     "vol": 20.9,
     "quality": 0.7,
     "uptrend": true,
-    "score": 1.086
+    "score": 1.091
    },
    {
     "symbol": "PSX",
     "crypto": false,
     "theme": "oil_gas",
-    "price": 233.49,
-    "ma50": 265.1517,
-    "ma200": 206.4222,
-    "r3": -2.1,
-    "r6": 33.5,
-    "r12": 79.9,
-    "vol": 35.3,
+    "price": 236.08,
+    "ma50": 265.2035,
+    "ma200": 206.4352,
+    "r3": -1.1,
+    "r6": 34.9,
+    "r12": 81.9,
+    "vol": 35.1,
     "quality": 0.4,
     "uptrend": false,
-    "score": 1.009
+    "score": 1.054
    },
    {
     "symbol": "REGN",
     "crypto": false,
     "theme": "healthcare",
-    "price": 970.71,
-    "ma50": 840.1816,
-    "ma200": 752.6016,
-    "r3": 20.3,
-    "r6": 56.5,
-    "r12": 28.1,
-    "vol": 41.4,
+    "price": 981.97,
+    "ma50": 840.4068,
+    "ma200": 752.6579,
+    "r3": 21.7,
+    "r6": 58.4,
+    "r12": 29.6,
+    "vol": 41.3,
     "quality": 0.93,
     "uptrend": true,
-    "score": 0.989
-   },
-   {
-    "symbol": "APA",
-    "crypto": false,
-    "theme": "oil_gas",
-    "price": 45.66,
-    "ma50": 46.1973,
-    "ma200": 39.1259,
-    "r3": 8.3,
-    "r6": 26.6,
-    "r12": 92.4,
-    "vol": 40.7,
-    "quality": 0.33,
-    "uptrend": false,
-    "score": 0.973
-   },
-   {
-    "symbol": "LLY",
-    "crypto": false,
-    "theme": "healthcare",
-    "price": 1381.54,
-    "ma50": 1281.1333,
-    "ma200": 1120.4603,
-    "r3": 17.7,
-    "r6": 22.9,
-    "r12": 30.1,
-    "vol": 29.4,
-    "quality": 0.88,
-    "uptrend": true,
-    "score": 0.925
-   },
-   {
-    "symbol": "COP",
-    "crypto": false,
-    "theme": "oil_gas",
-    "price": 135.66,
-    "ma50": 136.4992,
-    "ma200": 122.9712,
-    "r3": 5.4,
-    "r6": 19.6,
-    "r12": 59.4,
-    "vol": 31.7,
-    "quality": 0.56,
-    "uptrend": false,
-    "score": 0.91
-   },
-   {
-    "symbol": "JNJ",
-    "crypto": false,
-    "theme": "healthcare",
-    "price": 274.05,
-    "ma50": 266.6028,
-    "ma200": 248.8018,
-    "r3": 3.6,
-    "r6": 19.9,
-    "r12": 36.8,
-    "vol": 25.3,
-    "quality": 0.79,
-    "uptrend": true,
-    "score": 0.888
-   },
-   {
-    "symbol": "VLO",
-    "crypto": false,
-    "theme": "oil_gas",
-    "price": 319.0,
-    "ma50": 391.0224,
-    "ma200": 298.6175,
-    "r3": -7.6,
-    "r6": 31.2,
-    "r12": 86.4,
-    "vol": 44.1,
-    "quality": 0.64,
-    "uptrend": false,
-    "score": 0.879
+    "score": 1.038
    },
    {
     "symbol": "AAPL",
     "crypto": false,
     "theme": "tech_growth",
-    "price": 349.4,
-    "ma50": 342.7693,
-    "ma200": 303.9218,
-    "r3": 11.2,
-    "r6": 12.0,
-    "r12": 27.1,
-    "vol": 22.6,
+    "price": 355.58,
+    "ma50": 342.8929,
+    "ma200": 303.9527,
+    "r3": 13.1,
+    "r6": 14.0,
+    "r12": 29.3,
+    "vol": 22.4,
     "quality": 0.95,
     "uptrend": true,
-    "score": 0.874
+    "score": 0.991
+   },
+   {
+    "symbol": "LLY",
+    "crypto": false,
+    "theme": "healthcare",
+    "price": 1392.715,
+    "ma50": 1281.3568,
+    "ma200": 1120.5162,
+    "r3": 18.6,
+    "r6": 23.9,
+    "r12": 31.2,
+    "vol": 29.1,
+    "quality": 0.88,
+    "uptrend": true,
+    "score": 0.971
+   },
+   {
+    "symbol": "APA",
+    "crypto": false,
+    "theme": "oil_gas",
+    "price": 45.48,
+    "ma50": 46.1937,
+    "ma200": 39.125,
+    "r3": 7.8,
+    "r6": 26.1,
+    "r12": 91.7,
+    "vol": 40.6,
+    "quality": 0.33,
+    "uptrend": false,
+    "score": 0.961
+   },
+   {
+    "symbol": "VLO",
+    "crypto": false,
+    "theme": "oil_gas",
+    "price": 322.95,
+    "ma50": 391.1014,
+    "ma200": 298.6373,
+    "r3": -6.5,
+    "r6": 32.8,
+    "r12": 88.7,
+    "vol": 44.0,
+    "quality": 0.64,
+    "uptrend": false,
+    "score": 0.922
    },
    {
     "symbol": "LIN",
     "crypto": false,
     "theme": "materials",
-    "price": 516.53,
-    "ma50": 497.8939,
-    "ma200": 496.9231,
-    "r3": 6.8,
-    "r6": 3.6,
-    "r12": 28.4,
-    "vol": 16.4,
+    "price": 524.54,
+    "ma50": 498.0541,
+    "ma200": 496.9631,
+    "r3": 8.4,
+    "r6": 5.2,
+    "r12": 30.4,
+    "vol": 16.7,
     "quality": 0.61,
     "uptrend": true,
-    "score": 0.821
+    "score": 0.92
    },
    {
-    "symbol": "XOM",
+    "symbol": "COP",
     "crypto": false,
     "theme": "oil_gas",
-    "price": 159.08,
-    "ma50": 167.9836,
-    "ma200": 155.0555,
-    "r3": 2.3,
-    "r6": 9.6,
-    "r12": 40.8,
-    "vol": 26.8,
-    "quality": 0.84,
+    "price": 135.0,
+    "ma50": 136.486,
+    "ma200": 122.9679,
+    "r3": 4.9,
+    "r6": 19.0,
+    "r12": 58.6,
+    "vol": 31.7,
+    "quality": 0.56,
     "uptrend": false,
-    "score": 0.745
+    "score": 0.891
+   },
+   {
+    "symbol": "JNJ",
+    "crypto": false,
+    "theme": "healthcare",
+    "price": 273.97,
+    "ma50": 266.6012,
+    "ma200": 248.8014,
+    "r3": 3.6,
+    "r6": 19.9,
+    "r12": 36.7,
+    "vol": 25.3,
+    "quality": 0.79,
+    "uptrend": true,
+    "score": 0.886
    },
    {
     "symbol": "VRTX",
     "crypto": false,
     "theme": "healthcare",
-    "price": 554.21,
-    "ma50": 524.9725,
-    "ma200": 486.0969,
-    "r3": 1.2,
-    "r6": 23.7,
-    "r12": 30.7,
-    "vol": 29.1,
+    "price": 564.115,
+    "ma50": 525.1706,
+    "ma200": 486.1464,
+    "r3": 3.1,
+    "r6": 26.0,
+    "r12": 33.1,
+    "vol": 28.9,
     "quality": 0.9,
     "uptrend": true,
-    "score": 0.739
+    "score": 0.83
+   },
+   {
+    "symbol": "PANW",
+    "crypto": false,
+    "theme": "tech_growth",
+    "price": 355.97,
+    "ma50": 366.1526,
+    "ma200": 284.2267,
+    "r3": -7.0,
+    "r6": 38.1,
+    "r12": 93.6,
+    "vol": 64.1,
+    "quality": 1.0,
+    "uptrend": false,
+    "score": 0.778
    }
   ],
-  "uptrends": 12,
+  "uptrends": 14,
   "counted": 82,
   "rules": "Trend: price over 50-day avg over 200-day avg (coins: over 50-day). Momentum: avg 3/6/12-month return / volatility. Quality: lower debt ranks higher. New stock buys only while SPY is over its 200-day avg; coins only while BTC is over its 50-day.",
   "trendPct": 0,
@@ -4962,7 +4602,7 @@
   "backtest": null
  },
  "lab": {
-  "updatedAt": "2026-11-26T11:25:09Z",
+  "updatedAt": "2026-11-26T14:25:09Z",
   "startedAt": "2026-11-25T21:57:13Z",
   "endsAt": "2026-12-02T21:57:13Z",
   "done": false,
@@ -6428,8 +6068,8 @@
     "taSummary": ""
    },
    "stopOrderId": "8549feb1-17bc-42ac-954d-24f7b1f206f5",
-   "lastPrice": 60580.66,
-   "unrealizedPct": -0.53,
+   "lastPrice": 60672.28,
+   "unrealizedPct": -0.38,
    "high": 60901.053775603
   },
   {
@@ -6625,7 +6265,7 @@
    "id": "ahq-core-HLAL-20261125145147",
    "symbol": "HLAL",
    "asset": "stock",
-   "status": "open",
+   "status": "closed",
    "strategy": "core",
    "entryOrderId": "71a91d9e-f5f3-4a22-a8f6-be5cf3200ffd",
    "qty": 256.0,
@@ -6648,13 +6288,19 @@
     "tradingAgents": "not used (core)"
    },
    "lastPrice": 65.7,
-   "unrealizedPct": 3.12
+   "unrealizedPct": 3.12,
+   "closing": "bad news: Polymarket and market pricing continue to show a 94% probability of a December F",
+   "closedAt": "2026-11-26T14:01:03Z",
+   "exitPrice": 63.79,
+   "exitReason": "bad news: Polymarket and market pricing continue to show a 94% probability of a December F",
+   "pnl": 20.48,
+   "pnlPct": 0.13
   },
   {
    "id": "ahq-core-SPUS-20261125145147",
    "symbol": "SPUS",
    "asset": "stock",
-   "status": "open",
+   "status": "closed",
    "strategy": "core",
    "entryOrderId": "574aafa3-b47d-491a-9bda-02ef6ba9af4c",
    "qty": 324.0,
@@ -6677,7 +6323,13 @@
     "tradingAgents": "not used (core)"
    },
    "lastPrice": 53.79,
-   "unrealizedPct": 2.94
+   "unrealizedPct": 2.94,
+   "closing": "bad news: China rejected the new U.S. 20% tariff plan, further raising global trade war ri",
+   "closedAt": "2026-11-26T11:40:36Z",
+   "exitPrice": 53.745,
+   "exitReason": "bad news: China rejected the new U.S. 20% tariff plan, further raising global trade war ri",
+   "pnl": 487.62,
+   "pnlPct": 2.88
   },
   {
    "id": "ahq-PLTR-20261124164652",
@@ -6888,7 +6540,7 @@
    "id": "ahq-core-SPUS-20261124145913",
    "symbol": "SPUS",
    "asset": "stock",
-   "status": "open",
+   "status": "closed",
    "strategy": "core",
    "entryOrderId": "f61023ba-9547-4ca2-85ec-3200ace7369c",
    "qty": 2.0,
@@ -6911,7 +6563,13 @@
     "tradingAgents": "not used (core)"
    },
    "lastPrice": 53.79,
-   "unrealizedPct": 2.94
+   "unrealizedPct": 2.94,
+   "closing": "bad news: China rejected the new U.S. 20% tariff plan, further raising global trade war ri",
+   "closedAt": "2026-11-26T11:40:38Z",
+   "exitPrice": 53.745,
+   "exitReason": "bad news: China rejected the new U.S. 20% tariff plan, further raising global trade war ri",
+   "pnl": -0.88,
+   "pnlPct": -0.81
   },
   {
    "id": "ahq-NVDA-20261124145910",
@@ -8366,6 +8024,20 @@
  ],
  "decisions": [
   {
+   "t": "2026-11-26T14:17:11Z",
+   "symbol": "XRP/USD",
+   "outcome": "error",
+   "why": "order failed: not enough cash",
+   "event": "XRP sees positive institutional inflows via Franklin Templeton ETF, bucking the broader market trend."
+  },
+  {
+   "t": "2026-11-26T12:42:05Z",
+   "symbol": "ETH/USD",
+   "outcome": "error",
+   "why": "order failed: not enough cash",
+   "event": "Fidelity's filing for a spot Chainlink ETF and strong institutional backing provide positive momentum for digital assets."
+  },
+  {
    "t": "2026-11-26T09:14:25Z",
    "symbol": "BTC/USD",
    "outcome": "bought",
@@ -8770,58 +8442,9 @@
    "outcome": "waiting",
    "why": "down 3% today, no new trades until tomorrow",
    "event": "Renewed Houthi attacks on Saudi oil infrastructure continue to escalate regional supply disruption risks."
-  },
-  {
-   "t": "2026-11-25T19:06:25Z",
-   "symbol": "GE",
-   "outcome": "waiting",
-   "why": "down 3% today, no new trades until tomorrow",
-   "event": "General Electric's aerospace unit secured a significant order for GEnx engines from Malaysia Aviation Group."
-  },
-  {
-   "t": "2026-11-25T19:06:25Z",
-   "symbol": "OXY",
-   "outcome": "waiting",
-   "why": "down 3% today, no new trades until tomorrow",
-   "event": "Renewed Houthi attacks on Saudi oil infrastructure continue to escalate regional supply disruption risks."
   }
  ],
  "equity": [
-  {
-   "t": "2026-11-17T18:46:51Z",
-   "equity": 99795.16,
-   "spy": 731.15
-  },
-  {
-   "t": "2026-11-17T19:17:55Z",
-   "equity": 99783.68,
-   "spy": 731.98
-  },
-  {
-   "t": "2026-11-17T19:48:37Z",
-   "equity": 99782.88,
-   "spy": 730.235
-  },
-  {
-   "t": "2026-11-17T20:20:26Z",
-   "equity": 99783.7,
-   "spy": 729.71
-  },
-  {
-   "t": "2026-11-17T20:51:07Z",
-   "equity": 99804.55,
-   "spy": 729.63
-  },
-  {
-   "t": "2026-11-17T21:31:59Z",
-   "equity": 99921.8,
-   "spy": 733.26
-  },
-  {
-   "t": "2026-11-17T22:02:27Z",
-   "equity": 99836.73,
-   "spy": 733.26
-  },
   {
    "t": "2026-11-17T22:32:54Z",
    "equity": 99915.12,
@@ -10786,6 +10409,41 @@
    "t": "2026-11-26T11:02:28Z",
    "equity": 92002.46,
    "spy": 716.67
+  },
+  {
+   "t": "2026-11-26T11:40:39Z",
+   "equity": 92039.08,
+   "spy": 716.67
+  },
+  {
+   "t": "2026-11-26T12:11:29Z",
+   "equity": 92050.34,
+   "spy": 716.67
+  },
+  {
+   "t": "2026-11-26T12:42:05Z",
+   "equity": 92066.35,
+   "spy": 716.67
+  },
+  {
+   "t": "2026-11-26T13:12:40Z",
+   "equity": 92062.37,
+   "spy": 716.67
+  },
+  {
+   "t": "2026-11-26T13:43:05Z",
+   "equity": 92066.88,
+   "spy": 716.67
+  },
+  {
+   "t": "2026-11-26T14:17:11Z",
+   "equity": 92056.48,
+   "spy": 716.67
+  },
+  {
+   "t": "2026-11-26T14:52:11Z",
+   "equity": 92045.81,
+   "spy": 716.67
   }
  ],
  "watch": [],
@@ -10797,348 +10455,15 @@
  },
  "events": [
   {
-   "summary": "Renewed incidents including oil tankers hitting mines near Oman and an explosion at a Bangkok oil facility escalate regional supply disruption risks, pushing oil higher.",
-   "category": "oil_supply",
-   "firstSeen": "2026-11-26T06:33:36Z",
-   "publishers": [
-    "24 News HD",
-    "AOL.co.uk",
-    "Al Jazeera",
-    "Anadolu Ajansı",
-    "Arab News",
-    "Arbiterz",
-    "AzerNews",
-    "BBC",
-    "Bhaskar English",
-    "Breakingthenews.net",
-    "Business Upturn",
-    "CNA",
-    "CP24",
-    "Chiang Rai Times",
-    "Computing UK",
-    "Corsicana Daily Sun",
-    "Daily Express",
-    "Daily Mirror - Sri Lanka",
-    "Daily Times",
-    "Deccan Herald",
-    "Digg",
-    "Dimsum Daily",
-    "Durango Herald",
-    "Eastern Riverina Chronicle",
-    "Firstpost",
-    "Gujarat Samachar",
-    "Gulf Daily News (Bahrain)",
-    "Gulf Today",
-    "Herald Bulletin",
-    "India TV News",
-    "Investing.com",
-    "JournalArta",
-    "KLSE Screener",
-    "KMVU FOX 26 Medford",
-    "KVNU News Talk",
-    "Kyiv Post",
-    "LEADERSHIP Newspapers",
-    "Laodong.vn",
-    "Latest news from Azerbaijan",
-    "Lloyd's List",
-    "London South East",
-    "MM News",
-    "MTV Lebanon",
-    "Minute Mirror",
-    "Modern Ghana",
-    "Moneycontrol.com",
-    "NDTV",
-    "NDTV Profit",
-    "News Karnataka",
-    "News18",
-    "NewsBytes",
-    "Newsquawk",
-    "Operativ Məlumat Mərkəzi",
-    "Oskaloosa Herald",
-    "Profit by Pakistan Today",
-    "RFI",
-    "RTL Today",
-    "Reuters",
-    "Roya News English",
-    "SRN News",
-    "Splash247",
-    "TRT World",
-    "TV5 Kapatid Network",
-    "Temple Daily Telegram",
-    "Texomashomepage.com",
-    "Thaiger",
-    "The Annapurna Express",
-    "The Avenue Mail",
-    "The Batesville Daily Guard",
-    "The Border Mail",
-    "The Canberra Times",
-    "The Daily Jagran",
-    "The Diplomatic Insight",
-    "The Economic Times",
-    "The Financial Express",
-    "The Globe and Mail",
-    "The Hindu",
-    "The Killeen Daily Herald",
-    "The Kyiv Independent",
-    "The Mirror",
-    "The National",
-    "The Peninsula Qatar",
-    "The Singleton Argus",
-    "The Star",
-    "The Straits Times",
-    "The Sun",
-    "The Sun Malaysia",
-    "The Times of India",
-    "The Washington Post",
-    "The Week",
-    "Times Now",
-    "Trend News Agency",
-    "UA.NEWS",
-    "WE News English",
-    "WRAL",
-    "WSJ",
-    "Wisevoter",
-    "X",
-    "Yahoo",
-    "Yeni Safak English",
-    "blue News",
-    "grafa.com",
-    "https://www.engine.online/",
-    "la Repubblica",
-    "marketscreener.com",
-    "newstodaynet.com",
-    "seMissourian",
-    "www.jordannews.jo",
-    "Мілітарний",
-    "Прямий",
-    "Цензор.НЕТ",
-    "صوت الإمارات",
-    "巴士的報"
-   ],
-   "assets": {
-    "XOM": {
-     "direction": "up",
-     "confidence": 0.85,
-     "why": "Attacks on regional oil infrastructure and tankers threaten supply and boost oil prices."
-    },
-    "CVX": {
-     "direction": "up",
-     "confidence": 0.85,
-     "why": "Geopolitical conflict and tanker explosions provide strong tailwinds for oil majors."
-    },
-    "OXY": {
-     "direction": "up",
-     "confidence": 0.75,
-     "why": "Refinery explosion and supply disruption fears push oil prices higher."
-    },
-    "SLB": {
-     "direction": "up",
-     "confidence": 0.6,
-     "why": "Increased oil prices and regional instability typically boost demand for oilfield services."
-    },
-    "COP": {
-     "direction": "up",
-     "confidence": 0.8,
-     "why": "Higher geopolitical risk premiums in energy markets support upstream producers."
-    }
-   },
-   "sources": [
-    {
-     "id": "35d9b3a89685562a",
-     "publisher": "marketscreener.com",
-     "kind": "news",
-     "title": "Oil equipment supplier SBO's Q3 profit falls as Middle East disruptions continue",
-     "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxPZ1lRRlc2RzlWUXB1TnA2ejFPWV90akhUTF9TNVAzZXRZWmFJOUJPUFVhakZtVEpVM0Y4eTVRai04SXBGTFNSQkU2UkwwNFNkZFk3ckhYazkxbjZVUUtwY1ZoX1pHQVgxT2pra3hOZVlwRkdVY0h2d1BQTm0tdjVHdzRFc2xrVFg3UzRncEV6aHpiZVNRNFVqbVVhcmRDNkRVRTB4VXM0QWg4NHRZb0ZvY01iakM4UWN0WjVLSkNzMnRLNHA0Q3E4Y29JLWlyZw?oc=5",
-     "time": "2026-11-26T06:50:21Z"
-    },
-    {
-     "id": "bf9bba16ff1c551c",
-     "publisher": "MM News",
-     "kind": "news",
-     "title": "Global Oil Prices Rise as Brent Crude Reaches $94.71 per Barrel",
-     "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNMmVMSDliODdTY2lYYmpyZDV1TnRCelB1cmRxUE45ZUFDYmFqSThEOVhMNV9SaUlPcVZDRUNlVnJvdHZBTElQekUtWTBfWkczLS0xUGJkNHpDaDZRU0I3TmhzSHdVdVF3SC1rbHhNYzhxZEk0amZTN01aM2dXY1VKMWk5ZUNMakI2?oc=5",
-     "time": "2026-11-26T06:46:58Z"
-    },
-    {
-     "id": "41440b1a1a50e95c",
-     "publisher": "صوت الإمارات",
-     "kind": "news",
-     "title": "Oil prices rise amid supply concerns in the Strait of Hormuz and escalating regional tensions",
-     "url": "https://news.google.com/rss/articles/CBMi4wFBVV95cUxPMWhvMEZlVk8xb3ljWjg4bGo3bU1LSW1EQjhJcE9jc3lCWW1WZW9NajBZWlZJNzVvSVo2WVV5NW5oUmJ0SzdIbk1ZaUVIdmo1WGE5QXhKSE83TW1NcUNkdXE5MHBMYU10SXplMDlaYkRsRkJMTUFVdGRmM2FxWjBiMmpnN013N2RURVEya29NNU1LZ3I4OXhZU0R3SjBJdUNDbWtURWZ3RE1xZWt4MW83R0k2b1FqNFZuTXdmOV90QzVKbHFsNV9US3ppZWFSR2MweWFvaFhhRTNZUEJMVVVXenNUSQ?oc=5",
-     "time": "2026-11-26T06:41:12Z"
-    },
-    {
-     "id": "8bc43e340d7d8603",
-     "publisher": "Gulf Today",
-     "kind": "news",
-     "title": "Oil prices rise on supply concerns",
-     "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxOU0k1Qm9CcjN3amVoLXdtOTFTX3M0NC1DSEllVmdWVEN5Y3dfaFVOaTlQY1R1dXpwX09TRkF5akxfa1VwX21tQXhqN3Jac3RPa0VJLTBqM1VWc2pIaFVfSjl6QzlCNDhSVnVQOTBGaEUyTnd1aWwtd3NiZU92S2dNQzBYX3h6UQ?oc=5",
-     "time": "2026-11-26T06:35:36Z"
-    },
-    {
-     "id": "e44be2a2c6302782",
-     "publisher": "JournalArta",
-     "kind": "news",
-     "title": "Oil Holds Gains After Houthis Say They Attacked Saudi Refinery",
-     "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxQZkpPWE14VFp6c2VISTlHd044b2VSTzhwY0hCZkg2WDNBemhoNEJvZHU3d0JvT2pCTnVHekFxMVpvUVl6eXNPTDJXd0VDWWZ3WEFXU0c3ejlVM015d2l1UUsxSGF3YXZTZEFsNFE2MlpxZUdLd0VXSE1Iblh2QTJIeEI4cw?oc=5",
-     "time": "2026-11-26T06:35:10Z"
-    }
-   ]
-  },
-  {
-   "summary": "New US tariff actions including a surprise 10% jet tariff and friction with international trading partners continue to weigh on market sentiment and affected sectors.",
-   "category": "tariffs",
-   "firstSeen": "2026-11-26T07:58:04Z",
-   "publishers": [
-    "1News",
-    "ABP Live English",
-    "ANTARA News",
-    "AP",
-    "Asia Times",
-    "AsiaOne.com",
-    "Bangladesh Post",
-    "Big News Network.com",
-    "BreakingNews.ie",
-    "Business Today",
-    "BusinessToday Malaysia",
-    "Businesskorea",
-    "Báo VietNamNet",
-    "CNBC",
-    "CTV News",
-    "Central News South Africa",
-    "Corsicana Daily Sun",
-    "Dainik Jagran MP CG",
-    "ETV Bharat",
-    "Firstpost",
-    "FlipItMoney",
-    "France 24",
-    "Free Press Journal",
-    "Heavy Lift & Project Forwarding International",
-    "Hiru News",
-    "India Weekly",
-    "India's News.Net",
-    "Inshorts",
-    "Kiripost",
-    "Laodong.vn",
-    "LinkedIn",
-    "Livemint",
-    "Moneycontrol.com",
-    "NDTV",
-    "Novinite.com",
-    "Outlook India",
-    "Oz Arab Media",
-    "Public TV English",
-    "Reuters",
-    "Simple Flying",
-    "Telegraph India",
-    "The Arkansas Democrat-Gazette",
-    "The Avenue Mail",
-    "The Business Times",
-    "The Copenhagen Post",
-    "The Economic Times",
-    "The Independent",
-    "The Standard (HK)",
-    "The Statesman",
-    "The Sun Malaysia",
-    "Traders Union",
-    "Udayavani",
-    "X",
-    "cwibc.co.id",
-    "fiscal.ai",
-    "morning-times.com",
-    "prameyanews.com",
-    "tennews.in",
-    "İlke Haber Ajansı",
-    "شبكة تواصل الإخبارية",
-    "재경일보"
-   ],
-   "assets": {
-    "AMAT": {
-     "direction": "down",
-     "confidence": 0.7,
-     "why": "Trade war and tariff hikes pressure semiconductor equipment and broad tech."
-    },
-    "AAPL": {
-     "direction": "down",
-     "confidence": 0.7,
-     "why": "Escalating trade tensions and tariff threats between the US and China negatively impact multinational tech companies."
-    },
-    "SPWO": {
-     "direction": "down",
-     "confidence": 0.65,
-     "why": "Broad tariff escalation pressures global equities."
-    },
-    "NVDA": {
-     "direction": "down",
-     "confidence": 0.6,
-     "why": "Trade wars and tariff friction create broad headwinds for tech giants."
-    },
-    "AMD": {
-     "direction": "down",
-     "confidence": 0.6,
-     "why": "Broad trade war escalation and tariff threats negatively impact global tech supply chains."
-    },
-    "AMZN": {
-     "direction": "down",
-     "confidence": 0.65,
-     "why": "Escalating trade friction threatens global consumer goods supply chains."
-    },
-    "FDX": {
-     "direction": "down",
-     "confidence": 0.7,
-     "why": "Broader trade friction and newly proposed tariffs on aviation and transport weigh on global industrials and logistics."
-    }
-   },
-   "sources": [
-    {
-     "id": "7b91b6e36c255f46",
-     "publisher": "CNBC",
-     "kind": "news",
-     "title": "U.S. tariff-hike threats pile pressure on partners to sign trade deals",
-     "url": "https://www.cnbc.com/2026/11/26/us-tariffs-hike-trade-agreement.html",
-     "time": "2026-11-26T08:09:39Z"
-    },
-    {
-     "id": "8a159198a9ff9db0",
-     "publisher": "Central News South Africa",
-     "kind": "news",
-     "title": "Trump Fires Fresh Tariff Salvo at 14 Major Trading Partners, Including China and EU",
-     "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQTzVCVHJxR2NYR1N2ek5lOEVLQ1dlWnRXdEdUYi1IRlJ4bnFmWFRCRzgyRDR2aFdFanZSMC0zN1VqNmwtZHZ6YTV6cEVLNXg2SE1IVGRlZFNSLWJqUVMzZFVuUkpoeVY1V3ktTG5BeldVQjV2dWN6azg5MWxCNHEySDZpWVZWclc1THFicThpbzczTFp2d01GOVV2V284T2lyZG9McjhmTHJ5YTRxS2c?oc=5",
-     "time": "2026-11-26T08:08:41Z"
-    },
-    {
-     "id": "9f84aaa3b6dae228",
-     "publisher": "Novinite.com",
-     "kind": "news",
-     "title": "China, EU and Brazil Condemn Trump's New Tariff Proposals",
-     "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQekJXemhBLVBncHdYMkQ1WXhYZi1HNS1fREZvMEsxSldwVWZJT0hiYldHZ2pFanJTd1pzMGl4dDRwenJDN3otQmROTEtQc25nM1owZmhjYzFHLWhuMVJzNVRIX2xBUmpLeEVnT0hsWmpSZ0drTGNtVTQxaWQzOGVpOVRoRDliWHFyV0JBNVk0ZGhkcXRXNmgwV1hxSzhGakI4MDdqcA?oc=5",
-     "time": "2026-11-26T08:02:32Z"
-    },
-    {
-     "id": "4abc09f0e1c008c3",
-     "publisher": "BreakingNews.ie",
-     "kind": "news",
-     "title": "US tariff hikes threaten to reignite trade tensions with China",
-     "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxOLUdXZVhvTHVidXZERnFfckJPSno0cy14QjdEcTduQ09ZWmJSWjVPbzdJdF9aYmxGOHZ0ZnBlX2hSa0RXaGN3bE1KTFc5SXpRaHg4QW5hVFl0YjdtbC1XZ1l4RmFVMVRTRFNZWkxEd3lidzJlOHkwTm12OERCSVBWRmk2aWNvV1VHeGIwS1lZaDhaUWJBN1ZhYkUtNjV3eHRoUWhINXowV3hZN1pQR1E?oc=5",
-     "time": "2026-11-26T08:00:50Z"
-    },
-    {
-     "id": "9abbfee1ccbe26eb",
-     "publisher": "NDTV",
-     "kind": "news",
-     "title": "With 40% Tariff Threat, Trump Wants An Edge Over China Despite A Trade Deal",
-     "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQb1BEOVo1eXVNOG5UUEpTRjdCa2doZDcycEluYzM1XzZfalA2Znd6bWtVQk9SOWVBQ0xrMExhOEF3VHdJcVpIVkUtbkhoNElBS3QzYjNsSGl2YjJUUXRONDdRX0dUdnd3Y2xybDhmb2M3RWowT3o3UXNWTjRnUmJySWQ4R2FDUEhDb1NwZUlmSnBJalpSdDBVVGc3N3pJNGRROU03ZTJ3RjlKeGpVY2lpVG1vX0bSAbwBQVVfeXFMT2VDQWFIY1NxaElVVklwNkJFMkQzb2szbDhvYmpBeFRUNFJNeG1CUWhmSE5SWm1Gc1BHSGY0SDBvMV9FaG0wWlFlOHV1Y1h4cUJzQ25YZlY0RmZWdjVQTk1qelRWTmVBaFQ1Y0szY255OGRfZ2xzRFNZWlZ3WjRKaVh6UWtUR0pzNlNhbXl1RWRQQzRRQXRRenFWQ2lDRVBoc0Y3X2JCRklTOTNjZzNWLUN6MnRCZlFiSExuRzY?oc=5",
-     "time": "2026-11-26T08:00:46Z"
-    }
-   ]
-  },
-  {
-   "summary": "Cryptocurrency markets face ongoing headwinds as record US spot Bitcoin ETF outflows persist alongside institutional caution.",
+   "summary": "Bitcoin and broader crypto markets face sustained downward pressure from institutional ETF outflows and macroeconomic headwinds.",
    "category": "crypto_negative",
    "firstSeen": "2026-11-26T09:04:09Z",
    "publishers": [
+    "24/7 Wall St.",
     "BigGo Finance",
     "Coin Edition",
+    "CoinCodex",
+    "CoinDesk",
     "CoinJournal",
     "Crypto Economy",
     "Dosya Haber",
@@ -11146,17 +10471,20 @@
     "Holder.io",
     "Investing.com",
     "KuCoin",
+    "MLQ.ai",
+    "Pluang",
     "Reuters",
     "Score Nigeria",
     "The Crypto Times",
     "TradingView",
-    "Wisevoter"
+    "Wisevoter",
+    "www.tokenpost.com"
    ],
    "assets": {
     "BTC/USD": {
      "direction": "down",
      "confidence": 0.8,
-     "why": "Heavy spot net sales, record ETF outflows, and custodial security concerns add severe downward pressure on Bitcoin."
+     "why": "Record monthly spot ETF outflows create persistent downward pressure on Bitcoin."
     },
     "LINK/USD": {
      "direction": "down",
@@ -11213,20 +10541,533 @@
    ]
   },
   {
-   "summary": "Switzerland's first spot Bitcoin ETF debuts, providing a positive boost for crypto adoption sentiment.",
+   "summary": "Oil loadings have been halted at Saudi Arabia's Ras Tanura facility following Houthi attacks, further escalating supply disruption risks.",
+   "category": "war_escalation",
+   "firstSeen": "2026-11-26T12:41:00Z",
+   "publishers": [
+    "ABC News - Breaking News, Latest News and Videos",
+    "ANSA",
+    "ARN News Centre",
+    "Anadolu Ajansı",
+    "Breakingthenews.net",
+    "Business Standard",
+    "CNN",
+    "Channels Television",
+    "Daily Observer",
+    "Demokratis.co.id",
+    "Dubai Eye 103.8",
+    "Euronews.com",
+    "Fars News Agency",
+    "FinanceFeeds",
+    "Governo.it",
+    "Gulf Business",
+    "Haaretz",
+    "Head Topics",
+    "Il Sole 24 ORE",
+    "JFeed",
+    "KRDO",
+    "Latest news from Azerbaijan",
+    "Mezha.net",
+    "Middle East Monitor",
+    "Newsquawk",
+    "Operativ Məlumat Mərkəzi",
+    "Quantum Commodity Intelligence",
+    "Reuters",
+    "Roya News English",
+    "Saudi Gazette",
+    "Seatrade Maritime News",
+    "Sharjah24",
+    "SuaraGarut.ID",
+    "The Guardian",
+    "The Siasat Daily",
+    "Times Kuwait",
+    "TodayPress.tv",
+    "Ukrinform",
+    "WSJ",
+    "X",
+    "Xinhua",
+    "Yemen Online",
+    "Ynetnews",
+    "cedarnews.net",
+    "finance.biggo.com",
+    "marketscreener.com",
+    "www.connectedtoindia.com",
+    "www.marketscreener.com",
+    "www.thenationalnews.com",
+    "www.utkalpost.com",
+    "Цензор.НЕТ",
+    "تسنیم",
+    "شبكة تواصل الإخبارية",
+    "アラブニュース"
+   ],
+   "assets": {
+    "XOM": {
+     "direction": "up",
+     "confidence": 0.82,
+     "why": "Middle East war escalation and tanker attacks drive oil prices higher, benefiting major oil producers."
+    },
+    "CVX": {
+     "direction": "up",
+     "confidence": 0.81,
+     "why": "Supply disruption risks from regional conflict support higher crude prices."
+    },
+    "AEM": {
+     "direction": "up",
+     "confidence": 0.7,
+     "why": "War escalation increases safe-haven demand for gold."
+    },
+    "AVAV": {
+     "direction": "up",
+     "confidence": 0.7,
+     "why": "Defense tech benefits from regional military conflict escalation."
+    },
+    "OXY": {
+     "direction": "up",
+     "confidence": 0.7,
+     "why": "Supply disruption at major Saudi facility supports higher oil prices."
+    }
+   },
+   "sources": [
+    {
+     "id": "dc622b2bf75d9387",
+     "publisher": "Demokratis.co.id",
+     "kind": "news",
+     "title": "Houthi Strikes on Saudi Oil Refinery Renew Middle East Supply Fears",
+     "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE1tdEl6WHZKYVRvd2wtbTlGQ1EybTJrV3M1aU1rUWhWUktUNm9sS3lUOWxlaVRLb0NhY21rUWVKY2R6aVNNOGV0T1RLQ21feEExbXpxTC1sNXN0SFJwMmRQSW1odTFxbVp0LTNEaEZB?oc=5",
+     "time": "2026-11-26T12:48:03Z"
+    },
+    {
+     "id": "9a042b43f4554288",
+     "publisher": "Middle East Monitor",
+     "kind": "news",
+     "title": "Qatar’s LNG shipments reach highest pace since start of US-Iran war: Report",
+     "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPd3JHc3V0VnNGeEFjLTZMTnRFaU93NnBfQ2pYZzBXOHktbkN2cmN5M1hyVnp5QW5WQW1NWExEVW1URnBQYmM5ZXRfNG5VUW5NX3NERS1vcjdxd21qdEplU2ItVGFiTmV5UHk1cDhlcGFkSmVLOGU1MGxYQlZKajhET3BCQUh0bHJNR3FZMnFmY1BuYnJpYXdSX0NZSlI1MC1XVHExUExhdGZ0YXUzcHBXaUJZNWREMFJm0gG-AUFVX3lxTE1qVS1YbmRGZTY5TVBtOElmejVkdVpTNFZSWHJBSG1TazBOdVpxUkdRb0s0TlpCZU90ekVJdVF1WHlSdW9EbGg5MGlvM3cwcGM2aFNnYnJqNXNkeTZna3lWNlF4MnRPZ0Vxa3JoTmZOZWZoTGlFX2Nqamo0d0c4WWx1a2l1UkdOekRQcWZLNFJDUXRJVDRfOUxzWXE3VWJVMHhlVnY4bGNYT1E2eDEwYmR5QTF4QjhHaGVtRUZyMmc?oc=5",
+     "time": "2026-11-26T12:47:00Z"
+    },
+    {
+     "id": "33bf620a85dcb5cc",
+     "publisher": "The Guardian",
+     "kind": "news",
+     "title": "Huge flames rise from fire at Bangkok oil facility – video",
+     "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPS21ERWhmcVpqVTRJNmNqQzBFRG1YNURlemdxNF9Bd1hTaUpmOEJ6NUMySXZPZlVFdlVKUEZkUUMzRU1fZmdmYncwazJDRWN6dm5zX2NBdktKblFMNmpWQlBUZHVjaWw0YWlOU2tFcng1dFd4UGczajk3Mlh2NTVud1l6NzZWMWoyN0xpcEZOUWphUk1wX2g3RS1HYUtXT2R6VklNZ3R4d0dIZWRi?oc=5",
+     "time": "2026-11-26T12:46:00Z"
+    },
+    {
+     "id": "c90fb53e3a654b0a",
+     "publisher": "Sharjah24",
+     "kind": "news",
+     "title": "ADNOC L&S confirms Jordanian crew member dead after Hormuz attack",
+     "url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE1LcXVQenNscVdBYlU2WHpHN0tDV3Z6cUkxNmR3MlVRdzczX0lwdThzUmtuUEcyYkMtTkQzSEtQVTQxc2JsUWFJNVdSSGxZX3VweWd3MHR2Y2xJNlVlZnc?oc=5",
+     "time": "2026-11-26T12:43:26Z"
+    },
+    {
+     "id": "7b5c66a158211df7",
+     "publisher": "Xinhua",
+     "kind": "news",
+     "title": "8 injured in oil refinery explosion in Bangkok",
+     "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE5HTUMyOFl3dTNiRENwMWVEN290QnRsR2NxYmt2TE9TTmpKbU9QZzFCM05Kd25RbmxCRkNObDV1WHU0eVE1Ry15MzdMMzdkdjRLTTdrZWdhRGlHb1RDWHZqd1VVdG5MX0JSUnh0WXRrWHNLT255d2RteGVzOFI?oc=5",
+     "time": "2026-11-26T12:43:15Z"
+    }
+   ]
+  },
+  {
+   "summary": "Expanding US Section 301 tariffs on global trading partners heighten trade war risks and pressure export-oriented sectors.",
+   "category": "tariffs",
+   "firstSeen": "2026-11-26T14:13:58Z",
+   "publishers": [
+    "Business Standard",
+    "BusinessLine",
+    "CNBC TV18",
+    "Grants Pass Tribune",
+    "Herald Bulletin",
+    "News-Press NOW",
+    "Reuters",
+    "Sun Sentinel",
+    "Telegraph India",
+    "Washington Times",
+    "Yahoo Finance"
+   ],
+   "assets": {
+    "SPWO": {
+     "direction": "down",
+     "confidence": 0.75,
+     "why": "Broad tariff escalations weigh heavily on global equity markets and international trade."
+    },
+    "AMD": {
+     "direction": "down",
+     "confidence": 0.6,
+     "why": "Broad trade war escalation and tariff uncertainty negatively impact global chip supply chains."
+    },
+    "NVDA": {
+     "direction": "down",
+     "confidence": 0.6,
+     "why": "Broad trade war escalation and tariff uncertainty negatively impact global chip supply chains."
+    }
+   },
+   "sources": [
+    {
+     "id": "ae86741feecb0f60",
+     "publisher": "Sun Sentinel",
+     "kind": "news",
+     "title": "China and other US trading partners hit back at Trump’s new tariff plans",
+     "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPbndtNWxqUjFHOWJRRDdzRkFzWkNNMWRGeHVCZHkxV0EtWFV6S2xJYXJmRXBuRklUT0JlZW15RHd0M081RnBHRFJQWUctUU50bHNPQ25Td2k4c2dOMXZ2cm9JdFpjaVh5MlhzQkhJUFE1UWpXRDZDVC0yRklCZk5ZWFc3ODhYUk05QjFaQ1lCc2pqWGZKU3hMSlFfbmI2SUhlSU9FRE92ci15d1J3VUZuT3J3?oc=5",
+     "time": "2026-11-26T14:17:37Z"
+    },
+    {
+     "id": "8a34633a1115521a",
+     "publisher": "Grants Pass Tribune",
+     "kind": "news",
+     "title": "Trump Opens New Front in Global Trade Battle With Sweeping Tariff Proposal",
+     "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQdVdNMWdQdlBicnhUSGk5Y010MEtxZFBVeHlia0xnOWlWOHRkZFdoTVAzZXBvaDdqZGJCMzRGWFRYU0JOR0JUTUkzeWlFQ1JkdmRFWVJseUZaODZ5bVhDejdnZXNEak9WelZubVFsWEZidFpySmtGX0JReHpfX0REekg3cWFmaDdfaU5qeU9NLTk1TGZLWWxrOXhKQ2ZVSDZiZHdmOWNMd3ZxU1NoN0E?oc=5",
+     "time": "2026-11-26T14:17:20Z"
+    },
+    {
+     "id": "c92b3d252927b3e3",
+     "publisher": "Telegraph India",
+     "kind": "news",
+     "title": "Proposed US tariffs could erode India's edge over Asian rivals, warns engineering exporters' body",
+     "url": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxQbHBBT1JyMUl0SkNlaTlUcUlQcWhlN05iOV9jcUFudG9qdkNmUUtOclY2SHdkelNMVmp0Q0VUcjl3VmFsc3Z1NzNsQkc4ckZwYWJ5WGp5bzNWbjVNcGl3NVNKbElOTS1kVjh2eGd4YUVFNjdUQ3lGQkJJTE1Sbkdrd0dBcG5vLXY2U2xHNmROU3hFdG1FU0M1a043Y3liVk5DaVlsd2hTOFk4UVdBMFYyV193N25nbVozR2NtdmVTbzU3MTBTcGZuNVJBbXoyUE9VeDJPb0xva0tnd1F1T1Nr0gHkAUFVX3lxTFBXOFQ5VTlGMG9GMmthOFhXY3pvaU1UVDNXX043czRRazR5MkVvTFhTano1R3hlTHVRQ3k2M2NBRjkxelJwUnVlaFBwWGJINnN1eEJtcEpiYmo2LVdhbFU5dkVneS1ib1FIRW83a3JMY2NFNm9ncDJjcDYtOTNOZlZmaGV0TElrMEJWdF9kX202a2oxd3Q0b1hDdHVGQXgzVWZtaENRc0JZNndkUjJCZl9JWndXcmk3MDFlQVczU1J4bWZqVVd1aTJDMjItT2ljaFVva21mUm1WLTNEbmR0Q3lMM3VoRw?oc=5",
+     "time": "2026-11-26T14:16:46Z"
+    },
+    {
+     "id": "38ef353f39f42b7c",
+     "publisher": "Reuters",
+     "kind": "news",
+     "title": "Brazil's Embraer CEO says US aircraft tariff will hurt airlines",
+     "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQY25OMnN4NU9UMkpqZXcxWk5oMkdHRnR3alJpWVZfMnZVOEN2U1k3Z0xkVTdEZTFoSm9KdXExUnVReGhGeDl5SnprUncxOXpzSGpOazRVOEMzREczYzF2ODNaTkh4b2l4Q1dCU1JhekJIVXFNX1J1eTdlNmFpbTVSYU5BRUQwRmZzU3BvMjEyTmhOd3JXZlRjY1cwUjV0LWl0QkhVTVUzQmFKYmlJaEtQdXZORUdnZ25GZnZHcU04UEMtWDg?oc=5",
+     "time": "2026-11-26T14:15:44Z"
+    },
+    {
+     "id": "7036d603b6eea9cb",
+     "publisher": "Business Standard",
+     "kind": "news",
+     "title": "Fresh US tariff plan raises uncertainty over Indian exporters' prospects",
+     "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxNb3NPd2FpbWNOdGNTbHdjR0tVSjhHYnB0aWhKLWtUMUJ4NUVWZGFNV2ctVWxEbko5b3hONVMzRFVTR3lIN09uSDJ1ZGNiRTVnQ0tWalBhUXFaNlpXeHZGZVU1ZFc3V29GWGZaSE5ERVV6ME1KMXpfTHVuOUFEMDI0QUhaWmhkS0FleFdid2J0bUdCR2poYnFqQXBOWlh2MDZnd3A2dDFuUGN6OHJGbDlCdHBpR3pIemplSFN5NUVlUHF6VnpLLWlIUXNfMU9KRjlTR1HSAdcBQVVfeXFMT2U4V2JPWF8ydkRCNGxFS2RBMUtUQ1haX0Zla1h6TXpnemJfSGlmWEFfbEpXbV82TmlMaG9fcGdDSkJpYmI3NE9rTnVBRnpMSGQ3Q3dLdkJ4cDlJRkZHcTFVdlVCaWxNSEVpd2JpeXFYcVA1aFdRTVlBblZsaENmYVlrZ0ExMlExV29LQXpVblczb2FTU1puY0xweTd1VVFtbEo3Mlg4ampGRmF2c2h3ZVVaOUZMcDRhdTRfTzVNYXA0TDYxczhMOE1lSnJtY0V5cEFPS2lyMlk?oc=5",
+     "time": "2026-11-26T14:15:30Z"
+    }
+   ]
+  },
+  {
+   "summary": "HP Inc. shares surged following a strong Q4 earnings beat and positive outlook on device refresh cycles.",
+   "category": "earnings_beat",
+   "firstSeen": "2026-11-26T14:32:22Z",
+   "publishers": [
+    "fiscal.ai"
+   ],
+   "assets": {
+    "AAPL": {
+     "direction": "up",
+     "confidence": 0.5,
+     "why": "Positive sentiment from HP's device refresh cycle outlook may benefit hardware peers."
+    }
+   },
+   "sources": [
+    {
+     "id": "319c2bde73b1ee95",
+     "publisher": "fiscal.ai",
+     "kind": "news",
+     "title": "West Pharmaceutical Services Updates Full-Year 2026 Guidance and Increases Dividend",
+     "url": "https://www.barchart.com/story/news/9018550/west-pharmaceutical-services-stock-outlook-is-wall-street-bullish-or-bearish",
+     "time": "2026-11-26T14:32:22Z"
+    }
+   ]
+  },
+  {
+   "summary": "Nvidia faces tightened U.S. export controls, forcing the suspension of advanced AI server shipments to several ASEAN countries.",
+   "category": "company_bad_news",
+   "firstSeen": "2026-11-26T10:59:10Z",
+   "publishers": [
+    "Yahoo Finance",
+    "fiscal.ai"
+   ],
+   "assets": {
+    "NVDA": {
+     "direction": "down",
+     "confidence": 0.85,
+     "why": "Halting shipments to ASEAN countries under tightened export controls is negative for near-term revenue."
+    }
+   },
+   "sources": [
+    {
+     "id": "2a9abaa8fa4bf075",
+     "publisher": "Yahoo Finance",
+     "kind": "news",
+     "title": "Nvidia Reportedly Halts AI Server Shipments to Four Southeast Asian Countries Amid Tighter US Export Controls",
+     "url": "https://investorshub.advfn.com/market-news/article/40759/nvidia-reportedly-halts-ai-server-shipments-to-four-southeast-asian-countries-amid-tighter-us-export-controls?.tsrc=rss",
+     "time": "2026-11-26T10:59:10Z"
+    },
+    {
+     "id": "a780debbbf7da51d",
+     "publisher": "fiscal.ai",
+     "kind": "news",
+     "title": "NVIDIA Orders Partners to Stop Server Shipments to ASEAN States",
+     "url": "https://www.marketscreener.com/news/nvidia-orders-partners-to-stop-server-shipments-to-asean-states-ce7851d8de89f626",
+     "time": "2026-11-26T11:31:41Z"
+    },
+    {
+     "id": "e03f735c41005b4d",
+     "publisher": "fiscal.ai",
+     "kind": "news",
+     "title": "Dell Technologies Suspends Server Shipments to Select Southeast Asian Markets",
+     "url": "https://www.thailand-business-news.com/trade/342449-nvidia-freezes-ai-server-deliveries-to-thailand-and-other-southeast-asian-countries",
+     "time": "2026-11-26T14:31:41Z"
+    }
+   ]
+  },
+  {
+   "summary": "The US administration has initiated a second round of Section 301 tariffs, impacting Thailand and escalating global trade war risks.",
+   "category": "tariffs",
+   "firstSeen": "2026-11-26T07:58:04Z",
+   "publishers": [
+    "1News",
+    "24/7 Wall St.",
+    "ABC News - Breaking News, Latest News and Videos",
+    "ABP Live English",
+    "ANI News",
+    "ANTARA News",
+    "AP",
+    "Asia Times",
+    "AsiaOne.com",
+    "Bangladesh Post",
+    "Big News Network.com",
+    "BigGo Finance",
+    "BreakingNews.ie",
+    "Business Standard",
+    "Business Today",
+    "BusinessMirror",
+    "BusinessToday Malaysia",
+    "Businesskorea",
+    "Báo VietNamNet",
+    "CNBC",
+    "CTV News",
+    "Central News South Africa",
+    "Corsicana Daily Sun",
+    "Dainik Jagran MP CG",
+    "ETV Bharat",
+    "Firstpost",
+    "FlipItMoney",
+    "France 24",
+    "Free Press Journal",
+    "Heavy Lift & Project Forwarding International",
+    "Hiru News",
+    "Howl.Link",
+    "India Weekly",
+    "India's News.Net",
+    "Inshorts",
+    "KELO-AM",
+    "Kiripost",
+    "Kursiv Media Узбекистан",
+    "Laodong.vn",
+    "LinkedIn",
+    "Livemint",
+    "MLQ.ai",
+    "Mid-Day",
+    "Moneycontrol.com",
+    "NDTV",
+    "Novinite.com",
+    "Outlook India",
+    "Oz Arab Media",
+    "Public TV English",
+    "Reuters",
+    "Simple Flying",
+    "Spherical Insights",
+    "TAG24 NEWS USA INC",
+    "Telegraph India",
+    "The Arkansas Democrat-Gazette",
+    "The Avenue Mail",
+    "The Business Times",
+    "The Copenhagen Post",
+    "The Economic Times",
+    "The Independent",
+    "The Standard (HK)",
+    "The Statesman",
+    "The Sun Malaysia",
+    "Traders Union",
+    "Udayavani",
+    "Vietnam.vn",
+    "WPLG Local 10",
+    "WTVB",
+    "X",
+    "Yahoo Finance",
+    "Yahoo News Canada",
+    "cwibc.co.id",
+    "fiscal.ai",
+    "morning-times.com",
+    "oneworldnews.com",
+    "prameyanews.com",
+    "tennews.in",
+    "İlke Haber Ajansı",
+    "شبكة تواصل الإخبارية",
+    "巴士的報",
+    "재경일보"
+   ],
+   "assets": {
+    "AMAT": {
+     "direction": "down",
+     "confidence": 0.7,
+     "why": "Trade war and tariff hikes pressure semiconductor equipment and broad tech."
+    },
+    "AAPL": {
+     "direction": "down",
+     "confidence": 0.7,
+     "why": "Escalating trade tensions and tariff threats between the US and China negatively impact multinational tech companies."
+    },
+    "SPWO": {
+     "direction": "down",
+     "confidence": 0.65,
+     "why": "Broad tariff escalation weighs negatively on global equities."
+    },
+    "NVDA": {
+     "direction": "down",
+     "confidence": 0.6,
+     "why": "Trade wars and tariff friction create broad headwinds for tech giants."
+    },
+    "AMD": {
+     "direction": "down",
+     "confidence": 0.6,
+     "why": "Broad trade war escalation and tariff threats negatively impact global tech supply chains."
+    },
+    "AMZN": {
+     "direction": "down",
+     "confidence": 0.65,
+     "why": "Escalating trade friction threatens global consumer goods supply chains."
+    },
+    "FDX": {
+     "direction": "down",
+     "confidence": 0.7,
+     "why": "Broader trade friction and newly proposed tariffs on aviation and transport weigh on global industrials and logistics."
+    },
+    "SPUS": {
+     "direction": "down",
+     "confidence": 0.65,
+     "why": "Trade war escalation negatively impacts broad equities."
+    },
+    "SMCI": {
+     "direction": "down",
+     "confidence": 0.82,
+     "why": "Supermicro halts server shipments to Southeast Asian markets following new U.S. export control regulations."
+    }
+   },
+   "sources": [
+    {
+     "id": "7b91b6e36c255f46",
+     "publisher": "CNBC",
+     "kind": "news",
+     "title": "U.S. tariff-hike threats pile pressure on partners to sign trade deals",
+     "url": "https://www.cnbc.com/2026/11/26/us-tariffs-hike-trade-agreement.html",
+     "time": "2026-11-26T08:09:39Z"
+    },
+    {
+     "id": "8a159198a9ff9db0",
+     "publisher": "Central News South Africa",
+     "kind": "news",
+     "title": "Trump Fires Fresh Tariff Salvo at 14 Major Trading Partners, Including China and EU",
+     "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQTzVCVHJxR2NYR1N2ek5lOEVLQ1dlWnRXdEdUYi1IRlJ4bnFmWFRCRzgyRDR2aFdFanZSMC0zN1VqNmwtZHZ6YTV6cEVLNXg2SE1IVGRlZFNSLWJqUVMzZFVuUkpoeVY1V3ktTG5BeldVQjV2dWN6azg5MWxCNHEySDZpWVZWclc1THFicThpbzczTFp2d01GOVV2V284T2lyZG9McjhmTHJ5YTRxS2c?oc=5",
+     "time": "2026-11-26T08:08:41Z"
+    },
+    {
+     "id": "9f84aaa3b6dae228",
+     "publisher": "Novinite.com",
+     "kind": "news",
+     "title": "China, EU and Brazil Condemn Trump's New Tariff Proposals",
+     "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQekJXemhBLVBncHdYMkQ1WXhYZi1HNS1fREZvMEsxSldwVWZJT0hiYldHZ2pFanJTd1pzMGl4dDRwenJDN3otQmROTEtQc25nM1owZmhjYzFHLWhuMVJzNVRIX2xBUmpLeEVnT0hsWmpSZ0drTGNtVTQxaWQzOGVpOVRoRDliWHFyV0JBNVk0ZGhkcXRXNmgwV1hxSzhGakI4MDdqcA?oc=5",
+     "time": "2026-11-26T08:02:32Z"
+    },
+    {
+     "id": "4abc09f0e1c008c3",
+     "publisher": "BreakingNews.ie",
+     "kind": "news",
+     "title": "US tariff hikes threaten to reignite trade tensions with China",
+     "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxOLUdXZVhvTHVidXZERnFfckJPSno0cy14QjdEcTduQ09ZWmJSWjVPbzdJdF9aYmxGOHZ0ZnBlX2hSa0RXaGN3bE1KTFc5SXpRaHg4QW5hVFl0YjdtbC1XZ1l4RmFVMVRTRFNZWkxEd3lidzJlOHkwTm12OERCSVBWRmk2aWNvV1VHeGIwS1lZaDhaUWJBN1ZhYkUtNjV3eHRoUWhINXowV3hZN1pQR1E?oc=5",
+     "time": "2026-11-26T08:00:50Z"
+    },
+    {
+     "id": "9abbfee1ccbe26eb",
+     "publisher": "NDTV",
+     "kind": "news",
+     "title": "With 40% Tariff Threat, Trump Wants An Edge Over China Despite A Trade Deal",
+     "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQb1BEOVo1eXVNOG5UUEpTRjdCa2doZDcycEluYzM1XzZfalA2Znd6bWtVQk9SOWVBQ0xrMExhOEF3VHdJcVpIVkUtbkhoNElBS3QzYjNsSGl2YjJUUXRONDdRX0dUdnd3Y2xybDhmb2M3RWowT3o3UXNWTjRnUmJySWQ4R2FDUEhDb1NwZUlmSnBJalpSdDBVVGc3N3pJNGRROU03ZTJ3RjlKeGpVY2lpVG1vX0bSAbwBQVVfeXFMT2VDQWFIY1NxaElVVklwNkJFMkQzb2szbDhvYmpBeFRUNFJNeG1CUWhmSE5SWm1Gc1BHSGY0SDBvMV9FaG0wWlFlOHV1Y1h4cUJzQ25YZlY0RmZWdjVQTk1qelRWTmVBaFQ1Y0szY255OGRfZ2xzRFNZWlZ3WjRKaVh6UWtUR0pzNlNhbXl1RWRQQzRRQXRRenFWQ2lDRVBoc0Y3X2JCRklTOTNjZzNWLUN6MnRCZlFiSExuRzY?oc=5",
+     "time": "2026-11-26T08:00:46Z"
+    }
+   ]
+  },
+  {
+   "summary": "XRP sees positive institutional inflows via Franklin Templeton ETF, bucking the broader market trend.",
+   "category": "crypto_positive",
+   "firstSeen": "2026-11-26T13:55:40Z",
+   "publishers": [
+    "Coinpaper"
+   ],
+   "assets": {
+    "XRP/USD": {
+     "direction": "up",
+     "confidence": 0.6,
+     "why": "Positive institutional inflows via ETF are a strong indicator of demand."
+    }
+   },
+   "sources": [
+    {
+     "id": "4cd9abc7ba62acb4",
+     "publisher": "Coinpaper",
+     "kind": "news",
+     "title": "XRP Becomes the Only Crypto With ETF Inflows as Franklin Templeton Adds $4 Million",
+     "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQNDF5M0hvZWVPYXdtbFhrUmpqSFNtVnVCUVBVd1dtTjJ4VGhHbFMzNmRlYzNDeDNaWmc3SXh4UFhXb0hjZEZtUWtUclZia0xRWWM1MzJURVJGUFprLTAzOGJaWVJWaFV5alJGdmIwUzVJcWZDSDJjcHB0aklyY0JUSDFXX1o5SFdpNHRMVTBDcVNGMTlVQzZHMFd6SXlqSHBIX2Z5VXBrZGZiZVByX3c?oc=5",
+     "time": "2026-11-26T13:55:40Z"
+    }
+   ]
+  },
+  {
+   "summary": "Polymarket and market pricing continue to show a 94% probability of a December Fed rate hike, weighing on risk assets.",
+   "category": "central_bank_hawkish",
+   "firstSeen": "2026-11-26T13:54:41Z",
+   "publishers": [
+    "FinanceFeeds"
+   ],
+   "assets": {
+    "HLAL": {
+     "direction": "down",
+     "confidence": 0.75,
+     "why": "High probability of Fed rate hike puts pressure on broad equity markets."
+    },
+    "SPWO": {
+     "direction": "down",
+     "confidence": 0.75,
+     "why": "Hawkish central bank expectations weigh on global equities."
+    }
+   },
+   "sources": [
+    {
+     "id": "d028328dc8483385",
+     "publisher": "FinanceFeeds",
+     "kind": "news",
+     "title": "Polymarket Fed Odds: 94% on Hike, Tails Draw $3.5M",
+     "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE9jdlhKSXFxY0oyYXBNZUFRbW9La3p5ZDdlbV9rTEowQmtac3NqeFBRRG5GTFJ2a2ZuaFpqRFZ0Q0J6QWVuMlp4YjFVeUxPMTFRS2ZYdXFoN1RQcTE1VVZiel95Y0c1T3R1Mk9tWW00QWZEQlU?oc=5",
+     "time": "2026-11-26T13:54:41Z"
+    }
+   ]
+  },
+  {
+   "summary": "Switzerland's first spot Bitcoin ETF begins trading, boosting institutional crypto adoption sentiment.",
    "category": "crypto_positive",
    "firstSeen": "2026-11-26T07:47:42Z",
    "publishers": [
+    "BigGo Finance",
+    "CoinCodex",
+    "Crypto Briefing",
     "Crypto News",
     "Cryptonews.net",
     "DailyCoin",
     "FinanceFeeds",
     "FintechNews CH",
+    "Forbes",
     "Funds Europe",
     "Invezz",
     "Pluang",
     "The Cryptonomist",
+    "The Motley Fool",
+    "Traders Union",
     "Wisevoter",
+    "Yahoo Finance",
     "finews.com"
    ],
    "assets": {
@@ -11234,6 +11075,16 @@
      "direction": "up",
      "confidence": 0.8,
      "why": "Bitcoin breaking past $60,000 alongside new spot ETF launches boosts bullish momentum"
+    },
+    "ETH/USD": {
+     "direction": "up",
+     "confidence": 0.6,
+     "why": "Broader positive crypto sentiment driven by institutional adoption."
+    },
+    "SOL/USD": {
+     "direction": "up",
+     "confidence": 0.55,
+     "why": "Positive institutional inflows benefit major layer-1 tokens."
     }
    },
    "sources": [
@@ -11280,27 +11131,232 @@
    ]
   },
   {
-   "summary": "Nvidia instructed manufacturing partners to suspend advanced AI server shipments to four Southeast Asian countries due to tighter US export controls.",
-   "category": "company_bad_news",
-   "firstSeen": "2026-11-26T10:59:10Z",
+   "summary": "Middle East conflict escalation and oil tanker attacks continue to heighten supply disruption risks and support higher oil prices.",
+   "category": "oil_supply",
+   "firstSeen": "2026-11-26T06:33:36Z",
    "publishers": [
-    "Yahoo Finance"
+    "24 News HD",
+    "AOL.co.uk",
+    "Al Jazeera",
+    "Anadolu Ajansı",
+    "Arab News",
+    "Arbiterz",
+    "Arise News",
+    "AzerNews",
+    "BBC",
+    "Bhaskar English",
+    "Breakingthenews.net",
+    "Business Upturn",
+    "CNA",
+    "CP24",
+    "Chiang Rai Times",
+    "Computing UK",
+    "Corsicana Daily Sun",
+    "Crude Oil Prices Today | OilPrice.com",
+    "Daily Express",
+    "Daily Mirror - Sri Lanka",
+    "Daily Times",
+    "Deccan Herald",
+    "Digg",
+    "Dimsum Daily",
+    "Dosya Haber",
+    "Durango Herald",
+    "EU Today",
+    "Eastern Riverina Chronicle",
+    "Economies.com",
+    "Firstpost",
+    "Gujarat Samachar",
+    "Gulf Daily News (Bahrain)",
+    "Gulf Today",
+    "Herald Bulletin",
+    "India TV News",
+    "Investing.com",
+    "JournalArta",
+    "KLSE Screener",
+    "KMVU FOX 26 Medford",
+    "KVNU News Talk",
+    "Kyiv Post",
+    "LBCI Lebanon",
+    "LEADERSHIP Newspapers",
+    "Laodong.vn",
+    "Latest news from Azerbaijan",
+    "Lloyd's List",
+    "London South East",
+    "MM News",
+    "MTV Lebanon",
+    "Mezha.net",
+    "Middle East Monitor",
+    "Minute Mirror",
+    "Modern Ghana",
+    "Moneycontrol.com",
+    "NDTV",
+    "NDTV Profit",
+    "News Karnataka",
+    "News18",
+    "NewsBytes",
+    "Newsquawk",
+    "Operativ Məlumat Mərkəzi",
+    "Oskaloosa Herald",
+    "Profit by Pakistan Today",
+    "RFI",
+    "RTL Today",
+    "Reuters",
+    "Roya News English",
+    "SRN News",
+    "Splash247",
+    "SuaraGarut.ID",
+    "TRT World",
+    "TV5 Kapatid Network",
+    "Temple Daily Telegram",
+    "Texomashomepage.com",
+    "Thaiger",
+    "The Annapurna Express",
+    "The Avenue Mail",
+    "The Batesville Daily Guard",
+    "The Border Mail",
+    "The Canberra Times",
+    "The Daily Jagran",
+    "The Diplomatic Insight",
+    "The Economic Times",
+    "The Financial Express",
+    "The Globe and Mail",
+    "The Hindu",
+    "The Killeen Daily Herald",
+    "The Kyiv Independent",
+    "The Mirror",
+    "The National",
+    "The Peninsula Qatar",
+    "The Siasat Daily",
+    "The Singleton Argus",
+    "The Star",
+    "The Straits Times",
+    "The Sun",
+    "The Sun Malaysia",
+    "The Times of India",
+    "The Washington Post",
+    "The Week",
+    "Times Now",
+    "TradeWinds News",
+    "Trend News Agency",
+    "UA.NEWS",
+    "Vocal",
+    "WE News English",
+    "WRAL",
+    "WSJ",
+    "Wisevoter",
+    "X",
+    "Yahoo",
+    "Yeni Safak English",
+    "blue News",
+    "grafa.com",
+    "https://www.engine.online/",
+    "la Repubblica",
+    "marketscreener.com",
+    "newstodaynet.com",
+    "seMissourian",
+    "thenationalnews.com",
+    "www.jordannews.jo",
+    "Мілітарний",
+    "Прямий",
+    "Цензор.НЕТ",
+    "برق الإمارات",
+    "صحيفة مال",
+    "صوت الإمارات",
+    "巴士的報",
+    "联合早报"
    ],
    "assets": {
-    "NVDA": {
-     "direction": "down",
-     "confidence": 0.75,
-     "why": "New export curbs halting shipments to key Southeast Asian markets weigh on near-term hardware revenue."
+    "XOM": {
+     "direction": "up",
+     "confidence": 0.85,
+     "why": "Middle East attacks and tanker explosions escalate regional oil supply disruption risks, pushing crude prices higher."
+    },
+    "CVX": {
+     "direction": "up",
+     "confidence": 0.85,
+     "why": "Middle East attacks and tanker explosions escalate regional oil supply disruption risks, pushing crude prices higher."
+    },
+    "OXY": {
+     "direction": "up",
+     "confidence": 0.82,
+     "why": "Escalating oil supply disruption concerns in the Middle East drive crude prices upward."
+    },
+    "SLB": {
+     "direction": "up",
+     "confidence": 0.8,
+     "why": "Supply disruptions and higher oil prices benefit oilfield services."
+    },
+    "COP": {
+     "direction": "up",
+     "confidence": 0.8,
+     "why": "Higher geopolitical risk premiums in energy markets support upstream producers."
     }
    },
    "sources": [
     {
-     "id": "2a9abaa8fa4bf075",
+     "id": "35d9b3a89685562a",
+     "publisher": "marketscreener.com",
+     "kind": "news",
+     "title": "Oil equipment supplier SBO's Q3 profit falls as Middle East disruptions continue",
+     "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxPZ1lRRlc2RzlWUXB1TnA2ejFPWV90akhUTF9TNVAzZXRZWmFJOUJPUFVhakZtVEpVM0Y4eTVRai04SXBGTFNSQkU2UkwwNFNkZFk3ckhYazkxbjZVUUtwY1ZoX1pHQVgxT2pra3hOZVlwRkdVY0h2d1BQTm0tdjVHdzRFc2xrVFg3UzRncEV6aHpiZVNRNFVqbVVhcmRDNkRVRTB4VXM0QWg4NHRZb0ZvY01iakM4UWN0WjVLSkNzMnRLNHA0Q3E4Y29JLWlyZw?oc=5",
+     "time": "2026-11-26T06:50:21Z"
+    },
+    {
+     "id": "bf9bba16ff1c551c",
+     "publisher": "MM News",
+     "kind": "news",
+     "title": "Global Oil Prices Rise as Brent Crude Reaches $94.71 per Barrel",
+     "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNMmVMSDliODdTY2lYYmpyZDV1TnRCelB1cmRxUE45ZUFDYmFqSThEOVhMNV9SaUlPcVZDRUNlVnJvdHZBTElQekUtWTBfWkczLS0xUGJkNHpDaDZRU0I3TmhzSHdVdVF3SC1rbHhNYzhxZEk0amZTN01aM2dXY1VKMWk5ZUNMakI2?oc=5",
+     "time": "2026-11-26T06:46:58Z"
+    },
+    {
+     "id": "41440b1a1a50e95c",
+     "publisher": "صوت الإمارات",
+     "kind": "news",
+     "title": "Oil prices rise amid supply concerns in the Strait of Hormuz and escalating regional tensions",
+     "url": "https://news.google.com/rss/articles/CBMi4wFBVV95cUxPMWhvMEZlVk8xb3ljWjg4bGo3bU1LSW1EQjhJcE9jc3lCWW1WZW9NajBZWlZJNzVvSVo2WVV5NW5oUmJ0SzdIbk1ZaUVIdmo1WGE5QXhKSE83TW1NcUNkdXE5MHBMYU10SXplMDlaYkRsRkJMTUFVdGRmM2FxWjBiMmpnN013N2RURVEya29NNU1LZ3I4OXhZU0R3SjBJdUNDbWtURWZ3RE1xZWt4MW83R0k2b1FqNFZuTXdmOV90QzVKbHFsNV9US3ppZWFSR2MweWFvaFhhRTNZUEJMVVVXenNUSQ?oc=5",
+     "time": "2026-11-26T06:41:12Z"
+    },
+    {
+     "id": "8bc43e340d7d8603",
+     "publisher": "Gulf Today",
+     "kind": "news",
+     "title": "Oil prices rise on supply concerns",
+     "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxOU0k1Qm9CcjN3amVoLXdtOTFTX3M0NC1DSEllVmdWVEN5Y3dfaFVOaTlQY1R1dXpwX09TRkF5akxfa1VwX21tQXhqN3Jac3RPa0VJLTBqM1VWc2pIaFVfSjl6QzlCNDhSVnVQOTBGaEUyTnd1aWwtd3NiZU92S2dNQzBYX3h6UQ?oc=5",
+     "time": "2026-11-26T06:35:36Z"
+    },
+    {
+     "id": "e44be2a2c6302782",
+     "publisher": "JournalArta",
+     "kind": "news",
+     "title": "Oil Holds Gains After Houthis Say They Attacked Saudi Refinery",
+     "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxQZkpPWE14VFp6c2VISTlHd044b2VSTzhwY0hCZkg2WDNBemhoNEJvZHU3d0JvT2pCTnVHekFxMVpvUVl6eXNPTDJXd0VDWWZ3WEFXU0c3ejlVM015d2l1UUsxSGF3YXZTZEFsNFE2MlpxZUdLd0VXSE1Iblh2QTJIeEI4cw?oc=5",
+     "time": "2026-11-26T06:35:10Z"
+    }
+   ]
+  },
+  {
+   "summary": "Micron Technology faces labor risks in Taiwan that could force a redirection of capital expenditure.",
+   "category": "company_bad_news",
+   "firstSeen": "2026-11-26T11:35:53Z",
+   "publishers": [
+    "Yahoo Finance"
+   ],
+   "assets": {
+    "MU": {
+     "direction": "down",
+     "confidence": 0.5,
+     "why": "Labor disputes and potential investment redirection create operational uncertainty."
+    }
+   },
+   "sources": [
+    {
+     "id": "497fa88b356dbc70",
      "publisher": "Yahoo Finance",
      "kind": "news",
-     "title": "Nvidia Reportedly Halts AI Server Shipments to Four Southeast Asian Countries Amid Tighter US Export Controls",
-     "url": "https://investorshub.advfn.com/market-news/article/40759/nvidia-reportedly-halts-ai-server-shipments-to-four-southeast-asian-countries-amid-tighter-us-export-controls?.tsrc=rss",
-     "time": "2026-11-26T10:59:10Z"
+     "title": "Micron's $50 Billion Taiwan Investment Faces Fresh Labor Risk",
+     "url": "https://finance.yahoo.com/markets/stocks/articles/microns-50-billion-taiwan-investment-113553440.html?.tsrc=rss",
+     "time": "2026-11-26T11:35:53Z"
     }
    ]
   },
@@ -11383,408 +11439,6 @@
      "title": "Fed Hike Odds Hold Near 94% After October Core PCE Tops Forecast",
      "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBQSHNkdlJvMWpNaENoNkphVTRUb09lZnBjWmptaDlBNF8tQUhlenlLZ2xmMUEwOU1jOFduRjU2WTJRenA4Q3BlbFZqdS1IRXZlVm5fRHJTUE44Zw?oc=5",
      "time": "2026-11-26T09:05:09Z"
-    }
-   ]
-  },
-  {
-   "summary": "Wall Street analysts upgraded Nvidia and CrowdStrike following leadership stability and strong AI fundamentals.",
-   "category": "company_bad_news",
-   "firstSeen": "2026-11-26T04:14:03Z",
-   "publishers": [
-    "Yahoo Finance"
-   ],
-   "assets": {
-    "NVDA": {
-     "direction": "up",
-     "confidence": 0.7,
-     "why": "Wall Street analyst upgrades and return of Jensen Huang provide strong positive momentum."
-    },
-    "CRWD": {
-     "direction": "up",
-     "confidence": 0.65,
-     "why": "Analyst upgrade supports near-term bullish sentiment."
-    }
-   },
-   "sources": [
-    {
-     "id": "9321182b3093b2a1",
-     "publisher": "Yahoo Finance",
-     "kind": "news",
-     "title": "‘I Don’t Think He Needs a Pardon at All’: JD Vance Defends Nvidia CEO Jensen Huang as Crypto Bettors Put Him Atop Trump’s List",
-     "url": "https://www.benzinga.com/markets/prediction-markets/26/11/63659548/jd-vance-jensen-huang-trump-pardon-nvidia?utm_source=yahooFinance&utm_campaign=partner_feed&utm_medium=referral&.tsrc=rss",
-     "time": "2026-11-26T04:14:03Z"
-    },
-    {
-     "id": "e1710cdcae315cb5",
-     "publisher": "Yahoo Finance",
-     "kind": "news",
-     "title": "Nvidia Wins Back Wall Street Backing As Jensen Huang Returns; CRWD, LI Stocks Score Upgrades While DKNG, AMBA Face Pressure",
-     "url": "https://stocktwits.com/news-articles/markets/equity/nvda-jensen-huang-return-stock-upgrades-crwd-li-amba-dkng/cNbxi4aR9ZF?.tsrc=rss",
-     "time": "2026-11-26T08:43:12Z"
-    }
-   ]
-  },
-  {
-   "summary": "HP Inc. shares surged following a strong Q4 earnings beat and positive outlook on device refresh cycles.",
-   "category": "earnings_beat",
-   "firstSeen": "2026-11-26T02:15:00Z",
-   "publishers": [
-    "TIKR.com",
-    "TradingView"
-   ],
-   "assets": {},
-   "sources": [
-    {
-     "id": "713579b600cd38ab",
-     "publisher": "TIKR.com",
-     "kind": "news",
-     "title": "HP Soars 11% on Q4 Beat as Interim CEO Sees “Multiple Waves of Device Refresh”",
-     "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNVWpmdHVoTDEwUEpSb3Nnbm92MWR4ZUlTZEFfVHdXS3BSOGV6UlhiSXNIay05Q3lGU3JObHRFTDZMY1RLTEJfRGhRc1dIMHZmd0luWV8wc3NQdXBlVmFBQWJDanlWei1SNDU5dmhxVUE0U3FPMm1QczhRTXJneXdPMVJZSlE1ZTR2bkNGLUU3d3pBN1poRXc0TWt4RkpuNUctZDdj?oc=5",
-     "time": "2026-11-26T02:15:00Z"
-    },
-    {
-     "id": "445cf1f3a7f270fd",
-     "publisher": "TradingView",
-     "kind": "news",
-     "title": "HPQ: HP Jumps More Than 11% as Earnings Beat Cuts Through Tech Selloff",
-     "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxNbVpJcnBGeGxPMTdLYWNFZ0JNSk16dlFXbXZjLWZiWmgyUnk0QTZoZDNrR2hDTzBnZVREU3lma3RDVFh2N04yY1pINzRzbnJTWkNCNXNkWEVJRmFLT2dpVWluRUtDWFoxQzZQUTlQNF9FTmViQjlTM0tydEpyMC1GQnVXZUVYSC1kSjNmaWN6LWVhYTZNTEpJNjVPN3MxMThiMUxiSzBrNUtpMjRVUHlrS3FOX3I0bTFlWTM0aTVkRk90dWl1cDI1QmR3?oc=5",
-     "time": "2026-11-26T07:42:00Z"
-    }
-   ]
-  },
-  {
-   "summary": "Expanding US tariff plans targeting major trading partners heighten global trade war risks and weigh on market sentiment.",
-   "category": "tariffs",
-   "firstSeen": "2026-11-26T01:43:07Z",
-   "publishers": [
-    "ABC13 Houston",
-    "ANI News",
-    "ARYnews.tv",
-    "Ahmedabad Mirror",
-    "Armenpress",
-    "AsiaOne.com",
-    "Awani International",
-    "BW Businessworld",
-    "Big News Network.com",
-    "BigGo Finance",
-    "Bloomberg",
-    "Bloomberg.com",
-    "Business Recorder",
-    "Business Standard",
-    "Business Today",
-    "BusinessLine",
-    "BusinessToday Malaysia",
-    "CNA",
-    "CNBC TV18",
-    "Cyprus Mail",
-    "DW.com",
-    "Daijiworld",
-    "Dainik Jagran MP CG",
-    "Deshabhimani",
-    "Digg",
-    "ET Manufacturing",
-    "EU Today",
-    "FlipItMoney",
-    "Free Malaysia Today",
-    "Hindustan Times",
-    "Human Resources Director",
-    "IBTimes India",
-    "India Today",
-    "India's News.Net",
-    "IntelliNews",
-    "Irish Examiner",
-    "Jakarta Globe",
-    "Japan Today",
-    "Japan Wire by Kyodo News",
-    "JournalArta",
-    "KSLM Radio",
-    "Malay Mail",
-    "Mangalore Today",
-    "Moneycontrol.com",
-    "Moneylife",
-    "Munsif News 24x7",
-    "NDTV",
-    "NDTV Profit",
-    "NST Online",
-    "News18",
-    "News9live",
-    "NewsDrum",
-    "Ommcom News",
-    "Profit by Pakistan Today",
-    "Rediff.com",
-    "Republic World",
-    "Reuters",
-    "Serrari Group",
-    "Siliconindia",
-    "Social News XYZ",
-    "South China Morning Post",
-    "Taiwan News",
-    "Tempo.co English",
-    "Thai Examiner",
-    "The Assam Tribune",
-    "The Business Times",
-    "The Economic Times",
-    "The Federal",
-    "The Financial Express",
-    "The Indian EYE",
-    "The Malaysian Reserve",
-    "The Online Citizen",
-    "The Siasat Daily",
-    "The Star",
-    "The Statesman",
-    "The Straits Times",
-    "Times of Oman",
-    "Trade Brains",
-    "TradingView",
-    "Utkarsh Classes",
-    "Vajiram & Ravi",
-    "Vietnam.vn",
-    "Yonhap News Agency",
-    "Zee Business",
-    "marketscreener.com",
-    "news.sbs.co.kr",
-    "the deep dive",
-    "theopenpress.in",
-    "www.equiti.com",
-    "www.marketscreener.com",
-    "www.thehawk.in",
-    "شبكة تواصل الإخبارية",
-    "한겨레"
-   ],
-   "assets": {
-    "NVDA": {
-     "direction": "down",
-     "confidence": 0.7,
-     "why": "Broad market pressure from trade war escalation and tariff concerns."
-    },
-    "AAPL": {
-     "direction": "down",
-     "confidence": 0.7,
-     "why": "Broad trade war and tariff escalation pressures major technology and import-reliant stocks."
-    },
-    "AMD": {
-     "direction": "down",
-     "confidence": 0.6,
-     "why": "Trade war risks and export controls weigh on semiconductor sector sentiment."
-    },
-    "SPWO": {
-     "direction": "down",
-     "confidence": 0.6,
-     "why": "Global trade war risks and expanded US tariffs pressure international and broad equities."
-    },
-    "QCOM": {
-     "direction": "down",
-     "confidence": 0.6,
-     "why": "Tariffs on chips and trade friction negatively impact semiconductor supply chains and margins."
-    },
-    "AMAT": {
-     "direction": "down",
-     "confidence": 0.7,
-     "why": "Trade friction and tariff threats pressure semiconductor equipment suppliers."
-    }
-   },
-   "sources": [
-    {
-     "id": "a4545ec4231f50b0",
-     "publisher": "Profit by Pakistan Today",
-     "kind": "news",
-     "title": "Trump proposes new tariffs on 14 major trading partners",
-     "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxQZ1hnQXhkR2JoZ0k0RmdxZ0dSNFVkT1lIS1Z0ZWJTS19RNjBrRl9BUWFLZkhRMjd4SC03REwyalFiREQwZk1sOWwzRDNrVU5EMUlVcG1wR3RfLTJ0TGpoaVZXWU1jcG1mN09OMWpwdVZhX3ZKNm9nc3c5Ry1RYldkRGQyYW1kN1R1dG1rVzE5Q1BGbzU5SVpYdkpFeXBxMkNFM3p3Y3lTUzRGNDJreFp5elF0YWNpejVRcS1wYmVhOXdPMTk3amtWcU02aWdZR00?oc=5",
-     "time": "2026-11-26T02:05:34Z"
-    },
-    {
-     "id": "b2860c3a29f70b21",
-     "publisher": "Business Today",
-     "kind": "news",
-     "title": "'No structural excess capacity in any sector': India pushes back against US tariff allegations",
-     "url": "https://news.google.com/rss/articles/CBMi8AFBVV95cUxOX1pfWURuM20xeVNKbmdwQlE4U2oxY1Vob1pxaGRnMDJfamdYcG9LSUpwY3Y2WVo1QnBIbzdOd1Z5Q3dQMm9KWDBId216SVNlX3F4WFlQc0tYdDlFaHoxeVhlbURmZnptOFVXaHA0N1pPY3pBVlB6b0xNSmlPT3VQN19zNlRLaG9yS0h3a3RjMkZhdnN3VmtPd2tpQVFSRy13NWVmNVMyVm83Tm1LRlNxbVZJMGs0TFpwWmt4bjB5OG9sX01ldmZkN1E2MXN2akJXVEZRbXREcUV3SXd6bjhFTUdnb1FFOXptMjZUMFNtQVnSAfYBQVVfeXFMTXlWS29ycVpsRnFtaTdJOG5fWVJMRURsYVFic05kTVFfT09naHZrT2ZTR2I3eUtqWExzdURmSWRyTnlvcHVIckpKbFBta0lVeFpZbVd6cVdtLVl6TkhadHVycFp6UW0yTldIS21vLVNPWmRzNlFfOTBRU2R0TTk0MnJDQ01KNGlXTWVVT1lJNktFSkl3N1c5M0dKVXo3Y09NSVM0TnNGak56cjVyZmh4Z1Z0enE5M1NpZkFKZ3R6RGRSUGRUeFpSRkhMYmg5cFViUUkwOFhDbXFvZ2xmMEtZN1FvSUJ3ZW9CYW9tcVFfNEltNE9KNU1n?oc=5",
-     "time": "2026-11-26T01:57:51Z"
-    },
-    {
-     "id": "17202fe80957cdb7",
-     "publisher": "JournalArta",
-     "kind": "news",
-     "title": "S&P 500 slips as AI jitters and tariff plans rattle Wall Street",
-     "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQM2tRcVBoekZ5V29GdF81Yl9YSUo1ZmFFbkdSLUszbWg4RE9pcnFpZmNBbEktaFMxSWdRbzFOanozSnoyMWhjMDFZcFBsZjFxVTlIMTU2azdHQTdYNzJ4c1lvQW53cVhybzVwSjdXdXJZSkdKa2x3cHF0OERVLW1TNEdBSkd4MXNBTlFRenllRFBHVXdJQjFEVkFiVDVqQUNHRURr?oc=5",
-     "time": "2026-11-26T01:55:45Z"
-    },
-    {
-     "id": "a70f2967ef802e36",
-     "publisher": "NDTV Profit",
-     "kind": "news",
-     "title": "Trump's New Tariff List: India Faces 25% Duty, Is Pakistan Included? Check Country-Wise Rates",
-     "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxPZnpCeFV4WExLMTA1SGNPaDQtby1iaWtGbkRTZG1fNlJOMVhfVktzaGlmQ3ZJcjdyT01UdjZWa1FHYXlxejU2dVdCYTRaYTVvTU5fUm1wQlhQUVk5M1RwUk9lTnF5NEZTcnI5Mmp4bDRVTEltdmRwYVE2YVd1RFVvMTc1WUtiYy15UkV0VmI3Wk0xX1lqclpNck0zOEhhWGVtekJURUtnWV9jdEVzeGcyeHBpaGpWU3ZTY2dkSFRNWFZjY3M4d296VzRR?oc=5",
-     "time": "2026-11-26T01:55:18Z"
-    },
-    {
-     "id": "093278bb9a179464",
-     "publisher": "Ommcom News",
-     "kind": "news",
-     "title": "No ‘Structural Excess Capacity’ In Any Sector, Trade Talks On: India On US Tariff Threats",
-     "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxOUk84NjMzbXVVSkotWms1RFRTU056cEhiUUJSaDI1bmlRT2pBZlFfZlRydHZUYlFVOHRCMHNlOVJ4TUJlMzZ1WDY1THV1dEU1VDRaemRvbUg1b0M3R09JWXVIdWQtM2l0Tld4WVljQjVBSEllNUxuaThPazdxLUlEYnpocnJveUJaS0dLQUFvNVVFaW9pdXQ0LWhhQWdSdDZqSlVXaXh4Znlic0hralR5VVRpbi05VXRkdWlBVw?oc=5",
-     "time": "2026-11-26T01:53:50Z"
-    }
-   ]
-  },
-  {
-   "summary": "Bitcoin and cryptocurrency markets face severe downward pressure from massive spot ETF outflows.",
-   "category": "crypto_negative",
-   "firstSeen": "2026-11-26T02:04:19Z",
-   "publishers": [
-    "Coin Gabbar",
-    "Cryptonews.net",
-    "Holder.io",
-    "MEXC",
-    "NAI500",
-    "Serrari Group",
-    "Wisevoter",
-    "bloomingbit",
-    "newsbtc.com",
-    "디지털투데이"
-   ],
-   "assets": {
-    "BTC/USD": {
-     "direction": "down",
-     "confidence": 0.8,
-     "why": "Massive outflows near $5 billion from Bitcoin ETFs continue to weigh heavily on crypto prices."
-    },
-    "ETH/USD": {
-     "direction": "down",
-     "confidence": 0.6,
-     "why": "Regulatory tightening and negative sentiment weigh on crypto assets."
-    }
-   },
-   "sources": [
-    {
-     "id": "962791c09561ebfc",
-     "publisher": "Cryptonews.net",
-     "kind": "news",
-     "title": "Bitcoin ETFs shed $4 billion — How did one fund hide the cracks before leading the exit?",
-     "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTFBKLWJEWXBqbzV4emlPNjlLaTQtbHoyQjVzTUpqSFZkQWJvNlJtVE0wY3NkTzZRNVpXTUFRbVR2YXlZMDNhMVF1QkhoMFRBeTMwN3paWDhOSHE?oc=5",
-     "time": "2026-11-26T02:05:44Z"
-    },
-    {
-     "id": "cb8668ee88c9b773",
-     "publisher": "NAI500",
-     "kind": "news",
-     "title": "Bitcoin Acts as a Market Bellwether, Jointly Signaling Downside With US Stocks",
-     "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQR1pzclhmSEViTEg4dlBDMERzbTdDQmdZTkl1UGxmcG1JY2ppYWpnQVIyNGkxMzc0b1V2aVpnbDMxTWxfaVlZNldqWVlQdl9XNHliOWtwXzdjSkNYdXRGaGwtQlM4SkJ6NlV5VzBONXhzYzczTlg4TFdQUkgyd3ZRc2Z3dDZZMkswUm5yQnI2alVoMkx2bXplWnVvU2hNRGc1cHAyUzJ0a29uSHFpTVd3?oc=5",
-     "time": "2026-11-26T02:04:19Z"
-    },
-    {
-     "id": "ff9d0623c3680e29",
-     "publisher": "디지털투데이",
-     "kind": "news",
-     "title": "12 billion dollars flows out of major stablecoins, USDT trading volume halves",
-     "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNMHZhM285dE5EVmlITWhvY1hCNElUTzFWaTZ4d0lXelp4WWNRTzgwREpVTDdTSTVZYlFUbDRlRC1UMVd5eHZlUUFUcU81TzlFbmhJTTZTRjMwcGR1ZWFOMWNYYk9jaFk3cXB4R1BOVnJhbjJxcHhBdU1zbEtYYTNuem5ubWpPZWo3RGZ1emtKQk9JTHVTbTJkNHZHamVYbDRWQUF0YWhDc0E3cnE0WGpkZWZRdERBSllZcTNnTEl3?oc=5",
-     "time": "2026-11-26T05:34:20Z"
-    },
-    {
-     "id": "e24f2abc638a7d91",
-     "publisher": "디지털투데이",
-     "kind": "news",
-     "title": "Galaxy Digital withdraws call that bitcoin bear market ended, warns of further falls if June low breaks",
-     "url": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxORjFoNFJVYjI4X3ktSGJMRmJyR3NnMmljNm8yQmUyWjBsd25oSmllSVFmZE5qOGI0YUgxcGRJeDFQUUZxdnpfUjJSRXExLTBmV2NXazRTNHBDaWZjNWpqdkRkdW04aDU3TTNFYXdTMWd1eDFBcmxiclZTZ3RTc3lMWTNkZXZYaGd5NFc3VVZULWE0SWwyS1FfOHlSZ2p2UDhmTW1vbTRTTXAtd3lzcGRxV3lZZ05rekJiQnZfWWtDT0hCZDBNNXVfU2t6YTVoSEN1VS1VMUFQZ2tZZ1pWQ1BGLVBn?oc=5",
-     "time": "2026-11-26T05:33:00Z"
-    },
-    {
-     "id": "841cc6235753296b",
-     "publisher": "bloomingbit",
-     "kind": "news",
-     "title": "UK Plans Tougher DeFi Rules Over Money-Laundering Fears After Binance Hack",
-     "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTFBEd29vbE1WTTF1Zy1Kb2luaTN0NlVUcjNlV05qU3U1d1FManZPT3hmRzM2aFJrLVdFLXlKWFhRRExDOTdZZ2hrWFlQTzdxa1RNMklGRg?oc=5",
-     "time": "2026-11-26T06:21:36Z"
-    }
-   ]
-  },
-  {
-   "summary": "Switzerland's first spot Bitcoin ETF begins trading, boosting institutional crypto adoption sentiment.",
-   "category": "crypto_positive",
-   "firstSeen": "2026-11-26T01:45:42Z",
-   "publishers": [
-    "Crypto Economy",
-    "Cryptonews.net",
-    "StreetInsider",
-    "The Crypto Times",
-    "grafa.com"
-   ],
-   "assets": {
-    "LINK/USD": {
-     "direction": "up",
-     "confidence": 0.7,
-     "why": "Institutional ETF filing by a major firm like Fidelity is a significant bullish catalyst for Chainlink."
-    },
-    "BTC/USD": {
-     "direction": "up",
-     "confidence": 0.7,
-     "why": "Launch of spot Bitcoin ETF in Switzerland enhances institutional access."
-    }
-   },
-   "sources": [
-    {
-     "id": "b8f7b36f5c211024",
-     "publisher": "grafa.com",
-     "kind": "news",
-     "title": "Fidelity files for Nasdaq Chainlink ETF listing",
-     "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxNLUNYdHlRZmgyYk81emg2UEd3bFhjOGI4QUxCMU1vdzBlaGlfajhhUGZya0dqR0trYld3cDF1aU42Y25DbldFUzdjSm1fMVIzMkFDQzJuT2o3c0hhRFN5LUVZQ3FTQ3JUMVhLWjlMdE9uUjdxaFlZTTN1TEt4Q3FCX0hySQ?oc=5",
-     "time": "2026-11-26T01:45:42Z"
-    },
-    {
-     "id": "36f9dcc7f1f3d583",
-     "publisher": "Crypto Economy",
-     "kind": "news",
-     "title": "Franklin Templeton to Add Hyperliquid to Crypto Index ETF in December",
-     "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxQcU9NU0JJUEZaVlA2ZW9RV2d3b0lHaG40bUZMdUpGQ3FBNTRnZU9ldkdCYk9CXzBqODVhRm9oaHZuR1Q1VUpJRk1EdklqZW1VWHdqaW1SQXhyRzNlNDV6NHpNanB0ZVFOaGZVem5HN0xYZGV6aHotVVRqVjk5TVhlRFRkZWFtYkRFamdaUlNmM0EwMDFkeHBWYTR4OFdrUQ?oc=5",
-     "time": "2026-11-26T02:01:57Z"
-    },
-    {
-     "id": "8d6cfac1542a86b3",
-     "publisher": "Cryptonews.net",
-     "kind": "news",
-     "title": "Fidelity Files for Chainlink ETF. What Does It Mean for LINK?",
-     "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBoRm5fcmlBU1FQWi1MQTc0MDJqUTJCQ2FPSlNxLTdiQ2JoREJpVWdkZDR4aS1qcUQ5OThVUFl1OVFWZmg0YTEzUmQxdkpjRFA5dURzRXdiY2h1QQ?oc=5",
-     "time": "2026-11-26T05:20:47Z"
-    },
-    {
-     "id": "ce03f1b549b29bc4",
-     "publisher": "The Crypto Times",
-     "kind": "news",
-     "title": "Fidelity Seeks SEC Approval for Proposed Spot Chainlink ETF on Nasdaq",
-     "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxObXpKOUFzUVNKcVkxNWdVd1pxZ2t5Sk1LLXpnNHdIQXdNb252Ni16QVA0cmZqbmY1dDZpX082UWtxZi1OOGw3aFR6M1RYQlg5YXVscmtoSm8tS0xoSnBTd1kwOWoyaWJpb084WUdlTXczOWtvYmVqVUdPNU9KY2VFdG1WME1JZjkzREwxTXJVd05HbEExT25LWEJwTGFkQUJzQy1LTVRNYmdtTzNl?oc=5",
-     "time": "2026-11-26T05:23:41Z"
-    },
-    {
-     "id": "cec3a2551c9c6625",
-     "publisher": "StreetInsider",
-     "kind": "news",
-     "title": "Switzerland’s First Spot Bitcoin ETF Begins Trading",
-     "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQVjRwbXlSSUZZc0VOZUp2d3I3a09veTZzVnJFYWlVbDVQM1BpS19OWmt0Z3luTlZoZnRYSHJxTmRXQTY4VzE0NG53ZV9zTnFhVFNiTWJJYzAxdTdfbFZVWThGNjZpRXdPdTBmZnN5QlFXUXNhRExZNDJNM3VudHBYd0gybU1ybHFNWTlvSl9YbjVUdkMxdUtUQ2dTRUlreEU4VmxNMkJsN1ZQbjByNzlpYkdnckxBTy15YWxR?oc=5",
-     "time": "2026-11-26T07:12:15Z"
-    }
-   ]
-  },
-  {
-   "summary": "Raytheon secured a US Navy missile deal, providing a positive boost for defense tech.",
-   "category": "contract",
-   "firstSeen": "2026-11-26T07:26:13Z",
-   "publishers": [
-    "Raksha Anirveda"
-   ],
-   "assets": {
-    "PLTR": {
-     "direction": "up",
-     "confidence": 0.65,
-     "why": "Defense sector momentum supported by major naval contracts."
-    }
-   },
-   "sources": [
-    {
-     "id": "89fb3a7ff7bfc9d0",
-     "publisher": "Raksha Anirveda",
-     "kind": "news",
-     "title": "Raytheon Wins US Navy Missile Deal",
-     "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE42MmpKeW9xWkJQTjZJZmVfUE0zREsyWko4MkdEbE0xOGd3b2g0WmNlZWs3OTJFZnFLa0tXc2tWeGhObGpVT19zYTVUOWZTZktSbDdaTzJXYTRvbV9VeWF0bWtQWDNPclVYdWR4bm82dUg?oc=5",
-     "time": "2026-11-26T07:26:13Z"
     }
    ]
   }

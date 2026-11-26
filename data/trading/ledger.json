@@ -44,8 +44,8 @@
     "taSummary": ""
    },
    "stopOrderId": "8549feb1-17bc-42ac-954d-24f7b1f206f5",
-   "lastPrice": 60580.66,
-   "unrealizedPct": -0.53,
+   "lastPrice": 60672.28,
+   "unrealizedPct": -0.38,
    "high": 60901.053775603
   },
   {
@@ -241,7 +241,7 @@
    "id": "ahq-core-HLAL-20261125145147",
    "symbol": "HLAL",
    "asset": "stock",
-   "status": "open",
+   "status": "closed",
    "strategy": "core",
    "entryOrderId": "71a91d9e-f5f3-4a22-a8f6-be5cf3200ffd",
    "qty": 256.0,
@@ -264,13 +264,19 @@
     "tradingAgents": "not used (core)"
    },
    "lastPrice": 65.7,
-   "unrealizedPct": 3.12
+   "unrealizedPct": 3.12,
+   "closing": "bad news: Polymarket and market pricing continue to show a 94% probability of a December F",
+   "closedAt": "2026-11-26T14:01:03Z",
+   "exitPrice": 63.79,
+   "exitReason": "bad news: Polymarket and market pricing continue to show a 94% probability of a December F",
+   "pnl": 20.48,
+   "pnlPct": 0.13
   },
   {
    "id": "ahq-core-SPUS-20261125145147",
    "symbol": "SPUS",
    "asset": "stock",
-   "status": "open",
+   "status": "closed",
    "strategy": "core",
    "entryOrderId": "574aafa3-b47d-491a-9bda-02ef6ba9af4c",
    "qty": 324.0,
@@ -293,7 +299,13 @@
     "tradingAgents": "not used (core)"
    },
    "lastPrice": 53.79,
-   "unrealizedPct": 2.94
+   "unrealizedPct": 2.94,
+   "closing": "bad news: China rejected the new U.S. 20% tariff plan, further raising global trade war ri",
+   "closedAt": "2026-11-26T11:40:36Z",
+   "exitPrice": 53.745,
+   "exitReason": "bad news: China rejected the new U.S. 20% tariff plan, further raising global trade war ri",
+   "pnl": 487.62,
+   "pnlPct": 2.88
   },
   {
    "id": "ahq-PLTR-20261124164652",
@@ -504,7 +516,7 @@
    "id": "ahq-core-SPUS-20261124145913",
    "symbol": "SPUS",
    "asset": "stock",
-   "status": "open",
+   "status": "closed",
    "strategy": "core",
    "entryOrderId": "f61023ba-9547-4ca2-85ec-3200ace7369c",
    "qty": 2.0,
@@ -527,7 +539,13 @@
     "tradingAgents": "not used (core)"
    },
    "lastPrice": 53.79,
-   "unrealizedPct": 2.94
+   "unrealizedPct": 2.94,
+   "closing": "bad news: China rejected the new U.S. 20% tariff plan, further raising global trade war ri",
+   "closedAt": "2026-11-26T11:40:38Z",
+   "exitPrice": 53.745,
+   "exitReason": "bad news: China rejected the new U.S. 20% tariff plan, further raising global trade war ri",
+   "pnl": -0.88,
+   "pnlPct": -0.81
   },
   {
    "id": "ahq-NVDA-20261124145910",
@@ -5775,9 +5793,58 @@
    "t": "2026-11-26T11:02:28Z",
    "equity": 92002.46,
    "spy": 716.67
+  },
+  {
+   "t": "2026-11-26T11:40:39Z",
+   "equity": 92039.08,
+   "spy": 716.67
+  },
+  {
+   "t": "2026-11-26T12:11:29Z",
+   "equity": 92050.34,
+   "spy": 716.67
+  },
+  {
+   "t": "2026-11-26T12:42:05Z",
+   "equity": 92066.35,
+   "spy": 716.67
+  },
+  {
+   "t": "2026-11-26T13:12:40Z",
+   "equity": 92062.37,
+   "spy": 716.67
+  },
+  {
+   "t": "2026-11-26T13:43:05Z",
+   "equity": 92066.88,
+   "spy": 716.67
+  },
+  {
+   "t": "2026-11-26T14:17:11Z",
+   "equity": 92056.48,
+   "spy": 716.67
+  },
+  {
+   "t": "2026-11-26T14:52:11Z",
+   "equity": 92045.81,
+   "spy": 716.67
   }
  ],
  "decisions": [
+  {
+   "t": "2026-11-26T14:17:11Z",
+   "symbol": "XRP/USD",
+   "outcome": "error",
+   "why": "order failed: not enough cash",
+   "event": "XRP sees positive institutional inflows via Franklin Templeton ETF, bucking the broader market trend."
+  },
+  {
+   "t": "2026-11-26T12:42:05Z",
+   "symbol": "ETH/USD",
+   "outcome": "error",
+   "why": "order failed: not enough cash",
+   "event": "Fidelity's filing for a spot Chainlink ETF and strong institutional backing provide positive momentum for digital assets."
+  },
   {
    "t": "2026-11-26T09:14:25Z",
    "symbol": "BTC/USD",
@@ -6810,20 +6877,6 @@
   {
    "t": "2026-11-25T17:01:49Z",
    "symbol": "OXY",
-   "outcome": "waiting",
-   "why": "down 3% today, no new trades until tomorrow",
-   "event": "Ongoing Houthi attacks on Saudi oil infrastructure and financial centers continue to escalate regional supply risks."
-  },
-  {
-   "t": "2026-11-25T17:01:49Z",
-   "symbol": "CVX",
-   "outcome": "waiting",
-   "why": "down 3% today, no new trades until tomorrow",
-   "event": "Ongoing Houthi attacks on Saudi oil infrastructure and financial centers continue to escalate regional supply risks."
-  },
-  {
-   "t": "2026-11-25T17:01:48Z",
-   "symbol": "XOM",
    "outcome": "waiting",
    "why": "down 3% today, no new trades until tomorrow",
    "event": "Ongoing Houthi attacks on Saudi oil infrastructure and financial centers continue to escalate regional supply risks."
