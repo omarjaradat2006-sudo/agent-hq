@@ -7,6 +7,7 @@ import json, os, re, sys, datetime
 from zoneinfo import ZoneInfo
 sys.path.insert(0, os.path.dirname(__file__))
 import gemini as G
+import viral_refs as VR
 
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 STATE = os.path.join(ROOT, "data", "tiktok", "state.json")
@@ -143,13 +144,34 @@ def build_ideas(raw, state):
     return ideas
 
 
+def ideas_from_refs(refs, state):
+    """Today's scripts = Omar's version of each verified viral reference (same structure, his words). No Gemini call."""
+    used = {i["id"] for i in state["ideas"]}
+    n, ideas = 1, []
+    for r in refs:
+        v = r["yourVersion"]
+        while f"tiktok-{TODAY}-{n}" in used:
+            n += 1
+        iid = f"tiktok-{TODAY}-{n}"; used.add(iid)
+        b = r.get("breakdown") or {}
+        ideas.append({"id": iid, "title": v.get("title") or r["title"], "hook": v["scenes"][0]["line"],
+                      "why": f"Same structure as {r['creator']}'s video ({r['views']:,} views on {r['platform'].title()}). {b.get('watchedToEnd', '')}"[:400],
+                      "format": f"Talking head {v.get('length', 30)}s", "hookFamily": v.get("hookFamily", ""),
+                      "length": int(v.get("length") or 30), "onScreen": v.get("onScreen", ""), "scenes": v["scenes"],
+                      "hooksToTest": (v.get("hooksToTest") or [])[:3], "caption": v["caption"], "script": v["script"],
+                      "formatted": v["formatted"], "score": 8, "refKey": r["key"],
+                      "sources": [{"title": f"Reference: {r['creator']} ({r['views']:,} views)", "url": r["url"]}],
+                      "status": "pending", "createdAt": ISO, "madeBy": "gemini (watched the reference)"})
+    return ideas
+
+
 def brief(state, ideas):
     approved = [i for i in state["ideas"] if i.get("status") == "approved"]
     pending = sum(1 for i in state["ideas"] if i.get("status") == "pending") + len(ideas)
     rev = state.get("review") or {}
     best = max(ideas, key=lambda i: i["score"])
     return {"date": str(TODAY), "createdAt": ISO,
-            "headline": (rev.get("headline") or f"3 new scripts for {TODAY:%A}")[:90],
+            "headline": (rev.get("headline") or f"{len(ideas)} new scripts for {TODAY:%A}")[:90],
             "summary": f"{rev.get('summary','')} Today's best new idea: {best['title']}.".strip(),
             "filmToday": [f"{i['title']} — {i['hook']}" for i in approved[:2]] + [f"{best['title']} — {best['hook']}"],
             "approvals": [f"{pending} scripts waiting for your review"] + [f"Waiting on Omar: {i['title']}" for i in approved[:5]],
@@ -161,32 +183,46 @@ def main():
     fmt = open(FORMAT, encoding="utf-8").read()
     patch = {"team": "tiktok", "at": ISO, "log": [], "agents": {}}
     nxt = (NOW + datetime.timedelta(days=1)).strftime("%Y-%m-%dT14:41:00Z")
+    # Viral references: researched in small hourly chunks since 3:52 AM (viral_refs.py), joined here with no Gemini call.
+    refs, inbox, note = VR.assemble(state)
+    patch["viralRefs"] = {"date": str(TODAY), "createdAt": ISO, "items": refs, "note": note}
+    patch["refInboxDone"] = inbox
+    patch["log"].append({"t": ISO, "agent": "Reference Scout", "msg": note})
     if RESEARCH_DAY:
         patch["review"] = review_step(state, metrics)
         state["review"] = patch["review"]
         patch["log"].append({"t": ISO, "agent": "Performance Reviewer", "msg": patch["review"].get("headline", "Review done")})
-        patch["research"] = research_step(state, metrics)
-        state.setdefault("research", []).insert(0, patch["research"])
-        patch["log"].append({"t": ISO, "agent": "Analyst", "msg": f"Found {len(patch['research']['items'])} things working right now"})
-        rd = f"Research day: reviewed and researched {TODAY}"
+    if refs:   # the references replace the old web research + plain scripts (saves 2 Gemini calls)
+        patch["research"] = {"date": str(TODAY), "createdAt": ISO, "items": [
+            {"title": r["title"] or r["yourVersion"].get("title", ""), "creator": r["creator"], "url": r["url"],
+             "metric": f"{r['views']:,} views (checked on {r['platform'].title()})", "whyItWorks": (r["breakdown"].get("watchedToEnd") or "")[:300]}
+            for r in refs]}
+        ideas = ideas_from_refs(refs, state)
+        raw = {"strategy": f"Built today's scripts on {len(refs)} real viral videos (see Viral references)"}
+        rd = f"Viral references: {note}"
     else:
-        rd = f"Writing day: using {(state.get('review') or {}).get('date','last')} review and research"
-    last_err = None
-    for _ in range(3):
-        try:
-            raw = write_step(state, fmt)
-            ideas = build_ideas(raw, state)
-            break
-        except Exception as e:
-            last_err = e; print("retrying write:", e, flush=True)
-    else:
-        raise RuntimeError(f"Copywriter failed 3 times: {last_err}")
+        if RESEARCH_DAY:
+            patch["research"] = research_step(state, metrics)
+            state.setdefault("research", []).insert(0, patch["research"])
+            patch["log"].append({"t": ISO, "agent": "Analyst", "msg": f"Found {len(patch['research']['items'])} things working right now"})
+        rd = "No verified references today, so these are plain fallback scripts"
+        last_err = None
+        for _ in range(3):
+            try:
+                raw = write_step(state, fmt)
+                ideas = build_ideas(raw, state)
+                break
+            except Exception as e:
+                last_err = e; print("retrying write:", e, flush=True)
+        else:
+            raise RuntimeError(f"Copywriter failed 3 times: {last_err}")
     patch["ideas"] = ideas
     patch["brief"] = brief(state, ideas)
     patch["log"] += [{"t": ISO, "agent": "Strategist", "msg": raw.get("strategy", "Picked 3 angles")[:200]},
-                     {"t": ISO, "agent": "Copywriter", "msg": "Wrote 3 scripts: " + "; ".join(i["title"] for i in ideas)}]
+                     {"t": ISO, "agent": "Copywriter", "msg": f"Wrote {len(ideas)} scripts: " + "; ".join(i["title"] for i in ideas)}]
     for aid, doing in [("reviewer", rd), ("analyst", rd), ("strategist", raw.get("strategy", "")[:120]),
-                       ("copywriter", "Wrote 3 scripts (Gemini)")]:
+                       ("copywriter", f"Wrote {len(ideas)} scripts" + (" from viral references" if refs else " (fallback, no references)")),
+                       ("scout", note)]:
         patch["agents"][aid] = {"status": "ok", "doing": doing, "lastRun": ISO, "nextRun": nxt}
     os.makedirs(os.path.dirname(OUT), exist_ok=True)
     json.dump(patch, open(OUT, "w", encoding="utf-8"), ensure_ascii=False, indent=1)

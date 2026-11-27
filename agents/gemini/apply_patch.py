@@ -26,6 +26,15 @@ if "competitors" in patch:
 if isinstance(patch.get("review"), dict):
     s.setdefault("reviewHistory", []).insert(0, {"date": patch["review"].get("date"), "headline": patch["review"].get("headline")})
     s["reviewHistory"] = s["reviewHistory"][:30]
+if isinstance(patch.get("viralRefs"), dict):   # TikTok Viral references tab: today's set, last 6 days kept as history
+    old = s.get("viralRefs")
+    if old and old.get("date") != patch["viralRefs"].get("date") and old.get("items"):
+        s["pastViralRefs"] = ([old] + s.get("pastViralRefs", []))[:6]
+    s["viralRefs"] = patch["viralRefs"]
+for r in s.get("refInbox", []):                # links Omar pasted on the Viral references tab
+    res = (patch.get("refInboxDone") or {}).get(r.get("url"))
+    if res and res != "not reached today" and r.get("status") != "done":
+        r.update(status="done", result=str(res)[:200], doneAt=patch["at"])
 for k, keep in (("research", 14), ("swarms", 10)):
     if k in patch:
         new = patch[k] if isinstance(patch[k], list) else [patch[k]]
@@ -53,6 +62,9 @@ known = {a.get("id") for a in s.get("agents", [])}
 for a in s.get("agents", []):
     if isinstance(patch.get("agents"), dict) and a.get("id") in patch["agents"] and isinstance(patch["agents"][a["id"]], dict):
         a.update(patch["agents"][a["id"]])
+for aid, v in (patch.get("agents") or {}).items():   # a newly added agent (e.g. TikTok's Reference Scout)
+    if aid not in known and isinstance(v, dict):
+        s.setdefault("agents", []).append({"id": aid, **v})
 s["updatedAt"] = patch["at"]
 json.dump(s, open(path, "w", encoding="utf-8"), ensure_ascii=False, indent=2)
 print("merged", job, "into", team)

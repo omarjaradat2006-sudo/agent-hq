@@ -54,12 +54,12 @@ def model():
     return models()[0]
 
 
-def generate(prompt, system=None, search=False, json_out=False, temperature=0.8, retries=2):
+def generate(prompt, system=None, search=False, json_out=False, temperature=0.8, retries=2, gen_extra=None):
     """Returns (text, sources). sources = [(title, url)] from Google Search grounding.
     Tries each model in models(); on 429/503 moves to the next model."""
     parts = prompt if isinstance(prompt, list) else [{"text": prompt}]   # a list = text + video/image parts
     body = {"contents": [{"role": "user", "parts": parts}],
-            "generationConfig": {"temperature": temperature}}
+            "generationConfig": {"temperature": temperature, **(gen_extra or {})}}   # gen_extra e.g. {"mediaResolution": "MEDIA_RESOLUTION_LOW"}
     if system:
         body["systemInstruction"] = {"parts": [{"text": system}]}
     if search:

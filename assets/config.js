@@ -5,6 +5,7 @@ window.HQ_CONFIG = {
   teams: [
     { id: "tiktok", name: "TikTok", color: "#ff4d79", grid: [0, 0], tagline: "Trends, hooks and scripts for your main page", ideaWord: "Scripts",
       agents: [
+        { id: "scout", name: "Reference Scout", role: "Real viral videos, why they worked, your version", kind: "viral" },
         { id: "analyst", name: "Analyst", role: "Finds outlier videos", kind: "research" },
         { id: "strategist", name: "Strategist", role: "Picks what to film next", kind: "ideas" },
         { id: "copywriter", name: "Copywriter", role: "Scene-by-scene scripts", kind: "ideas" },

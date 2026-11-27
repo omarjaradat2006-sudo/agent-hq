@@ -240,7 +240,7 @@
 
   /* ---------------- panel ---------------- */
   let tab = "overview", agentSel = null, ideaFilter = "pending", statSel = null;
-  function tabForKind(t, kind) { return ["stats", "research", "ideas", "review", "competitors", "swarm", "positions", "trades", "news", "coins", "picks", "underdogs", "record", "books", "cheapgrowth", "promo"].includes(kind) ? kind : "overview"; }
+  function tabForKind(t, kind) { return ["viral", "stats", "research", "ideas", "review", "competitors", "swarm", "positions", "trades", "news", "coins", "picks", "underdogs", "record", "books", "cheapgrowth", "promo"].includes(kind) ? kind : "overview"; }
   function focusTeam(id, tb, agentId) {
     if (!M.teams[id]) return; focused = id; tab = tb || "overview"; agentSel = agentId || null; statSel = null; ideaFilter = id === "youtube" ? "approved" : "pending";
     $("#panel").classList.add("open"); renderPanel(); syncTeambar();
@@ -260,6 +260,7 @@
     if (t.metrics && (t.metrics.trending || []).length) out.push(["trending", "Trending"]);
     if (t.cfg.id === "youtube") out.splice(1, 0, ["lineup", "Today's lineup"]), out.splice(3, 0, ["shots", "Footage"]), out.splice(4, 0, ["clips", "Clip permissions"]), out.splice(2, 0, ["inspo", "Inspo"]);
     if (t.cfg.id === "tiktok" || t.cfg.id === "youtube") out.splice(out.findIndex(x => x[0] === "ideas") + 1, 0, ["review", "Review"]);
+    if (t.cfg.id === "tiktok") out.splice(1, 0, ["viral", "Viral references"]);
     if (t.cfg.id === "linkedai" || t.cfg.id === "growth") out.splice(2, 0, ["competitors", "Competitors"]);
     if (t.cfg.id === "linkedai") out.splice(1, 0, ["cheapgrowth", "Cheap Growth"]);
     if (t.cfg.id === "linkedai") out.splice(3, 0, ["promo", "Promo lab"]);
@@ -281,12 +282,13 @@
       if (k === "positions") b.append(el("span", "n", String((t.state.positions || []).length)));
       if (k === "upgrades") b.append(el("span", "n", String(labView(x => UPG[t.cfg.id].includes(x)).state.ideas.filter(i => effectiveStatus(i).status === "pending").length)));
       if (k === "ideas") b.append(el("span", "n", String((t.cfg.id === "lab" ? labView(isSystem).state.ideas : (t.state.ideas || [])).filter(i => t.cfg.id === "youtube" ? ["pending", "approved"].includes(effectiveStatus(i).status) : effectiveStatus(i).status === "pending").length)));
+      if (k === "viral") b.append(el("span", "n", String(((t.state.viralRefs || {}).items || []).length)));
       if (k === "shots") b.append(el("span", "n", String((t.state.footage || []).filter(f => f.status === "ready").length)));
       b.onclick = () => { tab = k; renderPanel(); }; tabs.append(b); });
     ph.append(tabs); p.append(ph);
     const body = el("div", "pb"); p.append(body);
     if (t.cfg.paused) { vPaused(t, body); return; }
-    ({ schedule: vSchedule, promo: vPromo, overview: vOverview, ideas: vIdeas, upgrades: vUpgrades, review: vReview, competitors: vCompetitors, cheapgrowth: vCheapGrowth, swarm: vSwarm, leads: vLeads, lineup: vLineup, inspo: vInspo, picks: vFToday, ufc: vFUfc, record: vFRecord, books: vFBooks, positions: vTPositions, trades: vTTrades, pnl: vTPnl, news: vTNews, coins: vTCoins, backtest: vTBacktest, week: vTWeek, shots: vShots, clips: vClips, stats: vStats, trending: vTrending, research: vResearch, activity: vActivity, ...(t.cfg.id === "fight" && !agentSel ? { overview: vFToday } : {}) }[tab] || vOverview)(t, body);
+    ({ viral: vViral, schedule: vSchedule, promo: vPromo, overview: vOverview, ideas: vIdeas, upgrades: vUpgrades, review: vReview, competitors: vCompetitors, cheapgrowth: vCheapGrowth, swarm: vSwarm, leads: vLeads, lineup: vLineup, inspo: vInspo, picks: vFToday, ufc: vFUfc, record: vFRecord, books: vFBooks, positions: vTPositions, trades: vTTrades, pnl: vTPnl, news: vTNews, coins: vTCoins, backtest: vTBacktest, week: vTWeek, shots: vShots, clips: vClips, stats: vStats, trending: vTrending, research: vResearch, activity: vActivity, ...(t.cfg.id === "fight" && !agentSel ? { overview: vFToday } : {}) }[tab] || vOverview)(t, body);
   }
   function pill(s) { return el("span", "pill s-" + (s || "idle"), ST[s] || s || "Idle"); }
   function empty(title, text) { const e = el("div", "empty"); e.append(el("strong", null, title)); e.append(el("span", null, text)); return e; }
@@ -295,7 +297,7 @@
     r.append(nm, pill(a.status)); c.append(r);
     if (a.doing) c.append(el("div", null, a.doing));
     c.append(el("div", "small", (a.lastRun ? "Last run " + ago(a.lastRun) : "Hasn't run yet") + (a.nextRun ? " · next " + until(a.nextRun) : "")));
-    const k = tabForKind(t, a.kind); if (k !== "overview") { const b = el("button", "btn primary", { stats: "See the stats", promo: "See the promo lab", research: "See what they found", review: "See the review", competitors: "See the competitors", cheapgrowth: "See this week's plan", swarm: "See the debate", positions: "See open positions", trades: "See every trade", news: "See the news desk", coins: "See coin watch", picks: "See today's slips", record: "See the record", books: "See odds and cost" }[k] || "See what they wrote"); b.onclick = () => { tab = k; renderPanel(); }; c.append(b); }
+    const k = tabForKind(t, a.kind); if (k !== "overview") { const b = el("button", "btn primary", { viral: "See the viral references", stats: "See the stats", promo: "See the promo lab", research: "See what they found", review: "See the review", competitors: "See the competitors", cheapgrowth: "See this week's plan", swarm: "See the debate", positions: "See open positions", trades: "See every trade", news: "See the news desk", coins: "See coin watch", picks: "See today's slips", record: "See the record", books: "See odds and cost" }[k] || "See what they wrote"); b.onclick = () => { tab = k; renderPanel(); }; c.append(b); }
     return c;
   }
   function ideaLine(t, body) {   // YouTube tab: how the board is being worked through
@@ -457,7 +459,7 @@
   }
   /* Schedule: read straight from the server's crontab in the repo (server clock = Toronto time). */
   let CRON = null;
-  const JOBNAME = { "run_team.sh tiktok": "TikTok team: scripts + review", "run_team.sh youtube": "YouTube team: today's lineup (both channels)",
+  const JOBNAME = { "run_team.sh tiktok": "TikTok team: scripts + review", "run_refs.sh": "TikTok: viral reference research (one small chunk)", "run_team.sh youtube": "YouTube team: today's lineup (both channels)",
     "run_team.sh linkedai": "LinkedAI team: competitor study + growth ideas", "run_team.sh promo": "LinkedAI Promo Studio: 2 promo videos in your style",
     "run_promo.sh chunk": "LinkedAI Promo Studio: one small research chunk", "run_team.sh opps": "AI Opportunities", "run_team.sh lab": "R&D Lab: system upgrades",
     "run_team.sh repos": "GitHub Scout: repo requests", "run_team.sh chief": "Chief of Staff: weekly brief", "run_team.sh growth": "Growth Architect team",
@@ -490,7 +492,7 @@
   function whenLabel(d) { if (!d) return "-"; const now = new Date(); const day = Math.round((new Date(d.getFullYear(), d.getMonth(), d.getDate()) - new Date(now.getFullYear(), now.getMonth(), now.getDate())) / 864e5);
     return (day === 0 ? "Today" : day === 1 ? "Tomorrow" : DOW[d.getDay()] + " " + d.toLocaleDateString([], { month: "short", day: "numeric" })) + " · " + d.toLocaleTimeString([], { hour: "numeric", minute: "2-digit" }); }
   function jobTeam(j) { const c = j.cmd || ""; const m = c.match(/run_team\.sh (\w+)/);
-    if (m) return { chief: "hq", promo: "linkedai" }[m[1]] || m[1]; if (/promo/.test(c)) return "linkedai"; if (/fight/.test(c)) return "fight"; if (/cheap_growth/.test(c)) return "linkedai"; if (/trading/.test(c)) return "trading"; return "youtube"; }
+    if (m) return { chief: "hq", promo: "linkedai" }[m[1]] || m[1]; if (/promo/.test(c)) return "linkedai"; if (/fight/.test(c)) return "fight"; if (/run_refs/.test(c)) return "tiktok"; if (/cheap_growth/.test(c)) return "linkedai"; if (/trading/.test(c)) return "trading"; return "youtube"; }
   async function loadCron() { if (!CRON) { try { const r = await fetch(ROOT + "scripts/server/crontab.txt?t=" + Date.now(), { cache: "no-store" }); CRON = r.ok ? parseCron(await r.text()) : []; } catch { CRON = []; } } return CRON; }
   let calWeek = 0;
   async function openCalendar() {
@@ -998,6 +1000,58 @@ Server breakdown (Gemini watched it with sound):
       vids.slice(0, 15).forEach(v => { const r = el("div", "vid"); const u = safeUrl(v.url); const a = el(u ? "a" : "span", "t", v.title || "Untitled"); if (u) { a.href = u; a.target = "_blank"; a.rel = "noopener"; } r.append(a, el("span", "n", fmt(v.views) + " views"));
         r.append(el("span", "m", v.published ? new Date(v.published).toLocaleDateString() : ""), el("span", "m", (v.likes != null ? fmt(v.likes) + " likes" : ""))); c.append(r); }); body.append(c); }
     body.append(el("div", "small", "Collected " + ago(m.updatedAt) + " · refreshes hourly"));
+  }
+  /* Viral references: real viral videos (link + views checked by the server), why each worked, and Omar's version. */
+  let viralDay = 0;
+  const REF_PARTS = [["hook", "Hook (first 2 seconds)"], ["pacing", "Pacing"], ["onScreenText", "On-screen text"], ["structure", "Story structure"],
+    ["framing", "Camera framing"], ["emotion", "Emotion"], ["payoff", "Payoff"], ["watchedToEnd", "Why people watched to the end"], ["shared", "Why people shared it"]];
+  function vViral(t, body) {
+    const add = el("div", "card brief"); add.append(el("div", "label", "Send the scout a video"));
+    add.append(el("div", "why", "Saw one blow up on your For You page? Paste the TikTok or YouTube Shorts link. The next morning's research opens it, reads its real views and breaks it down first."));
+    (t.state.refInbox || []).filter(r => r.status !== "done").slice(0, 6).forEach(r => { const row = el("div", "row between"); row.append(el("span", "small", r.url)); row.append(el("span", "pill s-waiting", "Next run")); add.append(row); });
+    const inp = el("input"); inp.className = "tokin"; inp.placeholder = "https://www.tiktok.com/@creator/video/…"; inp.maxLength = 300;
+    const ab = el("button", "btn primary", "Add link");
+    ab.onclick = async () => { const v = inp.value.trim();
+      if (!/^https:\/\/(www\.|vm\.|m\.)?(tiktok\.com|youtube\.com\/shorts|youtu\.be)\//.test(v)) { toast("Paste a TikTok or YouTube Shorts link"); return; }
+      if (!LS.get("hq.ghToken")) { openSettings("Connect GitHub once so links save by themselves."); return; }
+      ab.disabled = true; toast("Saving…");
+      try { const now = new Date().toISOString().replace(/\.\d+Z$/, "Z");
+        const st = await commitState("tiktok", s2 => { s2.refInbox = [{ url: v, at: now, status: "open" }, ...(s2.refInbox || [])].slice(0, 30);
+          s2.log = [{ t: now, agent: "Omar", msg: "Sent the Reference Scout: " + v }, ...(s2.log || [])].slice(0, 100); }, "Omar: viral reference link");
+        t.state.refInbox = st.refInbox; toast("Saved · it gets checked and broken down tomorrow morning"); renderPanel();
+      } catch (e) { ab.disabled = false; toast(e.message === "access" ? "Token can't write to agent-hq." : "Couldn't save. Try again."); } };
+    add.append(inp, ab); body.append(add);
+    const days = [t.state.viralRefs, ...(t.state.pastViralRefs || [])].filter(Boolean);
+    if (!days.length) { body.append(empty("No references yet", "The Reference Scout researches in small chunks from 3:52 AM and puts them here at 9:41 AM.")); return; }
+    if (viralDay >= days.length) viralDay = 0;
+    if (days.length > 1) { const sub = el("div", "subtabs"); days.forEach((d, n) => { const b = el("button", null, (n ? d.date : "Today") + " " + (d.items || []).length); b.setAttribute("aria-pressed", String(viralDay === n)); b.onclick = () => { viralDay = n; renderPanel(); }; sub.append(b); }); body.append(sub); }
+    const cur = days[viralDay];
+    body.append(el("div", "small", `${cur.date} · ${cur.note || ""} · every link opened by the server and its numbers read from the platform · breakdowns written by Gemini after watching each video`));
+    if (!(cur.items || []).length) { body.append(empty("Nothing verified that day", "No video could be checked and watched. Fallback scripts are in the Scripts tab.")); return; }
+    cur.items.forEach((r, n) => {
+      const c = el("article", "card"); const u = safeUrl(r.url);
+      const top = el("div", "row between");
+      const a = el(u ? "a" : "span", "btn primary", "▶ Open the video ↗"); if (u) { a.href = u; a.target = "_blank"; a.rel = "noopener"; }
+      top.append(a, el("span", "pill s-idle", (r.platform === "tiktok" ? "TikTok" : "YouTube Shorts") + (r.source === "your inbox" ? " · your link" : "")));
+      c.append(top);
+      const lk = el(u ? "a" : "div", "small", r.url); if (u) { lk.href = u; lk.target = "_blank"; lk.rel = "noopener"; } lk.style.overflowWrap = "anywhere"; c.append(lk);
+      c.append(el("h3", null, `${String.fromCharCode(65 + n)}. ${r.title || r.yourVersion.title || "Reference"}`));
+      const cr = el("div", "row"); const cu = safeUrl(r.creatorUrl); const ca = el(cu ? "a" : "strong", null, r.creator || ""); if (cu) { ca.href = cu; ca.target = "_blank"; ca.rel = "noopener"; } cr.append(ca);
+      cr.append(el("span", "small", [r.views != null ? fmt(r.views) + " views" : null, r.likes != null ? fmt(r.likes) + " likes" : null, r.comments != null ? fmt(r.comments) + " comments" : null,
+        r.shares != null ? fmt(r.shares) + " shares" : null, r.outlier ? r.outlier + "x their normal" : null, r.posted ? "posted " + r.posted : null, r.seconds ? r.seconds + "s" : null].filter(Boolean).join(" · ")));
+      c.append(cr);
+      c.append(el("div", "small muted", "Views checked " + ago(r.viewsCheckedAt) + (r.linkCheckedAt ? " · link re-checked " + ago(r.linkCheckedAt) : "")));
+      const bd = r.breakdown || {}; const d1 = el("details"); d1.open = n === 0; d1.append(el("summary", null, "Why it worked"));
+      const w = el("div"); w.style.display = "grid"; w.style.gap = "10px"; w.style.marginTop = "8px";
+      REF_PARTS.forEach(([k, l]) => { if (!bd[k]) return; const b = el("div"); b.style.borderLeft = "2px solid var(--line2)"; b.style.paddingLeft = "10px"; b.append(el("div", "label", l)); b.append(el("div", null, bd[k])); w.append(b); });
+      if ((bd.stealThis || []).length) { w.append(el("div", "label", "Steal this")); const ul = el("ul"); ul.style.margin = "0"; ul.style.paddingLeft = "18px"; bd.stealThis.forEach(x => ul.append(el("li", null, x))); w.append(ul); }
+      d1.append(w); c.append(d1);
+      const v = r.yourVersion || {}; const d2 = el("details"); d2.open = n === 0; d2.append(el("summary", null, "Your version (same structure, your words)"));
+      if (v.formatted) d2.append(mdBlock(v.formatted)); c.append(d2);
+      const act = el("div", "row"); if (v.script) { const cp = el("button", "btn", "Copy script"); cp.onclick = copyText(v.script, c, "Copied the script."); act.append(cp); }
+      if (v.caption) { const cc = el("button", "btn", "Copy caption"); cc.onclick = copyText(v.caption, c, "Copied the caption."); act.append(cc); }
+      act.append(el("span", "small", "Approve or skip it in the Scripts tab")); c.append(act);
+      body.append(c); });
   }
   function vTrending(t, body) {
     const tr = (t.metrics || {}).trending || []; if (t.metrics && t.metrics.trendingAt) body.append(el("div", "small", "Scanned " + ago(t.metrics.trendingAt) + " · ranked by how far each video beats its channel's normal views"));
