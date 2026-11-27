@@ -26,7 +26,8 @@ window.HQ_CONFIG = {
         { id: "lead", name: "Product Lead", role: "Weekly read on the market", kind: "brief" },
         { id: "watch", name: "Competitor Watch", role: "Their content, ads and growth", kind: "competitors" },
         { id: "copywriter", name: "Copywriter", role: "Promo scripts and posts", kind: "ideas" },
-        { id: "liaison", name: "R&D Liaison", role: "Brings in the R&D Lab's finds", kind: "research" } ] },
+        { id: "liaison", name: "R&D Liaison", role: "Brings in the R&D Lab's finds", kind: "research" },
+        { id: "cheap", name: "Cheap Growth", role: "$0-50 ways to get installs, weekly", kind: "cheapgrowth" } ] },
     { id: "growth", name: "Growth Architect", color: "#3ddc97", grid: [0, 1], tagline: "Paused: under construction", ideaWord: "Content",
       paused: "Omar is rebuilding Growth Architect from the ground up. This floor's agents are offline and recharging: they don't run, research or write anything until the rebuild is done and he switches them back on.",
       agents: [

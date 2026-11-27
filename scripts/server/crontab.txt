@@ -31,3 +31,8 @@
 
 # Every 3 days 2:47 PM: Inspo inbox -> Gemini watches each video -> Engine 2 template + sample for Omar to approve. No Claude.
 47 14 */3 * *  /home/ubuntu/agent-hq/scripts/server/run_inspo.sh
+
+# LinkedAI Cheap Growth: research in small chunks, 1 Gemini search call an hour, Sat + Sun 3:11-11:11 AM (after the 3 AM quota reset).
+# Topics collected in the last 5 days are skipped (0 calls). Sunday 12:41 PM: 1 call turns the saved research into the week's plan.
+11 3-11 * * 6,0   /home/ubuntu/agent-hq/scripts/server/run_cheap_growth.sh chunk
+41 12 * * 0       /home/ubuntu/agent-hq/scripts/server/run_cheap_growth.sh assemble

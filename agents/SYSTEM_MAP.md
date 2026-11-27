@@ -31,6 +31,7 @@ Last updated: 2026-11-19 (by Claude, from the real setup). Omar or Claude update
 - **TikTok team** daily: performance review (Mon/Wed/Fri), research, 3 scripts in his content-scripts/VoicePrint scene format, caption packs.
 - **YouTube team** daily 6:13 AM: writes the full day's lineup for both channels (24 Shorts each + longs), uses approved board ideas FIRST and tags each slot with ideaId, never reuses an uploaded title or recent template+settings combo, performance review.
 - **LinkedAI team** weekly Mon: full competitor study + promo scripts.
+- **LinkedAI Cheap Growth** (`agents/gemini/cheap_growth.py`): researches $0-50 install channels in 9 small chunks (1 Gemini search call an hour, Sat+Sun 3:11-11:11 AM, topics under 5 days old skipped, saved in `~/research/cheap-growth/` on the server), then Sun 12:41 PM one call ranks them into a weekly plan (top 3, steps, ready posts, $50 budget tracker, Chrome Web Store user count) on the LinkedAI floor's Cheap Growth tab. Omar records what he tried there. Never posts or spends.
 - **AI Opportunities** weekly Wed: money ideas with build prompts + 100-person simulated test.
 - **R&D Lab** every 3 days: SYSTEM upgrades + per-business upgrades (see rnd-lab.md).
 - **GitHub Scout** every 3 days: free repos, answers Omar's repo requests.
@@ -57,7 +58,7 @@ Already built, never pitch these as new:
 - Profile optimization suggestions; human-sounding writing rules (no AI-tell phrases, no em dashes).
 - Google-only sign-in, Firestore credits per user, free plan + Pro monthly/yearly (yearly 20% off, credits delivered monthly), Stripe live checkout, backend on Render, site on Firebase (linkedai-ff45f).
 - **LinkedAI Post Writer** app for ChatGPT (posts from notes, rewrite in his voice, hooks) on Cloudflare Workers, under OpenAI review.
-- Marketing: short TikTok promos (creator-style, never "I built this"), UGC creators (flat fee per post + 1-year affiliate link).
+- Marketing: short TikTok promos (creator-style, never "I built this"), UGC creators (flat fee per post + 1-year affiliate link), and the weekly Cheap Growth plan (store SEO/reviews, Reddit/communities, launch sites, newsletters, students, LinkedIn, micro-creators, small ad tests, affiliates). Don't re-pitch those channels as new; build on the plan's results.
 Real upgrade areas: getting installs and paid conversions (store listing, reviews, onboarding, retention, referral), reliability when LinkedIn changes its layout, new features that are NOT in the list above, and better promo content.
 
 ## FIGHT & COURT

@@ -240,7 +240,7 @@
 
   /* ---------------- panel ---------------- */
   let tab = "overview", agentSel = null, ideaFilter = "pending", statSel = null;
-  function tabForKind(t, kind) { return ["stats", "research", "ideas", "review", "competitors", "swarm", "positions", "trades", "news", "coins", "picks", "underdogs", "record", "books"].includes(kind) ? kind : "overview"; }
+  function tabForKind(t, kind) { return ["stats", "research", "ideas", "review", "competitors", "swarm", "positions", "trades", "news", "coins", "picks", "underdogs", "record", "books", "cheapgrowth"].includes(kind) ? kind : "overview"; }
   function focusTeam(id, tb, agentId) {
     if (!M.teams[id]) return; focused = id; tab = tb || "overview"; agentSel = agentId || null; statSel = null; ideaFilter = id === "youtube" ? "approved" : "pending";
     $("#panel").classList.add("open"); renderPanel(); syncTeambar();
@@ -261,6 +261,7 @@
     if (t.cfg.id === "youtube") out.splice(1, 0, ["lineup", "Today's lineup"]), out.splice(3, 0, ["shots", "Footage"]), out.splice(4, 0, ["clips", "Clip permissions"]), out.splice(2, 0, ["inspo", "Inspo"]);
     if (t.cfg.id === "tiktok" || t.cfg.id === "youtube") out.splice(out.findIndex(x => x[0] === "ideas") + 1, 0, ["review", "Review"]);
     if (t.cfg.id === "linkedai" || t.cfg.id === "growth") out.splice(2, 0, ["competitors", "Competitors"]);
+    if (t.cfg.id === "linkedai") out.splice(1, 0, ["cheapgrowth", "Cheap Growth"]);
     if (t.cfg.id === "opps" || t.cfg.id === "growth") out.splice(out.findIndex(x => x[0] === "ideas") + 1, 0, ["swarm", "100-person test"]);
     if (t.cfg.id === "lab") { out[1] = ["ideas", "System upgrades"]; out.splice(2, 0, ["leads", "Leads for each team"]); }
     if (UPG[t.cfg.id] && M.teams.lab) out.splice(out.findIndex(x => x[0] === "ideas") + 1, 0, ["upgrades", "Upgrades"]);
@@ -284,7 +285,7 @@
     ph.append(tabs); p.append(ph);
     const body = el("div", "pb"); p.append(body);
     if (t.cfg.paused) { vPaused(t, body); return; }
-    ({ schedule: vSchedule, overview: vOverview, ideas: vIdeas, upgrades: vUpgrades, review: vReview, competitors: vCompetitors, swarm: vSwarm, leads: vLeads, lineup: vLineup, inspo: vInspo, picks: vFToday, ufc: vFUfc, record: vFRecord, books: vFBooks, positions: vTPositions, trades: vTTrades, pnl: vTPnl, news: vTNews, coins: vTCoins, backtest: vTBacktest, week: vTWeek, shots: vShots, clips: vClips, stats: vStats, trending: vTrending, research: vResearch, activity: vActivity, ...(t.cfg.id === "fight" && !agentSel ? { overview: vFToday } : {}) }[tab] || vOverview)(t, body);
+    ({ schedule: vSchedule, overview: vOverview, ideas: vIdeas, upgrades: vUpgrades, review: vReview, competitors: vCompetitors, cheapgrowth: vCheapGrowth, swarm: vSwarm, leads: vLeads, lineup: vLineup, inspo: vInspo, picks: vFToday, ufc: vFUfc, record: vFRecord, books: vFBooks, positions: vTPositions, trades: vTTrades, pnl: vTPnl, news: vTNews, coins: vTCoins, backtest: vTBacktest, week: vTWeek, shots: vShots, clips: vClips, stats: vStats, trending: vTrending, research: vResearch, activity: vActivity, ...(t.cfg.id === "fight" && !agentSel ? { overview: vFToday } : {}) }[tab] || vOverview)(t, body);
   }
   function pill(s) { return el("span", "pill s-" + (s || "idle"), ST[s] || s || "Idle"); }
   function empty(title, text) { const e = el("div", "empty"); e.append(el("strong", null, title)); e.append(el("span", null, text)); return e; }
@@ -293,7 +294,7 @@
     r.append(nm, pill(a.status)); c.append(r);
     if (a.doing) c.append(el("div", null, a.doing));
     c.append(el("div", "small", (a.lastRun ? "Last run " + ago(a.lastRun) : "Hasn't run yet") + (a.nextRun ? " · next " + until(a.nextRun) : "")));
-    const k = tabForKind(t, a.kind); if (k !== "overview") { const b = el("button", "btn primary", { stats: "See the stats", research: "See what they found", review: "See the review", competitors: "See the competitors", swarm: "See the debate", positions: "See open positions", trades: "See every trade", news: "See the news desk", coins: "See coin watch", picks: "See today's slips", record: "See the record", books: "See odds and cost" }[k] || "See what they wrote"); b.onclick = () => { tab = k; renderPanel(); }; c.append(b); }
+    const k = tabForKind(t, a.kind); if (k !== "overview") { const b = el("button", "btn primary", { stats: "See the stats", research: "See what they found", review: "See the review", competitors: "See the competitors", cheapgrowth: "See this week's plan", swarm: "See the debate", positions: "See open positions", trades: "See every trade", news: "See the news desk", coins: "See coin watch", picks: "See today's slips", record: "See the record", books: "See odds and cost" }[k] || "See what they wrote"); b.onclick = () => { tab = k; renderPanel(); }; c.append(b); }
     return c;
   }
   function ideaLine(t, body) {   // YouTube tab: how the board is being worked through
@@ -461,7 +462,8 @@
     "run_team.sh upgrades": "Growth Architect upgrades", "run_bounce.sh": "Bounce Theory: make + upload the day's videos", "run_ambient.sh": "Ambient Escape: make + upload the day's videos",
     "run_wanted.sh": "WANTED LEVEL: post a GTA 6 clip", "run_autotemplate.sh": "Bounce: turn board ideas into new templates", "run_inspo.sh": "Inspo builder: your inspo videos into templates",
     "run_fight.sh picks nba": "Fight & Court: NBA parlays", "run_fight.sh picks ufc": "Fight & Court: UFC card picks", "run_fight.sh picks ufc --dwcs": "Fight & Court: Contender Series picks",
-    "run_fight.sh splits nba": "Fight & Court: NBA betting splits", "run_fight.sh grade": "Fight & Court: grade yesterday's picks" };
+    "run_fight.sh splits nba": "Fight & Court: NBA betting splits", "run_fight.sh grade": "Fight & Court: grade yesterday's picks",
+    "run_cheap_growth.sh chunk": "LinkedAI Cheap Growth: one research chunk", "run_cheap_growth.sh assemble": "LinkedAI Cheap Growth: this week's plan" };
   const DOW = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
   function cronField(f, lo, hi) { if (f === "*") return null; const out = new Set();
     f.split(",").forEach(part => { const [r, st] = part.split("/"); const step = +(st || 1); let a = lo, b = hi;
@@ -486,7 +488,7 @@
   function whenLabel(d) { if (!d) return "-"; const now = new Date(); const day = Math.round((new Date(d.getFullYear(), d.getMonth(), d.getDate()) - new Date(now.getFullYear(), now.getMonth(), now.getDate())) / 864e5);
     return (day === 0 ? "Today" : day === 1 ? "Tomorrow" : DOW[d.getDay()] + " " + d.toLocaleDateString([], { month: "short", day: "numeric" })) + " · " + d.toLocaleTimeString([], { hour: "numeric", minute: "2-digit" }); }
   function jobTeam(j) { const c = j.cmd || ""; const m = c.match(/run_team\.sh (\w+)/);
-    if (m) return { chief: "hq" }[m[1]] || m[1]; if (/fight/.test(c)) return "fight"; if (/trading/.test(c)) return "trading"; return "youtube"; }
+    if (m) return { chief: "hq" }[m[1]] || m[1]; if (/fight/.test(c)) return "fight"; if (/cheap_growth/.test(c)) return "linkedai"; if (/trading/.test(c)) return "trading"; return "youtube"; }
   async function loadCron() { if (!CRON) { try { const r = await fetch(ROOT + "scripts/server/crontab.txt?t=" + Date.now(), { cache: "no-store" }); CRON = r.ok ? parseCron(await r.text()) : []; } catch { CRON = []; } } return CRON; }
   let calWeek = 0;
   async function openCalendar() {
@@ -675,6 +677,63 @@
       if (Array.isArray(x.ads) && x.ads.length) { c.append(el("div", "label", "Ads running")); x.ads.forEach(v => { const s = el("div", "shot"); const uu = safeUrl(v.url); const a = el(uu ? "a" : "div", "t", v.hook || v.title || "Ad"); if (uu) { a.href = uu; a.target = "_blank"; a.rel = "noopener"; } s.append(a); const m = [v.platform, v.running].filter(Boolean).join(" · "); if (m) s.append(el("div", "m", m)); if (v.notes) s.append(el("p", null, v.notes)); c.append(s); }); }
       if (x.lessonForUs) { const l = el("div", "hook", x.lessonForUs); c.append(l); }
       body.append(c); });
+  }
+  /* LinkedAI Cheap Growth: weekly plan from small hourly research chunks. Omar's record lives in cheapGrowthTried (only he writes it). */
+  function vCheapGrowth(t, body) {
+    const P = t.state.cheapGrowth, tried = t.state.cheapGrowthTried || [], store = t.state.cheapGrowthStore || [];
+    body.append(el("div", "why", "Cheap and free ways to get LinkedAI known beyond your TikTok. Research runs one small chunk an hour on Saturday and Sunday mornings, and the plan is put together Sunday at 12:41 PM. Nothing posts or spends by itself: you copy the post, do it, then tell it how it went."));
+    if (!P) { body.append(empty("No plan yet", "The first research chunks run Saturday from 3 AM and the first plan shows up Sunday afternoon.")); return; }
+    const head = el("div", "card brief"); head.append(el("div", "label", "Week of " + P.date)); if (P.headline) head.append(el("h3", null, P.headline)); if (P.summary) head.append(el("div", "why", P.summary));
+    const spent = tried.reduce((n, x) => n + (Number(x.spent) || 0), 0), total = (P.budget && P.budget.total) || 50;
+    const kp = el("div", "row"); kp.style.gap = "8px"; kp.style.flexWrap = "wrap";
+    kp.append(el("span", "pill s-" + (spent > total ? "error" : "ok"), `$${spent.toFixed(2)} of $${total} spent`));
+    const s0 = store[0], s1 = store[1];
+    if (s0 && s0.users != null) kp.append(el("span", "pill s-idle", `${s0.users} store users` + (s1 && s1.users != null ? ` (${s0.users - s1.users >= 0 ? "+" : ""}${s0.users - s1.users} this week)` : "")));
+    if (s0 && s0.rating) kp.append(el("span", "pill s-idle", `${s0.rating} stars · ${s0.ratings || 0} ratings`));
+    if (P.research) kp.append(el("span", "pill s-idle", `research ${P.research.chunks}/${P.research.of} chunks`));
+    head.append(kp); body.append(head);
+    const byId = {}; (P.methods || []).forEach(m => byId[m.id] = m);
+    const last = id => tried.find(x => x.id === id);
+    const copyBtn = (txt, holder) => { const b = el("button", "btn", "Copy post"); b.onclick = async () => { try { await navigator.clipboard.writeText(txt); toast("Copied. Paste it where it says."); } catch { const ta = el("textarea"); ta.value = txt; ta.rows = 6; ta.style.width = "100%"; holder.append(ta); ta.select(); toast("Select and copy the text below."); } }; return b; };
+    const record = async (m, status, spentV, result, btns) => {
+      if (!LS.get("hq.ghToken")) { openSettings("Connect GitHub once so your buttons save by themselves."); return; }
+      btns.forEach(b => b.disabled = true); toast("Saving…");
+      try { const now = new Date().toISOString().replace(/\.\d+Z$/, "Z");
+        const st = await commitState("linkedai", s2 => { s2.cheapGrowthTried = [{ id: m.id, name: m.name, status, spent: Number(spentV) || 0, result: String(result || "").slice(0, 300), at: now }, ...(s2.cheapGrowthTried || [])].slice(0, 60);
+          s2.log = [{ t: now, agent: "Omar", msg: (status === "skipped" ? "Skipped " : "Tried ") + m.name + (result ? ": " + result : "") }, ...(s2.log || [])].slice(0, 100); }, "Omar: cheap growth " + status + " " + m.id);
+        t.state.cheapGrowthTried = st.cheapGrowthTried; toast(status === "skipped" ? "Saved · it won't be picked again" : "Saved · next week's plan builds on it"); renderPanel();
+      } catch (e) { btns.forEach(b => b.disabled = false); toast(e.message === "access" ? "Token can't write to agent-hq." : e.message === "busy" ? "An agent was saving at the same moment. Try again." : "Couldn't save. Try again."); }
+    };
+    const card = (m, full) => {
+      const c = el("div", "card"); const r = el("div", "row between"); r.append(el("h3", null, m.name)); r.append(el("span", "pill s-" + (m.needsYes ? "waiting" : "ok"), (m.cost || ("$" + (m.costUSD || 0))) + (m.needsYes ? " · needs your yes" : ""))); c.append(r);
+      const meta = [m.channel, m.timeMinutes ? m.timeMinutes + " min" : null, m.score ? "score " + m.score + "/10" : null].filter(Boolean).join(" · "); if (meta) c.append(el("div", "small", meta));
+      if (m.expected) { c.append(el("div", "label", "Expected")); c.append(el("div", null, m.expected)); }
+      if (m.why) c.append(el("div", "why", m.why));
+      const L = last(m.id); if (L) c.append(el("div", "hook", (L.status === "skipped" ? "You skipped this" : "You tried this") + " " + ago(L.at) + (L.result ? ": " + L.result : "")));
+      const fu = (P.followUps || []).find(f => f.id === m.id); if (fu && fu.advice) c.append(el("div", "hook", "Next: " + fu.advice));
+      const inner = full ? c : el("details"); if (!full) { inner.append(el("summary", null, "Steps and ready post")); c.append(inner); }
+      if (Array.isArray(m.steps) && m.steps.length) { inner.append(el("div", "label", "Steps")); const ol = el("ol"); m.steps.forEach(x => ol.append(el("li", null, String(x)))); inner.append(ol); }
+      if (m.rules) { inner.append(el("div", "label", "Rules to respect")); inner.append(el("div", "small", m.rules)); }
+      const p = m.post || {}; if (p.text) { inner.append(el("div", "label", "Ready to paste" + (p.where ? " · " + p.where : ""))); if (p.title) inner.append(el("div", "hook", p.title));
+        const pre = el("div", "card"); pre.style.whiteSpace = "pre-wrap"; pre.style.fontSize = "13.5px"; pre.textContent = p.text; inner.append(pre); inner.append(copyBtn((p.title ? p.title + "\n\n" : "") + p.text, inner)); }
+      if ((m.links || []).length) { const s = el("div", "sources"); m.links.forEach(x => { const u = safeUrl(x.url); if (u) { const a = el("a", null, "↗ " + (x.title || "link")); a.href = u; a.target = "_blank"; a.rel = "noopener"; s.append(a); } }); inner.append(s); }
+      const act = el("div", "row"); act.style.gap = "8px"; act.style.flexWrap = "wrap"; act.style.marginTop = "8px";
+      const sp = el("input"); sp.className = "tokin"; sp.placeholder = "$ spent"; sp.type = "number"; sp.min = "0"; sp.step = "0.01"; sp.style.width = "90px"; if (!m.costUSD) sp.value = "0";
+      const res = el("input"); res.className = "tokin"; res.placeholder = "How did it go? (e.g. 4 installs, post removed)"; res.maxLength = 300; res.style.flex = "1"; res.style.minWidth = "180px";
+      const b1 = el("button", "btn primary", "I did it"), b2 = el("button", "btn", "Skip");
+      b1.onclick = () => { if (m.needsYes && !(Number(sp.value) >= 0 && sp.value !== "")) { toast("Type what you spent (0 if nothing)."); return; } record(m, "tried", sp.value, res.value.trim(), [b1, b2]); };
+      b2.onclick = () => record(m, "skipped", 0, res.value.trim(), [b1, b2]);
+      act.append(sp, res, b1, b2); c.append(act);
+      return c;
+    };
+    body.append(el("div", "label", "Do these 3 this week"));
+    (P.thisWeek || []).forEach(id => byId[id] && body.append(card(byId[id], true)));
+    const rest = (P.methods || []).filter(m => !(P.thisWeek || []).includes(m.id));
+    if (rest.length) { body.append(el("div", "label", "Everything else, ranked")); rest.forEach(m => body.append(card(m, false))); }
+    if (tried.length) { const c = el("div", "card"); c.append(el("div", "label", "What you tried")); const ul = el("ul", "log");
+      tried.slice(0, 30).forEach(x => { const li = el("li"); li.append(el("time", null, (x.at || "").slice(0, 10))); li.append(el("span", null, `${x.status === "skipped" ? "Skipped" : "Tried"} ${x.name}${x.spent ? " · $" + Number(x.spent).toFixed(2) : ""}${x.result ? " · " + x.result : ""}`)); ul.append(li); });
+      c.append(ul); body.append(c); }
+    if (P.research && (P.research.missing || []).length) body.append(el("div", "small", "Still researching: " + P.research.missing.join(", ")));
   }
   function vLineup(t, body) {
     ideaLine(t, body);
