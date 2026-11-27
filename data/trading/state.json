@@ -1,28 +1,32 @@
 {
  "team": "trading",
  "plain": {
-  "line": "Down $7,630.49 since start · 38 trades · holding: HLAL, SPUS",
+  "line": "Down $7,476.68 since start · 40 trades · holding: XOM, CVX, HLAL, SPUS",
   "rulesMode": "ultra",
-  "top": "Down $7,630.49 since start (-7.63%) · just holding SPY would be -3.28%",
+  "top": "Down $7,476.68 since start (-7.48%) · just holding SPY would be -3.97%",
   "up": false,
   "holding": [
-   "HLAL: buy order sent, waiting to fill",
-   "SPUS: buy order sent, waiting to fill"
+   "XOM: 69 shares worth $11,115.90, up $61.07 (trailing stop: sells if it falls 3% from its high)",
+   "CVX: 107 shares worth $22,976.11, up $58.85 (trailing stop: sells if it falls 3% from its high)",
+   "HLAL: 271 shares worth $17,926.70, up $2.76 (sells at $95.69 or stops at $57.41)",
+   "SPUS: 320 shares worth $17,305.60, up $16.00 (sells at $81.00 or stops at $48.60)"
   ],
   "today": [
+   "Bought XOM after the news: Escalating conflict in the Middle East, including drone attacks in Kuwait and tensions in the Strait of Hormuz, continues to threaten global energy supplies.",
+   "Bought CVX after the news: Escalating conflict in the Middle East, including drone attacks in Kuwait and tensions in the Strait of Hormuz, continues to threaten global energy supplies.",
    "Bought HLAL after the news: Core holding: rides the whole (halal) market.",
    "Bought SPUS after the news: Core holding: rides the whole (halal) market.",
    "Sold SPWO (bad news: The US administration has initiated a second round of Section 301 tariffs, impac): made $214.71.",
-   "Scanned the news 40 times today: read 3239 headlines, found 102 that could move a stock or coin it's allowed to trade.",
+   "Scanned the news 49 times today: read 3408 headlines, found 109 that could move a stock or coin it's allowed to trade.",
    "Passed on AVAV, COP, CVX, DVN, NEM: order failed: not enough cash for one share.",
    "Passed on BTC/USD, LINK/USD: order failed: not enough cash.",
-   "Safety rules that stepped in: cash only no margin (x26), bad news exit (x1), stock entry window (x46)."
+   "Safety rules that stepped in: cash only no margin (x27), bad news exit (x1), stock entry window (x46)."
   ],
   "watchlist": "Allowed to trade: 68 halal stocks, 5 Shariah ETFs, 9 coins.",
-  "lastScan": "2026-11-27T14:40:21Z"
+  "lastScan": "2026-11-27T15:28:59Z"
  },
  "hired": true,
- "updatedAt": "2026-11-27T14:40:39Z",
+ "updatedAt": "2026-11-27T15:29:04Z",
  "mode": "PAPER",
  "agents": [
   {
@@ -30,8 +34,8 @@
    "name": "News Scout",
    "role": "Reads X, Reddit and news feeds",
    "status": "working",
-   "doing": "Read 3 new headlines/posts, 0 market-moving stories",
-   "lastRun": "2026-11-27T14:40:28Z"
+   "doing": "Read 2 new headlines/posts, 0 market-moving stories",
+   "lastRun": "2026-11-27T15:29:03Z"
   },
   {
    "id": "analyst",
@@ -61,17 +65,17 @@
    "id": "risk",
    "name": "Risk Officer",
    "role": "Hard limits, stop-losses, kill switch",
-   "status": "idle",
-   "doing": "",
-   "lastRun": null
+   "status": "ok",
+   "doing": "Trailing stop for CVX placed on Alpaca: sells if it falls 3% from its high",
+   "lastRun": "2026-11-27T14:50:59Z"
   },
   {
    "id": "trader",
    "name": "Trader",
    "role": "Places paper orders on Alpaca",
-   "status": "working",
-   "doing": "Order for DVN failed: not enough cash for one share",
-   "lastRun": "2026-11-27T14:40:38Z"
+   "status": "ok",
+   "doing": "Bought 107 CVX at $214.18 (stop $207.71, target $226.98)",
+   "lastRun": "2026-11-27T14:50:59Z"
   },
   {
    "id": "coins",
@@ -91,6 +95,101 @@
   }
  ],
  "log": [
+  {
+   "t": "2026-11-27T15:29:03Z",
+   "agent": "News Scout",
+   "msg": "Read 2 new headlines/posts, 0 market-moving stories"
+  },
+  {
+   "t": "2026-11-27T15:23:57Z",
+   "agent": "News Scout",
+   "msg": "Read 2 new headlines/posts, 0 market-moving stories"
+  },
+  {
+   "t": "2026-11-27T15:18:53Z",
+   "agent": "News Scout",
+   "msg": "Read 57 new headlines/posts, 2 market-moving stories"
+  },
+  {
+   "t": "2026-11-27T15:13:44Z",
+   "agent": "News Scout",
+   "msg": "Read 1 new headlines/posts, 0 market-moving stories"
+  },
+  {
+   "t": "2026-11-27T15:08:40Z",
+   "agent": "News Scout",
+   "msg": "Read 4 new headlines/posts, 0 market-moving stories"
+  },
+  {
+   "t": "2026-11-27T15:01:18Z",
+   "agent": "News Scout",
+   "msg": "Read 47 new headlines/posts, 2 market-moving stories"
+  },
+  {
+   "t": "2026-11-27T14:56:06Z",
+   "agent": "News Scout",
+   "msg": "Read 1 new headlines/posts, 0 market-moving stories"
+  },
+  {
+   "t": "2026-11-27T14:51:02Z",
+   "agent": "News Scout",
+   "msg": "Read 5 new headlines/posts, 0 market-moving stories"
+  },
+  {
+   "t": "2026-11-27T14:50:59Z",
+   "agent": "Risk Officer",
+   "msg": "Trailing stop for CVX placed on Alpaca: sells if it falls 3% from its high"
+  },
+  {
+   "t": "2026-11-27T14:50:59Z",
+   "agent": "Trader",
+   "msg": "Bought 107 CVX at $214.18 (stop $207.71, target $226.98)"
+  },
+  {
+   "t": "2026-11-27T14:50:59Z",
+   "agent": "Risk Officer",
+   "msg": "Trailing stop for XOM placed on Alpaca: sells if it falls 3% from its high"
+  },
+  {
+   "t": "2026-11-27T14:50:59Z",
+   "agent": "Trader",
+   "msg": "Bought 69 XOM at $160.21 (stop $155.42, target $169.84)"
+  },
+  {
+   "t": "2026-11-27T14:45:57Z",
+   "agent": "Trader",
+   "msg": "Order for COP failed: not enough cash for one share"
+  },
+  {
+   "t": "2026-11-27T14:45:57Z",
+   "agent": "Trader",
+   "msg": "BUY XOM: Escalating conflict in the Middle East, including drone attacks in Kuwait and tensions in  | volume 0.7x normal, price -0.11% since the news | TradingAgents not used (ultra mode)"
+  },
+  {
+   "t": "2026-11-27T14:45:57Z",
+   "agent": "Trader",
+   "msg": "BUY CVX: Escalating conflict in the Middle East, including drone attacks in Kuwait and tensions in  | volume 0.8x normal, price +0.13% since the news | TradingAgents not used (ultra mode)"
+  },
+  {
+   "t": "2026-11-27T14:45:56Z",
+   "agent": "News Scout",
+   "msg": "Read 50 new headlines/posts, 3 market-moving stories"
+  },
+  {
+   "t": "2026-11-27T14:45:42Z",
+   "agent": "Trader",
+   "msg": "Bought 320 SPUS at $54.03 (stop $48.60, target $81.00)"
+  },
+  {
+   "t": "2026-11-27T14:45:42Z",
+   "agent": "Trader",
+   "msg": "Bought 271 HLAL at $66.14 (stop $57.41, target $95.69)"
+  },
+  {
+   "t": "2026-11-27T14:40:41Z",
+   "agent": "Trader",
+   "msg": "Saved results to the Agent HQ dashboard"
+  },
   {
    "t": "2026-11-27T14:40:38Z",
    "agent": "Trader",
@@ -745,123 +844,28 @@
    "t": "2026-11-27T02:32:40Z",
    "agent": "News Analyst",
    "msg": "Bad news for SPWO: Expanding US tariff plans targeting major trading partners heighten global trade war risks and weigh"
-  },
-  {
-   "t": "2026-11-27T02:32:40Z",
-   "agent": "News Scout",
-   "msg": "Read 37 new headlines/posts, 2 market-moving stories"
-  },
-  {
-   "t": "2026-11-27T02:17:32Z",
-   "agent": "Trader",
-   "msg": "sell SPWO failed: HTTP 403 https://paper-api.alpaca.markets/v2/positions/SPWO: {\"available\":\"0\",\"code\":40310000,\"existing_qty\":\"421\",\"held_for_orders\":\"421\",\"message\":\"insufficient qty available for order (requested: 421, available: 0)\",\"symbol\":\"SPWO\"}"
-  },
-  {
-   "t": "2026-11-27T02:17:32Z",
-   "agent": "News Analyst",
-   "msg": "Bad news for SPWO: Expanding US tariff plans targeting major trading partners heighten global trade war risks and weigh"
-  },
-  {
-   "t": "2026-11-27T02:17:32Z",
-   "agent": "News Scout",
-   "msg": "Read 43 new headlines/posts, 1 market-moving stories"
-  },
-  {
-   "t": "2026-11-27T02:02:24Z",
-   "agent": "Trader",
-   "msg": "sell SPWO failed: HTTP 403 https://paper-api.alpaca.markets/v2/positions/SPWO: {\"available\":\"0\",\"code\":40310000,\"existing_qty\":\"421\",\"held_for_orders\":\"421\",\"message\":\"insufficient qty available for order (requested: 421, available: 0)\",\"symbol\":\"SPWO\"}"
-  },
-  {
-   "t": "2026-11-27T02:02:24Z",
-   "agent": "News Analyst",
-   "msg": "Bad news for SPWO: Expanding US tariff plans targeting major trading partners heighten global trade war risks and weigh"
-  },
-  {
-   "t": "2026-11-27T02:02:24Z",
-   "agent": "News Scout",
-   "msg": "Read 40 new headlines/posts, 1 market-moving stories"
-  },
-  {
-   "t": "2026-11-27T01:47:12Z",
-   "agent": "Trader",
-   "msg": "sell SPWO failed: HTTP 403 https://paper-api.alpaca.markets/v2/positions/SPWO: {\"available\":\"0\",\"code\":40310000,\"existing_qty\":\"421\",\"held_for_orders\":\"421\",\"message\":\"insufficient qty available for order (requested: 421, available: 0)\",\"symbol\":\"SPWO\"}"
-  },
-  {
-   "t": "2026-11-27T01:47:12Z",
-   "agent": "News Analyst",
-   "msg": "Bad news for SPWO: Expanding US tariff plans targeting major trading partners heighten global trade war risks and weigh"
-  },
-  {
-   "t": "2026-11-27T01:47:12Z",
-   "agent": "News Scout",
-   "msg": "Read 42 new headlines/posts, 2 market-moving stories"
-  },
-  {
-   "t": "2026-11-27T01:32:05Z",
-   "agent": "Trader",
-   "msg": "sell SPWO failed: HTTP 403 https://paper-api.alpaca.markets/v2/positions/SPWO: {\"available\":\"0\",\"code\":40310000,\"existing_qty\":\"421\",\"held_for_orders\":\"421\",\"message\":\"insufficient qty available for order (requested: 421, available: 0)\",\"symbol\":\"SPWO\"}"
-  },
-  {
-   "t": "2026-11-27T01:32:04Z",
-   "agent": "News Analyst",
-   "msg": "Bad news for SPWO: Expanding US tariff plans targeting major trading partners heighten global trade war risks and weigh"
-  },
-  {
-   "t": "2026-11-27T01:32:04Z",
-   "agent": "News Scout",
-   "msg": "Read 41 new headlines/posts, 1 market-moving stories"
-  },
-  {
-   "t": "2026-11-27T01:16:57Z",
-   "agent": "Trader",
-   "msg": "sell SPWO failed: HTTP 403 https://paper-api.alpaca.markets/v2/positions/SPWO: {\"available\":\"0\",\"code\":40310000,\"existing_qty\":\"421\",\"held_for_orders\":\"421\",\"message\":\"insufficient qty available for order (requested: 421, available: 0)\",\"symbol\":\"SPWO\"}"
-  },
-  {
-   "t": "2026-11-27T01:16:57Z",
-   "agent": "News Analyst",
-   "msg": "Bad news for SPWO: Expanding US tariff plans targeting major trading partners heighten global trade war risks and weigh"
-  },
-  {
-   "t": "2026-11-27T01:16:57Z",
-   "agent": "News Scout",
-   "msg": "Read 64 new headlines/posts, 3 market-moving stories"
-  },
-  {
-   "t": "2026-11-27T01:01:50Z",
-   "agent": "Trader",
-   "msg": "Saved results to the Agent HQ dashboard"
-  },
-  {
-   "t": "2026-11-27T01:01:46Z",
-   "agent": "Trader",
-   "msg": "sell SPWO failed: HTTP 403 https://paper-api.alpaca.markets/v2/positions/SPWO: {\"available\":\"0\",\"code\":40310000,\"existing_qty\":\"421\",\"held_for_orders\":\"421\",\"message\":\"insufficient qty available for order (requested: 421, available: 0)\",\"symbol\":\"SPWO\"}"
-  },
-  {
-   "t": "2026-11-27T01:01:46Z",
-   "agent": "News Analyst",
-   "msg": "Bad news for SPWO: Expanding US tariff plans targeting major trading partners heighten global trade war risks and weigh"
   }
  ],
  "brief": {
   "date": "Fri Nov 27",
-  "createdAt": "2026-11-27T14:40:39Z",
-  "headline": "Paper account +$88 today (+0.10%), -7.63% total vs SPY -3.28% · 2 open",
+  "createdAt": "2026-11-27T15:29:04Z",
+  "headline": "Paper account +$242 today (+0.26%), -7.48% total vs SPY -3.97% · 4 open",
   "summary": "1 trade(s) closed today, 10/36 winners overall. TradingAgents checks used today: 0/5.",
   "notes": [
    "X/Reddit reader: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
   ]
  },
  "account": {
-  "equity": 92369.51,
-  "cash": 57172.72,
+  "equity": 92523.32,
+  "cash": 23200.63,
   "startEquity": 100000.0,
   "startedAt": "2026-11-10T01:51:53Z",
-  "dayPnl": 87.77,
-  "dayPct": 0.1,
-  "totalPnl": -7630.49,
-  "totalPct": -7.63,
-  "spyPct": -3.28,
-  "vsSpyPct": -4.35
+  "dayPnl": 241.58,
+  "dayPct": 0.26,
+  "totalPnl": -7476.68,
+  "totalPct": -7.48,
+  "spyPct": -3.97,
+  "vsSpyPct": -3.51
  },
  "status": {
   "killed": false,
@@ -869,7 +873,7 @@
   "deepUsed": 0,
   "deepMax": 5,
   "social": {
-   "at": "2026-11-27T14:30:08Z",
+   "at": "2026-11-27T15:18:50Z",
    "items": 0,
    "source": "Reddit via Tradestie + ApeWisdom (direct Reddit blocks servers; X needs Agent Reach)",
    "problems": [
@@ -877,13 +881,13 @@
     "r/stocks: HTTP 403 https://www.reddit.com/r/stocks/new.json: <body class=theme-beta><div><"
    ],
    "wsb": {
-    "at": "2026-11-27T14:30:08Z",
-    "tickers": 41,
+    "at": "2026-11-27T15:18:50Z",
+    "tickers": 5,
     "items": 0,
     "key": false
    },
    "ape": {
-    "at": "2026-11-27T14:30:08Z",
+    "at": "2026-11-27T15:18:50Z",
     "tickers": 200,
     "items": 0,
     "problems": []
@@ -897,16 +901,122 @@
  },
  "positions": [
   {
+   "id": "ahq-XOM-20261127144557",
+   "symbol": "XOM",
+   "asset": "stock",
+   "status": "open",
+   "entryOrderId": "7ff3e737-c845-450a-87d7-87b93c3ee5fc",
+   "qty": 69,
+   "cost": 11055.87,
+   "estPrice": 160.23,
+   "entryPrice": 160.214928,
+   "stop": 155.42,
+   "target": null,
+   "openedAt": "2026-11-27T14:45:57Z",
+   "trail": 3.0,
+   "news": {
+    "summary": "Escalating conflict in the Middle East, including drone attacks in Kuwait and tensions in the Strait of Hormuz, continues to threaten global energy supplies.",
+    "category": "war_escalation",
+    "sources": [
+     {
+      "publisher": "TV ONE USA",
+      "title": "uae-strongly-condemns-iranian-drone-attack-on-kuwait Archives",
+      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxOOE5pcXlLRnV4T2tWeTJqTUxKaDRpdlF2ZVpISVlCb3ZfdF9aMG5WU0dfYmktTFpXczZFYkVfVG1qbGlHcXdPTnJSQ1NWRUZWWWJ2WHhVaWRjWVljTnR5WmJzbGFucHpxTGtLbC1kX2o5OUFJZnBJS1FEMFVQel9aYkRQSm0?oc=5"
+     },
+     {
+      "publisher": "الإذاعة الجزائرية |",
+      "title": "Algeria Condemns \"In the Strongest Terms\" the Attack Targeting One of the Vital sites in Kuwait",
+      "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFAyeUpndmVuWHJ4VE5KS0MzNzVWdWVOd3c5YlF3cWZGTzdoU01sck40N21QRjBjMmRsS3BZNkl1MlVEc0x1cjdVeVpsY3RMa044R2h4bU1R?oc=5"
+     },
+     {
+      "publisher": "Denver Gazette",
+      "title": "Two Italians killed in attack on Kuwait site; Iran denies involvement",
+      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPcjVSNXl5TTd0X2laeDZsZ2tha2YwVFFUcXBlVmxJN0k4SnhCZlF3VmIxUGt5cElMUWZfdVhwdDNUamVTV1NpcmFwdl9LM3dTaG43MjQxQUJ6TUVMNXcwZjMwanQ0WFZ3SFRMR3ZZeG1XX0pXNG1PckRsMXBJRURsc0EzaUdlNHpHaVNNY3FBVjRHSFd5WXpOMXY4TnJUOWFPOWVlZjFwYlFpVzNrTUxn?oc=5"
+     }
+    ]
+   },
+   "reason": {
+    "triage": "Geopolitical instability in the Middle East threatens oil supply, supporting energy stocks.",
+    "confidence": 0.7,
+    "confirmation": "volume 0.7x normal, price -0.11% since the news",
+    "rvol": 0.7,
+    "movePct": -0.11,
+    "publishers": [
+     "Denver Gazette",
+     "TV ONE USA",
+     "الإذاعة الجزائرية |"
+    ],
+    "tradingAgents": "not used (ultra mode)",
+    "taSummary": ""
+   },
+   "stopOrderId": "7f527ca0-ac8d-49f4-b790-6d02edecae1d",
+   "lastPrice": 161.0699,
+   "unrealizedPct": 0.53
+  },
+  {
+   "id": "ahq-CVX-20261127144557",
+   "symbol": "CVX",
+   "asset": "stock",
+   "status": "open",
+   "entryOrderId": "7bf31bd3-815e-46eb-8134-0894371f247d",
+   "qty": 107,
+   "cost": 22911.91,
+   "estPrice": 214.13,
+   "entryPrice": 214.18,
+   "stop": 207.71,
+   "target": null,
+   "openedAt": "2026-11-27T14:45:57Z",
+   "trail": 3.0,
+   "news": {
+    "summary": "Escalating conflict in the Middle East, including drone attacks in Kuwait and tensions in the Strait of Hormuz, continues to threaten global energy supplies.",
+    "category": "war_escalation",
+    "sources": [
+     {
+      "publisher": "TV ONE USA",
+      "title": "uae-strongly-condemns-iranian-drone-attack-on-kuwait Archives",
+      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxOOE5pcXlLRnV4T2tWeTJqTUxKaDRpdlF2ZVpISVlCb3ZfdF9aMG5WU0dfYmktTFpXczZFYkVfVG1qbGlHcXdPTnJSQ1NWRUZWWWJ2WHhVaWRjWVljTnR5WmJzbGFucHpxTGtLbC1kX2o5OUFJZnBJS1FEMFVQel9aYkRQSm0?oc=5"
+     },
+     {
+      "publisher": "الإذاعة الجزائرية |",
+      "title": "Algeria Condemns \"In the Strongest Terms\" the Attack Targeting One of the Vital sites in Kuwait",
+      "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFAyeUpndmVuWHJ4VE5KS0MzNzVWdWVOd3c5YlF3cWZGTzdoU01sck40N21QRjBjMmRsS3BZNkl1MlVEc0x1cjdVeVpsY3RMa044R2h4bU1R?oc=5"
+     },
+     {
+      "publisher": "Denver Gazette",
+      "title": "Two Italians killed in attack on Kuwait site; Iran denies involvement",
+      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPcjVSNXl5TTd0X2laeDZsZ2tha2YwVFFUcXBlVmxJN0k4SnhCZlF3VmIxUGt5cElMUWZfdVhwdDNUamVTV1NpcmFwdl9LM3dTaG43MjQxQUJ6TUVMNXcwZjMwanQ0WFZ3SFRMR3ZZeG1XX0pXNG1PckRsMXBJRURsc0EzaUdlNHpHaVNNY3FBVjRHSFd5WXpOMXY4TnJUOWFPOWVlZjFwYlFpVzNrTUxn?oc=5"
+     }
+    ]
+   },
+   "reason": {
+    "triage": "Geopolitical instability in the Middle East threatens oil supply, supporting energy stocks.",
+    "confidence": 0.7,
+    "confirmation": "volume 0.8x normal, price +0.13% since the news",
+    "rvol": 0.82,
+    "movePct": 0.13,
+    "publishers": [
+     "Denver Gazette",
+     "TV ONE USA",
+     "الإذاعة الجزائرية |"
+    ],
+    "tradingAgents": "not used (ultra mode)",
+    "taSummary": ""
+   },
+   "stopOrderId": "af62078d-348b-4678-8309-112c999e5e49",
+   "lastPrice": 214.67,
+   "unrealizedPct": 0.23
+  },
+  {
    "id": "ahq-core-HLAL-20261127144029",
    "symbol": "HLAL",
    "asset": "stock",
-   "status": "pending",
+   "status": "open",
    "strategy": "core",
    "entryOrderId": "b8d813d4-d000-4d8c-bce9-42b68fed397a",
-   "qty": 271,
+   "qty": 271.0,
    "cost": 17287.09,
    "estPrice": 63.79,
-   "entryPrice": 63.79,
+   "entryPrice": 66.14,
    "stop": 57.41,
    "target": 95.69,
    "openedAt": "2026-11-27T14:40:29Z",
@@ -921,19 +1031,21 @@
     "confirmation": "50% of the budget",
     "publishers": [],
     "tradingAgents": "not used (core)"
-   }
+   },
+   "lastPrice": 66.16,
+   "unrealizedPct": 0.03
   },
   {
    "id": "ahq-core-SPUS-20261127144029",
    "symbol": "SPUS",
    "asset": "stock",
-   "status": "pending",
+   "status": "open",
    "strategy": "core",
    "entryOrderId": "8250f1bb-85bb-475a-9a09-b7be081fa98e",
-   "qty": 320,
+   "qty": 320.0,
    "cost": 17280.0,
    "estPrice": 54.0,
-   "entryPrice": 54.0,
+   "entryPrice": 54.03,
    "stop": 48.6,
    "target": 81.0,
    "openedAt": "2026-11-27T14:40:29Z",
@@ -948,7 +1060,9 @@
     "confirmation": "50% of the budget",
     "publishers": [],
     "tradingAgents": "not used (core)"
-   }
+   },
+   "lastPrice": 54.08,
+   "unrealizedPct": 0.09
   }
  ],
  "charts": {
@@ -1229,6 +1343,42 @@
     [
      "2026-11-27T14:40:00Z",
      92496.27
+    ],
+    [
+     "2026-11-27T14:45:00Z",
+     92493.95
+    ],
+    [
+     "2026-11-27T14:50:00Z",
+     92418.04
+    ],
+    [
+     "2026-11-27T14:55:00Z",
+     92559.83
+    ],
+    [
+     "2026-11-27T15:00:00Z",
+     92460.02
+    ],
+    [
+     "2026-11-27T15:05:00Z",
+     92404.87
+    ],
+    [
+     "2026-11-27T15:10:00Z",
+     92468.48
+    ],
+    [
+     "2026-11-27T15:15:00Z",
+     92604.75
+    ],
+    [
+     "2026-11-27T15:20:00Z",
+     92604.59
+    ],
+    [
+     "2026-11-27T15:25:00Z",
+     92681.1
     ]
    ],
    "1W": [
@@ -2274,99 +2424,553 @@
     ],
     [
      "2026-11-27T09:00:00Z",
-     92939.08
+     92974.86
     ],
     [
      "2026-11-27T09:15:00Z",
-     92939.07
+     92974.85
     ],
     [
      "2026-11-27T09:30:00Z",
-     92903.23
+     92939.01
     ],
     [
      "2026-11-27T09:45:00Z",
-     92903.21
+     92938.99
     ],
     [
      "2026-11-27T10:00:00Z",
-     92991.2
+     93026.98
     ],
     [
      "2026-11-27T10:15:00Z",
-     93102.05
+     93137.83
     ],
     [
      "2026-11-27T10:30:00Z",
-     93102.07
+     93137.85
     ],
     [
      "2026-11-27T10:45:00Z",
-     92713.22
+     92749.0
     ],
     [
      "2026-11-27T11:00:00Z",
-     92713.24
+     92749.02
     ],
     [
      "2026-11-27T11:15:00Z",
-     92713.22
+     92749.0
     ],
     [
      "2026-11-27T11:30:00Z",
-     92851.04
+     92886.82
     ],
     [
      "2026-11-27T11:45:00Z",
-     92851.03
+     92886.81
     ],
     [
      "2026-11-27T12:00:00Z",
-     92851.03
+     92886.81
     ],
     [
      "2026-11-27T12:15:00Z",
-     92893.4
+     92929.18
     ],
     [
      "2026-11-27T12:30:00Z",
-     92893.38
+     92929.16
     ],
     [
      "2026-11-27T12:45:00Z",
-     92893.36
+     92929.14
     ],
     [
      "2026-11-27T13:00:00Z",
-     92890.27
+     92926.05
     ],
     [
      "2026-11-27T13:15:00Z",
-     92890.21
+     92925.99
     ],
     [
      "2026-11-27T13:30:00Z",
-     92844.11
+     92879.89
     ],
     [
      "2026-11-27T13:45:00Z",
-     92844.1
+     92879.88
     ],
     [
      "2026-11-27T14:00:00Z",
-     92844.12
+     92879.9
     ],
     [
      "2026-11-27T14:15:00Z",
-     92795.1
+     92830.88
     ],
     [
      "2026-11-27T14:30:00Z",
-     92762.47
+     92798.25
+    ],
+    [
+     "2026-11-27T14:45:00Z",
+     92493.95
+    ],
+    [
+     "2026-11-27T15:00:00Z",
+     92460.02
+    ],
+    [
+     "2026-11-27T15:15:00Z",
+     92558.68
     ]
    ]
   },
   "holdings": {
+   "XOM": {
+    "bars": [
+     [
+      "2026-11-24T15:30:00Z",
+      158.19
+     ],
+     [
+      "2026-11-24T15:45:00Z",
+      158.02
+     ],
+     [
+      "2026-11-24T16:00:00Z",
+      158.69
+     ],
+     [
+      "2026-11-24T16:15:00Z",
+      158.86
+     ],
+     [
+      "2026-11-24T16:30:00Z",
+      158.76
+     ],
+     [
+      "2026-11-24T16:45:00Z",
+      158.7
+     ],
+     [
+      "2026-11-24T17:00:00Z",
+      158.555
+     ],
+     [
+      "2026-11-24T17:15:00Z",
+      159.015
+     ],
+     [
+      "2026-11-24T17:30:00Z",
+      158.97
+     ],
+     [
+      "2026-11-24T17:45:00Z",
+      158.69
+     ],
+     [
+      "2026-11-24T18:00:00Z",
+      158.605
+     ],
+     [
+      "2026-11-24T18:15:00Z",
+      158.85
+     ],
+     [
+      "2026-11-24T18:30:00Z",
+      158.82
+     ],
+     [
+      "2026-11-24T18:45:00Z",
+      158.63
+     ],
+     [
+      "2026-11-24T19:00:00Z",
+      158.64
+     ],
+     [
+      "2026-11-24T19:15:00Z",
+      158.8
+     ],
+     [
+      "2026-11-24T19:30:00Z",
+      158.805
+     ],
+     [
+      "2026-11-24T19:45:00Z",
+      158.84
+     ],
+     [
+      "2026-11-24T20:00:00Z",
+      158.87
+     ],
+     [
+      "2026-11-24T20:15:00Z",
+      158.79
+     ],
+     [
+      "2026-11-24T20:30:00Z",
+      158.72
+     ],
+     [
+      "2026-11-24T20:45:00Z",
+      158.4
+     ],
+     [
+      "2026-11-24T21:00:00Z",
+      158.41
+     ],
+     [
+      "2026-11-25T14:30:00Z",
+      158.32
+     ],
+     [
+      "2026-11-25T14:45:00Z",
+      159.11
+     ],
+     [
+      "2026-11-25T15:00:00Z",
+      159.41
+     ],
+     [
+      "2026-11-25T15:15:00Z",
+      158.87
+     ],
+     [
+      "2026-11-25T15:30:00Z",
+      158.92
+     ],
+     [
+      "2026-11-25T15:45:00Z",
+      158.81
+     ],
+     [
+      "2026-11-25T16:00:00Z",
+      158.505
+     ],
+     [
+      "2026-11-25T16:15:00Z",
+      157.66
+     ],
+     [
+      "2026-11-25T16:30:00Z",
+      157.84
+     ],
+     [
+      "2026-11-25T16:45:00Z",
+      158.22
+     ],
+     [
+      "2026-11-25T17:00:00Z",
+      158.73
+     ],
+     [
+      "2026-11-25T17:15:00Z",
+      158.865
+     ],
+     [
+      "2026-11-25T17:30:00Z",
+      159.06
+     ],
+     [
+      "2026-11-25T17:45:00Z",
+      158.88
+     ],
+     [
+      "2026-11-25T18:00:00Z",
+      159.125
+     ],
+     [
+      "2026-11-25T18:15:00Z",
+      159.33
+     ],
+     [
+      "2026-11-25T18:30:00Z",
+      159.53
+     ],
+     [
+      "2026-11-25T18:45:00Z",
+      159.025
+     ],
+     [
+      "2026-11-25T19:00:00Z",
+      159.08
+     ],
+     [
+      "2026-11-25T19:15:00Z",
+      159.08
+     ],
+     [
+      "2026-11-25T19:30:00Z",
+      159.155
+     ],
+     [
+      "2026-11-25T19:45:00Z",
+      158.92
+     ],
+     [
+      "2026-11-25T20:00:00Z",
+      159.145
+     ],
+     [
+      "2026-11-25T20:15:00Z",
+      158.99
+     ],
+     [
+      "2026-11-25T20:30:00Z",
+      158.865
+     ],
+     [
+      "2026-11-25T20:45:00Z",
+      158.17
+     ],
+     [
+      "2026-11-27T14:30:00Z",
+      160.29
+     ],
+     [
+      "2026-11-27T14:45:00Z",
+      160.715
+     ],
+     [
+      "2026-11-27T15:00:00Z",
+      160.9
+     ],
+     [
+      "2026-11-27T15:15:00Z",
+      161.09
+     ]
+    ],
+    "entry": 160.214928,
+    "stop": 155.42,
+    "target": null,
+    "openedAt": "2026-11-27T14:45:57Z",
+    "qty": 69
+   },
+   "CVX": {
+    "bars": [
+     [
+      "2026-11-24T15:30:00Z",
+      209.16
+     ],
+     [
+      "2026-11-24T15:45:00Z",
+      208.94
+     ],
+     [
+      "2026-11-24T16:00:00Z",
+      209.98
+     ],
+     [
+      "2026-11-24T16:15:00Z",
+      209.92
+     ],
+     [
+      "2026-11-24T16:30:00Z",
+      209.6
+     ],
+     [
+      "2026-11-24T16:45:00Z",
+      209.56
+     ],
+     [
+      "2026-11-24T17:00:00Z",
+      209.65
+     ],
+     [
+      "2026-11-24T17:15:00Z",
+      210.12
+     ],
+     [
+      "2026-11-24T17:30:00Z",
+      209.97
+     ],
+     [
+      "2026-11-24T17:45:00Z",
+      209.79
+     ],
+     [
+      "2026-11-24T18:00:00Z",
+      209.62
+     ],
+     [
+      "2026-11-24T18:15:00Z",
+      210.22
+     ],
+     [
+      "2026-11-24T18:30:00Z",
+      210.3
+     ],
+     [
+      "2026-11-24T18:45:00Z",
+      209.96
+     ],
+     [
+      "2026-11-24T19:00:00Z",
+      209.76
+     ],
+     [
+      "2026-11-24T19:15:00Z",
+      209.87
+     ],
+     [
+      "2026-11-24T19:30:00Z",
+      209.94
+     ],
+     [
+      "2026-11-24T19:45:00Z",
+      209.84
+     ],
+     [
+      "2026-11-24T20:00:00Z",
+      209.63
+     ],
+     [
+      "2026-11-24T20:15:00Z",
+      209.49
+     ],
+     [
+      "2026-11-24T20:30:00Z",
+      209.14
+     ],
+     [
+      "2026-11-24T20:45:00Z",
+      208.74
+     ],
+     [
+      "2026-11-25T14:15:00Z",
+      208.27
+     ],
+     [
+      "2026-11-25T14:30:00Z",
+      209.64
+     ],
+     [
+      "2026-11-25T14:45:00Z",
+      210.71
+     ],
+     [
+      "2026-11-25T15:00:00Z",
+      211.41
+     ],
+     [
+      "2026-11-25T15:15:00Z",
+      210.765
+     ],
+     [
+      "2026-11-25T15:30:00Z",
+      210.22
+     ],
+     [
+      "2026-11-25T15:45:00Z",
+      210.145
+     ],
+     [
+      "2026-11-25T16:00:00Z",
+      209.725
+     ],
+     [
+      "2026-11-25T16:15:00Z",
+      208.9
+     ],
+     [
+      "2026-11-25T16:30:00Z",
+      209.47
+     ],
+     [
+      "2026-11-25T16:45:00Z",
+      210.06
+     ],
+     [
+      "2026-11-25T17:00:00Z",
+      210.33
+     ],
+     [
+      "2026-11-25T17:15:00Z",
+      211.11
+     ],
+     [
+      "2026-11-25T17:30:00Z",
+      211.47
+     ],
+     [
+      "2026-11-25T17:45:00Z",
+      211.39
+     ],
+     [
+      "2026-11-25T18:00:00Z",
+      211.37
+     ],
+     [
+      "2026-11-25T18:15:00Z",
+      211.48
+     ],
+     [
+      "2026-11-25T18:30:00Z",
+      211.63
+     ],
+     [
+      "2026-11-25T18:45:00Z",
+      211.03
+     ],
+     [
+      "2026-11-25T19:00:00Z",
+      211.2
+     ],
+     [
+      "2026-11-25T19:15:00Z",
+      211.38
+     ],
+     [
+      "2026-11-25T19:30:00Z",
+      211.47
+     ],
+     [
+      "2026-11-25T19:45:00Z",
+      211.5
+     ],
+     [
+      "2026-11-25T20:00:00Z",
+      211.41
+     ],
+     [
+      "2026-11-25T20:15:00Z",
+      211.28
+     ],
+     [
+      "2026-11-25T20:30:00Z",
+      211.37
+     ],
+     [
+      "2026-11-25T20:45:00Z",
+      210.99
+     ],
+     [
+      "2026-11-27T14:30:00Z",
+      214.41
+     ],
+     [
+      "2026-11-27T14:45:00Z",
+      214.355
+     ],
+     [
+      "2026-11-27T15:00:00Z",
+      214.68
+     ],
+     [
+      "2026-11-27T15:15:00Z",
+      214.67
+     ]
+    ],
+    "entry": 214.18,
+    "stop": 207.71,
+    "target": null,
+    "openedAt": "2026-11-27T14:45:57Z",
+    "qty": 107
+   },
    "HLAL": {
     "bars": [
      [
@@ -2382,22 +2986,14 @@
       63.79
      ]
     ],
-    "entry": 63.79,
+    "entry": 66.14,
     "stop": 57.41,
     "target": 95.69,
     "openedAt": "2026-11-27T14:40:29Z",
-    "qty": 271
+    "qty": 271.0
    },
    "SPUS": {
     "bars": [
-     [
-      "2026-11-24T15:00:00Z",
-      54.195
-     ],
-     [
-      "2026-11-24T15:15:00Z",
-      53.7
-     ],
      [
       "2026-11-24T15:45:00Z",
       53.62
@@ -2544,14 +3140,26 @@
      ],
      [
       "2026-11-27T14:30:00Z",
-      54.045
+      54.06
+     ],
+     [
+      "2026-11-27T14:45:00Z",
+      53.9
+     ],
+     [
+      "2026-11-27T15:00:00Z",
+      53.89
+     ],
+     [
+      "2026-11-27T15:15:00Z",
+      54.02
      ]
     ],
-    "entry": 54.0,
+    "entry": 54.03,
     "stop": 48.6,
     "target": 81.0,
     "openedAt": "2026-11-27T14:40:29Z",
-    "qty": 320
+    "qty": 320.0
    }
   }
  },
@@ -2874,7 +3482,7 @@
   "backtest": null
  },
  "lab": {
-  "updatedAt": "2026-11-27T14:20:57Z",
+  "updatedAt": "2026-11-27T15:20:58Z",
   "startedAt": "2026-11-25T21:57:13Z",
   "endsAt": "2026-12-02T21:57:13Z",
   "done": false,
@@ -4323,16 +4931,122 @@
  },
  "trades": [
   {
+   "id": "ahq-XOM-20261127144557",
+   "symbol": "XOM",
+   "asset": "stock",
+   "status": "open",
+   "entryOrderId": "7ff3e737-c845-450a-87d7-87b93c3ee5fc",
+   "qty": 69,
+   "cost": 11055.87,
+   "estPrice": 160.23,
+   "entryPrice": 160.214928,
+   "stop": 155.42,
+   "target": null,
+   "openedAt": "2026-11-27T14:45:57Z",
+   "trail": 3.0,
+   "news": {
+    "summary": "Escalating conflict in the Middle East, including drone attacks in Kuwait and tensions in the Strait of Hormuz, continues to threaten global energy supplies.",
+    "category": "war_escalation",
+    "sources": [
+     {
+      "publisher": "TV ONE USA",
+      "title": "uae-strongly-condemns-iranian-drone-attack-on-kuwait Archives",
+      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxOOE5pcXlLRnV4T2tWeTJqTUxKaDRpdlF2ZVpISVlCb3ZfdF9aMG5WU0dfYmktTFpXczZFYkVfVG1qbGlHcXdPTnJSQ1NWRUZWWWJ2WHhVaWRjWVljTnR5WmJzbGFucHpxTGtLbC1kX2o5OUFJZnBJS1FEMFVQel9aYkRQSm0?oc=5"
+     },
+     {
+      "publisher": "الإذاعة الجزائرية |",
+      "title": "Algeria Condemns \"In the Strongest Terms\" the Attack Targeting One of the Vital sites in Kuwait",
+      "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFAyeUpndmVuWHJ4VE5KS0MzNzVWdWVOd3c5YlF3cWZGTzdoU01sck40N21QRjBjMmRsS3BZNkl1MlVEc0x1cjdVeVpsY3RMa044R2h4bU1R?oc=5"
+     },
+     {
+      "publisher": "Denver Gazette",
+      "title": "Two Italians killed in attack on Kuwait site; Iran denies involvement",
+      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPcjVSNXl5TTd0X2laeDZsZ2tha2YwVFFUcXBlVmxJN0k4SnhCZlF3VmIxUGt5cElMUWZfdVhwdDNUamVTV1NpcmFwdl9LM3dTaG43MjQxQUJ6TUVMNXcwZjMwanQ0WFZ3SFRMR3ZZeG1XX0pXNG1PckRsMXBJRURsc0EzaUdlNHpHaVNNY3FBVjRHSFd5WXpOMXY4TnJUOWFPOWVlZjFwYlFpVzNrTUxn?oc=5"
+     }
+    ]
+   },
+   "reason": {
+    "triage": "Geopolitical instability in the Middle East threatens oil supply, supporting energy stocks.",
+    "confidence": 0.7,
+    "confirmation": "volume 0.7x normal, price -0.11% since the news",
+    "rvol": 0.7,
+    "movePct": -0.11,
+    "publishers": [
+     "Denver Gazette",
+     "TV ONE USA",
+     "الإذاعة الجزائرية |"
+    ],
+    "tradingAgents": "not used (ultra mode)",
+    "taSummary": ""
+   },
+   "stopOrderId": "7f527ca0-ac8d-49f4-b790-6d02edecae1d",
+   "lastPrice": 161.0699,
+   "unrealizedPct": 0.53
+  },
+  {
+   "id": "ahq-CVX-20261127144557",
+   "symbol": "CVX",
+   "asset": "stock",
+   "status": "open",
+   "entryOrderId": "7bf31bd3-815e-46eb-8134-0894371f247d",
+   "qty": 107,
+   "cost": 22911.91,
+   "estPrice": 214.13,
+   "entryPrice": 214.18,
+   "stop": 207.71,
+   "target": null,
+   "openedAt": "2026-11-27T14:45:57Z",
+   "trail": 3.0,
+   "news": {
+    "summary": "Escalating conflict in the Middle East, including drone attacks in Kuwait and tensions in the Strait of Hormuz, continues to threaten global energy supplies.",
+    "category": "war_escalation",
+    "sources": [
+     {
+      "publisher": "TV ONE USA",
+      "title": "uae-strongly-condemns-iranian-drone-attack-on-kuwait Archives",
+      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxOOE5pcXlLRnV4T2tWeTJqTUxKaDRpdlF2ZVpISVlCb3ZfdF9aMG5WU0dfYmktTFpXczZFYkVfVG1qbGlHcXdPTnJSQ1NWRUZWWWJ2WHhVaWRjWVljTnR5WmJzbGFucHpxTGtLbC1kX2o5OUFJZnBJS1FEMFVQel9aYkRQSm0?oc=5"
+     },
+     {
+      "publisher": "الإذاعة الجزائرية |",
+      "title": "Algeria Condemns \"In the Strongest Terms\" the Attack Targeting One of the Vital sites in Kuwait",
+      "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFAyeUpndmVuWHJ4VE5KS0MzNzVWdWVOd3c5YlF3cWZGTzdoU01sck40N21QRjBjMmRsS3BZNkl1MlVEc0x1cjdVeVpsY3RMa044R2h4bU1R?oc=5"
+     },
+     {
+      "publisher": "Denver Gazette",
+      "title": "Two Italians killed in attack on Kuwait site; Iran denies involvement",
+      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPcjVSNXl5TTd0X2laeDZsZ2tha2YwVFFUcXBlVmxJN0k4SnhCZlF3VmIxUGt5cElMUWZfdVhwdDNUamVTV1NpcmFwdl9LM3dTaG43MjQxQUJ6TUVMNXcwZjMwanQ0WFZ3SFRMR3ZZeG1XX0pXNG1PckRsMXBJRURsc0EzaUdlNHpHaVNNY3FBVjRHSFd5WXpOMXY4TnJUOWFPOWVlZjFwYlFpVzNrTUxn?oc=5"
+     }
+    ]
+   },
+   "reason": {
+    "triage": "Geopolitical instability in the Middle East threatens oil supply, supporting energy stocks.",
+    "confidence": 0.7,
+    "confirmation": "volume 0.8x normal, price +0.13% since the news",
+    "rvol": 0.82,
+    "movePct": 0.13,
+    "publishers": [
+     "Denver Gazette",
+     "TV ONE USA",
+     "الإذاعة الجزائرية |"
+    ],
+    "tradingAgents": "not used (ultra mode)",
+    "taSummary": ""
+   },
+   "stopOrderId": "af62078d-348b-4678-8309-112c999e5e49",
+   "lastPrice": 214.67,
+   "unrealizedPct": 0.23
+  },
+  {
    "id": "ahq-core-HLAL-20261127144029",
    "symbol": "HLAL",
    "asset": "stock",
-   "status": "pending",
+   "status": "open",
    "strategy": "core",
    "entryOrderId": "b8d813d4-d000-4d8c-bce9-42b68fed397a",
-   "qty": 271,
+   "qty": 271.0,
    "cost": 17287.09,
    "estPrice": 63.79,
-   "entryPrice": 63.79,
+   "entryPrice": 66.14,
    "stop": 57.41,
    "target": 95.69,
    "openedAt": "2026-11-27T14:40:29Z",
@@ -4347,19 +5061,21 @@
     "confirmation": "50% of the budget",
     "publishers": [],
     "tradingAgents": "not used (core)"
-   }
+   },
+   "lastPrice": 66.16,
+   "unrealizedPct": 0.03
   },
   {
    "id": "ahq-core-SPUS-20261127144029",
    "symbol": "SPUS",
    "asset": "stock",
-   "status": "pending",
+   "status": "open",
    "strategy": "core",
    "entryOrderId": "8250f1bb-85bb-475a-9a09-b7be081fa98e",
-   "qty": 320,
+   "qty": 320.0,
    "cost": 17280.0,
    "estPrice": 54.0,
-   "entryPrice": 54.0,
+   "entryPrice": 54.03,
    "stop": 48.6,
    "target": 81.0,
    "openedAt": "2026-11-27T14:40:29Z",
@@ -4374,7 +5090,9 @@
     "confirmation": "50% of the budget",
     "publishers": [],
     "tradingAgents": "not used (core)"
-   }
+   },
+   "lastPrice": 54.08,
+   "unrealizedPct": 0.09
   },
   {
    "id": "ahq-BTCUSD-20261126091425",
@@ -6388,6 +7106,27 @@
  ],
  "decisions": [
   {
+   "t": "2026-11-27T14:45:57Z",
+   "symbol": "COP",
+   "outcome": "error",
+   "why": "order failed: not enough cash for one share",
+   "event": "Escalating conflict in the Middle East, including drone attacks in Kuwait and tensions in the Strait of Hormuz, continues to threaten global energy supplies."
+  },
+  {
+   "t": "2026-11-27T14:45:57Z",
+   "symbol": "XOM",
+   "outcome": "bought",
+   "why": "volume 0.7x normal, price -0.11% since the news; TradingAgents: not used (ultra mode)",
+   "event": "Escalating conflict in the Middle East, including drone attacks in Kuwait and tensions in the Strait of Hormuz, continues to threaten global energy supplies."
+  },
+  {
+   "t": "2026-11-27T14:45:57Z",
+   "symbol": "CVX",
+   "outcome": "bought",
+   "why": "volume 0.8x normal, price +0.13% since the news; TradingAgents: not used (ultra mode)",
+   "event": "Escalating conflict in the Middle East, including drone attacks in Kuwait and tensions in the Strait of Hormuz, continues to threaten global energy supplies."
+  },
+  {
    "t": "2026-11-27T14:40:38Z",
    "symbol": "DVN",
    "outcome": "error",
@@ -6783,40 +7522,9 @@
    "outcome": "waiting",
    "why": "down 3% today, no new trades until tomorrow",
    "event": "Geopolitical conflict and Houthi attacks continue to impact the Strait of Hormuz, driving crude oil prices higher."
-  },
-  {
-   "t": "2026-11-25T19:47:43Z",
-   "symbol": "XOM",
-   "outcome": "waiting",
-   "why": "down 3% today, no new trades until tomorrow",
-   "event": "Geopolitical conflict and Houthi attacks continue to impact the Strait of Hormuz, driving crude oil prices higher."
-  },
-  {
-   "t": "2026-11-25T19:47:43Z",
-   "symbol": "CVX",
-   "outcome": "waiting",
-   "why": "down 3% today, no new trades until tomorrow",
-   "event": "Geopolitical conflict and Houthi attacks continue to impact the Strait of Hormuz, driving crude oil prices higher."
-  },
-  {
-   "t": "2026-11-25T19:42:39Z",
-   "symbol": "LINK/USD",
-   "outcome": "waiting",
-   "why": "down 3% today, no new trades until tomorrow",
-   "event": "Fidelity filed for a spot Chainlink ETF with a planned Nasdaq listing under the ticker FLNK."
   }
  ],
  "equity": [
-  {
-   "t": "2026-11-18T22:15:53Z",
-   "equity": 99901.22,
-   "spy": 731.12
-  },
-  {
-   "t": "2026-11-18T22:46:15Z",
-   "equity": 99899.33,
-   "spy": 731.12
-  },
   {
    "t": "2026-11-18T23:16:40Z",
    "equity": 100092.56,
@@ -8806,6 +9514,16 @@
    "t": "2026-11-27T14:15:02Z",
    "equity": 92555.86,
    "spy": 728.04
+  },
+  {
+   "t": "2026-11-27T14:45:58Z",
+   "equity": 92385.51,
+   "spy": 722.3
+  },
+  {
+   "t": "2026-11-27T15:18:53Z",
+   "equity": 92500.28,
+   "spy": 722.87
   }
  ],
  "watch": [],
@@ -8816,6 +9534,250 @@
   "avgPct": null
  },
  "events": [
+  {
+   "summary": "Ongoing Middle East conflict, including drone attacks on Saudi facilities and tanker explosions in the Strait of Hormuz, continues to threaten global energy supplies.",
+   "category": "war_escalation",
+   "firstSeen": "2026-11-27T14:32:14Z",
+   "publishers": [
+    "Anadolu Ajansı",
+    "Denver Gazette",
+    "Fox News",
+    "Free Malaysia Today",
+    "Latest news from Azerbaijan",
+    "Mezha.net",
+    "Middle East Eye",
+    "Pakistan Today",
+    "TV ONE USA",
+    "VOV World",
+    "Vocal",
+    "الإذاعة الجزائرية |"
+   ],
+   "assets": {
+    "XOM": {
+     "direction": "up",
+     "confidence": 0.7,
+     "why": "Geopolitical instability in the Middle East threatens oil supply, supporting energy prices."
+    },
+    "CVX": {
+     "direction": "up",
+     "confidence": 0.7,
+     "why": "Geopolitical instability in the Middle East threatens oil supply, supporting energy prices."
+    },
+    "COP": {
+     "direction": "up",
+     "confidence": 0.7,
+     "why": "Geopolitical instability in the Middle East threatens oil supply, supporting energy stocks."
+    }
+   },
+   "sources": [
+    {
+     "id": "fa85ed34642f05a6",
+     "publisher": "TV ONE USA",
+     "kind": "news",
+     "title": "uae-strongly-condemns-iranian-drone-attack-on-kuwait Archives",
+     "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxOOE5pcXlLRnV4T2tWeTJqTUxKaDRpdlF2ZVpISVlCb3ZfdF9aMG5WU0dfYmktTFpXczZFYkVfVG1qbGlHcXdPTnJSQ1NWRUZWWWJ2WHhVaWRjWVljTnR5WmJzbGFucHpxTGtLbC1kX2o5OUFJZnBJS1FEMFVQel9aYkRQSm0?oc=5",
+     "time": "2026-11-27T14:44:45Z"
+    },
+    {
+     "id": "b7aa66e709183b52",
+     "publisher": "الإذاعة الجزائرية |",
+     "kind": "news",
+     "title": "Algeria Condemns \"In the Strongest Terms\" the Attack Targeting One of the Vital sites in Kuwait",
+     "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFAyeUpndmVuWHJ4VE5KS0MzNzVWdWVOd3c5YlF3cWZGTzdoU01sck40N21QRjBjMmRsS3BZNkl1MlVEc0x1cjdVeVpsY3RMa044R2h4bU1R?oc=5",
+     "time": "2026-11-27T14:41:50Z"
+    },
+    {
+     "id": "1674789a8aaa6ad2",
+     "publisher": "Denver Gazette",
+     "kind": "news",
+     "title": "Two Italians killed in attack on Kuwait site; Iran denies involvement",
+     "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPcjVSNXl5TTd0X2laeDZsZ2tha2YwVFFUcXBlVmxJN0k4SnhCZlF3VmIxUGt5cElMUWZfdVhwdDNUamVTV1NpcmFwdl9LM3dTaG43MjQxQUJ6TUVMNXcwZjMwanQ0WFZ3SFRMR3ZZeG1XX0pXNG1PckRsMXBJRURsc0EzaUdlNHpHaVNNY3FBVjRHSFd5WXpOMXY4TnJUOWFPOWVlZjFwYlFpVzNrTUxn?oc=5",
+     "time": "2026-11-27T14:32:14Z"
+    },
+    {
+     "id": "3b5105b8e6c23f6e",
+     "publisher": "Mezha.net",
+     "kind": "news",
+     "title": "Middle East attacks push oil prices higher again",
+     "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPQVdSaVhXcXJ5RDZOemJiY3hKLVVEYk5KRnJIbFVjbjYyUklmMlhxWmFCVzNYcElyNEZvSnZQaUEyOEZLaEd2MHJGd1VtU0w4M08xek5VMHc4UU1LNkdTa0pTTHR2M0hmcHFWUVRFVDBtWTZOMm52S1E5TDhCTWhETmQ0Yjc?oc=5",
+     "time": "2026-11-27T14:51:23Z"
+    },
+    {
+     "id": "a1093da81e842449",
+     "publisher": "Fox News",
+     "kind": "news",
+     "title": "Deadly drone attack rocks Kuwait, Iran denies involvement",
+     "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE1yZUltYTIwNktxeTF5VlJES2FXVm03cWNZV0o1V0hYSTVpYlhuVnd0bEtjNE1JY2k3NTJGeWxLbWo3Q0NnZWVibmN2bW5wLXc2M2hwU2tB?oc=5",
+     "time": "2026-11-27T14:51:04Z"
+    }
+   ]
+  },
+  {
+   "summary": "Proposed US tariff hikes continue to raise concerns about global trade war risks and supply chain disruptions.",
+   "category": "tariffs",
+   "firstSeen": "2026-11-27T14:57:02Z",
+   "publishers": [
+    "Automotive Logistics",
+    "Baltimore Sun",
+    "Daily Sun"
+   ],
+   "assets": {
+    "AAPL": {
+     "direction": "down",
+     "confidence": 0.6,
+     "why": "Tariff escalation typically hurts global tech supply chains and importers."
+    }
+   },
+   "sources": [
+    {
+     "id": "be5b7d36bb7fd6e4",
+     "publisher": "Baltimore Sun",
+     "kind": "news",
+     "title": "New trade war could be brewing after Trump announces proposed tariff hikes",
+     "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPUVBNamFLU1Y2LWVqa3AyYktabUVWOHV2UVktcWZwbHVRS25sMlowNXUtbGhMRzJHODdnbGE3LV9xZmlHVVRfT2ZvcFFGZWtKaGlzMHhfRTlvczg1VkcyNzg4bTNuOXZJWTFFdEJmOEhrRG9lSGQ5QWVTVU9NcG5pWXZUNXpsU29tZ2ZpQVQ2Z29fWE5hNExrSnhoTktyTFZtR0ZFbFh5bWw5TWhVNDF3blphSThlQQ?oc=5",
+     "time": "2026-11-27T14:57:02Z"
+    },
+    {
+     "id": "8598baf970bc5b66",
+     "publisher": "Daily Sun",
+     "kind": "news",
+     "title": "India to cross $1T export mark by March 2027 despite proposed 25% US tariff: ASSOCHAM",
+     "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxOR2UwR0xUa1oyTjZEb2JXb2Q1Uk05ZmV2bFhYdENXdUNZcy1CcE1uNEZmLXhhOTlaUWRjbjZ3TXNRTi0wNXJnUlpCMkVtY0RyX0RZdVdBazE4bXF4bEctdU1INXUzOWNYYmRIYnZEcU13YUtHVnNPb1o3T09wVWNpNTVESExKcHVPM3AxaEs1b0hyb0NHaHNGM05fZmNXOUtnRkFQN01CUFZweW4xZkd4WTN0THB0cWZSVlVtVDhn?oc=5",
+     "time": "2026-11-27T15:13:00Z"
+    },
+    {
+     "id": "a5b5eb2c305bede0",
+     "publisher": "Automotive Logistics",
+     "kind": "news",
+     "title": "US tariff proposals threaten further disruption to automotive supply chains",
+     "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxNeUdWVUVwMWpSaDZMZ1ZjUTAycVVobGdIeURJZnBGWVBGX1hlOXgwTF9neXNmWDFKMk1fWkhkRTV5TGRuc2J4VlR5OGZBVERKTWVrMlM0cThjd0xFMVBYTzNxMUZDSlpiNUs0eDJOalZNU1UzX2huRTRXVHh4djNRZHJCTWp4dHRabkUwVVJyS09US3l0MEt4c2tlZUtwano5SFMtRDZRc2JoUnphUWVGVXNUWEpGLWNxMG5nZ3owOGxkVWpU?oc=5",
+     "time": "2026-11-27T15:08:59Z"
+    }
+   ]
+  },
+  {
+   "summary": "Ethereum ETFs continue to experience significant outflows, adding to the bearish sentiment in the crypto market.",
+   "category": "crypto_negative",
+   "firstSeen": "2026-11-27T11:46:45Z",
+   "publishers": [
+    "CCN.com",
+    "CoinCodex",
+    "Crypto Briefing",
+    "Crypto Economy",
+    "CryptoTicker.io",
+    "Investing.com",
+    "KuCoin",
+    "Pluang",
+    "Wisevoter",
+    "www.tokenpost.com"
+   ],
+   "assets": {
+    "BTC/USD": {
+     "direction": "down",
+     "confidence": 0.6,
+     "why": "Record ETF outflows and macroeconomic headwinds from proposed tariffs pressure crypto."
+    },
+    "ETH/USD": {
+     "direction": "down",
+     "confidence": 0.6,
+     "why": "Persistent outflows from Ethereum ETFs indicate negative market sentiment."
+    }
+   },
+   "sources": [
+    {
+     "id": "f693c185f24f33cb",
+     "publisher": "CoinCodex",
+     "kind": "news",
+     "title": "Arthur Hayes Warns Crypto Could Crash This Weekend Ahead of Fed Blackout",
+     "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQbXpaMzlXelhaMDJvNGtzb3owWnFLT2xMZmNsQ19Obk41RXV6TDc4VFFHQXhuYnRLOVFya3BWRXpmNzFwWkJKVUpMRE4za0hQd3MtV1dsWEgxYXRyWklMeHlzZGpUSUR0UDd5RV9JbERqaHptc3huQjhUWU9QdzRxVVByVWF6SlRpQW5NWTc2Nmg3V3FGZlkyeE4tdnJtSnhnS21SSWVzaG1BeDBJRFE?oc=5",
+     "time": "2026-11-27T11:48:00Z"
+    },
+    {
+     "id": "889129826fad51e7",
+     "publisher": "Investing.com",
+     "kind": "news",
+     "title": "Bitcoin’s Liquidity Problem: Who Will Buy the Dip?",
+     "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNbmpYRG0wX29wNzh2RjViTExJN19OanBPeXh0RUNad1ZwS3pzb2F3YVNwSnpleEg4Qk1hNHRWclROR2JTUE9fXzNMaW1tcmdfZk0tcmp2OFFEX1hBbnFfbE4yNDlxNVFGZGtrc2I2WTVFQUVOT2FadlFuX3hRTFdNRnpRRnlQcmlIRXNJcHRaeFlCbzZKcjJF?oc=5",
+     "time": "2026-11-27T11:46:45Z"
+    },
+    {
+     "id": "9da4c4b007f15d9d",
+     "publisher": "Crypto Economy",
+     "kind": "news",
+     "title": "BOJ Official Calls for Stablecoin Reserve Regulation",
+     "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNeEdBb2VOYm9IaW9lQUtPNXVFUXVsLVFxY1dBcnNYeENocENUOFRtYjNOenpTaHY3aF9aaU9sWGdBTC1BeFZTRnN5WU9zVzRObkhmbDRQaTI0NC1hdE9mcnkzVF9tMmktVXRLeEZKRVpxS05uTjNXeU0wMXZfMmxabW95V3JEdkU?oc=5",
+     "time": "2026-11-27T12:49:13Z"
+    },
+    {
+     "id": "7642ee29a5dc8762",
+     "publisher": "Crypto Briefing",
+     "kind": "news",
+     "title": "Bitcoin whales add 121,117 BTC as price falls nearly 30% in Q4",
+     "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE5UbVZxVlhvWDdzdW0yc3ZoRnVlZnJkSUh6c0tMaXExUUI5VzVKZ1lwdE9WakhaWFZiTEk4X3E0TTZJa0FvZm45LVBkYU1xbFJCT29sMFFPQXdmdEQ5THVsXzRPOFRkNU1ZYkoxaG04UVhGdW5mYmZfXzE3VQ?oc=5",
+     "time": "2026-11-27T13:26:23Z"
+    },
+    {
+     "id": "3c3df81b228069de",
+     "publisher": "CryptoTicker.io",
+     "kind": "news",
+     "title": "Bitcoin price at $61,600 after $6.8bn options expiry",
+     "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE1PTVVjekJUT0ZKbWJVdHVEanJmT0N2OEtVOWxlbTNuZTZtM3pvbk1tMWRmdnlsUUhEbXl3ald2ejdoa2Z0NEVLYlBkbDI0bEtHSTlaRzR6STVBWS1rajg1WG91RUx2TzBNOWxTallXbC1yZ1JkVWdR?oc=5",
+     "time": "2026-11-27T13:19:43Z"
+    }
+   ]
+  },
+  {
+   "summary": "Malaysia has approved its first Shariah-compliant spot Bitcoin ETF, further expanding institutional access to crypto assets.",
+   "category": "crypto_positive",
+   "firstSeen": "2026-11-27T14:24:52Z",
+   "publishers": [
+    "Crypto Briefing",
+    "Pluang",
+    "The Defiant",
+    "www.tokenpost.com"
+   ],
+   "assets": {
+    "BTC/USD": {
+     "direction": "up",
+     "confidence": 0.6,
+     "why": "New Shariah-compliant ETF approval in Malaysia signals continued institutional adoption."
+    }
+   },
+   "sources": [
+    {
+     "id": "ac0ed5446bcddf3f",
+     "publisher": "www.tokenpost.com",
+     "kind": "news",
+     "title": "Malaysia Approves First Shariah-Compliant Spot Bitcoin ETF",
+     "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE5IUExiZFg3UmUwekhDa1lKNFEtRVdYOFh1UVVJbDBzQjBlUV96bkdpYkVudUVvTmpKdlV3Q2huMlFodmJhSjNZU2FUQmJraGtZa3dOODVBRXZBdw?oc=5",
+     "time": "2026-11-27T14:25:45Z"
+    },
+    {
+     "id": "72fe49a3db6243a4",
+     "publisher": "Crypto Briefing",
+     "kind": "news",
+     "title": "Malaysia approves its first spot Bitcoin ETF, and it’s Shariah-compliant",
+     "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxPTWp2bE5Ha0w1N29HejE0RTN3TU9RZFp6U1djOFRLYnl0Y1lXU3FuY0RpVGloRGhHeXZWanZDQVdfM0pueGxIV1ZSVm1qMTh6dXJqcDM3RDNZLUx3bE83Rlpmb3JRSmp5VGNIOHBaT2I3S2pBMk5lT2RkYURnNTdnOQ?oc=5",
+     "time": "2026-11-27T14:24:52Z"
+    },
+    {
+     "id": "855a6918d87650ad",
+     "publisher": "Pluang",
+     "kind": "news",
+     "title": "Malaysia to list first Shariah-compliant spot B...",
+     "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxPdS03cmNjUk95c3NkY0hYSHdoVDV6bmlST1BqcW5MdkpoYkVCeW9xb2xrY0NSVnVTem9lU3RiVDJueV9IdWIzZEhPMDd3RV92YVpTZGZSUjZLa3VSelN1bWYtZnpzSnFNemFNMnllclVyeEJ6bDJjdlNKX2cya1V5R2xxWVhKbk5MVlhDWkxQNEgtSFlEM1E?oc=5",
+     "time": "2026-11-27T14:43:33Z"
+    },
+    {
+     "id": "1c6254ca82c8aa85",
+     "publisher": "The Defiant",
+     "kind": "news",
+     "title": "Halogen’s Shariah Bitcoin ETF Set for Dec. 2 Bursa Debut",
+     "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPSGpORXA1SnQ0LVVYVldNQ3BRaVVIUi01RGV2R2JIMjd6NDd6T2RYNFdGSE1vN3puei1yN1VRWGJTVTVEZUtfN1BtZ3VTMzY1ZTZlUHpERU9nZkVUakQtM210dkQ2SEJyZXZyV3lGTVJ3RzNqT2VaOVpRdElNUFZTLTdnNDc2ZTl3c2ppTFdHc2ZJa3liVXZLRW5nZk5NdmRPU2xJRk41MXQ?oc=5",
+     "time": "2026-11-27T14:41:52Z"
+    }
+   ]
+  },
   {
    "summary": "Palo Alto Networks faces a federal lawsuit from a former executive alleging wrongful dismissal over accounting practices.",
    "category": "company_bad_news",
@@ -9139,110 +10101,6 @@
    ]
   },
   {
-   "summary": "Significant outflows from US spot Ethereum ETFs and record Bitcoin ETF outflows in November are pressuring crypto markets.",
-   "category": "crypto_negative",
-   "firstSeen": "2026-11-27T11:46:45Z",
-   "publishers": [
-    "CCN.com",
-    "CoinCodex",
-    "Crypto Briefing",
-    "Crypto Economy",
-    "CryptoTicker.io",
-    "Investing.com",
-    "KuCoin",
-    "Pluang",
-    "www.tokenpost.com"
-   ],
-   "assets": {
-    "BTC/USD": {
-     "direction": "down",
-     "confidence": 0.6,
-     "why": "Record ETF outflows and macroeconomic headwinds from proposed tariffs pressure crypto."
-    },
-    "ETH/USD": {
-     "direction": "down",
-     "confidence": 0.6,
-     "why": "Heavy outflows from spot Ethereum ETFs are creating significant selling pressure."
-    }
-   },
-   "sources": [
-    {
-     "id": "f693c185f24f33cb",
-     "publisher": "CoinCodex",
-     "kind": "news",
-     "title": "Arthur Hayes Warns Crypto Could Crash This Weekend Ahead of Fed Blackout",
-     "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQbXpaMzlXelhaMDJvNGtzb3owWnFLT2xMZmNsQ19Obk41RXV6TDc4VFFHQXhuYnRLOVFya3BWRXpmNzFwWkJKVUpMRE4za0hQd3MtV1dsWEgxYXRyWklMeHlzZGpUSUR0UDd5RV9JbERqaHptc3huQjhUWU9QdzRxVVByVWF6SlRpQW5NWTc2Nmg3V3FGZlkyeE4tdnJtSnhnS21SSWVzaG1BeDBJRFE?oc=5",
-     "time": "2026-11-27T11:48:00Z"
-    },
-    {
-     "id": "889129826fad51e7",
-     "publisher": "Investing.com",
-     "kind": "news",
-     "title": "Bitcoin’s Liquidity Problem: Who Will Buy the Dip?",
-     "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNbmpYRG0wX29wNzh2RjViTExJN19OanBPeXh0RUNad1ZwS3pzb2F3YVNwSnpleEg4Qk1hNHRWclROR2JTUE9fXzNMaW1tcmdfZk0tcmp2OFFEX1hBbnFfbE4yNDlxNVFGZGtrc2I2WTVFQUVOT2FadlFuX3hRTFdNRnpRRnlQcmlIRXNJcHRaeFlCbzZKcjJF?oc=5",
-     "time": "2026-11-27T11:46:45Z"
-    },
-    {
-     "id": "9da4c4b007f15d9d",
-     "publisher": "Crypto Economy",
-     "kind": "news",
-     "title": "BOJ Official Calls for Stablecoin Reserve Regulation",
-     "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNeEdBb2VOYm9IaW9lQUtPNXVFUXVsLVFxY1dBcnNYeENocENUOFRtYjNOenpTaHY3aF9aaU9sWGdBTC1BeFZTRnN5WU9zVzRObkhmbDRQaTI0NC1hdE9mcnkzVF9tMmktVXRLeEZKRVpxS05uTjNXeU0wMXZfMmxabW95V3JEdkU?oc=5",
-     "time": "2026-11-27T12:49:13Z"
-    },
-    {
-     "id": "7642ee29a5dc8762",
-     "publisher": "Crypto Briefing",
-     "kind": "news",
-     "title": "Bitcoin whales add 121,117 BTC as price falls nearly 30% in Q4",
-     "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE5UbVZxVlhvWDdzdW0yc3ZoRnVlZnJkSUh6c0tMaXExUUI5VzVKZ1lwdE9WakhaWFZiTEk4X3E0TTZJa0FvZm45LVBkYU1xbFJCT29sMFFPQXdmdEQ5THVsXzRPOFRkNU1ZYkoxaG04UVhGdW5mYmZfXzE3VQ?oc=5",
-     "time": "2026-11-27T13:26:23Z"
-    },
-    {
-     "id": "3c3df81b228069de",
-     "publisher": "CryptoTicker.io",
-     "kind": "news",
-     "title": "Bitcoin price at $61,600 after $6.8bn options expiry",
-     "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE1PTVVjekJUT0ZKbWJVdHVEanJmT0N2OEtVOWxlbTNuZTZtM3pvbk1tMWRmdnlsUUhEbXl3ald2ejdoa2Z0NEVLYlBkbDI0bEtHSTlaRzR6STVBWS1rajg1WG91RUx2TzBNOWxTallXbC1yZ1JkVWdR?oc=5",
-     "time": "2026-11-27T13:19:43Z"
-    }
-   ]
-  },
-  {
-   "summary": "Malaysia has approved its first Shariah-compliant spot Bitcoin ETF, expanding institutional access.",
-   "category": "crypto_positive",
-   "firstSeen": "2026-11-27T14:24:52Z",
-   "publishers": [
-    "Crypto Briefing",
-    "www.tokenpost.com"
-   ],
-   "assets": {
-    "BTC/USD": {
-     "direction": "up",
-     "confidence": 0.6,
-     "why": "New regulatory approval for a Shariah-compliant Bitcoin ETF in Malaysia signals positive adoption."
-    }
-   },
-   "sources": [
-    {
-     "id": "ac0ed5446bcddf3f",
-     "publisher": "www.tokenpost.com",
-     "kind": "news",
-     "title": "Malaysia Approves First Shariah-Compliant Spot Bitcoin ETF",
-     "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE5IUExiZFg3UmUwekhDa1lKNFEtRVdYOFh1UVVJbDBzQjBlUV96bkdpYkVudUVvTmpKdlV3Q2huMlFodmJhSjNZU2FUQmJraGtZa3dOODVBRXZBdw?oc=5",
-     "time": "2026-11-27T14:25:45Z"
-    },
-    {
-     "id": "72fe49a3db6243a4",
-     "publisher": "Crypto Briefing",
-     "kind": "news",
-     "title": "Malaysia approves its first spot Bitcoin ETF, and it’s Shariah-compliant",
-     "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxPTWp2bE5Ha0w1N29HejE0RTN3TU9RZFp6U1djOFRLYnl0Y1lXU3FuY0RpVGloRGhHeXZWanZDQVdfM0pueGxIV1ZSVm1qMTh6dXJqcDM3RDNZLUx3bE83Rlpmb3JRSmp5VGNIOHBaT2I3S2pBMk5lT2RkYURnNTdnOQ?oc=5",
-     "time": "2026-11-27T14:24:52Z"
-    }
-   ]
-  },
-  {
    "summary": "Chevron faces an investigation into alleged deliberate methane releases at its facilities.",
    "category": "company_bad_news",
    "firstSeen": "2026-11-27T09:06:11Z",
@@ -9488,74 +10346,6 @@
      "title": "BIT Asset Management Introduces Switzerland's First Spot Bitcoin ETF on SIX Swiss Exchange",
      "url": "https://news.google.com/rss/articles/CBMi9AFBVV95cUxNZ0lzVWNnenozRjhadWhVZUE1bWhMODRJXzJwWEtIdWRiV3VSUmRsZ2JQT1FIZ04tQnZXS2w2VTRtMzc0NUotQXI0Qm1BU04zMWU0d0xYaHU1bHpfY2RMelRNelEzdmRiQUtxU19LTmJET3FVYnpMNnZYVnFDZUxfTmVYNXE2MkFjaXB5SVc4UWVJcW84VE5KMmgyN0t2SFZaUnVKaER3RUZJSllsSjhrMkMzaGFvR2FmZWtIVG1WbG5BQ2tqS0tBcWM5TXFNcTBiY0VwbmMtUnU1dDdJVmM3b3JrLXZWZlVwSFdjdi1TbU1IaFIz?oc=5",
      "time": "2026-11-27T11:23:31Z"
-    }
-   ]
-  },
-  {
-   "summary": "Tesla has filed plans to acquire German manufacturing systems group EMAG to bolster production.",
-   "category": "other",
-   "firstSeen": "2026-11-27T09:34:07Z",
-   "publishers": [
-    "Reuters",
-    "fiscal.ai"
-   ],
-   "assets": {
-    "TSLA": {
-     "direction": "up",
-     "confidence": 0.6,
-     "why": "Strategic acquisition to improve manufacturing efficiency and production capacity."
-    }
-   },
-   "sources": [
-    {
-     "id": "b9599740e6d0500c",
-     "publisher": "Reuters",
-     "kind": "news",
-     "title": "Tesla plans to acquire German manufacturing systems group EMAG",
-     "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOV3Z3REp5RGw2dXhwWEtJNEw2dHh6OUNsX2thc0llSTdDR0kyWUtrVENkOHdJSVhEZThnaC1DdHNvblJXX3BjQWdRTVJfWlMtbUM2U0UwaXFqdmR0QXhwei1tX1VIX0dhZkVkLU1CaEVZQ0xJenZpLU54LTFjNEszT3pJYkREMzI3TjA4RWNPZ1oyQ0FXQXlhTE8ySFQ4bUpzS3h3?oc=5",
-     "time": "2026-11-27T09:34:07Z"
-    },
-    {
-     "id": "f594867f6d144c72",
-     "publisher": "fiscal.ai",
-     "kind": "news",
-     "title": "Tesla Files Plans to Acquire German Company Emag",
-     "url": "https://www.moomoo.com/stock/TSLA-US/news?chain_id=Name1K9-3FXPhg.1l60200&global_content=%7B%22promote_id%22%3A13764,%22sub_promote_id%22%3A57,%22f%22%3A%22www.moomoo.com%2Fstock%2FUROY-US%22%7D",
-     "time": "2026-11-27T11:31:55Z"
-    }
-   ]
-  },
-  {
-   "summary": "Palantir is expanding its cooperation with the Polish Ministry of Defence for AI and defense technology.",
-   "category": "contract",
-   "firstSeen": "2026-11-27T11:31:52Z",
-   "publishers": [
-    "Yahoo Finance",
-    "fiscal.ai"
-   ],
-   "assets": {
-    "PLTR": {
-     "direction": "up",
-     "confidence": 0.6,
-     "why": "New defense contract and expansion of AI cooperation with Poland."
-    }
-   },
-   "sources": [
-    {
-     "id": "a1a7527f885c65b4",
-     "publisher": "Yahoo Finance",
-     "kind": "news",
-     "title": "Palantir Nears AI Defense Deal With Poland's Defense Ministry",
-     "url": "https://finance.yahoo.com/technology/ai/articles/palantir-nears-ai-defense-deal-113217461.html?.tsrc=rss",
-     "time": "2026-11-27T11:32:17Z"
-    },
-    {
-     "id": "ac45e8d96b8494b7",
-     "publisher": "fiscal.ai",
-     "kind": "news",
-     "title": "Palantir Technologies Reportedly to Supply Maven Smart System to Poland's Defence Ministry",
-     "url": "https://www.marketscreener.com/news/palantir-technologies-to-reportedly-supply-maven-smart-system-to-poland-s-defence-ministry-ce7851d9dc8df726",
-     "time": "2026-11-27T11:31:52Z"
     }
    ]
   }
