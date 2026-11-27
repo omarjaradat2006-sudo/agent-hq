@@ -133,7 +133,11 @@ Work out what works for HIM and how a LinkedAI promo should borrow it so it feel
 
 def candidates():
     c = load(os.path.join(ROOT, "data", "linkedai", "ad_candidates.json"), {}) or {}
-    return [v for v in c.get("videos", []) if (v.get("duration") or 0) <= 180]
+    def english(t):   # skip titles mostly in other scripts (Hindi, Telugu, ...): Omar posts in English
+        letters = [ch for ch in t if ch.isalpha()]
+        return not letters or sum(ch.isascii() for ch in letters) / len(letters) > 0.8
+    # 30M+ views on a brand channel = paid ad views, not a format that wins on its own
+    return [v for v in c.get("videos", []) if (v.get("duration") or 0) <= 180 and (v.get("views") or 0) < 30_000_000 and english(v.get("title", ""))]
 
 
 def chunk_watch(v):
