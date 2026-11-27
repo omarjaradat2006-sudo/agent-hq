@@ -28,7 +28,7 @@ ISO = NOW.strftime("%Y-%m-%dT%H:%M:%SZ")
 TODAY = NOW.astimezone(TZ).date()
 TAGS = "#fyppppppppppppppppppppppp #viral #fyp"
 STORE = "https://chromewebstore.google.com/detail/linkedai-%E2%80%94-smart-linkedin/pjbdjikbmncplbhiljcdipkhoidklngp"
-PROMO = re.compile(r"linkedai|linked ai|linkedin|resume|r[eé]sum[eé]|cover letter|job (search|hunt|interview|application)|recruiter|hiring|#ad\b|promo", re.I)
+PROMO = re.compile(r"#app\b|linkedai|linked ai|linkedin|resume|r[eé]sum[eé]|cover letter|job (search|hunt|interview|application)|recruiter|hiring|#ad\b|promo", re.I)
 BUILDER = re.compile(r"\b(i|we) (just )?(built|made|created|coded|developed|launched)\b|\bmy (app|extension|tool|product|startup|software)\b|\bour (app|extension|tool|product)\b", re.I)
 FAKE_RESULT = re.compile(r"\b(got|landed|booked|made)\s+(me\s+)?\$?\d", re.I)
 ANGLES = [
@@ -115,7 +115,8 @@ His LinkedAI / job promo videos so far (some were PAID boosts, so views don't pr
 His TikTok team's latest review: {json.dumps({k: rev.get(k) for k in ('headline', 'summary', 'doMore', 'stopDoing')}, ensure_ascii=False)[:2500]}
 He films sit-down, one take, talking to camera, regular-guy voice (never a guru), edited automatically (captions, zooms at pauses).
 
-Work out what works for HIM and how a LinkedAI promo should borrow it so it feels like his normal videos. Return JSON:
+Work out what works for HIM and how a LinkedAI promo should borrow it so it feels like his normal videos.
+IMPORTANT: "summary", "whatWorks", "hookPatterns" and "bestLength" use ONLY the organic videos above. The resume/job/LinkedAI promo videos (and any promo the review mentions, e.g. a resume video with ~77k views) were PAID boosts: they only go in "promoLessons", never in what works for him. Return JSON:
 {{"summary":"2-3 sentences to 'you' with real numbers","whatWorks":["3-5 patterns, each tied to a real video title + views"],
 "hookPatterns":["3-4 kinds of first lines that worked for him, with the real example"],"bestLength":"e.g. 35-50s, from the numbers",
 "avoid":["2-3 things"],"promoLessons":["2-3 lessons from his past promo videos (say paid if likely)"],
