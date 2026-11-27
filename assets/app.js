@@ -240,7 +240,7 @@
 
   /* ---------------- panel ---------------- */
   let tab = "overview", agentSel = null, ideaFilter = "pending", statSel = null;
-  function tabForKind(t, kind) { return ["stats", "research", "ideas", "review", "competitors", "swarm", "positions", "trades", "news", "coins", "picks", "underdogs", "record", "books", "cheapgrowth"].includes(kind) ? kind : "overview"; }
+  function tabForKind(t, kind) { return ["stats", "research", "ideas", "review", "competitors", "swarm", "positions", "trades", "news", "coins", "picks", "underdogs", "record", "books", "cheapgrowth", "promo"].includes(kind) ? kind : "overview"; }
   function focusTeam(id, tb, agentId) {
     if (!M.teams[id]) return; focused = id; tab = tb || "overview"; agentSel = agentId || null; statSel = null; ideaFilter = id === "youtube" ? "approved" : "pending";
     $("#panel").classList.add("open"); renderPanel(); syncTeambar();
@@ -262,6 +262,7 @@
     if (t.cfg.id === "tiktok" || t.cfg.id === "youtube") out.splice(out.findIndex(x => x[0] === "ideas") + 1, 0, ["review", "Review"]);
     if (t.cfg.id === "linkedai" || t.cfg.id === "growth") out.splice(2, 0, ["competitors", "Competitors"]);
     if (t.cfg.id === "linkedai") out.splice(1, 0, ["cheapgrowth", "Cheap Growth"]);
+    if (t.cfg.id === "linkedai") out.splice(3, 0, ["promo", "Promo lab"]);
     if (t.cfg.id === "opps" || t.cfg.id === "growth") out.splice(out.findIndex(x => x[0] === "ideas") + 1, 0, ["swarm", "100-person test"]);
     if (t.cfg.id === "lab") { out[1] = ["ideas", "System upgrades"]; out.splice(2, 0, ["leads", "Leads for each team"]); }
     if (UPG[t.cfg.id] && M.teams.lab) out.splice(out.findIndex(x => x[0] === "ideas") + 1, 0, ["upgrades", "Upgrades"]);
@@ -285,7 +286,7 @@
     ph.append(tabs); p.append(ph);
     const body = el("div", "pb"); p.append(body);
     if (t.cfg.paused) { vPaused(t, body); return; }
-    ({ schedule: vSchedule, overview: vOverview, ideas: vIdeas, upgrades: vUpgrades, review: vReview, competitors: vCompetitors, cheapgrowth: vCheapGrowth, swarm: vSwarm, leads: vLeads, lineup: vLineup, inspo: vInspo, picks: vFToday, ufc: vFUfc, record: vFRecord, books: vFBooks, positions: vTPositions, trades: vTTrades, pnl: vTPnl, news: vTNews, coins: vTCoins, backtest: vTBacktest, week: vTWeek, shots: vShots, clips: vClips, stats: vStats, trending: vTrending, research: vResearch, activity: vActivity, ...(t.cfg.id === "fight" && !agentSel ? { overview: vFToday } : {}) }[tab] || vOverview)(t, body);
+    ({ schedule: vSchedule, promo: vPromo, overview: vOverview, ideas: vIdeas, upgrades: vUpgrades, review: vReview, competitors: vCompetitors, cheapgrowth: vCheapGrowth, swarm: vSwarm, leads: vLeads, lineup: vLineup, inspo: vInspo, picks: vFToday, ufc: vFUfc, record: vFRecord, books: vFBooks, positions: vTPositions, trades: vTTrades, pnl: vTPnl, news: vTNews, coins: vTCoins, backtest: vTBacktest, week: vTWeek, shots: vShots, clips: vClips, stats: vStats, trending: vTrending, research: vResearch, activity: vActivity, ...(t.cfg.id === "fight" && !agentSel ? { overview: vFToday } : {}) }[tab] || vOverview)(t, body);
   }
   function pill(s) { return el("span", "pill s-" + (s || "idle"), ST[s] || s || "Idle"); }
   function empty(title, text) { const e = el("div", "empty"); e.append(el("strong", null, title)); e.append(el("span", null, text)); return e; }
@@ -294,7 +295,7 @@
     r.append(nm, pill(a.status)); c.append(r);
     if (a.doing) c.append(el("div", null, a.doing));
     c.append(el("div", "small", (a.lastRun ? "Last run " + ago(a.lastRun) : "Hasn't run yet") + (a.nextRun ? " · next " + until(a.nextRun) : "")));
-    const k = tabForKind(t, a.kind); if (k !== "overview") { const b = el("button", "btn primary", { stats: "See the stats", research: "See what they found", review: "See the review", competitors: "See the competitors", cheapgrowth: "See this week's plan", swarm: "See the debate", positions: "See open positions", trades: "See every trade", news: "See the news desk", coins: "See coin watch", picks: "See today's slips", record: "See the record", books: "See odds and cost" }[k] || "See what they wrote"); b.onclick = () => { tab = k; renderPanel(); }; c.append(b); }
+    const k = tabForKind(t, a.kind); if (k !== "overview") { const b = el("button", "btn primary", { stats: "See the stats", promo: "See the promo lab", research: "See what they found", review: "See the review", competitors: "See the competitors", cheapgrowth: "See this week's plan", swarm: "See the debate", positions: "See open positions", trades: "See every trade", news: "See the news desk", coins: "See coin watch", picks: "See today's slips", record: "See the record", books: "See odds and cost" }[k] || "See what they wrote"); b.onclick = () => { tab = k; renderPanel(); }; c.append(b); }
     return c;
   }
   function ideaLine(t, body) {   // YouTube tab: how the board is being worked through
@@ -457,7 +458,8 @@
   /* Schedule: read straight from the server's crontab in the repo (server clock = Toronto time). */
   let CRON = null;
   const JOBNAME = { "run_team.sh tiktok": "TikTok team: scripts + review", "run_team.sh youtube": "YouTube team: today's lineup (both channels)",
-    "run_team.sh linkedai": "LinkedAI team: competitor study + promos", "run_team.sh opps": "AI Opportunities", "run_team.sh lab": "R&D Lab: system upgrades",
+    "run_team.sh linkedai": "LinkedAI team: competitor study + growth ideas", "run_team.sh promo": "LinkedAI Promo Studio: 2 promo videos in your style",
+    "run_promo.sh chunk": "LinkedAI Promo Studio: one small research chunk", "run_team.sh opps": "AI Opportunities", "run_team.sh lab": "R&D Lab: system upgrades",
     "run_team.sh repos": "GitHub Scout: repo requests", "run_team.sh chief": "Chief of Staff: weekly brief", "run_team.sh growth": "Growth Architect team",
     "run_team.sh upgrades": "Growth Architect upgrades", "run_bounce.sh": "Bounce Theory: make + upload the day's videos", "run_ambient.sh": "Ambient Escape: make + upload the day's videos",
     "run_wanted.sh": "WANTED LEVEL: post a GTA 6 clip", "run_autotemplate.sh": "Bounce: turn board ideas into new templates", "run_inspo.sh": "Inspo builder: your inspo videos into templates",
@@ -488,7 +490,7 @@
   function whenLabel(d) { if (!d) return "-"; const now = new Date(); const day = Math.round((new Date(d.getFullYear(), d.getMonth(), d.getDate()) - new Date(now.getFullYear(), now.getMonth(), now.getDate())) / 864e5);
     return (day === 0 ? "Today" : day === 1 ? "Tomorrow" : DOW[d.getDay()] + " " + d.toLocaleDateString([], { month: "short", day: "numeric" })) + " · " + d.toLocaleTimeString([], { hour: "numeric", minute: "2-digit" }); }
   function jobTeam(j) { const c = j.cmd || ""; const m = c.match(/run_team\.sh (\w+)/);
-    if (m) return { chief: "hq" }[m[1]] || m[1]; if (/fight/.test(c)) return "fight"; if (/cheap_growth/.test(c)) return "linkedai"; if (/trading/.test(c)) return "trading"; return "youtube"; }
+    if (m) return { chief: "hq", promo: "linkedai" }[m[1]] || m[1]; if (/promo/.test(c)) return "linkedai"; if (/fight/.test(c)) return "fight"; if (/cheap_growth/.test(c)) return "linkedai"; if (/trading/.test(c)) return "trading"; return "youtube"; }
   async function loadCron() { if (!CRON) { try { const r = await fetch(ROOT + "scripts/server/crontab.txt?t=" + Date.now(), { cache: "no-store" }); CRON = r.ok ? parseCron(await r.text()) : []; } catch { CRON = []; } } return CRON; }
   let calWeek = 0;
   async function openCalendar() {
@@ -1001,6 +1003,30 @@ Server breakdown (Gemini watched it with sound):
     const tr = (t.metrics || {}).trending || []; if (t.metrics && t.metrics.trendingAt) body.append(el("div", "small", "Scanned " + ago(t.metrics.trendingAt) + " · ranked by how far each video beats its channel's normal views"));
     const c = el("div", "card"); tr.slice(0, 15).forEach(x => { const s = el("div", "shot"); const u = safeUrl(x.url); const a = el(u ? "a" : "div", "t", x.title); if (u) { a.href = u; a.target = "_blank"; a.rel = "noopener"; } s.append(a);
       s.append(el("div", "m", [x.channel, x.views != null ? fmt(x.views) + " views" : null, x.age].filter(Boolean).join(" · "))); c.append(s); }); body.append(c);
+  }
+  /* LinkedAI Promo lab: the Promo Studio's style profile + the real videos it studied (links come only from research files). */
+  function vPromo(t, body) {
+    const st = t.state.styleProfile, lib = t.state.adLibrary || [], pr = t.state.promoResearch || {};
+    const intro = el("div", "why", "Promo Studio: studies your TikToks and how AI tools market on TikTok, Reels and Shorts in small chunks every night (3:37-8:37 AM), then writes 2 promo videos in your style Mon/Wed/Fri. The scripts are in the Content tab.");
+    body.append(intro);
+    const promos = (t.state.ideas || []).filter(i => String(i.format || "").startsWith("Promo video"));
+    const k = el("div", "card"); k.append(el("div", "label", "This week"));
+    const wk = promos.filter(i => Date.now() - Date.parse(i.createdAt || 0) < 7 * 864e5).length;
+    k.append(el("div", null, `${wk} promo videos written in the last 7 days · ${promos.filter(i => effectiveStatus(i).status === "pending").length} waiting for your review · ${pr.watched || 0} competitor Shorts watched · ${pr.social || 0} TikTok/Instagram examples · ${pr.chunksLast7Days || 0} research chunks this week`));
+    if (pr.builtAt) k.append(el("div", "small", "Last build " + ago(pr.builtAt)));
+    const go = el("button", "btn primary", "See the promo scripts"); go.onclick = () => { tab = "ideas"; ideaFilter = "pending"; renderPanel(); }; k.append(go); body.append(k);
+    if (st && st.summary) { const c = el("div", "card"); c.append(el("div", "label", "Your style (from your real TikTok numbers)")); c.append(el("div", null, st.summary));
+      const list = (title, arr) => { if (!Array.isArray(arr) || !arr.length) return; c.append(el("div", "label", title)); const ul = el("ul"); ul.style.margin = "0 0 8px"; ul.style.paddingLeft = "18px"; arr.forEach(x => ul.append(el("li", null, String(x)))); c.append(ul); };
+      list("What works for you", st.whatWorks); list("Hooks that worked", st.hookPatterns); if (st.bestLength) c.append(el("div", "small", "Best length: " + st.bestLength));
+      list("How to blend a promo into your style", st.howToBlendPromos); list("From your past promos", st.promoLessons); list("Avoid", st.avoid); body.append(c); }
+    else body.append(empty("No style profile yet", "The Style Coach studies your TikTok history in the first research chunk (3:37 AM)."));
+    if (!lib.length) { body.append(empty("No videos studied yet", "The Ad Scout adds real videos here (with links and view counts) after the first nights of research.")); return; }
+    const c = el("div", "card"); c.append(el("div", "label", `Videos studied (${lib.length})`));
+    lib.forEach(x => { const s = el("div", "shot"); const u = safeUrl(x.url); const a = el(u ? "a" : "div", "t", `${x.whose === "yours" ? "Yours · " : ""}${x.platform || ""} · ${x.account || ""}${x.title ? " · " + x.title : ""}`); if (u) { a.href = u; a.target = "_blank"; a.rel = "noopener"; } s.append(a);
+      const v = x.views ? Number(String(x.views).replace(/[^\d.]/g, "")) : null;
+      const m = [x.format, x.views ? (isNaN(v) || !v ? x.views : v.toLocaleString()) + " views" + (x.viewsChecked ? "" : " (from search, not checked)") : "views not seen", x.linkCheck].filter(Boolean).join(" · "); s.append(el("div", "m", m));
+      if (x.hook) s.append(el("div", "small", "Hook: " + x.hook)); if (x.whatHappens) s.append(el("p", null, x.whatHappens)); if (x.whyItWorks) s.append(el("p", null, "Why it works: " + x.whyItWorks)); if (x.copyForLinkedAI) s.append(el("div", "small", "For LinkedAI: " + x.copyForLinkedAI)); c.append(s); });
+    body.append(c);
   }
   function vResearch(t, body) {
     const rs = t.state.research || []; if (!rs.length) { body.append(empty("No research yet", "The team's research shows up here after its first run.")); return; }

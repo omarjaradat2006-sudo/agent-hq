@@ -208,6 +208,78 @@ def tiktok_own():
     return kpis, vids, best, avg
 
 
+# ---------------- TikTok full history (daily; Promo Studio + TikTok team learn from ALL your videos) ----------------
+def tiktok_history(max_pages=25):
+    tok = http("https://open.tiktokapis.com/v2/oauth/token/", {"client_key": env("TT_CLIENT_KEY"), "client_secret": env("TT_CLIENT_SECRET"),
+                                                             "grant_type": "refresh_token", "refresh_token": env("TT_REFRESH_TOKEN")})
+    H = {"Authorization": "Bearer " + tok["access_token"], "Content-Type": "application/json"}
+    fields = "id,title,video_description,create_time,share_url,view_count,like_count,comment_count,share_count,duration"
+    vids, cursor = [], None
+    for _ in range(max_pages):
+        body = {"max_count": 20} if cursor is None else {"max_count": 20, "cursor": cursor}
+        d = http("https://open.tiktokapis.com/v2/video/list/?fields=" + fields, body, headers=H, method="POST").get("data", {})
+        for v in d.get("videos", []):
+            vids.append({"id": v.get("id"), "title": (v.get("title") or v.get("video_description") or "Untitled")[:120],
+                         "description": (v.get("video_description") or "")[:500], "url": v.get("share_url"),
+                         "views": v.get("view_count", 0), "likes": v.get("like_count", 0), "comments": v.get("comment_count", 0),
+                         "shares": v.get("share_count", 0), "duration": v.get("duration"),
+                         "published": datetime.datetime.fromtimestamp(v.get("create_time", 0), datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")})
+        if not d.get("has_more") or not d.get("cursor"):
+            break
+        cursor = d["cursor"]
+    vids.sort(key=lambda x: x["published"], reverse=True)
+    return vids
+
+
+# ---------------- Promo Studio: how AI tools market on Shorts (real links + real view counts, no Gemini) ----------------
+def run_promo():
+    p = os.path.join(ROOT, "data", "linkedai", "ad_candidates.json")
+    try:
+        old = json.load(open(p))
+    except Exception:
+        old = {}
+    pc = CFG.get("promo", {})
+    if not env("YT_API_KEY") or hours_since(old.get("updatedAt")) < pc.get("every_hours", 24):
+        print("promo: not due"); return
+    key = env("YT_API_KEY")
+    after = (NOW - datetime.timedelta(days=pc.get("days_back", 240))).strftime("%Y-%m-%dT%H:%M:%SZ")
+    found = {}
+    for q in pc.get("queries", []):
+        try:
+            res = http(YT + "search?" + urllib.parse.urlencode({"part": "snippet", "q": q, "type": "video", "order": "viewCount", "publishedAfter": after,
+                                                                "videoDuration": "short", "maxResults": 10, "relevanceLanguage": "en", "key": key}))
+            for i in res.get("items", []):
+                if i.get("id", {}).get("videoId"):
+                    found.setdefault(i["id"]["videoId"], q)
+        except Exception as e:
+            print("promo search failed:", q, str(e)[:120])
+    ids = list(found)[:100]
+    vids = []
+    for n in range(0, len(ids), 50):
+        vids += http(YT + "videos?" + urllib.parse.urlencode({"part": "snippet,statistics,contentDetails", "id": ",".join(ids[n:n + 50]), "key": key})).get("items", [])
+    chan_ids = list({v["snippet"]["channelId"] for v in vids})
+    chans = {}
+    for n in range(0, len(chan_ids), 50):
+        chans.update({c["id"]: c for c in http(YT + "channels?" + urllib.parse.urlencode({"part": "statistics", "id": ",".join(chan_ids[n:n + 50]), "key": key})).get("items", [])})
+    out = []
+    for v in vids:
+        views = int(v.get("statistics", {}).get("viewCount", 0))
+        cs = chans.get(v["snippet"]["channelId"], {}).get("statistics", {})
+        vc, tv = int(cs.get("videoCount", 0) or 0), int(cs.get("viewCount", 0) or 0)
+        avg = (tv / vc) if vc else 0
+        if views < 5000:
+            continue
+        out.append({"id": v["id"], "url": "https://www.youtube.com/watch?v=" + v["id"], "title": v["snippet"]["title"], "channel": v["snippet"]["channelTitle"],
+                    "views": views, "likes": int(v.get("statistics", {}).get("likeCount", 0) or 0), "duration": iso_secs(v.get("contentDetails", {}).get("duration")),
+                    "published": v["snippet"]["publishedAt"], "subscribers": int(cs.get("subscriberCount", 0) or 0),
+                    "outlier": round(views / avg, 1) if avg else None, "query": found.get(v["id"])})
+    keep = {x["id"]: x for x in old.get("videos", [])}   # keep older finds so the studio can still study them
+    keep.update({x["id"]: x for x in out})
+    allv = sorted(keep.values(), key=lambda x: x["views"], reverse=True)[:200]
+    json.dump({"updatedAt": ISO, "source": "YouTube Data API (real view counts)", "queries": pc.get("queries"), "videos": allv}, open(p, "w"), indent=1)
+    print(f"promo: {len(out)} AI-tool marketing Shorts found today, {len(allv)} kept")
+
+
 def run_youtube():
     m = load_metrics("youtube")
     m.setdefault("kpis", []); m.setdefault("topVideos", []); m.setdefault("trending", [])
@@ -259,6 +331,18 @@ def run_tiktok():
             did.append(f"pulled your TikTok stats (avg {avg:,} views on last 10" + (f", best: {best['views']:,}" if best else "") + ")")
         except Exception as e:
             problems.append("tiktok: " + str(e))
+        hp = os.path.join(ROOT, "data", "tiktok", "history.json")
+        try:
+            hist = json.load(open(hp))
+        except Exception:
+            hist = {}
+        if hours_since(hist.get("updatedAt")) >= 24:
+            try:
+                hv = tiktok_history()
+                json.dump({"updatedAt": ISO, "count": len(hv), "videos": hv}, open(hp, "w"), indent=1)
+                did.append(f"saved your full TikTok history ({len(hv)} videos)")
+            except Exception as e:
+                print("tiktok history failed:", str(e)[:200])
     finish(m, "tiktok", did, problems, needs="Connect your TikTok account and add YT_API_KEY to start. See SETUP.md.")
 
 
@@ -283,6 +367,9 @@ def finish(m, team, did, problems, needs):
 
 
 if __name__ == "__main__":
-    which = sys.argv[1:] or ["youtube", "tiktok"]
+    which = sys.argv[1:] or ["youtube", "tiktok", "promo"]
     for w in which:
-        {"youtube": run_youtube, "tiktok": run_tiktok}[w]()
+        try:
+            {"youtube": run_youtube, "tiktok": run_tiktok, "promo": run_promo}[w]()
+        except Exception as e:   # one collector failing never stops the others
+            print(w, "collector failed:", str(e)[:300])

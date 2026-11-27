@@ -18,7 +18,7 @@ if isinstance(patch.get("lineup"), dict):  # always store as {date, createdAt, c
     patch["lineup"] = {"date": L["date"], "createdAt": L["createdAt"], "channels": L["channels"]}
 if "lineup" in patch and s.get("lineup"):
     s["pastLineups"] = ([s["lineup"]] + s.get("pastLineups", []))[:7]
-for k in ("review", "brief", "competitors", "formatLeads", "teamLeads", "upgradeBrief", "lineup", "footage"):
+for k in ("review", "brief", "competitors", "formatLeads", "teamLeads", "upgradeBrief", "lineup", "footage", "adLibrary", "styleProfile", "promoResearch"):
     if k in patch:
         s[k] = patch[k]
 if "competitors" in patch:

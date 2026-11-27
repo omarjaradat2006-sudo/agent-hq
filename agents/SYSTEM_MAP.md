@@ -2,7 +2,7 @@
 
 Every team gets this file. If an idea is already listed here as something that exists, it is NOT an upgrade: drop it.
 "Exists" means built and running. Upgrades must build on top of what exists, never re-pitch it.
-Last updated: 2026-11-19 (by Claude, from the real setup). Omar or Claude update it when something ships.
+Last updated: 2026-11-27 (by Claude, from the real setup). Omar or Claude update it when something ships.
 
 ## STATUS BOARD
 | Part | Status |
@@ -30,7 +30,8 @@ Last updated: 2026-11-19 (by Claude, from the real setup). Omar or Claude update
 ## TEAMS ON THE SERVER (Gemini, cron)
 - **TikTok team** daily: performance review (Mon/Wed/Fri), research, 3 scripts in his content-scripts/VoicePrint scene format, caption packs.
 - **YouTube team** daily 6:13 AM: writes the full day's lineup for both channels (24 Shorts each + longs), uses approved board ideas FIRST and tags each slot with ideaId, never reuses an uploaded title or recent template+settings combo, performance review.
-- **LinkedAI team** weekly Mon: full competitor study + promo scripts.
+- **LinkedAI team** weekly Mon: full competitor study + 3 install/conversion ideas (no promo scripts: the Promo Studio writes those).
+- **LinkedAI Promo Studio** (connects the TikTok + LinkedAI teams, `agents/gemini/promo_studio.py`): research in small chunks, one an hour 3:37-8:37 AM daily (max 1 Gemini call each, saved to `~/research/promo/` on the server, fresh items skipped): Style Coach studies Omar's full TikTok history (`data/tiktok/history.json`) weekly; Ad Scout has Gemini watch one real AI-tool marketing Short (found with real view counts by the GitHub collector, `data/linkedai/ad_candidates.json`) and searches TikTok/Instagram examples (links kept only if Google loaded them or TikTok oEmbed confirms them). Mon/Wed/Fri 9:12 AM the Promo Director puts it together in one call: 2 promo videos in his content-scripts/VoicePrint format, each modeled on a real video (his or theirs, real link), with screen-recording shots. Shown on the LinkedAI floor's Promo lab tab.
 - **LinkedAI Cheap Growth** (`agents/gemini/cheap_growth.py`): researches $0-50 install channels in 9 small chunks (1 Gemini search call an hour, Sat+Sun 3:11-11:11 AM, topics under 5 days old skipped, saved in `~/research/cheap-growth/` on the server), then Sun 12:41 PM one call ranks them into a weekly plan (top 3, steps, ready posts, $50 budget tracker, Chrome Web Store user count) on the LinkedAI floor's Cheap Growth tab. Omar records what he tried there. Never posts or spends.
 - **AI Opportunities** weekly Wed: money ideas with build prompts + 100-person simulated test.
 - **R&D Lab** every 3 days: SYSTEM upgrades + per-business upgrades (see rnd-lab.md).
@@ -58,7 +59,7 @@ Already built, never pitch these as new:
 - Profile optimization suggestions; human-sounding writing rules (no AI-tell phrases, no em dashes).
 - Google-only sign-in, Firestore credits per user, free plan + Pro monthly/yearly (yearly 20% off, credits delivered monthly), Stripe live checkout, backend on Render, site on Firebase (linkedai-ff45f).
 - **LinkedAI Post Writer** app for ChatGPT (posts from notes, rewrite in his voice, hooks) on Cloudflare Workers, under OpenAI review.
-- Marketing: short TikTok promos (creator-style, never "I built this"), UGC creators (flat fee per post + 1-year affiliate link), and the weekly Cheap Growth plan (store SEO/reviews, Reddit/communities, launch sites, newsletters, students, LinkedIn, micro-creators, small ad tests, affiliates). Don't re-pitch those channels as new; build on the plan's results.
+- Marketing: short TikTok promos (creator-style, never "I built this") from the Promo Studio (6 a week, each modeled on a real video), UGC creators (flat fee per post + 1-year affiliate link), and the weekly Cheap Growth plan (store SEO/reviews, Reddit/communities, launch sites, newsletters, students, LinkedIn, micro-creators, small ad tests, affiliates). Don't re-pitch those channels as new; build on the plan's results.
 Real upgrade areas: getting installs and paid conversions (store listing, reviews, onboarding, retention, referral), reliability when LinkedIn changes its layout, new features that are NOT in the list above, and better promo content.
 
 ## FIGHT & COURT

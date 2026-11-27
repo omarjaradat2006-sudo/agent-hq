@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 # Runs one Gemini team (or "all") on the Oracle server and saves the result to Agent HQ.
-# Usage: run_team.sh <tiktok|youtube|linkedai|growth|upgrades|opps|lab|repos|chief|all>
+# Usage: run_team.sh <tiktok|youtube|linkedai|promo|growth|upgrades|opps|lab|repos|chief|all>
+# promo = LinkedAI Promo Studio build (puts the hourly research from run_promo.sh together into promo videos).
 # Keys live in ~/.agent-hq.env (chmod 600), never in git.
 set -u
 REPO=~/agent-hq
@@ -19,13 +20,18 @@ for TEAM in $LIST; do
   case "$TEAM" in growth|upgrades) echo "$TEAM is paused: skipped"; continue;; esac
   git fetch -q origin main && git reset -q --hard origin/main
   export AGENT_JOB="$TEAM"
-  if [ "$TEAM" = tiktok ]; then CMD="python3 agents/gemini/tiktok_team.py"; else CMD="python3 agents/gemini/team.py $TEAM"; fi
+  case "$TEAM" in
+    tiktok) CMD="python3 agents/gemini/tiktok_team.py";;
+    promo)  CMD="python3 agents/gemini/promo_studio.py build";;
+    *)      CMD="python3 agents/gemini/team.py $TEAM";;
+  esac
   # The YouTube team plans both channels' daily lineups: it uses its own key (own Google project) first, then the shared key.
   KEYS="$GEMINI_API_KEY"
   [ "$TEAM" = youtube ] && [ -n "${GEMINI_API_KEY_YOUTUBE:-}" ] && KEYS="$GEMINI_API_KEY_YOUTUBE $GEMINI_API_KEY"
+  [ "$TEAM" = promo ] && [ -n "${GEMINI_API_KEY_PROMO:-}" ] && KEYS="$GEMINI_API_KEY_PROMO $GEMINI_API_KEY"   # optional own key
   OK=no
   for K in $KEYS; do
-    [ "$K" != "$GEMINI_API_KEY" ] && echo "(using the YouTube team's own Gemini key)" || { [ "$KEYS" != "$GEMINI_API_KEY" ] && echo "(falling back to the shared Gemini key)"; }
+    [ "$K" != "$GEMINI_API_KEY" ] && echo "(using the team's own Gemini key)" || { [ "$KEYS" != "$GEMINI_API_KEY" ] && echo "(falling back to the shared Gemini key)"; }
     if GEMINI_API_KEY="$K" $CMD; then OK=yes; break; fi
   done
   if [ $OK = no ]; then echo "!! $TEAM failed"; FAILED="$FAILED $TEAM"; continue; fi
