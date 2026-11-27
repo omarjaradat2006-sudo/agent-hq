@@ -250,7 +250,11 @@ def collector_candidates():
 def english(t):
     """Omar's audience is English: skip titles that are mostly non-Latin script (saves a Gemini call per video)."""
     letters = [ch for ch in t or "" if ch.isalpha()]
-    return not letters or sum(ch.isascii() for ch in letters) / len(letters) >= 0.8
+    if letters and sum(ch.isascii() for ch in letters) / len(letters) < 0.8:
+        return False
+    return len(HINGLISH.findall(t or "")) < 2   # Hindi/Urdu written in English letters
+
+HINGLISH = re.compile(r"\b(hai|hain|nahi|nahin|mein|kya|aur|tha|thi|ek|ki|ka|ke|ko|se|ne|bhi|kaise|kyun|wala|wali|dil|zindagi|kismat|bana|di)\b", re.I)
 
 
 def query_topic(q):
