@@ -214,3 +214,12 @@ summary{cursor:pointer;color:var(--tc,var(--accent));font-size:13px;font-weight:
 .cal-ev.past{opacity:.45}
 .cal-now{position:absolute;left:0;right:0;height:2px;background:#ff5c7a;z-index:5}
 .cal-now::before{content:"";position:absolute;left:-5px;top:-4px;width:10px;height:10px;border-radius:50%;background:#ff5c7a}
+/* keep long pills (e.g. "Hours · Cost · First $") and cards inside the side panel instead of making it scroll sideways */
+.pill{max-width:100%;white-space:normal;line-height:1.4;flex-wrap:wrap}
+.panel .card,.panel .idea,.panel [class*="card"]{max-width:100%;box-sizing:border-box;overflow-wrap:anywhere}
+.panel .body,.panel-body,#panelBody{overflow-x:hidden}
+.card.grid,.panel-side .card{grid-template-columns:minmax(0,1fr)}
+.panel-side .card>*,.panel-side .row>*{min-width:0}
+.panel-side .row{flex-wrap:wrap}
+.panel-side .pill{width:auto}
+.panel-side .pill{border-radius:10px}
