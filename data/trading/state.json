@@ -1,34 +1,34 @@
 {
  "team": "trading",
  "plain": {
-  "line": "Down $7,267.58 since start · 40 trades · holding: XOM, CVX, HLAL, SPUS",
+  "line": "Down $7,009.67 since start · 40 trades · holding: HLAL, SPUS",
   "rulesMode": "ultra",
-  "top": "Down $7,267.58 since start (-7.27%) · just holding SPY would be -3.24%",
+  "top": "Down $7,009.67 since start (-7.01%) · just holding SPY would be -3.24%",
   "up": false,
   "holding": [
-   "XOM: 69 shares worth $11,136.60, up $81.77 (trailing stop: sells if it falls 3% from its high)",
-   "CVX: 107 shares worth $22,788.97, down $128.29 (trailing stop: sells if it falls 3% from its high)",
-   "HLAL: 271 shares worth $18,111.82, up $187.88 (sells at $95.69 or stops at $57.41)",
-   "SPUS: 320 shares worth $17,494.40, up $204.80 (sells at $81.00 or stops at $48.60)"
+   "HLAL: 271 shares worth $18,192.72, up $268.78 (sells at $95.69 or stops at $57.41)",
+   "SPUS: 320 shares worth $17,536.16, up $246.56 (sells at $81.00 or stops at $48.60)"
   ],
   "today": [
    "Bought XOM after the news: Escalating conflict in the Middle East, including drone attacks in Kuwait and tensions in the Strait of Hormuz, continues to threaten global energy supplies.",
    "Bought CVX after the news: Escalating conflict in the Middle East, including drone attacks in Kuwait and tensions in the Strait of Hormuz, continues to threaten global energy supplies.",
    "Bought HLAL after the news: Core holding: rides the whole (halal) market.",
    "Bought SPUS after the news: Core holding: rides the whole (halal) market.",
+   "Sold XOM (bad news: Crude prices retreat on a possible increase in OPEC crude output and reports tha): made $18.29.",
+   "Sold CVX (bad news: Crude prices retreat on a possible increase in OPEC crude output and reports tha): lost $170.13.",
    "Sold SPWO (bad news: The US administration has initiated a second round of Section 301 tariffs, impac): made $214.71.",
-   "Scanned the news 82 times today: read 4137 headlines, found 137 that could move a stock or coin it's allowed to trade.",
+   "Scanned the news 91 times today: read 4520 headlines, found 144 that could move a stock or coin it's allowed to trade.",
    "Passed on CVX, XOM: already holding it.",
    "Passed on AVAV, COP, CVX, DVN, NEM: order failed: not enough cash for one share.",
    "Passed on LINK/USD, REGN: already $69,427 invested (max 75% of $92,627).",
    "Passed on REGN: already $69,311 invested (max 75% of $92,511).",
-   "Safety rules that stepped in: cash only no margin (x27), bad news exit (x1), stock entry window (x76), one position per asset (x64), max invested (x28)."
+   "Safety rules that stepped in: cash only no margin (x27), bad news exit (x3), stock entry window (x76), one position per asset (x64), max invested (x33)."
   ],
   "watchlist": "Allowed to trade: 68 halal stocks, 5 Shariah ETFs, 9 coins.",
-  "lastScan": "2026-11-27T19:02:10Z"
+  "lastScan": "2026-11-27T21:18:16Z"
  },
  "hired": true,
- "updatedAt": "2026-11-27T19:02:15Z",
+ "updatedAt": "2026-11-27T21:18:22Z",
  "mode": "PAPER",
  "agents": [
   {
@@ -36,16 +36,16 @@
    "name": "News Scout",
    "role": "Reads X, Reddit and news feeds",
    "status": "working",
-   "doing": "Read 13 new headlines/posts, 0 market-moving stories",
-   "lastRun": "2026-11-27T19:02:13Z"
+   "doing": "Read 62 new headlines/posts, 0 market-moving stories",
+   "lastRun": "2026-11-27T21:18:21Z"
   },
   {
    "id": "analyst",
    "name": "News Analyst",
    "role": "Gemini: is it real, what moves, which way",
    "status": "ok",
-   "doing": "Bad news for SPWO: The US administration has initiated a second round of Section 301 tariffs, impacting Thailand and es",
-   "lastRun": "2026-11-27T09:07:41Z"
+   "doing": "Bad news for CVX: Crude prices retreat on a possible increase in OPEC crude output and reports that the U.S. pushed Ve",
+   "lastRun": "2026-11-27T20:32:59Z"
   },
   {
    "id": "confirm",
@@ -76,8 +76,8 @@
    "name": "Trader",
    "role": "Places paper orders on Alpaca",
    "status": "ok",
-   "doing": "Saved results to the Agent HQ dashboard",
-   "lastRun": "2026-11-27T17:00:23Z"
+   "doing": "Closed CVX: bad news: Crude prices retreat on a possible increase in OPEC crude output and reports tha, -0.74% ($-170.13)",
+   "lastRun": "2026-11-27T20:33:01Z"
   },
   {
    "id": "coins",
@@ -97,6 +97,76 @@
   }
  ],
  "log": [
+  {
+   "t": "2026-11-27T21:18:21Z",
+   "agent": "News Scout",
+   "msg": "Read 62 new headlines/posts, 0 market-moving stories"
+  },
+  {
+   "t": "2026-11-27T21:03:14Z",
+   "agent": "News Scout",
+   "msg": "Read 37 new headlines/posts, 0 market-moving stories"
+  },
+  {
+   "t": "2026-11-27T20:48:08Z",
+   "agent": "News Scout",
+   "msg": "Read 38 new headlines/posts, 1 market-moving stories"
+  },
+  {
+   "t": "2026-11-27T20:33:01Z",
+   "agent": "Trader",
+   "msg": "Closed CVX: bad news: Crude prices retreat on a possible increase in OPEC crude output and reports tha, -0.74% ($-170.13)"
+  },
+  {
+   "t": "2026-11-27T20:32:59Z",
+   "agent": "News Analyst",
+   "msg": "Bad news for CVX: Crude prices retreat on a possible increase in OPEC crude output and reports that the U.S. pushed Ve"
+  },
+  {
+   "t": "2026-11-27T20:32:59Z",
+   "agent": "Trader",
+   "msg": "Closed XOM: bad news: Crude prices retreat on a possible increase in OPEC crude output and reports tha, +0.17% ($+18.29)"
+  },
+  {
+   "t": "2026-11-27T20:32:56Z",
+   "agent": "News Analyst",
+   "msg": "Bad news for XOM: Crude prices retreat on a possible increase in OPEC crude output and reports that the U.S. pushed Ve"
+  },
+  {
+   "t": "2026-11-27T20:32:56Z",
+   "agent": "News Scout",
+   "msg": "Read 40 new headlines/posts, 1 market-moving stories"
+  },
+  {
+   "t": "2026-11-27T20:17:49Z",
+   "agent": "News Scout",
+   "msg": "Read 44 new headlines/posts, 1 market-moving stories"
+  },
+  {
+   "t": "2026-11-27T20:02:42Z",
+   "agent": "News Scout",
+   "msg": "Read 33 new headlines/posts, 1 market-moving stories"
+  },
+  {
+   "t": "2026-11-27T19:47:35Z",
+   "agent": "News Scout",
+   "msg": "Read 45 new headlines/posts, 1 market-moving stories"
+  },
+  {
+   "t": "2026-11-27T19:32:28Z",
+   "agent": "News Scout",
+   "msg": "Read 60 new headlines/posts, 1 market-moving stories"
+  },
+  {
+   "t": "2026-11-27T19:17:20Z",
+   "agent": "News Scout",
+   "msg": "Read 24 new headlines/posts, 1 market-moving stories"
+  },
+  {
+   "t": "2026-11-27T19:02:16Z",
+   "agent": "Trader",
+   "msg": "Saved results to the Agent HQ dashboard"
+  },
   {
    "t": "2026-11-27T19:02:13Z",
    "agent": "News Scout",
@@ -776,98 +846,28 @@
    "t": "2026-11-27T06:34:46Z",
    "agent": "News Scout",
    "msg": "Read 54 new headlines/posts, 1 market-moving stories"
-  },
-  {
-   "t": "2026-11-27T06:19:39Z",
-   "agent": "Trader",
-   "msg": "sell SPWO failed: HTTP 403 https://paper-api.alpaca.markets/v2/positions/SPWO: {\"available\":\"0\",\"code\":40310000,\"existing_qty\":\"421\",\"held_for_orders\":\"421\",\"message\":\"insufficient qty available for order (requested: 421, available: 0)\",\"symbol\":\"SPWO\"}"
-  },
-  {
-   "t": "2026-11-27T06:19:39Z",
-   "agent": "News Analyst",
-   "msg": "Bad news for SPWO: Expanding US tariff plans targeting major trading partners heighten global trade war risks and weigh"
-  },
-  {
-   "t": "2026-11-27T06:19:39Z",
-   "agent": "News Scout",
-   "msg": "Read 64 new headlines/posts, 1 market-moving stories"
-  },
-  {
-   "t": "2026-11-27T06:04:32Z",
-   "agent": "Trader",
-   "msg": "sell SPWO failed: HTTP 403 https://paper-api.alpaca.markets/v2/positions/SPWO: {\"available\":\"0\",\"code\":40310000,\"existing_qty\":\"421\",\"held_for_orders\":\"421\",\"message\":\"insufficient qty available for order (requested: 421, available: 0)\",\"symbol\":\"SPWO\"}"
-  },
-  {
-   "t": "2026-11-27T06:04:32Z",
-   "agent": "News Analyst",
-   "msg": "Bad news for SPWO: Expanding US tariff plans targeting major trading partners heighten global trade war risks and weigh"
-  },
-  {
-   "t": "2026-11-27T06:04:32Z",
-   "agent": "News Scout",
-   "msg": "Read 64 new headlines/posts, 1 market-moving stories"
-  },
-  {
-   "t": "2026-11-27T05:49:25Z",
-   "agent": "Trader",
-   "msg": "sell SPWO failed: HTTP 403 https://paper-api.alpaca.markets/v2/positions/SPWO: {\"available\":\"0\",\"code\":40310000,\"existing_qty\":\"421\",\"held_for_orders\":\"421\",\"message\":\"insufficient qty available for order (requested: 421, available: 0)\",\"symbol\":\"SPWO\"}"
-  },
-  {
-   "t": "2026-11-27T05:49:24Z",
-   "agent": "News Analyst",
-   "msg": "Bad news for SPWO: Expanding US tariff plans targeting major trading partners heighten global trade war risks and weigh"
-  },
-  {
-   "t": "2026-11-27T05:49:24Z",
-   "agent": "News Scout",
-   "msg": "Read 54 new headlines/posts, 1 market-moving stories"
-  },
-  {
-   "t": "2026-11-27T05:34:17Z",
-   "agent": "Trader",
-   "msg": "sell SPWO failed: HTTP 403 https://paper-api.alpaca.markets/v2/positions/SPWO: {\"available\":\"0\",\"code\":40310000,\"existing_qty\":\"421\",\"held_for_orders\":\"421\",\"message\":\"insufficient qty available for order (requested: 421, available: 0)\",\"symbol\":\"SPWO\"}"
-  },
-  {
-   "t": "2026-11-27T05:34:17Z",
-   "agent": "News Analyst",
-   "msg": "Bad news for SPWO: Expanding US tariff plans targeting major trading partners heighten global trade war risks and weigh"
-  },
-  {
-   "t": "2026-11-27T05:34:17Z",
-   "agent": "News Scout",
-   "msg": "Read 60 new headlines/posts, 3 market-moving stories"
-  },
-  {
-   "t": "2026-11-27T05:19:05Z",
-   "agent": "Trader",
-   "msg": "sell SPWO failed: HTTP 403 https://paper-api.alpaca.markets/v2/positions/SPWO: {\"available\":\"0\",\"code\":40310000,\"existing_qty\":\"421\",\"held_for_orders\":\"421\",\"message\":\"insufficient qty available for order (requested: 421, available: 0)\",\"symbol\":\"SPWO\"}"
-  },
-  {
-   "t": "2026-11-27T05:19:05Z",
-   "agent": "News Analyst",
-   "msg": "Bad news for SPWO: Expanding US tariff plans targeting major trading partners heighten global trade war risks and weigh"
   }
  ],
  "brief": {
   "date": "Fri Nov 27",
-  "createdAt": "2026-11-27T19:02:15Z",
-  "headline": "Paper account +$451 today (+0.49%), -7.27% total vs SPY -3.24% · 4 open",
-  "summary": "1 trade(s) closed today, 10/36 winners overall. TradingAgents checks used today: 0/5.",
+  "createdAt": "2026-11-27T21:18:22Z",
+  "headline": "Paper account +$709 today (+0.77%), -7.01% total vs SPY -3.24% · 2 open",
+  "summary": "3 trade(s) closed today, 11/38 winners overall. TradingAgents checks used today: 0/5.",
   "notes": [
    "X/Reddit reader: r/wallstreetbets: HTTP 403 https://www.reddit.com/r/wallstreetbets/new.json: <body class=theme-bet"
   ]
  },
  "account": {
-  "equity": 92732.42,
+  "equity": 92990.33,
   "cash": 23200.63,
   "startEquity": 100000.0,
   "startedAt": "2026-11-10T01:51:53Z",
-  "dayPnl": 450.68,
-  "dayPct": 0.49,
-  "totalPnl": -7267.58,
-  "totalPct": -7.27,
+  "dayPnl": 708.59,
+  "dayPct": 0.77,
+  "totalPnl": -7009.67,
+  "totalPct": -7.01,
   "spyPct": -3.24,
-  "vsSpyPct": -4.03
+  "vsSpyPct": -3.77
  },
  "status": {
   "killed": false,
@@ -875,7 +875,7 @@
   "deepUsed": 0,
   "deepMax": 5,
   "social": {
-   "at": "2026-11-27T19:02:12Z",
+   "at": "2026-11-27T21:18:19Z",
    "items": 0,
    "source": "Reddit via Tradestie + ApeWisdom (direct Reddit blocks servers; X needs Agent Reach)",
    "problems": [
@@ -883,13 +883,13 @@
     "r/stocks: HTTP 403 https://www.reddit.com/r/stocks/new.json: <body class=theme-beta><div><"
    ],
    "wsb": {
-    "at": "2026-11-27T19:02:12Z",
+    "at": "2026-11-27T21:18:19Z",
     "tickers": 50,
     "items": 0,
     "key": false
    },
    "ape": {
-    "at": "2026-11-27T19:02:12Z",
+    "at": "2026-11-27T21:18:20Z",
     "tickers": 200,
     "items": 0,
     "problems": []
@@ -902,112 +902,6 @@
   "alert": null
  },
  "positions": [
-  {
-   "id": "ahq-XOM-20261127144557",
-   "symbol": "XOM",
-   "asset": "stock",
-   "status": "open",
-   "entryOrderId": "7ff3e737-c845-450a-87d7-87b93c3ee5fc",
-   "qty": 69,
-   "cost": 11055.87,
-   "estPrice": 160.23,
-   "entryPrice": 160.214928,
-   "stop": 155.42,
-   "target": null,
-   "openedAt": "2026-11-27T14:45:57Z",
-   "trail": 3.0,
-   "news": {
-    "summary": "Escalating conflict in the Middle East, including drone attacks in Kuwait and tensions in the Strait of Hormuz, continues to threaten global energy supplies.",
-    "category": "war_escalation",
-    "sources": [
-     {
-      "publisher": "TV ONE USA",
-      "title": "uae-strongly-condemns-iranian-drone-attack-on-kuwait Archives",
-      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxOOE5pcXlLRnV4T2tWeTJqTUxKaDRpdlF2ZVpISVlCb3ZfdF9aMG5WU0dfYmktTFpXczZFYkVfVG1qbGlHcXdPTnJSQ1NWRUZWWWJ2WHhVaWRjWVljTnR5WmJzbGFucHpxTGtLbC1kX2o5OUFJZnBJS1FEMFVQel9aYkRQSm0?oc=5"
-     },
-     {
-      "publisher": "الإذاعة الجزائرية |",
-      "title": "Algeria Condemns \"In the Strongest Terms\" the Attack Targeting One of the Vital sites in Kuwait",
-      "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFAyeUpndmVuWHJ4VE5KS0MzNzVWdWVOd3c5YlF3cWZGTzdoU01sck40N21QRjBjMmRsS3BZNkl1MlVEc0x1cjdVeVpsY3RMa044R2h4bU1R?oc=5"
-     },
-     {
-      "publisher": "Denver Gazette",
-      "title": "Two Italians killed in attack on Kuwait site; Iran denies involvement",
-      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPcjVSNXl5TTd0X2laeDZsZ2tha2YwVFFUcXBlVmxJN0k4SnhCZlF3VmIxUGt5cElMUWZfdVhwdDNUamVTV1NpcmFwdl9LM3dTaG43MjQxQUJ6TUVMNXcwZjMwanQ0WFZ3SFRMR3ZZeG1XX0pXNG1PckRsMXBJRURsc0EzaUdlNHpHaVNNY3FBVjRHSFd5WXpOMXY4TnJUOWFPOWVlZjFwYlFpVzNrTUxn?oc=5"
-     }
-    ]
-   },
-   "reason": {
-    "triage": "Geopolitical instability in the Middle East threatens oil supply, supporting energy stocks.",
-    "confidence": 0.7,
-    "confirmation": "volume 0.7x normal, price -0.11% since the news",
-    "rvol": 0.7,
-    "movePct": -0.11,
-    "publishers": [
-     "Denver Gazette",
-     "TV ONE USA",
-     "الإذاعة الجزائرية |"
-    ],
-    "tradingAgents": "not used (ultra mode)",
-    "taSummary": ""
-   },
-   "stopOrderId": "7f527ca0-ac8d-49f4-b790-6d02edecae1d",
-   "lastPrice": 161.4,
-   "unrealizedPct": 0.74
-  },
-  {
-   "id": "ahq-CVX-20261127144557",
-   "symbol": "CVX",
-   "asset": "stock",
-   "status": "open",
-   "entryOrderId": "7bf31bd3-815e-46eb-8134-0894371f247d",
-   "qty": 107,
-   "cost": 22911.91,
-   "estPrice": 214.13,
-   "entryPrice": 214.18,
-   "stop": 207.71,
-   "target": null,
-   "openedAt": "2026-11-27T14:45:57Z",
-   "trail": 3.0,
-   "news": {
-    "summary": "Escalating conflict in the Middle East, including drone attacks in Kuwait and tensions in the Strait of Hormuz, continues to threaten global energy supplies.",
-    "category": "war_escalation",
-    "sources": [
-     {
-      "publisher": "TV ONE USA",
-      "title": "uae-strongly-condemns-iranian-drone-attack-on-kuwait Archives",
-      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxOOE5pcXlLRnV4T2tWeTJqTUxKaDRpdlF2ZVpISVlCb3ZfdF9aMG5WU0dfYmktTFpXczZFYkVfVG1qbGlHcXdPTnJSQ1NWRUZWWWJ2WHhVaWRjWVljTnR5WmJzbGFucHpxTGtLbC1kX2o5OUFJZnBJS1FEMFVQel9aYkRQSm0?oc=5"
-     },
-     {
-      "publisher": "الإذاعة الجزائرية |",
-      "title": "Algeria Condemns \"In the Strongest Terms\" the Attack Targeting One of the Vital sites in Kuwait",
-      "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFAyeUpndmVuWHJ4VE5KS0MzNzVWdWVOd3c5YlF3cWZGTzdoU01sck40N21QRjBjMmRsS3BZNkl1MlVEc0x1cjdVeVpsY3RMa044R2h4bU1R?oc=5"
-     },
-     {
-      "publisher": "Denver Gazette",
-      "title": "Two Italians killed in attack on Kuwait site; Iran denies involvement",
-      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPcjVSNXl5TTd0X2laeDZsZ2tha2YwVFFUcXBlVmxJN0k4SnhCZlF3VmIxUGt5cElMUWZfdVhwdDNUamVTV1NpcmFwdl9LM3dTaG43MjQxQUJ6TUVMNXcwZjMwanQ0WFZ3SFRMR3ZZeG1XX0pXNG1PckRsMXBJRURsc0EzaUdlNHpHaVNNY3FBVjRHSFd5WXpOMXY4TnJUOWFPOWVlZjFwYlFpVzNrTUxn?oc=5"
-     }
-    ]
-   },
-   "reason": {
-    "triage": "Geopolitical instability in the Middle East threatens oil supply, supporting energy stocks.",
-    "confidence": 0.7,
-    "confirmation": "volume 0.8x normal, price +0.13% since the news",
-    "rvol": 0.82,
-    "movePct": 0.13,
-    "publishers": [
-     "Denver Gazette",
-     "TV ONE USA",
-     "الإذاعة الجزائرية |"
-    ],
-    "tradingAgents": "not used (ultra mode)",
-    "taSummary": ""
-   },
-   "stopOrderId": "af62078d-348b-4678-8309-112c999e5e49",
-   "lastPrice": 212.981,
-   "unrealizedPct": -0.56
-  },
   {
    "id": "ahq-core-HLAL-20261127144029",
    "symbol": "HLAL",
@@ -1034,8 +928,8 @@
     "publishers": [],
     "tradingAgents": "not used (core)"
    },
-   "lastPrice": 66.8333,
-   "unrealizedPct": 1.05
+   "lastPrice": 67.1318,
+   "unrealizedPct": 1.5
   },
   {
    "id": "ahq-core-SPUS-20261127144029",
@@ -1063,8 +957,8 @@
     "publishers": [],
     "tradingAgents": "not used (core)"
    },
-   "lastPrice": 54.67,
-   "unrealizedPct": 1.19
+   "lastPrice": 54.8005,
+   "unrealizedPct": 1.43
   }
  ],
  "charts": {
@@ -1528,31 +1422,139 @@
     ],
     [
      "2026-11-27T18:30:00Z",
-     92835.98
+     92898.8
     ],
     [
      "2026-11-27T18:35:00Z",
-     92839.43
+     92902.25
     ],
     [
      "2026-11-27T18:40:00Z",
-     92836.26
+     92899.08
     ],
     [
      "2026-11-27T18:45:00Z",
-     92770.45
+     92833.27
     ],
     [
      "2026-11-27T18:50:00Z",
-     92850.04
+     92912.86
     ],
     [
      "2026-11-27T18:55:00Z",
-     92850.05
+     92912.87
     ],
     [
      "2026-11-27T19:00:00Z",
-     92860.41
+     92923.23
+    ],
+    [
+     "2026-11-27T19:05:00Z",
+     92874.17
+    ],
+    [
+     "2026-11-27T19:10:00Z",
+     92874.82
+    ],
+    [
+     "2026-11-27T19:15:00Z",
+     92935.72
+    ],
+    [
+     "2026-11-27T19:20:00Z",
+     92932.78
+    ],
+    [
+     "2026-11-27T19:25:00Z",
+     92954.17
+    ],
+    [
+     "2026-11-27T19:30:00Z",
+     92959.01
+    ],
+    [
+     "2026-11-27T19:35:00Z",
+     92967.98
+    ],
+    [
+     "2026-11-27T19:40:00Z",
+     92961.8
+    ],
+    [
+     "2026-11-27T19:45:00Z",
+     92961.79
+    ],
+    [
+     "2026-11-27T19:50:00Z",
+     92954.17
+    ],
+    [
+     "2026-11-27T19:55:00Z",
+     92934.82
+    ],
+    [
+     "2026-11-27T20:00:00Z",
+     92934.83
+    ],
+    [
+     "2026-11-27T20:05:00Z",
+     92969.45
+    ],
+    [
+     "2026-11-27T20:10:00Z",
+     92969.43
+    ],
+    [
+     "2026-11-27T20:15:00Z",
+     92979.75
+    ],
+    [
+     "2026-11-27T20:20:00Z",
+     92983.21
+    ],
+    [
+     "2026-11-27T20:25:00Z",
+     92983.2
+    ],
+    [
+     "2026-11-27T20:30:00Z",
+     92988.73
+    ],
+    [
+     "2026-11-27T20:35:00Z",
+     92994.26
+    ],
+    [
+     "2026-11-27T20:40:00Z",
+     93066.99
+    ],
+    [
+     "2026-11-27T20:45:00Z",
+     93069.79
+    ],
+    [
+     "2026-11-27T20:50:00Z",
+     92980.74
+    ],
+    [
+     "2026-11-27T20:55:00Z",
+     93009.69
+    ],
+    [
+     "2026-11-27T21:00:00Z",
+     93009.7
+    ],
+    [
+     "2026-11-27T21:05:00Z",
+     93040.06
+    ],
+    [
+     "2026-11-27T21:10:00Z",
+     93040.07
+    ],
+    [
+     "2026-11-27T21:15:00Z",
+     92871.54
     ]
    ],
    "1W": [
@@ -2754,427 +2756,53 @@
     ],
     [
      "2026-11-27T18:45:00Z",
-     92772.48
+     92835.3
     ],
     [
      "2026-11-27T19:00:00Z",
-     92860.41
+     92923.23
+    ],
+    [
+     "2026-11-27T19:15:00Z",
+     92877.12
+    ],
+    [
+     "2026-11-27T19:30:00Z",
+     92937.61
+    ],
+    [
+     "2026-11-27T19:45:00Z",
+     92961.79
+    ],
+    [
+     "2026-11-27T20:00:00Z",
+     92934.83
+    ],
+    [
+     "2026-11-27T20:15:00Z",
+     92979.75
+    ],
+    [
+     "2026-11-27T20:30:00Z",
+     92988.73
+    ],
+    [
+     "2026-11-27T20:45:00Z",
+     92997.03
+    ],
+    [
+     "2026-11-27T21:00:00Z",
+     92980.74
+    ],
+    [
+     "2026-11-27T21:15:00Z",
+     93035.25
     ]
    ]
   },
   "holdings": {
-   "XOM": {
-    "bars": [
-     [
-      "2026-11-24T19:15:00Z",
-      158.8
-     ],
-     [
-      "2026-11-24T19:30:00Z",
-      158.805
-     ],
-     [
-      "2026-11-24T19:45:00Z",
-      158.84
-     ],
-     [
-      "2026-11-24T20:00:00Z",
-      158.87
-     ],
-     [
-      "2026-11-24T20:15:00Z",
-      158.79
-     ],
-     [
-      "2026-11-24T20:30:00Z",
-      158.72
-     ],
-     [
-      "2026-11-24T20:45:00Z",
-      158.4
-     ],
-     [
-      "2026-11-24T21:00:00Z",
-      158.41
-     ],
-     [
-      "2026-11-25T14:30:00Z",
-      158.32
-     ],
-     [
-      "2026-11-25T14:45:00Z",
-      159.11
-     ],
-     [
-      "2026-11-25T15:00:00Z",
-      159.41
-     ],
-     [
-      "2026-11-25T15:15:00Z",
-      158.87
-     ],
-     [
-      "2026-11-25T15:30:00Z",
-      158.92
-     ],
-     [
-      "2026-11-25T15:45:00Z",
-      158.81
-     ],
-     [
-      "2026-11-25T16:00:00Z",
-      158.505
-     ],
-     [
-      "2026-11-25T16:15:00Z",
-      157.66
-     ],
-     [
-      "2026-11-25T16:30:00Z",
-      157.84
-     ],
-     [
-      "2026-11-25T16:45:00Z",
-      158.22
-     ],
-     [
-      "2026-11-25T17:00:00Z",
-      158.73
-     ],
-     [
-      "2026-11-25T17:15:00Z",
-      158.865
-     ],
-     [
-      "2026-11-25T17:30:00Z",
-      159.06
-     ],
-     [
-      "2026-11-25T17:45:00Z",
-      158.88
-     ],
-     [
-      "2026-11-25T18:00:00Z",
-      159.125
-     ],
-     [
-      "2026-11-25T18:15:00Z",
-      159.33
-     ],
-     [
-      "2026-11-25T18:30:00Z",
-      159.53
-     ],
-     [
-      "2026-11-25T18:45:00Z",
-      159.025
-     ],
-     [
-      "2026-11-25T19:00:00Z",
-      159.08
-     ],
-     [
-      "2026-11-25T19:15:00Z",
-      159.08
-     ],
-     [
-      "2026-11-25T19:30:00Z",
-      159.155
-     ],
-     [
-      "2026-11-25T19:45:00Z",
-      158.92
-     ],
-     [
-      "2026-11-25T20:00:00Z",
-      159.145
-     ],
-     [
-      "2026-11-25T20:15:00Z",
-      158.99
-     ],
-     [
-      "2026-11-25T20:30:00Z",
-      158.865
-     ],
-     [
-      "2026-11-25T20:45:00Z",
-      158.17
-     ],
-     [
-      "2026-11-27T14:30:00Z",
-      160.29
-     ],
-     [
-      "2026-11-27T14:45:00Z",
-      160.715
-     ],
-     [
-      "2026-11-27T15:00:00Z",
-      160.9
-     ],
-     [
-      "2026-11-27T15:15:00Z",
-      161.09
-     ],
-     [
-      "2026-11-27T15:30:00Z",
-      160.94
-     ],
-     [
-      "2026-11-27T15:45:00Z",
-      160.72
-     ],
-     [
-      "2026-11-27T16:00:00Z",
-      160.42
-     ],
-     [
-      "2026-11-27T16:15:00Z",
-      160.74
-     ],
-     [
-      "2026-11-27T16:30:00Z",
-      160.82
-     ],
-     [
-      "2026-11-27T16:45:00Z",
-      160.96
-     ],
-     [
-      "2026-11-27T17:00:00Z",
-      160.8
-     ],
-     [
-      "2026-11-27T17:15:00Z",
-      160.62
-     ],
-     [
-      "2026-11-27T17:30:00Z",
-      160.73
-     ],
-     [
-      "2026-11-27T17:45:00Z",
-      160.48
-     ]
-    ],
-    "entry": 160.214928,
-    "stop": 155.42,
-    "target": null,
-    "openedAt": "2026-11-27T14:45:57Z",
-    "qty": 69
-   },
-   "CVX": {
-    "bars": [
-     [
-      "2026-11-24T19:15:00Z",
-      209.87
-     ],
-     [
-      "2026-11-24T19:30:00Z",
-      209.94
-     ],
-     [
-      "2026-11-24T19:45:00Z",
-      209.84
-     ],
-     [
-      "2026-11-24T20:00:00Z",
-      209.63
-     ],
-     [
-      "2026-11-24T20:15:00Z",
-      209.49
-     ],
-     [
-      "2026-11-24T20:30:00Z",
-      209.14
-     ],
-     [
-      "2026-11-24T20:45:00Z",
-      208.74
-     ],
-     [
-      "2026-11-25T14:15:00Z",
-      208.27
-     ],
-     [
-      "2026-11-25T14:30:00Z",
-      209.64
-     ],
-     [
-      "2026-11-25T14:45:00Z",
-      210.71
-     ],
-     [
-      "2026-11-25T15:00:00Z",
-      211.41
-     ],
-     [
-      "2026-11-25T15:15:00Z",
-      210.765
-     ],
-     [
-      "2026-11-25T15:30:00Z",
-      210.22
-     ],
-     [
-      "2026-11-25T15:45:00Z",
-      210.145
-     ],
-     [
-      "2026-11-25T16:00:00Z",
-      209.725
-     ],
-     [
-      "2026-11-25T16:15:00Z",
-      208.9
-     ],
-     [
-      "2026-11-25T16:30:00Z",
-      209.47
-     ],
-     [
-      "2026-11-25T16:45:00Z",
-      210.06
-     ],
-     [
-      "2026-11-25T17:00:00Z",
-      210.33
-     ],
-     [
-      "2026-11-25T17:15:00Z",
-      211.11
-     ],
-     [
-      "2026-11-25T17:30:00Z",
-      211.47
-     ],
-     [
-      "2026-11-25T17:45:00Z",
-      211.39
-     ],
-     [
-      "2026-11-25T18:00:00Z",
-      211.37
-     ],
-     [
-      "2026-11-25T18:15:00Z",
-      211.48
-     ],
-     [
-      "2026-11-25T18:30:00Z",
-      211.63
-     ],
-     [
-      "2026-11-25T18:45:00Z",
-      211.03
-     ],
-     [
-      "2026-11-25T19:00:00Z",
-      211.2
-     ],
-     [
-      "2026-11-25T19:15:00Z",
-      211.38
-     ],
-     [
-      "2026-11-25T19:30:00Z",
-      211.47
-     ],
-     [
-      "2026-11-25T19:45:00Z",
-      211.5
-     ],
-     [
-      "2026-11-25T20:00:00Z",
-      211.41
-     ],
-     [
-      "2026-11-25T20:15:00Z",
-      211.28
-     ],
-     [
-      "2026-11-25T20:30:00Z",
-      211.37
-     ],
-     [
-      "2026-11-25T20:45:00Z",
-      210.99
-     ],
-     [
-      "2026-11-27T14:30:00Z",
-      214.41
-     ],
-     [
-      "2026-11-27T14:45:00Z",
-      214.355
-     ],
-     [
-      "2026-11-27T15:00:00Z",
-      214.68
-     ],
-     [
-      "2026-11-27T15:15:00Z",
-      214.67
-     ],
-     [
-      "2026-11-27T15:30:00Z",
-      214.34
-     ],
-     [
-      "2026-11-27T15:45:00Z",
-      214.02
-     ],
-     [
-      "2026-11-27T16:00:00Z",
-      213.58
-     ],
-     [
-      "2026-11-27T16:15:00Z",
-      213.87
-     ],
-     [
-      "2026-11-27T16:30:00Z",
-      213.62
-     ],
-     [
-      "2026-11-27T16:45:00Z",
-      213.87
-     ],
-     [
-      "2026-11-27T17:00:00Z",
-      213.59
-     ],
-     [
-      "2026-11-27T17:15:00Z",
-      213.37
-     ],
-     [
-      "2026-11-27T17:30:00Z",
-      213.26
-     ],
-     [
-      "2026-11-27T17:45:00Z",
-      212.585
-     ],
-     [
-      "2026-11-27T18:00:00Z",
-      212.59
-     ]
-    ],
-    "entry": 214.18,
-    "stop": 207.71,
-    "target": null,
-    "openedAt": "2026-11-27T14:45:57Z",
-    "qty": 107
-   },
    "HLAL": {
     "bars": [
-     [
-      "2026-11-24T20:45:00Z",
-      65.95
-     ],
      [
       "2026-11-25T15:30:00Z",
       63.79
@@ -3188,26 +2816,6 @@
    },
    "SPUS": {
     "bars": [
-     [
-      "2026-11-24T19:45:00Z",
-      53.89
-     ],
-     [
-      "2026-11-24T20:00:00Z",
-      53.96
-     ],
-     [
-      "2026-11-24T20:15:00Z",
-      53.91
-     ],
-     [
-      "2026-11-24T20:30:00Z",
-      53.93
-     ],
-     [
-      "2026-11-24T20:45:00Z",
-      54.13
-     ],
      [
       "2026-11-25T14:30:00Z",
       52.17
@@ -3676,7 +3284,7 @@
   "backtest": null
  },
  "lab": {
-  "updatedAt": "2026-11-27T18:50:58Z",
+  "updatedAt": "2026-11-27T20:50:58Z",
   "startedAt": "2026-11-25T21:57:13Z",
   "endsAt": "2026-12-02T21:57:13Z",
   "done": false,
@@ -5128,7 +4736,7 @@
    "id": "ahq-XOM-20261127144557",
    "symbol": "XOM",
    "asset": "stock",
-   "status": "open",
+   "status": "closed",
    "entryOrderId": "7ff3e737-c845-450a-87d7-87b93c3ee5fc",
    "qty": 69,
    "cost": 11055.87,
@@ -5174,14 +4782,20 @@
     "taSummary": ""
    },
    "stopOrderId": "7f527ca0-ac8d-49f4-b790-6d02edecae1d",
-   "lastPrice": 161.4,
-   "unrealizedPct": 0.74
+   "lastPrice": 160.18,
+   "unrealizedPct": -0.02,
+   "closing": "bad news: Crude prices retreat on a possible increase in OPEC crude output and reports tha",
+   "closedAt": "2026-11-27T20:32:59Z",
+   "exitPrice": 160.48,
+   "exitReason": "bad news: Crude prices retreat on a possible increase in OPEC crude output and reports tha",
+   "pnl": 18.29,
+   "pnlPct": 0.17
   },
   {
    "id": "ahq-CVX-20261127144557",
    "symbol": "CVX",
    "asset": "stock",
-   "status": "open",
+   "status": "closed",
    "entryOrderId": "7bf31bd3-815e-46eb-8134-0894371f247d",
    "qty": 107,
    "cost": 22911.91,
@@ -5227,8 +4841,14 @@
     "taSummary": ""
    },
    "stopOrderId": "af62078d-348b-4678-8309-112c999e5e49",
-   "lastPrice": 212.981,
-   "unrealizedPct": -0.56
+   "lastPrice": 213.3,
+   "unrealizedPct": -0.41,
+   "closing": "bad news: Crude prices retreat on a possible increase in OPEC crude output and reports tha",
+   "closedAt": "2026-11-27T20:33:01Z",
+   "exitPrice": 212.59,
+   "exitReason": "bad news: Crude prices retreat on a possible increase in OPEC crude output and reports tha",
+   "pnl": -170.13,
+   "pnlPct": -0.74
   },
   {
    "id": "ahq-core-HLAL-20261127144029",
@@ -5256,8 +4876,8 @@
     "publishers": [],
     "tradingAgents": "not used (core)"
    },
-   "lastPrice": 66.8333,
-   "unrealizedPct": 1.05
+   "lastPrice": 67.1318,
+   "unrealizedPct": 1.5
   },
   {
    "id": "ahq-core-SPUS-20261127144029",
@@ -5285,8 +4905,8 @@
     "publishers": [],
     "tradingAgents": "not used (core)"
    },
-   "lastPrice": 54.67,
-   "unrealizedPct": 1.19
+   "lastPrice": 54.8005,
+   "unrealizedPct": 1.43
   },
   {
    "id": "ahq-BTCUSD-20261126091425",
@@ -7300,6 +6920,41 @@
  ],
  "decisions": [
   {
+   "t": "2026-11-27T20:17:50Z",
+   "symbol": "LINK/USD",
+   "outcome": "waiting",
+   "why": "already $69,551 invested (max 75% of $92,752)",
+   "event": "Chainlink gains attention with strong institutional backing and positive market outlook reports."
+  },
+  {
+   "t": "2026-11-27T20:02:43Z",
+   "symbol": "LINK/USD",
+   "outcome": "waiting",
+   "why": "already $69,522 invested (max 75% of $92,723)",
+   "event": "Chainlink gains attention with strong institutional backing and positive market outlook reports."
+  },
+  {
+   "t": "2026-11-27T19:47:36Z",
+   "symbol": "LINK/USD",
+   "outcome": "waiting",
+   "why": "already $69,501 invested (max 75% of $92,702)",
+   "event": "Chainlink gains attention with strong institutional backing and positive market outlook reports."
+  },
+  {
+   "t": "2026-11-27T19:32:29Z",
+   "symbol": "LINK/USD",
+   "outcome": "waiting",
+   "why": "already $69,498 invested (max 75% of $92,699)",
+   "event": "Chainlink gains attention with strong institutional backing and positive market outlook reports."
+  },
+  {
+   "t": "2026-11-27T19:17:21Z",
+   "symbol": "LINK/USD",
+   "outcome": "waiting",
+   "why": "already $69,496 invested (max 75% of $92,697)",
+   "event": "Chainlink gains attention with strong institutional backing and positive market outlook reports."
+  },
+  {
    "t": "2026-11-27T19:02:13Z",
    "symbol": "LINK/USD",
    "outcome": "waiting",
@@ -7683,64 +7338,9 @@
    "outcome": "waiting",
    "why": "already holding it",
    "event": "Ongoing Middle East conflict and attacks on energy infrastructure continue to heighten regional energy supply disruption risks."
-  },
-  {
-   "t": "2026-11-27T16:11:45Z",
-   "symbol": "XOM",
-   "outcome": "waiting",
-   "why": "already holding it",
-   "event": "Ongoing Middle East conflict and attacks on energy infrastructure continue to heighten regional energy supply disruption risks."
-  },
-  {
-   "t": "2026-11-27T16:11:45Z",
-   "symbol": "REGN",
-   "outcome": "waiting",
-   "why": "already $69,311 invested (max 75% of $92,511)",
-   "event": "Regeneron Pharmaceuticals receives UK regulatory approval for its drug Linvoseltamab."
-  },
-  {
-   "t": "2026-11-27T16:11:45Z",
-   "symbol": "CVX",
-   "outcome": "waiting",
-   "why": "already holding it",
-   "event": "Ongoing Middle East conflict and attacks on energy infrastructure continue to heighten regional energy supply disruption risks."
-  },
-  {
-   "t": "2026-11-27T16:06:40Z",
-   "symbol": "XOM",
-   "outcome": "waiting",
-   "why": "already holding it",
-   "event": "Ongoing Middle East conflict and attacks on energy infrastructure continue to heighten regional energy supply disruption risks."
-  },
-  {
-   "t": "2026-11-27T16:06:40Z",
-   "symbol": "REGN",
-   "outcome": "waiting",
-   "why": "already $69,336 invested (max 75% of $92,537)",
-   "event": "Regeneron Pharmaceuticals receives UK regulatory approval for its drug Linvoseltamab."
   }
  ],
  "equity": [
-  {
-   "t": "2026-11-19T02:58:04Z",
-   "equity": 100228.87,
-   "spy": 731.12
-  },
-  {
-   "t": "2026-11-19T03:28:19Z",
-   "equity": 100129.89,
-   "spy": 731.12
-  },
-  {
-   "t": "2026-11-19T03:58:35Z",
-   "equity": 100248.99,
-   "spy": 731.12
-  },
-  {
-   "t": "2026-11-19T04:28:50Z",
-   "equity": 100323.86,
-   "spy": 731.12
-  },
   {
    "t": "2026-11-19T05:12:04Z",
    "equity": 100279.32,
@@ -9720,6 +9320,26 @@
    "t": "2026-11-27T19:02:14Z",
    "equity": 92732.42,
    "spy": 728.35
+  },
+  {
+   "t": "2026-11-27T19:32:29Z",
+   "equity": 92698.88,
+   "spy": 728.35
+  },
+  {
+   "t": "2026-11-27T20:02:43Z",
+   "equity": 92722.63,
+   "spy": 728.35
+  },
+  {
+   "t": "2026-11-27T20:33:01Z",
+   "equity": 92669.57,
+   "spy": 728.35
+  },
+  {
+   "t": "2026-11-27T21:03:15Z",
+   "equity": 92800.35,
+   "spy": 728.35
   }
  ],
  "watch": [],
@@ -9731,7 +9351,180 @@
  },
  "events": [
   {
-   "summary": "Attacks on tankers and the Saudi Aramco refinery keep regional energy supplies threatened and push oil prices higher.",
+   "summary": "Bitcoin prices fall as significant liquidations hit ahead of a massive options expiry.",
+   "category": "crypto_negative",
+   "firstSeen": "2026-11-27T16:10:00Z",
+   "publishers": [
+    "Altcoin Buzz",
+    "Benzinga",
+    "Bitcoin News",
+    "Yahoo Finance"
+   ],
+   "assets": {
+    "BTC/USD": {
+     "direction": "down",
+     "confidence": 0.75,
+     "why": "Heavy liquidations and large options expiry pressure Bitcoin downward."
+    },
+    "ETH/USD": {
+     "direction": "down",
+     "confidence": 0.8,
+     "why": "Ethereum ETFs experience massive outflows and price drops below key support."
+    }
+   },
+   "sources": [
+    {
+     "id": "9e86075af65bf1e7",
+     "publisher": "Yahoo Finance",
+     "kind": "news",
+     "title": "Another $453 million exits bitcoin ETFs as November outflows stack up",
+     "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNVS1nSFFuU2g1dS1TcHFoc2M2TldHbDUwR0xjWjRDU3RCSlpiWEpSSEJPb2Z4S1Y5RGVfNUFKMTg4QmUxTy1ENmhITEtUZmpnbVF6RkxqQnRnbXRPQ21qalBFUklGMkxpdDhldjRDRzBPb0cwQ0ZDYzQ0VDdnU1lpOGRoX1VaWDA?oc=5",
+     "time": "2026-11-27T16:10:00Z"
+    },
+    {
+     "id": "f7a1adc52cded786",
+     "publisher": "Bitcoin News",
+     "kind": "news",
+     "title": "Bitcoin's Thanksgiving Rally Unravels as $7B Options Expiry Rocks Markets",
+     "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQOUVhLUE0R1FhNXNwaVA2Ty15NEhzWXVFN0ktenh3cEFsZE9Zdk1NUkxGaFJXM3IwbzFweDlnbkRwX0hPVUxUN0syd0lTNXJyUFZTMnBIZVhDMjl5RDhsbFYtR3dQZTV4eTVsdmxFRmxuTE4yTGFyMXBpNXlUWjE1bFM5cXkwd1JPTElPZzJtbmQ1MHF4bjYtXzZBR1ZRU3FqMmdqeXJIRTQwZmw5VTl1X1V3?oc=5",
+     "time": "2026-11-27T17:37:36Z"
+    },
+    {
+     "id": "e76d3e9d1f27a937",
+     "publisher": "Altcoin Buzz",
+     "kind": "news",
+     "title": "Ethereum ETFs Lose $523 Million as ETH Falls Below $1,650",
+     "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxPZFl5RGxtMWx6MG1nbGduWWlheWh4dmp5NjNCLW44Q01RRWNhajdqNkF2ODJvSG1BeW5Eb0ZwS1E2RlFZTi1KdVJ6VTlzTmFKaHBtclRBc19mWE5yXzdzYWo2YXBvaHByTXd4VVo4Nmx4a28wX1g4S2FhbFVFWDQ2V0xSZndkdzZfTVE?oc=5",
+     "time": "2026-11-27T17:41:44Z"
+    },
+    {
+     "id": "07498dacf62072fd",
+     "publisher": "Benzinga",
+     "kind": "news",
+     "title": "Bitcoin Price Falls as $183 Million in Liquidations Hit Ahead of $6.8 Billion Options Expiry",
+     "url": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxNcURXT1VQVEhKd0xjVjlzUm84dzYtTmRNRHB6LU5uaXo3Qkp5SU5JUlBDOVQ5NnJqcy03MEUxNkxlYVVtSExzYl9reTNzTVpHbHBhODA0cnNGbFRidC1KUnNCMi1fdkdUTjN5R2Z2MTBJMFloa2FvSFM1LVVEMkNibzlsSG82V3Y0NlY1ZjJuYUtnVHM5NTgxLTVFMENlbHVlSGJ5QUlGTUUyV2J2RGJfZkpPUVpMMlh3RVVpY3c4V1BjZV9XSFhIR3V3SlNEQnVqa3pabHBEZjBSTWNCQ0JvTGdyZTBTVTQ?oc=5",
+     "time": "2026-11-27T20:30:13Z"
+    }
+   ]
+  },
+  {
+   "summary": "Crude prices retreat on a possible increase in OPEC crude output and reports that the U.S. pushed Venezuela and Iraq to consider leaving OPEC.",
+   "category": "oil_supply",
+   "firstSeen": "2026-11-27T19:50:00Z",
+   "publishers": [
+    "BNN Bloomberg",
+    "Barchart.com",
+    "Middle East Monitor",
+    "www.marketscreener.com"
+   ],
+   "assets": {
+    "CVX": {
+     "direction": "down",
+     "confidence": 0.65,
+     "why": "Potential increase in OPEC output and pressure on OPEC members weigh on oil prices."
+    },
+    "XOM": {
+     "direction": "down",
+     "confidence": 0.65,
+     "why": "Oil prices decline on potential supply increases."
+    }
+   },
+   "sources": [
+    {
+     "id": "cc22f8b77a3ee5ff",
+     "publisher": "Middle East Monitor",
+     "kind": "news",
+     "title": "Oil, gas prices fall as Brent trims weekly gains ahead of OPEC+ meeting",
+     "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNa2s1Z0U2UnRIRTBMcllWZlZxakRlZGl4T09kdnRrLUs4bjdZclJVRXY2NlN4UHlHOWJyZ29aUndRXzdFX3JGSmNHNHduTkw4VHhVWFFsVXlsWjExMnB6cUJSM2FpS190aFhlLV83NkxITG45NU5DeG5zY1RKdWRaeXdlcWxiZXVZNnNhOTZ6ZVNqOGhKcFJSMlA3UUpiaTQ2VDMzVUFXbFY1WmdMY0JCdjhBa9IBuAFBVV95cUxOUEdqZXNrTW1WMEFNdVZxRnVDQWNKOThNRXZUcEFxTVh1MXp6RmZhTWJmV0owanFrQVl0ZXRzd1V5Z0loSEp2eUIyMVJBMy15ZUYtZ1I3U0FuUXptQWsteXFOUFU3NnBXWkN0MHltVUpQXzVENVNoQ3RoUGRqd0hhd1MtN3NvaWxrUjBVMVd4bWJ5OEVMQVBSRHR2VjlPdDNmV3V6bWNGbjlXSGhYcWZTeGxkb1J2OGFK?oc=5",
+     "time": "2026-11-27T19:50:00Z"
+    },
+    {
+     "id": "e279be7337ecd77a",
+     "publisher": "BNN Bloomberg",
+     "kind": "news",
+     "title": "U.S. pushed Venezuela, Iraq to consider leaving OPEC, sources say: Reuters exclusive",
+     "url": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxPMXRpaUpva3FmWmF6V242bVVRTm44OFExenNfQzJtc25WMlpvT1ktZUYtMFJVTjFLa0N5dE9IWFJCOElNNmFzN2lsM05KVUhveW1LcFhDSENJT1pJbEtoYzYwUzkyaEt0dldGcWZzeWJQdDV6eG5PdFI1aVVsdnF4VFVhMEtlT3ZveGZJNDVKRW9yN1pnNWxNVXZvbS1nME84dk81RkZpWlNrZW1XaEpRQ3BXUjRVazF0RmFQTmRKMHpHZWFMWkd5ZFl6NllEeEVSU3ZfZ01sWlFwZw?oc=5",
+     "time": "2026-11-27T20:27:28Z"
+    },
+    {
+     "id": "ac3e4e5b05c3eb08",
+     "publisher": "Barchart.com",
+     "kind": "news",
+     "title": "Crude Prices Retreat on Possible Increase in OPEC Crude Output",
+     "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPMU04eDJwaUNhbEhzY0RZajdRRURlcm9oZ2lKNXNjSmxlNHZNaDZhb0FVZUZGTEZ3MlNmcWVjbmRtRUhDS3VVdUZDNUpxZExsd0lPeEtqS1ZiZnBvR1BfQ0k4YmtseFZUbXE1QmcxcjQxcGV6WHVqSVgtbjJFVzd4djhwNkVybVBWclpIWDBTdHdQWkVfUFFXbzJiUEJPdURfLTh0VFFqNGR6UQ?oc=5",
+     "time": "2026-11-27T20:11:14Z"
+    },
+    {
+     "id": "e487d225f130b52e",
+     "publisher": "www.marketscreener.com",
+     "kind": "news",
+     "title": "Oil Futures Settle Lower Ahead of OPEC+ Policy Meeting -- 2nd Update",
+     "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQTlZPaWJkbkstRXYwRnpsakhnaTRyY1hIcXFIMzA1WGRwLXNwQTBwSEdNQmVCWFFZeVVkTHBPT2loUUhHV2l3dkkxTVdJT2hWeEhhQ2N1R2gzT3JtT3FJMDV3aTNvb1JBYkZQU2FYLUdmLS1fbDFXVzFNcUtQazJaRmpXcDhYVTk2UHcyZ1BnajN6Q0UyS0FiNTBNMGZRc3FzQ2tjMXFVOUpkeWRTNUdnWDJ4SUM5LVRG?oc=5",
+     "time": "2026-11-27T20:17:22Z"
+    }
+   ]
+  },
+  {
+   "summary": "Tesla shares post strong weekly gains as the company eyes the acquisition of a German toolmaker amid its scaling plans.",
+   "category": "contract",
+   "firstSeen": "2026-11-27T19:55:54Z",
+   "publishers": [
+    "Yahoo Finance"
+   ],
+   "assets": {
+    "TSLA": {
+     "direction": "up",
+     "confidence": 0.7,
+     "why": "Expansion plans and German toolmaker acquisition interest boost investor sentiment."
+    }
+   },
+   "sources": [
+    {
+     "id": "41db3b98b3f3fd50",
+     "publisher": "Yahoo Finance",
+     "kind": "news",
+     "title": "TSLA Stock Clocks Best Week In 18 Months: Tesla Reportedly Eyes Buying German Toolmaker Amid Cybercab, Optimus Scaling Plans",
+     "url": "https://stocktwits.com/news-articles/markets/equity/tsla-stock-clocks-best-week-in-18-months-tesla-reportedly-eyes-buying-german-toolmaker-amid-cybercab-optimus-scaling-plans/cNb6PBlR9VL?.tsrc=rss",
+     "time": "2026-11-27T19:55:54Z"
+    }
+   ]
+  },
+  {
+   "summary": "Palantir shares climbed following the announcement of a $300 million software contract covering Poland's defense and security infrastructure.",
+   "category": "earnings_beat",
+   "firstSeen": "2026-11-27T17:54:25Z",
+   "publishers": [
+    "Pluang",
+    "Yahoo Finance"
+   ],
+   "assets": {
+    "PLTR": {
+     "direction": "up",
+     "confidence": 0.9,
+     "why": "Palantir significantly raised its 2026 growth forecast to 91%, representing major upward guidance revision."
+    }
+   },
+   "sources": [
+    {
+     "id": "6ff5039a554adfdb",
+     "publisher": "Pluang",
+     "kind": "news",
+     "title": "Palantir raises 2026 growth forecast to 91%, st...",
+     "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQVUpXV1J1eVN4bHhWclkxWk10cUhoZmNsM0Q4a0U5dkE3MXlqVlF1US1NVFltUlVrR2hPY1pWR0Q5SVFfSV9WTFJ4YWw4UTU3OXZncnVnMzJSanNtQkJWdUVNWVJ3RnVmYXVaSFJqclpnenZKSWdIcV95aGdsazByNEdsRjZfQkFnZklFQnJCQ2dlRmk4NnVsTTdiNW5fYnl4eU1CZERn?oc=5",
+     "time": "2026-11-27T17:54:25Z"
+    },
+    {
+     "id": "d1ac6edc1f241bdb",
+     "publisher": "Yahoo Finance",
+     "kind": "news",
+     "title": "Palantir Stocks Climb 3.72% on $300 Million Poland Defense AI Deal",
+     "url": "https://finance.yahoo.com/markets/stocks/articles/palantir-stocks-climb-3-72-192323429.html?.tsrc=rss",
+     "time": "2026-11-27T19:23:23Z"
+    }
+   ]
+  },
+  {
+   "summary": "Attacks on Saudi refineries and Middle East energy infrastructure keep regional supplies threatened and oil prices elevated.",
    "category": "oil_supply",
    "firstSeen": "2026-11-27T16:09:56Z",
    "publishers": [
@@ -9743,6 +9536,7 @@
     "Egyptian Gazette",
     "Haberler.com",
     "Investing.com",
+    "JournalArta",
     "Kitco",
     "MarketForces Africa",
     "SRN News",
@@ -9751,21 +9545,24 @@
     "The Kyiv Independent",
     "The Times of Israel",
     "TradeWinds News",
+    "Traders Union",
+    "WISH-TV",
     "WSJ",
     "X",
     "https://houseofsaud.com/",
-    "شبكة تواصل الإخبارية"
+    "شبكة تواصل الإخبارية",
+    "وكالة الأنباء السعودية"
    ],
    "assets": {
     "CVX": {
      "direction": "up",
-     "confidence": 0.8,
-     "why": "Ongoing energy infrastructure attacks in the Middle East elevate crude prices and support Chevron."
+     "confidence": 0.85,
+     "why": "Continuous energy supply threats in the Middle East support higher oil prices and benefit oil producers."
     },
     "XOM": {
      "direction": "up",
-     "confidence": 0.8,
-     "why": "Attacks on oil tankers and refineries drive up crude prices, benefiting oil majors like ExxonMobil."
+     "confidence": 0.85,
+     "why": "Ongoing Middle East attacks on oil refineries and infrastructure push crude prices higher, benefiting oil majors."
     }
    },
    "sources": [
@@ -9812,75 +9609,41 @@
    ]
   },
   {
-   "summary": "Palantir raised its 2026 growth forecast to 91%, signaling exceptionally strong financial performance and guidance.",
+   "summary": "Adobe reports record US online consumer spending exceeding $7 billion on Thanksgiving Day, providing a boost to e-commerce sentiment.",
    "category": "earnings_beat",
-   "firstSeen": "2026-11-27T17:54:25Z",
+   "firstSeen": "2026-11-27T18:53:10Z",
    "publishers": [
-    "Pluang"
+    "Yahoo Finance",
+    "fiscal.ai"
    ],
    "assets": {
-    "PLTR": {
+    "ADBE": {
      "direction": "up",
-     "confidence": 0.9,
-     "why": "Palantir significantly raised its 2026 growth forecast to 91%, representing major upward guidance revision."
-    }
-   },
-   "sources": [
-    {
-     "id": "6ff5039a554adfdb",
-     "publisher": "Pluang",
-     "kind": "news",
-     "title": "Palantir raises 2026 growth forecast to 91%, st...",
-     "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQVUpXV1J1eVN4bHhWclkxWk10cUhoZmNsM0Q4a0U5dkE3MXlqVlF1US1NVFltUlVrR2hPY1pWR0Q5SVFfSV9WTFJ4YWw4UTU3OXZncnVnMzJSanNtQkJWdUVNWVJ3RnVmYXVaSFJqclpnenZKSWdIcV95aGdsazByNEdsRjZfQkFnZklFQnJCQ2dlRmk4NnVsTTdiNW5fYnl4eU1CZERn?oc=5",
-     "time": "2026-11-27T17:54:25Z"
-    }
-   ]
-  },
-  {
-   "summary": "Ethereum and broader cryptocurrency markets face severe downward pressure amid massive ETF outflows and falling prices.",
-   "category": "crypto_negative",
-   "firstSeen": "2026-11-27T16:10:00Z",
-   "publishers": [
-    "Altcoin Buzz",
-    "Bitcoin News",
-    "Yahoo Finance"
-   ],
-   "assets": {
-    "BTC/USD": {
-     "direction": "down",
-     "confidence": 0.7,
-     "why": "Massive options expiry and fading holiday rally momentum drive downside pressure."
+     "confidence": 0.65,
+     "why": "Strong holiday online spending figures benefit Adobe digital insights and software demand."
     },
-    "ETH/USD": {
-     "direction": "down",
-     "confidence": 0.8,
-     "why": "Ethereum ETFs experience massive outflows and price drops below key support."
+    "SHOP": {
+     "direction": "up",
+     "confidence": 0.7,
+     "why": "Record Thanksgiving e-commerce spending drives strong investor sentiment into Shopify."
     }
    },
    "sources": [
     {
-     "id": "9e86075af65bf1e7",
+     "id": "7d0b9fe76c26c92c",
+     "publisher": "fiscal.ai",
+     "kind": "news",
+     "title": "Adobe Digital Insights Reports US Online Spending Exceeded $7 Billion on Thanksgiving Day",
+     "url": "https://www.marketscreener.com/news/us-consumers-online-spending-exceeded-7-billion-on-thanksgiving-day-adobe-digital-insights-says-ce7851d9de8fff21",
+     "time": "2026-11-27T19:02:33Z"
+    },
+    {
+     "id": "bec9bc265e23d049",
      "publisher": "Yahoo Finance",
      "kind": "news",
-     "title": "Another $453 million exits bitcoin ETFs as November outflows stack up",
-     "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNVS1nSFFuU2g1dS1TcHFoc2M2TldHbDUwR0xjWjRDU3RCSlpiWEpSSEJPb2Z4S1Y5RGVfNUFKMTg4QmUxTy1ENmhITEtUZmpnbVF6RkxqQnRnbXRPQ21qalBFUklGMkxpdDhldjRDRzBPb0cwQ0ZDYzQ0VDdnU1lpOGRoX1VaWDA?oc=5",
-     "time": "2026-11-27T16:10:00Z"
-    },
-    {
-     "id": "f7a1adc52cded786",
-     "publisher": "Bitcoin News",
-     "kind": "news",
-     "title": "Bitcoin's Thanksgiving Rally Unravels as $7B Options Expiry Rocks Markets",
-     "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQOUVhLUE0R1FhNXNwaVA2Ty15NEhzWXVFN0ktenh3cEFsZE9Zdk1NUkxGaFJXM3IwbzFweDlnbkRwX0hPVUxUN0syd0lTNXJyUFZTMnBIZVhDMjl5RDhsbFYtR3dQZTV4eTVsdmxFRmxuTE4yTGFyMXBpNXlUWjE1bFM5cXkwd1JPTElPZzJtbmQ1MHF4bjYtXzZBR1ZRU3FqMmdqeXJIRTQwZmw5VTl1X1V3?oc=5",
-     "time": "2026-11-27T17:37:36Z"
-    },
-    {
-     "id": "e76d3e9d1f27a937",
-     "publisher": "Altcoin Buzz",
-     "kind": "news",
-     "title": "Ethereum ETFs Lose $523 Million as ETH Falls Below $1,650",
-     "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxPZFl5RGxtMWx6MG1nbGduWWlheWh4dmp5NjNCLW44Q01RRWNhajdqNkF2ODJvSG1BeW5Eb0ZwS1E2RlFZTi1KdVJ6VTlzTmFKaHBtclRBc19mWE5yXzdzYWo2YXBvaHByTXd4VVo4Nmx4a28wX1g4S2FhbFVFWDQ2V0xSZndkdzZfTVE?oc=5",
-     "time": "2026-11-27T17:41:44Z"
+     "title": "Shopify Stocks Jump 6.05% as Record Online Holiday Spending Kicks Off",
+     "url": "https://finance.yahoo.com/markets/stocks/articles/shopify-stocks-jump-6-05-185310195.html?.tsrc=rss",
+     "time": "2026-11-27T18:53:10Z"
     }
    ]
   },
@@ -10161,107 +9924,6 @@
      "title": "Bitcoin’s $60K bottom faces a reality check as $6.8B Options expire",
      "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxOTVM2eU94M1VvVXBlOTYxUjJBQ0l0b0s3VkJOMFNNRVJTUkZ5TUxJNDdkQ0tBcnFBOVJzY0d3Z1RYc00zMkROWUgtMkwwNFlRRzc1bk5ObGZOTDUwR201ci1oYzUtRFlfS1VhaGRQa253dVk0VDBZeGZRcnNMX2c3S2lCb0JjZE4wa2ctYzRnX2Q?oc=5",
      "time": "2026-11-27T16:00:03Z"
-    }
-   ]
-  },
-  {
-   "summary": "Ongoing Middle East conflict and attacks on energy infrastructure continue to heighten regional energy supply disruption risks.",
-   "category": "war_escalation",
-   "firstSeen": "2026-11-27T15:40:35Z",
-   "publishers": [
-    "ASHARQ AL-AWSAT English",
-    "KRDO",
-    "RadarOnline",
-    "Tehran Times"
-   ],
-   "assets": {
-    "XOM": {
-     "direction": "up",
-     "confidence": 0.7,
-     "why": "Geopolitical instability in the Middle East threatens oil supply, supporting energy prices."
-    },
-    "CVX": {
-     "direction": "up",
-     "confidence": 0.7,
-     "why": "Geopolitical instability in the Middle East threatens oil supply, supporting energy prices."
-    }
-   },
-   "sources": [
-    {
-     "id": "2d8221b4d1e0c7ff",
-     "publisher": "KRDO",
-     "kind": "news",
-     "title": "Middle East attacks send oil prices rising again",
-     "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQMExoNC0tSHpsSERMZE04UC1OUEVDWHh3Yjd6VFoyMzhtLXIzeWVmUWM4dzI0Z0ZrRm5tYnplVUdKTV9tMnhHZkNpdFlGcWlQcEs5UHJDWnB0ZzZ1ZUF3UGEzUkhtRzRtVEZtUFp5THBUOXM4R1ZNLXV6ZGJCbVBqbUZuN0ZrS2l1RGg4T3hTV1ktTUM4YjZwNkxjVHFCUVpPb3cxc3JHUVM?oc=5",
-     "time": "2026-11-27T15:40:35Z"
-    },
-    {
-     "id": "e6dc6ec1236176ab",
-     "publisher": "Tehran Times",
-     "kind": "news",
-     "title": "Iran rejects allegations over Kuwait attack, warns of false-flag operations",
-     "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNamtQQXBFdllfZXF4S1I5SU9vbWpnN3pMNzhRZGctVjJscEJpd3NOYzNpa0pIdHlOMFFwVUVsQVBlZUM1ckNHMGdDU0pfYlFNUzR0SW51cG0tMk00enlzWGktRzNIWWhFbEhVX2FzNm5MMXRFZXVLQllTdE5oY1kwMmRKM0pla0VYc0xTbXVGLW41SW5NMUVMSjlEMUJkaERiTnJaNTZn?oc=5",
-     "time": "2026-11-27T16:03:47Z"
-    },
-    {
-     "id": "93ac00276caf7d66",
-     "publisher": "ASHARQ AL-AWSAT English",
-     "kind": "news",
-     "title": "Oil On Track for First Weekly Gain in November on Supply Fears - ASHARQ AL-AWSAT English",
-     "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOUGhPTHZkUEpVeG5IZFYzcmF2ZXRaa1F0OHZvdFdGV0plZTJBaWVuTFdXMU9LOTZlNkRNRXBMdm9LZGMyU1ZJbWZFQ0RiMFFGb0VvY2V0MjVhdlRhT20tZ3VQTWtNeFFOd09tRTlQUnV2b3lOQzhYbU5YanRCUE5XNW1Dc2drSEw1VUxYWHoxYU9rNnRBQ3EySA?oc=5",
-     "time": "2026-11-27T16:03:29Z"
-    },
-    {
-     "id": "664a0db6ff7dc89f",
-     "publisher": "RadarOnline",
-     "kind": "news",
-     "title": "Trump Says Iran War Will End 'Whenever I Want It to Be'",
-     "url": "https://news.google.com/rss/articles/CBMi9wFBVV95cUxQQWlOV3hIZlhXMGd4R0cwTTdyZEtWLVVUMzFKZDJiQTQ1Q01EMmIzT2p6aFlIT016ck1PMWg4LVAwMkgtUUxYZ1doUmUyTEpTUWVEaGpNc0ZNMEJHYjRRRjZlRHZKa0N2akpVN21VelYxOXR5djRkYm5TazJPSnBkaXhmWkVRc0hsZjliY3pDMkJyMFVlQXlIN2twTmJEc1M5eXFwNjdQYjZXdUhLY3kyUkktSEF6MUlGb2pLMHBTVDBWdUFJTl9waUE2aFpfRzZhdUNXTFdLdTlhZHJvajRuMVNVOG5SUDd2Y3pxQXB1aDJKcy0tajVr?oc=5",
-     "time": "2026-11-27T15:55:14Z"
-    }
-   ]
-  },
-  {
-   "summary": "Regeneron Pharmaceuticals receives UK regulatory approval for its drug Linvoseltamab.",
-   "category": "earnings_beat",
-   "firstSeen": "2026-11-27T16:02:50Z",
-   "publishers": [
-    "fiscal.ai"
-   ],
-   "assets": {
-    "REGN": {
-     "direction": "up",
-     "confidence": 0.7,
-     "why": "Regulatory approval for a new drug is a positive catalyst for revenue growth."
-    }
-   },
-   "sources": [
-    {
-     "id": "b7e59ce2b23ac1df",
-     "publisher": "fiscal.ai",
-     "kind": "news",
-     "title": "Regeneron Pharmaceuticals Receives UK Regulatory Approval for Linvoseltamab",
-     "url": "https://www.marketscreener.com/news/regeneron-pharmaceuticals-receives-uk-regulator-s-approval-for-linvoseltamab-in-multiple-myeloma-ce7851d9de88f525",
-     "time": "2026-11-27T16:02:50Z"
-    }
-   ]
-  },
-  {
-   "summary": "Potential progress in US-India trade talks may offer relief from broader tariff concerns.",
-   "category": "tariffs",
-   "firstSeen": "2026-11-27T15:37:13Z",
-   "publishers": [
-    "India Weekly"
-   ],
-   "assets": {},
-   "sources": [
-    {
-     "id": "6736c86888d47718",
-     "publisher": "India Weekly",
-     "kind": "news",
-     "title": "Trump's 17% Tariff Offer Could Bring India-US Deal Closer",
-     "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE5aSVEyMnJlUzduSHVKMVVuOENkYzY5NUZmcnlJc2J6VnpoNkk5SXBURXMwcTBib2Jmc2FQYWtQelhvaDJVdy1rYTJOODFuajRROWhaaFZYVkw3bF9Ma3RhSWhGTG9Ta1JmQXdHWS1adGliZWhnRHoyLWljWFk?oc=5",
-     "time": "2026-11-27T15:37:13Z"
     }
    ]
   }
