@@ -235,11 +235,13 @@ def youtube_candidates():
         if out:
             return out
         say("YouTube API gave nothing, trying yt-dlp search instead")
-    for q in CFG["youtube_queries"]:   # no key (or API failed): yt-dlp search, then open the best ones for exact numbers
-        info = ytdlp_json(f"ytsearch20:{q} shorts", ["--flat-playlist"], timeout=90) or {}
-        ents = [e for e in info.get("entries") or [] if e.get("id") and (e.get("view_count") or 0) >= CFG["fallback_min_views"]
-                and 0 < (e.get("duration") or 999) <= CFG.get("max_seconds", 180)]
-        for e in sorted(ents, key=lambda e: -(e.get("view_count") or 0))[:3]:
+    # No key (or API failed): YouTube's own search page, sorted by view count, uploaded this month, under 4 minutes
+    # (sp=CAMSBAgEGAE). The search list has no view counts, so the top few get opened one by one for the real numbers.
+    for q in CFG["youtube_queries"]:
+        url = "https://www.youtube.com/results?search_query=" + urllib.parse.quote_plus(q) + "&sp=CAMSBAgEGAE%3D"
+        info = ytdlp_json(url, ["--flat-playlist", "--playlist-end", "10"], timeout=90) or {}
+        ents = [e for e in info.get("entries") or [] if e.get("id") and 0 < (e.get("duration") or 999) <= CFG.get("max_seconds", 180)]
+        for e in ents[:4]:
             c = verify(f"https://www.youtube.com/watch?v={e['id']}", "YouTube Shorts search", query_topic(q))
             if c:
                 out.append(c)
