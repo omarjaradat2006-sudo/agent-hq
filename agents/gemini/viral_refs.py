@@ -65,8 +65,13 @@ def say(msg):
 
 def http_json(url, timeout=30):
     req = urllib.request.Request(url, headers=UA)
-    with urllib.request.urlopen(req, timeout=timeout) as r:
-        return json.loads(r.read().decode())
+    try:
+        with urllib.request.urlopen(req, timeout=timeout) as r:
+            return json.loads(r.read().decode())
+    except urllib.error.HTTPError as e:   # keep the reason (e.g. "API not enabled") in the log, never the key
+        body = re.sub(r"key=[\w-]+", "key=***", e.read().decode(errors="ignore"))
+        msg = re.search(r'"message":\s*"([^"]+)', body)
+        raise urllib.error.HTTPError(e.url, e.code, f"{e.code} {msg.group(1) if msg else e.reason}"[:300], e.headers, None)
 
 
 class _NoRedirect(urllib.request.HTTPRedirectHandler):
@@ -171,9 +176,12 @@ def verify(url, source, hint=None):
     yid = youtube_id(url)
     if yid:
         if os.environ.get("YT_API_KEY"):
-            got = yt_api_videos([yid], source, hint)
-            if got:
-                return got[0]
+            try:
+                got = yt_api_videos([yid], source, hint)
+                if got:
+                    return got[0]
+            except Exception as e:
+                say(f"YouTube API couldn't read {yid}: {e}")
         return from_ytdlp(ytdlp_json(f"https://www.youtube.com/watch?v={yid}"), "youtube", source, hint)
     return None
 
