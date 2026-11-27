@@ -43,6 +43,16 @@ Work through every item in the prompt. Don't stop to ask Omar anything: if an it
   Prefer expressing it as an existing kind (reminder / explainer / long) with new rules; add a new kind only if needed.
   Push bounce-engine to `main` (the server pulls it every morning).
 
+## 3b. It must make a NEW video every day (most important rule)
+A template is only useful if the server can make a different video from it every day with no human writing.
+- Physics: the knobs + seed must give real variety (counts, colours, shapes, rules, hooks).
+- Script-driven formats (narration, Ambient explainers like the blocky toy farm): never ship one fixed script.
+  Build a scene LIBRARY that covers many topics (generic actions/props/settings, not just the inspo's topic), let Gemini write
+  each day's script into that schema (validate scene names; unknown scene -> closest one), keep the Quran/hadith reference
+  check + meaning check, and test with 3 different Gemini-written topics before shipping.
+- Add a daily quota to `agents/formats/youtube-lineup.md` (e.g. "2-3 blocky explainers per Ambient lineup") so the YouTube
+  team actually schedules it, and say which `format` word triggers it.
+
 ## 4. Write the template (Bounce)
 File `agent-hq/data/youtube/auto_templates/auto_inspo_<name>.py` (the server's catalog loads every `auto_*.py` there):
 - First line `from auto_bounce2 import *` (gives np, math, skia, pymunk, Delaunay, sparse, E=engine2, Frame, Writer, Audio,
