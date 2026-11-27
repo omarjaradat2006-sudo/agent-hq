@@ -39,7 +39,8 @@ UA = {"User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, 
 
 # No job / resume / LinkedIn / LinkedAI content in this, ever (Omar's rule).
 BLOCK = re.compile(r"linkedai|linked ?in\b|\bresume|r[eé]sum[eé]|cover letter|job (search|hunt|interview|application|offer)|"
-                   r"interview (tips|questions)|recruiter|\bhiring\b|get hired|\bcv\b|#ad\b|sponsored", re.I)
+                   r"interview (tips|questions)|recruiter|\bhiring\b|get hired|\bcv\b|#ad\b|sponsored|"
+                   r"ex[- ]?muslim|apostate|left islam|leaving islam|why i left|debunk(ing|ed)? islam", re.I)   # never anti-Islam content
 FAITH = re.compile(r"\b(allah|quran|qur'an|salah|salat|prayer|pray|islam|islamic|muslim|hadith|deen|dua|prophet|sunnah|ayah|jannah|iman|ramadan)\b", re.I)
 AIBIZ = re.compile(r"\b(ai|chatgpt|gpt|claude|gemini|automation|startup|side hustle|business)\b", re.I)
 
@@ -419,7 +420,7 @@ def prompt_for(c, fmt):
 Watch the WHOLE video, picture and sound.
 
 PART 1, the breakdown (plain words, talking to Omar, 1-3 sentences each):
-- fitsNiche: true only if it's about self-improvement / discipline / mindset for young guys, living life the Islamic way, or AI/business. false for jobs, resumes, LinkedIn, interviews, or anything else.
+- fitsNiche: true only if it's about self-improvement / discipline / mindset for young guys, living life the Islamic way, or AI/business. false for jobs, resumes, LinkedIn, interviews, anything mocking or arguing against Islam or any religion, or anything else.
 - hook: what happens in the first 2 seconds: the exact first words said (quote them), what's on screen, and why a scroller stops.
 - pacing: how fast it moves: cuts per ~10 seconds, how fast they talk, where the pauses or zooms are.
 - onScreenText: the text shown and when (quote it). Say "none" if there isn't any.
