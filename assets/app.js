@@ -834,7 +834,7 @@ Server breakdown (Gemini watched it with sound):
     }
     throw new Error("busy");
   }
-  function decide(t, key, status, msg, extra) {
+  function decideItem(t, key, status, msg, extra) {
     return async () => {
       if (!LS.get("hq.ghToken")) { openSettings("Connect GitHub once so your clicks save by themselves."); return; }
       toast("Saving…");
@@ -859,7 +859,7 @@ Server breakdown (Gemini watched it with sound):
       const login = (nIn.value || "").trim().toLowerCase().replace(/^.*twitch\.tv\//, "").replace(/[^a-z0-9_]/g, "");
       const url = (uIn.value || "").trim();
       if (!login || !/^https:\/\//.test(url)) { toast("Enter the Twitch name and a link starting with https://"); return; }
-      await decide(t, "add:" + login, "joined", `Saved · ${login} gets added within the hour`, { url })();
+      await decideItem(t, "add:" + login, "joined", `Saved · ${login} gets added within the hour`, { url })();
       nIn.value = ""; uIn.value = "";
     };
     row.append(nIn, uIn, go); add.append(row); body.append(add);
@@ -870,7 +870,7 @@ Server breakdown (Gemini watched it with sound):
       subs.forEach(x => { const r = el("div", "row between"); const a = el("a", "t", x.title || x.url); const u = safeUrl(x.url); if (u) { a.href = u; a.target = "_blank"; a.rel = "noopener"; }
         const left = el("div"); left.append(a); left.append(el("div", "small", [x.streamer, x.program, x.mode === "test" ? "TEST video, don't submit" : null, x.deadline ? "submit " + (Date.parse(x.deadline) > Date.now() ? until(x.deadline) : "deadline passed") : null, x.where].filter(Boolean).join(" · ")));
         const right = el("div", "row"); const ju = safeUrl(x.join_url); if (ju) { const j = el("a", "btn", "Open campaign"); j.href = ju; j.target = "_blank"; j.rel = "noopener"; right.append(j); }
-        const b = el("button", "btn primary", "Submitted"); b.onclick = decide(t, "sub:" + x.video, "submitted", "Saved · submitted"); right.append(b);
+        const b = el("button", "btn primary", "Submitted"); b.onclick = decideItem(t, "sub:" + x.video, "submitted", "Saved · submitted"); right.append(b);
         r.append(left, right); c.append(r); });
       body.append(c);
     }
@@ -891,8 +891,8 @@ Server breakdown (Gemini watched it with sound):
         if (c.blocked) k2.append(el("div", "why", c.blocked));
         const row = el("div", "row"); const u = safeUrl(c.join_url);
         if (u) { const a = el("a", "btn" + (k === "new" ? " primary" : ""), "Open link to join"); a.href = u; a.target = "_blank"; a.rel = "noopener"; row.append(a); }
-        if (k !== "joined") { const b = el("button", "btn primary", "Done: I joined"); b.onclick = decide(t, c.id, "joined", "Saved · server adds them on its next run"); row.append(b); }
-        if (k !== "skipped") { const b = el("button", "btn", "Skip"); b.onclick = decide(t, c.id, "skipped", "Saved · skipped"); row.append(b); }
+        if (k !== "joined") { const b = el("button", "btn primary", "Done: I joined"); b.onclick = decideItem(t, c.id, "joined", "Saved · server adds them on its next run"); row.append(b); }
+        if (k !== "skipped") { const b = el("button", "btn", "Skip"); b.onclick = decideItem(t, c.id, "skipped", "Saved · skipped"); row.append(b); }
         k2.append(row); body.append(k2); });
     });
   }
