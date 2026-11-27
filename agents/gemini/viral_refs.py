@@ -8,7 +8,7 @@ Runs in SMALL chunks so the free Gemini quota never gets hit all at once:
   assemble(state)        called by tiktok_team.py at 9:41 AM: joins the saved research into the site. No Gemini.
 
 Real links and numbers only:
-  - Links come from the YouTube Data API, from Omar's own pasted links, or from Gemini web search results.
+  - Links come from the YouTube Data API (via the hourly GitHub collector, data/tiktok/refs_candidates.json), from Omar's own pasted links, or from Gemini web search results.
     Every link is opened by the server (yt-dlp / YouTube API) and views, creator and date are read from the
     platform itself. Gemini never supplies a link or a number; a link that can't be opened is dropped.
   - The breakdown is written by Gemini WATCHING the actual video (YouTube URL passed straight in, or the
@@ -223,6 +223,36 @@ def yt_api_videos(ids, source, hint=None):
     return out
 
 
+def collector_candidates():
+    """Niche Shorts the hourly GitHub collector saved with real YouTube API numbers (data/tiktok/refs_candidates.json)."""
+    d = rjson(os.path.join(ROOT, "data", "tiktok", "refs_candidates.json"), {})
+    if not d.get("videos"):
+        return []
+    try:
+        age = (NOW - datetime.datetime.strptime(d["updatedAt"], "%Y-%m-%dT%H:%M:%SZ").replace(tzinfo=datetime.timezone.utc)).total_seconds() / 3600
+    except Exception:
+        age = 999
+    if age > 72:
+        say(f"collector list is {age:.0f}h old, not using it")
+        return []
+    out = []
+    for v in d["videos"]:
+        out.append({"platform": "youtube", "id": v["id"], "url": f"https://www.youtube.com/shorts/{v['id']}", "creator": v.get("channel", ""),
+                    "creatorUrl": f"https://www.youtube.com/channel/{v['channelId']}" if v.get("channelId") else "",
+                    "title": (v.get("title") or "")[:160], "views": int(v["views"]), "likes": v.get("likes"), "comments": v.get("comments"),
+                    "shares": None, "followers": v.get("subscribers"), "seconds": v.get("duration"), "posted": (v.get("published") or "")[:10],
+                    "outlier": v.get("outlier"), "source": "YouTube Shorts search", "topic": topic_of(v.get("title", ""), query_topic(v.get("query") or "")),
+                    "viewsCheckedAt": d["updatedAt"], "status": "todo", "tries": 0})
+    say(f"using {len(out)} Shorts from the GitHub collector (checked {age:.0f}h ago)")
+    return out
+
+
+def english(t):
+    """Omar's audience is English: skip titles that are mostly non-Latin script (saves a Gemini call per video)."""
+    letters = [ch for ch in t or "" if ch.isalpha()]
+    return not letters or sum(ch.isascii() for ch in letters) / len(letters) >= 0.8
+
+
 def query_topic(q):
     return "faith" if FAITH.search(q) else "ai" if q in CFG.get("ai_queries", []) else "self"
 
@@ -242,7 +272,11 @@ def youtube_candidates():
                 say(f"YouTube API search '{q}' failed: {e}")
         if out:
             return out
-        say("YouTube API gave nothing, trying yt-dlp search instead")
+        say("Server YouTube key gave nothing, using the GitHub collector's list instead")
+    out = collector_candidates()
+    if out:
+        return out
+    say("No collector list either, trying yt-dlp search (YouTube often blocks this from the server)")
     # No key (or API failed): YouTube's own search page, sorted by view count, uploaded this month, under 4 minutes
     # (sp=CAMSBAgEGAE). The search list has no view counts, so the top few get opened one by one for the real numbers.
     for q in CFG["youtube_queries"]:
@@ -320,7 +354,7 @@ def pick(cands):
             continue
         inbox = c.get("source") == "your inbox"
         if not inbox:
-            if BLOCK.search(c.get("title", "") + " " + c.get("creator", "")):
+            if BLOCK.search(c.get("title", "") + " " + c.get("creator", "")) or not english(c.get("title", "")):
                 continue
             if seen.get(k, "") >= cutoff:                     # shown in the last 30 days: skip
                 continue

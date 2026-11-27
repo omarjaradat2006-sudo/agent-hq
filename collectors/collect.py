@@ -280,6 +280,56 @@ def run_promo():
     print(f"promo: {len(out)} AI-tool marketing Shorts found today, {len(allv)} kept")
 
 
+# ---------------- TikTok Viral references: candidate Shorts for the server's Reference Scout (real numbers, no Gemini) ----------------
+def run_refs():
+    """Once a day: niche Shorts with real view counts -> data/tiktok/refs_candidates.json. The Oracle server can't read YouTube
+    numbers itself (YouTube blocks it), so agents/gemini/viral_refs.py reads this file. ~1,000 API units a day."""
+    p = os.path.join(ROOT, "data", "tiktok", "refs_candidates.json")
+    try:
+        old = json.load(open(p))
+    except Exception:
+        old = {}
+    rc = CFG.get("refs", {})
+    if not env("YT_API_KEY") or hours_since(old.get("updatedAt")) < 20:
+        print("refs: not due"); return
+    key = env("YT_API_KEY")
+    after = (NOW - datetime.timedelta(days=rc.get("max_age_days", 45))).strftime("%Y-%m-%dT%H:%M:%SZ")
+    found = {}
+    for q in rc.get("youtube_queries", []):
+        try:
+            res = http(YT + "search?" + urllib.parse.urlencode({"part": "snippet", "q": q, "type": "video", "order": "viewCount", "publishedAfter": after,
+                                                                "videoDuration": "short", "maxResults": 12, "relevanceLanguage": "en", "key": key}))
+            for i in res.get("items", []):
+                if i.get("id", {}).get("videoId"):
+                    found.setdefault(i["id"]["videoId"], q)
+        except Exception as e:
+            print("refs search failed:", q, str(e)[:120])
+    ids = list(found)[:100]
+    vids = []
+    for n in range(0, len(ids), 50):
+        vids += http(YT + "videos?" + urllib.parse.urlencode({"part": "snippet,statistics,contentDetails", "id": ",".join(ids[n:n + 50]), "key": key})).get("items", [])
+    chan_ids = list({v["snippet"]["channelId"] for v in vids})
+    chans = {}
+    for n in range(0, len(chan_ids), 50):
+        chans.update({c["id"]: c for c in http(YT + "channels?" + urllib.parse.urlencode({"part": "statistics", "id": ",".join(chan_ids[n:n + 50]), "key": key})).get("items", [])})
+    out = []
+    for v in vids:
+        st, sn = v.get("statistics", {}), v["snippet"]
+        if "viewCount" not in st:
+            continue
+        views = int(st["viewCount"])
+        cs = chans.get(sn["channelId"], {}).get("statistics", {})
+        vc, tv = int(cs.get("videoCount", 0) or 0), int(cs.get("viewCount", 0) or 0)
+        out.append({"id": v["id"], "title": sn["title"], "channel": sn["channelTitle"], "channelId": sn["channelId"], "views": views,
+                    "likes": int(st["likeCount"]) if "likeCount" in st else None, "comments": int(st["commentCount"]) if "commentCount" in st else None,
+                    "subscribers": int(cs["subscriberCount"]) if cs.get("subscriberCount") else None,
+                    "duration": iso_secs(v.get("contentDetails", {}).get("duration")), "published": sn["publishedAt"],
+                    "outlier": round(views / (tv / vc), 1) if vc and tv else None, "query": found.get(v["id"])})
+    json.dump({"updatedAt": ISO, "source": "YouTube Data API (real view counts)", "videos": sorted(out, key=lambda x: -x["views"])},
+              open(p, "w"), indent=1, ensure_ascii=False)
+    print(f"refs: {len(out)} niche Shorts saved for the Reference Scout")
+
+
 def run_youtube():
     m = load_metrics("youtube")
     m.setdefault("kpis", []); m.setdefault("topVideos", []); m.setdefault("trending", [])
@@ -367,9 +417,9 @@ def finish(m, team, did, problems, needs):
 
 
 if __name__ == "__main__":
-    which = sys.argv[1:] or ["youtube", "tiktok", "promo"]
+    which = sys.argv[1:] or ["youtube", "tiktok", "promo", "refs"]
     for w in which:
         try:
-            {"youtube": run_youtube, "tiktok": run_tiktok, "promo": run_promo}[w]()
+            {"youtube": run_youtube, "tiktok": run_tiktok, "promo": run_promo, "refs": run_refs}[w]()
         except Exception as e:   # one collector failing never stops the others
             print(w, "collector failed:", str(e)[:300])
