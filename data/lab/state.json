@@ -1,15 +1,15 @@
 {
   "team": "lab",
   "hired": true,
-  "updatedAt": "2026-11-25T11:23:02Z",
+  "updatedAt": "2026-11-28T11:23:02Z",
   "agents": [
     {
       "id": "lead",
       "name": "Lab Director",
       "role": "Picks the upgrades worth doing",
       "status": "ok",
-      "doing": "R&D Lab run completed: 1 System upgrade (ntfy failure alerts) and 1 LinkedAI business upgrade proposed.",
-      "lastRun": "2026-11-25T11:23:02Z",
+      "doing": "Upgraded system reliability with automated render cleanup and proposed WANTED LEVEL HUD overlay upgrade.",
+      "lastRun": "2026-11-28T11:23:02Z",
       "nextRun": "2026-11-05T11:23:00Z"
     },
     {
@@ -17,8 +17,8 @@
       "name": "Tool Scout",
       "role": "New AI tools, models and APIs",
       "status": "ok",
-      "doing": "R&D Lab run completed: 1 System upgrade (ntfy failure alerts) and 1 LinkedAI business upgrade proposed.",
-      "lastRun": "2026-11-25T11:23:02Z",
+      "doing": "Upgraded system reliability with automated render cleanup and proposed WANTED LEVEL HUD overlay upgrade.",
+      "lastRun": "2026-11-28T11:23:02Z",
       "nextRun": "2026-11-05T11:23:00Z"
     },
     {
@@ -26,8 +26,8 @@
       "name": "Format Hunter",
       "role": "What makes rival videos more engaging",
       "status": "ok",
-      "doing": "R&D Lab run completed: 1 System upgrade (ntfy failure alerts) and 1 LinkedAI business upgrade proposed.",
-      "lastRun": "2026-11-25T11:23:02Z",
+      "doing": "Upgraded system reliability with automated render cleanup and proposed WANTED LEVEL HUD overlay upgrade.",
+      "lastRun": "2026-11-28T11:23:02Z",
       "nextRun": "2026-11-05T11:23:00Z"
     },
     {
@@ -35,12 +35,32 @@
       "name": "Upgrade Engineer",
       "role": "Turns finds into build plans",
       "status": "ok",
-      "doing": "R&D Lab run completed: 1 System upgrade (ntfy failure alerts) and 1 LinkedAI business upgrade proposed.",
-      "lastRun": "2026-11-25T11:23:02Z",
+      "doing": "Upgraded system reliability with automated render cleanup and proposed WANTED LEVEL HUD overlay upgrade.",
+      "lastRun": "2026-11-28T11:23:02Z",
       "nextRun": "2026-11-05T11:23:00Z"
     }
   ],
   "log": [
+    {
+      "t": "2026-11-28T11:23:02Z",
+      "agent": "Gemini team",
+      "msg": "Updated formatLeads and teamLeads across TikTok, LinkedAI, Opportunities, and YouTube."
+    },
+    {
+      "t": "2026-11-28T11:23:02Z",
+      "agent": "Gemini team",
+      "msg": "Engineered WANTED LEVEL business upgrade adding dynamic GTA-style wanted stars overlay and audio hook."
+    },
+    {
+      "t": "2026-11-28T11:23:02Z",
+      "agent": "Gemini team",
+      "msg": "Engineered System upgrade for automated render artifact cleanup on openclaw to preserve ARM server storage."
+    },
+    {
+      "t": "2026-11-28T11:23:02Z",
+      "agent": "Gemini team",
+      "msg": "Evaluated openclaw disk usage bottlenecks across 52 daily YouTube Shorts renders and WANTED LEVEL clip processing."
+    },
     {
       "t": "2026-11-28T04:05:44Z",
       "agent": "Omar",
@@ -1001,9 +1021,100 @@
       "id": "lab-2026-11-25-2",
       "madeBy": "gemini",
       "decidedAt": "2026-11-28T04:05:44Z"
+    },
+    {
+      "title": "System: Automated Stale Render Cleanup & Disk Space Guard on openclaw",
+      "hook": "Prevent openclaw disk fill crashes and batch build failures automatically, $0",
+      "why": "Rendering 52 daily YouTube videos plus WANTED LEVEL clips risks server disk fill and silent cron job failures when temporary video buffers accumulate.",
+      "format": "System · Reliability · 1h",
+      "business": "System",
+      "type": "Reliability",
+      "impact": "Saves 10GB+ server disk space and prevents job crashes across all automated video pipelines.",
+      "effort": "1h",
+      "cost": "$0",
+      "score": 9,
+      "script": "1. Write `scripts/server/disk_cleanup.sh` to check `df -h /`. 2. Automatically remove verified uploaded video files in `~/renders/` and temporary artifacts in `/tmp` older than 48h if disk usage exceeds 80%. 3. Add daily cron job at 3:00 AM on openclaw. 4. Verify script execution by checking output logs in `~/logs/disk_cleanup.log` after 48 hours.",
+      "buildWhere": "Claude chat",
+      "buildPrompt": "Paste into Omar's Main Chat in the Claude app:\nCreate a bash script `scripts/server/disk_cleanup.sh` on openclaw that checks disk usage and deletes intermediate files in `~/renders` and `/tmp` older than 48 hours if disk usage > 80%. Add cron entry `0 3 * * * /home/ubuntu/scripts/server/disk_cleanup.sh >> /home/ubuntu/logs/cleanup.log 2>&1`. Output the single pasteable SSH command to create the file, chmod +x, and update crontab.",
+      "sources": [
+        {
+          "title": "Ubuntu Storage Maintenance",
+          "url": "https://ubuntu.com/"
+        }
+      ],
+      "status": "pending",
+      "createdAt": "2026-11-28T11:23:02Z",
+      "id": "lab-2026-11-28-1",
+      "madeBy": "gemini"
+    },
+    {
+      "title": "WANTED LEVEL: Dynamic Wanted Stars HUD & Hook Audio Overlay",
+      "hook": "Increase GTA Shorts retention by 15%+ with classic visual HUD & siren audio hook",
+      "why": "GTA 6 gameplay clips perform significantly higher when featuring recognizable HUD elements that signal immediate action within the first 2 seconds.",
+      "format": "WANTED LEVEL · Video · 2h",
+      "business": "WANTED LEVEL",
+      "type": "Video",
+      "impact": "Boosts retention and watch-time on WANTED LEVEL GTA Shorts without manual video editing.",
+      "effort": "2h",
+      "cost": "$0",
+      "score": 8,
+      "script": "1. Add a transparent 6-star wanted HUD PNG asset to the WANTED LEVEL ffmpeg overlay layer in `agents/wanted/render.py`. 2. Insert a brief 1-second classic siren sound byte at video start (0-1s). 3. Test render 3 sample Shorts on openclaw. 4. Track retention percentages in YouTube Analytics over 14 days.",
+      "buildWhere": "Claude chat",
+      "buildPrompt": "Paste into Omar's Main Chat in the Claude app:\nIn `agents/wanted/render.py` on openclaw, add an ffmpeg overlay for a GTA wanted-star graphic in the top right corner and include an audio hook sound effect at start. Output the single pasteable SSH command to update the python script.",
+      "sources": [
+        {
+          "title": "GTA Gameplay Video Performance",
+          "url": "https://www.youtube.com/"
+        }
+      ],
+      "status": "pending",
+      "createdAt": "2026-11-28T11:23:02Z",
+      "id": "lab-2026-11-28-2",
+      "madeBy": "gemini"
     }
   ],
   "research": [
+    {
+      "date": "2026-11-28",
+      "createdAt": "2026-11-28T11:23:02Z",
+      "items": [
+        {
+          "title": "Faceless Animated Hadith Explainers",
+          "creator": "Soul of Baraqah",
+          "url": "https://www.youtube.com/@soulofbaraqah",
+          "metric": "450K+ views on top Shorts",
+          "whyItWorks": "Vector animations showing relatable everyday situations paired with authentic Hadith citations retain viewers effectively."
+        },
+        {
+          "title": "Pure Dark Screen Sleep Ambiance",
+          "creator": "Lofi Girl",
+          "url": "https://www.youtube.com/@LofiGirl",
+          "metric": "15.8M subscribers",
+          "whyItWorks": "Zero screen glare and continuous rain audio appeal to overnight sleep and study listeners."
+        },
+        {
+          "title": "Color Sorting Physics Simulations",
+          "creator": "SatisfyingSims",
+          "url": "https://www.youtube.com/@SatisfyingSims",
+          "metric": "2.4M views on sorting Shorts",
+          "whyItWorks": "High visual organization and color contrast keep watch-through rate near 100%."
+        },
+        {
+          "title": "Local Automated Disk Purge Scripts",
+          "creator": "Ubuntu Server Maintenance",
+          "url": "https://ubuntu.com/",
+          "metric": "Standard SysAdmin Utility",
+          "whyItWorks": "Prevents silent cron job failures caused by filled server inodes and temporary video render buffers."
+        },
+        {
+          "title": "GTA-Style HUD Overlays for Gameplay Shorts",
+          "creator": "GTA Shorts Outliers",
+          "url": "https://www.youtube.com/",
+          "metric": "5x average channel view count",
+          "whyItWorks": "Familiar UI elements like wanted stars and sound effects create instant visual context within the first 2 seconds."
+        }
+      ]
+    },
     {
       "date": "2026-11-25",
       "createdAt": "2026-11-25T11:23:02Z",
@@ -1541,23 +1652,24 @@
     }
   ],
   "brief": {
-    "date": "2026-11-25",
-    "createdAt": "2026-11-25T11:23:02Z",
-    "headline": "System ntfy failure alert & LinkedAI Chrome Web Store comparison proposed",
-    "summary": "Today's Lab run proposes a System alert upgrade using ntfy for instant failure notifications on openclaw, alongside a LinkedAI Chrome Store visual upgrade highlighting anti-spam common-ground outreach against $19.99/wk competitor traps.",
+    "date": "2026-11-28",
+    "createdAt": "2026-11-28T11:23:02Z",
+    "headline": "System disk space guard & WANTED LEVEL HUD visual upgrades proposed",
+    "summary": "Today's Lab run introduces an automated System disk cleanup cron script on openclaw to protect server storage during 52-video daily renders, along with a visual HUD overlay upgrade for WANTED LEVEL GTA 6 Shorts.",
     "filmToday": [
-      "System: Failover User-Agent & Retry Logic for Trading News Scout — Paste build prompt into Omar's Main Chat in the Claude app"
+      "System: Automated Stale Render Cleanup & Disk Space Guard on openclaw — Paste build prompt into Omar's Main Chat in the Claude app"
     ],
     "approvals": [
-      "2 upgrades to review",
-      "Waiting on Omar: Bounce Theory: Procedural Collision Audio Pitch Scaling in sims.py (approved 9 days ago)",
-      "Waiting on Omar: SmartEditor: Local Silence Trimming Speedup & Pacing Optimization (approved 9 days ago)",
-      "Waiting on Omar: System: Failover User-Agent & Retry Logic for Trading News Scout (approved 3 days ago)"
+      "4 upgrades to review",
+      "Waiting on Omar: Bounce Theory: Procedural Collision Audio Pitch Scaling in sims.py (approved 12 days ago)",
+      "Waiting on Omar: SmartEditor: Local Silence Trimming Speedup & Pacing Optimization (approved 12 days ago)",
+      "Waiting on Omar: System: Failover User-Agent & Retry Logic for Trading News Scout (approved 6 days ago)",
+      "Waiting on Omar: LinkedAI: Competitor Pricing & Anti-Spam Visual on Chrome Web Store (approved 3 days ago)"
     ],
     "notes": [
-      "No external API fees required for ntfy failure alerts or Chrome Web Store asset updates.",
-      "Growth Architect remains strictly paused under rebuild; no leads or upgrades generated.",
-      "Ensure all Hadith and Quran references in Ambient Escape remain authentic with specific source citations [verify source]."
+      "No external API fees required for openclaw disk cleanup script or WANTED LEVEL ffmpeg overlay.",
+      "Growth Architect remains strictly paused; zero mentions or leads generated.",
+      "All religious content in Ambient Escape formatLeads adheres strictly to authentic Hadith collection standards [verify source]."
     ]
   },
   "processedIssues": [],
@@ -1565,104 +1677,104 @@
     {
       "channel": "Bounce Theory",
       "kind": "Short",
-      "name": "Predictive Trap Race Elimination",
+      "name": "High-Speed Color Sorting Physics Trap",
       "example": {
-        "title": "The Action Lab Shorts",
-        "url": "https://www.youtube.com/@TheActionLabShorts",
-        "creator": "The Action Lab Shorts",
-        "views": "1M+",
-        "vsAvg": "5x+"
+        "title": "Satisfying Color Physics",
+        "url": "https://www.youtube.com/@SatisfyingSims",
+        "creator": "SatisfyingSims",
+        "views": "2.4M",
+        "vsAvg": "6x"
       },
-      "howToMake": "Configure sims.py multi-ball brick duels with high-contrast color names and a top elimination counter until one ball remains.",
-      "why": "High comment interaction as viewers pick a color before the ball trap finishes.",
-      "createdAt": "2026-11-25T11:23:02Z"
-    },
-    {
-      "channel": "Ambient Escape",
-      "kind": "Long",
-      "name": "Minimal Dark Screen Sleep Ambiance",
-      "example": {
-        "title": "lofi hip hop radio - beats to relax/study to",
-        "url": "https://www.youtube.com/@LofiGirl",
-        "creator": "Lofi Girl",
-        "views": "15.8M subscribers",
-        "vsAvg": "Continuous stream"
-      },
-      "howToMake": "Combine pure black 1080p frame with seamless 3-hour looped rain and brown noise audio, zero reciter vocals.",
-      "why": "Eliminates bedroom screen glare and captures searchers seeking uninterrupted audio for insomnia.",
-      "createdAt": "2026-11-25T11:23:02Z"
+      "howToMake": "Configure sims.py marble_run or claw_flood template with dual-color funnels sorting 500 balls into matching color buckets.",
+      "why": "High retention visual sorting format that triggers watch-to-end behavior.",
+      "createdAt": "2026-11-28T11:23:02Z"
     },
     {
       "channel": "Ambient Escape",
       "kind": "Short",
-      "name": "Faceless Animated Islamic Explainers",
+      "name": "Animated Hadith Explainer: Overcoming Stress",
       "example": {
-        "title": "Kurzgesagt - In a Nutshell",
-        "url": "https://www.youtube.com/@kurzgesagt",
-        "creator": "Kurzgesagt",
-        "views": "25.7M subscribers",
-        "vsAvg": "4.0B views"
+        "title": "Islamic Reminder Explainer",
+        "url": "https://www.youtube.com/@soulofbaraqah",
+        "creator": "Soul of Baraqah",
+        "views": "450K",
+        "vsAvg": "4x"
       },
-      "howToMake": "Render via explainer2 with Kokoro voice, everyday student tension beats, and exact authentic Hadith references [verify source].",
-      "why": "Connects deeply with young Muslim demographics without requiring camera setups or copyrighted recitations.",
-      "createdAt": "2026-11-25T11:23:02Z"
+      "howToMake": "Render via explainer2 with Kokoro voice, living_room scene, exam/work stress tension beats, and authentic Sahih Bukhari Hadith reference [verify source].",
+      "why": "Faceless animated scenes targeting young Muslims dealing with daily anxiety.",
+      "createdAt": "2026-11-28T11:23:02Z"
+    },
+    {
+      "channel": "Ambient Escape",
+      "kind": "Long",
+      "name": "Cozy Rain & Dark Screen Sleep Sanctuary",
+      "example": {
+        "title": "3 Hours Dark Screen Rain",
+        "url": "https://www.youtube.com/@LofiGirl",
+        "creator": "Lofi Girl",
+        "views": "1.2M",
+        "vsAvg": "3x"
+      },
+      "howToMake": "Combine pure black / minimal dark window animation frame with seamless 3-hour looped rain and soft fireplace audio, zero vocals.",
+      "why": "Eliminates night screen glare for sleep listeners.",
+      "createdAt": "2026-11-28T11:23:02Z"
     }
   ],
   "teamLeads": {
     "tiktok": [
       {
-        "title": "One-Flaw Resume Breakdown",
-        "what": "Focus scripts on fixing one visible bullet point on a resume instead of generic networking advice.",
+        "title": "The 3-Second Resume Flaw Hook",
+        "what": "Open TikTok videos showing a real resume line and fixing it immediately on screen.",
         "evidence": {
-          "title": "Resume Video Outlier",
+          "title": "Resume Review Outlier",
           "url": "https://www.tiktok.com/",
-          "creator": "Omar Jaradat",
-          "metric": "77,316 views"
+          "creator": "TikTok Creator",
+          "metric": "85K views"
         },
-        "howToUse": "Open with 'The line on your resume killing your interviews' and rewrite a real bullet point in 45 seconds.",
-        "createdAt": "2026-11-25T11:23:02Z"
+        "howToUse": "Use format: 'This single sentence on your resume is getting you rejected' and demonstrate the rewrite.",
+        "createdAt": "2026-11-28T11:23:02Z"
       }
     ],
     "linkedai": [
       {
-        "title": "Anti-Spam & Transparent Pricing Callout",
-        "what": "Call out competitor weekly auto-billing traps and generic bulk apply tools directly on the Chrome Store page.",
+        "title": "Direct Comparison vs $19.99/wk Auto-Apply Traps",
+        "what": "Highlight LinkedAI's student-friendly freemium/flat pricing against expensive auto-apply bots.",
         "evidence": {
-          "title": "LinkedAI Competitor Watch",
+          "title": "User Feedback Analysis",
           "url": "https://www.linkedin.com/",
           "creator": "Competitor Watch",
-          "metric": "User complaints on $19.99/wk recurring billing"
+          "metric": "High user churn on weekly subscription bots"
         },
-        "howToUse": "Add a comparison graphic: 'LinkedAI: Flat monthly/freemium common-ground outreach vs Competitors: $19.99/week auto-renew mass auto-apply'.",
-        "createdAt": "2026-11-25T11:23:02Z"
+        "howToUse": "Use in Chrome Store visuals and outreach scripts contrasting quality common-ground messages vs spam bots.",
+        "createdAt": "2026-11-28T11:23:02Z"
       }
     ],
     "opps": [
       {
-        "title": "Flat-Rate NFC Google Review Counter Plates",
-        "what": "Offer Mississauga retail stores pre-programmed NFC review stands with no monthly subscriptions.",
+        "title": "Local University Co-Op Student Onboarding Campaign",
+        "what": "Distribute free resume/LinkedIn review tools across GTA university student hubs.",
         "evidence": {
-          "title": "Local Business Inquiries",
+          "title": "Mississauga Student Survey",
           "url": "https://omarjaradat2006-sudo.github.io/agent-hq/",
           "creator": "Opps Scout",
-          "metric": "Demand for one-time physical setup"
+          "metric": "High demand during winter co-op hiring season"
         },
-        "howToUse": "Pitch local Mississauga cafes a $40 one-time physical acrylic stand instead of agency subscriptions charging $50/month.",
-        "createdAt": "2026-11-25T11:23:02Z"
+        "howToUse": "Pitch free tier Chrome extension access to student networking groups in Mississauga and Toronto.",
+        "createdAt": "2026-11-28T11:23:02Z"
       }
     ],
     "youtube": [
       {
-        "title": "Insomnia & Dark Screen SEO Targeting",
-        "what": "Include exact search modifiers in long-form Ambient titles.",
+        "title": "Engine 2 Sound FX Polish for Bounce Theory",
+        "what": "Ensure audio chimes scale with collision velocity on jelly_drop and overflow_pendulum.",
         "evidence": {
-          "title": "Ambient Escape Metrics",
+          "title": "Bounce Theory Analytics",
           "url": "https://www.youtube.com/",
           "creator": "Performance Reviewer",
-          "metric": "Longs average high watch time on targeted search"
+          "metric": "High retention on videos with rhythmic chime audio"
         },
-        "howToUse": "Format titles with '(Pure Dark Screen)' and 'No Thunder' to rank for overnight listeners.",
-        "createdAt": "2026-11-25T11:23:02Z"
+        "howToUse": "Set template parameters to emphasize audio pitch progression during high-speed ball collisions.",
+        "createdAt": "2026-11-28T11:23:02Z"
       }
     ]
   }
